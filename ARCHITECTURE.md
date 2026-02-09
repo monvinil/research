@@ -9,38 +9,40 @@ Identify businesses to build in the AI-driven economy across three horizons:
 
 ## Founding Constraints
 
-These are starting conditions, not walls. They define *cost gradients* — not what's impossible, but what's cheap vs. expensive to execute.
+These are starting conditions. They define *cost gradients* and *friction levels*, not limits.
+
+**Capital is a variable, not a constraint.** The founding team has access to angel/VC networks and can raise beyond $500K-$1M if the opportunity justifies it. The hard problem this engine solves is NOT "what can we afford" — it's "what's worth building in an economy where every pitch deck says AI." Finding capital is easy. Finding something worth funding is hard.
 
 ```
-CAPITAL:        $500K-$1M (VC angel check). No multi-year cash burn models.
-                Must reach revenue or clear metrics within runway.
-LOCATION:       Davis, CA — 1hr from SF. Access to Bay Area networks + large
-                rural/agricultural hinterland.
-TEAM:           2 founders.
-                Founder 1: Argentina citizen, US resident. Native English+Spanish.
-                  Can operate in US + LATAM markets natively.
-                Founder 2: US citizen, Georgia Tech ML/AI Masters. Technical
-                  execution on model fine-tuning, inference optimization,
-                  agentic system architecture.
-LANGUAGES:      English, Spanish natively. Other languages = higher ops cost,
-                not a blocker. Factor into unit economics.
-LEGAL:          Both legal to work in US. Founder 1 is resident (visa constraints
-                may limit certain government/defense contracts — verify per opp).
-LICENSES:       Neither founder holds CPA, JD, MD, etc. BUT: willing to acquire
-                existing businesses that carry needed licenses. License = acquirable
-                asset, not a wall. Factor acquisition cost into unit economics.
-OPERATING GEO:  US + LATAM = lowest friction. Other geographies viable if the
-                economics arbitrage justifies the higher ops cost. No geography
-                is off-limits — evaluate on cost/benefit, not binary yes/no.
+STARTING CAPITAL: $500K-$1M initial check. Can raise more if opportunity
+                  merits it. Capital scales to the quality of the thesis.
+LOCATION:         Davis, CA — 1hr from SF. Bay Area networks + rural hinterland.
+TEAM:             2 founders.
+                  Founder 1: Argentina citizen, US resident. Native English+Spanish.
+                    Operator. Can work US + LATAM natively.
+                  Founder 2: US citizen, Georgia Tech ML/AI Masters. Technical
+                    execution — fine-tuning, inference optimization, agentic systems.
+LANGUAGES:        English, Spanish natively. Others = ops cost adder, not blocker.
+LEGAL:            Both legal to work in US. Founder 1 is resident (flag on
+                  govt/defense contracts — verify per opportunity).
+LICENSES:         Neither founder holds CPA, JD, MD, etc. Willing to acquire
+                  existing businesses carrying needed licenses.
+OPERATING GEO:    US + LATAM = lowest friction. Any geography viable if
+                  economics justify the overhead.
+VC NETWORK:       Active angel/VC relationships. Can raise follow-on capital.
+                  Do not optimize for "what's fundable at $500K" — optimize for
+                  "what makes VCs excited vs. the 500 generic AI pitches they
+                  see this month."
 ```
 
-### What These Constraints Mean for the Engine
+### What These Conditions Mean for the Engine
 
-- **Capital-constrained = agentic-first is not optional.** At $500K-$1M, you cannot hire a team of 15. The business MUST run on AI labor from day 1. This is a feature, not a bug — it forces the cost structure the engine is looking for.
-- **Two technical founders = execution speed advantage.** ML/AI Masters + operator = can build and deploy without hiring for 6-12 months.
-- **Licenses are acquirable, not blockers.** If an opportunity requires a CPA, JD, MD, or any professional license, the move is to acquire a small existing licensed business. This is a cost item in the unit economics model, not a kill condition. Agent B should price the acquisition instead of killing the opportunity.
-- **US + LATAM = lowest friction, not only option.** US for primary TAM, LATAM as POC/secondary. But if there's a 10x arbitrage in Germany, Japan, or UAE — the higher ops cost is worth modeling, not dismissing. Evaluate geography on economics, not convenience.
-- **Language is a cost gradient.** English+Spanish markets are cheapest to operate. Non-English/Spanish markets require local hires or partners — price it, don't exclude it.
+- **The engine optimizes for opportunity quality, not capital fit.** If the best opportunity requires $3M, we raise $3M. The engine's job is to find something so structurally differentiated that capital follows.
+- **Agentic-first is a thesis, not a budget constraint.** We don't use AI labor because we can't afford humans. We use it because it creates cost structures incumbents literally cannot match. This is a strategic choice, not a financial one.
+- **Two technical founders = execution speed advantage.** ML/AI Masters + operator = build and deploy without hiring for 6-12 months.
+- **Licenses are acquirable.** Professional licenses = acquirable via small business acquisition. Price it, don't kill it.
+- **Geography is a cost gradient.** US + LATAM = lowest friction. Other markets = model the overhead.
+- **VC excitement is a signal.** If Agent B can articulate why this opportunity makes a VC excited *relative to the generic AI deal flow they're drowning in*, the opportunity is stronger. If the pitch sounds like everything else, it's weak regardless of unit economics.
 
 ## Core Thesis (Principles Engine)
 

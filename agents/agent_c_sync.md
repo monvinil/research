@@ -129,7 +129,8 @@ Maintain a running state that persists across research cycles:
       "pursue_rate": "X%",
       "avg_viability_score": 0,
       "common_kill_reasons": [],
-      "constraint_gate_kill_rate": "X% killed at constraint assessment before full verification",
+      "avg_vc_differentiation_score": 0,
+      "generic_pitch_rate": "X% scored <=3 on VC differentiation",
       "cost_adder_frequency": "X% required license/geo/language cost adders"
     }
   },
@@ -155,33 +156,38 @@ After Agent B returns verification results, compile final ranking:
 ```
 FINAL OPPORTUNITY SCORE (0-100)
 
-VIABILITY (0-40) — from Agent B
+VIABILITY (0-30) — from Agent B
 ├── Unit economics strength        [0-10]
 ├── Incumbent vulnerability         [0-8]
-├── Technical feasibility           [0-8]
-├── Regulatory clearance            [0-4]
-├── Constraint fit (PASS=5, PASS+COST=2-4 based on overhead, KILL=0) [0-5]
-└── Runway feasibility              [0-5]
+├── Technical feasibility           [0-7]
+└── Regulatory clearance            [0-5]
 
-STRATEGIC FIT (0-30) — from Principles Engine
-├── Infrastructure overhang exploit [0-6]
-├── Liquidation cascade position    [0-6]
-├── Output cost dominance           [0-6]
-├── Dead business revival           [0-6]
+STRATEGIC FIT (0-25) — from Principles Engine
+├── Infrastructure overhang exploit [0-5]
+├── Liquidation cascade position    [0-5]
+├── Output cost dominance           [0-5]
+├── Dead business revival           [0-5]
 ├── Demographic alignment           [0-3]
-└── Geopolitical resilience         [0-3]
+└── Geopolitical/geographic arb     [0-2]
 
-SIGNAL STRENGTH (0-20) — from scanning data
-├── Number of supporting signals    [0-7]
-├── Source diversity                 [0-5]
-├── Data specificity                [0-5]
-└── Trend momentum                  [0-3]
+VC DIFFERENTIATION (0-25) — from Agent B assessment
+├── VC score (direct from 1-10, scaled to 0-15)     [0-15]
+├── "Why now" structural clarity                      [0-5]
+└── Distance from generic AI pitch                    [0-5]
+
+SIGNAL STRENGTH (0-10) — from scanning data
+├── Number of supporting signals    [0-3]
+├── Source diversity                 [0-3]
+├── Data specificity                [0-2]
+└── Trend momentum                  [0-2]
 
 TIMING (0-10) — combined assessment
 ├── Market readiness                [0-4]
 ├── Competition window              [0-3]
 └── First-mover advantage           [0-3]
 ```
+
+**Note the weight shift:** VC Differentiation is now 25% of the final score — equal to Strategic Fit. An opportunity with perfect unit economics but a generic pitch (VC score 2/10) caps at ~60. An opportunity with strong economics AND a thesis that makes VCs rethink their model (VC score 9/10) can hit 90+. This is deliberate: finding the RIGHT thing to build is the hard problem, not the economics.
 
 ### 7. UI Data Push
 
@@ -205,7 +211,9 @@ Maintain JSON files that the localhost UI reads:
       "thesis": "one line",
       "status": "scanning | verifying | verified | pursuing",
       "principles_passed": ["P1", "P2"],
-      "constraint_gate": "PASS | CONDITIONAL",
+      "vc_score": "N/10",
+      "vc_hook": "one-line pitch hook",
+      "suggested_raise": "$X",
       "last_updated": "ISO 8601"
     }
   ],
