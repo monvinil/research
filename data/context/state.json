@@ -1,18 +1,44 @@
 {
-  "state_version": 1,
+  "state_version": 2,
   "current_cycle": 0,
   "engine_started": "2026-02-09",
   "active_research_focus": {
     "horizons": ["H1", "H2", "H3"],
-    "sectors": [],
-    "geographies": ["US", "EU", "Japan", "Middle East", "Southeast Asia"],
+    "systemic_patterns": [
+      "liquidation_cascades_labor_intensive_services",
+      "demographic_gap_widening_us",
+      "infrastructure_overhang_inference_cost_collapse",
+      "dead_business_revival_coordination_cost_failures",
+      "pe_rollup_disruption_by_agentic_entrants"
+    ],
+    "geographies": ["US", "LATAM_analysis_only"],
     "themes": [
-      "infrastructure_overhang",
+      "agentic_cost_collapse",
       "incumbent_low_mobility",
       "dead_business_revival",
       "demographic_gaps",
-      "agentic_cost_collapse"
+      "us_latam_corridor"
     ]
+  },
+  "founding_constraints": {
+    "capital": "$500K-$1M",
+    "team_size": 2,
+    "founder_1": "operator, Argentina citizen, US resident, English+Spanish",
+    "founder_2": "ML/AI Masters Georgia Tech, US citizen",
+    "operating_geo": "US primary, LATAM secondary",
+    "credentials": "no CPA/JD/MD",
+    "languages": "English, Spanish"
+  },
+  "grading_weights": {
+    "current": {
+      "principles_alignment": 1.0,
+      "data_specificity": 1.0,
+      "source_quality": 1.0,
+      "timeliness": 1.0,
+      "novelty": 1.0,
+      "cross_signal_reinforcement": 1.0
+    },
+    "history": []
   },
   "running_patterns": [],
   "opportunity_pipeline": {
@@ -28,19 +54,22 @@
       "signals_produced": 0,
       "signals_above_threshold": 0,
       "avg_relevance_score": 0,
-      "top_source_categories": []
+      "top_source_categories": [],
+      "kill_index_hit_rate": "0%"
     },
     "agent_b": {
       "verifications_completed": 0,
       "pursue_rate": "0%",
       "avg_viability_score": 0,
-      "common_kill_reasons": []
+      "common_kill_reasons": [],
+      "constraint_gate_kill_rate": "0%"
     }
   },
   "key_unknowns": [],
   "next_cycle_suggestions": [
-    "Run initial broad scan across all 6 source categories",
-    "Prioritize H1 opportunities for immediate actionability",
-    "Focus on US and Japan as initial geographies (most data available)"
+    "Cycle 1: Focus on P2 (liquidation cascades) + P5 (demographic gaps) in US labor-intensive services",
+    "Use BLS + FRED to identify the squeeze: rising wages + falling margins by sector",
+    "Use web search + Reddit to find practitioner pain signals confirming the quantitative data",
+    "Defer industry selection — let the data surface which industries are in cascade"
   ]
 }

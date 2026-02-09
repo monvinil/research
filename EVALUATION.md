@@ -1,101 +1,134 @@
-# Engine Evaluation & Setup Requirements
+# Engine Evaluation & API Edge Analysis
 
-## Self-Critique of the Design
+## Principles Engine Self-Test: Which APIs Produce Edge?
 
-### What's strong
+We applied our own framework to the question "which data sources should we connect?"
+The filter: an API is worth connecting if it produces signals that pass our Principles Engine
+AND cannot be replicated by general web search.
 
-1. **The Principles Engine is the differentiator.** Most AI research tools scan and summarize. This one filters through an economic thesis. P3 (Output Cost Kill) and P4 (Dead Business Revival) are the most novel lenses — they force non-obvious opportunity identification.
+### Evaluation Criteria
 
-2. **Agent B (Practitioner) as mandatory skeptic.** Without this, the engine just produces idea lists. The forensic verification step with named incumbents and calculated unit economics separates this from brainstorming.
+For each API, we ask:
+1. **Does it detect systemic patterns?** (Not just industry news)
+2. **Does it produce quantified signals?** (Numbers Agent B can use for unit economics)
+3. **Is it non-obvious?** (Would a competitor doing naive research miss this?)
+4. **Signal-to-noise ratio:** How much filtering needed to extract useful signals?
+5. **Founding constraint fit:** Usable by 2 people without a data team?
 
-3. **Time horizon separation.** Forcing every signal into H1/H2/H3 prevents conflating "could build today" with "interesting in theory." Keeps H1 outputs actionable.
+---
 
-4. **Agent C as memory.** Cross-cycle context is what makes this a research *engine* rather than repeated one-shots. Pattern detection across cycles compounds value.
+### TIER 1: CONNECT IMMEDIATELY — These produce signals no other source can
 
-### What needs correction
+| API | Edge Thesis | Principle Served | Monthly Cost |
+|-----|-------------|-----------------|-------------|
+| **BLS API** | Occupation-level wage data + vacancy rates. THE dataset for P5 (demographic gaps). Identify exact occupations where: wages rising > CPI AND vacancy rates > 5%. These are the roles AI can fill with least resistance. No other public source gives this granularity. | P5, P3 | Free |
+| **FRED API** | Industry-level financial health indicators. Combine with BLS to identify sectors in the squeeze (rising labor costs + falling margins = P2 liquidation cascade). Also: interest rate data for runway modeling (high rates = advantage for low-burn thesis). | P1, P2, P3 | Free |
+| **SEC EDGAR** | 10-K filings contain cost structure breakdowns by segment. How Agent B names specific incumbents and calculates actual cost structures. No earnings summary site gives the raw cost data needed for P3 unit economics comparison. | P2, P3 | Free |
+| **Web Search API (Serper)** | Agent A's general scanning backbone. Without this, Agent A is blind. Every source category except structured financial data flows through web search. ~$50/mo buys systematic querying vs. manual browsing. | All | ~$50/mo |
 
-1. **Agent A scope is too broad for cycle 1.** Scanning all 6 categories across 5 geographies will produce noise.
-   - **Fix:** First 2-3 cycles should be narrowly focused. Suggest starting with H1 + US + healthcare/professional-services/logistics. Expand after initial patterns emerge.
+**Total Tier 1: ~$50/mo.** Three free APIs produce the quantified foundation, plus one paid API makes Agent A functional.
 
-2. **Missing: competitive landscape agent.** The current design doesn't systematically track who else is building agentic businesses in identified spaces.
-   - **Fix (deferred):** Add this as Agent D in a later phase, or give Agent A a specific "competitor scan" mode to run after Agent B identifies viable opportunities.
+---
 
-3. **Grading weights in Agent C are static.** The scoring should adapt based on what Master learns across cycles.
-   - **Fix:** Agent C's grading weights should be settable per-cycle via Master directives, not hardcoded.
+### TIER 2: CONNECT WITHIN FIRST WEEK — High edge, not blocking
 
-4. **No feedback loop from kills.** When Agent B kills an opportunity, the reason should feed back to Agent A to improve scanning precision.
-   - **Fix:** Agent C should maintain a "kill reason index" that Agent A references to avoid producing similar low-viability signals.
+| API | Edge Thesis | Principle Served | Monthly Cost |
+|-----|-------------|-----------------|-------------|
+| **Crunchbase** | Failed startup database. Primary input for P4 (dead business revival). Search startups in non-software verticals that failed 2015-2023, filter by failure reasons. Also: competitor landscape data for Agent A's competitor scan mode. No substitute at this scale. | P4, Competitor | ~$99/mo |
+| **X/Twitter API** | Real-time practitioner complaints and industry sentiment. Individual practitioners saying "this industry is broken because X" = leading indicators before BLS/FRED data shows up. Also: early adopter reports ("I replaced X with AI and...") = direct P3 evidence. | P2, P3, P5 | ~$100/mo |
+| **Reddit API** | Industry-specific subreddits = unfiltered practitioner pain. r/accounting, r/nursing, r/logistics, r/insurance, r/smallbusiness have daily posts about operational pain mapping directly to agentic substitution opportunities. | P2, P3, P5 | Free |
+| **Hacker News API** | "What's becoming trivially easy to build" (P1). Track threads about agentic tools, cost reductions, capability unlocks. HN crowd reliably identifies failed business patterns worth revisiting (P4). | P1, P4 | Free |
 
-5. **UI is read-only.** For real operation, you'd want to flag/bookmark opportunities, add notes, and trigger re-verification from the UI.
-   - **Fix (deferred):** Phase 2 — add simple POST endpoints for annotations. Not needed for initial cycles.
+**Total Tier 2: ~$199/mo.** Crunchbase is the biggest unlock — the dead business revival database.
 
-## Recommended Cycle 1 Focus
+---
 
-```
-INITIAL SCAN DIRECTIVE
-Focus: H1 opportunities — businesses buildable in the next 12-18 months
-Sectors: Healthcare admin, accounting/bookkeeping, legal services,
-         insurance operations, logistics/freight, property management
-Geographies: US primary, Japan secondary
-Thesis: Find incumbents with >40% labor cost ratios in roles that
-        current AI models can perform at >80% accuracy
-Exclusions: Pure tech, consumer apps, social media, crypto
-```
+### TIER 3: CONNECT AFTER FIRST 2-3 CYCLES — Useful when we have hypotheses to test
 
-## Required APIs & Data Sources
+| API | Edge Thesis | Why Wait | Monthly Cost |
+|-----|-------------|----------|-------------|
+| **Trading Economics** | Commodities, metals, energy — P6 geopolitical inputs. | Until specific resource-dependent hypotheses emerge from scanning, this is background noise. | ~$40/mo |
+| **Alpha Vantage / Polygon** | Earnings transcripts, financial data. | SEC EDGAR gives 10-K/10-Q free. Transcripts only useful once Agent B needs to verify specific recent-quarter incumbent claims. | Free-$30/mo |
+| **Google Trends (pytrends)** | Search trend signals for timing validation. | Only after we have specific opportunities to test demand trajectory. Blind trend scans = noise. | Free |
+| **LinkedIn Job Data** | Company-level job posting trends. | BLS covers occupation-level. LinkedIn adds company granularity — worth it after identifying specific incumbent sectors to monitor. | Varies |
+| **INDEC (Argentina) / BCRA** | LATAM-specific economic data. | Not needed until LATAM POC opportunities are identified. Connect when we have a specific LATAM thesis to verify. | Free |
 
-### Tier 1 — Essential (connect before first cycle)
+**Total Tier 3: ~$70/mo, mostly optional.**
 
-| Source | Access Method | Purpose | Cost |
-|--------|-------------|---------|------|
-| **FRED API** | Free API key (api.stlouisfed.org) | Labor costs, CPI, industry production indices | Free |
-| **BLS Public Data API** | Free (api.bls.gov) | Occupation employment stats, wage data by industry | Free |
-| **SEC EDGAR** | Free (efts.sec.gov) | 10-K filings for incumbent cost structure analysis | Free |
-| **Web search API** | Serper.dev or SerpAPI | General web scanning for Agent A | ~$50/mo |
-| **X/Twitter API** | Basic tier (developer.x.com) | Sentiment scanning, practitioner pain points | $100/mo |
-| **Reddit API** | Free (oauth.reddit.com) | Industry subreddit scanning | Free |
-| **Hacker News API** | Free (hn.algolia.com) | Tech community signals | Free |
+---
 
-### Tier 2 — High Value (connect within first week)
+### KILLED: APIs That Don't Pass Our Filter
 
-| Source | Access Method | Purpose | Cost |
-|--------|-------------|---------|------|
-| **Crunchbase API** | Basic plan | Startup activity, funding patterns, failures | ~$99/mo |
-| **Indeed/LinkedIn job data** | Scraping or data providers | Job posting trends, salary data by role | Varies |
-| **Trading Economics API** | Basic plan | Commodities, metals, macro indicators | ~$40/mo |
-| **Alpha Vantage or Polygon.io** | Free/basic tier | Financial data, earnings transcripts | Free-$30/mo |
-| **Google Trends API** | pytrends (unofficial) | Search trend signals | Free |
+| API | Kill Reason |
+|-----|-------------|
+| **ArXiv API** | Tracks AI research, not business signals. We need inference cost curves and capability thresholds, not model architectures. Cloud pricing pages + announcements cover this. |
+| **Hugging Face API** | Same. Open model landscape doesn't produce signals mapping to business opportunities at our founding constraints. |
+| **GitHub API** | Dev tooling popularity ≠ business signals. Trending repos don't tell us about liquidation cascades in service businesses. |
+| **World Bank / IMF / OECD** | Too aggregated for systemic pattern detection. FRED + BLS cover US. For LATAM we need country-specific sources (INDEC, IBGE), not global aggregates. |
+| **EIA Energy API** | Energy matters as a compute cost constraint, but cloud provider pricing pages give us the direct signal (inference cost at point of consumption). We don't need to model energy markets upstream. |
+| **UN Population Division** | Demographic projections = H3 (5-10yr). BLS + Census cover US for H1/H2. Defer. |
 
-### Tier 3 — Nice to Have (connect as needed)
+---
 
-| Source | Access Method | Purpose | Cost |
-|--------|-------------|---------|------|
-| **ArXiv API** | Free (export.arxiv.org) | AI capability tracking | Free |
-| **Hugging Face API** | Free (huggingface.co/api) | Open model landscape | Free |
-| **World Bank Data API** | Free (api.worldbank.org) | International demographic/economic data | Free |
-| **Cloud pricing APIs** | Public pages + scraping | AI inference cost tracking | Free |
-| **GitHub API** | Free (api.github.com) | Open source tooling trends | Free |
-| **EIA API** | Free (api.eia.gov) | Energy prices and outlook | Free |
+### API Budget Summary
 
-### Social Accounts to Monitor (Agent A feed)
+| Phase | APIs | Monthly Cost |
+|-------|------|-------------|
+| **Day 1** | BLS, FRED, SEC EDGAR, Serper | ~$50/mo |
+| **Week 1** | + Crunchbase, X/Twitter, Reddit, HN | ~$249/mo |
+| **After cycle 3** | + Trading Economics, Alpha Vantage, Google Trends, LATAM sources as needed | ~$320/mo max |
+
+**Total at full speed: ~$320/mo.** At $500K-$1M capital, negligible. Each API connects when we have hypotheses to feed it.
+
+---
+
+## Social Accounts & Feeds to Monitor
 
 **X/Twitter lists to build:**
-- AI economics: @benedictevans, @sama, @elaboratist, @levelsio, @paulg, @paborenstein
-- Macro/geopolitics: @zabormeister, @INArteCarlworx, @RobinBrooksIIF, @jessefelder
-- Industry insiders: Follow practitioners in target sectors (accounting, healthcare admin, logistics)
-- Energy/commodities: @JavierBlas, @NickCunningham, @EnergyIntel
+- AI economics: @benedictevans, @levelsio, @paulg, @elaboratist
+- Macro/geopolitics: @JavierBlas, @RobinBrooksIIF, @jessefelder
+- LATAM angle: Argentina/LATAM tech and economics accounts
+- Industry practitioners: Follow as sectors emerge from scanning
 
-**Reddit subreddits:**
-- r/smallbusiness, r/accounting, r/nursing, r/logistics, r/insurance
-- r/artificial, r/MachineLearning, r/LocalLLaMA
-- r/economics, r/geopolitics, r/commodities
+**Reddit:**
+- Practitioner pain: r/smallbusiness, r/accounting, r/nursing, r/logistics, r/insurance
+- AI capability: r/LocalLLaMA, r/MachineLearning, r/artificial
+- Macro: r/economics, r/geopolitics
 
-**Newsletters/Substacks:**
-- Matt Levine (Bloomberg Money Stuff) — financial industry signals
+**Newsletters (curated signal, less noise):**
+- Matt Levine (Bloomberg Money Stuff) — financial industry structure
+- Doomberg — energy/commodities/physical economy
+- Construction Physics — physical infrastructure/industry
+- Apricitas Economics — macro data with analysis
 - Ben Thompson (Stratechery) — tech strategy
-- Doomberg — energy/commodities
-- Construction Physics — physical economy
-- Apricitas Economics — macro data
+
+---
+
+## Self-Critique: Updated Design Assessment
+
+### Strengths
+
+1. **Systemic shift focus over industry-picking.** The engine looks for structural patterns. Industries emerge from data, not from guessing.
+
+2. **Founding constraint gate runs first.** Agent B kills on constraints before wasting cycles on unit economics. This alone prevents the most common research-engine failure: producing ideas no one can execute.
+
+3. **Kill index as institutional memory.** Dead-end patterns accumulate. The engine's immune system.
+
+4. **P2 (Liquidation Cascade) is the sharpest principle.** Most AI analysis asks "what can AI improve?" We ask "where are businesses dying because of AI, and can we enter as they exit?" Different search = different results.
+
+5. **LATAM as a POC accelerator.** Argentina access = test hypotheses against weaker incumbents before US attack.
+
+### Watch Items
+
+1. **Hard deadline: 4-6 cycles max before active pursuit.** Don't let the engine become the product. Within 6 cycles we need 2-3 opportunities in active development, or the engine is self-serving.
+
+2. **Crunchbase early for P4.** Dead business revival is the most differentiated principle but needs specific failed-startup data. Prioritize.
+
+3. **LATAM data gap.** If LATAM is a secondary operating geography, we need Argentina-specific sources (INDEC, BCRA, local startup databases) in Tier 3.
+
+4. **Competitor scan: consider making proactive.** Currently reactive (after verification). Maybe lightweight competitive sweep on signals above threshold, not just verified ones.
+
+---
 
 ## Running the Engine
 
@@ -107,46 +140,37 @@ python scripts/serve_ui.py --port 8080
 # Open http://localhost:8080/ui/
 
 # 2. Initialize first cycle
-python scripts/run_cycle.py --phase init --directive "H1 healthcare admin and professional services, US market"
+python scripts/run_cycle.py --phase init \
+  --directive "Systemic patterns: liquidation cascades + demographic gaps in US labor-intensive services"
 
-# 3. Run Agent A scan (manually or via Claude/LLM API)
-# Feed agents/agent_a_trends_scanner.md as system prompt
-# Feed the scan directive as user message
-# Collect output into data/signals/YYYY-MM-DD.json
+# 3. Run Agent A — feed agent_a_trends_scanner.md as system prompt, scan directive as user message
+#    Output → data/signals/2026-02-09.json
 
-# 4. Run Agent C grading
-# Feed agents/agent_c_sync.md as system prompt
-# Feed signals file as input
-# Output to data/grades/YYYY-MM-DD.json
+# 4. Run Agent C grading — feed agent_c_sync.md, signals as input
+#    Output → data/grades/2026-02-09.json
 
-# 5. Run Agent B verification on top signals
-# Feed agents/agent_b_practitioner.md as system prompt
-# Feed top graded signals as input
-# Output to data/verified/YYYY-MM-DD.json
+# 5. Run Agent B verification — feed agent_b_practitioner.md, top signals as input
+#    Output → data/verified/2026-02-09.json
 
-# 6. Compile
+# 6. Compile and update UI
 python scripts/run_cycle.py --phase compile
 ```
 
 ### Automation Path
 
-For fully automated cycles, you'll need:
-1. An LLM API (Anthropic Claude API, OpenAI, or local models via Ollama)
-2. A runner script that chains agent calls with data passing
-3. Rate limiting and cost tracking (each full cycle ~$2-10 in API costs depending on model and volume)
+For automated cycles:
+1. Claude API or OpenAI API with agent prompts as system messages
+2. Runner script chaining agent calls with JSON data passing
+3. Each full cycle: ~$2-10 in LLM API costs depending on model and volume
+4. `scripts/run_cycle.py` handles data plumbing; agent execution via API calls
 
-The `scripts/run_cycle.py` handles the data plumbing. The actual agent execution requires either:
-- **Claude Code sessions** — run each agent prompt manually
-- **API automation** — Python script calling Claude/OpenAI API with agent prompts as system messages
-- **Local models** — For Agent A scanning tasks, a capable open model (Llama 3, Mixtral) can handle signal extraction at lower cost
+### Resolved Corrections
 
-## Proposed Corrections Summary
-
-| Issue | Severity | Fix | When |
-|-------|----------|-----|------|
-| Agent A scope too broad | High | Narrow first cycles to H1 + 3 sectors | Now |
-| No competitor tracking | Medium | Add competitor scan mode to Agent A | Week 2 |
-| Static grading weights | Medium | Make weights settable per-cycle | Week 1 |
-| No kill-reason feedback loop | Medium | Add kill index to Agent C state | Week 1 |
-| UI is read-only | Low | Add annotation endpoints | Phase 2 |
-| No cost tracking for API usage | Low | Add simple token/cost counter | Week 1 |
+| Issue | Status | How |
+|-------|--------|-----|
+| Agent A scope too broad | **Fixed** | Systemic pattern focus, not industry lists |
+| No competitor tracking | **Fixed** | Competitor scan mode added to Agent A |
+| Static grading weights | **Fixed** | Dynamic weights per-cycle in Agent C |
+| No kill-reason feedback | **Fixed** | Kill index in Agent C, referenced by Agent A |
+| Founding constraints not enforced | **Fixed** | Constraint gate mandatory first step in Agent B |
+| UI is read-only | **Deferred** | Phase 2 — not needed for initial cycles |
