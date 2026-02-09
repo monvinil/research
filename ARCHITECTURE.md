@@ -7,37 +7,40 @@ Identify businesses to build in the AI-driven economy across three horizons:
 - **H2 (3-5 years):** Re-ignited businesses — previously dead economics revived by agentic cost structures
 - **H3 (5-10 years):** Structural shifts — new economic categories created by infrastructure overhang
 
-## Founding Constraints (Hard Limits, Not Preferences)
+## Founding Constraints
 
-These are not preferences. These are physical/legal/capital constraints that bound the search space.
+These are starting conditions, not walls. They define *cost gradients* — not what's impossible, but what's cheap vs. expensive to execute.
 
 ```
 CAPITAL:        $500K-$1M (VC angel check). No multi-year cash burn models.
                 Must reach revenue or clear metrics within runway.
 LOCATION:       Davis, CA — 1hr from SF. Access to Bay Area networks + large
-                rural/agricultural hinterland. NOT a preference for agtech —
-                it's a logistics reality for anything physical.
+                rural/agricultural hinterland.
 TEAM:           2 founders.
-                Founder 1: Argentina citizen, US resident. No Chinese language
-                capability. Can operate in US + LATAM markets natively.
+                Founder 1: Argentina citizen, US resident. Native English+Spanish.
+                  Can operate in US + LATAM markets natively.
                 Founder 2: US citizen, Georgia Tech ML/AI Masters. Technical
-                execution on model fine-tuning, inference optimization,
-                agentic system architecture.
-LANGUAGES:      English, Spanish natively. No Mandarin, Japanese, Farsi, Hebrew.
-                → China/Japan/Iran/Israel are ANALYSIS inputs (geopolitical forces),
-                  not OPERATING geographies.
+                  execution on model fine-tuning, inference optimization,
+                  agentic system architecture.
+LANGUAGES:      English, Spanish natively. Other languages = higher ops cost,
+                not a blocker. Factor into unit economics.
 LEGAL:          Both legal to work in US. Founder 1 is resident (visa constraints
-                may limit certain government/defense contracts — verify per opportunity).
-OPERATING GEO:  US primary. LATAM (esp Argentina, given native access) secondary.
-                Other geographies only via remote/digital delivery.
+                may limit certain government/defense contracts — verify per opp).
+LICENSES:       Neither founder holds CPA, JD, MD, etc. BUT: willing to acquire
+                existing businesses that carry needed licenses. License = acquirable
+                asset, not a wall. Factor acquisition cost into unit economics.
+OPERATING GEO:  US + LATAM = lowest friction. Other geographies viable if the
+                economics arbitrage justifies the higher ops cost. No geography
+                is off-limits — evaluate on cost/benefit, not binary yes/no.
 ```
 
 ### What These Constraints Mean for the Engine
 
 - **Capital-constrained = agentic-first is not optional.** At $500K-$1M, you cannot hire a team of 15. The business MUST run on AI labor from day 1. This is a feature, not a bug — it forces the cost structure the engine is looking for.
-- **Two technical founders = execution speed advantage.** ML/AI Masters + operator = can build and deploy without hiring for 6-12 months. But the business must not require deep domain credentials (medical license, CPA, bar admission) that neither founder holds.
-- **US + LATAM = specific market access.** US for primary TAM. Argentina/LATAM as either: (a) secondary market with even weaker incumbents, or (b) labor arbitrage for any human-in-the-loop components.
-- **No operating access to China/Japan = geopolitical analysis only.** These markets inform *what forces are in play*, not *where to build*.
+- **Two technical founders = execution speed advantage.** ML/AI Masters + operator = can build and deploy without hiring for 6-12 months.
+- **Licenses are acquirable, not blockers.** If an opportunity requires a CPA, JD, MD, or any professional license, the move is to acquire a small existing licensed business. This is a cost item in the unit economics model, not a kill condition. Agent B should price the acquisition instead of killing the opportunity.
+- **US + LATAM = lowest friction, not only option.** US for primary TAM, LATAM as POC/secondary. But if there's a 10x arbitrage in Germany, Japan, or UAE — the higher ops cost is worth modeling, not dismissing. Evaluate geography on economics, not convenience.
+- **Language is a cost gradient.** English+Spanish markets are cheapest to operate. Non-English/Spanish markets require local hires or partners — price it, don't exclude it.
 
 ## Core Thesis (Principles Engine)
 

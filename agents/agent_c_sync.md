@@ -60,7 +60,7 @@ Maintain `data/context/kill_index.json`:
       "kill_reason": "Specific reason from Agent B",
       "signal_type_affected": "liquidation_cascade | incumbent_stuck | etc",
       "industries_affected": ["list"],
-      "constraint_violated": "capital | team | geography | language | legal | timeline | none",
+      "constraint_violated": "capital | team | timeline | none (geography/language/license are priced, not killed)",
       "example_signals_killed": ["signal IDs"],
       "still_active": true,
       "invalidation_condition": "What new data would make this kill reason obsolete"
@@ -129,7 +129,8 @@ Maintain a running state that persists across research cycles:
       "pursue_rate": "X%",
       "avg_viability_score": 0,
       "common_kill_reasons": [],
-      "constraint_gate_kill_rate": "X% killed at constraint gate before full verification"
+      "constraint_gate_kill_rate": "X% killed at constraint assessment before full verification",
+      "cost_adder_frequency": "X% required license/geo/language cost adders"
     }
   },
   "key_unknowns": [],
@@ -159,7 +160,7 @@ VIABILITY (0-40) — from Agent B
 ├── Incumbent vulnerability         [0-8]
 ├── Technical feasibility           [0-8]
 ├── Regulatory clearance            [0-4]
-├── Constraint gate strength        [0-5]
+├── Constraint fit (PASS=5, PASS+COST=2-4 based on overhead, KILL=0) [0-5]
 └── Runway feasibility              [0-5]
 
 STRATEGIC FIT (0-30) — from Principles Engine

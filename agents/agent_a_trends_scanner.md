@@ -109,6 +109,8 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
 - Education pipeline mismatches (degrees produced ≠ jobs needed)
 - Geographic labor migration patterns (where are workers leaving?)
 - LATAM labor market dynamics (potential for hybrid human+AI models)
+- Non-US markets with extreme arbitrage potential (Japan aging, Germany skilled trades, UAE services)
+- Licensed profession supply/demand dynamics (where are licensed practitioners retiring faster than being replaced? = acquisition targets)
 
 ## Signal Extraction Format
 
