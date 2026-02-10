@@ -3,326 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Economic Research Engine</title>
+<title>AI Economic Research Engine — Dashboard</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
   :root {
-    --bg: #0a0a0f;
-    --surface: #12121a;
-    --border: #1e1e2e;
-    --text: #e0e0e0;
-    --dim: #6b6b80;
-    --accent: #4fc3f7;
-    --green: #66bb6a;
-    --red: #ef5350;
-    --yellow: #ffa726;
-    --purple: #ab47bc;
+    --bg: #f5f5f3;
+    --surface: #fff;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-dim: #888;
+    --border: #e0e0e0;
+    --border-light: #eee;
+    --accent: #1a3a5c;
+    --accent-light: #2d5f8a;
+    --green: #1b7340;
+    --red: #a82828;
+    --orange: #b36b00;
+    --highlight: #e8f0f8;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
-  header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
-    margin-bottom: 24px;
+  .top-bar {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  h1 { font-size: 16px; font-weight: 600; color: var(--accent); }
-  .meta { color: var(--dim); font-size: 11px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .card {
+  .top-bar h1 { font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+  .top-bar .meta { font-size: 11px; opacity: 0.7; }
+  .top-bar a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 12px; font-weight: 500; padding: 4px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; }
+  .top-bar a:hover { background: rgba(255,255,255,0.1); }
+
+  .container { max-width: 1300px; margin: 0 auto; padding: 24px 32px; }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 16px;
+    text-align: center;
   }
-  .card h2 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--dim);
-    margin-bottom: 12px;
-  }
-  .stat { font-size: 28px; font-weight: 700; color: var(--accent); }
-  .stat-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-  .stat-label { color: var(--dim); }
-  .stat-value { font-weight: 600; }
-
-  .opportunity {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
-  }
-  .opportunity:last-child { border-bottom: none; }
-  .opp-header { display: flex; justify-content: space-between; align-items: center; }
-  .opp-name { font-weight: 600; }
-  .opp-score {
-    background: var(--accent);
-    color: var(--bg);
-    padding: 2px 8px;
-    border-radius: 3px;
+  .stat-card .number {
+    font-size: 32px;
     font-weight: 700;
-    font-size: 12px;
+    color: var(--accent);
+    line-height: 1;
   }
-  .opp-thesis { color: var(--dim); margin-top: 4px; font-size: 12px; }
-  .opp-meta { display: flex; gap: 12px; margin-top: 6px; font-size: 11px; }
-  .tag {
-    padding: 1px 6px;
-    border-radius: 3px;
+  .stat-card .label {
     font-size: 10px;
     font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 4px;
   }
-  .tag-h1 { background: #1b5e20; color: #a5d6a7; }
-  .tag-h2 { background: #e65100; color: #ffcc80; }
-  .tag-h3 { background: #4a148c; color: #ce93d8; }
-  .tag-principle { background: var(--border); color: var(--dim); }
 
-  .signal {
+  /* Card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-light);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 12px;
   }
-  .signal:last-child { border-bottom: none; }
-  .signal-score {
-    min-width: 28px;
-    text-align: center;
+  .card-header h2 {
+    font-size: 11px;
     font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
   }
-  .signal-score.high { color: var(--green); }
-  .signal-score.med { color: var(--yellow); }
-  .signal-score.low { color: var(--red); }
-  .signal-headline { flex: 1; }
-  .signal-source { color: var(--dim); font-size: 11px; min-width: 100px; text-align: right; }
-  .signal-status {
+  .card-header .badge {
     font-size: 10px;
-    padding: 1px 6px;
-    border-radius: 3px;
-    min-width: 70px;
-    text-align: center;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--highlight);
+    color: var(--accent);
   }
-  .status-new { background: #0d47a1; color: #90caf9; }
-  .status-graded { background: #1b5e20; color: #a5d6a7; }
-  .status-forwarded { background: #e65100; color: #ffcc80; }
-  .status-verified { background: #4a148c; color: #ce93d8; }
-  .status-killed { background: #b71c1c; color: #ef9a9a; }
+  .card-body { padding: 16px 20px; }
 
-  .heatmap { display: flex; flex-wrap: wrap; gap: 6px; }
+  /* Two column layout */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+  /* Opportunities */
+  .opp-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .opp-item:last-child { border-bottom: none; }
+  .opp-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .opp-name { font-weight: 600; font-size: 14px; }
+  .opp-score {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent);
+    min-width: 40px;
+    text-align: right;
+  }
+  .opp-thesis {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .opp-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+  }
+  .tag-h1 { background: #dff0d8; color: var(--green); }
+  .tag-h2 { background: #fef3cd; color: var(--orange); }
+  .tag-h3 { background: #e8dff0; color: #5b2d8c; }
+  .tag-principle { background: #e8f0f8; color: var(--accent); }
+  .tag-signals { background: #f0f0f0; color: var(--text-dim); }
+
+  /* Signals */
+  .signal-item {
+    display: grid;
+    grid-template-columns: 36px 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 13px;
+  }
+  .signal-item:last-child { border-bottom: none; }
+  .signal-score {
+    font-weight: 700;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px 0;
+    border-radius: 3px;
+  }
+  .sg-high { background: #dff0d8; color: var(--green); }
+  .sg-med { background: #fef3cd; color: var(--orange); }
+  .sg-low { background: #f2dede; color: var(--red); }
+  .signal-headline { color: var(--text); line-height: 1.3; }
+  .signal-source { font-size: 10px; color: var(--text-dim); font-weight: 500; white-space: nowrap; }
+  .signal-principle {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent-light);
+    white-space: nowrap;
+  }
+
+  /* Principle depth bars */
+  .depth-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 0;
+  }
+  .depth-label { font-size: 11px; font-weight: 600; color: var(--text-secondary); }
+  .depth-bar-bg {
+    background: var(--border-light);
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .depth-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent);
+    transition: width 0.5s ease;
+  }
+  .depth-pct { font-size: 11px; color: var(--text-dim); text-align: right; }
+
+  /* Sector heatmap */
+  .heatmap { display: flex; flex-wrap: wrap; gap: 8px; }
   .heat-cell {
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-radius: 4px;
     font-size: 11px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 80px;
+    text-align: center;
+    min-width: 90px;
   }
-  .heat-count { font-weight: 700; font-size: 16px; }
-  .heat-label { color: var(--dim); font-size: 10px; }
+  .heat-count { font-weight: 700; font-size: 18px; }
+  .heat-label { font-size: 9px; color: rgba(0,0,0,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+  /* Cycle roadmap */
+  .cycle-roadmap {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+  .cycle-step {
+    text-align: center;
+    padding: 12px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    font-size: 10px;
+  }
+  .cycle-step .step-num {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent);
+  }
+  .cycle-step .step-name { font-weight: 600; margin: 4px 0; font-size: 11px; }
+  .cycle-step .step-status { font-weight: 500; }
+  .cycle-active { background: var(--highlight); border-color: var(--accent); }
+  .cycle-done { background: #dff0d8; border-color: #a8d8a8; }
 
   .empty-state {
     text-align: center;
     padding: 40px;
-    color: var(--dim);
+    color: var(--text-dim);
+    font-size: 13px;
   }
-  .empty-state .icon { font-size: 32px; margin-bottom: 12px; }
-  .pulse { animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
-  .cycle-bar { display: flex; gap: 4px; align-items: flex-end; height: 60px; }
-  .cycle-col {
-    flex: 1;
-    background: var(--accent);
-    border-radius: 2px 2px 0 0;
-    opacity: 0.6;
-    min-width: 20px;
-    position: relative;
+  @media (max-width: 900px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .cycle-roadmap { grid-template-columns: repeat(3, 1fr); }
   }
-  .cycle-col:hover { opacity: 1; }
 </style>
 </head>
 <body>
+
+<div class="top-bar">
+  <div>
+    <h1>AI ECONOMIC RESEARCH ENGINE</h1>
+    <div class="meta">Cycle <span id="cycle-num">0</span> | Updated: <span id="last-updated">--</span></div>
+  </div>
+  <a href="report.html">View Full Report</a>
+</div>
+
 <div class="container">
-  <header>
-    <div>
-      <h1>AI ECONOMIC RESEARCH ENGINE</h1>
-      <div class="meta">Infrastructure Overhang / Incumbent Kill / Dead Revival</div>
-    </div>
-    <div style="text-align: right;">
-      <div class="meta">Cycle <span id="cycle-num">0</span></div>
-      <div class="meta">Updated: <span id="last-updated">—</span></div>
-      <div class="meta pulse" id="status-indicator">IDLE</div>
-    </div>
-  </header>
 
-  <div class="grid-3">
-    <div class="card">
-      <h2>Signals Scanned</h2>
-      <div class="stat" id="total-signals">0</div>
-    </div>
-    <div class="card">
-      <h2>Opportunities Verified</h2>
-      <div class="stat" id="total-verified">0</div>
-    </div>
-    <div class="card">
-      <h2>Active Pipeline</h2>
-      <div class="stat" id="active-pipeline">0</div>
-    </div>
+  <!-- Stats -->
+  <div class="stats-row" id="stats-row">
+    <div class="stat-card"><div class="number" id="s-signals">0</div><div class="label">Signals Scanned</div></div>
+    <div class="stat-card"><div class="number" id="s-strong">0</div><div class="label">High Relevance (7+)</div></div>
+    <div class="stat-card"><div class="number" id="s-opps">0</div><div class="label">Opportunity Clusters</div></div>
+    <div class="stat-card"><div class="number" id="s-principles">0/6</div><div class="label">Principles Active</div></div>
+    <div class="stat-card"><div class="number" id="s-verified">0</div><div class="label">Verified</div></div>
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <h2>Top Opportunities</h2>
-      <div id="opportunities-list">
-        <div class="empty-state">
-          <div class="icon">~</div>
-          <div>No opportunities yet. Run first research cycle.</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Recent Signals</h2>
-      <div id="signals-list">
-        <div class="empty-state">
-          <div class="icon">~</div>
-          <div>No signals yet. Awaiting Agent A scan.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h2>Sector Heatmap</h2>
-      <div id="sector-heatmap" class="heatmap">
-        <div class="empty-state" style="width:100%"><div class="icon">~</div>No data</div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Geography Heatmap</h2>
-      <div id="geo-heatmap" class="heatmap">
-        <div class="empty-state" style="width:100%"><div class="icon">~</div>No data</div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Research Cycle Roadmap -->
   <div class="card">
-    <h2>Cycle History</h2>
-    <div id="cycle-history" class="cycle-bar">
-      <div class="empty-state" style="width:100%"><div class="icon">~</div>No cycles completed</div>
+    <div class="card-header">
+      <h2>Research Cycle Roadmap</h2>
+      <span class="badge" id="roadmap-badge">Cycle 1 of 6</span>
+    </div>
+    <div class="card-body">
+      <div class="cycle-roadmap" id="cycle-roadmap"></div>
     </div>
   </div>
+
+  <!-- Opportunities + Context Depth -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-header">
+        <h2>Top Opportunities</h2>
+        <span class="badge" id="opp-badge">0 clusters</span>
+      </div>
+      <div class="card-body" id="opportunities-list">
+        <div class="empty-state">No opportunities yet. Run first cycle.</div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Context Depth by Principle</h2>
+          <span class="badge">Target: 100%</span>
+        </div>
+        <div class="card-body" id="principle-depth">
+          <div class="empty-state">No data</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>Sector Heatmap</h2></div>
+        <div class="card-body" id="sector-heatmap">
+          <div class="empty-state">No data</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signals -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Signal Feed</h2>
+      <span class="badge" id="signal-badge">0 signals</span>
+    </div>
+    <div class="card-body" id="signals-list">
+      <div class="empty-state">No signals yet. Awaiting scan.</div>
+    </div>
+  </div>
+
 </div>
 
 <script>
 const DATA_BASE = 'data/ui';
-const REFRESH_INTERVAL = 5000;
+const REFRESH = 10000;
 
-async function fetchJSON(path) {
-  try {
-    const res = await fetch(path + '?t=' + Date.now());
-    if (!res.ok) return null;
-    return await res.json();
-  } catch { return null; }
+const P_SHORT = { P1:'Infra Overhang', P2:'Liquidation', P3:'Cost Kill', P4:'Dead Revival', P5:'Demographic', P6:'Geopolitical' };
+
+function clean(s) {
+  if (!s) return '';
+  return s.replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/&quot;/g, '"')
+    .replace(/&#x2011;/g, '-').replace(/\u2011/g, '-').replace(/\u2014/g, ' — ');
 }
 
-function renderOpportunities(opps) {
-  const el = document.getElementById('opportunities-list');
-  if (!opps || opps.length === 0) return;
-  el.innerHTML = opps.map(o => `
-    <div class="opportunity">
-      <div class="opp-header">
-        <span class="opp-name">${o.name}</span>
-        <span class="opp-score">${o.score}</span>
-      </div>
-      <div class="opp-thesis">${o.thesis}</div>
-      <div class="opp-meta">
-        <span class="tag tag-${o.horizon.toLowerCase()}">${o.horizon}</span>
-        ${(o.principles_passed || []).map(p => `<span class="tag tag-principle">${p}</span>`).join('')}
-        <span style="color: var(--dim)">${o.status}</span>
-      </div>
-    </div>
-  `).join('');
-}
-
-function renderSignals(signals) {
-  const el = document.getElementById('signals-list');
-  if (!signals || signals.length === 0) return;
-  el.innerHTML = signals.slice(0, 20).map(s => {
-    const scoreClass = s.relevance_score >= 7 ? 'high' : s.relevance_score >= 4 ? 'med' : 'low';
-    return `
-      <div class="signal">
-        <div class="signal-score ${scoreClass}">${s.relevance_score}</div>
-        <div class="signal-headline">${s.headline}</div>
-        <div class="signal-source">${s.source || s.category}</div>
-        <div class="signal-status status-${s.status}">${s.status}</div>
-      </div>
-    `;
-  }).join('');
-}
-
-function renderHeatmap(data, elementId) {
-  const el = document.getElementById(elementId);
-  if (!data || Object.keys(data).length === 0) return;
-  const maxCount = Math.max(...Object.values(data).map(d => d.signal_count || 0), 1);
-  el.innerHTML = Object.entries(data).map(([name, d]) => {
-    const intensity = Math.round((d.signal_count / maxCount) * 200 + 55);
-    return `
-      <div class="heat-cell" style="background: rgba(79,195,247,${d.signal_count/maxCount*0.5 + 0.1})">
-        <div class="heat-count">${d.signal_count}</div>
-        <div class="heat-label">${name}</div>
-      </div>
-    `;
-  }).join('');
-}
-
-function renderCycleHistory(cycles) {
-  const el = document.getElementById('cycle-history');
-  if (!cycles || cycles.length === 0) return;
-  const maxSignals = Math.max(...cycles.map(c => c.signals || 0), 1);
-  el.innerHTML = cycles.map(c => `
-    <div class="cycle-col" style="height: ${(c.signals/maxSignals)*100}%"
-         title="Cycle ${c.cycle}: ${c.signals} signals, ${c.verified} verified, top: ${c.top_score}">
-    </div>
-  `).join('');
+async function fetchJSON(p) {
+  try { const r = await fetch(p + '?t=' + Date.now()); return r.ok ? await r.json() : null; }
+  catch { return null; }
 }
 
 async function refresh() {
-  const dashboard = await fetchJSON(DATA_BASE + '/dashboard.json');
-  const feed = await fetchJSON(DATA_BASE + '/signals_feed.json');
+  const [dash, feed] = await Promise.all([
+    fetchJSON(DATA_BASE + '/dashboard.json'),
+    fetchJSON(DATA_BASE + '/signals_feed.json')
+  ]);
+  if (!dash) return;
 
-  if (dashboard) {
-    document.getElementById('cycle-num').textContent = dashboard.current_cycle;
-    document.getElementById('last-updated').textContent =
-      dashboard.last_updated ? new Date(dashboard.last_updated).toLocaleString() : '—';
-    document.getElementById('total-signals').textContent = dashboard.total_signals_scanned;
-    document.getElementById('total-verified').textContent = dashboard.total_opportunities_verified;
-    document.getElementById('active-pipeline').textContent = dashboard.active_opportunities;
-    renderOpportunities(dashboard.top_opportunities);
-    renderHeatmap(dashboard.sector_heatmap, 'sector-heatmap');
-    renderHeatmap(dashboard.geography_heatmap, 'geo-heatmap');
-    renderCycleHistory(dashboard.cycle_history);
+  const signals = feed ? (feed.recent_signals || []) : [];
+  const opps = dash.top_opportunities || [];
+  const cycle = dash.current_cycle || 0;
+
+  // Header
+  document.getElementById('cycle-num').textContent = cycle;
+  document.getElementById('last-updated').textContent =
+    dash.last_updated ? new Date(dash.last_updated).toLocaleString() : '--';
+
+  // Stats
+  const strongCount = signals.filter(s => s.relevance_score >= 7).length;
+  const principles = new Set(signals.map(s => s.principle));
+  document.getElementById('s-signals').textContent = signals.length;
+  document.getElementById('s-strong').textContent = strongCount;
+  document.getElementById('s-opps').textContent = opps.length;
+  document.getElementById('s-principles').textContent = principles.size + '/6';
+  document.getElementById('s-verified').textContent = dash.total_opportunities_verified || 0;
+
+  // Roadmap
+  const steps = [
+    { num: 1, name: 'Signal ID', desc: 'Broad scan' },
+    { num: 2, name: 'Deepening', desc: 'Targeted drill' },
+    { num: 3, name: 'Practitioner', desc: 'Qual. validation' },
+    { num: 4, name: 'Economics', desc: 'Unit economics' },
+    { num: 5, name: 'Competitive', desc: 'Landscape scan' },
+    { num: 6, name: 'Synthesis', desc: 'Go/no-go' },
+  ];
+  document.getElementById('roadmap-badge').textContent = `Cycle ${cycle} of 6`;
+  document.getElementById('cycle-roadmap').innerHTML = steps.map(s => {
+    const cls = s.num < cycle ? 'cycle-done' : s.num === cycle ? 'cycle-active' : '';
+    const status = s.num < cycle ? 'DONE' : s.num === cycle ? 'ACTIVE' : 'PENDING';
+    const statusColor = s.num < cycle ? 'var(--green)' : s.num === cycle ? 'var(--accent)' : 'var(--text-dim)';
+    return `<div class="cycle-step ${cls}">
+      <div class="step-num">${s.num}</div>
+      <div class="step-name">${s.name}</div>
+      <div style="font-size:9px;color:var(--text-dim);">${s.desc}</div>
+      <div class="step-status" style="color:${statusColor};margin-top:4px;">${status}</div>
+    </div>`;
+  }).join('');
+
+  // Opportunities
+  if (opps.length > 0) {
+    document.getElementById('opp-badge').textContent = opps.length + ' clusters';
+    document.getElementById('opportunities-list').innerHTML = opps.map(o => `
+      <div class="opp-item">
+        <div class="opp-top">
+          <span class="opp-name">${clean(o.name)}</span>
+          <span class="opp-score">${o.score}</span>
+        </div>
+        <div class="opp-thesis">${clean(o.thesis)}</div>
+        <div class="opp-tags">
+          <span class="tag tag-${o.horizon.toLowerCase()}">${o.horizon}</span>
+          ${(o.principles_passed || []).map(p => `<span class="tag tag-principle">${p}</span>`).join('')}
+          <span class="tag tag-signals">${o.signal_count} signals</span>
+        </div>
+      </div>
+    `).join('');
   }
 
-  if (feed) {
-    renderSignals(feed.recent_signals);
+  // Principle depth
+  const byP = {};
+  ['P1','P2','P3','P4','P5','P6'].forEach(p => byP[p] = []);
+  signals.forEach(s => { if (byP[s.principle]) byP[s.principle].push(s); });
+
+  let depthHTML = '';
+  ['P1','P2','P3','P4','P5','P6'].forEach(p => {
+    const sigs = byP[p];
+    const count = sigs.length;
+    let d = 0;
+    if (count > 0) d += 10;
+    if (count >= 3) d += 10;
+    if (count >= 8) d += 10;
+    if (sigs.some(s => s.relevance_score >= 7)) d += 15;
+    if (sigs.some(s => ['FRED','BLS','EDGAR'].includes(s.source))) d += 15;
+    d = Math.min(d, 60);
+    depthHTML += `<div class="depth-item">
+      <span class="depth-label">${p}: ${P_SHORT[p]}</span>
+      <div class="depth-bar-bg"><div class="depth-bar" style="width:${d}%"></div></div>
+      <span class="depth-pct">${d}%</span>
+    </div>`;
+  });
+  document.getElementById('principle-depth').innerHTML = depthHTML;
+
+  // Sector heatmap
+  if (dash.sector_heatmap) {
+    const hm = dash.sector_heatmap;
+    const maxCount = Math.max(...Object.values(hm).map(d => d.signal_count || 0), 1);
+    // Prettify sector names
+    const prettyName = n => n.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const sorted = Object.entries(hm).sort((a,b) => b[1].signal_count - a[1].signal_count);
+    document.getElementById('sector-heatmap').innerHTML = '<div class="heatmap">' +
+      sorted.map(([name, d]) => {
+        const opacity = (d.signal_count / maxCount) * 0.5 + 0.1;
+        return `<div class="heat-cell" style="background:rgba(26,58,92,${opacity})">
+          <div class="heat-count" style="color:${opacity > 0.3 ? '#fff' : 'var(--accent)'}">${d.signal_count}</div>
+          <div class="heat-label" style="color:${opacity > 0.3 ? 'rgba(255,255,255,0.7)' : 'var(--text-dim)'}">${prettyName(name)}</div>
+        </div>`;
+      }).join('') + '</div>';
   }
 
-  document.getElementById('status-indicator').textContent =
-    dashboard && dashboard.current_cycle > 0 ? 'RUNNING' : 'IDLE';
+  // Signals
+  if (signals.length > 0) {
+    document.getElementById('signal-badge').textContent = signals.length + ' signals';
+    document.getElementById('signals-list').innerHTML = signals.slice(0, 25).map(s => {
+      const sc = s.relevance_score >= 7 ? 'sg-high' : s.relevance_score >= 5 ? 'sg-med' : 'sg-low';
+      return `<div class="signal-item">
+        <span class="signal-score ${sc}">${s.relevance_score}</span>
+        <span class="signal-headline">${clean(s.headline)}</span>
+        <span class="signal-principle">${s.principle}</span>
+        <span class="signal-source">${s.source}</span>
+      </div>`;
+    }).join('');
+  }
 }
 
 refresh();
-setInterval(refresh, REFRESH_INTERVAL);
+setInterval(refresh, REFRESH);
 </script>
 </body>
 </html>
