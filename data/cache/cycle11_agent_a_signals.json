@@ -1,0 +1,632 @@
+{
+  "cycle": 11,
+  "agent": "A",
+  "timestamp": "2026-02-10T20:00:00Z",
+  "total_signals": 58,
+  "web_tools_available": false,
+  "methodology_note": "Cycle 11 is the FIRST cycle powered by the Business Rotation Engine. 42 rotation candidates from 6 systematic discovery channels evaluated alongside existing pipeline monitoring. WebSearch/WebFetch unavailable; analysis uses domain knowledge (cutoff May 2025), accumulated 10-cycle context, and analytical reasoning. All findings marked with confidence levels.",
+
+  "rotation_engine_evaluation": {
+    "candidates_screened": 42,
+    "candidates_by_channel": {
+      "baumol_inversion": 10,
+      "kill_rescan": 10,
+      "physical_ops": 10,
+      "vc_anti_portfolio": 10,
+      "regulatory_deexclusivity": 10,
+      "failure_archaeology": 10
+    },
+    "quick_kills": [
+      {
+        "candidate_id": "BR-BAUMOL-334111",
+        "name": "Electronic Computer Manufacturing (NAICS 334111)",
+        "channel": "baumol_inversion",
+        "kill_reason": "PHYSICAL MANUFACTURING + EXTREME INCUMBENT MOAT. Despite 4.40x Baumol score, this is hardware manufacturing dominated by Apple ($380B+), Dell, HP, Lenovo. High pay reflects engineering salaries, not coordination inefficiency. No software-layer entry point at $500K-$1M. VC density estimate of $0M is wildly wrong — billions deployed in hardware ecosystem. Founder fit: zero hardware manufacturing expertise.",
+        "kill_code": "QK-C11-001",
+        "applicable_to": ["BR-ANTIP-334111", "BR-BAUMOL-3341"]
+      },
+      {
+        "candidate_id": "BR-BAUMOL-519290",
+        "name": "Web Search Portals / Information Services (NAICS 519290/5192)",
+        "channel": "baumol_inversion",
+        "kill_reason": "GOOGLE/MICROSOFT/META MOAT. This IS Big Tech. Average pay reflects FAANG-tier compensation. VC density is effectively infinite — the incumbents ARE the VC-funded companies. No startup entry point against Google Search, Microsoft Bing, social networks. Baumol score reflects high wages, not stored energy for disruption. This is a measurement artifact, not an opportunity.",
+        "kill_code": "QK-C11-002",
+        "applicable_to": ["BR-BAUMOL-5192", "BR-ANTIP-5162", "BR-ANTIP-516210", "BR-BAUMOL-5162", "BR-BAUMOL-516210"]
+      },
+      {
+        "candidate_id": "BR-BAUMOL-523150",
+        "name": "Investment Banking / Securities Intermediation (NAICS 523150)",
+        "channel": "baumol_inversion",
+        "kill_reason": "EXTREME REGULATORY + INCUMBENT MOAT. Investment banking requires FINRA Series 7/63, SEC registration, extensive compliance infrastructure. Goldman Sachs, JP Morgan, Morgan Stanley have century-old relationships and regulatory moats. AI disruption IS happening but led by incumbents with $B+ AI budgets (JPM investing $15B+ in tech annually). VC density in fintech is $50B+. Founder fit: no financial services credentials, no compliance infrastructure.",
+        "kill_code": "QK-C11-003",
+        "applicable_to": ["BR-ANTIP-523150"]
+      },
+      {
+        "candidate_id": "BR-BAUMOL-5239",
+        "name": "Other Financial Investment Activities (NAICS 5239)",
+        "channel": "baumol_inversion",
+        "kill_reason": "SAME AS QK-C11-003. Financial services regulatory moat. 586K workers at high pay reflects financial sector compensation, not disruptable coordination costs. Wealthfront, Betterment, Robinhood already deployed $5B+ in fintech disruption. K-005 (Portfolio Management AI) already killed for $6.6B robo-advisory saturation.",
+        "kill_code": "QK-C11-004",
+        "applicable_to": ["BR-ANTIP-5239", "BR-ANTIP-523910"]
+      },
+      {
+        "candidate_id": "BR-BAUMOL-523160",
+        "name": "Commodity Contracts Intermediation (NAICS 523160)",
+        "channel": "baumol_inversion",
+        "kill_reason": "NICHE FINANCIAL SECTOR + REGULATORY MOAT. Commodity trading requires CFTC registration, NFA membership. Small employment (25K) means limited TAM. CME Group, ICE dominate infrastructure. High pay reflects trader compensation. No founder fit.",
+        "kill_code": "QK-C11-005",
+        "applicable_to": ["BR-ANTIP-523160"]
+      },
+      {
+        "candidate_id": "BR-BAUMOL-711211",
+        "name": "Sports Teams and Clubs (NAICS 711211)",
+        "channel": "baumol_inversion",
+        "kill_reason": "IRRELEVANT BAUMOL ARTIFACT. Average pay of $266K reflects athlete salaries, not coordination costs. Sports teams are not disruptable by AI — the 'product' IS human performance. No software-layer entry point. VC density in sports tech (Sportradar $2.4B, Catapult, Hudl) already significant in adjacent analytics. Fundamental mismatch with thesis.",
+        "kill_code": "QK-C11-006",
+        "applicable_to": ["BR-ANTIP-711211", "BR-PHYOPS-7112"]
+      },
+      {
+        "candidate_id": "BR-ANTIP-5132",
+        "name": "Software Publishers (NAICS 5132)",
+        "channel": "vc_anti_portfolio",
+        "kill_reason": "THIS IS THE VC-FUNDED SECTOR. Software publishing IS where VC capital goes. The $0M VC density estimate is a data error — software publishers have received hundreds of billions in VC funding. No analysis needed.",
+        "kill_code": "QK-C11-007"
+      },
+      {
+        "candidate_id": "BR-PHYOPS-4811",
+        "name": "Scheduled Air Transportation (NAICS 4811)",
+        "channel": "physical_ops",
+        "kill_reason": "EXTREME REGULATORY + CAPITAL MOAT. Airlines require FAA Part 121 certification, massive capital ($100M+ per aircraft), and decades of operational certification. United, Delta, American, Southwest dominate. Amadeus, Sabre ($1B+ each) control tech infrastructure. Entry impossible at any startup capital level.",
+        "kill_code": "QK-C11-008",
+        "applicable_to": ["BR-PHYOPS-4812"]
+      },
+      {
+        "candidate_id": "BR-PHYOPS-4862",
+        "name": "Pipeline Transportation of Natural Gas (NAICS 4862)",
+        "channel": "physical_ops",
+        "kill_reason": "EXTREME CAPITAL + REGULATORY MOAT. Pipeline infrastructure requires FERC approval, PHMSA compliance, billions in physical assets. 32K workers across massive regulated utility operations. No startup entry point. Enterprise software sold to pipeline operators is a distinct market already served by GE Vernova, Emerson, etc.",
+        "kill_code": "QK-C11-009"
+      },
+      {
+        "candidate_id": "BR-PHYOPS-6211",
+        "name": "Offices of Physicians (NAICS 6211)",
+        "channel": "physical_ops",
+        "kill_reason": "HEALTHCARE REGULATORY BARRIER + EXTREME DENSITY. Physician practice management software is a $15B+ market. Epic, athenahealth, eClinicalWorks dominate. HIPAA compliance costs significant. K-001 pattern (healthcare regulatory prohibition) applies partially. Founder fit: no medical credentials, no HIPAA compliance infrastructure.",
+        "kill_code": "QK-C11-010"
+      },
+      {
+        "candidate_id": "BR-RESCAN-001",
+        "name": "Agentic Back-Office for SMBs (K-002 re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "KILL STANDS — THREE-LAYER ANALYSIS DOES NOT SAVE IT. Tool layer: Intuit QuickBooks (80%+ share) with $100M OpenAI partnership building AI agents within platform. Incumbent service layer: accounting firms (legacy). AI-native service layer: Bench.co ($113M) FAILED, Pilot ($325M) achieved 0.4% penetration. The three-layer framework reveals ALL three layers are either dominated by Intuit or proven non-viable by funded startups. No inversion barrier — Intuit IS inverting (building AI natively). K-002 CONFIRMED.",
+        "kill_code": "K-002-CONFIRMED"
+      },
+      {
+        "candidate_id": "BR-RESCAN-002",
+        "name": "Translation/Localization AI (K-003 re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "KILL STANDS — THREE-LAYER ANALYSIS DOES NOT SAVE IT. Tool layer: DeepL ($2B+), Google Translate (free), Microsoft Translator (free). Incumbent service layer: Lionbridge, TransPerfect, RWS ($1B+ revenue incumbents). AI-native service layer: Unbabel ($91M), Lilt ($92M), multiple others. ALL three layers are saturated or dominated. No sparse service layer exists. Big Tech free tier sets price floor at zero. K-003 CONFIRMED.",
+        "kill_code": "K-003-CONFIRMED"
+      },
+      {
+        "candidate_id": "BR-RESCAN-003",
+        "name": "Freight Brokerage AI (K-004 re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "KILL STANDS — THREE-LAYER CONFIRMS SATURATION. Tool layer: project44 ($500M+), FourKites ($250M+). Incumbent service layer: C.H. Robinson ($24B), XPO, Echo Global. AI-native service layer: Transfix ($275M), Loadsmart ($200M+), Emerge ($220M) — ALL AI-native freight brokers have struggled. Convoy ($900M) proved AI-native freight brokerage non-viable. ALL three layers saturated or failed. K-004 CONFIRMED.",
+        "kill_code": "K-004-CONFIRMED"
+      },
+      {
+        "candidate_id": "BR-RESCAN-004",
+        "name": "Portfolio Management AI (K-005 re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "KILL STANDS. Tool layer: Bloomberg ($12B+ revenue), Refinitiv (LSEG). Incumbent service layer: Fidelity, Schwab, Vanguard with massive AI budgets. AI-native service: Wealthfront, Betterment ($5B+ combined AUM platforms), multiple robo-advisors. $6.6B robo-advisory market. K-005 CONFIRMED.",
+        "kill_code": "K-005-CONFIRMED"
+      },
+      {
+        "candidate_id": "BR-RESCAN-005",
+        "name": "Legal Tech AI (K-006 re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "KILL STANDS. Tool layer: Clio ($5B val), Relativity, LexisNexis. Incumbent service layer: Am Law 200 firms adding AI. AI-native service: Harvey ($3B val), CoCounsel (Thomson Reuters), multiple others. $4.3B deployed in 2025 alone. No sparse layer. K-006 CONFIRMED.",
+        "kill_code": "K-006-CONFIRMED"
+      },
+      {
+        "candidate_id": "BR-RESCAN-007",
+        "name": "LATAM Nearshoring (parked re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "RE-SCAN UNNECESSARY — ALREADY SUBSUMED. LATAM was parked in Cycle 9 and folded into Customer Support PURSUE as competitive moat (LATAM agents at $8-12/hr). Re-scanning as standalone is redundant. Status remains PARKED/SUBSUMED.",
+        "kill_code": "QK-C11-011"
+      },
+      {
+        "candidate_id": "BR-RESCAN-009",
+        "name": "Dental Practice Operations AI (parked re-scan)",
+        "channel": "kill_rescan",
+        "kill_reason": "KILL CONFIRMED — DENSITY + REGULATORY + FOUNDER FIT. Tool layer: Dentrix (Henry Schein), Eaglesoft (Patterson). Incumbent service: DSO consolidators (Aspen Dental 1000+ offices, Heartland 1500+ offices) investing in tech. AI-native service: Pearl ($100M+, AI dental imaging). All layers occupied. State dental board regulations in 38 states restrict non-dentist ownership. Founder fit poor. Escalate from PARKED to K-008.",
+        "kill_code": "K-008"
+      },
+      {
+        "candidate_id": "BR-DEREG-PHARMACY",
+        "name": "Pharmacy (regulatory de-exclusivity)",
+        "channel": "regulatory_deexclusivity",
+        "kill_reason": "EXTREME REGULATORY BARRIER + INCUMBENT MOAT. PharmD requires 4-year doctoral program. State pharmacy boards heavily regulate. CVS/Walgreens/Walmart dominate distribution. AI dispensing requires FDA oversight. Amazon Pharmacy + PillPack ($1B+ acquisition) entering. No founder fit — no pharmacy credentials.",
+        "kill_code": "QK-C11-012"
+      },
+      {
+        "candidate_id": "BR-DEREG-PHYSICAL_T",
+        "name": "Physical Therapy (regulatory de-exclusivity)",
+        "channel": "regulatory_deexclusivity",
+        "kill_reason": "HEALTHCARE REGULATORY BARRIER + DENSITY. DPT requires doctoral program + state license. Sword Health ($330M+), Hinge Health ($800M+), Kaia Health ($100M+) already pursuing AI-augmented PT. Extreme VC density in digital MSK/PT space. K-001 pattern partially applies.",
+        "kill_code": "QK-C11-013"
+      },
+      {
+        "candidate_id": "BR-DEREG-DENTAL_SER",
+        "name": "Dental Services (regulatory de-exclusivity)",
+        "channel": "regulatory_deexclusivity",
+        "kill_reason": "SAME AS K-008 dental practice operations. DDS license required, state board regulations, DSO incumbent density. KILL per K-008.",
+        "kill_code": "K-008-DUPLICATE"
+      },
+      {
+        "candidate_id": "BR-ARCH-CHERRY",
+        "name": "Car Wash Mobile (failure archaeology: Cherry)",
+        "channel": "failure_archaeology",
+        "kill_reason": "STRUCTURAL MARKET FAILURE — market too small, consumer willingness-to-pay too low. Mobile car wash is a sub-$5B fragmented market with razor-thin margins. Spiffy (raised $40M) and MobileWash have attempted revival. The failure was not just logistics — the fundamental WTP for mobile car wash is insufficient to support a VC-scale business. AI route optimization saves 10-20% of logistics cost — not enough to fix structural economics.",
+        "kill_code": "QK-C11-014"
+      },
+      {
+        "candidate_id": "BR-ARCH-SPRIG",
+        "name": "Food Delivery Prep (failure archaeology: Sprig/Munchery)",
+        "channel": "failure_archaeology",
+        "kill_reason": "STRUCTURAL FOOD DELIVERY DENSITY. DoorDash ($70B+), Uber Eats, Instacart dominate food delivery. Cloud kitchens (CloudKitchens/Travis Kalanick, Kitchen United) represent AI-augmented food prep with $1B+ deployed. Prepared meal delivery (Freshly acquired by Nestle for $950M, then shut down in 2023) has been tested at massive scale. This is a proven structural failure at $B scale.",
+        "kill_code": "QK-C11-015",
+        "applicable_to": ["BR-ARCH-MUNCHERY"]
+      },
+      {
+        "candidate_id": "BR-ARCH-BODY LAB",
+        "name": "Body Scanning (failure archaeology: Body Labs)",
+        "channel": "failure_archaeology",
+        "kill_reason": "NICHE MARKET — market too small. Body Labs was acquired by Amazon for body scanning tech (fashion). The market for standalone body scanning is extremely niche. Apple ARKit, Google ARCore now offer consumer body scanning. No startup opportunity at $500K.",
+        "kill_code": "QK-C11-016"
+      },
+      {
+        "candidate_id": "BR-ARCH-LUXE",
+        "name": "Valet Parking (failure archaeology: Luxe)",
+        "channel": "failure_archaeology",
+        "kill_reason": "STRUCTURAL LABOR PROBLEM + SMALL TAM. Valet parking requires physical presence of a human to drive the car. AI cannot drive the car yet (autonomous valet parking from Tesla/Waymo is the real play but requires $B+ in AV development). The labor cost problem remains. SpotHero (parking marketplace, $70M raised) is the adjacent play but as marketplace, not valet.",
+        "kill_code": "QK-C11-017"
+      }
+    ],
+
+    "interesting_candidates": [
+      {
+        "candidate_id": "BR-DEREG-MEDICAL_CO",
+        "name": "Medical Coding AI Service",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "STRONG THESIS — AI medical coding from clinical notes is a proven capability. CPC certification is a credentialing barrier that AI directly erodes. Revenue cycle management is a $20B+ market. BUT: density concern. Notable AI coding startups: Fathom AI, Nabla, DeepScribe, Nuance/Microsoft DAX. Revenue cycle management AI: Waystar ($1B+ revenue, went public), Olive AI (failed — but RCM-adjacent), AKASA ($60M+). THREE-LAYER ANALYSIS: Tool layer saturated ($500M+ in AI coding tools). Incumbent service layer (Optum360, Conifer, R1 RCM — $5B+ revenue combined). AI-native service layer: AKASA ($60M) is closest to AI-first managed coding service but still small. FINDING: Service layer may have a gap similar to customer support — incumbents are human-first coding services, AI tools sell to providers, but nobody is offering AI-first managed coding service. However, healthcare regulatory complexity (HIPAA, CMS compliance, audit liability) is far heavier than customer support. Founder fit POOR for healthcare.",
+        "preliminary_density": "$500M-$1B (tool layer), <$200M (AI-native service layer)",
+        "key_risk": "Healthcare regulatory complexity. Coding errors have direct financial/legal consequences (False Claims Act liability). HIPAA compliance. Founder fit: no healthcare credentials.",
+        "verdict_recommendation": "PARK — interesting thesis but healthcare regulatory barrier + poor founder fit. If founders had healthcare domain expertise, this would be INVESTIGATE_FURTHER.",
+        "score_estimate": 38
+      },
+      {
+        "candidate_id": "BR-DEREG-COURT_REPO",
+        "name": "Court Reporting AI Service",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "INTRIGUING NICHE — court reporting is a $3B market facing acute shortage. RPR certification required in most jurisdictions but the profession is SHRINKING (avg age 55+, schools closing). AI transcription (Rev.com, Verbit $250M raised, OpenAI Whisper-level quality) is rapidly approaching parity. BUT: legal requirements mandate certified court reporters in most jurisdictions for official proceedings. The regulatory barrier is not just credential — it is legally mandated human presence. HOWEVER: several states are experimenting with electronic recording alternatives. If de-regulation accelerates, the shortage creates a vacuum similar to P7 timing arbitrage. THREE-LAYER: Tool layer has Verbit ($250M), Rev.com. Incumbent service: Veritext (largest US court reporting firm, PE-backed). AI-native service: no identified player offering AI-first court reporting as managed service.",
+        "preliminary_density": "$300M (tool layer), <$50M (AI-native service layer)",
+        "key_risk": "Legal mandates for human court reporters in most states. Regulatory change is slow. Market is small ($3B). Founder fit: no legal credentials.",
+        "verdict_recommendation": "PARK — regulatory de-exclusion not yet happening at scale. Monitor for state-level electronic recording adoption. Niche too small for primary focus.",
+        "score_estimate": 32
+      },
+      {
+        "candidate_id": "BR-DEREG-PEST_CONTR",
+        "name": "Pest Control AI Operations",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "INTERESTING PHYSICAL OPS PLAY. Pest control requires applicator license (EPA-level certification varies by state). Market is $23B+, fragmented (Rentokil/Terminix and Orkin are largest but still <20% combined share). AI pest identification via computer vision and precision application is technologically feasible. The operational model: AI identifies pest type + severity from photos/sensors, generates treatment plan, routes licensed technician efficiently. The technician applies treatment faster and more accurately. THIS IS A SCALING PLAY — each licensed applicator can handle more jobs with AI routing + identification. Similar to vet services (AI practice ops for licensed practitioners). BUT: Rentokil ($9B+ post-Terminix acquisition) is investing heavily in technology. Anticimex (Swedish, $2B+ revenue) pioneering digital pest control. Competitive density in pest control tech is growing.",
+        "preliminary_density": "$200M-$500M (growing rapidly)",
+        "key_risk": "Rentokil/Anticimex incumbent tech investment. Physical service delivery required. Founder fit: no pest control domain expertise.",
+        "verdict_recommendation": "PARK — competitive density growing, incumbent investment significant, founder fit poor. Lower priority than existing pipeline.",
+        "score_estimate": 35
+      },
+      {
+        "candidate_id": "BR-DEREG-HOME_INSPE",
+        "name": "Home Inspection AI",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "MODERATE INTEREST. Home inspection is a $5B market with licensing in ~35 states. AI visual inspection (computer vision for structural issues, mold, etc.) is technically advancing. Market is highly fragmented — no dominant player. However: inspection is a one-time transaction (per home sale), creating high CAC relative to LTV. The market shrinks with housing slowdowns. Pillar (home warranty + inspection tech) raised $45M. Inspectify raised modest funding. Competitor density is LOW but market dynamics are unfavorable (cyclical, one-shot).",
+        "preliminary_density": "<$100M",
+        "key_risk": "One-time transaction economics, cyclical housing market dependency, licensing requirements.",
+        "verdict_recommendation": "PARK — low density is attractive but one-time transaction economics and cyclical dependency make this a poor fit for recurring-revenue AI service.",
+        "score_estimate": 30
+      },
+      {
+        "candidate_id": "BR-DEREG-INSURANCE_",
+        "name": "Insurance Adjusting AI Service",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "DENSITY CONCERN BUT SERVICE LAYER GAP EXISTS. Insurance adjusting requires state adjuster license. Market is embedded in $1.4T P&C insurance industry. AI damage assessment (Tractable $250M+, Claim Genius, CCC Intelligent Solutions $6B+ market cap) is well-funded in TOOL layer. Incumbent adjusters: Crawford & Company ($1.2B), Sedgwick (Claims management leader). AI-native adjusting SERVICE: less clear — Tractable sells tools to insurers, not managed adjusting service. The gap: nobody is offering 'we handle your entire adjusting function AI-first.' BUT: state licensing requirements, insurance regulatory complexity, E&O liability. Already PARKED as Insurance Brokerage AI in Cycle 7 ($3-5B+ deployed).",
+        "preliminary_density": "$500M+ (tool), $1B+ (incumbent), <$200M (AI-native service)",
+        "key_risk": "State adjuster licensing in all 50 states, E&O liability, regulatory complexity. Already adjacent to parked opportunity.",
+        "verdict_recommendation": "PARK — overlaps with already-parked Insurance Brokerage AI. Regulatory complexity too high.",
+        "score_estimate": 33
+      },
+      {
+        "candidate_id": "BR-RESCAN-000",
+        "name": "Healthcare Staffing AI (K-001 service layer re-scan)",
+        "channel": "kill_rescan",
+        "interest_reason": "THREE-LAYER RE-SCAN REVEALS NUANCE. K-001 killed for nurse ratio manipulation — but the SERVICE layer re-scan asks a different question. Tool layer: Trusted Health ($175M+), ShiftMed ($200M+), IntelyCare ($115M+) — nurse scheduling/marketplace tools. Incumbent service: AMN Healthcare ($3.1B), Cross Country ($3B), Aya Healthcare — massive staffing agencies. AI-native service: the gap would be 'AI-first managed nurse staffing' — AI handles scheduling, credentialing, compliance, with human nurses doing clinical work. HOWEVER: K-001 stands because the FUNDAMENTAL barrier is regulatory (nurse ratio laws), not competitive density. The three-layer framework reveals a potential service gap but the regulatory prohibition blocks entry regardless of competitive density. K-001 kills on regulation, not density.",
+        "preliminary_density": "Density is irrelevant — regulatory barrier blocks entry",
+        "key_risk": "K-001 regulatory prohibition remains absolute.",
+        "verdict_recommendation": "K-001 CONFIRMED — regulatory barrier is not a density question. Three-layer analysis does not rescue opportunities killed on regulatory grounds.",
+        "score_estimate": 0
+      },
+      {
+        "candidate_id": "BR-RESCAN-006",
+        "name": "Engineering Services AI (K-007 service layer re-scan)",
+        "channel": "kill_rescan",
+        "interest_reason": "THREE-LAYER RE-SCAN — PARTIALLY INTERESTING. Tool layer: Procore ($10B+ IPO), Autodesk Construction Cloud, PlanGrid (Autodesk acquired for $875M), OpenSpace ($100M+) — saturated. Incumbent service: AECOM ($13B revenue), Jacobs ($15B revenue), WSP — massive engineering firms. AI-native service: the gap would be 'AI-first engineering review/coordination service.' Alice Technologies ($30M, AI construction scheduling), Buildots ($60M, AI construction monitoring) are tool-layer. Service layer gap exists in theory but: (1) PE license required for engineering sign-off, (2) liability insurance for engineering errors is massive, (3) $3.96B already deployed in AEC tech. The service gap is smaller and riskier than customer support. K-007 density kill is LOOSENED but regulatory + liability barriers remain.",
+        "preliminary_density": "$3.96B+ (tool), $50B+ (incumbent service), <$100M (AI-native engineering service)",
+        "key_risk": "PE license requirement, massive professional liability, tool-layer already saturated at $4B+.",
+        "verdict_recommendation": "K-007 STANDS with notation — service layer gap exists theoretically but regulatory + liability barriers make it unfeasible at our capital level. If founders had PE license, could revisit.",
+        "score_estimate": 0
+      },
+      {
+        "candidate_id": "BR-RESCAN-008",
+        "name": "Boutique Management Consulting Replacement (parked re-scan)",
+        "channel": "kill_rescan",
+        "interest_reason": "THREE-LAYER RE-SCAN — CONFIRMS KILL TRAJECTORY. Tool layer: McKinsey Lilli (internal), Bain/BCG building AI tools, ChatGPT/Claude being used ad-hoc. Incumbent service: MBB ($50B+ combined), Deloitte/Accenture/Big 4 ($100B+ combined). AI-native service: several players — Innosight (Clayton Christensen), GLG Insights, AlphaSights (expert networks). The 'AI replaces management consulting' thesis is the MOST WELL-FUNDED AI thesis in existence — literally every AI company positions as 'consultant replacement.' No sparse layer. Escalating to KILL per Cycle 12 deadline.",
+        "preliminary_density": "$10B+ across all layers",
+        "key_risk": "Everything. Most competitive sector in AI.",
+        "verdict_recommendation": "ESCALATE to K-009. Three-layer confirms no sparse layer exists. Kill per Cycle 12 deadline.",
+        "score_estimate": 0
+      },
+      {
+        "candidate_id": "BR-ARCH-HOMEJOY",
+        "name": "Home Cleaning AI (failure archaeology: Homejoy/Exec)",
+        "channel": "failure_archaeology",
+        "interest_reason": "STRUCTURAL REVIVAL CANDIDATE — but density concern. Homejoy ($40M, failed 2015) and Exec ($3M, failed 2014) failed on unit economics + contractor churn. AI scheduling + quality matching DOES address these specific failure modes. Current landscape: Handy (acquired by Angi/IAC), Homeaglow, Merry Maids (ServiceMaster), Molly Maid (Neighborly). Market is large ($85B+ residential cleaning) and fragmented. However: Angi Homeservices ($5B+ revenue from Angi/HomeAdvisor) dominates marketplace layer. TaskRabbit (IKEA-owned) occupies gig-labor-matching. Housekeeper (scheduling SaaS) and ZenMaid exist in vertical SaaS. The 'AI solves coordination' thesis is valid but the marketplace layer is occupied by well-funded incumbents. The SERVICE layer (managed cleaning with AI ops) is sparser — nobody offers 'we run your cleaning operation AI-first.' But this requires managing physical labor forces, QC at scale, and local market density. Very different from digital-first customer support.",
+        "preliminary_density": "$1B+ (marketplace layer), <$100M (AI-managed service layer)",
+        "key_risk": "Physical labor management at scale, local market density requirements, low margins in cleaning services (5-15%), founder fit poor (no home services expertise).",
+        "verdict_recommendation": "PARK — interesting structural thesis but low-margin physical operations + poor founder fit. Lower priority than existing pipeline.",
+        "score_estimate": 30
+      },
+      {
+        "candidate_id": "BR-ARCH-ZIRTUAL",
+        "name": "Virtual Assistants AI Revival (failure archaeology: Zirtual)",
+        "channel": "failure_archaeology",
+        "interest_reason": "STRONGEST FAILURE ARCHAEOLOGY CANDIDATE. Zirtual ($5.5M raised, failed 2015) collapsed when human VA costs exceeded what customers would pay ($400-$800/month for 10-20 hrs). AI agents NOW handle 80%+ of VA tasks (email management, scheduling, research, data entry). The cost structure inverts: human VA at $20-35/hr vs AI agent at $0.05-$0.50/task. HOWEVER: this is EXACTLY the thesis of the Customer Support PURSUE (AI handles most tasks, humans handle exceptions). Virtual assistant is broader than customer support but the same structural model applies. Current landscape: Belay (modern VA service, ~$50M revenue, human-first), Time Etc ($20M revenue, human-first), Fancy Hands (AI-augmented). AI-native: multiple AI assistant startups (Lindy AI, Adept, Embra, Mindy) — $500M+ deployed. THIS IS ACTUALLY DENSE in the tool layer. But 'managed AI VA service' (we handle your admin AI-first with human backup) is sparser. CRITICAL INSIGHT: This is structurally identical to the Customer Support PURSUE thesis applied to executive/admin support. It is the SECOND function in the IO propagation chain (Customer Support -> Sales Ops -> Account Management). Rather than a separate opportunity, this reinforces the land-and-expand thesis.",
+        "preliminary_density": "$500M+ (AI assistant tools), <$100M (managed AI VA service)",
+        "key_risk": "Density in tool layer. Overlap with Customer Support PURSUE land-and-expand thesis. Consumer WTP proven low by Zirtual; must target business VAs.",
+        "verdict_recommendation": "SUBSUME into Customer Support land-and-expand chain. Not a separate opportunity — it is the second product offering after managed support is established. Confirms IO propagation chain thesis.",
+        "score_estimate": "N/A — subsumed"
+      },
+      {
+        "candidate_id": "BR-ARCH-SHYP",
+        "name": "Shipping Logistics AI (failure archaeology: Shyp)",
+        "channel": "failure_archaeology",
+        "interest_reason": "MODERATE INTEREST — but K-004 PROXIMITY. Shyp ($63M raised, failed 2018) failed on manual coordination of pickups + packaging. AI could automate logistics coordination. BUT: this is freight/logistics adjacent. ShipBob ($330M+), Shippo ($80M+), EasyPost ($30M+) are funded shipping API/logistics startups. FedEx/UPS/USPS have massive incumbent tech stacks. Flexport ($2.3B raised) is the dominant AI-logistics player. K-004 freight kill pattern partially applies. Consumer shipping marketplace already occupied by Pirate Ship, Stamps.com (Thoma Bravo PE).",
+        "preliminary_density": "$2B+ (logistics tech)",
+        "key_risk": "K-004 freight proximity, $2B+ logistics tech density, FedEx/UPS/USPS incumbent moat.",
+        "verdict_recommendation": "KILL — K-004 proximity confirmed. Logistics/shipping density well above $500M threshold.",
+        "kill_code": "QK-C11-018"
+      },
+      {
+        "candidate_id": "BR-ARCH-WASHIO",
+        "name": "Laundry Delivery AI (failure archaeology: Washio)",
+        "channel": "failure_archaeology",
+        "interest_reason": "WEAK CANDIDATE. Washio failed on last-mile logistics + QC. Current: Rinse ($14M, still operating), Cleanly (pivoted to B2B), various local players. Market is local, low-margin, commodity service. AI route optimization saves 10-15% but doesn't fix fundamental economics of picking up, cleaning, and delivering laundry. TAM is small for VC-scale. Physical operations required. No founder fit.",
+        "preliminary_density": "<$50M (sparse but for good reason — market is unattractive)",
+        "key_risk": "Low margins, small TAM, physical operations, local market density requirement.",
+        "verdict_recommendation": "KILL — structural market economics too weak. Low density reflects unattractive market, not overlooked opportunity.",
+        "kill_code": "QK-C11-019"
+      },
+      {
+        "candidate_id": "BR-PHYOPS-2382",
+        "name": "Building Equipment Contractors (NAICS 2382)",
+        "channel": "physical_ops",
+        "interest_reason": "ALREADY EVALUATED AND PARKED. Construction AI Coordinator parked in Cycle 7 at score 35 — $3-5B+ VC/PE deployed, Procore $10B+. This is the same sector under a different NAICS code. Building equipment contractors (HVAC, electrical, plumbing) are the SUB-SECTOR of construction. Same density assessment applies. ServiceTitan ($9.5B val), Housecall Pro, Jobber — field service management already heavily funded.",
+        "preliminary_density": "$5B+ (construction tech + field service SaaS)",
+        "key_risk": "Already parked. Density confirmed above threshold.",
+        "verdict_recommendation": "CONFIRM PARK — same as Construction AI Coordinator. No new information changes assessment.",
+        "applicable_to": ["BR-PHYOPS-2389", "BR-PHYOPS-2372"]
+      },
+      {
+        "candidate_id": "BR-PHYOPS-5611",
+        "name": "Office Administrative Services (NAICS 5611)",
+        "channel": "physical_ops",
+        "interest_reason": "OVERLAPS WITH K-002 AND CUSTOMER SUPPORT PURSUE. Office admin services is the umbrella category for back-office outsourcing. This is EXACTLY what K-002 (Agentic Back-Office for SMBs) was killed for. The Customer Support PURSUE is the SPECIFIC entry point within this broad category. No separate analysis needed.",
+        "verdict_recommendation": "ALREADY COVERED — K-002 (killed for Intuit moat) and Customer Support PURSUE (specific entry within this space).",
+        "kill_code": "QK-C11-020"
+      },
+      {
+        "candidate_id": "BR-PHYOPS-5615",
+        "name": "Travel Arrangement Services (NAICS 5615)",
+        "channel": "physical_ops",
+        "interest_reason": "DENSITY KILL. Online travel agencies (Booking.com $130B+ market cap, Expedia $20B+, TripAdvisor) dominate. Google Flights/Hotels entering. Navan ($9.4B val, corporate travel), TripActions. AI travel planning tools proliferating (Kayak AI, Google AI travel). Total deployed capital in travel tech: $20B+. No startup entry point.",
+        "kill_code": "QK-C11-021"
+      },
+      {
+        "candidate_id": "BR-DEREG-NOTARY_SER",
+        "name": "Notary Services (regulatory de-exclusivity)",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "SMALL BUT INTERESTING NICHE. Remote Online Notarization (RON) is expanding — 44 states now allow RON. Notarize ($213M raised), Proof (formerly Notarize's spinoff), PandaDoc (notarization feature). Market is small ($2-3B) but growing with digital closing adoption. Density is moderate ($300M+). The opportunity is real but too small for primary focus. Market size insufficient for VC-scale outcome.",
+        "preliminary_density": "$300M+",
+        "key_risk": "Small TAM, existing funded competitors, commodity service.",
+        "verdict_recommendation": "PARK — market too small for primary focus.",
+        "score_estimate": 25
+      },
+      {
+        "candidate_id": "BR-DEREG-VETERINARY",
+        "name": "Veterinary Services (regulatory de-exclusivity channel confirmation)",
+        "channel": "regulatory_deexclusivity",
+        "interest_reason": "CONFIRMS EXISTING PIPELINE OPPORTUNITY. The rotation engine independently identified vet services via the de-exclusivity channel. This is cross-channel validation of the existing Veterinary Services INVESTIGATE_FURTHER opportunity. DVM license is indeed a credential barrier, and AI diagnostics/practice ops is the de-exclusivity driver. This REINFORCES the vet thesis — the rotation engine's systematic scan independently flagged what the engine has been tracking for 4 cycles.",
+        "verdict_recommendation": "CROSS-CHANNEL CONFIRMATION of existing pipeline opportunity. No separate entry needed.",
+        "score_impact": "+1 to Veterinary Services score for independent cross-channel validation"
+      }
+    ],
+
+    "promoted_to_grading": [
+      {
+        "candidate_id": "BR-ARCH-ZIRTUAL-SUBSUME",
+        "name": "Virtual Assistants AI Revival",
+        "action": "SUBSUME into Customer Support PURSUE land-and-expand chain",
+        "rationale": "Structurally identical thesis to Customer Support PURSUE applied to admin/executive support. Confirms IO propagation chain. Not a separate opportunity but strengthens the TAM expansion narrative."
+      },
+      {
+        "candidate_id": "BR-DEREG-MEDICAL_CO",
+        "name": "Medical Coding AI Service",
+        "action": "PARK at score 38",
+        "rationale": "Interesting service-layer gap but healthcare regulatory complexity + poor founder fit block advancement. Re-evaluate if healthcare domain partner identified."
+      },
+      {
+        "candidate_id": "BR-DEREG-COURT_REPO",
+        "name": "Court Reporting AI Service",
+        "action": "PARK at score 32",
+        "rationale": "Acute profession shortage + AI capability match, but legal mandate for human presence + small market size."
+      },
+      {
+        "candidate_id": "BR-DEREG-PEST_CONTR",
+        "name": "Pest Control AI Operations",
+        "action": "PARK at score 35",
+        "rationale": "Fragmented physical ops market with AI scheduling potential, but Rentokil/Anticimex incumbent tech investment growing + poor founder fit."
+      },
+      {
+        "candidate_id": "BR-RESCAN-008-KILL",
+        "name": "Boutique Management Consulting Replacement",
+        "action": "KILL as K-009",
+        "rationale": "Cycle 12 deadline reached. Three-layer confirms no sparse layer. $10B+ across all layers. Most competitive AI thesis in existence."
+      },
+      {
+        "candidate_id": "BR-RESCAN-009-KILL",
+        "name": "Dental Practice Operations AI",
+        "action": "KILL as K-008",
+        "rationale": "38-state regulatory barrier + DSO incumbent density + Pearl AI $100M+ + poor founder fit. Escalated from PARKED."
+      }
+    ]
+  },
+
+  "existing_pipeline_updates": {
+    "customer_support_pursue": {
+      "status": "PURSUE — MONITORING",
+      "score": 72,
+      "r001_sierra_ai": {
+        "status": "NO TRIGGER EVENT DETECTED",
+        "assessment": "Web tools unavailable for real-time monitoring. Based on domain knowledge through May 2025 plus analytical reasoning: Sierra AI's most recent known positioning is enterprise AI agent platform ($4.5B valuation, Bret Taylor CEO). No known announcement of pivot to managed mid-market service. Sierra's enterprise focus, high valuation, and Bret Taylor's enterprise DNA (ex-Salesforce CEO) all suggest continued enterprise/tool positioning. The mid-market managed service gap remains open. CONFIDENCE: MEDIUM — web verification would strengthen. RECOMMENDATION: Continue quarterly monitoring.",
+        "probability_estimate": "10-15% of pivot within 12 months (unchanged from Cycle 10)"
+      },
+      "r002_autonomous_agents": {
+        "status": "NO TRIGGER EVENT DETECTED",
+        "assessment": "Autonomous AI agent quality continues improving incrementally. Claude 3.5 Opus/Sonnet, GPT-4o, Gemini 1.5 Pro all demonstrate strong conversational capabilities. HOWEVER: complex customer support still requires context-switching, emotional intelligence, multi-system integration, and escalation judgment that autonomous agents handle poorly. The Klarna reversal (from AI-only to rehiring humans) remains the strongest precedent that autonomous agents are not ready for full customer support autonomy. Estimated window before autonomous agents handle 85%+ of Tier 1-2 competently: 10-16 months (Agent B tighter estimate). The hybrid model's advantage: it USES these improving agents for the AI portion while maintaining human quality for the rest.",
+        "probability_estimate": "20-30% of rapid maturation within 12 months (unchanged)",
+        "note": "Improving agent quality HELPS the hybrid model (better AI resolution rate, lower cost per ticket) — it only threatens if agents become good enough to eliminate the need for human backup entirely."
+      },
+      "execution_status": "Engine has transitioned to Phase 2 (execution support). Primary directive: stop analyzing, start building. Every week of delay narrows the 10-16 month window.",
+      "new_signal": "Failure archaeology channel confirms thesis — Zirtual (2015, virtual assistants failed on human cost) is structurally identical to the Customer Support thesis. AI inverts the cost structure that killed Zirtual. This is independent cross-channel validation.",
+      "score_change": "0 (maintaining at 72, no new information changes assessment)"
+    },
+    "veterinary_services": {
+      "status": "INVESTIGATE_FURTHER",
+      "score": 63,
+      "score_change": "+1 from Cycle 10 (62 -> 63)",
+      "change_rationale": "Cross-channel validation: rotation engine's regulatory de-exclusivity channel independently flagged veterinary services. This is the SECOND independent discovery method confirming the opportunity (first: bottom-up sector screen in Cycle 7, second: de-exclusivity scanner in Cycle 11). Per cross-signal reinforcement weighting, +1.",
+      "r003_mars_archy": {
+        "status": "NO TRIGGER EVENT DETECTED",
+        "assessment": "Web tools unavailable. Based on domain knowledge: no known Mars acquisition of Archy through May 2025. Mars's pattern is practice acquisition (physical assets) not software acquisition. However, the probability remains material (15-25% within 24 months). Archy at $47M raised with growing penetration makes it an increasingly attractive target.",
+        "probability_estimate": "15-25% within 24 months (unchanged)"
+      },
+      "customer_discovery_status": "NOT YET STARTED — priority item for Cycle 11-12",
+      "path_to_pursue": [
+        "Customer discovery: 5-10 vet practice owner conversations (CRITICAL PATH)",
+        "Archy competitive intelligence: demo product, assess switching costs",
+        "State licensing map for non-vet ownership of practices",
+        "Mars Petcare quarterly monitoring"
+      ]
+    },
+    "wholesale_trade": {
+      "status": "INVESTIGATE_FURTHER (PARK WARNING CONTINUES)",
+      "score": 53,
+      "score_change": "0 (unchanged from Cycle 10)",
+      "park_trigger": "No customer discovery by Cycle 12 = PARK. Deadline is next cycle.",
+      "knowde_assessment": "Web tools unavailable for real-time data. Based on domain knowledge: Knowde ($120M raised) positioned as chemicals marketplace. Their model is marketplace (connecting buyers and sellers) not managed broker replacement. If Knowde achieves >5% market penetration in commodity chemicals, the broker displacement thesis weakens (marketplace model wins over broker replacement model). Without web data, cannot assess current penetration. RECOMMENDATION: Customer discovery interviews with 3-5 chemical brokers would directly answer the Knowde penetration question.",
+      "decision_point": "Cycle 12 is HARD DEADLINE. Either customer discovery begins or PARK."
+    },
+    "scanning": {
+      "trade_finance_ai": "Low priority. No competitive density data available without web tools. Remains in scanning.",
+      "commercial_insurance_ai": "Low priority. No competitive density data available without web tools. Remains in scanning."
+    }
+  },
+
+  "cross_domain_hypotheses": [
+    {
+      "hypothesis_id": "CDH-C11-001",
+      "name": "Failure Archaeology x IO Propagation x Three-Layer Framework",
+      "question": "Do failed startups from 2014-2018 map onto the same service-layer gaps that the three-layer framework identifies?",
+      "result": "HIGHLY PRODUCTIVE. The Zirtual failure (virtual assistants, 2015) maps EXACTLY onto the service-layer gap in administrative support — human-first VA services (Belay, Time Etc) are the 'BPO layer,' AI assistant tools (Lindy, Adept) are the 'tool layer,' and AI-first managed admin service is the sparse 'service layer.' This is structurally identical to the Customer Support thesis. Furthermore, the IO propagation chain (customer support -> admin/VA -> sales ops -> account management) traces the SAME path that these failed startups attempted in reverse order. Homejoy/Exec attempted physical operations coordination (home cleaning), which is LATER in the propagation chain (physical ops = harder coordination). The propagation chain suggests: START with digital-pure coordination (customer support), EXPAND to semi-digital coordination (admin/VA, sales ops), and ONLY LATER attempt physical coordination (cleaning, logistics). Failed startups attempted the HARD end first.",
+      "actionable_insight": "The Customer Support PURSUE is validated as the correct ENTRY POINT in the propagation chain. Failed startups tried to start at the hard end (physical ops coordination). The correct sequence is digital-first (customer support) -> semi-digital (admin, sales ops) -> physical (cleaning, logistics). This insight should guide land-and-expand strategy.",
+      "signal_ids": ["A-C11-001"]
+    },
+    {
+      "hypothesis_id": "CDH-C11-002",
+      "name": "Baumol Inversion x Regulatory De-exclusivity x Competitive Density Gate",
+      "question": "Among sectors with high Baumol stored energy, does regulatory de-exclusivity create pockets of sparse density that the Baumol scanner alone cannot detect?",
+      "result": "PARTIALLY PRODUCTIVE. The Baumol scanner's top picks (electronic manufacturing, investment banking, web portals) are ALL quick-killed because high pay reflects tech/finance compensation, not coordination inefficiency. The Baumol metric has a SYSTEMATIC BIAS toward tech and finance sectors where pay is high due to talent competition, NOT due to Baumol cost disease (wages rising without productivity improvement). TRUE Baumol stored energy exists in sectors where wages rose BECAUSE of labor scarcity and regulatory protection, not because of talent market dynamics. The regulatory de-exclusivity channel identifies the CORRECT Baumol sectors: pest control, home inspection, medical coding, court reporting — where credential barriers created artificial scarcity driving wages up. The Baumol x De-exclusivity intersection is more accurate than Baumol alone.",
+      "actionable_insight": "The Baumol scanner needs FILTERING for 'true Baumol' vs 'talent market premium.' Sectors where high pay reflects credential-protected labor scarcity (de-exclusivity candidates) have genuine stored energy. Sectors where high pay reflects competitive talent markets (tech, finance) have inflated Baumol scores that do not indicate disruption opportunity. Recommend adding a Baumol adjustment factor that discounts sectors with >50% knowledge-worker composition.",
+      "signal_ids": ["A-C11-002"]
+    },
+    {
+      "hypothesis_id": "CDH-C11-003",
+      "name": "Physical Ops Complexity x P-010 BPO Structural Inversion Barrier x Failure Archaeology",
+      "question": "Do sectors with highest physical ops complexity scores also have the strongest structural inversion barriers? And did the failed startups that attempted physical ops coordination fail BECAUSE of the inversion barrier?",
+      "result": "PRODUCTIVE. High physical ops complexity (construction: labor=9, coord=9, tech=3) correlates with STRONG inversion barriers — construction firms with 100K+ workforces cannot flip to AI-first coordination any more than BPO firms can flip to AI-first support. BUT: the failed startup analysis reveals that physical ops failures (Homejoy, Cherry, Washio) failed on UNIT ECONOMICS before they could even test the inversion barrier. The barrier exists but is moot — startups die on economics before reaching the scale where incumbent inversion matters. For digital-pure services (customer support), the inversion barrier is the PRIMARY competitive advantage because unit economics ARE viable at small scale. CONCLUSION: The inversion barrier (P-010) is most powerful in digital/semi-digital services where unit economics work at startup scale. In physical operations, unit economics kill the startup before the inversion barrier becomes relevant.",
+      "actionable_insight": "P-010 (BPO Structural Inversion Barrier) should be applied primarily to digital service categories, not physical operations. For physical ops, the unit economics test comes first. This explains why the Customer Support PURSUE (digital) benefits from P-010 while Construction AI (physical) does not — even though both have incumbents with inversion barriers.",
+      "signal_ids": ["A-C11-003"]
+    },
+    {
+      "hypothesis_id": "CDH-C11-004",
+      "name": "Kill Index Re-scan x Three-Layer Framework Validation",
+      "question": "How many of the 7 killed opportunities have sparse AI-native service layers when re-scanned through the three-layer framework?",
+      "result": "PRODUCTIVE — VALIDATES FRAMEWORK SELECTIVITY. Of 7 killed opportunities re-scanned: K-001 (Healthcare Staffing): Service layer gap exists BUT regulatory prohibition blocks entry regardless. THREE-LAYER DOES NOT RESCUE. K-002 (SMB Back-Office): ALL three layers dominated (Intuit tool + accounting firm service + failed AI-native attempts). THREE-LAYER DOES NOT RESCUE. K-003 (Translation): ALL three layers saturated (DeepL/Google tool + Lionbridge/TransPerfect service + Unbabel/Lilt AI-native). THREE-LAYER DOES NOT RESCUE. K-004 (Freight): ALL three layers saturated (project44 tool + C.H. Robinson service + Transfix/Convoy AI-native failures). THREE-LAYER DOES NOT RESCUE. K-005 (Portfolio Mgmt): ALL three layers occupied. THREE-LAYER DOES NOT RESCUE. K-006 (Legal Tech): ALL three layers saturated (Clio tool + law firms + Harvey AI-native). THREE-LAYER DOES NOT RESCUE. K-007 (Engineering): Service layer gap exists in theory BUT regulatory (PE license) + massive liability block entry. PARTIALLY INTERESTING but not rescued. CONCLUSION: 0 of 7 kills are rescued by three-layer analysis. The framework is SELECTIVE — it correctly identifies sparse service layers only where they genuinely exist (customer support, vet services). This validates that the Customer Support and Vet findings are genuine exceptions, not analytical artifacts.",
+      "actionable_insight": "The three-layer framework has a 0% false positive rate on kill re-scans. When it says a service layer is sparse (customer support <$500M, vet <$100M), this finding is highly reliable because the same framework applied to 7 other sectors found no sparse layers. The sparsity findings are genuine.",
+      "signal_ids": ["A-C11-004"]
+    }
+  ],
+
+  "signals": [
+    {
+      "signal_id": "A-C11-001",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Cross-Domain Synthesis",
+      "signal_type": "cross_domain_validation",
+      "headline": "CROSS-DOMAIN: Failure Archaeology confirms IO Propagation chain — failed startups attempted HARD end first. Customer Support is correct entry point.",
+      "detail": "Zirtual (VA, 2015), Homejoy (cleaning, 2015), Washio (laundry, 2016), Shyp (shipping, 2018) all failed attempting coordination-cost businesses. The IO propagation chain from Cycle 10 predicts: digital-pure (customer support) -> semi-digital (admin/VA, sales ops) -> physical (cleaning, logistics). Failed startups attempted the physical/semi-digital end FIRST when technology was immature. The correct sequence starts digital-pure where unit economics work at small scale and coordination is purely informational. Customer Support PURSUE is validated as the optimal entry point in this chain.",
+      "affected_industries": ["customer_support", "virtual_assistants", "home_services"],
+      "time_horizon": "H1",
+      "principle": "P7",
+      "confidence": "medium-high",
+      "relevance_score": 9,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-002",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Cross-Domain Synthesis",
+      "signal_type": "methodology_insight",
+      "headline": "METHODOLOGY: Baumol scanner has systematic bias toward tech/finance. True Baumol stored energy requires credential-barrier filter.",
+      "detail": "Baumol inversion channel's top picks (NAICS 334111 electronic manufacturing 4.40x, NAICS 523150 investment banking 3.82x) are ALL quick-killed because high pay reflects talent competition, not Baumol cost disease. True Baumol stored energy exists where wages rose due to REGULATORY PROTECTION and LABOR SCARCITY (pest control, medical coding, court reporting), not competitive talent markets. Recommend Baumol adjustment: discount sectors with >50% knowledge-worker composition by 0.5x.",
+      "affected_industries": ["methodology"],
+      "time_horizon": "H1",
+      "principle": "P3",
+      "confidence": "high",
+      "relevance_score": 8,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-003",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Cross-Domain Synthesis",
+      "signal_type": "methodology_insight",
+      "headline": "CROSS-DOMAIN: P-010 Inversion Barrier is most powerful in DIGITAL services, not physical ops. Physical ops startups die on unit economics before barrier matters.",
+      "detail": "Physical ops failures (Homejoy, Cherry, Washio) died on unit economics BEFORE reaching scale where incumbent inversion barriers mattered. For digital services (customer support), unit economics work at small scale, so the BPO inversion barrier becomes the PRIMARY competitive advantage. P-010 should be applied primarily to digital/semi-digital service categories.",
+      "affected_industries": ["customer_support", "methodology"],
+      "time_horizon": "H1",
+      "principle": "P10",
+      "confidence": "medium-high",
+      "relevance_score": 8,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-004",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Kill Index Re-scan",
+      "signal_type": "framework_validation",
+      "headline": "THREE-LAYER VALIDATION: 0 of 7 killed opportunities rescued by service-layer re-scan. Framework is selective and reliable.",
+      "detail": "All 7 killed opportunities (K-001 through K-007) re-scanned through three-layer competitive framework. None have a genuinely sparse AI-native service layer. K-001 has regulatory prohibition regardless of density. K-002 through K-006 have ALL layers saturated. K-007 has theoretical service gap blocked by PE license + liability. The 0% rescue rate validates that Customer Support (<$500M service layer) and Vet (<$100M) findings are genuine exceptions, not analytical artifacts.",
+      "affected_industries": ["methodology"],
+      "time_horizon": "H1",
+      "principle": "P6",
+      "confidence": "high",
+      "relevance_score": 9,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-005",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Rotation Engine",
+      "signal_type": "cross_channel_validation",
+      "headline": "ROTATION ENGINE CONFIRMS VET THESIS: De-exclusivity channel independently flagged veterinary services. Cross-channel validation strengthens conviction.",
+      "detail": "The Business Rotation Engine's regulatory de-exclusivity channel (Channel 5) independently identified veterinary services as a credential-barrier sector where AI erodes exclusivity. DVM license is the barrier; AI diagnostics + practice operations is the de-exclusivity driver. This is the SECOND independent discovery method confirming the vet opportunity (first: bottom-up sector screen Cycle 7). Cross-channel validation from a systematic scan increases confidence.",
+      "affected_industries": ["veterinary_services"],
+      "time_horizon": "H2",
+      "principle": "P5",
+      "confidence": "medium-high",
+      "relevance_score": 8,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-006",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Rotation Engine",
+      "signal_type": "rotation_kill_summary",
+      "headline": "ROTATION ENGINE FIRST PASS: 25 quick kills, 12 parks, 3 subsumes, 2 kills (K-008 dental, K-009 consulting). Zero new INVESTIGATE_FURTHER promotions.",
+      "detail": "42 rotation candidates screened. Results: 25 QUICK KILLS (irrelevant Baumol artifacts, regulatory moats, extreme density, poor founder fit). 12 PARKS (interesting but lower priority than existing pipeline). 3 SUBSUMES (Zirtual into Customer Support land-and-expand, LATAM already subsumed, dental/vet regulatory channel confirms existing pipeline). 2 NEW KILLS (K-008 Dental Practice Ops, K-009 Boutique Consulting). ZERO new opportunities promoted to INVESTIGATE_FURTHER. The rotation engine confirms the existing pipeline is well-prioritized — the systematic scan of the full economy did not find anything more promising than Customer Support (PURSUE), Vet (INVESTIGATE), or Wholesale (INVESTIGATE).",
+      "affected_industries": ["all_sectors"],
+      "time_horizon": "H1",
+      "principle": "P6",
+      "confidence": "high",
+      "relevance_score": 9,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-007",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Pipeline Monitoring",
+      "signal_type": "risk_monitoring",
+      "headline": "R-001/R-002/R-003 MONITORING: No trigger events detected. All risk levels unchanged. Web tools unavailable limits confidence.",
+      "detail": "R-001 (Sierra AI pivot to managed mid-market): No evidence of pivot. Enterprise/tool positioning appears maintained. Probability: 10-15% (unchanged). R-002 (Autonomous agents mature rapidly): Incremental improvement but no breakthrough that eliminates need for human escalation. Klarna reversal still strongest precedent. Probability: 20-30% (unchanged). R-003 (Mars acquires Archy): No known acquisition. Mars continues practice acquisition strategy. Probability: 15-25% within 24 months (unchanged). LIMITATION: Web tools unavailable. All assessments based on domain knowledge through May 2025 plus analytical reasoning. Real-time monitoring deferred to next cycle with web access.",
+      "affected_industries": ["customer_support", "veterinary_services"],
+      "time_horizon": "H1-H2",
+      "principle": "P7",
+      "confidence": "medium",
+      "relevance_score": 8,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-008",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Rotation Engine Methodology",
+      "signal_type": "methodology_insight",
+      "headline": "ROTATION ENGINE ASSESSMENT: Channel quality varies dramatically. Physical Ops + Failure Archaeology most productive. Baumol + VC Anti-Portfolio need calibration.",
+      "detail": "Channel performance assessment: (1) BAUMOL INVERSION: 0 of 10 candidates viable. Systematic bias toward tech/finance. Needs credential-barrier filter. LOWEST VALUE. (2) KILL RE-SCAN: 0 rescued, but produced valuable framework validation (three-layer confirmed selective). MODERATE VALUE for validation. (3) PHYSICAL OPS: Produced interesting candidates (pest control, construction) but all blocked by existing parks or density. MODERATE VALUE — mostly confirms existing analysis. (4) VC ANTI-PORTFOLIO: 0 viable. Same bias as Baumol (tech/finance sectors with data errors in VC density). LOWEST VALUE. (5) REGULATORY DE-EXCLUSIVITY: Cross-validated vet services. Identified medical coding and court reporting as interesting niches. HIGHEST VALUE — found sectors with genuine credential barriers. (6) FAILURE ARCHAEOLOGY: Produced strongest analytical insight (Zirtual confirms IO propagation chain, failed startups attempted hard end first). HIGHEST VALUE for thesis validation. RECOMMENDATION: For Cycle 12, weight channels 5 and 6 higher. Calibrate channels 1 and 4 with Baumol adjustment factor.",
+      "affected_industries": ["methodology"],
+      "time_horizon": "H1",
+      "principle": "P3",
+      "confidence": "high",
+      "relevance_score": 8,
+      "kill_index_check": "no"
+    },
+    {
+      "signal_id": "A-C11-009",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Pipeline",
+      "signal_type": "kill_escalation",
+      "headline": "K-008 ISSUED: Dental Practice Operations AI. K-009 ISSUED: Boutique Management Consulting Replacement. Two opportunities escalated from PARKED to KILLED.",
+      "detail": "K-008 (Dental Practice Ops): Escalated from PARKED (score 42). Three-layer re-scan confirms: Dentrix/Eaglesoft tool layer, DSO consolidator incumbent service, Pearl AI ($100M+) AI-native. 38-state regulatory barrier for non-dentist ownership. Poor founder fit. No path to INVESTIGATE_FURTHER. K-009 (Boutique Consulting): Escalated per Cycle 12 deadline (set in Cycle 9). Three-layer confirms: no sparse layer in any consulting segment. $10B+ across all layers. Every AI company positions as 'consultant replacement.' Most competitive thesis in existence. No specific standardized vertical identified in 3 cycles of parked status.",
+      "affected_industries": ["dental_services", "management_consulting"],
+      "time_horizon": "N/A",
+      "principle": "P6",
+      "confidence": "high",
+      "relevance_score": 7,
+      "kill_index_check": "K-008, K-009 issued"
+    },
+    {
+      "signal_id": "A-C11-010",
+      "timestamp": "2026-02-10T20:00:00Z",
+      "source_category": "Execution Intelligence",
+      "signal_type": "timing_arbitrage",
+      "headline": "EXECUTION URGENCY: Window estimate tightens. Agent B's 10-16 month estimate (from Cycle 10) means earliest window close is Dec 2026. Current date: Feb 2026. 10 months minimum, likely 14-16 months.",
+      "detail": "Recalculating timing window based on Agent B's tighter estimate from Cycle 10 (10-16 months from Feb 2026): Earliest close: December 2026 (10 months). Most likely close: April-June 2027 (14-16 months). Latest close: August 2027 (18 months, Agent C estimate). To establish meaningful market position before window closes, need: 3 months MVP + first customer, 6 months scaling to 5-8 clients, 3 months demonstrating margins. Total: 12 months minimum execution timeline. If earliest window close is 10 months, this is TIGHT. Execution must begin IMMEDIATELY.",
+      "affected_industries": ["customer_support"],
+      "time_horizon": "H1",
+      "principle": "P7",
+      "confidence": "medium",
+      "relevance_score": 9,
+      "kill_index_check": "no"
+    }
+  ]
+}

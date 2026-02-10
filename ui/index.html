@@ -284,6 +284,47 @@
 
   .empty { text-align: center; padding: 48px 24px; color: var(--dim); font-size: 13px; }
   .update-meta { font-size: 12px; color: var(--dim); margin-top: 8px; }
+
+  /* Intro */
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .intro-text { flex: 1; }
+  .intro-text p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .intro-text strong { color: var(--text); font-weight: 600; }
+  .intro-toggle {
+    font-size: 12px;
+    color: var(--accent);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+  }
+  .intro-toggle:hover { text-decoration: underline; }
+  .intro-kv {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 16px;
+    font-size: 12px;
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+  .intro-kv dt { color: var(--dim); text-transform: uppercase; letter-spacing: 0.3px; }
+  .intro-kv dd { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
@@ -299,6 +340,43 @@
     <h1>Research Engine</h1>
     <div class="subtitle">Cycle <span id="cycle-num">0</span> &middot; <span id="last-updated">awaiting first run</span></div>
   </header>
+
+  <!-- Intro -->
+  <div class="intro" id="intro-section">
+    <div class="intro-text">
+      <p>
+        <strong>What is this?</strong> An AI-powered research engine that systematically scans the US economy
+        to identify businesses where AI creates a structural advantage for new entrants. It runs in iterative
+        cycles &mdash; each cycle scans data sources, extracts signals, grades opportunities, stress-tests
+        them with counter-arguments, and synthesizes findings.
+      </p>
+      <p id="intro-detail" style="display:none;">
+        The engine uses a multi-agent pipeline: <strong>Agent A</strong> scans data (FRED, BLS, EDGAR, web)
+        and extracts economic signals. <strong>Agent C</strong> grades each opportunity against 9 weighted criteria
+        including Baumol cost disease, competitive density, and counter-signal severity. <strong>Agent B</strong>
+        adversarially challenges every thesis &mdash; it has an 82% kill+park rate. <strong>Master</strong> synthesizes
+        cross-cycle patterns and updates the knowledge graph. A <strong>Business Rotation Engine</strong> with 6 discovery
+        channels feeds new candidates from the full NAICS universe rather than relying on brainstorming.
+      </p>
+      <p id="intro-detail2" style="display:none;">
+        Built for a 2-person founding team (operator + ML/AI). The research target: sectors where high human
+        labor costs (Baumol), low competitive density, and a timing window between &ldquo;companies cutting humans&rdquo; and
+        &ldquo;AI fully replacing them&rdquo; create a vacuum for AI-native service businesses.
+      </p>
+      <button class="intro-toggle" id="intro-toggle" onclick="
+        var d1=document.getElementById('intro-detail'),d2=document.getElementById('intro-detail2'),b=this;
+        if(d1.style.display==='none'){d1.style.display='block';d2.style.display='block';b.textContent='Show less';}
+        else{d1.style.display='none';d2.style.display='none';b.textContent='How does it work?';}
+      ">How does it work?</button>
+    </div>
+    <dl class="intro-kv" id="intro-stats">
+      <dt>Cycles</dt><dd id="intro-cycles">--</dd>
+      <dt>Signals</dt><dd id="intro-signals">--</dd>
+      <dt>Evaluated</dt><dd id="intro-evaluated">--</dd>
+      <dt>Killed</dt><dd id="intro-killed">--</dd>
+      <dt>Pursue</dt><dd id="intro-pursue">--</dd>
+    </dl>
+  </div>
 
   <!-- Pipeline -->
   <section>
@@ -473,6 +551,13 @@ async function refresh() {
     if (synthesis) {
       document.getElementById('synthesis-text').textContent = synthesis;
     }
+
+    // Intro stats
+    document.getElementById('intro-cycles').textContent = d.cycle || d.current_cycle || 0;
+    document.getElementById('intro-signals').textContent = stats.total_ever_evaluated || d.total_signals_scanned || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
+    document.getElementById('intro-evaluated').textContent = stats.total_ever_evaluated || opps.length || 0;
+    document.getElementById('intro-killed').textContent = stats.killed || killCount;
+    document.getElementById('intro-pursue').textContent = stats.pursue || opps.filter(o=>(o.status||'').toLowerCase()==='pursue').length || 0;
 
     renderOpps(opps.filter(o => typeof o.rank === 'number'));
     renderHeat(d.sector_heatmap);
