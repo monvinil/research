@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Research cycle runner — Cycle 1: Full live data pull + analysis.
+"""Research cycle runner — LLM-powered multi-agent research engine.
 
-Pulls from all 4 connectors, extracts signals, scores them through
-the Principles Engine, identifies opportunity clusters, and writes
-results to the dashboard JSON files.
+Pulls live data from 4 connectors, then routes it through 4 LLM agents
+(Agent A, Agent C, Agent B, Master) using Claude API. Each agent has a
+specific role defined in /agents/*.md. Context accumulates across cycles.
 
 Usage:
-    python scripts/run_cycle.py
-    python scripts/run_cycle.py --verbose
+    python scripts/run_cycle.py                     # full cycle
+    python scripts/run_cycle.py --scan-only         # data pull only (no LLM)
+    python scripts/run_cycle.py --model opus        # use opus for all agents
+    python scripts/run_cycle.py --verbose           # show raw LLM responses
 """
 
 import argparse
@@ -15,15 +17,31 @@ import json
 import os
 import sys
 import time
-from datetime import datetime, timezone, timedelta
+import traceback
+from datetime import datetime, timezone
+
+# ---------------------------------------------------------------------------
+# Setup
+# ---------------------------------------------------------------------------
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
+AGENTS_DIR = os.path.join(PROJECT_ROOT, 'agents')
 sys.path.insert(0, PROJECT_ROOT)
+
+# Load .env
+_env_path = os.path.join(PROJECT_ROOT, '.env')
+if os.path.exists(_env_path):
+    with open(_env_path) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                key, val = line.split('=', 1)
+                os.environ.setdefault(key.strip(), val.strip())
 
 
 # ---------------------------------------------------------------------------
-# Data I/O helpers
+# I/O helpers
 # ---------------------------------------------------------------------------
 
 def load_json(path):
@@ -40,15 +58,471 @@ def save_json(path, data):
 
 
 def load_state():
-    return load_json(os.path.join(DATA_DIR, 'context', 'state.json'))
+    return load_json(os.path.join(DATA_DIR, 'context', 'state.json')) or {
+        'current_cycle': 0,
+        'agent_a': {}, 'agent_b': {}, 'agent_c': {},
+    }
 
 
 def save_state(state):
     save_json(os.path.join(DATA_DIR, 'context', 'state.json'), state)
 
 
+def load_agent_prompt(name):
+    """Load an agent's system prompt from agents/*.md."""
+    path = os.path.join(AGENTS_DIR, name)
+    with open(path) as f:
+        return f.read()
+
+
+def load_context_summaries():
+    """Load accumulated cycle summaries for context feeding."""
+    path = os.path.join(DATA_DIR, 'context', 'cycle_summaries.json')
+    return load_json(path) or {'cycles': []}
+
+
+def save_context_summary(cycle_num, summary):
+    """Append a cycle summary to the accumulated context."""
+    path = os.path.join(DATA_DIR, 'context', 'cycle_summaries.json')
+    data = load_json(path) or {'cycles': []}
+    data['cycles'].append({
+        'cycle': cycle_num,
+        'date': datetime.now(timezone.utc).isoformat(),
+        'summary': summary,
+    })
+    # Keep last 10 cycles of full context, compress older ones
+    if len(data['cycles']) > 10:
+        old = data['cycles'][:-10]
+        data['compressed'] = data.get('compressed', '') + '\n'.join(
+            f"Cycle {c['cycle']}: {c['summary'][:200]}" for c in old
+        ) + '\n'
+        data['cycles'] = data['cycles'][-10:]
+    save_json(path, data)
+
+
+def load_kill_index():
+    """Load the kill index."""
+    path = os.path.join(DATA_DIR, 'context', 'kill_index.json')
+    return load_json(path) or {'kill_patterns': [], 'stats': {}}
+
+
+def save_kill_index(kill_index):
+    save_json(os.path.join(DATA_DIR, 'context', 'kill_index.json'), kill_index)
+
+
 # ---------------------------------------------------------------------------
-# Phase 1: SCAN — pull raw data from all connectors
+# LLM Engine
+# ---------------------------------------------------------------------------
+
+MODELS = {
+    'sonnet': 'claude-sonnet-4-5-20250929',
+    'opus': 'claude-opus-4-6',
+    'haiku': 'claude-haiku-4-5-20251001',
+}
+
+_client = None
+_total_input_tokens = 0
+_total_output_tokens = 0
+
+
+def get_client():
+    global _client
+    if _client is None:
+        import anthropic
+        api_key = os.environ.get('ANTHROPIC_API_KEY', '')
+        if not api_key:
+            raise RuntimeError(
+                'ANTHROPIC_API_KEY not set. Add it to .env:\n'
+                '  ANTHROPIC_API_KEY=sk-ant-...\n'
+                'Get your key at: https://console.anthropic.com/settings/keys'
+            )
+        _client = anthropic.Anthropic(api_key=api_key)
+    return _client
+
+
+def llm_call(system_prompt, user_message, model='sonnet', max_tokens=8192):
+    """Call Claude API and return the text response."""
+    global _total_input_tokens, _total_output_tokens
+
+    client = get_client()
+    model_id = MODELS.get(model, model)
+
+    t0 = time.time()
+    response = client.messages.create(
+        model=model_id,
+        max_tokens=max_tokens,
+        system=system_prompt,
+        messages=[{'role': 'user', 'content': user_message}],
+    )
+
+    elapsed = time.time() - t0
+    usage = response.usage
+    _total_input_tokens += usage.input_tokens
+    _total_output_tokens += usage.output_tokens
+
+    text = response.content[0].text
+    print(f'    [{model_id}] {usage.input_tokens} in / {usage.output_tokens} out / {elapsed:.1f}s')
+    return text
+
+
+def parse_json_response(text):
+    """Extract JSON from an LLM response, handling markdown code blocks."""
+    # Try direct parse first
+    text = text.strip()
+    if text.startswith('{') or text.startswith('['):
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            pass
+
+    # Try extracting from ```json ... ``` blocks
+    import re
+    blocks = re.findall(r'```(?:json)?\s*\n?(.*?)\n?```', text, re.DOTALL)
+    for block in blocks:
+        block = block.strip()
+        try:
+            return json.loads(block)
+        except json.JSONDecodeError:
+            continue
+
+    # Try finding the first { ... } or [ ... ] block
+    for start_char, end_char in [('{', '}'), ('[', ']')]:
+        start = text.find(start_char)
+        if start == -1:
+            continue
+        depth = 0
+        for i in range(start, len(text)):
+            if text[i] == start_char:
+                depth += 1
+            elif text[i] == end_char:
+                depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(text[start:i+1])
+                except json.JSONDecodeError:
+                    break
+
+    raise ValueError(f'Could not parse JSON from LLM response:\n{text[:500]}...')
+
+
+# ---------------------------------------------------------------------------
+# Data formatting helpers — prepare raw data for LLM context
+# ---------------------------------------------------------------------------
+
+def format_fred_data(raw):
+    """Format FRED data into a readable text block."""
+    lines = ['## FRED Economic Data\n']
+    for key in ['fred_labor_squeeze', 'fred_credit_stress', 'fred_job_gaps', 'fred_rates']:
+        if key not in raw:
+            continue
+        data = raw[key].get('data', {})
+        label = key.replace('fred_', '').replace('_', ' ').title()
+        lines.append(f'### {label}')
+        for series_name, series_data in data.items():
+            obs = series_data.get('observations', [])
+            pretty_name = series_name.replace('_', ' ').title()
+            if obs:
+                latest = obs[0]
+                lines.append(f'- {pretty_name}: {latest.get("value", "N/A")} (date: {latest.get("date", "?")})')
+                if len(obs) >= 2:
+                    prev = obs[1]
+                    lines.append(f'  Previous: {prev.get("value", "N/A")} ({prev.get("date", "?")})')
+                if len(obs) >= 13:
+                    yoy = obs[12]
+                    lines.append(f'  Year-ago: {yoy.get("value", "N/A")} ({yoy.get("date", "?")})')
+        lines.append('')
+    return '\n'.join(lines)
+
+
+def format_bls_data(raw):
+    """Format BLS data into readable text."""
+    lines = ['## BLS Employment & Wage Data\n']
+    for key in ['bls_industry', 'bls_wages', 'bls_jolts']:
+        if key not in raw:
+            continue
+        data = raw[key].get('data', {})
+        label = key.replace('bls_', '').replace('_', ' ').title()
+        lines.append(f'### {label}')
+        for series_name, series_data in data.items():
+            obs = series_data.get('observations', [])
+            pretty_name = series_name.replace('_', ' ').title()
+            if obs:
+                latest = obs[0]
+                lines.append(f'- {pretty_name}: {latest.get("value", "N/A")} (period: {latest.get("period", latest.get("date", "?"))})')
+                if len(obs) >= 2:
+                    lines.append(f'  Previous: {obs[1].get("value", "N/A")}')
+        lines.append('')
+    return '\n'.join(lines)
+
+
+def format_edgar_data(raw):
+    """Format EDGAR data, truncating long filing lists."""
+    lines = ['## SEC EDGAR Filings\n']
+    for key in ['edgar_distress', 'edgar_ai_failures']:
+        if key not in raw:
+            continue
+        data = raw[key]
+        label = key.replace('edgar_', '').replace('_', ' ').title()
+        lines.append(f'### {label}')
+        if isinstance(data, dict):
+            if 'total_hits' in data:
+                lines.append(f'Total hits: {data["total_hits"]}')
+            filings = data.get('filings', data.get('results', []))
+            if isinstance(filings, list):
+                lines.append(f'Filings found: {len(filings)}')
+                for f in filings[:15]:  # Cap at 15 to manage tokens
+                    name = f.get('company_name', f.get('entity_name', '?'))
+                    form = f.get('form_type', f.get('form', '?'))
+                    date = f.get('filed_date', f.get('filed', '?'))
+                    lines.append(f'  - {name} | {form} | filed {date}')
+        lines.append('')
+    return '\n'.join(lines)
+
+
+def format_web_data(raw):
+    """Format web search results."""
+    lines = ['## Web Search Results\n']
+    for key in ['web_liquidation', 'web_practitioner', 'web_dead_revival',
+                'web_demographics', 'web_inference']:
+        if key not in raw:
+            continue
+        data = raw[key]
+        label = key.replace('web_', '').replace('_', ' ').title()
+        lines.append(f'### {label}')
+        results = data.get('results', [])
+        if isinstance(results, list):
+            for r in results[:8]:
+                title = r.get('title', '?')
+                snippet = r.get('snippet', r.get('body', ''))[:200]
+                lines.append(f'  - {title}')
+                if snippet:
+                    lines.append(f'    {snippet}')
+        elif isinstance(data, list):
+            for r in data[:8]:
+                if isinstance(r, dict):
+                    title = r.get('title', '?')
+                    snippet = r.get('snippet', r.get('body', ''))[:200]
+                    lines.append(f'  - {title}')
+                    if snippet:
+                        lines.append(f'    {snippet}')
+        lines.append('')
+    return '\n'.join(lines)
+
+
+def format_raw_for_agent_a(raw, context_summaries, kill_index):
+    """Build the full user message for Agent A."""
+    sections = []
+
+    # Raw data
+    sections.append('# RAW DATA FROM THIS CYCLE\'S SCAN\n')
+    sections.append(format_fred_data(raw))
+    sections.append(format_bls_data(raw))
+    sections.append(format_edgar_data(raw))
+    sections.append(format_web_data(raw))
+
+    # Previous cycle context
+    cycles = context_summaries.get('cycles', [])
+    if cycles:
+        sections.append('# CONTEXT FROM PREVIOUS CYCLES\n')
+        for c in cycles[-3:]:  # Last 3 cycles
+            sections.append(f'## Cycle {c["cycle"]} ({c["date"][:10]})')
+            sections.append(c['summary'][:2000])
+            sections.append('')
+
+    # Kill index
+    patterns = kill_index.get('kill_patterns', [])
+    if patterns:
+        sections.append('# KILL INDEX — Do NOT produce signals matching these patterns\n')
+        for p in patterns:
+            if p.get('still_active', True):
+                sections.append(f'- [{p.get("pattern_id", "?")}] {p.get("kill_reason", "?")}')
+                sections.append(f'  Affects: {p.get("signal_type_affected", "?")} in {p.get("industries_affected", [])}')
+        sections.append('')
+
+    # Directive
+    sections.append('# SCAN DIRECTIVE')
+    sections.append('Systemic Pattern Focus: Liquidation cascades, demographic labor gaps, '
+                    'infrastructure overhang exploitation, dead business revival, cost-structure kills')
+    sections.append('Horizon: H1, H2, H3')
+    sections.append('Sources Priority: All categories — government data (FRED, BLS, EDGAR) + web signals')
+    sections.append('')
+    sections.append('Extract 20-50 signals from the raw data above. Return a JSON array of signal objects '
+                    'following your Signal Extraction Format. Focus on structural patterns, not industry picks.')
+    sections.append('')
+    sections.append('Return ONLY a JSON array of signal objects. No preamble.')
+
+    return '\n'.join(sections)
+
+
+def format_for_agent_c(signals, state, kill_index):
+    """Build user message for Agent C grading."""
+    sections = []
+    sections.append('# SIGNALS FROM AGENT A\n')
+    sections.append(json.dumps(signals, indent=2)[:15000])  # Token management
+
+    sections.append('\n# CURRENT STATE\n')
+    sections.append(json.dumps(state, indent=2)[:3000])
+
+    sections.append('\n# KILL INDEX\n')
+    sections.append(json.dumps(kill_index, indent=2)[:2000])
+
+    sections.append('\n# INSTRUCTIONS')
+    sections.append('1. Deduplicate and merge related signals')
+    sections.append('2. Grade each signal using the grading rubric (0-10)')
+    sections.append('3. Check against kill index — flag matches')
+    sections.append('4. Cluster signals into opportunity themes')
+    sections.append('5. Identify cross-signal patterns and contradictions')
+    sections.append('')
+    sections.append('Return a JSON object with this structure:')
+    sections.append('```json')
+    sections.append('''{
+  "graded_signals": [...signals with relevance_score added...],
+  "opportunity_clusters": [
+    {
+      "name": "...",
+      "thesis": "...",
+      "score": 0-100,
+      "horizon": "H1/H2/H3",
+      "principles_passed": ["P1", ...],
+      "signal_count": N,
+      "key_data": ["..."],
+      "vc_hook": "...",
+      "status": "scanning"
+    }
+  ],
+  "cross_signal_patterns": [
+    {"pattern": "...", "signals_involved": [...], "strength": "weak/moderate/strong"}
+  ],
+  "contradictions": ["..."],
+  "next_cycle_suggestions": ["..."]
+}''')
+    sections.append('```')
+    sections.append('Return ONLY the JSON object. No preamble.')
+
+    return '\n'.join(sections)
+
+
+def format_for_agent_b(opportunities, signals, state):
+    """Build user message for Agent B verification."""
+    sections = []
+    sections.append('# TOP OPPORTUNITIES TO VERIFY\n')
+    sections.append(json.dumps(opportunities[:5], indent=2))
+
+    sections.append('\n# SUPPORTING SIGNALS\n')
+    # Send only the signals relevant to these opportunities
+    opp_principles = set()
+    for o in opportunities[:5]:
+        for p in o.get('principles_passed', []):
+            opp_principles.add(p)
+    relevant = [s for s in signals if s.get('principle', '').split(',')[0] in opp_principles]
+    sections.append(json.dumps(relevant[:30], indent=2)[:10000])
+
+    sections.append('\n# FOUNDING CONSTRAINTS')
+    sections.append('''
+CAPITAL: $500K-$1M starting. Can raise more. Capital is a variable, not a constraint.
+FOUNDERS: 2 people. One ML/AI Masters (Georgia Tech). One operator (Argentina native, US resident).
+LANGUAGES: English + Spanish natively. Others = ops cost adder.
+LOCATION: Davis, CA — 1hr from SF.
+LEGAL: US citizen + US resident. Resident may have visa limits on govt/defense.
+LICENSES: Willing to acquire existing licensed businesses. Price the acquisition.
+VC NETWORK: Active angel/VC relationships.
+''')
+
+    sections.append('\n# INSTRUCTIONS')
+    sections.append('For each opportunity, run your full verification framework:')
+    sections.append('- V1: Unit Economics Model')
+    sections.append('- V2: Liquidation Cascade Position')
+    sections.append('- V3: Incumbent Response Analysis')
+    sections.append('- V4: Regulatory & Legal Check')
+    sections.append('- V5: Technical Feasibility')
+    sections.append('- V6: Market Timing')
+    sections.append('- Opportunity Quality Assessment (Execution + VC Differentiation)')
+    sections.append('')
+    sections.append('Return a JSON array of verification objects following your output format.')
+    sections.append('Return ONLY the JSON array. No preamble.')
+
+    return '\n'.join(sections)
+
+
+def format_for_master(signals, opportunities, verifications, context_summaries, state):
+    """Build user message for Master synthesis."""
+    sections = []
+
+    sections.append('# CYCLE RESULTS\n')
+
+    sections.append('## Agent A: Signal Summary')
+    sections.append(f'Total signals: {len(signals)}')
+    by_principle = {}
+    for s in signals:
+        p = s.get('principle', 'unknown').split(',')[0]
+        by_principle.setdefault(p, []).append(s)
+    for p in sorted(by_principle.keys()):
+        sigs = by_principle[p]
+        avg = sum(s.get('relevance_score', 0) for s in sigs) / max(len(sigs), 1)
+        sections.append(f'  {p}: {len(sigs)} signals, avg score {avg:.1f}')
+    sections.append('')
+
+    sections.append('## Top Signals (score >= 7)')
+    top = [s for s in signals if s.get('relevance_score', 0) >= 7]
+    for s in top[:15]:
+        sections.append(f'  [{s.get("relevance_score", 0)}] {s.get("headline", "?")} ({s.get("source", "?")})')
+    sections.append('')
+
+    sections.append('## Agent C: Opportunity Clusters')
+    sections.append(json.dumps(opportunities[:5], indent=2)[:5000])
+
+    if verifications:
+        sections.append('\n## Agent B: Verification Results')
+        sections.append(json.dumps(verifications[:5], indent=2)[:8000])
+
+    # Previous context
+    cycles = context_summaries.get('cycles', [])
+    if cycles:
+        sections.append('\n## Previous Cycle Context')
+        for c in cycles[-3:]:
+            sections.append(f'Cycle {c["cycle"]}: {c["summary"][:1500]}')
+        sections.append('')
+
+    sections.append('\n# INSTRUCTIONS')
+    sections.append('Synthesize this cycle\'s results. Produce:')
+    sections.append('1. Cross-cycle pattern analysis — what structural shifts are emerging?')
+    sections.append('2. Second-order effects — connections between principles that no single signal reveals')
+    sections.append('3. Emergent patterns that may not fit P1-P6 — potential new principles')
+    sections.append('4. Gaps in our scanning — what are we missing?')
+    sections.append('5. Direction for next cycle — what to focus on, what to deprioritize')
+    sections.append('6. Grading weight adjustments for next cycle')
+    sections.append('7. Kill index updates — what patterns should we stop investigating?')
+    sections.append('')
+    sections.append('Return a JSON object:')
+    sections.append('```json')
+    sections.append('''{
+  "synthesis": "2-3 paragraph narrative of what this cycle reveals about the economy",
+  "cross_principle_patterns": [
+    {"pattern": "...", "principles": ["P1", "P2"], "evidence": "...", "strength": "..."}
+  ],
+  "emergent_principles": [
+    {"name": "...", "description": "...", "supporting_evidence": "..."}
+  ],
+  "scanning_gaps": ["..."],
+  "next_cycle_direction": {
+    "focus_areas": ["..."],
+    "deprioritize": ["..."],
+    "new_queries": ["..."],
+    "weight_adjustments": {}
+  },
+  "kill_index_updates": [
+    {"pattern": "...", "kill_reason": "...", "still_active": true}
+  ],
+  "cycle_summary": "1-paragraph summary for context accumulation"
+}''')
+    sections.append('```')
+    sections.append('Return ONLY the JSON object. No preamble.')
+
+    return '\n'.join(sections)
+
+
+# ---------------------------------------------------------------------------
+# Phase 1: SCAN — pull raw data (unchanged from original)
 # ---------------------------------------------------------------------------
 
 def phase_scan(verbose=False):
@@ -64,20 +538,11 @@ def phase_scan(verbose=False):
     try:
         from connectors.fred import FredConnector
         fred = FredConnector()
-
-        print('  Labor cost squeeze (P2)...')
         raw['fred_labor_squeeze'] = fred.get_labor_cost_squeeze()
-
-        print('  Credit stress (P2)...')
         raw['fred_credit_stress'] = fred.get_credit_stress()
-
-        print('  Job market gaps (P5)...')
         raw['fred_job_gaps'] = fred.get_job_market_gaps()
-
-        print('  Interest rate environment...')
         raw['fred_rates'] = fred.get_interest_rate_environment()
-
-        print('  [FRED] OK — 4 datasets pulled')
+        print('  [FRED] OK — 4 datasets')
     except Exception as e:
         print(f'  [FRED] ERROR: {e}')
 
@@ -86,58 +551,35 @@ def phase_scan(verbose=False):
     try:
         from connectors.bls import BLSConnector
         bls = BLSConnector()
-
-        print('  Industry employment trends (P2/P5)...')
         raw['bls_industry'] = bls.get_employment_by_industry()
-
-        print('  Wage inflation (P3)...')
         raw['bls_wages'] = bls.get_wage_inflation()
-
-        print('  Job openings & quits (P5)...')
         raw['bls_jolts'] = bls.get_job_openings_and_quits()
-
-        print('  [BLS] OK — 3 datasets pulled')
+        print('  [BLS] OK — 3 datasets')
     except Exception as e:
         print(f'  [BLS] ERROR: {e}')
 
     # --- EDGAR ---
-    print('\n[EDGAR] Scanning SEC filings for distress signals...')
+    print('\n[EDGAR] Scanning SEC filings...')
     try:
         from connectors.edgar import EdgarConnector
         edgar = EdgarConnector()
-
-        print('  Corporate distress scan (P2)...')
         raw['edgar_distress'] = edgar.scan_for_distress()
-
-        print('  AI adoption failures (P2)...')
         raw['edgar_ai_failures'] = edgar.scan_for_ai_adoption_failures()
-
-        print('  [EDGAR] OK — 2 scans complete')
+        print('  [EDGAR] OK — 2 scans')
     except Exception as e:
         print(f'  [EDGAR] ERROR: {e}')
 
     # --- Web Search ---
-    print('\n[WEB] Scanning for qualitative signals...')
+    print('\n[WEB] Scanning web signals...')
     try:
         from connectors.websearch import WebSearchConnector
         ws = WebSearchConnector()
-
-        print('  Liquidation cascade signals (P2)...')
         raw['web_liquidation'] = ws.scan_liquidation_signals(num_results=5)
-
-        print('  Practitioner pain signals (P2/P3)...')
         raw['web_practitioner'] = ws.scan_practitioner_pain(num_results=5)
-
-        print('  Dead business revival signals (P4)...')
         raw['web_dead_revival'] = ws.scan_dead_business_revival(num_results=5)
-
-        print('  Demographic gap signals (P5)...')
         raw['web_demographics'] = ws.scan_demographic_gaps(num_results=5)
-
-        print('  Inference cost signals (P1)...')
         raw['web_inference'] = ws.scan_inference_cost_drops(num_results=5)
-
-        print('  [WEB] OK — 5 scans complete')
+        print('  [WEB] OK — 5 scans')
     except Exception as e:
         print(f'  [WEB] ERROR: {e}')
 
@@ -145,769 +587,450 @@ def phase_scan(verbose=False):
 
 
 # ---------------------------------------------------------------------------
-# Phase 2: EXTRACT — turn raw data into structured signals
+# Phase 2: AGENT A — LLM-powered signal extraction
 # ---------------------------------------------------------------------------
 
-def extract_signals(raw, verbose=False):
-    """Extract actionable signals from raw connector data."""
+def phase_agent_a(raw, context_summaries, kill_index, model='sonnet', verbose=False):
+    """Agent A: Extract signals from raw data using LLM reasoning."""
     print('\n' + '=' * 60)
-    print('PHASE 2: EXTRACTING SIGNALS from raw data')
+    print('PHASE 2: AGENT A — LLM signal extraction')
     print('=' * 60)
 
-    signals = []
+    system_prompt = load_agent_prompt('agent_a_trends_scanner.md')
+    user_message = format_raw_for_agent_a(raw, context_summaries, kill_index)
 
-    # --- FRED signals ---
-    if 'fred_labor_squeeze' in raw:
-        signals.extend(_extract_fred_squeeze(raw['fred_labor_squeeze']))
-    if 'fred_credit_stress' in raw:
-        signals.extend(_extract_fred_credit(raw['fred_credit_stress']))
-    if 'fred_job_gaps' in raw:
-        signals.extend(_extract_fred_jobs(raw['fred_job_gaps']))
-    if 'fred_rates' in raw:
-        signals.extend(_extract_fred_rates(raw['fred_rates']))
+    print(f'  Sending {len(user_message):,} chars to Agent A...')
+    response = llm_call(system_prompt, user_message, model=model, max_tokens=12000)
 
-    # --- BLS signals ---
-    if 'bls_industry' in raw:
-        signals.extend(_extract_bls_industry(raw['bls_industry']))
-    if 'bls_wages' in raw:
-        signals.extend(_extract_bls_wages(raw['bls_wages']))
-    if 'bls_jolts' in raw:
-        signals.extend(_extract_bls_jolts(raw['bls_jolts']))
+    if verbose:
+        print(f'\n--- Agent A raw response ({len(response)} chars) ---')
+        print(response[:2000])
+        print('---')
 
-    # --- EDGAR signals ---
-    if 'edgar_distress' in raw:
-        signals.extend(_extract_edgar_distress(raw['edgar_distress']))
-    if 'edgar_ai_failures' in raw:
-        signals.extend(_extract_edgar_ai(raw['edgar_ai_failures']))
-
-    # --- Web signals ---
-    for key in ['web_liquidation', 'web_practitioner', 'web_dead_revival',
-                'web_demographics', 'web_inference']:
-        if key in raw:
-            signals.extend(_extract_web_signals(raw[key]))
-
-    print(f'\n  Total signals extracted: {len(signals)}')
-    return signals
-
-
-def _latest(series_data, key='observations'):
-    """Get latest observation from a series."""
-    obs = series_data.get(key, [])
-    return obs[0] if obs else None
-
-
-def _pct_change(obs_list, periods=12):
-    """Calculate % change over N periods in a series."""
-    if len(obs_list) < periods + 1:
-        return None
     try:
-        current = obs_list[0]['value']
-        past = obs_list[periods]['value']
-        if past and past != 0:
-            return round((current - past) / past * 100, 2)
-    except (KeyError, TypeError, IndexError):
-        pass
-    return None
+        signals = parse_json_response(response)
+        if isinstance(signals, dict) and 'signals' in signals:
+            signals = signals['signals']
+        if not isinstance(signals, list):
+            signals = [signals]
+        print(f'  Agent A produced {len(signals)} signals')
+        return signals
+    except Exception as e:
+        print(f'  ERROR parsing Agent A response: {e}')
+        print(f'  Response starts with: {response[:300]}')
+        return []
 
 
-def _extract_fred_squeeze(data):
-    signals = []
-    d = data.get('data', {})
+# ---------------------------------------------------------------------------
+# Phase 3: AGENT C — LLM-powered grading & clustering
+# ---------------------------------------------------------------------------
 
-    # Unit labor costs trend
-    ulc = d.get('unit_labor_costs', {})
-    ulc_obs = ulc.get('observations', [])
-    if len(ulc_obs) >= 2:
-        latest_val = ulc_obs[0]['value']
-        prev_val = ulc_obs[1]['value']
-        change = round(latest_val - prev_val, 2)
-        direction = 'rising' if change > 0 else 'falling'
-        signals.append({
-            'headline': f'Unit labor costs {direction} ({change:+.1f} pts to {latest_val:.1f})',
-            'principle': 'P2',
-            'category': 'macro_squeeze',
-            'source': 'FRED',
-            'data_point': f'ULCNFB: {latest_val:.1f} (latest: {ulc_obs[0]["date"]})',
-            'strength': 'strong' if abs(change) > 1 else 'moderate',
-            'sector': 'all_nonfarm',
-        })
+def phase_agent_c(signals, state, kill_index, model='sonnet', verbose=False):
+    """Agent C: Grade, deduplicate, rank, and cluster signals."""
+    print('\n' + '=' * 60)
+    print('PHASE 3: AGENT C — LLM grading & clustering')
+    print('=' * 60)
 
-    # Productivity vs wages divergence
-    prod = d.get('productivity', {}).get('observations', [])
-    wages = d.get('avg_hourly_earnings', {}).get('observations', [])
-    if prod and wages:
-        prod_chg = _pct_change(prod, min(4, len(prod) - 1))
-        wage_chg = _pct_change(wages, min(12, len(wages) - 1))
-        if prod_chg is not None and wage_chg is not None:
-            gap = round(wage_chg - (prod_chg or 0), 2)
-            if gap > 0:
-                signals.append({
-                    'headline': f'Wage growth ({wage_chg:+.1f}%) outpacing productivity ({prod_chg:+.1f}%) — squeeze widening',
-                    'principle': 'P2',
-                    'category': 'macro_squeeze',
-                    'source': 'FRED',
-                    'data_point': f'Wage-productivity gap: {gap:+.1f}pp',
-                    'strength': 'strong' if gap > 2 else 'moderate',
-                    'sector': 'all_nonfarm',
-                })
+    system_prompt = load_agent_prompt('agent_c_sync.md')
+    user_message = format_for_agent_c(signals, state, kill_index)
 
-    # Absolute wage level
-    if wages:
-        latest_wage = wages[0]
-        signals.append({
-            'headline': f'Average hourly earnings: ${latest_wage["value"]:.2f} (as of {latest_wage["date"]})',
-            'principle': 'P3',
-            'category': 'cost_baseline',
-            'source': 'FRED',
-            'data_point': f'CES0500000003: ${latest_wage["value"]:.2f}',
-            'strength': 'reference',
-            'sector': 'private_sector',
-        })
+    print(f'  Sending {len(user_message):,} chars to Agent C...')
+    response = llm_call(system_prompt, user_message, model=model, max_tokens=12000)
 
-    return signals
+    if verbose:
+        print(f'\n--- Agent C raw response ({len(response)} chars) ---')
+        print(response[:2000])
+        print('---')
 
-
-def _extract_fred_credit(data):
-    signals = []
-    d = data.get('data', {})
-
-    # Business loan delinquency
-    delinq = d.get('business_loan_delinquency', {}).get('observations', [])
-    if delinq:
-        latest = delinq[0]
-        signals.append({
-            'headline': f'Business loan delinquency rate: {latest["value"]:.2f}% ({latest["date"]})',
-            'principle': 'P2',
-            'category': 'credit_stress',
-            'source': 'FRED',
-            'data_point': f'DRSFRMACBS: {latest["value"]:.2f}%',
-            'strength': 'strong' if latest['value'] > 3.0 else 'moderate' if latest['value'] > 2.0 else 'weak',
-            'sector': 'all_business',
-        })
-
-    # High yield spread
-    hy = d.get('high_yield_spread', {}).get('observations', [])
-    if hy:
-        latest = hy[0]
-        signals.append({
-            'headline': f'High yield corporate bond spread: {latest["value"]:.2f}% ({latest["date"]})',
-            'principle': 'P2',
-            'category': 'credit_stress',
-            'source': 'FRED',
-            'data_point': f'BAMLH0A0HYM2: {latest["value"]:.2f}%',
-            'strength': 'strong' if latest['value'] > 5.0 else 'moderate' if latest['value'] > 3.5 else 'weak',
-            'sector': 'corporate_debt',
-        })
-
-    return signals
-
-
-def _extract_fred_jobs(data):
-    signals = []
-    d = data.get('data', {})
-
-    openings = d.get('job_openings', {}).get('observations', [])
-    quits = d.get('quits_rate', {}).get('observations', [])
-    unemp = d.get('unemployment_rate', {}).get('observations', [])
-
-    if openings:
-        latest = openings[0]
-        val_k = latest['value']
-        signals.append({
-            'headline': f'Job openings: {val_k:,.0f}K ({latest["date"]}) — {"elevated" if val_k > 7000 else "normalizing" if val_k > 5000 else "contracting"}',
-            'principle': 'P5',
-            'category': 'labor_gap',
-            'source': 'FRED',
-            'data_point': f'JOLTS openings: {val_k:,.0f}K',
-            'strength': 'strong' if val_k > 8000 else 'moderate',
-            'sector': 'all_nonfarm',
-        })
-
-    if unemp:
-        latest = unemp[0]
-        signals.append({
-            'headline': f'Unemployment rate: {latest["value"]:.1f}% ({latest["date"]})',
-            'principle': 'P5',
-            'category': 'labor_market',
-            'source': 'FRED',
-            'data_point': f'UNRATE: {latest["value"]:.1f}%',
-            'strength': 'reference',
-            'sector': 'all_civilian',
-        })
-
-    # Openings-to-unemployment ratio
-    if openings and unemp:
-        ratio = round(openings[0]['value'] / (unemp[0]['value'] * 1000) * 100, 2) if unemp[0]['value'] else None
-        if ratio:
-            signals.append({
-                'headline': f'Job openings per unemployed person ratio signals {"tight" if ratio > 1.0 else "loosening"} labor market',
-                'principle': 'P5',
-                'category': 'labor_gap',
-                'source': 'FRED',
-                'data_point': f'Openings/Unemployed ratio: ~{ratio:.1f}',
-                'strength': 'strong' if ratio > 1.2 else 'moderate',
-                'sector': 'all_nonfarm',
-            })
-
-    return signals
-
-
-def _extract_fred_rates(data):
-    signals = []
-    d = data.get('data', {})
-
-    fed = d.get('fed_funds_rate', {}).get('observations', [])
-    spread = d.get('yield_curve_spread', {}).get('observations', [])
-
-    if fed:
-        latest = fed[0]
-        signals.append({
-            'headline': f'Fed funds rate: {latest["value"]:.2f}% — {"restrictive" if latest["value"] > 4 else "neutral" if latest["value"] > 2 else "accommodative"} policy',
-            'principle': 'P2',
-            'category': 'rate_environment',
-            'source': 'FRED',
-            'data_point': f'FEDFUNDS: {latest["value"]:.2f}%',
-            'strength': 'reference',
-            'sector': 'macro',
-        })
-
-    if spread:
-        latest = spread[0]
-        inverted = latest['value'] < 0
-        signals.append({
-            'headline': f'Yield curve (10Y-2Y): {latest["value"]:+.2f}% — {"INVERTED (recession signal)" if inverted else "normal"}',
-            'principle': 'P2',
-            'category': 'rate_environment',
-            'source': 'FRED',
-            'data_point': f'T10Y2Y: {latest["value"]:+.2f}%',
-            'strength': 'strong' if inverted else 'reference',
-            'sector': 'macro',
-        })
-
-    return signals
-
-
-def _extract_bls_industry(data):
-    signals = []
-    industry_names = {
-        'CES6500000001': 'Education & Health Services',
-        'CES5500000001': 'Financial Activities',
-        'CES6000000001': 'Professional & Business Services',
-        'CES4300000001': 'Transportation & Warehousing',
-    }
-
-    for sid, series in data.get('data', {}).items():
-        obs = series.get('observations', [])
-        if len(obs) >= 13:
-            current = obs[0]['value']
-            year_ago = obs[12]['value'] if len(obs) > 12 else None
-            if current and year_ago:
-                change = round((current - year_ago) / year_ago * 100, 2)
-                name = industry_names.get(sid, sid)
-                direction = 'growing' if change > 0 else 'declining'
-                signals.append({
-                    'headline': f'{name}: {current:,.0f}K employed, {direction} {abs(change):.1f}% YoY',
-                    'principle': 'P2' if change < 0 else 'P5',
-                    'category': 'industry_employment',
-                    'source': 'BLS',
-                    'data_point': f'{sid}: {current:,.0f}K, YoY: {change:+.1f}%',
-                    'strength': 'strong' if abs(change) > 2 else 'moderate',
-                    'sector': name.lower().replace(' & ', '_').replace(' ', '_'),
-                })
-
-    return signals
-
-
-def _extract_bls_wages(data):
-    signals = []
-    for sid, series in data.get('data', {}).items():
-        obs = series.get('observations', [])
-        if obs:
-            latest = obs[0]
-            yoy = _pct_change_bls(obs, 4)  # quarterly series
-            headline = f'{series["title"]}: {latest["value"]}'
-            if yoy is not None:
-                headline += f' (YoY: {yoy:+.1f}%)'
-            signals.append({
-                'headline': headline,
-                'principle': 'P3',
-                'category': 'wage_inflation',
-                'source': 'BLS',
-                'data_point': f'{sid}: {latest["value"]} ({latest["year"]}-{latest["period"]})',
-                'strength': 'strong' if yoy and yoy > 4 else 'moderate',
-                'sector': 'private_sector',
-            })
-    return signals
-
-
-def _pct_change_bls(obs, periods=4):
-    """% change for BLS observations (dict with 'value')."""
-    if len(obs) <= periods:
-        return None
     try:
-        cur = obs[0]['value']
-        prev = obs[periods]['value']
-        if cur and prev and prev != 0:
-            return round((cur - prev) / prev * 100, 2)
-    except (TypeError, IndexError):
-        pass
-    return None
+        result = parse_json_response(response)
+        graded = result.get('graded_signals', signals)
+        opportunities = result.get('opportunity_clusters', [])
+        patterns = result.get('cross_signal_patterns', [])
+        suggestions = result.get('next_cycle_suggestions', [])
 
+        print(f'  Graded {len(graded)} signals')
+        print(f'  Identified {len(opportunities)} opportunity clusters')
+        print(f'  Found {len(patterns)} cross-signal patterns')
 
-def _extract_bls_jolts(data):
-    signals = []
-    for sid, series in data.get('data', {}).items():
-        obs = series.get('observations', [])
-        if obs:
-            latest = obs[0]
-            signals.append({
-                'headline': f'{series["title"]}: {latest["value"]} ({latest["year"]}-{latest["period"]})',
-                'principle': 'P5',
-                'category': 'labor_gap',
-                'source': 'BLS',
-                'data_point': f'{sid}: {latest["value"]}',
-                'strength': 'moderate',
-                'sector': 'all_nonfarm',
-            })
-    return signals
-
-
-def _extract_edgar_distress(data):
-    signals = []
-    for keyword, result in data.get('data', {}).items():
-        total = result.get('total_hits', 0)
-        if total > 0:
-            top_companies = [r['company'] for r in result.get('results', [])[:3]]
-            short_kw = keyword[:60].strip('"')
-            signals.append({
-                'headline': f'SEC filings: {total} hits for "{short_kw}" — {", ".join(top_companies[:2])}...',
-                'principle': 'P2',
-                'category': 'corporate_distress',
-                'source': 'EDGAR',
-                'data_point': f'{total} filings matching: {keyword[:40]}',
-                'strength': 'strong' if total > 100 else 'moderate' if total > 20 else 'weak',
-                'sector': 'public_companies',
-                'companies': top_companies,
-            })
-    return signals
-
-
-def _extract_edgar_ai(data):
-    signals = []
-    result = data.get('data', {})
-    total = result.get('total_hits', 0)
-    if total > 0:
-        top = [r['company'] for r in result.get('results', [])[:5]]
-        signals.append({
-            'headline': f'{total} 10-K filings mention AI implementation challenges — low-mobility incumbents',
-            'principle': 'P2',
-            'category': 'ai_adoption_failure',
-            'source': 'EDGAR',
-            'data_point': f'{total} 10-K filings with AI transition language',
-            'strength': 'strong' if total > 50 else 'moderate',
-            'sector': 'public_companies',
-            'companies': top,
-        })
-    return signals
-
-
-def _extract_web_signals(data):
-    signals = []
-    signal_type = data.get('signal_type', 'unknown')
-    principle = data.get('principle', '')
-
-    category_map = {
-        'liquidation_cascade': ('liquidation', 'P2'),
-        'practitioner_pain': ('practitioner_pain', 'P2'),
-        'dead_revival': ('dead_revival', 'P4'),
-        'demographic_gap': ('demographic_gap', 'P5'),
-        'infra_overhang': ('inference_cost', 'P1'),
-    }
-    cat, princ = category_map.get(signal_type, ('web_scan', principle))
-
-    for query, results in data.get('data', {}).items():
-        if not results:
-            continue
-        for r in results[:3]:
-            title = r.get('title', '')
-            snippet = r.get('snippet', '')
-            if not title:
-                continue
-            signals.append({
-                'headline': title[:120],
-                'principle': princ,
-                'category': cat,
-                'source': f'Web ({r.get("source", "search")})',
-                'data_point': snippet[:200] if snippet else '',
-                'strength': 'weak',  # web = qualitative, lower weight
-                'sector': 'mixed',
-                'url': r.get('url', ''),
-            })
-    return signals
+        return {
+            'graded_signals': graded,
+            'opportunities': opportunities,
+            'cross_patterns': patterns,
+            'suggestions': suggestions,
+        }
+    except Exception as e:
+        print(f'  ERROR parsing Agent C response: {e}')
+        # Return signals as-is with default scoring
+        for s in signals:
+            s.setdefault('relevance_score', 5.0)
+        return {
+            'graded_signals': signals,
+            'opportunities': [],
+            'cross_patterns': [],
+            'suggestions': [],
+        }
 
 
 # ---------------------------------------------------------------------------
-# Phase 3: SCORE — principles engine scoring
+# Phase 4: AGENT B — LLM-powered verification
 # ---------------------------------------------------------------------------
 
-def score_signals(signals):
-    """Score each signal through the Principles Engine."""
+def phase_agent_b(opportunities, signals, state, model='sonnet', verbose=False):
+    """Agent B: Verify top opportunities against founding constraints."""
     print('\n' + '=' * 60)
-    print('PHASE 3: SCORING signals through Principles Engine')
+    print('PHASE 4: AGENT B — LLM verification & stress testing')
     print('=' * 60)
 
-    source_quality = {
-        'FRED': 9, 'BLS': 9, 'EDGAR': 8,
-        'Web (duckduckgo)': 4, 'Web (duckduckgo_html)': 4,
-        'Web (serper)': 5, 'Web (search)': 4,
-    }
+    if not opportunities:
+        print('  No opportunities to verify. Skipping.')
+        return []
 
-    strength_scores = {'strong': 8, 'moderate': 5, 'weak': 3, 'reference': 2}
+    system_prompt = load_agent_prompt('agent_b_practitioner.md')
+    user_message = format_for_agent_b(opportunities, signals, state)
 
-    principle_weight = {
-        'P1': 7, 'P2': 9, 'P3': 8, 'P4': 6, 'P5': 8, 'P6': 5,
-        'capital_modeling': 4,
-    }
+    print(f'  Sending {len(user_message):,} chars to Agent B with {len(opportunities[:5])} opportunities...')
+    response = llm_call(system_prompt, user_message, model=model, max_tokens=16000)
 
-    for s in signals:
-        src_score = source_quality.get(s['source'], 3)
-        str_score = strength_scores.get(s.get('strength', 'weak'), 3)
-        princ = s.get('principle', '').split(',')[0]
-        princ_score = principle_weight.get(princ, 4)
+    if verbose:
+        print(f'\n--- Agent B raw response ({len(response)} chars) ---')
+        print(response[:2000])
+        print('---')
 
-        # Timeliness bonus: government data = current, web = varies
-        timeliness = 7 if s['source'] in ('FRED', 'BLS', 'EDGAR') else 4
-
-        raw_score = (src_score * 0.25 + str_score * 0.30 +
-                     princ_score * 0.25 + timeliness * 0.20)
-
-        s['relevance_score'] = round(raw_score, 1)
-        s['status'] = 'new'
-
-    signals.sort(key=lambda s: s['relevance_score'], reverse=True)
-
-    scored_above_5 = sum(1 for s in signals if s['relevance_score'] >= 5)
-    print(f'  Scored {len(signals)} signals')
-    print(f'  Above threshold (>=5): {scored_above_5}')
-    print(f'  Top score: {signals[0]["relevance_score"] if signals else 0}')
-
-    return signals
+    try:
+        verifications = parse_json_response(response)
+        if isinstance(verifications, dict):
+            verifications = verifications.get('verifications', [verifications])
+        if not isinstance(verifications, list):
+            verifications = [verifications]
+        print(f'  Agent B returned {len(verifications)} verification results')
+        for v in verifications:
+            verdict = v.get('verdict', {})
+            name = v.get('opportunity_name', '?')
+            score = verdict.get('viability_score', '?')
+            rec = verdict.get('recommendation', '?')
+            print(f'    {name}: {score}/10 → {rec}')
+        return verifications
+    except Exception as e:
+        print(f'  ERROR parsing Agent B response: {e}')
+        return []
 
 
 # ---------------------------------------------------------------------------
-# Phase 4: IDENTIFY OPPORTUNITIES — cluster signals into themes
+# Phase 5: MASTER — LLM-powered synthesis
 # ---------------------------------------------------------------------------
 
-def identify_opportunities(signals):
-    """Cluster high-scoring signals into opportunity themes."""
+def phase_master(signals, opportunities, verifications, context_summaries, state,
+                 model='sonnet', verbose=False):
+    """Master: Synthesize cycle results, identify cross-patterns, set direction."""
     print('\n' + '=' * 60)
-    print('PHASE 4: IDENTIFYING OPPORTUNITY CLUSTERS')
+    print('PHASE 5: MASTER — LLM synthesis & direction setting')
     print('=' * 60)
 
-    # Group signals by sector/theme
-    sector_signals = {}
-    for s in signals:
-        sector = s.get('sector', 'mixed')
-        if sector not in sector_signals:
-            sector_signals[sector] = []
-        sector_signals[sector].append(s)
+    system_prompt = load_agent_prompt('master.md')
+    user_message = format_for_master(signals, opportunities, verifications,
+                                      context_summaries, state)
 
-    # Group by principle
-    principle_signals = {}
-    for s in signals:
-        p = s.get('principle', 'unknown').split(',')[0]
-        if p not in principle_signals:
-            principle_signals[p] = []
-        principle_signals[p].append(s)
+    print(f'  Sending {len(user_message):,} chars to Master...')
+    response = llm_call(system_prompt, user_message, model=model, max_tokens=8000)
 
-    # Build opportunities from convergence
-    opportunities = []
+    if verbose:
+        print(f'\n--- Master raw response ({len(response)} chars) ---')
+        print(response[:2000])
+        print('---')
 
-    # Opp 1: Labor-intensive services under squeeze
-    squeeze_signals = [s for s in signals if s['category'] in
-                       ('macro_squeeze', 'industry_employment', 'wage_inflation', 'credit_stress')
-                       and s['relevance_score'] >= 4]
-    if squeeze_signals:
-        avg_score = sum(s['relevance_score'] for s in squeeze_signals) / len(squeeze_signals)
-        top_data = [s['data_point'] for s in squeeze_signals[:3]]
-        opportunities.append({
-            'name': 'Labor-Intensive Services Disruption',
-            'thesis': (
-                'Unit labor costs rising while productivity stagnates. '
-                'Industries with 60%+ labor cost ratios face existential squeeze. '
-                'Agentic-first entrant captures the cost delta.'
-            ),
-            'score': round(avg_score * 10, 0),
-            'horizon': 'H1',
-            'principles_passed': ['P2', 'P3'],
-            'status': 'scanning',
-            'signal_count': len(squeeze_signals),
-            'key_data': top_data,
-            'vc_hook': 'Every dollar of wage inflation makes the AI cost advantage wider — this is a self-reinforcing moat.',
-        })
-
-    # Opp 2: Demographic gap exploitation
-    demo_signals = [s for s in signals if s['category'] in
-                    ('labor_gap', 'labor_market', 'demographic_gap')
-                    and s['relevance_score'] >= 3]
-    if demo_signals:
-        avg_score = sum(s['relevance_score'] for s in demo_signals) / len(demo_signals)
-        top_data = [s['data_point'] for s in demo_signals[:3]]
-        opportunities.append({
-            'name': 'Demographic Gap — AI Fills the Shortage',
-            'thesis': (
-                'Job openings persistently high in specific sectors while workforce '
-                'ages out. AI/agentic systems fill roles that literally cannot be '
-                'staffed. Regulatory tailwind: solving shortage, not displacing.'
-            ),
-            'score': round(avg_score * 10, 0),
-            'horizon': 'H1',
-            'principles_passed': ['P5', 'P2'],
-            'status': 'scanning',
-            'signal_count': len(demo_signals),
-            'key_data': top_data,
-            'vc_hook': 'Not replacing workers — filling roles nobody can fill. Solves a crisis, not just saves money.',
-        })
-
-    # Opp 3: Corporate distress → asset acquisition
-    distress_signals = [s for s in signals if s['category'] in
-                        ('corporate_distress', 'ai_adoption_failure')
-                        and s['relevance_score'] >= 4]
-    if distress_signals:
-        avg_score = sum(s['relevance_score'] for s in distress_signals) / len(distress_signals)
-        companies = []
-        for s in distress_signals:
-            companies.extend(s.get('companies', []))
-        top_companies = list(dict.fromkeys(companies))[:5]
-        opportunities.append({
-            'name': 'Distressed Incumbent Acquisition Play',
-            'thesis': (
-                'Incumbents filing restructuring notices and AI-transition challenges. '
-                'Their customer contracts, licenses, and relationships become available. '
-                'Acquire distressed assets, run them on agentic stack.'
-            ),
-            'score': round(avg_score * 10, 0),
-            'horizon': 'H2',
-            'principles_passed': ['P2', 'P4'],
-            'status': 'scanning',
-            'signal_count': len(distress_signals),
-            'key_data': [f'Companies flagged: {", ".join(top_companies[:3])}'] if top_companies else [],
-            'vc_hook': 'Buy the customer base for pennies, operate it at 10x lower cost with agents.',
-        })
-
-    # Opp 4: Dead business revival
-    revival_signals = [s for s in signals if s['category'] == 'dead_revival']
-    if revival_signals:
-        avg_score = sum(s['relevance_score'] for s in revival_signals) / len(revival_signals)
-        opportunities.append({
-            'name': 'Dead Business Model Revival (AI Economics)',
-            'thesis': (
-                'Business models that failed due to unit economics or coordination costs '
-                'may now work with agentic infrastructure. The market already validated '
-                'demand — only the cost side killed them.'
-            ),
-            'score': round(avg_score * 10, 0),
-            'horizon': 'H2',
-            'principles_passed': ['P4', 'P1'],
-            'status': 'scanning',
-            'signal_count': len(revival_signals),
-            'key_data': [s['headline'][:80] for s in revival_signals[:2]],
-            'vc_hook': 'The market proved the demand exists. AI just fixed the supply side.',
-        })
-
-    # Opp 5: Inference cost collapse
-    infra_signals = [s for s in signals if s['category'] == 'inference_cost']
-    if infra_signals:
-        avg_score = sum(s['relevance_score'] for s in infra_signals) / len(infra_signals)
-        opportunities.append({
-            'name': 'Infrastructure Overhang Exploitation',
-            'thesis': (
-                'AI inference costs dropping 10x/year. Businesses designed around '
-                'current cost curves will see margins explode as costs collapse. '
-                'Build at the cost floor, ride the curve down.'
-            ),
-            'score': round(avg_score * 10, 0),
-            'horizon': 'H1',
-            'principles_passed': ['P1'],
-            'status': 'scanning',
-            'signal_count': len(infra_signals),
-            'key_data': [s['headline'][:80] for s in infra_signals[:2]],
-            'vc_hook': 'Every quarter, the same product costs less to run. Margins go up automatically.',
-        })
-
-    opportunities.sort(key=lambda o: o['score'], reverse=True)
-
-    print(f'  Identified {len(opportunities)} opportunity clusters:')
-    for i, opp in enumerate(opportunities, 1):
-        print(f'    {i}. {opp["name"]} (score: {opp["score"]}, {opp["signal_count"]} signals)')
-
-    return opportunities
+    try:
+        synthesis = parse_json_response(response)
+        print(f'  Synthesis: {len(synthesis.get("cross_principle_patterns", []))} cross-patterns')
+        print(f'  Emergent principles: {len(synthesis.get("emergent_principles", []))}')
+        print(f'  Scanning gaps: {len(synthesis.get("scanning_gaps", []))}')
+        return synthesis
+    except Exception as e:
+        print(f'  ERROR parsing Master response: {e}')
+        return {'synthesis': response[:3000], 'cycle_summary': response[:1000]}
 
 
 # ---------------------------------------------------------------------------
-# Phase 5: COMPILE — write results to UI and data files
+# Phase 6: COMPILE — write results to dashboard JSON
 # ---------------------------------------------------------------------------
 
-def compile_results(signals, opportunities, state, raw, verbose=False):
-    """Write all results to data files for the dashboard."""
+def compile_results(cycle_num, signals, agent_c_result, verifications, master_synthesis):
+    """Write all results to data files and dashboard JSON."""
     print('\n' + '=' * 60)
-    print('PHASE 5: COMPILING results to dashboard')
+    print('PHASE 6: COMPILING results to dashboard')
     print('=' * 60)
 
-    now = datetime.now(timezone.utc).isoformat()
-    date_str = datetime.now().strftime('%Y-%m-%d')
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    graded_signals = agent_c_result.get('graded_signals', signals)
+    opportunities = agent_c_result.get('opportunities', [])
 
-    # Update state
-    state['current_cycle'] = 1
-    state['agent_performance']['agent_a']['signals_produced'] = len(signals)
-    state['agent_performance']['agent_a']['signals_above_threshold'] = sum(
-        1 for s in signals if s['relevance_score'] >= 5)
-    state['agent_performance']['agent_a']['avg_relevance_score'] = round(
-        sum(s['relevance_score'] for s in signals) / len(signals), 2) if signals else 0
+    # Update opportunity scores from verifications
+    if verifications:
+        verified_map = {}
+        for v in verifications:
+            name = v.get('opportunity_name', '')
+            verified_map[name.lower()] = v
 
-    # Top source categories
-    cat_counts = {}
-    for s in signals:
-        cat = s['source']
-        cat_counts[cat] = cat_counts.get(cat, 0) + 1
-    state['agent_performance']['agent_a']['top_source_categories'] = sorted(
-        cat_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+        for opp in opportunities:
+            v = verified_map.get(opp['name'].lower())
+            if v:
+                verdict = v.get('verdict', {})
+                opp['viability_score'] = verdict.get('viability_score', None)
+                opp['recommendation'] = verdict.get('recommendation', 'SCANNING')
+                opp['vc_score'] = v.get('opportunity_quality', {}).get('vc_differentiation_score', None)
+                opp['verified'] = True
+                # Update status based on recommendation
+                rec = verdict.get('recommendation', '').upper()
+                if rec == 'PURSUE':
+                    opp['status'] = 'verified'
+                elif rec == 'KILL':
+                    opp['status'] = 'killed'
+                elif rec == 'INVESTIGATE_FURTHER':
+                    opp['status'] = 'investigating'
+                elif rec == 'PARK':
+                    opp['status'] = 'parked'
 
-    # Sector heatmap
-    sector_counts = {}
-    for s in signals:
-        sector = s.get('sector', 'mixed')
-        if sector not in sector_counts:
-            sector_counts[sector] = {'signal_count': 0, 'avg_score': 0, 'scores': []}
-        sector_counts[sector]['signal_count'] += 1
-        sector_counts[sector]['scores'].append(s['relevance_score'])
+    # Sort opportunities by score
+    opportunities.sort(key=lambda o: o.get('score', 0), reverse=True)
 
-    for sector in sector_counts:
-        scores = sector_counts[sector]['scores']
-        sector_counts[sector]['avg_score'] = round(sum(scores) / len(scores), 1)
-        del sector_counts[sector]['scores']
+    # Build sector heatmap
+    sector_map = {}
+    for s in graded_signals:
+        sector = s.get('sector', s.get('affected_industries', ['mixed']))
+        if isinstance(sector, list):
+            for sec in sector:
+                sector_map.setdefault(sec, {'signal_count': 0, 'avg_score': 0, 'total_score': 0})
+                sector_map[sec]['signal_count'] += 1
+                sector_map[sec]['total_score'] += s.get('relevance_score', 0)
+        else:
+            sector_map.setdefault(sector, {'signal_count': 0, 'avg_score': 0, 'total_score': 0})
+            sector_map[sector]['signal_count'] += 1
+            sector_map[sector]['total_score'] += s.get('relevance_score', 0)
+    for v in sector_map.values():
+        v['avg_score'] = round(v['total_score'] / max(v['signal_count'], 1), 1)
+        del v['total_score']
 
-    # Geography heatmap (most signals are US-focused for now)
-    geo_heatmap = {
-        'US': {'signal_count': sum(1 for s in signals if s['source'] in ('FRED', 'BLS', 'EDGAR')),
-               'avg_score': 6.0},
-        'Global': {'signal_count': sum(1 for s in signals if 'Web' in s['source']),
-                   'avg_score': 4.0},
-    }
+    # Build geography heatmap
+    geo_map = {}
+    for s in graded_signals:
+        geos = s.get('affected_geographies', [s.get('sector', 'US')])
+        if isinstance(geos, str):
+            geos = [geos]
+        for g in geos:
+            geo_map.setdefault(g, {'signal_count': 0, 'avg_score': 0, 'total_score': 0})
+            geo_map[g]['signal_count'] += 1
+            geo_map[g]['total_score'] += s.get('relevance_score', 0)
+    for v in geo_map.values():
+        v['avg_score'] = round(v['total_score'] / max(v['signal_count'], 1), 1)
+        del v['total_score']
 
-    # Build dashboard
+    # Dashboard JSON
+    verified_count = sum(1 for o in opportunities if o.get('status') == 'verified')
     dashboard = {
-        'last_updated': now,
-        'current_cycle': 1,
-        'total_signals_scanned': len(signals),
-        'total_opportunities_verified': 0,
-        'active_opportunities': len(opportunities),
-        'top_opportunities': opportunities,
-        'sector_heatmap': sector_counts,
-        'geography_heatmap': geo_heatmap,
-        'cycle_history': [{
-            'cycle': 1,
-            'signals': len(signals),
-            'verified': 0,
-            'top_score': opportunities[0]['score'] if opportunities else 0,
-        }],
+        'last_updated': datetime.now(timezone.utc).isoformat(),
+        'current_cycle': cycle_num,
+        'total_signals_scanned': len(graded_signals),
+        'total_opportunities_verified': verified_count,
+        'active_opportunities': len([o for o in opportunities if o.get('status') not in ('killed', 'parked')]),
+        'top_opportunities': opportunities[:10],
+        'sector_heatmap': sector_map,
+        'geography_heatmap': geo_map,
+        'cycle_history': [],
+        'master_synthesis': master_synthesis.get('synthesis', ''),
+        'cross_principle_patterns': master_synthesis.get('cross_principle_patterns', []),
+        'emergent_principles': master_synthesis.get('emergent_principles', []),
     }
 
-    # Build signals feed (for UI)
+    # Load existing cycle history
+    existing = load_json(os.path.join(DATA_DIR, 'ui', 'dashboard.json'))
+    if existing and 'cycle_history' in existing:
+        dashboard['cycle_history'] = existing['cycle_history']
+    dashboard['cycle_history'].append({
+        'cycle': cycle_num,
+        'signals': len(graded_signals),
+        'verified': verified_count,
+        'top_score': max((o.get('score', 0) for o in opportunities), default=0),
+    })
+
+    # Signals feed JSON
     feed_signals = []
-    for s in signals:
+    for s in graded_signals:
         feed_signals.append({
-            'relevance_score': s['relevance_score'],
-            'headline': s['headline'],
-            'source': s['source'],
-            'category': s['category'],
-            'status': s['status'],
-            'principle': s.get('principle', ''),
+            'headline': s.get('headline', ''),
+            'principle': s.get('signal_type', s.get('principle', '?')),
+            'category': s.get('source_category', s.get('category', '?')),
+            'source': s.get('source_name', s.get('source', '?')),
+            'relevance_score': s.get('relevance_score', 0),
+            'status': s.get('status', 'new'),
+            'detail': s.get('detail', ''),
+            'time_horizon': s.get('time_horizon', '?'),
+            'confidence': s.get('confidence', 'medium'),
+        })
+    feed_signals.sort(key=lambda s: s.get('relevance_score', 0), reverse=True)
+    signals_feed = {
+        'cycle': cycle_num,
+        'updated': datetime.now(timezone.utc).isoformat(),
+        'recent_signals': feed_signals,
+    }
+
+    # Write files
+    save_json(os.path.join(DATA_DIR, 'ui', 'dashboard.json'), dashboard)
+    save_json(os.path.join(DATA_DIR, 'ui', 'signals_feed.json'), signals_feed)
+    save_json(os.path.join(DATA_DIR, 'signals', f'{today}.json'), graded_signals)
+    save_json(os.path.join(DATA_DIR, 'opportunities', f'{today}.json'), {
+        'cycle': cycle_num, 'date': today, 'opportunities': opportunities,
+    })
+    if verifications:
+        save_json(os.path.join(DATA_DIR, 'verified', f'{today}.json'), {
+            'cycle': cycle_num, 'date': today, 'verifications': verifications,
         })
 
-    # Save everything
-    save_json(os.path.join(DATA_DIR, 'ui', 'dashboard.json'), dashboard)
-    save_json(os.path.join(DATA_DIR, 'ui', 'signals_feed.json'),
-              {'recent_signals': feed_signals})
-    save_json(os.path.join(DATA_DIR, 'signals', f'{date_str}.json'), {
-        'cycle': 1,
-        'date': date_str,
-        'total_signals': len(signals),
-        'signals': signals,
-    })
-    save_json(os.path.join(DATA_DIR, 'opportunities', f'{date_str}.json'), {
-        'cycle': 1,
-        'date': date_str,
-        'opportunities': opportunities,
-    })
-
-    # Save raw data for reference
-    raw_safe = {}
-    for k, v in raw.items():
-        try:
-            json.dumps(v)
-            raw_safe[k] = v
-        except (TypeError, ValueError):
-            raw_safe[k] = str(v)
-    save_json(os.path.join(DATA_DIR, 'raw', f'{date_str}.json'), {
-        'cycle': 1,
-        'date': date_str,
-        'raw_data': raw_safe,
-    })
-
-    save_state(state)
-
-    print(f'  Dashboard updated: data/ui/dashboard.json')
-    print(f'  Signals feed updated: data/ui/signals_feed.json ({len(feed_signals)} signals)')
-    print(f'  Raw data saved: data/raw/{date_str}.json')
-    print(f'  Opportunities saved: data/opportunities/{date_str}.json')
+    print(f'  Dashboard: {len(graded_signals)} signals, {len(opportunities)} opportunities')
+    print(f'  Verified: {verified_count}')
+    print(f'  Files written to data/ui/, data/signals/, data/opportunities/')
 
     return dashboard
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Main cycle runner
+# ---------------------------------------------------------------------------
+
+def run_cycle(model='sonnet', scan_only=False, skip_verify=False, verbose=False):
+    """Run a full research cycle with LLM-powered agents."""
+    t0 = time.time()
+
+    print('\n' + '#' * 60)
+    print('#  AI ECONOMIC RESEARCH ENGINE — LLM-POWERED CYCLE')
+    print('#' * 60)
+
+    # Load state
+    state = load_state()
+    cycle_num = state.get('current_cycle', 0) + 1
+    state['current_cycle'] = cycle_num
+    print(f'\nCycle {cycle_num} starting...')
+    print(f'Model: {MODELS.get(model, model)}')
+
+    context_summaries = load_context_summaries()
+    kill_index = load_kill_index()
+
+    # Phase 1: SCAN
+    raw = phase_scan(verbose=verbose)
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    save_json(os.path.join(DATA_DIR, 'raw', f'{today}.json'), raw)
+
+    if scan_only:
+        print('\n  --scan-only: stopping after data pull.')
+        save_state(state)
+        return
+
+    # Phase 2: AGENT A
+    signals = phase_agent_a(raw, context_summaries, kill_index, model=model, verbose=verbose)
+    if not signals:
+        print('\n  ERROR: Agent A produced no signals. Aborting cycle.')
+        save_state(state)
+        return
+
+    # Phase 3: AGENT C
+    agent_c_result = phase_agent_c(signals, state, kill_index, model=model, verbose=verbose)
+    opportunities = agent_c_result.get('opportunities', [])
+
+    # Phase 4: AGENT B (optional — can skip for fast iterations)
+    verifications = []
+    if not skip_verify and opportunities:
+        verifications = phase_agent_b(opportunities, signals, state, model=model, verbose=verbose)
+
+        # Update kill index from KILL verdicts
+        for v in verifications:
+            verdict = v.get('verdict', {})
+            if verdict.get('recommendation', '').upper() == 'KILL':
+                kill_reason = verdict.get('kill_reason', 'Unknown')
+                kill_index['kill_patterns'].append({
+                    'pattern_id': f'K-{cycle_num}-{len(kill_index["kill_patterns"])+1}',
+                    'created_cycle': cycle_num,
+                    'kill_reason': kill_reason,
+                    'signal_type_affected': '',
+                    'industries_affected': [],
+                    'still_active': True,
+                })
+        save_kill_index(kill_index)
+
+    # Phase 5: MASTER
+    master_synthesis = phase_master(
+        agent_c_result.get('graded_signals', signals),
+        opportunities, verifications, context_summaries, state,
+        model=model, verbose=verbose,
+    )
+
+    # Save context summary for next cycle
+    cycle_summary = master_synthesis.get('cycle_summary',
+                                         master_synthesis.get('synthesis', 'No summary'))
+    if isinstance(cycle_summary, str):
+        save_context_summary(cycle_num, cycle_summary)
+
+    # Phase 6: COMPILE
+    dashboard = compile_results(cycle_num, signals, agent_c_result,
+                                verifications, master_synthesis)
+
+    # Update state
+    graded = agent_c_result.get('graded_signals', signals)
+    above_threshold = sum(1 for s in graded if s.get('relevance_score', 0) >= 5)
+    avg_score = (sum(s.get('relevance_score', 0) for s in graded) / max(len(graded), 1))
+    state['agent_a'] = {
+        'signals_produced': len(signals),
+        'signals_above_threshold': above_threshold,
+        'avg_relevance_score': round(avg_score, 2),
+    }
+    state['agent_b'] = {
+        'verifications_completed': len(verifications),
+        'pursue_count': sum(1 for v in verifications
+                           if v.get('verdict', {}).get('recommendation', '').upper() == 'PURSUE'),
+        'kill_count': sum(1 for v in verifications
+                          if v.get('verdict', {}).get('recommendation', '').upper() == 'KILL'),
+    }
+    state['last_run'] = datetime.now(timezone.utc).isoformat()
+    state['next_cycle_direction'] = master_synthesis.get('next_cycle_direction', {})
+    save_state(state)
+
+    elapsed = time.time() - t0
+    print('\n' + '#' * 60)
+    print(f'#  CYCLE {cycle_num} COMPLETE — {elapsed:.1f}s')
+    print(f'#  Signals: {len(signals)} | Opportunities: {len(opportunities)} | Verified: {len(verifications)}')
+    print(f'#  LLM tokens: {_total_input_tokens:,} in / {_total_output_tokens:,} out')
+    print('#' * 60)
+
+
+# ---------------------------------------------------------------------------
+# CLI
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Run research cycle')
-    parser.add_argument('--verbose', '-v', action='store_true',
-                        help='Print detailed output')
+    parser = argparse.ArgumentParser(description='AI Economic Research Engine — LLM Cycle Runner')
+    parser.add_argument('--model', default='sonnet',
+                        choices=['sonnet', 'opus', 'haiku'],
+                        help='Claude model (default: sonnet)')
+    parser.add_argument('--scan-only', action='store_true',
+                        help='Only pull data, skip LLM processing')
+    parser.add_argument('--skip-verify', action='store_true',
+                        help='Skip Agent B verification (faster cycles)')
+    parser.add_argument('--verbose', action='store_true',
+                        help='Print raw LLM responses')
     args = parser.parse_args()
 
-    print('\n' + '#' * 60)
-    print('#  AI ECONOMIC RESEARCH ENGINE — CYCLE 1')
-    print('#  ' + datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC'))
-    print('#' * 60)
-
-    state = load_state()
-    start = time.time()
-
-    # Phase 1: Scan
-    raw = phase_scan(verbose=args.verbose)
-
-    # Phase 2: Extract signals
-    signals = extract_signals(raw, verbose=args.verbose)
-
-    # Phase 3: Score
-    signals = score_signals(signals)
-
-    # Phase 4: Identify opportunities
-    opportunities = identify_opportunities(signals)
-
-    # Phase 5: Compile
-    dashboard = compile_results(signals, opportunities, state, raw, verbose=args.verbose)
-
-    elapsed = round(time.time() - start, 1)
-
-    print('\n' + '#' * 60)
-    print(f'#  CYCLE 1 COMPLETE — {elapsed}s')
-    print(f'#  Signals: {len(signals)} | Opportunities: {len(opportunities)}')
-    print(f'#  Top opportunity: {opportunities[0]["name"] if opportunities else "none"}')
-    print(f'#  Score: {opportunities[0]["score"] if opportunities else 0}')
-    print('#' * 60)
-    print(f'\nDashboard ready. Run:  python scripts/serve_ui.py')
-    print(f'Then open:  http://localhost:8080\n')
+    try:
+        run_cycle(
+            model=args.model,
+            scan_only=args.scan_only,
+            skip_verify=args.skip_verify,
+            verbose=args.verbose,
+        )
+    except RuntimeError as e:
+        print(f'\n  SETUP ERROR: {e}')
+        sys.exit(1)
+    except Exception as e:
+        print(f'\n  FATAL ERROR: {e}')
+        traceback.print_exc()
+        sys.exit(1)
 
 
 if __name__ == '__main__':
