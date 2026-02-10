@@ -1,9 +1,13 @@
 {
   "state_version": 2,
-  "current_cycle": 0,
+  "current_cycle": 1,
   "engine_started": "2026-02-09",
   "active_research_focus": {
-    "horizons": ["H1", "H2", "H3"],
+    "horizons": [
+      "H1",
+      "H2",
+      "H3"
+    ],
     "systemic_patterns": [
       "liquidation_cascades_labor_intensive_services",
       "demographic_gap_widening_us",
@@ -11,7 +15,11 @@
       "dead_business_revival_coordination_cost_failures",
       "pe_rollup_disruption_by_agentic_entrants"
     ],
-    "geographies": ["US_lowest_friction", "LATAM_low_friction", "any_if_arbitrage_justifies"],
+    "geographies": [
+      "US_lowest_friction",
+      "LATAM_low_friction",
+      "any_if_arbitrage_justifies"
+    ],
     "themes": [
       "agentic_cost_collapse",
       "incumbent_low_mobility",
@@ -27,7 +35,7 @@
     "founder_1": "operator, Argentina citizen, US resident, English+Spanish",
     "founder_2": "ML/AI Masters Georgia Tech, US citizen",
     "operating_geo": "US+LATAM lowest friction, any geo if economics justify overhead",
-    "credentials": "no CPA/JD/MD — willing to acquire licensed businesses",
+    "credentials": "no CPA/JD/MD \u2014 willing to acquire licensed businesses",
     "languages": "English+Spanish native, others = cost adder not blocker",
     "vc_network": "active, can raise follow-on",
     "optimization_target": "opportunity quality + VC differentiation, NOT capital fit"
@@ -54,10 +62,27 @@
   },
   "agent_performance": {
     "agent_a": {
-      "signals_produced": 0,
-      "signals_above_threshold": 0,
-      "avg_relevance_score": 0,
-      "top_source_categories": [],
+      "signals_produced": 50,
+      "signals_above_threshold": 35,
+      "avg_relevance_score": 5.94,
+      "top_source_categories": [
+        [
+          "Web (duckduckgo_html)",
+          27
+        ],
+        [
+          "FRED",
+          10
+        ],
+        [
+          "BLS",
+          8
+        ],
+        [
+          "EDGAR",
+          5
+        ]
+      ],
       "kill_index_hit_rate": "0%"
     },
     "agent_b": {
@@ -73,6 +98,6 @@
     "Cycle 1: Focus on P2 (liquidation cascades) + P5 (demographic gaps) in US labor-intensive services",
     "Use BLS + FRED to identify the squeeze: rising wages + falling margins by sector",
     "Use web search + Reddit to find practitioner pain signals confirming the quantitative data",
-    "Defer industry selection — let the data surface which industries are in cascade"
+    "Defer industry selection \u2014 let the data surface which industries are in cascade"
   ]
 }
