@@ -3,800 +3,537 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research Findings - AI Economic Research Engine</title>
+<title>Findings - Research Engine</title>
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #12121a;
-    --border: #1e1e2e;
-    --text: #e0e0e0;
-    --dim: #6b6b80;
-    --accent: #4fc3f7;
-    --green: #66bb6a;
-    --red: #ef5350;
-    --yellow: #ffa726;
-    --purple: #ab47bc;
-    --cyan: #26c6da;
-    --orange: #ff7043;
+    --bg: #09090b;
+    --surface: #18181b;
+    --surface-2: #1f1f23;
+    --border: #27272a;
+    --border-subtle: #1e1e21;
+    --text: #fafafa;
+    --text-secondary: #a1a1aa;
+    --dim: #71717a;
+    --accent: #a78bfa;
+    --accent-dim: rgba(167,139,250,0.12);
+    --green: #4ade80;
+    --green-dim: rgba(74,222,128,0.12);
+    --red: #f87171;
+    --red-dim: rgba(248,113,113,0.12);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96,165,250,0.12);
+    --cyan: #22d3ee;
+    --cyan-dim: rgba(34,211,238,0.12);
+    --orange: #fb923c;
+    --orange-dim: rgba(251,146,60,0.12);
+    --radius: 10px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-  header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
-    margin-bottom: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  h1 { font-size: 18px; font-weight: 600; color: var(--accent); }
-  .meta { color: var(--dim); font-size: 11px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
 
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 24px;
-    margin-bottom: 24px;
+  nav {
+    display: flex; gap: 2px; margin-bottom: 32px;
+    background: var(--surface); border-radius: 8px; padding: 3px; width: fit-content;
   }
-  .card h2 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--dim);
-    margin-bottom: 16px;
+  nav a {
+    color: var(--dim); text-decoration: none; font-size: 13px; font-weight: 500;
+    padding: 6px 16px; border-radius: 6px; transition: all 0.15s;
+  }
+  nav a:hover { color: var(--text-secondary); }
+  nav a.active { background: var(--surface-2); color: var(--text); }
+
+  header { margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.5px; }
+  .header-meta { color: var(--dim); font-size: 13px; text-align: right; }
+
+  /* Stats strip */
+  .stats {
+    display: flex; gap: 1px; background: var(--border);
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 32px;
+  }
+  .stat-item { flex: 1; background: var(--surface); padding: 16px 20px; text-align: center; }
+  .stat-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+  .stat-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+  .stat-label { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .stat-value { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  section { margin-bottom: 32px; }
+  section > h2 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--dim); margin-bottom: 12px; font-weight: 500;
+  }
+
+  /* Synthesis box */
+  .synthesis-box {
+    background: var(--accent-dim); border: 1px solid rgba(167,139,250,0.2);
+    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 32px;
+  }
+  .synthesis-box h2 {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--accent); margin-bottom: 8px; font-weight: 600;
+  }
+  .synthesis-text {
+    color: var(--text-secondary); font-size: 14px; line-height: 1.7;
+  }
+
+  /* Card */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 16px;
   }
   .card h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 8px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--dim); margin-bottom: 12px; font-weight: 500;
   }
 
-  /* Executive summary */
-  .exec-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-  .exec-stat {
-    text-align: center;
-  }
-  .exec-stat .value {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--accent);
-  }
-  .exec-stat .label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--dim);
-    margin-top: 4px;
-  }
-  .exec-stat.kills .value { color: var(--red); }
-  .synthesis {
-    color: var(--dim);
-    font-size: 13px;
-    line-height: 1.7;
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-    font-style: italic;
-  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+
+  .empty { text-align: center; padding: 40px 24px; color: var(--dim); font-size: 13px; }
 
   /* Opportunity cards */
   .opp-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
-    border-radius: 6px;
-    padding: 24px;
-    margin-bottom: 16px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px;
+    border-left: 3px solid var(--accent);
   }
-  .opp-card.parked {
-    border-left-color: var(--yellow);
-  }
-  .opp-card.killed {
-    border-left-color: var(--red);
-  }
+  .opp-card.parked { border-left-color: var(--amber); }
+  .opp-card.killed { border-left-color: var(--red); }
   .opp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 12px;
+    display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;
   }
-  .opp-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .opp-badges {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-shrink: 0;
-  }
+  .opp-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .opp-badges { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+
   .score-badge {
-    background: var(--accent);
-    color: var(--bg);
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 14px;
+    background: var(--accent); color: var(--bg);
+    padding: 3px 10px; border-radius: 100px;
+    font-weight: 700; font-size: 13px;
   }
   .horizon-tag {
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 600;
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 11px; font-weight: 600;
   }
-  .tag-h1 { background: #1b5e20; color: #a5d6a7; }
-  .tag-h2 { background: #e65100; color: #ffcc80; }
-  .tag-h3 { background: #4a148c; color: #ce93d8; }
+  .tag-h1 { background: var(--green-dim); color: var(--green); }
+  .tag-h2 { background: var(--amber-dim); color: var(--amber); }
+  .tag-h3 { background: var(--accent-dim); color: var(--accent); }
 
   .thesis-text {
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 16px;
+    color: var(--text-secondary); font-size: 13px; line-height: 1.7; margin-bottom: 12px;
   }
-  .data-points {
-    list-style: none;
-    margin-bottom: 16px;
-  }
+  .data-points { list-style: none; margin-bottom: 12px; }
   .data-points li {
-    padding: 4px 0;
-    padding-left: 16px;
-    position: relative;
-    font-size: 13px;
-    color: var(--dim);
+    padding: 3px 0 3px 16px; position: relative;
+    font-size: 12px; color: var(--dim);
   }
   .data-points li::before {
-    content: '\2022';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
+    content: '\2022'; position: absolute; left: 0; color: var(--accent);
   }
+
   .vc-hook {
-    background: rgba(79, 195, 247, 0.08);
-    border: 1px solid rgba(79, 195, 247, 0.2);
-    border-radius: 4px;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    font-size: 13px;
-    color: var(--accent);
+    background: var(--accent-dim); border: 1px solid rgba(167,139,250,0.15);
+    border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; font-size: 13px; color: var(--accent);
   }
   .vc-hook-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--dim);
-    margin-bottom: 4px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--dim); margin-bottom: 2px;
   }
-  .opp-footer {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    font-size: 12px;
-    color: var(--dim);
-    border-top: 1px solid var(--border);
-    padding-top: 12px;
-  }
-  .status-tag {
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .status-active { background: rgba(102,187,106,0.2); color: var(--green); }
-  .status-parked { background: rgba(255,167,38,0.2); color: var(--yellow); }
-  .status-killed { background: rgba(239,83,80,0.2); color: var(--red); }
-  .status-scanning { background: rgba(66,165,245,0.2); color: #42a5f5; }
-  .status-confirmed { background: rgba(102,187,106,0.2); color: var(--green); }
 
-  .counter-signal-note {
-    font-size: 11px;
-    color: var(--orange);
-    margin-top: 4px;
+  .opp-footer {
+    display: flex; gap: 12px; align-items: center; font-size: 12px; color: var(--dim);
+    border-top: 1px solid var(--border-subtle); padding-top: 10px;
+  }
+
+  .status-tag {
+    padding: 2px 10px; border-radius: 100px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+  }
+  .status-active { background: var(--green-dim); color: var(--green); }
+  .status-verified { background: var(--green-dim); color: var(--green); }
+  .status-parked { background: var(--amber-dim); color: var(--amber); }
+  .status-killed { background: var(--red-dim); color: var(--red); }
+  .status-scanning { background: var(--blue-dim); color: var(--blue); }
+
+  .counter-note {
+    font-size: 11px; color: var(--orange); margin-top: 6px; padding-left: 2px;
   }
 
   /* Pattern cards */
   .pattern-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px;
-    margin-bottom: 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin-bottom: 10px;
   }
   .pattern-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
   }
-  .pattern-name { font-weight: 600; font-size: 14px; }
+  .pattern-name { font-weight: 600; font-size: 13px; }
   .strength-bar {
-    width: 80px;
-    height: 6px;
-    background: var(--border);
-    border-radius: 3px;
-    overflow: hidden;
+    width: 80px; height: 5px; background: var(--border);
+    border-radius: 3px; overflow: hidden;
   }
-  .strength-fill {
-    height: 100%;
-    border-radius: 3px;
-    transition: width 0.3s;
-  }
-  .strength-high { background: var(--green); }
-  .strength-medium { background: var(--yellow); }
-  .strength-low { background: var(--red); }
-  .principle-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-  }
+  .strength-fill { height: 100%; border-radius: 3px; }
+  .s-high { background: var(--green); }
+  .s-med { background: var(--amber); }
+  .s-low { background: var(--red); }
+
+  .principle-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px; }
   .principle-tag {
-    background: var(--border);
-    color: var(--dim);
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-size: 10px;
-    font-weight: 600;
+    background: var(--surface-2); color: var(--dim);
+    padding: 2px 8px; border-radius: 100px; font-size: 10px; font-weight: 500;
   }
-  .pattern-evidence {
-    font-size: 13px;
-    color: var(--dim);
-    line-height: 1.6;
-  }
-  .pattern-status {
-    font-size: 11px;
-    color: var(--dim);
-    margin-top: 8px;
-  }
+  .pattern-evidence { font-size: 12px; color: var(--dim); line-height: 1.6; }
+  .pattern-status { font-size: 11px; color: var(--dim); margin-top: 6px; }
 
   /* Kill index */
-  .kill-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--red);
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin-bottom: 10px;
+  .kill-item {
+    padding: 10px 14px; border-left: 3px solid var(--red);
+    background: var(--red-dim); border-radius: 0 8px 8px 0;
+    margin-bottom: 8px; font-size: 13px;
   }
-  .kill-target { font-weight: 700; font-size: 14px; color: var(--red); margin-bottom: 4px; }
-  .kill-reason { font-size: 13px; color: var(--dim); margin-bottom: 4px; }
-  .kill-cycle { font-size: 11px; color: var(--dim); }
+  .kill-target { font-weight: 600; margin-bottom: 2px; }
+  .kill-reason { color: var(--red); font-size: 12px; }
+  .kill-cycle { font-size: 11px; color: var(--dim); margin-top: 2px; }
 
   /* Parked */
-  .reactivation-triggers {
-    list-style: none;
-    margin-top: 8px;
-  }
+  .reactivation-triggers { list-style: none; margin-top: 6px; }
   .reactivation-triggers li {
-    padding: 3px 0;
-    padding-left: 16px;
-    position: relative;
-    font-size: 12px;
-    color: var(--yellow);
+    padding: 2px 0 2px 14px; position: relative;
+    font-size: 11px; color: var(--amber);
   }
   .reactivation-triggers li::before {
-    content: '\25B6';
-    position: absolute;
-    left: 0;
-    font-size: 8px;
-    top: 6px;
-    color: var(--yellow);
+    content: '\25B6'; position: absolute; left: 0; font-size: 7px; top: 5px; color: var(--amber);
   }
 
-  /* Sector coverage */
+  /* Sector grid */
   .sector-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 10px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px;
   }
   .sector-cell {
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    text-align: center;
+    padding: 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface); text-align: center;
   }
-  .sector-cell.status-killed { border-color: var(--red); background: rgba(239,83,80,0.05); }
-  .sector-cell.status-parked { border-color: var(--yellow); background: rgba(255,167,38,0.05); }
-  .sector-cell.status-scanning { border-color: #42a5f5; background: rgba(66,165,245,0.05); }
-  .sector-cell.status-confirmed { border-color: var(--green); background: rgba(102,187,106,0.05); }
-  .sector-name { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-  .sector-count { font-size: 20px; font-weight: 700; }
+  .sector-cell.sc-killed { border-color: rgba(248,113,113,0.3); background: var(--red-dim); }
+  .sector-cell.sc-parked { border-color: rgba(251,191,36,0.3); background: var(--amber-dim); }
+  .sector-cell.sc-scanning { border-color: rgba(96,165,250,0.3); background: var(--blue-dim); }
+  .sector-cell.sc-confirmed { border-color: rgba(74,222,128,0.3); background: var(--green-dim); }
+  .sector-name { font-size: 11px; font-weight: 600; margin-bottom: 2px; color: var(--text-secondary); }
+  .sector-count { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .sector-meta { font-size: 10px; color: var(--dim); }
 
   /* Grading weights */
   .weight-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
   }
   .weight-label {
-    min-width: 180px;
-    font-size: 12px;
-    color: var(--dim);
-    text-align: right;
+    min-width: 160px; font-size: 12px; color: var(--dim); text-align: right;
   }
-  .weight-bar-container {
-    flex: 1;
-    height: 20px;
-    background: var(--border);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
+  .weight-bar-bg {
+    flex: 1; height: 16px; background: var(--surface-2);
+    border-radius: 4px; overflow: hidden;
   }
   .weight-bar-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 3px;
-    transition: width 0.4s ease;
+    height: 100%; background: var(--accent); border-radius: 4px;
   }
-  .weight-value {
-    min-width: 40px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: left;
+  .weight-val {
+    min-width: 36px; font-size: 12px; font-weight: 600;
+    font-variant-numeric: tabular-nums; text-align: left;
   }
 
-  /* Empty state */
-  .empty-state {
-    text-align: center;
-    padding: 40px;
-    color: var(--dim);
-  }
-  .empty-state .icon { font-size: 32px; margin-bottom: 12px; }
-
-  /* Print styles */
+  /* Print */
   @media print {
     :root {
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --border: #dddddd;
-      --text: #111111;
-      --dim: #666666;
-      --accent: #0066cc;
-      --green: #228b22;
-      --red: #cc0000;
-      --yellow: #cc8800;
-      --purple: #660099;
+      --bg: #fff; --surface: #fff; --surface-2: #f5f5f5;
+      --border: #ddd; --border-subtle: #eee;
+      --text: #111; --text-secondary: #444; --dim: #666;
+      --accent: #6d28d9; --accent-dim: #f3f0ff;
+      --green: #16a34a; --green-dim: #f0fdf4;
+      --red: #dc2626; --red-dim: #fef2f2;
+      --amber: #d97706; --amber-dim: #fffbeb;
     }
-    body {
-      background: #ffffff;
-      color: #111111;
-      font-size: 11px;
-      line-height: 1.5;
-    }
+    body { background: #fff; color: #111; font-size: 11px; }
     .container { max-width: 100%; padding: 10px; }
-    .card, .opp-card, .pattern-card, .kill-card {
-      background: #ffffff;
-      box-shadow: none;
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-    .vc-hook {
-      background: #f0f8ff;
-      border-color: #0066cc;
-    }
     nav { display: none !important; }
-    .meta { color: #666666; }
-    .score-badge {
-      background: #0066cc;
-      color: #ffffff;
-    }
-    .principle-tag {
-      background: #eeeeee;
-      color: #333333;
-    }
-    .sector-cell {
-      background: #ffffff !important;
-    }
-    .weight-bar-container { background: #eeeeee; }
-    .weight-bar-fill { background: #0066cc; }
+    .card, .opp-card, .pattern-card, .kill-item { break-inside: avoid; }
+    .score-badge { background: #6d28d9; color: #fff; }
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <nav style="display:flex;gap:16px;margin-bottom:12px;font-size:11px;">
-    <a href="index.html" style="color:var(--dim);text-decoration:none;">DASHBOARD</a>
-    <a href="ops.html" style="color:var(--dim);text-decoration:none;">OPS CENTER</a>
-    <a href="findings.html" style="color:var(--accent);text-decoration:none;font-weight:600;">FINDINGS</a>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="ops.html">Operations</a>
+    <a href="findings.html" class="active">Findings</a>
   </nav>
 
   <header>
     <div>
-      <h1>RESEARCH FINDINGS</h1>
-      <div class="meta">AI Economic Research Engine -- Findings Digest</div>
+      <h1>Findings</h1>
     </div>
-    <div style="text-align:right;">
-      <div class="meta">Last updated: <span id="last-updated">--</span></div>
-      <div class="meta">Auto-refresh: 30s</div>
+    <div class="header-meta">
+      <div id="last-updated">--</div>
+      <div style="color:var(--green)">auto-refresh 30s</div>
     </div>
   </header>
 
-  <!-- Executive Summary -->
-  <div class="card" id="exec-summary">
-    <h2>Executive Summary</h2>
-    <div class="exec-grid">
-      <div class="exec-stat">
-        <div class="value" id="exec-cycle">0</div>
-        <div class="label">Current Cycle</div>
-      </div>
-      <div class="exec-stat">
-        <div class="value" id="exec-signals">0</div>
-        <div class="label">Signals Scanned</div>
-      </div>
-      <div class="exec-stat">
-        <div class="value" id="exec-active">0</div>
-        <div class="label">Active Opportunities</div>
-      </div>
-      <div class="exec-stat kills">
-        <div class="value" id="exec-kills">0</div>
-        <div class="label">Kills</div>
-      </div>
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-label">Cycle</div>
+      <div class="stat-value" id="exec-cycle" style="color:var(--accent)">0</div>
     </div>
-    <div class="synthesis" id="exec-synthesis">No synthesis available yet. Run a research cycle to generate findings.</div>
+    <div class="stat-item">
+      <div class="stat-label">Signals Scanned</div>
+      <div class="stat-value" id="exec-signals">0</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Active Opps</div>
+      <div class="stat-value" id="exec-active" style="color:var(--green)">0</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Kills</div>
+      <div class="stat-value" id="exec-kills" style="color:var(--red)">0</div>
+    </div>
+  </div>
+
+  <!-- Synthesis -->
+  <div class="synthesis-box">
+    <h2>Master Synthesis</h2>
+    <div class="synthesis-text" id="exec-synthesis">No synthesis available yet. Run a research cycle to generate findings.</div>
   </div>
 
   <!-- Active Opportunities -->
-  <div class="card">
+  <section>
     <h2>Active Opportunities</h2>
-    <div id="active-opportunities">
-      <div class="empty-state"><div class="icon">~</div><div>No active opportunities yet</div></div>
-    </div>
-  </div>
+    <div id="active-opportunities"><div class="empty">No active opportunities yet</div></div>
+  </section>
 
-  <!-- Confirmed Patterns -->
-  <div class="card">
-    <h2>Confirmed Patterns</h2>
-    <div id="confirmed-patterns">
-      <div class="empty-state"><div class="icon">~</div><div>No cross-principle patterns detected yet</div></div>
+  <!-- Patterns + Kill Index -->
+  <div class="grid-2">
+    <div>
+      <section>
+        <h2>Confirmed Patterns</h2>
+        <div id="confirmed-patterns"><div class="empty">No patterns detected yet</div></div>
+      </section>
     </div>
-  </div>
-
-  <!-- Kill Index -->
-  <div class="card">
-    <h2>Kill Index</h2>
-    <div id="kill-index">
-      <div class="empty-state"><div class="icon">~</div><div>No kills recorded</div></div>
+    <div>
+      <section>
+        <h2>Kill Index</h2>
+        <div id="kill-index"><div class="empty">No kills recorded</div></div>
+      </section>
     </div>
   </div>
 
   <!-- Parked Opportunities -->
-  <div class="card">
+  <section>
     <h2>Parked Opportunities</h2>
-    <div id="parked-opportunities">
-      <div class="empty-state"><div class="icon">~</div><div>No parked opportunities</div></div>
-    </div>
-  </div>
+    <div id="parked-opportunities"><div class="empty">No parked opportunities</div></div>
+  </section>
 
-  <!-- Sector Coverage -->
-  <div class="card">
-    <h2>Sector Coverage</h2>
-    <div id="sector-coverage">
-      <div class="empty-state"><div class="icon">~</div><div>No sector data available</div></div>
+  <!-- Sectors + Weights -->
+  <div class="grid-2">
+    <div class="card">
+      <h3>Sector Coverage</h3>
+      <div id="sector-coverage"><div class="empty">No sector data</div></div>
     </div>
-  </div>
-
-  <!-- Grading Weights -->
-  <div class="card">
-    <h2>Grading Weights</h2>
-    <div id="grading-weights">
-      <div class="empty-state"><div class="icon">~</div><div>No grading weights configured</div></div>
+    <div class="card">
+      <h3>Grading Weights</h3>
+      <div id="grading-weights"><div class="empty">No weights configured</div></div>
     </div>
   </div>
 </div>
 
 <script>
 const DATA_URL = '../data/ui/dashboard.json';
-const REFRESH_MS = 30000;
 
-async function fetchJSON(url) {
-  try {
-    const res = await fetch(url + '?t=' + Date.now());
-    if (!res.ok) return null;
-    return await res.json();
-  } catch { return null; }
+function esc(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+function truncate(text,n){
+  if(!text)return'';
+  const m=text.match(/[^.!?]+[.!?]+/g);
+  return m?m.slice(0,n).join(' ').trim():text;
 }
 
-function escapeHtml(str) {
-  if (!str) return '';
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+function hClass(h){
+  if(!h)return'';
+  const l=h.toLowerCase();
+  return l.includes('h1')?'tag-h1':l.includes('h2')?'tag-h2':l.includes('h3')?'tag-h3':'';
 }
 
-function truncateToSentences(text, maxSentences) {
-  if (!text) return '';
-  const sentences = text.match(/[^.!?]+[.!?]+/g);
-  if (!sentences) return text;
-  return sentences.slice(0, maxSentences).join(' ').trim();
+function sClass(s){
+  if(!s)return'';
+  const l=s.toLowerCase();
+  if(l==='killed')return'status-killed';
+  if(l==='parked')return'status-parked';
+  if(l==='active'||l==='verified'||l==='confirmed')return'status-active';
+  if(l==='scanning'||l==='new')return'status-scanning';
+  return'';
 }
 
-function getHorizonClass(horizon) {
-  if (!horizon) return '';
-  const h = horizon.toLowerCase();
-  if (h === 'h1' || h.includes('h1')) return 'tag-h1';
-  if (h === 'h2' || h.includes('h2')) return 'tag-h2';
-  if (h === 'h3' || h.includes('h3')) return 'tag-h3';
-  return '';
+function strengthInfo(s){
+  const l=typeof s==='string'?s.toLowerCase():'';
+  if(l==='high'||l==='strong')return{cls:'s-high',pct:90};
+  if(l==='medium'||l==='moderate')return{cls:'s-med',pct:60};
+  if(typeof s==='number')return{cls:s>70?'s-high':s>40?'s-med':'s-low',pct:Math.min(100,Math.max(10,s))};
+  return{cls:'s-low',pct:30};
 }
 
-function getStatusClass(status) {
-  if (!status) return '';
-  const s = status.toLowerCase();
-  if (s === 'killed') return 'status-killed';
-  if (s === 'parked') return 'status-parked';
-  if (s === 'active' || s === 'verified' || s === 'confirmed') return 'status-active';
-  if (s === 'scanning' || s === 'new') return 'status-scanning';
-  return '';
+function renderExec(data){
+  document.getElementById('exec-cycle').textContent=data.current_cycle||0;
+  document.getElementById('exec-signals').textContent=data.total_signals_scanned||0;
+  document.getElementById('exec-active').textContent=data.active_opportunities||0;
+  const kills=data.kill_index?data.kill_index.length:0;
+  document.getElementById('exec-kills').textContent=kills;
+  const syn=data.master_synthesis||'';
+  document.getElementById('exec-synthesis').textContent=syn?truncate(syn,3):'No synthesis available yet. Run a research cycle to generate findings.';
 }
 
-function getStrengthClass(strength) {
-  if (!strength) return 'strength-low';
-  const s = typeof strength === 'string' ? strength.toLowerCase() : '';
-  if (s === 'high' || s === 'strong') return 'strength-high';
-  if (s === 'medium' || s === 'moderate') return 'strength-medium';
-  return 'strength-low';
-}
-
-function getStrengthPercent(strength) {
-  if (!strength) return 30;
-  const s = typeof strength === 'string' ? strength.toLowerCase() : '';
-  if (typeof strength === 'number') return Math.min(100, Math.max(10, strength));
-  if (s === 'high' || s === 'strong') return 90;
-  if (s === 'medium' || s === 'moderate') return 60;
-  return 30;
-}
-
-function renderExecSummary(data) {
-  document.getElementById('exec-cycle').textContent = data.current_cycle || 0;
-  document.getElementById('exec-signals').textContent = data.total_signals_scanned || 0;
-  document.getElementById('exec-active').textContent = data.active_opportunities || 0;
-
-  // Count kills
-  const kills = data.kill_index ? data.kill_index.length : 0;
-  document.getElementById('exec-kills').textContent = kills;
-
-  // Synthesis
-  const synthesis = data.master_synthesis || '';
-  const synthEl = document.getElementById('exec-synthesis');
-  if (synthesis) {
-    synthEl.textContent = truncateToSentences(synthesis, 2);
-  } else {
-    synthEl.textContent = 'No synthesis available yet. Run a research cycle to generate findings.';
-  }
-}
-
-function renderActiveOpportunities(opps) {
-  const el = document.getElementById('active-opportunities');
-  if (!opps) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No active opportunities yet</div></div>';
-    return;
-  }
-
-  const active = opps.filter(o => {
-    const s = (o.status || '').toLowerCase();
-    return s !== 'killed' && s !== 'parked';
-  });
-
-  if (active.length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No active opportunities</div></div>';
-    return;
-  }
-
-  el.innerHTML = active.map(o => {
-    const dataPoints = (o.key_data_points || o.data_points || []);
-    const dataPointsHtml = dataPoints.length > 0
-      ? '<ul class="data-points">' + dataPoints.map(d => '<li>' + escapeHtml(typeof d === 'string' ? d : d.point || d.description || JSON.stringify(d)) + '</li>').join('') + '</ul>'
-      : '';
-
-    const vcHook = o.vc_hook || o.investor_hook || '';
-    const vcHookHtml = vcHook
-      ? '<div class="vc-hook"><div class="vc-hook-label">VC Hook</div>' + escapeHtml(vcHook) + '</div>'
-      : '';
-
-    const counterSignal = o.counter_signal_status || o.counter_signals || '';
-    const counterHtml = counterSignal
-      ? '<div class="counter-signal-note">Counter-signal: ' + escapeHtml(typeof counterSignal === 'string' ? counterSignal : JSON.stringify(counterSignal)) + '</div>'
-      : '';
-
-    return `
-      <div class="opp-card">
-        <div class="opp-header">
-          <div class="opp-name">${escapeHtml(o.name)}</div>
-          <div class="opp-badges">
-            <span class="horizon-tag ${getHorizonClass(o.horizon)}">${escapeHtml(o.horizon || '')}</span>
-            <span class="score-badge">${o.score || '--'}</span>
-          </div>
+function renderActive(opps){
+  const el=document.getElementById('active-opportunities');
+  if(!opps){el.innerHTML='<div class="empty">No active opportunities yet</div>';return}
+  const active=opps.filter(o=>{const s=(o.status||'').toLowerCase();return s!=='killed'&&s!=='parked'});
+  if(!active.length){el.innerHTML='<div class="empty">No active opportunities</div>';return}
+  el.innerHTML=active.map(o=>{
+    const dp=o.key_data_points||o.data_points||[];
+    const dpH=dp.length?'<ul class="data-points">'+dp.map(d=>'<li>'+esc(typeof d==='string'?d:d.point||d.description||JSON.stringify(d))+'</li>').join('')+'</ul>':'';
+    const vh=o.vc_hook||o.investor_hook||'';
+    const vhH=vh?'<div class="vc-hook"><div class="vc-hook-label">VC Hook</div>'+esc(vh)+'</div>':'';
+    const cs=o.counter_signal_status||o.counter_signals||'';
+    const csH=cs?'<div class="counter-note">Counter-signal: '+esc(typeof cs==='string'?cs:JSON.stringify(cs))+'</div>':'';
+    return`<div class="opp-card">
+      <div class="opp-header">
+        <div class="opp-name">${esc(o.name)}</div>
+        <div class="opp-badges">
+          <span class="horizon-tag ${hClass(o.horizon)}">${esc(o.horizon||'')}</span>
+          <span class="score-badge">${o.score||'--'}</span>
         </div>
-        <div class="thesis-text">${escapeHtml(o.thesis || '')}</div>
-        ${dataPointsHtml}
-        ${vcHookHtml}
-        <div class="opp-footer">
-          <span class="status-tag ${getStatusClass(o.status)}">${escapeHtml(o.status || 'unknown')}</span>
-          <span>${escapeHtml(o.recommendation || '')}</span>
-        </div>
-        ${counterHtml}
       </div>
-    `;
+      <div class="thesis-text">${esc(o.thesis||'')}</div>
+      ${dpH}${vhH}
+      <div class="opp-footer">
+        <span class="status-tag ${sClass(o.status)}">${esc(o.status||'unknown')}</span>
+        <span>${esc(o.recommendation||'')}</span>
+      </div>
+      ${csH}
+    </div>`;
   }).join('');
 }
 
-function renderPatterns(patterns) {
-  const el = document.getElementById('confirmed-patterns');
-  if (!patterns || patterns.length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No cross-principle patterns detected yet</div></div>';
-    return;
-  }
-
-  el.innerHTML = patterns.map(p => {
-    const principles = p.principles || p.principle_names || [];
-    const principlesHtml = principles.length > 0
-      ? '<div class="principle-tags">' + principles.map(pr => '<span class="principle-tag">' + escapeHtml(pr) + '</span>').join('') + '</div>'
-      : '';
-
-    const strengthClass = getStrengthClass(p.strength);
-    const strengthPct = getStrengthPercent(p.strength);
-
-    return `
-      <div class="pattern-card">
-        <div class="pattern-header">
-          <span class="pattern-name">${escapeHtml(p.name || p.pattern || 'Unnamed Pattern')}</span>
-          <div class="strength-bar">
-            <div class="strength-fill ${strengthClass}" style="width:${strengthPct}%"></div>
-          </div>
-        </div>
-        ${principlesHtml}
-        <div class="pattern-evidence">${escapeHtml(p.evidence || p.description || '')}</div>
-        <div class="pattern-status">${escapeHtml(p.status || '')}</div>
+function renderPatterns(patterns){
+  const el=document.getElementById('confirmed-patterns');
+  if(!patterns||!patterns.length){el.innerHTML='<div class="empty">No patterns detected yet</div>';return}
+  el.innerHTML=patterns.map(p=>{
+    const pr=p.principles||p.principle_names||[];
+    const prH=pr.length?'<div class="principle-tags">'+pr.map(x=>'<span class="principle-tag">'+esc(x)+'</span>').join('')+'</div>':'';
+    const si=strengthInfo(p.strength);
+    return`<div class="pattern-card">
+      <div class="pattern-header">
+        <span class="pattern-name">${esc(p.name||p.pattern||'Unnamed')}</span>
+        <div class="strength-bar"><div class="strength-fill ${si.cls}" style="width:${si.pct}%"></div></div>
       </div>
-    `;
+      ${prH}
+      <div class="pattern-evidence">${esc(p.evidence||p.description||'')}</div>
+      <div class="pattern-status">${esc(p.status||'')}</div>
+    </div>`;
   }).join('');
 }
 
-function renderKillIndex(kills) {
-  const el = document.getElementById('kill-index');
-  if (!kills || kills.length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No kills recorded</div></div>';
-    return;
-  }
-
-  el.innerHTML = kills.map(k => `
-    <div class="kill-card">
-      <div class="kill-target">${escapeHtml(k.target || k.name || k.opportunity || 'Unknown')}</div>
-      <div class="kill-reason">${escapeHtml(k.reason || k.rationale || '')}</div>
-      <div class="kill-cycle">Killed in cycle ${k.cycle_killed || k.cycle || '?'}</div>
-    </div>
-  `).join('');
+function renderKills(kills){
+  const el=document.getElementById('kill-index');
+  if(!kills||!kills.length){el.innerHTML='<div class="empty">No kills recorded</div>';return}
+  el.innerHTML=kills.map(k=>`<div class="kill-item">
+    <div class="kill-target">${esc(k.target||k.name||k.opportunity||'Unknown')}</div>
+    <div class="kill-reason">${esc(k.reason||k.rationale||'')}</div>
+    <div class="kill-cycle">Cycle ${k.cycle_killed||k.cycle||'?'}</div>
+  </div>`).join('');
 }
 
-function renderParkedOpportunities(opps) {
-  const el = document.getElementById('parked-opportunities');
-  if (!opps) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No parked opportunities</div></div>';
-    return;
-  }
-
-  const parked = opps.filter(o => (o.status || '').toLowerCase() === 'parked');
-
-  if (parked.length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No parked opportunities</div></div>';
-    return;
-  }
-
-  el.innerHTML = parked.map(o => {
-    const triggers = o.reactivation_triggers || o.triggers || [];
-    const triggersHtml = triggers.length > 0
-      ? '<ul class="reactivation-triggers">' + triggers.map(t => '<li>' + escapeHtml(typeof t === 'string' ? t : t.trigger || JSON.stringify(t)) + '</li>').join('') + '</ul>'
-      : '';
-
-    return `
-      <div class="opp-card parked">
-        <div class="opp-header">
-          <div class="opp-name">${escapeHtml(o.name)}</div>
-          <div class="opp-badges">
-            <span class="horizon-tag ${getHorizonClass(o.horizon)}">${escapeHtml(o.horizon || '')}</span>
-            <span class="score-badge">${o.score || '--'}</span>
-          </div>
+function renderParked(opps){
+  const el=document.getElementById('parked-opportunities');
+  if(!opps){el.innerHTML='<div class="empty">No parked opportunities</div>';return}
+  const parked=opps.filter(o=>(o.status||'').toLowerCase()==='parked');
+  if(!parked.length){el.innerHTML='<div class="empty">No parked opportunities</div>';return}
+  el.innerHTML=parked.map(o=>{
+    const tr=o.reactivation_triggers||o.triggers||[];
+    const trH=tr.length?'<ul class="reactivation-triggers">'+tr.map(t=>'<li>'+esc(typeof t==='string'?t:t.trigger||JSON.stringify(t))+'</li>').join('')+'</ul>':'';
+    return`<div class="opp-card parked">
+      <div class="opp-header">
+        <div class="opp-name">${esc(o.name)}</div>
+        <div class="opp-badges">
+          <span class="horizon-tag ${hClass(o.horizon)}">${esc(o.horizon||'')}</span>
+          <span class="score-badge">${o.score||'--'}</span>
         </div>
-        <div class="thesis-text">${escapeHtml(o.thesis || '')}</div>
-        <div class="opp-footer">
-          <span class="status-tag status-parked">PARKED</span>
-          <span>${escapeHtml(o.recommendation || '')}</span>
-        </div>
-        ${triggersHtml}
       </div>
-    `;
+      <div class="thesis-text">${esc(o.thesis||'')}</div>
+      <div class="opp-footer">
+        <span class="status-tag status-parked">PARKED</span>
+        <span>${esc(o.recommendation||'')}</span>
+      </div>
+      ${trH}
+    </div>`;
   }).join('');
 }
 
-function renderSectorCoverage(heatmap) {
-  const el = document.getElementById('sector-coverage');
-  if (!heatmap || Object.keys(heatmap).length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No sector data available</div></div>';
-    return;
-  }
-
-  el.innerHTML = '<div class="sector-grid">' + Object.entries(heatmap).map(([name, data]) => {
-    const status = (data.status || 'scanning').toLowerCase();
-    let statusCls = 'status-scanning';
-    if (status === 'killed') statusCls = 'status-killed';
-    else if (status === 'parked') statusCls = 'status-parked';
-    else if (status === 'confirmed') statusCls = 'status-confirmed';
-
-    const count = data.signal_count || 0;
-    const avgScore = data.avg_score != null ? data.avg_score.toFixed(1) : '--';
-
-    return `
-      <div class="sector-cell ${statusCls}">
-        <div class="sector-name">${escapeHtml(name)}</div>
-        <div class="sector-count">${count}</div>
-        <div class="sector-meta">avg score: ${avgScore}</div>
-        <div class="sector-meta"><span class="status-tag ${getStatusClass(status)}">${status}</span></div>
-      </div>
-    `;
-  }).join('') + '</div>';
+function renderSectors(heatmap){
+  const el=document.getElementById('sector-coverage');
+  if(!heatmap||!Object.keys(heatmap).length){el.innerHTML='<div class="empty">No sector data</div>';return}
+  el.innerHTML='<div class="sector-grid">'+Object.entries(heatmap).map(([name,data])=>{
+    const st=(data.status||'scanning').toLowerCase();
+    let cls='';
+    if(st==='killed')cls='sc-killed';
+    else if(st==='parked')cls='sc-parked';
+    else if(st==='confirmed')cls='sc-confirmed';
+    else cls='sc-scanning';
+    return`<div class="sector-cell ${cls}">
+      <div class="sector-name">${esc(name)}</div>
+      <div class="sector-count">${data.signal_count||0}</div>
+      <div class="sector-meta">avg ${data.avg_score!=null?data.avg_score.toFixed(1):'--'}</div>
+    </div>`;
+  }).join('')+'</div>';
 }
 
-function renderGradingWeights(weights) {
-  const el = document.getElementById('grading-weights');
-  if (!weights || Object.keys(weights).length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">~</div><div>No grading weights configured</div></div>';
-    return;
-  }
-
-  const maxWeight = Math.max(...Object.values(weights).map(v => typeof v === 'number' ? v : 0), 1);
-
-  el.innerHTML = Object.entries(weights).map(([name, value]) => {
-    const numVal = typeof value === 'number' ? value : parseFloat(value) || 0;
-    const pct = (numVal / maxWeight) * 100;
-    return `
-      <div class="weight-row">
-        <div class="weight-label">${escapeHtml(name)}</div>
-        <div class="weight-bar-container">
-          <div class="weight-bar-fill" style="width:${pct}%"></div>
-        </div>
-        <div class="weight-value">${numVal.toFixed(2)}</div>
-      </div>
-    `;
+function renderWeights(weights){
+  const el=document.getElementById('grading-weights');
+  if(!weights||!Object.keys(weights).length){el.innerHTML='<div class="empty">No weights configured</div>';return}
+  const mx=Math.max(...Object.values(weights).map(v=>typeof v==='number'?v:0),1);
+  el.innerHTML=Object.entries(weights).map(([name,value])=>{
+    const n=typeof value==='number'?value:parseFloat(value)||0;
+    const pct=(n/mx)*100;
+    return`<div class="weight-row">
+      <div class="weight-label">${esc(name)}</div>
+      <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:${pct}%"></div></div>
+      <div class="weight-val">${n.toFixed(2)}</div>
+    </div>`;
   }).join('');
 }
 
-async function refresh() {
-  const data = await fetchJSON(DATA_URL);
-
-  document.getElementById('last-updated').textContent = new Date().toLocaleString();
-
-  if (!data) {
-    return;
-  }
-
-  renderExecSummary(data);
-  renderActiveOpportunities(data.top_opportunities);
-  renderPatterns(data.cross_principle_patterns);
-  renderKillIndex(data.kill_index);
-  renderParkedOpportunities(data.top_opportunities);
-  renderSectorCoverage(data.sector_heatmap);
-  renderGradingWeights(data.grading_weights_current);
+async function refresh(){
+  document.getElementById('last-updated').textContent=new Date().toLocaleString();
+  try{
+    const r=await fetch(DATA_URL+'?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    renderExec(d);
+    renderActive(d.top_opportunities);
+    renderPatterns(d.cross_principle_patterns);
+    renderKills(d.kill_index);
+    renderParked(d.top_opportunities);
+    renderSectors(d.sector_heatmap);
+    renderWeights(d.grading_weights_current);
+  }catch{}
 }
 
 refresh();
-setInterval(refresh, REFRESH_MS);
+setInterval(refresh,30000);
 </script>
 </body>
 </html>

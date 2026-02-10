@@ -3,331 +3,476 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Economic Research Engine</title>
+<title>Research Engine</title>
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #12121a;
-    --border: #1e1e2e;
-    --text: #e0e0e0;
-    --dim: #6b6b80;
-    --accent: #4fc3f7;
-    --green: #66bb6a;
-    --red: #ef5350;
-    --yellow: #ffa726;
-    --purple: #ab47bc;
+    --bg: #09090b;
+    --surface: #18181b;
+    --surface-2: #1f1f23;
+    --border: #27272a;
+    --border-subtle: #1e1e21;
+    --text: #fafafa;
+    --text-secondary: #a1a1aa;
+    --dim: #71717a;
+    --accent: #a78bfa;
+    --accent-dim: rgba(167,139,250,0.12);
+    --green: #4ade80;
+    --green-dim: rgba(74,222,128,0.12);
+    --red: #f87171;
+    --red-dim: rgba(248,113,113,0.12);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96,165,250,0.12);
+    --radius: 10px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
-  header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
-    margin-bottom: 24px;
+  .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
+
+  /* Nav */
+  nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 2px;
+    margin-bottom: 32px;
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 3px;
+    width: fit-content;
   }
-  h1 { font-size: 16px; font-weight: 600; color: var(--accent); }
-  .meta { color: var(--dim); font-size: 11px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .card {
+  nav a {
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  nav a:hover { color: var(--text-secondary); }
+  nav a.active {
+    background: var(--surface-2);
+    color: var(--text);
+  }
+
+  /* Header */
+  header {
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .subtitle { color: var(--dim); font-size: 14px; }
+
+  /* Stat strip */
+  .stats {
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .stat-item {
+    flex: 1;
+    background: var(--surface);
+    padding: 20px 24px;
+  }
+  .stat-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+  .stat-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+  .stat-label { font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .stat-value { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  /* Section */
+  section { margin-bottom: 40px; }
+  section > h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--dim);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  /* Edge insight */
+  .edge-box {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 16px;
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 32px;
   }
-  .card h2 {
+  .edge-box .label {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--dim);
+    color: var(--accent);
     margin-bottom: 12px;
-  }
-  .stat { font-size: 28px; font-weight: 700; color: var(--accent); }
-  .stat-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-  .stat-label { color: var(--dim); }
-  .stat-value { font-weight: 600; }
-
-  .opportunity {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
-  }
-  .opportunity:last-child { border-bottom: none; }
-  .opp-header { display: flex; justify-content: space-between; align-items: center; }
-  .opp-name { font-weight: 600; }
-  .opp-score {
-    background: var(--accent);
-    color: var(--bg);
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-weight: 700;
-    font-size: 12px;
-  }
-  .opp-thesis { color: var(--dim); margin-top: 4px; font-size: 12px; }
-  .opp-meta { display: flex; gap: 12px; margin-top: 6px; font-size: 11px; }
-  .tag {
-    padding: 1px 6px;
-    border-radius: 3px;
-    font-size: 10px;
     font-weight: 600;
   }
-  .tag-h1 { background: #1b5e20; color: #a5d6a7; }
-  .tag-h2 { background: #e65100; color: #ffcc80; }
-  .tag-h3 { background: #4a148c; color: #ce93d8; }
-  .tag-principle { background: var(--border); color: var(--dim); }
+  .edge-box .content {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+  }
 
+  /* Opportunity */
+  .opp-list { display: flex; flex-direction: column; gap: 8px; }
+  .opp {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    transition: border-color 0.15s;
+  }
+  .opp:hover { border-color: var(--accent); }
+  .opp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .opp-name { font-weight: 600; font-size: 15px; }
+  .opp-score {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .opp-thesis { color: var(--text-secondary); font-size: 13px; margin-bottom: 12px; }
+  .opp-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 10px;
+    border-radius: 100px;
+    background: var(--surface-2);
+    color: var(--dim);
+  }
+  .tag-h1 { background: var(--green-dim); color: var(--green); }
+  .tag-h2 { background: var(--amber-dim); color: var(--amber); }
+  .tag-h3 { background: var(--accent-dim); color: var(--accent); }
+  .tag-status-verified { background: var(--green-dim); color: var(--green); }
+  .tag-status-killed { background: var(--red-dim); color: var(--red); }
+  .tag-status-parked { background: var(--amber-dim); color: var(--amber); }
+  .tag-status-scanning { background: var(--blue-dim); color: var(--blue); }
+
+  /* Signal list */
+  .signal-list { display: flex; flex-direction: column; }
   .signal {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 12px;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
   }
   .signal:last-child { border-bottom: none; }
   .signal-score {
-    min-width: 28px;
-    text-align: center;
-    font-weight: 700;
-  }
-  .signal-score.high { color: var(--green); }
-  .signal-score.med { color: var(--yellow); }
-  .signal-score.low { color: var(--red); }
-  .signal-headline { flex: 1; }
-  .signal-source { color: var(--dim); font-size: 11px; min-width: 100px; text-align: right; }
-  .signal-status {
-    font-size: 10px;
-    padding: 1px 6px;
-    border-radius: 3px;
-    min-width: 70px;
-    text-align: center;
-  }
-  .status-new { background: #0d47a1; color: #90caf9; }
-  .status-graded { background: #1b5e20; color: #a5d6a7; }
-  .status-forwarded { background: #e65100; color: #ffcc80; }
-  .status-verified { background: #4a148c; color: #ce93d8; }
-  .status-killed { background: #b71c1c; color: #ef9a9a; }
-
-  .heatmap { display: flex; flex-wrap: wrap; gap: 6px; }
-  .heat-cell {
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 11px;
+    min-width: 32px;
+    height: 32px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    min-width: 80px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 8px;
+    flex-shrink: 0;
   }
-  .heat-count { font-weight: 700; font-size: 16px; }
-  .heat-label { color: var(--dim); font-size: 10px; }
+  .score-high { background: var(--green-dim); color: var(--green); }
+  .score-med { background: var(--amber-dim); color: var(--amber); }
+  .score-low { background: var(--red-dim); color: var(--red); }
+  .signal-text { flex: 1; color: var(--text-secondary); }
+  .signal-meta { color: var(--dim); font-size: 12px; text-align: right; min-width: 80px; }
 
-  .empty-state {
+  /* Grid layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* Heatmap */
+  .heat-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .heat-cell {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--surface-2);
     text-align: center;
-    padding: 40px;
-    color: var(--dim);
+    min-width: 90px;
+    transition: transform 0.15s;
   }
-  .empty-state .icon { font-size: 32px; margin-bottom: 12px; }
-  .pulse { animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+  .heat-cell:hover { transform: translateY(-1px); }
+  .heat-cell .count { font-size: 20px; font-weight: 700; }
+  .heat-cell .name { font-size: 11px; color: var(--dim); margin-top: 2px; }
 
-  .cycle-bar { display: flex; gap: 4px; align-items: flex-end; height: 60px; }
-  .cycle-col {
+  /* Cycle bars */
+  .cycle-chart { display: flex; gap: 3px; align-items: flex-end; height: 64px; }
+  .cycle-bar {
     flex: 1;
+    min-width: 16px;
+    border-radius: 4px 4px 0 0;
     background: var(--accent);
-    border-radius: 2px 2px 0 0;
-    opacity: 0.6;
-    min-width: 20px;
-    position: relative;
+    opacity: 0.3;
+    transition: opacity 0.15s;
+    cursor: default;
   }
-  .cycle-col:hover { opacity: 1; }
+  .cycle-bar:last-child { opacity: 0.8; }
+  .cycle-bar:hover { opacity: 1; }
+
+  /* Pipeline flow */
+  .pipeline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 0;
+  }
+  .pipeline-step {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dim);
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .pipeline-step.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+  .pipeline-step.done {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-dim);
+  }
+  .pipeline-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .pipeline-arrow { color: var(--dim); font-size: 14px; flex-shrink: 0; }
+
+  /* Card wrapper */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+  }
+  .card h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dim);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .empty { text-align: center; padding: 48px 24px; color: var(--dim); font-size: 13px; }
+  .update-meta { font-size: 12px; color: var(--dim); margin-top: 8px; }
 </style>
 </head>
 <body>
 <div class="container">
-  <nav style="display:flex;gap:16px;margin-bottom:12px;font-size:11px;">
-    <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:600;">DASHBOARD</a>
-    <a href="ops.html" style="color:var(--dim);text-decoration:none;">OPS CENTER</a>
-    <a href="findings.html" style="color:var(--dim);text-decoration:none;">FINDINGS</a>
+  <nav>
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="ops.html">Operations</a>
+    <a href="findings.html">Findings</a>
   </nav>
+
   <header>
-    <div>
-      <h1>AI ECONOMIC RESEARCH ENGINE</h1>
-      <div class="meta">Infrastructure Overhang / Incumbent Kill / Dead Revival</div>
-    </div>
-    <div style="text-align: right;">
-      <div class="meta">Cycle <span id="cycle-num">0</span></div>
-      <div class="meta">Updated: <span id="last-updated">—</span></div>
-      <div class="meta pulse" id="status-indicator">IDLE</div>
-    </div>
+    <h1>Research Engine</h1>
+    <div class="subtitle">Cycle <span id="cycle-num">0</span> &middot; <span id="last-updated">awaiting first run</span></div>
   </header>
 
-  <div class="grid-3">
-    <div class="card">
-      <h2>Signals Scanned</h2>
-      <div class="stat" id="total-signals">0</div>
+  <!-- Pipeline -->
+  <section>
+    <h2>Pipeline</h2>
+    <div class="pipeline" id="pipeline">
+      <div class="pipeline-step"><div class="pipeline-dot"></div>Scan</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><div class="pipeline-dot"></div>Agent A</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><div class="pipeline-dot"></div>Grade</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><div class="pipeline-dot"></div>Verify</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><div class="pipeline-dot"></div>Synthesize</div>
     </div>
-    <div class="card">
-      <h2>Opportunities Verified</h2>
-      <div class="stat" id="total-verified">0</div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-label">Signals</div>
+      <div class="stat-value" id="total-signals">0</div>
     </div>
-    <div class="card">
-      <h2>Active Pipeline</h2>
-      <div class="stat" id="active-pipeline">0</div>
+    <div class="stat-item">
+      <div class="stat-label">Verified</div>
+      <div class="stat-value" id="total-verified" style="color:var(--green)">0</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Active</div>
+      <div class="stat-value" id="active-pipeline" style="color:var(--accent)">0</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Killed</div>
+      <div class="stat-value" id="total-killed" style="color:var(--red)">0</div>
     </div>
   </div>
 
-  <div class="grid">
-    <div class="card">
+  <!-- Edge insight -->
+  <div class="edge-box" id="edge-box">
+    <div class="label">Current Edge</div>
+    <div class="content" id="synthesis-text">Run a research cycle to generate synthesis and identify structural edges.</div>
+  </div>
+
+  <!-- Opportunities + Signals -->
+  <div class="grid-2">
+    <section>
       <h2>Top Opportunities</h2>
-      <div id="opportunities-list">
-        <div class="empty-state">
-          <div class="icon">~</div>
-          <div>No opportunities yet. Run first research cycle.</div>
-        </div>
+      <div class="opp-list" id="opp-list">
+        <div class="empty">No opportunities yet</div>
       </div>
-    </div>
-    <div class="card">
-      <h2>Recent Signals</h2>
-      <div id="signals-list">
-        <div class="empty-state">
-          <div class="icon">~</div>
-          <div>No signals yet. Awaiting Agent A scan.</div>
-        </div>
+    </section>
+    <section>
+      <h2>Latest Signals</h2>
+      <div class="signal-list" id="signal-list">
+        <div class="empty">No signals yet</div>
       </div>
-    </div>
+    </section>
   </div>
 
-  <div class="grid">
+  <!-- Heatmaps + History -->
+  <div class="grid-2" style="margin-top:8px;">
     <div class="card">
-      <h2>Sector Heatmap</h2>
-      <div id="sector-heatmap" class="heatmap">
-        <div class="empty-state" style="width:100%"><div class="icon">~</div>No data</div>
+      <h3>Sectors</h3>
+      <div class="heat-grid" id="sector-heat">
+        <div class="empty" style="width:100%">No sector data</div>
       </div>
     </div>
     <div class="card">
-      <h2>Geography Heatmap</h2>
-      <div id="geo-heatmap" class="heatmap">
-        <div class="empty-state" style="width:100%"><div class="icon">~</div>No data</div>
+      <h3>Cycle History</h3>
+      <div class="cycle-chart" id="cycle-chart">
+        <div class="empty" style="width:100%">No cycles</div>
       </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Cycle History</h2>
-    <div id="cycle-history" class="cycle-bar">
-      <div class="empty-state" style="width:100%"><div class="icon">~</div>No cycles completed</div>
     </div>
   </div>
 </div>
 
 <script>
-const DATA_BASE = '../data/ui';
-const REFRESH_INTERVAL = 5000;
+const BASE = '../data/ui';
 
-async function fetchJSON(path) {
+async function load(path) {
   try {
-    const res = await fetch(path + '?t=' + Date.now());
-    if (!res.ok) return null;
-    return await res.json();
+    const r = await fetch(path + '?t=' + Date.now());
+    return r.ok ? await r.json() : null;
   } catch { return null; }
 }
 
-function renderOpportunities(opps) {
-  const el = document.getElementById('opportunities-list');
-  if (!opps || opps.length === 0) return;
-  el.innerHTML = opps.map(o => `
-    <div class="opportunity">
-      <div class="opp-header">
-        <span class="opp-name">${o.name}</span>
-        <span class="opp-score">${o.score}</span>
+function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function renderOpps(opps) {
+  const el = document.getElementById('opp-list');
+  if (!opps || !opps.length) return;
+  el.innerHTML = opps.slice(0, 8).map(o => {
+    const h = (o.horizon || '').toLowerCase();
+    const hCls = h === 'h1' ? 'tag-h1' : h === 'h2' ? 'tag-h2' : 'tag-h3';
+    const s = (o.status || 'scanning').toLowerCase();
+    const sCls = s === 'verified' ? 'tag-status-verified' : s === 'killed' ? 'tag-status-killed' : s === 'parked' ? 'tag-status-parked' : 'tag-status-scanning';
+    return `<div class="opp">
+      <div class="opp-top">
+        <span class="opp-name">${esc(o.name)}</span>
+        <span class="opp-score">${o.score || '--'}</span>
       </div>
-      <div class="opp-thesis">${o.thesis}</div>
-      <div class="opp-meta">
-        <span class="tag tag-${o.horizon.toLowerCase()}">${o.horizon}</span>
-        ${(o.principles_passed || []).map(p => `<span class="tag tag-principle">${p}</span>`).join('')}
-        <span style="color: var(--dim)">${o.status}</span>
+      <div class="opp-thesis">${esc(o.thesis)}</div>
+      <div class="opp-tags">
+        <span class="tag ${hCls}">${esc(o.horizon)}</span>
+        <span class="tag ${sCls}">${esc(o.status)}</span>
+        ${(o.principles_passed || []).map(p => `<span class="tag">${esc(p)}</span>`).join('')}
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 function renderSignals(signals) {
-  const el = document.getElementById('signals-list');
-  if (!signals || signals.length === 0) return;
-  el.innerHTML = signals.slice(0, 20).map(s => {
-    const scoreClass = s.relevance_score >= 7 ? 'high' : s.relevance_score >= 4 ? 'med' : 'low';
-    return `
-      <div class="signal">
-        <div class="signal-score ${scoreClass}">${s.relevance_score}</div>
-        <div class="signal-headline">${s.headline}</div>
-        <div class="signal-source">${s.source || s.category}</div>
-        <div class="signal-status status-${s.status}">${s.status}</div>
-      </div>
-    `;
+  const el = document.getElementById('signal-list');
+  if (!signals || !signals.length) return;
+  el.innerHTML = signals.slice(0, 15).map(s => {
+    const sc = s.relevance_score;
+    const cls = sc >= 7 ? 'score-high' : sc >= 4 ? 'score-med' : 'score-low';
+    return `<div class="signal">
+      <div class="signal-score ${cls}">${sc}</div>
+      <div class="signal-text">${esc(s.headline)}</div>
+      <div class="signal-meta">${esc(s.source || s.category)}</div>
+    </div>`;
   }).join('');
 }
 
-function renderHeatmap(data, elementId) {
-  const el = document.getElementById(elementId);
-  if (!data || Object.keys(data).length === 0) return;
-  const maxCount = Math.max(...Object.values(data).map(d => d.signal_count || 0), 1);
+function renderHeat(data) {
+  const el = document.getElementById('sector-heat');
+  if (!data || !Object.keys(data).length) return;
+  const max = Math.max(...Object.values(data).map(d => d.signal_count || 0), 1);
   el.innerHTML = Object.entries(data).map(([name, d]) => {
-    const intensity = Math.round((d.signal_count / maxCount) * 200 + 55);
-    return `
-      <div class="heat-cell" style="background: rgba(79,195,247,${d.signal_count/maxCount*0.5 + 0.1})">
-        <div class="heat-count">${d.signal_count}</div>
-        <div class="heat-label">${name}</div>
-      </div>
-    `;
+    const a = 0.15 + (d.signal_count / max) * 0.55;
+    return `<div class="heat-cell" style="background:rgba(167,139,250,${a.toFixed(2)})">
+      <div class="count">${d.signal_count}</div>
+      <div class="name">${esc(name)}</div>
+    </div>`;
   }).join('');
 }
 
-function renderCycleHistory(cycles) {
-  const el = document.getElementById('cycle-history');
-  if (!cycles || cycles.length === 0) return;
-  const maxSignals = Math.max(...cycles.map(c => c.signals || 0), 1);
-  el.innerHTML = cycles.map(c => `
-    <div class="cycle-col" style="height: ${(c.signals/maxSignals)*100}%"
-         title="Cycle ${c.cycle}: ${c.signals} signals, ${c.verified} verified, top: ${c.top_score}">
-    </div>
-  `).join('');
+function renderCycles(cycles) {
+  const el = document.getElementById('cycle-chart');
+  if (!cycles || !cycles.length) return;
+  const max = Math.max(...cycles.map(c => c.signals || 0), 1);
+  el.innerHTML = cycles.map((c, i) =>
+    `<div class="cycle-bar" style="height:${Math.max(8, (c.signals/max)*100)}%" title="Cycle ${c.cycle}: ${c.signals} signals"></div>`
+  ).join('');
 }
 
 async function refresh() {
-  const dashboard = await fetchJSON(DATA_BASE + '/dashboard.json');
-  const feed = await fetchJSON(DATA_BASE + '/signals_feed.json');
+  const d = await load(BASE + '/dashboard.json');
+  const f = await load(BASE + '/signals_feed.json');
 
-  if (dashboard) {
-    document.getElementById('cycle-num').textContent = dashboard.current_cycle;
+  if (d) {
+    document.getElementById('cycle-num').textContent = d.current_cycle || 0;
     document.getElementById('last-updated').textContent =
-      dashboard.last_updated ? new Date(dashboard.last_updated).toLocaleString() : '—';
-    document.getElementById('total-signals').textContent = dashboard.total_signals_scanned;
-    document.getElementById('total-verified').textContent = dashboard.total_opportunities_verified;
-    document.getElementById('active-pipeline').textContent = dashboard.active_opportunities;
-    renderOpportunities(dashboard.top_opportunities);
-    renderHeatmap(dashboard.sector_heatmap, 'sector-heatmap');
-    renderHeatmap(dashboard.geography_heatmap, 'geo-heatmap');
-    renderCycleHistory(dashboard.cycle_history);
-  }
+      d.last_updated ? new Date(d.last_updated).toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'awaiting first run';
+    document.getElementById('total-signals').textContent = d.total_signals_scanned || 0;
+    document.getElementById('total-verified').textContent = d.total_opportunities_verified || 0;
+    document.getElementById('active-pipeline').textContent = d.active_opportunities || 0;
 
-  if (feed) {
-    renderSignals(feed.recent_signals);
-  }
+    const killed = (d.top_opportunities || []).filter(o => (o.status||'').toLowerCase() === 'killed').length;
+    document.getElementById('total-killed').textContent = killed;
 
-  document.getElementById('status-indicator').textContent =
-    dashboard && dashboard.current_cycle > 0 ? 'RUNNING' : 'IDLE';
+    if (d.master_synthesis) {
+      document.getElementById('synthesis-text').textContent = d.master_synthesis;
+    }
+
+    renderOpps(d.top_opportunities);
+    renderHeat(d.sector_heatmap);
+    renderCycles(d.cycle_history);
+  }
+  if (f) renderSignals(f.recent_signals);
 }
 
 refresh();
-setInterval(refresh, REFRESH_INTERVAL);
+setInterval(refresh, 5000);
 </script>
 </body>
 </html>
