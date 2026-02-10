@@ -375,26 +375,30 @@ function sClass(s){
   const l=s.toLowerCase();
   if(l==='killed')return'status-killed';
   if(l==='parked')return'status-parked';
-  if(l==='active'||l==='verified'||l==='confirmed')return'status-active';
-  if(l==='scanning'||l==='new')return'status-scanning';
+  if(l==='active'||l==='verified'||l==='confirmed'||l==='pursue')return'status-active';
+  if(l==='scanning'||l==='new'||l.includes('investigate'))return'status-scanning';
   return'';
 }
 
 function strengthInfo(s){
-  const l=typeof s==='string'?s.toLowerCase():'';
-  if(l==='high'||l==='strong')return{cls:'s-high',pct:90};
-  if(l==='medium'||l==='moderate')return{cls:'s-med',pct:60};
+  const l=typeof s==='string'?s.toLowerCase().replace(/_/g,'-'):'';
+  if(l.includes('very')||l==='high'||l==='strong')return{cls:'s-high',pct:95};
+  if(l.includes('moderate')||l==='medium')return{cls:'s-med',pct:60};
   if(typeof s==='number')return{cls:s>70?'s-high':s>40?'s-med':'s-low',pct:Math.min(100,Math.max(10,s))};
   return{cls:'s-low',pct:30};
 }
 
 function renderExec(data){
-  document.getElementById('exec-cycle').textContent=data.current_cycle||0;
-  document.getElementById('exec-signals').textContent=data.total_signals_scanned||0;
-  document.getElementById('exec-active').textContent=data.active_opportunities||0;
-  const kills=data.kill_index?data.kill_index.length:0;
-  document.getElementById('exec-kills').textContent=kills;
-  const syn=data.master_synthesis||'';
+  document.getElementById('exec-cycle').textContent=data.cycle||data.current_cycle||0;
+  const opps=data.top_opportunities||[];
+  const active=opps.filter(o=>{const s=(o.status||'').toLowerCase();return s!=='killed'&&s!=='parked'});
+  const stats=data.pipeline_stats||{};
+  const ki=data.kill_index;
+  const killCount=ki?(Array.isArray(ki)?ki.length:(ki.entries||[]).length||ki.total_active||0):0;
+  document.getElementById('exec-signals').textContent=stats.total_ever_evaluated||data.total_signals_scanned||(data.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0)||0;
+  document.getElementById('exec-active').textContent=data.active_opportunities||stats.active_investigate_further||active.length;
+  document.getElementById('exec-kills').textContent=stats.killed||killCount;
+  const syn=data.summary||data.master_synthesis||data.engine_status||'';
   document.getElementById('exec-synthesis').textContent=syn?truncate(syn,3):'No synthesis available yet. Run a research cycle to generate findings.';
 }
 
@@ -404,12 +408,15 @@ function renderActive(opps){
   const active=opps.filter(o=>{const s=(o.status||'').toLowerCase();return s!=='killed'&&s!=='parked'});
   if(!active.length){el.innerHTML='<div class="empty">No active opportunities</div>';return}
   el.innerHTML=active.map(o=>{
-    const dp=o.key_data_points||o.data_points||[];
+    const dp=o.key_data_points||o.data_points||o.key_strengths||[];
     const dpH=dp.length?'<ul class="data-points">'+dp.map(d=>'<li>'+esc(typeof d==='string'?d:d.point||d.description||JSON.stringify(d))+'</li>').join('')+'</ul>':'';
     const vh=o.vc_hook||o.investor_hook||'';
     const vhH=vh?'<div class="vc-hook"><div class="vc-hook-label">VC Hook</div>'+esc(vh)+'</div>':'';
     const cs=o.counter_signal_status||o.counter_signals||'';
     const csH=cs?'<div class="counter-note">Counter-signal: '+esc(typeof cs==='string'?cs:JSON.stringify(cs))+'</div>':'';
+    const risksArr=o.key_risks||[];
+    const risksH=risksArr.length?'<ul class="data-points" style="margin-top:8px">'+risksArr.map(r=>'<li style="color:var(--red)">'+esc(r)+'</li>').join('')+'</ul>':'';
+    const actionH=o.critical_action?'<div style="margin-top:8px;padding:8px 12px;background:var(--amber-dim);border-radius:6px;font-size:12px;color:var(--amber)">'+esc(o.critical_action)+'</div>':'';
     return`<div class="opp-card">
       <div class="opp-header">
         <div class="opp-name">${esc(o.name)}</div>
@@ -419,10 +426,10 @@ function renderActive(opps){
         </div>
       </div>
       <div class="thesis-text">${esc(o.thesis||'')}</div>
-      ${dpH}${vhH}
+      ${dpH}${risksH}${vhH}${actionH}
       <div class="opp-footer">
         <span class="status-tag ${sClass(o.status)}">${esc(o.status||'unknown')}</span>
-        <span>${esc(o.recommendation||'')}</span>
+        <span>${esc(o.recommendation||o.critical_action||'')}</span>
       </div>
       ${csH}
     </div>`;
@@ -464,7 +471,8 @@ function renderParked(opps){
   const parked=opps.filter(o=>(o.status||'').toLowerCase()==='parked');
   if(!parked.length){el.innerHTML='<div class="empty">No parked opportunities</div>';return}
   el.innerHTML=parked.map(o=>{
-    const tr=o.reactivation_triggers||o.triggers||[];
+    const trRaw=o.reactivation_triggers||o.triggers||(o.reactivation_trigger?[o.reactivation_trigger]:[]);
+    const tr=Array.isArray(trRaw)?trRaw:[trRaw];
     const trH=tr.length?'<ul class="reactivation-triggers">'+tr.map(t=>'<li>'+esc(typeof t==='string'?t:t.trigger||JSON.stringify(t))+'</li>').join('')+'</ul>':'';
     return`<div class="opp-card parked">
       <div class="opp-header">
@@ -474,10 +482,10 @@ function renderParked(opps){
           <span class="score-badge">${o.score||'--'}</span>
         </div>
       </div>
-      <div class="thesis-text">${esc(o.thesis||'')}</div>
+      <div class="thesis-text">${esc(o.park_reason||o.thesis||'')}</div>
       <div class="opp-footer">
         <span class="status-tag status-parked">PARKED</span>
-        <span>${esc(o.recommendation||'')}</span>
+        <span>${esc(o.recommendation||o.critical_action||'')}</span>
       </div>
       ${trH}
     </div>`;
@@ -525,8 +533,10 @@ async function refresh(){
     const d=await r.json();
     renderExec(d);
     renderActive(d.top_opportunities);
-    renderPatterns(d.cross_principle_patterns);
-    renderKills(d.kill_index);
+    renderPatterns(d.key_patterns||d.cross_principle_patterns);
+    // kill_index can be array or object with .entries
+    const ki=d.kill_index;
+    renderKills(Array.isArray(ki)?ki:(ki&&ki.entries?ki.entries:ki?[ki]:[]));
     renderParked(d.top_opportunities);
     renderSectors(d.sector_heatmap);
     renderWeights(d.grading_weights_current);

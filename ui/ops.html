@@ -283,18 +283,45 @@ async function refresh(){
   document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false});
   try{
     const r=await fetch(URL+'?t='+Date.now());
-    if(!r.ok)return;
-    const s=await r.json();
-    const ct=s.counts||{pending:(s.pending||[]).length,running:(s.running||[]).length,completed:(s.completed||[]).length,failed:(s.failed||[]).length};
-    document.getElementById('ct-pending').textContent=ct.pending||0;
-    document.getElementById('ct-running').textContent=ct.running||0;
-    document.getElementById('ct-done').textContent=ct.completed||0;
-    document.getElementById('ct-failed').textContent=ct.failed||0;
-    renderPipeline(s);
-    renderRunning(s.running);
-    renderDone(s.completed);
-    renderPending(s.pending);
-    renderErrors(s.failed);
+    if(r.ok){
+      const s=await r.json();
+      const ct=s.counts||{pending:(s.pending||[]).length,running:(s.running||[]).length,completed:(s.completed||[]).length,failed:(s.failed||[]).length};
+      document.getElementById('ct-pending').textContent=ct.pending||0;
+      document.getElementById('ct-running').textContent=ct.running||0;
+      document.getElementById('ct-done').textContent=ct.completed||0;
+      document.getElementById('ct-failed').textContent=ct.failed||0;
+      renderPipeline(s);
+      renderRunning(s.running);
+      renderDone(s.completed);
+      renderPending(s.pending);
+      renderErrors(s.failed);
+      return;
+    }
+  }catch{}
+  // Fallback: load dashboard.json for last cycle summary
+  try{
+    const r2=await fetch('../data/ui/dashboard.json?t='+Date.now());
+    if(!r2.ok)return;
+    const d=await r2.json();
+    const hist=d.cycle_history||[];
+    const latest=hist.length?hist[hist.length-1]:null;
+    const stats=d.pipeline_stats||{};
+    document.getElementById('ct-pending').textContent=0;
+    document.getElementById('ct-running').textContent=0;
+    document.getElementById('ct-done').textContent=latest?latest.signals||0:0;
+    document.getElementById('ct-failed').textContent=stats.killed||0;
+    // Show all pipeline phases as done
+    const allDone={completed:PHASES.map(p=>({task_type:p})),running:[],pending:[],failed:[]};
+    renderPipeline(allDone);
+    renderRunning([]);
+    // Show cycle history as completed tasks
+    const doneTasks=hist.map(c=>({task_type:'scan',description:'Cycle '+c.cycle+': '+c.signals+' signals — '+(c.note||''),started_at:d.updated||d.last_updated}));
+    renderDone(doneTasks);
+    renderPending([]);
+    // Show next priorities as pending
+    const priorities=(d.next_cycle_priorities||[]).map(p=>({task_type:'explore',description:p}));
+    renderPending(priorities);
+    renderErrors([]);
   }catch{}
 }
 
