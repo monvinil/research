@@ -173,7 +173,36 @@ For systemic-shift-based opportunities, verify WHERE in the cascade we're enteri
 6. **Visa/immigration implications**: Anything that creates issues for a non-citizen founder?
 7. **Foreign market entry**: If non-US geography, what entity/registration needed? Cost?
 
-### V5: Technical Feasibility
+### V5: Physical & Human Reality Check (MANDATORY)
+
+**This check catches proposals that look good on a spreadsheet but violate real-world constraints.**
+
+1. **Physical throughput limits**: If the business involves physical operations:
+   - **Transportation**: A truck driver can legally drive 11 hrs/day (FMCSA HOS). A truck covers ~500-600 miles/day max. Fuel costs ~$0.50-0.80/mile. Loading/unloading takes 2-4 hours.
+   - **Construction**: A crew can frame ~500 sqft/day. Concrete cures in 24-48 hrs. Inspections take 1-5 business days. Weather stops work ~15-25% of days.
+   - **Healthcare**: A nurse works 3x12hr shifts/week (36 hrs). Patient-to-nurse ratios are STATE LAW (e.g., CA Title 22: 1:2 ICU, 1:4 med-surg, 1:6 tele). You cannot "multiply" a nurse beyond what regulation allows.
+   - **Food/Agriculture**: Perishable goods have shelf lives. Cold chain costs $X/mile. Harvest windows are fixed.
+   - If the model assumes throughput that violates these physical limits → KILL or recalculate.
+
+2. **Human capacity limits**: If the thesis claims "AI multiplies human capacity by Nx":
+   - **Specify which tasks are offloaded** — vague "AI handles the rest" is not acceptable.
+   - **Calculate remaining human workload** — if a nurse handles 12 patients instead of 4, what does her actual minute-by-minute day look like? Is she physically able to respond to 3x the emergencies?
+   - **Account for cognitive load** — monitoring 12 AI dashboards is not the same as monitoring 4 patients directly. Alert fatigue is real (see: alarm fatigue studies, 72-99% of clinical alarms are false).
+   - **Sleep, breaks, turnover** — humans work ~1,800 productive hours/year. High-stress roles have 20-40% annual turnover. Factor replacement/training costs.
+   - If the "multiplier" assumes humans operate at 100% cognitive capacity for entire shifts → FLAG as unrealistic.
+
+3. **Supply chain & input constraints**:
+   - Does the business depend on an input with limited supply? (e.g., GPU allocation, licensed professionals willing to be acquired, specific geographic access)
+   - What happens if input costs increase 50%? Does the model still work?
+   - Is there a single point of failure in the supply chain?
+
+4. **Scaling friction**: What breaks when you go from 10 to 100 to 1,000 units?
+   - Linear scaling (each new customer = same cost) → good
+   - Sublinear scaling (infrastructure amortizes) → great
+   - Superlinear scaling (each new customer = MORE complexity, e.g., regulatory per-state) → FLAG
+   - Does the opportunity require local presence, physical infrastructure, or relationships that don't scale?
+
+### V6: Technical Feasibility
 
 1. **Can current AI models actually do this reliably?**
    - What error rate is acceptable?
@@ -195,7 +224,7 @@ For systemic-shift-based opportunities, verify WHERE in the cascade we're enteri
    - APIs available, or custom integration?
    - Data format/quality issues?
 
-### V6: Market Timing
+### V7: Market Timing
 
 1. **Why now and not 12 months ago?** (What changed?)
 2. **Why now and not 12 months from now?** (What window is closing?)
@@ -203,7 +232,7 @@ For systemic-shift-based opportunities, verify WHERE in the cascade we're enteri
 4. **What's the minimum time to revenue?**
 5. **Does the US-LATAM angle create a timing advantage?** (Weaker incumbents in LATAM = faster proof of concept?)
 
-### V7: Dead Business Resurrection Check (Special Protocol)
+### V8: Dead Business Resurrection Check (Special Protocol)
 
 When evaluating a "revived" business model:
 
@@ -286,6 +315,18 @@ When evaluating a "revived" business model:
     "visa_implications": "none | flagged + detail",
     "foreign_market_entry_cost": "$X or N/A",
     "regulatory_trajectory": "tightening | stable | loosening"
+  },
+
+  "reality_check": {
+    "physical_constraints_applicable": true/false,
+    "physical_limits_verified": "description of what physical limits apply and whether the model respects them",
+    "human_capacity_claim": "Nx multiplier claimed",
+    "human_capacity_verified": "detailed task breakdown showing what the human actually does minute-by-minute",
+    "cognitive_load_realistic": true/false,
+    "supply_chain_single_point_of_failure": "none | description",
+    "scaling_type": "linear | sublinear | superlinear",
+    "scaling_bottleneck": "what breaks at 100x scale",
+    "fatal_if_failed": true/false
   },
 
   "technical_feasibility": {
