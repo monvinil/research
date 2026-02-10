@@ -140,6 +140,14 @@
   }
   .done-item:last-child { border-bottom: none; }
   .done-check { color: var(--green); font-size: 14px; flex-shrink: 0; }
+  .page-intro {
+    color: var(--text-secondary); font-size: 13px; line-height: 1.7;
+    margin-bottom: 24px; max-width: 800px;
+  }
+  .section-hint {
+    font-size: 12px; color: var(--dim); font-weight: 400;
+    text-transform: none; letter-spacing: 0; margin-left: 8px;
+  }
 </style>
 </head>
 <body>
@@ -160,6 +168,12 @@
       <div id="refresh-status" style="color:var(--green)">auto-refresh 3s</div>
     </div>
   </header>
+
+  <p class="page-intro">
+    Live view of the current research cycle. Each cycle runs 4 agents sequentially: <strong>Agent A</strong> scans
+    data sources for structural signals, <strong>Agent C</strong> grades and clusters them, <strong>Agent B</strong>
+    constructs business models, and <strong>Master</strong> synthesizes the landscape map. Auto-refreshes every 3 seconds.
+  </p>
 
   <div class="stats">
     <div class="stat-item">
@@ -182,7 +196,7 @@
 
   <!-- Pipeline -->
   <section>
-    <h2>Cycle Pipeline</h2>
+    <h2>Cycle Pipeline <span class="section-hint">green = complete, purple = running</span></h2>
     <div class="pipeline" id="pipeline"></div>
   </section>
 

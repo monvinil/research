@@ -1,0 +1,1392 @@
+{
+  "cycle": "v2-1",
+  "timestamp": "2026-02-10T14:00:00Z",
+  "agent": "B",
+  "engine_version": "v2.0",
+  "total_models_constructed": 20,
+  "opportunities": [
+
+    {
+      "verification_id": "B-2026-02-10-001",
+      "signal_ids_evaluated": ["A-2026-02-10-003", "A-2026-02-10-013", "A-2026-02-10-018", "A-2026-02-10-023"],
+      "cluster": "CL-03-SMB-FINANCIAL-SERVICES",
+      "structural_shift": "CPA shortage (75% retiring) colliding with 70% of SMBs unserved. AI accounting growing 44% CAGR. Nash equilibrium in accounting profession about to break.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI-First SMB Accounting Service",
+          "model_type": "direct",
+          "target_customer": "US small businesses ($100K-$5M revenue) currently doing own books or using basic software. 23M potential customers.",
+          "value_proposition": "Complete bookkeeping, tax prep, and financial reporting at $99-299/month vs. $2K-10K/year for a CPA. AI handles 90% of work; licensed CPA reviews quarterly.",
+          "cost_structure": "AI inference: $2-5/client/month. CPA oversight (1 CPA per 200 clients): $15-25/client/month. Infrastructure: $3-5/client/month. Total: $20-35/client/month.",
+          "cost_advantage_ratio": "8-15x vs. traditional CPA",
+          "revenue_model": "Monthly subscription tiered by complexity",
+          "jevons_multiplier": "3-5x (serving the 70% currently unserved)",
+          "economic_force": "$120B+ (current US accounting services ~$160B * 3x Jevons * capture rate)",
+          "moat_source": "CPA licensing integration, data flywheel from millions of transactions, compliance track record, trust through CPA review layer"
+        },
+        {
+          "model_name": "Fractional AI CFO for Growth SMBs",
+          "model_type": "expansion",
+          "target_customer": "SMBs with $500K-$20M revenue that cannot afford a full-time or traditional fractional CFO ($5K-15K/month). 2M+ potential customers.",
+          "value_proposition": "AI-powered financial forecasting, cash flow management, and strategic reporting with human CFO judgment for key decisions. $500-2000/month vs. $5K-15K for traditional fractional CFO.",
+          "cost_structure": "AI inference + dashboards: $10-20/client/month. Human CFO time (1hr/month per client, 1 CFO per 40 clients): $100-200/client/month. Total: $110-220/client/month.",
+          "cost_advantage_ratio": "5-10x vs. traditional fractional CFO",
+          "revenue_model": "Monthly subscription + percentage of identified savings",
+          "jevons_multiplier": "5-8x (80%+ of SMBs currently have no CFO function)",
+          "economic_force": "$50B+ (fractional CFO market ~$10B * 5x Jevons expansion)",
+          "moat_source": "Proprietary financial data across thousands of SMBs = benchmarking moat. AI improves with each client. Switching costs increase over time."
+        },
+        {
+          "model_name": "AI Tax Preparation for LATAM-US Businesses",
+          "model_type": "expansion",
+          "target_customer": "US-LATAM businesses (150K+ companies operating cross-border) needing bilingual tax/compliance. Currently paying $5K-20K/year for cross-border CPA.",
+          "value_proposition": "Bilingual AI tax/compliance service handling US + LATAM tax obligations at 60-80% lower cost. Spanish-first customer experience.",
+          "cost_structure": "AI inference: $5-10/client/month. Bilingual CPA oversight: $25-50/client/month. Total: $30-60/client/month.",
+          "cost_advantage_ratio": "5-8x vs. cross-border CPA",
+          "revenue_model": "Monthly subscription + per-filing fees",
+          "jevons_multiplier": "3x (many cross-border businesses under-compliant due to cost)",
+          "economic_force": "$15B (cross-border tax/compliance ~$5B * 3x Jevons)",
+          "moat_source": "Bilingual AI training data, cross-border regulatory expertise, founder language advantage"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$149/month (mid-tier accounting)",
+        "cost_per_unit_agentic": "$25-35/month",
+        "cost_per_unit_incumbent": "$200-800/month equivalent",
+        "cost_advantage_ratio": "8:1 to 15:1",
+        "break_even_volume": "500 clients at mid-tier pricing",
+        "gross_margin": "75-85%",
+        "assumptions": ["AI handles 90% of standard bookkeeping accurately", "1 CPA can review 200 accounts", "Client acquisition cost $200-500"],
+        "data_sources_used": ["Accounting Today", "Stanford GSB", "PYMNTS", "BLS"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["75% CPAs retiring", "64% no AI training", "52% no AI policies", "Nash equilibrium unbroken"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — pre-defection window"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["H&R Block ($3.6B rev)", "Intuit/TurboTax ($14B rev)", "Local CPA firms (300K+ firms)", "QuickBooks ($9B+ rev)"],
+        "mobility_score": 4,
+        "mobility_breakdown": {
+          "pricing_model_change": -2,
+          "cost_structure_change": -2,
+          "ai_cannibalization": -2,
+          "organizational_incentives": 0,
+          "speed_to_restructure": -1
+        },
+        "notes": "Intuit has AI capabilities but TurboTax model is self-service, not full-service. CPA firms structurally stuck: partner model, billable hours, aging workforce. Gap exists for 'AI-first full-service at self-service price'."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": true,
+        "acquisition_path": "Acquire small CPA practice ($50K-$200K) for licensing umbrella. Or partner with licensed CPAs.",
+        "moat_potential": "medium",
+        "regulatory_trajectory": "loosening (CPA shortage forcing accommodation)",
+        "compliance_as_advantage": "Licensed operation locks out pure-tech competitors"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "CPA shortage is real and worsening: 75% approaching retirement, enrollment declining (Thomson Reuters)",
+          "70% of SMBs don't use CPAs due to cost (BLS/PYMNTS)",
+          "AI can handle standard bookkeeping and tax prep: multiple products in market (Deduction, etc.)",
+          "AI accounting market growing 44%+ CAGR (Mordor Intelligence)"
+        ],
+        "likely": [
+          "SMBs will pay $99-299/month for AI accounting service: similar pricing works for QuickBooks Live",
+          "1 CPA can oversee 200 AI-managed accounts: based on current hybrid models",
+          "Trust barrier lower for SMBs than enterprise: less compliance scrutiny"
+        ],
+        "uncertain": [
+          "Customer acquisition cost for SMBs: testable with $20K ad spend in 2 months",
+          "Churn rate for AI accounting: testable with pilot cohort"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 22,
+        "capital_match": 9,
+        "team_match": 8,
+        "geo_language_match": 5,
+        "notes": "Strong fit: ML/AI founder builds the AI engine, operator founder manages CPA relationships and customer acquisition. Spanish enables LATAM expansion. $500K sufficient for launch. Davis, CA location fine for remote SMB service."
+      },
+
+      "verdict": {
+        "tier": "TIER_1",
+        "economic_force": "$120B+",
+        "opportunity_score": 88,
+        "score_breakdown": {
+          "economic_force": 32,
+          "structural_advantage": 25,
+          "timing_readiness": 18,
+          "signal_strength": 13
+        },
+        "confidence": "high",
+        "barriers": [
+          {"barrier": "CPA licensing requirements", "severity": "medium", "moat_potential": true, "resolution_path": "Acquire small CPA practice ($50K-200K) for licensing umbrella"},
+          {"barrier": "Trust for financial data", "severity": "medium", "moat_potential": true, "resolution_path": "CPA review layer + SOC 2 compliance builds trust"},
+          {"barrier": "Intuit/H&R Block competition", "severity": "medium", "moat_potential": false, "resolution_path": "Target the unserved 70%, not the served 30%"}
+        ],
+        "recommended_next_steps": [
+          "Build MVP for standard bookkeeping (single-entity, US only)",
+          "Acquire or partner with small CPA practice for licensing",
+          "Test pricing and acquisition cost with $20K pilot",
+          "Build Spanish-language version for LATAM cross-border customers"
+        ],
+        "reasoning": "The largest Jevons expansion opportunity in professional services. 70% of US SMBs are unserved. CPA shortage is structural and worsening. AI accuracy is proven. Multiple entry vectors (direct service, platform for CPAs, cross-border). Founder fit is exceptional."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-002",
+      "signal_ids_evaluated": ["A-2026-02-10-006", "A-2026-02-10-012"],
+      "cluster": "CL-06-HEALTHCARE-AI",
+      "structural_shift": "Healthcare: $4.3T market, $1.3T in admin, 500K+ nursing shortfall, decades of Baumol premium. Largest stored disruption energy in US economy.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Healthcare Admin Service (Revenue Cycle + Prior Auth)",
+          "model_type": "direct",
+          "target_customer": "Independent physician practices (600K+ in US) and small hospital networks spending $20-40 per claim on admin. Average practice processes 3,000-10,000 claims/year.",
+          "value_proposition": "AI processes claims, prior authorizations, and medical coding at $3-8 per claim vs. $20-40 current cost. Reduces prior auth time from 13 hours/week to <2 hours.",
+          "cost_structure": "AI inference per claim: $0.50-$1.50. Human review (10% exception rate): $1-3 per claim. Infrastructure: $0.50. Total: $2-5 per claim.",
+          "cost_advantage_ratio": "5-10x",
+          "revenue_model": "Per-claim processing fee or monthly subscription based on volume",
+          "jevons_multiplier": "2x (smaller practices currently skip proper coding/prior auth due to cost)",
+          "economic_force": "$200B+ (admin costs $1.3T, addressable portion ~$300B, 5x cost advantage, 2x Jevons)",
+          "moat_source": "HIPAA compliance, EHR integration library, medical coding accuracy data, payer relationship database"
+        },
+        {
+          "model_name": "AI Clinical Capacity Multiplier for Nursing Teams",
+          "model_type": "expansion",
+          "target_customer": "Hospital systems and home health agencies facing nursing shortages. 6,000+ hospitals, 30K+ home health agencies in US.",
+          "value_proposition": "AI handles clinical documentation, triage, scheduling, and follow-up. Each AI system adds 20% capacity per nurse (Deloitte estimate). Equivalent to 600K additional nurses across US nursing workforce.",
+          "cost_structure": "AI per nurse: $200-500/month. Integration: $50K-200K per hospital system. Total per nurse-equivalent: $300-600/month.",
+          "cost_advantage_ratio": "3-5x vs. travel nurse cost ($8K-15K/month)",
+          "revenue_model": "Per-nurse subscription + implementation fee",
+          "jevons_multiplier": "1.5x (enables service in underserved rural areas)",
+          "economic_force": "$50B+ (travel nursing $20B market + capacity expansion)",
+          "moat_source": "Clinical workflow integration, training data from usage, regulatory compliance track record, hospital system switching costs"
+        },
+        {
+          "model_name": "AI-Augmented Primary Care for Underserved Markets",
+          "model_type": "expansion",
+          "target_customer": "Patients in primary care deserts (80M+ Americans in Health Professional Shortage Areas). Rural clinics, FQHCs, and telehealth-first practices.",
+          "value_proposition": "AI handles intake, screening, documentation, and follow-up. One physician + AI can serve 2x patient panel. Makes rural/underserved practice economically viable.",
+          "cost_structure": "AI per patient per month: $5-10. Physician time (reduced by 40%): remaining cost. Total: enables practice profitability in areas where patient volume is too low for traditional model.",
+          "cost_advantage_ratio": "2-3x (measured by patients per physician)",
+          "revenue_model": "Per-patient-per-month subscription to clinics + outcome-based bonuses",
+          "jevons_multiplier": "3x (80M+ Americans in HPSAs currently lack access)",
+          "economic_force": "$100B+ (primary care $300B market, 3x Jevons for underserved)",
+          "moat_source": "Clinical validation data, patient outcomes track record, regulatory compliance, data flywheel from patient interactions"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$8-15 per claim (admin model) or $300-500/nurse/month (capacity model)",
+        "cost_per_unit_agentic": "$2-5 per claim or $200-400/nurse/month",
+        "cost_per_unit_incumbent": "$20-40 per claim or $8K-15K/month (travel nurse)",
+        "cost_advantage_ratio": "5:1 to 10:1 for admin; 3:1 to 5:1 for capacity",
+        "break_even_volume": "200 practices or 500 nurse subscriptions",
+        "gross_margin": "60-75%",
+        "assumptions": ["AI achieves 90%+ accuracy on medical coding", "10% exception rate requiring human review", "EHR integration feasible via standard APIs"],
+        "data_sources_used": ["HRSA", "BLS", "a16z", "Deloitte", "CMS"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["500K+ nursing shortfall projected", "Healthcare CPI above headline for 20+ years", "AI adoption shallow — mostly chatbots"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — demographic urgency creates regulatory tailwind"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["Epic Systems (EHR)", "Change Healthcare (claims)", "Optum (services)", "Traditional RCM companies"],
+        "mobility_score": 5,
+        "mobility_breakdown": {
+          "pricing_model_change": -1,
+          "cost_structure_change": -2,
+          "ai_cannibalization": -1,
+          "organizational_incentives": -1,
+          "speed_to_restructure": 0
+        },
+        "notes": "Epic is adding AI features (sustaining innovation). But Epic serves large systems; 600K+ independent practices are underserved. The opportunity is the long tail, not the enterprise."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": true,
+        "acquisition_path": "HIPAA compliance ($100K-200K setup). State-specific healthcare AI laws navigated per jurisdiction.",
+        "moat_potential": "high",
+        "regulatory_trajectory": "fragmenting (47 states with bills = moat for first compliant entrant)",
+        "compliance_as_advantage": "Multi-state compliance is 12-18 months and $500K+ to replicate — strong first-mover moat"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Nursing shortage is real: HRSA data, 500K+ projected shortfall",
+          "Admin costs are 30%+ of healthcare spending: CMS data, ~$1.3T",
+          "Healthcare CPI above headline for 20+ years: FRED data",
+          "AI can do medical coding: multiple products in market achieving 90%+ accuracy"
+        ],
+        "likely": [
+          "Practices will pay per-claim for AI processing: cost savings are 5-10x, ROI clear",
+          "Hospital systems will pay for nursing capacity tools: travel nurse costs are extreme",
+          "Regulatory trajectory is toward acceptance: shortage creates necessity"
+        ],
+        "uncertain": [
+          "EHR integration difficulty: varies by system, testable with $50K pilot",
+          "Physician/nurse adoption rate: testable with 10-practice pilot",
+          "Liability framework for AI-assisted clinical decisions: evolving"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 16,
+        "capital_match": 6,
+        "team_match": 5,
+        "geo_language_match": 5,
+        "notes": "Moderate fit. ML/AI capabilities strong. BUT: healthcare domain expertise needed (hire or partner). HIPAA compliance requires specialized knowledge. $500K sufficient for admin model but tight for clinical tools. LATAM healthcare market accessible with Spanish."
+      },
+
+      "verdict": {
+        "tier": "TIER_1",
+        "economic_force": "$200B+",
+        "opportunity_score": 85,
+        "score_breakdown": {
+          "economic_force": 33,
+          "structural_advantage": 24,
+          "timing_readiness": 16,
+          "signal_strength": 12
+        },
+        "confidence": "high",
+        "barriers": [
+          {"barrier": "HIPAA compliance", "severity": "medium", "moat_potential": true, "resolution_path": "$100K-200K compliance setup; once done, locks out underfunded competitors"},
+          {"barrier": "EHR integration", "severity": "medium", "moat_potential": true, "resolution_path": "Build integration library; each integration adds moat"},
+          {"barrier": "Clinical liability", "severity": "high", "moat_potential": true, "resolution_path": "Start with admin (non-clinical); expand to clinical after track record"},
+          {"barrier": "Domain expertise", "severity": "medium", "moat_potential": false, "resolution_path": "Hire healthcare domain expert as first hire or advisory role"}
+        ],
+        "recommended_next_steps": [
+          "Start with healthcare ADMIN (claims, prior auth, coding) — lower liability, clear unit economics",
+          "Build HIPAA-compliant infrastructure first ($100K-200K investment)",
+          "Pilot with 10-20 independent practices in California",
+          "Expand to clinical capacity tools after proving admin model"
+        ],
+        "reasoning": "Largest stored Baumol energy in the US economy ($1.3T in admin costs). Demographic urgency (500K+ nursing shortfall) creates regulatory tailwind. Admin model has clear 5-10x cost advantage. Start admin, expand clinical. Regulatory complexity is barrier-as-moat."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-003",
+      "signal_ids_evaluated": ["A-2026-02-10-008", "A-2026-02-10-015"],
+      "cluster": "CL-08-INSURANCE-AI",
+      "structural_shift": "Insurance: 400K worker attrition, 91% adopting AI, claims processing is routine-cognitive. Dead business revival — Lemonade thesis with better AI.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Claims Processing Service for TPAs and Mid-Market Insurers",
+          "model_type": "direct",
+          "target_customer": "Third-Party Administrators (1,200+ in US) and mid-market insurers (property/casualty, health, auto) processing 10K-500K claims/year each.",
+          "value_proposition": "End-to-end AI claims processing: intake, document extraction, damage assessment, adjudication recommendation. $5-15 per claim vs. $30-80 current cost. Turnaround: hours vs. days.",
+          "cost_structure": "AI inference per claim: $1-3 (multimodal processing). Human adjuster review (15% exception rate): $3-8. Infrastructure: $1. Total: $5-12 per claim.",
+          "cost_advantage_ratio": "5-8x",
+          "revenue_model": "Per-claim processing fee",
+          "jevons_multiplier": "1.5x (enables faster, cheaper claims = higher customer satisfaction = more policies)",
+          "economic_force": "$40B+ (US P&C claims processing ~$30B, 5x cost advantage, 1.5x Jevons)",
+          "moat_source": "Claims data flywheel, payer integration network, state insurance compliance, accuracy track record"
+        },
+        {
+          "model_name": "AI Claims Service for LATAM Insurance Market",
+          "model_type": "expansion",
+          "target_customer": "Latin American insurers (market growing 8-12% annually) with less sophisticated claims infrastructure. 500+ insurers across major LATAM markets.",
+          "value_proposition": "Spanish-first AI claims processing at 70-90% lower cost than manual processing. Bring developed-market claims technology to emerging market insurers.",
+          "cost_structure": "AI inference: $0.50-2 per claim. Local human oversight: $1-3. Total: $1.50-5 per claim.",
+          "cost_advantage_ratio": "10-15x vs. manual LATAM processing",
+          "revenue_model": "Per-claim + platform licensing",
+          "jevons_multiplier": "3x (many LATAM insurers currently process manually due to cost)",
+          "economic_force": "$15B+ (LATAM insurance market ~$80B, claims processing ~$10B addressable, 3x Jevons)",
+          "moat_source": "Spanish-language AI training, LATAM regulatory expertise, first-mover in underserved market"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$8-15 per claim (US) or $3-8 per claim (LATAM)",
+        "cost_per_unit_agentic": "$5-12 per claim (US) or $1.50-5 (LATAM)",
+        "cost_per_unit_incumbent": "$30-80 per claim",
+        "cost_advantage_ratio": "5:1 to 8:1",
+        "break_even_volume": "100K claims/month",
+        "gross_margin": "40-60%",
+        "assumptions": ["AI handles 85% of claims end-to-end", "15% exception rate for human review", "Multimodal AI achieves adequate damage assessment accuracy"],
+        "data_sources_used": ["BLS", "NAIC", "Avallon data", "Allianz announcement"]
+      },
+
+      "cascade_position": {
+        "tier": "confirmed",
+        "evidence": ["400K worker attrition confirmed", "91% adoption planned", "Allianz launched agentic claims", "Avallon 10x revenue growth"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — institutional adoption beginning"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["Guidewire ($800M rev)", "Duck Creek", "Majesco", "Traditional claims operations"],
+        "mobility_score": 5,
+        "mobility_breakdown": {
+          "pricing_model_change": -1,
+          "cost_structure_change": -2,
+          "ai_cannibalization": -1,
+          "organizational_incentives": 0,
+          "speed_to_restructure": -1
+        }
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": true,
+        "acquisition_path": "State insurance department approvals; TPA licensing varies by state",
+        "moat_potential": "high",
+        "regulatory_trajectory": "fragmenting (model law expected 2026)",
+        "compliance_as_advantage": "Multi-state compliance + model law readiness = strong first-mover moat"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Insurance workforce attrition: 400K by 2026 (BLS)",
+          "AI claims processing works: Avallon, Tractable, Sprout.ai proving it",
+          "Institutional readiness: Allianz launched agentic claims AI"
+        ],
+        "likely": [
+          "TPAs will pay per-claim for AI processing: ROI is 5-8x",
+          "LATAM market is receptive: weaker incumbents, manual processes"
+        ],
+        "uncertain": [
+          "Complex claims accuracy: testable with pilot on real claims data",
+          "Regulatory approval timeline by state: varies"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 20,
+        "capital_match": 8,
+        "team_match": 7,
+        "geo_language_match": 5,
+        "notes": "Strong fit. ML/AI capability covers core tech. LATAM expansion leverages bilingual advantage. Insurance domain expertise needed (hire). $500K sufficient for initial product targeting TPAs."
+      },
+
+      "verdict": {
+        "tier": "TIER_1",
+        "economic_force": "$40B+",
+        "opportunity_score": 82,
+        "score_breakdown": {
+          "economic_force": 28,
+          "structural_advantage": 26,
+          "timing_readiness": 17,
+          "signal_strength": 11
+        },
+        "confidence": "high",
+        "barriers": [
+          {"barrier": "State insurance regulation", "severity": "medium", "moat_potential": true, "resolution_path": "State-by-state compliance; each state adds moat"},
+          {"barrier": "Claims accuracy for complex cases", "severity": "medium", "moat_potential": false, "resolution_path": "Start with simple claims (auto, property), expand to complex"}
+        ],
+        "recommended_next_steps": [
+          "Pilot with 2-3 mid-market TPAs on auto/property claims",
+          "Build multimodal claims processing (vision + NLU + structured data)",
+          "Pursue state compliance in 5 highest-volume states first",
+          "Develop LATAM version (Spanish) as expansion beachhead"
+        ],
+        "reasoning": "Insurance claims is the most validated AI service model in this cycle (Avallon 10x, Allianz launch). Demographic gap forces adoption. LATAM expansion leverages founder advantage. Per-claim revenue model aligns incentives."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-004",
+      "signal_ids_evaluated": ["A-2026-02-10-005"],
+      "cluster": "CL-05-LEGAL-AI-SERVICES",
+      "structural_shift": "YC calling for AI-staffed law firms. Obelisk model replacing pyramid. Legal tech market doubling. First M&A expected 2026.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI-First Law Firm for SMB Corporate Legal",
+          "model_type": "direct",
+          "target_customer": "SMBs ($1M-$50M revenue) spending $10K-100K/year on outside counsel for contracts, compliance, employment law, IP. 5M+ potential customers.",
+          "value_proposition": "AI handles contract drafting/review, compliance monitoring, entity formation, trademark filing at 70-80% lower cost. Human attorneys handle negotiation, litigation strategy, complex judgment.",
+          "cost_structure": "AI per matter: $50-200 (vs. $2K-10K currently). Attorney oversight: $100-500 per matter. Total: $150-700 per matter.",
+          "cost_advantage_ratio": "5-15x for routine legal work",
+          "revenue_model": "Monthly retainer ($500-5000/month) + per-matter fees for complex work",
+          "jevons_multiplier": "3-5x (most SMBs handle legal informally or skip it entirely)",
+          "economic_force": "$80B+ (US legal services ~$350B, SMB addressable ~$50B, 3x Jevons)",
+          "moat_source": "Bar-licensed operation, contract/precedent database, compliance track record, client relationship lock-in"
+        },
+        {
+          "model_name": "AI Legal Research & Drafting Platform for Solo/Small Firms",
+          "model_type": "structural",
+          "target_customer": "Solo practitioners and small law firms (300K+ in US) who can't afford associates or paralegals. Average firm: 1-5 attorneys.",
+          "value_proposition": "AI paralegal that handles research, drafting, discovery, and document review. Each AI paralegal equivalent saves $60K-80K/year in associate cost.",
+          "cost_structure": "AI per firm: $500-2000/month. Total platform cost: $15-30/user/month at scale.",
+          "cost_advantage_ratio": "4-8x vs. hiring a junior associate",
+          "revenue_model": "Monthly SaaS subscription per attorney",
+          "jevons_multiplier": "2x (enables solo practitioners to take on more complex work)",
+          "economic_force": "$20B+ (legal support staff market ~$15B, AI replacement + Jevons)",
+          "moat_source": "Legal precedent database, jurisdiction-specific training, accuracy track record, bar association relationships"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$1500/month (SMB retainer) or $1000/month (firm platform)",
+        "cost_per_unit_agentic": "$200-500/client/month",
+        "cost_per_unit_incumbent": "$3K-10K/month equivalent",
+        "cost_advantage_ratio": "5:1 to 15:1",
+        "break_even_volume": "200 SMB clients or 1000 firm subscriptions",
+        "gross_margin": "65-80%",
+        "assumptions": ["AI achieves 85%+ accuracy on standard legal research and drafting", "10-15% exception rate for attorney review", "Bar licensing navigable in target states"],
+        "data_sources_used": ["National Law Review", "Y Combinator", "Legal tech market data"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["YC calling for AI law firms", "Vendor consolidation expected 2026", "First M&A anticipated"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — pre-defection Nash equilibrium"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["AmLaw 200 firms", "LegalZoom ($660M rev)", "Thomson Reuters ($7B legal)", "Harvey AI (funded $100M+)"],
+        "mobility_score": 3,
+        "mobility_breakdown": {
+          "pricing_model_change": -3,
+          "cost_structure_change": -2,
+          "ai_cannibalization": -3,
+          "organizational_incentives": -2,
+          "speed_to_restructure": -1
+        },
+        "notes": "Law firms are among the most structurally stuck incumbents: partner model, billable hours, leverage ratios. Harvey is well-funded but sells tools TO firms, not replacing them. LegalZoom targets consumers. Gap: AI-first full-service for SMBs."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": true,
+        "acquisition_path": "Acquire small law practice or partner with licensed attorney. UPL regulations vary by state.",
+        "moat_potential": "high",
+        "regulatory_trajectory": "stable (bar associations protective but shortage forcing accommodation in some areas)",
+        "compliance_as_advantage": "Bar-licensed AI firm is extremely hard to replicate quickly"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Legal tech market growing 9%+ CAGR (verified market data)",
+          "YC explicitly backing AI law firms (YC RFS 2025)",
+          "AI can handle standard legal research and drafting: Harvey, CoCounsel proving it"
+        ],
+        "likely": [
+          "SMBs will pay $500-5K/month for AI legal retainer: savings are 5-15x",
+          "Solo practitioners will adopt AI paralegal: cost savings critical for small firms"
+        ],
+        "uncertain": [
+          "Bar association reaction to AI-first firms: state-by-state, testable",
+          "Malpractice insurance for AI-assisted legal work: evolving"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 18,
+        "capital_match": 8,
+        "team_match": 6,
+        "geo_language_match": 4,
+        "notes": "Good fit. ML/AI covers core tech. Need to acquire legal licensing or partner with attorney. Spanish enables LATAM legal market. $500K sufficient for SMB-focused launch."
+      },
+
+      "verdict": {
+        "tier": "TIER_1",
+        "economic_force": "$80B+",
+        "opportunity_score": 80,
+        "score_breakdown": {
+          "economic_force": 30,
+          "structural_advantage": 24,
+          "timing_readiness": 15,
+          "signal_strength": 11
+        },
+        "confidence": "high",
+        "barriers": [
+          {"barrier": "Bar licensing/UPL regulations", "severity": "high", "moat_potential": true, "resolution_path": "Acquire small practice or partner with licensed attorney"},
+          {"barrier": "Harvey AI well-funded competitor", "severity": "medium", "moat_potential": false, "resolution_path": "Harvey sells to firms; gap is AI-first service to SMBs"}
+        ],
+        "recommended_next_steps": [
+          "Identify bar licensing pathway in California",
+          "Build contract review + drafting MVP for common SMB legal needs",
+          "Partner with 2-3 licensed attorneys for oversight layer",
+          "Test with 20 SMB clients at $500-1500/month retainer"
+        ],
+        "reasoning": "Legal services has massive Baumol energy (decades of above-CPI inflation), huge Jevons expansion (most SMBs skip legal), and YC validation of the AI-first firm model. Bar licensing is the moat."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-005",
+      "signal_ids_evaluated": ["A-2026-02-10-001", "A-2026-02-10-021"],
+      "cluster": "CL-01-PE-DISTRESS-CASCADE",
+      "structural_shift": "PE roll-up Minsky moment: 30% of bankruptcies PE-backed, refinancing wall + AI margin compression creating double squeeze.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "Distressed Professional Services Acquirer (AI-First Roll-Up)",
+          "model_type": "structural",
+          "target_customer": "Distressed PE-backed professional services firms (accounting, staffing, consulting, marketing agencies) with client books available at 0.3-0.5x revenue.",
+          "value_proposition": "Acquire client relationships from distressed firms at fraction of historical cost. Serve those clients with AI-first cost structure at 50-70% of previous pricing. Clients get price reduction; we get 5-10x better margins than the incumbents had.",
+          "cost_structure": "Acquisition cost: $100K-500K per client book. AI service delivery: 10-20% of incumbent cost. Human oversight: 10-15% additional.",
+          "cost_advantage_ratio": "5-8x vs. pre-distress incumbent cost structure",
+          "revenue_model": "Recurring service revenue from acquired clients",
+          "jevons_multiplier": "1x (serving existing clients, not expanding market)",
+          "economic_force": "$25B+ (distressed professional services assets becoming available, $100B+ in PE-backed services revenue at risk)",
+          "moat_source": "Acquired client relationships, below-market acquisition cost, AI-first cost structure that PE roll-ups can't match"
+        },
+        {
+          "model_name": "AI-First Staffing Platform",
+          "model_type": "direct",
+          "target_customer": "Companies using temporary staffing agencies (market ~$180B in US). Staffing is a classic Baumol sector with high labor costs and PE roll-up concentration.",
+          "value_proposition": "AI handles candidate matching, credential verification, scheduling, and onboarding at 40-60% lower staffing markup. Current markup: 25-60%. AI-first: 10-25% markup.",
+          "cost_structure": "AI per placement: $50-200. Human recruiter oversight: $100-300 per placement. vs. incumbent cost: $500-2000 per placement.",
+          "cost_advantage_ratio": "3-5x",
+          "revenue_model": "Reduced markup on hourly placement fees",
+          "jevons_multiplier": "2x (companies that currently avoid agencies due to markup will use lower-cost service)",
+          "economic_force": "$50B+ (US staffing $180B, addressable portion ~$80B, 2x Jevons at lower markup)",
+          "moat_source": "Candidate database and match quality data, employer relationship network, AI-driven screening accuracy"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "Varies by model: $5K-50K per acquired client book (distress) or $150-500 per staffing placement",
+        "cost_per_unit_agentic": "Acquisition model: 0.3-0.5x revenue for client book; Staffing: $50-200 per placement",
+        "cost_per_unit_incumbent": "1.5-2.5x revenue for client book; Staffing: $500-2000 per placement",
+        "cost_advantage_ratio": "3:1 to 8:1",
+        "break_even_volume": "Acquisition: 5-10 client books. Staffing: 2000 placements/month",
+        "gross_margin": "50-70%",
+        "assumptions": ["Distressed assets available at 0.3-0.5x revenue", "Client retention rate 60-70% through acquisition", "AI matching accuracy comparable to experienced recruiters"],
+        "data_sources_used": ["Epiq Global", "Capstone Partners", "PwC", "BLS"]
+      },
+
+      "cascade_position": {
+        "tier": "confirmed",
+        "evidence": ["Chapter 11 at 10-year high", "PE-backed 30% of filings", "Large filings up 44%", "Refinancing wall 2025-2027"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — distress is peaking, assets available"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["PE roll-ups (various)", "Robert Half ($6B)", "Adecco ($25B)", "Randstad ($28B)"],
+        "mobility_score": 2,
+        "mobility_breakdown": {
+          "pricing_model_change": -2,
+          "cost_structure_change": -3,
+          "ai_cannibalization": -2,
+          "organizational_incentives": -3,
+          "speed_to_restructure": -1
+        },
+        "notes": "PE-backed firms are the most stuck: debt service requires revenue that AI is compressing. They literally cannot restructure without defaulting on debt."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": false,
+        "acquisition_path": "Standard asset acquisition; some professional services require license transfer",
+        "moat_potential": "medium",
+        "regulatory_trajectory": "neutral",
+        "compliance_as_advantage": "Acquired licenses from distressed firms are available at below-market prices"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "PE bankruptcies rising: 30% of filings, up 15% YoY (Epiq)",
+          "Refinancing wall is real: 2020-2021 debt maturing 2025-2027",
+          "AI can deliver professional services at lower cost: multiple proof points"
+        ],
+        "likely": [
+          "Distressed assets will be available at discounted prices: follows from bankruptcy dynamics",
+          "Client retention through acquisition: 60-70% based on industry norms"
+        ],
+        "uncertain": [
+          "Deal flow access: need broker/banker relationships, testable with outreach",
+          "Speed of cascade: could accelerate or plateau"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 15,
+        "capital_match": 5,
+        "team_match": 6,
+        "geo_language_match": 4,
+        "notes": "Moderate fit. Acquisition model needs more capital ($1-3M for meaningful acquisitions). Operator founder can manage acquisitions. ML founder builds AI service layer. May need to raise beyond initial $500K-1M for acquisition strategy."
+      },
+
+      "verdict": {
+        "tier": "TIER_1",
+        "economic_force": "$50B+",
+        "opportunity_score": 79,
+        "score_breakdown": {
+          "economic_force": 28,
+          "structural_advantage": 26,
+          "timing_readiness": 16,
+          "signal_strength": 9
+        },
+        "confidence": "high",
+        "barriers": [
+          {"barrier": "Capital requirements for acquisitions", "severity": "medium", "moat_potential": false, "resolution_path": "Start with smallest acquisitions ($50K-200K client books); raise as track record builds"},
+          {"barrier": "Deal flow access", "severity": "medium", "moat_potential": true, "resolution_path": "Build relationships with bankruptcy attorneys and business brokers"}
+        ],
+        "recommended_next_steps": [
+          "Map distressed professional services firms in California/West Coast",
+          "Build relationships with 5 bankruptcy attorneys and brokers",
+          "Prepare AI service platform for rapid client onboarding",
+          "Identify first acquisition target ($50K-200K range)"
+        ],
+        "reasoning": "The PE distress cascade is confirmed and accelerating. Distressed assets at 0.3-0.5x revenue + AI-first service delivery = extraordinary economics. The window is 12-24 months as the refinancing wall forces exits."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-006",
+      "signal_ids_evaluated": ["A-2026-02-10-007", "A-2026-02-10-010", "A-2026-02-10-017", "A-2026-02-10-020"],
+      "cluster": "CL-07-REGULATORY-COMPLIANCE-MOAT",
+      "structural_shift": "AI regulatory fragmentation creating compliance maze — 47 states + EU + sector-specific. RegTech market growing 17-36% CAGR.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Compliance Navigator for SMBs",
+          "model_type": "expansion",
+          "target_customer": "Companies deploying AI that need compliance across jurisdictions. 500K+ companies using AI tools with no compliance framework. Previously only Fortune 500 could afford compliance teams.",
+          "value_proposition": "AI-powered compliance monitoring, assessment, and documentation across state/federal/EU AI regulations. $200-2000/month vs. $20K-100K/year for compliance consultants.",
+          "cost_structure": "AI inference: $10-30/client/month. Regulatory update monitoring: $5-10. Human expert review (quarterly): $50-100. Total: $65-140/client/month.",
+          "cost_advantage_ratio": "10-20x vs. compliance consulting",
+          "revenue_model": "Monthly subscription tiered by jurisdictions covered",
+          "jevons_multiplier": "10x+ (compliance was previously unaffordable for most companies; now required as AI regulation expands)",
+          "economic_force": "$30B+ (RegTech $18.6B growing to $85-115B; AI compliance is fastest-growing segment)",
+          "moat_source": "Regulatory knowledge base, multi-jurisdiction compliance maps, update speed, compliance track record"
+        },
+        {
+          "model_name": "Sector-Specific AI Compliance (Healthcare + Insurance Focus)",
+          "model_type": "direct",
+          "target_customer": "Healthcare organizations and insurers deploying AI in regulated environments. 6,000+ hospitals, 5,000+ insurers, 600K+ practices.",
+          "value_proposition": "Navigate the intersection of AI regulation + industry regulation (HIPAA + state AI laws, or insurance regulation + AI transparency requirements). $500-5000/month.",
+          "cost_structure": "AI regulatory engine: $20-50/client/month. Sector expert review: $100-300/month. Total: $120-350/month.",
+          "cost_advantage_ratio": "5-10x vs. specialized compliance firms",
+          "revenue_model": "Monthly subscription + per-assessment fees",
+          "jevons_multiplier": "3x (smaller organizations previously skipped AI compliance; new laws force it)",
+          "economic_force": "$15B+ (healthcare + insurance AI compliance)",
+          "moat_source": "Cross-domain regulatory expertise (AI + sector), compliance precedent database, regulatory relationship network"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-2000/month",
+        "cost_per_unit_agentic": "$65-350/month",
+        "cost_per_unit_incumbent": "$5K-20K/month for compliance consulting",
+        "cost_advantage_ratio": "10:1 to 20:1",
+        "break_even_volume": "200 clients",
+        "gross_margin": "70-85%",
+        "assumptions": ["AI can accurately track and interpret regulatory changes", "Quarterly human expert review sufficient for ongoing compliance", "Customers willing to pay for proactive compliance vs. reactive"],
+        "data_sources_used": ["Precedence Research", "Grand View Research", "FINRA", "State legislation trackers"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["47 states introduced AI bills", "EU AI Act effective", "FINRA flagging governance gaps", "Model law expected 2026"],
+        "trajectory": "accelerating rapidly",
+        "timing_assessment": "early-optimal — regulation expanding, compliance demand about to surge"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["Big 4 (compliance practices)", "Thomson Reuters", "Wolters Kluwer", "Various RegTech startups"],
+        "mobility_score": 6,
+        "mobility_breakdown": {
+          "pricing_model_change": 0,
+          "cost_structure_change": -1,
+          "ai_cannibalization": 0,
+          "organizational_incentives": 0,
+          "speed_to_restructure": 0
+        },
+        "notes": "Big 4 serve enterprise. Thomson/Wolters serve mid-market. Gap: SMBs deploying AI with no compliance framework. New category: AI-specific compliance vs. traditional regulatory compliance."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": false,
+        "acquisition_path": "N/A — compliance advisory typically not licensed",
+        "moat_potential": "very high",
+        "regulatory_trajectory": "expanding rapidly (more regulation = more demand for compliance services)",
+        "compliance_as_advantage": "The product IS compliance; regulatory expansion is a structural tailwind"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "AI regulation is fragmenting: 47 states, EU AI Act (verified)",
+          "Compliance gap exists: FINRA report, industry surveys",
+          "RegTech market growing 17-36% CAGR (multiple market reports)"
+        ],
+        "likely": [
+          "SMBs will pay for AI compliance: regulation forcing it",
+          "Regulatory complexity will increase: political momentum toward more regulation"
+        ],
+        "uncertain": [
+          "Federal preemption: possible federal AI law could simplify (and reduce demand)",
+          "Enforcement timeline: regulations exist but enforcement may lag"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 19,
+        "capital_match": 9,
+        "team_match": 7,
+        "geo_language_match": 3,
+        "notes": "Good fit. ML/AI builds the compliance engine. Operator manages regulatory tracking. Need legal/regulatory domain expertise (hire or advisory). $500K sufficient for launch. Cross-border (US-LATAM) compliance is an expansion opportunity with language advantage."
+      },
+
+      "verdict": {
+        "tier": "TIER_2",
+        "economic_force": "$30B+",
+        "opportunity_score": 76,
+        "score_breakdown": {
+          "economic_force": 25,
+          "structural_advantage": 24,
+          "timing_readiness": 16,
+          "signal_strength": 11
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "Regulatory expertise required", "severity": "medium", "moat_potential": true, "resolution_path": "Hire regulatory counsel; each jurisdiction mastered adds moat"},
+          {"barrier": "Federal preemption risk", "severity": "low", "moat_potential": false, "resolution_path": "Federal law would simplify but not eliminate need; creates different moat (federal compliance expertise)"}
+        ],
+        "recommended_next_steps": [
+          "Map all current state AI regulations into structured database",
+          "Build MVP for healthcare AI compliance (highest-urgency sector)",
+          "Test with 20 companies deploying AI in healthcare/insurance",
+          "Monitor federal AI legislation for preemption risk"
+        ],
+        "reasoning": "Regulatory fragmentation is a structural tailwind for compliance services. The barrier IS the moat — building multi-jurisdiction compliance expertise is expensive and time-consuming. Jevons expansion is massive: AI compliance was previously irrelevant for SMBs but new laws make it mandatory."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-007",
+      "signal_ids_evaluated": ["A-2026-02-10-011", "A-2026-02-10-019"],
+      "cluster": "CL-10-SKILLED-TRADES-PLATFORM",
+      "structural_shift": "400K+ unfilled trade jobs, 2M by 2033. Back-office is 20-30% of time. Tacit-manual workers' premium rising. AI can't replace the work but CAN augment the business.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Business Operations Platform for Trades (Dispatch + Admin)",
+          "model_type": "direct",
+          "target_customer": "HVAC, plumbing, electrical businesses (2M+ in US). Solo operators to 50-person shops. Average revenue $250K-$2M.",
+          "value_proposition": "AI handles scheduling, dispatch, invoicing, customer communication, and lead management. Free 10-15 hours/week per tradesperson for billable work. $99-299/month vs. hiring office manager ($3K-5K/month).",
+          "cost_structure": "AI per business: $15-25/month. SMS/communication: $5-10. Infrastructure: $5-10. Total: $25-45/month.",
+          "cost_advantage_ratio": "10-20x vs. office manager hire",
+          "revenue_model": "Monthly subscription tiered by business size",
+          "jevons_multiplier": "2x (enables solo operators to run like larger businesses, taking more jobs)",
+          "economic_force": "$20B+ (trade business back-office ~$20B, 2x Jevons expansion for solo operators)",
+          "moat_source": "Workflow integration (hard to switch once embedded), industry-specific training data, job history database for pricing intelligence"
+        },
+        {
+          "model_name": "Trades Worker Premium Marketplace",
+          "model_type": "expansion",
+          "target_customer": "Homeowners and commercial property managers needing skilled trades work. Currently using Angi, Yelp, or word-of-mouth. 130M+ US households.",
+          "value_proposition": "AI-powered matching + verified skilled tradespeople + instant scheduling. Premium positioning: 'verified human expert' in an AI-saturated world. The human tradesperson IS the premium product.",
+          "cost_structure": "AI matching + scheduling: $5-15 per job. Marketing/acquisition: $20-50 per job. Total: $25-65 per job.",
+          "cost_advantage_ratio": "N/A (premium model, not cost competition)",
+          "revenue_model": "Service fee on jobs booked (10-15% of job value)",
+          "jevons_multiplier": "1.5x (easier booking = more jobs completed per tradesperson)",
+          "economic_force": "$15B+ (home services marketplace ~$500B, platform capture rate 3%)",
+          "moat_source": "Tradesperson supply lock-in, customer ratings database, AI scheduling optimization creating superior reliability"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$149/month (platform) or $75-150 per marketplace job",
+        "cost_per_unit_agentic": "$25-45/month or $25-65 per job",
+        "cost_per_unit_incumbent": "$3K-5K/month for office manager",
+        "cost_advantage_ratio": "10:1 to 20:1 for platform; premium pricing for marketplace",
+        "break_even_volume": "5,000 trade business subscribers or 10,000 marketplace jobs/month",
+        "gross_margin": "70-80%",
+        "assumptions": ["Trade businesses will adopt digital tools", "10-15 hours/week of admin genuinely recoverable", "Premium positioning resonates with homeowners"],
+        "data_sources_used": ["BLS", "CSIS", "MyOutDesk", "Industry reports"]
+      },
+
+      "cascade_position": {
+        "tier": "confirmed",
+        "evidence": ["400K+ unfilled positions confirmed", "41% retiring by 2031", "Data center construction amplifying demand"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — shortage worsening, tech adoption increasing in trades"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["ServiceTitan ($500M rev)", "Jobber", "Housecall Pro", "Angi ($1.3B)"],
+        "mobility_score": 6,
+        "mobility_breakdown": {
+          "pricing_model_change": 0,
+          "cost_structure_change": -1,
+          "ai_cannibalization": 0,
+          "organizational_incentives": 0,
+          "speed_to_restructure": 0
+        },
+        "notes": "ServiceTitan targets large shops ($1M+ revenue). Gap: solo operators and 2-5 person shops that can't afford $200-500/month platforms. Also: AI-native approach vs. adding AI features to existing SaaS."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": false,
+        "acquisition_path": "N/A",
+        "moat_potential": "low",
+        "regulatory_trajectory": "neutral",
+        "compliance_as_advantage": "N/A"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Skilled trades shortage is real and worsening: BLS data, 400K+ unfilled",
+          "Back-office is a major time sink: industry surveys, 20-30% of time"
+        ],
+        "likely": [
+          "Trade businesses will pay $99-299/month: comparable to existing tools",
+          "AI scheduling/dispatch achieves adequate quality: simpler than clinical/legal tasks"
+        ],
+        "uncertain": [
+          "Solo operator adoption rate: traditionally low tech adoption, but generational shift happening",
+          "Differentiation from ServiceTitan/Jobber: price point and AI-native approach may suffice"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 17,
+        "capital_match": 9,
+        "team_match": 7,
+        "geo_language_match": 1,
+        "notes": "Good capital and team fit. ML builds the AI engine, operator handles trade business relationships. BUT: Davis, CA location is fine; Spanish language less relevant (US trades are English-dominant). Low geographic fit for LATAM expansion."
+      },
+
+      "verdict": {
+        "tier": "TIER_2",
+        "economic_force": "$20B+",
+        "opportunity_score": 72,
+        "score_breakdown": {
+          "economic_force": 22,
+          "structural_advantage": 20,
+          "timing_readiness": 18,
+          "signal_strength": 12
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "ServiceTitan/Jobber competition", "severity": "medium", "moat_potential": false, "resolution_path": "Target underserved segment (solo to 5-person shops) at lower price"},
+          {"barrier": "Low tech adoption in trades", "severity": "medium", "moat_potential": false, "resolution_path": "Mobile-first, SMS-based interface; minimize complexity"}
+        ],
+        "recommended_next_steps": [
+          "Interview 50 solo/small trade operators about admin pain points",
+          "Build SMS-first MVP for scheduling and invoicing",
+          "Test at $99/month with 100 trade businesses",
+          "Measure hours saved and willingness-to-pay"
+        ],
+        "reasoning": "Massive demographic gap in tacit-manual work + AI-automatable back-office = Baumol Premium opportunity. The human workers become MORE valuable; the platform captures the admin surplus. Lower moat than regulated sectors but higher adoption readiness."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-008",
+      "signal_ids_evaluated": ["A-2026-02-10-009"],
+      "cluster": "CL-09-LATAM-AI-CORRIDOR",
+      "structural_shift": "LATAM AI market 26% CAGR; 45% of US companies increasing LATAM hiring; nearshoring creating cross-border service demand.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "Bilingual AI Business Services for US-LATAM Companies",
+          "model_type": "direct",
+          "target_customer": "US companies nearshoring operations to LATAM (est. 50K-100K companies) + LATAM companies serving US clients. Need bilingual compliance, HR, finance services.",
+          "value_proposition": "AI-powered bilingual (English/Spanish) business services: compliance, HR, payroll, tax across US-LATAM jurisdictions. $500-3000/month vs. $5K-20K for cross-border consulting.",
+          "cost_structure": "AI per client: $50-150/month. Bilingual human review: $100-300/month. Total: $150-450/month.",
+          "cost_advantage_ratio": "5-10x",
+          "revenue_model": "Monthly subscription tiered by complexity and jurisdictions",
+          "jevons_multiplier": "3x (many small companies nearshoring informally without proper compliance)",
+          "economic_force": "$25B+ (cross-border business services ~$10B, growing 20%+ annually, 3x Jevons)",
+          "moat_source": "Bilingual AI training, cross-border regulatory expertise, LATAM market knowledge, founder's Argentina background"
+        },
+        {
+          "model_name": "LATAM AI-Services Marketplace (Agentic Delivery)",
+          "model_type": "expansion",
+          "target_customer": "LATAM businesses ($100K-$10M revenue) that can't afford professional services at US price points. 20M+ SMBs across LATAM.",
+          "value_proposition": "Deliver US-quality accounting, legal, and compliance services in Spanish at LATAM price points using AI. $50-500/month.",
+          "cost_structure": "AI per client: $10-30/month. Local human review: $20-50/month. Total: $30-80/month.",
+          "cost_advantage_ratio": "8-15x vs. LATAM professional services",
+          "revenue_model": "Monthly subscription in local currency",
+          "jevons_multiplier": "5-10x (vast majority of LATAM SMBs have no professional services)",
+          "economic_force": "$50B+ (LATAM SMB professional services market ~$20B, 5x Jevons expansion at AI prices)",
+          "moat_source": "Spanish-native AI, LATAM regulatory knowledge, first-mover in underserved market, local pricing"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$1000/month (US-LATAM) or $200/month (LATAM-only)",
+        "cost_per_unit_agentic": "$150-450/month or $30-80/month",
+        "cost_per_unit_incumbent": "$5K-20K/month (cross-border) or $500-2000 (LATAM local)",
+        "cost_advantage_ratio": "5:1 to 15:1",
+        "break_even_volume": "300 US-LATAM clients or 2000 LATAM-only clients",
+        "gross_margin": "60-75%",
+        "assumptions": ["AI handles 80% of cross-border compliance work", "LATAM businesses will adopt cloud-based services", "Payment processing works across LATAM currencies"],
+        "data_sources_used": ["Alcor BPO", "Industry reports", "LATAM market data"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["45% of US companies increasing LATAM hiring", "LATAM AI market 26% CAGR", "Services exports up 27%"],
+        "trajectory": "accelerating",
+        "timing_assessment": "early-optimal — nearshoring trend strengthening"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["Deel ($500M+ rev)", "Remote.com", "Big 4 LATAM offices", "Local accounting firms"],
+        "mobility_score": 5,
+        "mobility_breakdown": {
+          "pricing_model_change": 0,
+          "cost_structure_change": -1,
+          "ai_cannibalization": 0,
+          "organizational_incentives": 0,
+          "speed_to_restructure": 0
+        },
+        "notes": "Deel/Remote focus on HR/payroll, not full business services. Big 4 serve enterprise only. Gap: AI-first full-service for SMBs operating cross-border."
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": false,
+        "acquisition_path": "N/A for platform; may need local licenses in specific LATAM countries",
+        "moat_potential": "medium",
+        "regulatory_trajectory": "neutral-positive (nearshoring is politically favored)",
+        "compliance_as_advantage": "Cross-border expertise is hard to build, creating natural moat"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Nearshoring trend is real: 45% of US companies increasing LATAM hiring",
+          "LATAM AI market growing 26% CAGR (industry reports)"
+        ],
+        "likely": [
+          "Cross-border compliance demand will grow: follows from nearshoring",
+          "SMBs will pay for bilingual AI services: cost savings are 5-15x"
+        ],
+        "uncertain": [
+          "LATAM payment processing: varies by country, testable",
+          "LATAM SMB adoption rate for cloud services: growing but uneven"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 24,
+        "capital_match": 9,
+        "team_match": 8,
+        "geo_language_match": 5,
+        "notes": "EXCEPTIONAL fit. Argentina-native founder with deep LATAM understanding. Native Spanish. ML/AI founder builds the engine. Cross-border operation is a direct founder advantage. Davis, CA proximity to Bay Area for US-side clients."
+      },
+
+      "verdict": {
+        "tier": "TIER_2",
+        "economic_force": "$25B+",
+        "opportunity_score": 74,
+        "score_breakdown": {
+          "economic_force": 24,
+          "structural_advantage": 20,
+          "timing_readiness": 17,
+          "signal_strength": 13
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "Deel/Remote competition in HR/payroll", "severity": "medium", "moat_potential": false, "resolution_path": "Differentiate with full-service (not just HR) and AI-first pricing"},
+          {"barrier": "LATAM market fragmentation", "severity": "medium", "moat_potential": true, "resolution_path": "Start with Mexico + Argentina (largest markets with strongest founder connections)"}
+        ],
+        "recommended_next_steps": [
+          "Interview 30 US companies nearshoring to LATAM about compliance pain",
+          "Build MVP for US-Mexico cross-border compliance",
+          "Price test at $500-1500/month with 10 pilot clients",
+          "Expand to Argentina, Brazil, Colombia in phase 2"
+        ],
+        "reasoning": "The nearshoring wave creates structural demand for cross-border business services. Founder fit is the strongest in the entire landscape: native Spanish, Argentina background, ML capability. The question is market timing and execution speed."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-009",
+      "signal_ids_evaluated": ["A-2026-02-10-014"],
+      "cluster": "CL-11-EDUCATION-AI",
+      "structural_shift": "Education Baumol cure: private tutoring only for wealthy 10-20%. AI at 10x lower cost unlocks 80% of market.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Tutoring for Underserved K-12 (US + LATAM)",
+          "model_type": "expansion",
+          "target_customer": "Families earning $30K-$100K who want tutoring but can't afford $40-100/hr. 35M+ students in US, 100M+ in LATAM.",
+          "value_proposition": "Personalized AI tutoring at $20-50/month. Adaptive, available 24/7, covers core subjects (math, science, SAT prep). Spanish and English.",
+          "cost_structure": "AI per student: $3-8/month. Content/curriculum: $2-4/month amortized. Total: $5-12/month.",
+          "cost_advantage_ratio": "10-20x vs. human tutoring",
+          "revenue_model": "Monthly family subscription or school district license",
+          "jevons_multiplier": "5-8x (80%+ of families currently can't afford tutoring)",
+          "economic_force": "$30B+ (tutoring ~$10B in US, 5x Jevons, LATAM expansion)",
+          "moat_source": "Student learning data, adaptive algorithm improvement, curriculum partnerships, bilingual content"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$30/month (family) or $5/student/month (district)",
+        "cost_per_unit_agentic": "$5-12/month",
+        "cost_per_unit_incumbent": "$400-1000/month for human tutoring",
+        "cost_advantage_ratio": "10:1 to 20:1",
+        "break_even_volume": "50,000 subscribers",
+        "gross_margin": "60-80%",
+        "assumptions": ["AI tutoring achieves measurable learning outcomes", "Parents will pay $20-50/month for tutoring", "Mobile-first works for target demographic"],
+        "data_sources_used": ["Mordor Intelligence", "New America", "Market reports"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["AI tutoring market growing 12.7% CAGR", "Microsoft/Carnegie investing", "Education CPI above headline"],
+        "trajectory": "moderate",
+        "timing_assessment": "early — market developing but not yet breaking"
+      },
+
+      "incumbent_analysis": {
+        "primary_incumbents": ["Khan Academy (free)", "Chegg ($440M)", "Duolingo ($531M)", "Various tutoring centers"],
+        "mobility_score": 6
+      },
+
+      "regulatory_landscape": {
+        "licensing_required": false,
+        "acquisition_path": "N/A",
+        "moat_potential": "low",
+        "regulatory_trajectory": "neutral",
+        "compliance_as_advantage": "COPPA/FERPA compliance for K-12 creates modest barrier"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "80%+ of families can't afford regular tutoring (industry data)",
+          "AI can provide effective tutoring for standard subjects (Khan Academy, Carnegie results)"
+        ],
+        "likely": [
+          "Parents will pay $20-50/month: aligns with streaming service psychology"
+        ],
+        "uncertain": [
+          "Learning outcome measurement: key for retention, testable in 3 months",
+          "School district sales cycle: potentially 6-12+ months"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 20,
+        "capital_match": 9,
+        "team_match": 7,
+        "geo_language_match": 4,
+        "notes": "Good fit. AI/ML builds adaptive engine. Bilingual for LATAM expansion (massive underserved education market). $500K sufficient. BUT: competitive market with free alternatives (Khan Academy)."
+      },
+
+      "verdict": {
+        "tier": "TIER_3",
+        "economic_force": "$30B+",
+        "opportunity_score": 62,
+        "score_breakdown": {
+          "economic_force": 22,
+          "structural_advantage": 14,
+          "timing_readiness": 14,
+          "signal_strength": 12
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "Khan Academy (free competitor)", "severity": "high", "moat_potential": false, "resolution_path": "Differentiate with adaptive AI + Spanish-first for LATAM + outcome tracking"},
+          {"barrier": "Proving learning outcomes", "severity": "medium", "moat_potential": true, "resolution_path": "Rigorous A/B testing with outcome measurement"}
+        ],
+        "recommended_next_steps": [
+          "Build MVP for SAT prep or math tutoring (measurable outcomes)",
+          "Test in LATAM market first (less competition from Khan Academy, Spanish advantage)",
+          "Measure learning outcomes rigorously for 3 months",
+          "Decide go/no-go based on outcome data + retention"
+        ],
+        "reasoning": "Massive Jevons expansion (80% of families priced out). But competitive landscape includes free alternatives (Khan Academy). Strongest angle: LATAM expansion (underserved, Spanish advantage, less competition). Economic force is real but moat is thin."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-010",
+      "signal_ids_evaluated": ["A-2026-02-10-002", "A-2026-02-10-022"],
+      "cluster": "CL-02-INFERENCE-COST-COLLAPSE",
+      "structural_shift": "280x inference cost collapse enabling deployment-phase businesses. Perez turning point approaching.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Service Factory (Multi-Vertical Agent Builder)",
+          "model_type": "structural",
+          "target_customer": "SMBs in various verticals that need AI-powered services but can't build them. Horizontal platform, vertical execution.",
+          "value_proposition": "Deploy pre-built AI service agents for specific business functions (customer service, content, data analysis, operations) at $200-2000/month. Each agent replaces $3K-15K/month in human cost.",
+          "cost_structure": "AI inference per agent: $20-80/month. Customization: $50-200/month amortized. Total: $70-280/month.",
+          "cost_advantage_ratio": "5-15x",
+          "revenue_model": "Monthly subscription per agent deployed",
+          "jevons_multiplier": "3x (businesses that couldn't afford these functions now can)",
+          "economic_force": "$100B+ (enterprise SaaS ~$200B transitioning to Service-as-Software)",
+          "moat_source": "Agent library, customization database, integration framework, usage data for improvement"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$500/month per agent",
+        "cost_per_unit_agentic": "$70-280/month",
+        "cost_per_unit_incumbent": "$3K-15K/month (human equivalent or traditional SaaS + human)",
+        "cost_advantage_ratio": "5:1 to 15:1",
+        "break_even_volume": "500 agent subscriptions",
+        "gross_margin": "60-75%",
+        "assumptions": ["AI agents can reliably handle specific business functions", "SMBs will pay $200-2000/month for agent services"],
+        "data_sources_used": ["Epoch AI", "Gartner", "CB Insights"]
+      },
+
+      "cascade_position": {
+        "tier": "confirmed",
+        "evidence": ["280x inference cost drop", "40% enterprise apps to embed agents by end 2026", "AI startup shakeout forcing focus on viable models"],
+        "trajectory": "accelerating",
+        "timing_assessment": "optimal — infrastructure overbuilt, application layer underbuilt"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Inference costs dropped 280x (Epoch AI data)",
+          "Gartner: 40% enterprise apps with agents by end 2026"
+        ],
+        "likely": [
+          "Agent accuracy sufficient for many business functions: improving rapidly"
+        ],
+        "uncertain": [
+          "Competitive dynamics in agent marketplace: fast-moving space",
+          "Customer acquisition cost for SMB agent services: testable"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 20,
+        "capital_match": 8,
+        "team_match": 9,
+        "geo_language_match": 3,
+        "notes": "Strong tech fit — ML/AI founder's core competency. Agent building is technically demanding. Operator founder handles GTM. $500K sufficient for MVP with 5-10 agent types."
+      },
+
+      "verdict": {
+        "tier": "TIER_2",
+        "economic_force": "$100B+",
+        "opportunity_score": 70,
+        "score_breakdown": {
+          "economic_force": 30,
+          "structural_advantage": 16,
+          "timing_readiness": 14,
+          "signal_strength": 10
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "Competitive density in agent space", "severity": "high", "moat_potential": false, "resolution_path": "Focus on specific verticals where domain expertise creates defensibility"},
+          {"barrier": "Agent reliability concerns", "severity": "medium", "moat_potential": false, "resolution_path": "Human-in-the-loop for critical decisions; accuracy improves with usage data"}
+        ],
+        "recommended_next_steps": [
+          "Pick 2-3 verticals where founders have domain access",
+          "Build agent framework + 5 specific agents",
+          "Test with 50 SMBs at $200-500/month",
+          "Measure retention and expansion revenue"
+        ],
+        "reasoning": "The infrastructure-to-application shift is the largest macro force in AI right now. Economic force is enormous ($100B+). But competitive density is high and moat is uncertain. Best if combined with a vertical focus (healthcare, legal, trades) rather than horizontal."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-011",
+      "signal_ids_evaluated": ["A-2026-02-10-016"],
+      "cluster": "CL-12-AI-STARTUP-DISTRESS",
+      "structural_shift": "90-99% AI startup mortality creating acqui-hire and IP acquisition opportunities.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Startup Asset Acquirer (Talent + Models + Data)",
+          "model_type": "structural",
+          "target_customer": "Not customer-facing: acquire distressed AI startup assets (fine-tuned models, datasets, talent) at cents on the dollar. Redeploy into revenue-generating vertical services.",
+          "value_proposition": "Acquire AI IP and talent from failing startups at 5-20% of development cost. Combine assets to build vertical AI services with pre-trained capabilities.",
+          "cost_structure": "Acquisition: $50K-500K per asset. Integration: $50K-200K. vs. building from scratch: $500K-$5M.",
+          "cost_advantage_ratio": "5-10x development cost savings",
+          "revenue_model": "Revenue from services built on acquired assets",
+          "jevons_multiplier": "N/A",
+          "economic_force": "$10B+ (estimated value of distressed AI startup IP available 2026-2027)",
+          "moat_source": "Deal flow access, integration capability, accumulated IP portfolio"
+        }
+      ],
+
+      "verdict": {
+        "tier": "TIER_3",
+        "economic_force": "$10B+",
+        "opportunity_score": 58,
+        "score_breakdown": {
+          "economic_force": 18,
+          "structural_advantage": 18,
+          "timing_readiness": 14,
+          "signal_strength": 8
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "Quality assessment of distressed assets", "severity": "high", "moat_potential": false, "resolution_path": "ML founder can evaluate technical quality"},
+          {"barrier": "Integration risk", "severity": "medium", "moat_potential": false, "resolution_path": "Start with talent acqui-hires; lower integration risk"}
+        ],
+        "recommended_next_steps": [
+          "Monitor YC and funded startup failures in target verticals",
+          "Build relationships with VCs who will want to place failing portfolio company teams",
+          "Identify 5 target acquisition candidates"
+        ],
+        "reasoning": "The Perez shakeout creates a window for acquiring AI capabilities at distressed prices. Best used as a COMPLEMENT to a primary vertical business model, not as the primary strategy."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-012",
+      "signal_ids_evaluated": ["A-2026-02-10-025"],
+      "cluster": "CL-14-LOW-WAGE-BAUMOL",
+      "structural_shift": "Low-wage Baumol sectors (home care, childcare, social work) underexplored by AI startups. Large workforces, severe shortages, sparse competition.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Operations for Home Health Agencies",
+          "model_type": "expansion",
+          "target_customer": "Home health agencies (30K+ in US) managing 4.6M home health aides. Currently use paper-heavy processes. Average agency: 20-200 aides.",
+          "value_proposition": "AI handles scheduling, care plan documentation, compliance reporting (state/federal), and family communication. $10-25 per aide per month. Currently, agencies spend $50-150 per aide on admin overhead.",
+          "cost_structure": "AI per aide: $3-8/month. Infrastructure: $2-4. Human oversight: $2-5. Total: $7-17/month.",
+          "cost_advantage_ratio": "5-10x vs. current admin overhead",
+          "revenue_model": "Per-aide monthly subscription",
+          "jevons_multiplier": "2x (enables agencies to manage more aides with same admin staff, expanding service capacity)",
+          "economic_force": "$15B+ (home health admin ~$5B, 2x Jevons, growing 8%+ annually)",
+          "moat_source": "State compliance database (50-state), CMS regulatory expertise, workflow integration with home health-specific EMRs"
+        },
+        {
+          "model_name": "AI for Childcare Center Operations",
+          "model_type": "expansion",
+          "target_customer": "Childcare centers and family daycare providers (500K+ in US). Cost pressures extreme: staff costs rising, parents' ability to pay flat. Average center: 5-50 children.",
+          "value_proposition": "AI handles parent communication, billing, licensing compliance, curriculum planning, and staff scheduling. $50-200/month per center vs. 5-10 hours/week of director admin time.",
+          "cost_structure": "AI per center: $10-30/month. Infrastructure: $5-10. Total: $15-40/month.",
+          "cost_advantage_ratio": "5-10x time savings for directors",
+          "revenue_model": "Monthly subscription per center",
+          "jevons_multiplier": "1.5x (enables directors to expand capacity by reducing admin burden)",
+          "economic_force": "$5B+ (childcare admin, growing due to regulatory expansion)",
+          "moat_source": "State licensing compliance database, parent communication platform lock-in"
+        }
+      ],
+
+      "unit_economics": {
+        "revenue_per_unit": "$15/aide/month (home health) or $99/month (childcare center)",
+        "cost_per_unit_agentic": "$7-17/aide or $15-40/center",
+        "cost_per_unit_incumbent": "$50-150/aide admin overhead or $500-1000/month for director admin time",
+        "cost_advantage_ratio": "5:1 to 10:1",
+        "break_even_volume": "10,000 aide subscriptions or 3,000 center subscriptions",
+        "gross_margin": "55-65%",
+        "assumptions": ["Home health agencies will adopt digital tools (trend accelerating post-COVID)", "Per-aide pricing works financially for agencies", "Childcare directors willing to adopt new technology"],
+        "data_sources_used": ["BLS", "CMS", "UNESCO", "Industry reports"]
+      },
+
+      "cascade_position": {
+        "tier": "pre-cascade",
+        "evidence": ["Home health aide workforce 4.6M and growing", "Childcare costs doubled", "AI competition very sparse in these sectors"],
+        "trajectory": "moderate",
+        "timing_assessment": "early-optimal — underexplored territory with real structural forces"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Home health aide workforce large (4.6M) and growing (BLS)",
+          "Childcare costs rising faster than inflation (Education data)",
+          "AI competition sparse in low-wage sectors (market observation)"
+        ],
+        "likely": [
+          "Agencies will adopt at $10-25/aide: ROI is clear",
+          "Regulatory compliance is a pain point: CMS and state requirements increasing"
+        ],
+        "uncertain": [
+          "Tech adoption rate in low-wage sectors: improving but historically low",
+          "Willingness to pay at these price points: testable with $10K pilot"
+        ],
+        "unlikely": []
+      },
+
+      "founder_fit": {
+        "score": 18,
+        "capital_match": 9,
+        "team_match": 7,
+        "geo_language_match": 2,
+        "notes": "Good capital/team fit. ML builds AI engine, operator handles agency relationships. Spanish less relevant (domestic market). But: low-wage sectors can be difficult go-to-market with long sales cycles."
+      },
+
+      "verdict": {
+        "tier": "TIER_3",
+        "economic_force": "$15B+",
+        "opportunity_score": 64,
+        "score_breakdown": {
+          "economic_force": 20,
+          "structural_advantage": 18,
+          "timing_readiness": 14,
+          "signal_strength": 12
+        },
+        "confidence": "medium",
+        "barriers": [
+          {"barrier": "Low tech adoption in sector", "severity": "medium", "moat_potential": false, "resolution_path": "Mobile-first, minimal-friction interface; integrate with existing workflows"},
+          {"barrier": "Low willingness-to-pay", "severity": "medium", "moat_potential": false, "resolution_path": "Ultra-low pricing ($10-25/aide); volume play"}
+        ],
+        "recommended_next_steps": [
+          "Interview 30 home health agency owners about admin pain points",
+          "Build MVP for scheduling + compliance documentation",
+          "Test at $15/aide/month with 10 agencies",
+          "Measure time savings and adoption friction"
+        ],
+        "reasoning": "Low-wage Baumol sectors are the most underexplored territory in the AI economy. Competition is sparse because startups chase high-margin sectors (Dutch Disease/T9). But the workforce is massive (4.6M home health aides alone) and the structural forces (demographic gap, regulatory expansion) are just as strong as in healthcare or legal."
+      }
+    },
+
+    {
+      "verification_id": "B-2026-02-10-013",
+      "signal_ids_evaluated": ["A-2026-02-10-024"],
+      "cluster": "CL-13-AI-MICRO-AGENCY",
+      "structural_shift": "Coasean firm shrinkage: 1-3 person AI teams replacing 10-50 person agencies.",
+
+      "business_models_constructed": [
+        {
+          "model_name": "AI Micro-Agency Toolkit (Enabling the Micro-Agency Model)",
+          "model_type": "structural",
+          "target_customer": "Freelancers and consultants transitioning to AI micro-agencies. 60M+ freelancers in US; growing portion adopting AI tools to scale output.",
+          "value_proposition": "All-in-one platform for running an AI micro-agency: client management, AI workflow orchestration, deliverable generation, billing. $99-299/month.",
+          "cost_structure": "AI infrastructure per user: $20-40/month. Platform: $10-20. Total: $30-60/month.",
+          "cost_advantage_ratio": "N/A (enabling tool, not direct service replacement)",
+          "revenue_model": "Monthly subscription + percentage of AI inference consumed",
+          "jevons_multiplier": "3x (enables individuals to operate agencies, creating new supply)",
+          "economic_force": "$10B+ (freelancer platform market ~$15B, growing rapidly)",
+          "moat_source": "Workflow templates, integration ecosystem, client management data"
+        }
+      ],
+
+      "verdict": {
+        "tier": "TIER_3",
+        "economic_force": "$10B+",
+        "opportunity_score": 55,
+        "score_breakdown": {
+          "economic_force": 18,
+          "structural_advantage": 14,
+          "timing_readiness": 14,
+          "signal_strength": 9
+        },
+        "confidence": "low",
+        "barriers": [
+          {"barrier": "Low barriers to entry = high competition", "severity": "high", "moat_potential": false, "resolution_path": "Focus on specific vertical (e.g., AI marketing agencies)"},
+          {"barrier": "Commodity risk for agency services", "severity": "high", "moat_potential": false, "resolution_path": "Build quality differentiation and client matching"}
+        ],
+        "recommended_next_steps": [
+          "Survey 100 AI micro-agency operators about tool needs",
+          "Build MVP for one specific agency type (e.g., content marketing)",
+          "Test willingness-to-pay at $99/month"
+        ],
+        "reasoning": "Coasean shrinkage is real but this is a picks-and-shovels play in a low-moat market. The structural force (firm shrinkage) is confirmed but the competitive dynamics are unfavorable. Better as a feature of a larger platform than a standalone business."
+      }
+    }
+  ]
+}

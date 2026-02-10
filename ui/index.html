@@ -285,6 +285,25 @@
   .empty { text-align: center; padding: 48px 24px; color: var(--dim); font-size: 13px; }
   .update-meta { font-size: 12px; color: var(--dim); margin-top: 8px; }
 
+  /* Section hints */
+  .section-hint {
+    font-size: 12px; color: var(--dim); font-weight: 400;
+    text-transform: none; letter-spacing: 0; margin-left: 8px;
+  }
+
+  /* Theory legend */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    padding: 10px 16px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 8px;
+    margin-bottom: 24px; font-size: 11px; color: var(--dim);
+  }
+  .legend-item { white-space: nowrap; }
+  .legend-dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; margin-right: 4px; vertical-align: middle;
+  }
+
   /* Intro */
   .intro {
     background: var(--surface);
@@ -345,23 +364,22 @@
   <div class="intro" id="intro-section">
     <div class="intro-text">
       <p>
-        <strong>What is this?</strong> An AI-powered research engine that systematically scans the US economy
-        to identify businesses where AI creates a structural advantage for new entrants. It runs in iterative
-        cycles &mdash; each cycle scans data sources, extracts signals, grades opportunities, stress-tests
-        them with counter-arguments, and synthesizes findings.
+        <strong>What is this?</strong> An AI-powered research engine that maps the landscape of businesses
+        likely to thrive in the AI economy over the next 3&ndash;5 years. It applies classical economic theories
+        as operational lenses &mdash; Baumol, Schumpeter, Jevons, Perez, Polanyi &mdash; to detect structural
+        forces and construct business models from the data up.
       </p>
       <p id="intro-detail" style="display:none;">
-        The engine uses a multi-agent pipeline: <strong>Agent A</strong> scans data (FRED, BLS, EDGAR, web)
-        and extracts economic signals. <strong>Agent C</strong> grades each opportunity against 9 weighted criteria
-        including Baumol cost disease, competitive density, and counter-signal severity. <strong>Agent B</strong>
-        adversarially challenges every thesis &mdash; it has an 82% kill+park rate. <strong>Master</strong> synthesizes
-        cross-cycle patterns and updates the knowledge graph. A <strong>Business Rotation Engine</strong> with 6 discovery
-        channels feeds new candidates from the full NAICS universe rather than relying on brainstorming.
+        The engine uses a construct-first pipeline: <strong>Agent A</strong> scans data (FRED, BLS, EDGAR, O*NET, web)
+        and extracts structural signals. <strong>Agent C</strong> grades signals by economic force, structural advantage,
+        and timing readiness. <strong>Agent B</strong> constructs 5 business model types per opportunity &mdash; Direct Play,
+        Structural Play, Jevons Expansion, Judgment-Premium (AGG), and Human-Premium (Baumol). <strong>Master</strong>
+        synthesizes into a tiered landscape map with founder fit scored separately.
       </p>
       <p id="intro-detail2" style="display:none;">
-        Built for a 2-person founding team (operator + ML/AI). The research target: sectors where high human
-        labor costs (Baumol), low competitive density, and a timing window between &ldquo;companies cutting humans&rdquo; and
-        &ldquo;AI fully replacing them&rdquo; create a vacuum for AI-native service businesses.
+        v2 engine: landscape-first, construct before filtering. Barriers are moats, not vetoes. Competitive density
+        means the structural force is real. Three Polanyi categories per sector (routine-cognitive, tacit-manual,
+        tacit-cognitive) yield three distinct business models, not one. Perez crash resilience check on every opportunity.
       </p>
       <button class="intro-toggle" id="intro-toggle" onclick="
         var d1=document.getElementById('intro-detail'),d2=document.getElementById('intro-detail2'),b=this;
@@ -372,9 +390,9 @@
     <dl class="intro-kv" id="intro-stats">
       <dt>Cycles</dt><dd id="intro-cycles">--</dd>
       <dt>Signals</dt><dd id="intro-signals">--</dd>
-      <dt>Evaluated</dt><dd id="intro-evaluated">--</dd>
-      <dt>Killed</dt><dd id="intro-killed">--</dd>
-      <dt>Pursue</dt><dd id="intro-pursue">--</dd>
+      <dt>Models</dt><dd id="intro-evaluated">--</dd>
+      <dt>Tier 1</dt><dd id="intro-killed">--</dd>
+      <dt>Tier 2</dt><dd id="intro-pursue">--</dd>
     </dl>
   </div>
 
@@ -401,35 +419,43 @@
       <div class="stat-value" id="total-signals">0</div>
     </div>
     <div class="stat-item">
-      <div class="stat-label">Verified</div>
+      <div class="stat-label">Models</div>
       <div class="stat-value" id="total-verified" style="color:var(--green)">0</div>
     </div>
     <div class="stat-item">
-      <div class="stat-label">Active</div>
+      <div class="stat-label">Tier 1</div>
       <div class="stat-value" id="active-pipeline" style="color:var(--accent)">0</div>
     </div>
     <div class="stat-item">
-      <div class="stat-label">Killed</div>
-      <div class="stat-value" id="total-killed" style="color:var(--red)">0</div>
+      <div class="stat-label">Tier 2</div>
+      <div class="stat-value" id="total-killed" style="color:var(--amber)">0</div>
     </div>
+  </div>
+
+  <!-- Theory legend -->
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction, near-term</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; strong signal, needs validation</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; early signal, monitoring</span>
+    <span class="legend-item" style="margin-left:auto; border-left:1px solid var(--border); padding-left:14px;">Baumol = cost disease cure &middot; Jevons = demand expansion &middot; Perez = tech revolution phase &middot; Polanyi = automation boundary &middot; AGG = prediction/judgment split</span>
   </div>
 
   <!-- Edge insight -->
   <div class="edge-box" id="edge-box">
-    <div class="label">Current Edge</div>
-    <div class="content" id="synthesis-text">Run a research cycle to generate synthesis and identify structural edges.</div>
+    <div class="label">Landscape Synthesis</div>
+    <div class="content" id="synthesis-text">Run a research cycle to map the opportunity landscape.</div>
   </div>
 
   <!-- Opportunities + Signals -->
   <div class="grid-2">
     <section>
-      <h2>Top Opportunities</h2>
+      <h2>Top Opportunities <span class="section-hint">ranked by economic force</span></h2>
       <div class="opp-list" id="opp-list">
         <div class="empty">No opportunities yet</div>
       </div>
     </section>
     <section>
-      <h2>Latest Signals</h2>
+      <h2>Latest Signals <span class="section-hint">raw data extracted this cycle</span></h2>
       <div class="signal-list" id="signal-list">
         <div class="empty">No signals yet</div>
       </div>
@@ -439,13 +465,13 @@
   <!-- Heatmaps + History -->
   <div class="grid-2" style="margin-top:8px;">
     <div class="card">
-      <h3>Sectors</h3>
+      <h3>Sectors <span class="section-hint" style="text-transform:none;letter-spacing:0;font-size:11px">signal density by industry</span></h3>
       <div class="heat-grid" id="sector-heat">
         <div class="empty" style="width:100%">No sector data</div>
       </div>
     </div>
     <div class="card">
-      <h3>Cycle History</h3>
+      <h3>Cycle History <span class="section-hint" style="text-transform:none;letter-spacing:0;font-size:11px">signals per cycle (taller = more signals)</span></h3>
       <div class="cycle-chart" id="cycle-chart">
         <div class="empty" style="width:100%">No cycles</div>
       </div>
@@ -468,22 +494,27 @@ function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.
 function renderOpps(opps) {
   const el = document.getElementById('opp-list');
   if (!opps || !opps.length) return;
-  el.innerHTML = opps.slice(0, 8).map(o => {
-    const h = (o.horizon || '').toLowerCase();
-    const hCls = h === 'h1' ? 'tag-h1' : h === 'h2' ? 'tag-h2' : 'tag-h3';
-    const s = (o.status || 'scanning').toLowerCase();
-    const sCls = s === 'verified' || s === 'pursue' ? 'tag-status-verified' : s === 'killed' ? 'tag-status-killed' : s === 'parked' ? 'tag-status-parked' : 'tag-status-scanning';
-    const change = o.score_change != null ? (typeof o.score_change === 'number' ? (o.score_change > 0 ? '+'+o.score_change : o.score_change) : o.score_change) : '';
+  el.innerHTML = opps.slice(0, 10).map(o => {
+    // v2: tier-based coloring; v1: horizon-based
+    const tier = (o.tier || '').toLowerCase();
+    const h = (o.horizon || tier || '').toLowerCase();
+    const hCls = (h.includes('1') || h === 'h1') ? 'tag-h1' : (h.includes('2') || h === 'h2') ? 'tag-h2' : 'tag-h3';
+    const s = (o.status || o.tier || 'scanning').toLowerCase();
+    const sCls = s.includes('tier 1') || s === 'verified' || s === 'pursue' ? 'tag-status-verified' : s.includes('tier 2') ? 'tag-status-scanning' : s.includes('tier 3') ? 'tag-status-parked' : s === 'killed' ? 'tag-status-killed' : 'tag-status-scanning';
+    const score = o.score || o.opportunity_score || o.economic_force_score || o.total_score || '--';
+    // v2: show model types or theories; v1: show principles
+    const tags = o.model_types || o.theoretical_lenses || o.business_models || o.principles_passed || [];
+    const tagArr = Array.isArray(tags) ? tags : [];
     return `<div class="opp">
       <div class="opp-top">
         <span class="opp-name">${esc(o.name)}</span>
-        <span class="opp-score">${o.score || '--'}${change ? ' <small style="opacity:0.6">'+esc(String(change))+'</small>' : ''}</span>
+        <span class="opp-score">${score}</span>
       </div>
-      <div class="opp-thesis">${esc(o.thesis)}</div>
+      <div class="opp-thesis">${esc(o.thesis || o.description || o.key_signals || o.note || '')}</div>
       <div class="opp-tags">
-        <span class="tag ${hCls}">${esc(o.horizon)}</span>
-        <span class="tag ${sCls}">${esc(o.status)}</span>
-        ${(o.principles_passed || []).map(p => `<span class="tag">${esc(p)}</span>`).join('')}
+        <span class="tag ${hCls}">${esc(o.tier || o.horizon || '')}</span>
+        <span class="tag ${sCls}">${esc(o.status || o.tier || '')}</span>
+        ${tagArr.slice(0, 3).map(t => `<span class="tag">${esc(typeof t === 'string' ? t : t.type || t.name || '')}</span>`).join('')}
       </div>
     </div>`;
   }).join('');
@@ -535,17 +566,30 @@ async function refresh() {
     document.getElementById('last-updated').textContent =
       ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'awaiting first run';
 
-    // Compute stats from available data
-    const opps = d.top_opportunities || [];
-    const active = opps.filter(o => {const s=(o.status||'').toLowerCase(); return s!=='killed'&&s!=='parked';});
-    const parked = opps.filter(o => (o.status||'').toLowerCase() === 'parked');
-    const stats = d.pipeline_stats || {};
-    const killCount = d.kill_index ? (d.kill_index.entries||d.kill_index).length || d.kill_index.total_active || 0 : 0;
+    // v2 landscape data: flatten tiers into a single opportunities list
+    const landscape = d.opportunity_landscape || d.landscape || {};
+    const tier1 = (landscape.tier_1 || []).map(o => Object.assign({tier:'Tier 1', name: o.name || o.structural_shift}, o));
+    const tier2 = (landscape.tier_2 || []).map(o => Object.assign({tier:'Tier 2', name: o.name || o.structural_shift}, o));
+    const tier3 = (landscape.tier_3 || []).map(o => Object.assign({tier:'Tier 3', name: o.name || o.structural_shift}, o));
+    const allLandscape = [...tier1, ...tier2, ...tier3];
 
-    document.getElementById('total-signals').textContent = stats.total_ever_evaluated || d.total_signals_scanned || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
-    document.getElementById('total-verified').textContent = stats.active_investigate_further || d.total_opportunities_verified || active.length;
-    document.getElementById('active-pipeline').textContent = d.active_opportunities || active.length;
-    document.getElementById('total-killed').textContent = stats.killed || killCount;
+    // Fall back to v1 top_opportunities if no landscape data
+    const opps = allLandscape.length ? allLandscape : (d.top_opportunities || []);
+    const stats = d.pipeline_stats || {};
+
+    // Barrier count (v2) or kill count (v1)
+    const bi = d.barrier_index || d.kill_index;
+    const biSummary = d.barrier_index_summary;
+    const barrierCount = biSummary ? (biSummary.total || 0) : bi ? (Array.isArray(bi) ? bi.length : (bi.barriers||bi.entries||[]).length || bi.total_barriers || bi.total_active || 0) : 0;
+
+    // Stats: Signals, Models, Tier 1, Tier 2
+    const signalCount = d.signals_scanned || d.total_signals_scanned || stats.total_ever_evaluated || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
+    const modelCount = d.models_constructed || d.total_models_constructed || stats.models_constructed || opps.length || 0;
+
+    document.getElementById('total-signals').textContent = signalCount;
+    document.getElementById('total-verified').textContent = modelCount;
+    document.getElementById('active-pipeline').textContent = tier1.length || stats.tier_1 || d.active_opportunities || 0;
+    document.getElementById('total-killed').textContent = tier2.length || stats.tier_2 || barrierCount;
 
     const synthesis = d.summary || d.master_synthesis || d.engine_status || '';
     if (synthesis) {
@@ -554,20 +598,21 @@ async function refresh() {
 
     // Intro stats
     document.getElementById('intro-cycles').textContent = d.cycle || d.current_cycle || 0;
-    document.getElementById('intro-signals').textContent = stats.total_ever_evaluated || d.total_signals_scanned || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
-    document.getElementById('intro-evaluated').textContent = stats.total_ever_evaluated || opps.length || 0;
-    document.getElementById('intro-killed').textContent = stats.killed || killCount;
-    document.getElementById('intro-pursue').textContent = stats.pursue || opps.filter(o=>(o.status||'').toLowerCase()==='pursue').length || 0;
+    document.getElementById('intro-signals').textContent = signalCount;
+    document.getElementById('intro-evaluated').textContent = modelCount;
+    document.getElementById('intro-killed').textContent = tier1.length || 0;
+    document.getElementById('intro-pursue').textContent = tier2.length || 0;
 
-    renderOpps(opps.filter(o => typeof o.rank === 'number'));
+    // For v2: add tier as status/horizon tag for rendering
+    const renderableOpps = opps.map((o, i) => Object.assign({rank: o.rank != null ? o.rank : i+1}, o));
+    renderOpps(renderableOpps);
     renderHeat(d.sector_heatmap);
     renderCycles(d.cycle_history);
   }
   if (f) {
-    renderSignals(f.recent_signals);
-    // If no dashboard signals, use signals_feed opportunity clusters
-    if (!d && f.opportunity_clusters) {
-      renderOpps(f.opportunity_clusters);
+    renderSignals(f.recent_signals || f.signals);
+    if (!d && (f.opportunity_clusters || f.opportunities)) {
+      renderOpps(f.opportunity_clusters || f.opportunities);
     }
   }
 }

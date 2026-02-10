@@ -100,6 +100,27 @@
 
   .empty { text-align: center; padding: 40px 24px; color: var(--dim); font-size: 13px; }
 
+  /* Section hints + legend */
+  .section-hint {
+    font-size: 12px; color: var(--dim); font-weight: 400;
+    text-transform: none; letter-spacing: 0; margin-left: 8px;
+  }
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    padding: 10px 16px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 8px;
+    margin-bottom: 24px; font-size: 11px; color: var(--dim);
+  }
+  .legend-item { white-space: nowrap; }
+  .legend-dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; margin-right: 4px; vertical-align: middle;
+  }
+  .page-intro {
+    color: var(--text-secondary); font-size: 13px; line-height: 1.7;
+    margin-bottom: 24px; max-width: 800px;
+  }
+
   /* Opportunity cards */
   .opp-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -286,6 +307,22 @@
     </div>
   </header>
 
+  <p class="page-intro">
+    Deep analysis of every opportunity the engine has constructed. Each business model is scored by economic force,
+    structural advantage, and timing readiness. Structural patterns show recurring cross-signal themes.
+    Barriers are not rejections &mdash; high-barrier sectors with moat potential may be the strongest opportunities.
+  </p>
+
+  <!-- Tier legend -->
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction, near-term</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; strong signal, needs validation</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; early signal, monitoring</span>
+    <span class="legend-item" style="margin-left:auto; border-left:1px solid var(--border); padding-left:14px;">
+      Score = economic force (0&ndash;100) &middot; Barriers can indicate moat potential
+    </span>
+  </div>
+
   <!-- Stats -->
   <div class="stats">
     <div class="stat-item">
@@ -297,12 +334,12 @@
       <div class="stat-value" id="exec-signals">0</div>
     </div>
     <div class="stat-item">
-      <div class="stat-label">Active Opps</div>
+      <div class="stat-label">Business Models</div>
       <div class="stat-value" id="exec-active" style="color:var(--green)">0</div>
     </div>
     <div class="stat-item">
-      <div class="stat-label">Kills</div>
-      <div class="stat-value" id="exec-kills" style="color:var(--red)">0</div>
+      <div class="stat-label">Barriers</div>
+      <div class="stat-value" id="exec-kills" style="color:var(--amber)">0</div>
     </div>
   </div>
 
@@ -314,29 +351,29 @@
 
   <!-- Active Opportunities -->
   <section>
-    <h2>Active Opportunities</h2>
+    <h2>Active Opportunities <span class="section-hint">business models ranked by tier and economic force</span></h2>
     <div id="active-opportunities"><div class="empty">No active opportunities yet</div></div>
   </section>
 
-  <!-- Patterns + Kill Index -->
+  <!-- Patterns + Barrier Index -->
   <div class="grid-2">
     <div>
       <section>
-        <h2>Confirmed Patterns</h2>
+        <h2>Structural Patterns <span class="section-hint">recurring cross-signal themes</span></h2>
         <div id="confirmed-patterns"><div class="empty">No patterns detected yet</div></div>
       </section>
     </div>
     <div>
       <section>
-        <h2>Kill Index</h2>
-        <div id="kill-index"><div class="empty">No kills recorded</div></div>
+        <h2>Barrier Index <span class="section-hint">entry barriers &mdash; some indicate moat potential</span></h2>
+        <div id="kill-index"><div class="empty">No barriers recorded</div></div>
       </section>
     </div>
   </div>
 
   <!-- Parked Opportunities -->
   <section>
-    <h2>Parked Opportunities</h2>
+    <h2>Parked Opportunities <span class="section-hint">paused pending customer discovery or new data</span></h2>
     <div id="parked-opportunities"><div class="empty">No parked opportunities</div></div>
   </section>
 
@@ -390,25 +427,31 @@ function strengthInfo(s){
 
 function renderExec(data){
   document.getElementById('exec-cycle').textContent=data.cycle||data.current_cycle||0;
-  const opps=data.top_opportunities||[];
-  const active=opps.filter(o=>{const s=(o.status||'').toLowerCase();return s!=='killed'&&s!=='parked'});
+  // v2: flatten landscape tiers
+  const landscape=data.opportunity_landscape||data.landscape||{};
+  const t1=landscape.tier_1||[];const t2=landscape.tier_2||[];const t3=landscape.tier_3||[];
+  const allLandscape=[...t1,...t2,...t3];
+  const opps=allLandscape.length?allLandscape:(data.top_opportunities||[]);
   const stats=data.pipeline_stats||{};
-  const ki=data.kill_index;
-  const killCount=ki?(Array.isArray(ki)?ki.length:(ki.entries||[]).length||ki.total_active||0):0;
-  document.getElementById('exec-signals').textContent=stats.total_ever_evaluated||data.total_signals_scanned||(data.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0)||0;
-  document.getElementById('exec-active').textContent=data.active_opportunities||stats.active_investigate_further||active.length;
-  document.getElementById('exec-kills').textContent=stats.killed||killCount;
+  // v2: barrier_index; v1: kill_index
+  const bi=data.barrier_index||data.kill_index;
+  const biSummary=data.barrier_index_summary;
+  const barrierCount=biSummary?(biSummary.total||0):bi?(Array.isArray(bi)?bi.length:(bi.barriers||bi.entries||[]).length||bi.total_barriers||bi.total_active||0):0;
+  document.getElementById('exec-signals').textContent=data.signals_scanned||data.total_signals_scanned||stats.total_ever_evaluated||(data.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0)||0;
+  document.getElementById('exec-active').textContent=data.models_constructed||data.total_models_constructed||stats.models_constructed||opps.length;
+  document.getElementById('exec-kills').textContent=barrierCount;
   const syn=data.summary||data.master_synthesis||data.engine_status||'';
   document.getElementById('exec-synthesis').textContent=syn?truncate(syn,3):'No synthesis available yet. Run a research cycle to generate findings.';
 }
 
 function renderActive(opps){
   const el=document.getElementById('active-opportunities');
-  if(!opps){el.innerHTML='<div class="empty">No active opportunities yet</div>';return}
+  if(!opps||!opps.length){el.innerHTML='<div class="empty">No active opportunities yet</div>';return}
+  // v2: all landscape opps are active (no kill/park filtering); v1: filter killed/parked
   const active=opps.filter(o=>{const s=(o.status||'').toLowerCase();return s!=='killed'&&s!=='parked'});
   if(!active.length){el.innerHTML='<div class="empty">No active opportunities</div>';return}
   el.innerHTML=active.map(o=>{
-    const dp=o.key_data_points||o.data_points||o.key_strengths||[];
+    const dp=o.key_data_points||o.data_points||o.key_strengths||o.barriers||o.moats||[];
     const dpH=dp.length?'<ul class="data-points">'+dp.map(d=>'<li>'+esc(typeof d==='string'?d:d.point||d.description||JSON.stringify(d))+'</li>').join('')+'</ul>':'';
     const vh=o.vc_hook||o.investor_hook||'';
     const vhH=vh?'<div class="vc-hook"><div class="vc-hook-label">VC Hook</div>'+esc(vh)+'</div>':'';
@@ -416,16 +459,17 @@ function renderActive(opps){
     const csH=cs?'<div class="counter-note">Counter-signal: '+esc(typeof cs==='string'?cs:JSON.stringify(cs))+'</div>':'';
     const risksArr=o.key_risks||[];
     const risksH=risksArr.length?'<ul class="data-points" style="margin-top:8px">'+risksArr.map(r=>'<li style="color:var(--red)">'+esc(r)+'</li>').join('')+'</ul>':'';
-    const actionH=o.critical_action?'<div style="margin-top:8px;padding:8px 12px;background:var(--amber-dim);border-radius:6px;font-size:12px;color:var(--amber)">'+esc(o.critical_action)+'</div>':'';
+    const actionText=o.critical_action||(o.next_steps?o.next_steps.slice(0,3).join(' / '):'');
+    const actionH=actionText?'<div style="margin-top:8px;padding:8px 12px;background:var(--amber-dim);border-radius:6px;font-size:12px;color:var(--amber)">'+esc(actionText)+'</div>':'';
     return`<div class="opp-card">
       <div class="opp-header">
         <div class="opp-name">${esc(o.name)}</div>
         <div class="opp-badges">
           <span class="horizon-tag ${hClass(o.horizon)}">${esc(o.horizon||'')}</span>
-          <span class="score-badge">${o.score||'--'}</span>
+          <span class="score-badge">${o.score||o.opportunity_score||'--'}</span>
         </div>
       </div>
-      <div class="thesis-text">${esc(o.thesis||'')}</div>
+      <div class="thesis-text">${esc(o.thesis||o.key_signals||o.note||'')}</div>
       ${dpH}${risksH}${vhH}${actionH}
       <div class="opp-footer">
         <span class="status-tag ${sClass(o.status)}">${esc(o.status||'unknown')}</span>
@@ -445,7 +489,7 @@ function renderPatterns(patterns){
     const si=strengthInfo(p.strength);
     return`<div class="pattern-card">
       <div class="pattern-header">
-        <span class="pattern-name">${esc(p.name||p.pattern||'Unnamed')}</span>
+        <span class="pattern-name">${esc(p.name||p.pattern||p.shift||'Unnamed')}</span>
         <div class="strength-bar"><div class="strength-fill ${si.cls}" style="width:${si.pct}%"></div></div>
       </div>
       ${prH}
@@ -455,14 +499,16 @@ function renderPatterns(patterns){
   }).join('');
 }
 
-function renderKills(kills){
+function renderKills(barriers){
   const el=document.getElementById('kill-index');
-  if(!kills||!kills.length){el.innerHTML='<div class="empty">No kills recorded</div>';return}
-  el.innerHTML=kills.map(k=>`<div class="kill-item">
-    <div class="kill-target">${esc(k.target||k.name||k.opportunity||'Unknown')}</div>
-    <div class="kill-reason">${esc(k.reason||k.rationale||'')}</div>
-    <div class="kill-cycle">Cycle ${k.cycle_killed||k.cycle||'?'}</div>
-  </div>`).join('');
+  if(!barriers||!barriers.length){el.innerHTML='<div class="empty">No barriers recorded</div>';return}
+  el.innerHTML=barriers.map(b=>{
+    const moat=b.moat_potential?' <span style="color:var(--green);font-size:10px">MOAT</span>':'';
+    return`<div class="kill-item" style="border-left-color:${b.moat_potential?'var(--amber)':'var(--red)'}">
+    <div class="kill-target">${esc(b.target||b.name||b.opportunity||b.sector||'Unknown')}${moat}</div>
+    <div class="kill-reason">${esc(b.reason||b.rationale||b.description||'')}</div>
+    <div class="kill-cycle">${b.review_date?'Review: '+esc(b.review_date):'Cycle '+(b.cycle_killed||b.cycle||'?')}</div>
+  </div>`}).join('');
 }
 
 function renderParked(opps){
@@ -479,7 +525,7 @@ function renderParked(opps){
         <div class="opp-name">${esc(o.name)}</div>
         <div class="opp-badges">
           <span class="horizon-tag ${hClass(o.horizon)}">${esc(o.horizon||'')}</span>
-          <span class="score-badge">${o.score||'--'}</span>
+          <span class="score-badge">${o.score||o.opportunity_score||'--'}</span>
         </div>
       </div>
       <div class="thesis-text">${esc(o.park_reason||o.thesis||'')}</div>
@@ -532,14 +578,25 @@ async function refresh(){
     if(!r.ok)return;
     const d=await r.json();
     renderExec(d);
-    renderActive(d.top_opportunities);
-    renderPatterns(d.key_patterns||d.cross_principle_patterns);
-    // kill_index can be array or object with .entries
-    const ki=d.kill_index;
-    renderKills(Array.isArray(ki)?ki:(ki&&ki.entries?ki.entries:ki?[ki]:[]));
-    renderParked(d.top_opportunities);
+    // v2: flatten landscape tiers; v1: use top_opportunities
+    const landscape=d.opportunity_landscape||d.landscape||{};
+    const t1=(landscape.tier_1||[]).map(o=>Object.assign({tier:'Tier 1',status:'Tier 1',name:o.name||o.structural_shift},o));
+    const t2=(landscape.tier_2||[]).map(o=>Object.assign({tier:'Tier 2',status:'Tier 2',name:o.name||o.structural_shift},o));
+    const t3=(landscape.tier_3||[]).map(o=>Object.assign({tier:'Tier 3',status:'Tier 3',name:o.name||o.structural_shift},o));
+    const allOpps=[...t1,...t2,...t3];
+    const opps=allOpps.length?allOpps:(d.top_opportunities||[]);
+    renderActive(opps);
+    renderPatterns(d.key_patterns||d.structural_patterns||d.structural_shifts_active||d.cross_principle_patterns);
+    // v2: barrier_index; v1: kill_index; also check landscape barriers_noted
+    const bi=d.barrier_index||d.kill_index;
+    let barriers=bi?(Array.isArray(bi)?bi:(bi.barriers||bi.entries||[])):[];
+    if(!barriers.length&&landscape.barriers_noted){
+      barriers=landscape.barriers_noted.map(b=>({target:b.barrier,reason:b.sectors?b.sectors.join(', '):'',moat_potential:b.moat_potential}));
+    }
+    renderKills(barriers);
+    renderParked(opps);
     renderSectors(d.sector_heatmap);
-    renderWeights(d.grading_weights_current);
+    renderWeights(d.grading_weights_current||d.grading_weights);
   }catch{}
 }
 

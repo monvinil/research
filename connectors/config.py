@@ -27,5 +27,8 @@ CENSUS_API_KEY = os.getenv('CENSUS_API_KEY', '')
 # SEC EDGAR
 EDGAR_CONTACT_EMAIL = os.getenv('EDGAR_CONTACT_EMAIL', 'research@example.com')
 
+# O*NET (Occupation data — Polanyi classification)
+ONET_API_KEY = os.getenv('ONET_API_KEY', '')
+
 # Web Search
 SERPER_API_KEY = os.getenv('SERPER_API_KEY', '')

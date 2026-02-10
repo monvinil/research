@@ -8,7 +8,7 @@
 
 Each theory below maps to specific data patterns the engine should detect. These aren't academic references — they're operational lenses that change what signals mean.
 
-### T1: Schumpeterian Creative Destruction (Accelerated)
+### T1: Schumpeterian Creative Destruction (Accelerated) + Christensen's Disruption Taxonomy
 
 **Classic theory:** Innovation creates temporary monopoly → monopoly attracts imitators → prices fall → next innovation cycle. Destruction is how capitalism clears dead wood and reallocates resources to more productive uses.
 
@@ -16,6 +16,12 @@ Each theory below maps to specific data patterns the engine should detect. These
 - The "creative" part (new entrants with AI cost structures) is moving faster than the "destruction" part (incumbents exiting)
 - There's a **gap period** where incumbents are dead but don't know it yet — still operating, still holding customers, but their cost structure is terminal
 - This gap period IS the entry window for P2 (Liquidation Cascade)
+
+**Christensen distinction (CRITICAL):** Not all AI adoption is disruptive. For each sector, classify:
+- **Sustaining AI:** Makes incumbents better/faster (AI-enhanced Google, AI-assisted lawyers at BigLaw). Incumbents adopt and STRENGTHEN their position. Entry is hard.
+- **Disruptive AI:** Makes incumbents obsolete — new entrants serve overshot or unserved markets at radically lower cost. Incumbents CAN'T adopt because it cannibalizes their business model.
+
+**The test:** If AI makes the incumbent's core revenue model MORE profitable → sustaining (avoid). If AI destroys the incumbent's pricing power or serves customers they can't reach → disruptive (opportunity).
 
 **What to scan for:** Industries where the Schumpeterian clock has accelerated but incumbents haven't acknowledged it. Measured by: rising labor costs + flat/falling revenue + no AI capex on 10-K → the gap period. When you see this combination, the cascade is 12-24 months away.
 
@@ -27,6 +33,14 @@ INCUMBENT DEATH SIGNAL:
   EDGAR 10-K: no "artificial intelligence" in strategy   ✓ (not adapting)
   EDGAR 10-K: "restructuring charges" appearing          ✓ (trying to cut, not transform)
   → DIAGNOSIS: Schumpeterian gap period. 12-24mo window.
+
+CHRISTENSEN CLASSIFICATION:
+  Can incumbent adopt AI without cannibalizing revenue?
+    YES → Sustaining innovation. Incumbent wins. AVOID entry.
+    NO  → Disruptive innovation. Entry window exists.
+  Does AI serve customers incumbents CAN'T serve profitably?
+    YES → New-market disruption (Jevons expansion). LARGEST opportunity.
+    NO  → Low-end disruption (cost competition only). Smaller window.
 ```
 
 ### T2: Ricardian Comparative Advantage (Applied to Firms, Not Nations)
@@ -53,17 +67,23 @@ COMPARATIVE ADVANTAGE MAP:
   LOW: <40% → advantage exists but physical/regulatory floor dominates
 ```
 
-### T3: Baumol's Cost Disease (The Cure)
+### T3: Baumol's Cost Disease (The Cure AND The Premium)
 
 **Classic theory:** In sectors where productivity doesn't easily increase (healthcare, education, legal, performing arts), costs rise over time because wages must keep up with productive sectors. A string quartet can't get more "productive" — it always needs 4 people and 40 minutes. But musicians' wages rise because they could work in manufacturing instead.
 
-**AI-era application:** AI potentially *cures* Baumol's cost disease for specific service categories. The sectors most affected by cost disease are ALSO the sectors where AI cost disruption creates the largest arbitrage. Healthcare, legal, accounting, education — these have had decades of above-inflation cost growth specifically because productivity couldn't increase. Now it can.
+**AI-era application — TWO effects, not one:**
 
-**The insight for the engine:** Don't just look for industries with high costs. Look for industries where costs have been rising faster than inflation for 20+ years AND the work is primarily cognitive. These are Baumol's disease sectors, and they represent the largest stored potential energy for AI disruption.
+**Effect A — The Cure:** AI cures Baumol's disease for cognitive/routine services. Cost of legal research, medical coding, tax preparation collapses. These sectors have decades of stored potential energy for disruption. This is the REPLACEMENT opportunity.
+
+**Effect B — The Premium:** As digital goods get cheaper (software, media, analysis), human-touch services become RELATIVELY more expensive and more valued. Nursing, therapy, artisanal crafts, live performance, personal coaching — these can't be automated (Polanyi's Paradox / T21) and their relative premium INCREASES. This is the PREMIUM opportunity.
+
+**The split creates two business categories:**
+- **Category A (Baumol Cure):** AI replaces expensive cognitive services at 10x lower cost. Target: routine-cognitive work. Build AI-first service businesses.
+- **Category B (Baumol Premium):** Human-touch services become more valuable as digital collapses. Target: tacit-knowledge work. Build businesses that CERTIFY, CONNECT, or ENABLE premium human services.
 
 **What to scan for:**
 ```
-BAUMOL CURE CANDIDATES:
+BAUMOL CURE CANDIDATES (Category A):
   FRED: sector-specific CPI component growing > headline CPI for 10+ years
     → Healthcare CPI: +4.5%/yr vs headline +2.5%/yr = 2% Baumol premium
     → Legal services CPI: +3.8%/yr vs headline +2.5%/yr = 1.3% Baumol premium
@@ -75,6 +95,21 @@ BAUMOL CURE CANDIDATES:
   → DIAGNOSIS: Baumol cure candidate. Stored potential energy =
     (years of above-inflation growth) × (Baumol premium) × (sector size).
     The longer the disease, the bigger the cure opportunity.
+
+BAUMOL PREMIUM CANDIDATES (Category B):
+  Sectors where the work is fundamentally HUMAN (tacit knowledge, physical presence,
+  empathy, trust, craft):
+    → Therapy/counseling, skilled trades, artisanal food, personal training,
+      elder care, live entertainment, luxury personal services
+
+  AS DIGITAL COSTS COLLAPSE:
+    → Relative value of human-touch services INCREASES
+    → Willingness-to-pay for "verified human" premium rises
+    → Business models: certification, marketplace, enablement platform
+    → NOT AI-replacement — AI-AUGMENTED human premium
+
+  → DIAGNOSIS: Baumol premium candidate. Opportunity =
+    (digital cost collapse in adjacent sectors) × (human premium elasticity) × (market size)
 ```
 
 ### T4: Minsky's Financial Instability Hypothesis
@@ -99,33 +134,57 @@ MINSKY MOMENT CANDIDATES:
     → Cascade = forced asset sales at distressed prices = P2 entry window
 ```
 
-### T5: Kondratieff Long Waves (Where Are We in the Cycle?)
+### T5: Carlota Perez — Technological Revolutions & Financial Capital (replaces Kondratieff)
 
-**Classic theory:** Technology-driven long economic cycles of 40-60 years. Each wave: new technology → infrastructure buildout (overinvestment) → deployment phase (applications) → maturation → decline.
+**Classic theory (Perez, 2002):** Technological revolutions follow a predictable two-phase pattern:
 
-- Wave 1: Steam/cotton (1780-1840)
-- Wave 2: Railways/steel (1840-1890)
-- Wave 3: Electricity/heavy engineering (1890-1940)
-- Wave 4: Oil/automobiles/mass production (1940-1990)
-- Wave 5: Information technology (1990-2030?)
-- Wave 6: AI/biotech (2020s-?)
+**Installation Phase** (we are HERE):
+- Wild speculation, massive infrastructure buildout, financial bubbles
+- Capital floods into the new technology's infrastructure layer
+- Real economy transformation is minimal — mostly hype and financial engineering
+- Ends with a CRASH (the "Turning Point") — dot-com bust, railway mania bust, etc.
 
-**AI-era application:** We're at the transition from infrastructure buildout to deployment. Signs:
-- Massive capex in AI infrastructure (GPU clusters, data centers) — classic overinvestment phase
-- Infrastructure overhang forming (P1) — capacity exceeding current demand
-- Application layer underdeveloped relative to infrastructure capacity
-- Capital flowing to infrastructure, starving applications of talent/attention
+**Deployment Phase** (NEXT):
+- Post-crash: regulation increases, capital becomes more patient
+- Real productivity transformation begins — the technology actually changes industries
+- "Golden age" of broad economic growth based on the new technology
+- Lasts 20-30 years
 
-**The Kondratieff insight for the engine:** During the transition from buildout to deployment, the biggest opportunities are NOT in building more infrastructure. They're in businesses that CONSUME the overbuilt infrastructure cheaply. The engine's P1 (Infrastructure Overhang) is exactly this — but Kondratieff theory tells you the timing: the transition period lasts 5-10 years, and first movers in the deployment phase capture disproportionate value.
+**The five surges:** Canal mania → Railway mania → Steel/electricity → Oil/auto/mass production → ICT/Internet → **AI (current)**
+
+**AI-era application — where we are:**
+- Massive GPU/datacenter capex = classic Installation overinvestment
+- AI valuations detached from revenue = Installation-phase financial speculation
+- Real-economy AI adoption is shallow (chatbots, copilots) = Installation, not Deployment
+- **PREDICTION: A "Turning Point" crash is likely before AI transforms the physical economy**
+
+**What this means for business model construction:**
+- Infrastructure plays (more GPUs, more training, more cloud) are LATE in the Installation Phase — risky
+- Application-layer plays that transform physical operations are EARLY in the Deployment Phase — high potential but may need to survive the crash
+- **Crash-resilient businesses** (low burn, revenue-generating, physical-economy impact) are the best positioned
+- Businesses that CONSUME overbuilt infrastructure at post-crash prices capture disproportionate value
 
 **What to scan for:**
 ```
-KONDRATIEFF DEPLOYMENT PHASE SIGNALS:
+PEREZ INSTALLATION → DEPLOYMENT TRANSITION:
   Industry capex in AI infra: still rising but decelerating
   Inference cost curves: dropping faster than demand grows
+  AI startup failures: increasing (shakeout beginning)
   Startup funding: shifting from "AI infrastructure" to "AI applications"
-  → We're IN the transition. Application businesses being built NOW
-    will ride the deployment phase for 10+ years.
+  Regulation increasing: AI safety, EU AI Act, sector-specific rules
+  → Signs of approaching Turning Point
+
+CRASH RESILIENCE CHECK (for every opportunity):
+  Can this business survive a 12-18 month funding freeze?
+  Does it generate revenue within 6-12 months?
+  Is burn rate sustainable without follow-on funding?
+  Does it serve the physical economy (not just digital)?
+  → Crash-resilient businesses = highest conviction in Installation → Deployment transition
+
+POST-CRASH DEPLOYMENT OPPORTUNITIES:
+  Sectors where AI adoption is shallow (chatbots only, no operational change)
+  Industries where physical operations haven't been touched by AI yet
+  → These are Deployment Phase businesses — the real transformation
 ```
 
 ### T6: Jevons Paradox (Demand Expansion)
@@ -676,9 +735,137 @@ COMPLEXITY / FEEDBACK LOOP SIGNALS:
   → If loops already spinning for a competitor = avoid or differentiate
 ```
 
+### T21: Polanyi's Paradox — The Automation Boundary (Autor)
+
+**Classic theory (Polanyi, 1966 / Autor, 2014):** "We know more than we can tell." Tacit knowledge — skills we have but can't articulate as explicit rules — defines the boundary of what can be automated. If you can't codify it, you can't automate it.
+
+**Autor's extension:** This creates a "Barbell Economy":
+- **Routine cognitive** tasks (data entry, bookkeeping, basic analysis, code generation, document review) → fully automatable. The MIDDLE collapses.
+- **Non-routine manual** tasks (plumbing, surgery, eldercare, carpentry) → hard to automate (requires physical dexterity + tacit spatial reasoning). Value INCREASES.
+- **Non-routine cognitive** tasks (strategic judgment, negotiation, empathy, creative direction, novel problem-solving) → hard to automate (requires tacit social/creative intelligence). Value INCREASES.
+
+**AI-era application — the work classification system:**
+
+For EVERY sector the engine analyzes, classify the work:
+
+```
+POLANYI WORK CLASSIFICATION:
+
+ROUTINE COGNITIVE (automatable — AI cost kill):
+  → Data processing, form filling, standard analysis, report generation,
+    pattern matching, code generation, document review, scheduling,
+    basic customer service, standard legal research, medical coding
+  → BUSINESS MODEL: AI replaces this work at 10x lower cost
+  → This is where Baumol Cure (T3 Category A) applies
+
+TACIT MANUAL (NOT automatable — premium increases):
+  → Plumbing, electrical, surgery, physical therapy, eldercare,
+    construction, cooking, haircutting, massage, equipment repair
+  → BUSINESS MODEL: Enable/certify/connect these workers (marketplace,
+    training, tools). Their premium RISES as routine work collapses.
+  → This is where Baumol Premium (T3 Category B) applies
+
+TACIT COGNITIVE (NOT automatable — judgment premium):
+  → Strategic consulting, complex negotiation, creative direction,
+    novel R&D, empathy-driven therapy, leadership, crisis management,
+    high-stakes decision-making under ambiguity
+  → BUSINESS MODEL: AI provides prediction (T22), human provides judgment.
+    Build AI+human hybrid services where the human judgment is the premium.
+  → This is where AGG Prediction Machines (T22) applies
+```
+
+**The Barbell prediction for business construction:**
+- **The collapsing middle** = massive AI-replacement opportunity (routine cognitive). Build here for volume.
+- **The rising ends** = human premium opportunity (tacit manual + tacit cognitive). Build here for margin.
+- **The trap** = building AI for tacit work that AI can't actually do. Polanyi prevents this.
+
+**What to scan for:**
+```
+POLANYI BOUNDARY SIGNALS:
+  O*NET: Task composition of occupations (% routine vs. non-routine)
+  BLS: Wage growth by occupation type (routine declining, tacit rising)
+  AI benchmark data: Error rates on tacit vs routine tasks
+  Job posting trends: "Human required" language increasing in certain roles
+
+  For each sector:
+    % routine cognitive → size of AI-replacement opportunity
+    % tacit manual → size of human-premium opportunity
+    % tacit cognitive → size of judgment-hybrid opportunity
+
+  → THREE different business models per sector, not one
+```
+
+### T22: Prediction Machines — The Complement Principle (Agrawal, Gans, Goldfarb)
+
+**Classic theory (AGG, 2018):** AI does not "think." It lowers the cost of PREDICTION (pattern matching, classification, forecasting, recommendation). When the cost of prediction drops, the value of its complement rises. The complement to prediction is JUDGMENT — the human ability to decide what to do with predictions, especially under ambiguity, ethical complexity, or novel situations.
+
+**AI-era application:**
+
+The most valuable businesses may not be "AI replaces humans" but "AI predicts, humans judge":
+
+```
+PREDICTION vs. JUDGMENT DECOMPOSITION:
+
+PREDICTION (AI does this — cost approaching zero):
+  → "What is this medical image showing?"
+  → "What's the probability this loan defaults?"
+  → "Which legal precedents are most relevant?"
+  → "What will demand be next quarter?"
+  → "Which candidates match this job description?"
+
+JUDGMENT (Humans do this — value RISING):
+  → "Should we operate, given the patient's wishes?"
+  → "Should we approve this loan, given relationship context?"
+  → "Which legal strategy serves this client's actual goals?"
+  → "Should we expand or consolidate given this forecast?"
+  → "Which candidate will thrive in our specific culture?"
+```
+
+**Business model implications:**
+- **Pure AI prediction service** = commodity (every competitor can offer the same prediction). Race to zero margins. WEAK model.
+- **AI prediction + human judgment hybrid** = premium service. The judgment component is scarce, valuable, and defensible. STRONG model.
+- **Judgment-as-a-service** = the highest-margin business. Use AI to handle all prediction, charge premium for the human judgment layer. Doctors who ONLY make decisions (AI does diagnosis). Lawyers who ONLY strategize (AI does research). Financial advisors who ONLY counsel (AI does analysis).
+
+**What to scan for:**
+```
+PREDICTION-JUDGMENT SPLIT OPPORTUNITIES:
+  Sectors where prediction is the majority of work time but judgment
+    is the majority of value delivered
+  → Legal: 80% research (prediction) + 20% strategy (judgment)
+  → Medical: 60% diagnosis (prediction) + 40% treatment decisions (judgment)
+  → Financial advisory: 70% analysis (prediction) + 30% counsel (judgment)
+
+  The business model: AI handles the 60-80% prediction.
+    Human handles the 20-40% judgment. Price at premium.
+    Cost structure: 80% AI cost + 20% expert cost ≪ incumbent's 100% expert cost.
+    Value captured: by the judgment, not the prediction.
+
+  WATCH FOR: Industries where prediction and judgment are currently BUNDLED
+    in the same professional role. Unbundling them = the opportunity.
+```
+
+### T23: Innovation Stack / Competitive Immunity (Jim McKelvey)
+
+**Theory (McKelvey, 2020):** When solving a problem no one has solved before, each solution creates a new problem that requires another novel solution. The resulting "innovation stack" — a tower of interdependent innovations — creates competitive immunity not through any single moat but through the COMPLEXITY of copying the entire stack.
+
+**AI-era application:** In AI-disrupted markets, the first entrant who solves the full problem (not just "use AI for X") builds an innovation stack that's extremely hard to copy:
+- Solve the AI accuracy problem → need domain-specific training data → need customer relationships → need trust mechanism → need compliance framework → need pricing model that works at AI economics → need support model for AI errors
+- Each layer is individually copyable. The STACK is not.
+
+**What to scan for:**
+```
+INNOVATION STACK POTENTIAL:
+  Sectors where the problem requires 5+ interdependent innovations
+  Markets where "just add AI" doesn't work (need domain expertise,
+    regulatory navigation, trust building, data acquisition)
+  → These are HARDER to enter (barrier) but HARDER to copy (moat)
+  → The barrier IS the moat
+  → Build the full stack; competitors who copy one layer fail
+```
+
 ---
 
-### Integration: How T11-T20 Map to Scanning
+### Integration: How T11-T23 Map to Scanning
 
 | Theory | Primary Signal Type | Transmission Node | Complements |
 |--------|-------------------|-------------------|-------------|
@@ -692,3 +879,6 @@ COMPLEXITY / FEEDBACK LOOP SIGNALS:
 | T18 Real Options | timing_optimization | N4-N6 | T5, T1 |
 | T19 Attention Economics | attention_scarcity | N5-N6 | T6, T7 |
 | T20 Complexity Economics | feedback_loop | N4-N6 | T6, T10 |
+| **T21 Polanyi's Paradox** | **work_classification** | **N5-N6** | **T3, T7, T22** |
+| **T22 Prediction Machines** | **judgment_premium** | **N5-N6** | **T21, T3, T7** |
+| **T23 Innovation Stack** | **competitive_immunity** | **N4-N6** | **T11, T20, T16** |
