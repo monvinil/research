@@ -51,6 +51,27 @@ SERIES_CATALOG = {
 
     # Producer Price Index — Monthly
     'PCU--': ('PPI: Final Demand', 'P3'),
+
+    # CES Average Hourly Earnings by industry (wage premium detection)
+    'CES5500000003': ('Avg Hourly Earnings, Financial Activities', 'P3'),
+    'CES6054000003': ('Avg Hourly Earnings, Professional and Technical Services', 'P3'),
+    'CES6561000003': ('Avg Hourly Earnings, Educational Services', 'P3'),
+    'CES6562000003': ('Avg Hourly Earnings, Health Care', 'P3'),
+    'CES6500000003': ('Avg Hourly Earnings, Education and Health Services', 'P3'),
+}
+
+# Occupations most vulnerable to AI/agentic disruption (SOC codes, no hyphens)
+AI_VULNERABLE_OCCUPATIONS = {
+    '232011': 'Paralegals and Legal Assistants',
+    '232092': 'Law Clerks',
+    '132011': 'Accountants and Auditors',
+    '132082': 'Tax Preparers',
+    '433031': 'Bookkeeping, Accounting, and Auditing Clerks',
+    '439061': 'Office Clerks, General',
+    '131111': 'Management Analysts',
+    '151252': 'Software Quality Assurance Analysts',
+    '434051': 'Customer Service Representatives',
+    '292052': 'Pharmacy Technicians',
 }
 
 # Industries with high labor cost ratios — key targets for P2/P3
@@ -82,7 +103,7 @@ class BLSConnector:
     def _post(self, series_ids, start_year=None, end_year=None):
         """BLS v2 API uses POST with JSON body."""
         if not start_year:
-            start_year = datetime.now().year - 3
+            start_year = datetime.now().year - 10
         if not end_year:
             end_year = datetime.now().year
 
@@ -243,6 +264,83 @@ class BLSConnector:
         area_code: 0000000=National
         """
         return f'OEUS{area_code}{industry_code}{occupation_code}{data_type}'
+
+    def get_occupational_exposure(self):
+        """P3/P5: Employment and wage data for AI-vulnerable occupations.
+
+        Fetches employment level + mean hourly wage for each target occupation.
+        Cross-reference rising wages with declining employment to identify
+        roles where agentic substitution delivers the highest ROI.
+        """
+        area_code = '0000000'
+        industry_code = '000000'
+        series_ids = []
+        series_labels = {}
+
+        for occ_code, occ_name in AI_VULNERABLE_OCCUPATIONS.items():
+            emp_id = self.build_oes_series_id(
+                area_code=area_code, industry_code=industry_code,
+                occupation_code=occ_code, data_type='01')
+            series_ids.append(emp_id)
+            series_labels[emp_id] = f'{occ_name} -- Employment'
+
+            wage_id = self.build_oes_series_id(
+                area_code=area_code, industry_code=industry_code,
+                occupation_code=occ_code, data_type='03')
+            series_ids.append(wage_id)
+            series_labels[wage_id] = f'{occ_name} -- Mean Hourly Wage'
+
+        data = self._post(series_ids)
+        results = {}
+        for series in data.get('Results', {}).get('series', []):
+            sid = series.get('seriesID', '')
+            observations = []
+            for obs in series.get('data', []):
+                if obs.get('period') == 'M13':
+                    continue
+                observations.append({
+                    'year': obs['year'],
+                    'period': obs.get('period', ''),
+                    'value': float(obs['value']) if obs['value'] != '-' else None,
+                })
+            results[sid] = {
+                'series_id': sid,
+                'title': series_labels.get(sid, sid),
+                'observations': observations,
+            }
+
+        return {
+            'signal_type': 'occupational_ai_exposure',
+            'principle': 'P3,P5',
+            'data': results,
+            'interpretation': (
+                'Occupations with high wages and large employment bases represent '
+                'the biggest addressable markets for agentic disruption. Rising '
+                'wages widen the cost advantage each year. Declining employment '
+                'may indicate disruption already underway.'
+            ),
+        }
+
+    def get_industry_wage_premium(self):
+        """P3: Average hourly earnings by industry -- detect where wages grow fastest."""
+        series = [
+            'CES5500000003',  # Financial Activities
+            'CES6054000003',  # Professional and Technical Services
+            'CES6561000003',  # Educational Services
+            'CES6562000003',  # Health Care
+            'CES6500000003',  # Education and Health Services
+        ]
+        results = self.get_multiple_series(series)
+        return {
+            'signal_type': 'industry_wage_premium',
+            'principle': 'P3',
+            'data': results,
+            'interpretation': (
+                'Industries with highest and fastest-rising hourly earnings '
+                'represent the largest cost-advantage opportunity for agentic '
+                'businesses. Compare growth rates to prioritize where P3 moat widens fastest.'
+            ),
+        }
 
     def test_connection(self):
         """Verify BLS API access."""

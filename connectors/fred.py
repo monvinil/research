@@ -50,6 +50,33 @@ SERIES_CATALOG = {
 
     # P1: Infrastructure overhang indicators
     'BOGZ1FL893065105Q': 'Nonfinancial Corporate Business: Capital Expenditures',
+
+    # Corporate profitability
+    'CP': 'Corporate Profits After Tax (quarterly)',
+    'CPATAX': 'Corporate Profits After Tax with IVA and CCAdj (quarterly)',
+    'A445RC1Q027SBEA': 'Corporate Profits: Nonfinancial (quarterly)',
+    'W260RC1Q027SBEA': 'Corporate Profits: Financial (quarterly)',
+
+    # Financial stress and volatility
+    'VIXCLS': 'CBOE Volatility Index (daily)',
+    'STLFSI4': 'St. Louis Fed Financial Stress Index (weekly)',
+    'DRTSCILM': 'Net % Banks Tightening C&I Loan Standards, Large Firms (quarterly)',
+    'DRTSCLCC': 'Net % Banks Tightening Credit Card Loan Standards (quarterly)',
+
+    # Employment Cost Index by sector
+    'CIU2010000000000A': 'ECI Total Compensation All Civilian (quarterly)',
+    'CIU2020000000000A': 'ECI Wages and Salaries All Civilian (quarterly)',
+    'CIU2010000000710A': 'ECI Total Compensation Professional & Business Services (quarterly)',
+    'CIU2010000000910A': 'ECI Total Compensation Education & Health Services (quarterly)',
+
+    # Small business health
+    'EVANQ': 'Business Applications, High-Propensity (quarterly)',
+    'BABATOTALSAUS': 'Business Applications Total (monthly)',
+    'BUSAPPWNSAUS': 'Business Applications Without Planned Wages (monthly)',
+
+    # Asset prices and transactions (P2 liquidation cascades)
+    'BOGZ1FL893065005Q': 'Nonfinancial Business: Total Liabilities (quarterly)',
+    'NCBEILQ027S': 'Nonfinancial Corporate Business: Inventories (quarterly)',
 }
 
 
@@ -241,6 +268,82 @@ class FredConnector:
                 'High rates favor cash-flow-positive, low-burn businesses. '
                 'This aligns with agentic-first cost structures. Inverted '
                 'yield curve = recession signal = accelerated liquidation cascades.'
+            ),
+        }
+
+    def get_industry_profitability(self):
+        """Corporate profitability trends -- detect margin compression by sector."""
+        series = ['CP', 'CPATAX', 'A445RC1Q027SBEA', 'W260RC1Q027SBEA']
+        results = {sid: self.get_series(sid, limit=20) for sid in series}
+        return {
+            'signal_type': 'industry_profitability',
+            'principle': 'P2',
+            'data': results,
+            'interpretation': (
+                'Declining corporate profits = margin compression. '
+                'Divergence between financial and nonfinancial profits '
+                'indicates sector-specific stress patterns.'
+            ),
+        }
+
+    def get_market_stress_indicators(self):
+        """Financial stress and volatility -- macro risk environment."""
+        series = ['VIXCLS', 'STLFSI4', 'DRTSCILM', 'DRTSCLCC']
+        results = {sid: self.get_series(sid, limit=50) for sid in series}
+        return {
+            'signal_type': 'market_stress',
+            'principle': 'P2,capital_modeling',
+            'data': results,
+            'interpretation': (
+                'Rising VIX + tightening lending standards = credit stress. '
+                'Banks tightening C&I loans = incumbents losing access to '
+                'restructuring capital. Favors cash-flow-positive agentic entrants.'
+            ),
+        }
+
+    def get_sector_employment_costs(self):
+        """Employment Cost Index by sector -- where is labor getting most expensive?"""
+        series = ['CIU2010000000000A', 'CIU2020000000000A',
+                  'CIU2010000000710A', 'CIU2010000000910A']
+        results = {sid: self.get_series(sid, limit=20) for sid in series}
+        return {
+            'signal_type': 'sector_employment_costs',
+            'principle': 'P3',
+            'data': results,
+            'interpretation': (
+                'Sectors where total compensation grows fastest offer widest '
+                'cost advantage for agentic substitution. Compare Professional & '
+                'Business Services vs. Education & Health to find divergence.'
+            ),
+        }
+
+    def get_small_business_indicators(self):
+        """Small business formation and health -- P2 cascade + P4 revival signals."""
+        series = ['EVANQ', 'BABATOTALSAUS', 'BUSAPPWNSAUS', 'DRSFRMACBS']
+        results = {sid: self.get_series(sid, limit=30) for sid in series}
+        return {
+            'signal_type': 'small_business_health',
+            'principle': 'P2,P4',
+            'data': results,
+            'interpretation': (
+                'Rising business applications + rising delinquency = churn. '
+                'Old businesses dying, new ones forming. Applications without '
+                'planned wages may indicate solo/agentic business formation.'
+            ),
+        }
+
+    def get_asset_prices_and_transactions(self):
+        """Asset and liability indicators -- P2 liquidation cascade timing."""
+        series = ['BOGZ1FL893065005Q', 'NCBEILQ027S', 'BOGZ1FL893065105Q']
+        results = {sid: self.get_series(sid, limit=20) for sid in series}
+        return {
+            'signal_type': 'asset_transactions',
+            'principle': 'P2',
+            'data': results,
+            'interpretation': (
+                'Rising liabilities + falling capex = businesses taking on '
+                'debt without investing. Inventory buildup may signal demand '
+                'collapse. These are pre-liquidation indicators.'
             ),
         }
 

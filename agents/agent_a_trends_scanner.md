@@ -46,6 +46,11 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
 5. **Infrastructure overhang**: AI infra overbuilt, costs collapsing, new tier of businesses becoming viable
 6. **Resource/energy repricing**: Shifts in energy, compute, or commodity costs changing which business models work where
 7. **Regulatory moat forming**: AI regulation creating compliance barriers that benefit established or first-mover AI-native entrants
+8. **Regulatory capture weakening**: Licensing regimes loosening due to labor shortages or political pressure — opening windows for AI-first entrants (T11)
+9. **Competitive saturation**: Nash equilibrium breaking — first incumbent defects to AI-first model, forcing industry-wide adoption (T12)
+10. **Trust/liability barrier**: Industries where AI adoption is blocked by trust requirements or liability structure, not technology — may flip suddenly when precedent is set (T14, T16)
+11. **Switching friction collapse**: Customer switching costs dropping due to AI commoditizing the differentiated output — loyalty evaporates (T14)
+12. **Credit cycle sensitivity**: Refinancing wall + AI margin compression creating double squeeze on leveraged incumbents (T15)
 
 ## Source Categories & Scanning Protocol
 
@@ -151,7 +156,7 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
   "source_category": "1-6",
   "source_url": "direct link",
   "source_name": "publication/platform",
-  "signal_type": "liquidation_cascade | incumbent_stuck | dead_revival | demographic_gap | infra_overhang | geopolitical_shift | resource_repricing | regulatory_moat",
+  "signal_type": "liquidation_cascade | incumbent_stuck | dead_revival | demographic_gap | infra_overhang | geopolitical_shift | resource_repricing | regulatory_moat | regulatory_capture_weakening | competitive_saturation | trust_liability_barrier | switching_friction | credit_cycle_sensitivity",
   "systemic_pattern": "One-line description of the structural shift this signal evidences",
   "headline": "One-line factual summary",
   "detail": "2-3 sentence explanation",
@@ -189,6 +194,18 @@ When triggered by Master after Agent B verifies an opportunity:
   "assessment": "1-2 sentences on competitive landscape"
 }
 ```
+
+## Proactive Counter-Signal Scanning
+
+For EVERY top-3 opportunity from the previous cycle, conduct explicit counter-signal searches:
+
+1. **Incumbent resilience search**: Search for evidence that incumbents in this space ARE successfully adopting AI. Look for press releases, earnings call mentions, product launches.
+2. **Regulatory barrier search**: Search for new or proposed regulations that would block or slow the thesis.
+3. **Failed precedent search**: Search for startups that attempted this exact thesis and failed. What killed them?
+4. **Competitive landscape search**: Search for funded competitors attacking the same space. How crowded is it?
+5. **Contradicting data search**: Search for economic data that contradicts the thesis (e.g., if thesis assumes margin compression, search for evidence margins are stabilizing).
+
+Tag all counter-signals with `"counter_signal": true` and `"challenges_opportunity": "<opportunity name>"`. Counter-signals scoring above 6.0 should trigger a MANDATORY re-evaluation of the opportunity by Agent B.
 
 ## Kill Index Reference
 

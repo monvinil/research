@@ -476,3 +476,219 @@ The edge is in:
 4. **Layer 2-3 analysis.** Reading data not for what it says (everyone does this) but for what it means in the context of chains and theories, and what it implies about timing and positioning.
 
 5. **Counter-force discipline.** Maintaining bear cases with equal rigor to bull cases. The kill index isn't just for filtering — it's for building institutional knowledge about what interrupts transmission chains.
+
+---
+
+## Part 6: Extended Economic Theories (T11–T20)
+
+These ten additional frameworks expand the engine's analytical repertoire beyond the founding ten theories. Each adds a distinct lens that catches opportunities and risks the original ten miss.
+
+### T11: Regulatory Capture Theory (Stigler)
+
+**Classic theory:** Industries capture the regulators meant to oversee them, using regulation as a barrier to entry rather than consumer protection. Licensing requirements, compliance costs, and lobbying create moats around incumbents.
+
+**AI-era application:** Regulatory capture is a DOUBLE-EDGED signal:
+- **As barrier:** Captured industries (healthcare, legal, financial services) have regulatory moats that slow AI entrants. First-movers who navigate the regulatory maze lock out followers.
+- **As opportunity:** When regulators face a crisis (labor shortage, cost explosion), capture weakens. Nursing shortages → states allow expanded scope of practice → AI augmentation gets regulatory tailwind.
+
+**What to scan for:**
+```
+REGULATORY CAPTURE SIGNALS:
+  Lobbying spend by industry association + position on AI regulation
+  State/federal licensing rule changes (loosening = window opening)
+  "Regulatory sandbox" announcements (explicit permission to innovate)
+  Legal challenges to licensing requirements (Teladoc-style precedent)
+
+  → Capture WEAKENING + labor shortage = fastest entry window
+  → Capture STRENGTHENING = moat for first-movers already inside
+```
+
+### T12: Game Theory / Nash Equilibrium Dynamics
+
+**Classic theory:** Rational actors reach equilibria where no player benefits from unilateral change. Markets can get stuck in suboptimal equilibria when switching requires coordinated action.
+
+**AI-era application:** Many industries are stuck in a "nobody moves first" equilibrium:
+- Law firms won't adopt AI because clients expect human lawyers. Clients won't demand AI because firms don't offer it. The equilibrium breaks when ONE firm defects (offers AI at 5x lower cost) and wins clients. Then ALL firms must follow.
+- The defection moment is the opportunity window. Scan for the FIRST defector in each industry.
+
+**What to scan for:**
+```
+NASH EQUILIBRIUM BREAK:
+  First incumbent to publicly adopt AI-first model in a sector
+  First client to publicly switch to AI-first provider
+  Industry conference panels debating "should we use AI?"
+    (debate = pre-defection, consensus = post-defection)
+  → The window is between first defection and equilibrium shift
+```
+
+### T13: Principal-Agent Theory (Jensen & Meckling)
+
+**Classic theory:** When agents (managers, employees) have different incentives than principals (owners, shareholders), costly monitoring and misalignment result. Agency costs are a significant share of organizational overhead.
+
+**AI-era application:** AI collapses agency costs in two ways:
+1. **AI as perfect agent:** AI agents have zero agency costs — they don't shirk, don't empire-build, don't need monitoring. This eliminates middle management in information-processing hierarchies.
+2. **AI as monitoring tool:** AI can monitor compliance, quality, and performance at near-zero cost, reducing agency costs for remaining human workers.
+
+**What to scan for:**
+```
+AGENCY COST COLLAPSE:
+  Industries with deep management hierarchies (>5 layers)
+  Sectors where "oversight" and "quality assurance" are major cost lines
+  Companies reporting "span of control" changes (managers overseeing more)
+  → High agency cost sectors = biggest margin improvement from AI
+  → Middle management layers = most directly displaced
+```
+
+### T14: Prospect Theory (Kahneman & Tversky)
+
+**Classic theory:** People overweight losses relative to gains (loss aversion), evaluate outcomes relative to reference points, and have diminishing sensitivity to larger changes.
+
+**AI-era application for customer acquisition:** Understanding prospect theory predicts which customers switch to AI and which resist:
+- **Loss aversion:** Customers won't switch if they perceive risk of LOSING current quality, even if expected value is higher. Frame as "keep everything + save 80%" not "replace your accountant."
+- **Reference point:** Customers anchored to $500/hr expect premium. Customers anchored to "I can't afford this at all" have no switching friction — they're pure acquisition.
+- **Status quo bias:** Existing relationships create inertia. Target the UNSERVED (no status quo to defend) before the served.
+
+**What to scan for:**
+```
+BEHAVIORAL SWITCHING SIGNALS:
+  Customer satisfaction + switching cost surveys by industry
+  Industries where >50% of target market is currently UNSERVED
+  Sectors where trust/relationship is the primary purchase driver
+    (high switching friction) vs. commodity (low friction)
+  → Unserved markets + commodity perception = fastest adoption
+  → High-trust + served markets = slowest adoption (PARK or acquire)
+```
+
+### T15: Minsky Extended — The Refinancing Wall
+
+**Classic theory (extended):** Beyond the instability hypothesis (T4), the specific mechanism of the refinancing wall. Companies and PE funds that took on debt at low rates face refinancing at higher rates, creating a wave of distress.
+
+**AI-era application:** The 2020-2021 low-rate borrowing cohort faces refinancing in 2025-2027. This is SIMULTANEOUS with AI margin compression. The double squeeze:
+- Revenue declining (AI competition on price)
+- Debt service increasing (higher refinancing rates)
+- No equity market exit (IPO window narrow for traditional businesses)
+
+**What to scan for:**
+```
+REFINANCING WALL + AI SQUEEZE:
+  FRED: Corporate debt maturity schedule (BOGZ1FL series)
+  EDGAR: Companies with >40% of debt maturing in 12-24mo
+  FRED: HY spread trajectory (widening = distress approaching)
+  Combined with: AI cost compression in same sector
+  → Double squeeze = accelerated liquidation = P2 asset opportunity
+```
+
+### T16: Resource-Based View (Barney)
+
+**Classic theory:** Sustained competitive advantage comes from resources that are Valuable, Rare, Inimitable, and Non-substitutable (VRIN). Strategy should be built around defending and exploiting these resources.
+
+**AI-era application:** AI reshuffles which resources are VRIN:
+- **No longer rare:** Information processing, pattern recognition, content generation, code writing
+- **Newly rare:** Proprietary training data, regulatory licenses, physical infrastructure, trust/brand in AI-skeptical markets, domain-specific fine-tuned models
+- **Still rare:** Human judgment in novel situations, physical presence, relationship networks, regulatory capture
+
+**What to scan for:**
+```
+VRIN RESOURCE SHIFT:
+  Industries where the primary competitive resource was human expertise
+    (being de-VRIN'd by AI — competitive advantage eroding)
+  Industries where proprietary data is the scarce resource
+    (competitive advantage INCREASING — data moat)
+  Sectors where trust/brand matters more than cost
+    (AI adoption slower, but first-mover with trust = durable moat)
+```
+
+### T17: Institutional Theory (DiMaggio & Powell)
+
+**Classic theory:** Organizations become similar (isomorphic) through coercive pressure (regulation), mimetic pressure (copying successful peers), and normative pressure (professional standards). Industries self-standardize.
+
+**AI-era application:** Institutional isomorphism explains why incumbents move slowly AND why they'll eventually all move at once:
+- **Mimetic:** No firm wants to be first to adopt AI (risk). But once a peer succeeds, ALL adopt rapidly (herd behavior).
+- **Coercive:** When regulators mandate AI reporting, compliance costs, or capabilities, the entire industry must move.
+- **Normative:** Professional associations setting AI competency standards create a tipping point.
+
+**What to scan for:**
+```
+INSTITUTIONAL TIPPING POINT:
+  Professional association AI policy statements
+  First major firm in sector publicly committing to AI-first
+  Regulatory mandates requiring AI capabilities
+  → Pre-tipping = opportunity window for entrants
+  → Post-tipping = incumbents flood in, competition intensifies
+  → TIMING: Enter BEFORE the institutional tipping point
+```
+
+### T18: Real Options Theory
+
+**Classic theory:** Business decisions under uncertainty are options, not commitments. The value of waiting can exceed the value of acting, especially when investments are irreversible and uncertainty is high.
+
+**AI-era application:** Real options theory explains optimal entry timing:
+- **High uncertainty + irreversible investment = wait.** Don't build a $10M platform when the model landscape changes quarterly.
+- **Low investment + reversible = act now.** Agentic-first businesses with $500K seed and minimal infrastructure have low option value to waiting — act now, pivot cheap.
+- **Declining uncertainty = window closing.** As AI capabilities stabilize, the option value of waiting drops and the cost of delay rises.
+
+**What to scan for:**
+```
+REAL OPTIONS TIMING:
+  Sectors where AI capability uncertainty is DECREASING (models stabilizing)
+  → Option value of waiting drops → enter NOW
+  Sectors where required investment is HIGH and irreversible
+  → Option value of waiting still high → PARK until clearer
+  Track model capability benchmarks — stabilizing scores = declining uncertainty
+```
+
+### T19: Attention Economics (Simon / Davenport)
+
+**Classic theory:** In an information-rich world, the scarce resource is attention, not information. Wealth flows to those who can capture and direct attention effectively.
+
+**AI-era application:** AI generates unlimited content but human attention remains fixed at ~16 waking hours/day. This creates:
+- **Content flood → attention scarcity:** Every business can now produce infinite content. Differentiation shifts from content production to attention capture and trust.
+- **Curation premium:** The value of filtering, summarizing, and prioritizing increases as content volume explodes.
+- **Decision fatigue:** More AI-generated options = more paralysis. Businesses that REDUCE choices (opinionated, curated) win over businesses that EXPAND choices.
+
+**What to scan for:**
+```
+ATTENTION SCARCITY SIGNALS:
+  Declining engagement rates on AI-generated content
+  Rising premium for "verified human" or "expert curated" labels
+  Industries where decision complexity is paralyzing customers
+  → Build AI that REDUCES cognitive load, not increases options
+  → Curation/recommendation businesses have counter-cyclical advantage
+```
+
+### T20: Complexity Economics (Arthur / Santa Fe Institute)
+
+**Classic theory:** Economies are complex adaptive systems, not equilibrium machines. Small perturbations can cascade into large effects. Positive feedback loops create winner-take-all dynamics. Path dependence locks in early outcomes.
+
+**AI-era application:** AI creates multiple positive feedback loops simultaneously:
+- **Data flywheel:** More users → more data → better model → more users
+- **Cost flywheel:** More volume → lower per-unit cost → lower price → more volume
+- **Talent flywheel:** Better product → attracts talent → better product
+- **Ecosystem lock-in:** Early integrations → switching costs → defensibility
+
+**What to scan for:**
+```
+COMPLEXITY / FEEDBACK LOOP SIGNALS:
+  Sectors where data flywheel is POSSIBLE but NO ONE has started it
+  Markets with strong network effects that AI could activate
+  Industries where the first AI entrant creates switching costs
+  → Positive feedback loops = winner-take-all = first-mover critical
+  → If loops already spinning for a competitor = avoid or differentiate
+```
+
+---
+
+### Integration: How T11-T20 Map to Scanning
+
+| Theory | Primary Signal Type | Transmission Node | Complements |
+|--------|-------------------|-------------------|-------------|
+| T11 Regulatory Capture | regulatory_moat | N2-N3 | T3, T8 |
+| T12 Nash Equilibrium | competitive_saturation | N4 | T1, T17 |
+| T13 Principal-Agent | agency_cost_collapse | N4-N5 | T10, T3 |
+| T14 Prospect Theory | switching_friction | N5-N6 | T6, T7 |
+| T15 Minsky Extended | credit_cycle_sensitivity | N3-N4 | T4, T1 |
+| T16 Resource-Based View | resource_shift | N3-N4 | T2, T10 |
+| T17 Institutional Theory | institutional_tipping | N3-N4 | T1, T12 |
+| T18 Real Options | timing_optimization | N4-N6 | T5, T1 |
+| T19 Attention Economics | attention_scarcity | N5-N6 | T6, T7 |
+| T20 Complexity Economics | feedback_loop | N4-N6 | T6, T10 |

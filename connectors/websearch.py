@@ -12,7 +12,39 @@ to DuckDuckGo.
 
 import requests
 from datetime import datetime
+from urllib.parse import urlparse
 from .config import SERPER_API_KEY
+
+# Source credibility classification
+_CRED_PRIMARY = {'gov', 'edu', 'bls.gov', 'fred.stlouisfed.org', 'sec.gov',
+                 'reuters.com', 'bloomberg.com', 'ft.com', 'wsj.com'}
+_CRED_INDUSTRY = {'hbr.org', 'mckinsey.com', 'techcrunch.com', 'crunchbase.com'}
+_CRED_COMMUNITY = {'reddit.com', 'news.ycombinator.com', 'twitter.com', 'medium.com'}
+
+
+def _classify_credibility(url):
+    try:
+        h = urlparse(url).hostname or ''
+    except Exception:
+        return 'general'
+    h = h.lower().lstrip('www.')
+    tld = h.rsplit('.', 1)[-1] if '.' in h else ''
+    if tld in ('gov', 'edu'):
+        return 'primary'
+    for s, label in [(_CRED_PRIMARY, 'primary'), (_CRED_INDUSTRY, 'industry'), (_CRED_COMMUNITY, 'community')]:
+        if h in s:
+            return label
+        parts = h.split('.')
+        if len(parts) > 2 and '.'.join(parts[-2:]) in s:
+            return label
+    return 'general'
+
+
+def _tag_results(results):
+    for r in results:
+        if isinstance(r, dict) and 'url' in r:
+            r['credibility'] = _classify_credibility(r['url'])
+    return results
 
 HAS_DDGS = False
 try:
@@ -47,13 +79,15 @@ class WebSearchConnector:
             list of {'title', 'url', 'snippet', 'source'}
         """
         if self.use_serper:
-            return self._serper_search(query, num_results, time_range)
-        if HAS_DDGS:
+            results = self._serper_search(query, num_results, time_range)
+        elif HAS_DDGS:
             try:
-                return self._ddgs_search(query, num_results, time_range)
+                results = self._ddgs_search(query, num_results, time_range)
             except Exception:
-                pass
-        return self._ddg_html_search(query, num_results)
+                results = self._ddg_html_search(query, num_results)
+        else:
+            results = self._ddg_html_search(query, num_results)
+        return _tag_results(results)
 
     def news_search(self, query, num_results=10, time_range=None):
         """Search news specifically.
@@ -183,6 +217,51 @@ class WebSearchConnector:
                     'source': 'duckduckgo',
                 })
         return results
+
+    # ---- Dynamic search methods ----
+
+    def search_custom(self, queries, num_results=10, time_range='m'):
+        """Run custom queries from agents or counter-signal module."""
+        results = {}
+        for q in queries:
+            results[q] = self.search(q, num_results=num_results, time_range=time_range)
+        return {'signal_type': 'custom', 'data': results,
+                'results': [r for batch in results.values() for r in batch]}
+
+    def search_competitors(self, sector, num_results=10):
+        """Search for competitive density in a sector."""
+        queries = [f"{sector} AI startup funding 2025 2026",
+                   f"{sector} automation venture capital",
+                   f"{sector} AI disruption competitors",
+                   f"{sector} startup landscape"]
+        results = {}
+        for q in queries:
+            results[q] = self.search(q, num_results=num_results, time_range='y')
+        return {'signal_type': 'competitive_density', 'sector': sector,
+                'data': results, 'results': [r for b in results.values() for r in b]}
+
+    def search_regulatory(self, sector, num_results=10):
+        """Search for regulatory barriers in a sector."""
+        queries = [f"{sector} AI regulation 2025 2026",
+                   f"{sector} licensing requirements AI",
+                   f"{sector} professional association AI policy",
+                   f"{sector} lobbying artificial intelligence"]
+        results = {}
+        for q in queries:
+            results[q] = self.search(q, num_results=num_results, time_range='y')
+        return {'signal_type': 'regulatory_capture', 'sector': sector,
+                'data': results, 'results': [r for b in results.values() for r in b]}
+
+    def search_failed_precedents(self, business_model, num_results=10):
+        """Search for failed startups with similar business model."""
+        queries = [f"{business_model} startup failed shutdown",
+                   f"{business_model} company closed raised funding",
+                   f"{business_model} post-mortem lessons learned"]
+        results = {}
+        for q in queries:
+            results[q] = self.search(q, num_results=num_results, time_range='y')
+        return {'signal_type': 'failed_precedents', 'business_model': business_model,
+                'data': results, 'results': [r for b in results.values() for r in b]}
 
     # ---- Pre-built scans for Agent A ----
 

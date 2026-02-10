@@ -243,6 +243,121 @@ Apply classical economic theories to stress-test the opportunity (see `ANALYTICA
 5. **Schumpeter timing:** Is the incumbent in the "gap period" (dead but doesn't know it) or already actively restructuring? Gap period = enter now. Active restructuring = too late or too competitive.
 6. **Transmission chain position:** Which node is the relevant macro-to-micro chain at? Node 4-5 = H1 timing. Node 2-3 = too early, PARK.
 
+### V10: Regulatory Capture Assessment (T11)
+
+Evaluate whether the target industry's regulatory environment helps or hinders the thesis:
+
+1. **Current capture level**: How strongly do incumbents control the regulatory environment?
+   - Lobbying spend by industry association (OpenSecrets data)
+   - Licensing requirements: are they protecting consumers or protecting incumbents?
+   - Recent regulatory changes: tightening (barrier) or loosening (window)?
+
+2. **Capture trajectory**: Is capture weakening?
+   - Labor shortages forcing regulatory accommodation (e.g., nurse practitioner scope expansion)
+   - Political pressure on licensing boards (e.g., occupational licensing reform movement)
+   - "Regulatory sandbox" programs allowing AI experimentation
+
+3. **First-mover moat potential**: If we navigate the regulatory maze first, does that lock out followers?
+   - How long does compliance setup take? (>6 months = meaningful moat)
+   - Are there limited licenses/permits available?
+   - Does early regulatory relationship create advantage?
+
+**Output**: `regulatory_capture_score: 1-10` (10 = capture is an insurmountable barrier, 1 = no regulatory barrier)
+
+### V11: Competitive Equilibrium Analysis (T12)
+
+Assess where the industry's Nash equilibrium stands:
+
+1. **Has a defector emerged?** Is any incumbent or startup already offering AI-first in this space?
+   - If yes: how much traction do they have? Is the equilibrium already breaking?
+   - If no: why not? Is the barrier technical, regulatory, or behavioral?
+
+2. **Defection incentive**: What's the payoff for the first mover?
+   - Customer acquisition advantage: how much cheaper/better is AI-first?
+   - Can the first defector capture disproportionate market share before others follow?
+
+3. **Equilibrium shift timeline**: Once one player defects, how fast do others follow?
+   - Fast followers in <6 months = advantage is temporary, must scale fast
+   - Slow followers (>18 months) = structural advantage, can build moat
+
+### V12: Trust & Liability Check (T14, T16)
+
+For industries where trust and liability are primary purchase drivers:
+
+1. **Trust requirement**: Does the customer need to TRUST the provider with high-stakes decisions?
+   - Medical, legal, financial advice: HIGH trust requirement
+   - Bookkeeping, data entry, scheduling: LOW trust requirement
+   - High trust + AI skepticism = slow adoption. Consider human-in-the-loop model.
+
+2. **Liability structure**: If the AI makes an error, who bears liability?
+   - Is professional liability insurance available for AI-assisted services?
+   - What's the malpractice/E&O insurance cost delta for AI-first vs. traditional?
+   - Has there been any legal precedent for AI liability in this industry?
+
+3. **Trust transfer mechanism**: How does trust transfer from human to AI-assisted?
+   - Licensed professional as "supervising" AI = easiest trust transfer
+   - Brand/reputation as trust signal = medium difficulty
+   - Pure AI with no human association = hardest, only works for low-trust tasks
+
+### V13: Behavioral Switching Friction (T14)
+
+Apply prospect theory to predict customer adoption speed:
+
+1. **Reference point**: What's the customer's current baseline?
+   - Currently using incumbent = must overcome loss aversion (they fear losing current quality)
+   - Currently unserved (can't afford incumbent) = no loss aversion, pure gain framing
+   - → Target unserved segments FIRST (Jevons expansion)
+
+2. **Switching cost matrix**:
+   - Financial: cancellation fees, new setup costs, overlap period
+   - Operational: learning new system, transferring data/history
+   - Emotional: relationship with current provider, fear of change
+   - Regulatory: changing provider requires filings, notifications, approvals
+
+3. **Adoption prediction**: Based on switching friction analysis:
+   - LOW friction + unserved market = rapid adoption (3-6 months to traction)
+   - MEDIUM friction + served market = moderate adoption (6-12 months)
+   - HIGH friction + loyal customer base = slow adoption (12-24 months, may need acquisition strategy)
+
+### V14: Macroeconomic Stress Test (T15)
+
+Test the opportunity against adverse macro scenarios:
+
+1. **Recession scenario**: If the economy enters recession in 12 months:
+   - Does demand for this service increase (cost-cutting), decrease (budget cuts), or stay flat?
+   - Do customers switch TO cheaper AI options (tailwind) or freeze all spending (headwind)?
+   - Does the incumbent's distress accelerate (more opportunities) or do they get bailouts?
+
+2. **Rate environment**: If rates stay high for 3+ more years:
+   - Does our low-burn model outperform leveraged incumbents? (Usually yes)
+   - Does higher cost of capital affect our customers' ability to pay?
+   - Do refinancing walls create acquisition opportunities on schedule?
+
+3. **AI cost shock**: If inference costs drop another 10x in 12 months:
+   - Does our unit economics improve, or does competition intensify faster?
+   - Are we building on a cost advantage that evaporates? (moat depth question)
+   - Would 10x cheaper AI enable new competitors that our model doesn't account for?
+
+### V15: Network Effect & Data Moat Assessment (T20)
+
+Evaluate whether the opportunity can build compounding advantages:
+
+1. **Data flywheel potential**: Does serving customers generate proprietary data that improves the product?
+   - Every tax return processed → better tax model (strong flywheel)
+   - Every customer served → just more revenue, no data advantage (no flywheel)
+
+2. **Network effects**: Does each additional user make the product more valuable for existing users?
+   - Marketplace effects, referral networks, shared knowledge base
+   - If no network effects → must compete on cost forever (weaker position)
+
+3. **Switching cost creation**: Does usage create lock-in?
+   - Historical data, customized models, integration depth
+   - If customers can easily switch to competitor → moat is cost only (fragile)
+
+4. **Winner-take-all dynamics**: Is this a market where #1 gets 70%+ share?
+   - If yes → must be first or best, PARK if we can't achieve that
+   - If no → can build sustainable niche without being dominant
+
 ### V9: Dead Business Resurrection Check (Special Protocol)
 
 When evaluating a "revived" business model:

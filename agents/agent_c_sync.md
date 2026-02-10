@@ -27,7 +27,11 @@ RELEVANCE SCORE (0-10) — DEFAULT WEIGHTS (override per cycle)
 ├── Source quality (primary data vs. commentary)           [0-2] weight: 1.0
 ├── Timeliness (fresh vs. stale)                           [0-1] weight: 1.0
 ├── Novelty (new insight vs. known trend)                  [0-1] weight: 1.0
-└── Cross-signal reinforcement (other signals agree)       [0-1] weight: 1.0
+├── Cross-signal reinforcement (other signals agree)       [0-1] weight: 1.0
+├── Regulatory moat risk (does regulatory capture block    [0-2] weight: 1.3
+│   or protect this opportunity? T11)
+└── Precedent failure severity (did similar attempts fail? [0-2] weight: 1.4
+    T14, T17 — higher weight forces confrontation with failures)
 ```
 
 **Weight overrides from Master** look like:

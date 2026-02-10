@@ -212,7 +212,9 @@ def parse_json_response(text):
 def format_fred_data(raw):
     """Format FRED data into a readable text block."""
     lines = ['## FRED Economic Data\n']
-    for key in ['fred_labor_squeeze', 'fred_credit_stress', 'fred_job_gaps', 'fred_rates']:
+    for key in ['fred_labor_squeeze', 'fred_credit_stress', 'fred_job_gaps', 'fred_rates',
+                'fred_profitability', 'fred_stress', 'fred_sector_costs', 'fred_small_biz',
+                'fred_assets']:
         if key not in raw:
             continue
         data = raw[key].get('data', {})
@@ -237,7 +239,7 @@ def format_fred_data(raw):
 def format_bls_data(raw):
     """Format BLS data into readable text."""
     lines = ['## BLS Employment & Wage Data\n']
-    for key in ['bls_industry', 'bls_wages', 'bls_jolts']:
+    for key in ['bls_industry', 'bls_wages', 'bls_jolts', 'bls_occupational', 'bls_wage_premium']:
         if key not in raw:
             continue
         data = raw[key].get('data', {})
@@ -258,7 +260,7 @@ def format_bls_data(raw):
 def format_edgar_data(raw):
     """Format EDGAR data, truncating long filing lists."""
     lines = ['## SEC EDGAR Filings\n']
-    for key in ['edgar_distress', 'edgar_ai_failures']:
+    for key in ['edgar_distress', 'edgar_ai_failures', 'edgar_ai_risk']:
         if key not in raw:
             continue
         data = raw[key]
@@ -436,6 +438,7 @@ VC NETWORK: Active angel/VC relationships.
     sections.append('- V4: Regulatory & Legal Check')
     sections.append('- V5: Technical Feasibility')
     sections.append('- V6: Market Timing')
+    sections.append('- V10-V15: Extended checks (Regulatory Capture, Competitive Equilibrium, Trust & Liability, Switching Friction, Macro Stress Test, Network Effects)')
     sections.append('- Opportunity Quality Assessment (Execution + VC Differentiation)')
     sections.append('')
     sections.append('Return a JSON array of verification objects following your output format.')
@@ -542,7 +545,12 @@ def phase_scan(verbose=False):
         raw['fred_credit_stress'] = fred.get_credit_stress()
         raw['fred_job_gaps'] = fred.get_job_market_gaps()
         raw['fred_rates'] = fred.get_interest_rate_environment()
-        print('  [FRED] OK — 4 datasets')
+        raw['fred_profitability'] = fred.get_industry_profitability()
+        raw['fred_stress'] = fred.get_market_stress_indicators()
+        raw['fred_sector_costs'] = fred.get_sector_employment_costs()
+        raw['fred_small_biz'] = fred.get_small_business_indicators()
+        raw['fred_assets'] = fred.get_asset_prices_and_transactions()
+        print('  [FRED] OK — 9 datasets')
     except Exception as e:
         print(f'  [FRED] ERROR: {e}')
 
@@ -554,7 +562,9 @@ def phase_scan(verbose=False):
         raw['bls_industry'] = bls.get_employment_by_industry()
         raw['bls_wages'] = bls.get_wage_inflation()
         raw['bls_jolts'] = bls.get_job_openings_and_quits()
-        print('  [BLS] OK — 3 datasets')
+        raw['bls_occupational'] = bls.get_occupational_exposure()
+        raw['bls_wage_premium'] = bls.get_industry_wage_premium()
+        print('  [BLS] OK — 5 datasets')
     except Exception as e:
         print(f'  [BLS] ERROR: {e}')
 
@@ -565,7 +575,8 @@ def phase_scan(verbose=False):
         edgar = EdgarConnector()
         raw['edgar_distress'] = edgar.scan_for_distress()
         raw['edgar_ai_failures'] = edgar.scan_for_ai_adoption_failures()
-        print('  [EDGAR] OK — 2 scans')
+        raw['edgar_ai_risk'] = edgar.scan_ai_risk_factors()
+        print('  [EDGAR] OK — 3 scans')
     except Exception as e:
         print(f'  [EDGAR] ERROR: {e}')
 

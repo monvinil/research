@@ -238,6 +238,35 @@ class EdgarConnector:
             ),
         }
 
+    def get_company_financials(self, ticker):
+        """Drill into a specific company's recent filings."""
+        companies = self.search_companies(ticker, limit=1)
+        if not companies:
+            return {'error': f'Company not found: {ticker}'}
+        company = companies[0]
+        cik = company.get('cik', '')
+        filings = self.get_company_filings(cik, form_types=['10-K'], limit=3) if cik else []
+        return {'signal_type': 'company_drill', 'company': company, 'recent_filings': filings}
+
+    def scan_sector_distress(self, sector_keywords):
+        """Search for distress signals in specific sectors."""
+        distress_terms = ['restructuring', 'cost reduction', 'workforce reduction', 'impairment']
+        results = {}
+        for keyword in sector_keywords:
+            for term in distress_terms:
+                query = f'"{keyword}" AND "{term}"'
+                data = self.search_filings(query=query, form_types=['10-K', '8-K'],
+                                          date_from='2025-01-01', limit=5)
+                results[f'{keyword}_{term}'] = data
+        return {'signal_type': 'sector_distress', 'principle': 'P2', 'data': results}
+
+    def scan_ai_risk_factors(self, limit=20):
+        """Find filings where AI appears in risk factors."""
+        data = self.search_filings(
+            query='"artificial intelligence" AND ("risk factor" OR "competitive" OR "disruption")',
+            form_types=['10-K'], date_from='2025-01-01', limit=limit)
+        return {'signal_type': 'ai_risk_factors', 'principle': 'P2', 'data': data}
+
     def test_connection(self):
         """Verify EDGAR access."""
         try:
