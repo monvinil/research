@@ -1,0 +1,244 @@
+[
+  {
+    "combination_id": "47b05dc17c98",
+    "name": "Baumol Cost Disease / Stored Energy x Bass Diffusion S-Curve Positioning x Input-Output Table Disruption Propagation",
+    "component_methods": [
+      {
+        "method_id": "baumol_cost_disease",
+        "name": "Baumol Cost Disease / Stored Energy",
+        "category": "economic_theory",
+        "description": "Sectors where wages rose with the economy but productivity did NOT have the most 'stored energy' for AI disruption. Higher stored energy = more potential for cost collapse.",
+        "success_rate": 0.833,
+        "total_applications": 5
+      },
+      {
+        "method_id": "bass_diffusion_scurve",
+        "name": "Bass Diffusion S-Curve Positioning",
+        "category": "math_model",
+        "description": "Estimates where AI adoption is on the S-curve for a given sector. Position determines strategy: pre-takeoff (evangelize), takeoff (ride), late majority (differentiate), laggards (skip).",
+        "success_rate": 0.5,
+        "total_applications": 3
+      },
+      {
+        "method_id": "io_table_propagation",
+        "name": "Input-Output Table Disruption Propagation",
+        "category": "math_model",
+        "description": "Trace how disruption in one industry propagates to downstream industries through supply chain linkages. Built but never applied to real data.",
+        "success_rate": 0.5,
+        "total_applications": 0
+      }
+    ],
+    "cross_domain_question": "Combining Baumol Cost Disease / Stored Energy + Bass Diffusion S-Curve Positioning + Input-Output Table Disruption Propagation: what happens when we apply these lenses simultaneously? Where do they agree on high opportunity?",
+    "falsifiable_prediction": "Sectors scoring highly on ALL of [Baumol Cost Disease / Stored Energy, Bass Diffusion S-Curve Positioning, Input-Output Table Disruption Propagation] simultaneously will produce more actionable discoveries than any single method applied alone.",
+    "data_needed": [
+      "bea_io_tables",
+      "bls_oes",
+      "bls_qcew",
+      "census_cbp",
+      "fred"
+    ],
+    "sectors_to_test": [],
+    "source": "generated",
+    "composite_score": 81.9
+  },
+  {
+    "combination_id": "3a43e5cf9225",
+    "name": "Counter-Signal / Bear Case Research x Composite Index Construction",
+    "component_methods": [
+      {
+        "method_id": "counter_signal_research",
+        "name": "Counter-Signal / Bear Case Research",
+        "category": "analytical_lens",
+        "description": "Deliberately search for reasons an opportunity will FAIL. Counter-signals weighted 1.5x in grading.",
+        "success_rate": 0.667,
+        "total_applications": 6
+      },
+      {
+        "method_id": "composite_index_construction",
+        "name": "Composite Index Construction",
+        "category": "math_model",
+        "description": "Build multi-indicator composite indices (P3 Cost Collapse, Capital Environment, Beveridge Curve) from normalized components.",
+        "success_rate": 0.75,
+        "total_applications": 2
+      }
+    ],
+    "cross_domain_question": "Combining Counter-Signal / Bear Case Research + Composite Index Construction: what happens when we apply these lenses simultaneously? Where do they agree on high opportunity?",
+    "falsifiable_prediction": "Sectors scoring highly on ALL of [Counter-Signal / Bear Case Research, Composite Index Construction] simultaneously will produce more actionable discoveries than any single method applied alone.",
+    "data_needed": [
+      "bea_io_tables",
+      "bls_qcew",
+      "census_cbp",
+      "equity_prices",
+      "fred",
+      "web_search"
+    ],
+    "sectors_to_test": [],
+    "source": "generated",
+    "composite_score": 92.7
+  },
+  {
+    "combination_id": "0a87a38aa563",
+    "name": "Bass Diffusion S-Curve Positioning x FRED/BLS Macro Indicator Screening x Counter-Signal / Bear Case Research",
+    "component_methods": [
+      {
+        "method_id": "bass_diffusion_scurve",
+        "name": "Bass Diffusion S-Curve Positioning",
+        "category": "math_model",
+        "description": "Estimates where AI adoption is on the S-curve for a given sector. Position determines strategy: pre-takeoff (evangelize), takeoff (ride), late majority (differentiate), laggards (skip).",
+        "success_rate": 0.5,
+        "total_applications": 3
+      },
+      {
+        "method_id": "macro_indicator_screening",
+        "name": "FRED/BLS Macro Indicator Screening",
+        "category": "data_source",
+        "description": "Pull macro indicators (GDP, employment, wages, productivity, credit, JOLTS) from FRED and BLS to identify structural shifts.",
+        "success_rate": 0.5,
+        "total_applications": 8
+      },
+      {
+        "method_id": "counter_signal_research",
+        "name": "Counter-Signal / Bear Case Research",
+        "category": "analytical_lens",
+        "description": "Deliberately search for reasons an opportunity will FAIL. Counter-signals weighted 1.5x in grading.",
+        "success_rate": 0.667,
+        "total_applications": 6
+      }
+    ],
+    "cross_domain_question": "Combining Bass Diffusion S-Curve Positioning + FRED/BLS Macro Indicator Screening + Counter-Signal / Bear Case Research: what happens when we apply these lenses simultaneously? Where do they agree on high opportunity?",
+    "falsifiable_prediction": "Sectors scoring highly on ALL of [Bass Diffusion S-Curve Positioning, FRED/BLS Macro Indicator Screening, Counter-Signal / Bear Case Research] simultaneously will produce more actionable discoveries than any single method applied alone.",
+    "data_needed": [
+      "bea_io_tables",
+      "bls_qcew",
+      "census_cbp",
+      "edgar_sec",
+      "equity_prices",
+      "eurostat",
+      "fred",
+      "web_search"
+    ],
+    "sectors_to_test": [],
+    "source": "generated",
+    "composite_score": 88.9
+  },
+  {
+    "combination_id": "21002cb0fed7",
+    "name": "Baumol Cost Disease / Stored Energy x Herfindahl-Hirschman Index x Shift-Share Employment Decomposition",
+    "component_methods": [
+      {
+        "method_id": "baumol_cost_disease",
+        "name": "Baumol Cost Disease / Stored Energy",
+        "category": "economic_theory",
+        "description": "Sectors where wages rose with the economy but productivity did NOT have the most 'stored energy' for AI disruption. Higher stored energy = more potential for cost collapse.",
+        "success_rate": 0.833,
+        "total_applications": 5
+      },
+      {
+        "method_id": "hhi_market_concentration",
+        "name": "Herfindahl-Hirschman Index",
+        "category": "math_model",
+        "description": "Market concentration measure. HHI < 1500 = fragmented (platform opportunity), 1500-2500 = moderate, > 2500 = concentrated (hard entry).",
+        "success_rate": 0.5,
+        "total_applications": 3
+      },
+      {
+        "method_id": "shift_share_decomposition",
+        "name": "Shift-Share Employment Decomposition",
+        "category": "math_model",
+        "description": "Separate national, industry, and regional effects on employment changes. Answers: is decline due to national trends, industry trends, or region-specific factors?",
+        "success_rate": 0.5,
+        "total_applications": 0
+      }
+    ],
+    "cross_domain_question": "Combining Baumol Cost Disease / Stored Energy + Herfindahl-Hirschman Index + Shift-Share Employment Decomposition: what happens when we apply these lenses simultaneously? Where do they agree on high opportunity?",
+    "falsifiable_prediction": "Sectors scoring highly on ALL of [Baumol Cost Disease / Stored Energy, Herfindahl-Hirschman Index, Shift-Share Employment Decomposition] simultaneously will produce more actionable discoveries than any single method applied alone.",
+    "data_needed": [
+      "bea_io_tables",
+      "bls_oes",
+      "bls_qcew",
+      "census_cbp",
+      "fred"
+    ],
+    "sectors_to_test": [],
+    "source": "generated",
+    "composite_score": 81.9
+  },
+  {
+    "combination_id": "c856cacab89d",
+    "name": "Shift-Share Employment Decomposition x Geographic Wage/Cost Arbitrage Analysis",
+    "component_methods": [
+      {
+        "method_id": "shift_share_decomposition",
+        "name": "Shift-Share Employment Decomposition",
+        "category": "math_model",
+        "description": "Separate national, industry, and regional effects on employment changes. Answers: is decline due to national trends, industry trends, or region-specific factors?",
+        "success_rate": 0.5,
+        "total_applications": 0
+      },
+      {
+        "method_id": "geographic_arbitrage",
+        "name": "Geographic Wage/Cost Arbitrage Analysis",
+        "category": "analytical_lens",
+        "description": "Compare US labor costs with international alternatives to identify arbitrage opportunities (LATAM, Asia, EU).",
+        "success_rate": 0.5,
+        "total_applications": 3
+      }
+    ],
+    "cross_domain_question": "Combining Shift-Share Employment Decomposition + Geographic Wage/Cost Arbitrage Analysis: what happens when we apply these lenses simultaneously? Where do they agree on high opportunity?",
+    "falsifiable_prediction": "Sectors scoring highly on ALL of [Shift-Share Employment Decomposition, Geographic Wage/Cost Arbitrage Analysis] simultaneously will produce more actionable discoveries than any single method applied alone.",
+    "data_needed": [
+      "bea_io_tables",
+      "bls_qcew",
+      "census_cbp",
+      "equity_prices",
+      "fred",
+      "web_search"
+    ],
+    "sectors_to_test": [],
+    "source": "generated",
+    "composite_score": 87.5
+  },
+  {
+    "combination_id": "7dccd7cb1db7",
+    "name": "Bass Diffusion S-Curve Positioning x Competitive Density Web Scan x Input-Output Table Disruption Propagation",
+    "component_methods": [
+      {
+        "method_id": "bass_diffusion_scurve",
+        "name": "Bass Diffusion S-Curve Positioning",
+        "category": "math_model",
+        "description": "Estimates where AI adoption is on the S-curve for a given sector. Position determines strategy: pre-takeoff (evangelize), takeoff (ride), late majority (differentiate), laggards (skip).",
+        "success_rate": 0.5,
+        "total_applications": 3
+      },
+      {
+        "method_id": "competitive_density_scan",
+        "name": "Competitive Density Web Scan",
+        "category": "analytical_lens",
+        "description": "Web search for AI startups, VC funding, and incumbents targeting a specific sector. Rating: LOW/MEDIUM/HIGH/SATURATED.",
+        "success_rate": 0.875,
+        "total_applications": 7
+      },
+      {
+        "method_id": "io_table_propagation",
+        "name": "Input-Output Table Disruption Propagation",
+        "category": "math_model",
+        "description": "Trace how disruption in one industry propagates to downstream industries through supply chain linkages. Built but never applied to real data.",
+        "success_rate": 0.5,
+        "total_applications": 0
+      }
+    ],
+    "cross_domain_question": "Combining Bass Diffusion S-Curve Positioning + Competitive Density Web Scan + Input-Output Table Disruption Propagation: what happens when we apply these lenses simultaneously? Where do they agree on high opportunity?",
+    "falsifiable_prediction": "Sectors scoring highly on ALL of [Bass Diffusion S-Curve Positioning, Competitive Density Web Scan, Input-Output Table Disruption Propagation] simultaneously will produce more actionable discoveries than any single method applied alone.",
+    "data_needed": [
+      "bea_io_tables",
+      "bls_qcew",
+      "census_cbp",
+      "equity_prices",
+      "fred",
+      "web_search"
+    ],
+    "sectors_to_test": [],
+    "source": "generated",
+    "composite_score": 82.3
+  }
+]
