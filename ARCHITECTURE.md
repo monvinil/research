@@ -131,3 +131,22 @@ Each research cycle produces:
 | H1 (1-3y) | Liquidation cascades, current cost structures, available AI tooling | Unit economics vs. incumbent COGS at $500K-$1M start | Agentic service firm entering market where incumbents are consolidating/exiting |
 | H2 (3-5y) | Emerging model capabilities, regulatory shifts, demographic curves | TAM viability, can 2 founders + AI scale to this? | AI-native operations in category where human labor pipeline is collapsing |
 | H3 (5-10y) | Infrastructure buildout, geopolitical realignment, energy transitions | Strategic positioning, moat durability, LATAM angle | Vertical AI business positioned for US-LATAM corridor advantages |
+
+## Execution Modes
+
+### Mode 1: Single Session (Current)
+One Claude Code session acts as all 4 agents sequentially. Simple to run, uses subscription compute. Best for quick cycles or when exploring.
+
+### Mode 2: Parallel Sessions (Target)
+Multiple Claude Code terminals, each running as a specific agent. Uses `scripts/run_parallel.sh` as orchestrator. Benefits:
+- Each agent gets full context window (no cramming all 4 into one)
+- Agent B can parallelize across opportunities (one session per opportunity)
+- True separation of concerns — Agent B can't "peek" at what it wants to conclude
+- Uses Max subscription, no API credits needed
+
+### Mode 3: API-Powered (Future, requires credits)
+`scripts/run_cycle.py` makes direct Anthropic API calls. Most automated but costs $0.50-$10 per cycle depending on model. Useful for scheduled/unattended runs.
+
+## Verification
+
+See `VERIFICATION.md` for standards on ensuring research outputs are genuinely AI-reasoned and not template-generated. Key principle: **if an output can't be traced to a specific data source, it's not research — it's fiction.**
