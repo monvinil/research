@@ -1,19 +1,18 @@
 {
-  "state_version": 2,
-  "current_cycle": 2,
+  "state_version": 3,
+  "current_cycle": 3,
   "engine_started": "2026-02-09",
+  "engine_type": "opus-4.6-in-session",
   "active_research_focus": {
-    "horizons": [
-      "H1",
-      "H2",
-      "H3"
-    ],
+    "horizons": ["H1", "H2", "H3"],
     "systemic_patterns": [
       "liquidation_cascades_labor_intensive_services",
-      "demographic_gap_widening_us",
-      "infrastructure_overhang_inference_cost_collapse",
+      "demographic_gap_widening_healthcare_construction",
+      "infrastructure_overhang_inference_cost_1000x",
       "dead_business_revival_coordination_cost_failures",
-      "pe_rollup_disruption_by_agentic_entrants"
+      "pe_rollup_disruption_by_agentic_entrants",
+      "credit_squeeze_accelerating_distress",
+      "timing_arbitrage_premature_human_cuts"
     ],
     "geographies": [
       "US_lowest_friction",
@@ -26,7 +25,9 @@
       "dead_business_revival",
       "demographic_gaps",
       "geographic_arbitrage",
-      "license_acquisition_as_entry"
+      "license_acquisition_as_entry",
+      "distressed_asset_acquisition",
+      "timing_arbitrage"
     ]
   },
   "founding_conditions": {
@@ -35,7 +36,7 @@
     "founder_1": "operator, Argentina citizen, US resident, English+Spanish",
     "founder_2": "ML/AI Masters Georgia Tech, US citizen",
     "operating_geo": "US+LATAM lowest friction, any geo if economics justify overhead",
-    "credentials": "no CPA/JD/MD \u2014 willing to acquire licensed businesses",
+    "credentials": "no CPA/JD/MD — willing to acquire licensed businesses",
     "languages": "English+Spanish native, others = cost adder not blocker",
     "vc_network": "active, can raise follow-on",
     "optimization_target": "opportunity quality + VC differentiation, NOT capital fit"
@@ -43,61 +44,99 @@
   "grading_weights": {
     "current": {
       "principles_alignment": 1.0,
-      "data_specificity": 1.0,
+      "data_specificity": 1.3,
       "source_quality": 1.0,
       "timeliness": 1.0,
-      "novelty": 1.0,
-      "cross_signal_reinforcement": 1.0
+      "novelty": 0.7,
+      "cross_signal_reinforcement": 1.2
     },
-    "history": []
+    "history": [
+      {"cycle": 1, "weights": {"principles_alignment": 1.0, "data_specificity": 1.0, "source_quality": 1.0, "timeliness": 1.0, "novelty": 1.0, "cross_signal_reinforcement": 1.0}, "reason": "Default weights, initial cycle"},
+      {"cycle": 3, "weights": {"principles_alignment": 1.0, "data_specificity": 1.3, "source_quality": 1.0, "timeliness": 1.0, "novelty": 0.7, "cross_signal_reinforcement": 1.2}, "reason": "Post Cycle 3: themes established, need depth over novelty. Boost data specificity for unit economics verification. Boost cross-signal reinforcement to detect convergences."}
+    ]
   },
-  "running_patterns": [],
+  "running_patterns": [
+    {
+      "pattern_id": "P-001",
+      "description": "P2+P5 Divergence Corridor: Professional services in liquidation cascade while healthcare faces permanent labor shortage",
+      "supporting_signals": ["bankruptcy_surge_76pct", "prof_services_neg_97k", "healthcare_pos_709k", "nursing_shortage_6states"],
+      "first_observed": "cycle 3",
+      "strength": "strong",
+      "status": "confirmed"
+    },
+    {
+      "pattern_id": "P-002",
+      "description": "P2+P3 Credit-Squeeze Accelerator: Falling credit availability preventing incumbent restructuring while AI entrants need minimal capital",
+      "supporting_signals": ["ci_loans_neg_55b", "hy_spread_287bps", "chapter11_surge"],
+      "first_observed": "cycle 3",
+      "strength": "strong",
+      "status": "emerging"
+    },
+    {
+      "pattern_id": "P-003",
+      "description": "P1+P3 Cost Floor Unlock: 1000x inference cost collapse enabling new tier of agentic businesses",
+      "supporting_signals": ["inference_cost_1000x", "ai_spending_320pct", "capex_surge"],
+      "first_observed": "cycle 3",
+      "strength": "strong",
+      "status": "confirmed"
+    },
+    {
+      "pattern_id": "P-004",
+      "description": "Timing Arbitrage (potential P7): Companies cutting human capacity before AI can deliver, creating service vacuums",
+      "supporting_signals": ["ai_layoffs_55k", "premature_cuts_hbr"],
+      "first_observed": "cycle 3",
+      "strength": "moderate",
+      "status": "emerging"
+    }
+  ],
   "opportunity_pipeline": {
-    "scanning": [],
+    "scanning": ["Construction AI Coordinator", "PE Roll-Up Disruptor", "Agentic Back-Office for SMBs"],
     "grading": [],
     "verification": [],
-    "verified": [],
+    "verified": ["Distressed Professional Services Acquisition", "Healthcare Staffing AI"],
     "killed": [],
     "parked": []
   },
   "agent_performance": {
     "agent_a": {
-      "signals_produced": 50,
-      "signals_above_threshold": 35,
-      "avg_relevance_score": 5.94,
+      "signals_produced": 75,
+      "signals_above_threshold": 52,
+      "avg_relevance_score": 7.1,
       "top_source_categories": [
-        [
-          "Web (duckduckgo_html)",
-          27
-        ],
-        [
-          "FRED",
-          10
-        ],
-        [
-          "BLS",
-          8
-        ],
-        [
-          "EDGAR",
-          5
-        ]
+        ["FRED", 12],
+        ["BLS", 10],
+        ["EDGAR", 8],
+        ["Web", 30],
+        ["Cross-signal synthesis", 15]
       ],
-      "kill_index_hit_rate": "0%"
+      "kill_index_hit_rate": "0%",
+      "notes": "Cycle 3 used LLM reasoning (Opus 4.6) — significantly higher signal quality vs Cycle 1 hardcoded extraction"
     },
     "agent_b": {
-      "verifications_completed": 0,
-      "pursue_rate": "0%",
-      "avg_viability_score": 0,
+      "verifications_completed": 5,
+      "pursue_rate": "0% (all INVESTIGATE_FURTHER, none fully PURSUE yet)",
+      "avg_viability_score": 5.4,
       "common_kill_reasons": [],
-      "constraint_gate_kill_rate": "0%"
+      "avg_vc_differentiation_score": 7.2,
+      "generic_pitch_rate": "0%",
+      "cost_adder_frequency": "40% (2/5 require license acquisition or geo setup)",
+      "notes": "First real verification pass. Need deeper unit economics in Cycle 4."
     }
   },
-  "key_unknowns": [],
+  "key_unknowns": [
+    "Real acquisition prices for distressed professional services firms (need deal data, not estimates)",
+    "Actual client retention rate when firm ownership changes",
+    "HIPAA compliance cost for AI in healthcare settings",
+    "Whether nurse-patient ratio regulations allow AI augmentation",
+    "LATAM market: are same cascades happening in Argentina/Brazil professional services?",
+    "Competitor landscape for distressed acquisition + AI rebuild thesis"
+  ],
   "next_cycle_suggestions": [
-    "Cycle 1: Focus on P2 (liquidation cascades) + P5 (demographic gaps) in US labor-intensive services",
-    "Use BLS + FRED to identify the squeeze: rising wages + falling margins by sector",
-    "Use web search + Reddit to find practitioner pain signals confirming the quantitative data",
-    "Defer industry selection \u2014 let the data surface which industries are in cascade"
+    "Deep-dive Agent B on top 2: Distressed Prof Services + Healthcare Staffing",
+    "Run competitor scans via Agent A on both verified opportunities",
+    "Add LATAM data sources to Agent A scanning",
+    "Investigate P7 Timing Arbitrage more deeply — which specific industries have premature cuts?",
+    "Get real deal data: BizBuySell, DealStream for distressed professional services acquisition prices",
+    "Stress-test healthcare opportunity against state-level nursing regulations"
   ]
 }

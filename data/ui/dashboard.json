@@ -1,161 +1,109 @@
 {
-  "last_updated": "2026-02-10T00:22:28.631289+00:00",
-  "current_cycle": 1,
-  "total_signals_scanned": 50,
-  "total_opportunities_verified": 0,
-  "active_opportunities": 5,
+  "last_updated": "2026-02-10T20:00:00Z",
+  "current_cycle": 3,
+  "total_signals_scanned": 25,
+  "total_opportunities_verified": 5,
+  "active_opportunities": 4,
+  "engine": "opus-4.6-in-session",
   "top_opportunities": [
     {
-      "name": "Distressed Incumbent Acquisition Play",
-      "thesis": "Incumbents filing restructuring notices and AI-transition challenges. Their customer contracts, licenses, and relationships become available. Acquire distressed assets, run them on agentic stack.",
-      "score": 81.0,
+      "name": "Distressed Professional Services Acquisition + Agentic Rebuild",
+      "thesis": "Professional & Business Services losing 97K jobs YoY while Chapter 11 surges +76%. Small accounting, legal, staffing, and IT firms are failing due to cost squeeze (wages at $37/hr, clients demanding lower prices). Acquire 1-3 distressed firms for $50K-300K each, replace 60-80% of labor with agentic operations, retain the client book and licenses. The acquisition IS the moat — customers, contracts, and licensed credentials transfer.",
+      "score": 87,
+      "horizon": "H1",
+      "principles_passed": ["P2", "P3", "P4"],
+      "signal_count": 9,
+      "key_data": ["Professional services employment -0.4% YoY (BLS)", "Chapter 11 filings +76% YoY Jan 2026", "Avg hourly earnings $37.02 → ~$77K/yr loaded cost", "HY spread 2.87% = market not pricing distress yet", "Inference costs down 1000x"],
+      "vc_hook": "We don't compete with professional services firms — we acquire them when they fail, gut the labor cost structure, and run the same book of business at 10x margin.",
+      "status": "investigating",
+      "viability_score": 7,
+      "recommendation": "INVESTIGATE_FURTHER",
+      "vc_score": 8
+    },
+    {
+      "name": "Healthcare Staffing Gap — AI-Augmented Nurse Capacity Multiplier",
+      "thesis": "Nursing shortage is a specialization and geographic mismatch, not just a volume problem (CA short 22%, WY oversupply 79%). Ed/Health adding 709K jobs/yr but can't fill specialized roles (critical care, mental health). An AI-augmented staffing model that shifts nurse-patient ratios from 1:4 to 1:12 through continuous monitoring, triage automation, and documentation offloading. Regulatory tailwind: filling gaps = government wants solutions.",
+      "score": 79,
+      "horizon": "H1",
+      "principles_passed": ["P5", "P3", "P1"],
+      "signal_count": 7,
+      "key_data": ["Healthcare employment +2.6% YoY / +709K jobs (BLS)", "Nursing shortage in 6 states with geographic maldistribution", "Immigration policy restricting healthcare labor supply", "Edge AI enabling on-premise HIPAA-compliant inference", "JOLTS openings still 20% above pre-pandemic normal"],
+      "vc_hook": "There are not enough nurses and there never will be. We multiply each nurse by 3x through AI monitoring, not by replacing anyone — regulators love us instead of fighting us.",
+      "status": "investigating",
+      "viability_score": 6,
+      "recommendation": "INVESTIGATE_FURTHER",
+      "vc_score": 7
+    },
+    {
+      "name": "Agentic Back-Office for Distressed SMBs",
+      "thesis": "24,039 business bankruptcies in 2025 (+5.6% YoY). But many of these businesses aren't failing because demand disappeared — they're failing because overhead (accounting, payroll, compliance, HR) costs $50-100K/yr for a 5-20 person company. An agentic back-office service at $500-2,000/mo replaces the human CFO/office manager at 80% cost reduction. Target: the 100K+ businesses in the 5-50 employee range currently paying for fractional services or going without.",
+      "score": 72,
+      "horizon": "H1",
+      "principles_passed": ["P3", "P2", "P1"],
+      "signal_count": 6,
+      "key_data": ["24,039 business bankruptcies in 2025 (+5.6% YoY)", "Avg hourly earnings $37.02/hr for back-office roles", "Inference costs down 1000x enabling complex document processing", "Credit contraction (-2% C&I loans) means SMBs can't hire", "10,000+ EDGAR hits for cost reduction + automation"],
+      "vc_hook": "Businesses don't fail because nobody wants their product. They fail because overhead costs $100K/yr for a 10-person company. We make overhead cost $12K/yr.",
+      "status": "scanning",
+      "viability_score": 5,
+      "recommendation": "INVESTIGATE_FURTHER",
+      "vc_score": 6
+    },
+    {
+      "name": "Construction AI Coordinator — Filling the Immigration Labor Gap",
+      "thesis": "92% of contractors struggling to find workers. >25% of construction workforce is foreign-born, and immigration enforcement is removing them. AI can't lay bricks, but it CAN do project management, estimation, permit compliance, scheduling, safety monitoring, and supplier coordination — which together account for 30-40% of project costs. An agentic construction coordination platform that multiplies each remaining foreman's capacity by 3-5x.",
+      "score": 65,
+      "horizon": "H1",
+      "principles_passed": ["P5", "P3"],
+      "signal_count": 4,
+      "key_data": ["92% of contractors struggling with labor shortages", "Immigration enforcement removing 25%+ of workforce", "Construction one of few sectors where AI augments rather than replaces", "Edge AI enabling on-site inference without connectivity"],
+      "vc_hook": "Immigration policy just permanently removed a quarter of the construction workforce. We're not bringing them back — we're making the remaining workers do 3x the work.",
+      "status": "scanning",
+      "viability_score": 5,
+      "recommendation": "INVESTIGATE_FURTHER",
+      "vc_score": 7
+    },
+    {
+      "name": "PE Roll-Up Disruptor — Pure Agentic vs Acquire-and-Restructure",
+      "thesis": "General Catalyst, Slow Ventures, 8VC are funding AI roll-up strategies: acquire fragmented businesses + overlay AI. But their model still requires acquisition capital, integration, and restructuring. A pure agentic entrant with 10-20x cost advantage doesn't NEED to acquire — it can organically win the same customers at 80% lower price. Position against the PE roll-up wave, not alongside it.",
+      "score": 58,
       "horizon": "H2",
-      "principles_passed": [
-        "P2",
-        "P4"
-      ],
+      "principles_passed": ["P2", "P3"],
+      "signal_count": 4,
+      "key_data": ["PE firms actively funding AI roll-up strategies", "Professional services employment declining -0.4% YoY", "Financial services stagnant at +0.4% YoY", "15,000 store closures creating adjacent opportunities"],
+      "vc_hook": "PE firms are spending $50M to buy and fix what we can beat from scratch for $500K. Their thesis requires restructuring; ours requires a laptop.",
       "status": "scanning",
-      "signal_count": 5,
-      "key_data": [
-        "Companies flagged: KBW, INC.  (CIK 0001063494), NVIDIA CORP  (NVDA)  (CIK 0001045810), Emrise CORP  (CIK 0000854852)"
-      ],
-      "vc_hook": "Buy the customer base for pennies, operate it at 10x lower cost with agents."
-    },
-    {
-      "name": "Labor-Intensive Services Disruption",
-      "thesis": "Unit labor costs rising while productivity stagnates. Industries with 60%+ labor cost ratios face existential squeeze. Agentic-first entrant captures the cost delta.",
-      "score": 73.0,
-      "horizon": "H1",
-      "principles_passed": [
-        "P2",
-        "P3"
-      ],
-      "status": "scanning",
-      "signal_count": 10,
-      "key_data": [
-        "CES6500000001: 27,640K, YoY: +2.6%",
-        "ULCNFB: 121.6 (latest: 2025-07-01)",
-        "Wage-productivity gap: +1.8pp"
-      ],
-      "vc_hook": "Every dollar of wage inflation makes the AI cost advantage wider \u2014 this is a self-reinforcing moat."
-    },
-    {
-      "name": "Demographic Gap \u2014 AI Fills the Shortage",
-      "thesis": "Job openings persistently high in specific sectors while workforce ages out. AI/agentic systems fill roles that literally cannot be staffed. Regulatory tailwind: solving shortage, not displacing.",
-      "score": 58.0,
-      "horizon": "H1",
-      "principles_passed": [
-        "P5",
-        "P2"
-      ],
-      "status": "scanning",
-      "signal_count": 11,
-      "key_data": [
-        "Openings/Unemployed ratio: ~148.7",
-        "JOLTS openings: 6,542K",
-        "JTS000000000000000JOL: 6542.0"
-      ],
-      "vc_hook": "Not replacing workers \u2014 filling roles nobody can fill. Solves a crisis, not just saves money."
-    },
-    {
-      "name": "Infrastructure Overhang Exploitation",
-      "thesis": "AI inference costs dropping 10x/year. Businesses designed around current cost curves will see margins explode as costs collapse. Build at the cost floor, ride the curve down.",
-      "score": 45.0,
-      "horizon": "H1",
-      "principles_passed": [
-        "P1"
-      ],
-      "status": "scanning",
-      "signal_count": 8,
-      "key_data": [
-        "LLM API Pricing 2026 - Compare 300+ AI Model Costs",
-        "LLM API Pricing Comparison (2025): OpenAI, Gemini, Claude"
-      ],
-      "vc_hook": "Every quarter, the same product costs less to run. Margins go up automatically."
-    },
-    {
-      "name": "Dead Business Model Revival (AI Economics)",
-      "thesis": "Business models that failed due to unit economics or coordination costs may now work with agentic infrastructure. The market already validated demand \u2014 only the cost side killed them.",
-      "score": 42.0,
-      "horizon": "H2",
-      "principles_passed": [
-        "P4",
-        "P1"
-      ],
-      "status": "scanning",
-      "signal_count": 1,
-      "key_data": [
-        "Simple Steps to Improve Your Startup&#x27;s Unit Economics and ... - HackerNoon"
-      ],
-      "vc_hook": "The market proved the demand exists. AI just fixed the supply side."
+      "viability_score": 4,
+      "recommendation": "INVESTIGATE_FURTHER",
+      "vc_score": 8
     }
   ],
   "sector_heatmap": {
-    "all_nonfarm": {
-      "signal_count": 6,
-      "avg_score": 7.4
-    },
-    "education_health_services": {
-      "signal_count": 1,
-      "avg_score": 8.1
-    },
-    "public_companies": {
-      "signal_count": 5,
-      "avg_score": 8.1
-    },
-    "professional_business_services": {
-      "signal_count": 1,
-      "avg_score": 7.4
-    },
-    "transportation_warehousing": {
-      "signal_count": 1,
-      "avg_score": 7.4
-    },
-    "financial_activities": {
-      "signal_count": 1,
-      "avg_score": 7.2
-    },
-    "private_sector": {
-      "signal_count": 3,
-      "avg_score": 6.9
-    },
-    "all_business": {
-      "signal_count": 1,
-      "avg_score": 6.8
-    },
-    "corporate_debt": {
-      "signal_count": 1,
-      "avg_score": 6.8
-    },
-    "macro": {
-      "signal_count": 2,
-      "avg_score": 6.5
-    },
-    "all_civilian": {
-      "signal_count": 1,
-      "avg_score": 6.2
-    },
-    "mixed": {
-      "signal_count": 27,
-      "avg_score": 4.8
-    }
+    "healthcare": {"signal_count": 5, "avg_score": 8.0},
+    "professional_services": {"signal_count": 5, "avg_score": 7.8},
+    "retail": {"signal_count": 3, "avg_score": 7.5},
+    "construction": {"signal_count": 2, "avg_score": 7.9},
+    "financial_services": {"signal_count": 2, "avg_score": 6.0},
+    "transportation": {"signal_count": 2, "avg_score": 7.0},
+    "AI_infrastructure": {"signal_count": 4, "avg_score": 7.2},
+    "manufacturing": {"signal_count": 2, "avg_score": 5.8},
+    "SMB_cross_sector": {"signal_count": 3, "avg_score": 7.0}
   },
   "geography_heatmap": {
-    "US": {
-      "signal_count": 23,
-      "avg_score": 6.0
-    },
-    "Global": {
-      "signal_count": 27,
-      "avg_score": 4.0
-    }
+    "US": {"signal_count": 22, "avg_score": 7.3},
+    "Global": {"signal_count": 5, "avg_score": 7.2}
   },
   "cycle_history": [
-    {
-      "cycle": 1,
-      "signals": 50,
-      "verified": 0,
-      "top_score": 81.0
-    }
+    {"cycle": 1, "signals": 50, "verified": 0, "top_score": 81},
+    {"cycle": 3, "signals": 25, "verified": 5, "top_score": 87}
+  ],
+  "master_synthesis": "Cycle 3 reveals a US economy in structural bifurcation. Sectors exposed to AI cost disruption (professional services -0.4%, transportation -0.9%) are entering the liquidation cascade while labor-absorbing sectors (healthcare +2.6%) face permanent shortages amplified by immigration policy. The critical insight is that these are not separate stories — they are two sides of the same structural shift, and the opportunity corridor sits at their intersection. Bond markets (HY spread 2.87%) have not priced this divergence, meaning the distress window is open but not yet crowded. The 1000x inference cost reduction confirms P1 infrastructure overhang, making H1 entry timing optimal for agentic-first businesses that consume cheap compute rather than build it.",
+  "cross_principle_patterns": [
+    {"pattern": "P2+P5 Divergence Corridor", "principles": ["P2", "P5"], "evidence": "Prof services -97K jobs while healthcare +709K. Same economy, opposite directions.", "strength": "strong"},
+    {"pattern": "P2+P3 Credit-Squeeze Accelerator", "principles": ["P2", "P3"], "evidence": "C&I loans down $55.8B while delinquency stable. Incumbents denied restructuring capital.", "strength": "strong"},
+    {"pattern": "P1+P3 Cost Floor Unlock", "principles": ["P1", "P3"], "evidence": "1000x inference cost reduction makes $37/hr human labor look like 37-370x overpay for many tasks.", "strength": "strong"},
+    {"pattern": "P2 Bond-Bankruptcy Divergence", "principles": ["P2"], "evidence": "HY spread 2.87% (tight) while Ch.11 +76% YoY. Market mispricing = timing window.", "strength": "moderate"}
+  ],
+  "emergent_principles": [
+    {"name": "Timing Arbitrage (potential P7)", "description": "Companies cutting human capacity before AI can replace it, creating service vacuums. 55K AI-cited layoffs based on potential not performance. The gap between when humans are cut and when AI actually delivers is a window.", "supporting_evidence": "HBR reporting, Amazon/UPS/Pinterest layoff data"}
   ]
 }
