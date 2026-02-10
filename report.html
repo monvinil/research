@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Economic Research — Cycle 1 Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --text: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-dim: #777;
+    --bg: #fff;
+    --bg-section: #f8f8f6;
+    --border: #ddd;
+    --border-light: #eee;
+    --accent: #1a3a5c;
+    --accent-light: #2d5f8a;
+    --highlight: #e8f0f8;
+    --green: #1b7340;
+    --red: #a82828;
+    --orange: #b36b00;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    color: var(--text);
+    background: var(--bg);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 860px; margin: 0 auto; padding: 40px 32px; }
+  .report-header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+  .report-header .firm-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .report-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .report-header .subtitle {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .report-meta {
+    display: flex;
+    gap: 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+  }
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin: 48px 0 20px 0;
+  }
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 28px 0 12px 0;
+  }
+  h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 20px 0 8px 0;
+  }
+  p { margin-bottom: 14px; }
+  strong { font-weight: 600; }
+  .exec-summary {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+  .exec-summary p:last-child { margin-bottom: 0; }
+  .key-figures {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .key-figure {
+    text-align: center;
+    padding: 16px 8px;
+    background: var(--bg-section);
+    border: 1px solid var(--border-light);
+  }
+  .key-figure .number {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .key-figure .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .principle-card {
+    background: var(--bg-section);
+    border: 1px solid var(--border-light);
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .principle-card .principle-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 6px;
+  }
+  .principle-card h3 { margin-top: 0; margin-bottom: 10px; }
+  .principle-card .definition {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .evidence-list { margin: 12px 0; }
+  .evidence-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 15px;
+    align-items: baseline;
+  }
+  .evidence-item:last-child { border-bottom: none; }
+  .evidence-score {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    min-width: 36px;
+    text-align: center;
+  }
+  .score-high { background: #dff0d8; color: var(--green); }
+  .score-med { background: #fef3cd; color: var(--orange); }
+  .score-low { background: #f2dede; color: var(--red); }
+  .evidence-source {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-dim);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .opp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+  .opp-table th {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--accent);
+    background: var(--bg-section);
+  }
+  .opp-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+  }
+  .opp-table tr:hover { background: var(--highlight); }
+  .opp-rank {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 14px;
+  }
+  .opp-score-cell {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .opp-principles {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-light);
+  }
+  .horizon-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+  .horizon-h1 { background: #dff0d8; color: var(--green); }
+  .horizon-h2 { background: #fef3cd; color: var(--orange); }
+  .horizon-h3 { background: #e8dff0; color: #5b2d8c; }
+  .opp-detail {
+    background: var(--bg-section);
+    border: 1px solid var(--border-light);
+    padding: 24px;
+    margin: 16px 0 28px 0;
+  }
+  .opp-detail .opp-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .opp-detail h3 { margin: 0; }
+  .opp-detail .vc-hook {
+    background: #fff;
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+  .opp-detail .data-points {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 10px;
+  }
+  .opp-detail .data-points li { margin-bottom: 4px; }
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .status-card {
+    background: var(--bg-section);
+    border: 1px solid var(--border-light);
+    padding: 16px;
+  }
+  .status-card h4 { margin-top: 0; }
+  .progress-bar-container {
+    background: var(--border-light);
+    border-radius: 4px;
+    height: 8px;
+    margin: 8px 0;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent);
+  }
+  .progress-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .data-table th {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .data-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border-light);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+  }
+  .data-table .positive { color: var(--green); font-weight: 600; }
+  .data-table .negative { color: var(--red); font-weight: 600; }
+  .data-table .neutral { color: var(--text-dim); }
+  .report-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--text-dim);
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    background: var(--accent);
+    padding: 8px 32px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+  }
+  .nav-bar a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .nav-bar a:hover { color: #fff; }
+  .nav-bar .nav-right {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+  /* Cross-signal intersection */
+  .intersection-card {
+    background: #fffbf0;
+    border: 1px solid #e8d4a0;
+    border-left: 4px solid var(--orange);
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .intersection-card h4 {
+    color: var(--orange);
+    margin-top: 0;
+  }
+  .intersection-card .intersection-signals {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 8px;
+  }
+  /* Emergent pattern */
+  .emergent-card {
+    background: #f0f8f0;
+    border: 1px solid #a8d8a8;
+    border-left: 4px solid var(--green);
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .emergent-card h4 {
+    color: var(--green);
+    margin-top: 0;
+  }
+  @media print {
+    .nav-bar { display: none; }
+    .page { padding: 20px; }
+    body { font-size: 12pt; }
+  }
+  @media (max-width: 700px) {
+    .key-figures { grid-template-columns: repeat(2, 1fr); }
+    .status-grid { grid-template-columns: 1fr; }
+    .report-meta { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a href="#executive-summary">Summary</a>
+  <a href="#methodology">Methodology</a>
+  <a href="#macro">Macro</a>
+  <a href="#principles">By Principle</a>
+  <a href="#cross-signals">Cross-Signal</a>
+  <a href="#opportunities">Opportunities</a>
+  <a href="#research-status">Status</a>
+  <div class="nav-right">
+    <a href="index.html">Dashboard</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="report-header">
+    <div class="firm-name">AI Economic Research Engine</div>
+    <h1>Agentic Economy: Structural Opportunity Scan</h1>
+    <div class="subtitle">Cycle 1 Research Memo &mdash; Initial Signal Identification &amp; Context Foundation</div>
+    <div class="report-meta" id="report-meta">
+      <span>Loading...</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <h2 id="executive-summary">Executive Summary</h2>
+  <div class="exec-summary" id="exec-summary-box">
+    <p>Loading report data...</p>
+  </div>
+  <div class="key-figures" id="key-figures"></div>
+
+  <!-- METHODOLOGY -->
+  <h2 id="methodology">Research Methodology</h2>
+
+  <p>This engine identifies structural economic shifts that create opportunities for <strong>agentic-first businesses</strong>. We reject industry-picking in favor of <strong>systemic pattern detection</strong> that reveals where the economy is structurally dislocating.</p>
+
+  <h3>The Principles Engine: A Starting Framework, Not a Ceiling</h3>
+
+  <p>The six principles below are <strong>initial scanning lenses</strong>, not a fixed taxonomy. They structure the first pass of data collection. But the real analytical value emerges from what happens <em>between</em> principles: second-order effects, cross-industry feedback loops, and emergent patterns that no single principle would surface alone.</p>
+
+  <p>As the research context deepens across cycles, the engine is expected to:</p>
+  <ul style="margin-bottom: 16px; padding-left: 24px;">
+    <li><strong>Discover new principles</strong> from data patterns that don't fit existing categories</li>
+    <li><strong>Identify second-order effects</strong> &mdash; e.g., a P2 liquidation cascade in one industry creates a P5 demographic gap in an adjacent one</li>
+    <li><strong>Surface cross-industry connections</strong> &mdash; distress in transportation + shortages in healthcare may point to an opportunity that neither signal reveals alone</li>
+    <li><strong>Build reasoning context</strong> rich enough to make non-obvious inferences rather than pattern-matching against a fixed checklist</li>
+  </ul>
+
+  <p><em>The goal of multi-cycle research is not "run the same scan more times." It's to build a context where the engine can reason about the economy with the depth an analyst would after months of immersion &mdash; seeing connections between moving pieces that no single data pull reveals.</em></p>
+
+  <h4>Current Scanning Lenses (P1&ndash;P6)</h4>
+
+  <div class="principle-card">
+    <div class="principle-tag">P1 &mdash; Infrastructure Overhang Exploitation</div>
+    <p class="definition">When AI compute/models/tooling are overbuilt, returns shift to applications consuming cheap infrastructure. Look for businesses where the cost of intelligence has dropped below the threshold that killed previous attempts.</p>
+  </div>
+  <div class="principle-card">
+    <div class="principle-tag">P2 &mdash; Liquidation Cascade Detection</div>
+    <p class="definition">Track the chain reaction: cheap AI &rarr; new entrants with 5&ndash;20x cost advantage &rarr; incumbent exit &rarr; asset liquidation &rarr; even cheaper entry. Enter at the point where assets (customers, contracts, licenses) become available cheaply.</p>
+  </div>
+  <div class="principle-card">
+    <div class="principle-tag">P3 &mdash; Output Cost Kill</div>
+    <p class="definition">The winning move is not "better product" but identical output at radically lower cost. Model where agentic labor collapses the cost stack. The cost structure IS the moat.</p>
+  </div>
+  <div class="principle-card">
+    <div class="principle-tag">P4 &mdash; Dead Business Revival</div>
+    <p class="definition">Businesses that died because labor/coordination costs exceeded revenue. With agentic ops, the break-even shifts. The market validated demand &mdash; only costs killed them.</p>
+  </div>
+  <div class="principle-card">
+    <div class="principle-tag">P5 &mdash; Demographic Alignment</div>
+    <p class="definition">Structural labor gaps from aging, skill shortages, migration shifts. Agentic businesses filling these gaps get regulatory tailwinds, not headwinds.</p>
+  </div>
+  <div class="principle-card">
+    <div class="principle-tag">P6 &mdash; Geopolitical Resilience</div>
+    <p class="definition">US-bloc viability, reshoring demand, LATAM corridor advantage from US-China decoupling.</p>
+  </div>
+
+  <!-- MACRO -->
+  <h2 id="macro">Macro Environment Snapshot</h2>
+  <p>US economic conditions as of December 2025 &ndash; February 2026. These establish the operating context for all principle analysis.</p>
+  <div id="macro-table-container"></div>
+
+  <!-- FINDINGS BY PRINCIPLE -->
+  <h2 id="principles">Findings by Principle</h2>
+  <p>Each signal is scored 0&ndash;10 on a relevance scale combining source quality, signal strength, principle alignment, and timeliness. Signals are classified to the <em>primary</em> principle they serve, but many carry implications across multiple principles (explored in the Cross-Signal section below).</p>
+  <div id="principle-findings"></div>
+
+  <!-- CROSS-SIGNAL ANALYSIS -->
+  <h2 id="cross-signals">Cross-Signal Analysis &amp; Second-Order Effects</h2>
+
+  <p>The following patterns emerge from reading signals <em>across</em> principles rather than within them. These are the connections that a fixed checklist would miss &mdash; they require sufficient context to identify.</p>
+
+  <div class="exec-summary" style="border-left-color: var(--orange);">
+    <p><strong>Context depth note:</strong> After one cycle, the engine's ability to identify second-order effects is limited. The intersections below are directional hypotheses based on pattern co-occurrence. As the research context deepens through cycles 2&ndash;4 (adding practitioner data, unit economics, competitor landscape), these connections will either strengthen into verified opportunities or be killed by contrary evidence.</p>
+  </div>
+
+  <div id="cross-signal-content"></div>
+
+  <!-- OPPORTUNITIES -->
+  <h2 id="opportunities">Opportunity Analysis</h2>
+  <p>Signals converging across categories are clustered into opportunity themes. These are <em>hypotheses</em>, not recommendations. Each requires verification through Cycles 2&ndash;6 before becoming actionable.</p>
+  <div id="opp-ranking-table"></div>
+  <div id="opp-details"></div>
+
+  <!-- RESEARCH STATUS -->
+  <h2 id="research-status">Research Status &amp; Context Development</h2>
+
+  <div class="exec-summary" style="border-left-color: var(--orange);">
+    <p><strong>Why multiple cycles matter:</strong> One inference cycle collects raw signals. It cannot reason about them with depth. The purpose of subsequent cycles is not just "more data" &mdash; it's to build an analytical context rich enough that the engine can identify non-obvious connections between the millions of moving pieces in the economy. Each cycle adds a new layer of context: quantitative baselines &rarr; qualitative practitioner signals &rarr; unit economics models &rarr; competitive landscape &rarr; cross-validated reasoning.</p>
+  </div>
+
+  <div id="research-status-content"></div>
+
+  <div class="report-footer">
+    AI Economic Research Engine &mdash; Automated signal detection &mdash; Not investment advice<br>
+    Sources: FRED, BLS, SEC EDGAR, Web Search &mdash; Cycle <span id="footer-cycle">1</span>
+  </div>
+
+</div>
+
+<script>
+const DATA_BASE = 'data/ui';
+
+const PRINCIPLE_NAMES = {
+  'P1': 'Infrastructure Overhang Exploitation',
+  'P2': 'Liquidation Cascade Detection',
+  'P3': 'Output Cost Kill',
+  'P4': 'Dead Business Revival',
+  'P5': 'Demographic Alignment',
+  'P6': 'Geopolitical Resilience'
+};
+
+const PRINCIPLE_SHORT = {
+  'P1': 'Infrastructure Overhang',
+  'P2': 'Liquidation Cascade',
+  'P3': 'Cost Kill',
+  'P4': 'Dead Revival',
+  'P5': 'Demographic Gap',
+  'P6': 'Geopolitical'
+};
+
+function scoreClass(s) { return s >= 7 ? 'score-high' : s >= 5 ? 'score-med' : 'score-low'; }
+function horizonClass(h) { return 'horizon-' + h.toLowerCase(); }
+function clean(s) {
+  if (!s) return '';
+  return s.replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/&quot;/g, '"')
+    .replace(/&#x2011;/g, '-').replace(/\u2011/g, '-').replace(/\u2014/g, ' — ');
+}
+
+async function loadReport() {
+  const [dashboard, feed] = await Promise.all([
+    fetch(DATA_BASE + '/dashboard.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
+    fetch(DATA_BASE + '/signals_feed.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
+  ]);
+  if (!dashboard || !feed) {
+    document.getElementById('exec-summary-box').innerHTML = '<p>Unable to load data files.</p>';
+    return;
+  }
+
+  const signals = feed.recent_signals || [];
+  const opps = dashboard.top_opportunities || [];
+  const cycle = dashboard.current_cycle || 1;
+  const updated = dashboard.last_updated ? new Date(dashboard.last_updated) : new Date();
+
+  // Header meta
+  document.getElementById('report-meta').innerHTML = `
+    <span>Date: ${updated.toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})}</span>
+    <span>Cycle: ${cycle}</span>
+    <span>Signals: ${signals.length}</span>
+    <span>Classification: Internal Research</span>
+  `;
+  document.getElementById('footer-cycle').textContent = cycle;
+
+  // Principle grouping
+  const byP = {};
+  ['P1','P2','P3','P4','P5','P6'].forEach(p => byP[p] = []);
+  signals.forEach(s => { if (byP[s.principle]) byP[s.principle].push(s); });
+
+  const principlesCovered = new Set(signals.map(s => s.principle));
+  const strongSignals = signals.filter(s => s.relevance_score >= 7).length;
+  const topOpp = opps[0];
+
+  // Executive Summary
+  document.getElementById('exec-summary-box').innerHTML = `
+    <p>Cycle ${cycle} scanned <strong>${signals.length} economic signals</strong> from four data sources (FRED, BLS, SEC EDGAR, Web Search), covering <strong>${principlesCovered.size} of 6 initial research principles</strong>. Of these, <strong>${strongSignals} signals scored 7.0+</strong> on the relevance scale.</p>
+
+    <p>The scan identified <strong>${opps.length} opportunity clusters</strong> where multiple signals converge. The highest-scoring cluster is <strong>${clean(topOpp.name)}</strong> (${topOpp.score}/100), supported by ${topOpp.signal_count} signals across principles ${topOpp.principles_passed.join(' + ')}.</p>
+
+    <p><strong>Macro context:</strong> The US economy presents a divergence: simultaneous labor tightening (6,542K job openings, healthcare/nursing shortages accelerated by immigration policy) and liquidation acceleration (commercial Chapter 11 filings +76% YoY, AI-cited layoffs approaching 50K). This divergence is not a contradiction &mdash; it's a structural feature. <em>Different sectors are moving in opposite directions.</em> The opportunity corridor sits at the intersection: fill unfillable roles in shortage sectors (P5) while acquiring distressed assets in sectors whose human labor model is collapsing (P2).</p>
+
+    <p><strong>Context limitation:</strong> This is the first of 4&ndash;6 planned research cycles. Cycle 1 establishes a quantitative baseline and identifies directional patterns. It does not verify opportunities, model unit economics, or incorporate practitioner evidence. The engine's ability to identify second-order effects and cross-industry connections will deepen with each subsequent cycle as the reasoning context grows.</p>
+  `;
+
+  // Key figures
+  document.getElementById('key-figures').innerHTML = `
+    <div class="key-figure"><div class="number">${signals.length}</div><div class="label">Signals Scanned</div></div>
+    <div class="key-figure"><div class="number">${strongSignals}</div><div class="label">High-Relevance (7+)</div></div>
+    <div class="key-figure"><div class="number">${opps.length}</div><div class="label">Opportunity Clusters</div></div>
+    <div class="key-figure"><div class="number">${principlesCovered.size}/6</div><div class="label">Principles Active</div></div>
+  `;
+
+  // Macro table
+  const macroData = [
+    { indicator: 'Fed Funds Rate', value: '3.64%', source: 'FRED', note: 'Neutral policy stance', cls: 'neutral' },
+    { indicator: 'Yield Curve (10Y-2Y)', value: '+0.74%', source: 'FRED', note: 'Normal slope restored', cls: 'neutral' },
+    { indicator: 'Unemployment', value: '4.4%', source: 'FRED', note: 'Softening from post-pandemic tightness', cls: 'neutral' },
+    { indicator: 'Avg Hourly Earnings', value: '$37.02', source: 'FRED/BLS', note: '+1.2% YoY — decelerating', cls: 'neutral' },
+    { indicator: 'Wage-Productivity Gap', value: '+1.8pp', source: 'FRED', note: 'Wages > productivity = margin squeeze', cls: 'negative' },
+    { indicator: 'Unit Labor Costs', value: '121.6', source: 'FRED', note: '-0.6 pts — elevated but turning', cls: 'neutral' },
+    { indicator: 'Business Loan Delinquency', value: '1.78%', source: 'FRED', note: 'Low but watch trend', cls: 'neutral' },
+    { indicator: 'HY Spread', value: '2.87%', source: 'FRED', note: 'Markets not pricing distress yet', cls: 'neutral' },
+    { indicator: 'JOLTS Openings', value: '6,542K', source: 'BLS', note: 'Structurally elevated', cls: 'neutral' },
+    { indicator: 'Quits Rate', value: '2.0%', source: 'BLS', note: 'Low confidence to switch jobs', cls: 'negative' },
+    { indicator: 'Ch. 11 Filings (Jan 2026)', value: '+76% YoY', source: 'Epiq', note: '956 vs 544 — sharp acceleration', cls: 'negative' },
+  ];
+  let macroHTML = `<table class="data-table"><thead><tr><th>Indicator</th><th>Value</th><th>Source</th><th>Assessment</th></tr></thead><tbody>`;
+  macroData.forEach(d => {
+    macroHTML += `<tr><td><strong>${d.indicator}</strong></td><td class="${d.cls}">${d.value}</td><td>${d.source}</td><td>${d.note}</td></tr>`;
+  });
+  macroHTML += '</tbody></table>';
+  document.getElementById('macro-table-container').innerHTML = macroHTML;
+
+  // FINDINGS BY PRINCIPLE
+  let pfHTML = '';
+  ['P1','P2','P3','P4','P5','P6'].forEach(p => {
+    const sigs = byP[p];
+    const count = sigs.length;
+    const avg = count > 0 ? (sigs.reduce((a,s) => a + s.relevance_score, 0) / count).toFixed(1) : '0';
+    const top = count > 0 ? Math.max(...sigs.map(s => s.relevance_score)).toFixed(1) : '0';
+
+    pfHTML += `<h3>${p}: ${PRINCIPLE_NAMES[p]}</h3>
+      <p style="font-family:'Inter',sans-serif;font-size:12px;color:var(--text-dim);">
+        ${count} signals | Avg: ${avg} | Top: ${top} | Sources: ${[...new Set(sigs.map(s => s.source))].join(', ') || 'none'}
+      </p>`;
+
+    if (count === 0) {
+      pfHTML += `<p style="color:var(--text-dim);font-style:italic;">No signals in Cycle ${cycle}. Requires additional data sources or targeted queries.</p>`;
+    } else {
+      pfHTML += '<div class="evidence-list">';
+      sigs.forEach(s => {
+        pfHTML += `<div class="evidence-item">
+          <span class="evidence-score ${scoreClass(s.relevance_score)}">${s.relevance_score}</span>
+          <span>${clean(s.headline)}</span>
+          <span class="evidence-source">${s.source}</span>
+        </div>`;
+      });
+      pfHTML += '</div>';
+    }
+
+    const c = getCommentary(p, sigs);
+    if (c) pfHTML += `<div style="background:var(--highlight);padding:12px 16px;margin:12px 0;border-left:3px solid var(--accent-light);">
+      <p style="font-size:15px;margin:0;"><strong>Assessment:</strong> ${c}</p></div>`;
+  });
+  document.getElementById('principle-findings').innerHTML = pfHTML;
+
+  // CROSS-SIGNAL ANALYSIS
+  let crossHTML = '';
+
+  crossHTML += `<div class="intersection-card">
+    <h4>P2 + P5: The Divergence Corridor</h4>
+    <p>The most structurally interesting pattern in Cycle 1 is the <strong>simultaneous occurrence of liquidation pressure (P2) and labor shortages (P5) in adjacent sectors</strong>. Professional &amp; Business Services is shedding jobs (-0.4% YoY) while Education &amp; Health Services cannot fill roles (+2.6% growth, nursing shortages nationwide). Transportation is declining (-0.9%) while healthcare logistics demand grows.</p>
+    <p>This is not a single "the economy is doing X" story. It's a <strong>sectoral divergence</strong> where the same macroeconomic conditions produce opposite effects in different industries. The opportunity lives in the gap: acquire distressed assets from P2 sectors, redeploy the infrastructure to serve P5 shortage sectors using agentic labor.</p>
+    <p class="intersection-signals" style="font-size:13px;">Supporting signals: BLS industry employment divergence, JOLTS openings (6,542K), Chapter 11 filings (+76% YoY), EDGAR restructuring filings (10,000+ hits), nursing shortage data (6 states in crisis)</p>
+  </div>`;
+
+  crossHTML += `<div class="intersection-card">
+    <h4>P2 + P3: The Wage-Productivity Squeeze Accelerator</h4>
+    <p>Wages are growing at +3.8% while productivity grows only +1.9%, creating a <strong>+1.8pp gap that functions as an accelerant for P2 liquidation</strong>. Companies squeezed by this gap face a choice: automate or exit. Those that can't automate fast enough (most incumbents) enter the P2 cascade. Those that exit create assets available for agentic entrants (P3).</p>
+    <p>This creates a <strong>self-reinforcing feedback loop</strong>: wage pressure &rarr; margin compression &rarr; incumbent distress &rarr; asset availability &rarr; agentic entrant captures market at lower cost &rarr; further wage pressure on remaining incumbents. Each cycle of this loop widens the cost advantage.</p>
+    <p class="intersection-signals" style="font-size:13px;">Supporting signals: FRED wage-productivity gap, BLS earnings data, EDGAR margin compression filings (10,000+ hits), unit labor costs (121.6)</p>
+  </div>`;
+
+  crossHTML += `<div class="intersection-card">
+    <h4>P1 + P4: The Cost Floor Revival</h4>
+    <p>Inference costs are dropping aggressively (P1) at the same time that Chapter 11 filings are surging (P2). Some of these failing businesses are in categories where the <em>business model</em> was sound but the cost structure was lethal (P4). As inference costs approach the floor, the set of "revivable dead businesses" expands.</p>
+    <p>This requires <strong>Crunchbase data</strong> (not yet connected) to identify specific failed businesses from 2010&ndash;2023 and cross-reference against current cost curves. This is the weakest cross-signal currently &mdash; high potential but insufficient data to validate.</p>
+    <p class="intersection-signals" style="font-size:13px;">Supporting signals: LLM API pricing data (web), DeepSeek disruption, edge AI deployment trend, HackerNoon unit economics</p>
+  </div>`;
+
+  crossHTML += `<div class="intersection-card">
+    <h4>P5 + P6: Immigration Policy as Accelerant</h4>
+    <p>Multiple web signals indicate that <strong>immigration crackdowns are worsening existing demographic labor gaps</strong> in healthcare, manufacturing, and agriculture. This is a P5 demographic gap being amplified by P6 geopolitical forces. For LATAM-connected founders (Founder 1: Argentina citizen, US resident), this creates a specific corridor:</p>
+    <p>Roles being vacated by immigration restriction in the US could be partially served by LATAM-based agentic operations where the labor arbitrage plus AI augmentation creates a cost structure neither pure US nor pure offshore models can match.</p>
+    <p class="intersection-signals" style="font-size:13px;">Supporting signals: NPR/Guardian immigration-labor coverage, nursing shortage by state data, Verisk immigrant labor analysis, healthcare workforce pressure report</p>
+  </div>`;
+
+  crossHTML += `<div class="emergent-card">
+    <h4>Emergent Pattern: "The Squeeze + Shortage" &mdash; A Potential New Principle</h4>
+    <p>Cycle 1 data suggests a pattern that doesn't cleanly fit any single existing principle: <strong>sectors experiencing simultaneous cost squeeze AND labor shortage</strong>. Healthcare is the clearest example &mdash; rising costs, unfillable roles, regulatory complexity, and aging demand all hitting at once. This isn't just P2 (liquidation) or P5 (demographics) &mdash; it's a compound condition that may warrant its own scanning lens in future cycles.</p>
+    <p>If validated by practitioner data in Cycles 2&ndash;3, this could become <strong>P7: Compound Sector Stress</strong> &mdash; sectors where multiple structural forces converge to make the status quo untenable and create outsized openings for new entrants.</p>
+  </div>`;
+
+  crossHTML += `<div class="emergent-card">
+    <h4>Emergent Pattern: AI Layoffs as Leading Indicator</h4>
+    <p>Web signals show companies citing AI in ~50,000 job cuts, but an HBR signal notes these are based on AI's <em>potential</em>, not performance. This creates a <strong>timing arbitrage</strong>: companies are shedding human capacity before AI can actually replace it, creating a gap period where service quality degrades. Agentic entrants who can actually deliver during this gap capture market share while incumbents are self-weakening.</p>
+    <p>This pattern &mdash; "premature optimization creating service vacuums" &mdash; deserves tracking as a distinct signal in future cycles.</p>
+  </div>`;
+
+  document.getElementById('cross-signal-content').innerHTML = crossHTML;
+
+  // OPPORTUNITY TABLE
+  let otHTML = `<table class="opp-table"><thead><tr><th>#</th><th>Opportunity</th><th>Score</th><th>Horizon</th><th>Principles</th><th>Signals</th><th>Status</th></tr></thead><tbody>`;
+  opps.forEach((o, i) => {
+    otHTML += `<tr>
+      <td class="opp-rank">${i+1}</td>
+      <td><strong>${clean(o.name)}</strong></td>
+      <td class="opp-score-cell">${o.score}</td>
+      <td><span class="horizon-tag ${horizonClass(o.horizon)}">${o.horizon}</span></td>
+      <td class="opp-principles">${(o.principles_passed||[]).join(' + ')}</td>
+      <td style="text-align:center">${o.signal_count}</td>
+      <td style="font-family:'Inter',sans-serif;font-size:11px;text-transform:uppercase;color:var(--text-dim);">${o.status}</td>
+    </tr>`;
+  });
+  otHTML += '</tbody></table>';
+  document.getElementById('opp-ranking-table').innerHTML = otHTML;
+
+  // OPPORTUNITY DETAILS
+  let odHTML = '';
+  opps.forEach((o, i) => {
+    odHTML += `<div class="opp-detail">
+      <div class="opp-detail-header">
+        <h3>${i+1}. ${clean(o.name)}</h3>
+        <span class="horizon-tag ${horizonClass(o.horizon)}">${o.horizon} (${o.horizon==='H1'?'1-3yr':o.horizon==='H2'?'3-5yr':'5-10yr'})</span>
+      </div>
+      <p><strong>Score:</strong> ${o.score}/100 | <strong>Principles:</strong> ${(o.principles_passed||[]).map(p=>p+' ('+PRINCIPLE_SHORT[p]+')').join(', ')} | <strong>Signals:</strong> ${o.signal_count}</p>
+      <h4>Thesis</h4>
+      <p>${clean(o.thesis)}</p>
+      <div class="vc-hook"><strong>Investment Narrative:</strong> ${clean(o.vc_hook)}</div>
+      <h4>Key Data</h4>
+      <ul class="data-points">${(o.key_data||[]).map(d=>`<li>${clean(d)}</li>`).join('')}</ul>
+    </div>`;
+  });
+  document.getElementById('opp-details').innerHTML = odHTML;
+
+  // RESEARCH STATUS
+  const principleDepth = {};
+  ['P1','P2','P3','P4','P5','P6'].forEach(p => {
+    const sigs = byP[p];
+    const count = sigs.length;
+    let d = 0;
+    if (count > 0) d += 10;
+    if (count >= 3) d += 10;
+    if (count >= 8) d += 10;
+    if (sigs.some(s => s.relevance_score >= 7)) d += 15;
+    if (sigs.some(s => ['FRED','BLS','EDGAR'].includes(s.source))) d += 15;
+    principleDepth[p] = Math.min(d, 60);
+  });
+
+  let stHTML = `
+    <h3>Context Depth by Principle</h3>
+    <p>Each bar represents how deeply the engine has investigated this principle. 100% requires multi-source verification, practitioner validation, and unit economics modeling. Cycle 1 caps at ~60% for any principle (quantitative baseline only).</p>
+    <div class="status-grid">`;
+
+  ['P1','P2','P3','P4','P5','P6'].forEach(p => {
+    const d = principleDepth[p];
+    const n = byP[p].length;
+    let lbl = 'No data';
+    if (d >= 40) lbl = 'Strong quantitative signals';
+    else if (d >= 20) lbl = 'Directional signals found';
+    else if (d > 0) lbl = 'Weak — needs deepening';
+    stHTML += `<div class="status-card">
+      <h4>${p}: ${PRINCIPLE_SHORT[p]}</h4>
+      <div class="progress-bar-container"><div class="progress-bar" style="width:${d}%"></div></div>
+      <div class="progress-label"><span>${lbl}</span><span>${d}% / ${n} sig</span></div>
+    </div>`;
+  });
+  stHTML += '</div>';
+
+  stHTML += `<h3>Multi-Cycle Research Architecture</h3>
+    <p>The research process is designed as progressive context-building, not repeated scanning. Each phase adds a distinct layer of reasoning capability.</p>
+    <table class="data-table">
+    <thead><tr><th>Cycle</th><th>Phase</th><th>Context Layer Added</th><th>Why This Matters</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr style="background:var(--highlight)">
+        <td><strong>1</strong></td>
+        <td>Signal Identification</td>
+        <td>Quantitative baseline from government + public data</td>
+        <td>Know what the numbers say before looking at narratives</td>
+        <td class="positive">DONE</td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td>Targeted Deepening</td>
+        <td>Industry-specific drill-down on top clusters</td>
+        <td>Move from "sectors are stressed" to "these specific sub-sectors at this rate"</td>
+        <td class="negative">NEXT</td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td>Practitioner Layer</td>
+        <td>Reddit, Twitter, HN — qualitative evidence from people doing the work</td>
+        <td>Numbers confirm a pattern exists; practitioners reveal why and how fast it's moving</td>
+        <td class="negative">PLANNED</td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td>Economics Modeling</td>
+        <td>Unit economics: agentic cost vs. incumbent cost per opportunity</td>
+        <td>Is the cost advantage 2x or 20x? This determines which opportunities are real</td>
+        <td class="negative">PLANNED</td>
+      </tr>
+      <tr>
+        <td><strong>5</strong></td>
+        <td>Competitive Landscape</td>
+        <td>Who else sees this? Existing entrants, VC activity, adjacent competitors</td>
+        <td>An opportunity no one else sees is different from one everyone is racing toward</td>
+        <td class="negative">PLANNED</td>
+      </tr>
+      <tr>
+        <td><strong>6</strong></td>
+        <td>Synthesis &amp; Decision</td>
+        <td>Full cross-validated context — go/no-go on 2-3 verified opportunities</td>
+        <td>Engine has enough context to make reasoned judgments, not pattern-match</td>
+        <td class="negative">PLANNED</td>
+      </tr>
+    </tbody></table>`;
+
+  stHTML += `<h3>Data Source Coverage</h3>
+    <div class="status-grid">
+      <div class="status-card">
+        <h4>Active (Cycle 1)</h4>
+        <ul style="list-style:none;font-size:14px;">
+          <li style="padding:4px 0;color:var(--green);">&#10003; FRED &mdash; macro + labor + credit (P1, P2, P3, P5)</li>
+          <li style="padding:4px 0;color:var(--green);">&#10003; BLS &mdash; industry employment, wages, JOLTS (P2, P3, P5)</li>
+          <li style="padding:4px 0;color:var(--green);">&#10003; SEC EDGAR &mdash; corporate distress filings (P2)</li>
+          <li style="padding:4px 0;color:var(--green);">&#10003; Web Search &mdash; narrative signals across all categories</li>
+        </ul>
+      </div>
+      <div class="status-card">
+        <h4>Priority Queue</h4>
+        <ul style="list-style:none;font-size:14px;">
+          <li style="padding:4px 0;color:var(--orange);">&#9675; Crunchbase &mdash; dead startup database (critical for P4)</li>
+          <li style="padding:4px 0;color:var(--orange);">&#9675; X/Twitter &mdash; practitioner sentiment (P2, P3, P5)</li>
+          <li style="padding:4px 0;color:var(--orange);">&#9675; Reddit &mdash; industry subreddit pain signals (P2, P3)</li>
+          <li style="padding:4px 0;color:var(--orange);">&#9675; Hacker News &mdash; capability + cost signals (P1, P4)</li>
+        </ul>
+      </div>
+    </div>`;
+
+  stHTML += `<h3>What This Cycle Built vs. What It Cannot Do</h3>
+    <div class="status-grid">
+      <div class="status-card" style="border-left:3px solid var(--green);">
+        <h4 style="color:var(--green);">Context Established</h4>
+        <ul style="font-size:14px;padding-left:18px;">
+          <li>Quantitative macro baseline (rates, employment, wages, credit)</li>
+          <li>Directional evidence for 5 of 6 scanning principles</li>
+          <li>Cross-source corroboration for P2 (liquidation) and P5 (demographics)</li>
+          <li>4 cross-principle intersections identified as reasoning hypotheses</li>
+          <li>2 emergent patterns flagged for potential new principles</li>
+          <li>5 opportunity cluster hypotheses to test in subsequent cycles</li>
+        </ul>
+      </div>
+      <div class="status-card" style="border-left:3px solid var(--red);">
+        <h4 style="color:var(--red);">Context Gaps</h4>
+        <ul style="font-size:14px;padding-left:18px;">
+          <li>P4 (Dead Revival) nearly blind — needs Crunchbase</li>
+          <li>P6 (Geopolitical) has zero signals — needs LATAM data sources</li>
+          <li>No practitioner validation of any quantitative pattern</li>
+          <li>No unit economics modeling (cannot say "5x" vs "20x" advantage)</li>
+          <li>No competitor identification in any opportunity space</li>
+          <li>Cross-principle reasoning is hypothetical — needs depth to validate</li>
+          <li>Industry specificity is low — "healthcare" vs which healthcare sub-sector</li>
+        </ul>
+      </div>
+    </div>`;
+
+  document.getElementById('research-status-content').innerHTML = stHTML;
+}
+
+function getCommentary(p, sigs) {
+  const n = sigs.length;
+  switch(p) {
+    case 'P1': return n > 0 ? `${n} signals on inference cost trends and edge deployment. Web sources confirm aggressive LLM price competition. DeepSeek disruption is forcing cost compression across all providers. Edge AI deployment guides suggest enterprises already exploring on-premise inference to escape API costs. <strong>Gap:</strong> Need actual token pricing data (historical + current) to model the cost curve quantitatively. Currently directional only.` : '';
+    case 'P2': return n > 5 ? `Strongest principle: ${n} signals from high-quality government + filing sources. EDGAR shows 10,000+ filings matching restructuring/distress language. BLS confirms employment declines in Professional & Business Services (-0.4%) and Transportation (-0.9%). Web data confirms Chapter 11 filings surged 76% YoY in January 2026. AI-cited layoffs approaching 50K. Multiple signals from independent sources converging on the same conclusion: <strong>a liquidation cascade is actively underway in specific sectors.</strong>` : '';
+    case 'P3': return n > 0 ? `${n} wage/cost signals. Average hourly earnings $37.02 (+1.2% YoY). ECI declining (-5.3% YoY). Wage-productivity gap of +1.8pp confirms margin pressure. <strong>Gap:</strong> These are economy-wide averages. Need industry-specific and occupation-specific cost breakdowns from 10-K filings to model where the agentic cost kill is widest.` : '';
+    case 'P4': return n > 0 ? `Only ${n} signal — this principle is severely under-researched. <strong>This is the most differentiated principle in the framework</strong> (VCs see liquidation and demographic plays constantly; dead business revival is genuinely novel) but has the weakest data support. Critical path: connect Crunchbase to access failed startup data 2010-2023.` : '';
+    case 'P5': return n > 3 ? `${n} signals spanning government and web data. JOLTS openings structurally elevated at 6,542K. Education & Health growing +2.6% (absorbing all available labor). 6 web sources confirm nursing shortage crisis worsened by immigration policy. <strong>This principle has the strongest real-world urgency signal</strong>: these are roles that literally cannot be filled, making the regulatory environment favorable for AI solutions.` : '';
+    case 'P6': return 'Zero signals. P6 requires LATAM-specific sources (INDEC, BCRA, trade flow databases) and targeted US-China decoupling analysis. Not a Cycle 1 priority — will activate when P2/P5 opportunities suggest a geographic dimension worth testing.';
+    default: return '';
+  }
+}
+
+loadReport();
+</script>
+</body>
+</html>
