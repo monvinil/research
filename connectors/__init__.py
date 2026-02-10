@@ -1,13 +1,34 @@
-"""Research engine API connectors."""
+"""Research engine API connectors.
+
+12 data sources:
+  US:    FRED, BLS, BEA, Census, EDGAR, Yahoo Finance, Google Trends
+  Intl:  World Bank, OECD, Eurostat
+  Meta:  Web Search, Counter-Signals
+"""
 
 from .fred import FredConnector
 from .bls import BLSConnector
 from .edgar import EdgarConnector
 from .websearch import WebSearchConnector
+from .bea import BEAConnector
+from .census import CensusConnector
+from .worldbank import WorldBankConnector
+from .oecd import OECDConnector
+from .eurostat import EurostatConnector
+from .yfinance import YFinanceConnector
+from .google_trends import GoogleTrendsConnector
 from .cache import DataCache, DEFAULT_TTLS
 from .counter_signals import CounterSignalSearcher
 
 __all__ = [
-    'FredConnector', 'BLSConnector', 'EdgarConnector', 'WebSearchConnector',
-    'DataCache', 'DEFAULT_TTLS', 'CounterSignalSearcher',
+    # US economic
+    'FredConnector', 'BLSConnector', 'BEAConnector', 'CensusConnector',
+    # US market/filing
+    'EdgarConnector', 'YFinanceConnector', 'GoogleTrendsConnector',
+    # International
+    'WorldBankConnector', 'OECDConnector', 'EurostatConnector',
+    # Meta
+    'WebSearchConnector', 'CounterSignalSearcher',
+    # Infrastructure
+    'DataCache', 'DEFAULT_TTLS',
 ]

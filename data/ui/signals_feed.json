@@ -1,282 +1,278 @@
 {
-  "cycle": 3,
-  "updated": "2026-02-10T20:00:00Z",
-  "engine": "opus-4.6-in-session",
+  "cycle": 9,
+  "updated": "2026-02-10T12:00:00Z",
   "recent_signals": [
     {
-      "headline": "Chapter 11 filings surged +76% YoY in January 2026 (956 vs 544) — sharpest acceleration in dataset",
+      "id": "A-2026-02-10-003",
+      "headline": "Staffing company stocks in freefall: RHI -51%, MAN -39%, KELYA -20% - professional labor demand structurally collapsing",
+      "systemic_pattern": "Market-priced confirmation of professional labor substitution via AI. Gradient (professional > industrial) isolates AI effect from cyclical recession.",
+      "source": "FRED Market Data",
+      "relevance_score": 10,
+      "grade": 9.8,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
       "principle": "P2",
-      "category": "liquidation_cascade",
-      "source": "Epiq/Web",
-      "relevance_score": 9.2,
-      "status": "new",
-      "detail": "Commercial bankruptcy filings are not just rising — they are accelerating. The 76% YoY jump represents the point in the liquidation cascade where distressed assets (customer lists, contracts, physical infrastructure) become available at depressed prices. This is the optimal entry window for P2.",
-      "time_horizon": "H1",
-      "confidence": "high"
+      "kill_index_match": "none"
     },
     {
-      "headline": "HY spread at 2.87% despite +76% bankruptcy surge — bond markets have NOT priced the distress wave",
-      "principle": "P2",
-      "category": "credit_stress",
-      "source": "FRED",
-      "relevance_score": 9.0,
-      "status": "new",
-      "detail": "Critical divergence signal. Bond markets pricing benign environment while operating reality shows accelerating distress. Either spreads widen or distress is concentrated in small/mid companies below bond-index radar — meaning the P2 cascade is happening in exactly the SMB tier where agentic entrants compete.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "Inference costs down ~1,000x while total AI spending up 320% — infrastructure overhang confirmed",
-      "principle": "P1",
-      "category": "infra_overhang",
-      "source": "Web",
-      "relevance_score": 8.8,
-      "status": "new",
-      "detail": "The defining P1 condition is met: massive infrastructure investment driving per-unit costs to near-zero. Cost-per-token replacing cost-per-hour as the primary KPI. At 1000x reduction, entire categories of businesses that were impossible at previous cost curves become viable.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "Professional & Business Services shed 97K jobs (-0.4% YoY) — early liquidation cascade in knowledge work",
-      "principle": "P2",
-      "category": "industry_employment",
-      "source": "BLS",
-      "relevance_score": 8.7,
-      "status": "new",
-      "detail": "Sector includes accounting, legal, consulting, staffing, IT services — labor-intensive professional services most exposed to AI cost disruption. Employment declining while broader economy adds jobs = structural, not cyclical.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "15,000 store closures projected for 2026 — 2x the 7,325 in 2024",
-      "principle": "P2",
-      "category": "liquidation_cascade",
-      "source": "Web",
-      "relevance_score": 8.5,
-      "status": "new",
-      "detail": "Physical retail doubling closure rate. Dollar General, GameStop, specialty chains. Creates cascading distress in retail-adjacent services (commercial real estate, logistics, marketing).",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "55,000 AI-attributed layoffs in 2025 (12x prior) but based on AI potential not performance — timing arbitrage",
-      "principle": "P2",
-      "category": "liquidation_cascade",
-      "source": "Web",
-      "relevance_score": 8.4,
-      "status": "new",
-      "detail": "Companies shedding human capacity before AI can actually replace it (Amazon, UPS, Pinterest). Creates SERVICE VACUUM: quality degrades as humans exit but AI is not yet deployed. Agentic entrants who can actually deliver during this gap capture market share.",
-      "time_horizon": "H1",
-      "confidence": "medium"
-    },
-    {
-      "headline": "SECTORAL DIVERGENCE: Ed/Health +709K jobs vs Prof Services -97K vs Transport -58.5K — same economy, opposite directions",
-      "principle": "P2,P5",
-      "category": "cross_signal",
-      "source": "BLS",
-      "relevance_score": 8.3,
-      "status": "new",
-      "detail": "Most structurally important signal. Economy is not uniformly expanding or contracting. Healthcare cannot hire fast enough (P5). Professional services and transport are shedding workers (P2). Opportunity corridor: acquire distressed P2 assets, deploy agentic labor to serve P5 shortage sectors.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "Education & Health Services employment surges +2.6% YoY (+709K) to 27,640K — absorbing all available labor",
-      "principle": "P5",
-      "category": "demographic_gap",
-      "source": "BLS",
-      "relevance_score": 8.2,
-      "status": "new",
-      "detail": "Healthcare is the largest labor sink in the US economy. Sector alone added more jobs than total decline in Professional Services + Transportation combined. Gap is structural and widening.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "Nursing shortage shifts from volume to specialization — critical care, mental health, primary care most needed",
-      "principle": "P5",
-      "category": "demographic_gap",
-      "source": "Web",
-      "relevance_score": 8.1,
-      "status": "new",
-      "detail": "California short 22% vs Wyoming oversupply 79%. AI cannot replace nurses but can shift ratios from 1:4 to 1:12 with monitoring/triage automation. Ideal P5 pattern: filling a gap humans cannot fill, with regulatory tailwind.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "Immigration enforcement fueling construction labor gaps — 92% of contractors struggling, >25% workforce foreign-born",
-      "principle": "P5",
-      "category": "demographic_gap",
-      "source": "Web",
-      "relevance_score": 7.9,
-      "status": "new",
-      "detail": "Policy-driven supply constraint amplifying demographic shortage. AI augmentation (project management, estimation, scheduling, compliance) can multiply existing worker productivity. Political environment makes shortage permanent for 2-4 year policy cycle.",
-      "time_horizon": "H1",
-      "confidence": "medium"
-    },
-    {
-      "headline": "PE firms funding AI roll-up strategies — General Catalyst, Slow Ventures, 8VC active",
-      "principle": "P2",
-      "category": "liquidation_cascade",
-      "source": "Web",
-      "relevance_score": 7.8,
-      "status": "new",
-      "detail": "Phase 2 cascade indicator: financial sponsors recognize fragmented industries ripe for AI consolidation. The roll-up thesis itself may be disrupted — a pure agentic entrant with 10-20x cost advantage does not need to acquire and restructure.",
-      "time_horizon": "H1",
-      "confidence": "medium"
-    },
-    {
-      "headline": "Commercial loans DOWN $55.8B (-2% YoY) while delinquency stable at 1.78% — credit contraction blocking restructuring",
-      "principle": "P2",
-      "category": "credit_stress",
-      "source": "FRED",
-      "relevance_score": 7.7,
-      "status": "new",
-      "detail": "Businesses deleveraging or denied credit. Companies needing AI transformation capital are being denied it. ACCELERATES the P2 cascade for capital-constrained incumbents.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "GPU monopoly fragmenting — Midjourney cut costs 65% via TPU migration; inference 15-20x training costs",
-      "principle": "P1",
-      "category": "infra_overhang",
-      "source": "Web",
-      "relevance_score": 7.5,
-      "status": "new",
-      "detail": "Compute layer commoditizing. Multiple hardware options competing on inference price. Application-layer businesses that consume cheap compute are the P1 beneficiaries.",
-      "time_horizon": "H1",
-      "confidence": "medium"
-    },
-    {
-      "headline": "Edge AI/SLMs deployable on constrained devices — Microsoft Foundry Local at Build 2025",
-      "principle": "P1",
-      "category": "infra_overhang",
-      "source": "Web",
-      "relevance_score": 7.3,
-      "status": "new",
-      "detail": "Local inference enables use cases in low-connectivity, privacy-sensitive, latency-critical environments. Healthcare (HIPAA), construction sites, field services become viable for agentic operations without cloud costs.",
-      "time_horizon": "H2",
-      "confidence": "medium"
-    },
-    {
-      "headline": "Unit labor costs declining from 123.13 to 121.64 but still +1.8% YoY — squeeze moderating, not reversing",
+      "id": "A-2026-02-10-001",
+      "headline": "P3 Cost Collapse Index at maximum (100.0) - productivity surging while unit labor costs declining",
+      "systemic_pattern": "Widest gap between AI capability costs and human labor costs ever measured. Maximum economic pressure for AI substitution.",
+      "source": "FRED Economic Data",
+      "relevance_score": 9,
+      "grade": 9.3,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
       "principle": "P3",
-      "category": "cost_baseline",
-      "source": "FRED",
-      "relevance_score": 7.2,
-      "status": "new",
-      "detail": "Squeeze that drove 2024-2025 distress is easing but labor costs remain structurally elevated. At $37.02/hr average, single employee costs ~$77K/yr. Agentic cost advantage does not disappear as squeeze moderates — it becomes permanent structural advantage.",
-      "time_horizon": "H1",
-      "confidence": "high"
+      "kill_index_match": "none"
     },
     {
-      "headline": "Average hourly earnings $37.02 (+3.8% YoY) while ECI decelerating to 3.6% — high level, slowing growth",
+      "id": "A-2026-02-10-016",
+      "headline": "Klarna reversal: AI-only customer support failed, now rehiring humans - P7 timing arbitrage confirmed",
+      "systemic_pattern": "Precedent failure confirms AI-only doesn't work for complex/emotional support. Hybrid human+AI required. Timing arbitrage vacuum opening.",
+      "source": "Precedent Failure Research",
+      "relevance_score": 9,
+      "grade": 8.6,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
+      "principle": "P7",
+      "kill_index_match": "none"
+    },
+    {
+      "id": "A-2026-02-10-025",
+      "headline": "COUNTER: Customer support tool layer saturated - Intercom, Zendesk, Freshdesk, Kustomer all AI-enabled",
+      "systemic_pattern": "Counter-signal challenging Customer Support thesis. Tool layer saturated. CRITICAL UNKNOWN: Is service layer also saturated?",
+      "source": "Counter-Signal Research",
+      "relevance_score": 8,
+      "grade": 8.5,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "counter_signal",
+      "principle": "P7",
+      "kill_index_match": "none"
+    },
+    {
+      "id": "A-2026-02-10-013",
+      "headline": "NAICS 425120 Wholesale Trade Agents/Brokers: 512K employees, 122K firms, LOW competitive density - pure matchmaking intermediaries",
+      "systemic_pattern": "Pure intermediaries with zero inventory, 100% coordination value. Coasean collapse candidate. LOW competitive density (needs verification).",
+      "source": "NAICS Industry Data",
+      "relevance_score": 8,
+      "grade": 7.8,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
       "principle": "P3",
-      "category": "cost_baseline",
-      "source": "FRED/BLS",
-      "relevance_score": 7.0,
-      "status": "new",
-      "detail": "Wages high in absolute terms even though growth moderates. Many knowledge tasks cost <$1/hr via AI vs $37/hr human. The P3 cost kill does not require accelerating wages — it requires that human labor stays expensive relative to agentic labor.",
-      "time_horizon": "H1",
-      "confidence": "high"
+      "kill_index_match": "none"
     },
     {
-      "headline": "JOLTS openings at 6,542K — down 12.9% YoY but still 20% above pre-pandemic normal (~5,500K)",
-      "principle": "P5",
-      "category": "labor_gap",
-      "source": "FRED/BLS",
-      "relevance_score": 6.9,
-      "status": "new",
-      "detail": "Labor market normalizing but remains structurally above 2019 levels. Decline concentrated in sectors where AI substitutes; shortage sectors remain persistently tight.",
-      "time_horizon": "H1",
-      "confidence": "high"
+      "id": "A-2026-02-10-014",
+      "headline": "NAICS 541611 Management Consulting: 837K employees, 166K firms, MEDIUM density - boutique disruption opportunity",
+      "systemic_pattern": "Small operational consulting boutiques squeezed by marketplaces below, AI-augmented large firms above. Tool layer crowded, service layer unknown.",
+      "source": "NAICS Industry Data",
+      "relevance_score": 8,
+      "grade": 7.9,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
+      "principle": "P3",
+      "kill_index_match": "none"
     },
     {
-      "headline": "Quits rate at 2.0% — workers frozen in place, creating zombie labor in declining sectors",
-      "principle": "P5",
-      "category": "labor_market",
-      "source": "BLS",
-      "relevance_score": 6.7,
-      "status": "new",
-      "detail": "Low quits + declining sectors = workers staying with deteriorating employers. Incumbents staffed with demoralized, immobile workers — worst condition for competitive response to agentic entrant.",
-      "time_horizon": "H1",
-      "confidence": "medium"
-    },
-    {
-      "headline": "3,768 companies citing AI as risk factor in SEC filings — incumbents self-identifying as vulnerable",
-      "principle": "P2",
-      "category": "incumbent_stuck",
-      "source": "EDGAR",
-      "relevance_score": 6.5,
-      "status": "new",
-      "detail": "Legally mandated disclosure. Volume (3,768) means AI disruption risk is mainstream in corporate risk assessment. These companies are self-identifying as P2 cascade candidates.",
-      "time_horizon": "H2",
-      "confidence": "medium"
-    },
-    {
-      "headline": "Fed funds at 3.64%, down 169bps from peak — easing cycle favors agentic-first low-burn models",
-      "principle": "capital_modeling",
-      "category": "rate_environment",
-      "source": "FRED",
-      "relevance_score": 6.3,
-      "status": "new",
-      "detail": "Rates declining but still elevated. Favors cash-flow-positive, low-burn businesses. Sweet spot for asset-light agentic entrants.",
-      "time_horizon": "H1",
-      "confidence": "high"
-    },
-    {
-      "headline": "Transportation employment down -0.9% YoY (-58.5K) from Feb 2025 peak",
-      "principle": "P2",
-      "category": "industry_employment",
-      "source": "BLS",
-      "relevance_score": 6.2,
-      "status": "new",
-      "detail": "Logistics shedding workers while e-commerce grows. Decoupling of employment from output signals automation. Adjacent opportunity: agentic logistics coordination for remaining fragmented carriers.",
-      "time_horizon": "H2",
-      "confidence": "medium"
-    },
-    {
-      "headline": "LLM API pricing commoditizing — multiple providers in price war, DeepSeek forcing compression",
+      "id": "A-2026-02-10-002",
+      "headline": "Capital Environment Index at maximum (100.0) - rates falling, credit easing, stress at minimum",
+      "systemic_pattern": "Capital cheap and abundant. Combined with P3=100, creates most favorable macro setup for AI-native business formation ever measured.",
+      "source": "FRED Economic Data",
+      "relevance_score": 9,
+      "grade": 9.3,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
       "principle": "P1",
-      "category": "infra_overhang",
-      "source": "Web",
-      "relevance_score": 6.0,
-      "status": "new",
-      "detail": "Textbook infrastructure overhang. Providers commoditizing their own product, pushing returns to application layer.",
-      "time_horizon": "H1",
-      "confidence": "high"
+      "kill_index_match": "none"
     },
     {
-      "headline": "10,000+ EDGAR hits for cost reduction AND automation — industrial-scale automation push confirmed",
-      "principle": "P3",
-      "category": "cost_kill",
-      "source": "EDGAR",
-      "relevance_score": 5.8,
-      "status": "new",
-      "detail": "Volume is the signal. Thousands of companies simultaneously pursuing cost reduction through automation. Creates demand for agentic tools while confirming labor cost pressure drives enterprise behavior.",
-      "time_horizon": "H1",
-      "confidence": "medium"
+      "id": "A-2026-02-10-022",
+      "headline": "Beveridge Curve r=-0.658 - structural mismatch, not cyclical recession",
+      "systemic_pattern": "Openings falling while unemployment rising = matching function broken. Structural labor market mismatch confirms AI changing skill requirements faster than workforce adapts.",
+      "source": "FRED Cross-Correlations",
+      "relevance_score": 9,
+      "grade": 9.2,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
+      "principle": "P5",
+      "kill_index_match": "none"
     },
     {
-      "headline": "Financial Services employment flat +0.4% YoY (9,244K) — stagnant sector in pre-cascade phase",
-      "principle": "P2",
-      "category": "industry_employment",
-      "source": "BLS",
-      "relevance_score": 5.5,
-      "status": "new",
-      "detail": "Finance in maintenance mode. Insurance, mortgage processing, compliance, bookkeeping are sub-sectors most exposed to next phase of cascade.",
-      "time_horizon": "H2",
-      "confidence": "medium"
+      "id": "A-2026-02-10-015",
+      "headline": "NAICS 621210 Dental Offices: 130K+ practices, LOW competitive density in admin AI, Archy pioneer at $47M",
+      "systemic_pattern": "Diagnostics AI crowded, practice operations sparse. Demographic pressure building. Regulatory complexity (DSO) and Mars consolidation threat.",
+      "source": "NAICS Industry Data",
+      "relevance_score": 7,
+      "grade": 6.8,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
+      "principle": "P5",
+      "kill_index_match": "none"
     },
     {
-      "headline": "24,039 business bankruptcy filings in 2025 (+5.6% YoY) with 117 large corporate bankruptcies",
-      "principle": "P2",
-      "category": "liquidation_cascade",
-      "source": "Web",
-      "relevance_score": 5.4,
-      "status": "new",
-      "detail": "Cascade confirmed across entire size spectrum. Small filings create acquisition opportunities at the scale relevant to $500K-1M startup.",
-      "time_horizon": "H1",
-      "confidence": "high"
+      "id": "A-2026-02-10-040",
+      "headline": "Creative Destruction Index at 0.0 - new business formation stalling despite maximum favorable conditions",
+      "systemic_pattern": "Business applications down 69.7% YoY despite P3=100, Capital=100. Low entrepreneurial activity = sparse competition. FAVORABLE signal.",
+      "source": "FRED Composite Indices",
+      "relevance_score": 8,
+      "grade": 8.1,
+      "timestamp": "2026-02-10T00:00:00Z",
+      "status": "graded",
+      "principle": "P4",
+      "kill_index_match": "none"
+    }
+  ],
+  "opportunity_clusters": [
+    {
+      "rank": 1,
+      "name": "Customer Support Vacuum Filler — Managed Hybrid Human+AI",
+      "score": 68,
+      "score_change": "+3",
+      "horizon": "H1",
+      "thesis": "Companies prematurely cutting human support before AI can deliver. Pure AI fails (Klarna reversal, CNET, SI, Air Canada, NEDA). Tool layer saturated but SERVICE layer may be sparse. Staffing canary (-51%) confirms structural demand collapse.",
+      "status": "INVESTIGATE_FURTHER",
+      "principles_passed": ["P3", "P7"],
+      "signal_count": 8,
+      "vc_hook": "We fill the timing arbitrage vacuum between premature human cuts and AI that can't deliver — managed hybrid support at 40-60% cost of pure human, 10x reliability of pure AI. Market-priced validation: professional staffing -51%.",
+      "key_data": [
+        "RHI (professional staffing) -51%",
+        "Klarna AI-only → rehiring",
+        "P3 Cost Collapse: 100.0",
+        "COUNTER: Tool layer saturated"
+      ],
+      "next_action": "PRIORITY 1: Competitive density deep-dive on managed hybrid customer support SERVICE layer",
+      "last_updated": "2026-02-10T12:00:00Z"
+    },
+    {
+      "rank": 2,
+      "name": "Veterinary Services — Agentic Practice Operations",
+      "score": 63,
+      "score_change": "-2",
+      "horizon": "H2",
+      "thesis": "Proven sparse competitive density ($200-400M). Demographic gap widening. COUNTER: Mars consolidation accelerating (high threat).",
+      "status": "INVESTIGATE_FURTHER",
+      "principles_passed": ["P5"],
+      "signal_count": 2,
+      "vc_hook": "The only sector that passed the competitive density filter (sparse $200-400M vs $3-5B+ everywhere else). We're the practice operating system for independent vets before Mars consolidates them.",
+      "key_data": [
+        "Competitive density: $200-400M (sparse)",
+        "COUNTER: Mars consolidation accelerating"
+      ],
+      "next_action": "OVERDUE: Mars/IDEXX threat assessment, practice acquisition economics",
+      "last_updated": "2026-02-10T12:00:00Z"
+    },
+    {
+      "rank": 3,
+      "name": "Wholesale Trade AI Broker — NAICS 425120",
+      "score": 58,
+      "score_change": "NEW",
+      "horizon": "H2",
+      "thesis": "Pure intermediaries (512K emp, 122K firms, 4.2 avg/firm) with zero inventory = 100% coordination value. Dead business revival: B2B marketplaces failed in dot-com but AI 100x cheaper now. LOW competitive density estimate.",
+      "status": "SCANNING",
+      "principles_passed": ["P3", "P4"],
+      "signal_count": 4,
+      "vc_hook": "The dot-com B2B marketplace thesis was right but too early — coordination costs are now 100x lower. We target fragmented wholesale trade where agents add zero operational value, only matching.",
+      "key_data": [
+        "NAICS 425120: 512K emp, 122K firms",
+        "Pure intermediaries (no inventory)",
+        "Dead revival: Chemdex/Covisint failed, AI 100x cheaper"
+      ],
+      "next_action": "Deep competitive scan, segment analysis for lowest incumbent moats",
+      "last_updated": "2026-02-10T12:00:00Z"
+    },
+    {
+      "rank": 4,
+      "name": "LATAM Nearshoring + AI Augmentation",
+      "score": 58,
+      "score_change": "-2",
+      "horizon": "H2",
+      "thesis": "LATAM professionals at 30-50% US cost + AI tools = hybrid service delivery. COUNTER: Traditional BPO giants (Globant $2B, TTEC $2.1B) already operate LATAM at scale. Differentiation: AI-augmented professional services (not call center BPO).",
+      "status": "INVESTIGATE_FURTHER",
+      "principles_passed": ["P3"],
+      "signal_count": 4,
+      "vc_hook": "Traditional BPO is call centers. We're AI-augmented professional services — accounting, legal research, customer success ops — delivered by LATAM professionals with AI at 40-60% US cost.",
+      "key_data": [
+        "Brazil internet: 84.5%, Argentina: 89.7%",
+        "COUNTER: Globant $2B, TTEC $2.1B, Concentrix $5.4B"
+      ],
+      "next_action": "Distinguish AI-augmented LATAM professional services from traditional BPO, identify vertical with highest arbitrage",
+      "last_updated": "2026-02-10T12:00:00Z"
+    },
+    {
+      "rank": 5,
+      "name": "Boutique Management Consulting Replacement — NAICS 541611",
+      "score": 55,
+      "score_change": "NEW",
+      "horizon": "H2",
+      "thesis": "Small boutiques (837K emp, 166K firms, 5.0 avg/firm) squeezed by Upwork below, Accenture AI above. NAICS 541611 excludes MBB. Tool layer crowded, service replacement sparse. Staffing canary confirms collapse.",
+      "status": "SCANNING",
+      "principles_passed": ["P2", "P3"],
+      "signal_count": 5,
+      "vc_hook": "Small consulting boutiques are the 'middle class' of professional services — too expensive vs marketplaces, too small vs AI-augmented large firms. We replace the boutique entirely with AI + offshore hybrid at 30-40% cost.",
+      "key_data": [
+        "NAICS 541611: 837K emp, 166K firms",
+        "Squeezed by Upwork below, Accenture above",
+        "RHI -51% confirms collapse"
+      ],
+      "next_action": "Competitive scan of AI consulting service operators, segment analysis",
+      "last_updated": "2026-02-10T12:00:00Z"
+    },
+    {
+      "rank": 6,
+      "name": "Dental Practice Operations AI — NAICS 621210",
+      "score": 52,
+      "score_change": "NEW",
+      "horizon": "H2",
+      "thesis": "130K+ practices, admin burden rising. Diagnostics crowded, operations sparse. Archy $47M pioneer. COUNTER: 38 states restrict ownership (DSO workaround), Mars consolidation.",
+      "status": "SCANNING",
+      "principles_passed": ["P5"],
+      "signal_count": 4,
+      "vc_hook": "Dental AI funding went to diagnostics. Practice operations — the actual pain point — remains sparse. We're the 'practice in a box' software. DSO-compliant model.",
+      "key_data": [
+        "130K+ practices",
+        "Diagnostics crowded, operations sparse",
+        "COUNTER: 38 states restrict ownership"
+      ],
+      "next_action": "Verify competitive landscape in practice operations, research DSO economics, assess Mars/IDEXX threat",
+      "last_updated": "2026-02-10T12:00:00Z"
+    }
+  ],
+  "cross_signal_patterns": [
+    {
+      "pattern": "Composite Index Convergence at Maximum — P3 Cost Collapse (100.0) and Capital Environment (100.0) both at maximum. Most favorable macro setup ever measured. BUT creates competitive density risk.",
+      "signal_count": 4,
+      "strength": "very_strong"
+    },
+    {
+      "pattern": "Market-Priced Professional Labor Collapse — Staffing stocks (RHI -51%, MAN -39%, KELYA -20%) confirm structural labor substitution 6-12 months before government data. Engine's first MARKET-PRICED external validation.",
+      "signal_count": 3,
+      "strength": "very_strong"
+    },
+    {
+      "pattern": "Timing Arbitrage Vacuum — Multiple precedent failures (Klarna, CNET, SI, Air Canada, NEDA) confirm AI-only fails for complex/emotional tasks. Hybrid models required. Window = 12-24 months.",
+      "signal_count": 4,
+      "strength": "strong"
+    },
+    {
+      "pattern": "Tool vs Service Layer Distinction — Across multiple sectors, TOOL layer saturated but SERVICE layer density UNKNOWN. This distinction is make-or-break filter for new pipeline candidates.",
+      "signal_count": 3,
+      "strength": "moderate"
+    },
+    {
+      "pattern": "Creative Destruction Stalling Despite Maximum Conditions — Business apps down 69.7% despite P3=100, Capital=100. Low entrepreneurial activity = sparse competition. FAVORABLE signal.",
+      "signal_count": 2,
+      "strength": "moderate-strong"
+    },
+    {
+      "pattern": "Profits-Wages Divergence — Corporate profits +7% while wages +1.6%, r=-0.347. Productivity gains flowing to profits, not wages. Margin capture accelerates substitution pressure.",
+      "signal_count": 3,
+      "strength": "strong"
+    },
+    {
+      "pattern": "No Liquidation Pressure Despite Labor Substitution — P2 at 0.0 despite staffing -51%. Incumbents adapting successfully. REDUCES distressed acquisition appeal, INCREASES urgency of AI-native competition.",
+      "signal_count": 2,
+      "strength": "moderate"
     }
   ]
 }

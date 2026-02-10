@@ -1,0 +1,474 @@
+{
+  "cycle": 9,
+  "updated": "2026-02-10T12:00:00Z",
+  "agent_c_analysis": {
+    "signals_processed": 40,
+    "signals_above_threshold": 37,
+    "signals_killed_by_index": 0,
+    "new_kill_patterns_added": 0
+  },
+  "graded_signals": [
+    {
+      "signal_id": "A-2026-02-10-001",
+      "headline": "P3 Cost Collapse Index at maximum (100.0) - productivity surging while unit labor costs declining",
+      "relevance_score": 9,
+      "grade_components": {
+        "principles_alignment": 3.0,
+        "data_specificity": 2.6,
+        "source_quality": 2.0,
+        "timeliness": 1.0,
+        "novelty": 0.7,
+        "cross_signal_reinforcement": 1.2,
+        "market_price_confirmation": 1.1
+      },
+      "final_grade": 9.3,
+      "status": "high_priority"
+    },
+    {
+      "signal_id": "A-2026-02-10-003",
+      "headline": "Staffing company stocks in freefall: RHI -51%, MAN -39%, KELYA -20%",
+      "relevance_score": 10,
+      "grade_components": {
+        "principles_alignment": 3.0,
+        "data_specificity": 2.6,
+        "source_quality": 2.0,
+        "timeliness": 1.0,
+        "novelty": 0.35,
+        "cross_signal_reinforcement": 1.2,
+        "market_price_confirmation": 2.2
+      },
+      "final_grade": 9.8,
+      "status": "highest_priority"
+    },
+    {
+      "signal_id": "A-2026-02-10-013",
+      "headline": "NAICS 425120 Wholesale Trade Agents/Brokers: 512K employees, 122K firms, LOW competitive density",
+      "relevance_score": 8,
+      "grade_components": {
+        "principles_alignment": 2.5,
+        "data_specificity": 2.6,
+        "source_quality": 1.5,
+        "timeliness": 1.0,
+        "novelty": 0.7,
+        "cross_signal_reinforcement": 0.4,
+        "market_price_confirmation": 0.0
+      },
+      "final_grade": 7.8,
+      "status": "new_pipeline_candidate"
+    },
+    {
+      "signal_id": "A-2026-02-10-014",
+      "headline": "NAICS 541611 Management Consulting: 837K employees, 166K firms, MEDIUM density",
+      "relevance_score": 8,
+      "grade_components": {
+        "principles_alignment": 2.5,
+        "data_specificity": 2.6,
+        "source_quality": 1.5,
+        "timeliness": 1.0,
+        "novelty": 0.7,
+        "cross_signal_reinforcement": 0.6,
+        "market_price_confirmation": 0.0
+      },
+      "final_grade": 7.9,
+      "status": "new_pipeline_candidate"
+    },
+    {
+      "signal_id": "A-2026-02-10-015",
+      "headline": "NAICS 621210 Dental Offices: 130K+ practices, LOW competitive density in admin AI",
+      "relevance_score": 7,
+      "grade_components": {
+        "principles_alignment": 2.0,
+        "data_specificity": 2.0,
+        "source_quality": 1.5,
+        "timeliness": 1.0,
+        "novelty": 0.7,
+        "cross_signal_reinforcement": 0.0,
+        "market_price_confirmation": 0.0
+      },
+      "final_grade": 6.8,
+      "status": "new_pipeline_candidate"
+    },
+    {
+      "signal_id": "A-2026-02-10-016",
+      "headline": "Klarna reversal: AI-only customer support failed, now rehiring humans",
+      "relevance_score": 9,
+      "grade_components": {
+        "principles_alignment": 3.0,
+        "data_specificity": 2.0,
+        "source_quality": 1.5,
+        "timeliness": 1.0,
+        "novelty": 0.35,
+        "cross_signal_reinforcement": 1.2,
+        "market_price_confirmation": 1.1
+      },
+      "final_grade": 8.6,
+      "status": "high_priority"
+    },
+    {
+      "signal_id": "A-2026-02-10-025",
+      "headline": "COUNTER: Customer support tool layer saturated",
+      "relevance_score": 8,
+      "grade_components": {
+        "principles_alignment": 2.0,
+        "data_specificity": 2.0,
+        "source_quality": 2.0,
+        "timeliness": 1.0,
+        "novelty": 0.0,
+        "cross_signal_reinforcement": 0.0,
+        "counter_signal_severity": 3.0
+      },
+      "final_grade": 8.5,
+      "status": "counter_signal_critical"
+    }
+  ],
+  "opportunity_clusters": [
+    {
+      "cluster_id": "OC-009-001",
+      "name": "Customer Support Vacuum Filler — Managed Hybrid Human+AI",
+      "thesis": "Companies prematurely cutting human support before AI can deliver (Klarna, CNET, SI, Air Canada, NEDA failures). Pure AI fails on complex/emotional issues. Tool layer (Intercom, Zendesk) saturated but SERVICE layer (we operate your hybrid support team) may be sparse. DOGE federal cuts create largest single timing arbitrage event. Staffing canary (-51% RHI) confirms structural demand collapse.",
+      "score": 68,
+      "previous_score": 65,
+      "score_change": "+3",
+      "horizon": "H1",
+      "principles_passed": ["P3", "P7"],
+      "signal_count": 8,
+      "key_signals": ["A-2026-02-10-003", "A-2026-02-10-016", "A-2026-02-10-017", "A-2026-02-10-018", "A-2026-02-10-019", "A-2026-02-10-025"],
+      "key_data": [
+        "RHI (professional staffing) -51% (market confirmation)",
+        "Klarna AI-only → rehiring (precedent failure)",
+        "P3 Cost Collapse Index: 100.0 (maximum)",
+        "Capital Environment: 100.0 (maximum)",
+        "COUNTER: Tool layer saturated (Intercom, Zendesk, Freshdesk AI)",
+        "CRITICAL UNKNOWN: Is SERVICE layer also saturated?"
+      ],
+      "vc_hook": "We fill the timing arbitrage vacuum between premature human cuts and AI that can't deliver — managed hybrid support at 40-60% cost of pure human, 10x reliability of pure AI. Market-priced validation: professional staffing -51%.",
+      "status": "INVESTIGATE_FURTHER",
+      "next_action": "PRIORITY 1: Competitive density deep-dive on managed hybrid customer support SERVICE layer. Distinguish tool vendors (saturated) from service operators (unknown). If service layer sparse, advance to PURSUE. If crowded, PARK.",
+      "viability_components": {
+        "unit_economics": 8,
+        "incumbent_vulnerability": 9,
+        "technical_feasibility": 7,
+        "regulatory_clearance": 9
+      },
+      "strategic_fit_components": {
+        "infrastructure_overhang": 5,
+        "liquidation_cascade": 5,
+        "output_cost_dominance": 5,
+        "dead_business_revival": 3,
+        "demographic_alignment": 0,
+        "geographic_arbitrage": 2
+      },
+      "vc_differentiation_components": {
+        "vc_score_scaled": 13.5,
+        "why_now_structural": 5,
+        "distance_from_generic": 5
+      },
+      "signal_strength": 9,
+      "timing": 9,
+      "kill_index_risk": "Medium - tool layer saturation raises density concerns, but service layer may be distinct",
+      "counter_signals": [
+        "A-2026-02-10-025: Tool layer saturated (critical unknown: is service layer also saturated?)"
+      ]
+    },
+    {
+      "cluster_id": "OC-009-002",
+      "name": "Wholesale Trade AI Broker — NAICS 425120 Disruption",
+      "thesis": "Wholesale trade agents/brokers (512K emp, 122K firms, 4.2 avg/firm) are PURE intermediaries with zero inventory - 100% coordination value. AI reduces coordination costs 100x. Dead business revival: B2B marketplaces (Chemdex, Covisint) failed in dot-com era but viable at current AI costs. LOW competitive density (unlike killed freight brokerage $5-8B+). P3 at maximum enables entry.",
+      "score": 58,
+      "previous_score": null,
+      "score_change": "NEW",
+      "horizon": "H2",
+      "principles_passed": ["P3", "P4"],
+      "signal_count": 4,
+      "key_signals": ["A-2026-02-10-013", "A-2026-02-10-028", "A-2026-02-10-036", "A-2026-02-10-001"],
+      "key_data": [
+        "NAICS 425120: 512K emp, 122K firms",
+        "Pure intermediaries (no inventory)",
+        "Avg firm size 4.2 employees (fragmented)",
+        "Dead revival: Chemdex/Covisint failed, AI 100x cheaper now",
+        "P3 Cost Collapse: 100.0",
+        "LOW competitive density estimate (needs verification)"
+      ],
+      "vc_hook": "The dot-com B2B marketplace thesis was right but too early — coordination costs are now 100x lower. We target the most fragmented wholesale trade segments (425120) where agents add zero operational value, only matching. Pure Coasean collapse play.",
+      "status": "SCANNING",
+      "next_action": "Deep competitive scan: Who is attacking wholesale trade brokerage with AI? What killed Chemdex/Covisint — technology or incumbents? Segment analysis: which wholesale trade verticals have lowest incumbent moats?",
+      "viability_components": {
+        "unit_economics": 6,
+        "incumbent_vulnerability": 7,
+        "technical_feasibility": 8,
+        "regulatory_clearance": 8
+      },
+      "strategic_fit_components": {
+        "infrastructure_overhang": 5,
+        "liquidation_cascade": 3,
+        "output_cost_dominance": 5,
+        "dead_business_revival": 5,
+        "demographic_alignment": 0,
+        "geographic_arbitrage": 0
+      },
+      "vc_differentiation_components": {
+        "vc_score_scaled": 10.5,
+        "why_now_structural": 4,
+        "distance_from_generic": 3
+      },
+      "signal_strength": 5,
+      "timing": 7,
+      "kill_index_risk": "Medium - freight brokerage killed (K-004) but wholesale agents/brokers may be distinct enough (no carrier relationships, pure digital)",
+      "counter_signals": []
+    },
+    {
+      "cluster_id": "OC-009-003",
+      "name": "Boutique Management Consulting Replacement — NAICS 541611",
+      "thesis": "Small management consulting boutiques (837K emp, 166K firms, 5.0 avg/firm) face margin compression from Upwork/Toptal below and Accenture AI above. NAICS 541611 excludes MBB strategy — focuses on operational/admin consulting. Tool layer crowded but SERVICE replacement (we operate as the boutique) may be sparse. Staffing canary (-51% professional) confirms structural demand collapse.",
+      "score": 55,
+      "previous_score": null,
+      "score_change": "NEW",
+      "horizon": "H2",
+      "principles_passed": ["P2", "P3"],
+      "signal_count": 5,
+      "key_signals": ["A-2026-02-10-014", "A-2026-02-10-029", "A-2026-02-10-037", "A-2026-02-10-003"],
+      "key_data": [
+        "NAICS 541611: 837K emp, 166K firms",
+        "Excludes MBB, focuses on operational consulting",
+        "Squeezed by Upwork below, Accenture AI above",
+        "RHI -51% confirms professional services collapse",
+        "Tool layer crowded, service layer unknown",
+        "MEDIUM competitive density estimate"
+      ],
+      "vc_hook": "Small consulting boutiques are the 'middle class' of professional services — too expensive vs marketplaces, too small vs AI-augmented large firms. We replace the boutique entirely with AI + offshore hybrid at 30-40% cost. The squeeze is structural and market-priced (-51% staffing).",
+      "status": "SCANNING",
+      "next_action": "Competitive scan: AI consulting service operators (not tools). Segment analysis: which consulting verticals (process improvement, org design, admin optimization) have lowest competitive density? Distinguish from killed SMB back-office (K-002).",
+      "viability_components": {
+        "unit_economics": 7,
+        "incumbent_vulnerability": 8,
+        "technical_feasibility": 7,
+        "regulatory_clearance": 9
+      },
+      "strategic_fit_components": {
+        "infrastructure_overhang": 4,
+        "liquidation_cascade": 5,
+        "output_cost_dominance": 4,
+        "dead_business_revival": 2,
+        "demographic_alignment": 0,
+        "geographic_arbitrage": 3
+      },
+      "vc_differentiation_components": {
+        "vc_score_scaled": 9.0,
+        "why_now_structural": 4,
+        "distance_from_generic": 3
+      },
+      "signal_strength": 6,
+      "timing": 7,
+      "kill_index_risk": "Low-Medium - distinct from killed SMB back-office (K-002: horizontal product vs vertical service replacement)",
+      "counter_signals": []
+    },
+    {
+      "cluster_id": "OC-009-004",
+      "name": "Dental Practice Operations AI — NAICS 621210",
+      "thesis": "130K+ dental practices with admin burden rising. Diagnostics AI crowded (Pearl, Overjet, Videa) but practice OPERATIONS layer (scheduling, billing, patient comms, workflow) sparse. Archy $47M pioneer with limited competition. COUNTER: 38 states restrict practice ownership to dentists (DSO workaround adds complexity). Mars consolidation accelerating (threat or acquisition opportunity?).",
+      "score": 52,
+      "previous_score": null,
+      "score_change": "NEW",
+      "horizon": "H2",
+      "principles_passed": ["P5"],
+      "signal_count": 4,
+      "key_signals": ["A-2026-02-10-015", "A-2026-02-10-030", "A-2026-02-10-026", "A-2026-02-10-035"],
+      "key_data": [
+        "NAICS 621210: 130K+ practices",
+        "Diagnostics crowded, operations sparse",
+        "Archy $47M pioneer",
+        "COUNTER: 38 states restrict ownership (DSO workaround)",
+        "COUNTER: Mars consolidation accelerating",
+        "Demographic: dentist median age rising"
+      ],
+      "vc_hook": "Dental AI funding went to diagnostics (radiographs, caries detection). Practice operations — the actual pain point for dentists — remains sparse. We're the 'practice in a box' software that handles everything except the clinical work. DSO-compliant model.",
+      "status": "SCANNING",
+      "next_action": "Verify competitive landscape in dental practice operations (not diagnostics). Research DSO regulatory structure and unit economics. Assess Mars/IDEXX threat: are they building practice operations AI or staying in products/diagnostics?",
+      "viability_components": {
+        "unit_economics": 6,
+        "incumbent_vulnerability": 6,
+        "technical_feasibility": 7,
+        "regulatory_clearance": 6
+      },
+      "strategic_fit_components": {
+        "infrastructure_overhang": 3,
+        "liquidation_cascade": 2,
+        "output_cost_dominance": 3,
+        "dead_business_revival": 2,
+        "demographic_alignment": 3,
+        "geographic_arbitrage": 0
+      },
+      "vc_differentiation_components": {
+        "vc_score_scaled": 7.5,
+        "why_now_structural": 3,
+        "distance_from_generic": 3
+      },
+      "signal_strength": 5,
+      "timing": 6,
+      "kill_index_risk": "Medium - regulatory complexity (DSO) and Mars consolidation threat. Distinct from killed healthcare staffing (K-001: admin not clinical).",
+      "counter_signals": [
+        "A-2026-02-10-026: Mars consolidation accelerating",
+        "A-2026-02-10-035: 38 states restrict ownership to dentists"
+      ]
+    },
+    {
+      "cluster_id": "OC-009-005",
+      "name": "Veterinary Services — Agentic Practice Operations",
+      "thesis": "Proven sparse competitive density ($200-400M vs $3-5B+ in killed sectors). Demographic gap widening (vet median age rising, new grads declining). Practice acquisition model or software-only. COUNTER: Mars Petcare consolidation accelerating (threat level: high - Mars could build internally or acquire at scale). State licensing mostly permits non-vet ownership (unlike dental's 38-state restriction).",
+      "score": 63,
+      "previous_score": 65,
+      "score_change": "-2",
+      "horizon": "H2",
+      "principles_passed": ["P5"],
+      "signal_count": 2,
+      "key_signals": ["A-2026-02-10-026"],
+      "key_data": [
+        "Competitive density: $200-400M (sparse)",
+        "Demographic gap: vet shortage worsening",
+        "COUNTER: Mars consolidation accelerating",
+        "Most states allow non-vet ownership",
+        "Practice acquisition economics TBD"
+      ],
+      "vc_hook": "The only sector that passed the competitive density filter (sparse $200-400M vs $3-5B+ everywhere else). We're the practice operating system for independent vets before Mars consolidates them. Two paths: acquire practices or sell software to independents fighting consolidation.",
+      "status": "INVESTIGATE_FURTHER",
+      "next_action": "OVERDUE from Cycle 8: Mars/IDEXX threat assessment (specific AI plans?). Practice acquisition economics (EBITDA multiples, working capital). State licensing map. Unit economics model (revenue/vet, cost with AI, margin improvement).",
+      "viability_components": {
+        "unit_economics": 7,
+        "incumbent_vulnerability": 7,
+        "technical_feasibility": 7,
+        "regulatory_clearance": 8
+      },
+      "strategic_fit_components": {
+        "infrastructure_overhang": 3,
+        "liquidation_cascade": 2,
+        "output_cost_dominance": 3,
+        "dead_business_revival": 2,
+        "demographic_alignment": 3,
+        "geographic_arbitrage": 0
+      },
+      "vc_differentiation_components": {
+        "vc_score_scaled": 12.0,
+        "why_now_structural": 4,
+        "distance_from_generic": 4
+      },
+      "signal_strength": 6,
+      "timing": 7,
+      "kill_index_risk": "Medium-High - Mars consolidation is existential threat. Score reduced -2 on consolidation counter-signal.",
+      "counter_signals": [
+        "A-2026-02-10-026: Mars consolidation accelerating (HIGH threat)"
+      ]
+    },
+    {
+      "cluster_id": "OC-009-006",
+      "name": "LATAM Nearshoring + AI Augmentation",
+      "thesis": "LATAM professionals at 30-50% US cost + AI tools (same internet penetration: Brazil 84.5%, Argentina 89.7%) = hybrid service delivery. Rising global services trade ($547.6B Germany imports) confirms demand for cheaper delivery. COUNTER: Traditional BPO giants (Globant $2B, TTEC $2.1B, Concentrix $5.4B) already operate LATAM at scale. Differentiation: AI-augmented professional services (not call center BPO).",
+      "score": 58,
+      "previous_score": 60,
+      "score_change": "-2",
+      "horizon": "H2",
+      "principles_passed": ["P3"],
+      "signal_count": 4,
+      "key_signals": ["A-2026-02-10-010", "A-2026-02-10-011", "A-2026-02-10-027"],
+      "key_data": [
+        "Brazil internet: 84.5%, Argentina: 89.7%",
+        "Germany services imports: $547.6B",
+        "LATAM labor arbitrage: 30-50% US cost",
+        "COUNTER: Globant $2B, TTEC $2.1B, Concentrix $5.4B",
+        "Differentiation: professional services not BPO"
+      ],
+      "vc_hook": "Traditional BPO is call centers. We're AI-augmented professional services — accounting, legal research, customer success ops — delivered by LATAM professionals with AI at 40-60% US cost. Not competing with Globant on engineering, not competing with Concentrix on call centers.",
+      "status": "INVESTIGATE_FURTHER",
+      "next_action": "Distinguish AI-augmented LATAM professional services from traditional BPO. Identify professional services vertical (accounting, legal research, customer success) with highest arbitrage and sparsest competition. Competitive scan: who is doing this specifically?",
+      "viability_components": {
+        "unit_economics": 8,
+        "incumbent_vulnerability": 6,
+        "technical_feasibility": 8,
+        "regulatory_clearance": 7
+      },
+      "strategic_fit_components": {
+        "infrastructure_overhang": 4,
+        "liquidation_cascade": 2,
+        "output_cost_dominance": 4,
+        "dead_business_revival": 2,
+        "demographic_alignment": 0,
+        "geographic_arbitrage": 5
+      },
+      "vc_differentiation_components": {
+        "vc_score_scaled": 9.0,
+        "why_now_structural": 4,
+        "distance_from_generic": 2
+      },
+      "signal_strength": 6,
+      "timing": 7,
+      "kill_index_risk": "Medium - BPO incumbents could add AI tools to existing model. Differentiation clarity is critical.",
+      "counter_signals": [
+        "A-2026-02-10-027: BPO giants already operate LATAM at scale"
+      ]
+    }
+  ],
+  "cross_signal_patterns": [
+    {
+      "pattern_id": "CSP-009-001",
+      "name": "Composite Index Convergence at Maximum — Goldilocks Moment",
+      "description": "P3 Cost Collapse (100.0) and Capital Environment (100.0) both at maximum simultaneously. AI costs at minimum, capital cheap and abundant, stress low. Most favorable macro setup for AI-native business formation ever measured. BUT creates dual risk: if everyone sees this, competitive density increases everywhere (reinforcing P-006 Universal Gate).",
+      "supporting_signals": ["A-2026-02-10-001", "A-2026-02-10-002", "A-2026-02-10-023", "A-2026-02-10-024"],
+      "strength": "very_strong",
+      "interpretation": "FAVORABLE for formation, DANGEROUS for density. Resolution: find sectors requiring domain-specific insight that generic pattern recognition misses.",
+      "strategic_implication": "Accelerate scanning and verification. Window of maximum conditions + minimum competition may be narrow. Prioritize sectors with barriers to generic AI entry (licensing, relationships, trust)."
+    },
+    {
+      "pattern_id": "CSP-009-002",
+      "name": "Market-Priced Professional Labor Collapse — Leading Indicator Confirmed",
+      "description": "Staffing stocks (RHI -51%, MAN -39%, KELYA -20%) confirm structural professional labor substitution 6-12 months before government data. The gradient (professional > industrial) isolates AI substitution from cyclical recession. This is the engine's first MARKET-PRICED external validation — billions in trading volume confirm the thesis.",
+      "supporting_signals": ["A-2026-02-10-003", "A-2026-02-10-004", "A-2026-02-10-022"],
+      "strength": "very_strong",
+      "interpretation": "STRONGEST external validation signal the engine has produced. Equity markets are pricing in structural decline of professional labor demand. Government statistics (BLS, JOLTS) lag by 6-12 months.",
+      "strategic_implication": "Prioritize opportunities targeting professional services (customer support, consulting, brokerage) where staffing canary confirms demand collapse is real and priced."
+    },
+    {
+      "pattern_id": "CSP-009-003",
+      "name": "Timing Arbitrage Vacuum — Premature Human Cuts, AI Can't Deliver",
+      "description": "Multiple precedent failures (Klarna reversal, CNET errors, SI scandal, Air Canada liability, NEDA harmful chatbot) confirm AI-only fails for complex/emotional tasks. Companies cutting humans prematurely (staffing -51%, JOLTS -12.9%) creating service vacuum. DOGE federal cuts = largest single P7 event. Hybrid human+AI models fill the gap.",
+      "supporting_signals": ["A-2026-02-10-016", "A-2026-02-10-017", "A-2026-02-10-018", "A-2026-02-10-019"],
+      "strength": "strong",
+      "interpretation": "P7 Timing Arbitrage is CONFIRMED by precedent failures. Pure AI replacement doesn't work. Hybrid models required. Window = 12-24 months until AI catches up OR companies reverse cuts.",
+      "strategic_implication": "Customer Support Vacuum is the clearest P7 opportunity. Must verify service layer competitive density urgently — if sparse, this becomes PURSUE."
+    },
+    {
+      "pattern_id": "CSP-009-004",
+      "name": "Tool vs Service Layer Distinction — Critical Density Assessment",
+      "description": "Across multiple sectors (customer support, dental, consulting), TOOL layer is saturated (Intercom, Zendesk for support; Pearl, Overjet for dental diagnostics) but SERVICE layer (we operate your support/practice/consulting) competitive density is UNKNOWN. This distinction is the make-or-break filter for all three new pipeline candidates.",
+      "supporting_signals": ["A-2026-02-10-025", "A-2026-02-10-030", "A-2026-02-10-014"],
+      "strength": "moderate",
+      "interpretation": "Tool saturation does NOT automatically imply service saturation. Many companies want managed services, not software. But must verify empirically for each sector.",
+      "strategic_implication": "PRIORITY 1 for Cycle 10: Tool vs Service competitive scans for customer support, consulting, dental. If service layers sparse, opportunities advance. If crowded, park like everything else."
+    },
+    {
+      "pattern_id": "CSP-009-005",
+      "name": "Creative Destruction Stalling Despite Maximum Conditions — Sparse Competition Signal",
+      "description": "Creative Destruction Index at 0.0, business applications down 69.7% YoY despite P3=100 and Capital=100. Entrepreneurs NOT forming new businesses despite maximum favorable conditions. This paradox is FAVORABLE for us — it means competitive landscape remains sparse even with obvious macro tailwinds.",
+      "supporting_signals": ["A-2026-02-10-008", "A-2026-02-10-040"],
+      "strength": "moderate-strong",
+      "interpretation": "Low entrepreneurial activity = less competition in sectors we target. Either opportunity is not yet obvious to most, or regulatory/incumbent moats block entry. Both benefit us (domain insight + VC network).",
+      "strategic_implication": "Formation window is OPEN with sparse competition. Accelerate verification and commit capital before entrepreneurial activity rebounds."
+    },
+    {
+      "pattern_id": "CSP-009-006",
+      "name": "Profits-Wages Divergence — Margin Capture Not Sharing",
+      "description": "Corporate profits +7% QoQ while wages +1.6%, with negative correlation r=-0.347. Productivity gains (117.962) flowing to profits, not wages. This confirms AI is enabling margin expansion through cost substitution, not productivity sharing with workers. The gap between productivity and compensation = stored energy for further substitution.",
+      "supporting_signals": ["A-2026-02-10-007", "A-2026-02-10-021", "A-2026-02-10-031"],
+      "strength": "strong",
+      "interpretation": "Firms are successfully substituting AI for labor and capturing margin. Workers are NOT capturing productivity gains. This divergence accelerates substitution pressure — firms have no reason to slow down.",
+      "strategic_implication": "Labor substitution is self-reinforcing. Every firm that successfully replaces labor with AI improves margins, pressuring competitors to follow. First-mover advantage in AI-native service delivery is structural."
+    },
+    {
+      "pattern_id": "CSP-009-007",
+      "name": "No Liquidation Pressure Despite Labor Substitution — Incumbents Adapting?",
+      "description": "P2 Liquidation Pressure Index at 0.0 (minimum) despite clear labor substitution (staffing -51%, Beveridge broken). Delinquency rates flat (1.78%), commercial loans down only 2% YoY. Firms are restructuring successfully via AI without distress. This REDUCES appeal of distressed acquisition strategies but INCREASES urgency of AI-native competition.",
+      "supporting_signals": ["A-2026-02-10-038", "A-2026-02-10-005"],
+      "strength": "moderate",
+      "interpretation": "Incumbents are NOT dying — they're adapting. Labor substitution is happening smoothly, not catastrophically. This means greenfield AI-native entry (not distressed acquisition) is the right strategy.",
+      "strategic_implication": "Shift from 'acquire distressed incumbents' to 'outcompete adapting incumbents with superior cost structure.' Timing matters — enter before incumbents fully restructure."
+    }
+  ]
+}

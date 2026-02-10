@@ -1,0 +1,491 @@
+{
+  "cycle": 9,
+  "agent": "B",
+  "role": "Verification + Master Synthesis",
+  "updated": "2026-02-10T14:30:00Z",
+  "methodology_note": "WebSearch and WebFetch unavailable this cycle. Verification relies on engine knowledge base, prior cycle data, kill index precedents, and analytical reasoning. Where web verification would have strengthened or weakened a claim, this is explicitly noted as UNVERIFIED_WEB_NEEDED. This limitation biases the cycle toward conservatism — claims that cannot be independently verified are penalized.",
+
+  "verifications": [
+    {
+      "cluster_id": "OC-009-001",
+      "name": "Customer Support Vacuum Filler — Managed Hybrid Human+AI",
+      "agent_c_score": 68,
+      "agent_b_verdict": "INVESTIGATE_FURTHER",
+      "agent_b_viability": 7,
+      "agent_b_adjusted_score": 66,
+      "score_change_rationale": "Reduced 2 points. The thesis is strong and market-priced, but the CRITICAL UNKNOWN (service layer density) remains unanswered for a second consecutive cycle. This is now OVERDUE. The engine cannot advance this to PURSUE without resolving it. Penalizing for stalling.",
+
+      "analysis": {
+        "thesis_strength": "STRONG. This is the engine's best-supported thesis across all dimensions: (1) Market-priced confirmation via staffing canary (RHI -51%), (2) Precedent failure confirmation via Klarna reversal, (3) Macro support at P3=100 and Capital=100, (4) Beveridge Curve structural mismatch, (5) Multiple named failures (CNET, SI, Air Canada, NEDA) establishing the hybrid requirement. The thesis that companies are cutting humans prematurely while AI cannot deliver alone is not theoretical — it is empirically validated.",
+
+        "tool_vs_service_distinction": "This is the MAKE-OR-BREAK question and it remains unresolved. The tool layer is unambiguously saturated: Intercom, Zendesk, Freshdesk, Kustomer, Forethought, Ada, PolyAI, and dozens more. But managed hybrid support services — where a company outsources its entire support function to a provider who runs AI + humans — is a different market. Known players in managed/outsourced customer support: TTEC ($2.1B), Concentrix ($5.4B), Teleperformance (~$8B), Foundever, Alorica, TELUS International. These are traditional BPO/contact center firms. The question is: are any of them or new entrants specifically offering AI-FIRST hybrid managed support? Based on available knowledge: TTEC has 'TTEC Digital' AI solutions, Concentrix acquired Webhelp and is building AI capabilities, Teleperformance is investing in AI augmentation. This suggests the BPO incumbents ARE moving into the hybrid space, which raises density concerns. However, BPO incumbents are building AI ON TOP of their existing human-heavy model, not building AI-FIRST with humans as escalation. The entry angle may be inverted — we build AI-first with human backup, they build human-first with AI assist. The cost structure difference could be 2-3x.",
+
+        "competitive_density_assessment": "MEDIUM-HIGH and RISING. Unlike veterinary services ($200-400M sparse), customer support has $10B+ BPO incumbents actively adding AI. The question is whether the INVERSION (AI-first vs human-first) creates enough differentiation. My assessment: the differentiation is real but the window is narrowing as BPO firms invest heavily in AI. Additionally, new AI-native support companies ARE emerging: Sierra AI, Decagon, Parloa have raised significant funding for AI customer support. While these are more tool-oriented, the line between tool and service blurs as AI handles more.",
+
+        "unit_economics_assessment": "FAVORABLE. AI handles 60-70% of Tier 1 at near-zero marginal cost. Humans handle 30-40% escalations. Blended cost should be 40-60% of pure-human BPO. Margins should be 30-40% at scale. Revenue per customer $5K-50K/month depending on volume. With $500K-$1M starting capital, can bootstrap with 5-10 initial clients. Revenue model is recurring (monthly contracts). This is the most favorable unit economics of any opportunity in the pipeline.",
+
+        "timing_assessment": "OPTIMAL but decaying. The Klarna reversal was 2025. DOGE cuts are 2025-2026. BPO firms are actively investing in AI. The window where 'AI-first hybrid' is novel and differentiated may be 12-18 months. After that, every BPO firm will offer something similar. If the founders don't move within 2-3 cycles (6 months), the window closes.",
+
+        "founder_fit": "GOOD. No credentials required (no CPA/JD/MD). Argentina founder provides LATAM talent pipeline for human agents at lower cost. ML/AI founder can build the AI layer. English+Spanish covers US+LATAM market. Can start with a vertical (e.g., SaaS companies, e-commerce) to reduce scope."
+      },
+
+      "key_risks": [
+        "BPO incumbents (Concentrix, TTEC, Teleperformance) adding AI to existing operations — may close the cost structure gap within 18 months",
+        "AI-native support startups (Sierra AI, Decagon, Parloa) blurring the tool/service line",
+        "Customer support is extremely price-sensitive — race to bottom on margins",
+        "Churn risk: once AI improves, companies may bring support back in-house",
+        "CRITICAL: Service layer density STILL UNVERIFIED. Overdue since Cycle 8. Cannot advance to PURSUE without resolution."
+      ],
+
+      "what_changes_verdict": {
+        "upgrade_to_PURSUE": "Competitive density scan confirms managed AI-first hybrid support has fewer than 5 funded competitors with less than $500M aggregate deployed. AND founders identify a specific vertical (SaaS, e-commerce, fintech) where they can achieve 10+ customers in 6 months.",
+        "downgrade_to_PARK": "Competitive scan reveals BPO incumbents already offer AI-first hybrid at similar cost structure. OR more than $1B deployed in AI-native support service companies (not tools).",
+        "downgrade_to_KILL": "Sierra AI, Decagon, or Parloa pivot from tool to managed service with $100M+ funding. OR Intercom/Zendesk launch managed service offerings."
+      },
+
+      "next_actions": [
+        "OVERDUE — MUST EXECUTE IN CYCLE 10: Web search for 'managed AI customer support service' companies. Specifically distinguish: (a) BPO firms with AI bolt-on, (b) AI-native managed service providers, (c) AI tool vendors. Map funding levels for each.",
+        "Identify 3-5 specific verticals (SaaS, e-commerce, fintech, healthcare admin, insurance) where hybrid support has highest value and lowest incumbent density",
+        "Price comparison: what do Concentrix/TTEC charge for managed support? What would AI-first hybrid cost? Is the gap enough to compete?",
+        "Talk to 5 mid-market companies (100-500 employees) about their support stack — are they looking for managed hybrid?"
+      ],
+
+      "kill_index_check": "No kill pattern matched. Tool saturation is a density concern but not a kill-level threat because tool != service. However, if BPO incumbents successfully bridge to AI-first, this approaches K-003/K-004 density kill territory.",
+      "web_verification_needed": [
+        "Sierra AI, Decagon, Parloa funding levels and service model",
+        "TTEC Digital, Concentrix AI pricing and capabilities",
+        "Number of AI-first managed support startups founded 2024-2026"
+      ]
+    },
+
+    {
+      "cluster_id": "OC-009-005",
+      "name": "Veterinary Services — Agentic Practice Operations",
+      "agent_c_score": 63,
+      "agent_b_verdict": "INVESTIGATE_FURTHER",
+      "agent_b_viability": 6,
+      "agent_b_adjusted_score": 60,
+      "score_change_rationale": "Reduced 3 points. Mars consolidation counter-signal has been flagged since Cycle 7 and remains unresolved. Score decay for staleness — this opportunity has been 'scanning' for 3 cycles without advancing. Additionally, P5 Labor Gap Index at 0.4 (near minimum) weakens the demographic gap argument at the aggregate level. Vet-specific gap must be proven, not assumed.",
+
+      "analysis": {
+        "thesis_strength": "MODERATE. The sparse competitive density ($200-400M) remains the strongest single differentiator in the entire pipeline — it is the ONLY sector that passed the density filter across 7+ sectors scanned. But sparse density alone doesn't make a business. The thesis requires: (1) practices willing to adopt AI operations tools, (2) a viable go-to-market that doesn't require practice acquisition, (3) Mars consolidation not preempting the opportunity.",
+
+        "mars_threat_assessment": "SERIOUS AND UNRESOLVED. Mars Petcare has a $20B+ pet care division. They own VCA (900+ hospitals), operate National Veterinary Associates, and are the dominant consolidator. Mars could: (a) build practice operations AI internally for their 1500+ owned practices, (b) acquire any startup that gains traction (Archy at $47M is a likely target), (c) partner with IDEXX (diagnostics dominant) to create an integrated practice platform. The question isn't whether Mars CAN do this — they obviously can. The question is whether they WILL in the next 24 months. Based on available knowledge: Mars's strategy has been acquisition-led, not technology-led. They buy practices, not software companies. IDEXX is diagnostics-focused. This suggests a window exists, but it's a window Mars could close at any time.",
+
+        "practice_acquisition_vs_software": "Two models proposed. Software-only is lower capital requirement ($500K feasible) but requires sales to fragmented, tech-resistant veterinary market. Practice acquisition requires $2-5M per practice (well above starting capital) and dental-like regulatory complexity (varies by state). RECOMMENDATION: software-only model unless VC raise exceeds $5M. Practice acquisition is a Series A+ play.",
+
+        "regulatory_assessment": "FAVORABLE relative to dental. Most states allow non-veterinarian ownership of vet practices (unlike dental where 38 states restrict to dentists). However, 'corporate practice of veterinary medicine' laws exist in some states. Net assessment: regulatory is not a kill factor.",
+
+        "market_size_concern": "130K+ dental practices vs 33K vet practices. The vet market is 4x smaller. Addressable market with AI practice ops software at $500-$1000/month = $200M-$400M TAM. This is small by VC standards. May limit follow-on fundraising unless positioned as beachhead for broader pet/animal services.",
+
+        "staleness_penalty": "This opportunity has been in 'scanning/investigate_further' status since Cycle 7. The Mars/IDEXX threat assessment has been 'overdue' for 2 cycles. The practice acquisition economics have never been modeled. Score decays for inaction — either advance this with real data or park it."
+      },
+
+      "key_risks": [
+        "Mars Petcare consolidation — existential threat from $20B incumbent",
+        "IDEXX could expand from diagnostics to practice operations platform",
+        "Archy ($47M) as first-mover may already own the beachhead",
+        "Small addressable market ($200-400M TAM) limits VC appeal",
+        "Vet practice tech adoption notoriously slow — still paper/fax heavy",
+        "P5 Labor Gap at 0.4 (near minimum) weakens demographic gap thesis — must prove vet-specific gap"
+      ],
+
+      "what_changes_verdict": {
+        "upgrade_to_PURSUE": "Mars/IDEXX confirmed to NOT be building practice operations AI (confirmed via job postings, press releases, product roadmaps). AND practice acquisition economics modeled showing 15%+ IRR at $500K-$1M entry. AND vet-specific labor shortage data (not aggregate P5) confirms demographic thesis.",
+        "downgrade_to_PARK": "Mars announces practice operations software or acquires Archy. OR IDEXX announces practice management platform. OR competitive density rises above $500M.",
+        "downgrade_to_KILL": "Mars launches integrated practice OS for all VCA/NVA practices with plans to offer to independent practices. This would be K-004-level (Convoy equivalent in vet)."
+      },
+
+      "next_actions": [
+        "CRITICAL AND OVERDUE: Mars/IDEXX competitive intelligence — search job postings for 'practice management', 'practice operations', 'veterinary AI'. Check press releases 2024-2026. Check IDEXX investor presentations for product roadmap mentions.",
+        "Archy deep-dive: what exactly do they offer? How many practices? Revenue? Growth? Are they acquirable or a competitor?",
+        "Model unit economics: vet practice revenue ($500K-$2M), cost structure (60-70% labor), what AI operations saves, willingness to pay for software ($500-$1000/month?)",
+        "State licensing map: which states allow non-vet practice ownership? Focus initial market there.",
+        "DECISION POINT: If Mars/IDEXX are building practice ops, PARK this immediately. If not, advance to PURSUE with software-only model."
+      ],
+
+      "kill_index_check": "No direct kill pattern matched. Mars consolidation is a threat but not yet a kill — they're consolidating practices, not building software. If Mars pivots to software, this would need a new kill entry.",
+      "web_verification_needed": [
+        "Mars Petcare technology strategy and recent acquisitions 2025-2026",
+        "IDEXX product roadmap — any practice management features?",
+        "Archy.com features, pricing, practice count, growth trajectory",
+        "State-by-state veterinary practice ownership laws",
+        "Veterinary labor shortage statistics (vet and vet tech shortages by state)"
+      ]
+    },
+
+    {
+      "cluster_id": "OC-009-002",
+      "name": "Wholesale Trade AI Broker — NAICS 425120 Disruption",
+      "agent_c_score": 58,
+      "agent_b_verdict": "INVESTIGATE_FURTHER",
+      "agent_b_viability": 5,
+      "agent_b_adjusted_score": 55,
+      "score_change_rationale": "Reduced 3 points. Intellectually interesting thesis (pure Coasean intermediation collapse) but MULTIPLE unresolved questions. The Chemdex/Covisint precedent cuts BOTH ways — yes AI is cheaper now, but B2B marketplaces failed for RELATIONSHIP reasons, not just technology cost. The freight brokerage kill (K-004) is dangerously close. Need to prove wholesale is structurally different from freight before advancing.",
+
+      "analysis": {
+        "thesis_strength": "MODERATE-INTERESTING. The bottom-up screener found this, which is a positive signal — it's not an LLM brainstorm retread. NAICS 425120 is a genuine discovery: 512K employees in 122K firms (4.2 avg), pure intermediaries with zero inventory. The Coasean thesis is clean: when coordination costs drop 100x, pure coordinators die. But the thesis ALSO applied to freight brokerage (K-004), and Convoy proved that $900M of technology could not displace relationship-based intermediation.",
+
+        "freight_brokerage_distinction": "CRITICAL QUESTION. How is wholesale trade brokerage different from freight brokerage? Potential distinctions: (1) Freight brokers manage physical logistics, carrier relationships, and real-time capacity — wholesale brokers just match buyers and sellers of commoditized goods. (2) Freight has massive incumbents (C.H. Robinson $24B) — wholesale brokers are 4.2 emp/firm average, meaning no dominant player. (3) Freight requires FMCSA broker authority + $75K surety bond — wholesale brokerage has lower barriers. COUNTER-COUNTER: Convoy failed because carrier relationships were the moat, not technology. Wholesale trade brokers may have analogous buyer-seller relationships that technology cannot replace. The question is: are wholesale trade relationships as sticky as freight carrier relationships?",
+
+        "dead_business_revival_assessment": "CAUTIOUSLY POSITIVE. Chemdex and Covisint failed in 1999-2003, when internet infrastructure was immature, transaction costs were still high, and trust mechanisms were primitive. AI changes: (1) automated quality verification (machine vision for product inspection), (2) natural language negotiation, (3) intelligent matching based on historical transaction data, (4) trust scoring via data aggregation. The technology gap is real. But Chemdex/Covisint also failed because procurement departments preferred relationship continuity over theoretical cost savings. This behavioral inertia may persist.",
+
+        "competitive_density_assessment": "LOW (UNVERIFIED). The bottom-up screener claims LOW competitive density. Based on available knowledge, B2B wholesale AI startups are not a heavily funded category. There are B2B marketplace players (Faire for retail, Mirakl for enterprise) but these target retail, not wholesale trade brokerage specifically. Chemical distribution has some digital platforms (ChemDirect, Knowde). Food wholesale has Pepper. But NAICS 425120 specifically (agents and brokers who don't take title) is a niche within a niche. Density appears genuinely sparse. HOWEVER, this must be web-verified.",
+
+        "go_to_market_challenge": "SIGNIFICANT. 122K firms at 4.2 employees each means hyper-fragmented market. No enterprise sales. Must be bottom-up adoption or vertical-specific beachhead. The question: which wholesale trade vertical (chemicals, food, electronics, textiles, etc.) has the most commoditized products where relationship moat is weakest? Commoditized goods = weaker relationship moat = AI more viable.",
+
+        "revenue_model_concern": "Wholesale brokers typically earn 2-10% commission on transactions. If AI replaces the broker, the AI platform captures that margin — but must also acquire both sides of the marketplace. Two-sided marketplace cold start is the hardest problem in startup building. At $500K-$1M, building both supply and demand sides simultaneously is extremely capital-constrained."
+      },
+
+      "key_risks": [
+        "K-004 (freight brokerage) proximity — relationship moat may apply to wholesale trade too",
+        "Two-sided marketplace cold start problem — extremely hard at $500K-$1M",
+        "Behavioral inertia: buyers and sellers may prefer known brokers over AI platforms",
+        "Chemdex/Covisint failed for relationship reasons, not just technology cost",
+        "4.2 emp/firm hyper-fragmentation means no enterprise sales, slow adoption",
+        "Vertical selection critical: wrong vertical = relationship moat kills thesis, right vertical = commoditized goods where matching is the only value"
+      ],
+
+      "what_changes_verdict": {
+        "upgrade_to_PURSUE": "Identify specific wholesale trade vertical (e.g., commodity chemicals, generic electronics, raw materials) where: (a) products are commoditized (relationship moat weak), (b) transaction volume is high (revenue scales), (c) no existing digital platform dominates. AND competitive density scan confirms <$200M deployed in that vertical.",
+        "downgrade_to_PARK": "Competitive scan reveals $500M+ deployed in B2B wholesale AI. OR discovery that wholesale broker relationships are as sticky as freight carrier relationships.",
+        "downgrade_to_KILL": "Add K-008: Wholesale Trade AI Broker if competitive density exceeds $1B or if a specific precedent failure (post-2020, well-funded) in wholesale AI brokerage is identified."
+      },
+
+      "next_actions": [
+        "Competitive density web scan: 'wholesale trade AI', 'B2B marketplace wholesale', 'AI broker chemicals', 'AI broker food wholesale', etc.",
+        "Vertical analysis: which NAICS 425120 sub-verticals have most commoditized goods? Chemicals, food ingredients, raw materials, generic electronics?",
+        "Relationship stickiness research: interview or find industry sources on how sticky wholesale broker relationships are. Is it like freight (very sticky) or like simple commodity matching (not sticky)?",
+        "Cold start analysis: can we start with one side? (e.g., aggregate demand from buyers, then recruit suppliers) — or must we build both sides simultaneously?",
+        "Distinction test: write a formal memo on 'Why wholesale brokerage is not freight brokerage' — if the memo is unconvincing, PARK."
+      ],
+
+      "kill_index_check": "K-004 (freight brokerage) is adjacent but not directly applicable. Wholesale brokers don't manage logistics, don't need carrier relationships, don't need FMCSA authority. The kill pattern is 'coordination-cost business with relationship moat' — if wholesale trade has the same relationship moat, K-004 applies. If not, it's distinct.",
+      "web_verification_needed": [
+        "B2B wholesale AI startups and funding levels (Faire, Knowde, ChemDirect, Pepper, others)",
+        "Wholesale broker relationship stickiness — industry reports, trade publications",
+        "Specific wholesale verticals with digital adoption trends"
+      ]
+    },
+
+    {
+      "cluster_id": "OC-009-006",
+      "name": "LATAM Nearshoring + AI Augmentation",
+      "agent_c_score": 58,
+      "agent_b_verdict": "PARK",
+      "agent_b_viability": 4,
+      "agent_b_adjusted_score": 48,
+      "score_change_rationale": "Reduced 10 points. HARSH but necessary. This opportunity has been 'scanning' since Cycle 7 with declining momentum (-2 this cycle, -2 last cycle). The core problem: BPO incumbents (Globant, TTEC, Concentrix, Teleperformance) ALREADY operate LATAM at scale with $10B+ aggregate revenue. The 'AI-augmented' differentiation is thin — these firms are all adding AI to their LATAM operations right now. The claim that 'AI-augmented professional services (not call center BPO)' is differentiated becomes less defensible every quarter as incumbents add AI. Additionally, this overlaps significantly with Customer Support Vacuum Filler — if we pursue hybrid customer support, the LATAM talent pipeline is a FEATURE of that opportunity, not a separate opportunity. PARK and fold LATAM talent advantage into Customer Support Vacuum as a competitive advantage, not a standalone play.",
+
+      "analysis": {
+        "thesis_strength": "WEAK AND DECLINING. The LATAM wage arbitrage is real (30-50% cost savings). The internet penetration is sufficient (Argentina 89.7%, Brazil 84.5%). The founder has operating access to Argentina. But none of these create a defensible business. The problem: (1) BPO is a massive, mature industry with $10B+ firms operating in LATAM. (2) 'AI augmentation' is not a moat — it's a feature every BPO firm is adding. (3) The specific claim of 'professional services, not call center BPO' doesn't have a clear product definition. What exactly would we deliver? Accounting from Argentina? Legal research from Brazil? Customer success ops? Each of these is either regulated (accounting requires CPA, legal research needs JD supervision) or already served by existing nearshoring firms.",
+
+        "incumbent_threat": "OVERWHELMING. Globant ($2B) is literally an Argentine company that provides AI-augmented technology services to US firms. They ARE the thesis. If Globant — headquartered in Argentina, publicly traded at $2B, with thousands of AI-augmented professionals — already exists, what does our $500K-$1M startup add? The answer has never been adequately articulated.",
+
+        "differentiation_failure": "The engine has been asked to distinguish 'AI-augmented LATAM professional services' from 'traditional BPO' for 3 cycles. The distinction has not become clearer — it has become blurrier as BPO firms adopt AI. When the differentiation cannot be clearly stated after 3 cycles of analysis, that is a signal to PARK.",
+
+        "reframe_as_competitive_advantage": "LATAM talent access should be reframed as a COMPETITIVE ADVANTAGE for the Customer Support Vacuum opportunity, not as a standalone opportunity. If we pursue managed hybrid customer support, the ability to source human agents from Argentina at 30-50% US cost is a powerful cost structure advantage. This is how LATAM talent is most valuable — as a moat within another opportunity, not as the opportunity itself."
+      },
+
+      "key_risks": [
+        "BPO incumbents ($10B+ aggregate) already operate LATAM + are adding AI",
+        "Globant IS this thesis — an Argentine AI-augmented professional services firm at $2B",
+        "No clear product definition after 3 cycles of analysis",
+        "Regulatory barriers for specific professional services (CPA, JD requirements)",
+        "Currency risk (Argentina peso volatility), political risk, infrastructure variability",
+        "Cannot articulate differentiation from existing LATAM nearshoring providers"
+      ],
+
+      "what_changes_verdict": {
+        "unpark_condition": "A specific professional services vertical is identified where: (a) no LATAM BPO firm currently operates, (b) AI augmentation creates 3x+ productivity multiplier, (c) no regulatory credential requirement, (d) $500M+ addressable market. This is a HIGH bar and may not exist.",
+        "permanent_park_condition": "If Customer Support Vacuum advances to PURSUE with LATAM talent as competitive advantage, this opportunity is permanently subsumed."
+      },
+
+      "next_actions": [
+        "PARK. Do not allocate further research cycles to LATAM as standalone opportunity.",
+        "Fold LATAM talent pipeline into Customer Support Vacuum Filler as competitive advantage for human agent sourcing.",
+        "If Customer Support also parks, revisit LATAM only with a SPECIFIC vertical and product definition — not as a general nearshoring play."
+      ],
+
+      "kill_index_check": "Not killed (no absolute barrier), but PARKED due to incumbent density in BPO + inability to articulate differentiation after 3 cycles.",
+      "web_verification_needed": [
+        "Globant's specific AI augmentation offerings 2025-2026",
+        "TTEC/Concentrix AI investments in LATAM operations",
+        "Any pure-play AI-augmented professional services nearshoring startups (not BPO)"
+      ]
+    },
+
+    {
+      "cluster_id": "OC-009-003",
+      "name": "Boutique Management Consulting Replacement — NAICS 541611",
+      "agent_c_score": 55,
+      "agent_b_verdict": "PARK",
+      "agent_b_viability": 3,
+      "agent_b_adjusted_score": 40,
+      "score_change_rationale": "Reduced 15 points. This is dangerously close to K-002 (SMB back-office killed) repackaged. The claimed distinction — 'tool layer crowded but service replacement sparse' — has not been verified and the thesis itself has critical structural problems. Management consulting is a relationship/trust sale. Clients don't buy 'consulting from an AI' — they buy judgment from people they trust. The Upwork/Toptal price compression referenced in the thesis actually DISPROVES the opportunity: it shows clients already have cheaper alternatives and STILL use boutique consultants for the relationship/trust. AI replacing the boutique consultant is an even harder sell than AI replacing the bookkeeper (which Bench/Pilot failed at with $438M combined). PARK.",
+
+      "analysis": {
+        "thesis_strength": "WEAK. The signal (837K employees in 166K firms squeezed from two sides) is valid. Small consulting boutiques ARE under pressure. But 'under pressure' does not equal 'replaceable by AI + offshore.' Consulting is fundamentally a trust/relationship sale — clients pay for: (1) someone who understands their specific business context, (2) accountability (a person they can call when things go wrong), (3) political cover ('McKinsey recommended it'). AI provides none of these. The operational/process improvement consulting that NAICS 541611 captures requires deep contextual understanding of the client's organization — not a general-purpose AI capability.",
+
+        "k_002_proximity": "CRITICAL RED FLAG. K-002 killed SMB back-office because Bench ($113M) and Pilot ($325M) failed trying to replace professional services (bookkeeping) with technology + cheaper labor. This thesis proposes replacing professional services (consulting) with AI + cheaper labor (LATAM). The structural dynamics are nearly identical: (1) fragmented market of small firms, (2) high-trust relationship sale, (3) price-sensitive clients who already have cheaper alternatives (Upwork). The claimed distinction ('horizontal product vs vertical service replacement') is thin. Bench and Pilot WERE vertical service replacements (managed bookkeeping service). They failed because quality control at scale required more humans than projected and unit economics never worked.",
+
+        "accenture_threat": "Accenture, Deloitte, IBM, and other large firms are actively deploying AI consulting capabilities. Accenture has committed $3B+ to AI. They are moving downmarket with AI-assisted delivery — EXACTLY the 'squeeze from above' the thesis describes. But the thesis's solution (we replace the boutique) faces the same competitive pressure from Accenture's AI as the boutiques do. We would be competing with Accenture's AI consulting at scale.",
+
+        "go_to_market_impossibility_at_scale": "Consulting is sold one relationship at a time. There is no scalable distribution channel for 'AI consulting services' to SMBs. Every client engagement requires scoping, trust-building, and customization. At $500K-$1M, the founders can serve maybe 5-10 clients simultaneously. This is not a venture-scale business — it's a lifestyle consulting firm with AI tools. There's nothing wrong with that, but it doesn't match the engine's optimization target (VC-backable, scalable)."
+      },
+
+      "key_risks": [
+        "K-002 proximity: structurally similar to killed SMB back-office thesis",
+        "Management consulting is a trust/relationship sale — AI cannot replicate trust",
+        "Accenture/Deloitte $3B+ AI investments compressing the space from above",
+        "Upwork/Toptal already commoditizing low-end consulting from below",
+        "No scalable distribution channel — consulting sold one relationship at a time",
+        "Unit economics likely fail at scale (same as Bench/Pilot lesson)",
+        "MEDIUM competitive density already (166K firms = fragmented but also = many will try AI)"
+      ],
+
+      "what_changes_verdict": {
+        "unpark_condition": "Identify a SPECIFIC consulting sub-vertical where: (a) deliverable is standardized (not bespoke), (b) trust/relationship is secondary to cost (procurement-driven, not partner-driven), (c) market size >$500M, (d) no existing AI consulting service. Example might be: compliance consulting, audit preparation, or regulatory filing assistance — but these border on K-002 territory.",
+        "kill_condition": "If no specific vertical meets all four unpark conditions, escalate to KILL with new kill index entry K-009: AI Consulting Replacement."
+      },
+
+      "next_actions": [
+        "PARK. Do not allocate further research cycles unless a specific standardized consulting vertical is identified.",
+        "Archive the NAICS 541611 data for potential reactivation if a specific vertical emerges.",
+        "Note the K-002 proximity warning — if this keeps resurfacing, add a formal kill entry."
+      ],
+
+      "kill_index_check": "K-002 (SMB back-office) is dangerously adjacent. Not killed yet because consulting is distinct from bookkeeping, but the structural dynamics (fragmented market + trust sale + cheaper alternatives exist + quality control at scale) are nearly identical. One more cycle of failed differentiation should escalate to kill.",
+      "web_verification_needed": [
+        "AI consulting service startups founded 2024-2026 (not tools, actual service delivery)",
+        "Accenture AI consulting capabilities and pricing for mid-market",
+        "Catalant, Toptal, GLG competitive positioning in AI-augmented consulting"
+      ]
+    },
+
+    {
+      "cluster_id": "OC-009-004",
+      "name": "Dental Practice Operations AI — NAICS 621210",
+      "agent_c_score": 52,
+      "agent_b_verdict": "PARK",
+      "agent_b_viability": 4,
+      "agent_b_adjusted_score": 42,
+      "score_change_rationale": "Reduced 10 points. The regulatory barrier (38 states restrict ownership) is more severe than initially presented. For a 2-person founding team with no dental credentials, the DSO workaround adds massive structural complexity and cost. Archy at $47M is positioned well as first-mover. Mars consolidation applies to dental as well as veterinary. Additionally, P5 Labor Gap at 0.4 means the demographic argument is weak at aggregate level. The operations-vs-diagnostics density distinction is interesting but unverified. PARK until regulatory path is clear and competitive landscape in operations AI is mapped.",
+
+      "analysis": {
+        "thesis_strength": "MODERATE-WEAK. The operations-vs-diagnostics density split is a valid observation — diagnostic AI (Pearl, Overjet, Videa) is funded while operations AI is sparse. 130K+ practices provide large addressable market. But the regulatory barrier is a serious structural impediment. In 38 states, non-dentists cannot own dental practices. Software-only model avoids this, but software sales to 130K fragmented practices (avg 5-10 employees) is a brutal go-to-market. Archy is already there with $47M.",
+
+        "regulatory_deep_dive": "The 'corporate practice of dentistry' doctrine prohibits non-dentist ownership in most states. DSO (Dental Service Organization) model allows management services without clinical ownership — but DSO structures are: (1) legally complex (requires careful structuring with dental attorney), (2) increasingly scrutinized by state dental boards, (3) add 5-15% overhead for compliance. For a $500K-$1M startup, the DSO path is feasible but consumes significant founder bandwidth on legal/regulatory rather than product. The software-only path avoids this but means competing with Archy ($47M funded) and dental practice management incumbents (Dentrix by Henry Schein, Eaglesoft by Patterson).",
+
+        "incumbent_landscape": "MORE CROWDED THAN PRESENTED. Dental practice management is dominated by Dentrix (Henry Schein) and Eaglesoft (Patterson Dental). These are legacy systems but deeply embedded — switching costs are high. Archy ($47M) is specifically targeting this with a modern cloud platform. Additional players: Curve Dental, Open Dental, tab32. The operations AI layer may be sparse currently, but Dentrix and Eaglesoft will add AI features to protect their install base. Henry Schein ($12B revenue) has the resources to build or buy.",
+
+        "mars_connection": "Mars (via VCA) is active in veterinary AND dental analogs. The consolidation pattern in pet care could extend to dental through DSO acquisitions. Additionally, private equity is very active in dental DSOs — Heartland Dental ($2B+ revenue), Aspen Dental, Pacific Dental Services are massive consolidators. These PE-backed DSOs have technology budgets and are building centralized operations platforms. This significantly reduces the 'sparse' claim for dental operations AI.",
+
+        "founder_fit": "POOR. No dental credentials, no practice ownership ability in 38 states, no relationships in dental industry. ML/AI founder adds technical capability but dental is a domain-specific market with long sales cycles. The LATAM advantage doesn't apply (dental operations are US-specific). This is the weakest founder-market fit in the pipeline."
+      },
+
+      "key_risks": [
+        "38 states restrict practice ownership — eliminates acquisition strategy for non-dentists",
+        "Archy ($47M) already positioned as first-mover in modern dental practice operations",
+        "Dentrix (Henry Schein $12B) and Eaglesoft (Patterson) will add AI to protect install base",
+        "PE-backed DSO consolidators (Heartland $2B+, Aspen, Pacific) building centralized operations platforms",
+        "Software-only model faces switching cost barrier from legacy systems",
+        "Poorest founder-market fit in the pipeline — no dental domain expertise or relationships",
+        "P5 Labor Gap at 0.4 weakens demographic thesis"
+      ],
+
+      "what_changes_verdict": {
+        "unpark_condition": "Web verification confirms dental operations AI has <$200M deployed (excluding diagnostics). AND DSO regulatory path clearly viable at $500K-$1M. AND Dentrix/Eaglesoft NOT building AI operations features. AND Archy has not achieved >5% market penetration.",
+        "kill_condition": "Henry Schein announces AI operations features for Dentrix. OR Heartland/Aspen/Pacific launch centralized AI operations platform for their practices. OR total competitive density exceeds $500M."
+      },
+
+      "next_actions": [
+        "PARK. Do not allocate further research cycles.",
+        "If veterinary services advances, revisit dental as parallel 'practice operations AI' play — but only with dental domain partner.",
+        "Monitor Archy progress quarterly as indicator of market viability."
+      ],
+
+      "kill_index_check": "No direct kill pattern. K-001 (healthcare staffing) is adjacent but distinct (dental operations, not clinical staffing). However, regulatory complexity + incumbent density + poor founder fit combine to make this unviable at current stage.",
+      "web_verification_needed": [
+        "Archy.com pricing, features, practice count, growth rate",
+        "Dentrix/Eaglesoft AI roadmap or features",
+        "Heartland Dental, Aspen Dental technology investments 2025-2026",
+        "DSO formation costs and legal complexity for non-dentists"
+      ]
+    }
+  ],
+
+  "verification_summary": {
+    "total_verified": 6,
+    "verdicts": {
+      "PURSUE": 0,
+      "INVESTIGATE_FURTHER": 3,
+      "PARK": 3,
+      "KILL": 0
+    },
+    "new_kills_this_cycle": 0,
+    "new_parks_this_cycle": 3,
+    "score_adjustments": {
+      "OC-009-001_customer_support": {"from": 68, "to": 66, "change": -2},
+      "OC-009-005_veterinary": {"from": 63, "to": 60, "change": -3},
+      "OC-009-002_wholesale_trade": {"from": 58, "to": 55, "change": -3},
+      "OC-009-006_latam": {"from": 58, "to": 48, "change": -10},
+      "OC-009-003_consulting": {"from": 55, "to": 40, "change": -15},
+      "OC-009-004_dental": {"from": 52, "to": 42, "change": -10}
+    },
+    "aggregate_observation": "Agent B verification continues its aggressive filtering pattern. Zero opportunities advanced to PURSUE (0% PURSUE rate maintained across all 9 cycles). Three new parks from three new pipeline candidates — the bottom-up screener produced interesting candidates but none survived verification without significant doubt. The two surviving INVESTIGATE_FURTHER opportunities (Customer Support and Veterinary) both have OVERDUE verification tasks. The engine is at an inflection point: either resolve the critical unknowns in Cycle 10, or acknowledge that the pipeline is fundamentally stuck."
+  },
+
+  "master_synthesis": {
+    "cycle": 9,
+    "headline": "THE STALLING PROBLEM: Three cycles of scanning without a single PURSUE. Bottom-up screener broke the discovery bottleneck but verification kills continue. Engine must resolve two overdue questions or risk permanent stall.",
+
+    "updated_rankings": [
+      {
+        "rank": 1,
+        "name": "Customer Support Vacuum Filler — Managed Hybrid Human+AI",
+        "agent_b_score": 66,
+        "status": "INVESTIGATE_FURTHER",
+        "justification": "Strongest thesis in the pipeline by every measure: market-priced confirmation (staffing canary), precedent failure validation (Klarna), favorable unit economics, good founder fit, optimal timing. The ONLY obstacle is unresolved competitive density in the service layer. This has been the #1 priority question for 2 cycles. If it's not answered in Cycle 10, we must make a decision with incomplete information — which is better than indefinite stalling.",
+        "critical_action": "RESOLVE SERVICE LAYER DENSITY IN CYCLE 10. This is non-negotiable. The engine's credibility depends on resolving overdue questions."
+      },
+      {
+        "rank": 2,
+        "name": "Veterinary Services — Agentic Practice Operations",
+        "agent_b_score": 60,
+        "status": "INVESTIGATE_FURTHER",
+        "justification": "Sparse competitive density remains the strongest single differentiator. But Mars threat and staleness (3 cycles without advancement) are eroding the score. The software-only model is viable at $500K-$1M. The practice acquisition model requires Series A+ capital. Must resolve Mars/IDEXX threat assessment — also overdue since Cycle 7.",
+        "critical_action": "RESOLVE MARS/IDEXX THREAT IN CYCLE 10. If they are building practice ops AI, PARK immediately. If not, advance to PURSUE with software-only model."
+      },
+      {
+        "rank": 3,
+        "name": "Wholesale Trade AI Broker — NAICS 425120",
+        "agent_b_score": 55,
+        "status": "INVESTIGATE_FURTHER",
+        "justification": "Most intellectually interesting new candidate from the bottom-up screener. Pure Coasean intermediation target. But K-004 (freight brokerage) proximity and two-sided marketplace cold start problem are serious. Needs vertical selection and distinction test before advancing.",
+        "critical_action": "Write the 'Why wholesale is not freight' memo. If unconvincing, PARK."
+      },
+      {
+        "rank": "PARKED",
+        "name": "LATAM Nearshoring + AI Augmentation",
+        "agent_b_score": 48,
+        "status": "PARKED",
+        "justification": "Cannot differentiate from $10B+ BPO incumbents after 3 cycles of analysis. Globant IS this thesis at $2B. Fold LATAM talent advantage into Customer Support Vacuum as competitive moat, not standalone opportunity."
+      },
+      {
+        "rank": "PARKED",
+        "name": "Dental Practice Operations AI",
+        "agent_b_score": 42,
+        "status": "PARKED",
+        "justification": "Regulatory barriers (38 states), incumbent density (Dentrix, Eaglesoft, DSO consolidators), first-mover (Archy $47M), and poor founder-market fit combine to make this unviable at current stage."
+      },
+      {
+        "rank": "PARKED",
+        "name": "Boutique Management Consulting Replacement",
+        "agent_b_score": 40,
+        "status": "PARKED",
+        "justification": "Dangerously close to K-002 (SMB back-office). Consulting is a trust/relationship sale that AI cannot replicate. Accenture compressing from above, Upwork from below. No scalable distribution channel. One more cycle of failed differentiation should escalate to kill."
+      }
+    ],
+
+    "engine_health_assessment": {
+      "status": "WARNING — STALLING RISK",
+      "diagnosis": "The engine has produced zero PURSUE verdicts across 9 cycles of operation. While the kill rate demonstrates analytical rigor (4 kills, 8 parks across 14+ verified opportunities), the absence of any actionable output is becoming a strategic problem. The engine is excellent at REJECTING bad ideas but has not yet produced a GOOD enough idea that survives verification. Two specific concerns: (1) Overdue critical questions: Customer Support service layer density and Mars/IDEXX vet threat have been flagged as top priorities for 2+ cycles without resolution. (2) Score convergence at mediocrity: top score has been 60-68 for 4 cycles. The engine is stuck in a band of 'interesting but not compelling' opportunities.",
+      "is_recycling": "PARTIALLY. The three new candidates from the bottom-up screener broke the LLM brainstorming exhaustion problem identified in Cycle 8. But two of three new candidates (consulting, dental) were immediately parked, and the third (wholesale) needs significant verification. The screener finds candidates — but the verification filter kills most of them. This is by design (aggressive filtering) but raises the question: is the filter too aggressive, or is the landscape genuinely that competitive?",
+      "finding_new_ground": "YES, MARGINALLY. The bottom-up screener is a genuine methodological advance. Wholesale trade AI brokerage is a category the LLM would never have brainstormed. The Thompson Sampling methodology tracker is ensuring untested methods get trial runs. But the engine needs to produce at least one PURSUE by Cycle 12, or the founders should question whether the engine's value model is flawed.",
+      "fundamental_question": "Is the engine's inability to produce a PURSUE verdict evidence of: (A) a genuinely hostile competitive landscape where no viable entry exists at $500K-$1M, (B) an overly conservative verification filter that rejects viable opportunities by demanding impossible certainty, or (C) a systematic bias toward analysis over action? The answer has strategic implications: if (A), the founders should consider a different capital strategy (raise more, acquire an existing business). If (B), the engine should lower the PURSUE threshold. If (C), the founders should just pick the best INVESTIGATE_FURTHER and go."
+    },
+
+    "key_strategic_question_for_cycle_10": "RESOLVE OR DECIDE: The two overdue questions (customer support service layer density, Mars/IDEXX vet threat) MUST be answered in Cycle 10. If web verification is unavailable, the founders must make a judgment call with incomplete information. The alternative — another cycle of INVESTIGATE_FURTHER — is itself a failure mode. Analysis paralysis is the real threat, not bad decisions. Recommendation: if service layer density cannot be definitively answered, default to PURSUE for Customer Support Vacuum with the assumption that the AI-first inversion (vs BPO human-first) provides enough differentiation. Better to be wrong and learn than to be undecided forever.",
+
+    "methodology_assessment": {
+      "most_valuable_this_cycle": [
+        "Bottom-up BLS/Census Sector Screener: Produced 3 new candidates from 933 screened sectors. Broke the LLM brainstorming exhaustion. Even though 2 of 3 parked immediately, the method found wholesale trade — a genuine novel discovery.",
+        "Competitive Density Scan: Remains the single most valuable filter. Every opportunity that survived it (vet at $200-400M) has stayed viable. Every one that failed it has been killed or parked. The density scan should run FIRST, before any thesis development.",
+        "Counter-Signal Research: Produced the Mars consolidation threat and BPO incumbent density that drove 3 parks this cycle. The engine's willingness to kill its own ideas remains its core strength."
+      ],
+      "underperforming": [
+        "International Comparative Data: Produced UAE/Germany benchmarks in Cycle 8 but no actionable signals. Deprioritize unless LATAM unparks.",
+        "IO Table Propagation and Shift-Share Decomposition: Built but never used (0 applications). Thompson Sampling should force a trial in Cycle 10-11."
+      ],
+      "new_method_needed": "Customer and market validation. The engine has been purely desk-research. At this stage, talking to 5-10 potential customers would provide more signal than another cycle of data analysis. Recommend adding 'customer discovery interviews' as a methodology in the tracker."
+    },
+
+    "recommendations_for_cycle_10": [
+      {
+        "priority": 1,
+        "action": "RESOLVE Customer Support Service Layer Density",
+        "description": "Web search for managed AI-first hybrid customer support companies. Map: (a) BPO firms with AI bolt-on (Concentrix, TTEC, Teleperformance), (b) AI-native managed services (Sierra AI, Decagon, others?), (c) tool vendors (Intercom, Zendesk). If AI-native managed services have <$500M aggregate funding: advance to PURSUE. If >$1B: PARK.",
+        "deadline": "Must complete before Cycle 10 verification",
+        "consequence_of_inaction": "Fourth consecutive cycle of INVESTIGATE_FURTHER = analysis paralysis"
+      },
+      {
+        "priority": 2,
+        "action": "RESOLVE Mars/IDEXX Veterinary Threat",
+        "description": "Search Mars Petcare, VCA, NVA, IDEXX job postings and press releases for 'practice management AI', 'practice operations', 'veterinary software'. Check IDEXX investor presentations. If neither is building practice ops AI: advance to PURSUE with software-only model. If either is building: PARK.",
+        "deadline": "Must complete before Cycle 10 verification",
+        "consequence_of_inaction": "Fourth consecutive cycle of staleness = park by default"
+      },
+      {
+        "priority": 3,
+        "action": "Wholesale Trade Distinction Test",
+        "description": "Write formal memo: 'Why wholesale trade AI brokerage is not freight brokerage (K-004).' Must address: relationship stickiness, physical logistics dependency, incumbent concentration, regulatory barriers. If memo is convincing: maintain INVESTIGATE_FURTHER. If not: PARK.",
+        "deadline": "Cycle 10",
+        "consequence_of_inaction": "K-004 adjacency remains unresolved"
+      },
+      {
+        "priority": 4,
+        "action": "ADD Customer Discovery as Methodology",
+        "description": "For the top 1-2 opportunities that survive Cycle 10 verification, conduct 5-10 customer discovery calls. For Customer Support: call mid-market companies (100-500 emp) about their support stack. For Vet: call independent vet practice owners about operations pain points. This provides signal that desk research cannot.",
+        "deadline": "Cycle 10-11",
+        "consequence_of_inaction": "Engine remains purely analytical with no market validation"
+      },
+      {
+        "priority": 5,
+        "action": "Thompson Sampling Trial: IO Table Propagation",
+        "description": "IO tables have been built but never used (0 applications). Force a trial: trace how the professional labor substitution signal (staffing canary -51%) propagates through supply chain linkages. Which downstream industries are most affected? Are any of those industries sparse in competitive density?",
+        "deadline": "Cycle 10 (exploration budget)",
+        "consequence_of_inaction": "Untested methodology remains untested"
+      },
+      {
+        "priority": 6,
+        "action": "Establish PURSUE Threshold Decision",
+        "description": "The founders must decide: what level of confidence is required to advance to PURSUE? If the answer is 'certainty about competitive density,' the engine may never produce a PURSUE because competitive landscapes change constantly. A more realistic threshold: 'no identified kill-level barrier + positive unit economics model + founder enthusiasm.' Apply this threshold explicitly in Cycle 10.",
+        "deadline": "Beginning of Cycle 10",
+        "consequence_of_inaction": "Indefinite stalling"
+      }
+    ],
+
+    "kill_index_updates": {
+      "new_kills": [],
+      "kills_approaching": [
+        {
+          "candidate": "K-008: Boutique Management Consulting AI Replacement",
+          "reason": "K-002 proximity (trust/relationship sale + fragmented market + quality control at scale failure pattern). One more cycle of failed differentiation should trigger formal kill.",
+          "trigger": "No specific standardized consulting vertical identified with all four unpark conditions met"
+        }
+      ],
+      "existing_kills_status": "All 7 existing kills (K-001 through K-007) remain active. No invalidation conditions met."
+    },
+
+    "pipeline_after_cycle_9": {
+      "active_investigate_further": [
+        {"name": "Customer Support Vacuum Filler", "score": 66, "cycles_at_status": 4},
+        {"name": "Veterinary Services", "score": 60, "cycles_at_status": 3},
+        {"name": "Wholesale Trade AI Broker", "score": 55, "cycles_at_status": 1}
+      ],
+      "parked_this_cycle": [
+        {"name": "LATAM Nearshoring + AI", "score": 48, "reason": "BPO incumbent density, no differentiation after 3 cycles"},
+        {"name": "Boutique Management Consulting", "score": 40, "reason": "K-002 proximity, trust/relationship barrier, no scalable distribution"},
+        {"name": "Dental Practice Operations AI", "score": 42, "reason": "Regulatory barriers, incumbent density, poor founder fit"}
+      ],
+      "total_pipeline": {
+        "active": 3,
+        "parked": 8,
+        "killed": 7,
+        "rejected_as_opportunity": 1,
+        "total_ever_evaluated": 19
+      }
+    }
+  }
+}

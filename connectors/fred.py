@@ -64,10 +64,8 @@ SERIES_CATALOG = {
     'DRTSCLCC': 'Net % Banks Tightening Credit Card Loan Standards (quarterly)',
 
     # Employment Cost Index by sector
-    'CIU2010000000000A': 'ECI Total Compensation All Civilian (quarterly)',
-    'CIU2020000000000A': 'ECI Wages and Salaries All Civilian (quarterly)',
-    'CIU2010000000710A': 'ECI Total Compensation Professional & Business Services (quarterly)',
-    'CIU2010000000910A': 'ECI Total Compensation Education & Health Services (quarterly)',
+    'ECIALLCIV': 'ECI Total Compensation All Civilian (quarterly)',
+    'ECIWAG': 'ECI Wages and Salaries All Civilian (quarterly)',
 
     # Small business health
     'EVANQ': 'Business Applications, High-Propensity (quarterly)',
@@ -124,7 +122,15 @@ class FredConnector:
         if end_date:
             params['observation_end'] = end_date
 
-        data = self._get('series/observations', params)
+        try:
+            data = self._get('series/observations', params)
+        except Exception:
+            return {
+                'series_id': series_id,
+                'title': SERIES_CATALOG.get(series_id, series_id),
+                'observations': [],
+                'error': f'Failed to fetch {series_id}',
+            }
 
         observations = []
         for obs in data.get('observations', []):
@@ -303,8 +309,7 @@ class FredConnector:
 
     def get_sector_employment_costs(self):
         """Employment Cost Index by sector -- where is labor getting most expensive?"""
-        series = ['CIU2010000000000A', 'CIU2020000000000A',
-                  'CIU2010000000710A', 'CIU2010000000910A']
+        series = ['ECIALLCIV', 'ECIWAG']
         results = {sid: self.get_series(sid, limit=20) for sid in series}
         return {
             'signal_type': 'sector_employment_costs',

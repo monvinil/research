@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 """Research cycle runner — LLM-powered multi-agent research engine.
 
-Pulls live data from 4 connectors, then routes it through 4 LLM agents
-(Agent A, Agent C, Agent B, Master) using Claude API. Each agent has a
-specific role defined in /agents/*.md. Context accumulates across cycles.
+Pulls live data from 12 connectors (US + international), runs derived
+analytics (z-scores, cross-correlations, composite indices), then routes
+through 4 LLM agents (Agent A/C/B/Master) using Claude Code CLI.
+
+No API key needed — uses existing Claude Code subscription via CLI.
 
 Usage:
     python scripts/run_cycle.py                     # full cycle
     python scripts/run_cycle.py --scan-only         # data pull only (no LLM)
+    python scripts/run_cycle.py --analytics-only    # scan + analytics (no LLM)
     python scripts/run_cycle.py --model opus        # use opus for all agents
     python scripts/run_cycle.py --verbose           # show raw LLM responses
+    python scripts/run_cycle.py --use-api           # use Anthropic API instead of CLI
 """
 
 import argparse
@@ -94,7 +98,7 @@ def save_context_summary(cycle_num, summary):
     if len(data['cycles']) > 10:
         old = data['cycles'][:-10]
         data['compressed'] = data.get('compressed', '') + '\n'.join(
-            f"Cycle {c['cycle']}: {c['summary'][:200]}" for c in old
+            f"Cycle {c['cycle']}: {(c.get('summary') or c.get('master_synthesis') or c.get('note') or '')[:200]}" for c in old
         ) + '\n'
         data['cycles'] = data['cycles'][-10:]
     save_json(path, data)
@@ -111,7 +115,7 @@ def save_kill_index(kill_index):
 
 
 # ---------------------------------------------------------------------------
-# LLM Engine
+# LLM Engine — supports both Claude Code CLI (subscription) and API
 # ---------------------------------------------------------------------------
 
 MODELS = {
@@ -123,6 +127,7 @@ MODELS = {
 _client = None
 _total_input_tokens = 0
 _total_output_tokens = 0
+_use_api = False  # Default: use CLI
 
 
 def get_client():
@@ -140,8 +145,67 @@ def get_client():
     return _client
 
 
-def llm_call(system_prompt, user_message, model='sonnet', max_tokens=8192):
-    """Call Claude API and return the text response."""
+def llm_call_cli(system_prompt, user_message, model='sonnet', max_tokens=8192):
+    """Call Claude via Claude Code CLI — uses existing subscription, no API key.
+
+    Requires `claude` CLI: npm install -g @anthropic-ai/claude-code
+    Auto-falls back to API if CLI is not available.
+    """
+    import subprocess
+    import shutil
+
+    claude_path = shutil.which('claude')
+    if not claude_path:
+        for path in ['/usr/local/bin/claude', os.path.expanduser('~/.local/bin/claude'),
+                     os.path.expanduser('~/.npm/bin/claude')]:
+            if os.path.exists(path):
+                claude_path = path
+                break
+
+    if not claude_path:
+        print('    [CLI] claude binary not found — falling back to API')
+        if os.environ.get('ANTHROPIC_API_KEY'):
+            return llm_call_api(system_prompt, user_message, model, max_tokens)
+        raise RuntimeError(
+            'Neither claude CLI nor ANTHROPIC_API_KEY available.\n'
+            'Install CLI: npm install -g @anthropic-ai/claude-code\n'
+            'Or set ANTHROPIC_API_KEY in .env'
+        )
+
+    model_id = MODELS.get(model, model)
+    combined_prompt = f'{system_prompt}\n\n---\n\n{user_message}'
+
+    t0 = time.time()
+    try:
+        result = subprocess.run(
+            [claude_path, '--print', '--model', model_id, '--max-tokens', str(max_tokens)],
+            input=combined_prompt,
+            capture_output=True, text=True, timeout=300,
+        )
+        elapsed = time.time() - t0
+        text = result.stdout.strip()
+
+        if result.returncode != 0:
+            err = result.stderr.strip()
+            print(f'    [CLI {model}] ERROR: {err[:200]}')
+            if os.environ.get('ANTHROPIC_API_KEY'):
+                print('    Falling back to API...')
+                return llm_call_api(system_prompt, user_message, model, max_tokens)
+            raise RuntimeError(f'Claude CLI failed: {err[:500]}')
+
+        chars = len(text)
+        est_tokens = chars // 4
+        print(f'    [CLI {model}] ~{est_tokens:,} tokens / {elapsed:.1f}s')
+        return text
+    except FileNotFoundError:
+        print('    [CLI] claude not executable — falling back to API')
+        if os.environ.get('ANTHROPIC_API_KEY'):
+            return llm_call_api(system_prompt, user_message, model, max_tokens)
+        raise
+
+
+def llm_call_api(system_prompt, user_message, model='sonnet', max_tokens=8192):
+    """Call Claude API directly — requires ANTHROPIC_API_KEY."""
     global _total_input_tokens, _total_output_tokens
 
     client = get_client()
@@ -163,6 +227,13 @@ def llm_call(system_prompt, user_message, model='sonnet', max_tokens=8192):
     text = response.content[0].text
     print(f'    [{model_id}] {usage.input_tokens} in / {usage.output_tokens} out / {elapsed:.1f}s')
     return text
+
+
+def llm_call(system_prompt, user_message, model='sonnet', max_tokens=8192):
+    """Route to CLI or API based on configuration."""
+    if _use_api:
+        return llm_call_api(system_prompt, user_message, model, max_tokens)
+    return llm_call_cli(system_prompt, user_message, model, max_tokens)
 
 
 def parse_json_response(text):
@@ -284,51 +355,167 @@ def format_edgar_data(raw):
 def format_web_data(raw):
     """Format web search results."""
     lines = ['## Web Search Results\n']
-    for key in ['web_liquidation', 'web_practitioner', 'web_dead_revival',
-                'web_demographics', 'web_inference']:
-        if key not in raw:
-            continue
+    for key in sorted(k for k in raw if k.startswith('web_')):
         data = raw[key]
         label = key.replace('web_', '').replace('_', ' ').title()
         lines.append(f'### {label}')
-        results = data.get('results', [])
-        if isinstance(results, list):
-            for r in results[:8]:
+        # Handle both list and dict formats
+        if isinstance(data, list):
+            results = data
+        elif isinstance(data, dict):
+            results = data.get('results', [])
+        else:
+            continue
+        for r in results[:8]:
+            if isinstance(r, dict):
                 title = r.get('title', '?')
                 snippet = r.get('snippet', r.get('body', ''))[:200]
                 lines.append(f'  - {title}')
                 if snippet:
                     lines.append(f'    {snippet}')
-        elif isinstance(data, list):
-            for r in data[:8]:
-                if isinstance(r, dict):
-                    title = r.get('title', '?')
-                    snippet = r.get('snippet', r.get('body', ''))[:200]
-                    lines.append(f'  - {title}')
-                    if snippet:
-                        lines.append(f'    {snippet}')
         lines.append('')
     return '\n'.join(lines)
 
 
-def format_raw_for_agent_a(raw, context_summaries, kill_index):
+def format_international_data(raw):
+    """Format international data (World Bank, OECD, Eurostat)."""
+    lines = ['## International Comparative Data\n']
+
+    # World Bank
+    for key in ['wb_business_env', 'wb_labor_markets', 'wb_services_trade', 'wb_tech_readiness']:
+        if key not in raw:
+            continue
+        data = raw[key]
+        label = key.replace('wb_', '').replace('_', ' ').title()
+        lines.append(f'### World Bank: {label}')
+        interpretation = data.get('interpretation', '')
+        if interpretation:
+            lines.append(f'  Analysis: {interpretation[:300]}')
+        inner = data.get('data', {})
+        if isinstance(inner, dict):
+            for ind_id, ind_data in list(inner.items())[:3]:
+                desc = ind_data.get('description', ind_id) if isinstance(ind_data, dict) else ind_id
+                lines.append(f'  - {desc}')
+                country_data = ind_data.get('data', {}) if isinstance(ind_data, dict) else {}
+                for country, cdata in list(country_data.items())[:4]:
+                    obs = cdata.get('observations', [])
+                    if obs and obs[0].get('value') is not None:
+                        lines.append(f'    {cdata.get("country", country)}: {obs[0]["value"]} ({obs[0].get("year", "?")})')
+        lines.append('')
+
+    # OECD
+    for key in ['oecd_leading', 'oecd_labor', 'oecd_tech']:
+        if key not in raw:
+            continue
+        data = raw[key]
+        label = key.replace('oecd_', '').replace('_', ' ').title()
+        lines.append(f'### OECD: {label}')
+        interpretation = data.get('interpretation', '')
+        if interpretation:
+            lines.append(f'  {interpretation[:300]}')
+        obs = data.get('data', [])
+        if isinstance(obs, list):
+            lines.append(f'  Data points: {len(obs)}')
+            for o in obs[:5]:
+                if isinstance(o, dict):
+                    parts = [f'{k}={v}' for k, v in o.items() if k != 'value']
+                    lines.append(f'    {", ".join(parts[:3])}: {o.get("value", "?")}')
+        lines.append('')
+
+    # Eurostat
+    for key in ['eu_labor_costs', 'eu_ai_adoption', 'eu_biz_demography']:
+        if key not in raw:
+            continue
+        data = raw[key]
+        label = key.replace('eu_', '').replace('_', ' ').title()
+        lines.append(f'### Eurostat: {label}')
+        interpretation = data.get('interpretation', '')
+        if interpretation:
+            lines.append(f'  {interpretation[:300]}')
+        lines.append(f'  Records: {data.get("record_count", "?")}')
+        lines.append('')
+
+    return '\n'.join(lines)
+
+
+def format_market_data(raw):
+    """Format Yahoo Finance and Google Trends data."""
+    lines = ['## Market & Search Data\n']
+
+    # Sector performance
+    if 'market_sectors' in raw:
+        data = raw['market_sectors']
+        lines.append('### Sector ETF Performance (6mo)')
+        ranked = data.get('ranked', [])
+        for symbol, name, perf in ranked:
+            emoji = '+' if perf > 0 else ''
+            lines.append(f'  {symbol} ({name}): {emoji}{perf}%')
+        lines.append('')
+
+    # Staffing canary
+    if 'market_staffing_canary' in raw:
+        data = raw['market_staffing_canary']
+        lines.append('### Staffing Company Stocks (P2 canary)')
+        for symbol, info in data.get('data', {}).items():
+            lines.append(f'  {symbol} ({info.get("name", "")}): {info.get("performance_pct", "?")}%')
+        interpretation = data.get('interpretation', '')
+        if interpretation:
+            lines.append(f'  {interpretation[:200]}')
+        lines.append('')
+
+    # AI infrastructure
+    if 'market_ai_infra' in raw:
+        data = raw['market_ai_infra']
+        lines.append('### AI Infrastructure Stocks (P1)')
+        for symbol, info in data.get('data', {}).items():
+            lines.append(f'  {symbol} ({info.get("name", "")}): {info.get("performance_pct", "?")}%')
+        lines.append('')
+
+    # Google Trends
+    for key in ['trends_distress', 'trends_ai_adoption']:
+        if key not in raw:
+            continue
+        data = raw[key]
+        label = key.replace('trends_', '').replace('_', ' ').title()
+        lines.append(f'### Search Trends: {label}')
+        interpretation = data.get('interpretation', '')
+        if interpretation:
+            lines.append(f'  {interpretation[:300]}')
+        obs = data.get('data', [])
+        if obs:
+            lines.append(f'  Data points: {len(obs)}')
+        lines.append('')
+
+    return '\n'.join(lines)
+
+
+def format_raw_for_agent_a(raw, context_summaries, kill_index, analytics_result=None):
     """Build the full user message for Agent A."""
     sections = []
+
+    # Derived analytics first (most valuable)
+    if analytics_result:
+        sections.append('# DERIVED ANALYTICS — COMPUTED INDICATORS\n')
+        sections.append(format_analytics_for_agent(analytics_result))
 
     # Raw data
     sections.append('# RAW DATA FROM THIS CYCLE\'S SCAN\n')
     sections.append(format_fred_data(raw))
     sections.append(format_bls_data(raw))
+    sections.append(format_market_data(raw))
     sections.append(format_edgar_data(raw))
     sections.append(format_web_data(raw))
+    sections.append(format_international_data(raw))
 
     # Previous cycle context
     cycles = context_summaries.get('cycles', [])
     if cycles:
         sections.append('# CONTEXT FROM PREVIOUS CYCLES\n')
         for c in cycles[-3:]:  # Last 3 cycles
-            sections.append(f'## Cycle {c["cycle"]} ({c["date"][:10]})')
-            sections.append(c['summary'][:2000])
+            sections.append(f'## Cycle {c["cycle"]} ({c.get("date", "?")[:10]})')
+            summary = c.get('summary') or c.get('master_synthesis') or c.get('note') or ''
+            if summary:
+                sections.append(summary[:2000])
             sections.append('')
 
     # Kill index
@@ -483,7 +670,8 @@ def format_for_master(signals, opportunities, verifications, context_summaries, 
     if cycles:
         sections.append('\n## Previous Cycle Context')
         for c in cycles[-3:]:
-            sections.append(f'Cycle {c["cycle"]}: {c["summary"][:1500]}')
+            summary = c.get('summary') or c.get('master_synthesis') or c.get('note') or ''
+            sections.append(f'Cycle {c["cycle"]}: {summary[:1500]}')
         sections.append('')
 
     sections.append('\n# INSTRUCTIONS')
@@ -529,12 +717,13 @@ def format_for_master(signals, opportunities, verifications, context_summaries, 
 # ---------------------------------------------------------------------------
 
 def phase_scan(verbose=False):
-    """Pull data from all 4 connectors and return raw results."""
+    """Pull data from all 12 connectors and return raw results."""
     print('\n' + '=' * 60)
-    print('PHASE 1: SCANNING — pulling live data from all connectors')
+    print('PHASE 1: SCANNING — pulling live data from 12 connectors')
     print('=' * 60)
 
     raw = {}
+    connector_count = 0
 
     # --- FRED ---
     print('\n[FRED] Pulling macro economic indicators...')
@@ -550,6 +739,7 @@ def phase_scan(verbose=False):
         raw['fred_sector_costs'] = fred.get_sector_employment_costs()
         raw['fred_small_biz'] = fred.get_small_business_indicators()
         raw['fred_assets'] = fred.get_asset_prices_and_transactions()
+        connector_count += 1
         print('  [FRED] OK — 9 datasets')
     except Exception as e:
         print(f'  [FRED] ERROR: {e}')
@@ -564,9 +754,37 @@ def phase_scan(verbose=False):
         raw['bls_jolts'] = bls.get_job_openings_and_quits()
         raw['bls_occupational'] = bls.get_occupational_exposure()
         raw['bls_wage_premium'] = bls.get_industry_wage_premium()
+        connector_count += 1
         print('  [BLS] OK — 5 datasets')
     except Exception as e:
         print(f'  [BLS] ERROR: {e}')
+
+    # --- BEA ---
+    print('\n[BEA] Pulling GDP by industry and services trade...')
+    try:
+        from connectors.bea import BEAConnector
+        bea = BEAConnector()
+        raw['bea_gdp_by_industry'] = bea.get_gdp_by_industry()
+        raw['bea_services_trade'] = bea.get_international_services_trade()
+        raw['bea_regional_gdp'] = bea.get_regional_gdp()
+        connector_count += 1
+        print('  [BEA] OK — 3 datasets')
+    except Exception as e:
+        print(f'  [BEA] SKIP: {e}')
+
+    # --- Census ---
+    print('\n[CENSUS] Pulling business dynamics and establishment data...')
+    try:
+        from connectors.census import CensusConnector
+        census = CensusConnector()
+        raw['census_business_dynamics'] = census.get_business_dynamics()
+        raw['census_cbp_professional'] = census.get_county_business_patterns(naics='54')
+        raw['census_cbp_healthcare'] = census.get_county_business_patterns(naics='62')
+        raw['census_nonemployer'] = census.get_nonemployer_statistics()
+        connector_count += 1
+        print('  [CENSUS] OK — 4 datasets')
+    except Exception as e:
+        print(f'  [CENSUS] SKIP: {e}')
 
     # --- EDGAR ---
     print('\n[EDGAR] Scanning SEC filings...')
@@ -576,9 +794,35 @@ def phase_scan(verbose=False):
         raw['edgar_distress'] = edgar.scan_for_distress()
         raw['edgar_ai_failures'] = edgar.scan_for_ai_adoption_failures()
         raw['edgar_ai_risk'] = edgar.scan_ai_risk_factors()
+        connector_count += 1
         print('  [EDGAR] OK — 3 scans')
     except Exception as e:
         print(f'  [EDGAR] ERROR: {e}')
+
+    # --- Yahoo Finance ---
+    print('\n[MARKET] Pulling sector performance and canary stocks...')
+    try:
+        from connectors.yfinance import YFinanceConnector
+        yf = YFinanceConnector()
+        raw['market_sectors'] = yf.get_sector_etf_performance()
+        raw['market_staffing_canary'] = yf.get_staffing_canary()
+        raw['market_ai_infra'] = yf.get_ai_infrastructure_momentum()
+        connector_count += 1
+        print('  [MARKET] OK — 3 datasets')
+    except Exception as e:
+        print(f'  [MARKET] SKIP: {e}')
+
+    # --- Google Trends ---
+    print('\n[TRENDS] Pulling search interest signals...')
+    try:
+        from connectors.google_trends import GoogleTrendsConnector
+        gt = GoogleTrendsConnector()
+        raw['trends_distress'] = gt.get_distress_signals()
+        raw['trends_ai_adoption'] = gt.get_ai_adoption_interest()
+        connector_count += 1
+        print('  [TRENDS] OK — 2 datasets')
+    except Exception as e:
+        print(f'  [TRENDS] SKIP: {e}')
 
     # --- Web Search ---
     print('\n[WEB] Scanning web signals...')
@@ -590,25 +834,195 @@ def phase_scan(verbose=False):
         raw['web_dead_revival'] = ws.scan_dead_business_revival(num_results=5)
         raw['web_demographics'] = ws.scan_demographic_gaps(num_results=5)
         raw['web_inference'] = ws.scan_inference_cost_drops(num_results=5)
+        connector_count += 1
         print('  [WEB] OK — 5 scans')
     except Exception as e:
         print(f'  [WEB] ERROR: {e}')
 
+    # --- INTERNATIONAL SOURCES (no keys needed) ---
+
+    # --- World Bank ---
+    print('\n[WORLD BANK] Pulling international comparative data...')
+    try:
+        from connectors.worldbank import WorldBankConnector
+        wb = WorldBankConnector()
+        raw['wb_business_env'] = wb.get_business_environment_comparison()
+        raw['wb_labor_markets'] = wb.get_labor_market_comparison()
+        raw['wb_services_trade'] = wb.get_services_trade_flows()
+        raw['wb_tech_readiness'] = wb.get_technology_readiness()
+        connector_count += 1
+        print('  [WORLD BANK] OK — 4 datasets')
+    except Exception as e:
+        print(f'  [WORLD BANK] SKIP: {e}')
+
+    # --- OECD ---
+    print('\n[OECD] Pulling leading indicators and labor stats...')
+    try:
+        from connectors.oecd import OECDConnector
+        oecd = OECDConnector()
+        raw['oecd_leading'] = oecd.get_composite_leading_indicators()
+        raw['oecd_labor'] = oecd.get_labor_statistics()
+        raw['oecd_tech'] = oecd.get_technology_indicators()
+        connector_count += 1
+        print('  [OECD] OK — 3 datasets')
+    except Exception as e:
+        print(f'  [OECD] SKIP: {e}')
+
+    # --- Eurostat ---
+    print('\n[EUROSTAT] Pulling EU economic data...')
+    try:
+        from connectors.eurostat import EurostatConnector
+        eu = EurostatConnector()
+        raw['eu_labor_costs'] = eu.get_labor_cost_index()
+        raw['eu_ai_adoption'] = eu.get_ai_adoption()
+        raw['eu_biz_demography'] = eu.get_business_demography()
+        connector_count += 1
+        print('  [EUROSTAT] OK — 3 datasets')
+    except Exception as e:
+        print(f'  [EUROSTAT] SKIP: {e}')
+
+    print(f'\n  SCAN COMPLETE: {connector_count} connectors, {len(raw)} datasets')
     return raw
+
+
+# ---------------------------------------------------------------------------
+# Phase 1.5: ANALYTICS — compute derived indicators from raw data
+# ---------------------------------------------------------------------------
+
+def phase_analytics(raw, verbose=False):
+    """Run derived analytics on raw scan data.
+
+    Computes: z-scores, momentum, regime changes, cross-correlations,
+    composite indices, structural indicators.
+    """
+    print('\n' + '=' * 60)
+    print('PHASE 1.5: ANALYTICS — computing derived indicators')
+    print('=' * 60)
+
+    analytics_result = {}
+
+    try:
+        from analytics.timeseries import TimeSeriesAnalyzer
+        from analytics.cross_correlation import CrossCorrelator
+        from analytics.composite_indices import CompositeIndexBuilder
+
+        ts = TimeSeriesAnalyzer()
+        cc = CrossCorrelator()
+        ci = CompositeIndexBuilder()
+
+        # Extract FRED series for analytics
+        fred_series = {}
+        for key, data in raw.items():
+            if key.startswith('fred_') and isinstance(data, dict):
+                inner_data = data.get('data', {})
+                for series_name, series_data in inner_data.items():
+                    if isinstance(series_data, dict) and 'observations' in series_data:
+                        series_id = series_data.get('series_id', series_name.upper())
+                        fred_series[series_id] = series_data
+
+        if fred_series:
+            # Time series analysis on each FRED series
+            print('  Computing time series indicators...')
+            ts_results = {}
+            for series_id, data in fred_series.items():
+                analysis = ts.analyze_series(data)
+                if 'error' not in analysis:
+                    ts_results[series_id] = analysis
+            analytics_result['timeseries'] = ts_results
+            print(f'    Analyzed {len(ts_results)} series')
+
+            # Cross-correlations
+            print('  Computing cross-correlations...')
+            correlations = cc.analyze_principle_relationships(fred_series)
+            analytics_result['cross_correlations'] = correlations
+            print(f'    Found {len(correlations)} relationships')
+
+            # Composite indices
+            print('  Building composite indices...')
+            indices = ci.build_all_indices(fred_series)
+            analytics_result['composite_indices'] = indices
+            for name, idx in indices.items():
+                if 'latest' in idx and idx['latest']:
+                    print(f'    {name}: {idx["latest"][1]:.1f}')
+
+    except Exception as e:
+        print(f'  ANALYTICS ERROR: {e}')
+        if verbose:
+            traceback.print_exc()
+
+    return analytics_result
+
+
+def format_analytics_for_agent(analytics_result):
+    """Format analytics output into readable text for LLM consumption."""
+    lines = ['## DERIVED ANALYTICS\n']
+
+    # Composite indices
+    indices = analytics_result.get('composite_indices', {})
+    if indices:
+        lines.append('### Composite Principle Indices (0-100 scale)')
+        for name, idx in indices.items():
+            if idx.get('latest'):
+                date, val = idx['latest']
+                lines.append(f'- {idx.get("index_name", name)}: {val:.1f} (as of {date})')
+                components = idx.get('components', [])
+                if components:
+                    lines.append(f'  Components: {", ".join(components)}')
+        lines.append('')
+
+    # Key cross-correlations
+    correlations = analytics_result.get('cross_correlations', {})
+    if correlations:
+        lines.append('### Key Cross-Correlations')
+        for name, rel in correlations.items():
+            if isinstance(rel, dict):
+                best_lag = rel.get('best_lag', 0)
+                best_corr = rel.get('best_correlation', 0)
+                desc = rel.get('description', '')
+                if best_corr is not None:
+                    lines.append(f'- {name}: r={best_corr:.3f}, lag={best_lag} periods')
+                    if desc:
+                        lines.append(f'  {desc[:200]}')
+                # Divergence events
+                divs = rel.get('divergence', [])
+                if divs:
+                    lines.append(f'  DIVERGENCE EVENTS: {len(divs)} detected')
+                    for d in divs[:3]:
+                        lines.append(f'    {d.get("date", "?")}: z={d.get("z_score", 0):.2f} — {d.get("direction", "?")}')
+        lines.append('')
+
+    # Notable regime changes
+    ts_results = analytics_result.get('timeseries', {})
+    regime_changes = []
+    for series_id, analysis in ts_results.items():
+        changes = analysis.get('regime_changes', [])
+        for rc in changes:
+            regime_changes.append((series_id, rc[0], rc[1], rc[2]))
+
+    if regime_changes:
+        lines.append('### Regime Changes Detected')
+        regime_changes.sort(key=lambda x: abs(x[3]), reverse=True)
+        for series_id, date, direction, magnitude in regime_changes[:10]:
+            lines.append(f'- {series_id}: {direction} shift at {date} (magnitude: {magnitude:.2f}σ)')
+        lines.append('')
+
+    return '\n'.join(lines)
 
 
 # ---------------------------------------------------------------------------
 # Phase 2: AGENT A — LLM-powered signal extraction
 # ---------------------------------------------------------------------------
 
-def phase_agent_a(raw, context_summaries, kill_index, model='sonnet', verbose=False):
+def phase_agent_a(raw, context_summaries, kill_index, analytics_result=None,
+                   model='sonnet', verbose=False):
     """Agent A: Extract signals from raw data using LLM reasoning."""
     print('\n' + '=' * 60)
     print('PHASE 2: AGENT A — LLM signal extraction')
     print('=' * 60)
 
     system_prompt = load_agent_prompt('agent_a_trends_scanner.md')
-    user_message = format_raw_for_agent_a(raw, context_summaries, kill_index)
+    user_message = format_raw_for_agent_a(raw, context_summaries, kill_index,
+                                           analytics_result=analytics_result)
 
     print(f'  Sending {len(user_message):,} chars to Agent A...')
     response = llm_call(system_prompt, user_message, model=model, max_tokens=12000)
@@ -907,12 +1321,17 @@ def compile_results(cycle_num, signals, agent_c_result, verifications, master_sy
 # Main cycle runner
 # ---------------------------------------------------------------------------
 
-def run_cycle(model='sonnet', scan_only=False, skip_verify=False, verbose=False):
+def run_cycle(model='sonnet', scan_only=False, analytics_only=False,
+              skip_verify=False, verbose=False, use_api=False):
     """Run a full research cycle with LLM-powered agents."""
+    global _use_api
+    _use_api = use_api
+
     t0 = time.time()
 
     print('\n' + '#' * 60)
     print('#  AI ECONOMIC RESEARCH ENGINE — LLM-POWERED CYCLE')
+    print(f'#  LLM Mode: {"API" if use_api else "CLI (subscription)"}')
     print('#' * 60)
 
     # Load state
@@ -935,8 +1354,18 @@ def run_cycle(model='sonnet', scan_only=False, skip_verify=False, verbose=False)
         save_state(state)
         return
 
+    # Phase 1.5: ANALYTICS
+    analytics_result = phase_analytics(raw, verbose=verbose)
+    save_json(os.path.join(DATA_DIR, 'analytics', f'{today}.json'), analytics_result)
+
+    if analytics_only:
+        print('\n  --analytics-only: stopping after analytics.')
+        save_state(state)
+        return
+
     # Phase 2: AGENT A
-    signals = phase_agent_a(raw, context_summaries, kill_index, model=model, verbose=verbose)
+    signals = phase_agent_a(raw, context_summaries, kill_index,
+                             analytics_result=analytics_result, model=model, verbose=verbose)
     if not signals:
         print('\n  ERROR: Agent A produced no signals. Aborting cycle.')
         save_state(state)
@@ -1021,9 +1450,13 @@ def main():
                         choices=['sonnet', 'opus', 'haiku'],
                         help='Claude model (default: sonnet)')
     parser.add_argument('--scan-only', action='store_true',
-                        help='Only pull data, skip LLM processing')
+                        help='Only pull data, skip analytics and LLM processing')
+    parser.add_argument('--analytics-only', action='store_true',
+                        help='Run scan + analytics, skip LLM processing')
     parser.add_argument('--skip-verify', action='store_true',
                         help='Skip Agent B verification (faster cycles)')
+    parser.add_argument('--use-api', action='store_true',
+                        help='Use Anthropic API instead of Claude Code CLI')
     parser.add_argument('--verbose', action='store_true',
                         help='Print raw LLM responses')
     args = parser.parse_args()
@@ -1032,7 +1465,9 @@ def main():
         run_cycle(
             model=args.model,
             scan_only=args.scan_only,
+            analytics_only=args.analytics_only,
             skip_verify=args.skip_verify,
+            use_api=args.use_api,
             verbose=args.verbose,
         )
     except RuntimeError as e:

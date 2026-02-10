@@ -73,21 +73,91 @@
       ],
       "example_signals_killed": ["smb_back_office_agentic", "distressed_smb_overhead", "smb_bankruptcy_24k"],
       "still_active": true,
-      "invalidation_condition": "Kill becomes invalid ONLY if: (1) Intuit loses significant market share (below 60%) due to product failure or regulatory action, OR (2) a new distribution channel emerges that bypasses Intuit's platform lock-in (e.g., embedded finance in vertical SaaS), OR (3) a vertical-specific niche is identified where QuickBooks does not serve well (cannabis, crypto, international trade). Condition 3 would not invalidate the general kill but could create a niche exception.",
-      "preserved_insight": "The distressed SMB signal is VALID — 24K bankruptcies, overhead costs at $50-100K for 5-20 person firms. The PROBLEM is real. But the SOLUTION cannot be a horizontal back-office product competing with Intuit. Vertical-specific or Intuit-complementary approaches remain viable for scanning."
+      "invalidation_condition": "Kill becomes invalid ONLY if: (1) Intuit loses significant market share (below 60%) due to product failure or regulatory action, OR (2) a new distribution channel emerges that bypasses Intuit's platform lock-in, OR (3) a vertical-specific niche is identified where QuickBooks does not serve well (cannabis, crypto, international trade). Condition 3 would not invalidate the general kill but could create a niche exception.",
+      "preserved_insight": "The distressed SMB signal is VALID — 24K bankruptcies, overhead costs at $50-100K for 5-20 person firms. The PROBLEM is real. But the SOLUTION cannot be a horizontal back-office product competing with Intuit."
+    },
+    {
+      "pattern_id": "K-003",
+      "created_cycle": 7,
+      "created_date": "2026-02-09",
+      "opportunity_killed": "Translation/Localization AI Disruption",
+      "kill_reason": "Extreme competitive density. Total VC/PE deployed exceeds $2-4B+. DeepL (~$100M+ raised, ~$2B valuation), Unbabel ($91M), Lilt ($92.5M), Phrase/Memsource ($150M+ PE-backed), Smartling ($60M), Lokalise ($50M+), Language I/O ($12M), and many others. Plus horizontal AI competitors (Google Translate, Microsoft Translator, Meta NLLB, ChatGPT) competing at free or near-free tier. The translation market is simultaneously crowded by specialized startups AND commoditized by Big Tech free offerings. No viable entry point at $500K-$1M.",
+      "signal_type_affected": "cost_structure_collapse",
+      "industries_affected": ["translation", "localization", "language_services", "interpretation"],
+      "constraint_violated": "competitive_density — $2-4B+ deployed + Big Tech free-tier competition",
+      "theoretical_basis": "Schumpeter creative destruction IS happening in translation — but the creative destroyers are DeepL, Google, and Microsoft, not a new entrant. Jevons demand expansion (more content = more translation need) is real but captured by existing players. Coase transaction cost reduction benefits platforms with existing distribution.",
+      "precedent_failures": [],
+      "competing_incumbents": [
+        {
+          "name": "DeepL",
+          "market_share": "Leading AI translation provider",
+          "threat": "~$2B valuation, dominant in European enterprise translation, expanding globally"
+        },
+        {
+          "name": "Google Translate",
+          "market_share": "Dominant free-tier usage globally",
+          "threat": "Free for consumer use, integrated into Chrome/Android ecosystem, sets price floor at zero"
+        }
+      ],
+      "additional_kill_factors": [
+        "Big Tech offers free-tier that sets price floor at zero for consumer translation",
+        "Enterprise localization market fragmented among dozens of funded startups",
+        "EU AI Act may add transparency/compliance costs for translation AI"
+      ],
+      "example_signals_killed": ["translation_ai_disruption", "localization_cost_collapse"],
+      "still_active": true,
+      "invalidation_condition": "Kill becomes invalid ONLY if: (1) a specific language pair or domain niche is identified with zero competition (unlikely), OR (2) a regulatory change creates a new translation requirement that existing players cannot serve. This is a permanent density kill — the sector will remain crowded.",
+      "preserved_insight": "Translation IS being disrupted by AI — the thesis is correct. But the disruption is being executed by well-funded incumbents and Big Tech. No room for a $500K entrant."
+    },
+    {
+      "pattern_id": "K-004",
+      "created_cycle": 7,
+      "created_date": "2026-02-09",
+      "opportunity_killed": "Freight Brokerage AI Disintermediation",
+      "kill_reason": "Extreme competitive density plus the most expensive precedent failure in our scanning universe. Convoy raised $900M and shut down in October 2023, with assets acquired by Flexport. Total VC/PE deployed in digital freight exceeds $5-8B+: Transfix ($275M), Loadsmart ($200M+), Emerge ($220M), project44 ($500M+), FourKites ($250M), and others. C.H. Robinson ($24B gross revenue) is investing heavily in Navisphere AI from dominant incumbent position. The digital brokerage model has been tested at massive capital levels and has NOT displaced traditional brokers.",
+      "signal_type_affected": "cost_structure_collapse",
+      "industries_affected": ["freight_brokerage", "logistics", "trucking", "supply_chain"],
+      "constraint_violated": "competitive_density + precedent_failure — $5-8B+ deployed, Convoy $900M failure",
+      "theoretical_basis": "Coase transaction cost reduction thesis is correct — freight brokerage is a coordination-cost business. But Convoy proved that reducing transaction costs via technology is not sufficient when incumbents have relationship moats, carrier networks, and balance sheet advantages. Schumpeter gap analysis: the gap was filled by traditional brokers adapting, not by digital disruptors replacing them.",
+      "precedent_failures": [
+        {
+          "company": "Convoy",
+          "capital_raised": "$900M",
+          "outcome": "Shut down October 2023. Assets acquired by Flexport. Digital brokerage model could not achieve unit economics at scale despite nearly $1B in capital.",
+          "relevance": "1800x our capital level. The most expensive validation that this thesis does not work."
+        }
+      ],
+      "competing_incumbents": [
+        {
+          "name": "C.H. Robinson",
+          "market_share": "Largest freight broker globally (~$24B gross revenue)",
+          "threat": "Investing heavily in Navisphere AI. Has carrier relationships, balance sheet for credit, and 100+ year operating history."
+        }
+      ],
+      "additional_kill_factors": [
+        "FMCSA broker authority + $75K surety bond requirement",
+        "Freight market is highly cyclical — 2023-2024 recession devastated digital brokers",
+        "Carrier relationships (not technology) are the primary competitive moat"
+      ],
+      "example_signals_killed": ["freight_ai_disintermediation", "logistics_cost_collapse"],
+      "still_active": true,
+      "invalidation_condition": "Kill becomes invalid ONLY if: (1) autonomous trucking reaches scale (removes the carrier relationship dependency), OR (2) a specific freight niche (e.g., last-mile, cold chain, oversized loads) shows sparse competition. The general freight brokerage kill is permanent.",
+      "preserved_insight": "Freight brokerage IS a coordination-cost business ripe for technology disruption — the thesis is correct. But $900M proved the execution is exponentially harder than the thesis suggests. The incumbent moat is relationships, not technology."
     }
   ],
   "stats": {
-    "total_kills": 2,
+    "total_kills": 4,
     "kills_this_cycle": 2,
+    "kills_by_cycle": {"6": 2, "7": 2},
     "top_kill_reasons": [
       {"reason": "Regulatory prohibition of core value proposition", "count": 1},
-      {"reason": "Incumbent moat + proven startup failure pattern", "count": 1}
+      {"reason": "Incumbent moat + proven startup failure pattern", "count": 1},
+      {"reason": "Extreme competitive density ($2B+ deployed)", "count": 2}
     ],
     "most_killed_signal_types": [
-      {"type": "demographic_gap", "count": 1},
-      {"type": "cost_structure_collapse", "count": 1}
+      {"type": "cost_structure_collapse", "count": 3},
+      {"type": "demographic_gap", "count": 1}
     ],
-    "kill_index_observations": "Both kills share a common lesson: the Principles Engine identifies disruption correctly but does not assess competitive density or regulatory impossibility. Cycle 7 must add these as mandatory gates. Notable that zero kills are due to 'bad thesis' — both opportunities correctly identified real problems. The kills are about solution viability, not problem validity."
+    "kill_index_observations": "Cycle 7 adds competitive density as a kill category. K-003 and K-004 are the first 'pure density' kills — no regulatory barrier or incumbent moat, just too much capital already deployed. Combined with Cycle 6's kills, the pattern is clear: the Principles Engine correctly identifies macro disruption forces, but every sector it flags has already attracted $1B+ in capital. The search must move toward sectors requiring domain-specific insight that generic disruption frameworks miss. Veterinary services is the first candidate that passed all filters."
   }
 }

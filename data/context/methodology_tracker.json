@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "methodologies": {
+    "baumol_cost_disease": {
+      "name": "Baumol Cost Disease / Stored Energy",
+      "category": "economic_theory",
+      "description": "Sectors where wages rose with the economy but productivity did NOT have the most 'stored energy' for AI disruption. Higher stored energy = more potential for cost collapse.",
+      "alpha": 5,
+      "beta": 1,
+      "total_applications": 5,
+      "discoveries": [
+        {"cycle": 1, "description": "Identified professional services as high Baumol energy", "score": 60},
+        {"cycle": 3, "description": "Veterinary services has highest Baumol in healthcare subsectors", "score": 65},
+        {"cycle": 5, "description": "Translation/localization had high Baumol but killed by density", "score": 40},
+        {"cycle": 8, "description": "EU Labour Cost Index confirms Baumol across geographies", "score": 50},
+        {"cycle": 9, "description": "Bottom-up screener found 933 sectors ranked by Baumol - wholesale brokers (1.73x), management consulting (1.82x) as new candidates", "score": 70}
+      ],
+      "null_results": [],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T09:00:00",
+      "status": "active"
+    },
+    "bass_diffusion_scurve": {
+      "name": "Bass Diffusion S-Curve Positioning",
+      "category": "math_model",
+      "description": "Estimates where AI adoption is on the S-curve for a given sector. Position determines strategy: pre-takeoff (evangelize), takeoff (ride), late majority (differentiate), laggards (skip).",
+      "alpha": 2,
+      "beta": 2,
+      "total_applications": 3,
+      "discoveries": [
+        {"cycle": 3, "description": "Veterinary AI in early-adopter phase (optimal entry window)", "score": 55},
+        {"cycle": 5, "description": "Customer support AI in early-majority (growth accelerating)", "score": 50}
+      ],
+      "null_results": [
+        {"cycle": 4, "notes": "Applied to healthcare staffing - position unclear due to regulatory distortion"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-09T00:00:00",
+      "status": "active"
+    },
+    "hhi_market_concentration": {
+      "name": "Herfindahl-Hirschman Index",
+      "category": "math_model",
+      "description": "Market concentration measure. HHI < 1500 = fragmented (platform opportunity), 1500-2500 = moderate, > 2500 = concentrated (hard entry).",
+      "alpha": 2,
+      "beta": 2,
+      "total_applications": 3,
+      "discoveries": [
+        {"cycle": 5, "description": "Property management concentrated (RealPage+Yardi >60%) - killed opportunity", "score": 45},
+        {"cycle": 6, "description": "Surveying duopoly (Trimble+Hexagon 60%+) - killed opportunity", "score": 40}
+      ],
+      "null_results": [
+        {"cycle": 4, "notes": "Applied to veterinary services but no clean market share data available at sub-industry level"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-09T00:00:00",
+      "status": "active"
+    },
+    "competitive_density_scan": {
+      "name": "Competitive Density Web Scan",
+      "category": "analytical_lens",
+      "description": "Web search for AI startups, VC funding, and incumbents targeting a specific sector. Rating: LOW/MEDIUM/HIGH/SATURATED.",
+      "alpha": 7,
+      "beta": 1,
+      "total_applications": 7,
+      "discoveries": [
+        {"cycle": 5, "description": "Construction AI saturated ($3-5B+) - killed opportunity", "score": 60},
+        {"cycle": 5, "description": "Translation saturated ($2-4B+) - killed opportunity", "score": 60},
+        {"cycle": 6, "description": "Freight brokerage saturated ($5-8B+) - killed opportunity", "score": 60},
+        {"cycle": 6, "description": "Insurance brokerage moderate-crowded ($3-5B+) - parked", "score": 50},
+        {"cycle": 7, "description": "Veterinary services sparse ($200-400M) - only exception to density gate", "score": 75},
+        {"cycle": 8, "description": "Staffing industry saturated ($5B+) - rejected as opportunity", "score": 55},
+        {"cycle": 9, "description": "12-sector scan: wholesale brokers LOW density, legal SATURATED ($4.3B), portfolio mgmt SATURATED", "score": 80}
+      ],
+      "null_results": [],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T09:30:00",
+      "status": "active"
+    },
+    "macro_indicator_screening": {
+      "name": "FRED/BLS Macro Indicator Screening",
+      "category": "data_source",
+      "description": "Pull macro indicators (GDP, employment, wages, productivity, credit, JOLTS) from FRED and BLS to identify structural shifts.",
+      "alpha": 4,
+      "beta": 4,
+      "total_applications": 8,
+      "discoveries": [
+        {"cycle": 1, "description": "Professional services employment declining (-97K) while healthcare growing (+709K)", "score": 65},
+        {"cycle": 3, "description": "JOLTS gap -966K confirming structural labor shortage", "score": 55},
+        {"cycle": 6, "description": "Bankruptcy surge 76% YoY confirming liquidation cascade", "score": 60},
+        {"cycle": 8, "description": "Beveridge Curve r=-0.658 confirming structural mismatch", "score": 70}
+      ],
+      "null_results": [
+        {"cycle": 2, "notes": "GDP data too aggregated to identify sector-specific opportunities"},
+        {"cycle": 4, "notes": "Credit data showed tightening but couldn't connect to specific sectors"},
+        {"cycle": 5, "notes": "Productivity data at 2-digit NAICS too coarse"},
+        {"cycle": 7, "notes": "Same indicators, marginal new signal vs prior cycles"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "edgar_filing_analysis": {
+      "name": "EDGAR SEC Filing Analysis",
+      "category": "data_source",
+      "description": "Analyze 10-K/10-Q filings for AI mentions, labor cost disclosures, and sector-specific signals.",
+      "alpha": 2,
+      "beta": 3,
+      "total_applications": 4,
+      "discoveries": [
+        {"cycle": 4, "description": "PE roll-up firms (Crete, Ascend) showing acquisition patterns in accounting", "score": 55},
+        {"cycle": 8, "description": "Staffing company filings (RHI, MAN, KELYA) confirming labor market deterioration", "score": 70}
+      ],
+      "null_results": [
+        {"cycle": 3, "notes": "10-K AI mentions too generic to differentiate sectors"},
+        {"cycle": 5, "notes": "Small-cap filings inconsistent quality"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "equity_market_signals": {
+      "name": "Equity Market / ETF Price Signals",
+      "category": "analytical_lens",
+      "description": "Use stock prices and ETF performance as leading indicators. Staffing stocks, sector ETFs, PE-exposed equities.",
+      "alpha": 3,
+      "beta": 1,
+      "total_applications": 2,
+      "discoveries": [
+        {"cycle": 8, "description": "Staffing canary: RHI -51%, MAN -39%, KELYA -20% — professional labor depreciation priced by markets", "score": 85},
+        {"cycle": 8, "description": "Healthcare ETF +20% confirming P2+P5 divergence corridor", "score": 60},
+        {"cycle": 8, "description": "Professional-vs-industrial gradient reveals specificity of disruption", "score": 70}
+      ],
+      "null_results": [],
+      "first_used": "2026-02-10T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "timing_arbitrage_analysis": {
+      "name": "P7 Timing Arbitrage / Vacuum Analysis",
+      "category": "analytical_lens",
+      "description": "Identify gaps between companies cutting human capacity and AI's actual ability to replace those functions. Klarna reversal as canonical example.",
+      "alpha": 3,
+      "beta": 1,
+      "total_applications": 3,
+      "discoveries": [
+        {"cycle": 3, "description": "Customer support vacuum hypothesis formed", "score": 55},
+        {"cycle": 6, "description": "Klarna reversal + CNet errors + Air Canada liability confirm premature cuts", "score": 65},
+        {"cycle": 8, "description": "DOGE workforce reductions creating federal services vacuum", "score": 50}
+      ],
+      "null_results": [],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "counter_signal_research": {
+      "name": "Counter-Signal / Bear Case Research",
+      "category": "analytical_lens",
+      "description": "Deliberately search for reasons an opportunity will FAIL. Counter-signals weighted 1.5x in grading.",
+      "alpha": 4,
+      "beta": 2,
+      "total_applications": 6,
+      "discoveries": [
+        {"cycle": 5, "description": "Healthcare staffing AI killed — nurse ratio manipulation illegal", "score": 70},
+        {"cycle": 5, "description": "Back-office SMB killed — Intuit moat + Bench/Pilot failure precedent", "score": 70},
+        {"cycle": 6, "description": "Freight brokerage killed — Convoy $900M failure at 100-1000x our capital", "score": 75},
+        {"cycle": 7, "description": "Vet services Mars/IDEXX threat identified (not yet fatal)", "score": 55}
+      ],
+      "null_results": [
+        {"cycle": 4, "notes": "Counter-signals for construction opportunity unclear at the time"},
+        {"cycle": 7, "notes": "Customer support counter-signals found (Klarna reversal) but interpreted as supporting vacuum thesis"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "international_comparison": {
+      "name": "International Comparative Data (Eurostat, OECD, World Bank)",
+      "category": "data_source",
+      "description": "Use international data to confirm US-specific patterns or identify geographic arbitrage. NOT for relocation — for bias-checking.",
+      "alpha": 1,
+      "beta": 3,
+      "total_applications": 2,
+      "discoveries": [
+        {"cycle": 8, "description": "UAE tight labor + Germany Baumol benchmarks confirm US-specific structural patterns", "score": 40}
+      ],
+      "null_results": [
+        {"cycle": 8, "notes": "7 of 9 international connectors returned empty data"},
+        {"cycle": 8, "notes": "Eurostat, OECD data too aggregated for sub-industry analysis"},
+        {"cycle": 8, "notes": "World Bank 16-country dataset not yet processed into actionable signals"}
+      ],
+      "first_used": "2026-02-10T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "composite_index_construction": {
+      "name": "Composite Index Construction",
+      "category": "math_model",
+      "description": "Build multi-indicator composite indices (P3 Cost Collapse, Capital Environment, Beveridge Curve) from normalized components.",
+      "alpha": 3,
+      "beta": 1,
+      "total_applications": 2,
+      "discoveries": [
+        {"cycle": 8, "description": "P3 Cost Collapse Index at 100.0 (MAXIMUM) — all components at most favorable", "score": 75},
+        {"cycle": 8, "description": "Capital Environment Index at 100.0 — dual maximum creates P-008 convergence pattern", "score": 70},
+        {"cycle": 8, "description": "Beveridge Curve r=-0.658 confirms structural (not cyclical) mismatch", "score": 65}
+      ],
+      "null_results": [],
+      "first_used": "2026-02-10T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "llm_brainstorm_candidates": {
+      "name": "LLM Brainstorming for Sector Candidates",
+      "category": "discovery_method",
+      "description": "Use the LLM's knowledge to brainstorm potential sectors/opportunities. The original (and only) discovery method for Cycles 1-8.",
+      "alpha": 4,
+      "beta": 5,
+      "total_applications": 8,
+      "discoveries": [
+        {"cycle": 1, "description": "Initial sector list: healthcare staffing, back-office, construction, professional services", "score": 40},
+        {"cycle": 3, "description": "Veterinary services identified as unique low-density opportunity", "score": 65},
+        {"cycle": 3, "description": "Customer support vacuum hypothesis", "score": 55},
+        {"cycle": 6, "description": "LATAM nearshoring + AI augmentation frame", "score": 55}
+      ],
+      "null_results": [
+        {"cycle": 2, "notes": "Same sectors as Cycle 1, no new candidates"},
+        {"cycle": 4, "notes": "Re-scored existing candidates, no new sectors"},
+        {"cycle": 5, "notes": "Translation/freight added but immediately killed by density"},
+        {"cycle": 7, "notes": "No new candidates, just re-verification"},
+        {"cycle": 8, "notes": "Staffing industry identified as opportunity but rejected — signal not entry point"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    },
+    "bottom_up_screener": {
+      "name": "Bottom-Up BLS/Census Sector Screener",
+      "category": "discovery_method",
+      "description": "Mechanically screen all NAICS sub-industries using BLS QCEW employment/wage data, Census CBP establishment counts, and BEA productivity. Composite score: Baumol + size + fragmentation.",
+      "alpha": 2,
+      "beta": 1,
+      "total_applications": 1,
+      "discoveries": [
+        {"cycle": 9, "description": "Screened 933 6-digit NAICS sectors. Found wholesale trade brokers (425120) as LOW-density, high-fragmentation candidate never previously considered", "score": 80},
+        {"cycle": 9, "description": "Revealed that top-scoring sectors by Baumol (finance, tech) are all SATURATED — confirming P-006 Universal Gate from a completely independent methodology", "score": 70}
+      ],
+      "null_results": [],
+      "first_used": "2026-02-10T09:00:00",
+      "last_used": "2026-02-10T09:30:00",
+      "status": "active"
+    },
+    "io_table_propagation": {
+      "name": "Input-Output Table Disruption Propagation",
+      "category": "math_model",
+      "description": "Trace how disruption in one industry propagates to downstream industries through supply chain linkages. Built but never applied to real data.",
+      "alpha": 1,
+      "beta": 1,
+      "total_applications": 0,
+      "discoveries": [],
+      "null_results": [],
+      "first_used": null,
+      "last_used": null,
+      "status": "active"
+    },
+    "shift_share_decomposition": {
+      "name": "Shift-Share Employment Decomposition",
+      "category": "math_model",
+      "description": "Separate national, industry, and regional effects on employment changes. Answers: is decline due to national trends, industry trends, or region-specific factors?",
+      "alpha": 1,
+      "beta": 1,
+      "total_applications": 0,
+      "discoveries": [],
+      "null_results": [],
+      "first_used": null,
+      "last_used": null,
+      "status": "active"
+    },
+    "geographic_arbitrage": {
+      "name": "Geographic Wage/Cost Arbitrage Analysis",
+      "category": "analytical_lens",
+      "description": "Compare US labor costs with international alternatives to identify arbitrage opportunities (LATAM, Asia, EU).",
+      "alpha": 2,
+      "beta": 2,
+      "total_applications": 3,
+      "discoveries": [
+        {"cycle": 6, "description": "LATAM nearshoring opportunity: 3-5x wage gap with improving infrastructure", "score": 55},
+        {"cycle": 8, "description": "Cross-border arbitrage amplified by composite index convergence", "score": 50}
+      ],
+      "null_results": [
+        {"cycle": 7, "notes": "Asia/Middle East comparison too distant from founding conditions to be actionable"}
+      ],
+      "first_used": "2026-02-09T00:00:00",
+      "last_used": "2026-02-10T00:00:00",
+      "status": "active"
+    }
+  },
+  "cycle_log": [],
+  "allocation_history": [],
+  "meta": {
+    "created": "2026-02-10T09:30:00",
+    "description": "Methodology tracker for research engine. Uses Thompson Sampling to balance exploration (try uncertain methods) vs exploitation (use proven methods). Each methodology has a Beta distribution representing discovery probability.",
+    "exploration_budget": "20% of cycle capacity reserved for low-confidence methodologies",
+    "key_insight": "The engine's discovery bottleneck was that it only had ONE discovery method (LLM brainstorming) which exhausted after Cycle 3. Adding the bottom-up screener in Cycle 9 immediately produced new candidates. The tracker ensures we systematically try and evaluate new approaches rather than relying on a single exhausted method."
+  }
+}

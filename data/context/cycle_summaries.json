@@ -37,12 +37,12 @@
         {"name": "PE Roll-Up Disruptor", "score": 58, "recommendation": "INVESTIGATE_FURTHER"}
       ],
       "next_cycle_direction": [
-        "Deep-dive Agent B verification on top 2 opportunities (Distressed Prof Services, Healthcare Staffing)",
-        "Run competitor scans on both via Agent A",
-        "Increase weight on data_specificity (1.3) — need real acquisition prices, real client book sizes",
-        "Decrease weight on novelty (0.7) — we have the themes, now need unit economics depth",
-        "Add LATAM scanning pass: are the same cascades happening in Argentina/Brazil?",
-        "Investigate the P7 Timing Arbitrage hypothesis: which industries cut humans prematurely?"
+        "Deep-dive Agent B verification on top 2 opportunities",
+        "Run competitor scans via Agent A",
+        "Increase weight on data_specificity (1.3)",
+        "Decrease weight on novelty (0.7)",
+        "Add LATAM scanning pass",
+        "Investigate P7 Timing Arbitrage hypothesis"
       ]
     },
     {
@@ -54,88 +54,163 @@
       "opportunities_killed": 2,
       "opportunities_parked": 1,
       "kill_index_entries_added": 2,
-      "master_synthesis": "Cycle 6 is the counter-signal revolution — the first cycle where the engine confronted its own conclusions with serious counter-evidence, and the conclusions lost. All three top opportunities from Cycle 3 were materially undermined: Healthcare Staffing AI killed by federal legislation explicitly banning technology as nurse ratio substitute (H.R. 3415 / S. 1709); Agentic SMB Back-Office killed by incumbent moat (Intuit 80%+ share, $100M OpenAI partnership) and catastrophic precedent failure (Bench.co $113M, Pilot $325M for 0.4%); Distressed Professional Services parked due to competitive landscape saturation ($500M+ from Crete, $75M Accrual, $314M revenue Ascend, 147 PE deals totaling $200B). The kill index is populated for the first time with 2 entries. This is not a failure of the engine — it is the engine reaching maturity. The Principles Engine correctly identified WHERE disruption happens. The counter-signal framework now tells us whether WE can be the disruptors.",
-      "counter_signal_revolution": {
-        "description": "Cycle 6 marks the transition from 'what should be disrupted' to 'what can WE disrupt'. Previous cycles identified macro patterns and theoretical opportunities. This cycle tested those opportunities against competitive reality, regulatory barriers, and precedent failures. The result: a cleared pipeline and a sharpened methodology.",
-        "key_lessons": [
-          "The Principles Engine (Schumpeter, Minsky, Baumol, Jevons, Coase) correctly identifies disruption patterns. In all 3 cases, the theoretical analysis was RIGHT about the macro forces. The engine's analytical value is confirmed.",
-          "Competitive density is a first-class variable. An opportunity where the disruption thesis is correct but $500M+ of capital is already deployed is NOT an opportunity for a $500K-$1M entrant. This must become a mandatory gate.",
-          "Regulatory impossibility is absolute. Healthcare nurse ratios are protected by law. No amount of technical capability or capital can override explicit statutory prohibition. Regulatory checks must precede all other analysis for labor-market-adjacent opportunities.",
-          "Precedent failures at 100-1000x our capital are dispositive. Bench ($113M) and Olive AI ($1B) failed at the exact theses we proposed. When well-funded, well-executed companies fail at a thesis, we must explain why we would succeed at 1/200th the capital — and 'we use better AI' is not sufficient.",
-          "The PROBLEM is always valid when the Principles Engine flags it. All three problems (professional services distress, healthcare shortage, SMB overhead burden) are real and confirmed by hard data. The kills are about solution viability, not problem validity. The problems become scanning targets for DIFFERENT solutions."
-        ]
+      "master_synthesis": "Cycle 6 is the counter-signal revolution — the first cycle where the engine confronted its own conclusions with serious counter-evidence, and the conclusions lost. Healthcare Staffing AI killed by federal legislation. Agentic SMB Back-Office killed by incumbent moat + precedent failure. Distressed Professional Services parked due to competitive saturation. The kill index is populated for the first time. This is the engine reaching maturity.",
+      "top_opportunities_post_cycle": [
+        {"name": "Construction AI Coordinator", "score": 65, "status": "scanning"},
+        {"name": "PE Roll-Up Disruptor", "score": 58, "status": "scanning"},
+        {"name": "Distressed Professional Services", "score": 44, "status": "parked"}
+      ]
+    },
+    {
+      "cycle": 7,
+      "date": "2026-02-09",
+      "engine": "opus-4.6-in-session",
+      "signals_scanned": 20,
+      "opportunities_verified": 11,
+      "opportunities_killed": 2,
+      "opportunities_parked": 4,
+      "kill_index_entries_added": 2,
+      "master_synthesis": "Cycle 7 is the competitive density reckoning. Seven candidate sectors were scanned for competitive landscape: veterinary ($200-400M, sparse), translation ($2-4B+, crowded), property management ($1-2B+, moderate), insurance ($3-5B+, moderate-crowded), freight ($5-8B+, crowded), construction ($3-5B+, crowded), and surveying ($500M-1B, sparse-moderate with duopoly). Five of seven were killed or parked. Construction AI Coordinator — previously our #1 opportunity at score 65 — was parked after discovering $3-5B+ VC/PE deployed including Procore ($10B+ market cap). Only veterinary services passed the density filter. Simultaneously, LATAM research invalidated the professional services cascade hypothesis (Argentina's distress is macro-driven, Brazil is growing) and reframed the opportunity as nearshoring arbitrage. P7 Timing Arbitrage research produced the first named failure cases (Klarna, CNET, SI, Air Canada, NEDA), identifying customer support as the top vacuum sector and DOGE federal reductions as the largest timing arbitrage event. New emergent insight: competitive density appears to be a UNIVERSAL property of sectors flagged by the Principles Engine — if the disruption is obvious enough for our framework to identify, it's obvious enough for billions in VC/PE to have already arrived. The search must focus on sectors where the disruption thesis requires domain-specific insight that generic pattern recognition misses.",
+      "competitive_density_scan_results": {
+        "veterinary": {"density": "sparse", "vc_pe_deployed": "$200-400M", "verdict": "ADVANCE"},
+        "translation": {"density": "crowded", "vc_pe_deployed": "$2-4B+", "verdict": "KILL"},
+        "property_management": {"density": "moderate", "vc_pe_deployed": "$1-2B+", "verdict": "PARK"},
+        "insurance_brokerage": {"density": "moderate-crowded", "vc_pe_deployed": "$3-5B+", "verdict": "PARK"},
+        "freight_brokerage": {"density": "crowded", "vc_pe_deployed": "$5-8B+", "verdict": "KILL"},
+        "construction": {"density": "crowded", "vc_pe_deployed": "$3-5B+", "verdict": "PARK"},
+        "surveying": {"density": "sparse-moderate", "vc_pe_deployed": "$500M-1B", "verdict": "PARK (duopoly + licensing)"}
       },
-      "kill_index_first_population": {
-        "K-001": "Healthcare Staffing AI — nurse ratio manipulation illegal under H.R. 3415 / S. 1709 + CA SB 596. NNU campaign. 80-99% false alarm rates. Olive AI $1B precedent failure. Epic competing from 42% share.",
-        "K-002": "Generic SMB Back-Office — Intuit 80%+ moat with $100M OpenAI partnership. Bench.co $113M catastrophic failure. Pilot $325M for 0.4% penetration. 70% paper adoption after 43 years."
+      "latam_findings": {
+        "cascade_hypothesis": "INVALIDATED — Argentina distress is macro-driven (inflation, austerity), not AI-driven. Brazil professional services GROWING from tax reform demand.",
+        "reframed_opportunity": "Nearshoring arbitrage: LATAM professionals + AI augmentation serving US clients at 30-50% cost. Near-zero AI-for-professional-services competition in either country.",
+        "key_insight": "Baumol stored energy is 3-5x smaller in LATAM ($15-30K vs $80-150K salaries). The play is not domestic disruption but cross-border arbitrage."
       },
-      "top_opportunity_parked": {
-        "name": "Distressed Professional Services Acquisition",
-        "previous_score": 87,
-        "revised_score": 44,
-        "reason": "Thesis structurally valid. Competitive landscape at $500M+ vs our $500K-$1M is untenable. Crete, Accrual, Ascend, and 147 PE deals have industrialized the playbook we proposed at 1000x our capital.",
-        "reactivation_conditions": [
-          "PE roll-up Minsky moment — when over-leveraged acquirers face distress",
-          "LATAM market showing same cascade with less PE competition",
-          "Niche sub-sector identification where PE hasn't arrived"
-        ]
-      },
-      "analytical_framework_validation": {
-        "jevons": "Correctly predicted demand expansion at lower costs. Value: identifies TAM expansion. Limitation: does not predict WHO captures expanded demand.",
-        "coase": "Correctly predicted firm shrinkage in cognitive industries. Value: identifies structural direction. Limitation: PE roll-ups can capture the transition economics before firm shrinkage completes.",
-        "minsky": "Identified potential vulnerability in PE roll-ups (speculative phase). Value: may identify H2-H3 second-order opportunity when roll-ups face distress. Correctly identified that in healthcare, WE would be the speculative actor.",
-        "baumol": "Confirmed stored energy in professional services and healthcare. Value: identifies magnitude of disruption potential. Limitation: regulation can preserve cost disease indefinitely (healthcare).",
-        "schumpeter": "Correctly identified gap periods. CRITICAL: helped determine that prof services is in 'crowded restructuring' phase, not 'gap period'. Most operationally useful lens for timing decisions.",
-        "summary": "The framework proved its value by being RIGHT about the forces and by helping us understand WHY we were wrong about the timing and competitive position. Retaining all 6 lenses. Promoting P7 Timing Arbitrage to confirmed pattern."
-      },
-      "transmission_chain_analysis": {
-        "prof_services_cascade": "Confirmed at N4-N5 (firm behavior and labor effect). Advanced to N6 (micro opportunity) but entry window is crowded by institutional capital. Chain fully materialized but not actionable for undercapitalized entrants.",
-        "healthcare_demographic_gap": "Stalled at N5 by regulation. Federal legislation explicitly blocks N5→N6 transition for technology-as-substitute solutions. Chain cannot progress through our proposed mechanism.",
-        "p7_timing_arbitrage": "Confirmed pattern, currently at N3-N4 (industry structure change and firm behavior). HBR data validates the mechanism. HIGH PRIORITY: identify specific sectors where the vacuum exists and is unfilled.",
-        "construction_labor_gap": "Early chain at N2-N3. Immigration policy confirmed as N2 trigger. Needs competitive scan at N3 before advancing."
-      },
-      "new_direction": {
-        "core_pivot": "Apply the proven Principles Engine to sectors where PE and well-funded startups have NOT arrived. The framework identifies disruption correctly — we need less crowded terrain.",
-        "search_criteria": [
-          "Sector shows P2 cascade dynamics (declining employment + rising bankruptcies)",
-          "Sector does NOT have >$100M of venture/PE capital deployed in AI solutions",
-          "Sector is accessible to a 2-person team at $500K-$1M",
-          "Sector is not protected by federal regulation blocking AI substitution",
-          "Sector has fragmented incumbents (no single player with 80%+ share)"
-        ],
-        "candidate_sectors_for_cycle_7": [
-          "Veterinary services — fragmented, no PE AI wave, Baumol cost disease present",
-          "Translation/localization — AI disruption obvious but PE hasn't industrialized acquisition",
-          "Property management — fragmented, high overhead, no dominant AI player",
-          "Insurance brokerage — fragmented, coordination-cost-heavy, license-gated",
-          "Freight brokerage — middlemen ripe for disintermediation, JOLTS data shows cooling",
-          "Print/media production — dead business revival candidate, coordination costs collapsed",
-          "Surveying/land services — license-gated, fragmented, construction-adjacent"
-        ],
-        "latam_scan": "Priority for Cycle 7. Professional services cascade may exist in Argentina/Brazil with weaker incumbents and zero PE competition. Founder operating access creates unique advantage.",
-        "p7_sector_identification": "Priority for Cycle 7. Which specific sectors have the largest gap between human cuts and AI readiness? These vacuums are the highest-priority scanning targets."
+      "timing_arbitrage_findings": {
+        "top_vacuum_sectors": ["Customer support (Klarna reversal, Air Canada liability)", "Media/journalism (CNET errors, SI scandal)", "Healthcare admin (claims backlogs, coding AI immature)"],
+        "largest_macro_event": "DOGE federal workforce reductions — 60-75K buyouts, AI tools NOT deployed at scale",
+        "key_insight": "The opportunity is in the SERVICE layer (managed hybrid human+AI) not the TOOL layer (where Intercom/Zendesk/Freshdesk compete)"
       },
       "cross_principle_patterns": [
         {"pattern": "P2+P5 Divergence Corridor", "strength": "strong", "status": "confirmed"},
         {"pattern": "P2+P3 Credit-Squeeze Accelerator", "strength": "strong", "status": "confirmed"},
-        {"pattern": "P1+P3 Cost Floor Unlock", "strength": "strong", "status": "confirmed"},
+        {"pattern": "P1+P3 Cost Floor Unlock", "strength": "strong", "status": "confirmed — strengthening"},
         {"pattern": "P2 Bond-Bankruptcy Divergence", "strength": "moderate", "status": "confirmed"},
-        {"pattern": "P7 Timing Arbitrage", "strength": "strong", "status": "confirmed — promoted from emerging in Cycle 3"}
+        {"pattern": "P7 Timing Arbitrage", "strength": "strong", "status": "confirmed — sector-specific identification achieved"}
       ],
       "top_opportunities_post_cycle": [
-        {"name": "Construction AI Coordinator", "score": 65, "status": "scanning", "priority": "Cycle 7 competitive scan"},
-        {"name": "PE Roll-Up Disruptor", "score": 58, "status": "scanning", "priority": "H2 monitoring"},
-        {"name": "Distressed Professional Services", "score": 44, "status": "parked", "priority": "Monitor for reactivation triggers"}
+        {"name": "Veterinary Services — Agentic Practice Operations", "score": 62, "status": "scanning -> verify"},
+        {"name": "P7 Timing Arbitrage — Customer Support Vacuum Filler", "score": 58, "status": "scanning"},
+        {"name": "LATAM Nearshoring + AI Augmentation", "score": 55, "status": "scanning — reframed"},
+        {"name": "PE Roll-Up Disruptor", "score": 58, "status": "monitoring — H2"}
       ],
       "next_cycle_direction": [
-        "Run competitive density scans on Construction AI Coordinator — apply the same counter-signal rigor that killed/parked the top 3",
-        "Scan 5-7 new sectors using the search criteria (no >$100M PE/VC, P2 cascade present, fragmented incumbents, no regulatory block)",
-        "Add LATAM data sources to Agent A — scan Argentina/Brazil professional services for cascade dynamics with less PE competition",
-        "Deep-dive P7 Timing Arbitrage: which sectors have the widest gap between human layoffs and AI delivery readiness?",
-        "Add counter_signal_severity (1.5) and competitive_density (1.3) as permanent grading weights",
-        "For any opportunity scoring above 60: MANDATORY counter-signal research before advancing to verification",
-        "Monitor PE roll-up health quarterly — Crete, Ascend, and Accrual are leveraged bets that may face Minsky distress in H2-H3",
-        "Test the Principles Engine on at least 2 sectors where we have NO prior thesis — pure discovery mode"
+        "PRIORITY 1: Deep-verify veterinary services — Mars/IDEXX threat assessment, state licensing map, practice acquisition economics, unit economics modeling",
+        "PRIORITY 2: Competitive density deep-dive on customer support SERVICE layer (not tool layer) — who else is doing managed hybrid human+AI support?",
+        "PRIORITY 3: Nearshoring competitive scan — how crowded is AI-augmented nearshoring? What verticals have highest arbitrage?",
+        "PRIORITY 4: Add international data sources (Asia, Europe, Middle East) for comparative market analysis",
+        "PROCESS: Move competitive density scan to FIRST step, before any scoring. If density > $1B, auto-park.",
+        "MONITOR: PE roll-up health quarterly — Crete, Ascend, Accrual",
+        "MONITOR: DOGE federal workforce developments — if service delivery visibly degrades, federal services vacuum becomes actionable"
+      ]
+    },
+    {
+      "cycle": 8,
+      "date": "2026-02-09",
+      "engine": "opus-4.6-in-session",
+      "signals_scanned": 12,
+      "opportunities_verified": 14,
+      "opportunities_killed": 0,
+      "opportunities_parked": 0,
+      "kill_index_entries_added": 0,
+      "new_data_categories": [
+        "Staffing company equity prices (first-ever equity market signal)",
+        "Composite indices: P3 Cost Collapse, Capital Environment, Beveridge Curve (first-ever computed)",
+        "Sector ETF divergence analysis (first-ever)",
+        "International comparative data: UAE, Germany, World Bank 16-country (first-ever)"
+      ],
+      "master_synthesis": "Cycle 8 marks a phase transition in the engine's analytical power. For the first time, we have MARKET-PRICED confirmation of the professional labor substitution thesis: Robert Half -51%, ManpowerGroup -39%, Kelly Services -20% over one year. Equity markets are telling us what government statistics (BLS, JOLTS) haven't confirmed yet — professional labor demand is structurally declining, not cyclically. Simultaneously, the engine's first composite indices both hit 100.0 (maximum): P3 Cost Collapse (productivity surging, unit labor costs declining) and Capital Environment (rates falling, credit easing, stress low). The Beveridge Curve correlation at r=-0.658 confirms structural mismatch — this is not a normal recession pattern. The convergence of these three signals — market confirmation of labor substitution, AI costs at minimum, and capital at maximum availability — creates the most favorable macro environment the engine has ever measured for AI-native business formation. Customer Support Vacuum surges from #2 (score 58) to co-#1 (score 65), tied with Veterinary Services. LATAM Nearshoring rises from 55 to 60. Top score rises for the first time since Cycle 3 (62->65) on external macro validation, not thesis weakening. Staffing industry itself was assessed as opportunity and REJECTED — the value is as signal, not entry point. First international data collected but not yet deeply analyzed.",
+      "staffing_canary_analysis": {
+        "robert_half": {"ticker": "RHI", "1yr_change": "-51%", "interpretation": "Professional/office staffing demand structurally collapsing"},
+        "manpowergroup": {"ticker": "MAN", "1yr_change": "-39%", "interpretation": "Broad professional staffing demand declining"},
+        "kelly_services": {"ticker": "KELYA", "1yr_change": "-20%", "interpretation": "Mixed staffing (professional + industrial) declining, but less than pure-professional firms"},
+        "meta_insight": "The gradient matters: Robert Half (most professional/white-collar focused) down most (-51%), Kelly Services (most mixed with industrial/blue-collar) down least (-20%). This confirms the disruption is specifically in PROFESSIONAL labor, not across all labor. Blue-collar/industrial staffing is relatively resilient.",
+        "opportunity_assessment": "REJECTED as direct opportunity. Staffing industry competitive density exceeds $5B+ (Indeed, LinkedIn, Upwork, Deel, Remote.com). Category is shrinking, not being disrupted by a new entrant. The value is as a LEADING INDICATOR for other opportunities.",
+        "signal_propagation": [
+          "Strengthens Customer Support Vacuum (+7 score points) — confirms professional labor substitution is real and priced",
+          "Strengthens LATAM Nearshoring (+5 score points) — US companies cutting domestic professional staff still need capacity",
+          "Strengthens Veterinary Services (+3 score points, indirect) — P3 maximum + capital environment maximum help thesis",
+          "Accelerates PE Roll-Up timeline (+2 score points) — labor these roll-ups are buying may depreciate faster than modeled"
+        ]
+      },
+      "composite_indices": {
+        "p3_cost_collapse": {
+          "value": 100.0,
+          "components": "Productivity growth rate, unit labor cost change, corporate profit growth, AI inference cost trajectory",
+          "interpretation": "MAXIMUM. The gap between human labor cost and AI capability cost has never been wider. This is the P1+P3 Cost Floor Unlock pattern at its peak."
+        },
+        "capital_environment": {
+          "value": 100.0,
+          "components": "Federal funds rate trajectory, SLOOS credit standards, HY spread, financial stress index",
+          "interpretation": "MAXIMUM. Capital is available and cheap. This removes the P2+P3 Credit-Squeeze as a barrier — the squeeze is ending, capital is deploying."
+        },
+        "beveridge_curve_r": {
+          "value": -0.658,
+          "components": "Job openings (JOLTS) vs unemployment rate correlation",
+          "interpretation": "STRONG STRUCTURAL MISMATCH. In a normal cycle, openings and unemployment move in the same direction. When they diverge (openings falling, unemployment rising), it signals structural change — jobs being eliminated, not redistributed."
+        }
+      },
+      "sector_etf_findings": {
+        "energy": "+27.4%",
+        "healthcare": "+20.0%",
+        "industrials": "+15.5%",
+        "utilities": "+1.2%",
+        "engine_implications": [
+          "Healthcare +20% confirms staffing shortage cost pressure — second-order effect on vet tech wages",
+          "Energy +27.4% suggests sector rotation into real/physical assets — not directly actionable for the engine",
+          "Industrials +15.5% confirms infrastructure spending — relevant if Construction AI ever unparks",
+          "Utilities +1.2% lagging confirms rate-sensitivity — not directly actionable"
+        ]
+      },
+      "international_data_findings": {
+        "uae": {"unemployment": "2.16%", "vs_us": "US at 4.4%", "insight": "Tight labor market — different structural dynamics. US labor shift is US-specific, not global."},
+        "germany": {"data": "LCI available", "insight": "EU Baumol stored energy now measurable. Comparative benchmarking foundation laid."},
+        "world_bank": {"coverage": "16 countries", "insight": "Cross-country comparison dataset available. Not yet deeply analyzed. Priority for Cycle 9."},
+        "meta_insight": "The US structural labor shift (confirmed by staffing canary) is NOT universal. UAE has tight labor market. This confirms the LATAM nearshoring thesis — LATAM can serve US demand specifically because the structural shift is US-specific."
+      },
+      "cross_principle_patterns": [
+        {"pattern": "P2+P5 Divergence Corridor", "strength": "strong", "status": "confirmed — market-priced"},
+        {"pattern": "P2+P3 Credit-Squeeze Accelerator", "strength": "strong", "status": "confirmed — transitioning from squeeze to deployment"},
+        {"pattern": "P1+P3 Cost Floor Unlock", "strength": "strong", "status": "confirmed — AT MAXIMUM"},
+        {"pattern": "P2 Bond-Bankruptcy Divergence", "strength": "moderate-strong", "status": "confirmed — equity-bond divergence widening"},
+        {"pattern": "P7 Timing Arbitrage", "strength": "strong", "status": "confirmed — market-priced, sector-specific"},
+        {"pattern": "Staffing Canary as P2 Leading Indicator (NEW)", "strength": "strong", "status": "NEW — first observation"}
+      ],
+      "emergent_principles": [
+        {"name": "Staffing Stocks as Macro Leading Indicator", "description": "Staffing company equity prices collapse 6-12 months before government employment data confirms structural shifts. Robert Half, ManpowerGroup, and Kelly Services are the canaries. The gradient (RHI -51% vs KELYA -20%) reveals that PROFESSIONAL labor is being disrupted, not all labor."},
+        {"name": "Composite Index Convergence at Maximum", "description": "P3 and Capital Environment both at 100.0 simultaneously. This unprecedented convergence creates the most favorable macro setup for AI-native business formation — but also means competitive density may intensify across all sectors as capital floods in."}
+      ],
+      "rescored_opportunities": [
+        {"name": "P7 Timing Arbitrage — Customer Support Vacuum Filler", "old_score": 58, "new_score": 65, "change": "+7", "rationale": "Staffing canary collapse is strongest external validation of hybrid thesis. Market confirms professional labor substitution while Klarna reversal confirms AI-only doesn't work. Gap is exactly where hybrid services operate."},
+        {"name": "Veterinary Services — Agentic Practice Operations", "old_score": 62, "new_score": 65, "change": "+3", "rationale": "P3 maximum + capital environment maximum + healthcare wage sympathy. Indirect but favorable."},
+        {"name": "LATAM Nearshoring + AI Augmentation", "old_score": 55, "new_score": 60, "change": "+5", "rationale": "Staffing canary directly amplifies nearshoring demand. US companies cutting domestic professional staff still need capacity. International data confirms US-specificity of structural shift."},
+        {"name": "PE Roll-Up Disruptor", "old_score": 58, "new_score": 60, "change": "+2", "rationale": "Staffing canary suggests labor substitution timeline accelerating. PE roll-ups may have less time to restructure."}
+      ],
+      "top_opportunities_post_cycle": [
+        {"name": "P7 Timing Arbitrage — Customer Support Vacuum Filler", "score": 65, "status": "co-#1, advancing"},
+        {"name": "Veterinary Services — Agentic Practice Operations", "score": 65, "status": "co-#1, advancing to verify"},
+        {"name": "LATAM Nearshoring + AI Augmentation", "score": 60, "status": "#3, strengthened"},
+        {"name": "PE Roll-Up Disruptor", "score": 60, "status": "#4, monitoring — H2"}
+      ],
+      "next_cycle_direction": [
+        "PRIORITY 1: Competitive density deep-dive on customer support SERVICE layer. Who is doing managed hybrid human+AI customer support at scale? Is this sparse like veterinary or crowded like everything else? This is the MAKE-OR-BREAK question for the #1 opportunity.",
+        "PRIORITY 2: Deep-verify veterinary services — Mars/IDEXX threat assessment, state licensing map, practice acquisition economics. This has been pending since Cycle 7 and must execute.",
+        "PRIORITY 3: AI-augmented nearshoring competitive scan — is anyone doing what we're describing? Distinguish from traditional BPO (Globant, Accenture) and from AI-only automation. The specific niche is 'AI-augmented professional services from LATAM.'",
+        "PRIORITY 4: Deeper international data analysis — the Cycle 8 data was collected but not deeply analyzed. UAE, Germany, and World Bank 16-country datasets need processing for bias-checking.",
+        "PRIORITY 5: Staffing canary propagation tracking — monitor RHI/MAN/KELYA quarterly as leading indicators. Track whether BLS/JOLTS data confirms the equity signal with expected 6-12 month lag.",
+        "PRIORITY 6: Track whether P3 remaining at maximum creates new competitive density problems (more capital = more entrants in every sector).",
+        "MONITOR: PE roll-up health — Crete, Ascend, Accrual. Staffing canary may be early warning of PE stress.",
+        "MONITOR: DOGE federal workforce — if service delivery visibly degrades, federal services vacuum becomes more actionable.",
+        "PROCESS: Add market_price_confirmation (1.1 weight) to grading framework — equity market signals should boost scores when they confirm thesis direction."
       ]
     }
   ]
