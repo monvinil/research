@@ -1,6 +1,6 @@
 {
-  "state_version": 3,
-  "current_cycle": 5,
+  "state_version": 6,
+  "current_cycle": 6,
   "engine_started": "2026-02-09",
   "engine_type": "opus-4.6-in-session",
   "active_research_focus": {
@@ -16,11 +16,13 @@
       "dead_business_revival_coordination_cost_failures",
       "pe_rollup_disruption_by_agentic_entrants",
       "credit_squeeze_accelerating_distress",
-      "timing_arbitrage_premature_human_cuts"
+      "timing_arbitrage_premature_human_cuts",
+      "competitive_density_as_disqualifier",
+      "regulatory_impossibility_as_absolute_gate"
     ],
     "geographies": [
       "US_lowest_friction",
-      "LATAM_low_friction",
+      "LATAM_low_friction_priority_for_cycle_7",
       "any_if_arbitrage_justifies"
     ],
     "themes": [
@@ -31,7 +33,9 @@
       "geographic_arbitrage",
       "license_acquisition_as_entry",
       "distressed_asset_acquisition",
-      "timing_arbitrage"
+      "timing_arbitrage",
+      "pe_free_sectors",
+      "regulatory_unblocked_sectors"
     ]
   },
   "founding_conditions": {
@@ -40,7 +44,7 @@
     "founder_1": "operator, Argentina citizen, US resident, English+Spanish",
     "founder_2": "ML/AI Masters Georgia Tech, US citizen",
     "operating_geo": "US+LATAM lowest friction, any geo if economics justify overhead",
-    "credentials": "no CPA/JD/MD \u2014 willing to acquire licensed businesses",
+    "credentials": "no CPA/JD/MD — willing to acquire licensed businesses",
     "languages": "English+Spanish native, others = cost adder not blocker",
     "vc_network": "active, can raise follow-on",
     "optimization_target": "opportunity quality + VC differentiation, NOT capital fit"
@@ -52,7 +56,9 @@
       "source_quality": 1.0,
       "timeliness": 1.0,
       "novelty": 0.7,
-      "cross_signal_reinforcement": 1.2
+      "cross_signal_reinforcement": 1.2,
+      "counter_signal_severity": 1.5,
+      "competitive_density": 1.3
     },
     "history": [
       {
@@ -78,6 +84,20 @@
           "cross_signal_reinforcement": 1.2
         },
         "reason": "Post Cycle 3: themes established, need depth over novelty. Boost data specificity for unit economics verification. Boost cross-signal reinforcement to detect convergences."
+      },
+      {
+        "cycle": 6,
+        "weights": {
+          "principles_alignment": 1.0,
+          "data_specificity": 1.3,
+          "source_quality": 1.0,
+          "timeliness": 1.0,
+          "novelty": 0.7,
+          "cross_signal_reinforcement": 1.2,
+          "counter_signal_severity": 1.5,
+          "competitive_density": 1.3
+        },
+        "reason": "Post Cycle 6 counter-signal revolution: added counter_signal_severity (1.5) because counter-evidence was decisive in 3/3 verifications — must be weighted heavily to prevent confirmation bias. Added competitive_density (1.3) because competitive landscape was the blind spot that inflated Opp 1 and Opp 3 scores. Both are now permanent grading dimensions."
       }
     ]
   },
@@ -93,7 +113,8 @@
       ],
       "first_observed": "cycle 3",
       "strength": "strong",
-      "status": "confirmed"
+      "status": "confirmed",
+      "cycle_6_note": "Pattern confirmed but entry window for prof services is crowded (147 PE deals, $500M+ Crete). Healthcare side blocked by regulation. Pattern itself is validated — actionable entry points require less crowded sectors."
     },
     {
       "pattern_id": "P-002",
@@ -105,7 +126,8 @@
       ],
       "first_observed": "cycle 3",
       "strength": "strong",
-      "status": "emerging"
+      "status": "confirmed",
+      "cycle_6_note": "Promoted from emerging to confirmed. Credit squeeze continues to accelerate distress among incumbents who cannot self-fund AI transformation. The squeeze is real — but PE firms are filling the capital gap for some sectors (professional services). Need to find sectors where the credit squeeze operates WITHOUT PE intervention."
     },
     {
       "pattern_id": "P-003",
@@ -117,90 +139,109 @@
       ],
       "first_observed": "cycle 3",
       "strength": "strong",
-      "status": "confirmed"
+      "status": "confirmed",
+      "cycle_6_note": "Consistently the strongest macro signal. Every cost reduction opens new business tiers. The 320% spending surge confirms Kondratieff deployment phase. This pattern is sector-agnostic and continues to create opportunities."
     },
     {
       "pattern_id": "P-004",
-      "description": "Timing Arbitrage (potential P7): Companies cutting human capacity before AI can deliver, creating service vacuums",
+      "description": "P7 Timing Arbitrage: Companies cutting human capacity before AI can deliver, creating service vacuums",
       "supporting_signals": [
         "ai_layoffs_55k",
-        "premature_cuts_hbr"
+        "premature_cuts_hbr",
+        "jolts_neg_966k"
       ],
       "first_observed": "cycle 3",
+      "strength": "strong",
+      "status": "confirmed",
+      "cycle_6_note": "PROMOTED from emerging to confirmed. HBR data validates the mechanism. JOLTS decline (-966K, -12.9%) supports broad labor market cooling driven partly by premature AI-motivated cuts. HIGH PRIORITY for Cycle 7: identify specific sectors with the widest human-cut-to-AI-readiness gap."
+    },
+    {
+      "pattern_id": "P-005",
+      "description": "PE Roll-Up Vulnerability: PE firms deploying $200B+ into fragmented sector roll-ups may face Minsky distress as AI disruption outpaces their restructuring capacity",
+      "supporting_signals": [
+        "pe_deals_147_accounting",
+        "crete_500m",
+        "ascend_314m_revenue",
+        "accrual_75m",
+        "client_attrition_20_25pct"
+      ],
+      "first_observed": "cycle 6",
       "strength": "moderate",
-      "status": "emerging"
+      "status": "emerging",
+      "cycle_6_note": "NEW pattern identified from counter-signal research. The same competitive density that killed our entry thesis creates a second-order opportunity: PE roll-ups are leveraged, assume stable client retention (contradicted by 20-25% attrition data), and may face Minsky distress if AI disruption accelerates. H2-H3 timing."
     }
   ],
   "opportunity_pipeline": {
     "scanning": [
       "Construction AI Coordinator",
       "PE Roll-Up Disruptor",
-      "Agentic Back-Office for SMBs"
+      "Veterinary services agentic rebuild",
+      "Translation/localization AI disruption",
+      "Property management AI coordination",
+      "Insurance brokerage AI disintermediation",
+      "Freight brokerage AI disintermediation",
+      "LATAM professional services cascade"
     ],
     "grading": [],
     "verification": [],
-    "verified": [
-      "Distressed Professional Services Acquisition",
-      "Healthcare Staffing AI"
+    "verified": [],
+    "killed": [
+      "Healthcare Staffing AI (K-001: nurse ratio manipulation illegal)",
+      "Agentic Back-Office for SMBs (K-002: Intuit moat + Bench/Pilot failure precedent)"
     ],
-    "killed": [],
-    "parked": []
+    "parked": [
+      "Distressed Professional Services Acquisition (competitive landscape saturated — $500M+ Crete, 147 PE deals)"
+    ]
   },
   "agent_performance": {
     "agent_a": {
-      "signals_produced": 75,
-      "signals_above_threshold": 52,
-      "avg_relevance_score": 7.1,
+      "signals_produced": 103,
+      "signals_above_threshold": 67,
+      "avg_relevance_score": 7.3,
       "top_source_categories": [
-        [
-          "FRED",
-          12
-        ],
-        [
-          "BLS",
-          10
-        ],
-        [
-          "EDGAR",
-          8
-        ],
-        [
-          "Web",
-          30
-        ],
-        [
-          "Cross-signal synthesis",
-          15
-        ]
+        ["FRED", 14],
+        ["BLS", 14],
+        ["EDGAR", 10],
+        ["Web", 38],
+        ["Cross-signal synthesis", 18],
+        ["Counter-signal research", 9]
       ],
-      "kill_index_hit_rate": "0%",
-      "notes": "Cycle 3 used LLM reasoning (Opus 4.6) \u2014 significantly higher signal quality vs Cycle 1 hardcoded extraction"
+      "kill_index_hit_rate": "10.7% (3/28 signals matched K-001 or K-002 patterns)",
+      "notes": "Cycle 6 added counter-signal research as a new source category. Agent A produced 9 critical counter-signals that drove 2 kills and 1 park. Counter-signal production is now a core Agent A function, not an add-on."
     },
     "agent_b": {
-      "verifications_completed": 5,
-      "pursue_rate": "0% (all INVESTIGATE_FURTHER, none fully PURSUE yet)",
-      "avg_viability_score": 5.4,
-      "common_kill_reasons": [],
-      "avg_vc_differentiation_score": 7.2,
+      "verifications_completed": 8,
+      "pursue_rate": "0% (0 PURSUE, 2 INVESTIGATE_FURTHER retained from Cycle 3, 1 PARK, 2 KILL)",
+      "avg_viability_score": 3.4,
+      "common_kill_reasons": [
+        "Regulatory prohibition of core value proposition",
+        "Incumbent moat + proven startup failure pattern",
+        "Competitive density exceeding capital capacity"
+      ],
+      "avg_vc_differentiation_score": 5.8,
       "generic_pitch_rate": "0%",
-      "cost_adder_frequency": "40% (2/5 require license acquisition or geo setup)",
-      "notes": "First real verification pass. Need deeper unit economics in Cycle 4."
+      "cost_adder_frequency": "33% (1/3 top opportunities required license acquisition)",
+      "notes": "Cycle 6 was Agent B's highest-impact cycle. Counter-signal research gave B real ammunition. The kill rate increased from 0% to 67% (2/3 top opportunities) reflecting genuine verification rigor, not pessimism. B's theoretical checks (Schumpeter timing, Minsky reversal) proved operationally decisive."
     }
   },
   "key_unknowns": [
-    "Real acquisition prices for distressed professional services firms (need deal data, not estimates)",
-    "Actual client retention rate when firm ownership changes",
-    "HIPAA compliance cost for AI in healthcare settings",
-    "Whether nurse-patient ratio regulations allow AI augmentation",
-    "LATAM market: are same cascades happening in Argentina/Brazil professional services?",
-    "Competitor landscape for distressed acquisition + AI rebuild thesis"
+    "Which sectors show P2 cascade dynamics (declining employment + rising bankruptcies) but have NOT attracted >$100M in PE/VC capital?",
+    "Are the same professional services cascade dynamics occurring in Argentina/Brazil with less PE competition?",
+    "Which specific sectors have the widest gap between human layoffs (P7 timing arbitrage) and AI delivery readiness?",
+    "Is the Construction AI Coordinator space free of well-funded competitors, or will counter-signal research reveal the same crowding issue?",
+    "Are the 147 PE accounting roll-ups showing any early signs of Minsky distress (client attrition, integration cost overruns, revenue shortfalls)?",
+    "What is the competitive landscape for veterinary services, translation, property management, insurance brokerage, and freight brokerage AI solutions?",
+    "Does the Principles Engine work equally well for identifying opportunities in sectors we have no prior thesis about (pure discovery mode)?",
+    "What specific regulatory barriers exist for the candidate sectors (veterinary, insurance, freight) — are any sectors protected like healthcare?"
   ],
   "next_cycle_suggestions": [
-    "Deep-dive Agent B on top 2: Distressed Prof Services + Healthcare Staffing",
-    "Run competitor scans via Agent A on both verified opportunities",
-    "Add LATAM data sources to Agent A scanning",
-    "Investigate P7 Timing Arbitrage more deeply \u2014 which specific industries have premature cuts?",
-    "Get real deal data: BizBuySell, DealStream for distressed professional services acquisition prices",
-    "Stress-test healthcare opportunity against state-level nursing regulations"
+    "PRIORITY 1: Run competitive density scans on Construction AI Coordinator and 5-7 new candidate sectors (veterinary, translation, property management, insurance brokerage, freight brokerage, surveying). Apply mandatory counter-signal research BEFORE scoring above 60.",
+    "PRIORITY 2: Deep-dive P7 Timing Arbitrage — use BLS sector-level employment data + JOLTS by industry to identify sectors with largest human-cut-to-AI-readiness gap. These vacuums are the highest-value scanning targets.",
+    "PRIORITY 3: Add LATAM data sources to Agent A. Scan Argentina/Brazil professional services for cascade dynamics. Founder 1 has direct operating access — this is a unique competitive advantage if LATAM cascades exist without PE competition.",
+    "PRIORITY 4: Apply the Principles Engine to at least 2 sectors with ZERO prior thesis (pure discovery mode). Test whether the framework identifies opportunities we would not have found through directed scanning.",
+    "PROCESS: For any opportunity scoring above 60, MANDATORY counter-signal research before advancing to verification. This is the Cycle 6 lesson codified as process.",
+    "PROCESS: Add competitive_density (1.3) and counter_signal_severity (1.5) as permanent grading weights in Agent C.",
+    "MONITOR: Set quarterly trigger to check PE roll-up health — Crete, Ascend, Accrual, and the broader 147-deal accounting PE landscape. Early Minsky distress signals = reactivation trigger for parked Prof Services opportunity.",
+    "MONITOR: Track H.R. 3415 / S. 1709 legislative status quarterly. If both die in committee AND NNU campaign weakens, K-001 invalidation conditions partially met."
   ]
 }

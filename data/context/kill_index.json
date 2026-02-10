@@ -1,8 +1,93 @@
 {
-  "kill_patterns": [],
+  "kill_patterns": [
+    {
+      "pattern_id": "K-001",
+      "created_cycle": 6,
+      "created_date": "2026-02-10",
+      "opportunity_killed": "Healthcare Staffing Gap — AI-Augmented Nurse Capacity Multiplier",
+      "kill_reason": "Nurse ratio manipulation is illegal. Federal bills H.R. 3415 and S. 1709 explicitly prohibit counting technology as a substitute for nurse staffing in ratio calculations. California SB 596 increases penalties for ratio violations. The core value proposition — shifting nurse-patient ratios from 1:4 to 1:12 through AI monitoring — is not merely difficult, it is prohibited by law. Additionally, NNU (largest US nurses' union) is running a funded national anti-AI campaign across 12 states, creating organized political opposition to any technology-as-substitute framing.",
+      "signal_type_affected": "demographic_gap",
+      "industries_affected": ["healthcare", "hospital_staffing", "nurse_staffing", "clinical_AI", "healthcare_workforce_management"],
+      "constraint_violated": "regulatory — federal and state law explicitly blocks core value proposition",
+      "theoretical_basis": "Baumol cost disease confirmed in healthcare but regulation preserves it. Schumpeter destruction blocked by legal protection of incumbent model. Jevons demand expansion blocked by ratio mandates. Minsky analysis shows WE would be the speculative actor, not the incumbents.",
+      "precedent_failures": [
+        {
+          "company": "Olive AI",
+          "capital_raised": "$1B+",
+          "outcome": "Shut down. Healthcare AI integration exponentially harder than projected. 18-36 month enterprise sales cycles consumed capital.",
+          "relevance": "Direct precedent at 1000x our capital level"
+        }
+      ],
+      "competing_incumbents": [
+        {
+          "name": "Epic Systems",
+          "market_share": "42% of US hospital EHR market",
+          "threat": "Building competing AI monitoring and staffing optimization from incumbent data/integration position"
+        }
+      ],
+      "additional_kill_factors": [
+        "80-99% false alarm rate in clinical monitoring (alarm fatigue documented)",
+        "HIPAA compliance costs $10K-$1M/year",
+        "Enterprise sales cycles 18-36 months in healthcare"
+      ],
+      "example_signals_killed": ["healthcare_staffing_gap_709k", "nursing_shortage_6states", "nurse_ai_capacity_multiplier"],
+      "still_active": true,
+      "invalidation_condition": "Kill becomes invalid ONLY if: (1) H.R. 3415 / S. 1709 both die in committee AND no replacement legislation introduced, AND (2) NNU reverses its anti-AI campaign or loses political influence, AND (3) at least one state explicitly allows AI as substitute in ratio calculations. All three conditions must be met. Monitor quarterly.",
+      "preserved_insight": "The demographic signal is VALID — healthcare adding 709K jobs/yr with permanent shortage. The PROBLEM is real. Only this specific SOLUTION (ratio manipulation via AI) is killed. Adjacent opportunities in healthcare that help compliance rather than circumvent it remain viable for scanning."
+    },
+    {
+      "pattern_id": "K-002",
+      "created_cycle": 6,
+      "created_date": "2026-02-10",
+      "opportunity_killed": "Agentic Back-Office for Distressed SMBs",
+      "kill_reason": "Incumbent moat (Intuit/QuickBooks 80%+ market share with $100M OpenAI partnership) plus proven startup failure pattern. Bench.co raised $113M, built exactly this product, reached 35K customers, then catastrophically failed Dec 2024 — unit economics never worked at SMB price points. Pilot raised $325M from Sequoia/Bezos and achieved only 0.4% market penetration. The market has been tested at $113M and $325M by elite teams and has been proven non-viable as a standalone product. Additionally, 70% of SMBs still use paper-based bookkeeping after 43 years of digital alternatives — the adoption barrier is behavioral, not economic.",
+      "signal_type_affected": "cost_structure_collapse",
+      "industries_affected": ["smb_bookkeeping", "smb_back_office", "smb_accounting", "fractional_cfo", "outsourced_finance"],
+      "constraint_violated": "market — incumbent moat + proven startup failure pattern + behavioral adoption resistance",
+      "theoretical_basis": "Jevons demand expansion blocked by behavioral inelasticity (70% on paper after 43 years). Coase correctly predicts outsourcing value but Intuit already captured it. Schumpeter analysis shows Intuit IS the creative destroyer, not the victim. No Minsky vulnerability — Intuit's model strengthens with AI.",
+      "precedent_failures": [
+        {
+          "company": "Bench.co",
+          "capital_raised": "$113M",
+          "outcome": "Catastrophic failure Dec 2024. 35K customers stranded mid-tax-season. Unit economics never worked at SMB price points.",
+          "relevance": "Exact same product thesis at 200x our capital"
+        },
+        {
+          "company": "Pilot",
+          "capital_raised": "$325M (Sequoia, Bezos, Stripe)",
+          "outcome": "0.4% market penetration despite elite backing and massive capital.",
+          "relevance": "Proves even $325M cannot dislodge SMB accounting incumbent"
+        }
+      ],
+      "competing_incumbents": [
+        {
+          "name": "Intuit (QuickBooks)",
+          "market_share": "80%+",
+          "threat": "$100M OpenAI partnership, actively building agentic AI agents within QuickBooks. Has distribution, data, and habit moat."
+        }
+      ],
+      "additional_kill_factors": [
+        "70% of SMBs still on paper after 43 years of digital alternatives",
+        "CAC for SMBs structurally too high relative to LTV",
+        "Quality control at scale requires more humans than projected (Bench lesson)"
+      ],
+      "example_signals_killed": ["smb_back_office_agentic", "distressed_smb_overhead", "smb_bankruptcy_24k"],
+      "still_active": true,
+      "invalidation_condition": "Kill becomes invalid ONLY if: (1) Intuit loses significant market share (below 60%) due to product failure or regulatory action, OR (2) a new distribution channel emerges that bypasses Intuit's platform lock-in (e.g., embedded finance in vertical SaaS), OR (3) a vertical-specific niche is identified where QuickBooks does not serve well (cannabis, crypto, international trade). Condition 3 would not invalidate the general kill but could create a niche exception.",
+      "preserved_insight": "The distressed SMB signal is VALID — 24K bankruptcies, overhead costs at $50-100K for 5-20 person firms. The PROBLEM is real. But the SOLUTION cannot be a horizontal back-office product competing with Intuit. Vertical-specific or Intuit-complementary approaches remain viable for scanning."
+    }
+  ],
   "stats": {
-    "total_kills": 0,
-    "top_kill_reasons": [],
-    "most_killed_signal_types": []
+    "total_kills": 2,
+    "kills_this_cycle": 2,
+    "top_kill_reasons": [
+      {"reason": "Regulatory prohibition of core value proposition", "count": 1},
+      {"reason": "Incumbent moat + proven startup failure pattern", "count": 1}
+    ],
+    "most_killed_signal_types": [
+      {"type": "demographic_gap", "count": 1},
+      {"type": "cost_structure_collapse", "count": 1}
+    ],
+    "kill_index_observations": "Both kills share a common lesson: the Principles Engine identifies disruption correctly but does not assess competitive density or regulatory impossibility. Cycle 7 must add these as mandatory gates. Notable that zero kills are due to 'bad thesis' — both opportunities correctly identified real problems. The kills are about solution viability, not problem validity."
   }
 }
