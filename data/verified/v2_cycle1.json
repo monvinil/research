@@ -5,13 +5,16 @@
   "engine_version": "v2.0",
   "total_models_constructed": 20,
   "opportunities": [
-
     {
       "verification_id": "B-2026-02-10-001",
-      "signal_ids_evaluated": ["A-2026-02-10-003", "A-2026-02-10-013", "A-2026-02-10-018", "A-2026-02-10-023"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-003",
+        "A-2026-02-10-013",
+        "A-2026-02-10-018",
+        "A-2026-02-10-023"
+      ],
       "cluster": "CL-03-SMB-FINANCIAL-SERVICES",
       "structural_shift": "CPA shortage (75% retiring) colliding with 70% of SMBs unserved. AI accounting growing 44% CAGR. Nash equilibrium in accounting profession about to break.",
-
       "business_models_constructed": [
         {
           "model_name": "AI-First SMB Accounting Service",
@@ -50,7 +53,6 @@
           "moat_source": "Bilingual AI training data, cross-border regulatory expertise, founder language advantage"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$149/month (mid-tier accounting)",
         "cost_per_unit_agentic": "$25-35/month",
@@ -58,19 +60,36 @@
         "cost_advantage_ratio": "8:1 to 15:1",
         "break_even_volume": "500 clients at mid-tier pricing",
         "gross_margin": "75-85%",
-        "assumptions": ["AI handles 90% of standard bookkeeping accurately", "1 CPA can review 200 accounts", "Client acquisition cost $200-500"],
-        "data_sources_used": ["Accounting Today", "Stanford GSB", "PYMNTS", "BLS"]
+        "assumptions": [
+          "AI handles 90% of standard bookkeeping accurately",
+          "1 CPA can review 200 accounts",
+          "Client acquisition cost $200-500"
+        ],
+        "data_sources_used": [
+          "Accounting Today",
+          "Stanford GSB",
+          "PYMNTS",
+          "BLS"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["75% CPAs retiring", "64% no AI training", "52% no AI policies", "Nash equilibrium unbroken"],
+        "evidence": [
+          "75% CPAs retiring",
+          "64% no AI training",
+          "52% no AI policies",
+          "Nash equilibrium unbroken"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — pre-defection window"
+        "timing_assessment": "optimal \u2014 pre-defection window"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["H&R Block ($3.6B rev)", "Intuit/TurboTax ($14B rev)", "Local CPA firms (300K+ firms)", "QuickBooks ($9B+ rev)"],
+        "primary_incumbents": [
+          "H&R Block ($3.6B rev)",
+          "Intuit/TurboTax ($14B rev)",
+          "Local CPA firms (300K+ firms)",
+          "QuickBooks ($9B+ rev)"
+        ],
         "mobility_score": 4,
         "mobility_breakdown": {
           "pricing_model_change": -2,
@@ -81,7 +100,6 @@
         },
         "notes": "Intuit has AI capabilities but TurboTax model is self-service, not full-service. CPA firms structurally stuck: partner model, billable hours, aging workforce. Gap exists for 'AI-first full-service at self-service price'."
       },
-
       "regulatory_landscape": {
         "licensing_required": true,
         "acquisition_path": "Acquire small CPA practice ($50K-$200K) for licensing umbrella. Or partner with licensed CPAs.",
@@ -89,7 +107,6 @@
         "regulatory_trajectory": "loosening (CPA shortage forcing accommodation)",
         "compliance_as_advantage": "Licensed operation locks out pure-tech competitors"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "CPA shortage is real and worsening: 75% approaching retirement, enrollment declining (Thomson Reuters)",
@@ -108,15 +125,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 22,
-        "capital_match": 9,
-        "team_match": 8,
-        "geo_language_match": 5,
-        "notes": "Strong fit: ML/AI founder builds the AI engine, operator founder manages CPA relationships and customer acquisition. Spanish enables LATAM expansion. $500K sufficient for launch. Davis, CA location fine for remote SMB service."
-      },
-
       "verdict": {
         "tier": "TIER_1",
         "economic_force": "$120B+",
@@ -129,9 +137,24 @@
         },
         "confidence": "high",
         "barriers": [
-          {"barrier": "CPA licensing requirements", "severity": "medium", "moat_potential": true, "resolution_path": "Acquire small CPA practice ($50K-200K) for licensing umbrella"},
-          {"barrier": "Trust for financial data", "severity": "medium", "moat_potential": true, "resolution_path": "CPA review layer + SOC 2 compliance builds trust"},
-          {"barrier": "Intuit/H&R Block competition", "severity": "medium", "moat_potential": false, "resolution_path": "Target the unserved 70%, not the served 30%"}
+          {
+            "barrier": "CPA licensing requirements",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "Acquire small CPA practice ($50K-200K) for licensing umbrella"
+          },
+          {
+            "barrier": "Trust for financial data",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "CPA review layer + SOC 2 compliance builds trust"
+          },
+          {
+            "barrier": "Intuit/H&R Block competition",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Target the unserved 70%, not the served 30%"
+          }
         ],
         "recommended_next_steps": [
           "Build MVP for standard bookkeeping (single-entity, US only)",
@@ -142,13 +165,14 @@
         "reasoning": "The largest Jevons expansion opportunity in professional services. 70% of US SMBs are unserved. CPA shortage is structural and worsening. AI accuracy is proven. Multiple entry vectors (direct service, platform for CPAs, cross-border). Founder fit is exceptional."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-002",
-      "signal_ids_evaluated": ["A-2026-02-10-006", "A-2026-02-10-012"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-006",
+        "A-2026-02-10-012"
+      ],
       "cluster": "CL-06-HEALTHCARE-AI",
       "structural_shift": "Healthcare: $4.3T market, $1.3T in admin, 500K+ nursing shortfall, decades of Baumol premium. Largest stored disruption energy in US economy.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Healthcare Admin Service (Revenue Cycle + Prior Auth)",
@@ -187,7 +211,6 @@
           "moat_source": "Clinical validation data, patient outcomes track record, regulatory compliance, data flywheel from patient interactions"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$8-15 per claim (admin model) or $300-500/nurse/month (capacity model)",
         "cost_per_unit_agentic": "$2-5 per claim or $200-400/nurse/month",
@@ -195,19 +218,36 @@
         "cost_advantage_ratio": "5:1 to 10:1 for admin; 3:1 to 5:1 for capacity",
         "break_even_volume": "200 practices or 500 nurse subscriptions",
         "gross_margin": "60-75%",
-        "assumptions": ["AI achieves 90%+ accuracy on medical coding", "10% exception rate requiring human review", "EHR integration feasible via standard APIs"],
-        "data_sources_used": ["HRSA", "BLS", "a16z", "Deloitte", "CMS"]
+        "assumptions": [
+          "AI achieves 90%+ accuracy on medical coding",
+          "10% exception rate requiring human review",
+          "EHR integration feasible via standard APIs"
+        ],
+        "data_sources_used": [
+          "HRSA",
+          "BLS",
+          "a16z",
+          "Deloitte",
+          "CMS"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["500K+ nursing shortfall projected", "Healthcare CPI above headline for 20+ years", "AI adoption shallow — mostly chatbots"],
+        "evidence": [
+          "500K+ nursing shortfall projected",
+          "Healthcare CPI above headline for 20+ years",
+          "AI adoption shallow \u2014 mostly chatbots"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — demographic urgency creates regulatory tailwind"
+        "timing_assessment": "optimal \u2014 demographic urgency creates regulatory tailwind"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["Epic Systems (EHR)", "Change Healthcare (claims)", "Optum (services)", "Traditional RCM companies"],
+        "primary_incumbents": [
+          "Epic Systems (EHR)",
+          "Change Healthcare (claims)",
+          "Optum (services)",
+          "Traditional RCM companies"
+        ],
         "mobility_score": 5,
         "mobility_breakdown": {
           "pricing_model_change": -1,
@@ -218,15 +258,13 @@
         },
         "notes": "Epic is adding AI features (sustaining innovation). But Epic serves large systems; 600K+ independent practices are underserved. The opportunity is the long tail, not the enterprise."
       },
-
       "regulatory_landscape": {
         "licensing_required": true,
         "acquisition_path": "HIPAA compliance ($100K-200K setup). State-specific healthcare AI laws navigated per jurisdiction.",
         "moat_potential": "high",
         "regulatory_trajectory": "fragmenting (47 states with bills = moat for first compliant entrant)",
-        "compliance_as_advantage": "Multi-state compliance is 12-18 months and $500K+ to replicate — strong first-mover moat"
+        "compliance_as_advantage": "Multi-state compliance is 12-18 months and $500K+ to replicate \u2014 strong first-mover moat"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Nursing shortage is real: HRSA data, 500K+ projected shortfall",
@@ -246,15 +284,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 16,
-        "capital_match": 6,
-        "team_match": 5,
-        "geo_language_match": 5,
-        "notes": "Moderate fit. ML/AI capabilities strong. BUT: healthcare domain expertise needed (hire or partner). HIPAA compliance requires specialized knowledge. $500K sufficient for admin model but tight for clinical tools. LATAM healthcare market accessible with Spanish."
-      },
-
       "verdict": {
         "tier": "TIER_1",
         "economic_force": "$200B+",
@@ -267,13 +296,33 @@
         },
         "confidence": "high",
         "barriers": [
-          {"barrier": "HIPAA compliance", "severity": "medium", "moat_potential": true, "resolution_path": "$100K-200K compliance setup; once done, locks out underfunded competitors"},
-          {"barrier": "EHR integration", "severity": "medium", "moat_potential": true, "resolution_path": "Build integration library; each integration adds moat"},
-          {"barrier": "Clinical liability", "severity": "high", "moat_potential": true, "resolution_path": "Start with admin (non-clinical); expand to clinical after track record"},
-          {"barrier": "Domain expertise", "severity": "medium", "moat_potential": false, "resolution_path": "Hire healthcare domain expert as first hire or advisory role"}
+          {
+            "barrier": "HIPAA compliance",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "$100K-200K compliance setup; once done, locks out underfunded competitors"
+          },
+          {
+            "barrier": "EHR integration",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "Build integration library; each integration adds moat"
+          },
+          {
+            "barrier": "Clinical liability",
+            "severity": "high",
+            "moat_potential": true,
+            "resolution_path": "Start with admin (non-clinical); expand to clinical after track record"
+          },
+          {
+            "barrier": "Domain expertise",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Hire healthcare domain expert as first hire or advisory role"
+          }
         ],
         "recommended_next_steps": [
-          "Start with healthcare ADMIN (claims, prior auth, coding) — lower liability, clear unit economics",
+          "Start with healthcare ADMIN (claims, prior auth, coding) \u2014 lower liability, clear unit economics",
           "Build HIPAA-compliant infrastructure first ($100K-200K investment)",
           "Pilot with 10-20 independent practices in California",
           "Expand to clinical capacity tools after proving admin model"
@@ -281,13 +330,14 @@
         "reasoning": "Largest stored Baumol energy in the US economy ($1.3T in admin costs). Demographic urgency (500K+ nursing shortfall) creates regulatory tailwind. Admin model has clear 5-10x cost advantage. Start admin, expand clinical. Regulatory complexity is barrier-as-moat."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-003",
-      "signal_ids_evaluated": ["A-2026-02-10-008", "A-2026-02-10-015"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-008",
+        "A-2026-02-10-015"
+      ],
       "cluster": "CL-08-INSURANCE-AI",
-      "structural_shift": "Insurance: 400K worker attrition, 91% adopting AI, claims processing is routine-cognitive. Dead business revival — Lemonade thesis with better AI.",
-
+      "structural_shift": "Insurance: 400K worker attrition, 91% adopting AI, claims processing is routine-cognitive. Dead business revival \u2014 Lemonade thesis with better AI.",
       "business_models_constructed": [
         {
           "model_name": "AI Claims Processing Service for TPAs and Mid-Market Insurers",
@@ -314,7 +364,6 @@
           "moat_source": "Spanish-language AI training, LATAM regulatory expertise, first-mover in underserved market"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$8-15 per claim (US) or $3-8 per claim (LATAM)",
         "cost_per_unit_agentic": "$5-12 per claim (US) or $1.50-5 (LATAM)",
@@ -322,19 +371,36 @@
         "cost_advantage_ratio": "5:1 to 8:1",
         "break_even_volume": "100K claims/month",
         "gross_margin": "40-60%",
-        "assumptions": ["AI handles 85% of claims end-to-end", "15% exception rate for human review", "Multimodal AI achieves adequate damage assessment accuracy"],
-        "data_sources_used": ["BLS", "NAIC", "Avallon data", "Allianz announcement"]
+        "assumptions": [
+          "AI handles 85% of claims end-to-end",
+          "15% exception rate for human review",
+          "Multimodal AI achieves adequate damage assessment accuracy"
+        ],
+        "data_sources_used": [
+          "BLS",
+          "NAIC",
+          "Avallon data",
+          "Allianz announcement"
+        ]
       },
-
       "cascade_position": {
         "tier": "confirmed",
-        "evidence": ["400K worker attrition confirmed", "91% adoption planned", "Allianz launched agentic claims", "Avallon 10x revenue growth"],
+        "evidence": [
+          "400K worker attrition confirmed",
+          "91% adoption planned",
+          "Allianz launched agentic claims",
+          "Avallon 10x revenue growth"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — institutional adoption beginning"
+        "timing_assessment": "optimal \u2014 institutional adoption beginning"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["Guidewire ($800M rev)", "Duck Creek", "Majesco", "Traditional claims operations"],
+        "primary_incumbents": [
+          "Guidewire ($800M rev)",
+          "Duck Creek",
+          "Majesco",
+          "Traditional claims operations"
+        ],
         "mobility_score": 5,
         "mobility_breakdown": {
           "pricing_model_change": -1,
@@ -344,7 +410,6 @@
           "speed_to_restructure": -1
         }
       },
-
       "regulatory_landscape": {
         "licensing_required": true,
         "acquisition_path": "State insurance department approvals; TPA licensing varies by state",
@@ -352,7 +417,6 @@
         "regulatory_trajectory": "fragmenting (model law expected 2026)",
         "compliance_as_advantage": "Multi-state compliance + model law readiness = strong first-mover moat"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Insurance workforce attrition: 400K by 2026 (BLS)",
@@ -369,15 +433,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 20,
-        "capital_match": 8,
-        "team_match": 7,
-        "geo_language_match": 5,
-        "notes": "Strong fit. ML/AI capability covers core tech. LATAM expansion leverages bilingual advantage. Insurance domain expertise needed (hire). $500K sufficient for initial product targeting TPAs."
-      },
-
       "verdict": {
         "tier": "TIER_1",
         "economic_force": "$40B+",
@@ -390,8 +445,18 @@
         },
         "confidence": "high",
         "barriers": [
-          {"barrier": "State insurance regulation", "severity": "medium", "moat_potential": true, "resolution_path": "State-by-state compliance; each state adds moat"},
-          {"barrier": "Claims accuracy for complex cases", "severity": "medium", "moat_potential": false, "resolution_path": "Start with simple claims (auto, property), expand to complex"}
+          {
+            "barrier": "State insurance regulation",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "State-by-state compliance; each state adds moat"
+          },
+          {
+            "barrier": "Claims accuracy for complex cases",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Start with simple claims (auto, property), expand to complex"
+          }
         ],
         "recommended_next_steps": [
           "Pilot with 2-3 mid-market TPAs on auto/property claims",
@@ -402,13 +467,13 @@
         "reasoning": "Insurance claims is the most validated AI service model in this cycle (Avallon 10x, Allianz launch). Demographic gap forces adoption. LATAM expansion leverages founder advantage. Per-claim revenue model aligns incentives."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-004",
-      "signal_ids_evaluated": ["A-2026-02-10-005"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-005"
+      ],
       "cluster": "CL-05-LEGAL-AI-SERVICES",
       "structural_shift": "YC calling for AI-staffed law firms. Obelisk model replacing pyramid. Legal tech market doubling. First M&A expected 2026.",
-
       "business_models_constructed": [
         {
           "model_name": "AI-First Law Firm for SMB Corporate Legal",
@@ -435,7 +500,6 @@
           "moat_source": "Legal precedent database, jurisdiction-specific training, accuracy track record, bar association relationships"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$1500/month (SMB retainer) or $1000/month (firm platform)",
         "cost_per_unit_agentic": "$200-500/client/month",
@@ -443,19 +507,34 @@
         "cost_advantage_ratio": "5:1 to 15:1",
         "break_even_volume": "200 SMB clients or 1000 firm subscriptions",
         "gross_margin": "65-80%",
-        "assumptions": ["AI achieves 85%+ accuracy on standard legal research and drafting", "10-15% exception rate for attorney review", "Bar licensing navigable in target states"],
-        "data_sources_used": ["National Law Review", "Y Combinator", "Legal tech market data"]
+        "assumptions": [
+          "AI achieves 85%+ accuracy on standard legal research and drafting",
+          "10-15% exception rate for attorney review",
+          "Bar licensing navigable in target states"
+        ],
+        "data_sources_used": [
+          "National Law Review",
+          "Y Combinator",
+          "Legal tech market data"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["YC calling for AI law firms", "Vendor consolidation expected 2026", "First M&A anticipated"],
+        "evidence": [
+          "YC calling for AI law firms",
+          "Vendor consolidation expected 2026",
+          "First M&A anticipated"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — pre-defection Nash equilibrium"
+        "timing_assessment": "optimal \u2014 pre-defection Nash equilibrium"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["AmLaw 200 firms", "LegalZoom ($660M rev)", "Thomson Reuters ($7B legal)", "Harvey AI (funded $100M+)"],
+        "primary_incumbents": [
+          "AmLaw 200 firms",
+          "LegalZoom ($660M rev)",
+          "Thomson Reuters ($7B legal)",
+          "Harvey AI (funded $100M+)"
+        ],
         "mobility_score": 3,
         "mobility_breakdown": {
           "pricing_model_change": -3,
@@ -466,7 +545,6 @@
         },
         "notes": "Law firms are among the most structurally stuck incumbents: partner model, billable hours, leverage ratios. Harvey is well-funded but sells tools TO firms, not replacing them. LegalZoom targets consumers. Gap: AI-first full-service for SMBs."
       },
-
       "regulatory_landscape": {
         "licensing_required": true,
         "acquisition_path": "Acquire small law practice or partner with licensed attorney. UPL regulations vary by state.",
@@ -474,7 +552,6 @@
         "regulatory_trajectory": "stable (bar associations protective but shortage forcing accommodation in some areas)",
         "compliance_as_advantage": "Bar-licensed AI firm is extremely hard to replicate quickly"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Legal tech market growing 9%+ CAGR (verified market data)",
@@ -491,15 +568,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 18,
-        "capital_match": 8,
-        "team_match": 6,
-        "geo_language_match": 4,
-        "notes": "Good fit. ML/AI covers core tech. Need to acquire legal licensing or partner with attorney. Spanish enables LATAM legal market. $500K sufficient for SMB-focused launch."
-      },
-
       "verdict": {
         "tier": "TIER_1",
         "economic_force": "$80B+",
@@ -512,8 +580,18 @@
         },
         "confidence": "high",
         "barriers": [
-          {"barrier": "Bar licensing/UPL regulations", "severity": "high", "moat_potential": true, "resolution_path": "Acquire small practice or partner with licensed attorney"},
-          {"barrier": "Harvey AI well-funded competitor", "severity": "medium", "moat_potential": false, "resolution_path": "Harvey sells to firms; gap is AI-first service to SMBs"}
+          {
+            "barrier": "Bar licensing/UPL regulations",
+            "severity": "high",
+            "moat_potential": true,
+            "resolution_path": "Acquire small practice or partner with licensed attorney"
+          },
+          {
+            "barrier": "Harvey AI well-funded competitor",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Harvey sells to firms; gap is AI-first service to SMBs"
+          }
         ],
         "recommended_next_steps": [
           "Identify bar licensing pathway in California",
@@ -524,13 +602,14 @@
         "reasoning": "Legal services has massive Baumol energy (decades of above-CPI inflation), huge Jevons expansion (most SMBs skip legal), and YC validation of the AI-first firm model. Bar licensing is the moat."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-005",
-      "signal_ids_evaluated": ["A-2026-02-10-001", "A-2026-02-10-021"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-001",
+        "A-2026-02-10-021"
+      ],
       "cluster": "CL-01-PE-DISTRESS-CASCADE",
       "structural_shift": "PE roll-up Minsky moment: 30% of bankruptcies PE-backed, refinancing wall + AI margin compression creating double squeeze.",
-
       "business_models_constructed": [
         {
           "model_name": "Distressed Professional Services Acquirer (AI-First Roll-Up)",
@@ -557,7 +636,6 @@
           "moat_source": "Candidate database and match quality data, employer relationship network, AI-driven screening accuracy"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "Varies by model: $5K-50K per acquired client book (distress) or $150-500 per staffing placement",
         "cost_per_unit_agentic": "Acquisition model: 0.3-0.5x revenue for client book; Staffing: $50-200 per placement",
@@ -565,19 +643,36 @@
         "cost_advantage_ratio": "3:1 to 8:1",
         "break_even_volume": "Acquisition: 5-10 client books. Staffing: 2000 placements/month",
         "gross_margin": "50-70%",
-        "assumptions": ["Distressed assets available at 0.3-0.5x revenue", "Client retention rate 60-70% through acquisition", "AI matching accuracy comparable to experienced recruiters"],
-        "data_sources_used": ["Epiq Global", "Capstone Partners", "PwC", "BLS"]
+        "assumptions": [
+          "Distressed assets available at 0.3-0.5x revenue",
+          "Client retention rate 60-70% through acquisition",
+          "AI matching accuracy comparable to experienced recruiters"
+        ],
+        "data_sources_used": [
+          "Epiq Global",
+          "Capstone Partners",
+          "PwC",
+          "BLS"
+        ]
       },
-
       "cascade_position": {
         "tier": "confirmed",
-        "evidence": ["Chapter 11 at 10-year high", "PE-backed 30% of filings", "Large filings up 44%", "Refinancing wall 2025-2027"],
+        "evidence": [
+          "Chapter 11 at 10-year high",
+          "PE-backed 30% of filings",
+          "Large filings up 44%",
+          "Refinancing wall 2025-2027"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — distress is peaking, assets available"
+        "timing_assessment": "optimal \u2014 distress is peaking, assets available"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["PE roll-ups (various)", "Robert Half ($6B)", "Adecco ($25B)", "Randstad ($28B)"],
+        "primary_incumbents": [
+          "PE roll-ups (various)",
+          "Robert Half ($6B)",
+          "Adecco ($25B)",
+          "Randstad ($28B)"
+        ],
         "mobility_score": 2,
         "mobility_breakdown": {
           "pricing_model_change": -2,
@@ -588,7 +683,6 @@
         },
         "notes": "PE-backed firms are the most stuck: debt service requires revenue that AI is compressing. They literally cannot restructure without defaulting on debt."
       },
-
       "regulatory_landscape": {
         "licensing_required": false,
         "acquisition_path": "Standard asset acquisition; some professional services require license transfer",
@@ -596,7 +690,6 @@
         "regulatory_trajectory": "neutral",
         "compliance_as_advantage": "Acquired licenses from distressed firms are available at below-market prices"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "PE bankruptcies rising: 30% of filings, up 15% YoY (Epiq)",
@@ -613,15 +706,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 15,
-        "capital_match": 5,
-        "team_match": 6,
-        "geo_language_match": 4,
-        "notes": "Moderate fit. Acquisition model needs more capital ($1-3M for meaningful acquisitions). Operator founder can manage acquisitions. ML founder builds AI service layer. May need to raise beyond initial $500K-1M for acquisition strategy."
-      },
-
       "verdict": {
         "tier": "TIER_1",
         "economic_force": "$50B+",
@@ -634,8 +718,18 @@
         },
         "confidence": "high",
         "barriers": [
-          {"barrier": "Capital requirements for acquisitions", "severity": "medium", "moat_potential": false, "resolution_path": "Start with smallest acquisitions ($50K-200K client books); raise as track record builds"},
-          {"barrier": "Deal flow access", "severity": "medium", "moat_potential": true, "resolution_path": "Build relationships with bankruptcy attorneys and business brokers"}
+          {
+            "barrier": "Capital requirements for acquisitions",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Start with smallest acquisitions ($50K-200K client books); raise as track record builds"
+          },
+          {
+            "barrier": "Deal flow access",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "Build relationships with bankruptcy attorneys and business brokers"
+          }
         ],
         "recommended_next_steps": [
           "Map distressed professional services firms in California/West Coast",
@@ -646,13 +740,16 @@
         "reasoning": "The PE distress cascade is confirmed and accelerating. Distressed assets at 0.3-0.5x revenue + AI-first service delivery = extraordinary economics. The window is 12-24 months as the refinancing wall forces exits."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-006",
-      "signal_ids_evaluated": ["A-2026-02-10-007", "A-2026-02-10-010", "A-2026-02-10-017", "A-2026-02-10-020"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-007",
+        "A-2026-02-10-010",
+        "A-2026-02-10-017",
+        "A-2026-02-10-020"
+      ],
       "cluster": "CL-07-REGULATORY-COMPLIANCE-MOAT",
-      "structural_shift": "AI regulatory fragmentation creating compliance maze — 47 states + EU + sector-specific. RegTech market growing 17-36% CAGR.",
-
+      "structural_shift": "AI regulatory fragmentation creating compliance maze \u2014 47 states + EU + sector-specific. RegTech market growing 17-36% CAGR.",
       "business_models_constructed": [
         {
           "model_name": "AI Compliance Navigator for SMBs",
@@ -679,7 +776,6 @@
           "moat_source": "Cross-domain regulatory expertise (AI + sector), compliance precedent database, regulatory relationship network"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$500-2000/month",
         "cost_per_unit_agentic": "$65-350/month",
@@ -687,19 +783,36 @@
         "cost_advantage_ratio": "10:1 to 20:1",
         "break_even_volume": "200 clients",
         "gross_margin": "70-85%",
-        "assumptions": ["AI can accurately track and interpret regulatory changes", "Quarterly human expert review sufficient for ongoing compliance", "Customers willing to pay for proactive compliance vs. reactive"],
-        "data_sources_used": ["Precedence Research", "Grand View Research", "FINRA", "State legislation trackers"]
+        "assumptions": [
+          "AI can accurately track and interpret regulatory changes",
+          "Quarterly human expert review sufficient for ongoing compliance",
+          "Customers willing to pay for proactive compliance vs. reactive"
+        ],
+        "data_sources_used": [
+          "Precedence Research",
+          "Grand View Research",
+          "FINRA",
+          "State legislation trackers"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["47 states introduced AI bills", "EU AI Act effective", "FINRA flagging governance gaps", "Model law expected 2026"],
+        "evidence": [
+          "47 states introduced AI bills",
+          "EU AI Act effective",
+          "FINRA flagging governance gaps",
+          "Model law expected 2026"
+        ],
         "trajectory": "accelerating rapidly",
-        "timing_assessment": "early-optimal — regulation expanding, compliance demand about to surge"
+        "timing_assessment": "early-optimal \u2014 regulation expanding, compliance demand about to surge"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["Big 4 (compliance practices)", "Thomson Reuters", "Wolters Kluwer", "Various RegTech startups"],
+        "primary_incumbents": [
+          "Big 4 (compliance practices)",
+          "Thomson Reuters",
+          "Wolters Kluwer",
+          "Various RegTech startups"
+        ],
         "mobility_score": 6,
         "mobility_breakdown": {
           "pricing_model_change": 0,
@@ -710,15 +823,13 @@
         },
         "notes": "Big 4 serve enterprise. Thomson/Wolters serve mid-market. Gap: SMBs deploying AI with no compliance framework. New category: AI-specific compliance vs. traditional regulatory compliance."
       },
-
       "regulatory_landscape": {
         "licensing_required": false,
-        "acquisition_path": "N/A — compliance advisory typically not licensed",
+        "acquisition_path": "N/A \u2014 compliance advisory typically not licensed",
         "moat_potential": "very high",
         "regulatory_trajectory": "expanding rapidly (more regulation = more demand for compliance services)",
         "compliance_as_advantage": "The product IS compliance; regulatory expansion is a structural tailwind"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "AI regulation is fragmenting: 47 states, EU AI Act (verified)",
@@ -735,15 +846,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 19,
-        "capital_match": 9,
-        "team_match": 7,
-        "geo_language_match": 3,
-        "notes": "Good fit. ML/AI builds the compliance engine. Operator manages regulatory tracking. Need legal/regulatory domain expertise (hire or advisory). $500K sufficient for launch. Cross-border (US-LATAM) compliance is an expansion opportunity with language advantage."
-      },
-
       "verdict": {
         "tier": "TIER_2",
         "economic_force": "$30B+",
@@ -756,8 +858,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "Regulatory expertise required", "severity": "medium", "moat_potential": true, "resolution_path": "Hire regulatory counsel; each jurisdiction mastered adds moat"},
-          {"barrier": "Federal preemption risk", "severity": "low", "moat_potential": false, "resolution_path": "Federal law would simplify but not eliminate need; creates different moat (federal compliance expertise)"}
+          {
+            "barrier": "Regulatory expertise required",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "Hire regulatory counsel; each jurisdiction mastered adds moat"
+          },
+          {
+            "barrier": "Federal preemption risk",
+            "severity": "low",
+            "moat_potential": false,
+            "resolution_path": "Federal law would simplify but not eliminate need; creates different moat (federal compliance expertise)"
+          }
         ],
         "recommended_next_steps": [
           "Map all current state AI regulations into structured database",
@@ -765,16 +877,17 @@
           "Test with 20 companies deploying AI in healthcare/insurance",
           "Monitor federal AI legislation for preemption risk"
         ],
-        "reasoning": "Regulatory fragmentation is a structural tailwind for compliance services. The barrier IS the moat — building multi-jurisdiction compliance expertise is expensive and time-consuming. Jevons expansion is massive: AI compliance was previously irrelevant for SMBs but new laws make it mandatory."
+        "reasoning": "Regulatory fragmentation is a structural tailwind for compliance services. The barrier IS the moat \u2014 building multi-jurisdiction compliance expertise is expensive and time-consuming. Jevons expansion is massive: AI compliance was previously irrelevant for SMBs but new laws make it mandatory."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-007",
-      "signal_ids_evaluated": ["A-2026-02-10-011", "A-2026-02-10-019"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-011",
+        "A-2026-02-10-019"
+      ],
       "cluster": "CL-10-SKILLED-TRADES-PLATFORM",
       "structural_shift": "400K+ unfilled trade jobs, 2M by 2033. Back-office is 20-30% of time. Tacit-manual workers' premium rising. AI can't replace the work but CAN augment the business.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Business Operations Platform for Trades (Dispatch + Admin)",
@@ -801,7 +914,6 @@
           "moat_source": "Tradesperson supply lock-in, customer ratings database, AI scheduling optimization creating superior reliability"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$149/month (platform) or $75-150 per marketplace job",
         "cost_per_unit_agentic": "$25-45/month or $25-65 per job",
@@ -809,19 +921,35 @@
         "cost_advantage_ratio": "10:1 to 20:1 for platform; premium pricing for marketplace",
         "break_even_volume": "5,000 trade business subscribers or 10,000 marketplace jobs/month",
         "gross_margin": "70-80%",
-        "assumptions": ["Trade businesses will adopt digital tools", "10-15 hours/week of admin genuinely recoverable", "Premium positioning resonates with homeowners"],
-        "data_sources_used": ["BLS", "CSIS", "MyOutDesk", "Industry reports"]
+        "assumptions": [
+          "Trade businesses will adopt digital tools",
+          "10-15 hours/week of admin genuinely recoverable",
+          "Premium positioning resonates with homeowners"
+        ],
+        "data_sources_used": [
+          "BLS",
+          "CSIS",
+          "MyOutDesk",
+          "Industry reports"
+        ]
       },
-
       "cascade_position": {
         "tier": "confirmed",
-        "evidence": ["400K+ unfilled positions confirmed", "41% retiring by 2031", "Data center construction amplifying demand"],
+        "evidence": [
+          "400K+ unfilled positions confirmed",
+          "41% retiring by 2031",
+          "Data center construction amplifying demand"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — shortage worsening, tech adoption increasing in trades"
+        "timing_assessment": "optimal \u2014 shortage worsening, tech adoption increasing in trades"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["ServiceTitan ($500M rev)", "Jobber", "Housecall Pro", "Angi ($1.3B)"],
+        "primary_incumbents": [
+          "ServiceTitan ($500M rev)",
+          "Jobber",
+          "Housecall Pro",
+          "Angi ($1.3B)"
+        ],
         "mobility_score": 6,
         "mobility_breakdown": {
           "pricing_model_change": 0,
@@ -832,7 +960,6 @@
         },
         "notes": "ServiceTitan targets large shops ($1M+ revenue). Gap: solo operators and 2-5 person shops that can't afford $200-500/month platforms. Also: AI-native approach vs. adding AI features to existing SaaS."
       },
-
       "regulatory_landscape": {
         "licensing_required": false,
         "acquisition_path": "N/A",
@@ -840,7 +967,6 @@
         "regulatory_trajectory": "neutral",
         "compliance_as_advantage": "N/A"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Skilled trades shortage is real and worsening: BLS data, 400K+ unfilled",
@@ -856,15 +982,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 17,
-        "capital_match": 9,
-        "team_match": 7,
-        "geo_language_match": 1,
-        "notes": "Good capital and team fit. ML builds the AI engine, operator handles trade business relationships. BUT: Davis, CA location is fine; Spanish language less relevant (US trades are English-dominant). Low geographic fit for LATAM expansion."
-      },
-
       "verdict": {
         "tier": "TIER_2",
         "economic_force": "$20B+",
@@ -877,8 +994,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "ServiceTitan/Jobber competition", "severity": "medium", "moat_potential": false, "resolution_path": "Target underserved segment (solo to 5-person shops) at lower price"},
-          {"barrier": "Low tech adoption in trades", "severity": "medium", "moat_potential": false, "resolution_path": "Mobile-first, SMS-based interface; minimize complexity"}
+          {
+            "barrier": "ServiceTitan/Jobber competition",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Target underserved segment (solo to 5-person shops) at lower price"
+          },
+          {
+            "barrier": "Low tech adoption in trades",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Mobile-first, SMS-based interface; minimize complexity"
+          }
         ],
         "recommended_next_steps": [
           "Interview 50 solo/small trade operators about admin pain points",
@@ -889,13 +1016,13 @@
         "reasoning": "Massive demographic gap in tacit-manual work + AI-automatable back-office = Baumol Premium opportunity. The human workers become MORE valuable; the platform captures the admin surplus. Lower moat than regulated sectors but higher adoption readiness."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-008",
-      "signal_ids_evaluated": ["A-2026-02-10-009"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-009"
+      ],
       "cluster": "CL-09-LATAM-AI-CORRIDOR",
       "structural_shift": "LATAM AI market 26% CAGR; 45% of US companies increasing LATAM hiring; nearshoring creating cross-border service demand.",
-
       "business_models_constructed": [
         {
           "model_name": "Bilingual AI Business Services for US-LATAM Companies",
@@ -922,7 +1049,6 @@
           "moat_source": "Spanish-native AI, LATAM regulatory knowledge, first-mover in underserved market, local pricing"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$1000/month (US-LATAM) or $200/month (LATAM-only)",
         "cost_per_unit_agentic": "$150-450/month or $30-80/month",
@@ -930,19 +1056,34 @@
         "cost_advantage_ratio": "5:1 to 15:1",
         "break_even_volume": "300 US-LATAM clients or 2000 LATAM-only clients",
         "gross_margin": "60-75%",
-        "assumptions": ["AI handles 80% of cross-border compliance work", "LATAM businesses will adopt cloud-based services", "Payment processing works across LATAM currencies"],
-        "data_sources_used": ["Alcor BPO", "Industry reports", "LATAM market data"]
+        "assumptions": [
+          "AI handles 80% of cross-border compliance work",
+          "LATAM businesses will adopt cloud-based services",
+          "Payment processing works across LATAM currencies"
+        ],
+        "data_sources_used": [
+          "Alcor BPO",
+          "Industry reports",
+          "LATAM market data"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["45% of US companies increasing LATAM hiring", "LATAM AI market 26% CAGR", "Services exports up 27%"],
+        "evidence": [
+          "45% of US companies increasing LATAM hiring",
+          "LATAM AI market 26% CAGR",
+          "Services exports up 27%"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "early-optimal — nearshoring trend strengthening"
+        "timing_assessment": "early-optimal \u2014 nearshoring trend strengthening"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["Deel ($500M+ rev)", "Remote.com", "Big 4 LATAM offices", "Local accounting firms"],
+        "primary_incumbents": [
+          "Deel ($500M+ rev)",
+          "Remote.com",
+          "Big 4 LATAM offices",
+          "Local accounting firms"
+        ],
         "mobility_score": 5,
         "mobility_breakdown": {
           "pricing_model_change": 0,
@@ -953,7 +1094,6 @@
         },
         "notes": "Deel/Remote focus on HR/payroll, not full business services. Big 4 serve enterprise only. Gap: AI-first full-service for SMBs operating cross-border."
       },
-
       "regulatory_landscape": {
         "licensing_required": false,
         "acquisition_path": "N/A for platform; may need local licenses in specific LATAM countries",
@@ -961,7 +1101,6 @@
         "regulatory_trajectory": "neutral-positive (nearshoring is politically favored)",
         "compliance_as_advantage": "Cross-border expertise is hard to build, creating natural moat"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Nearshoring trend is real: 45% of US companies increasing LATAM hiring",
@@ -977,15 +1116,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 24,
-        "capital_match": 9,
-        "team_match": 8,
-        "geo_language_match": 5,
-        "notes": "EXCEPTIONAL fit. Argentina-native founder with deep LATAM understanding. Native Spanish. ML/AI founder builds the engine. Cross-border operation is a direct founder advantage. Davis, CA proximity to Bay Area for US-side clients."
-      },
-
       "verdict": {
         "tier": "TIER_2",
         "economic_force": "$25B+",
@@ -998,8 +1128,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "Deel/Remote competition in HR/payroll", "severity": "medium", "moat_potential": false, "resolution_path": "Differentiate with full-service (not just HR) and AI-first pricing"},
-          {"barrier": "LATAM market fragmentation", "severity": "medium", "moat_potential": true, "resolution_path": "Start with Mexico + Argentina (largest markets with strongest founder connections)"}
+          {
+            "barrier": "Deel/Remote competition in HR/payroll",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Differentiate with full-service (not just HR) and AI-first pricing"
+          },
+          {
+            "barrier": "LATAM market fragmentation",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "Start with Mexico + Argentina (largest markets with strongest founder connections)"
+          }
         ],
         "recommended_next_steps": [
           "Interview 30 US companies nearshoring to LATAM about compliance pain",
@@ -1010,13 +1150,13 @@
         "reasoning": "The nearshoring wave creates structural demand for cross-border business services. Founder fit is the strongest in the entire landscape: native Spanish, Argentina background, ML capability. The question is market timing and execution speed."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-009",
-      "signal_ids_evaluated": ["A-2026-02-10-014"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-014"
+      ],
       "cluster": "CL-11-EDUCATION-AI",
       "structural_shift": "Education Baumol cure: private tutoring only for wealthy 10-20%. AI at 10x lower cost unlocks 80% of market.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Tutoring for Underserved K-12 (US + LATAM)",
@@ -1031,7 +1171,6 @@
           "moat_source": "Student learning data, adaptive algorithm improvement, curriculum partnerships, bilingual content"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$30/month (family) or $5/student/month (district)",
         "cost_per_unit_agentic": "$5-12/month",
@@ -1039,22 +1178,36 @@
         "cost_advantage_ratio": "10:1 to 20:1",
         "break_even_volume": "50,000 subscribers",
         "gross_margin": "60-80%",
-        "assumptions": ["AI tutoring achieves measurable learning outcomes", "Parents will pay $20-50/month for tutoring", "Mobile-first works for target demographic"],
-        "data_sources_used": ["Mordor Intelligence", "New America", "Market reports"]
+        "assumptions": [
+          "AI tutoring achieves measurable learning outcomes",
+          "Parents will pay $20-50/month for tutoring",
+          "Mobile-first works for target demographic"
+        ],
+        "data_sources_used": [
+          "Mordor Intelligence",
+          "New America",
+          "Market reports"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["AI tutoring market growing 12.7% CAGR", "Microsoft/Carnegie investing", "Education CPI above headline"],
+        "evidence": [
+          "AI tutoring market growing 12.7% CAGR",
+          "Microsoft/Carnegie investing",
+          "Education CPI above headline"
+        ],
         "trajectory": "moderate",
-        "timing_assessment": "early — market developing but not yet breaking"
+        "timing_assessment": "early \u2014 market developing but not yet breaking"
       },
-
       "incumbent_analysis": {
-        "primary_incumbents": ["Khan Academy (free)", "Chegg ($440M)", "Duolingo ($531M)", "Various tutoring centers"],
+        "primary_incumbents": [
+          "Khan Academy (free)",
+          "Chegg ($440M)",
+          "Duolingo ($531M)",
+          "Various tutoring centers"
+        ],
         "mobility_score": 6
       },
-
       "regulatory_landscape": {
         "licensing_required": false,
         "acquisition_path": "N/A",
@@ -1062,7 +1215,6 @@
         "regulatory_trajectory": "neutral",
         "compliance_as_advantage": "COPPA/FERPA compliance for K-12 creates modest barrier"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "80%+ of families can't afford regular tutoring (industry data)",
@@ -1077,15 +1229,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 20,
-        "capital_match": 9,
-        "team_match": 7,
-        "geo_language_match": 4,
-        "notes": "Good fit. AI/ML builds adaptive engine. Bilingual for LATAM expansion (massive underserved education market). $500K sufficient. BUT: competitive market with free alternatives (Khan Academy)."
-      },
-
       "verdict": {
         "tier": "TIER_3",
         "economic_force": "$30B+",
@@ -1098,8 +1241,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "Khan Academy (free competitor)", "severity": "high", "moat_potential": false, "resolution_path": "Differentiate with adaptive AI + Spanish-first for LATAM + outcome tracking"},
-          {"barrier": "Proving learning outcomes", "severity": "medium", "moat_potential": true, "resolution_path": "Rigorous A/B testing with outcome measurement"}
+          {
+            "barrier": "Khan Academy (free competitor)",
+            "severity": "high",
+            "moat_potential": false,
+            "resolution_path": "Differentiate with adaptive AI + Spanish-first for LATAM + outcome tracking"
+          },
+          {
+            "barrier": "Proving learning outcomes",
+            "severity": "medium",
+            "moat_potential": true,
+            "resolution_path": "Rigorous A/B testing with outcome measurement"
+          }
         ],
         "recommended_next_steps": [
           "Build MVP for SAT prep or math tutoring (measurable outcomes)",
@@ -1110,13 +1263,14 @@
         "reasoning": "Massive Jevons expansion (80% of families priced out). But competitive landscape includes free alternatives (Khan Academy). Strongest angle: LATAM expansion (underserved, Spanish advantage, less competition). Economic force is real but moat is thin."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-010",
-      "signal_ids_evaluated": ["A-2026-02-10-002", "A-2026-02-10-022"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-002",
+        "A-2026-02-10-022"
+      ],
       "cluster": "CL-02-INFERENCE-COST-COLLAPSE",
       "structural_shift": "280x inference cost collapse enabling deployment-phase businesses. Perez turning point approaching.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Service Factory (Multi-Vertical Agent Builder)",
@@ -1131,7 +1285,6 @@
           "moat_source": "Agent library, customization database, integration framework, usage data for improvement"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$500/month per agent",
         "cost_per_unit_agentic": "$70-280/month",
@@ -1139,17 +1292,26 @@
         "cost_advantage_ratio": "5:1 to 15:1",
         "break_even_volume": "500 agent subscriptions",
         "gross_margin": "60-75%",
-        "assumptions": ["AI agents can reliably handle specific business functions", "SMBs will pay $200-2000/month for agent services"],
-        "data_sources_used": ["Epoch AI", "Gartner", "CB Insights"]
+        "assumptions": [
+          "AI agents can reliably handle specific business functions",
+          "SMBs will pay $200-2000/month for agent services"
+        ],
+        "data_sources_used": [
+          "Epoch AI",
+          "Gartner",
+          "CB Insights"
+        ]
       },
-
       "cascade_position": {
         "tier": "confirmed",
-        "evidence": ["280x inference cost drop", "40% enterprise apps to embed agents by end 2026", "AI startup shakeout forcing focus on viable models"],
+        "evidence": [
+          "280x inference cost drop",
+          "40% enterprise apps to embed agents by end 2026",
+          "AI startup shakeout forcing focus on viable models"
+        ],
         "trajectory": "accelerating",
-        "timing_assessment": "optimal — infrastructure overbuilt, application layer underbuilt"
+        "timing_assessment": "optimal \u2014 infrastructure overbuilt, application layer underbuilt"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Inference costs dropped 280x (Epoch AI data)",
@@ -1164,15 +1326,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 20,
-        "capital_match": 8,
-        "team_match": 9,
-        "geo_language_match": 3,
-        "notes": "Strong tech fit — ML/AI founder's core competency. Agent building is technically demanding. Operator founder handles GTM. $500K sufficient for MVP with 5-10 agent types."
-      },
-
       "verdict": {
         "tier": "TIER_2",
         "economic_force": "$100B+",
@@ -1185,8 +1338,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "Competitive density in agent space", "severity": "high", "moat_potential": false, "resolution_path": "Focus on specific verticals where domain expertise creates defensibility"},
-          {"barrier": "Agent reliability concerns", "severity": "medium", "moat_potential": false, "resolution_path": "Human-in-the-loop for critical decisions; accuracy improves with usage data"}
+          {
+            "barrier": "Competitive density in agent space",
+            "severity": "high",
+            "moat_potential": false,
+            "resolution_path": "Focus on specific verticals where domain expertise creates defensibility"
+          },
+          {
+            "barrier": "Agent reliability concerns",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Human-in-the-loop for critical decisions; accuracy improves with usage data"
+          }
         ],
         "recommended_next_steps": [
           "Pick 2-3 verticals where founders have domain access",
@@ -1197,13 +1360,13 @@
         "reasoning": "The infrastructure-to-application shift is the largest macro force in AI right now. Economic force is enormous ($100B+). But competitive density is high and moat is uncertain. Best if combined with a vertical focus (healthcare, legal, trades) rather than horizontal."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-011",
-      "signal_ids_evaluated": ["A-2026-02-10-016"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-016"
+      ],
       "cluster": "CL-12-AI-STARTUP-DISTRESS",
       "structural_shift": "90-99% AI startup mortality creating acqui-hire and IP acquisition opportunities.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Startup Asset Acquirer (Talent + Models + Data)",
@@ -1218,7 +1381,6 @@
           "moat_source": "Deal flow access, integration capability, accumulated IP portfolio"
         }
       ],
-
       "verdict": {
         "tier": "TIER_3",
         "economic_force": "$10B+",
@@ -1231,8 +1393,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "Quality assessment of distressed assets", "severity": "high", "moat_potential": false, "resolution_path": "ML founder can evaluate technical quality"},
-          {"barrier": "Integration risk", "severity": "medium", "moat_potential": false, "resolution_path": "Start with talent acqui-hires; lower integration risk"}
+          {
+            "barrier": "Quality assessment of distressed assets",
+            "severity": "high",
+            "moat_potential": false,
+            "resolution_path": "ML founder can evaluate technical quality"
+          },
+          {
+            "barrier": "Integration risk",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Start with talent acqui-hires; lower integration risk"
+          }
         ],
         "recommended_next_steps": [
           "Monitor YC and funded startup failures in target verticals",
@@ -1242,13 +1414,13 @@
         "reasoning": "The Perez shakeout creates a window for acquiring AI capabilities at distressed prices. Best used as a COMPLEMENT to a primary vertical business model, not as the primary strategy."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-012",
-      "signal_ids_evaluated": ["A-2026-02-10-025"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-025"
+      ],
       "cluster": "CL-14-LOW-WAGE-BAUMOL",
       "structural_shift": "Low-wage Baumol sectors (home care, childcare, social work) underexplored by AI startups. Large workforces, severe shortages, sparse competition.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Operations for Home Health Agencies",
@@ -1275,7 +1447,6 @@
           "moat_source": "State licensing compliance database, parent communication platform lock-in"
         }
       ],
-
       "unit_economics": {
         "revenue_per_unit": "$15/aide/month (home health) or $99/month (childcare center)",
         "cost_per_unit_agentic": "$7-17/aide or $15-40/center",
@@ -1283,17 +1454,28 @@
         "cost_advantage_ratio": "5:1 to 10:1",
         "break_even_volume": "10,000 aide subscriptions or 3,000 center subscriptions",
         "gross_margin": "55-65%",
-        "assumptions": ["Home health agencies will adopt digital tools (trend accelerating post-COVID)", "Per-aide pricing works financially for agencies", "Childcare directors willing to adopt new technology"],
-        "data_sources_used": ["BLS", "CMS", "UNESCO", "Industry reports"]
+        "assumptions": [
+          "Home health agencies will adopt digital tools (trend accelerating post-COVID)",
+          "Per-aide pricing works financially for agencies",
+          "Childcare directors willing to adopt new technology"
+        ],
+        "data_sources_used": [
+          "BLS",
+          "CMS",
+          "UNESCO",
+          "Industry reports"
+        ]
       },
-
       "cascade_position": {
         "tier": "pre-cascade",
-        "evidence": ["Home health aide workforce 4.6M and growing", "Childcare costs doubled", "AI competition very sparse in these sectors"],
+        "evidence": [
+          "Home health aide workforce 4.6M and growing",
+          "Childcare costs doubled",
+          "AI competition very sparse in these sectors"
+        ],
         "trajectory": "moderate",
-        "timing_assessment": "early-optimal — underexplored territory with real structural forces"
+        "timing_assessment": "early-optimal \u2014 underexplored territory with real structural forces"
       },
-
       "what_must_be_true": {
         "confirmed": [
           "Home health aide workforce large (4.6M) and growing (BLS)",
@@ -1310,15 +1492,6 @@
         ],
         "unlikely": []
       },
-
-      "founder_fit": {
-        "score": 18,
-        "capital_match": 9,
-        "team_match": 7,
-        "geo_language_match": 2,
-        "notes": "Good capital/team fit. ML builds AI engine, operator handles agency relationships. Spanish less relevant (domestic market). But: low-wage sectors can be difficult go-to-market with long sales cycles."
-      },
-
       "verdict": {
         "tier": "TIER_3",
         "economic_force": "$15B+",
@@ -1331,8 +1504,18 @@
         },
         "confidence": "medium",
         "barriers": [
-          {"barrier": "Low tech adoption in sector", "severity": "medium", "moat_potential": false, "resolution_path": "Mobile-first, minimal-friction interface; integrate with existing workflows"},
-          {"barrier": "Low willingness-to-pay", "severity": "medium", "moat_potential": false, "resolution_path": "Ultra-low pricing ($10-25/aide); volume play"}
+          {
+            "barrier": "Low tech adoption in sector",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Mobile-first, minimal-friction interface; integrate with existing workflows"
+          },
+          {
+            "barrier": "Low willingness-to-pay",
+            "severity": "medium",
+            "moat_potential": false,
+            "resolution_path": "Ultra-low pricing ($10-25/aide); volume play"
+          }
         ],
         "recommended_next_steps": [
           "Interview 30 home health agency owners about admin pain points",
@@ -1343,13 +1526,13 @@
         "reasoning": "Low-wage Baumol sectors are the most underexplored territory in the AI economy. Competition is sparse because startups chase high-margin sectors (Dutch Disease/T9). But the workforce is massive (4.6M home health aides alone) and the structural forces (demographic gap, regulatory expansion) are just as strong as in healthcare or legal."
       }
     },
-
     {
       "verification_id": "B-2026-02-10-013",
-      "signal_ids_evaluated": ["A-2026-02-10-024"],
+      "signal_ids_evaluated": [
+        "A-2026-02-10-024"
+      ],
       "cluster": "CL-13-AI-MICRO-AGENCY",
       "structural_shift": "Coasean firm shrinkage: 1-3 person AI teams replacing 10-50 person agencies.",
-
       "business_models_constructed": [
         {
           "model_name": "AI Micro-Agency Toolkit (Enabling the Micro-Agency Model)",
@@ -1364,7 +1547,6 @@
           "moat_source": "Workflow templates, integration ecosystem, client management data"
         }
       ],
-
       "verdict": {
         "tier": "TIER_3",
         "economic_force": "$10B+",
@@ -1377,8 +1559,18 @@
         },
         "confidence": "low",
         "barriers": [
-          {"barrier": "Low barriers to entry = high competition", "severity": "high", "moat_potential": false, "resolution_path": "Focus on specific vertical (e.g., AI marketing agencies)"},
-          {"barrier": "Commodity risk for agency services", "severity": "high", "moat_potential": false, "resolution_path": "Build quality differentiation and client matching"}
+          {
+            "barrier": "Low barriers to entry = high competition",
+            "severity": "high",
+            "moat_potential": false,
+            "resolution_path": "Focus on specific vertical (e.g., AI marketing agencies)"
+          },
+          {
+            "barrier": "Commodity risk for agency services",
+            "severity": "high",
+            "moat_potential": false,
+            "resolution_path": "Build quality differentiation and client matching"
+          }
         ],
         "recommended_next_steps": [
           "Survey 100 AI micro-agency operators about tool needs",

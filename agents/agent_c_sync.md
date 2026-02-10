@@ -126,11 +126,6 @@ Maintain a running state that persists across research cycles:
     "monitoring": [],
     "barriers_noted": []
   },
-  "founder_fit_overlay": {
-    "high_fit": [],
-    "moderate_fit": [],
-    "low_fit": []
-  },
   "agent_performance": {
     "agent_a": {
       "signals_produced": 0,
@@ -240,7 +235,6 @@ Maintain JSON files that the localhost UI reads:
             "type": "direct | structural | expansion",
             "economic_force": "$XB",
             "score": 0,
-            "founder_fit": 0,
             "barriers": ["list"],
             "moats": ["list"]
           }

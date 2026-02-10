@@ -300,28 +300,6 @@ UNLIKELY:    Evidence against this, but not conclusive. Worth monitoring.
 
 This replaces the binary KILL/PURSUE logic. Instead of asking "should we kill this?", ask "what would we need to learn to be confident?"
 
-## Founder Fit Assessment (SEPARATE SECTION)
-
-**This is scored SEPARATELY from opportunity viability. A great opportunity with poor founder fit is still a great opportunity — it just needs a different team or a different entry strategy.**
-
-```
-FOUNDER FIT (scored independently, 0-25)
-├── Capital match (0-10)
-│   └── Can launch at $500K-$1M?  → 8-10
-│   └── Needs $1-5M?             → 4-7
-│   └── Needs $5M+?              → 1-3
-│
-├── Team capability (0-10)
-│   └── ML/AI + operator covers it?     → 8-10
-│   └── Needs one additional domain hire → 5-7
-│   └── Needs specialized team           → 1-4
-│
-└── Geographic/language fit (0-5)
-    └── US + LATAM, English + Spanish   → 4-5
-    └── US only, English only           → 3
-    └── Requires non-English/non-LATAM  → 1-2
-```
-
 ## Verification Output Format
 
 ```json
@@ -387,14 +365,6 @@ FOUNDER FIT (scored independently, 0-25)
     "unlikely": ["assumption: evidence against"]
   },
 
-  "founder_fit": {
-    "score": "0-25",
-    "capital_match": "0-10",
-    "team_match": "0-10",
-    "geo_language_match": "0-5",
-    "notes": "what would improve fit"
-  },
-
   "verdict": {
     "tier": "TIER_1 | TIER_2 | TIER_3 | MONITOR",
     "economic_force": "$XB",
@@ -427,9 +397,7 @@ FOUNDER FIT (scored independently, 0-25)
 
 6. **Failed predecessors are data, not disqualification.** A business that failed in 2015 because unit economics didn't work is a POSITIVE signal if unit economics now work at 10x lower cost. The market was proven. The cost structure was the problem. That problem is solved.
 
-7. **Separate the landscape from founder fit.** A great opportunity that doesn't fit this team is still a great opportunity. Score founder fit separately. The landscape map should show ALL viable businesses, not just ones this team can build.
-
-8. **No permanent kills.** Document barriers with specific resolution paths and review triggers. Markets change. Regulations evolve. Technology improves. What's blocked today may be open in 12 months.
+7. **No permanent kills.** Document barriers with specific resolution paths and review triggers. Markets change. Regulations evolve. Technology improves. What's blocked today may be open in 12 months.
 
 9. **Numbers matter, but direction matters more.** Precise TAM estimates are less important than correctly identifying the DIRECTION of structural forces. A 3x error in TAM estimation doesn't change a Tier 1 opportunity — it's still large. Getting the structural direction wrong does.
 
