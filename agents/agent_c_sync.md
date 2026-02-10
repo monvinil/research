@@ -139,17 +139,29 @@ Maintain a running state that persists across research cycles:
 }
 ```
 
-### 5. Cross-Reference Engine
+### 5. Transmission Chain Tracking
+
+Maintain a registry of macro-to-micro transmission chains (see `ANALYTICAL_FRAMEWORK.md`). For each chain:
+- Track which of the 6 nodes (Shift → Policy → Structure → Firm → Labor → Opportunity) has been reached
+- Map incoming signals to chain nodes — each signal should advance or stall a chain
+- Track chain velocity (how many nodes advanced in last 3 cycles?)
+- Flag chains approaching node 4-5 (opportunity materializing — priority for Agent B)
+- Flag chains stalled for 2+ cycles (park or kill dependent opportunities)
+- Identify chain intersections (when two chains converge on the same opportunity = high priority)
+
+### 6. Cross-Reference Engine
 
 Maintain connections between signals:
 - **Systemic pattern clustering**: Group signals evidencing the same structural shift
 - **Geographic clustering**: Group signals affecting the same region
 - **Causal chains**: Track signals that are cause/effect of each other
 - **Contradiction detection**: Flag when signals point in opposite directions
+- **Counter-signal tracking**: Maintain bull case and bear case for each top opportunity with equal rigor
+- **Divergence detection**: Flag indicators that should move together but aren't (market mispricing signals)
 - **Trend convergence**: Identify when multiple independent signals point to the same opportunity
 - **Kill pattern correlation**: When a new kill happens, check if it invalidates related pipeline items
 
-### 6. Grading & Ranking (Post-Verification)
+### 7. Grading & Ranking (Post-Verification)
 
 After Agent B returns verification results, compile final ranking:
 
@@ -189,7 +201,7 @@ TIMING (0-10) — combined assessment
 
 **Note the weight shift:** VC Differentiation is now 25% of the final score — equal to Strategic Fit. An opportunity with perfect unit economics but a generic pitch (VC score 2/10) caps at ~60. An opportunity with strong economics AND a thesis that makes VCs rethink their model (VC score 9/10) can hit 90+. This is deliberate: finding the RIGHT thing to build is the hard problem, not the economics.
 
-### 7. UI Data Push
+### 8. UI Data Push
 
 Maintain JSON files that the localhost UI reads:
 

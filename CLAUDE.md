@@ -77,9 +77,20 @@ Every research output must be verifiable:
 - **4 confirmed patterns**: P2+P5 Divergence Corridor, P2+P3 Credit-Squeeze, P1+P3 Cost Floor Unlock, P7 Timing Arbitrage (emerging)
 - **Next**: Deep verification on top 2 opportunities, competitor scans, LATAM expansion
 
+## Analytical Framework
+
+The engine applies classical economic theories as operational lenses — not academic references but tools that change what data means. See `ANALYTICAL_FRAMEWORK.md` for the full framework, including:
+
+- **10 theoretical lenses** (Schumpeter, Ricardo, Baumol, Minsky, Kondratieff, Jevons, Gresham, Demographic Transition, Dutch Disease, Coase/Williamson)
+- **Macro-to-micro transmission chain model** — 6-node causal chains tracking how geopolitical shifts become micro-level opportunities
+- **3-layer data analysis** — Layer 1 (what data says), Layer 2 (what it means in chain context), Layer 3 (timing/positioning implications)
+- **Divergence detection** — indicators that should move together but aren't = market mispricing
+- **Counter-signal discipline** — maintain bear cases with equal rigor to bull cases
+
 ## Important Notes
 
 - `.env` contains API keys — never commit
 - `data/context/kill_index.json` is the most valuable persistent asset — never truncate
+- `ANALYTICAL_FRAMEWORK.md` is the theoretical foundation — update theories as evidence accumulates
 - Dashboard deploys to GitHub Pages via auto-merge of claude/* branches to main
 - The engine optimizes for OPPORTUNITY QUALITY, not capital fit

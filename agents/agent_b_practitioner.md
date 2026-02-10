@@ -232,7 +232,18 @@ For systemic-shift-based opportunities, verify WHERE in the cascade we're enteri
 4. **What's the minimum time to revenue?**
 5. **Does the US-LATAM angle create a timing advantage?** (Weaker incumbents in LATAM = faster proof of concept?)
 
-### V8: Dead Business Resurrection Check (Special Protocol)
+### V8: Theoretical Consistency Check
+
+Apply classical economic theories to stress-test the opportunity (see `ANALYTICAL_FRAMEWORK.md`):
+
+1. **Jevons check:** Is TAM calculated at current market size only, or does it account for demand expansion at 10x lower cost? If TAM only counts existing customers, it's underestimated.
+2. **Coase check:** Does this opportunity align with the direction of optimal firm size change? If AI is shrinking firm sizes in this sector, don't build something that requires the customer to be large.
+3. **Minsky check:** Is the incumbent's vulnerability structural (their entire financing model is wrong at new cost curves) or cyclical (they'll recover when rates drop)? Structural = PURSUE. Cyclical = PARK.
+4. **Baumol check:** Has this sector had above-inflation cost growth for 10+ years? If yes, the "stored energy" makes disruption more violent and the opportunity larger.
+5. **Schumpeter timing:** Is the incumbent in the "gap period" (dead but doesn't know it) or already actively restructuring? Gap period = enter now. Active restructuring = too late or too competitive.
+6. **Transmission chain position:** Which node is the relevant macro-to-micro chain at? Node 4-5 = H1 timing. Node 2-3 = too early, PARK.
+
+### V9: Dead Business Resurrection Check (Special Protocol)
 
 When evaluating a "revived" business model:
 
