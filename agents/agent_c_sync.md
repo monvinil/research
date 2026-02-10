@@ -37,6 +37,8 @@ RELEVANCE SCORE (0-10) — BALANCED WEIGHTS
 - "Precedent failure severity" REMOVED as a penalty dimension. Failed predecessors are DATA for Agent B's dead business analysis, not a grading penalty.
 - "Regulatory moat risk" REPLACED with "Barrier complexity" scored as a POSITIVE (barriers = moats for first movers).
 - Jevons expansion potential ADDED — signals about markets with large unserved populations due to price barriers get a boost.
+- Physical production viability ADDED for cycle 2+ — robotics × AI signals get a grading boost when the production process is a GOOD or BEST FIT (custom fabrication, batch processing, precision agriculture), and context annotation when it's a POOR FIT (commodity physics).
+- Capital allocation signals ADDED for cycle 2+ — asset manager sector allocation shifts (BlackRock, Bridgewater, JPM) provide leading indicators for what becomes fundable.
 
 **Weight overrides from Master** look like:
 ```json
@@ -200,11 +202,6 @@ SIGNAL STRENGTH (0-15) — from scanning data
 ├── Data specificity               [0-4]
 └── Cross-signal convergence       [0-3]
 ```
-
-**FOUNDER FIT (scored separately, 0-25)** — from Agent B
-- Capital match [0-10]
-- Team capability [0-10]
-- Geographic/language fit [0-5]
 
 **Key changes from previous scoring:**
 - VC Differentiation REMOVED entirely. The test is economic force and structural advantage, not how novel the pitch sounds.

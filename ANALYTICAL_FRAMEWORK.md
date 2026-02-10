@@ -416,6 +416,8 @@ N6: OPPORTUNITY — Agentic compliance/coordination for reshored manufacturers.
 | Interest rate environment | High rates → low-burn advantage → incumbents leveraged → agentic-first capital efficiency | Node 4 | T4 |
 | PE roll-up disruption | AI cost compression → roll-up margin decline → debt stress → forced exits | Node 3-4 | T4, T1 |
 | Japan aging (leading indicator) | Population decline → service automation adoption → pattern preview for US/EU | Node 4-5 | T3, T8 |
+| Robotics × AI compound | Robot costs dropping + AI capability rising → flexible automation viable → manufacturing COGS compression → distressed acquisition targets | Node 3-4 | T24, T3, T4, T6 |
+| Manufacturing demographic gap | Owner retirement wave → distressed sales → licenses/equipment at discount → robotics × AI modernization opportunity | Node 4-5 | T24, T8, T4 |
 
 ---
 
@@ -863,9 +865,92 @@ INNOVATION STACK POTENTIAL:
   → Build the full stack; competitors who copy one layer fail
 ```
 
+### T24: Robotics × AI Compound Effect — Physical Production Cost Curves
+
+**Theory:** AI and robotics are individually limited. AI can optimize planning, quality control, scheduling, and demand forecasting but can't touch physical production. Robotics can automate physical tasks but without AI is limited to rigid, pre-programmed movements. The COMPOUND of AI + robotics enables flexible, adaptive physical production at dramatically lower cost — compressing COGS, not just SGA.
+
+**AI-era application — two Baumol cure vectors:**
+- **Vector 1 (Services — cycle 1 focus):** AI cures Baumol's disease in cognitive services. Targets SGA (admin, professional services, compliance). This is what accounting, legal, healthcare admin, insurance opportunities exploit.
+- **Vector 2 (Production — cycle 2 expansion):** Robotics × AI cures cost disease in physical production. Targets COGS (direct labor, QC, waste, scheduling). This is where manufacturing, food production, precision agriculture, specialty materials opportunities live.
+
+**The compound effect:**
+```
+WITHOUT AI: Robot does same motion 10,000 times. Can't adapt.
+WITHOUT ROBOTICS: AI plans perfectly but can't execute physically.
+TOGETHER:
+  AI does: demand forecasting, production scheduling, quality inspection,
+           defect prediction, process optimization, supplier management
+  Robotics does: assembly, fabrication, material handling, packaging,
+                  precision operations, hazardous tasks
+  RESULT: 3-8x production cost compression in suitable industries
+```
+
+**Production fit spectrum (CRITICAL — not all production benefits):**
+```
+POOR FIT (production physics dominate — robotics × AI adds little):
+  → Commodity chemicals (reaction kinetics, not labor)
+  → Basic metals smelting (energy + raw materials = 80%+ COGS)
+  → Raw material extraction (geology, not process)
+  → Bulk commodity agriculture (land + water + weather)
+  → Simple commodity manufacturing (already automated, thin margins)
+
+MODERATE FIT (some compression, moderate ROI):
+  → Standard discrete manufacturing (automotive parts, electronics assembly)
+  → Large-scale food processing (partially automated already)
+  → Standard warehousing/logistics (Amazon already doing this)
+
+STRONG FIT (significant COGS compression, good ROI):
+  → Custom/small-batch manufacturing (high labor %, variable products)
+  → Specialty food & beverage (craft production at scale)
+  → Precision agriculture (variable-rate everything, per-plant management)
+  → Specialty/advanced materials (complex processes, high QC requirements)
+  → Mixed-mode assembly (products with many variants)
+  → Construction prefab/modular (labor shortage + precision requirements)
+
+BEST FIT (Jevons expansion — new production categories emerge):
+  → Personalized/on-demand manufacturing (mass customization)
+  → Vertical farming / controlled environment agriculture
+  → Distributed micro-manufacturing (local production of goods)
+  → Biomanufacturing / synthetic biology production
+  → Space/extreme environment production
+```
+
+**Acquisition economics (unique to physical plays):**
+```
+DISTRESSED MANUFACTURING ACQUISITION:
+  Aging owner retirement sale: 2-4x EBITDA (vs 8-12x for healthy)
+  PE-distressed forced sale: 1-3x EBITDA
+  Bankruptcy asset sale: equipment at 20-40¢ on the dollar
+
+  What you get: license + permits + equipment + customer contracts + trained workforce
+  What you add: robotics × AI modernization ($1-5M capex)
+  What changes: COGS drops 30-60%, throughput increases 2-3x, quality improves
+
+CAPITAL STRUCTURE (unavailable to pure-digital):
+  SBA 504: up to $5.5M at below-market rates (equipment/facilities)
+  Equipment financing: 80-100% LTV (equipment IS collateral)
+  State manufacturing incentives: varies, $100K-$2M typical
+  USDA VAPG: up to $250K for value-added agricultural products
+  Working capital: inventory + receivables cycle (plan for it)
+```
+
+**What to scan for:**
+```
+ROBOTICS × AI COMPOUND SIGNALS:
+  IFR data: industrial robot installations by sector (accelerating = adoption)
+  Manufacturing PMI subcomponents: new orders vs employment (diverging = automation)
+  BLS: manufacturing output per worker (rising faster than wages = automation)
+  BizBuySell: manufacturing businesses for sale by reason (retirement/distress)
+  Patent data: robotics + AI combined patents by application area
+  VC funding: robotics/hard-tech funding rounds (increasing = appetite shift)
+
+  COMBINED WITH: Entry budget < $15M including acquisition + modernization
+  → Viable physical play candidate
+```
+
 ---
 
-### Integration: How T11-T23 Map to Scanning
+### Integration: How T11-T24 Map to Scanning
 
 | Theory | Primary Signal Type | Transmission Node | Complements |
 |--------|-------------------|-------------------|-------------|
@@ -882,3 +967,4 @@ INNOVATION STACK POTENTIAL:
 | **T21 Polanyi's Paradox** | **work_classification** | **N5-N6** | **T3, T7, T22** |
 | **T22 Prediction Machines** | **judgment_premium** | **N5-N6** | **T21, T3, T7** |
 | **T23 Innovation Stack** | **competitive_immunity** | **N4-N6** | **T11, T20, T16** |
+| **T24 Robotics × AI** | **production_cost_compression** | **N3-N6** | **T3, T6, T4, T18** |

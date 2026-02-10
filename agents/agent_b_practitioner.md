@@ -30,6 +30,8 @@ For every structural shift forwarded to you, construct **2-3 distinct business m
 
 5. **The Human-Premium Play (Baumol Premium)**: For sectors where the work is fundamentally human (tacit manual or tacit cognitive per Polanyi), build platforms that CERTIFY, CONNECT, or ENABLE premium human workers. As digital costs collapse, these workers' relative value rises.
 
+6. **The Physical Play (Robotics × AI)**: For sectors with physical production, where AI + robotics TOGETHER compress COGS. Neither AI alone (can't touch production) nor robotics alone (dumb automation) works — the compound enables: AI does planning/scheduling/QC/optimization, robotics does physical execution. Target: manufacturing, food production, precision agriculture, assembly, specialty materials. Key difference from plays 1-5: this touches PRODUCTION COSTS, not just service/admin costs. Often involves acquiring a distressed physical operation and modernizing it.
+
 ### For Each Model, Specify:
 ```
 MODEL: [Name]
@@ -154,6 +156,47 @@ MOBILITY SCORE (1-10, where 1 = completely stuck, 10 = can adapt easily)
 - Score 1-3: Incumbent is structurally stuck. Strong entry window.
 - Score 4-6: Incumbent can adapt but slowly. Window exists but time-limited.
 - Score 7-10: Incumbent can match quickly. Advantage must come from elsewhere (cost, speed, new market).
+
+### V3b: Physical Production Economics (for Physical Play models)
+
+When the structural shift involves manufacturing, production, or robotics × AI:
+
+```
+PRODUCTION COST DECOMPOSITION:
+├── Raw materials / inputs (% of COGS — usually NOT compressible by AI)
+├── Direct labor (% of COGS — compressible by robotics × AI)
+├── Equipment / depreciation (% of COGS — changes with automation)
+├── Energy (% of COGS — variable, affected by process optimization)
+├── Quality control / waste (% of COGS — highly compressible by AI vision/sensing)
+├── Scheduling / planning overhead (compressible by AI)
+└── Compliance / certification (may be moat)
+
+ACQUISITION vs. GREENFIELD:
+├── Distressed acquisition cost (existing license + equipment + customers)
+├── Modernization capex (robotics + AI integration)
+├── Total entry cost (acquisition + modernization)
+├── Greenfield equivalent cost (licenses + permits + equipment + ramp)
+├── Timeline: acquisition typically 6-12mo faster than greenfield
+└── Entry budget check: MUST be under $15M total
+
+CAPITAL STRUCTURE ADVANTAGES (Physical):
+├── SBA 504 loans (up to $5.5M, below-market rates for equipment/facilities)
+├── Equipment financing (equipment IS the collateral — 80-100% LTV)
+├── State manufacturing incentive programs (tax credits, grants)
+├── USDA grants (value-added producer, rural business)
+├── EDA grants (economic development, especially for distressed areas)
+├── Working capital requirements (inventory, receivables cycle)
+└── Compare: pure-digital businesses have NONE of these structures
+
+PRODUCTION FIT ASSESSMENT:
+├── Can robotics × AI touch the actual production process? (not just admin/logistics)
+│   → If production is commodity physics (smelting, basic chemicals): POOR FIT
+│   → If production involves assembly, fabrication, batch processing, QC: GOOD FIT
+│   → If production is precision/custom work at variable scale: BEST FIT
+├── Is the product differentiated enough to sustain margin post-automation?
+├── Are customers willing to pay for quality/speed improvements?
+└── Does AI-driven production create a new product category (Jevons)?
+```
 
 ### V4: Regulatory Landscape Assessment
 

@@ -67,8 +67,11 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
 10. **Trust/liability barrier shifting**: Industries where AI adoption was blocked by trust, but precedent is being set
 11. **Switching friction collapse**: Differentiated output being commoditized, loyalty evaporating
 12. **Credit cycle sensitivity**: Refinancing wall + AI margin compression creating double squeeze
-13. **Jevons expansion signal** (NEW): Evidence of latent demand at lower price points — people who WANT a service but can't afford it. This often indicates the largest opportunity.
-14. **AI-native category emergence** (NEW): New business categories that don't fit existing NAICS codes — AI agencies, agent marketplaces, synthetic content services. Scan beyond the existing economy.
+13. **Jevons expansion signal**: Evidence of latent demand at lower price points — people who WANT a service but can't afford it. This often indicates the largest opportunity.
+14. **AI-native category emergence**: New business categories that don't fit existing NAICS codes — AI agencies, agent marketplaces, synthetic content services. Scan beyond the existing economy.
+15. **Robotics × AI convergence**: Physical production where AI + robotics TOGETHER compress COGS (not just SGA). Manufacturing, food production, assembly, logistics, agriculture. The compound effect: AI handles planning/QC/optimization, robotics handles physical execution. Neither alone is sufficient; together they unlock production cost curves previously untouchable.
+16. **Manufacturing/production disruption**: Distressed manufacturing licenses, equipment at discount, credit structures available for production. PE-distressed or aging-owner manufacturers with good IP/contracts but bad cost structure = acquisition targets for robotics × AI modernization.
+17. **Physical production cost curve shift**: Industries where production costs (not just admin costs) can be compressed by robotics × AI. Custom manufacturing, specialty food/beverage, materials processing, precision agriculture. Distinguish from industries where production physics prevent cost compression (commodity chemicals, basic commodity agriculture).
 
 ## Source Categories & Scanning Protocol
 
@@ -87,10 +90,17 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
 
 **Scan for:** Inference cost trajectory (each 50% drop = new business tier). Capability unlocks changing viability. Open-source convergence with frontier. Edge deployment progress. Agentic framework maturity.
 
-### Category 4: Geopolitics & Policy
-**Sources:** USTR, Commerce BIS, EU AI Act, Japan Digital Agency, LATAM trade/tech policy, energy policy trackers, immigration policy
+### Category 4: Geopolitics, Policy & Capital Allocation
+**Sources:** USTR, Commerce BIS, EU AI Act, Japan Digital Agency, LATAM trade/tech policy, energy policy trackers, immigration policy, **asset manager annual outlooks and sector reports** (BlackRock Investment Institute, Bridgewater Daily Observations, JPMorgan Global Research, Goldman Sachs Research, KKR Global Macro, Carlyle Economic Outlook, a16z State of AI/crypto, Sequoia capital reports)
 
-**Scan for:** Reshoring/nearshoring mandates creating greenfield opportunities. AI regulation creating compliance moats. Immigration policy affecting talent availability. Government AI procurement.
+**Scan for:**
+- Reshoring/nearshoring mandates creating greenfield opportunities
+- AI regulation creating compliance moats
+- Immigration policy affecting talent availability
+- Government AI procurement
+- **Asset manager sector allocation shifts**: Where are BlackRock, Bridgewater, JPM, Goldman recommending capital flows? Their projections shape VC/PE/angel allocation downstream. A BlackRock overweight on "AI-enabled industrials" or "physical automation" means capital will follow in 12-24 months.
+- **VC/PE fund formation by thesis**: What theses are new funds being raised around? (Climate tech → robotics → AI-industrials → physical production?) This predicts the funding environment 12-24 months out.
+- **Sovereign wealth fund movements**: SoftBank Vision, Saudi PIF, Abu Dhabi's Mubadala — their sector bets shape what gets funded at massive scale.
 
 ### Category 5: Social & Sentiment
 **Sources:** X/Twitter, Reddit, Hacker News, LinkedIn, YouTube, Substack
@@ -102,10 +112,20 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
 
 **Scan for:** Occupations where vacancy rates rising AND wage inflation above CPI. Industries where average worker age >50. Education pipeline mismatches. Geographic labor migration. LATAM labor dynamics. Licensed profession supply/demand gaps.
 
-### Category 7: Emerging AI-Native Economy (NEW)
+### Category 7: Emerging AI-Native Economy
 **Sources:** Product Hunt, AI tool directories, indie hacker communities, freelancer platforms (Upwork, Fiverr), agency directories, AI newsletter ecosystems
 
 **Scan for:** New business categories being created by AI (not just existing categories disrupted). AI agencies, prompt engineering services, AI-augmented freelancing, synthetic media services, agent-as-a-service models. These are businesses that DIDN'T EXIST 2 years ago and may represent entirely new economic categories.
+
+### Category 8: Manufacturing, Robotics & Physical Production
+**Sources:** Manufacturing PMI data, Census Annual Survey of Manufactures, BizBuySell (manufacturing businesses for sale), LoopNet (industrial facilities), industry journals (Modern Machine Shop, Food Engineering, Assembly Magazine), robotics industry reports (IFR, Robotics Industries Association), USDA data, agricultural equipment dealer networks, SBA loan data for manufacturing
+
+**Scan for:**
+- **Robotics × AI convergence signals**: Industries where AI + robotics together compress production costs (not just admin). Custom manufacturing, food production, precision agriculture, logistics/warehousing, assembly operations.
+- **Distressed manufacturing assets**: Manufacturing businesses for sale due to retirement, PE distress, or margin compression. Look for good IP/customer contracts with bad cost structure. These are acquisition targets for robotics × AI modernization.
+- **Manufacturing credit structures**: SBA 504 loans, equipment financing, state manufacturing incentive programs, USDA value-added producer grants, EDA grants. These create favorable capital structures unavailable to pure-digital businesses.
+- **License/permit arbitrage**: Manufacturing licenses, food production certifications (USDA, FDA), environmental permits — available at discount from distressed operators. Same barrier-as-moat logic as professional services but in physical production.
+- **Production cost untouchables**: Identify industries where production physics prevent meaningful cost compression (commodity chemicals, basic metals smelting, raw material extraction) — these are POOR fits. vs. industries where the production process has optimization headroom (custom fabrication, batch food production, specialty materials, mixed-mode assembly).
 
 ## Signal Extraction Format
 
@@ -116,7 +136,7 @@ A signal is any data point, trend, announcement, discussion, or pattern that sug
   "source_category": "1-7",
   "source_url": "direct link",
   "source_name": "publication/platform",
-  "signal_type": "liquidation_cascade | incumbent_stuck | dead_revival | demographic_gap | infra_overhang | geopolitical_shift | resource_repricing | regulatory_moat | regulatory_capture_weakening | competitive_saturation | trust_liability_barrier | switching_friction | credit_cycle_sensitivity | jevons_expansion | ai_native_category",
+  "signal_type": "liquidation_cascade | incumbent_stuck | dead_revival | demographic_gap | infra_overhang | geopolitical_shift | resource_repricing | regulatory_moat | regulatory_capture_weakening | competitive_saturation | trust_liability_barrier | switching_friction | credit_cycle_sensitivity | jevons_expansion | ai_native_category | robotics_ai_convergence | manufacturing_disruption | production_cost_shift",
   "structural_force": "One-line description of the economic force this signal evidences",
   "headline": "One-line factual summary",
   "detail": "2-3 sentence explanation",
@@ -186,3 +206,4 @@ Competitor Scan Requests: [tier 1-2 opportunities to scan for competitors]
 - When in doubt, include at low confidence rather than omit
 - Include opportunity hypotheses for your top 5 signals
 - Scan Category 7 (AI-native) every cycle — this is where new economy businesses live
+- Scan Category 8 (Manufacturing/Robotics/Physical Production) every cycle — this is the dimension most AI research ignores. Robotics × AI is a compound force that touches COGS, not just SGA. Manufacturing has favorable credit structures (SBA 504, equipment financing) and distressed licenses/permits that create moats
