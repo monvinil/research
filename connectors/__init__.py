@@ -20,6 +20,7 @@ from .google_trends import GoogleTrendsConnector
 from .onet import ONetConnector
 from .cache import DataCache, DEFAULT_TTLS
 from .counter_signals import CounterSignalSearcher
+from .sector_screener import SectorScreener
 
 __all__ = [
     # US economic
@@ -32,6 +33,8 @@ __all__ = [
     'WorldBankConnector', 'OECDConnector', 'EurostatConnector',
     # Meta
     'WebSearchConnector', 'CounterSignalSearcher',
+    # Data-driven sector discovery
+    'SectorScreener',
     # Infrastructure
     'DataCache', 'DEFAULT_TTLS',
 ]

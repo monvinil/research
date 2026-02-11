@@ -1,207 +1,209 @@
 {
   "last_updated": "2026-02-10T23:59:00Z",
-  "current_cycle": 6,
+  "current_cycle": 7,
   "engine_version": "v2.0",
-  "engine_mode": "architecture_based_decomposition",
-  "engine_status": "V2 CYCLE 6 COMPLETE -- ARCHITECTURE-BASED DECOMPOSITION. 8 structural forces x 10 business architectures = 187 models. New 5-axis structural durability scoring: Economic Force (35%), Structural Compounding (25%), Convergence Resistance (20%), Timing Fit (10%), Capital Efficiency (10%). KEY REVERSAL: Vertical SaaS (Cycle 5 highest) scores LOWEST (67 avg). Acquire-and-modernize (Cycle 5 harder to start) scores HIGHEST (84 avg). Physical architectures dominate because convergence resistance from physical assets >> software. TOP 5: (1) Multi-Shop CNC Rollup (86), (2) Acquire+Modernize CNC Shop (86), (3) AI Financial Intelligence Platform (86), (4) Acquire+Modernize Specialty Food (85), (5) Healthcare AI Compliance Platform (85). 3 new patterns: Physical Architecture Dominance (P-016), Data Compounding Bridge (P-017), Timing/Compounding Split (P-018).",
-  "total_signals_scanned": 110,
-  "total_models_constructed": 187,
+  "engine_mode": "naics_systematic_expansion",
+  "engine_status": "V2 CYCLE 7 COMPLETE -- NAICS-SYSTEMATIC EXPANSION + STRESS TEST. 187 -> 387 models via NAICS QCEW screening of 293 4-digit industries. Stress-tested scoring with 3 alternative weight vectors: 7 of top 10 robust across ALL vectors. Mapped 80-cell force x architecture matrix (16 impossible, 12 previously unexplored now filled). 8 new high-value sectors discovered via bottom-up NAICS scanning. TOP 5: (1) Multi-Shop CNC/Metal Fab Rollup (88), (2) AI Financial Intelligence Platform (87), (3) Acquire+Modernize CNC Shop (87), (4) Acquire+Modernize Specialty Food (86), (5) Healthcare AI Compliance Platform (86). KEY FINDINGS: Physical > digital is partially weight-conditional (physical more durable, digital data compounding more force). NAICS bottom-up scanning > top-down theme scanning for sector discovery. PE distress cascade extends to veterinary, dental, staffing, printing. 3 new patterns: P-019 NAICS Systematic Discovery, P-020 Weight-Conditional Rankings, P-021 PE Distress Multi-Sector.",
+  "total_signals_scanned": 158,
+  "total_models_constructed": 387,
 
   "landscape": {
     "decomposed_models_top_20": [
       {
         "rank": 1,
-        "id": "C6-AM-MFG-01",
-        "name": "Acquire + Modernize: Retirement-Sale CNC Shop (CA)",
+        "id": "C7-RC-MFG-01",
+        "name": "Multi-Shop CNC/Metal Fab Rollup Platform",
         "sector": "Robotics x AI Manufacturing",
-        "score": 86,
-        "type": "acquire_and_modernize",
-        "one_liner": "Acquire $300-400K EBITDA CNC shop at 3-4x. Deploy cobots + AI scheduling/QC. COGS drops 25-30%, throughput up 30-50%. Physical assets + permits + contracts = highest convergence resistance in landscape. SBA 504 0% fees through Sept 2026."
+        "score": 88,
+        "type": "rollup_consolidation",
+        "one_liner": "Acquire 5-10 retiring-owner machine shops and metal fab facilities, deploy cobots + AI scheduling/quoting, operate as unified multi-site production platform. NAICS 3327+3323+3329: 1.02M employees, 46K establishments. SBA 504 fee waiver through Sept 2026. STRESS TEST: robust top 7 across ALL weight vectors."
       },
       {
         "rank": 2,
-        "id": "C6-AM-FOOD-01",
-        "name": "Acquire + Modernize: Specialty Food Producer (CA Bakery/Ethnic)",
-        "sector": "Specialty Food/Beverage Production",
-        "score": 85,
-        "type": "acquire_and_modernize",
-        "one_liner": "Acquire specialty food producer ($1-2M revenue, 300+ store distribution) at 3-4x EBITDA. Cobots for packaging + AI scheduling. FDA/USDA certifications + brand + distribution = highest convergence resistance in ENTIRE landscape. SBA 504 + USDA VAPG."
+        "id": "C7-DC-FIN-01",
+        "name": "AI Financial Intelligence Platform (Data Compounding)",
+        "sector": "SMB Accounting/Finance",
+        "score": 87,
+        "type": "data_compounding",
+        "one_liner": "Full-service AI bookkeeping where every client generates financial pattern data, building unassailable intelligence moat. NAICS 5412+5611: 1.77M employees, $173B wages. 23M unserved SMBs. $0.05/month inference. STRESS TEST: #1 under force-dominant weights (89.6). Data moat impossible to replicate without equivalent client base."
       },
       {
         "rank": 3,
-        "id": "C6-FSR-FIN-01",
-        "name": "Full-Service AI Finance Function for SMBs",
-        "sector": "SMB Accounting/Finance",
-        "score": 84,
-        "type": "full_service_replacement",
-        "one_liner": "Replace ENTIRE finance function for 1-50 employee businesses. Bookkeeping, tax, payroll tax, 1099s, financials, forecasting. $149-299/mo. AI does 95% at $0.05/month. 15-20x cost advantage. Jevons: serves 70% of SMBs who currently have NO professional finance."
+        "id": "C7-AM-MFG-01",
+        "name": "Acquire + Modernize CNC Shop (Single Site)",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 87,
+        "type": "acquire_and_modernize",
+        "one_liner": "Buy retiring-owner CNC shop at 3-4x EBITDA ($1-3M), deploy cobots + AI scheduling, double throughput. HIGHEST convergence resistance (96). Capital stack: $3.5M total, $18K/mo debt service covered by $29K/mo EBITDA. STRESS TEST: robust, #1 under convergence-dominant weights."
       },
       {
         "rank": 4,
-        "id": "C6-RC-MFG-01",
-        "name": "Rollup + Consolidation: Multi-Shop CNC Platform (3-5 shops)",
-        "sector": "Robotics x AI Manufacturing",
+        "id": "C7-AM-FOOD-01",
+        "name": "Acquire + Modernize Specialty Food Producer",
+        "sector": "Specialty Food/Beverage Production",
         "score": 86,
-        "type": "rollup_consolidation",
-        "one_liner": "Acquire 3-5 CNC shops over 24-36 months. Standardize AI + cobot stack. Combined $5-10M revenue, $1.5-2.5M EBITDA. Each acquisition compounds purchasing power, customer cross-sell, and AI training data. Exit multiple jumps from 3-4x to 5-7x."
+        "type": "acquire_and_modernize",
+        "one_liner": "Acquire retiring-owner specialty food producer (bakery, confectionery, preserved foods). Deploy cobots + AI QC. FSMA 204 compliance moat. NAICS 3118+3114+3113: 593K employees, 20K+ establishments. CRITICAL: specialty/branded only (20-35% margins). STRESS TEST: robust top 10 across all vectors."
       },
       {
         "rank": 5,
-        "id": "C6-RMB-HC-01",
-        "name": "Regulatory Moat Builder: Multi-State Healthcare AI Compliance",
+        "id": "C7-RMB-HC-01",
+        "name": "Healthcare AI Multi-State Compliance Platform",
         "sector": "AI Regulatory Compliance",
-        "score": 85,
+        "score": 86,
         "type": "regulatory_moat_builder",
-        "one_liner": "Build compliance infrastructure for every healthcare AI company. Track 250+ state bills, 33 enacted laws, HIPAA, CMS WISeR. Generate compliance docs. Audit AI for bias. $500-5,000/mo. Every new regulation PERMANENTLY increases platform value."
+        "one_liner": "Compliance layer for every healthcare AI company: multi-state tracking across 250+ bills, bias auditing, documentation. NAICS 6211+6213+6214: 5.13M employees, $453B wages. Every new regulation permanently increases value. STRESS TEST: remarkably stable (rank 5-6) across all weight vectors."
       },
       {
         "rank": 6,
-        "id": "C6-FSR-HC-01",
-        "name": "Full-Service Prior Auth + Denial Management for Independent Practices",
-        "sector": "Healthcare Admin AI",
-        "score": 84,
+        "id": "C7-FSR-FIN-01",
+        "name": "Full-Service AI Finance Function for SMBs",
+        "sector": "SMB Accounting/Finance",
+        "score": 85,
         "type": "full_service_replacement",
-        "one_liner": "Replace ENTIRE prior auth/denial function for independent practices. AI processes requests, generates appeals, tracks multi-payer compliance. $1,000-3,000/mo. CMS WISeR creates immediate urgency. Payer denial pattern database compounds with volume."
+        "one_liner": "Replace entire finance function for SMBs at $149-499/mo. 23M unserved. 90%+ gross margin. Jevons: 70% unserved -> 3-5x TAM. Bench orphan customers (35K) for initial traction. STRESS TEST: FORCE-DEPENDENT -- top 2 under force-dominant, drops under compounding."
       },
       {
         "rank": 7,
-        "id": "C6-DC-FIN-01",
-        "name": "Data Compounding: AI Financial Intelligence Platform",
-        "sector": "SMB Accounting/Finance",
-        "score": 86,
-        "type": "data_compounding",
-        "one_liner": "Enter via full-service bookkeeping, build cross-SMB financial intelligence from aggregated data. Benchmarking, forecasting, advisory. At 10K clients: most valuable asset in SMB finance. At 100K: unassailable. Highest structural compounding in landscape."
+        "id": "C7-FSR-HC-01",
+        "name": "Full-Service Prior Auth + Denial Management for Independent Practices",
+        "sector": "Healthcare Admin AI",
+        "score": 85,
+        "type": "full_service_replacement",
+        "one_liner": "Full-service prior auth replacing in-house billing staff for independent practices. AMA: 61% say AI increases denials. WISeR creating provider-side urgency. NAICS 6211+6213: 4.05M employees, 426K establishments. STRESS TEST: robust top 9 across all vectors."
       },
       {
         "rank": 8,
-        "id": "C6-AW-ACC-01",
-        "name": "Arbitrage Window: Acquire PE-Distressed Accounting Practice",
-        "sector": "PE Distress Cascade",
-        "score": 82,
-        "type": "arbitrage_window",
-        "one_liner": "Acquire CPA practices ($500K-2M revenue) being shed by distressed PE rollups at 0.5-1.0x revenue (vs 1.5-2.5x healthy). Deploy AI to automate 85-90%. $1.2T debt maturing 2027-2029 = 2-3 year window of depressed pricing."
+        "id": "C7-DC-HC-01",
+        "name": "Clinical Denial Intelligence Platform (Data Compounding)",
+        "sector": "Healthcare Admin AI",
+        "score": 85,
+        "type": "data_compounding",
+        "one_liner": "Start with denial management service, compound into definitive payer denial pattern database across all 50 states. Bloomberg Terminal of healthcare revenue cycle. NAICS 6211+6214: 3.97M employees, $394B wages. STRESS TEST: robust top 10 under all vectors."
       },
       {
         "rank": 9,
-        "id": "C6-PI-MFG-01",
-        "name": "Platform/Infrastructure: Manufacturing AI Deployment Stack for SMEs",
-        "sector": "Robotics x AI Manufacturing",
-        "score": 79,
-        "type": "platform_infrastructure",
-        "one_liner": "Build deployment infrastructure for 78% of manufacturers who adopted but haven't scaled. AI scheduling, QC, maintenance, cobot orchestration as integrated platform. $1,000-5,000/mo. 30K+ target SMEs. Production data flywheel compounds."
+        "id": "C7-AM-PRINT-01",
+        "name": "Acquire + Modernize Commercial Print Shop",
+        "sector": "Manufacturing (NEW SECTOR C7)",
+        "score": 84,
+        "type": "acquire_and_modernize",
+        "one_liner": "NEW C7 DISCOVERY. Acquire retiring-owner print shops (28K establishments = HIGHEST manufacturing fragmentation). AI workflow automation, personalization, predictive maintenance. Print-on-demand $59.3B by 2033. 85% say AI critical, only 40% adopted. Employment declining 6.1% = pre-cascade."
       },
       {
         "rank": 10,
-        "id": "C6-FSR-LATAM-01",
-        "name": "Full-Service AI Cross-Border Compliance for US-LATAM Businesses",
-        "sector": "US-LATAM AI Services",
-        "score": 77,
-        "type": "full_service_replacement",
-        "one_liner": "Replace ENTIRE cross-border tax/compliance function. Transfer pricing, FBAR, FATCA, dual-country filings. $299-999/mo. NO funded AI-first competitor found. Bilingual platform. 20x cost advantage vs Big 4. Strongest founder-market fit."
+        "id": "C7-RC-PRINT-01",
+        "name": "Multi-Shop Commercial Print Rollup Platform",
+        "sector": "Manufacturing (NEW SECTOR C7)",
+        "score": 84,
+        "type": "rollup_consolidation",
+        "one_liner": "NEW C7 DISCOVERY. Consolidate 5-10 print shops into AI-native production network. Centralized prepress, scheduling, estimating. Shops cheaper than CNC ($200K-$1M). Position around growth segments: packaging, personalization, large format."
       },
       {
         "rank": 11,
-        "id": "C6-RMB-INS-01",
-        "name": "Regulatory Moat Builder: Insurance AI Compliance + Bias Auditing",
-        "sector": "AI Regulatory Compliance",
-        "score": 78,
-        "type": "regulatory_moat_builder",
-        "one_liner": "Build compliance for 92% of insurers using AI under 23-state regulatory patchwork. Bias auditing, fairness testing, multi-state reporting. $2,000-10,000/mo. If NAIC vendor licensing passes, platform becomes certification gate."
+        "id": "C7-AW-ACC-01",
+        "name": "Acquire PE-Distressed Accounting Practice",
+        "sector": "PE Distress Cascade",
+        "score": 83,
+        "type": "arbitrage_window",
+        "one_liner": "Acquire PE-distressed accounting practices at 2-3x (vs PE-purchased 8-12x). Convert to AI-native cost structure. $1.2T debt maturing 2027-2029. TIME-LIMITED: 2-3 year window."
       },
       {
         "rank": 12,
-        "id": "C6-RC-FOOD-01",
-        "name": "Rollup + Consolidation: Multi-Facility Specialty Food Platform",
+        "id": "C7-RC-FOOD-01",
+        "name": "Multi-Facility Specialty Food Production Platform",
         "sector": "Specialty Food/Beverage Production",
-        "score": 82,
+        "score": 83,
         "type": "rollup_consolidation",
-        "one_liner": "Acquire 3-5 specialty food producers. Standardize AI + cobot stack. Shared distribution, compliance, purchasing. Multiple brands for different segments. FDA/USDA certified facilities + brand = second-highest convergence resistance."
+        "one_liner": "Consolidate 3-5 specialty food producers. Shared AI QC, FSMA 204 compliance, distribution network. STRESS TEST: COMPOUNDING-DEPENDENT -- top 3 under compounding weights."
       },
       {
         "rank": 13,
-        "id": "C6-FSR-HC-02",
-        "name": "Full-Service Medical Records Abstraction (AI-Native Chart Review)",
-        "sector": "Healthcare Admin AI",
-        "score": 77,
-        "type": "full_service_replacement",
-        "one_liner": "Replace ENTIRE chart abstraction function for health plans and ACOs. AI ingests clinical docs, extracts HEDIS/HCC data. $3-8/chart. 97% automatable (highest O*NET) but employment growing +8.7% = textbook Schumpeterian gap."
+        "id": "C7-PI-TRADES-01",
+        "name": "AI Operations Platform for Building Equipment Contractors",
+        "sector": "Building Trades (NEW SECTOR C7)",
+        "score": 83,
+        "type": "platform_infrastructure",
+        "one_liner": "NEW C7 DISCOVERY. AI operations for HVAC/plumbing/electrical: dispatching, estimating, scheduling. NAICS 2382: 2.46M employees, 230K establishments, $190B wages. 70% can't find workers. 499K new workers needed 2026. ServiceTitan ($9.5B) serves enterprise -- small contractors underserved."
       },
       {
         "rank": 14,
-        "id": "C6-MN-FIN-01",
-        "name": "Marketplace/Network: AI-Matched Business Acquisition Platform",
-        "sector": "PE Distress Cascade",
-        "score": 78,
-        "type": "marketplace_network",
-        "one_liner": "Marketplace connecting 2.34M businesses needing succession with acquirers. AI scores automation potential, modernization opportunity. $299/mo + 2-3% success fee. Silver Tsunami provides structural supply. Also serves as deal flow pipeline for own acquisitions."
+        "id": "C7-RMB-INS-01",
+        "name": "Insurance AI Compliance + Bias Auditing Platform",
+        "sector": "AI Regulatory Compliance",
+        "score": 82,
+        "type": "regulatory_moat_builder",
+        "one_liner": "Multi-state insurance AI compliance: NAIC model law, bias auditing, rate filing automation. NAICS 5241+5242: 2.56M employees, 222K establishments, $268B wages."
       },
       {
         "rank": 15,
-        "id": "C6-FSR-INS-01",
-        "name": "Full-Service AI TPA (Be the Claims Processor, Don't Sell to Them)",
-        "sector": "Insurance Claims AI",
-        "score": 78,
-        "type": "full_service_replacement",
-        "one_liner": "Instead of selling AI tools to TPAs, BE an AI-native TPA. Process WC and P&C claims end-to-end. AI handles 80%+. 40-60% below traditional TPAs. TPA licensing creates structural moat. 78% adopted AI but 4% scaled = incumbents can't go AI-native."
+        "id": "C7-MN-FIN-01",
+        "name": "AI-Matched Business Acquisition Marketplace",
+        "sector": "Silver Tsunami",
+        "score": 82,
+        "type": "marketplace_network",
+        "one_liner": "AI marketplace matching 2.34M retiring owners with acquirers. AI valuations, deal structuring, SBA 504 guidance. BizBuySell hasn't innovated. Transaction data creates moat."
       },
       {
         "rank": 16,
-        "id": "C6-VS-FOOD-01",
-        "name": "Vertical SaaS: FSMA 204 Food Traceability Compliance",
-        "sector": "Specialty Food/Beverage Production",
-        "score": 71,
-        "type": "vertical_saas",
-        "one_liner": "SaaS for SMB food producers to comply with FSMA 204 traceability rule (enforceable 2026). $200-500/mo. FoodLogiQ serves enterprise only. Strongest timing in vertical SaaS category. Regulatory catalyst with specific enforcement date."
+        "id": "C7-FSR-INS-01",
+        "name": "Full-Service AI TPA (Third-Party Administrator)",
+        "sector": "Insurance Claims AI",
+        "score": 82,
+        "type": "full_service_replacement",
+        "one_liner": "AI-native TPA replacing 1,200+ small/mid TPAs. Full claims processing at 10x lower cost. TPA licensing creates moat. Avallon (YC S25, $4.6M) is direct competitor."
       },
       {
         "rank": 17,
-        "id": "C6-DC-HC-01",
-        "name": "Data Compounding: Clinical Denial Intelligence Platform",
-        "sector": "Healthcare Admin AI",
-        "score": 84,
-        "type": "data_compounding",
-        "one_liner": "Enter via prior auth service, build comprehensive payer denial pattern database. 'Aetna denies 62% of CPT 97110 for LBP in NJ -- here's the 78% success appeal strategy.' Denial intelligence more valuable than the appeals themselves."
+        "id": "C7-AM-PLASTICS-01",
+        "name": "Acquire + Modernize Plastics Injection Molding Shop",
+        "sector": "Manufacturing (NEW SECTOR C7)",
+        "score": 81,
+        "type": "acquire_and_modernize",
+        "one_liner": "NEW C7 DISCOVERY. Acquire plastics injection molding shop, deploy robotic part removal + AI quality control + predictive maintenance. NAICS 3261: 600K employees, 12K establishments, $39.6B wages. Reshoring tailwinds."
       },
       {
         "rank": 18,
-        "id": "C6-PI-FIN-01",
-        "name": "Platform/Infrastructure: Finance-as-a-Service API for Micro-Firms",
-        "sector": "SMB Accounting/Finance",
-        "score": 77,
-        "type": "platform_infrastructure",
-        "one_liner": "Financial infrastructure API for micro-firms. Any platform can embed bookkeeping, tax, compliance, payroll via API. Like Stripe for finance operations. Coasean shrinkage creates demand. API integration = extreme switching costs."
+        "id": "C7-FSR-ALLIEDHEALTH-01",
+        "name": "Full-Service AI Practice Operations for Allied Health",
+        "sector": "Healthcare (NEW SECTOR C7)",
+        "score": 81,
+        "type": "full_service_replacement",
+        "one_liner": "NEW C7 DISCOVERY. Full-service billing, scheduling, documentation for chiropractors, PTs, optometrists, speech therapists. NAICS 6213: 1.16M employees, 191K establishments -- MOST fragmented healthcare sector."
       },
       {
         "rank": 19,
-        "id": "C6-PA-MFG-01",
-        "name": "Physical Production + AI: Precision CNC-as-a-Service",
+        "id": "C7-PI-MFG-01",
+        "name": "Manufacturing AI Deployment Stack",
         "sector": "Robotics x AI Manufacturing",
-        "score": 68,
-        "type": "physical_production_ai",
-        "one_liner": "AI-native CNC facility from scratch. AI handles quoting, scheduling, QC. Cobots handle machine tending. 30-40% below traditional job shops. Jevons: lower prices expand custom fabrication market. Better as evolution AFTER acquire-and-modernize."
+        "score": 81,
+        "type": "platform_infrastructure",
+        "one_liner": "AI deployment platform for SME manufacturers: scheduling, QC, maintenance, analytics as plug-and-play modules. 98% interested, 20% adopted = massive gap. $500-5000/mo."
       },
       {
         "rank": 20,
-        "id": "C6-RMB-MH-01",
-        "name": "Regulatory Moat Builder: Mental Health AI Compliance Platform",
-        "sector": "Mental Health AI",
-        "score": 73,
-        "type": "regulatory_moat_builder",
-        "one_liner": "Compliance infrastructure for mental health AI deployers. Track 21 bills, 7 laws, 5 states. Safety testing, content moderation frameworks. $500-2,000/mo. Regulatory wave early but accelerating. First-mover defines compliance standard."
+        "id": "C7-RC-DENTAL-01",
+        "name": "AI-Native Dental Practice Rollup (Counter-PE)",
+        "sector": "Healthcare (NEW SECTOR C7)",
+        "score": 81,
+        "type": "rollup_consolidation",
+        "one_liner": "NEW C7 DISCOVERY. Acquire independent dental practices at 3-5x (vs PE 8-12x), deploy AI billing/scheduling/imaging. NAICS 6212: 1.03M employees, 135K establishments. 137 PE dental deals 2024 but saturation + FTC scrutiny emerging. Counter-PE play."
       }
     ],
 
     "not_recommended": [
-      {"id": "C6-NR-01", "name": "Vertical SaaS: AI Therapist Notes", "score": 45, "reason": "Blueprint 50K clinicians + 5 competitors. Tool-layer commodity. Convergence resistance = 0."},
-      {"id": "C6-NR-02", "name": "Vertical SaaS: AI Tax for Gig Workers", "score": 42, "reason": "FlyFin $15M + Keeper $42M. Well-funded direct competitors. Low ARPU ($150/yr)."},
-      {"id": "C6-NR-03", "name": "Vertical SaaS: AI Payroll+Bookkeeping Bundle", "score": 38, "reason": "Gusto $746M + Rippling $1.3B + Wave. Cannot compete."},
-      {"id": "C6-NR-04", "name": "Full-Service: Consumer Mental Health App", "score": 35, "reason": "Calm, Headspace, BetterHelp, MindSync $720M. Saturated."},
-      {"id": "C6-NR-05", "name": "Vertical SaaS: AI Clinical Documentation", "score": 40, "reason": "Abridge $250M, Nuance DAX, DeepScribe. Market captured."},
-      {"id": "C6-NR-06", "name": "Vertical SaaS: AI Auto Claims Photo", "score": 38, "reason": "Tractable $115M + CCC (public $900M+ rev)."},
-      {"id": "C6-NR-07", "name": "Vertical SaaS: Shopify/E-commerce Bookkeeping", "score": 48, "reason": "Finaloop $35M is direct well-funded competitor."},
-      {"id": "C6-NR-08", "name": "Vertical SaaS: Real Estate AI", "score": 30, "reason": "$10.5B funding, 7 unicorns. DISMISSED Cycle 4."},
-      {"id": "C6-NR-09", "name": "Platform: Government/Municipal AI", "score": 42, "reason": "12-24mo procurement. Tyler Tech $1.8B. FedRAMP."},
-      {"id": "C6-NR-10", "name": "Vertical SaaS: AI Irrigation CA Vineyards", "score": 44, "reason": "Orchard Robotics $22M + OEM risk (Deere See & Spray)."}
+      {"id": "C7-NR-01", "name": "Vertical SaaS: AI Therapist Notes", "score": 45, "reason": "Blueprint 50K clinicians + 5 competitors. Tool-layer commodity. Convergence resistance = 0."},
+      {"id": "C7-NR-02", "name": "Vertical SaaS: AI Payroll+Bookkeeping Bundle", "score": 38, "reason": "Gusto $746M + Rippling $1.3B + Wave. Cannot compete."},
+      {"id": "C7-NR-03", "name": "Full-Service: Consumer Mental Health App", "score": 35, "reason": "Calm, Headspace, BetterHelp, MindSync $720M. Saturated."},
+      {"id": "C7-NR-04", "name": "Vertical SaaS: AI Clinical Documentation", "score": 40, "reason": "Abridge $250M, Nuance DAX, DeepScribe. Market captured."},
+      {"id": "C7-NR-05", "name": "Vertical SaaS: AI Auto Claims Photo", "score": 38, "reason": "Tractable $115M + CCC (public $900M+ rev)."},
+      {"id": "C7-NR-06", "name": "Vertical SaaS: Shopify/E-commerce Bookkeeping", "score": 48, "reason": "Finaloop $35M is direct well-funded competitor."},
+      {"id": "C7-NR-07", "name": "Vertical SaaS: Real Estate AI", "score": 30, "reason": "$10.5B funding, 7 unicorns. DISMISSED Cycle 4."},
+      {"id": "C7-NR-08", "name": "Platform: Government/Municipal AI", "score": 42, "reason": "12-24mo procurement. Tyler Tech $1.8B. FedRAMP."},
+      {"id": "C7-NR-09", "name": "Vertical SaaS: AI Irrigation CA Vineyards", "score": 44, "reason": "Orchard Robotics $22M + OEM risk (Deere See & Spray)."},
+      {"id": "C7-NR-10", "name": "Vertical SaaS: AI Crypto/DeFi Analytics", "score": 32, "reason": "Regulatory uncertainty + many funded competitors."},
+      {"id": "C7-NR-11", "name": "Tool: General AI Writing Tool", "score": 28, "reason": "ChatGPT, Claude, Gemini free tier. Platform commoditized."},
+      {"id": "C7-NR-12", "name": "Tool: AI Code Generation", "score": 30, "reason": "GitHub Copilot, Cursor, Windsurf. Platform commoditized."}
     ],
 
     "monitoring": [
@@ -209,25 +211,49 @@
       {"shift": "AI Additive Manufacturing / Mass Customization", "signal_count": 2, "note": "Growing niche. Watch for cost/speed improvements."},
       {"shift": "LATAM Humanoid Robot Manufacturing", "signal_count": 1, "note": "Very early. Monitor."},
       {"shift": "Perez Turning Point / AI Funding Correction", "signal_count": 3, "note": "Goldman $527B hyperscaler capex deepens overhang. Build crash-resilient."},
-      {"shift": "Construction Subcontractor AI Management", "signal_count": 2, "note": "Stuut $29.5M for general AR, but construction-specific gap remains. Monitor."},
-      {"shift": "AI-Native Business Category Emergence", "signal_count": 2, "note": "Agent marketplaces, AI agencies proliferating. Monitor for platform plays."}
+      {"shift": "Construction Subcontractor AI Management", "signal_count": 3, "note": "Stuut $29.5M for general AR. Construction-specific gap remains."},
+      {"shift": "AI-Native Business Category Emergence", "signal_count": 2, "note": "Agent marketplaces, AI agencies proliferating. Monitor for platform plays."},
+      {"shift": "Printing Industry Print-on-Demand Shift", "signal_count": 2, "note": "NEW C7. $8.3B -> $59.3B by 2033 (27.8% CAGR). Could displace traditional print."},
+      {"shift": "Data Center Cooling / Infrastructure Demand", "signal_count": 2, "note": "NEW C7. 140K+ skilled trades workers needed by 2030. Google $10M electrician training."}
     ]
   },
 
   "structural_shifts_active": [
-    {"shift": "AI Inference Cost Collapse (50x/yr median decline)", "signal_count": 5, "strength": "very_strong", "models_produced": 187, "note": "Enables ALL models in landscape. DeepSeek R1 at 90% below Western competitors. Cost floor effectively zero vs human labor."},
-    {"shift": "Baumol Cost Disease Cure ($207B quantified automatable)", "signal_count": 22, "strength": "very_strong", "models_produced": 30, "note": "Architecture analysis: full-service replacement captures 5x more value than vertical SaaS. $139B accounting + $36B insurance + $20B legal + $9B medical records."},
-    {"shift": "Silver Tsunami (2.34M boomer businesses)", "signal_count": 13, "strength": "very_strong", "models_produced": 12, "note": "Acquire-and-modernize + rollup architectures score 84 avg -- highest in landscape. SBA 504 fee waiver time-sensitive through Sept 2026."},
-    {"shift": "Robotics x AI Compound Cost Compression", "signal_count": 19, "strength": "very_strong", "models_produced": 15, "note": "Cobots $25-60K, ROI 6-18mo. 98% exploring, 20% ready. Architecture: ACQUIRE (84) beats BUILD (68) by 16 points."},
-    {"shift": "Regulatory Fragmentation (250+ bills, 33 laws)", "signal_count": 15, "strength": "very_strong", "models_produced": 10, "note": "Now a distinct architecture type (regulatory_moat_builder, 77 avg). Each new regulation permanently increases platform value."},
-    {"shift": "PE/Leveraged Incumbent Vulnerability ($1.2T maturing)", "signal_count": 7, "strength": "strong", "models_produced": 5, "note": "$1.2T debt maturing 2027-2029. Interest coverage declining to 4.6x. Arbitrage window for distressed acquisitions."},
-    {"shift": "Coasean Firm Shrinkage", "signal_count": 4, "strength": "strong", "models_produced": 5, "note": "Micro-firm formation creates demand for platform_infrastructure architecture. More firms = more customers for business services."},
-    {"shift": "Kondratieff Deployment Phase", "signal_count": 4, "strength": "strong", "models_produced": 5, "note": "AI infra reckoning 2026. Application layer captures value from infrastructure overinvestment. Build crash-resilient."},
-    {"shift": "Christensen Full-Service Layer Gap", "signal_count": 16, "strength": "very_strong", "models_produced": 10, "note": "Architecture validation: full-service (79) beats vertical SaaS (67). Incumbents CANNOT self-cannibalize to enter full-service layer."},
-    {"shift": "Dead Business Revival + PE Distress", "signal_count": 6, "strength": "very_strong", "models_produced": 4, "note": "Extended beyond Bench/Woebot to structural PE distress. Arbitrage window architecture captures 2-3 year window."}
+    {"shift": "AI Inference Cost Collapse (50x/yr median decline)", "signal_count": 5, "strength": "very_strong", "models_produced": 387, "note": "Enables ALL models in landscape. Cost floor effectively zero vs human labor. Every cycle confirms deepening."},
+    {"shift": "Baumol Cost Disease Cure ($207B quantified automatable)", "signal_count": 26, "strength": "very_strong", "models_produced": 90, "note": "Produces models across 8 of 10 architecture types -- MOST versatile force. NAICS adds: staffing cascade (-7.6%), credit gap (-10.7%/+13.8%), allied health fragmentation (191K estabs)."},
+    {"shift": "Silver Tsunami (2.34M boomer businesses)", "signal_count": 21, "strength": "very_strong", "models_produced": 65, "note": "NAICS reveals 12+ manufacturing sectors beyond CNC/food: printing 28K, plastics 12K, furniture 12.7K, metal fab, coating, foundry. Produces 8 of 10 architecture types."},
+    {"shift": "Robotics x AI Compound Cost Compression", "signal_count": 23, "strength": "very_strong", "models_produced": 55, "note": "NAICS adds 12+ sectors for cobot deployment. $2.26B Q1 2026 robotics funding. Printing, plastics, furniture, metal fab, auto parts all viable."},
+    {"shift": "Regulatory Fragmentation (250+ bills, 33 laws)", "signal_count": 21, "strength": "very_strong", "models_produced": 45, "note": "NEW regulatory moat sectors: veterinary (state corporate practice laws), child care (50-state licensing), construction permitting, dental FTC scrutiny, financial AI compliance."},
+    {"shift": "PE/Leveraged Incumbent Vulnerability ($1.2T maturing)", "signal_count": 11, "strength": "strong", "models_produced": 25, "note": "EXTENDED beyond accounting: veterinary, dental, staffing, printing. Counter-PE strategy scales across sectors. $1.2T maturity wall 2027-2029."},
+    {"shift": "Coasean Firm Shrinkage", "signal_count": 9, "strength": "strong", "models_produced": 20, "note": "981K establishments in individual/family services = most fragmented major industry. Platform infrastructure for micro-firms growing. 5 of 10 architecture types."},
+    {"shift": "Kondratieff Deployment Phase", "signal_count": 7, "strength": "strong", "models_produced": 15, "note": "Application layer captures value. AI infrastructure commoditizing. Manufacturing AI deployment platform positioned for deployment phase."},
+    {"shift": "Christensen Full-Service Layer Gap", "signal_count": 16, "strength": "very_strong", "models_produced": 60, "note": "STRESS TEST CONFIRMS: full-service (78) beats vertical SaaS (62) by 16 points across ALL weight vectors. 16-point gap is structural and weight-independent."},
+    {"shift": "Dead Business Revival + PE Distress", "signal_count": 10, "strength": "very_strong", "models_produced": 20, "note": "Extended to multi-sector PE distress. Staffing employment -7.6% = active Schumpeterian destruction. Combined validated failures >$1B."}
   ],
 
-  "key_insight": "ARCHITECTURE DETERMINES STRUCTURAL DURABILITY. Cycle 5 found niche > sector. Cycle 6 finds architecture > niche. A full-service bookkeeping play (84) beats a restaurant-specific vertical SaaS play (71) EVEN THOUGH both serve SMB accounting. HOW you enter matters more than WHERE you enter. Physical architectures (acquire-and-modernize, rollup) create convergence resistance from physical assets, permits, and contracts that software CANNOT replicate. Data compounding is the bridge that makes software plays structurally defensible. Optimal strategy: START physical (capture timing window), BUILD digital in parallel (capture compounding).",
+  "stress_test_results": {
+    "methodology": "3 alternative weight vectors tested on top 20 C6 models",
+    "vectors": {
+      "force_dominant": "50/20/15/10/5 -- emphasizes TAM x cost advantage",
+      "compounding_dominant": "20/40/25/10/5 -- emphasizes structural compounding",
+      "convergence_dominant": "25/20/40/5/10 -- emphasizes replication barrier"
+    },
+    "robust_top_10": ["C6-RC-MFG-01", "C6-AM-MFG-01", "C6-DC-FIN-01", "C6-RMB-HC-01", "C6-AM-FOOD-01", "C6-DC-HC-01", "C6-FSR-HC-01"],
+    "weight_sensitive": ["C6-FSR-FIN-01 (force-dependent)", "C6-RC-FOOD-01 (compounding-dependent)", "C6-AW-ACC-01 (timing-dependent)"],
+    "architecture_insight": "Physical: 86.4 convergence > 86.1 compounding > 83.1 force. Data compounding: 88.1 force > 86.6 compounding > 81.0 convergence. Physical = more durable. Digital = more force."
+  },
+
+  "force_architecture_matrix": {
+    "total_cells": 80,
+    "well_mapped": 22,
+    "partially_mapped": 30,
+    "unexplored_filled": 12,
+    "structurally_unlikely": 16,
+    "most_versatile_forces": "Baumol (8/10), Silver Tsunami (8/10)",
+    "most_constrained": "Coasean (5/10), Kondratieff (6/10)"
+  },
+
+  "key_insight": "CYCLE 7 VALIDATES AND EXTENDS THE LANDSCAPE. (1) SCORING IS ROBUST: 7 of top 10 survive ALL weight vectors. Current weights aren't arbitrary. (2) PHYSICAL vs DIGITAL IS NUANCED: physical = more durable (highest convergence resistance), digital data compounding = more force (largest TAM). Strategy unchanged: START physical (timing windows), BUILD digital parallel (compounding). (3) NAICS BOTTOM-UP > TOP-DOWN: systematic NAICS screening discovers sectors invisible to theme scanning. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) all entered top 20. (4) MATRIX IS COMPLETE: 80 cells mapped. 16 impossible. 12 unexplored now filled. (5) PE DISTRESS IS MULTI-SECTOR: extends beyond accounting to veterinary, dental, staffing, printing.",
 
   "cycle_history": [
     {"cycle": "v2-1", "signals": 25, "clusters": 14, "models_constructed": 20, "tier_1": 4, "tier_2": 4, "tier_3": 5, "top_force": "$200B+ (Healthcare Admin)", "note": "First v2 landscape mapping cycle. Services-focused."},
@@ -235,6 +261,7 @@
     {"cycle": "v2-3", "signals": 38, "clusters": 16, "models_constructed": 34, "tier_1": 5, "tier_2": 5, "tier_3": 6, "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)", "note": "CORRECTION CYCLE: Real data replaces estimates."},
     {"cycle": "v2-4", "signals": 20, "clusters": 18, "models_constructed": 37, "tier_1": 5, "tier_2": 6, "tier_3": 7, "top_force": "$207B automatable wage bill (O*NET + BLS quantified)", "note": "QUANTITATIVE DEEPENING: O*NET + BLS data. Stress tests on top 3."},
     {"cycle": "v2-5", "signals": 20, "clusters": 11, "models_constructed": 102, "tier_1_models": 5, "tier_2_models": 9, "not_recommended": 5, "top_model": "AI Bookkeeping for Bench Orphans (80)", "note": "YC-GRANULARITY DECOMPOSITION: 11 sectors -> 102 models. Customer-segment scoring."},
-    {"cycle": "v2-6", "signals": 32, "clusters": 8, "models_constructed": 187, "tier_1_models": 5, "tier_2_models": 9, "not_recommended": 10, "top_model": "Multi-Shop CNC Rollup (86) / CNC Acquire+Modernize (86) / Financial Intelligence (86)", "note": "ARCHITECTURE-BASED DECOMPOSITION: 8 forces x 10 architectures = 187 models. Structural durability scoring. KEY REVERSAL: physical architectures (84 avg) dominate; vertical SaaS (67 avg) scores LOWEST."}
+    {"cycle": "v2-6", "signals": 32, "clusters": 8, "models_constructed": 187, "tier_1_models": 5, "tier_2_models": 9, "not_recommended": 10, "top_model": "Multi-Shop CNC Rollup (86) / CNC Acquire+Modernize (86) / Financial Intelligence (86)", "note": "ARCHITECTURE-BASED DECOMPOSITION: 8 forces x 10 architectures = 187 models. Structural durability scoring. KEY REVERSAL: physical architectures (84 avg) dominate; vertical SaaS (67 avg) scores LOWEST."},
+    {"cycle": "v2-7", "signals": 48, "clusters": 8, "models_constructed": 387, "tier_1_models": 5, "tier_2_models": 15, "not_recommended": 12, "top_model": "Multi-Shop CNC/Metal Fab Rollup (88)", "note": "NAICS-SYSTEMATIC EXPANSION + STRESS TEST: 187 -> 387 models via NAICS QCEW (293 4-digit industries). Scoring stress-tested: 7/10 robust. 80-cell matrix mapped. 8 new sectors discovered. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) enter top 20. PE distress extends to vet/dental/staffing/print."}
   ]
 }

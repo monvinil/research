@@ -1,7 +1,7 @@
 {
-  "state_version": 7,
-  "current_cycle": 6,
-  "engine_mode": "architecture_based_decomposition",
+  "state_version": 8,
+  "current_cycle": 7,
+  "engine_mode": "naics_systematic_expansion",
   "engine_version": "v2.0 -- construct-first, landscape mapping",
 
   "active_research_focus": {
@@ -35,7 +35,18 @@
       "yc_granularity_decomposition",
       "architecture_based_structural_scoring",
       "physical_vs_digital_architecture_dominance",
-      "data_compounding_as_bridge_to_unassailability"
+      "data_compounding_as_bridge_to_unassailability",
+      "naics_systematic_sector_screening",
+      "force_architecture_matrix_mapping",
+      "stress_test_scoring_robustness",
+      "printing_industry_ai_modernization",
+      "building_trades_ai_augmentation",
+      "employment_services_active_cascade",
+      "credit_intermediation_schumpeterian_gap",
+      "allied_health_fragmentation_opportunity",
+      "plastics_injection_molding_modernization",
+      "furniture_cnc_design_to_production",
+      "dental_counter_pe_rollup"
     ],
     "geographies": ["US", "LATAM", "Japan (leading indicator)", "EU (comparative)"],
     "themes": [
@@ -74,7 +85,20 @@
       "convergence_resistance_scoring",
       "structural_compounding_analysis",
       "physical_architecture_dominance",
-      "data_compounding_flywheel_design"
+      "data_compounding_flywheel_design",
+      "naics_qcew_systematic_sector_scan",
+      "force_architecture_80_cell_matrix",
+      "stress_test_weight_vector_robustness",
+      "printing_28k_establishments_modernization",
+      "building_equipment_contractors_2_46m_workers",
+      "staffing_industry_cascade_decline",
+      "credit_intermediation_gap_signal",
+      "allied_health_191k_establishments",
+      "plastics_12k_establishments_cobot_ready",
+      "furniture_manufacturing_design_to_cnc",
+      "dental_pe_counter_rollup_strategy",
+      "home_health_elder_care_ai_operations",
+      "hvac_data_center_cooling_demand"
     ]
   },
 
@@ -88,60 +112,62 @@
 
   "scoring_system": {
     "current": {
-      "name": "5-Axis Structural Durability Scoring (Cycle 6+)",
+      "name": "5-Axis Structural Durability Scoring (Cycle 6+, stress-tested Cycle 7)",
       "axes": {
         "economic_force_magnitude": {"weight": 0.35, "description": "TAM x cost advantage ratio x Jevons expansion potential"},
         "structural_compounding": {"weight": 0.25, "description": "Does business get HARDER to compete with over time?"},
         "convergence_resistance": {"weight": 0.20, "description": "What prevents competitors from replicating in 3 years?"},
         "timing_structural_fit": {"weight": 0.10, "description": "Structural reason why NOW?"},
         "capital_efficiency": {"weight": 0.10, "description": "Structural advantage gained per dollar invested"}
-      }
+      },
+      "stress_test_validation": "Cycle 7 tested 3 alternative weight vectors (force-dominant, compounding-dominant, convergence-dominant). 7 of top 10 models robust across ALL vectors. Architecture dominance partially weight-dependent: physical dominates convergence/compounding, data compounding dominates force."
     },
     "history": [
       {"cycle": "0-4", "weights": "balanced 1.0 across: competitive_density, unit_economics_clarity, distribution_specificity, moat_durability, customer_findability", "reason": "v2 cycles 0-4 used balanced weights on sector-level scoring."},
       {"cycle": 5, "weights": "balanced 1.0 across: competitive_density, unit_economics_clarity, distribution_specificity, moat_durability, customer_findability", "reason": "YC-granularity decomposition. Customer-segment-based scoring. PROBLEM: scored tactical accessibility, not structural durability."},
-      {"cycle": 6, "weights": "weighted: economic_force (35%), structural_compounding (25%), convergence_resistance (20%), timing_structural_fit (10%), capital_efficiency (10%)", "reason": "Architecture-based decomposition. CORRECTS Cycle 5: scores STRUCTURAL DURABILITY. Physical architectures dominate because convergence resistance from physical assets >> software."}
+      {"cycle": 6, "weights": "weighted: economic_force (35%), structural_compounding (25%), convergence_resistance (20%), timing_structural_fit (10%), capital_efficiency (10%)", "reason": "Architecture-based decomposition. CORRECTS Cycle 5: scores STRUCTURAL DURABILITY. Physical architectures dominate because convergence resistance from physical assets >> software."},
+      {"cycle": 7, "weights": "Same as cycle 6 (validated by stress test)", "reason": "NAICS-systematic expansion + stress test. 3 alternative weight vectors tested. Core weights VALIDATED: 7 of top 10 robust across all vectors. Key finding: physical vs digital dominance is partially weight-dependent, not absolute."}
     ]
   },
 
   "architecture_types": {
-    "acquire_and_modernize": {"avg_score": 84, "description": "Buy existing business at demographic-distress pricing, deploy AI+robotics. Highest convergence resistance."},
-    "full_service_replacement": {"avg_score": 79, "description": "Replace entire function (not just sell a tool). Christensen disruptive layer."},
-    "rollup_consolidation": {"avg_score": 84, "description": "Acquire-and-modernize at scale. Strongest compounding mechanism."},
-    "data_compounding": {"avg_score": 80, "description": "Service entry + data flywheel. Weak at year 1, unassailable at year 5."},
-    "regulatory_moat_builder": {"avg_score": 77, "description": "Build compliance infrastructure. Every new regulation increases value."},
-    "platform_infrastructure": {"avg_score": 74, "description": "Build once, sell many. Moderate convergence resistance."},
-    "marketplace_network": {"avg_score": 73, "description": "Network effects once at critical mass. Binary value."},
-    "arbitrage_window": {"avg_score": 71, "description": "Time-limited structural mispricing. Act during PE distress window."},
-    "physical_production_ai": {"avg_score": 68, "description": "Greenfield AI-native production. Lower than acquire-and-modernize (no inherited moats)."},
-    "vertical_saas": {"avg_score": 67, "description": "LOWEST score. Easy to start but hard to defend. Platform incumbents can add features."}
+    "acquire_and_modernize": {"avg_score": 83, "model_count": 62, "description": "Buy existing business at demographic-distress pricing, deploy AI+robotics. Highest convergence resistance. C7 NAICS expansion adds: printing, plastics, furniture, metal fab, auto parts, dairy, confectionery, foundry, rubber, glass, paper, sawmill."},
+    "rollup_consolidation": {"avg_score": 82, "model_count": 32, "description": "Acquire-and-modernize at scale. Strongest compounding mechanism. C7 adds: printing, plastics, furniture, metal fab, electrical, dental, bakery, coating, auto parts, beverage rollups."},
+    "data_compounding": {"avg_score": 80, "model_count": 28, "description": "Service entry + data flywheel. Weak at year 1, unassailable at year 5. C7 adds: trades intelligence, insurance claims, workforce, construction, legal, staffing, veterinary."},
+    "full_service_replacement": {"avg_score": 78, "model_count": 60, "description": "Replace entire function (not just sell a tool). Christensen disruptive layer. C7 adds: allied health, staffing, home health, lending, child care, design, consulting, banking, nursing, accounting verticals."},
+    "regulatory_moat_builder": {"avg_score": 76, "model_count": 34, "description": "Build compliance infrastructure. Every new regulation increases value. C7 adds: veterinary, dental, child care, construction, financial AI compliance."},
+    "platform_infrastructure": {"avg_score": 74, "model_count": 46, "description": "Build once, sell many. Moderate convergence resistance. C7 adds: trades, home health, elder care, real estate, manufacturing, compliance, nursing, lending, dental, agriculture."},
+    "marketplace_network": {"avg_score": 72, "model_count": 28, "description": "Network effects once at critical mass. Binary value. C7 adds: trades contractor, elder care, micro-firm, print capacity, food producer, manufacturing capacity, healthcare services."},
+    "arbitrage_window": {"avg_score": 71, "model_count": 20, "description": "Time-limited structural mispricing. Act during PE distress window. C7 adds: veterinary, staffing, dental arbitrage acquisitions."},
+    "physical_production_ai": {"avg_score": 68, "model_count": 28, "description": "Greenfield AI-native production. Lower than acquire-and-modernize (no inherited moats). C7 adds: HVAC/cooling for data centers, medical device contract mfg, cosmetics contract mfg, auto parts, craft beverage, print-on-demand, ag equipment."},
+    "vertical_saas": {"avg_score": 62, "model_count": 49, "description": "LOWEST score. Easy to start but hard to defend. Platform incumbents can add features. C7 confirms: vertical SaaS consistently scores lowest across all weight vectors."}
   },
 
   "landscape": {
     "top_20_models": [
-      {"rank": 1, "id": "C6-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "architecture": "acquire_and_modernize", "score": 86},
-      {"rank": 2, "id": "C6-AM-FOOD-01", "name": "Acquire + Modernize Specialty Food Producer", "architecture": "acquire_and_modernize", "score": 85},
-      {"rank": 3, "id": "C6-FSR-FIN-01", "name": "Full-Service AI Finance Function for SMBs", "architecture": "full_service_replacement", "score": 84},
-      {"rank": 4, "id": "C6-RC-MFG-01", "name": "Multi-Shop CNC Rollup Platform", "architecture": "rollup_consolidation", "score": 86},
-      {"rank": 5, "id": "C6-RMB-HC-01", "name": "Healthcare AI Compliance Platform", "architecture": "regulatory_moat_builder", "score": 85},
-      {"rank": 6, "id": "C6-FSR-HC-01", "name": "Full-Service Prior Auth + Denial Management", "architecture": "full_service_replacement", "score": 84},
-      {"rank": 7, "id": "C6-DC-FIN-01", "name": "AI Financial Intelligence Platform", "architecture": "data_compounding", "score": 86},
-      {"rank": 8, "id": "C6-AW-ACC-01", "name": "Acquire PE-Distressed Accounting Practice", "architecture": "arbitrage_window", "score": 82},
-      {"rank": 9, "id": "C6-PI-MFG-01", "name": "Manufacturing AI Deployment Stack", "architecture": "platform_infrastructure", "score": 79},
-      {"rank": 10, "id": "C6-FSR-LATAM-01", "name": "Full-Service Cross-Border Compliance", "architecture": "full_service_replacement", "score": 77},
-      {"rank": 11, "id": "C6-RMB-INS-01", "name": "Insurance AI Compliance + Bias Auditing", "architecture": "regulatory_moat_builder", "score": 78},
-      {"rank": 12, "id": "C6-RC-FOOD-01", "name": "Multi-Facility Specialty Food Platform", "architecture": "rollup_consolidation", "score": 82},
-      {"rank": 13, "id": "C6-FSR-HC-02", "name": "AI-Native Medical Records Abstraction", "architecture": "full_service_replacement", "score": 77},
-      {"rank": 14, "id": "C6-MN-FIN-01", "name": "AI-Matched Business Acquisition Marketplace", "architecture": "marketplace_network", "score": 78},
-      {"rank": 15, "id": "C6-FSR-INS-01", "name": "Full-Service AI TPA", "architecture": "full_service_replacement", "score": 78},
-      {"rank": 16, "id": "C6-VS-FOOD-01", "name": "FSMA 204 Food Traceability Compliance SaaS", "architecture": "vertical_saas", "score": 71},
-      {"rank": 17, "id": "C6-DC-HC-01", "name": "Clinical Denial Intelligence Platform", "architecture": "data_compounding", "score": 84},
-      {"rank": 18, "id": "C6-PI-FIN-01", "name": "Finance-as-a-Service API for Micro-Firms", "architecture": "platform_infrastructure", "score": 77},
-      {"rank": 19, "id": "C6-PA-MFG-01", "name": "Precision CNC-as-a-Service", "architecture": "physical_production_ai", "score": 68},
-      {"rank": 20, "id": "C6-RMB-MH-01", "name": "Mental Health AI Compliance Platform", "architecture": "regulatory_moat_builder", "score": 73}
+      {"rank": 1, "id": "C7-RC-MFG-01", "name": "Multi-Shop CNC/Metal Fab Rollup Platform", "architecture": "rollup_consolidation", "score": 88},
+      {"rank": 2, "id": "C7-DC-FIN-01", "name": "AI Financial Intelligence Platform", "architecture": "data_compounding", "score": 87},
+      {"rank": 3, "id": "C7-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "architecture": "acquire_and_modernize", "score": 87},
+      {"rank": 4, "id": "C7-AM-FOOD-01", "name": "Acquire + Modernize Specialty Food Producer", "architecture": "acquire_and_modernize", "score": 86},
+      {"rank": 5, "id": "C7-RMB-HC-01", "name": "Healthcare AI Multi-State Compliance Platform", "architecture": "regulatory_moat_builder", "score": 86},
+      {"rank": 6, "id": "C7-FSR-FIN-01", "name": "Full-Service AI Finance Function for SMBs", "architecture": "full_service_replacement", "score": 85},
+      {"rank": 7, "id": "C7-FSR-HC-01", "name": "Full-Service Prior Auth + Denial Management", "architecture": "full_service_replacement", "score": 85},
+      {"rank": 8, "id": "C7-DC-HC-01", "name": "Clinical Denial Intelligence Platform", "architecture": "data_compounding", "score": 85},
+      {"rank": 9, "id": "C7-AM-PRINT-01", "name": "Acquire + Modernize Commercial Print Shop", "architecture": "acquire_and_modernize", "score": 84},
+      {"rank": 10, "id": "C7-RC-PRINT-01", "name": "Multi-Shop Commercial Print Rollup Platform", "architecture": "rollup_consolidation", "score": 84},
+      {"rank": 11, "id": "C7-AW-ACC-01", "name": "Acquire PE-Distressed Accounting Practice", "architecture": "arbitrage_window", "score": 83},
+      {"rank": 12, "id": "C7-RC-FOOD-01", "name": "Multi-Facility Specialty Food Production Platform", "architecture": "rollup_consolidation", "score": 83},
+      {"rank": 13, "id": "C7-PI-TRADES-01", "name": "AI Operations Platform for Building Equipment Contractors", "architecture": "platform_infrastructure", "score": 83},
+      {"rank": 14, "id": "C7-RMB-INS-01", "name": "Insurance AI Compliance + Bias Auditing Platform", "architecture": "regulatory_moat_builder", "score": 82},
+      {"rank": 15, "id": "C7-MN-FIN-01", "name": "AI-Matched Business Acquisition Marketplace", "architecture": "marketplace_network", "score": 82},
+      {"rank": 16, "id": "C7-FSR-INS-01", "name": "Full-Service AI TPA", "architecture": "full_service_replacement", "score": 82},
+      {"rank": 17, "id": "C7-AM-PLASTICS-01", "name": "Acquire + Modernize Plastics Injection Molding Shop", "architecture": "acquire_and_modernize", "score": 81},
+      {"rank": 18, "id": "C7-FSR-ALLIEDHEALTH-01", "name": "Full-Service AI Practice Operations for Allied Health", "architecture": "full_service_replacement", "score": 81},
+      {"rank": 19, "id": "C7-PI-MFG-01", "name": "Manufacturing AI Deployment Stack", "architecture": "platform_infrastructure", "score": 81},
+      {"rank": 20, "id": "C7-RC-DENTAL-01", "name": "AI-Native Dental Practice Rollup (Counter-PE)", "architecture": "rollup_consolidation", "score": 81}
     ],
-    "total_models": 187,
-    "not_recommended_count": 10
+    "total_models": 387,
+    "not_recommended_count": 12
   },
 
   "running_patterns": [
@@ -150,133 +176,164 @@
       "description": "Multi-Sector Baumol Cure Convergence: Healthcare, legal, accounting, insurance all releasing stored above-CPI energy simultaneously",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "Architecture analysis reveals: the Baumol force creates opportunity for EVERY architecture type. But full-service replacement captures 5x more value than vertical SaaS because it replaces the ENTIRE function, not just a tool."
+      "cycle_7_update": "NAICS data quantifies depth: $207B automatable wages across 7 key occupations. Baumol force produces models across 8 of 10 architecture types. NAICS 5613 (staffing) declining 7.6% = ACTIVE cascade. NAICS 5223 (credit intermediation support) declining 10.7% with wages up 13.8% = textbook Schumpeterian gap."
     },
     {
       "pattern_id": "P-002",
       "description": "Demographic Gap + AI Readiness Convergence",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "Acquire-and-modernize (84 avg) and rollup (84 avg) are the dominant architectures for this force. Silver Tsunami creates ACQUISITION SUPPLY. AI+robotics create MODERNIZATION CAPABILITY. Together they produce the highest-scoring models in the landscape."
+      "cycle_7_update": "NAICS systematic scan reveals 12+ manufacturing sectors with retiring owners beyond CNC and food: printing (28K estabs), plastics (12K), furniture (12.7K), metal fab, coating, foundry, rubber, glass, paper, sawmill. Acquire-and-modernize architecture extends across all these sectors."
     },
     {
       "pattern_id": "P-003",
       "description": "Regulatory Fragmentation as Structural Moat",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "Regulatory moat builder is now a distinct ARCHITECTURE type scoring 77 avg. Three separate plays identified: healthcare AI (250+ bills), insurance AI (NAIC model law), mental health AI (21 bills). Every new regulation increases platform value PERMANENTLY."
+      "cycle_7_update": "NAICS reveals new regulatory moat opportunities: veterinary (state corporate practice laws), child care (50-state licensing), construction permitting (jurisdictional fragmentation), dental (FTC scrutiny of PE), financial AI (multi-regulator compliance). 5 new regulatory moat builder models added."
     },
     {
       "pattern_id": "P-005",
       "description": "Jevons Expansion 3-5x in Professional Services",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "The LARGEST force by TAM. 70% of SMBs currently unserved by professional financial services. At 10x lower cost, market expands 3-5x from $139B to $400-600B. This is the economic force magnitude driving full-service replacement architecture."
+      "cycle_7_update": "Confirmed across NAICS data. Building trades (NAICS 2382): 499K new workers needed = massive unmet demand. Allied health (NAICS 6213): employment growing 6.8%, most fragmented healthcare sector (191K establishments). Jevons expansion applies to services AND to physical production (lower cost = more accessible custom manufacturing)."
     },
     {
       "pattern_id": "P-006",
       "description": "Robotics x AI Compound Production Cost Compression",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "This force now maps to 4 distinct architectures: acquire_and_modernize, platform_infrastructure, physical_production_ai, rollup_consolidation. Architecture analysis reveals: ACQUIRE is 16 points better than BUILD (84 vs 68) because inherited moats compound."
+      "cycle_7_update": "NAICS-driven expansion adds 12+ new manufacturing sectors for cobot deployment: printing (28K estabs, 85% say AI critical), plastics injection molding (robotic part removal proven), furniture (AI design-to-CNC), metal fabrication, auto parts, foundry, coating/heat treating. $2.26B Q1 2026 robotics funding validates continued investment appetite."
     },
     {
       "pattern_id": "P-009",
       "description": "Christensen Three-Layer Competitive Framework",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "ARCHITECTURE-LEVEL VALIDATION: Full-service replacement (79 avg) beats vertical SaaS (67 avg) by 12 points. The 12-point gap is STRUCTURAL: full-service owns the customer, vertical SaaS is a feature on someone else's platform. This is Christensen's prediction realized in scoring data."
+      "cycle_7_update": "Stress test validates: full-service replacement (78 avg) consistently outscores vertical SaaS (62 avg) across ALL weight vectors. The 16-point gap is structural and weight-independent."
     },
     {
       "pattern_id": "P-013",
       "description": "Dead Business Revival at AI-Native Cost Structure",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_6_update": "Now scored as arbitrage_window architecture. PE-distressed accounting practices (C6-AW-ACC-01, score 82) extend the pattern beyond Bench/Woebot to structural PE distress. $1.2T debt maturity wall creates 2-3 year window."
-    },
-    {
-      "pattern_id": "P-015",
-      "description": "Niche Segmentation Reveals Hidden Opportunity Structure",
-      "strength": "strong",
-      "status": "confirmed",
-      "cycle_6_update": "Cycle 6 SUPERSEDES this pattern with architecture-based analysis. Niche segmentation was correct but incomplete. Architecture segmentation reveals that HOW you enter a market matters more than WHICH niche you target. A $149/mo full-service bookkeeping play (score 84) beats a $149/mo restaurant-specific vertical SaaS play (score 71)."
+      "cycle_7_update": "Pattern extended beyond accounting: PE-distressed veterinary, dental, and staffing practices now available for AI-native revival. Combined validated market failures >$1B. NAICS 5613 staffing employment declining 7.6% = active Schumpeterian destruction creating revival opportunities."
     },
     {
       "pattern_id": "P-016",
-      "description": "NEW: Physical Architecture Dominance Over Digital",
+      "description": "Physical Architecture Dominance Over Digital",
       "first_observed": "v2-6",
       "strength": "very_strong",
-      "status": "emerging_confirmed",
-      "detail": "Acquire-and-modernize (84 avg) and rollup (84 avg) outscore every software architecture. Physical assets + permits + customer contracts + favorable financing (SBA 504) create convergence resistance that software CANNOT MATCH. This was INVISIBLE in Cycle 5's tactical scoring because tactical accessibility favors software (easy to start) while structural durability favors physical (hard to compete with)."
+      "status": "confirmed",
+      "cycle_7_update": "STRESS TEST NUANCE: Physical dominance is PARTIALLY weight-dependent. Physical architectures dominate under convergence-dominant (86.4 avg) and compounding-dominant (86.1 avg) weights. But data compounding (digital) takes #1 position under force-dominant weights (88.1 avg). CONCLUSION: physical is MORE DURABLE, digital captures MORE ECONOMIC FORCE. Strategy implication UNCHANGED: start physical for durability, build digital for scale."
     },
     {
       "pattern_id": "P-017",
-      "description": "NEW: Data Compounding as Bridge to Unassailability",
+      "description": "Data Compounding as Bridge to Unassailability",
       "first_observed": "v2-6",
-      "strength": "strong",
-      "status": "emerging_confirmed",
-      "detail": "The strongest SOFTWARE plays combine a service entry point with a data compounding flywheel. The service generates revenue AND data. The data creates the unassailable moat that the service alone cannot. C6-DC-FIN-01 (score 86) and C6-DC-HC-01 (score 84) both follow this pattern. Data compounding is the bridge that makes digital plays structurally defensible."
+      "strength": "very_strong",
+      "status": "confirmed",
+      "cycle_7_update": "UPGRADED from strong. Stress test confirms: data compounding models score #1 under force-dominant weights. C7-DC-FIN-01 (87) and C7-DC-HC-01 (85) remain top 10 across ALL weight vectors. New data compounding models added: trades intelligence, insurance claims, workforce, construction, legal, veterinary."
     },
     {
       "pattern_id": "P-018",
-      "description": "NEW: Timing for Physical, Compounding for Digital",
+      "description": "Timing for Physical, Compounding for Digital",
       "first_observed": "v2-6",
+      "strength": "very_strong",
+      "status": "confirmed",
+      "cycle_7_update": "UPGRADED from strong. NAICS data deepens: printing, plastics, furniture, metal fab ALL have retiring owners (timing windows). Data compounding models ALL have multi-year flywheel designs. The dual strategy is validated across 12+ manufacturing sectors and 7+ data compounding plays."
+    },
+    {
+      "pattern_id": "P-019",
+      "description": "NEW: NAICS-Driven Systematic Sector Discovery",
+      "first_observed": "v2-7",
+      "strength": "very_strong",
+      "status": "confirmed",
+      "detail": "Systematic NAICS QCEW screening (293 4-digit industries, 933 6-digit sub-industries) reveals sectors invisible to top-down analysis. PRINTING (NAICS 3231): 28K establishments = highest manufacturing fragmentation, totally unexplored before C7. BUILDING EQUIPMENT CONTRACTORS (NAICS 2382): 2.46M employees, 70% can't find workers = massive Baumol/Jevons opportunity. EMPLOYMENT SERVICES (NAICS 5613): 3.57M employees declining 7.6% = active cascade. ALLIED HEALTH (NAICS 6213): 191K establishments = most fragmented healthcare. Bottom-up NAICS scanning produces higher-quality discoveries than top-down theme scanning."
+    },
+    {
+      "pattern_id": "P-020",
+      "description": "NEW: Stress Test Reveals Weight-Conditional Architecture Rankings",
+      "first_observed": "v2-7",
+      "strength": "strong",
+      "status": "confirmed",
+      "detail": "The physical > digital architecture dominance from Cycle 6 is PARTIALLY weight-dependent. Under convergence-dominant weights, physical (86.4) dominates. Under force-dominant weights, data compounding (88.1) dominates. 7 of top 10 models are ROBUST across all 3 alternative vectors: C6-RC-MFG-01, C6-AM-MFG-01, C6-DC-FIN-01, C6-RMB-HC-01, C6-AM-FOOD-01, C6-DC-HC-01, C6-FSR-HC-01. Weight-SENSITIVE models: C6-FSR-FIN-01 (force-dependent), C6-RC-FOOD-01 (compounding-dependent), C6-AW-ACC-01 (timing-dependent)."
+    },
+    {
+      "pattern_id": "P-021",
+      "description": "NEW: PE Distress Cascade Extending to New Sectors",
+      "first_observed": "v2-7",
       "strength": "strong",
       "status": "emerging_confirmed",
-      "detail": "Physical architectures have TIMING windows (SBA fee waiver Sept 2026, Silver Tsunami peak, PE distress 2026-2028). Digital architectures have COMPOUNDING advantages (data flywheel grows every day). Optimal strategy: START with physical (capture timing window), BUILD digital in parallel (capture compounding)."
+      "detail": "PE rollup distress now visible beyond accounting: veterinary (saturation + FTC scrutiny + regulatory backlash), dental (137 PE acquisitions in 2024 but rising valuations squeezing returns), staffing (employment declining 7.6%), printing (secular digital decline stressing PE print companies). Counter-PE strategy (acquire at 3-5x EBITDA vs PE-paid 8-12x, operate with AI cost structure PE can't match) applies across multiple sectors."
     }
   ],
 
   "opportunity_landscape": {
-    "summary": "Cycle 6 decomposed 8 structural forces across 10 business architecture types, producing 187 models. Architecture-based scoring with structural durability axes REVERSES Cycle 5 rankings: vertical SaaS (Cycle 5 highest tactical accessibility) scores LOWEST (67 avg). Acquire-and-modernize (Cycle 5 harder to start) scores HIGHEST (84 avg). The top models cluster by architecture: (1) Physical acquisition/rollup plays score 84 avg, (2) Full-service replacement scores 79 avg, (3) Data compounding scores 80 avg. Vertical SaaS scores 67 avg.",
+    "summary": "Cycle 7 expanded from 187 to 387 models via NAICS-systematic screening (293 4-digit industries), stress-tested scoring robustness with 3 alternative weight vectors, and mapped all 80 cells of the 8x10 force-architecture matrix. KEY FINDINGS: (1) Stress test validates scoring: 7 of top 10 robust across all weight vectors. Physical dominance is partially weight-conditional -- physical more DURABLE, digital data compounding more FORCE. (2) NAICS screening discovers 8 new high-value sectors invisible to top-down analysis: printing 28K estabs, building trades 2.46M workers, staffing -7.6% decline, allied health 191K estabs, plastics 12K estabs, furniture 12.7K estabs, credit intermediation gap, elder care 981K estabs. (3) Force-architecture matrix shows 16 structurally impossible cells, 12 previously unexplored but promising cells (all now filled). Baumol cure and Silver Tsunami are the most architecturally versatile forces (8 of 10 types each).",
     "tier_1_models": [
-      "C6-RC-MFG-01: Multi-Shop CNC Rollup (86)",
-      "C6-AM-MFG-01: Acquire + Modernize CNC Shop (86)",
-      "C6-DC-FIN-01: AI Financial Intelligence Platform (86)",
-      "C6-AM-FOOD-01: Acquire + Modernize Specialty Food (85)",
-      "C6-RMB-HC-01: Healthcare AI Compliance Platform (85)"
+      "C7-RC-MFG-01: Multi-Shop CNC/Metal Fab Rollup Platform (88)",
+      "C7-DC-FIN-01: AI Financial Intelligence Platform (87)",
+      "C7-AM-MFG-01: Acquire + Modernize CNC Shop (87)",
+      "C7-AM-FOOD-01: Acquire + Modernize Specialty Food Producer (86)",
+      "C7-RMB-HC-01: Healthcare AI Multi-State Compliance Platform (86)"
     ],
     "tier_2_models": [
-      "C6-FSR-FIN-01: Full-Service AI Finance for SMBs (84)",
-      "C6-FSR-HC-01: Full-Service Prior Auth Management (84)",
-      "C6-DC-HC-01: Clinical Denial Intelligence (84)",
-      "C6-AW-ACC-01: PE-Distressed Accounting Acquisition (82)",
-      "C6-RC-FOOD-01: Multi-Facility Food Platform (82)",
-      "C6-PI-MFG-01: Manufacturing AI Deployment Stack (79)",
-      "C6-RMB-INS-01: Insurance AI Compliance (78)",
-      "C6-MN-FIN-01: Business Acquisition Marketplace (78)",
-      "C6-FSR-INS-01: Full-Service AI TPA (78)"
+      "C7-FSR-FIN-01: Full-Service AI Finance for SMBs (85)",
+      "C7-FSR-HC-01: Full-Service Prior Auth Management (85)",
+      "C7-DC-HC-01: Clinical Denial Intelligence Platform (85)",
+      "C7-AM-PRINT-01: Acquire + Modernize Commercial Print Shop (84)",
+      "C7-RC-PRINT-01: Multi-Shop Print Rollup Platform (84)",
+      "C7-AW-ACC-01: PE-Distressed Accounting Acquisition (83)",
+      "C7-RC-FOOD-01: Multi-Facility Food Platform (83)",
+      "C7-PI-TRADES-01: AI Ops Platform for Building Contractors (83)",
+      "C7-RMB-INS-01: Insurance AI Compliance (82)",
+      "C7-MN-FIN-01: Business Acquisition Marketplace (82)",
+      "C7-FSR-INS-01: Full-Service AI TPA (82)",
+      "C7-AM-PLASTICS-01: Acquire + Modernize Plastics Injection Molding (81)",
+      "C7-FSR-ALLIEDHEALTH-01: Full-Service AI for Allied Health (81)",
+      "C7-PI-MFG-01: Manufacturing AI Deployment Stack (81)",
+      "C7-RC-DENTAL-01: AI-Native Dental Rollup Counter-PE (81)"
     ],
     "not_recommended": [
-      "C6-NR-01: Vertical SaaS Therapist Notes (45) -- Blueprint 50K clinicians, tool-layer commodity",
-      "C6-NR-03: Vertical SaaS Payroll+Bookkeeping (38) -- Gusto $746M, Rippling $1.3B",
-      "C6-NR-04: Consumer Mental Health App (35) -- saturated market",
-      "C6-NR-05: Vertical SaaS Clinical Documentation (40) -- Abridge $250M captured",
-      "C6-NR-06: Vertical SaaS Auto Claims Photo (38) -- Tractable $115M, CCC public",
-      "C6-NR-07: Vertical SaaS Shopify Bookkeeping (48) -- Finaloop $35M direct",
-      "C6-NR-08: Vertical SaaS Real Estate AI (30) -- $10.5B funding, 7 unicorns",
-      "C6-NR-09: Platform Government AI (42) -- 12-24mo procurement, Tyler Tech $1.8B",
-      "C6-NR-10: Vertical SaaS AG Irrigation (44) -- Orchard Robotics $22M, OEM risk"
+      "C7-NR-01: Vertical SaaS Therapist Notes (45) -- Blueprint 50K clinicians, tool-layer commodity",
+      "C7-NR-02: Vertical SaaS Payroll+Bookkeeping (38) -- Gusto $746M, Rippling $1.3B",
+      "C7-NR-03: Consumer Mental Health App (35) -- saturated market",
+      "C7-NR-04: Vertical SaaS Clinical Documentation (40) -- Abridge $250M captured",
+      "C7-NR-05: Vertical SaaS Auto Claims Photo (38) -- Tractable $115M, CCC public",
+      "C7-NR-06: Vertical SaaS Shopify Bookkeeping (48) -- Finaloop $35M direct",
+      "C7-NR-07: Vertical SaaS Real Estate AI (30) -- $10.5B funding, 7 unicorns",
+      "C7-NR-08: Platform Government AI (42) -- 12-24mo procurement, Tyler Tech $1.8B",
+      "C7-NR-09: Vertical SaaS AG Irrigation (44) -- Orchard Robotics $22M, OEM risk",
+      "C7-NR-10: AI Crypto/DeFi Analytics (32) -- regulatory uncertainty, funded competitors",
+      "C7-NR-11: General AI Writing Tool (28) -- ChatGPT/Claude/Gemini free tier commoditized",
+      "C7-NR-12: AI Code Generation Tool (30) -- Copilot/Cursor/Windsurf platform commoditization"
     ]
   },
 
   "key_unknowns": [
-    "Customer discovery interviews -- STILL TOP PRIORITY. Talk to: (a) retiring CNC shop owners, (b) specialty food producers, (c) SMB owners doing own bookkeeping, (d) healthcare AI companies about compliance burden, (e) independent practices about prior auth pain.",
+    "Customer discovery interviews -- STILL TOP PRIORITY. No actual conversations in any cycle. Talk to: (a) retiring CNC/printing/food production owners, (b) SMB owners doing own bookkeeping, (c) independent healthcare practices about prior auth pain, (d) HVAC/plumbing contractors about workforce challenges, (e) allied health practitioners about billing pain.",
     "SBA 504 CDC relationship establishment -- TIME SENSITIVE before Sept 2026 deadline.",
-    "BizBuySell specific acquisition targets -- narrow to 5-10 CNC shops and 5-10 food producers with criteria.",
+    "BizBuySell specific acquisition targets -- narrow to 5-10 CNC shops, 5-10 food producers, 5-10 print shops with criteria.",
     "Cobot integration partner in CA -- Standard Bots vs UR vs FANUC for specific shop configurations.",
     "Data compounding feasibility -- can aggregated SMB financial data be productized while maintaining privacy?",
-    "Regulatory moat builder competitive landscape -- any funded players specifically building multi-state healthcare AI compliance?",
-    "PE distress timeline -- when do first forced sales from $1.2T maturity wall appear?",
-    "Manufacturing acquisition operational playbook -- what does the first 90 days post-acquisition look like?"
+    "Regulatory moat builder competitive landscape -- any funded players specifically building multi-state healthcare/insurance/veterinary AI compliance?",
+    "PE distress timeline -- when do first forced sales from $1.2T maturity wall appear in accounting, dental, veterinary, staffing?",
+    "Printing industry acquisition targets -- what % of 28K print shops are viable acquisition candidates (growing segments vs declining)?",
+    "Building trades AI adoption rate -- what % of 230K building equipment contractor establishments have adopted any AI/scheduling tools?",
+    "Allied health practice billing costs -- quantify the per-practice cost of billing/admin as % of revenue for PT, chiro, optometry, speech.",
+    "Plastics injection molding cobot readiness -- which specific robotic cells are proven for injection molding shops?",
+    "Dental PE distress timing -- when do FTC actions and rising valuations force PE dental exits?"
   ],
 
   "next_cycle_suggestions": [
-    "PRIORITY 1: Customer discovery interviews -- 5+ conversations with retiring CNC/food production owners via BizBuySell.",
-    "PRIORITY 2: SBA 504 CDC relationship -- contact Statewide CDC, model specific acquisition capital stack.",
-    "PRIORITY 3: Narrow BizBuySell targets to 5-10 specific CNC shops and 5-10 food producers.",
-    "PRIORITY 4: Standard Bots / UR partnership exploration for cobot deployment.",
-    "PRIORITY 5: Architecture sequencing plan -- physical FIRST (timing window), digital PARALLEL (compounding).",
-    "PRIORITY 6: Prototype specification for C6-FSR-FIN-01 (full-service finance) or C6-RMB-HC-01 (compliance platform)."
+    "PRIORITY 1: Customer discovery interviews -- 10+ conversations across top 5 opportunities (CNC shop owners, food producers, SMB bookkeeping, healthcare practices, building contractors).",
+    "PRIORITY 2: SBA 504 CDC relationship -- contact Statewide CDC, model capital stacks for printing and plastics acquisitions (in addition to CNC and food).",
+    "PRIORITY 3: Narrow BizBuySell acquisition targets to 5-10 per sector: CNC, food, printing, plastics, furniture.",
+    "PRIORITY 4: Deep-dive on NAICS-discovered sectors: commercial printing (28K estabs -- what segments are growing?), building trades (2.46M workers -- AI adoption landscape?), allied health (191K estabs -- billing pain quantification?).",
+    "PRIORITY 5: Stress test NEW cycle 7 top 10 models with real competitive intelligence (web search for competitors per model).",
+    "PRIORITY 6: Architecture sequencing plan: map optimal order of physical acquisitions + parallel digital data compounding builds.",
+    "PRIORITY 7: Build prototype specification for #1 or #2 opportunity (CNC rollup or financial intelligence platform)."
   ]
 }

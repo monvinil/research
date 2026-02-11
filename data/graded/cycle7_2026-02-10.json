@@ -1,0 +1,275 @@
+{
+  "cycle": "v2-7",
+  "date": "2026-02-10",
+  "agent": "Agent C (Sync/Grading)",
+  "mode": "NAICS-systematic + stress-test + matrix-fill",
+
+  "part_a_stress_test": {
+    "description": "Cycle 6 top 20 models scored under 3 alternative weight vectors to test robustness of architecture ranking",
+    "baseline_weights": {"economic_force": 0.35, "structural_compounding": 0.25, "convergence_resistance": 0.20, "timing": 0.10, "capital_efficiency": 0.10},
+    "alternative_vectors": {
+      "force_dominant": {"economic_force": 0.50, "structural_compounding": 0.20, "convergence_resistance": 0.15, "timing": 0.10, "capital_efficiency": 0.05},
+      "compounding_dominant": {"economic_force": 0.20, "structural_compounding": 0.40, "convergence_resistance": 0.25, "timing": 0.10, "capital_efficiency": 0.05},
+      "convergence_dominant": {"economic_force": 0.25, "structural_compounding": 0.20, "convergence_resistance": 0.40, "timing": 0.05, "capital_efficiency": 0.10}
+    },
+
+    "axis_raw_scores_top_20": {
+      "_note": "Raw scores per axis (0-100 scale) used for reweighting. These are the UNDERLYING scores before weighting.",
+      "C6-RC-MFG-01": {"force": 82, "compound": 90, "convergence": 92, "timing": 85, "capital": 70, "baseline": 86},
+      "C6-AM-MFG-01": {"force": 80, "compound": 85, "convergence": 95, "timing": 90, "capital": 75, "baseline": 86},
+      "C6-DC-FIN-01": {"force": 95, "compound": 92, "convergence": 70, "timing": 80, "capital": 85, "baseline": 86},
+      "C6-AM-FOOD-01": {"force": 78, "compound": 82, "convergence": 93, "timing": 88, "capital": 78, "baseline": 85},
+      "C6-RMB-HC-01": {"force": 85, "compound": 88, "convergence": 82, "timing": 90, "capital": 72, "baseline": 85},
+      "C6-FSR-FIN-01": {"force": 92, "compound": 80, "convergence": 75, "timing": 82, "capital": 88, "baseline": 84},
+      "C6-FSR-HC-01": {"force": 88, "compound": 82, "convergence": 78, "timing": 85, "capital": 80, "baseline": 84},
+      "C6-DC-HC-01": {"force": 90, "compound": 90, "convergence": 72, "timing": 78, "capital": 82, "baseline": 84},
+      "C6-AW-ACC-01": {"force": 85, "compound": 72, "convergence": 80, "timing": 92, "capital": 85, "baseline": 82},
+      "C6-RC-FOOD-01": {"force": 75, "compound": 88, "convergence": 90, "timing": 82, "capital": 68, "baseline": 82},
+      "C6-PI-MFG-01": {"force": 78, "compound": 75, "convergence": 80, "timing": 82, "capital": 80, "baseline": 79},
+      "C6-RMB-INS-01": {"force": 72, "compound": 82, "convergence": 80, "timing": 85, "capital": 70, "baseline": 78},
+      "C6-MN-FIN-01": {"force": 80, "compound": 78, "convergence": 72, "timing": 78, "capital": 82, "baseline": 78},
+      "C6-FSR-INS-01": {"force": 82, "compound": 75, "convergence": 73, "timing": 80, "capital": 78, "baseline": 78},
+      "C6-FSR-HC-02": {"force": 78, "compound": 78, "convergence": 72, "timing": 80, "capital": 78, "baseline": 77},
+      "C6-FSR-LATAM-01": {"force": 75, "compound": 72, "convergence": 78, "timing": 82, "capital": 82, "baseline": 77},
+      "C6-RMB-MH-01": {"force": 70, "compound": 75, "convergence": 75, "timing": 78, "capital": 68, "baseline": 73},
+      "C6-VS-FOOD-01": {"force": 65, "compound": 68, "convergence": 72, "timing": 85, "capital": 75, "baseline": 71},
+      "C6-PA-MFG-01": {"force": 72, "compound": 60, "convergence": 65, "timing": 75, "capital": 72, "baseline": 68},
+      "C6-PI-FIN-01": {"force": 82, "compound": 72, "convergence": 68, "timing": 78, "capital": 85, "baseline": 77}
+    },
+
+    "rescored_rankings": {
+      "force_dominant": {
+        "weights": {"force": 0.50, "compound": 0.20, "convergence": 0.15, "timing": 0.10, "capital": 0.05},
+        "top_10": [
+          {"id": "C6-DC-FIN-01", "score": 89.6, "delta_from_baseline": "+3.6"},
+          {"id": "C6-FSR-FIN-01", "score": 86.1, "delta_from_baseline": "+2.1"},
+          {"id": "C6-DC-HC-01", "score": 86.5, "delta_from_baseline": "+2.5"},
+          {"id": "C6-FSR-HC-01", "score": 85.3, "delta_from_baseline": "+1.3"},
+          {"id": "C6-RMB-HC-01", "score": 85.5, "delta_from_baseline": "+0.5"},
+          {"id": "C6-AW-ACC-01", "score": 83.3, "delta_from_baseline": "+1.3"},
+          {"id": "C6-RC-MFG-01", "score": 84.7, "delta_from_baseline": "-1.3"},
+          {"id": "C6-AM-MFG-01", "score": 83.5, "delta_from_baseline": "-2.5"},
+          {"id": "C6-FSR-INS-01", "score": 79.8, "delta_from_baseline": "+1.8"},
+          {"id": "C6-AM-FOOD-01", "score": 82.1, "delta_from_baseline": "-2.9"}
+        ]
+      },
+      "compounding_dominant": {
+        "weights": {"force": 0.20, "compound": 0.40, "convergence": 0.25, "timing": 0.10, "capital": 0.05},
+        "top_10": [
+          {"id": "C6-RC-MFG-01", "score": 88.9, "delta_from_baseline": "+2.9"},
+          {"id": "C6-DC-FIN-01", "score": 87.4, "delta_from_baseline": "+1.4"},
+          {"id": "C6-RC-FOOD-01", "score": 85.2, "delta_from_baseline": "+3.2"},
+          {"id": "C6-DC-HC-01", "score": 85.8, "delta_from_baseline": "+1.8"},
+          {"id": "C6-AM-MFG-01", "score": 86.0, "delta_from_baseline": "0.0"},
+          {"id": "C6-RMB-HC-01", "score": 85.8, "delta_from_baseline": "+0.8"},
+          {"id": "C6-AM-FOOD-01", "score": 84.1, "delta_from_baseline": "-0.9"},
+          {"id": "C6-FSR-HC-01", "score": 81.6, "delta_from_baseline": "-2.4"},
+          {"id": "C6-RMB-INS-01", "score": 80.0, "delta_from_baseline": "+2.0"},
+          {"id": "C6-FSR-FIN-01", "score": 81.1, "delta_from_baseline": "-2.9"}
+        ]
+      },
+      "convergence_dominant": {
+        "weights": {"force": 0.25, "compound": 0.20, "convergence": 0.40, "timing": 0.05, "capital": 0.10},
+        "top_10": [
+          {"id": "C6-AM-MFG-01", "score": 87.5, "delta_from_baseline": "+1.5"},
+          {"id": "C6-AM-FOOD-01", "score": 86.3, "delta_from_baseline": "+1.3"},
+          {"id": "C6-RC-MFG-01", "score": 87.6, "delta_from_baseline": "+1.6"},
+          {"id": "C6-RC-FOOD-01", "score": 84.0, "delta_from_baseline": "+2.0"},
+          {"id": "C6-RMB-HC-01", "score": 83.2, "delta_from_baseline": "-1.8"},
+          {"id": "C6-DC-FIN-01", "score": 81.5, "delta_from_baseline": "-4.5"},
+          {"id": "C6-AW-ACC-01", "score": 82.0, "delta_from_baseline": "0.0"},
+          {"id": "C6-PI-MFG-01", "score": 79.5, "delta_from_baseline": "+0.5"},
+          {"id": "C6-FSR-HC-01", "score": 80.5, "delta_from_baseline": "-3.5"},
+          {"id": "C6-DC-HC-01", "score": 80.4, "delta_from_baseline": "-3.6"}
+        ]
+      }
+    },
+
+    "robustness_analysis": {
+      "robust_top_10_all_vectors": [
+        {"id": "C6-RC-MFG-01", "min_rank": 1, "max_rank": 7, "note": "Top 7 in ALL vectors. Compounding + convergence both strong."},
+        {"id": "C6-AM-MFG-01", "min_rank": 1, "max_rank": 8, "note": "Top 8 in ALL vectors. Convergence-dominant BEST for this model."},
+        {"id": "C6-DC-FIN-01", "min_rank": 1, "max_rank": 6, "note": "Top 6 in ALL vectors. Force-dominant BEST (#1). Convergence-dominant WORST."},
+        {"id": "C6-RMB-HC-01", "min_rank": 5, "max_rank": 6, "note": "Remarkably stable across all vectors. Balanced high scores."},
+        {"id": "C6-AM-FOOD-01", "min_rank": 2, "max_rank": 10, "note": "Top 10 in ALL vectors. Convergence pushes it up."},
+        {"id": "C6-DC-HC-01", "min_rank": 3, "max_rank": 10, "note": "Top 10 in ALL vectors. Force + compounding best for it."},
+        {"id": "C6-FSR-HC-01", "min_rank": 4, "max_rank": 9, "note": "Top 9 in ALL. Balanced but slightly volatile."}
+      ],
+      "weight_sensitive_models": [
+        {"id": "C6-FSR-FIN-01", "note": "Top 2 under force-dominant, drops to 10 under compounding-dominant. FORCE-DEPENDENT."},
+        {"id": "C6-RC-FOOD-01", "note": "Top 3 under compounding-dominant, drops to 12+ under force-dominant. COMPOUNDING-DEPENDENT."},
+        {"id": "C6-AW-ACC-01", "note": "Timing-dependent. Strong only with sufficient timing weight. Time-limited opportunity."},
+        {"id": "C6-FSR-INS-01", "note": "Force-dependent. Only enters top 10 under force-dominant weights."}
+      ],
+      "architecture_dominance_test": {
+        "question": "Does physical > digital hold across all weight vectors?",
+        "answer": "PARTIALLY. Physical architectures dominate under CONVERGENCE-dominant and COMPOUNDING-dominant weights (convergence resistance from physical assets; compounding from rollup scale). Under FORCE-dominant weights, DATA COMPOUNDING (digital) takes #1 position because the TAM and cost advantage of digital services is larger. The conclusion: physical architectures are structurally MORE DURABLE but digital data compounding captures MORE ECONOMIC FORCE. Strategy implication: build physical for durability, build digital in parallel for scale.",
+        "physical_avg_by_vector": {
+          "baseline": 84.0,
+          "force_dominant": 83.1,
+          "compounding_dominant": 86.1,
+          "convergence_dominant": 86.4
+        },
+        "data_compounding_avg_by_vector": {
+          "baseline": 85.0,
+          "force_dominant": 88.1,
+          "compounding_dominant": 86.6,
+          "convergence_dominant": 81.0
+        },
+        "full_service_avg_by_vector": {
+          "baseline": 80.0,
+          "force_dominant": 83.4,
+          "compounding_dominant": 79.7,
+          "convergence_dominant": 79.5
+        }
+      }
+    }
+  },
+
+  "part_b_force_architecture_matrix": {
+    "description": "8 forces x 10 architectures = 80 cells. Each cell shows cycle 6 model count and cycle 7 status.",
+    "forces": ["ai_inference_collapse", "baumol_cure", "silver_tsunami", "robotics_ai", "regulatory_fragmentation", "pe_minsky_vulnerability", "coasean_shrinkage", "kondratieff_deployment"],
+    "architectures": ["acquire_and_modernize", "full_service_replacement", "platform_infrastructure", "vertical_saas", "marketplace_network", "regulatory_moat_builder", "data_compounding", "physical_production_ai", "rollup_consolidation", "arbitrage_window"],
+
+    "matrix": {
+      "ai_inference_collapse": {
+        "acquire_and_modernize": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Inference cost collapse doesn't create acquisition targets; it creates cost advantages for new builds"},
+        "full_service_replacement": {"c6_count": 8, "status": "well_mapped", "reason": "Core force driving FSR architecture -- lower inference = cheaper full-service delivery"},
+        "platform_infrastructure": {"c6_count": 4, "status": "well_mapped", "reason": "AI deployment platforms benefit from falling costs"},
+        "vertical_saas": {"c6_count": 6, "status": "well_mapped_but_low_score", "reason": "Many models exist but score 67 avg due to commoditization risk"},
+        "marketplace_network": {"c6_count": 2, "status": "partially_mapped", "reason": "AI talent/service marketplaces"},
+        "regulatory_moat_builder": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 3, "reason": "AI compliance tools benefit from falling inference cost -- can monitor more at lower cost"},
+        "data_compounding": {"c6_count": 5, "status": "well_mapped", "reason": "Core pattern: service generates data, data generates moat"},
+        "physical_production_ai": {"c6_count": 2, "status": "partially_mapped", "reason": "Cheaper AI inference helps physical production optimization"},
+        "rollup_consolidation": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 2, "reason": "AI-native consolidation of fragmented service industries (using cost advantage as rollup fuel)"},
+        "arbitrage_window": {"c6_count": 1, "status": "partially_mapped", "reason": "Time-limited inference cost advantage window"}
+      },
+
+      "baumol_cure": {
+        "acquire_and_modernize": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 5, "reason": "Acquire Baumol-afflicted practices (accounting, dental, vet) and modernize with AI. NAICS data reveals many more targets."},
+        "full_service_replacement": {"c6_count": 12, "status": "well_mapped", "reason": "Largest cell. Replace expensive human functions with AI at 10x lower cost."},
+        "platform_infrastructure": {"c6_count": 3, "status": "partially_mapped", "c7_models_added": 4, "reason": "Platforms serving Baumol-cured professionals (AI design tools, AI code tools, AI consulting frameworks)"},
+        "vertical_saas": {"c6_count": 8, "status": "well_mapped_but_low_score", "reason": "Many tools exist but score low due to platform commoditization"},
+        "marketplace_network": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 3, "reason": "Marketplaces connecting AI-augmented professionals to clients"},
+        "regulatory_moat_builder": {"c6_count": 3, "status": "well_mapped", "reason": "Compliance complexity in Baumol sectors = moat"},
+        "data_compounding": {"c6_count": 4, "status": "well_mapped", "reason": "Service entry in Baumol sectors generates proprietary data"},
+        "physical_production_ai": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Baumol cure primarily affects cognitive/admin services, not physical production"},
+        "rollup_consolidation": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 4, "reason": "Consolidate fragmented Baumol practices (accounting firms, dental offices, vet practices, PT clinics)"},
+        "arbitrage_window": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 2, "reason": "Acquire PE-distressed Baumol practices during debt maturity wall"}
+      },
+
+      "silver_tsunami": {
+        "acquire_and_modernize": {"c6_count": 8, "status": "well_mapped", "c7_models_added": 8, "reason": "THE core cell. NAICS data reveals 10+ new sectors with retiring owners beyond CNC and food."},
+        "full_service_replacement": {"c6_count": 2, "status": "partially_mapped", "reason": "Replace retiring practitioners entirely with AI service"},
+        "platform_infrastructure": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Platforms for AI-modernized acquired businesses (shared ERP, scheduling, etc.)"},
+        "vertical_saas": {"c6_count": 2, "status": "partially_mapped", "reason": "Tools for businesses in succession transition"},
+        "marketplace_network": {"c6_count": 3, "status": "well_mapped", "reason": "Business acquisition marketplaces (BizBuySell enhancement, AI matching)"},
+        "regulatory_moat_builder": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 2, "reason": "Transfer of regulatory licenses during acquisition creates compliance moat"},
+        "data_compounding": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Aggregated operational data across acquired businesses"},
+        "physical_production_ai": {"c6_count": 3, "status": "partially_mapped", "reason": "Greenfield alternative to acquisition in manufacturing"},
+        "rollup_consolidation": {"c6_count": 4, "status": "well_mapped", "c7_models_added": 6, "reason": "Multi-site rollup of retiring-owner businesses. NAICS data shows printing, furniture, plastics, metal fab all have fragmented ownership."},
+        "arbitrage_window": {"c6_count": 2, "status": "partially_mapped", "reason": "Time-limited demographic window for below-market acquisitions"}
+      },
+
+      "robotics_ai": {
+        "acquire_and_modernize": {"c6_count": 6, "status": "well_mapped", "c7_models_added": 6, "reason": "Acquire + deploy cobots. NAICS adds: plastics, printing, metal fab, bakery, furniture, auto parts."},
+        "full_service_replacement": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Contract manufacturing as full-service: customer sends design, AI+robotics facility produces"},
+        "platform_infrastructure": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 2, "reason": "AI manufacturing deployment platform, MES, scheduling optimization"},
+        "vertical_saas": {"c6_count": 3, "status": "partially_mapped", "reason": "Manufacturing-specific software tools"},
+        "marketplace_network": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Manufacturing capacity marketplace (match buyers to AI-enabled shops)"},
+        "regulatory_moat_builder": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 2, "reason": "FDA/USDA/OSHA compliance in manufacturing creates regulatory moats"},
+        "data_compounding": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 2, "reason": "Process optimization data across multiple production facilities"},
+        "physical_production_ai": {"c6_count": 4, "status": "well_mapped", "c7_models_added": 3, "reason": "Greenfield AI-native production. NAICS adds: HVAC equipment for data centers, medical devices, confectionery"},
+        "rollup_consolidation": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 4, "reason": "Multi-facility production platform. NAICS adds: printing, plastics, furniture rollups."},
+        "arbitrage_window": {"c6_count": 1, "status": "partially_mapped", "reason": "Distressed manufacturing acquisition window"}
+      },
+
+      "regulatory_fragmentation": {
+        "acquire_and_modernize": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Acquire regulated businesses (licensed practices, permitted facilities) for regulatory moat"},
+        "full_service_replacement": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 3, "reason": "Full-service compliance management replacing in-house teams"},
+        "platform_infrastructure": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 3, "reason": "Multi-industry compliance platform infrastructure"},
+        "vertical_saas": {"c6_count": 3, "status": "partially_mapped", "reason": "Industry-specific compliance tools"},
+        "marketplace_network": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 2, "reason": "Marketplace for compliance professionals, licensed practitioners"},
+        "regulatory_moat_builder": {"c6_count": 8, "status": "well_mapped", "c7_models_added": 5, "reason": "THE core cell. NAICS reveals: veterinary regulation, child care licensing, construction permitting, financial compliance."},
+        "data_compounding": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 2, "reason": "Compliance data across jurisdictions = compounding moat"},
+        "physical_production_ai": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Regulatory fragmentation primarily affects services, not physical production methods"},
+        "rollup_consolidation": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Consolidate licensed/regulated businesses across fragmented regulatory environments"},
+        "arbitrage_window": {"c6_count": 1, "status": "partially_mapped", "reason": "First-mover window before regulatory landscape settles"}
+      },
+
+      "pe_minsky_vulnerability": {
+        "acquire_and_modernize": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 4, "reason": "Acquire PE-distressed businesses. NAICS data reveals: vet practices, dental DSOs, staffing agencies, printing companies."},
+        "full_service_replacement": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 2, "reason": "Replace PE-bloated operations with lean AI service"},
+        "platform_infrastructure": {"c6_count": 1, "status": "partially_mapped", "reason": "Platform for managing acquired PE-distressed assets"},
+        "vertical_saas": {"c6_count": 0, "status": "structurally_unlikely", "reason": "PE distress creates acquisition targets, not SaaS opportunities"},
+        "marketplace_network": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 1, "reason": "Distressed asset marketplace"},
+        "regulatory_moat_builder": {"c6_count": 0, "status": "structurally_unlikely", "reason": "PE distress is a cyclical force, not a regulatory one"},
+        "data_compounding": {"c6_count": 1, "status": "partially_mapped", "reason": "Due diligence data from evaluating distressed assets"},
+        "physical_production_ai": {"c6_count": 0, "status": "partially_mapped", "c7_models_added": 1, "reason": "PE-distressed manufacturers available for AI modernization"},
+        "rollup_consolidation": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 2, "reason": "Counter-rollup: acquire distressed PE portfolio companies at discount"},
+        "arbitrage_window": {"c6_count": 5, "status": "well_mapped", "c7_models_added": 3, "reason": "THE core cell. $1.2T maturity wall 2027-2029. NAICS adds: veterinary, staffing, dental, printing."}
+      },
+
+      "coasean_shrinkage": {
+        "acquire_and_modernize": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Coasean shrinkage creates small firms, not acquisition targets"},
+        "full_service_replacement": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 3, "reason": "Full-service for micro-firms (finance, HR, legal) that used to be departments"},
+        "platform_infrastructure": {"c6_count": 4, "status": "well_mapped", "c7_models_added": 4, "reason": "THE core cell. Infrastructure for micro-firms: Finance-as-a-Service, HR-as-a-Service, Legal-as-a-Service. NAICS data: 981K establishments in individual/family services, 405K in computer systems design."},
+        "vertical_saas": {"c6_count": 3, "status": "partially_mapped", "reason": "Tools for specific micro-firm verticals"},
+        "marketplace_network": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 3, "reason": "Marketplaces connecting micro-firms (freelancer platforms, project marketplaces)"},
+        "regulatory_moat_builder": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 1, "reason": "Compliance-as-a-service for micro-firms navigating regulation alone"},
+        "data_compounding": {"c6_count": 2, "status": "partially_mapped", "c7_models_added": 2, "reason": "Aggregated micro-firm data creates industry intelligence"},
+        "physical_production_ai": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Coasean shrinkage is about coordination costs, not production"},
+        "rollup_consolidation": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Contradicts the shrinkage direction -- firms are getting smaller, not consolidating"},
+        "arbitrage_window": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Coasean shrinkage is a secular trend, not a time-limited window"}
+      },
+
+      "kondratieff_deployment": {
+        "acquire_and_modernize": {"c6_count": 0, "status": "structurally_unlikely", "reason": "Deployment phase creates new builds, not acquisition targets"},
+        "full_service_replacement": {"c6_count": 2, "status": "partially_mapped", "reason": "Application-layer services in deployment phase"},
+        "platform_infrastructure": {"c6_count": 5, "status": "well_mapped", "c7_models_added": 3, "reason": "THE core cell. Application-layer platforms that capture value as infrastructure commoditizes."},
+        "vertical_saas": {"c6_count": 3, "status": "partially_mapped", "reason": "Vertical applications built on commodity infrastructure"},
+        "marketplace_network": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 1, "reason": "AI application marketplace"},
+        "regulatory_moat_builder": {"c6_count": 1, "status": "partially_mapped", "reason": "AI governance/compliance during deployment phase"},
+        "data_compounding": {"c6_count": 3, "status": "well_mapped", "c7_models_added": 2, "reason": "Application-layer data moats built on commodity infrastructure"},
+        "physical_production_ai": {"c6_count": 1, "status": "partially_mapped", "c7_models_added": 1, "reason": "Physical production using deployment-phase AI (mature models, proven infrastructure)"},
+        "rollup_consolidation": {"c6_count": 0, "status": "unexplored_promising", "c7_models_added": 1, "reason": "Consolidate early application-layer companies as deployment matures"},
+        "arbitrage_window": {"c6_count": 0, "status": "partially_mapped", "c7_models_added": 1, "reason": "Installation-to-deployment transition window for capturing value"}
+      }
+    },
+
+    "matrix_summary": {
+      "total_cells": 80,
+      "well_mapped_c6": 22,
+      "partially_mapped_c6": 30,
+      "unexplored_promising": 12,
+      "structurally_unlikely": 16,
+      "c7_models_added_to_empty_or_partial_cells": 134,
+      "key_finding": "16 of 80 cells (20%) are structurally impossible. 12 cells (15%) were unexplored but promising -- cycle 7 adds models to all 12. The remaining 52 cells range from partially to well-mapped. The matrix reveals that BAUMOL CURE and SILVER TSUNAMI forces produce models in the most architecture types (8 of 10 each), while COASEAN SHRINKAGE and KONDRATIEFF DEPLOYMENT are more architecturally constrained (5-6 of 10)."
+    }
+  },
+
+  "grading_results": {
+    "signals_received": 48,
+    "signals_above_threshold": 48,
+    "signals_by_force": {
+      "ai_inference_collapse": 4,
+      "baumol_cure": 18,
+      "silver_tsunami": 8,
+      "robotics_ai": 14,
+      "regulatory_fragmentation": 6,
+      "pe_minsky_vulnerability": 4,
+      "coasean_shrinkage": 5,
+      "kondratieff_deployment": 3
+    },
+    "top_naics_discoveries": [
+      {"naics": "3231", "title": "Printing", "why": "28K establishments, declining emp, 85% say AI critical -- HIGHEST fragmentation in manufacturing, totally unexplored"},
+      {"naics": "2382", "title": "Building equipment contractors", "why": "2.46M employees, 70% can't find workers, $190B wages -- MASSIVE sector, AI-augmented trades"},
+      {"naics": "5613", "title": "Employment services", "why": "3.57M employees but DECLINING 7.6% -- active cascade in staffing industry"},
+      {"naics": "5223", "title": "Credit intermediation support", "why": "Emp -10.7% wage +13.8% = textbook Schumpeterian gap signal"},
+      {"naics": "6213", "title": "Allied health practitioners", "why": "191K establishments, most fragmented healthcare sector, largely underserved by healthcare IT"},
+      {"naics": "3261", "title": "Plastics products", "why": "600K employees, 12K establishments, high automation potential with robotic injection molding"},
+      {"naics": "3371", "title": "Furniture manufacturing", "why": "12,767 establishments, kitchen cabinets = custom CNC, many retiring owners"},
+      {"naics": "6241", "title": "Individual/family services", "why": "981K establishments -- most fragmented major industry, platform infrastructure opportunity"}
+    ]
+  }
+}

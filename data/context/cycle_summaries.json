@@ -578,5 +578,132 @@
       ]
     }
   ],
-  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data. Cycle 6 is the ARCHITECTURE-BASED DECOMPOSITION cycle: 8 structural forces x 10 business architectures = 187 models. New 5-axis structural durability scoring replaces tactical accessibility scoring. KEY FINDING: physical architectures (acquire-and-modernize, rollup) dominate at 84 avg; vertical SaaS scores LOWEST at 67 avg."
-}
+    {
+      "cycle": "v2-7",
+      "date": "2026-02-10",
+      "engine_version": "v2.0",
+      "engine_mode": "naics_systematic_expansion",
+      "summary": "NAICS-SYSTEMATIC EXPANSION + STRESS TEST cycle. Three-part mission: (A) Stress-tested cycle 6 top 20 models with 3 alternative weight vectors -- 7 of 10 robust across all vectors, physical dominance partially weight-conditional. (B) Mapped all 80 cells of 8x10 force-architecture matrix -- 16 structurally impossible, 12 unexplored-promising (all filled), 52 mapped. (C) NAICS-driven expansion from 187 to 387 models by systematically crossing 8 forces against 293 NAICS 4-digit industries. 200 new models constructed. 8 new high-value sectors discovered via bottom-up NAICS screening. 3 new patterns identified: P-019 NAICS Systematic Discovery, P-020 Weight-Conditional Rankings, P-021 PE Distress Multi-Sector Cascade.",
+
+      "stress_test_results": {
+        "methodology": "Rescored top 20 C6 models under 3 alternative weight vectors: force-dominant (50/20/15/10/5), compounding-dominant (20/40/25/10/5), convergence-dominant (25/20/40/5/10)",
+        "robust_models_top_10_all_vectors": ["C6-RC-MFG-01", "C6-AM-MFG-01", "C6-DC-FIN-01", "C6-RMB-HC-01", "C6-AM-FOOD-01", "C6-DC-HC-01", "C6-FSR-HC-01"],
+        "weight_sensitive_models": {
+          "C6-FSR-FIN-01": "Force-dependent: top 2 under force-dominant, drops to 10 under compounding",
+          "C6-RC-FOOD-01": "Compounding-dependent: top 3 under compounding, drops under force",
+          "C6-AW-ACC-01": "Timing-dependent: strong only with timing weight",
+          "C6-FSR-INS-01": "Force-dependent: only top 10 under force-dominant"
+        },
+        "architecture_dominance": "PARTIALLY weight-dependent. Physical: 86.4 avg convergence-dominant, 86.1 compounding, 83.1 force. Data compounding: 88.1 force, 86.6 compounding, 81.0 convergence. Physical MORE DURABLE. Digital MORE FORCE. Strategy unchanged: start physical, build digital parallel.",
+        "conclusion": "Core scoring weights VALIDATED. 7 of top 10 robust. Physical vs digital dominance is nuanced, not absolute. Current weights (35/25/20/10/10) represent a reasonable balance."
+      },
+
+      "force_architecture_matrix": {
+        "total_cells": 80,
+        "well_mapped": 22,
+        "partially_mapped": 30,
+        "unexplored_promising_filled": 12,
+        "structurally_unlikely": 16,
+        "most_versatile_forces": ["Baumol cure (8/10 architectures)", "Silver Tsunami (8/10)"],
+        "most_constrained_forces": ["Coasean shrinkage (5/10)", "Kondratieff deployment (6/10)"],
+        "key_finding": "16 of 80 cells (20%) are structurally impossible. 12 cells (15%) were unexplored but promising -- all filled with 2-3 models each. The matrix confirms that physical forces (Silver Tsunami, Robotics AI) naturally produce physical architectures, while cognitive forces (Baumol, Coasean) naturally produce software architectures."
+      },
+
+      "landscape_map": {
+        "tier_1": [
+          {"id": "C7-RC-MFG-01", "name": "Multi-Shop CNC/Metal Fab Rollup Platform", "score": 88, "architecture": "rollup_consolidation", "forces": ["silver_tsunami", "robotics_ai"], "naics": ["3327", "3323", "3329"]},
+          {"id": "C7-DC-FIN-01", "name": "AI Financial Intelligence Platform", "score": 87, "architecture": "data_compounding", "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"], "naics": ["5412", "5611"]},
+          {"id": "C7-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "score": 87, "architecture": "acquire_and_modernize", "forces": ["silver_tsunami", "robotics_ai", "sba_504"], "naics": ["3327"]},
+          {"id": "C7-AM-FOOD-01", "name": "Acquire + Modernize Specialty Food Producer", "score": 86, "architecture": "acquire_and_modernize", "forces": ["silver_tsunami", "robotics_ai", "regulatory_fragmentation"], "naics": ["3118", "3114", "3113"]},
+          {"id": "C7-RMB-HC-01", "name": "Healthcare AI Multi-State Compliance Platform", "score": 86, "architecture": "regulatory_moat_builder", "forces": ["regulatory_fragmentation", "baumol_cure"], "naics": ["6211", "6213", "6214"]}
+        ],
+        "tier_2": [
+          {"id": "C7-FSR-FIN-01", "name": "Full-Service AI Finance for SMBs", "score": 85},
+          {"id": "C7-FSR-HC-01", "name": "Full-Service Prior Auth + Denial Management", "score": 85},
+          {"id": "C7-DC-HC-01", "name": "Clinical Denial Intelligence Platform", "score": 85},
+          {"id": "C7-AM-PRINT-01", "name": "Acquire + Modernize Commercial Print Shop", "score": 84},
+          {"id": "C7-RC-PRINT-01", "name": "Multi-Shop Print Rollup Platform", "score": 84},
+          {"id": "C7-AW-ACC-01", "name": "PE-Distressed Accounting Acquisition", "score": 83},
+          {"id": "C7-RC-FOOD-01", "name": "Multi-Facility Food Platform", "score": 83},
+          {"id": "C7-PI-TRADES-01", "name": "AI Ops for Building Equipment Contractors", "score": 83},
+          {"id": "C7-RMB-INS-01", "name": "Insurance AI Compliance", "score": 82},
+          {"id": "C7-MN-FIN-01", "name": "Business Acquisition Marketplace", "score": 82},
+          {"id": "C7-FSR-INS-01", "name": "Full-Service AI TPA", "score": 82},
+          {"id": "C7-AM-PLASTICS-01", "name": "Acquire + Modernize Plastics Injection Molding", "score": 81},
+          {"id": "C7-FSR-ALLIEDHEALTH-01", "name": "Full-Service AI for Allied Health", "score": 81},
+          {"id": "C7-PI-MFG-01", "name": "Manufacturing AI Deployment Stack", "score": 81},
+          {"id": "C7-RC-DENTAL-01", "name": "AI-Native Dental Rollup Counter-PE", "score": 81}
+        ],
+        "not_recommended_count": 12
+      },
+
+      "naics_discoveries": [
+        {"naics": "3231", "title": "Printing", "finding": "28K establishments = highest manufacturing fragmentation. Employment declining 6.1%. 85% say AI critical. Print-on-demand growing 27.8% CAGR. TOTALLY UNEXPLORED before C7. Entered top 10 (rank 9-10)."},
+        {"naics": "2382", "title": "Building Equipment Contractors", "finding": "2.46M employees, 230K establishments, $190B wages. 70% can't find workers. 499K new needed. AI data center demand driving electrician/HVAC boom. New entry at rank 13."},
+        {"naics": "5613", "title": "Employment Services", "finding": "3.57M employees but DECLINING 7.6%. Active Schumpeterian cascade in staffing industry. AI matching/dispatch replaces traditional staffing model."},
+        {"naics": "5223", "title": "Credit Intermediation Support", "finding": "Employment -10.7%, wages +13.8% = textbook Schumpeterian gap signal. Survivors need AI cost structure."},
+        {"naics": "6213", "title": "Allied Health Practitioners", "finding": "191K establishments = most fragmented healthcare sector. Growing 6.8%. Underserved by enterprise healthcare IT. New entry at rank 18."},
+        {"naics": "3261", "title": "Plastics Products", "finding": "600K employees, 12K establishments. Robotic injection molding proven. Reshoring tailwinds. New entry at rank 17."},
+        {"naics": "3371", "title": "Furniture Manufacturing", "finding": "12.7K establishments. AI design-to-CNC workflow transforming custom cabinetry. Retiring owners. New entry at rank 23."},
+        {"naics": "6241", "title": "Individual/Family Services", "finding": "981K establishments = most fragmented major industry. Platform infrastructure opportunity for elder care coordination."}
+      ],
+
+      "key_patterns_identified": [
+        {"pattern_id": "P-016", "name": "Physical Architecture Dominance", "strength": "very_strong", "status": "confirmed", "update": "STRESS TEST NUANCE: partially weight-dependent. Physical more durable, data compounding more force."},
+        {"pattern_id": "P-017", "name": "Data Compounding Bridge", "strength": "very_strong", "status": "confirmed", "update": "UPGRADED from strong. Confirmed by stress test: #1 under force-dominant weights."},
+        {"pattern_id": "P-018", "name": "Timing Physical / Compounding Digital", "strength": "very_strong", "status": "confirmed", "update": "UPGRADED from strong. NAICS adds 12+ manufacturing sectors with timing windows."},
+        {"pattern_id": "P-019", "name": "NEW: NAICS Systematic Discovery", "strength": "very_strong", "status": "confirmed", "update": "Bottom-up NAICS screening > top-down theme scanning for sector discovery."},
+        {"pattern_id": "P-020", "name": "NEW: Weight-Conditional Architecture Rankings", "strength": "strong", "status": "confirmed", "update": "Architecture ranking partially depends on scoring emphasis (force vs compounding vs convergence)."},
+        {"pattern_id": "P-021", "name": "NEW: PE Distress Multi-Sector Cascade", "strength": "strong", "status": "emerging_confirmed", "update": "PE distress extends beyond accounting to veterinary, dental, staffing, printing."}
+      ],
+
+      "model_statistics": {
+        "total_models": 387,
+        "retained_from_c6": 187,
+        "new_in_c7": 200,
+        "by_architecture": {
+          "acquire_and_modernize": 62,
+          "full_service_replacement": 60,
+          "vertical_saas": 49,
+          "platform_infrastructure": 46,
+          "regulatory_moat_builder": 34,
+          "rollup_consolidation": 32,
+          "data_compounding": 28,
+          "marketplace_network": 28,
+          "physical_production_ai": 28,
+          "arbitrage_window": 20
+        },
+        "naics_coverage": "158 unique 4-digit NAICS codes referenced (54% of 293 total)"
+      },
+
+      "cycle_7_key_findings": {
+        "finding_1": "SCORING IS ROBUST: 7 of top 10 models survive ALL 3 alternative weight vectors in the top 10. The current scoring weights (35/25/20/10/10) are not arbitrary -- they produce rankings consistent with the structural logic regardless of reasonable weight variations. This validates Cycle 6's architecture-based approach.",
+        "finding_2": "PHYSICAL vs DIGITAL IS NUANCED, NOT ABSOLUTE: Physical architectures dominate under convergence-dominant weights (86.4 avg) because physical assets create replication barriers. Data compounding dominates under force-dominant weights (88.1 avg) because TAM of digital services is larger. The optimal strategy remains UNCHANGED: start physical (capture timing window + durability) while building digital data compounding in parallel (capture scale + force).",
+        "finding_3": "NAICS BOTTOM-UP SCANNING DISCOVERS SECTORS INVISIBLE TO TOP-DOWN ANALYSIS: Printing (28K establishments, highest mfg fragmentation) was completely absent from cycles 1-6. Building equipment contractors (2.46M workers, $190B wages) were mentioned only as 'skilled trades' without quantification. NAICS systematic screening is a superior discovery methodology for sector identification.",
+        "finding_4": "FORCE-ARCHITECTURE MATRIX REVEALS STRUCTURAL IMPOSSIBILITIES: 16 of 80 cells are structurally unlikely (e.g., Coasean shrinkage x rollup consolidation = contradictory). 12 cells were unexplored but promising. This means 20% of the theoretical space is simply not viable, while 15% represented undiscovered opportunity. The matrix is now fully mapped.",
+        "finding_5": "PE DISTRESS CASCADE IS MULTI-SECTOR: Beyond accounting (Cycle 4-6 focus), PE rollup distress is now visible in veterinary (saturation + FTC + regulatory), dental (137 PE deals in 2024 but returns compressing), staffing (employment -7.6%), and printing (secular decline + digital disruption). The counter-PE strategy (acquire at 3-5x vs PE's 8-12x, operate with AI cost structure) scales across sectors."
+      },
+
+      "under_explored_areas": [
+        "Customer discovery interviews -- CRITICAL GAP. 7 cycles with zero actual customer conversations.",
+        "Print shop segment analysis: which of 28K establishments are in growing vs declining segments?",
+        "Building trades AI adoption: what % of 230K building contractor establishments use any AI?",
+        "Allied health billing pain quantification per specialty",
+        "Plastics injection molding cobot readiness by specific shop configuration",
+        "Dental PE exit timing and FTC impact",
+        "SBA 504 approval process for printing/plastics acquisitions",
+        "Data compounding privacy/regulatory considerations for financial and healthcare intelligence",
+        "Printing industry segment-level economics (packaging vs commercial vs specialty)"
+      ],
+
+      "next_cycle_direction": [
+        "PRIORITY 1: Customer discovery -- 10+ conversations across top opportunities",
+        "PRIORITY 2: SBA 504 CDC relationship + capital stacks for printing/plastics (expand beyond CNC/food)",
+        "PRIORITY 3: Narrow BizBuySell targets per sector (CNC, food, printing, plastics, furniture)",
+        "PRIORITY 4: Deep competitive intelligence on C7 top 10 (web search per model)",
+        "PRIORITY 5: Architecture sequencing plan: optimal order of physical acquisitions + parallel digital builds",
+        "PRIORITY 6: Prototype specification for top 1-2 opportunities"
+      ]
+    }
+  ],
+  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data. Cycle 6 is the ARCHITECTURE-BASED DECOMPOSITION cycle: 8 structural forces x 10 business architectures = 187 models. New 5-axis structural durability scoring replaces tactical accessibility scoring. KEY FINDING: physical architectures (acquire-and-modernize, rollup) dominate at 84 avg; vertical SaaS scores LOWEST at 67 avg. Cycle 7 is the NAICS-SYSTEMATIC EXPANSION + STRESS TEST cycle: 187 -> 387 models via NAICS QCEW screening of 293 4-digit industries, stress-tested scoring with 3 weight vectors (7/10 robust), mapped 80-cell force x architecture matrix (16 impossible, 12 unexplored filled). KEY FINDINGS: physical > digital is partially weight-dependent (physical more durable, digital data compounding more force), NAICS bottom-up screening discovers 8 new high-value sectors, PE distress extends to veterinary/dental/staffing/printing."
