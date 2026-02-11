@@ -586,7 +586,7 @@ function renderOpps(opps) {
     const pillCls = 'pill-tier' + tierNum;
     const score = o.score || o.opportunity_score || o.economic_force_score || o.total_score || '--';
     const type = o.type || o.landscape_type || '';
-    const desc = o.cycle_3_change || o.cycle_4_change || o.thesis || o.description || o.note || '';
+    const desc = o.one_liner || o.cycle_3_change || o.cycle_4_change || o.thesis || o.description || o.note || '';
     return `<div class="glass opp ${tierCls}">
       <div class="opp-top">
         <span class="opp-name">${esc(o.name)}</span>
@@ -651,20 +651,37 @@ async function refresh() {
       ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'awaiting first run';
 
     const landscape = d.opportunity_landscape || d.landscape || {};
-    const tier1 = (landscape.tier_1 || []).map(o => Object.assign({tier:'Tier 1', name: o.name || o.structural_shift}, o));
-    const tier2 = (landscape.tier_2 || []).map(o => Object.assign({tier:'Tier 2', name: o.name || o.structural_shift}, o));
-    const tier3 = (landscape.tier_3 || []).map(o => Object.assign({tier:'Tier 3', name: o.name || o.structural_shift}, o));
-    const allLandscape = [...tier1, ...tier2, ...tier3];
-    const opps = allLandscape.length ? allLandscape : (d.top_opportunities || []);
     const stats = d.pipeline_stats || {};
+    let opps = [];
+    let tier1Count = 0, tier2Count = 0;
+
+    // v2.5+ format: decomposed_models_top_20
+    const decomposed = landscape.decomposed_models_top_20 || [];
+    if (decomposed.length) {
+      opps = decomposed.map(m => {
+        const tier = m.score >= 75 ? 'Tier 1' : m.score >= 68 ? 'Tier 2' : 'Tier 3';
+        return Object.assign({tier, name: m.name, score: m.score, economic_force: m.sector, description: m.one_liner, type: m.type}, m);
+      });
+      tier1Count = opps.filter(o => o.tier === 'Tier 1').length;
+      tier2Count = opps.filter(o => o.tier === 'Tier 2').length;
+    } else {
+      // Legacy format: tier_1/tier_2/tier_3 arrays
+      const tier1 = (landscape.tier_1 || []).map(o => Object.assign({tier:'Tier 1', name: o.name || o.structural_shift}, o));
+      const tier2 = (landscape.tier_2 || []).map(o => Object.assign({tier:'Tier 2', name: o.name || o.structural_shift}, o));
+      const tier3 = (landscape.tier_3 || []).map(o => Object.assign({tier:'Tier 3', name: o.name || o.structural_shift}, o));
+      opps = [...tier1, ...tier2, ...tier3];
+      tier1Count = tier1.length;
+      tier2Count = tier2.length;
+    }
+    if (!opps.length) opps = d.top_opportunities || [];
 
     const signalCount = d.signals_scanned || d.total_signals_scanned || stats.total_ever_evaluated || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
     const modelCount = d.models_constructed || d.total_models_constructed || stats.models_constructed || opps.length || 0;
 
     document.getElementById('total-signals').textContent = signalCount;
     document.getElementById('total-verified').textContent = modelCount;
-    document.getElementById('active-pipeline').textContent = tier1.length || stats.tier_1 || d.active_opportunities || 0;
-    document.getElementById('total-killed').textContent = tier2.length || stats.tier_2 || 0;
+    document.getElementById('active-pipeline').textContent = tier1Count || stats.tier_1 || d.active_opportunities || 0;
+    document.getElementById('total-killed').textContent = tier2Count || stats.tier_2 || 0;
 
     const synthesis = d.summary || d.master_synthesis || d.engine_status || '';
     if (synthesis) document.getElementById('synthesis-text').textContent = synthesis;
@@ -672,11 +689,21 @@ async function refresh() {
     document.getElementById('intro-cycles').textContent = d.cycle || d.current_cycle || 0;
     document.getElementById('intro-signals').textContent = signalCount;
     document.getElementById('intro-evaluated').textContent = modelCount;
-    document.getElementById('intro-tier1').textContent = tier1.length || 0;
-    document.getElementById('intro-tier2').textContent = tier2.length || 0;
+    document.getElementById('intro-tier1').textContent = tier1Count || 0;
+    document.getElementById('intro-tier2').textContent = tier2Count || 0;
 
     renderOpps(opps);
-    renderHeat(d.sector_heatmap);
+
+    // Sector heatmap: use sector_heatmap if available, else build from structural_shifts_active
+    let heatData = d.sector_heatmap;
+    if (!heatData && d.structural_shifts_active) {
+      heatData = {};
+      d.structural_shifts_active.forEach(s => {
+        const name = (s.shift || '').replace(/\s*\(.*?\)\s*/g, '').substring(0, 20);
+        heatData[name] = { signal_count: s.signal_count || s.models_decomposed || 0 };
+      });
+    }
+    renderHeat(heatData);
     renderCycles(d.cycle_history);
   }
   if (f) {

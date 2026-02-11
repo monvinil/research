@@ -287,15 +287,15 @@ function strengthInfo(s){
 function renderExec(d){
   document.getElementById('exec-cycle').textContent=d.cycle||d.current_cycle||0;
   const landscape=d.opportunity_landscape||d.landscape||{};
-  const t1=landscape.tier_1||[];const t2=landscape.tier_2||[];const t3=landscape.tier_3||[];
-  const allL=[...t1,...t2,...t3];
-  const opps=allL.length?allL:(d.top_opportunities||[]);
+  const decomposed=landscape.decomposed_models_top_20||[];
+  let oppCount=0;
+  if(decomposed.length){oppCount=decomposed.length;}
+  else{const t1=landscape.tier_1||[];const t2=landscape.tier_2||[];const t3=landscape.tier_3||[];oppCount=[...t1,...t2,...t3].length||(d.top_opportunities||[]).length;}
   const stats=d.pipeline_stats||{};
-  const bi=d.barrier_index||d.kill_index;
-  const biS=d.barrier_index_summary;
-  const bc=biS?(biS.total||0):bi?(Array.isArray(bi)?bi.length:(bi.barriers||bi.entries||[]).length||bi.total_barriers||0):0;
+  const notRec=landscape.not_recommended||[];
+  const bc=notRec.length||(function(){const bi=d.barrier_index||d.kill_index;const biS=d.barrier_index_summary;return biS?(biS.total||0):bi?(Array.isArray(bi)?bi.length:(bi.barriers||bi.entries||[]).length||bi.total_barriers||0):0;})();
   document.getElementById('exec-signals').textContent=d.signals_scanned||d.total_signals_scanned||stats.total_ever_evaluated||(d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0)||0;
-  document.getElementById('exec-active').textContent=d.models_constructed||d.total_models_constructed||stats.models_constructed||opps.length;
+  document.getElementById('exec-active').textContent=d.models_constructed||d.total_models_constructed||stats.models_constructed||oppCount;
   document.getElementById('exec-kills').textContent=bc;
   const syn=d.summary||d.master_synthesis||d.engine_status||'';
   document.getElementById('exec-synthesis').textContent=syn?truncate(syn,3):'No synthesis available yet.';
@@ -393,19 +393,42 @@ async function refresh(){
     const d=await r.json();
     renderExec(d);
     const landscape=d.opportunity_landscape||d.landscape||{};
-    const t1=(landscape.tier_1||[]).map(o=>Object.assign({tier:'Tier 1',name:o.name||o.structural_shift},o));
-    const t2=(landscape.tier_2||[]).map(o=>Object.assign({tier:'Tier 2',name:o.name||o.structural_shift},o));
-    const t3=(landscape.tier_3||[]).map(o=>Object.assign({tier:'Tier 3',name:o.name||o.structural_shift},o));
-    const opps=[...t1,...t2,...t3].length?[...t1,...t2,...t3]:(d.top_opportunities||[]);
+    const decomposed=landscape.decomposed_models_top_20||[];
+    let opps=[];
+    if(decomposed.length){
+      opps=decomposed.map(m=>{
+        const tier=m.score>=75?'Tier 1':m.score>=68?'Tier 2':'Tier 3';
+        return Object.assign({tier,name:m.name,score:m.score,thesis:m.one_liner,economic_force:m.sector,type:m.type,
+          key_data_points:[m.entry_wedge?'Entry: '+m.entry_wedge:null,m.key_competitor?'Competition: '+m.key_competitor:null,m.why_now?'Why now: '+m.why_now:null].filter(Boolean)},m);
+      });
+    }else{
+      const t1=(landscape.tier_1||[]).map(o=>Object.assign({tier:'Tier 1',name:o.name||o.structural_shift},o));
+      const t2=(landscape.tier_2||[]).map(o=>Object.assign({tier:'Tier 2',name:o.name||o.structural_shift},o));
+      const t3=(landscape.tier_3||[]).map(o=>Object.assign({tier:'Tier 3',name:o.name||o.structural_shift},o));
+      opps=[...t1,...t2,...t3].length?[...t1,...t2,...t3]:(d.top_opportunities||[]);
+    }
     renderActive(opps);
     renderPatterns(d.key_patterns||d.structural_patterns||d.structural_shifts_active||d.cross_principle_patterns);
+    const notRec=landscape.not_recommended||[];
     const bi=d.barrier_index||d.kill_index;
     let barriers=bi?(Array.isArray(bi)?bi:(bi.barriers||bi.entries||[])):[];
+    if(!barriers.length&&notRec.length){
+      barriers=notRec.map(b=>({target:b.name,reason:b.reason,score:b.score}));
+    }
     if(!barriers.length&&landscape.barriers_noted){
       barriers=landscape.barriers_noted.map(b=>({target:b.barrier,reason:b.sectors?b.sectors.join(', '):'',moat_potential:b.moat_potential,status:b.status}));
     }
     renderKills(barriers);
-    renderSectors(d.sector_heatmap);
+    // Sector coverage: use sector_heatmap or build from structural_shifts_active
+    let heatmap=d.sector_heatmap;
+    if(!heatmap&&d.structural_shifts_active){
+      heatmap={};
+      d.structural_shifts_active.forEach(s=>{
+        const name=(s.shift||'').replace(/\s*\(.*?\)\s*/g,'').substring(0,24);
+        heatmap[name]={signal_count:s.signal_count||0,avg_score:null};
+      });
+    }
+    renderSectors(heatmap);
     renderWeights(d.grading_weights_current||d.grading_weights);
   }catch{}
 }
