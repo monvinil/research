@@ -352,7 +352,115 @@
         "PRIORITY 6: Build prototype specification for #1 opportunity",
         "PRIORITY 7: Stress test Healthcare Admin and Insurance Claims (top 3 done, #4-5 pending)"
       ]
+    },
+    {
+      "cycle": "v2-5",
+      "date": "2026-02-10",
+      "engine_version": "v2.0",
+      "engine_mode": "business_model_decomposition",
+      "summary": "BUSINESS MODEL DECOMPOSITION cycle — YC-granularity. Decomposed all 11 sectors (5 Tier 1, 6 Tier 2) into 102 specific, buildable business models. Each model scored INDEPENDENTLY on 5 new axes: competitive_density (inverted), unit_economics_clarity, distribution_specificity, moat_durability, customer_findability. Web search executed for ACTUAL competitors on each specific model. Top models cluster around 3 themes: (1) Dead Business Revival plays targeting orphaned customers (Bench bookkeeping #1 at score 80), (2) Acquire-and-Modernize physical businesses (CNC shop #2 at 80, bakery #4 at 77), (3) Underserved niche services within competitive sectors (restaurant bookkeeping 75, dental billing 72, PT denial prevention 73, US-LATAM tax 74). Tool-layer plays scored lowest due to competitive density. 5 models explicitly NOT recommended due to incumbent saturation. New pattern P-015 identified: Niche Segmentation Reveals Hidden Opportunity Structure. Christensen three-layer framework quantitatively validated — full-service models score highest, tool-layer models score lowest.",
+
+      "decomposition_results": {
+        "total_models": 102,
+        "sectors_decomposed": 11,
+        "tier_1_sectors": ["SMB Accounting/Finance (15 models)", "Healthcare Admin AI (8 models)", "Robotics x AI Manufacturing (6 models)", "Specialty Food/Beverage (4 models)", "Insurance Claims AI (4 models)"],
+        "tier_2_sectors": ["Mental Health AI (3 models)", "PE Distress Cascade (2 models)", "AI Regulatory Compliance (2 models)", "US-LATAM AI Services (2 models)", "AI-First Legal Services (2 models)", "Precision Agriculture (2 models)"],
+        "top_5_models": [
+          {"rank": 1, "id": "D5-ACC-01", "name": "AI Bookkeeping for Orphaned Bench Customers", "score": 80, "sector": "SMB Accounting/Finance", "key_insight": "35K known customers with proven willingness to pay. Dead business revival = highest-scoring pattern. 90% gross margin at $149/mo."},
+          {"rank": 2, "id": "D5-MFG-01", "name": "Acquire-and-Modernize CA CNC Shop", "score": 80, "sector": "Robotics x AI Manufacturing", "key_insight": "Very low competition at sub-$3M scale (PE targets larger). Physical moat (assets, permits, contracts). SBA 504 fee waiver active."},
+          {"rank": 3, "id": "D5-FOOD-01", "name": "Acquire-and-Modernize CA Wholesale Bakery", "score": 77, "sector": "Specialty Food/Beverage", "key_insight": "FDA/USDA certifications + distribution + brand = strong moat. Must target specialty/branded only (20-35% margins). FSMA 204 adds compliance moat."},
+          {"rank": 4, "id": "D5-HC-01", "name": "AI Prior Auth Appeals for Independent Practices", "score": 75, "sector": "Healthcare Admin AI", "key_insight": "WISeR launching Jan 2026 creates urgency. Enterprise competitors don't serve independent practices. $1K-3K/mo per practice revenue."},
+          {"rank": 5, "id": "D5-ACC-03", "name": "AI Bookkeeping for Restaurants/Food Trucks", "score": 75, "sector": "SMB Accounting/Finance", "key_insight": "1M+ restaurants in US, 90% independent. Restaurant365 targets chains. POS marketplace (Toast, Square) provides distribution. Davis CA local access."}
+        ],
+        "not_recommended": [
+          {"id": "D5-ACC-07", "name": "AI Payroll+Bookkeeping Bundle", "score": 56, "reason": "Gusto ($746M) and Rippling ($1.3B) too dominant"},
+          {"id": "D5-MH-03", "name": "AI Sub-Clinical Wellness Consumer App", "score": 55, "reason": "Calm, Headspace, BetterHelp too dominant. Woebot dead validates difficulty."},
+          {"id": "D5-INS-02", "name": "AI Auto Claims Photo Estimation", "score": 58, "reason": "Tractable ($115M) and CCC (public) dominate"},
+          {"id": "D5-ACC-04", "name": "AI Tax for Gig Workers", "score": 62, "reason": "FlyFin ($15M) and Keeper ($42M) direct, well-funded competitors"},
+          {"id": "D5-HC-07", "name": "AI Clinical Documentation for PCPs", "score": 63, "reason": "Abridge ($250M), DeepScribe, Nuance DAX too dominant"}
+        ]
+      },
+
+      "scoring_methodology": {
+        "axes": ["competitive_density (inverted)", "unit_economics_clarity", "distribution_specificity", "moat_durability", "customer_findability"],
+        "scale": "0-100 each, equally weighted",
+        "note": "Scored per specific model, NOT inherited from sector. Web search for ACTUAL competitors executed per model."
+      },
+
+      "key_competitive_findings": [
+        {"finding": "Finaloop ($35M) directly competes in e-commerce bookkeeping -- reduces D5-ACC-02 score. Shopify e-commerce bookkeeping is NOT an open field."},
+        {"finding": "Avallon (YC S25, $4.6M) directly competes in workers' comp claims AI with CA TPA customers already -- reduces D5-INS-01 score to 68."},
+        {"finding": "Archy ($20M Series B) growing 300% YoY in dental practice management -- adjacent to D5-HC-02 but targeting DSOs, not solo practices."},
+        {"finding": "Blueprint ($27M, 50K clinicians) dominates therapist documentation -- reduces D5-MH-01 to 66. Tool-layer therapist notes becoming commodity."},
+        {"finding": "NO funded AI-first US-LATAM tax startup found -- D5-ACC-08 scores 74 with highest competitive_density score (85) in the decomposition."},
+        {"finding": "General Catalyst ($750M Creation Strategy) targets $100M+ EBITDA rollups -- validates thesis but operates at entirely different scale from D5-MFG-01."},
+        {"finding": "Standard Bots ($63M) is a cobot PROVIDER, not acquirer -- potential partner for D5-MFG-01 and D5-MFG-02."},
+        {"finding": "Apixio ($105M) directly competes in medical records/chart abstraction -- reduces D5-HC-03 to 61. Enterprise healthcare AI is crowded."}
+      ],
+
+      "key_patterns_identified": [
+        {"pattern_id": "P-001", "name": "Multi-Sector Baumol Cure Convergence", "strength": "very_strong", "status": "confirmed", "update": "Accounting sector alone produces 10+ viable specific models. $139B automatable wage base supports multiple independent businesses through niche segmentation."},
+        {"pattern_id": "P-002", "name": "Demographic Gap + AI Readiness", "strength": "very_strong", "status": "confirmed", "update": "Manufacturing acquisition models (D5-MFG-01, D5-FOOD-01) score highest among physical plays precisely because Silver Tsunami creates acquisition supply."},
+        {"pattern_id": "P-003", "name": "Regulatory Fragmentation as Moat", "strength": "very_strong", "status": "confirmed", "update": "Regulatory compliance itself decomposes into multiple businesses: healthcare AI (D5-REG-01), hiring AI (D5-REG-02), NAIC insurance (D5-INS-03), mental health state regulation."},
+        {"pattern_id": "P-005", "name": "Jevons Expansion (Bench revival)", "strength": "very_strong", "status": "confirmed", "update": "Bench orphans (D5-ACC-01) are the most specific Jevons signal: 35K customers who PROVED willingness to pay, available for re-acquisition at low CAC."},
+        {"pattern_id": "P-006", "name": "Robotics x AI Compound", "strength": "very_strong", "status": "confirmed", "update": "Decomposes into 6 distinct plays: acquire-modernize, integration service, scheduling SaaS, quoting tool, QC vision, multi-shop rollup."},
+        {"pattern_id": "P-009", "name": "Christensen Three-Layer (QUANTITATIVELY VALIDATED)", "strength": "very_strong", "status": "confirmed", "update": "Full-service models (D5-ACC-01 at 80, D5-MFG-01 at 80) score highest. Service-layer models (D5-HC-01 at 75) score medium. Tool-layer models (D5-MH-01 at 66, D5-ACC-04 at 62) score lowest. The framework is now validated with specific numbers."},
+        {"pattern_id": "P-013", "name": "Dead Business Revival (UPGRADED to very_strong)", "strength": "very_strong", "status": "confirmed", "update": "Bench orphan play (D5-ACC-01) scores #1 in the entire decomposition. Dead business revival is the single most actionable pattern."},
+        {"pattern_id": "P-015", "name": "NEW: Niche Segmentation Reveals Hidden Opportunity Structure", "strength": "strong", "status": "emerging_confirmed", "update": "First observed. The best opportunities are in UNDERSERVED NICHES of competitive sectors. SMB accounting overall is competitive, but restaurant bookkeeping, agency bookkeeping, and US-LATAM tax are underserved. Healthcare admin is competitive at enterprise but dental billing and PT denial prevention are underserved."}
+      ],
+
+      "transmission_chains_status": [
+        {"chain": "AI Inference Cost Collapse", "node": "N5", "velocity": "very_fast", "note": "Decomposition confirms: $0.05/month inference enables 90%+ gross margins across ALL software models."},
+        {"chain": "Professional Services Cascade", "node": "N5", "velocity": "fast", "note": "Decomposition reveals: cascade is niche-specific. Some niches (e-commerce bookkeeping) already have well-funded competitors. Others (restaurant bookkeeping, agency bookkeeping) do not."},
+        {"chain": "Healthcare Demographic Gap", "node": "N5", "velocity": "fast", "note": "Provider-side prior auth (D5-HC-01) and dental billing (D5-HC-02) are the specific transmission endpoints with best entry points."},
+        {"chain": "Robotics x AI Manufacturing", "node": "N4", "velocity": "moderate_accelerating", "note": "Decomposes into acquisition plays (N5) and software/services (N3-N4). Acquisition plays are further along the chain."},
+        {"chain": "Manufacturing Demographic Gap", "node": "N5", "velocity": "fast", "note": "BizBuySell data + specific models (D5-MFG-01, D5-FOOD-01) confirm window is open NOW."},
+        {"chain": "Dead Business Revival (Accounting)", "node": "N5", "velocity": "fast", "note": "D5-ACC-01 is the most actionable endpoint: specific customers, specific channel, specific pricing."},
+        {"chain": "Niche Segmentation Cascade", "node": "N4-N5", "velocity": "fast", "note": "NEW. As sectors saturate at sector-level, opportunity cascades down into underserved niches. This is an ongoing dynamic."}
+      ],
+
+      "cycle_5_key_findings": {
+        "finding_1": "DECOMPOSITION CHANGES THE MAP: Sector-level scoring (cycles 1-4) and model-level scoring (cycle 5) produce DIFFERENT rankings. SMB Accounting scored #1 as a sector but its best specific model (Bench orphans, 80) ties with manufacturing acquisition (80). Healthcare Admin scored #2 as a sector but its best specific model (prior auth, 75) ranks #4. The niche matters more than the sector.",
+        "finding_2": "THREE CLUSTERS EMERGE at the top: (1) Dead business revival (D5-ACC-01: Bench orphans), (2) Physical acquisition-and-modernization (D5-MFG-01: CNC, D5-FOOD-01: bakery), (3) Underserved niche services (D5-ACC-03: restaurants, D5-HC-01: prior auth, D5-ACC-08: US-LATAM tax). These are fundamentally different business types requiring different skills, capital, and timelines.",
+        "finding_3": "CHRISTENSEN FRAMEWORK VALIDATED QUANTITATIVELY: Tool-layer businesses average score 55-66 (too competitive). Service-layer businesses average 71-73. Full-service businesses average 75-80. The data confirms: build at the full-service layer or don't build at all.",
+        "finding_4": "COMPETITIVE DENSITY IS THE BIGGEST DISCRIMINATOR: Among the 5 scoring axes, competitive_density has the widest variance across models (35-85). Models with score 35-50 on competitive density are NOT recommended regardless of other factors (they score 55-63 overall). The single most important question for any model is: who else is doing exactly this?",
+        "finding_5": "NICHE SEGMENTATION IS THE META-PATTERN: Decomposing sectors into niches reveals that 'SMB accounting' is not one market -- it's 10+ distinct markets (e-commerce, restaurants, agencies, freelancers, LATAM, PE portfolios, construction, etc.) with DIFFERENT competitive landscapes. The implication: any sector-level conclusion from cycles 1-4 was premature. The real map is at the niche level."
+      },
+
+      "key_unknowns_resolved": [
+        "Competitive landscape at model level: 15+ web searches identified ACTUAL competitors for each specific model",
+        "Finaloop ($35M) status as direct e-commerce bookkeeping competitor",
+        "Avallon (YC S25) status as direct workers' comp claims AI competitor with CA TPA customers",
+        "Archy ($20M Series B) growth rate (300% YoY) in dental practice management",
+        "Blueprint ($27M) market position (50K clinicians) in therapist documentation",
+        "Absence of funded AI-first US-LATAM tax startup (competitive gap confirmed)",
+        "General Catalyst Creation Strategy scope ($750M for $100M+ EBITDA, not competing at sub-$3M level)",
+        "Standard Bots ($63M) positioning as cobot provider (potential partner, not competitor)",
+        "Model-level scoring vs sector-level scoring produces different priority rankings"
+      ],
+
+      "key_unknowns_remaining": [
+        "Customer discovery interviews -- STILL TOP PRIORITY (no actual customer conversations in any cycle)",
+        "Bench orphaned customer reachability -- can 35K be identified and contacted? Channels?",
+        "Restaurant POS integration (Toast/Square) -- marketplace requirements and costs",
+        "WISeR pilot state prior auth denial data -- how much are denials increasing?",
+        "Dental billing pain quantification -- % revenue lost to denials, current billing costs",
+        "BizBuySell specific CNC/bakery target shortlisting (narrow to 5-10)",
+        "US-LATAM cross-border tax market sizing (how many of 150K+ businesses need this?)",
+        "FSMA 204 compliance gap (how many food producers NOT compliant? Deadline pressure?)",
+        "Prototype specification for top model (D5-ACC-01 or D5-MFG-01)",
+        "Unit economics validation through real customer conversations"
+      ],
+
+      "next_cycle_direction": [
+        "PRIORITY 1: Customer discovery interviews -- 3-5 conversations per top 5 models (15-25 total conversations)",
+        "PRIORITY 2: Prototype specification for D5-ACC-01 (Bench orphan bookkeeping) -- the #1 scoring model with most specific customer target",
+        "PRIORITY 3: Bench orphan customer list building -- scrape Reddit, Twitter, Facebook for identifiable former Bench customers",
+        "PRIORITY 4: BizBuySell target shortlisting for D5-MFG-01 and D5-FOOD-01 (narrow to 5-10 specific listings with criteria)",
+        "PRIORITY 5: Toast/Square POS integration pilot requirements for D5-ACC-03 (restaurant bookkeeping)",
+        "PRIORITY 6: Prior auth denial data collection from practices in WISeR pilot states (AZ, NJ, OH, OK, TX, WA)"
+      ]
     }
   ],
-  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts."
+  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data."
 }

@@ -1,410 +1,262 @@
 {
   "last_updated": "2026-02-10T23:59:00Z",
-  "current_cycle": 4,
+  "current_cycle": 5,
   "engine_version": "v2.0",
-  "engine_mode": "landscape_mapping",
-  "engine_status": "V2 CYCLE 4 COMPLETE -- QUANTITATIVE DEEPENING CYCLE. O*NET Polanyi classification + BLS wage/employment data produce first quantified Baumol Cure Priority Matrix: $207B automatable wage bill across 7 key occupations. Stress tests on top 3 opportunities with real competitive data. 3 under-explored sectors assessed (Mental Health AI PROMOTED to Tier 2, Government AI to Tier 3, Real Estate AI DISMISSED). 20 signals scanned. NEW PATTERNS: P-013 Dead Business Revival (Bench $113M + Woebot $123M), P-014 Quantitative Baumol Matrix. KEY ADJUSTMENTS: Accounting -2 (Intuit Accountant Suite + Bench precedent), Manufacturing -1 (integration complexity stress test), Food -1 (margin risk + FSMA 204 traceability).",
-  "total_signals_scanned": 58,
-  "total_models_constructed": 37,
+  "engine_mode": "business_model_decomposition",
+  "engine_status": "V2 CYCLE 5 COMPLETE -- YC-GRANULARITY BUSINESS MODEL DECOMPOSITION. 11 sectors decomposed into 102 specific, buildable business models. Each scored independently on 5 axes (competitive density, unit economics, distribution, moat, customer findability) using web search for ACTUAL competitors. TOP 5: (1) AI Bookkeeping for Bench Orphans (80), (2) Acquire-and-Modernize CA CNC Shop (80), (3) Acquire-and-Modernize CA Wholesale Bakery (77), (4) AI Prior Auth Appeals for Practices (75), (5) AI Bookkeeping for Restaurants (75). KEY INSIGHT: Best opportunities are UNDERSERVED NICHES within competitive sectors, not sector-level plays. Dead business revival (Bench orphans) is the single most actionable pattern. 5 models NOT recommended due to competitive saturation. NEW PATTERN P-015: Niche segmentation reveals hidden opportunity structure.",
+  "total_signals_scanned": 78,
+  "total_models_constructed": 102,
 
   "landscape": {
-    "tier_1": [
+    "decomposed_models_top_20": [
       {
         "rank": 1,
-        "structural_shift": "SMB Accounting/Finance -- Full-Service Layer Gap (STRESS TESTED)",
-        "economic_force": "$139B automatable wage base (O*NET + BLS quantified)",
-        "opportunity_score": 84,
-        "landscape_type": "services",
-        "business_models": [
-          {
-            "name": "AI-First Full-Service SMB Bookkeeping (NOT Tool Layer)",
-            "type": "direct",
-            "economic_force": "$139B automatable wage base",
-            "cost_advantage": "10-50x (raw inference 4,000x+, effective 10-50x with overhead)",
-            "jevons_multiplier": "3-5x",
-            "target": "23M US single-entity small businesses without CPA + 35K orphaned Bench customers",
-            "price_point": "$99-299/month",
-            "entry_budget": "$1-3M (MVP + first CPA practice acquisition)",
-            "unit_economics": "Inference cost ~$0.05/month per client. Support/compliance ~$10/client/month. Target margin 60-70% at $199/month price point. CAC estimate: $200-500 for unserved SMBs (lower friction than switching)."
-          },
-          {
-            "name": "Fractional AI CFO for Growth SMBs",
-            "type": "expansion",
-            "economic_force": "$50B+",
-            "cost_advantage": "5-10x",
-            "jevons_multiplier": "5-8x",
-            "target": "SMBs $500K-$20M revenue needing financial advisory",
-            "price_point": "$500-2000/month",
-            "entry_budget": "$1-2M"
-          },
-          {
-            "name": "AI Tax for US-LATAM Cross-Border",
-            "type": "expansion",
-            "economic_force": "$15B+",
-            "cost_advantage": "5-8x",
-            "jevons_multiplier": "3x",
-            "target": "150K+ US-LATAM cross-border businesses",
-            "price_point": "Subscription + per-filing",
-            "entry_budget": "$500K-1M"
-          }
-        ],
-        "key_signals": "O*NET: Bookkeepers 91% automation risk, Tax Preparers 99%, Accountants 67%. BLS: 1.5M bookkeepers + 1.4M accountants = $139B automatable wage base. BLS outlook: bookkeepers -5% (pre-cascade employment decline). 75% CPAs retiring. 70% SMBs unserved. Tool layer crowded AND NOW THREATENED by embedded AI (Intuit Accountant Suite replacing QBO Accountant, Feb 2026). Service layer emerging (Basis, Docyt). FULL-SERVICE layer EMPTY. Bench Accounting collapsed Dec 2024 ($113M raised, 35K customers) -- market proven, cost structure failure. AI-first at $0.05/month solves Bench's failure mode.",
-        "cycle_4_updates": "STRESS TESTED. #1 kill risk: Intuit Accountant Suite (AI-native platform replacement, $149/mo Accelerate plan) + Bench collapse precedent. RESULT: Intuit serves accountants (B2B2C), NOT SMBs directly. The Christensen disruption path (direct-to-SMB full-service) remains empty. Bench's $113M failure VALIDATES market (35K customers) while proving AI+offshore-human model fails. Pure AI at $0.05/month solves cost structure. Score -2 for competitive threat but thesis strengthened by quantitative data: $139B automatable wage base, BLS bookkeepers -5% employment = pre-cascade confirmed. CA AB 1175 (signed Oct 2025, effective Jan 2027) lowers CPA licensing barrier.",
-        "barriers": ["CPA licensing (moat -- CA AB 1175 easing Jan 2027, still 2-3yr moat)", "Intuit Accountant Suite entering service layer (but B2B2C, not direct-to-SMB)", "Bench $113M collapse precedent (validates market but shows operational difficulty)", "Embedded AI in Xero/Intuit threatening tool layer (validates service/full-service focus)", "Trust deficit for financial data (target unserved first)", "Data integration complexity (start with single-entity)"],
-        "moats": ["CPA licensing integration", "Data flywheel from serving unserved SMBs", "Compliance track record", "Full-service delivery vs tool-only competitors", "Bench orphaned customer acquisition opportunity"],
-        "theoretical_lenses": ["T3-Baumol-Cure($139B)", "T6-Jevons(23M-unserved)", "T8-Demographic(75%-CPA-retiring)", "T21-Polanyi(91%-bookkeepers)", "T22-AGG", "P4-Dead-Revival(Bench-$113M)"],
-        "baumol_matrix": {
-          "bookkeepers": {"onet_automation": "91%", "bls_wage": "$47,440", "bls_employment": 1501910, "automatable_wage_bill": "$64.4B"},
-          "accountants": {"onet_automation": "67%", "bls_wage": "$79,880", "bls_employment": 1435770, "automatable_wage_bill": "$76.9B"},
-          "tax_preparers": {"onet_automation": "99%", "bls_wage": "$49,010", "bls_employment": 81650, "automatable_wage_bill": "$4.0B"},
-          "total_automatable": "$139B"
-        },
-        "next_steps": ["Build AI-first full-service bookkeeping for single-entity SMBs", "Price at $149-199/month (below Zeni $549 but above DIY)", "Acquire/partner 1-2 small CPA practices in CA for licensing (AB 1175 transition)", "Target Bench orphaned customers (35K validated buyers)", "Target unserved 23M SMBs (no switching friction)", "Monitor Intuit Accountant Suite rollout for direct-to-SMB expansion"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-ACC-01",
+        "name": "AI Bookkeeping for Orphaned Bench Customers",
+        "sector": "SMB Accounting/Finance",
+        "score": 80,
+        "type": "services",
+        "one_liner": "Full-service AI bookkeeping for 35K businesses stranded by Bench's Dec 2024 collapse. $149/mo. AI-first (no offshore human labor = Bench's failure mode solved). 90% gross margin.",
+        "entry_wedge": "Bench customer communities on Reddit, Twitter, Facebook",
+        "key_competitor": "Kick ($3M), Otterz ($5M) -- neither targeting Bench orphans specifically",
+        "why_now": "35K orphaned customers with PROVEN willingness to pay. Bench revived by Employer.com but degraded service quality. Window closing as customers settle elsewhere."
       },
       {
         "rank": 2,
-        "structural_shift": "Healthcare Admin AI -- Provider-Side Opportunity (O*NET VALIDATED)",
-        "economic_force": "$200B+",
-        "opportunity_score": 84,
-        "landscape_type": "services",
-        "business_models": [
-          {
-            "name": "AI Healthcare Admin for Independent Practices (Provider-Side)",
-            "type": "direct",
-            "economic_force": "$200B+",
-            "cost_advantage": "5-10x",
-            "jevons_multiplier": "2x",
-            "target": "600K+ independent physician practices losing 13%/decade",
-            "price_point": "$3-8 per claim OR $500-1500/month subscription",
-            "entry_budget": "$2-5M (HIPAA infra + EHR integration + pilot)"
-          },
-          {
-            "name": "Provider-Side Prior Auth AI (Counter to WISeR Payer AI)",
-            "type": "structural",
-            "economic_force": "$30B+",
-            "cost_advantage": "8-15x vs manual prior auth staff",
-            "jevons_multiplier": "1.5x",
-            "target": "Practices in WISeR states needing to navigate AI-powered prior auth",
-            "price_point": "$5-15 per authorization",
-            "entry_budget": "$3-5M"
-          },
-          {
-            "name": "Horizontal AI Business-in-a-Box for Independent Practices",
-            "type": "expansion",
-            "economic_force": "$50B+",
-            "cost_advantage": "3-5x",
-            "jevons_multiplier": "1.5x",
-            "target": "All practice types (vs competitors' hyper-specialization)",
-            "price_point": "$200-500/practice/month",
-            "entry_budget": "$3-5M"
-          }
-        ],
-        "key_signals": "O*NET: Medical Records 97% automation probability (HIGHEST of all 15 occupations screened). BLS: 185,690 medical records specialists at $47,180/yr = $9B automatable wage base. BUT the real force is the $200B+ admin overhead across ALL healthcare. RNs at 10% automation = strong Baumol PREMIUM (human judgment = premium wage). CMS WISeR vendor selection CLOSED. Congressional repeal bill. AMA: 61% say AI increases denials. Competitors hyper-specialized (HealthSpark PT, Verse SLP). No HORIZONTAL platform. BLS: Medical records employment growing +8.7% DESPITE 97% automation potential = Schumpeterian gap period (window open NOW).",
-        "cycle_4_updates": "Score unchanged. O*NET data VALIDATES thesis quantitatively: Medical Records 97% is the deepest automation potential in any occupation screened. The +8.7% employment growth despite 97% automation potential is textbook Schumpeterian gap period -- demand growing, costs rising, AI ready to cure, but adoption not yet materialized. Window is OPEN. Provider-side thesis unchanged. No new competitive threats identified this cycle.",
-        "barriers": ["HIPAA compliance (commoditizing via OpenAI/Hathr.ai)", "EHR integration (300+ systems = bottleneck)", "WISeR vendor selection closed", "Political risk to WISeR model", "Physician opposition to AI in care decisions"],
-        "moats": ["Multi-state compliance first-mover", "EHR integration library", "Provider-side positioning (aligned with physician interests)", "Horizontal platform across practice types"],
-        "theoretical_lenses": ["T3-Baumol-Cure($200B+)", "T8-Demographic", "T6-Jevons", "T11-Regulatory-Capture", "T21-Polanyi(97%-medical-records)", "T21-Polanyi(10%-RNs=Baumol-Premium)"],
-        "baumol_matrix": {
-          "medical_records": {"onet_automation": "97%", "bls_wage": "$47,180", "bls_employment": 185690, "automatable_wage_bill": "$8.5B", "note": "Highest automation rate of any screened occupation"},
-          "rns": {"onet_automation": "10%", "bls_wage": "$86,070", "bls_employment": 3175390, "human_premium_wage_bill": "$247B", "note": "Baumol PREMIUM -- human judgment commands premium wages"}
-        },
-        "next_steps": ["Start with provider-side: help practices fight AI-powered denials", "Build horizontal platform (not hyper-specialized by practice type)", "Pilot in WISeR states where practices face new prior auth burden", "Use HIPAA-compliant platforms (Hathr.ai / OpenAI) to reduce infra cost", "NOT YET STRESS TESTED -- priority for cycle 5"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-MFG-01",
+        "name": "Acquire-and-Modernize: CA CNC Machine Shop",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 80,
+        "type": "physical_production",
+        "one_liner": "Acquire retiring-owner CNC shop ($1-3M revenue) at 3-4x EBITDA. Modernize with cobots ($200-400K). SBA 504 financing. 25-30% COGS reduction.",
+        "entry_wedge": "BizBuySell CA manufacturing listings + broker relationships",
+        "key_competitor": "No well-funded competitor at this scale. General Catalyst targets $100M+ EBITDA.",
+        "why_now": "SBA 504 fee waiver expires Sept 30, 2026. Silver Tsunami creating acquisition supply. Cobot ROI proven (8-14 months)."
       },
       {
         "rank": 3,
-        "structural_shift": "Robotics x AI Manufacturing Acquisition & Modernization (STRESS TESTED)",
-        "economic_force": "$80B+",
-        "opportunity_score": 83,
-        "landscape_type": "physical_production",
-        "business_models": [
-          {
-            "name": "Acquire-and-Modernize: CNC Machine Shop (Specific Target Profile)",
-            "type": "physical",
-            "economic_force": "$80B+",
-            "cost_advantage": "3-5x COGS compression",
-            "jevons_multiplier": "2x",
-            "target": "Retirement-sale CNC/fabrication shops in CA ($1-3M revenue, $300-400K EBITDA)",
-            "price_point": "30-50% margin improvement post-modernization",
-            "entry_budget": "$3-5M total ($2-3M acquisition at 3.2-4x EBITDA + $500K modernization)",
-            "capital_structure": "SBA 504 $1.2M (5.85%, 25yr, fees waived) + Bank $1.5M (7%, 10yr) + Equipment financing $400K (8%, 5yr, 80% LTV) + Equity $550K",
-            "unit_economics": "Monthly debt service ~$18K. Pre-modernization EBITDA $29K/mo (covers debt from day 1). Post-modernization: $163-195K/yr additional savings from 25-30% COGS reduction. 5-station cobot modernization: $225-550K. ROI 8-14 months on robotics investment.",
-            "production_fit": "STRONG -- custom fabrication, precision parts, variable products"
-          },
-          {
-            "name": "Manufacturing AI Integration Service",
-            "type": "structural",
-            "economic_force": "$40B+",
-            "cost_advantage": "10-20% of cost savings achieved",
-            "jevons_multiplier": "3x (98% exploring, 20% prepared)",
-            "target": "SME manufacturers needing help deploying AI/robotics",
-            "price_point": "$50K-500K per engagement",
-            "entry_budget": "$1-3M"
-          }
-        ],
-        "key_signals": "REAL DATA: 379 CA manufacturing businesses for sale (BizBuySell). Median asking $600K. CNC shops: $1.25M-$3M asking, $1-2M revenue, $300-400K EBITDA. SBA 504 actual rates 5.67-5.91% (Feb 2026), fees waived through Sept 2026 for manufacturers. O*NET: Machinists 79% automation risk BUT manual dexterity resists = PARTIAL automation thesis confirmed (automate programming/scheduling, enhance manual precision). COBOT ROI VALIDATED: 35% adoption surge 2024, 8-14 month payback, single cobot saves $65-85K/yr, cobots 30% of new installations.",
-        "cycle_4_updates": "STRESS TESTED. Score -1 (from 84). #1 kill risk: Operational complexity (NOT cobot ROI). RESULT: Cobot ROI is proven (8-14 months, $65-85K/yr savings). The risk is execution -- 70% M&A synergy failure rate means operational capability IS the moat. Skills gap (not cost) is the bottleneck for manufacturing AI deployment. O*NET confirms machinists are PARTIALLY automatable: 79% overall automation risk, but manual dexterity and spatial reasoning resist pure automation. This supports the acquire-and-ENHANCE model (not acquire-and-automate). Manufacturing integration timeline remains 12-18 months realistic.",
-        "barriers": ["70% M&A synergy failure rate (operational capability is key)", "Skills gap for manufacturing AI deployment (constraint shifted from cost to talent)", "Tariff uncertainty affecting manufacturing economics", "First-time buyer 15% equity requirement", "Integration timeline 12-18 months (not 3-6)", "Due diligence complexity"],
-        "moats": ["Physical assets (equipment, permits, customer contracts)", "SBA 504 + equipment financing capital structure", "Operational know-how from running production", "Data flywheel on production optimization", "License/permit moat from acquisition", "Skills gap = barrier to competitors too"],
-        "theoretical_lenses": ["T24-Robotics-AI-Compound", "T4-Minsky", "T8-Demographic(Silver-Tsunami)", "T6-Jevons", "T21-Polanyi(79%-machinists-partial)"],
-        "baumol_matrix": {
-          "machinists": {"onet_automation": "79%", "bls_wage": "$50,840", "bls_employment": 290720, "note": "Partial automation -- manual dexterity resists. Enhance model, not replace."}
-        },
-        "next_steps": ["Screen specific BizBuySell CNC/fabrication listings in CA with $1-3M revenue", "Establish CDC relationship for SBA 504 (Statewide CDC for fast processing)", "Identify cobot integration partners (UR/FANUC distributors in CA)", "Build due diligence framework for manufacturing acquisitions (specifically addressing 70% M&A failure factors)", "Timeline: begin screening now, target acquisition by Q3 2026 (before SBA fee waiver expires Sept 30)"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-FOOD-01",
+        "name": "Acquire-and-Modernize: CA Wholesale Bakery",
+        "sector": "Specialty Food/Beverage Production",
+        "score": 77,
+        "type": "physical_production",
+        "one_liner": "Acquire CA wholesale bakery ($1-2M revenue, 300+ store distribution) at 3-4x EBITDA. Cobots for packaging ($150-280K). Margin uplift from 29% to 35-45%.",
+        "entry_wedge": "BizBuySell CA food production listings",
+        "key_competitor": "No competitor at this scale. PE targets larger operations.",
+        "why_now": "SBA 504 + USDA VAPG financing. FSMA 204 compliance creates moat for compliant operators. Specialty food premiums growing."
       },
       {
         "rank": 4,
-        "structural_shift": "Specialty Food/Beverage Production AI + Robotics (STRESS TESTED)",
-        "economic_force": "$20B+",
-        "opportunity_score": 79,
-        "landscape_type": "physical_production",
-        "business_models": [
-          {
-            "name": "Acquire-and-Modernize: Specialty Food Producer (Wholesale Bakery Profile)",
-            "type": "physical",
-            "economic_force": "$20B+",
-            "cost_advantage": "2-4x COGS compression",
-            "jevons_multiplier": "2-3x",
-            "target": "Retiring CA food producers ($1-2M revenue, SPECIALTY/BRANDED only)",
-            "price_point": "35-45% margin (up from 29% pre-modernization)",
-            "entry_budget": "$1.5-3M (acquisition $1-1.5M + modernization $200-300K)",
-            "capital_structure": "SBA 504 + USDA VAPG ($250K) + equipment financing",
-            "unit_economics": "Wholesale bakery: $1.7M revenue, $500K profit, 14 employees. Acquire at $1-1.5M. Add 2-3 cobots ($100-180K) + AI scheduling/QC ($50-100K). Automate 4-5 positions ($160-200K/yr savings). Increase throughput 30-50%. New margin 35-45%.",
-            "production_fit": "BEST FIT -- variable products, quality-sensitive, high labor %, strong brand differentiation"
-          },
-          {
-            "name": "AI-Powered Craft Food Production Platform",
-            "type": "expansion",
-            "economic_force": "$15B+",
-            "cost_advantage": "Service model",
-            "jevons_multiplier": "3x",
-            "target": "Mid-sized food/beverage producers",
-            "price_point": "$10K-50K/month",
-            "entry_budget": "$2-4M"
-          }
-        ],
-        "key_signals": "REAL LISTINGS: 77 CA food production businesses for sale. Wholesale bakery $1.7M revenue/$500K profit. Bottling facility available. Specialty charcuterie, artisanal sausage, Mexican snacks operations. USDA VAPG $250K (corrected from $200K), highly competitive. SBA 504 fee waiver for manufacturers. FDA PCHF compliance $22K year 1, $8K/yr ongoing. FSMA 204 food traceability rule NEW in 2026.",
-        "cycle_4_updates": "STRESS TESTED. Score -1 (from 80). #1 kill risk: Commodity margins too thin + input cost volatility. RESULT: Specialty/branded products (20-35% margins) are viable. Commodity products (5-10% margins) are NOT -- input cost swings (wheat, dairy, sugar) can wipe margins. CRITICAL FILTER: Must target branded/specialty producers with pricing power, not commodity. FDA PCHF compliance $22K yr1/$8K ongoing is manageable and creates moat. NEW RISK: FSMA 204 food traceability rule (2026) + PFAS/microplastics regulatory concerns add compliance burden. These are MOATS once navigated.",
-        "barriers": ["Commodity margin risk (MUST target specialty/branded only)", "FDA/USDA certification transfer (strong moat once achieved)", "Food safety compliance ongoing ($8K/yr minimum)", "FSMA 204 food traceability rule (NEW 2026 -- compliance moat)", "PFAS/microplastics regulatory concerns (emerging)", "Seasonal demand variability", "Raw material cost volatility (wheat, dairy, sugar)", "USDA VAPG highly competitive"],
-        "moats": ["FDA/USDA certifications from acquisition", "Existing customer relationships + distribution (300+ stores)", "Production optimization data flywheel", "Brand + distribution from acquired operation", "FSMA 204 compliance (barrier for new entrants)", "Specialty/branded pricing power"],
-        "theoretical_lenses": ["T24-Robotics-AI-Compound", "T6-Jevons", "T3-Baumol-Cure-Vector2", "T21-Polanyi(60%-tacit-manual-enhanced-not-replaced)"],
-        "next_steps": ["Screen BizBuySell food production listings: FILTER for specialty/branded with 20%+ margins", "Prioritize wholesale bakery or specialty producer with existing distribution + brand", "Model USDA VAPG + SBA 504 capital stack for specific target", "Identify cobot packaging + AI QC integration partners", "Research FSMA 204 compliance requirements and timeline"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-HC-01",
+        "name": "AI Prior Auth Appeal Engine for Independent Practices",
+        "sector": "Healthcare Admin AI",
+        "score": 75,
+        "type": "services",
+        "one_liner": "Auto-generates prior auth appeals for independent practices losing $50-100K/yr to denials. $5-15 per appeal. Provider-side arms race triggered by CMS WISeR.",
+        "entry_wedge": "Practices in WISeR pilot states (AZ, NJ, OH, OK, TX, WA)",
+        "key_competitor": "Infinx ($85M enterprise), Valer ($7M). Gap: independent practices underserved.",
+        "why_now": "CMS WISeR launching Jan 2026 = AI-driven denials increasing. AMA: 61% say AI increased denial rates."
       },
       {
         "rank": 5,
-        "structural_shift": "Insurance Claims AI -- SMB/TPA Layer (O*NET VALIDATED)",
-        "economic_force": "$40B+",
-        "opportunity_score": 79,
-        "landscape_type": "services",
-        "business_models": [
-          {
-            "name": "AI Claims Processing for TPAs and Mid-Market Insurers",
-            "type": "direct",
-            "economic_force": "$40B+",
-            "cost_advantage": "5-8x",
-            "jevons_multiplier": "1.5x",
-            "target": "1,200+ TPAs, mid-market insurers (not enterprise)",
-            "price_point": "$5-15 per claim",
-            "entry_budget": "$2-4M"
-          },
-          {
-            "name": "AI Claims for LATAM Insurance Market",
-            "type": "expansion",
-            "economic_force": "$15B+",
-            "cost_advantage": "10-15x",
-            "jevons_multiplier": "3x",
-            "target": "536+ LATAM insurtechs and traditional insurers",
-            "price_point": "$3-8 per claim",
-            "entry_budget": "$1-2M"
-          }
-        ],
-        "key_signals": "78% P&C insurers adopted GenAI but only 4% SCALED. Manual error rates 7-12%. AI needs >95% accuracy. 88% customer concern about human oversight. Microsoft + Cognizant deploying enterprise solutions. Total AI claims startup funding still <$20M. O*NET: Claims Adjusters 63% automation risk, Insurance Sales 80%. BLS: 293K claims adjusters at $75,050/yr + 457K insurance sales at $59,000/yr = combined $36B automatable wage base.",
-        "cycle_4_updates": "Score unchanged. O*NET data adds quantitative layer: Claims Adjusters 63% (moderate -- significant judgment component resists), Insurance Sales 80% (high -- mostly routine). Combined $36B automatable wage base. The 63% claims adjuster rate supports the human-in-the-loop model for complex claims. NOT YET STRESS TESTED -- priority for cycle 5.",
-        "barriers": ["95% accuracy requirement (hard technical bar)", "70% customer mistrust (slow adoption)", "Hallucination liability risk", "NAIC model law uncertainty", "Enterprise incumbents (Microsoft/Cognizant)"],
-        "moats": ["Claims data flywheel", "Multi-state TPA compliance", "First-mover on NAIC AI model law", "SMB/TPA focus (enterprise ignores)"],
-        "theoretical_lenses": ["T3-Baumol-Cure($36B-automatable)", "T8-Demographic", "T11-Regulatory-Capture", "T21-Polanyi(63%-claims-adjusters,80%-insurance-sales)"],
-        "baumol_matrix": {
-          "claims_adjusters": {"onet_automation": "63%", "bls_wage": "$75,050", "bls_employment": 293780, "automatable_wage_bill": "$13.9B"},
-          "insurance_sales": {"onet_automation": "80%", "bls_wage": "$59,000", "bls_employment": 457510, "automatable_wage_bill": "$21.6B"}
-        },
-        "next_steps": ["Focus on auto/property claims (simpler, lower stakes)", "Build for >95% accuracy with human-in-the-loop for complex cases", "5-state compliance first", "LATAM version for cross-border expansion", "STRESS TEST in cycle 5"],
-        "last_updated": "2026-02-10T23:59:00Z"
-      }
-    ],
-
-    "tier_2": [
+        "id": "D5-ACC-03",
+        "name": "AI Full-Service Bookkeeping for Restaurants",
+        "sector": "SMB Accounting/Finance",
+        "score": 75,
+        "type": "services",
+        "one_liner": "Restaurant-specific AI bookkeeping (POS integration, tip tracking, food cost analysis). $129/mo per location. 1M+ independent restaurants underserved.",
+        "entry_wedge": "Toast App Marketplace + Square App Marketplace",
+        "key_competitor": "Restaurant365 ($255M) targets chains only. Independents underserved.",
+        "why_now": "POS marketplace distribution enables low-CAC acquisition. Restaurant365 overkill for single-location independents."
+      },
       {
         "rank": 6,
-        "structural_shift": "Mental Health AI -- Sub-Clinical/Productivity (NEW ENTRY, P4 DEAD REVIVAL)",
-        "economic_force": "$150B+ unmet need",
-        "opportunity_score": 74,
-        "landscape_type": "services",
-        "business_models": [
-          {"name": "AI Therapy Productivity Platform for Clinicians", "type": "direct", "economic_force": "$30B+", "entry_budget": "$2-4M", "price_point": "$99-299/month per therapist"},
-          {"name": "Sub-Clinical AI Wellness (Below FDA Threshold)", "type": "expansion", "economic_force": "$50B+", "entry_budget": "$1-3M", "price_point": "$10-30/month consumer"},
-          {"name": "AI Behavioral Health for Employers (EAP Replacement)", "type": "structural", "economic_force": "$20B+", "entry_budget": "$2-5M", "price_point": "$5-15/employee/month"}
-        ],
-        "key_signals": "Woebot Health dead (Jul 2025, $123M raised). FDA pathway blocked for clinical AI therapy. BUT: MindSync $720M, Slingshot Health $93M, Talkiatry $130M -- market is MASSIVE and growing. Utah HB 452 (May 2025) first state to regulate AI therapy chatbots -- regulatory moat forming. 75% of US counties are mental health professional shortage areas. Massive Jevons: at $10-30/mo vs $150-300/session, 5-10x TAM expansion. Woebot's failure is P4 Dead Business Revival -- market proven, regulatory path was the failure mode. Sub-clinical and therapist productivity tools avoid FDA.",
-        "cycle_4_updates": "NEW ENTRY. Promoted from under-explored/monitoring. Woebot's $123M collapse validates the market while revealing the failure mode (FDA pathway, not demand). Three viable paths that avoid FDA: (1) therapist productivity tools, (2) sub-clinical wellness below regulatory threshold, (3) employer EAP replacement. Utah regulatory moat forming. 75% county shortage = massive Jevons expansion potential.",
-        "barriers": ["FDA pathway blocked for clinical claims (Woebot precedent)", "State regulation forming (Utah HB 452, others following)", "Clinical liability if over-promising", "Woebot $123M failure precedent (shows difficulty)", "Trust in AI for mental health (sensitive domain)"],
-        "moats": ["State regulatory compliance (Utah first, others following)", "Clinical validation data", "Therapist network effects", "Sub-clinical positioning avoids FDA"],
-        "theoretical_lenses": ["T3-Baumol-Cure($150B-unmet)", "T6-Jevons(5-10x-at-lower-price)", "P4-Dead-Revival(Woebot-$123M)", "T11-Regulatory-Capture(Utah)"],
-        "next_steps": ["Deep-dive: map which states are following Utah on AI therapy regulation", "Identify therapist productivity tool gap (notes, billing, treatment plans)", "Assess sub-clinical wellness market size", "Monitor MindSync and Slingshot trajectories"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-ACC-08",
+        "name": "AI Cross-Border Tax for US-LATAM Businesses",
+        "sector": "SMB Accounting/Finance",
+        "score": 74,
+        "type": "services",
+        "one_liner": "AI tax compliance for US-LATAM cross-border businesses (transfer pricing, FBAR, foreign tax credits). $299-999/mo. Bilingual platform. No funded AI-first competitor found.",
+        "entry_wedge": "LATAM founder communities, Hispanic Chamber of Commerce",
+        "key_competitor": "No funded AI-first US-LATAM tax startup found. Big 4 serve large companies only.",
+        "why_now": "Nearshoring trend growing. 150K+ cross-border businesses. Strong founder-market fit (bilingual team, Argentina native)."
       },
       {
         "rank": 7,
-        "structural_shift": "PE Distress Cascade -- Fewer Competing Buyers (UPDATED)",
-        "economic_force": "$50B+",
-        "opportunity_score": 77,
-        "landscape_type": "services_and_physical",
-        "business_models": [
-          {"name": "Distressed Professional Services/Manufacturing Acquirer", "type": "structural", "economic_force": "$25B+", "entry_budget": "$3-8M"},
-          {"name": "AI-First Staffing Platform (PE distressed)", "type": "direct", "economic_force": "$50B+", "entry_budget": "$2-4M"}
-        ],
-        "key_signals": "Chapter 11 at decade high. PE-backed 30% of filings. Distress rate +148%. Tariff uncertainty scaring PE away from manufacturing M&A = fewer competing buyers at small-business level. Quality of transactions improving. M&A volume below expectations.",
-        "cycle_4_updates": "Score unchanged. Tariff uncertainty continues to suppress PE M&A activity, creating favorable environment for non-PE acquirers.",
-        "next_steps": ["Map distressed firms in CA (both services and manufacturing)", "Build broker relationships for deal flow", "Focus on retirement sales (less complexity than distressed/bankruptcy)"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-HC-05",
+        "name": "AI Billing Denial Prevention for PT Practices",
+        "sector": "Healthcare Admin AI",
+        "score": 73,
+        "type": "services",
+        "one_liner": "Pre-checks PT claims before submission to prevent denials (15-20% denial rate vs 5-10% average). $199-499/mo per clinic. 40K+ PT practices.",
+        "entry_wedge": "APTA (American Physical Therapy Association) channel",
+        "key_competitor": "HealthSpark ($5M) -- clinical focus, not billing. WebPT (Patterson) adding AI slowly.",
+        "why_now": "PT denial rates highest of any specialty. Clear ROI ($30-60K/yr saved per practice)."
       },
       {
         "rank": 8,
-        "structural_shift": "AI Regulatory Compliance -- Barrier-as-Moat (EXPANDED)",
-        "economic_force": "$30B+",
-        "opportunity_score": 76,
-        "landscape_type": "services",
-        "business_models": [
-          {"name": "AI Compliance Navigator for SMBs", "type": "expansion", "economic_force": "$30B+", "entry_budget": "$1-3M"},
-          {"name": "Sector-Specific AI Compliance (Healthcare + Insurance + Mental Health)", "type": "direct", "economic_force": "$15B+", "entry_budget": "$2-4M"}
-        ],
-        "key_signals": "47 states + EU AI Act. 250+ healthcare AI bills. Colorado AI Act June 2026. NAIC AI model law. Utah HB 452 (mental health AI). RegTech $18.6B growing. First compliant entrant locks out followers.",
-        "cycle_4_updates": "Score unchanged. NEW: Utah mental health AI regulation adds another compliance domain. Regulatory moat expanding to new sectors (mental health, autonomous vehicles, hiring AI). The compliance opportunity keeps getting larger.",
-        "next_steps": ["Map all state AI regulations", "MVP for healthcare AI compliance", "Add mental health AI compliance module", "Test with 20 companies"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-ACC-02",
+        "name": "AI Bookkeeping for Shopify/E-commerce Sellers",
+        "sector": "SMB Accounting/Finance",
+        "score": 73,
+        "type": "services",
+        "one_liner": "E-commerce bookkeeping with native Shopify/Amazon/Stripe integration. $99/mo. Auto-reconciles payouts, tracks COGS/fees, multi-state sales tax.",
+        "entry_wedge": "Shopify App Store listing",
+        "key_competitor": "Finaloop ($35M) is DIRECT competitor. Risk: well-funded.",
+        "why_now": "2M+ Shopify merchants. E-commerce bookkeeping uniquely painful. Shopify App Store provides distribution."
       },
       {
         "rank": 9,
-        "structural_shift": "US-LATAM AI Services + Manufacturing Corridor (UNCHANGED)",
-        "economic_force": "$25B+",
-        "opportunity_score": 74,
-        "landscape_type": "services_and_physical",
-        "business_models": [
-          {"name": "Bilingual AI Business Services for US-LATAM", "type": "direct", "economic_force": "$25B+", "entry_budget": "$1-2M"},
-          {"name": "LATAM Manufacturing AI Integration Service", "type": "expansion", "economic_force": "$15B+", "entry_budget": "$2-4M"}
-        ],
-        "key_signals": "LATAM factory automation $19.67B growing to $30.24B by 2031. Mexico export growth 6-6.5%. Nearshoring driving automation. Spanish-language advantage.",
-        "cycle_4_updates": "Score unchanged. No significant new data this cycle. Remains a compelling expansion market for any Tier 1 play.",
-        "next_steps": ["Interview US companies nearshoring to Mexico", "LATAM insurance claims pilot"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-FOOD-02",
+        "name": "Acquire-and-Modernize: Ethnic/Specialty Snack Producer",
+        "sector": "Specialty Food/Beverage Production",
+        "score": 73,
+        "type": "physical_production",
+        "one_liner": "Acquire CA ethnic food producer (Mexican snacks, Asian sauces). Modernize with AI + cobots. Expand distribution via new retail chains and DTC.",
+        "entry_wedge": "BizBuySell CA food production listings",
+        "key_competitor": "No competitor at this scale",
+        "why_now": "Growing Hispanic and Asian food demand. Retiring owners. SBA 504 financing."
       },
       {
         "rank": 10,
-        "structural_shift": "AI-First Legal Services -- SMB Corporate Niche (O*NET VALIDATED)",
-        "economic_force": "$80B+",
-        "opportunity_score": 73,
-        "landscape_type": "services",
-        "business_models": [
-          {"name": "AI-First Corporate Legal for SMBs (Contracts, Employment, IP)", "type": "direct", "economic_force": "$40B+", "entry_budget": "$2-4M", "price_point": "$500-3000/month retainer"},
-          {"name": "AI Legal Platform for Solo/Small Firms", "type": "structural", "economic_force": "$20B+", "entry_budget": "$1-3M"}
-        ],
-        "key_signals": "Lawhive $60M Series B, $35M ARR, 7x growth, 35 US states. O*NET: Paralegals 90% automation risk ($20B automatable wage bill). Lawyers 23% (judgment-premium, resists automation). 37% SMBs already using AI for legal. Garfield AI SRA-regulated. August $375/mo for small firms.",
-        "cycle_4_updates": "Score unchanged. O*NET data confirms the split: Paralegals 90% automatable ($20B wage bill) vs Lawyers 23% (judgment resists). AI does paralegal work; lawyers provide judgment. This validates the AGG prediction-judgment unbundling thesis. Lawhive remains the dominant competitive threat at the service layer.",
-        "barriers": ["Lawhive $60M direct competitor (formidable first-mover)", "Bar licensing (hard moat)", "UPL enforcement tightening", "37% SMB adoption already (market more mature than assumed)"],
-        "moats": ["Bar-licensed operation", "SMB corporate focus (vs Lawhive consumer)", "Spanish for LATAM expansion"],
-        "theoretical_lenses": ["T3-Baumol-Cure", "T22-AGG(90%-paralegal-automate,23%-lawyer-judgment)", "T21-Polanyi(90%-paralegals)", "T12-Nash"],
-        "baumol_matrix": {
-          "paralegals": {"onet_automation": "90%", "bls_wage": "$60,970", "bls_employment": 354890, "automatable_wage_bill": "$19.5B"},
-          "lawyers": {"onet_automation": "23%", "bls_wage": "$145,760", "bls_employment": 731340, "judgment_premium_wage_bill": "$82B", "note": "Judgment-premium resists automation"}
-        },
-        "next_steps": ["Narrow focus to SMB corporate legal (contracts, employment, compliance)", "Monitor Lawhive US expansion closely", "CA bar licensing pathway exploration"],
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-HC-02",
+        "name": "AI Medical Billing for Solo Dental Practices",
+        "sector": "Healthcare Admin AI",
+        "score": 72,
+        "type": "services",
+        "one_liner": "AI billing + insurance verification for independent dental practices (1-3 dentists). $299/mo. Simpler than medical billing = better AI-first target.",
+        "entry_wedge": "Dental associations + supply distributor partnerships",
+        "key_competitor": "Archy ($20M) targets DSOs, not solo practices.",
+        "why_now": "127K dental practices, majority independent. Archy targeting DSOs leaves solo practices underserved."
       },
       {
         "rank": 11,
-        "structural_shift": "Precision Agriculture AI + Robotics -- Davis CA Advantage (UNCHANGED)",
-        "economic_force": "$15B+",
-        "opportunity_score": 73,
-        "landscape_type": "physical_production",
-        "business_models": [
-          {"name": "AI-Powered Specialty Crop Service (Davis CA)", "type": "physical", "economic_force": "$15B+", "entry_budget": "$2-5M", "price_point": "$5-20/acre/season"},
-          {"name": "Autonomous Farm Equipment Service", "type": "expansion", "economic_force": "$10B+", "entry_budget": "$3-5M"}
-        ],
-        "key_signals": "Precision ag commercial in 2026. 15-30% input cost reduction. Davis CA epicenter. But: seasonal revenue, weather dependence, John Deere/CNH/AGCO spending billions. Farmer adoption slow. Specialty crops (almonds, grapes, tomatoes) = niche where OEMs underserve.",
-        "cycle_4_updates": "Score unchanged. No new data this cycle. Longer timeline opportunity.",
-        "barriers": ["John Deere/CNH/AGCO OEM competition (billions in R&D)", "Seasonal revenue (6-8 months)", "Weather risk", "Slow farmer adoption"],
-        "moats": ["UC Davis research pipeline", "Local farm relationships", "Specialty crop focus (OEM blind spot)"],
-        "next_steps": ["Focus narrowly on specialty crops (almonds, grapes, tomatoes) where OEMs underserve", "UC Davis partnership exploration", "Prototype drone + AI monitoring for 2-3 pilot farms"],
-        "last_updated": "2026-02-10T23:59:00Z"
-      }
-    ],
-
-    "tier_3": [
+        "id": "D5-ACC-06",
+        "name": "AI Bookkeeping for Agencies & Consultancies",
+        "sector": "SMB Accounting/Finance",
+        "score": 72,
+        "type": "services",
+        "one_liner": "AI bookkeeping for agencies with project-based P&L, contractor 1099 management, client profitability tracking. $199/mo.",
+        "entry_wedge": "Agency owner communities (AgencySparks, Bureau of Digital)",
+        "key_competitor": "Pilot (acquired Decimal) but not focused on agencies.",
+        "why_now": "500K+ agencies need project-based accounting. Generic tools don't handle it."
+      },
       {
         "rank": 12,
-        "structural_shift": "AI Service Factory (Multi-Vertical Agent Builder)",
-        "economic_force": "$100B+",
-        "opportunity_score": 70,
-        "landscape_type": "services",
-        "note": "Enormous economic force but thin moat in horizontal agent space.",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-MFG-06",
+        "name": "Multi-CNC Shop Rollup Platform",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 72,
+        "type": "physical_production",
+        "one_liner": "Acquire 3-5 CNC shops, standardize on common cobot/AI stack. Cross-sell customers, purchasing scale. $5-10M total.",
+        "entry_wedge": "Sequential acquisitions from BizBuySell + broker network",
+        "key_competitor": "General Catalyst doing this at $100M+ scale. Gap at $5-10M.",
+        "why_now": "PE rollup trend validates model. SBA 504 fee waiver. Silver Tsunami supply."
       },
       {
         "rank": 13,
-        "structural_shift": "Capital Allocation Signals -- Physical AI Consensus (STRENGTHENED)",
-        "economic_force": "$50B+ (downstream capital unlocked)",
-        "opportunity_score": 70,
-        "landscape_type": "capital_allocation",
-        "note": "BlackRock: humanoid robotics 'most transformative frontier.' JPM: AI supercycle broadening. Goldman: $500B+ AI investment, reindustrialization. All three bullish on physical-economy AI. Strongest capital allocation signal yet. VALIDATES manufacturing/robotics plays.",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-FOOD-03",
+        "name": "AI Food Safety Compliance Platform (FSMA 204)",
+        "sector": "Specialty Food/Beverage Production",
+        "score": 71,
+        "type": "services",
+        "one_liner": "SaaS for SMB food producers to comply with FSMA 204 food traceability rule (enforceable 2026). $200-500/mo.",
+        "entry_wedge": "FDA compliance deadline creates urgency",
+        "key_competitor": "FoodLogiQ ($50M+) targets enterprise. SMB gap.",
+        "why_now": "FSMA 204 enforcement starting 2026. Deadline pressure. SMB food producers unprepared."
       },
       {
         "rank": 14,
-        "structural_shift": "Skilled Trades AI Operations",
-        "economic_force": "$20B+",
-        "opportunity_score": 68,
-        "landscape_type": "services",
-        "note": "Still valid but lower priority than Tier 1-2. ServiceTitan competition remains.",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-REG-01",
+        "name": "AI Compliance Monitor for Healthcare AI Deployers",
+        "sector": "AI Regulatory Compliance",
+        "score": 71,
+        "type": "services",
+        "one_liner": "Platform tracking 250+ state AI healthcare bills, mapping to AI systems, generating compliance docs. $500-2,000/mo.",
+        "entry_wedge": "Healthcare AI companies facing compliance uncertainty",
+        "key_competitor": "No dominant player in AI-specific healthcare compliance.",
+        "why_now": "33 laws signed across 21 states in 2025. Compliance burden accelerating."
       },
       {
         "rank": 15,
-        "structural_shift": "Government/Municipal AI (NEW -- ASSESSED FROM MONITORING)",
-        "economic_force": "$26B+ growing to $136B",
-        "opportunity_score": 67,
-        "landscape_type": "services",
-        "note": "Strong Baumol force ($26B market, 82% state CIOs using GenAI). BUT: 12-24 month procurement cycles incompatible with startup runway. Established incumbents (Tyler Technologies $1.8B revenue, OpenGov acquired by Cox). FedRAMP + StateRAMP authorization barrier. Assessed in cycle 4 -- NOT promoted beyond Tier 3.",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-MFG-03",
+        "name": "AI Production Scheduling for Job Shops",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 71,
+        "type": "services",
+        "one_liner": "AI scheduling replacing whiteboards for CNC/fabrication job shops. $500-2,000/mo. Optimizes machine allocation and delivery estimation.",
+        "entry_wedge": "Partner with job shop ERP providers (JobBOSS, E2) + manufacturer associations",
+        "key_competitor": "LillyWorks (bootstrapped). Only direct AI competitor.",
+        "why_now": "Enterprise scheduling tools don't work for job shops. 30K+ shops stuck on whiteboards."
       },
       {
         "rank": 16,
-        "structural_shift": "Construction Prefab/Modular Robotics",
-        "economic_force": "$30B+",
-        "opportunity_score": 65,
-        "landscape_type": "physical_production",
-        "note": "Over budget for direct factory. FaaS integration service possible.",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-MFG-04",
+        "name": "AI Quoting Tool for Custom Manufacturers",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 70,
+        "type": "services",
+        "one_liner": "Auto-generates quotes from CAD files for CNC/fabrication. $300-800/mo.",
+        "entry_wedge": "Manufacturing trade shows + ERP integrations",
+        "key_competitor": "Paperless Parts ($46M) is direct. Fictiv ($192M) is marketplace model.",
+        "why_now": "Manual quoting takes hours. AI can reduce to minutes."
       },
       {
         "rank": 17,
-        "structural_shift": "Low-Wage Baumol Sectors",
-        "economic_force": "$15B+",
-        "opportunity_score": 64,
-        "landscape_type": "services",
-        "note": "Underexplored. Sparse competition but low willingness-to-pay.",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-LATAM-01",
+        "name": "Bilingual AI Bookkeeping for US-LATAM Businesses",
+        "sector": "US-LATAM AI Services",
+        "score": 70,
+        "type": "services",
+        "one_liner": "AI bookkeeping in Spanish + English for 4.7M Hispanic-owned US businesses. $149/mo.",
+        "entry_wedge": "Hispanic Chamber of Commerce + LATAM business communities",
+        "key_competitor": "No bilingual AI-first bookkeeping found.",
+        "why_now": "4.7M Hispanic-owned businesses in US. Growing rapidly. No tailored solution."
       },
       {
         "rank": 18,
-        "structural_shift": "AI Tutoring",
-        "economic_force": "$30B+",
-        "opportunity_score": 62,
-        "landscape_type": "services",
-        "note": "Massive Jevons but free competitors (Khan Academy).",
-        "last_updated": "2026-02-10T23:59:00Z"
+        "id": "D5-PE-01",
+        "name": "AI Small Business Acquisition Platform",
+        "sector": "PE Distress Cascade",
+        "score": 69,
+        "type": "services",
+        "one_liner": "Platform for individual acquirers to find and evaluate small businesses. AI scores automation potential. $299/mo + success fee.",
+        "entry_wedge": "Search fund community + ETA networks",
+        "key_competitor": "BizBuySell (marketplace, no AI scoring). Acquire.com (digital businesses only).",
+        "why_now": "Search fund + ETA boom. 2.34M businesses need succession. AI can identify best targets."
+      },
+      {
+        "rank": 19,
+        "id": "D5-MFG-02",
+        "name": "Manufacturing AI Integration Service for CA SMEs",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 69,
+        "type": "services",
+        "one_liner": "Help 20-150 person CA manufacturers deploy cobots and AI. $50-150K per engagement.",
+        "entry_wedge": "MEP center referrals + cobot distributor partnerships",
+        "key_competitor": "No well-funded AI-specific manufacturing integrator for SMEs.",
+        "why_now": "98% exploring AI but only 20% prepared. Skills gap is the bottleneck."
+      },
+      {
+        "rank": 20,
+        "id": "D5-INS-01",
+        "name": "AI Workers' Comp Claims for Regional TPAs",
+        "sector": "Insurance Claims AI",
+        "score": 68,
+        "type": "services",
+        "one_liner": "AI claims intake and triage for WC TPAs. $5-12 per claim. 80% of WC claims potentially automatable.",
+        "entry_wedge": "SIIA membership + WC industry conferences",
+        "key_competitor": "Avallon (YC S25, $4.6M) is DIRECT competitor with CA TPA customers.",
+        "why_now": "400K worker attrition by 2026. 1,200+ TPAs need automation."
       }
+    ],
+
+    "not_recommended": [
+      {"id": "D5-ACC-07", "name": "AI Payroll+Bookkeeping Bundle", "score": 56, "reason": "Gusto ($746M), Rippling ($1.3B), Wave (H&R Block) -- too dominant"},
+      {"id": "D5-MH-03", "name": "AI Sub-Clinical Wellness Consumer App", "score": 55, "reason": "Calm, Headspace, BetterHelp, MindSync ($720M) -- saturated"},
+      {"id": "D5-INS-02", "name": "AI Auto Claims Photo Estimation", "score": 58, "reason": "Tractable ($115M), CCC (public) -- enterprise dominance"},
+      {"id": "D5-ACC-04", "name": "AI Tax for Gig Workers", "score": 62, "reason": "FlyFin ($15M), Keeper ($42M) -- well-funded direct competitors"},
+      {"id": "D5-HC-07", "name": "AI Clinical Documentation for PCPs", "score": 63, "reason": "Abridge ($250M), Nuance DAX, DeepScribe -- market captured"}
     ],
 
     "monitoring": [
@@ -412,45 +264,28 @@
       {"shift": "AI Additive Manufacturing / Mass Customization", "signal_count": 2, "note": "Growing niche. Watch for cost/speed improvements."},
       {"shift": "LATAM Humanoid Robot Manufacturing", "signal_count": 1, "note": "Very early. Monitor."},
       {"shift": "Perez Turning Point / AI Funding Correction", "signal_count": 3, "note": "Goldman $527B hyperscaler capex deepens overhang. Build crash-resilient."},
-      {"shift": "Real Estate Transaction AI", "signal_count": 1, "note": "ASSESSED AND DISMISSED: $10.5B funding, 7 unicorns, EliseAI $2.25B. Extremely crowded. NOT viable for new entry."}
+      {"shift": "Real Estate Transaction AI", "signal_count": 1, "note": "ASSESSED AND DISMISSED: $10.5B funding, 7 unicorns. NOT viable."}
     ]
   },
 
   "structural_shifts_active": [
-    {"shift": "AI Inference Cost Collapse (200x/year)", "signal_count": 4, "strength": "very_strong", "models_constructed": 37, "note": "Cost advantage ratio WIDENING as wages grow +4%/yr while inference costs drop. Bookkeeping: $0.05/month inference vs $47,440/yr wage."},
-    {"shift": "Baumol Cost Disease Cure (multi-sector -- QUANTIFIED)", "signal_count": 20, "strength": "very_strong", "models_constructed": 18, "note": "QUANTIFIED: O*NET x BLS = $207B automatable wage bill across 7 key occupations. Deepest cure in healthcare admin (97% medical records). Largest wage pool in accounting ($139B bookkeepers + accountants). Baumol PREMIUM side: RNs $247B, Lawyers $82B in human-premium wages."},
-    {"shift": "Robotics x AI Compound Production Cost Compression", "signal_count": 17, "strength": "very_strong", "models_constructed": 8, "note": "STRESS TESTED: Cobot ROI proven (8-14 months, $65-85K/yr savings). Skills gap (not cost) is now the constraint. 35% adoption surge 2024. Machinists 79% automation but manual dexterity resists = partial enhancement model."},
-    {"shift": "PE Roll-Up Minsky Moment (deepening)", "signal_count": 5, "strength": "strong", "models_constructed": 2, "note": "Distress rate still elevated. Tariff uncertainty scares PE = fewer competing buyers for retirement sales."},
-    {"shift": "Demographic Supply Collapse (services + manufacturing)", "signal_count": 11, "strength": "very_strong", "models_constructed": 8, "note": "BLS outlook: bookkeepers -5%, claims adjusters -5% = pre-cascade employment decline. 75% CPAs retiring. Window open."},
-    {"shift": "Regulatory Fragmentation as Moat (EXPANDING to new sectors)", "signal_count": 13, "strength": "very_strong", "models_constructed": 5, "note": "NEW: Utah HB 452 (mental health AI), CA AB 1175 (CPA licensing). Regulatory moat forming in mental health -- new sector. 250+ bills + sector-specific laws = deepening compliance maze."},
-    {"shift": "Jevons Demand Expansion (services + production)", "signal_count": 12, "strength": "very_strong", "models_constructed": 10, "note": "VALIDATED: Bench 35K customers proves demand. 23M unserved SMBs for accounting. 75% county mental health shortage. At $10-30/mo vs $150-300/session = 5-10x mental health TAM expansion."},
-    {"shift": "Capital Allocation Rotation to Physical AI", "signal_count": 6, "strength": "very_strong", "models_constructed": 3, "note": "Unchanged. Consensus holds."},
-    {"shift": "Christensen Three-Layer Competitive Framework (UPDATED)", "signal_count": 14, "strength": "very_strong", "models_constructed": 6, "note": "CRITICAL: Intuit Accountant Suite = incumbent moving tool-to-service (Feb 2026). Bench collapse = dead revival at full-service. Three-layer framework holds but service layer competition INCREASING. Full-service remains frontier."},
-    {"shift": "Dead Business Revival (NEW PATTERN)", "signal_count": 3, "strength": "strong", "models_constructed": 6, "note": "TWO major P4 signals: Bench ($113M, accounting) + Woebot ($123M, mental health). Combined $236M in proven-market failures. Failure modes are SOLVABLE: cost structure (AI-first) and regulatory path (sub-clinical). Markets validated, orphaned customers available."},
-    {"shift": "LATAM Nearshoring + Manufacturing AI", "signal_count": 4, "strength": "moderate", "models_constructed": 4, "note": "Unchanged. Remains expansion market."},
-    {"shift": "AI-Native Category Emergence", "signal_count": 4, "strength": "moderate", "models_constructed": 3, "note": "Lawhive ($60M AI law firm) is the archetype."},
-    {"shift": "Perez Installation-to-Deployment Transition", "signal_count": 4, "strength": "strong", "models_constructed": 2, "note": "Goldman $527B capex confirms installation phase still running. Deployment phase businesses = highest conviction."},
-    {"shift": "Quantitative Baumol Priority Matrix (NEW)", "signal_count": 6, "strength": "very_strong", "models_constructed": 0, "note": "NEW analytical framework. O*NET automation% x BLS wages x employment = total automatable wage bill. Ranking: Accountants $75B, Bookkeepers $64B, Insurance Sales $22B, Paralegals $20B, Claims Adjusters $14B, Medical Records $9B, Tax Preparers $4B. Total: $207B. PREMIUM side: RNs $247B, Lawyers $82B."}
+    {"shift": "AI Inference Cost Collapse (200x/year)", "signal_count": 4, "strength": "very_strong", "models_decomposed": 30, "note": "Enables ALL top 20 service models. Cost advantage ratio STILL WIDENING."},
+    {"shift": "Baumol Cost Disease Cure (multi-sector -- QUANTIFIED)", "signal_count": 20, "strength": "very_strong", "models_decomposed": 25, "note": "$207B automatable wage bill decomposes into 25+ specific business models across niches."},
+    {"shift": "Robotics x AI Compound Production Cost Compression", "signal_count": 17, "strength": "very_strong", "models_decomposed": 12, "note": "Decomposes into 6 distinct model types: acquire, integrate, schedule, quote, inspect, rollup."},
+    {"shift": "Dead Business Revival (Bench + Woebot)", "signal_count": 5, "strength": "very_strong", "models_decomposed": 3, "note": "UPGRADED to very_strong. Bench orphan play scores #1 overall. Most actionable pattern."},
+    {"shift": "Silver Tsunami + Demographic Gap", "signal_count": 11, "strength": "very_strong", "models_decomposed": 6, "note": "Manufacturing + food acquisition models score in top 5 because of supply."},
+    {"shift": "Regulatory Fragmentation as Moat", "signal_count": 13, "strength": "very_strong", "models_decomposed": 8, "note": "Decomposes into 4+ regulatory compliance businesses."},
+    {"shift": "Christensen Three-Layer Competition", "signal_count": 14, "strength": "very_strong", "models_decomposed": 10, "note": "VALIDATED by decomposition: full-service scores highest, tool-layer scores lowest."},
+    {"shift": "Niche Segmentation (NEW P-015)", "signal_count": 0, "strength": "strong", "models_decomposed": 102, "note": "NEW PATTERN: Best opportunities are in underserved NICHES of competitive sectors, not sector-level plays."}
   ],
 
-  "barrier_index_summary": {
-    "total": 26,
-    "with_moat_potential": 16,
-    "resolved": 2,
-    "new_this_cycle": 4,
-    "note": "v2 cycle 4: 4 new barriers added (Intuit Accountant Suite competition, Bench collapse precedent, raw material cost volatility, government procurement cycles). 10 resolved unknowns (O*NET automation, BLS wages, Bench failure mode, Intuit positioning, cobot ROI, FDA compliance cost, mental health landscape, real estate density, government AI, CPA licensing). 62% of barriers have moat potential."
-  },
-
-  "v1_vs_v2_comparison": {
-    "v1_final_state": "11 cycles, 1 PURSUE, 83% kill/park rate",
-    "v2_cycle_4": "4 cycles, 5 Tier 1 (18 opportunities total), 37 business models, 14 running patterns, 10 resolved unknowns this cycle. QUANTITATIVE cycle: O*NET + BLS data replaces qualitative automation estimates. Stress tests on top 3. Mental Health AI promoted. Government AI assessed. Real Estate AI dismissed.",
-    "key_difference": "v2-4 is a QUANTITATIVE DEEPENING cycle. For the first time, Baumol Cure claims are backed by real occupational automation data (O*NET) cross-referenced with real wages and employment (BLS). $207B automatable wage bill is not an estimate -- it's calculated from government data. Stress tests use real competitive intelligence (Intuit roadmap, Bench failure data, cobot adoption rates)."
-  },
+  "key_insight": "DECOMPOSITION CHANGES THE MAP. Sector-level analysis showed 'SMB Accounting' as one opportunity (score 84). Decomposition reveals it's actually 10+ distinct businesses, ranging from score 80 (Bench orphans) to score 56 (payroll bundle). The RIGHT niche within a sector matters more than the sector itself. Similarly, 'Healthcare Admin AI' is not one business but 8+ niches (prior auth appeals, dental billing, PT denial prevention, credentialing, chart abstraction, etc.) with very different competitive dynamics.",
 
   "cycle_history": [
     {"cycle": "v2-1", "signals": 25, "clusters": 14, "models_constructed": 20, "tier_1": 4, "tier_2": 4, "tier_3": 5, "top_force": "$200B+ (Healthcare Admin)", "note": "First v2 landscape mapping cycle. Services-focused."},
     {"cycle": "v2-2", "signals": 42, "clusters": 18, "models_constructed": 32, "tier_1": 5, "tier_2": 5, "tier_3": 6, "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)", "note": "EXPANDED SCOPE: Added physical production landscape."},
-    {"cycle": "v2-3", "signals": 38, "clusters": 16, "models_constructed": 34, "tier_1": 5, "tier_2": 5, "tier_3": 6, "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)", "note": "CORRECTION CYCLE: Real data replaces estimates. Food promoted to Tier 1. Legal demoted to Tier 2 (Lawhive $60M). Insurance/Healthcare scores corrected down. Manufacturing CONFIRMED with specific targets and capital stack. 10 counter-signals (2+ per Tier 1)."},
-    {"cycle": "v2-4", "signals": 20, "clusters": 18, "models_constructed": 37, "tier_1": 5, "tier_2": 6, "tier_3": 7, "top_force": "$207B automatable wage bill (O*NET + BLS quantified)", "note": "QUANTITATIVE DEEPENING: O*NET Polanyi classification + BLS wage/employment data. Baumol Priority Matrix: $207B automatable. Stress tests on top 3 (all survived with adjustments). Mental Health AI promoted to Tier 2. Government AI assessed for Tier 3. Real Estate AI dismissed. 2 new patterns (P-013 Dead Business Revival, P-014 Quantitative Baumol Matrix). 10 key unknowns resolved."}
+    {"cycle": "v2-3", "signals": 38, "clusters": 16, "models_constructed": 34, "tier_1": 5, "tier_2": 5, "tier_3": 6, "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)", "note": "CORRECTION CYCLE: Real data replaces estimates."},
+    {"cycle": "v2-4", "signals": 20, "clusters": 18, "models_constructed": 37, "tier_1": 5, "tier_2": 6, "tier_3": 7, "top_force": "$207B automatable wage bill (O*NET + BLS quantified)", "note": "QUANTITATIVE DEEPENING: O*NET + BLS data. Stress tests on top 3."},
+    {"cycle": "v2-5", "signals": 20, "clusters": 11, "models_constructed": 102, "tier_1_models": 5, "tier_2_models": 9, "not_recommended": 5, "top_model": "AI Bookkeeping for Bench Orphans (80)", "note": "YC-GRANULARITY DECOMPOSITION: 11 sectors -> 102 specific business models. Each scored independently with web research on actual competitors. Top 5 identified. 5 NOT recommended. NEW PATTERN: Niche segmentation > sector analysis."}
   ]
 }
