@@ -1,0 +1,549 @@
+{
+  "cycle": "v2-6",
+  "date": "2026-02-10",
+  "methodology": "Architecture-based decomposition. For each of 8 structural forces, identify which business architectures it enables. Each Force x Architecture combination produces a distinct business model. Corrects Cycle 5 Error 1 (decomposed by customer segment, not architecture), Error 2 (scored tactical accessibility, not structural durability), Error 3 (only 102 models, too thin).",
+  "total_models_constructed": 187,
+  "architecture_types": [
+    "acquire_and_modernize",
+    "full_service_replacement",
+    "platform_infrastructure",
+    "vertical_saas",
+    "marketplace_network",
+    "regulatory_moat_builder",
+    "data_compounding",
+    "physical_production_ai",
+    "rollup_consolidation",
+    "arbitrage_window"
+  ],
+
+  "models_ranked": [
+    {
+      "rank": 1,
+      "id": "C6-AM-MFG-01",
+      "name": "Acquire + Modernize: Retirement-Sale CNC Shop (CA)",
+      "architecture": "acquire_and_modernize",
+      "structural_force": "Silver Tsunami + Robotics x AI + SBA 504",
+      "economic_engine": "Acquire $300-400K EBITDA CNC shop at 3-4x ($1.2-1.6M). Deploy 3-5 cobots ($150-250K) + AI scheduling/QC ($50K). COGS drops 25-30%, throughput up 30-50%. Post-modernization EBITDA: $500-550K/yr. Physical assets, permits, customer contracts transfer. Debt service ($216K/yr) covered by pre-modernization EBITDA.",
+      "compounding_mechanism": "Each acquired shop adds: (1) customer base that cross-sells to next shop, (2) AI scheduling model improves with more production data, (3) purchasing power for materials increases, (4) integration playbook compounds — shop N+1 is faster/cheaper to modernize than shop N. Physical assets appreciate, not depreciate in this market.",
+      "convergence_prevention": "Physical assets (CNC machines, permits, facility). Customer contracts with switching costs. Proprietary AI scheduling trained on production data from YOUR shops. SBA 504 financing not available to PE funds. Institutional buyers cannot touch sub-$3M EBITDA deals. Integration expertise is tacit knowledge (T21).",
+      "capital_stack": "$1.4-2.0M equity + $1.5-2M SBA 504 (0% fees through Sept 2026) + $150-250K equipment financing. Total: $3-4.5M for first shop. SBA 504 at 5.67-5.91% fixed. Equipment financing: equipment IS the collateral.",
+      "timing_window": "SBA 504 fee waiver expires Sept 30, 2026. Silver Tsunami creating peak acquisition supply NOW. Cobot costs at 5-year low. PE distress reducing competing bidders.",
+      "scores": {
+        "economic_force_magnitude": 78,
+        "structural_compounding": 88,
+        "convergence_resistance": 92,
+        "timing_structural_fit": 95,
+        "capital_efficiency": 85,
+        "weighted_total": 86
+      },
+      "score_rationale": "Highest convergence resistance in the landscape (physical assets + permits + contracts + financing moat). Strongest timing fit (SBA 504 fee waiver, Silver Tsunami peak, cobot ROI proven). Compounding accelerates with each acquisition. Economic force moderate for single shop but multiplies with rollup. Capital efficiency excellent: $3-4.5M creates $500K+/yr structural advantage."
+    },
+    {
+      "rank": 2,
+      "id": "C6-AM-FOOD-01",
+      "name": "Acquire + Modernize: Specialty Food Producer (CA Bakery/Ethnic)",
+      "architecture": "acquire_and_modernize",
+      "structural_force": "Silver Tsunami + Robotics x AI + FSMA 204 + SBA 504 + USDA VAPG",
+      "economic_engine": "Acquire specialty food producer ($1-2M revenue, 20-35% margins, 300+ store distribution) at 3-4x EBITDA ($350-500K). Deploy cobots for packaging/portioning ($100-180K) + AI scheduling/QC ($50K). Margin uplift from 29% to 35-45%. Additional $160-200K/yr savings from 4-5 automated positions.",
+      "compounding_mechanism": "FDA/USDA certifications are non-transferable barriers. Brand loyalty compounds. Distribution relationships expand with capacity. AI recipe optimization and demand forecasting improve with data. FSMA 204 compliance creates regulatory moat. DTC channel adds recurring revenue.",
+      "convergence_prevention": "FDA PCHF + USDA certifications (take 6-18 months to obtain). FSMA 204 traceability compliance. Existing brand and distribution relationships (300+ stores). Physical facility, equipment, recipes. Specialty/ethnic food brands have cultural authenticity that cannot be replicated.",
+      "capital_stack": "$600K-800K equity + $1-1.2M SBA 504 (0% fees) + $150-250K equipment financing + up to $250K USDA VAPG (requires 1:1 match). Total: $2-3M.",
+      "timing_window": "SBA 504 fee waiver Sept 2026. USDA VAPG grant cycles. FSMA 204 enforcement creating urgency. Bakery automation technology just reached threshold (IBIE 2025). Retiring owner supply peaking.",
+      "scores": {
+        "economic_force_magnitude": 72,
+        "structural_compounding": 90,
+        "convergence_resistance": 95,
+        "timing_structural_fit": 90,
+        "capital_efficiency": 88,
+        "weighted_total": 85
+      },
+      "score_rationale": "Highest convergence resistance in the ENTIRE landscape (FDA/USDA certifications + brand + distribution + physical assets + FSMA 204 compliance). Lower economic force than CNC (smaller EBITDA) but stronger moat. Capital efficiency excellent with USDA VAPG grants. Must filter for specialty/branded only (20%+ margins)."
+    },
+    {
+      "rank": 3,
+      "id": "C6-FSR-FIN-01",
+      "name": "Full-Service AI Finance Function for SMBs",
+      "architecture": "full_service_replacement",
+      "structural_force": "Baumol Cure ($139B) + Jevons Expansion (70% unserved) + Inference Cost Collapse",
+      "economic_engine": "Replace the ENTIRE finance function for businesses with 1-50 employees: bookkeeping, tax prep, payroll tax, 1099 management, monthly financial statements, cash flow forecasting. $149-299/mo. AI does 95% at $0.05/month inference. CPA reviews and signs off. Cost advantage: 15-20x vs incumbent CPA ($200-500/hr). Jevons multiplier: 3-5x (serves the 70% of SMBs who currently have NO professional financial services).",
+      "compounding_mechanism": "Financial data flywheel: each client's data improves categorization models, industry benchmarks, tax optimization rules. Multi-year client history creates switching cost. Regulatory knowledge base for multi-state tax compliance compounds. Cross-sell: bookkeeping -> tax -> CFO advisory -> payroll.",
+      "convergence_prevention": "Data flywheel from thousands of SMB financial records. Multi-state tax compliance knowledge base. CPA relationships and licensing (where required). Intuit CANNOT do this at $149/mo without cannibalizing QuickBooks ($30-80/mo) + TurboTax ($129+) + accountant partner revenue. Full-service model requires operational maturity that pure-software competitors lack.",
+      "capital_stack": "$500K-1M to build and launch. First revenue within 3-6 months. Break-even at ~2,000 clients ($300K MRR). No physical assets or licenses required beyond CPA relationship.",
+      "timing_window": "Bench collapse (Dec 2024) proved demand and eliminated a competitor. Intuit Accountant Suite (Feb 2026) commoditizes tool layer, driving demand for full-service alternative. Inference costs now support <$0.05/client/month unit economics.",
+      "scores": {
+        "economic_force_magnitude": 95,
+        "structural_compounding": 82,
+        "convergence_resistance": 65,
+        "timing_structural_fit": 80,
+        "capital_efficiency": 90,
+        "weighted_total": 84
+      },
+      "score_rationale": "Highest economic force in the landscape: $139B automatable wage base x 15-20x cost advantage x 3-5x Jevons = $600B+ economic force. Convergence resistance moderate (no physical assets, but data flywheel + operational complexity + Intuit's self-cannibalization barrier provide structural defense). Excellent capital efficiency: $500K-1M to capture share of $139B market."
+    },
+    {
+      "rank": 4,
+      "id": "C6-RC-MFG-01",
+      "name": "Rollup + Consolidation: Multi-Shop CNC Platform (3-5 shops)",
+      "architecture": "rollup_consolidation",
+      "structural_force": "Silver Tsunami + Robotics x AI + PE Scale Gap + Capital Rotation",
+      "economic_engine": "Acquire 3-5 CNC/fabrication shops sequentially over 24-36 months. Standardize on common AI scheduling + cobot stack. Combined revenue $5-10M. Combined EBITDA $1.5-2.5M. Synergies: shared purchasing (materials -5-10%), shared sales team, capacity overflow routing between shops, standardized quoting. Total capital: $8-15M across all acquisitions.",
+      "compounding_mechanism": "Each shop adds purchasing scale, customer cross-sell, production overflow capacity, and AI training data. Network of shops creates customer convenience (multiple capabilities, locations). Standardized operations playbook becomes proprietary IP. Larger combined entity commands higher exit multiple (5-7x vs 3-4x).",
+      "convergence_prevention": "Multiple physical locations with equipment and permits. Network of customer contracts. Proprietary AI scheduling trained across multiple production environments. Scale gap: too small for PE ($100M+ EBITDA funds), too complex for individual acquirers without manufacturing AI expertise. Integration playbook is tacit knowledge.",
+      "capital_stack": "$8-15M total over 24-36 months. Mix of equity, SBA 504, equipment financing. Could structure as venture-backed acquisition fund given capital allocation rotation to hard-tech.",
+      "timing_window": "SBA 504 fee waiver for initial acquisitions (must start before Sept 2026). Silver Tsunami creating peak supply. Capital rotation toward hard-tech makes this fundable NOW. PE distress reducing competing bidders.",
+      "scores": {
+        "economic_force_magnitude": 85,
+        "structural_compounding": 92,
+        "convergence_resistance": 90,
+        "timing_structural_fit": 88,
+        "capital_efficiency": 72,
+        "weighted_total": 86
+      },
+      "score_rationale": "Tied for highest overall score. Strongest structural compounding in the landscape (each acquisition makes the platform harder to replicate). Very high convergence resistance (multiple physical assets + integration IP). Slightly lower capital efficiency (requires $8-15M total) but produces proportionally larger structural advantage."
+    },
+    {
+      "rank": 5,
+      "id": "C6-RMB-HC-01",
+      "name": "Regulatory Moat Builder: Multi-State Healthcare AI Compliance Platform",
+      "architecture": "regulatory_moat_builder",
+      "structural_force": "Regulatory Fragmentation (250+ bills) + CMS WISeR + Inference Cost Collapse",
+      "economic_engine": "Build the compliance infrastructure that every healthcare AI company needs. Track 250+ state bills, 33 enacted laws, HIPAA, CMS WISeR requirements. Map requirements to AI systems. Generate compliance documentation. Audit AI models for bias/fairness. $500-5,000/mo per customer. Target: healthcare AI companies, health systems deploying AI, insurers using AI. TAM: every entity deploying AI in healthcare ($30B+).",
+      "compounding_mechanism": "Regulatory knowledge base compounds with every new law tracked, every audit performed, every compliance framework built. Each customer's audit data improves detection models. First-mover builds the reference database that becomes the standard. Regulatory relationships with state agencies compound. When vendors need compliance certification, they use the established platform.",
+      "convergence_prevention": "Multi-state regulatory knowledge base is the product — takes years to build from scratch. Relationship with state regulators. Audit history database. Compliance framework becomes industry standard (network effect). NAIC potential vendor licensing creates official gatekeeping role. If you are the compliance platform when licensing arrives, you are the gatekeeper.",
+      "capital_stack": "$1-2M to build core platform. Revenue within 3-6 months (compliance urgency is NOW). Break-even at 200-400 customers.",
+      "timing_window": "33 laws already enacted. 250+ bills pending. NAIC vendor licensing potential 2026. CMS WISeR Jan 2026. Each new regulation INCREASES the value of the compliance platform. The regulatory wave is accelerating, not slowing.",
+      "scores": {
+        "economic_force_magnitude": 80,
+        "structural_compounding": 90,
+        "convergence_resistance": 85,
+        "timing_structural_fit": 92,
+        "capital_efficiency": 88,
+        "weighted_total": 85
+      },
+      "score_rationale": "Strongest timing fit of any non-physical model (regulatory wave is accelerating NOW). Excellent compounding (each new law increases platform value). High convergence resistance (knowledge base takes years to replicate). The regulatory fragmentation that others see as a problem IS the product."
+    },
+    {
+      "rank": 6,
+      "id": "C6-FSR-HC-01",
+      "name": "Full-Service Prior Auth + Denial Management for Independent Practices",
+      "architecture": "full_service_replacement",
+      "structural_force": "Baumol Cure ($200B+) + CMS WISeR Arms Race + Demographic Gap",
+      "economic_engine": "Replace the ENTIRE prior auth and denial management function for independent practices (1-10 providers). AI processes prior auth requests, generates appeals when denied, tracks across multiple payers, manages multi-state compliance. $1,000-3,000/mo per practice. Cost advantage: 10x vs manual appeals staff ($40-80K/yr per FTE). Revenue per practice: $12-36K/yr.",
+      "compounding_mechanism": "Payer-specific denial pattern database improves with every appeal processed. Multi-payer medical policy knowledge base compounds. Practice outcomes data creates clinical evidence for future appeals. Network of practices creates benchmarking data. Each state's regulatory requirements become encoded knowledge.",
+      "convergence_prevention": "Multi-payer medical policy database (years to build). Denial pattern ML models trained on real appeal outcomes. Multi-state compliance knowledge (5+ states with AI denial laws). EHR integrations (operational complexity moat). Enterprise competitors (Infinx $85M, Availity) focused on hospital systems, not independent practices.",
+      "capital_stack": "$1-2M to build. First revenue within 3-6 months. Target WISeR pilot states first (AZ, NJ, OH, OK, TX, WA).",
+      "timing_window": "CMS WISeR launching Jan 2026 in 6 states = immediate urgency. AMA: 61% physicians say AI increased denial rates. 5 states prohibit AI-only denials (creates compliance complexity that IS the moat).",
+      "scores": {
+        "economic_force_magnitude": 88,
+        "structural_compounding": 85,
+        "convergence_resistance": 78,
+        "timing_structural_fit": 90,
+        "capital_efficiency": 82,
+        "weighted_total": 84
+      },
+      "score_rationale": "Very strong economic force ($200B+ healthcare admin market, 10x cost advantage). Strong timing (WISeR creates immediate demand). Compounding from payer denial pattern database. Convergence resistance from multi-payer, multi-state compliance complexity."
+    },
+    {
+      "rank": 7,
+      "id": "C6-DC-FIN-01",
+      "name": "Data Compounding: AI Financial Intelligence Platform (cross-SMB benchmarking)",
+      "architecture": "data_compounding",
+      "structural_force": "Inference Cost Collapse + Coasean Shrinkage + Jevons Expansion",
+      "economic_engine": "Start with full-service bookkeeping (C6-FSR-FIN-01 as entry point). Use aggregated, anonymized financial data across thousands of SMBs to build benchmarking, forecasting, and advisory intelligence. Sell insights: 'Your food cost is 34%, industry average is 28% — here's why and what to do.' $299-999/mo premium tier. Data becomes more valuable with every client added.",
+      "compounding_mechanism": "This IS the compounding mechanism. Each client's financial data improves: (1) categorization accuracy for that industry, (2) benchmark quality for all clients in that industry, (3) forecasting models, (4) tax optimization recommendations. At 10,000 clients, the benchmarking data is the most valuable asset in SMB financial services. At 100,000 clients, it is unassailable.",
+      "convergence_prevention": "The data itself. No competitor can replicate 10,000+ SMB financial histories. Aggregated benchmarking data has increasing returns to scale. The only way to compete is to acquire a similar client base, which requires years of service delivery. Plaid has transaction data but not P&L-level intelligence. Intuit has data but cannot productize it without privacy issues with their accountant partners.",
+      "capital_stack": "Built on top of C6-FSR-FIN-01. Incremental cost to add benchmarking: $200-500K. The financial services entry point generates revenue that funds the data play.",
+      "timing_window": "Inference costs low enough to serve SMBs profitably at $149/mo. Intuit transition (Feb 2026) creates confusion/switching window. Data advantage compounds over time — starting earlier is structurally better.",
+      "scores": {
+        "economic_force_magnitude": 90,
+        "structural_compounding": 95,
+        "convergence_resistance": 80,
+        "timing_structural_fit": 70,
+        "capital_efficiency": 85,
+        "weighted_total": 86
+      },
+      "score_rationale": "Highest structural compounding score in the landscape. This is a classic winner-take-most data play. Economic force is massive ($139B automatable + Jevons). Convergence resistance builds over time (weak at year 1, unassailable at year 5). Lower timing urgency (data advantage is continuous, not deadline-driven)."
+    },
+    {
+      "rank": 8,
+      "id": "C6-AW-ACC-01",
+      "name": "Arbitrage Window: Acquire PE-Distressed Accounting Practice + AI Modernize",
+      "architecture": "arbitrage_window",
+      "structural_force": "Minsky PE Vulnerability + Baumol Cure + Dead Revival (Bench) + Refinancing Wall",
+      "economic_engine": "Acquire small CPA practices ($500K-2M revenue) being shed by distressed PE rollups or retiring solo practitioners. 147 PE accounting deals since 2020 created leveraged portfolios now facing refinancing stress. Acquire at 0.5-1.0x revenue (distressed) vs 1.5-2.5x (healthy). Deploy AI to automate 85-90% of bookkeeping/tax prep tasks. Transform from labor-intensive to AI-native cost structure. Revenue maintained, costs drop 60-70%.",
+      "compounding_mechanism": "Each acquired practice adds: (1) client book that generates recurring revenue, (2) financial data that improves AI models, (3) CPA relationships that enable compliance. Multi-practice platform creates benchmarking data. CPA license transfers create regulatory moat.",
+      "convergence_prevention": "CPA licenses (state-specific, transfer requires approval). Client relationships with high switching costs (trust in CPA). PE funds cannot modernize (debt service prevents investment). Individual CPAs cannot build AI (lack technical capability). The arbitrage is structural: PE's leverage + AI's cost compression = forced sellers + capable buyers.",
+      "capital_stack": "$500K-1.5M per practice. SBA 7(a) loans available for professional practice acquisition. First practice generates cash flow to fund subsequent acquisitions.",
+      "timing_window": "$1.2T leveraged debt maturing 2027-2029 = PE distress accelerating. 75% of CPAs nearing retirement. Interest coverage declining (4.6x from 6x). The window is NOW through 2028 as refinancing pressure forces sales.",
+      "scores": {
+        "economic_force_magnitude": 82,
+        "structural_compounding": 80,
+        "convergence_resistance": 82,
+        "timing_structural_fit": 88,
+        "capital_efficiency": 85,
+        "weighted_total": 82
+      },
+      "score_rationale": "Strong timing (PE distress + CPA retirement = depressed acquisition pricing). Good convergence resistance (CPA licenses + client relationships). The arbitrage window is structural and time-limited — once the refinancing wall passes, distressed pricing ends."
+    },
+    {
+      "rank": 9,
+      "id": "C6-PI-MFG-01",
+      "name": "Platform/Infrastructure: Manufacturing AI Deployment Stack for SMEs",
+      "architecture": "platform_infrastructure",
+      "structural_force": "Robotics x AI (98% exploring, 20% ready) + Kondratieff Deployment Phase",
+      "economic_engine": "Build the deployment infrastructure that the 78% of manufacturers who adopted but haven't scaled actually need. AI scheduling, QC vision, predictive maintenance, and cobot orchestration as an integrated platform. Not a tool (Siemens Opcenter) — a deployment stack that a 20-person shop can actually use. $1,000-5,000/mo per facility. Target: 30K+ US manufacturing SMEs.",
+      "compounding_mechanism": "Production data from each deployed facility improves scheduling algorithms, QC models, and predictive maintenance across all facilities. Cross-facility benchmarking data creates advisory capability. Integration playbook with major cobot brands (UR, FANUC, Standard Bots) creates ecosystem moat. Training curriculum becomes industry standard.",
+      "convergence_prevention": "Production data from deployed facilities (proprietary). Integration certifications with cobot manufacturers. Operational expertise in SME manufacturing (vs enterprise-focused competitors like Siemens). Network effect: more facilities = better algorithms = more facilities. Enterprise competitors (Siemens, Rockwell) cannot serve 20-person shops profitably.",
+      "capital_stack": "$2-3M to build core platform. Revenue within 6-9 months. Can also serve as the AI layer for own acquire-and-modernize plays (C6-AM-MFG-01).",
+      "timing_window": "40%+ upgrading to AI scheduling by 2026. 98%/20% gap = massive implementation demand. SBA fee waiver creates acquisition boom that drives platform demand. Cobot installation acceleration.",
+      "scores": {
+        "economic_force_magnitude": 78,
+        "structural_compounding": 85,
+        "convergence_resistance": 72,
+        "timing_structural_fit": 82,
+        "capital_efficiency": 75,
+        "weighted_total": 79
+      },
+      "score_rationale": "Strong compounding from production data flywheel. Good timing (98%/20% gap). Convergence resistance moderate (software can be replicated, but operational expertise + data + integrations compound). Strategic synergy with acquire-and-modernize plays."
+    },
+    {
+      "rank": 10,
+      "id": "C6-FSR-LATAM-01",
+      "name": "Full-Service AI Cross-Border Compliance for US-LATAM Businesses",
+      "architecture": "full_service_replacement",
+      "structural_force": "Baumol Cure + Regulatory Fragmentation + Coasean Shrinkage + Zero Competition",
+      "economic_engine": "Replace the ENTIRE cross-border tax/compliance function for US businesses with LATAM operations. Transfer pricing, FBAR, FATCA, dual-country filings, foreign tax credits, withholding requirements. $299-999/mo. AI handles compliance screening, document preparation, calculation. Bilingual CPA reviews. Platform in English + Spanish. Cost advantage: 20x vs Big 4 ($500-1,500/hr).",
+      "compounding_mechanism": "Multi-country regulatory knowledge base compounds with every filing. Client base data improves tax optimization models. Bilingual compliance expertise creates cultural trust moat. Nearshoring trend adds new customers monthly. Cross-sell: compliance -> banking -> payroll -> entity management.",
+      "convergence_prevention": "NO funded AI-first competitor found (confirmed via web search). Bilingual platform + LATAM regulatory expertise is rare combination. Big 4 serves large companies only ($500-1,500/hr). Multi-country regulatory knowledge base takes years to build. Founder-market fit (bilingual team, Argentina native) is structural advantage.",
+      "capital_stack": "$500K-1M to build. First revenue within 3-6 months. No physical assets or special licenses required.",
+      "timing_window": "Nearshoring trend accelerating. Cross-border businesses growing monthly. No competitor in the space — first mover locks in reference customers and regulatory knowledge base. Trade policy volatility increases compliance demand.",
+      "scores": {
+        "economic_force_magnitude": 70,
+        "structural_compounding": 78,
+        "convergence_resistance": 80,
+        "timing_structural_fit": 72,
+        "capital_efficiency": 92,
+        "weighted_total": 77
+      },
+      "score_rationale": "Highest capital efficiency of any service model (zero competition = immediate market share for minimal investment). Strong convergence resistance (bilingual regulatory expertise is rare). Lower economic force (150K+ businesses but niche compared to domestic markets). Strong founder-market fit."
+    },
+    {
+      "rank": 11,
+      "id": "C6-RMB-INS-01",
+      "name": "Regulatory Moat Builder: Insurance AI Compliance + Bias Auditing",
+      "architecture": "regulatory_moat_builder",
+      "structural_force": "NAIC Model Law + Regulatory Fragmentation + Insurance AI Adoption (92%)",
+      "economic_engine": "Build compliance infrastructure for the 92% of health insurers using AI who face 23-state regulatory patchwork + potential NAIC vendor licensing. Bias auditing, fairness testing, compliance documentation, multi-state reporting. $2,000-10,000/mo per insurer. If NAIC vendor licensing passes, this platform becomes the certification gate.",
+      "compounding_mechanism": "Regulatory database compounds. Audit methodology becomes industry standard. Each insurer audited adds to fairness benchmarking data. State-by-state compliance requirements encoded. If NAIC licensing passes, the established compliance platform has first-mover gatekeeper advantage.",
+      "convergence_prevention": "Multi-state regulatory expertise. Audit history database. Insurer relationship network. If NAIC licensing passes, incumbent compliance platform has structural advantage. 1/3 of insurers don't test for bias = urgent demand.",
+      "capital_stack": "$1-2M to build. Revenue within 3-6 months.",
+      "timing_window": "NAIC vendor licensing potential 2026. 23 states already adopted AI Model Bulletin. 60 insurance AI bills introduced in 2025. 1/3 not testing for bias = compliance gap NOW.",
+      "scores": {
+        "economic_force_magnitude": 72,
+        "structural_compounding": 82,
+        "convergence_resistance": 78,
+        "timing_structural_fit": 85,
+        "capital_efficiency": 82,
+        "weighted_total": 78
+      },
+      "score_rationale": "Strong timing (NAIC licensing potential, 23-state adoption). Good compounding (regulatory database). Convergence resistance from multi-state expertise + audit history. Economic force moderate (insurance AI compliance is niche within broader insurance market)."
+    },
+    {
+      "rank": 12,
+      "id": "C6-RC-FOOD-01",
+      "name": "Rollup + Consolidation: Multi-Facility Specialty Food Platform",
+      "architecture": "rollup_consolidation",
+      "structural_force": "Silver Tsunami + Robotics x AI + FSMA 204 + Capital Rotation",
+      "economic_engine": "Acquire 3-5 specialty food producers (bakeries, ethnic food, artisanal products) across CA. Standardize on common AI scheduling + cobot stack. Shared distribution, shared compliance (FSMA 204), shared purchasing. Combined revenue: $5-10M. Margin uplift from standardization: 30-45%.",
+      "compounding_mechanism": "Multiple brands serving different market segments. Shared production capacity. Shared distribution relationships (retailer prefers one vendor for multiple products). FSMA 204 compliance infrastructure shared. AI production optimization transfers across facilities.",
+      "convergence_prevention": "Multiple FDA/USDA certified facilities. Multiple established brands. Distribution relationships across 500+ stores. FSMA 204 compliance platform. Physical assets. Cultural authenticity of ethnic food brands.",
+      "capital_stack": "$5-10M across 3-5 acquisitions over 24-36 months. SBA 504 + USDA VAPG + equipment financing.",
+      "timing_window": "Same as C6-AM-FOOD-01: SBA fee waiver, FSMA 204 urgency, Silver Tsunami supply, automation technology threshold.",
+      "scores": {
+        "economic_force_magnitude": 75,
+        "structural_compounding": 88,
+        "convergence_resistance": 92,
+        "timing_structural_fit": 85,
+        "capital_efficiency": 70,
+        "weighted_total": 82
+      },
+      "score_rationale": "Second-highest convergence resistance (multiple certified facilities + brands + distribution). Very strong compounding (shared infrastructure, cross-facility learning). Lower capital efficiency (requires $5-10M) but proportionally larger moat."
+    },
+    {
+      "rank": 13,
+      "id": "C6-FSR-HC-02",
+      "name": "Full-Service Medical Records Abstraction (AI-Native Chart Review)",
+      "architecture": "full_service_replacement",
+      "structural_force": "Baumol Cure (97% automatable) + Schumpeterian Gap (+8.7% employment growth) + Demographic Gap",
+      "economic_engine": "Replace the ENTIRE medical records abstraction function for health plans and ACOs. AI ingests clinical documents, extracts structured data for HEDIS, risk adjustment (HCC coding), clinical research. Per-chart pricing: $3-8/chart. Cost advantage: 8-12x vs manual abstraction. Target: health plans, ACOs needing chart review at scale.",
+      "compounding_mechanism": "Clinical document understanding models improve with volume. Payer-specific reporting requirements encoded. Multi-payer chart abstraction creates cross-payer intelligence. Quality measure benchmarking data compounds.",
+      "convergence_prevention": "Apixio ($105M) is the primary competitor — market absorbs multiple winners given 97% automation potential. Clinical NLP models trained on millions of charts. HIPAA compliance infrastructure. Payer-specific reporting integrations. Enterprise sales relationships with health plans.",
+      "capital_stack": "$2-3M to build. Enterprise sales cycle: 6-12 months. First revenue: 9-18 months.",
+      "timing_window": "97% automation potential but employment GROWING = massive Schumpeterian gap. HEDIS season (Jan-May) creates annual urgency. CMS quality measure expansion adds reporting requirements annually.",
+      "scores": {
+        "economic_force_magnitude": 85,
+        "structural_compounding": 80,
+        "convergence_resistance": 62,
+        "timing_structural_fit": 75,
+        "capital_efficiency": 70,
+        "weighted_total": 77
+      },
+      "score_rationale": "Very high economic force (97% automatable x growing employment = textbook Schumpeterian gap). Good compounding from clinical NLP models. Lower convergence resistance due to Apixio ($105M) as established competitor. Longer sales cycle reduces capital efficiency."
+    },
+    {
+      "rank": 14,
+      "id": "C6-MN-FIN-01",
+      "name": "Marketplace/Network: AI-Matched Business Acquisition Platform",
+      "architecture": "marketplace_network",
+      "structural_force": "Silver Tsunami (2.34M businesses) + PE Distress + Coasean Shrinkage",
+      "economic_engine": "Build the marketplace that connects the 2.34M businesses needing succession with acquirers. AI scores each business on automation potential, modernization opportunity, retirement urgency, financial health. Not just listing (BizBuySell) but intelligence-layer marketplace. $299/mo buyer subscription + 2-3% success fee on closed deals. Also serves as deal flow pipeline for own acquisition plays.",
+      "compounding_mechanism": "Network effect: more businesses listed = more buyers attracted = more businesses listed. AI scoring model improves with transaction outcome data. Industry-specific automation potential assessments become proprietary. Deal flow intelligence (which businesses are ABOUT to list) creates information advantage.",
+      "convergence_prevention": "Network effects once established. Transaction outcome data trains better scoring models. BizBuySell is listing-only (no AI intelligence layer). Acquire.com targets digital-only businesses. Deal flow relationships with brokers and business owners.",
+      "capital_stack": "$1-2M to build platform. Revenue within 3-6 months from buyer subscriptions. Success fees compound as deals close.",
+      "timing_window": "Silver Tsunami at peak NOW. 1/3 of owners over 50 can't find buyers = urgent supply. Search fund/ETA community growing = buyer demand. The platform that captures this transition captures a generational wealth transfer.",
+      "scores": {
+        "economic_force_magnitude": 82,
+        "structural_compounding": 78,
+        "convergence_resistance": 65,
+        "timing_structural_fit": 85,
+        "capital_efficiency": 80,
+        "weighted_total": 78
+      },
+      "score_rationale": "Strong economic force ($10T transfer, 2.34M businesses). Good timing (Silver Tsunami peak). Moderate convergence resistance (marketplace can be replicated but network effects defend). Strong capital efficiency for a marketplace model."
+    },
+    {
+      "rank": 15,
+      "id": "C6-FSR-INS-01",
+      "name": "Full-Service AI TPA (Be the Claims Processor, Don't Sell to Them)",
+      "architecture": "full_service_replacement",
+      "structural_force": "Baumol Cure ($36B automatable) + Demographic Gap (400K attrition) + Implementation Gap (78% adopted, 4% scaled)",
+      "economic_engine": "Instead of selling AI tools to TPAs (which Avallon and others are doing), BE an AI-native TPA. Process workers' comp and P&C claims end-to-end. AI handles 80%+ of claims intake, triage, and processing. Humans handle complex/litigated claims only. Per-claim pricing 40-60% below traditional TPAs. Target: self-insured employers and small insurance carriers who need TPA services.",
+      "compounding_mechanism": "Claims data trains better triage and outcome prediction models. Carrier-specific and jurisdiction-specific rules encode as knowledge. Multi-state licensing creates regulatory moat. Loss ratio data creates underwriting intelligence that traditional TPAs don't have.",
+      "convergence_prevention": "TPA licensing (state-by-state, 6-18 months to obtain). Claims processing data from thousands of claims. Carrier relationships with multi-year contracts. The 4% scaling rate means most existing TPAs CANNOT become AI-native. Traditional TPAs face the innovator's dilemma: can't fire claims staff while maintaining service.",
+      "capital_stack": "$3-5M to build, obtain licenses, and launch. TPA licensing takes 6-18 months. First revenue: 12-18 months. Higher capital requirement but structural moat from licensing.",
+      "timing_window": "400K worker attrition by 2026 = TPAs losing staff they can't replace. 78% adopted AI but only 4% scaled = massive implementation failure. Self-insured employers face rising claims costs. Workers' comp rates increasing.",
+      "scores": {
+        "economic_force_magnitude": 80,
+        "structural_compounding": 82,
+        "convergence_resistance": 80,
+        "timing_structural_fit": 78,
+        "capital_efficiency": 62,
+        "weighted_total": 78
+      },
+      "score_rationale": "Strong economic force ($36B automatable claims labor). Very good convergence resistance (TPA licensing + claims data). Good compounding from claims processing data. Lower capital efficiency (licensing takes time and money). But the full-service model is structurally stronger than selling tools to TPAs."
+    },
+    {
+      "rank": 16,
+      "id": "C6-VS-FOOD-01",
+      "name": "Vertical SaaS: FSMA 204 Food Traceability Compliance for SMB Producers",
+      "architecture": "vertical_saas",
+      "structural_force": "FSMA 204 Enforcement 2026 + Regulatory Fragmentation + SMB Gap",
+      "economic_engine": "SaaS platform for SMB food producers to comply with FSMA 204 food traceability rule. Track lot numbers, supplier records, distribution chain through the mandated Key Data Elements. Auto-generate compliance documentation. $200-500/mo. FoodLogiQ ($50M+) serves enterprise only. SMB food producers (the 90% of food businesses) are underserved.",
+      "compounding_mechanism": "Compliance data from each producer improves the platform. Supply chain mapping data creates network intelligence. Regulatory expertise compounds as FDA enforcement patterns emerge. Cross-producer supplier data creates purchasing intelligence.",
+      "convergence_prevention": "FSMA 204 domain expertise. SMB food producer relationships. FoodLogiQ focused on enterprise. Compliance data history. Supply chain mapping data. FDA relationship and enforcement pattern knowledge.",
+      "capital_stack": "$500K-1M. Revenue within 3 months (enforcement deadline creates urgency). Break-even at 500-1,000 producers.",
+      "timing_window": "FSMA 204 enforcement starting 2026. Deadline pressure creates IMMEDIATE demand. SMB producers are NOT compliant. This is a regulatory catalyst with a specific date.",
+      "scores": {
+        "economic_force_magnitude": 60,
+        "structural_compounding": 70,
+        "convergence_resistance": 65,
+        "timing_structural_fit": 92,
+        "capital_efficiency": 88,
+        "weighted_total": 71
+      },
+      "score_rationale": "Strongest timing in the vertical SaaS category (FSMA 204 enforcement creates dated urgency). Excellent capital efficiency ($500K to capture regulated market). Lower economic force (food traceability is niche). Moderate convergence resistance (software can be replicated but regulatory expertise + data compound)."
+    },
+    {
+      "rank": 17,
+      "id": "C6-DC-HC-01",
+      "name": "Data Compounding: Clinical Denial Intelligence Platform",
+      "architecture": "data_compounding",
+      "structural_force": "CMS WISeR + Baumol Cure + Regulatory Fragmentation",
+      "economic_engine": "Start with prior auth appeal service (C6-FSR-HC-01 as entry). Use aggregated denial data across hundreds of practices to build the most comprehensive payer denial pattern database in the market. Sell intelligence: 'Aetna denies 62% of CPT 97110 for LBP in NJ — here's the appeal strategy with 78% success rate.' Denial intelligence is more valuable than the appeals themselves.",
+      "compounding_mechanism": "Every appeal processed = data point. Every denial pattern identified = intelligence. Every payer policy change tracked = early warning. This data is the definition of structural compounding — it gets exponentially more valuable with volume. At 10,000 practices, no competitor can match the denial intelligence.",
+      "convergence_prevention": "Aggregated denial outcome data from thousands of practices is proprietary. Payer-specific denial patterns by geography, specialty, procedure. Appeal success rate data. No competitor has this dataset because no competitor has processed enough appeals at scale.",
+      "capital_stack": "Built on top of C6-FSR-HC-01. Incremental cost for intelligence layer: $200-500K.",
+      "timing_window": "CMS WISeR creating denial wave. Data advantage compounds — starting now captures the WISeR-era denial patterns that will define the next decade of prior auth.",
+      "scores": {
+        "economic_force_magnitude": 82,
+        "structural_compounding": 92,
+        "convergence_resistance": 78,
+        "timing_structural_fit": 82,
+        "capital_efficiency": 85,
+        "weighted_total": 84
+      },
+      "score_rationale": "Second-highest structural compounding (behind C6-DC-FIN-01). The denial intelligence data is exponentially valuable. Built on C6-FSR-HC-01 so capital efficiency is excellent (incremental build). Strong timing (WISeR creates the data-generating event)."
+    },
+    {
+      "rank": 18,
+      "id": "C6-PI-FIN-01",
+      "name": "Platform/Infrastructure: Finance-as-a-Service API for Micro-Firms",
+      "architecture": "platform_infrastructure",
+      "structural_force": "Coasean Shrinkage + Inference Cost Collapse + Jevons Expansion",
+      "economic_engine": "Build the financial infrastructure that the new micro-firms need. API-first: any app, marketplace, or platform can embed full financial services (bookkeeping, tax, compliance, invoicing, payroll) via API. Like Stripe for finance operations. $0.50-5/transaction or $50-200/mo per embedded customer. Target: vertical platforms, marketplaces, freelancer tools that want to offer financial services without building them.",
+      "compounding_mechanism": "API integration moat (once embedded, extremely costly to switch). Transaction volume creates data advantage. Multi-vertical deployment creates benchmarking data. Regulatory compliance infrastructure shared across all embedded customers.",
+      "convergence_prevention": "API integration switching costs. Multi-vertical financial data. Regulatory compliance infrastructure (multi-state payroll, tax). Scale economics of shared infrastructure. Stripe's fintech infrastructure model proves the pattern.",
+      "capital_stack": "$2-5M to build API platform. Revenue within 6-12 months. B2B2C model = each platform partnership brings thousands of end users.",
+      "timing_window": "Coasean shrinkage creating micro-firms NOW. Vertical platforms and marketplaces growing. Embedded finance trend accelerating. Infrastructure overhang keeps compute costs falling.",
+      "scores": {
+        "economic_force_magnitude": 85,
+        "structural_compounding": 80,
+        "convergence_resistance": 68,
+        "timing_structural_fit": 72,
+        "capital_efficiency": 70,
+        "weighted_total": 77
+      },
+      "score_rationale": "High economic force (Coasean shrinkage creates massive demand for micro-firm services). Good compounding from API integration moat. Moderate convergence resistance (API platforms can be replicated, but embedded integrations create switching costs). Higher capital requirement reduces efficiency score."
+    },
+    {
+      "rank": 19,
+      "id": "C6-PA-MFG-01",
+      "name": "Physical Production + AI: Precision CNC-as-a-Service",
+      "architecture": "physical_production_ai",
+      "structural_force": "Robotics x AI + Kondratieff Deployment + Jevons Expansion",
+      "economic_engine": "Not acquiring an existing shop — building an AI-native CNC production facility from scratch. AI handles quoting (from CAD), scheduling, QC inspection. Cobots handle machine tending. Humans handle complex setup and exception handling. Pricing: 30-40% below traditional job shops due to AI+cobot cost structure. Target: hardware startups, prototyping companies, custom fabrication buyers who currently wait 2-4 weeks for quotes and 4-8 weeks for delivery.",
+      "compounding_mechanism": "Production data improves AI scheduling, quoting accuracy, and QC models. Customer relationships create recurring orders. Machine utilization optimization improves with data. Jevons: at 30-40% lower prices, custom fabrication becomes viable for projects currently using off-the-shelf parts.",
+      "convergence_prevention": "Production data from thousands of jobs. AI quoting accuracy (competitive advantage). Physical facility, machines, certifications. Customer relationships. BUT: lower convergence resistance than acquire-and-modernize because greenfield = no inherited moats.",
+      "capital_stack": "$3-5M for facility, machines, cobots, AI systems. Longer ramp to revenue (6-12 months to operational).",
+      "timing_window": "Cobot costs at historic lows. AI scheduling technology mature. Hardware startup ecosystem growing (need for custom parts). Reshoring trend increasing domestic demand.",
+      "scores": {
+        "economic_force_magnitude": 72,
+        "structural_compounding": 75,
+        "convergence_resistance": 60,
+        "timing_structural_fit": 68,
+        "capital_efficiency": 55,
+        "weighted_total": 68
+      },
+      "score_rationale": "Interesting Jevons play (lower prices expand CNC market) but lower convergence resistance than acquire-and-modernize (no inherited moats). Higher capital requirement for greenfield. Better as a future state after acquiring and learning from existing shop (C6-AM-MFG-01)."
+    },
+    {
+      "rank": 20,
+      "id": "C6-RMB-MH-01",
+      "name": "Regulatory Moat Builder: Mental Health AI Compliance Platform",
+      "architecture": "regulatory_moat_builder",
+      "structural_force": "Mental Health AI Regulation (21 bills, 7 laws, 5 states) + $150B Unmet Need",
+      "economic_engine": "Build the compliance infrastructure for every company deploying AI in mental health. Track state regulations (Utah HB 452 first, others following). Provide compliance certification, safety testing, content moderation frameworks. $500-2,000/mo per platform. As regulations proliferate, the compliance platform becomes mandatory.",
+      "compounding_mechanism": "State-by-state regulatory database compounds. Safety testing methodology becomes standard. Compliance certification becomes industry credential. First-mover establishes the norms that followers must meet.",
+      "convergence_prevention": "Regulatory expertise in nascent domain (few competitors understand mental health AI regulation). State-by-state compliance database. Safety testing history. Industry relationships with regulators. First-mover advantage in defining compliance standards.",
+      "capital_stack": "$500K-1M. Revenue within 3-6 months.",
+      "timing_window": "7 laws already passed. More coming. The regulatory wave is early but accelerating. First-mover builds the compliance standard.",
+      "scores": {
+        "economic_force_magnitude": 65,
+        "structural_compounding": 78,
+        "convergence_resistance": 72,
+        "timing_structural_fit": 80,
+        "capital_efficiency": 88,
+        "weighted_total": 73
+      },
+      "score_rationale": "Good timing (regulatory wave starting). Strong capital efficiency (small build captures growing market). Moderate economic force (mental health AI compliance is niche). Good compounding as regulations proliferate."
+    }
+  ],
+
+  "additional_models_scored": [
+    {"rank": 21, "id": "C6-VS-HC-01", "name": "Vertical SaaS: Dental Practice AI Billing", "architecture": "vertical_saas", "force": "Baumol Cure + Dental Niche Gap", "weighted_total": 72, "note": "127K dental practices, Archy targets DSOs. Solo practices gap. $299/mo."},
+    {"rank": 22, "id": "C6-VS-HC-02", "name": "Vertical SaaS: PT Billing Denial Prevention", "architecture": "vertical_saas", "force": "Baumol Cure + PT Denial Rate (15-20%)", "weighted_total": 71, "note": "40K PT practices. Highest denial rate specialty. $199-499/mo."},
+    {"rank": 23, "id": "C6-FSR-FIN-02", "name": "Full-Service AI Bookkeeping for Restaurants", "architecture": "full_service_replacement", "force": "Baumol Cure + POS Distribution", "weighted_total": 71, "note": "1M+ independent restaurants. Toast/Square marketplace distribution. $129/mo. Restaurant365 targets chains only."},
+    {"rank": 24, "id": "C6-VS-MFG-01", "name": "Vertical SaaS: AI Production Scheduling for Job Shops", "architecture": "vertical_saas", "force": "Robotics x AI + Implementation Gap", "weighted_total": 70, "note": "30K+ job shops on whiteboards. LillyWorks only direct competitor. $500-2K/mo."},
+    {"rank": 25, "id": "C6-MN-HC-01", "name": "Marketplace: AI-Matched Locum/Temp Healthcare Staff", "architecture": "marketplace_network", "force": "Demographic Gap + Coasean Shrinkage", "weighted_total": 70, "note": "Healthcare staffing shortage. AI matching reduces fill time. Take-rate model."},
+    {"rank": 26, "id": "C6-DC-INS-01", "name": "Data Compounding: Workers Comp Claims Intelligence", "architecture": "data_compounding", "force": "Insurance Demographic Gap + Claims Data", "weighted_total": 69, "note": "Claims outcome data from processing creates prediction intelligence for underwriters."},
+    {"rank": 27, "id": "C6-VS-MFG-02", "name": "Vertical SaaS: AI Quoting for Custom Manufacturers", "architecture": "vertical_saas", "force": "Robotics x AI + Inference Cost Collapse", "weighted_total": 68, "note": "Paperless Parts ($46M) is competitor. CAD-to-quote AI. $300-800/mo."},
+    {"rank": 28, "id": "C6-PI-HC-01", "name": "Platform/Infrastructure: EHR-Agnostic Prior Auth API", "architecture": "platform_infrastructure", "force": "CMS WISeR + Regulatory Fragmentation", "weighted_total": 68, "note": "API that any EHR can embed for prior auth management. B2B2C model."},
+    {"rank": 29, "id": "C6-AW-MFG-01", "name": "Arbitrage Window: Buy PE-Distressed Manufacturing at 1-2x EBITDA", "architecture": "arbitrage_window", "force": "Minsky PE Vulnerability + Refinancing Wall", "weighted_total": 68, "note": "PE-distressed manufacturing at steeper discount than retirement sales."},
+    {"rank": 30, "id": "C6-FSR-FIN-03", "name": "Full-Service AI Bookkeeping for Agencies/Consultancies", "architecture": "full_service_replacement", "force": "Baumol Cure + Project-Based Gap", "weighted_total": 68, "note": "500K+ agencies need project-based P&L. Generic tools don't work. $199/mo."},
+    {"rank": 31, "id": "C6-AM-HC-01", "name": "Acquire + Modernize: Small Medical Billing Company", "architecture": "acquire_and_modernize", "force": "Silver Tsunami + Baumol Cure + Demographic Gap", "weighted_total": 67, "note": "Acquire retiring-owner medical billing company. AI automates 85%+ of claims processing. Inherit client relationships."},
+    {"rank": 32, "id": "C6-VS-REG-01", "name": "Vertical SaaS: AI Hiring Compliance (NYC/IL/CO)", "architecture": "vertical_saas", "force": "Regulatory Fragmentation", "weighted_total": 66, "note": "Audit AI hiring tools for bias. NYC Local 144, IL HB 3773, CO AI Act."},
+    {"rank": 33, "id": "C6-VS-FOOD-02", "name": "Vertical SaaS: Craft Brewery Production Optimization", "architecture": "vertical_saas", "force": "Robotics x AI + Specialty Food", "weighted_total": 65, "note": "9,500+ craft breweries. Recipe optimization, batch consistency. $200-500/mo."},
+    {"rank": 34, "id": "C6-MN-MFG-01", "name": "Marketplace: AI-Scored Manufacturing Business Exchange", "architecture": "marketplace_network", "force": "Silver Tsunami + Implementation Gap", "weighted_total": 65, "note": "BizBuySell with AI scoring for automation potential. Subset of C6-MN-FIN-01."},
+    {"rank": 35, "id": "C6-PI-LATAM-01", "name": "Platform: LATAM Manufacturing AI Integration Service", "architecture": "platform_infrastructure", "force": "Nearshoring + Robotics x AI", "weighted_total": 64, "note": "Help LATAM factories deploy AI for nearshoring quality requirements. Bilingual advantage."},
+    {"rank": 36, "id": "C6-VS-AG-01", "name": "Vertical SaaS: AI Pest/Disease Detection for CA Specialty Crops", "architecture": "vertical_saas", "force": "Robotics x AI + Davis CA Location", "weighted_total": 63, "note": "Orchard Robotics ($22M) is direct competitor. OEM risk. Lower priority."},
+    {"rank": 37, "id": "C6-FSR-LEGAL-01", "name": "Full-Service AI Corporate Legal for LATAM Startups in US", "architecture": "full_service_replacement", "force": "Baumol Cure + LATAM Gap + Coasean Shrinkage", "weighted_total": 63, "note": "Delaware C-Corps, SAFEs, employment law for LATAM founders. Bilingual. Lawhive $60M closing service layer."},
+    {"rank": 38, "id": "C6-VS-MFG-03", "name": "Vertical SaaS: AI QC Vision for SME Manufacturers", "architecture": "vertical_saas", "force": "Robotics x AI", "weighted_total": 62, "note": "Landing AI ($164M), Instrumental ($100M+) enterprise-focused. SME gap. $1-3K/mo."},
+    {"rank": 39, "id": "C6-AW-FOOD-01", "name": "Arbitrage Window: Buy PE-Distressed Food Brand + Modernize", "architecture": "arbitrage_window", "force": "Minsky + Specialty Food", "weighted_total": 62, "note": "PE food rollups facing distress. Branded food products at depressed pricing."},
+    {"rank": 40, "id": "C6-DC-MFG-01", "name": "Data Compounding: Manufacturing Process Intelligence Platform", "architecture": "data_compounding", "force": "Robotics x AI + Production Data", "weighted_total": 61, "note": "Aggregate production data across manufacturing clients for process optimization intelligence."}
+  ],
+
+  "not_recommended": [
+    {"id": "C6-NR-01", "name": "Vertical SaaS: AI Therapist Progress Notes", "architecture": "vertical_saas", "reason": "Blueprint 50K clinicians + 5 competitors. Tool-layer commodity. Convergence resistance = 0. Score: 45."},
+    {"id": "C6-NR-02", "name": "Vertical SaaS: AI Tax for Gig Workers", "architecture": "vertical_saas", "reason": "FlyFin $15M + Keeper $42M. Well-funded direct competitors. Low ARPU ($150/yr). Score: 42."},
+    {"id": "C6-NR-03", "name": "Vertical SaaS: AI Payroll+Bookkeeping Bundle", "architecture": "vertical_saas", "reason": "Gusto $746M + Rippling $1.3B + Wave (H&R Block). Cannot compete with incumbents this large. Score: 38."},
+    {"id": "C6-NR-04", "name": "Full-Service: Consumer Mental Health App", "architecture": "full_service_replacement", "reason": "Calm, Headspace, BetterHelp, MindSync $720M. Saturated consumer market. Score: 35."},
+    {"id": "C6-NR-05", "name": "Vertical SaaS: AI Clinical Documentation for PCPs", "architecture": "vertical_saas", "reason": "Abridge $250M, Nuance DAX, DeepScribe. Market captured by well-funded players. Score: 40."},
+    {"id": "C6-NR-06", "name": "Vertical SaaS: AI Auto Claims Photo Estimation", "architecture": "vertical_saas", "reason": "Tractable $115M + CCC public ($900M+ rev). Cannot compete against this scale. Score: 38."},
+    {"id": "C6-NR-07", "name": "Vertical SaaS: AI Shopify/E-commerce Bookkeeping", "architecture": "vertical_saas", "reason": "Finaloop $35M is direct competitor with strong positioning. Convergence resistance too low. Score: 48."},
+    {"id": "C6-NR-08", "name": "Vertical SaaS: Real Estate Transaction AI", "architecture": "vertical_saas", "reason": "DISMISSED in Cycle 4. $10.5B funding, 7 unicorns. No entry point. Score: 30."},
+    {"id": "C6-NR-09", "name": "Platform: Government/Municipal AI Services", "architecture": "platform_infrastructure", "reason": "12-24mo procurement cycles. Tyler Technologies $1.8B. FedRAMP barrier. Startup runway incompatible. Score: 42."},
+    {"id": "C6-NR-10", "name": "Vertical SaaS: AI Irrigation for CA Vineyards", "architecture": "vertical_saas", "reason": "Orchard Robotics $22M expanding + OEM risk (Deere See & Spray). Seasonal revenue. Score: 44."}
+  ],
+
+  "architecture_pattern_analysis": {
+    "acquire_and_modernize": {
+      "average_score": 84,
+      "models_in_top_20": 4,
+      "key_finding": "HIGHEST average score of any architecture. Physical assets + permits + customer contracts create convergence resistance that no software architecture can match. SBA 504 fee waiver makes this the cheapest capital structure. Silver Tsunami provides supply. The structural economics are overwhelming.",
+      "why_it_wins": "An economist would recognize this immediately: you are buying real option on physical assets at depressed prices (demographic distress) and exercising the option with technology (AI + robotics). The assets appreciate, the costs compress, and the convergence barriers compound."
+    },
+    "full_service_replacement": {
+      "average_score": 79,
+      "models_in_top_20": 5,
+      "key_finding": "Second-highest architecture score. Full-service replacement captures the Christensen disruption layer that incumbents CANNOT enter without self-cannibalization. The key: you don't sell tools TO the incumbent, you REPLACE the function they perform. This is fundamentally a different business from SaaS.",
+      "why_it_wins": "Incumbents face the innovator's dilemma: they cannot offer AI-first full service without destroying their existing revenue model. Intuit cannot offer $149/mo bookkeeping. TPAs cannot fire claims staff. Law firms cannot cut billable hours. The structural barrier to incumbent response IS the moat."
+    },
+    "rollup_consolidation": {
+      "average_score": 84,
+      "models_in_top_20": 2,
+      "key_finding": "Tied for highest average score with acquire_and_modernize (it IS acquire_and_modernize at scale). The compounding mechanism is strongest in rollup: each acquisition makes the next one more valuable. Network effects apply to physical businesses when you standardize operations across them.",
+      "why_it_wins": "Compounding returns on physical asset aggregation. Each additional shop/facility adds purchasing power, customer cross-sell, and AI training data. The standardized operations playbook is proprietary IP. Exit multiple increases from 3-4x (single shop) to 5-7x (platform)."
+    },
+    "regulatory_moat_builder": {
+      "average_score": 77,
+      "models_in_top_20": 3,
+      "key_finding": "Strongest timing scores. Regulatory waves are accelerating in healthcare AI (250+ bills), insurance AI (NAIC), mental health AI (21 bills), food safety (FSMA 204). The compliance infrastructure that nobody wants to build IS the highest-moat product. Every new regulation increases the value of the compliance platform.",
+      "why_it_wins": "The structural force is the regulatory wave itself. Unlike market forces that can reverse, regulatory fragmentation almost never consolidates (new laws add, old laws rarely repeal). Each new regulation is a permanent increase in compliance burden = permanent increase in product value."
+    },
+    "data_compounding": {
+      "average_score": 80,
+      "models_in_top_20": 2,
+      "key_finding": "Highest structural compounding scores. Data flywheel businesses start weak (small dataset) but become unassailable at scale. The pattern: enter via full-service delivery (collect data), then monetize aggregated intelligence. Financial benchmarking data and clinical denial intelligence are the two strongest data plays.",
+      "why_it_wins": "Classic increasing returns to scale. At 100 clients, data is interesting. At 10,000 clients, data is proprietary intelligence no competitor can replicate. The business that collects the data first wins because the data advantage compounds geometrically."
+    },
+    "platform_infrastructure": {
+      "average_score": 74,
+      "models_in_top_20": 2,
+      "key_finding": "Moderate scores across all axes. Platform plays require more capital and longer time to moat. Manufacturing AI deployment stack and finance-as-a-service API are the strongest plays. Risk: platform commoditization is the same force that threatens existing tool-layer businesses.",
+      "why_it_wins": "Platform economics: build once, sell many. But convergence resistance is lower than physical-asset architectures. Best when combined with data compounding (platform + data) or regulatory moat (platform + compliance)."
+    },
+    "vertical_saas": {
+      "average_score": 67,
+      "models_in_top_20": 4,
+      "key_finding": "LOWEST average score of software architectures. This is the key Cycle 6 finding: vertical SaaS is the WEAKEST architecture for structural durability. It scored highest in Cycle 5 (tactical accessibility) but lowest in Cycle 6 (structural durability). Why: (1) no physical moat, (2) platform incumbents can add features, (3) convergence resistance depends on data/relationships that take time to build.",
+      "why_it_loses": "Vertical SaaS is easy to start (high tactical accessibility) but hard to defend (low structural durability). Intuit can add restaurant-specific features to QuickBooks. EHR vendors can add billing modules. The tool layer is where platform incumbents are STRONGEST."
+    },
+    "marketplace_network": {
+      "average_score": 73,
+      "models_in_top_20": 1,
+      "key_finding": "Strong once established (network effects) but requires critical mass. The business acquisition marketplace (C6-MN-FIN-01) is the strongest play because the Silver Tsunami provides structural supply. Healthcare staffing marketplace is second.",
+      "why_it_depends": "Marketplace value is binary: below critical mass = no value, above critical mass = winner-take-most. The question is whether you can reach critical mass before a well-funded competitor. Silver Tsunami provides structural demand that helps."
+    },
+    "arbitrage_window": {
+      "average_score": 71,
+      "models_in_top_20": 1,
+      "key_finding": "Time-limited by definition. PE distress creates depressed acquisition pricing NOW that will normalize when the refinancing wall passes. The arbitrage is structural but ephemeral. Best combined with acquire-and-modernize (buy distressed, deploy AI).",
+      "why_it_matters": "The $1.2T debt maturity wall (2027-2029) creates a 2-3 year window of depressed acquisition pricing. Buyers who act during this window acquire structural assets at cyclical lows."
+    },
+    "physical_production_ai": {
+      "average_score": 68,
+      "models_in_top_20": 1,
+      "key_finding": "Greenfield physical production scored lower than acquire-and-modernize because it lacks inherited moats (customer contracts, permits, workforce). Better as a future evolution after acquiring and learning from an existing operation.",
+      "why_it_scores_lower": "The acquire-and-modernize architecture captures the SAME economic force (robotics x AI cost compression) but with inherited moats. Greenfield builds the moat from scratch, which is slower and more expensive."
+    }
+  },
+
+  "cross_force_patterns": {
+    "pattern_1": "PHYSICAL ARCHITECTURES DOMINATE: Acquire-and-modernize (84 avg) and rollup (84 avg) outscore every software architecture. The structural economics are clear: physical assets + permits + customer contracts + favorable financing create convergence resistance that software cannot match. This was INVISIBLE in Cycle 5's tactical scoring.",
+    "pattern_2": "FULL-SERVICE BEATS TOOL LAYER BY 32 POINTS: Full-service replacement averages 79. Vertical SaaS averages 67. The 12-point gap is structural, not tactical. Full-service owns the customer relationship. Vertical SaaS is a feature on someone else's platform.",
+    "pattern_3": "DATA COMPOUNDING IS THE BRIDGE: The strongest software plays combine a service entry point with a data compounding mechanism. The service generates revenue AND data. The data creates the unassailable moat that the service alone cannot. C6-DC-FIN-01 and C6-DC-HC-01 both follow this pattern.",
+    "pattern_4": "REGULATORY MOATS ARE PERMANENT: Unlike market moats (can be competed away) or data moats (can be replicated given enough time), regulatory moats are STRUCTURAL. A new law is permanent. The compliance burden it creates is permanent. The first platform to encode compliance becomes the standard.",
+    "pattern_5": "TIMING MATTERS FOR PHYSICAL, COMPOUNDING MATTERS FOR DIGITAL: Physical architectures have specific timing windows (SBA fee waiver Sept 2026, Silver Tsunami peak, PE distress 2026-2028). Digital architectures have continuous compounding (data advantage grows every day). This suggests: START with physical (capture the timing window), BUILD digital in parallel (capture the compounding).",
+    "pattern_6": "JEVONS EXPANSION IS THE LARGEST FORCE BY TAM: The 70% of SMBs currently unserved by professional financial services represents a larger TAM than all incumbent revenue combined. Jevons expansion at 3-5x means the real market for AI financial services is $400-600B, not the current $139B. This dwarfs every other force by TAM."
+  }
+}

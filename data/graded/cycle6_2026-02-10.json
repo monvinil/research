@@ -1,0 +1,31 @@
+{
+  "cycle": "v2-6",
+  "date": "2026-02-10",
+  "grading_methodology": "New 5-axis scoring replacing Cycle 5's tactical axes. Each axis 0-100, weighted: Economic Force Magnitude (35%), Structural Compounding (25%), Convergence Resistance (20%), Timing Structural Fit (10%), Capital Efficiency (10%). Corrects Cycle 5 Error 2: scores STRUCTURAL DURABILITY, not tactical accessibility.",
+  "scoring_axes": {
+    "economic_force_magnitude": {
+      "weight": 0.35,
+      "description": "TAM x cost advantage ratio x Jevons expansion potential. A $200B market with 15x cost advantage is more powerful than a $1B market with 3x advantage."
+    },
+    "structural_compounding": {
+      "weight": 0.25,
+      "description": "Does this business get HARDER to compete with over time? Data flywheel, network effects, physical asset accumulation, regulatory knowledge base, customer lock-in."
+    },
+    "convergence_resistance": {
+      "weight": 0.20,
+      "description": "What prevents competitors from replicating this in 3 years? Physical assets, licenses, data, regulations, relationships, brand trust. Low competition today is NOT convergence resistance."
+    },
+    "timing_structural_fit": {
+      "weight": 0.10,
+      "description": "Is there a structural reason why NOW? Specific regulation deadline, demographic cliff, technology threshold just crossed, asset prices depressed, financing window open."
+    },
+    "capital_efficiency": {
+      "weight": 0.10,
+      "description": "Ratio of structural advantage gained per dollar invested. A $2M acquisition creating $500K/yr structural advantage vs a $5M SaaS build creating the same."
+    }
+  },
+  "total_signals_graded": 32,
+  "signals_above_threshold": 32,
+  "all_forwarded_to_agent_b": true,
+  "note": "All 32 signals scored 4+ and forwarded. Signals are graded at the FORCE level, not the model level. Model-level scoring happens after Agent B construction."
+}

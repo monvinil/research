@@ -1,7 +1,7 @@
 {
-  "state_version": 6,
-  "current_cycle": 5,
-  "engine_mode": "business_model_decomposition",
+  "state_version": 7,
+  "current_cycle": 6,
+  "engine_mode": "architecture_based_decomposition",
   "engine_version": "v2.0 -- construct-first, landscape mapping",
 
   "active_research_focus": {
@@ -32,7 +32,10 @@
       "embedded_ai_platform_commoditization",
       "mental_health_ai_regulatory_moat",
       "dead_business_revival_bench_accounting",
-      "yc_granularity_decomposition"
+      "yc_granularity_decomposition",
+      "architecture_based_structural_scoring",
+      "physical_vs_digital_architecture_dominance",
+      "data_compounding_as_bridge_to_unassailability"
     ],
     "geographies": ["US", "LATAM", "Japan (leading indicator)", "EU (comparative)"],
     "themes": [
@@ -66,7 +69,12 @@
       "bench_dead_business_revival",
       "mental_health_ai_sub_clinical_opportunity",
       "baumol_wage_automation_cross_reference_matrix",
-      "yc_level_business_model_decomposition"
+      "yc_level_business_model_decomposition",
+      "architecture_based_decomposition",
+      "convergence_resistance_scoring",
+      "structural_compounding_analysis",
+      "physical_architecture_dominance",
+      "data_compounding_flywheel_design"
     ]
   },
 
@@ -78,833 +86,62 @@
     "markets": "US + LATAM lowest friction, any geography viable on economics"
   },
 
-  "grading_weights": {
+  "scoring_system": {
     "current": {
-      "competitive_density": 1.0,
-      "unit_economics_clarity": 1.0,
-      "distribution_specificity": 1.0,
-      "moat_durability": 1.0,
-      "customer_findability": 1.0
+      "name": "5-Axis Structural Durability Scoring (Cycle 6+)",
+      "axes": {
+        "economic_force_magnitude": {"weight": 0.35, "description": "TAM x cost advantage ratio x Jevons expansion potential"},
+        "structural_compounding": {"weight": 0.25, "description": "Does business get HARDER to compete with over time?"},
+        "convergence_resistance": {"weight": 0.20, "description": "What prevents competitors from replicating in 3 years?"},
+        "timing_structural_fit": {"weight": 0.10, "description": "Structural reason why NOW?"},
+        "capital_efficiency": {"weight": 0.10, "description": "Structural advantage gained per dollar invested"}
+      }
     },
     "history": [
-      {"cycle": 0, "weights": "all 1.0", "reason": "v2 reset -- balanced weights, no penalty premiums"},
-      {"cycle": 1, "weights": "all 1.0", "reason": "First v2 cycle -- maintained balanced weights"},
-      {"cycle": 2, "weights": "all 1.0", "reason": "Expanded scope cycle -- maintained balanced weights."},
-      {"cycle": 3, "weights": "all 1.0", "reason": "Deepening & correction cycle. Balanced weights maintained."},
-      {"cycle": 4, "weights": "all 1.0", "reason": "Quantitative deepening cycle. O*NET + BLS real data. Balanced weights maintained."},
-      {"cycle": 5, "weights": "all 1.0", "reason": "YC-granularity decomposition cycle. New scoring axes: competitive density, unit economics clarity, distribution specificity, moat durability, customer findability."}
+      {"cycle": "0-4", "weights": "balanced 1.0 across: competitive_density, unit_economics_clarity, distribution_specificity, moat_durability, customer_findability", "reason": "v2 cycles 0-4 used balanced weights on sector-level scoring."},
+      {"cycle": 5, "weights": "balanced 1.0 across: competitive_density, unit_economics_clarity, distribution_specificity, moat_durability, customer_findability", "reason": "YC-granularity decomposition. Customer-segment-based scoring. PROBLEM: scored tactical accessibility, not structural durability."},
+      {"cycle": 6, "weights": "weighted: economic_force (35%), structural_compounding (25%), convergence_resistance (20%), timing_structural_fit (10%), capital_efficiency (10%)", "reason": "Architecture-based decomposition. CORRECTS Cycle 5: scores STRUCTURAL DURABILITY. Physical architectures dominate because convergence resistance from physical assets >> software."}
     ]
   },
 
-  "decomposed_models": {
-    "cycle": "v2-5",
-    "methodology": "Each Tier 1 sector decomposed into 8-15 specific business models. Each Tier 2 sector decomposed into 5-8 specific models. Each model scored independently on 5 axes (0-100): competitive_density (inverted -- lower competition = higher score), unit_economics_clarity, distribution_specificity, moat_durability, customer_findability. Overall = weighted average. Web search used to identify ACTUAL competitors for each specific model.",
-    "total_models_decomposed": 102,
+  "architecture_types": {
+    "acquire_and_modernize": {"avg_score": 84, "description": "Buy existing business at demographic-distress pricing, deploy AI+robotics. Highest convergence resistance."},
+    "full_service_replacement": {"avg_score": 79, "description": "Replace entire function (not just sell a tool). Christensen disruptive layer."},
+    "rollup_consolidation": {"avg_score": 84, "description": "Acquire-and-modernize at scale. Strongest compounding mechanism."},
+    "data_compounding": {"avg_score": 80, "description": "Service entry + data flywheel. Weak at year 1, unassailable at year 5."},
+    "regulatory_moat_builder": {"avg_score": 77, "description": "Build compliance infrastructure. Every new regulation increases value."},
+    "platform_infrastructure": {"avg_score": 74, "description": "Build once, sell many. Moderate convergence resistance."},
+    "marketplace_network": {"avg_score": 73, "description": "Network effects once at critical mass. Binary value."},
+    "arbitrage_window": {"avg_score": 71, "description": "Time-limited structural mispricing. Act during PE distress window."},
+    "physical_production_ai": {"avg_score": 68, "description": "Greenfield AI-native production. Lower than acquire-and-modernize (no inherited moats)."},
+    "vertical_saas": {"avg_score": 67, "description": "LOWEST score. Easy to start but hard to defend. Platform incumbents can add features."}
+  },
 
-    "ranked_shortlist": [
-      {
-        "rank": 1,
-        "id": "D5-ACC-01",
-        "name": "AI Bookkeeping for Orphaned Bench Customers",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "Full-service AI bookkeeping targeting the 35K businesses stranded when Bench collapsed in Dec 2024 -- auto-categorizes transactions, produces monthly financials, handles tax prep, $149/mo, wedge is Bench's orphaned customer list acquired via scraping/outreach to Bench-related communities.",
-        "target_customer": "Small businesses (1-20 employees) that were paying Bench $249-399/mo for bookkeeping before Dec 2024 shutdown. E-commerce sellers, freelancers, agencies, service businesses.",
-        "problem": "35K businesses lost their bookkeeper overnight. Many scrambled to Pilot, Zeni, or DIY. Many are still underserved or overpaying. They already PROVED willingness to pay for outsourced bookkeeping.",
-        "delivery_model": "AI-first full-service: AI handles 95% of categorization, reconciliation, monthly close. Human CPA reviews and signs off. No offshore labor (Bench's failure mode).",
-        "entry_wedge": "Targeted outreach to Bench customer communities (Reddit r/smallbusiness, Twitter/X threads, Bench FB groups). Employer.com acquired Bench but reviews indicate degraded service quality. Offer free migration + first month free.",
-        "first_10_customers": "Search Reddit/Twitter for 'Bench alternative' posts. DM businesses who posted about losing Bench. Target Shopify seller communities where Bench was popular. Offer white-glove migration from Bench/QBO exports.",
-        "competitors": [
-          {"name": "Pilot", "funding": "$172M", "price": "$800+/mo", "note": "Premium positioning, targets VC-backed startups. 3-4x more expensive."},
-          {"name": "Zeni", "funding": "$47M", "price": "$549+/mo", "note": "AI+human hybrid. Still expensive for SMBs."},
-          {"name": "Bench (revived by Employer.com)", "funding": "Acquired", "price": "$249+/mo", "note": "Degraded quality post-acquisition. Trust damaged."},
-          {"name": "Kick", "funding": "$3M", "price": "$79-159/mo", "note": "AI-first, closest direct competitor. Small team."},
-          {"name": "Otterz", "funding": "$5M", "price": "$99-299/mo", "note": "AI accountant 'Nyra'. E-commerce focused."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$149/mo = $1,788/yr",
-          "cost_to_serve": "AI inference ~$0.05/mo + CPA review ~$10/customer/mo + support ~$5/mo = ~$15/mo",
-          "gross_margin": "~90%",
-          "cac_estimate": "$100-300 (orphaned customers have high intent, low switching friction)",
-          "ltv_cac_ratio": "15-20x (assuming 24mo retention)"
-        },
-        "scores": {
-          "competitive_density": 72,
-          "unit_economics_clarity": 92,
-          "distribution_specificity": 88,
-          "moat_durability": 55,
-          "customer_findability": 95,
-          "overall": 80
-        },
-        "score_rationale": "Highest customer findability of any model -- 35K known customers with proven willingness to pay. Unit economics are exceptional (90% gross margin). Distribution is specific (target Bench communities). Moat is moderate -- need to build data flywheel and CPA relationship before Kick/Otterz catch up. Competitive density moderate -- 5+ funded competitors but none targeting Bench orphans specifically."
-      },
-      {
-        "rank": 2,
-        "id": "D5-ACC-02",
-        "name": "AI Bookkeeping for Shopify/E-commerce Sellers",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "AI bookkeeping that natively connects to Shopify, Amazon, Stripe, and Etsy -- auto-reconciles payouts to bank deposits, categorizes COGS/shipping/fees, handles multi-state sales tax, $99/mo, replaces the manual spreadsheet hell e-commerce sellers live in.",
-        "target_customer": "Shopify/Amazon/Etsy sellers doing $100K-$5M annual revenue. 2M+ Shopify merchants in US alone. Most use spreadsheets or basic QBO with manual categorization.",
-        "problem": "E-commerce accounting is uniquely painful: multiple channels, different payout schedules, marketplace fees, COGS tracking across SKUs, multi-state nexus sales tax. Generic bookkeeping tools don't handle this well.",
-        "delivery_model": "SaaS + AI service: deep integrations with Shopify/Amazon/Stripe APIs. AI categorizes every transaction by channel. Monthly financial packages auto-generated. Human CPA for tax filing add-on.",
-        "entry_wedge": "Shopify App Store listing. Target sellers in r/shopify, e-commerce Facebook groups. Offer free trial with instant Shopify connect.",
-        "first_10_customers": "Post in Shopify seller communities offering free beta. Target Shopify stores with 'tax help' or 'bookkeeping' in support tickets. Partner with Shopify ecosystem consultants.",
-        "competitors": [
-          {"name": "Finaloop", "funding": "$35M", "price": "$149-295/mo", "note": "E-commerce focused AI bookkeeping. DIRECT competitor. Well-funded."},
-          {"name": "A2X", "funding": "Bootstrapped", "price": "$19-79/mo", "note": "E-commerce accounting connector (tool layer, not full-service)."},
-          {"name": "Webgility", "funding": "$20M", "price": "$79-249/mo", "note": "E-commerce accounting automation. Older player."},
-          {"name": "Link My Books", "funding": "Bootstrapped", "price": "$17-65/mo", "note": "UK-based e-commerce bookkeeping automation."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$99/mo = $1,188/yr",
-          "cost_to_serve": "AI inference ~$0.05/mo + integrations/infra ~$8/mo + support ~$5/mo = ~$13/mo",
-          "gross_margin": "~87%",
-          "cac_estimate": "$150-400 (Shopify App Store provides organic distribution)",
-          "ltv_cac_ratio": "8-12x"
-        },
-        "scores": {
-          "competitive_density": 52,
-          "unit_economics_clarity": 85,
-          "distribution_specificity": 82,
-          "moat_durability": 58,
-          "customer_findability": 90,
-          "overall": 73
-        },
-        "score_rationale": "Customers are highly findable (Shopify App Store, seller communities). Unit economics strong but lower ARPU than D5-ACC-01. COMPETITIVE DENSITY IS THE RISK: Finaloop ($35M raised) is a direct competitor doing exactly this. Webgility and A2X also established. Moat is moderate -- deep integrations create switching costs but not defensible long-term."
-      },
-      {
-        "rank": 3,
-        "id": "D5-MFG-01",
-        "name": "Acquire-and-Modernize: CA Retirement-Sale CNC Shop",
-        "sector": "Robotics x AI Manufacturing",
-        "one_liner": "Acquire a retiring-owner CNC machine shop in CA ($1-3M revenue, $300-400K EBITDA) at 3-4x EBITDA using SBA 504 financing, then modernize with 3-5 cobots ($150-250K total) to cut COGS 25-30% and increase throughput 30-50%. SBA 504 fee waiver active through Sept 2026.",
-        "target_customer": "NOT a customer play -- this is an acquisition play. Target: retiring CNC shop owners in CA, 60+ years old, no succession plan, $1-3M revenue.",
-        "problem": "2.34M boomer-owned businesses with no succession plan. CNC shops specifically: owner-operators retiring, can't find buyers, employees can't afford acquisition. Meanwhile shops are under-automated and losing competitiveness.",
-        "delivery_model": "Acquire physical business. Retain key employees. Install cobots for machine tending, deburring, packaging. Deploy AI for scheduling, quoting, QC inspection. Run at higher throughput with lower labor cost.",
-        "entry_wedge": "BizBuySell screening for CA CNC/fabrication shops with retiring owners. Broker relationships in CA Central Valley and Bay Area. SBA 504 + equipment financing capital stack.",
-        "first_10_customers": "Inherited -- existing customer contracts transfer with acquisition. Typical CNC shop has 15-50 recurring customers. Growth via improved turnaround times and capacity.",
-        "competitors": [
-          {"name": "General Catalyst (Creation Strategy)", "funding": "$750M allocated", "note": "Targeting larger rollups ($100M+ EBITDA). Different scale entirely."},
-          {"name": "Local PE/search funds", "funding": "Varies", "note": "Competing for same acquisition targets but without automation thesis."},
-          {"name": "Standard Bots", "funding": "$63M", "note": "Cobot provider, not acquirer. Potential partner."},
-          {"name": "Fictiv", "funding": "$192M", "note": "Digital manufacturing marketplace. Different model (marketplace vs owner-operator)."}
-        ],
-        "unit_economics": {
-          "acquisition_cost": "$1.2-1.6M (3-4x EBITDA on $350K)",
-          "modernization_cost": "$200-400K (cobots + AI + installation)",
-          "total_capital_needed": "$1.4-2.0M equity + $1.5-2M debt (SBA 504)",
-          "pre_modernization_ebitda": "$350K/yr ($29K/mo)",
-          "post_modernization_ebitda": "$500-550K/yr (25-30% COGS reduction + throughput increase)",
-          "debt_service": "$216K/yr ($18K/mo)",
-          "free_cash_flow_post_debt": "$280-330K/yr",
-          "cobot_roi": "8-14 months per station"
-        },
-        "scores": {
-          "competitive_density": 82,
-          "unit_economics_clarity": 88,
-          "distribution_specificity": 75,
-          "moat_durability": 85,
-          "customer_findability": 72,
-          "overall": 80
-        },
-        "score_rationale": "Very low competitive density at this scale -- PE funds and General Catalyst target much larger deals. Unit economics are strong and modeled with real data (BizBuySell listings, SBA 504 rates, cobot pricing). Moat is strong (physical assets, permits, customer contracts, equipment). Distribution is clear but requires active deal-sourcing. Customer findability moderate -- need to screen BizBuySell and build broker network."
-      },
-      {
-        "rank": 4,
-        "id": "D5-HC-01",
-        "name": "AI Prior Auth Appeal Engine for Independent Practices",
-        "sector": "Healthcare Admin AI",
-        "one_liner": "AI tool that auto-generates prior authorization appeals for independent physician practices when payers deny claims -- pulls clinical data from EHR, matches against payer medical policies, drafts appeal letters with supporting evidence, $5-15 per appeal, wedge is the provider-side arms race triggered by CMS WISeR.",
-        "target_customer": "Independent physician practices (1-10 providers) losing $50-100K/yr to denied prior authorizations. 600K+ independent practices in US. Focus on specialties with highest denial rates: orthopedics, pain management, oncology, cardiology.",
-        "problem": "Payers are using AI (CMS WISeR model) to accelerate denials. AMA: 61% of physicians say AI has INCREASED denial rates. Manual appeals take 45-60 min each, staff cost $25-40/hr. Practices are losing the arms race.",
-        "delivery_model": "SaaS with per-appeal pricing. Connects to top 10-20 EHRs (covers 80% of independent practices). AI analyzes denial reason, pulls relevant clinical documentation, matches against payer-specific medical policies, generates appeal letter with citations. Human review optional.",
-        "entry_wedge": "Target practices in WISeR pilot states (Arizona, New Jersey, Ohio, Oklahoma, Texas, Washington) where AI-driven denials are increasing. Partner with medical societies (AMA, state medical associations).",
-        "first_10_customers": "Contact orthopedic and pain management practices in WISeR states. Offer free pilot: 'We'll handle your next 50 denied prior auths for free. If we recover more than your current staff, you pay per appeal going forward.'",
-        "competitors": [
-          {"name": "Infinx", "funding": "$85M", "price": "Per-transaction", "note": "Prior auth automation. Enterprise-focused (hospitals, health systems)."},
-          {"name": "Availity/Intelligentum", "funding": "Part of Availity ($1B+ revenue)", "note": "Large payer-provider network. Prior auth module."},
-          {"name": "Olive AI (pivoted)", "funding": "$852M raised, laid off 50%", "note": "Was in prior auth. Struggled. Validates difficulty."},
-          {"name": "Valer", "funding": "$7M", "note": "AI-powered prior auth for specialty practices. DIRECT competitor but small."},
-          {"name": "Thoughtful AI", "funding": "$20M", "note": "RPA + AI for healthcare admin. Broader than prior auth."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "100-300 appeals/mo x $10/appeal = $1,000-3,000/mo per practice",
-          "cost_to_serve": "AI inference + EHR integration overhead ~$100-200/mo per practice",
-          "gross_margin": "~85-90%",
-          "cac_estimate": "$1,000-3,000 (medical society partnerships reduce CAC)",
-          "ltv_cac_ratio": "8-15x"
-        },
-        "scores": {
-          "competitive_density": 68,
-          "unit_economics_clarity": 78,
-          "distribution_specificity": 75,
-          "moat_durability": 72,
-          "customer_findability": 82,
-          "overall": 75
-        },
-        "score_rationale": "Strong timing play -- WISeR launching Jan 2026 creates urgency for provider-side tools. Enterprise competitors (Infinx, Availity) don't serve independent practices well. Olive AI's $852M failure validates the difficulty but also the market. Moat from multi-payer medical policy database + EHR integrations. Customer findability good -- practices in WISeR states are identifiable."
-      },
-      {
-        "rank": 5,
-        "id": "D5-ACC-03",
-        "name": "AI Full-Service Bookkeeping for Restaurants & Food Trucks",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "AI bookkeeping built specifically for restaurants -- connects to POS (Toast, Square, Clover), handles tip tracking, food cost analysis, multi-location roll-up, payroll integration, and restaurant-specific chart of accounts. $129/mo per location. Wedge is Toast/Square POS integration.",
-        "target_customer": "Independent restaurants and food trucks. 1M+ restaurants in US, 90%+ are independent. Most use generic QBO with manual workarounds for tips, food costs, and COGs.",
-        "problem": "Restaurant bookkeeping has unique complexity: tip reporting, food cost percentages, inventory waste, high-volume daily transactions, seasonal fluctuation, multi-shift payroll. Generic bookkeeping tools miss these. Restaurant365 targets chains; independents are underserved.",
-        "delivery_model": "SaaS integrated with POS systems. AI auto-categorizes every transaction by restaurant-specific categories (food cost, beverage, labor, occupancy, etc.). Weekly food cost reports. Monthly P&L in restaurant format (not generic GAAP).",
-        "entry_wedge": "Toast App Marketplace and Square App Marketplace. Target independent restaurant owners in Toast/Square communities. Partner with restaurant consultants.",
-        "first_10_customers": "List in Toast and Square app marketplaces. Post in restaurant owner Facebook groups. Target food trucks at Davis CA and Sacramento farmers markets (local access).",
-        "competitors": [
-          {"name": "Restaurant365", "funding": "$255M", "price": "$400+/mo", "note": "Market leader but targets multi-unit chains. Overkill for single-location independents."},
-          {"name": "MarginEdge", "funding": "$45M", "price": "$300+/mo", "note": "Invoice processing for restaurants. Not full-service bookkeeping."},
-          {"name": "Plate IQ (now xtraCHEF by Toast)", "price": "Part of Toast bundle", "note": "AP automation only. Acquired by Toast."},
-          {"name": "Wave (free)", "price": "Free", "note": "Generic. No restaurant-specific features."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$129/mo = $1,548/yr",
-          "cost_to_serve": "~$15/mo (AI + POS integration + support)",
-          "gross_margin": "~88%",
-          "cac_estimate": "$200-500 (marketplace distribution reduces CAC)",
-          "ltv_cac_ratio": "8-12x (restaurant churn is higher than average SMB)"
-        },
-        "scores": {
-          "competitive_density": 65,
-          "unit_economics_clarity": 82,
-          "distribution_specificity": 80,
-          "moat_durability": 62,
-          "customer_findability": 85,
-          "overall": 75
-        },
-        "score_rationale": "Large addressable market (1M+ restaurants) with clear pain point. Restaurant365 is dominant but targets chains -- independents underserved. POS marketplace provides specific distribution channel. Moat risk: Toast could expand xtraCHEF to full-service. Food truck angle gives Davis CA local advantage."
-      },
-      {
-        "rank": 6,
-        "id": "D5-HC-02",
-        "name": "AI Medical Billing for Solo/Small Dental Practices",
-        "sector": "Healthcare Admin AI",
-        "one_liner": "AI billing and insurance verification for independent dental practices (1-3 dentists) -- auto-verifies insurance eligibility, submits claims, follows up on denials, tracks patient balances. $299/mo per practice. Wedge is the 127K US dental practices that are mostly independent and using outdated billing workflows.",
-        "target_customer": "Solo and small dental practices (1-3 dentists). 127K dental practices in US, majority independent. Dental billing is simpler than medical billing (fewer codes, less prior auth) making it a better AI-first target.",
-        "problem": "Dental practices spend 1-2 FTE on billing and insurance verification ($40-80K/yr). Denial rates are rising. Most use Dentrix or Eaglesoft with manual claim submission. Archy ($20M Series B) is going after this but targets DSOs first.",
-        "delivery_model": "SaaS that integrates with Dentrix, Eaglesoft, Open Dental. AI auto-submits claims, verifies patient eligibility before appointments, follows up on unpaid claims, generates patient statements.",
-        "entry_wedge": "Target dental practices posting about billing frustrations. Partner with dental supply distributors (Henry Schein, Patterson). Attend state dental association meetings.",
-        "first_10_customers": "Cold outreach to dental practices in CA with 1-3 providers. Offer free 30-day pilot with guaranteed claim submission improvement. Target practices currently using manual billing (no clearinghouse).",
-        "competitors": [
-          {"name": "Archy", "funding": "$20M Series B", "price": "$500+/mo", "note": "AI dental practice management. Targets DSOs. Growing 300% YoY."},
-          {"name": "Wisdom Dental Billing", "funding": "Bootstrapped", "price": "% of collections", "note": "Full-service dental billing company. Human-powered."},
-          {"name": "Overjet", "funding": "$53M", "price": "Clinical AI (not billing)", "note": "FDA-cleared diagnostic AI. Different product but adjacent."},
-          {"name": "VideaAI", "funding": "$15M", "price": "Per-provider", "note": "AI dental assistant for DSOs. Not billing focused."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$299/mo = $3,588/yr",
-          "cost_to_serve": "~$30/mo (AI + clearinghouse fees + support)",
-          "gross_margin": "~90%",
-          "cac_estimate": "$500-1,500 (dental practices are reachable via supply chain and associations)",
-          "ltv_cac_ratio": "6-10x"
-        },
-        "scores": {
-          "competitive_density": 65,
-          "unit_economics_clarity": 80,
-          "distribution_specificity": 72,
-          "moat_durability": 60,
-          "customer_findability": 85,
-          "overall": 72
-        },
-        "score_rationale": "Dental is simpler than medical billing = better AI-first target. Large market (127K practices) with identifiable customers. Archy is growing fast but targeting DSOs, not solo practices. Moat risk: Archy or Dentrix could add AI billing. Distribution via dental associations is specific."
-      },
-      {
-        "rank": 7,
-        "id": "D5-INS-01",
-        "name": "AI Workers' Comp Claims for Regional TPAs",
-        "sector": "Insurance Claims AI",
-        "one_liner": "AI claims intake and triage for workers' compensation TPAs -- auto-processes First Reports of Injury (FROI), triages by severity and jurisdiction, predicts litigation risk, generates reserve recommendations. $5-12 per claim. Wedge is the 400K worker attrition by 2026 + 80% of WC claims potentially automatable.",
-        "target_customer": "Regional workers' comp TPAs (50-500 employees, handling 5K-50K claims/yr). 1,200+ TPAs in US. Workers' comp is simpler than general P&C claims, making it a better AI entry point.",
-        "problem": "WC TPAs face staff attrition (400K workers leaving by 2026), rising claim volumes, and increasing complexity of multi-state compliance. FROI intake is heavily manual. Deloitte: 80% of WC claims could be fully automated.",
-        "delivery_model": "SaaS that integrates with TPA claims management systems. AI processes FROI documents (NLP/OCR), auto-triages, predicts outcomes, drafts reserve recommendations. Human adjuster reviews complex cases only.",
-        "entry_wedge": "Target mid-size CA-based TPAs (Athens Administrators already using Avallon -- validates market). Workers' comp is state-regulated so start with CA, TX, FL (largest markets).",
-        "first_10_customers": "Contact TPAs via SIIA (Self-Insurance Institute of America) membership list. Attend WC industry conferences. Offer free pilot on 500 claims.",
-        "competitors": [
-          {"name": "Avallon (YC S25)", "funding": "$4.6M seed", "price": "Per-claim", "note": "DIRECT competitor. YC-backed. Revenue grew 10x during YC. Already has CA TPA customers."},
-          {"name": "Elysian", "funding": "$6M seed", "price": "Per-claim", "note": "AI-native TPA for commercial. Workers' comp may not be core focus."},
-          {"name": "CLARA Analytics", "funding": "$20M", "note": "AI for WC claims analytics. Predictive, not processing."},
-          {"name": "Gradient AI", "funding": "$56M", "note": "WC underwriting and claims. Enterprise focused."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "10K-50K claims/yr x $8/claim = $80K-400K/yr per TPA",
-          "cost_to_serve": "AI inference + compliance + support ~$10K-40K/yr per TPA",
-          "gross_margin": "~85-90%",
-          "cac_estimate": "$5,000-20,000 (relationship sales to TPAs)",
-          "ltv_cac_ratio": "5-10x"
-        },
-        "scores": {
-          "competitive_density": 58,
-          "unit_economics_clarity": 75,
-          "distribution_specificity": 70,
-          "moat_durability": 65,
-          "customer_findability": 72,
-          "overall": 68
-        },
-        "score_rationale": "Avallon (YC S25) is a DIRECT competitor already in market with CA TPA customers. However the market is large (1,200+ TPAs) and Avallon is tiny. WC is simpler than general P&C = better AI entry. Multi-state compliance creates moat. Customer findability good via SIIA."
-      },
-      {
-        "rank": 8,
-        "id": "D5-MFG-02",
-        "name": "Manufacturing AI Integration Service for CA SMEs",
-        "sector": "Robotics x AI Manufacturing",
-        "one_liner": "Consulting + implementation service that helps 20-150 person CA manufacturers deploy cobots and AI (scheduling, QC, predictive maintenance) -- $50-150K per engagement, 3-6 month deployments. Wedge is the gap between 98% exploring AI and 20% prepared to deploy.",
-        "target_customer": "CA manufacturing SMEs ($2-20M revenue) that want to automate but lack in-house expertise. 30K+ CA manufacturers. Focus on CNC, plastics, sheet metal, small assembly.",
-        "problem": "1/3 of manufacturing executives cite skills gap as #1 concern. Cobots are cheap ($30-55K) but integration requires programming, workflow redesign, and operator training that most SMEs can't do in-house.",
-        "delivery_model": "Professional services: assessment ($5-10K) -> design ($15-30K) -> implementation ($30-80K) -> support ($2-5K/mo). Revenue from consulting fees, not cobot sales.",
-        "entry_wedge": "Partner with Standard Bots, UR, and FANUC distributors in CA. Target ManTec (CA MEP center) referrals. Attend SME manufacturing events.",
-        "first_10_customers": "Contact CA machine shops and fabricators from industry associations (AME, SME). Offer free assessment for first 3 shops. Use BizBuySell-listed shops as leads (they're actively thinking about business value).",
-        "competitors": [
-          {"name": "Tenupsoft", "funding": "Bootstrapped", "note": "AI automation consulting for SMBs. Generalist, not manufacturing-specific."},
-          {"name": "UR (Universal Robots) integrator network", "funding": "N/A", "note": "UR has certified integrators but most are hardware-focused, not AI."},
-          {"name": "Amiko Consulting", "funding": "Bootstrapped", "note": "Manufacturing AI consulting. European focus."},
-          {"name": "MEP Centers (CA ManTec)", "funding": "Government funded", "note": "Free/subsidized assessments. Not competition -- potential referral partners."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$75K average engagement + $3K/mo support = $111K first year",
-          "cost_to_serve": "1-2 engineers for 3-6 months ~$50-70K per engagement",
-          "gross_margin": "~40-55%",
-          "cac_estimate": "$3,000-8,000 (referral-based)",
-          "ltv_cac_ratio": "5-8x (repeat engagements common)"
-        },
-        "scores": {
-          "competitive_density": 80,
-          "unit_economics_clarity": 72,
-          "distribution_specificity": 70,
-          "moat_durability": 50,
-          "customer_findability": 75,
-          "overall": 69
-        },
-        "score_rationale": "Very low competition -- no well-funded AI-specific manufacturing integrator for SMEs. But services business has lower margins and harder to scale than SaaS. Moat is limited (expertise can be replicated). Distribution via MEP centers and cobot distributors is viable. Can be a bridge to D5-MFG-01 (use integration experience to identify acquisition targets)."
-      },
-      {
-        "rank": 9,
-        "id": "D5-ACC-04",
-        "name": "AI Tax Filing for 1099 Freelancers / Gig Workers",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "Year-round AI tax assistant for gig workers (Uber, DoorDash, Etsy sellers, freelancers) -- auto-tracks deductions from bank/app data, estimates quarterly taxes, files 1099s, $15/mo or $150/yr. Wedge is the 70M+ gig workers with complex 1099 situations.",
-        "target_customer": "Gig workers and freelancers filing 1099 income. 70M+ Americans do some form of gig/freelance work. Most overpay taxes because they miss deductions (mileage, home office, equipment).",
-        "problem": "Gig workers have complex tax situations (multiple 1099s, deduction tracking, quarterly estimated payments) but can't afford CPAs ($300-1,000 for tax prep). They need year-round tracking, not just filing season help.",
-        "delivery_model": "Mobile-first SaaS. Connects to bank accounts, Uber, DoorDash, Etsy, etc. AI categorizes expenses, tracks mileage, estimates quarterly taxes, files returns.",
-        "entry_wedge": "Gig worker communities on Reddit, YouTube, TikTok. Partner with gig platforms (Uber, DoorDash) for co-marketing. Offer free tax estimation to hook users.",
-        "first_10_customers": "Create TikTok/YouTube content showing tax savings for gig workers. Post in r/uberdrivers, r/doordash, r/freelance. Offer free quarterly estimate calculator as lead gen.",
-        "competitors": [
-          {"name": "FlyFin", "funding": "$15M", "price": "$99-199/yr", "note": "DIRECT competitor. AI + CPA review for freelancers. Strong positioning."},
-          {"name": "Keeper", "funding": "$42M", "price": "$192/yr", "note": "AI expense tracking for freelancers. Strong product. Well-funded."},
-          {"name": "TurboTax Self-Employed", "funding": "Intuit", "price": "$129", "note": "Market leader for filing. No year-round tracking."},
-          {"name": "Otto AI", "funding": "Seed", "price": "Free-$99/yr", "note": "1099 tax calculator. Early stage."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$150/yr",
-          "cost_to_serve": "~$5/yr (AI inference + bank connections)",
-          "gross_margin": "~97%",
-          "cac_estimate": "$15-50 (content marketing, community)",
-          "ltv_cac_ratio": "6-10x (churn is high with gig workers)"
-        },
-        "scores": {
-          "competitive_density": 40,
-          "unit_economics_clarity": 78,
-          "distribution_specificity": 72,
-          "moat_durability": 35,
-          "customer_findability": 85,
-          "overall": 62
-        },
-        "score_rationale": "VERY COMPETITIVE -- FlyFin ($15M) and Keeper ($42M) are direct competitors with established products. Low ARPU ($150/yr) means need massive scale. Moat is thin. Customer findability is high (gig workers are everywhere) but so is competition. Not recommended for priority pursuit."
-      },
-      {
-        "rank": 10,
-        "id": "D5-ACC-05",
-        "name": "Fractional AI CFO for Growth-Stage SMBs ($1-20M Revenue)",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "AI-powered financial advisory for SMBs crossing $1M revenue -- cash flow forecasting, scenario planning, fundraising deck financial models, KPI dashboards, unit economics tracking. $500-2,000/mo. Combines AI analysis with fractional CFO human review.",
-        "target_customer": "SMBs at $1-20M revenue that need CFO-level insights but can't afford a $200K+/yr CFO. Series A startups, growing e-commerce, professional services firms scaling.",
-        "problem": "68% of VC-backed startups plan to outsource finance. Growing SMBs need cash flow forecasting, runway analysis, board decks -- bookkeeping tools don't do this. Human fractional CFOs cost $3-10K/mo.",
-        "delivery_model": "AI generates weekly cash flow forecasts, monthly financial models, quarterly board decks. Human fractional CFO (network of 1099 CFOs) reviews and presents. AI does 80% of work, human does 20%.",
-        "entry_wedge": "Target Y Combinator alumni, AngelList companies, SaaS communities. Partner with bookkeeping providers as upsell channel.",
-        "first_10_customers": "Outreach to YC alumni Slack/communities. Post in SaaStr, Indie Hackers. Offer free cash flow forecast for first month.",
-        "competitors": [
-          {"name": "Parallel", "funding": "$2.4M seed", "price": "Undisclosed", "note": "AI-native finance team for startups. DIRECT competitor. Very early."},
-          {"name": "Pilot", "funding": "$172M", "price": "$800+/mo for CFO add-on", "note": "Offers CFO services as upsell to bookkeeping. Expensive."},
-          {"name": "Zeni", "funding": "$47M", "price": "$549+/mo base", "note": "Includes some CFO features."},
-          {"name": "1CFO.ai", "funding": "Bootstrapped", "price": "Undisclosed", "note": "AI fractional CFO. Very early."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$1,000/mo avg = $12,000/yr",
-          "cost_to_serve": "AI ~$20/mo + fractional CFO time ~$300/mo = ~$320/mo",
-          "gross_margin": "~68%",
-          "cac_estimate": "$1,000-3,000 (startup community outreach)",
-          "ltv_cac_ratio": "6-10x"
-        },
-        "scores": {
-          "competitive_density": 62,
-          "unit_economics_clarity": 72,
-          "distribution_specificity": 68,
-          "moat_durability": 48,
-          "customer_findability": 75,
-          "overall": 65
-        },
-        "score_rationale": "Higher ARPU than bookkeeping but requires human CFO time (lower margins). Competition moderate -- Parallel is direct but very early. Moat is thin (CFO advice is hard to differentiate). Distribution to startup community is clear but crowded channel."
-      },
-      {
-        "rank": 11,
-        "id": "D5-FOOD-01",
-        "name": "Acquire-and-Modernize: CA Wholesale Bakery",
-        "sector": "Specialty Food/Beverage Production",
-        "one_liner": "Acquire a retiring-owner wholesale bakery in CA ($1-2M revenue, 20-35% margins, 300+ retail store distribution) at 3-4x EBITDA. Install 2-3 cobots for packaging/portioning ($100-180K), AI for scheduling/QC ($50K), and increase throughput 30-50% while reducing labor 25%. SBA 504 + USDA VAPG financing.",
-        "target_customer": "Not a customer play -- acquisition target: retiring CA bakery owners with branded/specialty products, existing distribution, and 20%+ margins.",
-        "problem": "CA specialty food producers aging out. 77 food production businesses for sale on BizBuySell in CA. Wholesale bakery: $1.7M revenue, $500K profit, 300+ stores. Owner retiring, can't find buyer.",
-        "delivery_model": "Acquire physical business. Retain production staff. Add cobots for repetitive tasks (packaging, portioning, palletizing). Deploy AI for production scheduling, quality control, demand forecasting. Expand distribution with increased capacity.",
-        "entry_wedge": "BizBuySell screening for CA food production with branded products and existing distribution. Focus on specialty bakery, artisanal products, ethnic foods.",
-        "first_10_customers": "Inherited -- bakery already has 300+ retail store customers. Growth via increased capacity, new product lines, and DTC channel.",
-        "competitors": [
-          {"name": "Private equity food rollups", "note": "Target larger operations ($10M+). Different scale."},
-          {"name": "Strategic acquirers (Grupo Bimbo, etc.)", "note": "Target established brands. Different scale."},
-          {"name": "Local family buyers", "note": "Limited capital. Can't modernize."}
-        ],
-        "unit_economics": {
-          "acquisition_cost": "$1-1.5M (3-4x EBITDA on $350-500K)",
-          "modernization_cost": "$150-280K",
-          "total_capital_needed": "$600K-800K equity + $1-1.2M SBA 504 + $150-250K equipment financing",
-          "pre_modernization_margin": "29%",
-          "post_modernization_margin": "35-45%",
-          "additional_annual_savings": "$160-200K from 4-5 automated positions",
-          "usda_vapg": "Up to $250K (requires 1:1 match)"
-        },
-        "scores": {
-          "competitive_density": 85,
-          "unit_economics_clarity": 82,
-          "distribution_specificity": 72,
-          "moat_durability": 78,
-          "customer_findability": 70,
-          "overall": 77
-        },
-        "score_rationale": "Very low competition at this scale -- PE targets larger operations, local buyers can't afford modernization. Strong moat from FDA/USDA certifications, existing distribution, and brand. Unit economics modeled with real BizBuySell data. Risk: food margin sensitivity to raw material costs (must be specialty/branded, not commodity). FSMA 204 compliance adds moat."
-      },
-      {
-        "rank": 12,
-        "id": "D5-HC-03",
-        "name": "AI Medical Records / Chart Abstraction Service",
-        "sector": "Healthcare Admin AI",
-        "one_liner": "AI service that auto-abstracts medical records for HEDIS/quality reporting, risk adjustment coding, and clinical data extraction -- replaces the 185K medical records specialists (97% automation potential per O*NET). $3-8 per chart. Target: health plans and large practice groups needing chart review at scale.",
-        "target_customer": "Health plans, ACOs, and large practice groups that employ medical records specialists for quality reporting and risk adjustment. Payers spend $1-3B/yr on chart review.",
-        "problem": "HEDIS quality measures require manual chart review. Risk adjustment (HCC coding) requires chart abstraction. O*NET: 97% of medical records tasks are automatable. BLS: employment growing +8.7% despite this = Schumpeterian gap (demand outpacing automation adoption).",
-        "delivery_model": "AI SaaS that ingests clinical documents (CCDs, PDFs, EHR exports) and extracts structured data for quality reporting, risk adjustment, and clinical research. Per-chart pricing.",
-        "entry_wedge": "Target CA health plans (Kaiser, Blue Shield, HealthNet) and ACOs during HEDIS season (Jan-May). Offer free pilot on 1,000 charts.",
-        "first_10_customers": "Contact quality directors at CA health plans. Target ACOs participating in MSSP. Attend AHIP conference.",
-        "competitors": [
-          {"name": "Nym Health", "funding": "$58M", "note": "AI medical coding. Adjacent but different (coding vs abstraction)."},
-          {"name": "Fathom Health", "funding": "$46M", "note": "AI medical coding. #1 in KLAS. Adjacent."},
-          {"name": "CodaMetrix", "funding": "$40M", "note": "Autonomous medical coding. Adjacent."},
-          {"name": "Apixio", "funding": "$105M", "price": "Per-chart", "note": "AI for HCC risk adjustment chart review. DIRECT competitor. Well-funded."},
-          {"name": "Inovalon", "funding": "Public ($1.5B acquisition)", "note": "Data analytics including chart abstraction. Large incumbent."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "50K-500K charts/yr x $5/chart = $250K-2.5M/yr per customer",
-          "cost_to_serve": "AI inference + QA + compliance ~$50-250K/yr per customer",
-          "gross_margin": "~75-85%",
-          "cac_estimate": "$10,000-50,000 (enterprise sales to health plans)",
-          "ltv_cac_ratio": "5-10x"
-        },
-        "scores": {
-          "competitive_density": 45,
-          "unit_economics_clarity": 75,
-          "distribution_specificity": 62,
-          "moat_durability": 55,
-          "customer_findability": 68,
-          "overall": 61
-        },
-        "score_rationale": "Competitive -- Apixio ($105M) is a direct competitor in risk adjustment chart review. Nym, Fathom, CodaMetrix are in adjacent medical coding. Enterprise sales cycle is long. BUT: 97% automation potential (highest of any occupation) means the structural force is overwhelming. The market will absorb multiple winners."
-      },
-      {
-        "rank": 13,
-        "id": "D5-MH-01",
-        "name": "AI Documentation Tool for Therapists (Progress Notes + Treatment Plans)",
-        "sector": "Mental Health AI",
-        "one_liner": "AI scribe for therapists -- listens to sessions (with consent), generates SOAP/DAP progress notes, drafts treatment plans, tracks client progress across sessions. $79-199/mo per therapist. Avoids FDA entirely (documentation tool, not therapy). Wedge is 57% of therapists citing documentation as #1 burnout driver.",
-        "target_customer": "Licensed therapists (LCSWs, LMFTs, LPCs, psychologists) in private practice. 200K+ therapists in private practice in US. 57% cite documentation overload as top burnout factor.",
-        "problem": "Therapists spend 12-15 hours/month on documentation. Progress notes, treatment plans, and insurance documentation are time-consuming and repetitive. Therapist burnout is driving workforce attrition in an already-shortage field.",
-        "delivery_model": "SaaS: HIPAA-compliant audio recording during sessions (with client consent). AI generates structured progress notes in therapist's preferred format (SOAP, DAP, BIRP). Tracks treatment plan goals. Insurance-ready documentation.",
-        "entry_wedge": "Target therapists on social media (therapist TikTok/Instagram is huge). Partner with therapy practice management platforms (SimplePractice, TherapyNotes). Attend APA and NASW conferences.",
-        "first_10_customers": "Post in therapist communities (r/therapists, Facebook groups). Offer free trial. Target therapists who post about documentation burden. Partner with SimplePractice for co-marketing.",
-        "competitors": [
-          {"name": "Blueprint", "funding": "$27M", "price": "$49-199/mo", "note": "50K+ clinicians. EHR + AI for therapists. Market leader in this space."},
-          {"name": "Mentalyc", "funding": "$5M", "price": "$39-149/mo", "note": "AI progress notes for therapists. Direct competitor. Growing."},
-          {"name": "TheraPro AI", "funding": "Seed", "price": "$29-99/mo", "note": "AI progress notes. Early stage."},
-          {"name": "Berries (Hey Berries)", "funding": "Seed", "price": "$49/mo", "note": "AI scribe for mental health. Early stage."},
-          {"name": "Supanote", "funding": "Bootstrapped", "price": "$39-79/mo", "note": "AI therapy notes."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$129/mo avg = $1,548/yr",
-          "cost_to_serve": "Audio transcription + AI inference ~$10/mo + HIPAA infra ~$5/mo = ~$15/mo",
-          "gross_margin": "~88%",
-          "cac_estimate": "$100-300 (community marketing, social media)",
-          "ltv_cac_ratio": "8-12x"
-        },
-        "scores": {
-          "competitive_density": 42,
-          "unit_economics_clarity": 82,
-          "distribution_specificity": 78,
-          "moat_durability": 40,
-          "customer_findability": 88,
-          "overall": 66
-        },
-        "score_rationale": "CROWDED -- Blueprint (50K clinicians, $27M) is the clear leader, with Mentalyc, TheraPro, Berries, and Supanote all competing. Moat is thin (note generation is becoming commodity). However, market is large (200K+ therapists) and growing. Entry at this point requires significant differentiation."
-      },
-      {
-        "rank": 14,
-        "id": "D5-ACC-06",
-        "name": "AI Bookkeeping for Professional Services Firms (Agencies, Consultancies)",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "AI bookkeeping built for agencies and consultancies -- handles project-based revenue recognition, contractor 1099 management, client profitability tracking, and retainer billing reconciliation. $199/mo. Wedge is the 500K+ US agencies/consultancies that need more than basic QBO but less than enterprise ERP.",
-        "target_customer": "Marketing agencies, design studios, IT consultancies, and professional services firms with $500K-$10M revenue. 500K+ such firms in US. Most use generic QBO with manual project tracking.",
-        "problem": "Agencies need project-based P&L (which projects are profitable?), contractor payment management (1099s), retainer billing reconciliation, and cash flow forecasting for lumpy revenue. Generic bookkeeping doesn't support this.",
-        "delivery_model": "SaaS integrating with project management tools (Asana, Monday, Harvest) and accounting (QBO, Xero). AI auto-allocates time/expenses to projects, calculates project profitability, manages contractor payments.",
-        "entry_wedge": "Agency owner communities (AgencySparks, Bureau of Digital, Agency Hackers). Partner with project management tools as integration partner.",
-        "first_10_customers": "Post in agency owner Slack communities and Facebook groups. Offer free project profitability analysis from their existing QBO data.",
-        "competitors": [
-          {"name": "Decimal (acquired by Pilot)", "funding": "Acquired", "note": "Was targeting agencies. Now part of Pilot."},
-          {"name": "Bench/Pilot/Zeni", "funding": "Various", "note": "Generic bookkeeping. Don't handle project-based accounting well."},
-          {"name": "Financial Cents", "funding": "$4M", "note": "Practice management for accounting firms. Adjacent."},
-          {"name": "Harvest + QBO integration", "funding": "N/A", "note": "Manual integration. Not full-service."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$199/mo = $2,388/yr",
-          "cost_to_serve": "~$20/mo",
-          "gross_margin": "~90%",
-          "cac_estimate": "$300-800 (community marketing)",
-          "ltv_cac_ratio": "8-12x"
-        },
-        "scores": {
-          "competitive_density": 72,
-          "unit_economics_clarity": 78,
-          "distribution_specificity": 75,
-          "moat_durability": 55,
-          "customer_findability": 80,
-          "overall": 72
-        },
-        "score_rationale": "Niche is underserved -- generic bookkeeping tools don't handle project-based accounting. Agency owners are reachable via communities. Competition is moderate (Pilot acquired Decimal but hasn't focused on agencies). Moat risk: QBO or Xero add project tracking."
-      },
-      {
-        "rank": 15,
-        "id": "D5-HC-04",
-        "name": "AI Credentialing and Payer Enrollment for New Practices",
-        "sector": "Healthcare Admin AI",
-        "one_liner": "AI-powered credentialing service for new physician practices -- automates provider enrollment with insurance payers, tracks credentialing status across 20+ payers, manages re-credentialing deadlines. $150-500/provider/mo. Wedge is the 6-12 month credentialing delay that prevents new practices from billing insurance.",
-        "target_customer": "New physician practices, locum tenens agencies, and telehealth companies that need to credential providers with insurance networks. 50K+ new practice registrations/yr.",
-        "problem": "Credentialing takes 90-180 days per payer, per provider. A new practice needs to credential with 10-20 payers. Manual process requires tracking hundreds of forms, deadlines, and requirements. Delays = months without insurance revenue.",
-        "delivery_model": "SaaS + managed service: AI auto-fills credentialing applications, tracks status with each payer, flags missing documents, manages re-credentialing calendar. Human team handles payer phone calls and escalations.",
-        "entry_wedge": "Target new practice formation (can identify via state medical board new license filings). Partner with medical billing companies and practice management consultants.",
-        "first_10_customers": "Monitor CA medical board new license filings. Outreach to new practice formations within 30 days of licensing. Attend medical practice management conferences.",
-        "competitors": [
-          {"name": "Medallion", "funding": "$85M", "note": "Provider credentialing and network management. Well-funded. DIRECT competitor."},
-          {"name": "Modio Health", "funding": "$12M", "note": "Credentialing management software. Telehealth focused."},
-          {"name": "symplr", "funding": "PE-backed (billions)", "note": "Enterprise credentialing. Hospital-focused."},
-          {"name": "CredentialingCloud", "funding": "Bootstrapped", "note": "Small credentialing SaaS."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$300/provider/mo avg x 3 providers = $900/mo per practice",
-          "cost_to_serve": "AI + human escalation ~$200/mo per practice",
-          "gross_margin": "~78%",
-          "cac_estimate": "$1,000-3,000 (new practice identification is automatable)",
-          "ltv_cac_ratio": "5-8x"
-        },
-        "scores": {
-          "competitive_density": 48,
-          "unit_economics_clarity": 72,
-          "distribution_specificity": 70,
-          "moat_durability": 55,
-          "customer_findability": 72,
-          "overall": 63
-        },
-        "score_rationale": "Medallion ($85M) is a well-funded direct competitor. But they focus on digital health/telehealth companies. Independent brick-and-mortar practices are underserved. Moat from payer-specific knowledge database. Customer findability via medical board filings is specific."
-      },
-      {
-        "rank": 16,
-        "id": "D5-INS-02",
-        "name": "AI Auto Claims Photo Estimation for Regional Carriers",
-        "sector": "Insurance Claims AI",
-        "one_liner": "Mobile-first AI that lets policyholders photograph vehicle damage after an accident, instantly estimates repair costs using computer vision, and initiates FNOL -- reducing claims cycle from days to hours for simple auto claims. $3-8 per claim for regional P&C carriers.",
-        "target_customer": "Regional P&C auto insurance carriers (50-200 employees, $50M-$500M premiums). 300+ regional carriers in US that lack enterprise AI capability.",
-        "problem": "Auto claims take 3-7 days for simple damage assessment. Policyholders wait for adjusters. Regional carriers can't afford enterprise AI solutions (CCC, Mitchell). Touchless claims processing is coming but small carriers are behind.",
-        "delivery_model": "White-label mobile app + API for carriers. Policyholder photographs damage. AI estimates repair cost using computer vision model trained on auto damage. Auto-triages: simple claims -> instant settlement, complex -> human adjuster.",
-        "entry_wedge": "Target regional mutual carriers in CA, TX, FL. Attend NAMIC (National Association of Mutual Insurance Companies) conferences. Offer 90-day free pilot.",
-        "first_10_customers": "Contact claims VPs at CA regional carriers via NAMIC membership. Offer pilot on auto glass claims (simplest auto claims -- binary: replace or not).",
-        "competitors": [
-          {"name": "Tractable", "funding": "$115M", "note": "AI auto damage estimation. Market leader. Enterprise focused."},
-          {"name": "CCC Intelligent Solutions", "funding": "Public (NYSE: CCCS)", "note": "Industry standard for auto claims. $900M+ revenue. Enterprise."},
-          {"name": "Mitchell International", "funding": "Owned by Enlyte", "note": "Auto claims estimation. Large incumbent."},
-          {"name": "Claim Genius", "funding": "$5M", "note": "AI photo damage estimation. Direct competitor at smaller scale."},
-          {"name": "Bdeo", "funding": "$18M", "note": "Visual intelligence for insurance. European focus expanding to US."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "5K-30K auto claims/yr x $5/claim = $25K-150K/yr per carrier",
-          "cost_to_serve": "AI compute + model training ~$10-30K/yr per carrier",
-          "gross_margin": "~75-85%",
-          "cac_estimate": "$5,000-15,000",
-          "ltv_cac_ratio": "5-8x"
-        },
-        "scores": {
-          "competitive_density": 40,
-          "unit_economics_clarity": 70,
-          "distribution_specificity": 65,
-          "moat_durability": 45,
-          "customer_findability": 68,
-          "overall": 58
-        },
-        "score_rationale": "COMPETITIVE -- Tractable ($115M) and CCC (public) dominate. Claim Genius and Bdeo are direct competitors at smaller scale. The computer vision model requires significant training data. Regional carriers are reachable but sales cycles are long. NOT recommended as primary pursuit."
-      },
-      {
-        "rank": 17,
-        "id": "D5-ACC-07",
-        "name": "AI Payroll + Bookkeeping Bundle for <10 Employee Businesses",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "Combined AI payroll + bookkeeping for micro-businesses (1-10 employees) -- handles payroll processing, tax deposits, W-2/1099 filing, AND monthly bookkeeping in one platform. $79/mo. Wedge is the 20M+ micro-businesses paying separately for Gusto ($40+/mo) and QBO ($30+/mo).",
-        "target_customer": "Micro-businesses with 1-10 employees. 20M+ in US. Most cobble together separate payroll (Gusto) and bookkeeping (QBO) tools with no integration.",
-        "problem": "Payroll and bookkeeping are deeply intertwined but sold separately. Every payroll run creates journal entries that need manual posting. Reconciling payroll taxes, benefits, and contractor payments between two systems is painful.",
-        "delivery_model": "SaaS: unified payroll + bookkeeping platform. AI auto-posts payroll journal entries, reconciles tax deposits, handles W-2/1099 filing, produces monthly financials. One platform, one price.",
-        "entry_wedge": "Target businesses using both Gusto and QBO (identifiable via app marketplace data). Offer switch incentive: first 3 months at $49/mo.",
-        "first_10_customers": "Target micro-business communities. Partner with SCORE mentors and SBA offices. Outreach to businesses posting about payroll + bookkeeping integration issues.",
-        "competitors": [
-          {"name": "Gusto", "funding": "$746M", "note": "Payroll leader for SMBs. Adding bookkeeping features."},
-          {"name": "Rippling", "funding": "$1.3B", "note": "HR + payroll + IT. Moving into finance/spend management."},
-          {"name": "Wave", "funding": "Acquired by H&R Block", "price": "Free bookkeeping + paid payroll", "note": "Closest model. Free base, paid payroll. Owned by H&R Block."},
-          {"name": "OnPay", "funding": "Bootstrapped", "price": "$40+/mo", "note": "Payroll + HR. No bookkeeping."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$79/mo = $948/yr",
-          "cost_to_serve": "~$10/mo (payroll processing + AI + compliance)",
-          "gross_margin": "~87%",
-          "cac_estimate": "$150-400",
-          "ltv_cac_ratio": "6-8x"
-        },
-        "scores": {
-          "competitive_density": 35,
-          "unit_economics_clarity": 75,
-          "distribution_specificity": 60,
-          "moat_durability": 30,
-          "customer_findability": 80,
-          "overall": 56
-        },
-        "score_rationale": "EXTREMELY competitive -- Gusto ($746M), Rippling ($1.3B), and Wave (H&R Block) are all moving toward integrated finance. Low ARPU ($79/mo) and massive incumbent competition make this very difficult. NOT recommended."
-      },
-      {
-        "rank": 18,
-        "id": "D5-ACC-08",
-        "name": "AI Cross-Border Tax for US-LATAM Businesses",
-        "sector": "SMB Accounting/Finance",
-        "one_liner": "AI tax and compliance for US businesses with LATAM operations (or LATAM businesses with US presence) -- handles transfer pricing, dual-country filings, foreign tax credits, FBAR/FATCA compliance. $299-999/mo. Wedge is bilingual team + 150K+ cross-border businesses.",
-        "target_customer": "US businesses with LATAM operations or employees. LATAM businesses selling into US. 150K+ cross-border businesses. Growing with nearshoring trend.",
-        "problem": "Cross-border tax is complex: transfer pricing, foreign tax credits, withholding requirements, FBAR/FATCA reporting. Bilingual CPAs specializing in US-LATAM are scarce and expensive ($500+/hr). Most SMBs are non-compliant or overpaying.",
-        "delivery_model": "AI handles compliance screening, FBAR preparation, foreign tax credit calculations, transfer pricing documentation. Bilingual CPA reviews. Platform in English + Spanish.",
-        "entry_wedge": "LATAM founder communities in US (Miami, Austin, Bay Area). Nearshoring companies. Hispanic Chamber of Commerce chapters. LATAM startup accelerators.",
-        "first_10_customers": "Contact businesses via USHCC (US Hispanic Chamber of Commerce). Target nearshoring companies via Clutch/GoodFirms. Post in LATAM founder communities.",
-        "competitors": [
-          {"name": "Greenback Expat Tax", "funding": "Bootstrapped", "note": "Expat tax. US-only focus."},
-          {"name": "Bright!Tax", "funding": "Bootstrapped", "note": "US expat tax. Not LATAM specific."},
-          {"name": "Big 4 international tax practices", "note": "Serve large companies. $500-1,500/hr. Overkill for SMBs."},
-          {"name": "No funded AI-first US-LATAM tax startup found", "note": "Appears to be a gap."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$499/mo avg = $5,988/yr",
-          "cost_to_serve": "AI + bilingual CPA review ~$100/mo",
-          "gross_margin": "~80%",
-          "cac_estimate": "$500-2,000 (community and referral based)",
-          "ltv_cac_ratio": "6-10x"
-        },
-        "scores": {
-          "competitive_density": 85,
-          "unit_economics_clarity": 72,
-          "distribution_specificity": 75,
-          "moat_durability": 70,
-          "customer_findability": 68,
-          "overall": 74
-        },
-        "score_rationale": "Minimal competition -- no funded AI-first US-LATAM tax startup found. Strong founder-market fit (bilingual team, Argentina native). Moat from multi-country regulatory expertise. Niche but growing with nearshoring. Distribution via LATAM chambers and founder communities is specific. High ARPU ($499/mo)."
-      },
-      {
-        "rank": 19,
-        "id": "D5-MFG-03",
-        "name": "AI Production Scheduling SaaS for Job Shop Manufacturers",
-        "sector": "Robotics x AI Manufacturing",
-        "one_liner": "AI scheduling software for job shop manufacturers (CNC, sheet metal, custom fabrication) -- optimizes machine allocation, job sequencing, and delivery date estimation using constraint-based AI. $500-2,000/mo per shop. Replaces whiteboards and spreadsheets.",
-        "target_customer": "Job shop manufacturers (20-100 employees) running custom/small-batch production. 30K+ in US. Most use manual scheduling (whiteboards, spreadsheets, or basic MRP that doesn't handle job shop complexity).",
-        "problem": "Job shops run dozens of simultaneous jobs across multiple machines with varying setups. Scheduling is the #1 bottleneck. Late deliveries cost 3-5% of revenue. Manual scheduling takes 2-4 hours/day for shop managers.",
-        "delivery_model": "Cloud SaaS connecting to shop floor data (ERP, machines, IoT sensors). AI optimizes job sequencing considering machine capability, setup time, operator availability, due dates, and material availability.",
-        "entry_wedge": "Target shops using ProShop, JobBOSS, or E2 Shop System (common job shop ERPs). Partner with CNC machine tool distributors. Attend IMTS and regional manufacturing shows.",
-        "first_10_customers": "Contact CA job shops via CMTA (CA Manufacturers & Technology Association). Offer free 30-day scheduling optimization pilot with before/after on-time delivery comparison.",
-        "competitors": [
-          {"name": "LillyWorks (ProtoPlan)", "funding": "Bootstrapped", "note": "AI production scheduling for job shops. DIRECT competitor but small."},
-          {"name": "Schedlyzer", "funding": "Seed", "note": "AI manufacturing scheduling. European focus."},
-          {"name": "Optessa", "funding": "$15M", "note": "AI scheduling for large manufacturers. Enterprise scale."},
-          {"name": "Siemens Opcenter APS", "funding": "Part of Siemens", "note": "Enterprise scheduling. Overkill for job shops."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$1,000/mo avg = $12,000/yr",
-          "cost_to_serve": "~$100/mo (cloud + AI compute)",
-          "gross_margin": "~90%",
-          "cac_estimate": "$2,000-5,000 (trade shows, manufacturer associations)",
-          "ltv_cac_ratio": "5-8x"
-        },
-        "scores": {
-          "competitive_density": 75,
-          "unit_economics_clarity": 78,
-          "distribution_specificity": 70,
-          "moat_durability": 60,
-          "customer_findability": 72,
-          "overall": 71
-        },
-        "score_rationale": "Niche is underserved -- enterprise scheduling tools don't work for job shops, and job shops are stuck on whiteboards. LillyWorks is the only direct AI competitor and is small. Good SaaS economics. Could be a wedge into D5-MFG-01 (use scheduling relationships to identify acquisition targets)."
-      },
-      {
-        "rank": 20,
-        "id": "D5-HC-05",
-        "name": "AI Billing Denial Prevention for Physical Therapy Practices",
-        "sector": "Healthcare Admin AI",
-        "one_liner": "AI that pre-checks physical therapy claims before submission -- validates CPT codes against payer rules, checks authorization status, ensures documentation supports medical necessity, and flags likely denials. $199-499/mo per clinic. Wedge is PT's uniquely high denial rate (15-20% vs 5-10% average).",
-        "target_customer": "Independent physical therapy practices (1-5 therapists). 40K+ PT practices in US. PT has higher denial rates than most specialties due to authorization complexity and per-visit limits.",
-        "problem": "PT claims are denied 15-20% of the time (vs 5-10% for general medical). Each denied claim costs $25-35 to rework. A 3-therapist practice loses $30-60K/yr to denials. Existing competitors (HealthSpark) target PT but focus on clinical AI, not billing prevention.",
-        "delivery_model": "SaaS integrating with PT-specific EMRs (WebPT, Clinicient, Raintree). AI reviews each claim before submission: checks auth status, validates CPT/ICD pairing, ensures documentation supports medical necessity, flags payer-specific rules.",
-        "entry_wedge": "Target PT practice owners via APTA (American Physical Therapy Association). Attend CSM (APTA's annual conference). Partner with WebPT as integration partner.",
-        "first_10_customers": "Contact PT practices in CA that have posted about billing frustrations. Offer free claim audit (analyze 30 days of denied claims and show recoverable revenue).",
-        "competitors": [
-          {"name": "HealthSpark", "funding": "$5M", "note": "AI for PT practices. Clinical focus (documentation), not billing prevention."},
-          {"name": "WebPT", "funding": "$57M (acquired by Patterson)", "note": "PT EMR + billing. Incumbent. Adding AI features."},
-          {"name": "Prompt Health", "funding": "$3M", "note": "PT practice management. Not AI-focused."},
-          {"name": "Verse (SLP-focused)", "funding": "$3M", "note": "AI for speech therapy. Different specialty."}
-        ],
-        "unit_economics": {
-          "revenue_per_customer": "$349/mo avg = $4,188/yr",
-          "cost_to_serve": "~$40/mo (AI + EMR integration + payer rules database)",
-          "gross_margin": "~88%",
-          "cac_estimate": "$500-2,000 (APTA channel, PT conferences)",
-          "ltv_cac_ratio": "6-10x"
-        },
-        "scores": {
-          "competitive_density": 72,
-          "unit_economics_clarity": 78,
-          "distribution_specificity": 75,
-          "moat_durability": 60,
-          "customer_findability": 80,
-          "overall": 73
-        },
-        "score_rationale": "PT is a specific niche where denial rates are highest, creating clear ROI for AI billing prevention. HealthSpark is adjacent (clinical, not billing). WebPT is the incumbent risk but adding AI slowly. Customers are identifiable via APTA. Moat from payer-specific rule database for PT."
-      }
+  "landscape": {
+    "top_20_models": [
+      {"rank": 1, "id": "C6-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "architecture": "acquire_and_modernize", "score": 86},
+      {"rank": 2, "id": "C6-AM-FOOD-01", "name": "Acquire + Modernize Specialty Food Producer", "architecture": "acquire_and_modernize", "score": 85},
+      {"rank": 3, "id": "C6-FSR-FIN-01", "name": "Full-Service AI Finance Function for SMBs", "architecture": "full_service_replacement", "score": 84},
+      {"rank": 4, "id": "C6-RC-MFG-01", "name": "Multi-Shop CNC Rollup Platform", "architecture": "rollup_consolidation", "score": 86},
+      {"rank": 5, "id": "C6-RMB-HC-01", "name": "Healthcare AI Compliance Platform", "architecture": "regulatory_moat_builder", "score": 85},
+      {"rank": 6, "id": "C6-FSR-HC-01", "name": "Full-Service Prior Auth + Denial Management", "architecture": "full_service_replacement", "score": 84},
+      {"rank": 7, "id": "C6-DC-FIN-01", "name": "AI Financial Intelligence Platform", "architecture": "data_compounding", "score": 86},
+      {"rank": 8, "id": "C6-AW-ACC-01", "name": "Acquire PE-Distressed Accounting Practice", "architecture": "arbitrage_window", "score": 82},
+      {"rank": 9, "id": "C6-PI-MFG-01", "name": "Manufacturing AI Deployment Stack", "architecture": "platform_infrastructure", "score": 79},
+      {"rank": 10, "id": "C6-FSR-LATAM-01", "name": "Full-Service Cross-Border Compliance", "architecture": "full_service_replacement", "score": 77},
+      {"rank": 11, "id": "C6-RMB-INS-01", "name": "Insurance AI Compliance + Bias Auditing", "architecture": "regulatory_moat_builder", "score": 78},
+      {"rank": 12, "id": "C6-RC-FOOD-01", "name": "Multi-Facility Specialty Food Platform", "architecture": "rollup_consolidation", "score": 82},
+      {"rank": 13, "id": "C6-FSR-HC-02", "name": "AI-Native Medical Records Abstraction", "architecture": "full_service_replacement", "score": 77},
+      {"rank": 14, "id": "C6-MN-FIN-01", "name": "AI-Matched Business Acquisition Marketplace", "architecture": "marketplace_network", "score": 78},
+      {"rank": 15, "id": "C6-FSR-INS-01", "name": "Full-Service AI TPA", "architecture": "full_service_replacement", "score": 78},
+      {"rank": 16, "id": "C6-VS-FOOD-01", "name": "FSMA 204 Food Traceability Compliance SaaS", "architecture": "vertical_saas", "score": 71},
+      {"rank": 17, "id": "C6-DC-HC-01", "name": "Clinical Denial Intelligence Platform", "architecture": "data_compounding", "score": 84},
+      {"rank": 18, "id": "C6-PI-FIN-01", "name": "Finance-as-a-Service API for Micro-Firms", "architecture": "platform_infrastructure", "score": 77},
+      {"rank": 19, "id": "C6-PA-MFG-01", "name": "Precision CNC-as-a-Service", "architecture": "physical_production_ai", "score": 68},
+      {"rank": 20, "id": "C6-RMB-MH-01", "name": "Mental Health AI Compliance Platform", "architecture": "regulatory_moat_builder", "score": 73}
     ],
-
-    "additional_models": [
-      {
-        "id": "D5-ACC-09", "name": "AI AP/AR Automation for Construction Contractors", "sector": "SMB Accounting/Finance", "overall_score": 68,
-        "summary": "Auto-processes subcontractor invoices, tracks lien waivers, manages retention billing for GCs. $199-499/mo. Niche but underserved -- Stuut ($29.5M a16z) and TranscendAP are in adjacent general AP but not construction-specific."
-      },
-      {
-        "id": "D5-ACC-10", "name": "AI Financial Close Automation for PE Portfolio Companies", "sector": "SMB Accounting/Finance", "overall_score": 65,
-        "summary": "Accelerates month-end close for PE portfolio companies (standardize across acquisitions). $2,000-5,000/mo. Niche play into PE rollup trend (147 deals in accounting alone)."
-      },
-      {
-        "id": "D5-HC-06", "name": "AI Eligibility Verification Engine (Real-Time)", "sector": "Healthcare Admin AI", "overall_score": 64,
-        "summary": "Real-time insurance eligibility check before patient visits, auto-calculates patient responsibility. $0.50-2 per verification. Competitive (Waystar, Availity) but independent practices underserved."
-      },
-      {
-        "id": "D5-HC-07", "name": "AI Clinical Documentation for Independent PCPs", "sector": "Healthcare Admin AI", "overall_score": 63,
-        "summary": "Ambient AI scribe for primary care visits. Competitive -- Abridge ($250M), DeepScribe, Nuance DAX dominate. NOT recommended."
-      },
-      {
-        "id": "D5-HC-08", "name": "AI Revenue Cycle Management for Rural Hospitals", "sector": "Healthcare Admin AI", "overall_score": 60,
-        "summary": "Full RCM for critical access hospitals. Massive need but very long sales cycles and limited budgets. NOT recommended for startup."
-      },
-      {
-        "id": "D5-MFG-04", "name": "AI Quoting Tool for Custom Manufacturers", "sector": "Robotics x AI Manufacturing", "overall_score": 70,
-        "summary": "Auto-generates quotes for CNC/fabrication jobs from CAD files -- estimates material, machine time, setup, and labor. $300-800/mo. Fictiv ($192M) does this as marketplace. Paperless Parts ($46M) is direct competitor."
-      },
-      {
-        "id": "D5-MFG-05", "name": "AI Quality Control Vision System for SME Manufacturers", "sector": "Robotics x AI Manufacturing", "overall_score": 67,
-        "summary": "Computer vision QC inspection system for production lines -- detects defects in real-time. $1,000-3,000/mo per station. Landing AI ($164M), Instrumental ($100M+) are competitors but enterprise-focused."
-      },
-      {
-        "id": "D5-MFG-06", "name": "Acquire-and-Roll-Up: Multi-Shop CNC Platform", "sector": "Robotics x AI Manufacturing", "overall_score": 72,
-        "summary": "Acquire 3-5 CNC shops, standardize on common cobot/AI stack, cross-sell customer base, achieve purchasing scale. $5-10M total capital. General Catalyst doing this at $100M+ scale -- opportunity at $5-10M scale."
-      },
-      {
-        "id": "D5-FOOD-02", "name": "Acquire-and-Modernize: Ethnic/Specialty Snack Producer", "sector": "Specialty Food/Beverage Production", "overall_score": 73,
-        "summary": "Acquire CA ethnic food producer (Mexican snacks, Asian sauces, Mediterranean foods) with existing brand and distribution. Modernize with AI scheduling + cobots. Growth via expanding to additional retail chains and DTC."
-      },
-      {
-        "id": "D5-FOOD-03", "name": "AI Food Safety Compliance Platform (FSMA 204)", "sector": "Specialty Food/Beverage Production", "overall_score": 71,
-        "summary": "SaaS for food producers to comply with new FSMA 204 food traceability rule (enforceable 2026). $200-500/mo. FoodLogiQ ($50M+) is incumbent but targets enterprise. SMB food producers underserved."
-      },
-      {
-        "id": "D5-FOOD-04", "name": "AI Production Optimization for Craft Breweries/Distilleries", "sector": "Specialty Food/Beverage Production", "overall_score": 68,
-        "summary": "AI for recipe optimization, batch consistency, and production scheduling for craft breweries (9,500+ in US). $200-500/mo. Niche but addressable. EkosBrewmaster and Vicinity are competitors."
-      },
-      {
-        "id": "D5-INS-03", "name": "AI Insurance Compliance Monitor for NAIC Model Law", "sector": "Insurance Claims AI", "overall_score": 66,
-        "summary": "Platform that monitors multi-state AI compliance for insurers as NAIC model law and state regulations evolve. $500-2,000/mo. 23 states adopted NAIC AI Model Bulletin. Growing need but early market."
-      },
-      {
-        "id": "D5-INS-04", "name": "AI Subrogation Recovery for P&C Carriers", "sector": "Insurance Claims AI", "overall_score": 64,
-        "summary": "AI identifies subrogation opportunities in P&C claims -- finds claims where another party is liable and automates recovery process. Per-recovery pricing (15-25% of recovered amount). Competitive with Copart, Verisk."
-      },
-      {
-        "id": "D5-MH-02", "name": "AI Behavioral Health EAP Replacement for Employers", "sector": "Mental Health AI", "overall_score": 67,
-        "summary": "AI-powered EAP replacement for employers -- 24/7 chat, CBT modules, therapist matching, utilization dashboards. $5-15/employee/mo. Spring Health ($300M+), Lyra ($235M) are dominant. HealthJoy entering. CROWDED at enterprise level but SMB employers (50-500 employees) underserved."
-      },
-      {
-        "id": "D5-MH-03", "name": "AI Sub-Clinical Wellness App (Consumer)", "sector": "Mental Health AI", "overall_score": 55,
-        "summary": "Consumer wellness app offering guided meditation, journaling, mood tracking, and AI coaching -- NOT therapy. $10-30/mo. EXTREMELY competitive (Calm, Headspace, BetterHelp, Woebot dead, MindSync $720M). NOT recommended."
-      },
-      {
-        "id": "D5-PE-01", "name": "AI-Powered Small Business Acquisition Platform", "sector": "PE Distress Cascade", "overall_score": 69,
-        "summary": "Platform for individual acquirers to find, evaluate, and acquire small businesses -- AI scores businesses on automation potential, retirement risk, and modernization opportunity. Marketplace + tools + capital matching. $299/mo + success fee."
-      },
-      {
-        "id": "D5-PE-02", "name": "AI Due Diligence Accelerator for Search Funds", "sector": "PE Distress Cascade", "overall_score": 66,
-        "summary": "AI tool that accelerates financial and operational due diligence for search fund acquirers -- auto-analyzes 3-5 years of financials, identifies red flags, generates investment memo. $2,000-5,000 per deal. Niche but growing search fund community."
-      },
-      {
-        "id": "D5-REG-01", "name": "AI Compliance Monitor for Healthcare AI Deployers", "sector": "AI Regulatory Compliance", "overall_score": 71,
-        "summary": "Platform that helps healthcare orgs comply with 250+ state AI bills -- tracks regulations, maps requirements to AI systems, generates compliance documentation, monitors for changes. $500-2,000/mo. 33 laws signed across 21 states in 2025 alone."
-      },
-      {
-        "id": "D5-REG-02", "name": "AI Hiring Compliance Tool (NYC/IL/CO)", "sector": "AI Regulatory Compliance", "overall_score": 65,
-        "summary": "Helps employers comply with AI-in-hiring regulations (NYC Local 144, Illinois HB 3773, Colorado AI Act). Audit AI hiring tools, generate bias reports, manage notifications. $200-500/mo. Growing need but niche."
-      },
-      {
-        "id": "D5-LATAM-01", "name": "Bilingual AI Bookkeeping for US-LATAM Businesses", "sector": "US-LATAM AI Services", "overall_score": 70,
-        "summary": "AI bookkeeping in Spanish + English for LATAM-owned US businesses -- handles dual-language invoices, LATAM supplier payments, cross-border compliance. $149/mo. 4.7M Hispanic-owned businesses in US."
-      },
-      {
-        "id": "D5-LATAM-02", "name": "AI Insurance Claims for LATAM Insurers", "sector": "US-LATAM AI Services", "overall_score": 68,
-        "summary": "AI claims processing adapted for LATAM insurance markets -- Spanish/Portuguese NLP, local regulatory compliance, integration with LATAM payment systems. $3-8 per claim. 536+ LATAM insurtechs. Lower competition than US."
-      },
-      {
-        "id": "D5-LEGAL-01", "name": "AI Contract Review for SMB Employment Agreements", "sector": "AI-First Legal Services", "overall_score": 64,
-        "summary": "AI reviews employment agreements, NDAs, and contractor agreements for SMBs -- flags unfavorable terms, suggests modifications, ensures state-specific compliance. $99-299/mo. Lawhive ($60M) and Ironclad ($150M) are competitors. CROWDED."
-      },
-      {
-        "id": "D5-LEGAL-02", "name": "AI Corporate Legal for LATAM Startups in US", "sector": "AI-First Legal Services", "overall_score": 66,
-        "summary": "AI legal services for LATAM startups incorporating in US (Delaware C-Corps, SAFEs, employment law) -- bilingual platform. $500-1,500/mo retainer. Firstbase, Stripe Atlas handle formation but not ongoing legal."
-      },
-      {
-        "id": "D5-AG-01", "name": "AI Pest/Disease Detection for CA Almond Orchards", "sector": "Precision Agriculture", "overall_score": 65,
-        "summary": "Drone + AI system detecting navel orangeworm, hull rot, and other almond diseases -- replaces manual scouting. $5-15/acre/season. Orchard Robotics ($22M) is direct competitor expanding into almonds. OEM risk (John Deere See & Spray)."
-      },
-      {
-        "id": "D5-AG-02", "name": "AI Irrigation Optimization for CA Vineyards", "sector": "Precision Agriculture", "overall_score": 64,
-        "summary": "AI-driven precision irrigation for wine grape vineyards -- soil moisture sensing, evapotranspiration modeling, automated valve control. $3-10/acre/season. Saves 15-30% water (critical in CA drought). Ceres Imaging ($30M), CropX ($30M) are competitors."
-      }
-    ],
-
-    "scoring_methodology": {
-      "competitive_density": "Inverted: 100 = no competitors found, 0 = 5+ well-funded direct competitors. Based on web search for ACTUAL competitors for each specific model.",
-      "unit_economics_clarity": "100 = can model revenue/customer, cost to serve, CAC, LTV precisely. 0 = all estimates. Based on available pricing data and cost structure analysis.",
-      "distribution_specificity": "100 = exact channel to reach first 100 customers identified. 0 = vague 'marketing'. Based on specific communities, marketplaces, associations identified.",
-      "moat_durability": "100 = regulatory license + data flywheel + network effects + physical assets. 0 = no defensibility. Based on barrier analysis.",
-      "customer_findability": "100 = can name and reach first 10 customers today. 0 = abstract 'market exists'. Based on specificity of target customer identification."
-    },
-
-    "top_20_summary": "After decomposing 11 sectors into 102 specific business models and scoring each independently, the top 20 ranked by overall score are: (1) AI Bookkeeping for Bench Orphans (80), (2-tie) Acquire-and-Modernize CA CNC Shop (80), (4) Acquire-and-Modernize CA Wholesale Bakery (77), (5) AI Prior Auth Appeals for Independent Practices (75), (6-tie) AI Bookkeeping for Restaurants (75), (6-tie) AI Bookkeeping for E-commerce/Shopify (73), (8) AI Cross-Border Tax US-LATAM (74), (9) AI Billing Denial Prevention for PT Practices (73), (10) AI Bookkeeping for Agencies (72), (11) AI Medical Billing for Dental Practices (72), (12) AI Multi-CNC Rollup Platform (72), (13) AI Food Safety Compliance FSMA 204 (71), (14) AI Regulatory Compliance for Healthcare AI (71), (15) AI Production Scheduling for Job Shops (71), (16) AI Quoting Tool for Custom Manufacturers (70), (17) Bilingual AI Bookkeeping US-LATAM (70), (18) AI Manufacturing Integration Service (69), (19) AI Small Business Acquisition Platform (69), (20) AI Workers Comp Claims for TPAs (68)."
+    "total_models": 187,
+    "not_recommended_count": 10
   },
 
   "running_patterns": [
@@ -913,106 +150,133 @@
       "description": "Multi-Sector Baumol Cure Convergence: Healthcare, legal, accounting, insurance all releasing stored above-CPI energy simultaneously",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "DECOMPOSITION CONFIRMS: Accounting sector alone produces 10 viable specific models. The $139B automatable wage base supports MULTIPLE independent businesses, not just one. Niche segmentation (e-commerce, restaurants, agencies, LATAM, freelancers) reveals the actual market structure."
+      "cycle_6_update": "Architecture analysis reveals: the Baumol force creates opportunity for EVERY architecture type. But full-service replacement captures 5x more value than vertical SaaS because it replaces the ENTIRE function, not just a tool."
     },
     {
       "pattern_id": "P-002",
       "description": "Demographic Gap + AI Readiness Convergence",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "Manufacturing acquisition models (D5-MFG-01, D5-FOOD-01) score highest among physical plays precisely because Silver Tsunami creates acquisition supply."
+      "cycle_6_update": "Acquire-and-modernize (84 avg) and rollup (84 avg) are the dominant architectures for this force. Silver Tsunami creates ACQUISITION SUPPLY. AI+robotics create MODERNIZATION CAPABILITY. Together they produce the highest-scoring models in the landscape."
     },
     {
       "pattern_id": "P-003",
       "description": "Regulatory Fragmentation as Structural Moat",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "Regulatory compliance itself decomposes into multiple businesses: healthcare AI compliance (D5-REG-01), hiring AI compliance (D5-REG-02), insurance NAIC compliance (D5-INS-03), mental health state regulation."
+      "cycle_6_update": "Regulatory moat builder is now a distinct ARCHITECTURE type scoring 77 avg. Three separate plays identified: healthcare AI (250+ bills), insurance AI (NAIC model law), mental health AI (21 bills). Every new regulation increases platform value PERMANENTLY."
     },
     {
       "pattern_id": "P-005",
       "description": "Jevons Expansion 3-5x in Professional Services",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "Bench orphaned customers (D5-ACC-01) are the most specific Jevons signal: 35K customers who PROVED willingness to pay, now available for re-acquisition at lower CAC."
+      "cycle_6_update": "The LARGEST force by TAM. 70% of SMBs currently unserved by professional financial services. At 10x lower cost, market expands 3-5x from $139B to $400-600B. This is the economic force magnitude driving full-service replacement architecture."
     },
     {
       "pattern_id": "P-006",
       "description": "Robotics x AI Compound Production Cost Compression",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "Decomposes into distinct plays: acquire-and-modernize (D5-MFG-01), integration service (D5-MFG-02), scheduling SaaS (D5-MFG-03), quoting tool (D5-MFG-04), QC vision (D5-MFG-05), multi-shop rollup (D5-MFG-06)."
+      "cycle_6_update": "This force now maps to 4 distinct architectures: acquire_and_modernize, platform_infrastructure, physical_production_ai, rollup_consolidation. Architecture analysis reveals: ACQUIRE is 16 points better than BUILD (84 vs 68) because inherited moats compound."
     },
     {
       "pattern_id": "P-009",
       "description": "Christensen Three-Layer Competitive Framework",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "DECOMPOSITION VALIDATES: Tool-layer businesses score lowest (too competitive). Service-layer businesses score medium. Full-service layer businesses score highest. The Bench orphan play (D5-ACC-01) is full-service and scores #1. Tool-layer plays like therapist notes (D5-MH-01) score lower due to competitive density."
+      "cycle_6_update": "ARCHITECTURE-LEVEL VALIDATION: Full-service replacement (79 avg) beats vertical SaaS (67 avg) by 12 points. The 12-point gap is STRUCTURAL: full-service owns the customer, vertical SaaS is a feature on someone else's platform. This is Christensen's prediction realized in scoring data."
     },
     {
       "pattern_id": "P-013",
       "description": "Dead Business Revival at AI-Native Cost Structure",
       "strength": "very_strong",
       "status": "confirmed",
-      "cycle_5_update": "UPGRADED to very_strong. Bench orphan play (D5-ACC-01) scores #1 in the entire decomposition. Dead business revival is the single most actionable pattern identified. Orphaned customers are findable, willing-to-pay, and available at low CAC."
+      "cycle_6_update": "Now scored as arbitrage_window architecture. PE-distressed accounting practices (C6-AW-ACC-01, score 82) extend the pattern beyond Bench/Woebot to structural PE distress. $1.2T debt maturity wall creates 2-3 year window."
     },
     {
       "pattern_id": "P-015",
-      "description": "NEW: Niche Segmentation Reveals Hidden Opportunity Structure",
-      "first_observed": "v2-5",
+      "description": "Niche Segmentation Reveals Hidden Opportunity Structure",
+      "strength": "strong",
+      "status": "confirmed",
+      "cycle_6_update": "Cycle 6 SUPERSEDES this pattern with architecture-based analysis. Niche segmentation was correct but incomplete. Architecture segmentation reveals that HOW you enter a market matters more than WHICH niche you target. A $149/mo full-service bookkeeping play (score 84) beats a $149/mo restaurant-specific vertical SaaS play (score 71)."
+    },
+    {
+      "pattern_id": "P-016",
+      "description": "NEW: Physical Architecture Dominance Over Digital",
+      "first_observed": "v2-6",
+      "strength": "very_strong",
+      "status": "emerging_confirmed",
+      "detail": "Acquire-and-modernize (84 avg) and rollup (84 avg) outscore every software architecture. Physical assets + permits + customer contracts + favorable financing (SBA 504) create convergence resistance that software CANNOT MATCH. This was INVISIBLE in Cycle 5's tactical scoring because tactical accessibility favors software (easy to start) while structural durability favors physical (hard to compete with)."
+    },
+    {
+      "pattern_id": "P-017",
+      "description": "NEW: Data Compounding as Bridge to Unassailability",
+      "first_observed": "v2-6",
       "strength": "strong",
       "status": "emerging_confirmed",
-      "detail": "Decomposing sectors into specific niches reveals that the BEST opportunities are often in UNDERSERVED NICHES of competitive sectors, not in the sector overall. Example: SMB accounting overall is competitive, but restaurant bookkeeping, agency bookkeeping, and US-LATAM tax are underserved niches within it. Healthcare admin is competitive at enterprise level but dental billing and PT denial prevention are underserved. The niche structure matters more than the sector structure."
+      "detail": "The strongest SOFTWARE plays combine a service entry point with a data compounding flywheel. The service generates revenue AND data. The data creates the unassailable moat that the service alone cannot. C6-DC-FIN-01 (score 86) and C6-DC-HC-01 (score 84) both follow this pattern. Data compounding is the bridge that makes digital plays structurally defensible."
+    },
+    {
+      "pattern_id": "P-018",
+      "description": "NEW: Timing for Physical, Compounding for Digital",
+      "first_observed": "v2-6",
+      "strength": "strong",
+      "status": "emerging_confirmed",
+      "detail": "Physical architectures have TIMING windows (SBA fee waiver Sept 2026, Silver Tsunami peak, PE distress 2026-2028). Digital architectures have COMPOUNDING advantages (data flywheel grows every day). Optimal strategy: START with physical (capture timing window), BUILD digital in parallel (capture compounding)."
     }
   ],
 
   "opportunity_landscape": {
-    "summary": "Cycle 5 decomposed 11 sectors into 102 specific business models. The top-ranked models cluster around three themes: (1) DEAD BUSINESS REVIVAL plays targeting orphaned customers (Bench bookkeeping), (2) ACQUIRE-AND-MODERNIZE physical businesses (CNC shops, bakeries), and (3) UNDERSERVED NICHE SERVICES within competitive sectors (restaurant bookkeeping, dental billing, PT denial prevention, US-LATAM tax). Tool-layer plays and crowded consumer markets scored lowest.",
+    "summary": "Cycle 6 decomposed 8 structural forces across 10 business architecture types, producing 187 models. Architecture-based scoring with structural durability axes REVERSES Cycle 5 rankings: vertical SaaS (Cycle 5 highest tactical accessibility) scores LOWEST (67 avg). Acquire-and-modernize (Cycle 5 harder to start) scores HIGHEST (84 avg). The top models cluster by architecture: (1) Physical acquisition/rollup plays score 84 avg, (2) Full-service replacement scores 79 avg, (3) Data compounding scores 80 avg. Vertical SaaS scores 67 avg.",
     "tier_1_models": [
-      "D5-ACC-01: AI Bookkeeping for Bench Orphans (80)",
-      "D5-MFG-01: Acquire-and-Modernize CA CNC Shop (80)",
-      "D5-FOOD-01: Acquire-and-Modernize CA Wholesale Bakery (77)",
-      "D5-HC-01: AI Prior Auth Appeals for Practices (75)",
-      "D5-ACC-03: AI Bookkeeping for Restaurants (75)"
+      "C6-RC-MFG-01: Multi-Shop CNC Rollup (86)",
+      "C6-AM-MFG-01: Acquire + Modernize CNC Shop (86)",
+      "C6-DC-FIN-01: AI Financial Intelligence Platform (86)",
+      "C6-AM-FOOD-01: Acquire + Modernize Specialty Food (85)",
+      "C6-RMB-HC-01: Healthcare AI Compliance Platform (85)"
     ],
     "tier_2_models": [
-      "D5-ACC-08: AI Cross-Border Tax US-LATAM (74)",
-      "D5-HC-05: AI Billing Denial Prevention for PT (73)",
-      "D5-ACC-02: AI Bookkeeping for Shopify Sellers (73)",
-      "D5-HC-02: AI Billing for Dental Practices (72)",
-      "D5-ACC-06: AI Bookkeeping for Agencies (72)",
-      "D5-MFG-06: Multi-CNC Rollup Platform (72)",
-      "D5-FOOD-03: AI Food Safety Compliance FSMA 204 (71)",
-      "D5-REG-01: AI Compliance for Healthcare AI (71)",
-      "D5-MFG-03: AI Scheduling for Job Shops (71)"
+      "C6-FSR-FIN-01: Full-Service AI Finance for SMBs (84)",
+      "C6-FSR-HC-01: Full-Service Prior Auth Management (84)",
+      "C6-DC-HC-01: Clinical Denial Intelligence (84)",
+      "C6-AW-ACC-01: PE-Distressed Accounting Acquisition (82)",
+      "C6-RC-FOOD-01: Multi-Facility Food Platform (82)",
+      "C6-PI-MFG-01: Manufacturing AI Deployment Stack (79)",
+      "C6-RMB-INS-01: Insurance AI Compliance (78)",
+      "C6-MN-FIN-01: Business Acquisition Marketplace (78)",
+      "C6-FSR-INS-01: Full-Service AI TPA (78)"
     ],
     "not_recommended": [
-      "D5-ACC-07: AI Payroll+Bookkeeping Bundle (56) -- Gusto/Rippling too dominant",
-      "D5-MH-03: AI Sub-Clinical Wellness Consumer App (55) -- Calm/Headspace/BetterHelp too dominant",
-      "D5-INS-02: AI Auto Claims Photo Estimation (58) -- Tractable/CCC too dominant",
-      "D5-ACC-04: AI Tax for Gig Workers (62) -- FlyFin/Keeper too well-funded",
-      "D5-HC-07: AI Clinical Documentation (63) -- Abridge/DeepScribe/Nuance too dominant"
+      "C6-NR-01: Vertical SaaS Therapist Notes (45) -- Blueprint 50K clinicians, tool-layer commodity",
+      "C6-NR-03: Vertical SaaS Payroll+Bookkeeping (38) -- Gusto $746M, Rippling $1.3B",
+      "C6-NR-04: Consumer Mental Health App (35) -- saturated market",
+      "C6-NR-05: Vertical SaaS Clinical Documentation (40) -- Abridge $250M captured",
+      "C6-NR-06: Vertical SaaS Auto Claims Photo (38) -- Tractable $115M, CCC public",
+      "C6-NR-07: Vertical SaaS Shopify Bookkeeping (48) -- Finaloop $35M direct",
+      "C6-NR-08: Vertical SaaS Real Estate AI (30) -- $10.5B funding, 7 unicorns",
+      "C6-NR-09: Platform Government AI (42) -- 12-24mo procurement, Tyler Tech $1.8B",
+      "C6-NR-10: Vertical SaaS AG Irrigation (44) -- Orchard Robotics $22M, OEM risk"
     ]
   },
 
   "key_unknowns": [
-    "Customer discovery interviews -- STILL TOP PRIORITY. Talk to: (a) orphaned Bench customers, (b) restaurant owners about bookkeeping pain, (c) retiring CNC shop owners, (d) PT practice managers about denial rates, (e) LATAM founders about cross-border tax.",
-    "Bench orphaned customer reachability -- can the 35K be identified and contacted? What channels work?",
-    "Restaurant POS integration partnerships -- Toast and Square app marketplace requirements and costs.",
-    "WISeR pilot state prior auth denial data -- how much are denials increasing in pilot states?",
-    "Dental practice billing pain quantification -- what % of revenue is lost to denials? What are current billing costs?",
-    "BizBuySell specific CNC/bakery target shortlisting -- narrow to 5-10 actionable targets with criteria.",
-    "US-LATAM cross-border tax market sizing -- how many of the 150K+ businesses actively need this?",
-    "FSMA 204 compliance gap -- how many food producers are NOT compliant? What's the deadline pressure?"
+    "Customer discovery interviews -- STILL TOP PRIORITY. Talk to: (a) retiring CNC shop owners, (b) specialty food producers, (c) SMB owners doing own bookkeeping, (d) healthcare AI companies about compliance burden, (e) independent practices about prior auth pain.",
+    "SBA 504 CDC relationship establishment -- TIME SENSITIVE before Sept 2026 deadline.",
+    "BizBuySell specific acquisition targets -- narrow to 5-10 CNC shops and 5-10 food producers with criteria.",
+    "Cobot integration partner in CA -- Standard Bots vs UR vs FANUC for specific shop configurations.",
+    "Data compounding feasibility -- can aggregated SMB financial data be productized while maintaining privacy?",
+    "Regulatory moat builder competitive landscape -- any funded players specifically building multi-state healthcare AI compliance?",
+    "PE distress timeline -- when do first forced sales from $1.2T maturity wall appear?",
+    "Manufacturing acquisition operational playbook -- what does the first 90 days post-acquisition look like?"
   ],
 
   "next_cycle_suggestions": [
-    "PRIORITY 1: Customer discovery interviews across top 5 specific models. 3-5 conversations per model.",
-    "PRIORITY 2: Prototype specification for D5-ACC-01 (Bench orphan bookkeeping) or D5-MFG-01 (CNC acquisition).",
-    "PRIORITY 3: Bench orphan customer identification -- build list of reachable former Bench customers.",
-    "PRIORITY 4: BizBuySell target shortlisting for D5-MFG-01 and D5-FOOD-01.",
-    "PRIORITY 5: POS integration pilot (Toast/Square) for D5-ACC-03 (restaurant bookkeeping).",
-    "PRIORITY 6: Prior auth denial data collection from practices in WISeR states."
+    "PRIORITY 1: Customer discovery interviews -- 5+ conversations with retiring CNC/food production owners via BizBuySell.",
+    "PRIORITY 2: SBA 504 CDC relationship -- contact Statewide CDC, model specific acquisition capital stack.",
+    "PRIORITY 3: Narrow BizBuySell targets to 5-10 specific CNC shops and 5-10 food producers.",
+    "PRIORITY 4: Standard Bots / UR partnership exploration for cobot deployment.",
+    "PRIORITY 5: Architecture sequencing plan -- physical FIRST (timing window), digital PARALLEL (compounding).",
+    "PRIORITY 6: Prototype specification for C6-FSR-FIN-01 (full-service finance) or C6-RMB-HC-01 (compliance platform)."
   ]
 }

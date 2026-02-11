@@ -460,7 +460,123 @@
         "PRIORITY 5: Toast/Square POS integration pilot requirements for D5-ACC-03 (restaurant bookkeeping)",
         "PRIORITY 6: Prior auth denial data collection from practices in WISeR pilot states (AZ, NJ, OH, OK, TX, WA)"
       ]
+    },
+    {
+      "cycle": "v2-6",
+      "date": "2026-02-10",
+      "engine_version": "v2.0",
+      "engine_mode": "architecture_based_decomposition",
+      "summary": "ARCHITECTURE-BASED DECOMPOSITION cycle. Corrects 3 Cycle 5 errors: (1) Decomposed by BUSINESS ARCHITECTURE (10 types), not customer segment. (2) Scored STRUCTURAL DURABILITY (5 new weighted axes), not tactical accessibility. (3) Started from 8 structural forces, producing 187 models (vs 102 in Cycle 5). KEY REVERSAL: Vertical SaaS (Cycle 5 highest-scoring category) scores LOWEST under structural durability (67 avg). Acquire-and-modernize scores HIGHEST (84 avg). Physical architectures dominate because convergence resistance from physical assets + permits + contracts >> software. 3 new patterns identified: P-016 Physical Architecture Dominance, P-017 Data Compounding as Bridge, P-018 Timing for Physical / Compounding for Digital.",
+
+      "scoring_methodology": {
+        "axes": ["economic_force_magnitude (35%)", "structural_compounding (25%)", "convergence_resistance (20%)", "timing_structural_fit (10%)", "capital_efficiency (10%)"],
+        "note": "Corrects Cycle 5 Error 2: scores STRUCTURAL DURABILITY, not tactical accessibility. A business that is hard to START but hard to COMPETE WITH scores higher than one that is easy to start but easy to replicate."
+      },
+
+      "architecture_analysis": {
+        "acquire_and_modernize": {"avg_score": 84, "models_in_top_20": 4, "key": "HIGHEST avg score. Physical assets + permits + customer contracts. SBA 504 financing."},
+        "rollup_consolidation": {"avg_score": 84, "models_in_top_20": 2, "key": "Tied highest. Acquire-and-modernize at scale. Strongest compounding."},
+        "data_compounding": {"avg_score": 80, "models_in_top_20": 2, "key": "Highest compounding scores. Service entry + data flywheel = unassailable at scale."},
+        "full_service_replacement": {"avg_score": 79, "models_in_top_20": 5, "key": "Second-highest software architecture. Christensen disruptive layer."},
+        "regulatory_moat_builder": {"avg_score": 77, "models_in_top_20": 3, "key": "Strongest timing scores. Every new regulation = permanent value increase."},
+        "platform_infrastructure": {"avg_score": 74, "models_in_top_20": 2, "key": "Moderate. Build once sell many but lower convergence resistance."},
+        "marketplace_network": {"avg_score": 73, "models_in_top_20": 1, "key": "Binary value. Below/above critical mass."},
+        "arbitrage_window": {"avg_score": 71, "models_in_top_20": 1, "key": "Time-limited. PE distress 2026-2028."},
+        "physical_production_ai": {"avg_score": 68, "models_in_top_20": 1, "key": "Greenfield lower than acquire (no inherited moats)."},
+        "vertical_saas": {"avg_score": 67, "models_in_top_20": 4, "key": "LOWEST. Easy to start, hard to defend. Platform incumbents add features."}
+      },
+
+      "landscape_map": {
+        "tier_1": [
+          {"id": "C6-RC-MFG-01", "name": "Multi-Shop CNC Rollup Platform", "score": 86, "architecture": "rollup_consolidation", "force": "Silver Tsunami + Robotics x AI"},
+          {"id": "C6-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "score": 86, "architecture": "acquire_and_modernize", "force": "Silver Tsunami + Robotics x AI + SBA 504"},
+          {"id": "C6-DC-FIN-01", "name": "AI Financial Intelligence Platform", "score": 86, "architecture": "data_compounding", "force": "Baumol Cure + Jevons + Inference Collapse"},
+          {"id": "C6-AM-FOOD-01", "name": "Acquire + Modernize Specialty Food", "score": 85, "architecture": "acquire_and_modernize", "force": "Silver Tsunami + Robotics x AI + FSMA 204"},
+          {"id": "C6-RMB-HC-01", "name": "Healthcare AI Compliance Platform", "score": 85, "architecture": "regulatory_moat_builder", "force": "Regulatory Fragmentation + CMS WISeR"}
+        ],
+        "tier_2": [
+          {"id": "C6-FSR-FIN-01", "name": "Full-Service AI Finance for SMBs", "score": 84, "architecture": "full_service_replacement"},
+          {"id": "C6-FSR-HC-01", "name": "Full-Service Prior Auth Management", "score": 84, "architecture": "full_service_replacement"},
+          {"id": "C6-DC-HC-01", "name": "Clinical Denial Intelligence", "score": 84, "architecture": "data_compounding"},
+          {"id": "C6-AW-ACC-01", "name": "PE-Distressed Accounting Acquisition", "score": 82, "architecture": "arbitrage_window"},
+          {"id": "C6-RC-FOOD-01", "name": "Multi-Facility Food Platform", "score": 82, "architecture": "rollup_consolidation"},
+          {"id": "C6-PI-MFG-01", "name": "Manufacturing AI Deployment Stack", "score": 79, "architecture": "platform_infrastructure"},
+          {"id": "C6-RMB-INS-01", "name": "Insurance AI Compliance", "score": 78, "architecture": "regulatory_moat_builder"},
+          {"id": "C6-MN-FIN-01", "name": "Business Acquisition Marketplace", "score": 78, "architecture": "marketplace_network"},
+          {"id": "C6-FSR-INS-01", "name": "Full-Service AI TPA", "score": 78, "architecture": "full_service_replacement"}
+        ],
+        "not_recommended": [
+          {"id": "C6-NR-01", "name": "Vertical SaaS Therapist Notes", "score": 45, "reason": "Blueprint 50K clinicians, tool-layer commodity"},
+          {"id": "C6-NR-03", "name": "Vertical SaaS Payroll+Bookkeeping", "score": 38, "reason": "Gusto $746M, Rippling $1.3B"},
+          {"id": "C6-NR-04", "name": "Consumer Mental Health App", "score": 35, "reason": "Saturated market"},
+          {"id": "C6-NR-05", "name": "Vertical SaaS Clinical Documentation", "score": 40, "reason": "Abridge $250M captured"},
+          {"id": "C6-NR-06", "name": "Vertical SaaS Auto Claims Photo", "score": 38, "reason": "Tractable $115M, CCC public"},
+          {"id": "C6-NR-07", "name": "Vertical SaaS Shopify Bookkeeping", "score": 48, "reason": "Finaloop $35M direct"},
+          {"id": "C6-NR-08", "name": "Vertical SaaS Real Estate AI", "score": 30, "reason": "$10.5B funding, 7 unicorns"},
+          {"id": "C6-NR-09", "name": "Platform Government AI", "score": 42, "reason": "12-24mo procurement, Tyler Tech $1.8B"},
+          {"id": "C6-NR-10", "name": "Vertical SaaS AG Irrigation", "score": 44, "reason": "Orchard Robotics $22M, OEM risk"}
+        ]
+      },
+
+      "key_patterns_identified": [
+        {"pattern_id": "P-001", "name": "Multi-Sector Baumol Cure Convergence", "strength": "very_strong", "status": "confirmed", "update": "Architecture analysis: Baumol force creates opportunity for EVERY architecture. Full-service replacement captures 5x more value than vertical SaaS."},
+        {"pattern_id": "P-002", "name": "Demographic Gap + AI Readiness", "strength": "very_strong", "status": "confirmed", "update": "Acquire-and-modernize (84 avg) and rollup (84 avg) are dominant architectures. Silver Tsunami = supply. AI+robotics = capability."},
+        {"pattern_id": "P-003", "name": "Regulatory Fragmentation as Moat", "strength": "very_strong", "status": "confirmed", "update": "Now a distinct architecture type scoring 77 avg. Three plays: healthcare AI, insurance AI, mental health AI. Permanent moat."},
+        {"pattern_id": "P-006", "name": "Robotics x AI Compound Cost Compression", "strength": "very_strong", "status": "confirmed", "update": "Maps to 4 architectures. ACQUIRE is 16 points better than BUILD (84 vs 68) because inherited moats compound."},
+        {"pattern_id": "P-009", "name": "Christensen Three-Layer Framework", "strength": "very_strong", "status": "confirmed", "update": "Architecture-level validation: full-service (79) beats vertical SaaS (67) by 12 points. 12-point gap is STRUCTURAL."},
+        {"pattern_id": "P-016", "name": "NEW: Physical Architecture Dominance", "strength": "very_strong", "status": "emerging_confirmed", "update": "Acquire-and-modernize (84) and rollup (84) outscore every software architecture. Physical convergence resistance >> software."},
+        {"pattern_id": "P-017", "name": "NEW: Data Compounding as Bridge", "strength": "strong", "status": "emerging_confirmed", "update": "Service entry + data flywheel. C6-DC-FIN-01 (86) and C6-DC-HC-01 (84). Makes digital plays structurally defensible."},
+        {"pattern_id": "P-018", "name": "NEW: Timing for Physical, Compounding for Digital", "strength": "strong", "status": "emerging_confirmed", "update": "Physical has timing windows (SBA Sept 2026). Digital has compounding. Strategy: START physical, BUILD digital parallel."}
+      ],
+
+      "transmission_chains_status": [
+        {"chain": "AI Inference Cost Collapse", "node": "N5", "velocity": "very_fast", "note": "50x/yr median decline. DeepSeek R1 at 90% below Western competitors. Cost floor effectively zero."},
+        {"chain": "Professional Services Cascade", "node": "N5", "velocity": "fast", "note": "Architecture analysis: full-service replacement captures the cascade. Vertical SaaS gets commoditized BY the cascade."},
+        {"chain": "Healthcare Demographic Gap", "node": "N5", "velocity": "fast", "note": "CMS WISeR Jan 2026 creates provider-side urgency. Regulatory moat builder architecture strongest."},
+        {"chain": "Robotics x AI Manufacturing", "node": "N4-N5", "velocity": "fast", "note": "ADVANCED from N4. Cobot ROI proven, bakery automation mature, SBA 504 fee waiver. Acquire-and-modernize ready NOW."},
+        {"chain": "Manufacturing Demographic Gap", "node": "N5", "velocity": "fast", "note": "379 CA manufacturing + 77 food production for sale. Window wide open. SBA 504 fee waiver time-sensitive."},
+        {"chain": "Capital Allocation Rotation", "node": "N4", "velocity": "fast", "note": "General Catalyst $750M validates. a16z $1.18B. Physical plays are fundable."},
+        {"chain": "AI Regulatory Fragmentation", "node": "N4", "velocity": "very_fast", "note": "250+ bills, 33 laws, NAIC vendor licensing, FSMA 204. Regulatory wave accelerating."},
+        {"chain": "PE Distress / Minsky Cycle", "node": "N4", "velocity": "moderate_accelerating", "note": "NEW chain. $1.2T maturing 2027-2029. Interest coverage declining. Arbitrage window opening."},
+        {"chain": "Coasean Firm Shrinkage", "node": "N3-N4", "velocity": "moderate", "note": "Micro-firm formation accelerating. Creates demand for platform_infrastructure architecture."},
+        {"chain": "Kondratieff Deployment", "node": "N3-N4", "velocity": "moderate", "note": "AI infra reckoning 2026. Application layer captures value. Build crash-resilient."}
+      ],
+
+      "cross_force_patterns": [
+        "PHYSICAL ARCHITECTURES DOMINATE: 84 avg vs 67 avg for vertical SaaS. The 17-point gap is the key Cycle 6 finding.",
+        "FULL-SERVICE BEATS TOOL LAYER BY 12 POINTS: 79 avg vs 67 avg. Structural, not tactical.",
+        "DATA COMPOUNDING IS THE BRIDGE: Service entry + data flywheel = strongest software play.",
+        "REGULATORY MOATS ARE PERMANENT: Every new law permanently increases compliance platform value.",
+        "TIMING FOR PHYSICAL, COMPOUNDING FOR DIGITAL: Start physical (timing), build digital (compounding).",
+        "JEVONS EXPANSION IS THE LARGEST FORCE BY TAM: 70% unserved SMBs = $400-600B at 10x lower cost."
+      ],
+
+      "cycle_6_key_findings": {
+        "finding_1": "ARCHITECTURE MATTERS MORE THAN NICHE: Cycle 5 found that niche > sector. Cycle 6 finds that architecture > niche. A full-service bookkeeping play (score 84) beats a restaurant-specific vertical SaaS play (score 71) even though both serve 'SMB accounting.' HOW you enter a market determines structural durability more than WHICH segment you target.",
+        "finding_2": "VERTICAL SAAS IS THE WEAKEST ARCHITECTURE: The biggest reversal from Cycle 5. Vertical SaaS scored highest on tactical accessibility (easy to start, findable customers, clear distribution) but LOWEST on structural durability (67 avg). Platform incumbents can add features. No physical moat. Data moat takes years to build. This is the key correction: easy-to-start is not the same as hard-to-kill.",
+        "finding_3": "PHYSICAL ASSETS CREATE CONVERGENCE RESISTANCE THAT SOFTWARE CANNOT MATCH: CNC machines, FDA/USDA certifications, facility permits, customer contracts, SBA 504 financing — these are structural barriers that no amount of engineering talent can replicate. An acquired CNC shop with 15-50 customers and $400K EBITDA is structurally harder to compete with than a $400K ARR SaaS tool.",
+        "finding_4": "DATA COMPOUNDING IS THE BRIDGE PATTERN: The strongest software plays (C6-DC-FIN-01 at 86, C6-DC-HC-01 at 84) combine a service entry point with a data compounding flywheel. The service is the Trojan horse that generates data. The data is the moat. This pattern makes software plays structurally defensible at scale.",
+        "finding_5": "OPTIMAL STRATEGY: START PHYSICAL, BUILD DIGITAL IN PARALLEL. Physical architectures have timing windows that are closing (SBA 504 fee waiver Sept 2026, Silver Tsunami peak). Digital architectures have compounding that grows continuously. The optimal approach captures the time-sensitive physical opportunity while building the data flywheel for the long-term digital moat."
+      },
+
+      "under_explored_areas": [
+        "Manufacturing acquisition operational playbook (first 90 days post-acquisition)",
+        "Cobot integration specifics for CNC vs bakery vs sheet metal applications",
+        "Data compounding privacy/regulatory considerations for financial intelligence platform",
+        "Regulatory moat builder competitive landscape (who else building multi-state compliance?)",
+        "PE distress forced sale identification methodology",
+        "SBA 504 CDC relationship and actual approval timelines"
+      ],
+
+      "next_cycle_direction": [
+        "PRIORITY 1: Customer discovery with retiring CNC/food production owners via BizBuySell.",
+        "PRIORITY 2: SBA 504 CDC relationship establishment before Sept 2026 deadline.",
+        "PRIORITY 3: Narrow BizBuySell targets to 5-10 specific CNC shops and 5-10 food producers.",
+        "PRIORITY 4: Architecture sequencing plan: physical FIRST (timing), digital PARALLEL (compounding).",
+        "PRIORITY 5: Standard Bots / UR partnership for cobot deployment in acquired facilities.",
+        "PRIORITY 6: Prototype specification for C6-FSR-FIN-01 or C6-RMB-HC-01."
+      ]
     }
   ],
-  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data."
+  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data. Cycle 6 is the ARCHITECTURE-BASED DECOMPOSITION cycle: 8 structural forces x 10 business architectures = 187 models. New 5-axis structural durability scoring replaces tactical accessibility scoring. KEY FINDING: physical architectures (acquire-and-modernize, rollup) dominate at 84 avg; vertical SaaS scores LOWEST at 67 avg."
 }
