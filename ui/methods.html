@@ -2,213 +2,440 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Methods - Research Engine</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
   :root {
-    --bg: #09090b;
-    --surface: #18181b;
-    --surface-2: #1f1f23;
-    --border: #27272a;
-    --border-subtle: #1e1e21;
-    --text: #fafafa;
-    --text-secondary: #a1a1aa;
-    --dim: #71717a;
+    --bg: #050507;
+    --surface: rgba(255,255,255,0.03);
+    --surface-hover: rgba(255,255,255,0.055);
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.06);
+    --glass-border-hover: rgba(255,255,255,0.12);
+    --text: #f0f0f5;
+    --text-secondary: #8b8b9e;
+    --dim: #55556a;
     --accent: #a78bfa;
-    --accent-dim: rgba(167,139,250,0.12);
-    --green: #4ade80;
-    --green-dim: rgba(74,222,128,0.12);
+    --accent-glow: rgba(167,139,250,0.15);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.1);
     --red: #f87171;
-    --red-dim: rgba(248,113,113,0.12);
+    --red-dim: rgba(248,113,113,0.08);
     --amber: #fbbf24;
-    --amber-dim: rgba(251,191,36,0.12);
+    --amber-dim: rgba(251,191,36,0.08);
     --blue: #60a5fa;
-    --blue-dim: rgba(96,165,250,0.12);
+    --blue-dim: rgba(96,165,250,0.08);
     --cyan: #22d3ee;
-    --cyan-dim: rgba(34,211,238,0.12);
+    --cyan-dim: rgba(34,211,238,0.08);
     --orange: #fb923c;
-    --orange-dim: rgba(251,146,60,0.12);
-    --radius: 10px;
+    --orange-dim: rgba(251,146,60,0.08);
+    --gradient-1: linear-gradient(135deg, rgba(167,139,250,0.12) 0%, rgba(96,165,250,0.08) 50%, rgba(52,211,153,0.06) 100%);
+    --gradient-accent: linear-gradient(135deg, #a78bfa, #818cf8, #60a5fa);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --blur: 20px;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
     font-size: 14px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+    overflow-x: hidden;
   }
-  .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
 
+  /* Ambient glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -40%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(167,139,250,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -30%;
+    right: -20%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(52,211,153,0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── Nav ─── */
   nav {
-    display: flex; gap: 2px; margin-bottom: 32px;
-    background: var(--surface); border-radius: 8px; padding: 3px; width: fit-content;
+    display: flex;
+    gap: 2px;
+    margin-bottom: 28px;
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 3px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   nav a {
-    color: var(--dim); text-decoration: none; font-size: 13px; font-weight: 500;
-    padding: 6px 16px; border-radius: 6px; transition: all 0.15s;
+    flex: 1;
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 9px;
+    transition: all 0.2s;
+    text-align: center;
+    white-space: nowrap;
   }
   nav a:hover { color: var(--text-secondary); }
-  nav a.active { background: var(--surface-2); color: var(--text); }
-
-  header { margin-bottom: 32px; }
-  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 4px; }
-  .subtitle { color: var(--dim); font-size: 14px; }
-
-  /* Stats strip */
-  .stats {
-    display: flex; gap: 1px; background: var(--border);
-    border-radius: var(--radius); overflow: hidden; margin-bottom: 32px;
-  }
-  .stat-item { flex: 1; background: var(--surface); padding: 16px 20px; text-align: center; }
-  .stat-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-  .stat-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
-  .stat-label { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
-  .stat-value { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
-
-  section { margin-bottom: 32px; }
-  section > h2 {
-    font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px;
-    color: var(--dim); margin-bottom: 12px; font-weight: 500;
+  nav a.active {
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
   }
 
-  /* Category filter */
+  /* ─── Header ─── */
+  header { margin-bottom: 24px; }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 2px;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitle { color: var(--dim); font-size: 13px; }
+
+  /* ─── Glass card base ─── */
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .glass:hover {
+    border-color: var(--glass-border-hover);
+    background: var(--surface-hover);
+  }
+
+  /* ─── Stat cards ─── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .stat-card {
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+  }
+
+  /* ─── Page intro ─── */
+  .page-intro {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    padding: 16px 20px;
+  }
+  .page-intro strong { color: var(--text); font-weight: 600; }
+
+  /* ─── Bento grid ─── */
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .bento-wide { grid-column: 1 / -1; }
+  .bento-item { padding: 20px; }
+
+  /* ─── Section labels ─── */
+  .section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--dim);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .section-hint {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--dim);
+    margin-left: 6px;
+    font-size: 10px;
+  }
+
+  /* ─── Category summary chips ─── */
+  .cat-summary {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .cat-chip {
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    min-width: 110px;
+    flex: 1;
+  }
+  .cat-chip-name { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .cat-chip-count { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+  .cat-chip-disc { font-size: 10px; opacity: 0.8; }
+
+  /* ─── Category filters ─── */
   .cat-filters {
-    display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
   }
   .cat-btn {
-    padding: 5px 14px; border-radius: 100px; border: 1px solid var(--border);
-    background: var(--surface); color: var(--dim); font-size: 12px; font-weight: 500;
-    cursor: pointer; transition: all 0.15s;
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--dim);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
   }
-  .cat-btn:hover { border-color: var(--accent); color: var(--text-secondary); }
-  .cat-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .cat-btn:hover { border-color: rgba(167,139,250,0.3); color: var(--text-secondary); }
+  .cat-btn.active { border-color: rgba(167,139,250,0.3); color: var(--accent); background: var(--accent-glow); }
 
-  /* Method card */
+  /* ─── Method card ─── */
   .method-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px;
-    transition: border-color 0.15s;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
   }
-  .method-card:hover { border-color: var(--accent); }
+  .method-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: var(--accent);
+  }
   .method-header {
-    display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 12px;
   }
-  .method-name { font-weight: 600; font-size: 15px; }
+  .method-name { font-weight: 600; font-size: 14px; }
   .method-cat {
-    font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 100px;
-    text-transform: uppercase; letter-spacing: 0.3px;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .cat-economic_theory { background: var(--accent-dim); color: var(--accent); }
+  .cat-economic_theory { background: var(--accent-glow); color: var(--accent); }
   .cat-math_model { background: var(--cyan-dim); color: var(--cyan); }
   .cat-data_source { background: var(--blue-dim); color: var(--blue); }
   .cat-analytical_lens { background: var(--orange-dim); color: var(--orange); }
   .cat-discovery_method { background: var(--green-dim); color: var(--green); }
 
-  .method-desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 14px; line-height: 1.6; }
+  .method-desc { color: var(--text-secondary); font-size: 12px; margin-bottom: 12px; line-height: 1.6; }
 
-  /* Success rate bar */
+  /* ─── Success rate bar ─── */
   .rate-row {
-    display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
   }
-  .rate-label { font-size: 12px; color: var(--dim); min-width: 90px; }
+  .rate-label { font-size: 11px; color: var(--dim); min-width: 80px; }
   .rate-bar-bg {
-    flex: 1; height: 20px; background: var(--surface-2);
-    border-radius: 4px; overflow: hidden; position: relative;
+    flex: 1;
+    height: 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
   }
   .rate-bar-fill {
-    height: 100%; border-radius: 4px; transition: width 0.3s;
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s;
   }
   .rate-ci {
-    position: absolute; top: 0; height: 100%; border-radius: 4px;
-    background: rgba(255,255,255,0.06);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
   }
-  .rate-val { min-width: 50px; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .rate-val { min-width: 46px; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
-  /* Mini stats */
+  /* ─── Mini stats ─── */
   .method-stats {
-    display: flex; gap: 16px; margin-bottom: 8px;
+    display: flex;
+    gap: 14px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
   }
-  .ms { font-size: 12px; color: var(--dim); }
+  .ms { font-size: 11px; color: var(--dim); }
   .ms strong { color: var(--text-secondary); font-weight: 600; }
 
-  /* Discovery list */
+  /* ─── Discovery list ─── */
   .discovery-list { margin-top: 10px; }
   .disc-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 6px 0; border-bottom: 1px solid var(--border-subtle); font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 12px;
   }
   .disc-item:last-child { border-bottom: none; }
   .disc-cycle {
-    font-size: 10px; font-weight: 600; padding: 2px 8px;
-    border-radius: 100px; background: var(--accent-dim); color: var(--accent);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: var(--accent-glow);
+    color: var(--accent);
     flex-shrink: 0;
   }
-  .disc-desc { color: var(--text-secondary); flex: 1; }
+  .disc-desc { color: var(--text-secondary); flex: 1; font-size: 11px; }
   .disc-score {
-    font-size: 11px; font-weight: 600; color: var(--green);
-    flex-shrink: 0; min-width: 30px; text-align: right;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    flex-shrink: 0;
+    min-width: 30px;
+    text-align: right;
   }
 
-  /* Exploration candidates */
+  /* ─── Exploration candidates ─── */
   .explore-card {
-    background: var(--amber-dim); border: 1px solid rgba(251,191,36,0.2);
-    border-radius: var(--radius); padding: 16px 20px; margin-bottom: 10px;
+    background: var(--amber-dim);
+    border: 1px solid rgba(251,191,36,0.15);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin-bottom: 8px;
   }
   .explore-header {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    gap: 12px;
   }
-  .explore-name { font-weight: 600; font-size: 13px; color: var(--amber); }
-  .explore-meta { font-size: 12px; color: var(--dim); }
-  .explore-rec { font-size: 12px; color: var(--amber); margin-top: 4px; }
+  .explore-name { font-weight: 600; font-size: 12px; color: var(--amber); }
+  .explore-meta { font-size: 11px; color: var(--dim); }
+  .explore-rec { font-size: 11px; color: var(--amber); margin-top: 2px; opacity: 0.85; }
 
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px;
-  }
-  .card h3 {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
-    color: var(--dim); margin-bottom: 12px; font-weight: 500;
-  }
-  .empty { text-align: center; padding: 40px 24px; color: var(--dim); font-size: 13px; }
-  .page-intro {
-    color: var(--text-secondary); font-size: 13px; line-height: 1.7;
-    margin-bottom: 24px; max-width: 800px;
-  }
-  .section-hint {
-    font-size: 12px; color: var(--dim); font-weight: 400;
-    text-transform: none; letter-spacing: 0; margin-left: 8px;
-  }
-
-  /* Allocation bars */
+  /* ─── Allocation bars ─── */
   .alloc-row {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
   }
-  .alloc-name { min-width: 160px; font-size: 12px; color: var(--dim); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .alloc-name {
+    min-width: 140px;
+    font-size: 11px;
+    color: var(--dim);
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .alloc-bar-bg {
-    flex: 1; height: 14px; background: var(--surface-2);
-    border-radius: 3px; overflow: hidden;
+    flex: 1;
+    height: 14px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 4px;
+    overflow: hidden;
   }
-  .alloc-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
-  .alloc-val { min-width: 30px; font-size: 11px; font-weight: 600; color: var(--text-secondary); }
+  .alloc-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--gradient-accent);
+  }
+  .alloc-val { min-width: 30px; font-size: 11px; font-weight: 700; color: var(--text-secondary); }
 
-  /* Category summary */
-  .cat-summary {
-    display: flex; gap: 8px; flex-wrap: wrap;
+  .empty { text-align: center; padding: 32px 16px; color: var(--dim); font-size: 12px; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 640px) {
+    .container { padding: 16px 12px; }
+    h1 { font-size: 20px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .stat-card { padding: 14px 12px; }
+    .stat-value { font-size: 24px; }
+    .bento { grid-template-columns: 1fr; }
+    .bento-item { padding: 16px; }
+    .cat-summary { gap: 6px; }
+    .cat-chip { min-width: 90px; padding: 10px 12px; }
+    .cat-chip-count { font-size: 18px; }
+    .method-header { flex-direction: column; gap: 6px; }
+    .method-stats { gap: 8px; }
+    .rate-label { min-width: 70px; font-size: 10px; }
+    .alloc-name { min-width: 100px; font-size: 10px; }
   }
-  .cat-chip {
-    padding: 10px 16px; border-radius: 8px; text-align: center; min-width: 110px;
-  }
-  .cat-chip-name { font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 2px; }
-  .cat-chip-count { font-size: 20px; font-weight: 700; }
-  .cat-chip-disc { font-size: 11px; }
 
   @media print {
-    :root { --bg:#fff; --surface:#fff; --surface-2:#f5f5f5; --border:#ddd; --text:#111; --text-secondary:#444; --dim:#666; }
+    body::before, body::after { display: none; }
+    :root { --bg:#fff; --glass:transparent; --glass-border:#ddd; --text:#111; --text-secondary:#444; --dim:#666; }
     body { background:#fff; color:#111; }
     nav { display:none !important; }
+    .glass { backdrop-filter: none; -webkit-backdrop-filter: none; background: #f8f8f8; }
   }
 </style>
 </head>
@@ -226,38 +453,35 @@
     <div class="subtitle">Exploration / exploitation allocation across analytical approaches</div>
   </header>
 
-  <p class="page-intro">
-    Each analytical method (economic theory, data source, discovery approach) is tracked as a multi-armed bandit.
-    Success rates update after every cycle based on whether the method produced a discovery. Thompson sampling
+  <div class="glass page-intro">
+    Each analytical method (economic theory, data source, discovery approach) is tracked as a <strong>multi-armed bandit</strong>.
+    Success rates update after every cycle based on whether the method produced a discovery. <strong>Thompson sampling</strong>
     allocates future cycle attention toward methods with the best risk-adjusted payoff. High-uncertainty methods
     get exploration bonus.
-  </p>
+  </div>
 
   <!-- Stats -->
-  <div class="stats">
-    <div class="stat-item">
+  <div class="stat-grid">
+    <div class="glass stat-card">
       <div class="stat-label">Methods</div>
       <div class="stat-value" id="s-methods" style="color:var(--accent)">0</div>
     </div>
-    <div class="stat-item">
+    <div class="glass stat-card">
       <div class="stat-label">Applications</div>
       <div class="stat-value" id="s-applications">0</div>
     </div>
-    <div class="stat-item">
+    <div class="glass stat-card">
       <div class="stat-label">Discoveries</div>
       <div class="stat-value" id="s-discoveries" style="color:var(--green)">0</div>
     </div>
-    <div class="stat-item">
+    <div class="glass stat-card">
       <div class="stat-label">Avg Success</div>
       <div class="stat-value" id="s-avg-rate" style="color:var(--amber)">0%</div>
     </div>
   </div>
 
   <!-- Category summary -->
-  <section>
-    <h2>By Category</h2>
-    <div class="cat-summary" id="cat-summary"></div>
-  </section>
+  <div class="cat-summary" id="cat-summary"></div>
 
   <!-- Category filters -->
   <div class="cat-filters" id="cat-filters">
@@ -265,25 +489,25 @@
   </div>
 
   <!-- Exploration candidates -->
-  <section id="explore-section" style="display:none">
-    <h2>Needs More Testing <span class="section-hint">wide confidence interval, exploration bonus active</span></h2>
+  <section id="explore-section" style="display:none; margin-bottom: 16px;">
+    <div class="section-label">Needs More Testing <span class="section-hint">wide confidence interval, exploration bonus active</span></div>
     <div id="explore-list"></div>
   </section>
 
   <!-- All methods -->
-  <section>
-    <h2>All Methodologies</h2>
+  <section style="margin-bottom: 16px;">
+    <div class="section-label">All Methodologies</div>
     <div id="method-list"><div class="empty">No methodology data</div></div>
   </section>
 
   <!-- Allocation + Log -->
-  <div class="grid-2">
-    <div class="card">
-      <h3>Thompson Sampling Allocation (next cycle)</h3>
+  <div class="bento">
+    <div class="glass bento-item">
+      <div class="section-label">Thompson Sampling Allocation <span class="section-hint">next cycle</span></div>
       <div id="alloc-chart"><div class="empty">No allocation data</div></div>
     </div>
-    <div class="card">
-      <h3>Recent Applications</h3>
+    <div class="glass bento-item">
+      <div class="section-label">Recent Applications</div>
       <div id="cycle-log"><div class="empty">No application log</div></div>
     </div>
   </div>
@@ -295,7 +519,7 @@ let allData = null;
 let activeCategory = 'all';
 
 const CAT_COLORS = {
-  economic_theory: {bg:'var(--accent-dim)',fg:'var(--accent)'},
+  economic_theory: {bg:'var(--accent-glow)',fg:'var(--accent)'},
   math_model: {bg:'var(--cyan-dim)',fg:'var(--cyan)'},
   data_source: {bg:'var(--blue-dim)',fg:'var(--blue)'},
   analytical_lens: {bg:'var(--orange-dim)',fg:'var(--orange)'},
@@ -360,7 +584,7 @@ function renderCategorySummary(methods) {
     cats[c].applications += m.total_applications||0;
   }
   el.innerHTML = Object.entries(cats).map(([cat, d]) => {
-    const col = CAT_COLORS[cat] || {bg:'var(--surface-2)',fg:'var(--dim)'};
+    const col = CAT_COLORS[cat] || {bg:'rgba(255,255,255,0.04)',fg:'var(--dim)'};
     return `<div class="cat-chip" style="background:${col.bg};color:${col.fg}">
       <div class="cat-chip-name">${esc(CAT_LABELS[cat]||cat)}</div>
       <div class="cat-chip-count">${d.count}</div>
@@ -400,7 +624,6 @@ function renderMethods(methods) {
     const rate = successRate(m);
     const ci = confidenceInterval(m);
     const col = rateColor(rate);
-    const catCol = CAT_COLORS[m.category] || {bg:'var(--surface-2)',fg:'var(--dim)'};
 
     // Discoveries
     const discs = (m.discoveries||[]).slice(-5);
@@ -417,7 +640,7 @@ function renderMethods(methods) {
     const ciHigh = ci.high * 100;
     const ciWidth = ciHigh - ciLow;
 
-    return `<div class="method-card">
+    return `<div class="glass method-card">
       <div class="method-header">
         <span class="method-name">${esc(m.name)}</span>
         <span class="method-cat cat-${m.category}">${esc(CAT_LABELS[m.category]||m.category)}</span>

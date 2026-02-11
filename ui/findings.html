@@ -2,289 +2,209 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Findings - Research Engine</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
   :root {
-    --bg: #09090b;
-    --surface: #18181b;
-    --surface-2: #1f1f23;
-    --border: #27272a;
-    --border-subtle: #1e1e21;
-    --text: #fafafa;
-    --text-secondary: #a1a1aa;
-    --dim: #71717a;
+    --bg: #050507;
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.06);
+    --glass-hover: rgba(255,255,255,0.055);
+    --glass-border-hover: rgba(255,255,255,0.12);
+    --text: #f0f0f5;
+    --text-secondary: #8b8b9e;
+    --dim: #55556a;
     --accent: #a78bfa;
-    --accent-dim: rgba(167,139,250,0.12);
-    --green: #4ade80;
-    --green-dim: rgba(74,222,128,0.12);
+    --accent-glow: rgba(167,139,250,0.15);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.1);
     --red: #f87171;
-    --red-dim: rgba(248,113,113,0.12);
+    --red-dim: rgba(248,113,113,0.08);
     --amber: #fbbf24;
-    --amber-dim: rgba(251,191,36,0.12);
+    --amber-dim: rgba(251,191,36,0.08);
     --blue: #60a5fa;
-    --blue-dim: rgba(96,165,250,0.12);
     --cyan: #22d3ee;
-    --cyan-dim: rgba(34,211,238,0.12);
     --orange: #fb923c;
-    --orange-dim: rgba(251,146,60,0.12);
-    --radius: 10px;
+    --gradient-accent: linear-gradient(135deg, #a78bfa, #818cf8, #60a5fa);
+    --gradient-1: linear-gradient(135deg, rgba(167,139,250,0.12) 0%, rgba(96,165,250,0.08) 50%, rgba(52,211,153,0.06) 100%);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --blur: 20px;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg); color: var(--text);
+    font-size: 14px; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    min-height: 100dvh; overflow-x: hidden;
   }
-  .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
+  body::before {
+    content: ''; position: fixed; top: -40%; left: -20%; width: 80%; height: 80%;
+    background: radial-gradient(ellipse, rgba(167,139,250,0.04) 0%, transparent 60%);
+    pointer-events: none; z-index: 0;
+  }
+  .container {
+    max-width: 960px; margin: 0 auto; padding: 24px 16px;
+    padding-top: max(24px, env(safe-area-inset-top));
+    position: relative; z-index: 1;
+  }
 
+  /* Nav */
   nav {
-    display: flex; gap: 2px; margin-bottom: 32px;
-    background: var(--surface); border-radius: 8px; padding: 3px; width: fit-content;
+    display: flex; gap: 2px; margin-bottom: 28px;
+    background: var(--glass); backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border); border-radius: 12px;
+    padding: 3px; width: 100%; overflow-x: auto;
   }
   nav a {
-    color: var(--dim); text-decoration: none; font-size: 13px; font-weight: 500;
-    padding: 6px 16px; border-radius: 6px; transition: all 0.15s;
+    flex: 1; color: var(--dim); text-decoration: none; font-size: 13px;
+    font-weight: 500; padding: 8px 12px; border-radius: 9px;
+    transition: all 0.2s; text-align: center; white-space: nowrap;
   }
   nav a:hover { color: var(--text-secondary); }
-  nav a.active { background: var(--surface-2); color: var(--text); }
+  nav a.active { background: rgba(255,255,255,0.06); color: var(--text); }
 
-  header { margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; }
-  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.5px; }
-  .header-meta { color: var(--dim); font-size: 13px; text-align: right; }
+  /* Glass base */
+  .glass {
+    background: var(--glass); backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border); border-radius: var(--radius);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .glass:hover { border-color: var(--glass-border-hover); background: var(--glass-hover); }
 
-  /* Stats strip */
-  .stats {
-    display: flex; gap: 1px; background: var(--border);
-    border-radius: var(--radius); overflow: hidden; margin-bottom: 32px;
+  header { margin-bottom: 24px; }
+  h1 {
+    font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 2px;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .stat-item { flex: 1; background: var(--surface); padding: 16px 20px; text-align: center; }
-  .stat-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-  .stat-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
-  .stat-label { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
-  .stat-value { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .subtitle { color: var(--dim); font-size: 13px; }
+  .page-intro { color: var(--text-secondary); font-size: 12px; line-height: 1.7; margin-bottom: 20px; max-width: 700px; }
 
-  section { margin-bottom: 32px; }
-  section > h2 {
-    font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px;
-    color: var(--dim); margin-bottom: 12px; font-weight: 500;
-  }
+  /* Stats */
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+  .stat-card { padding: 16px; text-align: center; }
+  .stat-label { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 4px; }
+  .stat-value { font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
 
-  /* Synthesis box */
-  .synthesis-box {
-    background: var(--accent-dim); border: 1px solid rgba(167,139,250,0.2);
-    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 32px;
+  /* Synthesis */
+  .synthesis {
+    padding: 24px; background: var(--gradient-1);
+    border-color: rgba(167,139,250,0.1); margin-bottom: 12px;
   }
-  .synthesis-box h2 {
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px;
-    color: var(--accent); margin-bottom: 8px; font-weight: 600;
-  }
-  .synthesis-text {
-    color: var(--text-secondary); font-size: 14px; line-height: 1.7;
-  }
+  .synthesis-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+  .synthesis-text { color: var(--text-secondary); font-size: 13px; line-height: 1.8; }
 
-  /* Card */
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 16px;
-  }
-  .card h3 {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
-    color: var(--dim); margin-bottom: 12px; font-weight: 500;
-  }
-
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
-
-  .empty { text-align: center; padding: 40px 24px; color: var(--dim); font-size: 13px; }
-
-  /* Section hints + legend */
-  .section-hint {
-    font-size: 12px; color: var(--dim); font-weight: 400;
-    text-transform: none; letter-spacing: 0; margin-left: 8px;
-  }
+  /* Legend */
   .legend {
-    display: flex; flex-wrap: wrap; gap: 6px 14px;
-    padding: 10px 16px; background: var(--surface);
-    border: 1px solid var(--border); border-radius: 8px;
-    margin-bottom: 24px; font-size: 11px; color: var(--dim);
+    display: flex; flex-wrap: wrap; gap: 8px 16px;
+    padding: 12px 16px; margin-bottom: 12px; font-size: 10px; color: var(--dim);
   }
-  .legend-item { white-space: nowrap; }
-  .legend-dot {
-    display: inline-block; width: 6px; height: 6px;
-    border-radius: 50%; margin-right: 4px; vertical-align: middle;
-  }
-  .page-intro {
-    color: var(--text-secondary); font-size: 13px; line-height: 1.7;
-    margin-bottom: 24px; max-width: 800px;
-  }
+  .legend-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+  .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--dim); font-weight: 600; margin-bottom: 10px; }
+  .section-hint { font-weight: 400; letter-spacing: 0; text-transform: none; margin-left: 6px; font-size: 10px; }
 
   /* Opportunity cards */
   .opp-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px;
-    border-left: 3px solid var(--accent);
+    padding: 18px 20px; margin-bottom: 10px;
+    position: relative; overflow: hidden;
   }
-  .opp-card.parked { border-left-color: var(--amber); }
-  .opp-card.killed { border-left-color: var(--red); }
-  .opp-header {
-    display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;
+  .opp-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px;
   }
-  .opp-name { font-size: 15px; font-weight: 600; color: var(--text); }
-  .opp-badges { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
-
+  .opp-card.t1::before { background: var(--green); }
+  .opp-card.t2::before { background: var(--amber); }
+  .opp-card.t3::before { background: var(--accent); }
+  .opp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 12px; }
+  .opp-name { font-weight: 600; font-size: 14px; flex: 1; }
+  .opp-badges { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
   .score-badge {
-    background: var(--accent); color: var(--bg);
-    padding: 3px 10px; border-radius: 100px;
-    font-weight: 700; font-size: 13px;
+    font-weight: 800; font-size: 13px; padding: 2px 10px;
+    border-radius: 8px; letter-spacing: -0.5px;
   }
-  .horizon-tag {
-    padding: 3px 10px; border-radius: 100px;
-    font-size: 11px; font-weight: 600;
+  .sb-t1 { background: var(--green-dim); color: var(--green); }
+  .sb-t2 { background: var(--amber-dim); color: var(--amber); }
+  .sb-t3 { background: rgba(167,139,250,0.1); color: var(--accent); }
+  .tier-pill {
+    font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 6px;
   }
-  .tag-h1 { background: var(--green-dim); color: var(--green); }
-  .tag-h2 { background: var(--amber-dim); color: var(--amber); }
-  .tag-h3 { background: var(--accent-dim); color: var(--accent); }
+  .tp-1 { background: var(--green-dim); color: var(--green); }
+  .tp-2 { background: var(--amber-dim); color: var(--amber); }
+  .tp-3 { background: rgba(167,139,250,0.1); color: var(--accent); }
 
-  .thesis-text {
-    color: var(--text-secondary); font-size: 13px; line-height: 1.7; margin-bottom: 12px;
-  }
-  .data-points { list-style: none; margin-bottom: 12px; }
-  .data-points li {
-    padding: 3px 0 3px 16px; position: relative;
-    font-size: 12px; color: var(--dim);
-  }
-  .data-points li::before {
-    content: '\2022'; position: absolute; left: 0; color: var(--accent);
-  }
-
-  .vc-hook {
-    background: var(--accent-dim); border: 1px solid rgba(167,139,250,0.15);
-    border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; font-size: 13px; color: var(--accent);
-  }
-  .vc-hook-label {
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;
-    color: var(--dim); margin-bottom: 2px;
-  }
+  .thesis-text { color: var(--text-secondary); font-size: 12px; line-height: 1.7; margin-bottom: 10px; }
+  .data-points { list-style: none; margin-bottom: 10px; }
+  .data-points li { padding: 2px 0 2px 14px; position: relative; font-size: 11px; color: var(--dim); }
+  .data-points li::before { content: '\2022'; position: absolute; left: 0; color: var(--accent); }
 
   .opp-footer {
-    display: flex; gap: 12px; align-items: center; font-size: 12px; color: var(--dim);
-    border-top: 1px solid var(--border-subtle); padding-top: 10px;
+    display: flex; gap: 10px; align-items: center; font-size: 11px; color: var(--dim);
+    border-top: 1px solid rgba(255,255,255,0.04); padding-top: 8px; margin-top: 8px;
   }
+  .counter-note { font-size: 11px; color: var(--orange); margin-top: 6px; }
 
-  .status-tag {
-    padding: 2px 10px; border-radius: 100px;
-    font-size: 10px; font-weight: 600; text-transform: uppercase;
-  }
-  .status-active { background: var(--green-dim); color: var(--green); }
-  .status-verified { background: var(--green-dim); color: var(--green); }
-  .status-parked { background: var(--amber-dim); color: var(--amber); }
-  .status-killed { background: var(--red-dim); color: var(--red); }
-  .status-scanning { background: var(--blue-dim); color: var(--blue); }
-
-  .counter-note {
-    font-size: 11px; color: var(--orange); margin-top: 6px; padding-left: 2px;
-  }
-
-  /* Pattern cards */
-  .pattern-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 16px 20px; margin-bottom: 10px;
-  }
-  .pattern-header {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
-  }
-  .pattern-name { font-weight: 600; font-size: 13px; }
-  .strength-bar {
-    width: 80px; height: 5px; background: var(--border);
-    border-radius: 3px; overflow: hidden;
-  }
+  /* Patterns */
+  .pattern-card { padding: 14px 18px; margin-bottom: 8px; }
+  .pattern-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+  .pattern-name { font-weight: 600; font-size: 12px; }
+  .strength-bar { width: 70px; height: 4px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
   .strength-fill { height: 100%; border-radius: 3px; }
   .s-high { background: var(--green); }
   .s-med { background: var(--amber); }
   .s-low { background: var(--red); }
+  .pattern-evidence { font-size: 11px; color: var(--dim); line-height: 1.6; }
+  .pattern-status { font-size: 10px; color: var(--dim); margin-top: 4px; }
 
-  .principle-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px; }
-  .principle-tag {
-    background: var(--surface-2); color: var(--dim);
-    padding: 2px 8px; border-radius: 100px; font-size: 10px; font-weight: 500;
+  /* Barriers */
+  .barrier-item {
+    padding: 10px 14px; margin-bottom: 6px;
+    border-left: 3px solid var(--red); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   }
-  .pattern-evidence { font-size: 12px; color: var(--dim); line-height: 1.6; }
-  .pattern-status { font-size: 11px; color: var(--dim); margin-top: 6px; }
+  .barrier-item.moat { border-left-color: var(--amber); }
+  .barrier-target { font-weight: 600; font-size: 12px; margin-bottom: 2px; }
+  .barrier-reason { color: var(--red); font-size: 11px; }
+  .moat-tag { font-size: 9px; color: var(--green); font-weight: 700; margin-left: 6px; }
+  .barrier-cycle { font-size: 10px; color: var(--dim); margin-top: 2px; }
 
-  /* Kill index */
-  .kill-item {
-    padding: 10px 14px; border-left: 3px solid var(--red);
-    background: var(--red-dim); border-radius: 0 8px 8px 0;
-    margin-bottom: 8px; font-size: 13px;
-  }
-  .kill-target { font-weight: 600; margin-bottom: 2px; }
-  .kill-reason { color: var(--red); font-size: 12px; }
-  .kill-cycle { font-size: 11px; color: var(--dim); margin-top: 2px; }
-
-  /* Parked */
-  .reactivation-triggers { list-style: none; margin-top: 6px; }
-  .reactivation-triggers li {
-    padding: 2px 0 2px 14px; position: relative;
-    font-size: 11px; color: var(--amber);
-  }
-  .reactivation-triggers li::before {
-    content: '\25B6'; position: absolute; left: 0; font-size: 7px; top: 5px; color: var(--amber);
-  }
+  /* Grid */
+  .bento { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 12px; }
+  .bento-wide { grid-column: 1 / -1; }
+  .bento-item { padding: 20px; }
 
   /* Sector grid */
-  .sector-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px;
-  }
+  .sector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
   .sector-cell {
-    padding: 12px; border-radius: 8px;
-    border: 1px solid var(--border); background: var(--surface); text-align: center;
+    padding: 10px; border-radius: var(--radius-sm); text-align: center;
+    border: 1px solid var(--glass-border);
   }
-  .sector-cell.sc-killed { border-color: rgba(248,113,113,0.3); background: var(--red-dim); }
-  .sector-cell.sc-parked { border-color: rgba(251,191,36,0.3); background: var(--amber-dim); }
-  .sector-cell.sc-scanning { border-color: rgba(96,165,250,0.3); background: var(--blue-dim); }
-  .sector-cell.sc-confirmed { border-color: rgba(74,222,128,0.3); background: var(--green-dim); }
-  .sector-name { font-size: 11px; font-weight: 600; margin-bottom: 2px; color: var(--text-secondary); }
-  .sector-count { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .sector-name { font-size: 10px; font-weight: 600; color: var(--text-secondary); margin-bottom: 2px; }
+  .sector-count { font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
   .sector-meta { font-size: 10px; color: var(--dim); }
 
-  /* Grading weights */
-  .weight-row {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
-  }
-  .weight-label {
-    min-width: 160px; font-size: 12px; color: var(--dim); text-align: right;
-  }
-  .weight-bar-bg {
-    flex: 1; height: 16px; background: var(--surface-2);
-    border-radius: 4px; overflow: hidden;
-  }
-  .weight-bar-fill {
-    height: 100%; background: var(--accent); border-radius: 4px;
-  }
-  .weight-val {
-    min-width: 36px; font-size: 12px; font-weight: 600;
-    font-variant-numeric: tabular-nums; text-align: left;
-  }
+  /* Weight bars */
+  .weight-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .weight-label { min-width: 140px; font-size: 11px; color: var(--dim); text-align: right; }
+  .weight-bar-bg { flex: 1; height: 14px; background: rgba(255,255,255,0.04); border-radius: 4px; overflow: hidden; }
+  .weight-bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
+  .weight-val { min-width: 32px; font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
-  /* Print */
-  @media print {
-    :root {
-      --bg: #fff; --surface: #fff; --surface-2: #f5f5f5;
-      --border: #ddd; --border-subtle: #eee;
-      --text: #111; --text-secondary: #444; --dim: #666;
-      --accent: #6d28d9; --accent-dim: #f3f0ff;
-      --green: #16a34a; --green-dim: #f0fdf4;
-      --red: #dc2626; --red-dim: #fef2f2;
-      --amber: #d97706; --amber-dim: #fffbeb;
-    }
-    body { background: #fff; color: #111; font-size: 11px; }
-    .container { max-width: 100%; padding: 10px; }
-    nav { display: none !important; }
-    .card, .opp-card, .pattern-card, .kill-item { break-inside: avoid; }
-    .score-badge { background: #6d28d9; color: #fff; }
+  .empty { text-align: center; padding: 32px 16px; color: var(--dim); font-size: 12px; }
+
+  @media (max-width: 640px) {
+    .container { padding: 16px 12px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento { grid-template-columns: 1fr; }
+    .bento-item { padding: 16px; }
+    .opp-header { flex-direction: column; gap: 6px; }
+    .opp-badges { align-self: flex-start; }
+    .sector-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -298,93 +218,55 @@
   </nav>
 
   <header>
-    <div>
-      <h1>Findings</h1>
-    </div>
-    <div class="header-meta">
-      <div id="last-updated">--</div>
-      <div style="color:var(--green)">auto-refresh 30s</div>
-    </div>
+    <h1>Findings</h1>
+    <div class="subtitle" id="last-updated">--</div>
   </header>
 
   <p class="page-intro">
     Deep analysis of every opportunity the engine has constructed. Each business model is scored by economic force,
-    structural advantage, and timing readiness. Structural patterns show recurring cross-signal themes.
-    Barriers are not rejections &mdash; high-barrier sectors with moat potential may be the strongest opportunities.
+    structural advantage, and timing readiness. Barriers are not rejections &mdash; high-barrier sectors may be the strongest opportunities.
   </p>
 
-  <!-- Tier legend -->
-  <div class="legend">
-    <span class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction, near-term</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; strong signal, needs validation</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; early signal, monitoring</span>
-    <span class="legend-item" style="margin-left:auto; border-left:1px solid var(--border); padding-left:14px;">
-      Score = economic force (0&ndash;100) &middot; Barriers can indicate moat potential
-    </span>
+  <div class="glass legend">
+    <span><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction</span>
+    <span><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; needs validation</span>
+    <span><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; monitoring</span>
+    <span style="margin-left:auto;opacity:0.6">Score = economic force (0&ndash;100)</span>
   </div>
 
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-label">Cycle</div>
-      <div class="stat-value" id="exec-cycle" style="color:var(--accent)">0</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-label">Signals Scanned</div>
-      <div class="stat-value" id="exec-signals">0</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-label">Business Models</div>
-      <div class="stat-value" id="exec-active" style="color:var(--green)">0</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-label">Barriers</div>
-      <div class="stat-value" id="exec-kills" style="color:var(--amber)">0</div>
-    </div>
+  <div class="stat-grid">
+    <div class="glass stat-card"><div class="stat-label">Cycle</div><div class="stat-value" id="exec-cycle" style="color:var(--accent)">0</div></div>
+    <div class="glass stat-card"><div class="stat-label">Signals</div><div class="stat-value" id="exec-signals">0</div></div>
+    <div class="glass stat-card"><div class="stat-label">Models</div><div class="stat-value" id="exec-active" style="color:var(--green)">0</div></div>
+    <div class="glass stat-card"><div class="stat-label">Barriers</div><div class="stat-value" id="exec-kills" style="color:var(--amber)">0</div></div>
   </div>
 
-  <!-- Synthesis -->
-  <div class="synthesis-box">
-    <h2>Master Synthesis</h2>
+  <div class="glass synthesis">
+    <div class="synthesis-label">Master Synthesis</div>
     <div class="synthesis-text" id="exec-synthesis">No synthesis available yet. Run a research cycle to generate findings.</div>
   </div>
 
-  <!-- Active Opportunities -->
-  <section>
-    <h2>Active Opportunities <span class="section-hint">business models ranked by tier and economic force</span></h2>
-    <div id="active-opportunities"><div class="empty">No active opportunities yet</div></div>
-  </section>
+  <div class="section-label" style="margin-top:16px;">Active Opportunities <span class="section-hint">business models ranked by tier and economic force</span></div>
+  <div id="active-opportunities"><div class="empty">No active opportunities yet</div></div>
 
-  <!-- Patterns + Barrier Index -->
-  <div class="grid-2">
-    <div>
-      <section>
-        <h2>Structural Patterns <span class="section-hint">recurring cross-signal themes</span></h2>
-        <div id="confirmed-patterns"><div class="empty">No patterns detected yet</div></div>
-      </section>
+  <div class="bento" style="margin-top:16px;">
+    <div class="glass bento-item">
+      <div class="section-label">Structural Patterns <span class="section-hint">cross-signal themes</span></div>
+      <div id="confirmed-patterns"><div class="empty">No patterns detected</div></div>
     </div>
-    <div>
-      <section>
-        <h2>Barrier Index <span class="section-hint">entry barriers &mdash; some indicate moat potential</span></h2>
-        <div id="kill-index"><div class="empty">No barriers recorded</div></div>
-      </section>
+    <div class="glass bento-item">
+      <div class="section-label">Barrier Index <span class="section-hint">some indicate moat potential</span></div>
+      <div id="kill-index"><div class="empty">No barriers recorded</div></div>
     </div>
   </div>
 
-  <!-- Parked Opportunities -->
-  <section>
-    <h2>Parked Opportunities <span class="section-hint">paused pending customer discovery or new data</span></h2>
-    <div id="parked-opportunities"><div class="empty">No parked opportunities</div></div>
-  </section>
-
-  <!-- Sectors + Weights -->
-  <div class="grid-2">
-    <div class="card">
-      <h3>Sector Coverage</h3>
+  <div class="bento">
+    <div class="glass bento-item">
+      <div class="section-label">Sector Coverage</div>
       <div id="sector-coverage"><div class="empty">No sector data</div></div>
     </div>
-    <div class="card">
-      <h3>Grading Weights</h3>
+    <div class="glass bento-item">
+      <div class="section-label">Grading Weights</div>
       <div id="grading-weights"><div class="empty">No weights configured</div></div>
     </div>
   </div>
@@ -392,88 +274,58 @@
 
 <script>
 const DATA_URL = '../data/ui/dashboard.json';
-
 function esc(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-
-function truncate(text,n){
-  if(!text)return'';
-  const m=text.match(/[^.!?]+[.!?]+/g);
-  return m?m.slice(0,n).join(' ').trim():text;
-}
-
-function hClass(h){
-  if(!h)return'';
-  const l=h.toLowerCase();
-  return l.includes('h1')?'tag-h1':l.includes('h2')?'tag-h2':l.includes('h3')?'tag-h3':'';
-}
-
-function sClass(s){
-  if(!s)return'';
-  const l=s.toLowerCase();
-  if(l==='killed')return'status-killed';
-  if(l==='parked')return'status-parked';
-  if(l==='active'||l==='verified'||l==='confirmed'||l==='pursue')return'status-active';
-  if(l==='scanning'||l==='new'||l.includes('investigate'))return'status-scanning';
-  return'';
-}
+function truncate(t,n){if(!t)return'';const m=t.match(/[^.!?]+[.!?]+/g);return m?m.slice(0,n).join(' ').trim():t}
 
 function strengthInfo(s){
   const l=typeof s==='string'?s.toLowerCase().replace(/_/g,'-'):'';
   if(l.includes('very')||l==='high'||l==='strong')return{cls:'s-high',pct:95};
   if(l.includes('moderate')||l==='medium')return{cls:'s-med',pct:60};
-  if(typeof s==='number')return{cls:s>70?'s-high':s>40?'s-med':'s-low',pct:Math.min(100,Math.max(10,s))};
   return{cls:'s-low',pct:30};
 }
 
-function renderExec(data){
-  document.getElementById('exec-cycle').textContent=data.cycle||data.current_cycle||0;
-  // v2: flatten landscape tiers
-  const landscape=data.opportunity_landscape||data.landscape||{};
+function renderExec(d){
+  document.getElementById('exec-cycle').textContent=d.cycle||d.current_cycle||0;
+  const landscape=d.opportunity_landscape||d.landscape||{};
   const t1=landscape.tier_1||[];const t2=landscape.tier_2||[];const t3=landscape.tier_3||[];
-  const allLandscape=[...t1,...t2,...t3];
-  const opps=allLandscape.length?allLandscape:(data.top_opportunities||[]);
-  const stats=data.pipeline_stats||{};
-  // v2: barrier_index; v1: kill_index
-  const bi=data.barrier_index||data.kill_index;
-  const biSummary=data.barrier_index_summary;
-  const barrierCount=biSummary?(biSummary.total||0):bi?(Array.isArray(bi)?bi.length:(bi.barriers||bi.entries||[]).length||bi.total_barriers||bi.total_active||0):0;
-  document.getElementById('exec-signals').textContent=data.signals_scanned||data.total_signals_scanned||stats.total_ever_evaluated||(data.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0)||0;
-  document.getElementById('exec-active').textContent=data.models_constructed||data.total_models_constructed||stats.models_constructed||opps.length;
-  document.getElementById('exec-kills').textContent=barrierCount;
-  const syn=data.summary||data.master_synthesis||data.engine_status||'';
-  document.getElementById('exec-synthesis').textContent=syn?truncate(syn,3):'No synthesis available yet. Run a research cycle to generate findings.';
+  const allL=[...t1,...t2,...t3];
+  const opps=allL.length?allL:(d.top_opportunities||[]);
+  const stats=d.pipeline_stats||{};
+  const bi=d.barrier_index||d.kill_index;
+  const biS=d.barrier_index_summary;
+  const bc=biS?(biS.total||0):bi?(Array.isArray(bi)?bi.length:(bi.barriers||bi.entries||[]).length||bi.total_barriers||0):0;
+  document.getElementById('exec-signals').textContent=d.signals_scanned||d.total_signals_scanned||stats.total_ever_evaluated||(d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0)||0;
+  document.getElementById('exec-active').textContent=d.models_constructed||d.total_models_constructed||stats.models_constructed||opps.length;
+  document.getElementById('exec-kills').textContent=bc;
+  const syn=d.summary||d.master_synthesis||d.engine_status||'';
+  document.getElementById('exec-synthesis').textContent=syn?truncate(syn,3):'No synthesis available yet.';
 }
 
 function renderActive(opps){
   const el=document.getElementById('active-opportunities');
   if(!opps||!opps.length){el.innerHTML='<div class="empty">No active opportunities yet</div>';return}
-  // v2: all landscape opps are active (no kill/park filtering); v1: filter killed/parked
   const active=opps.filter(o=>{const s=(o.status||'').toLowerCase();return s!=='killed'&&s!=='parked'});
   if(!active.length){el.innerHTML='<div class="empty">No active opportunities</div>';return}
   el.innerHTML=active.map(o=>{
-    const dp=o.key_data_points||o.data_points||o.key_strengths||o.barriers||o.moats||[];
+    const tier=(o.tier||'').toLowerCase();
+    const tn=tier.includes('1')?1:tier.includes('2')?2:3;
+    const dp=o.key_data_points||o.data_points||o.key_strengths||[];
     const dpH=dp.length?'<ul class="data-points">'+dp.map(d=>'<li>'+esc(typeof d==='string'?d:d.point||d.description||JSON.stringify(d))+'</li>').join('')+'</ul>':'';
-    const vh=o.vc_hook||o.investor_hook||'';
-    const vhH=vh?'<div class="vc-hook"><div class="vc-hook-label">VC Hook</div>'+esc(vh)+'</div>':'';
     const cs=o.counter_signal_status||o.counter_signals||'';
-    const csH=cs?'<div class="counter-note">Counter-signal: '+esc(typeof cs==='string'?cs:JSON.stringify(cs))+'</div>':'';
-    const risksArr=o.key_risks||[];
-    const risksH=risksArr.length?'<ul class="data-points" style="margin-top:8px">'+risksArr.map(r=>'<li style="color:var(--red)">'+esc(r)+'</li>').join('')+'</ul>':'';
-    const actionText=o.critical_action||(o.next_steps?o.next_steps.slice(0,3).join(' / '):'');
-    const actionH=actionText?'<div style="margin-top:8px;padding:8px 12px;background:var(--amber-dim);border-radius:6px;font-size:12px;color:var(--amber)">'+esc(actionText)+'</div>':'';
-    return`<div class="opp-card">
+    const csH=cs?'<div class="counter-note">Counter: '+esc(typeof cs==='string'?cs:JSON.stringify(cs))+'</div>':'';
+    return`<div class="glass opp-card t${tn}">
       <div class="opp-header">
         <div class="opp-name">${esc(o.name)}</div>
         <div class="opp-badges">
-          <span class="horizon-tag ${hClass(o.horizon)}">${esc(o.horizon||'')}</span>
-          <span class="score-badge">${o.score||o.opportunity_score||'--'}</span>
+          <span class="tier-pill tp-${tn}">${esc(o.tier||'')}</span>
+          <span class="score-badge sb-t${tn}">${o.score||o.opportunity_score||'--'}</span>
         </div>
       </div>
-      <div class="thesis-text">${esc(o.thesis||o.key_signals||o.note||'')}</div>
-      ${dpH}${risksH}${vhH}${actionH}
+      <div class="thesis-text">${esc(o.thesis||o.key_signals||o.note||o.cycle_3_change||o.cycle_4_change||'')}</div>
+      ${dpH}
       <div class="opp-footer">
-        <span class="status-tag ${sClass(o.status)}">${esc(o.status||'unknown')}</span>
-        <span>${esc(o.recommendation||o.critical_action||'')}</span>
+        <span>${esc(o.economic_force||'')}</span>
+        <span>${esc(o.type||o.landscape_type||'')}</span>
       </div>
       ${csH}
     </div>`;
@@ -482,17 +334,14 @@ function renderActive(opps){
 
 function renderPatterns(patterns){
   const el=document.getElementById('confirmed-patterns');
-  if(!patterns||!patterns.length){el.innerHTML='<div class="empty">No patterns detected yet</div>';return}
+  if(!patterns||!patterns.length){el.innerHTML='<div class="empty">No patterns detected</div>';return}
   el.innerHTML=patterns.map(p=>{
-    const pr=p.principles||p.principle_names||[];
-    const prH=pr.length?'<div class="principle-tags">'+pr.map(x=>'<span class="principle-tag">'+esc(x)+'</span>').join('')+'</div>':'';
     const si=strengthInfo(p.strength);
-    return`<div class="pattern-card">
+    return`<div class="glass pattern-card">
       <div class="pattern-header">
         <span class="pattern-name">${esc(p.name||p.pattern||p.shift||'Unnamed')}</span>
         <div class="strength-bar"><div class="strength-fill ${si.cls}" style="width:${si.pct}%"></div></div>
       </div>
-      ${prH}
       <div class="pattern-evidence">${esc(p.evidence||p.description||'')}</div>
       <div class="pattern-status">${esc(p.status||'')}</div>
     </div>`;
@@ -503,54 +352,20 @@ function renderKills(barriers){
   const el=document.getElementById('kill-index');
   if(!barriers||!barriers.length){el.innerHTML='<div class="empty">No barriers recorded</div>';return}
   el.innerHTML=barriers.map(b=>{
-    const moat=b.moat_potential?' <span style="color:var(--green);font-size:10px">MOAT</span>':'';
-    return`<div class="kill-item" style="border-left-color:${b.moat_potential?'var(--amber)':'var(--red)'}">
-    <div class="kill-target">${esc(b.target||b.name||b.opportunity||b.sector||'Unknown')}${moat}</div>
-    <div class="kill-reason">${esc(b.reason||b.rationale||b.description||'')}</div>
-    <div class="kill-cycle">${b.review_date?'Review: '+esc(b.review_date):'Cycle '+(b.cycle_killed||b.cycle||'?')}</div>
-  </div>`}).join('');
-}
-
-function renderParked(opps){
-  const el=document.getElementById('parked-opportunities');
-  if(!opps){el.innerHTML='<div class="empty">No parked opportunities</div>';return}
-  const parked=opps.filter(o=>(o.status||'').toLowerCase()==='parked');
-  if(!parked.length){el.innerHTML='<div class="empty">No parked opportunities</div>';return}
-  el.innerHTML=parked.map(o=>{
-    const trRaw=o.reactivation_triggers||o.triggers||(o.reactivation_trigger?[o.reactivation_trigger]:[]);
-    const tr=Array.isArray(trRaw)?trRaw:[trRaw];
-    const trH=tr.length?'<ul class="reactivation-triggers">'+tr.map(t=>'<li>'+esc(typeof t==='string'?t:t.trigger||JSON.stringify(t))+'</li>').join('')+'</ul>':'';
-    return`<div class="opp-card parked">
-      <div class="opp-header">
-        <div class="opp-name">${esc(o.name)}</div>
-        <div class="opp-badges">
-          <span class="horizon-tag ${hClass(o.horizon)}">${esc(o.horizon||'')}</span>
-          <span class="score-badge">${o.score||o.opportunity_score||'--'}</span>
-        </div>
-      </div>
-      <div class="thesis-text">${esc(o.park_reason||o.thesis||'')}</div>
-      <div class="opp-footer">
-        <span class="status-tag status-parked">PARKED</span>
-        <span>${esc(o.recommendation||o.critical_action||'')}</span>
-      </div>
-      ${trH}
-    </div>`;
-  }).join('');
+    const moat=b.moat_potential;
+    return`<div class="glass barrier-item${moat?' moat':''}">
+      <div class="barrier-target">${esc(b.target||b.name||b.barrier||b.sector||'Unknown')}${moat?'<span class="moat-tag">MOAT</span>':''}</div>
+      <div class="barrier-reason">${esc(b.reason||b.rationale||b.description||b.status||'')}</div>
+    </div>`}).join('');
 }
 
 function renderSectors(heatmap){
   const el=document.getElementById('sector-coverage');
   if(!heatmap||!Object.keys(heatmap).length){el.innerHTML='<div class="empty">No sector data</div>';return}
   el.innerHTML='<div class="sector-grid">'+Object.entries(heatmap).map(([name,data])=>{
-    const st=(data.status||'scanning').toLowerCase();
-    let cls='';
-    if(st==='killed')cls='sc-killed';
-    else if(st==='parked')cls='sc-parked';
-    else if(st==='confirmed')cls='sc-confirmed';
-    else cls='sc-scanning';
-    return`<div class="sector-cell ${cls}">
+    return`<div class="sector-cell" style="background:rgba(167,139,250,0.04)">
       <div class="sector-name">${esc(name)}</div>
-      <div class="sector-count">${data.signal_count||0}</div>
+      <div class="sector-count" style="color:var(--accent)">${data.signal_count||0}</div>
       <div class="sector-meta">avg ${data.avg_score!=null?data.avg_score.toFixed(1):'--'}</div>
     </div>`;
   }).join('')+'</div>';
@@ -562,10 +377,9 @@ function renderWeights(weights){
   const mx=Math.max(...Object.values(weights).map(v=>typeof v==='number'?v:0),1);
   el.innerHTML=Object.entries(weights).map(([name,value])=>{
     const n=typeof value==='number'?value:parseFloat(value)||0;
-    const pct=(n/mx)*100;
     return`<div class="weight-row">
       <div class="weight-label">${esc(name)}</div>
-      <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:${pct}%"></div></div>
+      <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:${(n/mx)*100}%"></div></div>
       <div class="weight-val">${n.toFixed(2)}</div>
     </div>`;
   }).join('');
@@ -578,28 +392,23 @@ async function refresh(){
     if(!r.ok)return;
     const d=await r.json();
     renderExec(d);
-    // v2: flatten landscape tiers; v1: use top_opportunities
     const landscape=d.opportunity_landscape||d.landscape||{};
-    const t1=(landscape.tier_1||[]).map(o=>Object.assign({tier:'Tier 1',status:'Tier 1',name:o.name||o.structural_shift},o));
-    const t2=(landscape.tier_2||[]).map(o=>Object.assign({tier:'Tier 2',status:'Tier 2',name:o.name||o.structural_shift},o));
-    const t3=(landscape.tier_3||[]).map(o=>Object.assign({tier:'Tier 3',status:'Tier 3',name:o.name||o.structural_shift},o));
-    const allOpps=[...t1,...t2,...t3];
-    const opps=allOpps.length?allOpps:(d.top_opportunities||[]);
+    const t1=(landscape.tier_1||[]).map(o=>Object.assign({tier:'Tier 1',name:o.name||o.structural_shift},o));
+    const t2=(landscape.tier_2||[]).map(o=>Object.assign({tier:'Tier 2',name:o.name||o.structural_shift},o));
+    const t3=(landscape.tier_3||[]).map(o=>Object.assign({tier:'Tier 3',name:o.name||o.structural_shift},o));
+    const opps=[...t1,...t2,...t3].length?[...t1,...t2,...t3]:(d.top_opportunities||[]);
     renderActive(opps);
     renderPatterns(d.key_patterns||d.structural_patterns||d.structural_shifts_active||d.cross_principle_patterns);
-    // v2: barrier_index; v1: kill_index; also check landscape barriers_noted
     const bi=d.barrier_index||d.kill_index;
     let barriers=bi?(Array.isArray(bi)?bi:(bi.barriers||bi.entries||[])):[];
     if(!barriers.length&&landscape.barriers_noted){
-      barriers=landscape.barriers_noted.map(b=>({target:b.barrier,reason:b.sectors?b.sectors.join(', '):'',moat_potential:b.moat_potential}));
+      barriers=landscape.barriers_noted.map(b=>({target:b.barrier,reason:b.sectors?b.sectors.join(', '):'',moat_potential:b.moat_potential,status:b.status}));
     }
     renderKills(barriers);
-    renderParked(opps);
     renderSectors(d.sector_heatmap);
     renderWeights(d.grading_weights_current||d.grading_weights);
   }catch{}
 }
-
 refresh();
 setInterval(refresh,30000);
 </script>

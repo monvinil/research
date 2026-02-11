@@ -2,348 +2,440 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Research Engine</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
   :root {
-    --bg: #09090b;
-    --surface: #18181b;
-    --surface-2: #1f1f23;
-    --border: #27272a;
-    --border-subtle: #1e1e21;
-    --text: #fafafa;
-    --text-secondary: #a1a1aa;
-    --dim: #71717a;
+    --bg: #050507;
+    --surface: rgba(255,255,255,0.03);
+    --surface-hover: rgba(255,255,255,0.055);
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.06);
+    --glass-border-hover: rgba(255,255,255,0.12);
+    --text: #f0f0f5;
+    --text-secondary: #8b8b9e;
+    --dim: #55556a;
     --accent: #a78bfa;
-    --accent-dim: rgba(167,139,250,0.12);
-    --green: #4ade80;
-    --green-dim: rgba(74,222,128,0.12);
+    --accent-glow: rgba(167,139,250,0.15);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.1);
     --red: #f87171;
-    --red-dim: rgba(248,113,113,0.12);
+    --red-dim: rgba(248,113,113,0.08);
     --amber: #fbbf24;
-    --amber-dim: rgba(251,191,36,0.12);
+    --amber-dim: rgba(251,191,36,0.08);
     --blue: #60a5fa;
-    --blue-dim: rgba(96,165,250,0.12);
-    --radius: 10px;
+    --blue-dim: rgba(96,165,250,0.08);
+    --cyan: #22d3ee;
+    --gradient-1: linear-gradient(135deg, rgba(167,139,250,0.12) 0%, rgba(96,165,250,0.08) 50%, rgba(52,211,153,0.06) 100%);
+    --gradient-accent: linear-gradient(135deg, #a78bfa, #818cf8, #60a5fa);
+    --gradient-iridescent: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(129,140,248,0.05), rgba(96,165,250,0.08), rgba(52,211,153,0.05));
+    --radius: 16px;
+    --radius-sm: 10px;
+    --blur: 20px;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
     font-size: 14px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+    overflow-x: hidden;
   }
-  .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
 
-  /* Nav */
+  /* Ambient glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -40%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(167,139,250,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -30%;
+    right: -20%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(52,211,153,0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── Nav ─── */
   nav {
     display: flex;
     gap: 2px;
-    margin-bottom: 32px;
-    background: var(--surface);
-    border-radius: 8px;
+    margin-bottom: 28px;
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
     padding: 3px;
-    width: fit-content;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   nav a {
+    flex: 1;
     color: var(--dim);
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
-    padding: 6px 16px;
-    border-radius: 6px;
-    transition: all 0.15s;
+    padding: 8px 12px;
+    border-radius: 9px;
+    transition: all 0.2s;
+    text-align: center;
+    white-space: nowrap;
   }
   nav a:hover { color: var(--text-secondary); }
   nav a.active {
-    background: var(--surface-2);
+    background: rgba(255,255,255,0.06);
     color: var(--text);
   }
 
-  /* Header */
-  header {
-    margin-bottom: 40px;
-  }
+  /* ─── Header ─── */
+  header { margin-bottom: 24px; }
   h1 {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     letter-spacing: -0.5px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .subtitle { color: var(--dim); font-size: 14px; }
+  .subtitle { color: var(--dim); font-size: 13px; }
 
-  /* Stat strip */
-  .stats {
-    display: flex;
-    gap: 1px;
-    background: var(--border);
+  /* ─── Glass card base ─── */
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 32px;
+    transition: border-color 0.2s, background 0.2s;
   }
-  .stat-item {
-    flex: 1;
-    background: var(--surface);
-    padding: 20px 24px;
+  .glass:hover {
+    border-color: var(--glass-border-hover);
+    background: var(--surface-hover);
   }
-  .stat-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-  .stat-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
-  .stat-label { font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-  .stat-value { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
-  /* Section */
-  section { margin-bottom: 40px; }
-  section > h2 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
+  /* ─── Bento grid ─── */
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .bento-wide { grid-column: 1 / -1; }
+  .bento-item { padding: 20px; }
+
+  /* ─── Stat cards (top row) ─── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .stat-card {
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-label {
+    font-size: 10px;
     color: var(--dim);
-    margin-bottom: 16px;
-    font-weight: 500;
-  }
-
-  /* Edge insight */
-  .edge-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px;
-    margin-bottom: 32px;
-  }
-  .edge-box .label {
-    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--accent);
-    margin-bottom: 12px;
     font-weight: 600;
+    margin-bottom: 4px;
   }
-  .edge-box .content {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.8;
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
   }
 
-  /* Opportunity */
+  /* ─── Synthesis card (hero) ─── */
+  .synthesis {
+    padding: 24px;
+    background: var(--gradient-1);
+    border-color: rgba(167,139,250,0.1);
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .synthesis::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .synthesis-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .synthesis-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+    position: relative;
+  }
+
+  /* ─── Opportunity cards ─── */
   .opp-list { display: flex; flex-direction: column; gap: 8px; }
   .opp {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    transition: border-color 0.15s;
+    padding: 16px 18px;
+    position: relative;
+    overflow: hidden;
   }
-  .opp:hover { border-color: var(--accent); }
-  .opp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-  .opp-name { font-weight: 600; font-size: 15px; }
+  .opp::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+  .opp.tier-1::before { background: var(--green); }
+  .opp.tier-2::before { background: var(--amber); }
+  .opp.tier-3::before { background: var(--accent); }
+  .opp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; gap: 12px; }
+  .opp-name { font-weight: 600; font-size: 14px; flex: 1; }
   .opp-score {
     font-size: 13px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 6px;
-    background: var(--accent-dim);
-    color: var(--accent);
-    flex-shrink: 0;
-    margin-left: 16px;
-  }
-  .opp-thesis { color: var(--text-secondary); font-size: 13px; margin-bottom: 12px; }
-  .opp-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag {
-    font-size: 11px;
-    font-weight: 500;
+    font-weight: 800;
     padding: 2px 10px;
-    border-radius: 100px;
-    background: var(--surface-2);
+    border-radius: 8px;
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+  .score-t1 { background: var(--green-dim); color: var(--green); }
+  .score-t2 { background: var(--amber-dim); color: var(--amber); }
+  .score-t3 { background: rgba(167,139,250,0.1); color: var(--accent); }
+  .opp-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 11px;
+  }
+  .pill {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+  .pill-tier1 { background: var(--green-dim); color: var(--green); }
+  .pill-tier2 { background: var(--amber-dim); color: var(--amber); }
+  .pill-tier3 { background: rgba(167,139,250,0.1); color: var(--accent); }
+  .pill-type {
+    background: rgba(255,255,255,0.04);
     color: var(--dim);
   }
-  .tag-h1 { background: var(--green-dim); color: var(--green); }
-  .tag-h2 { background: var(--amber-dim); color: var(--amber); }
-  .tag-h3 { background: var(--accent-dim); color: var(--accent); }
-  .tag-status-verified { background: var(--green-dim); color: var(--green); }
-  .tag-status-killed { background: var(--red-dim); color: var(--red); }
-  .tag-status-parked { background: var(--amber-dim); color: var(--amber); }
-  .tag-status-scanning { background: var(--blue-dim); color: var(--blue); }
+  .opp-desc {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: 6px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-  /* Signal list */
+  /* ─── Signal list ─── */
   .signal-list { display: flex; flex-direction: column; }
   .signal {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
     font-size: 13px;
   }
   .signal:last-child { border-bottom: none; }
-  .signal-score {
-    min-width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 12px;
-    border-radius: 8px;
+  .signal-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
     flex-shrink: 0;
+    margin-top: 6px;
   }
-  .score-high { background: var(--green-dim); color: var(--green); }
-  .score-med { background: var(--amber-dim); color: var(--amber); }
-  .score-low { background: var(--red-dim); color: var(--red); }
-  .signal-text { flex: 1; color: var(--text-secondary); }
-  .signal-meta { color: var(--dim); font-size: 12px; text-align: right; min-width: 80px; }
+  .dot-high { background: var(--green); box-shadow: 0 0 8px rgba(52,211,153,0.3); }
+  .dot-med { background: var(--amber); box-shadow: 0 0 8px rgba(251,191,36,0.2); }
+  .dot-low { background: var(--red); }
+  .signal-text { flex: 1; color: var(--text-secondary); font-size: 12px; line-height: 1.5; }
+  .signal-src { color: var(--dim); font-size: 11px; flex-shrink: 0; }
 
-  /* Grid layouts */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-
-  /* Heatmap */
-  .heat-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  /* ─── Heatmap ─── */
+  .heat-grid { display: flex; flex-wrap: wrap; gap: 6px; }
   .heat-cell {
-    padding: 12px 16px;
-    border-radius: 8px;
-    background: var(--surface-2);
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
     text-align: center;
-    min-width: 90px;
-    transition: transform 0.15s;
+    min-width: 80px;
+    flex: 1;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
   }
-  .heat-cell:hover { transform: translateY(-1px); }
-  .heat-cell .count { font-size: 20px; font-weight: 700; }
-  .heat-cell .name { font-size: 11px; color: var(--dim); margin-top: 2px; }
+  .heat-cell:hover { border-color: var(--glass-border-hover); }
+  .heat-cell .count { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .heat-cell .name { font-size: 10px; color: var(--dim); margin-top: 1px; }
 
-  /* Cycle bars */
-  .cycle-chart { display: flex; gap: 3px; align-items: flex-end; height: 64px; }
+  /* ─── Cycle bars ─── */
+  .cycle-chart { display: flex; gap: 3px; align-items: flex-end; height: 56px; }
   .cycle-bar {
     flex: 1;
-    min-width: 16px;
+    min-width: 14px;
     border-radius: 4px 4px 0 0;
-    background: var(--accent);
-    opacity: 0.3;
-    transition: opacity 0.15s;
+    transition: opacity 0.2s;
     cursor: default;
+    position: relative;
   }
-  .cycle-bar:last-child { opacity: 0.8; }
-  .cycle-bar:hover { opacity: 1; }
+  .cycle-bar:last-child { opacity: 0.9; }
+  .cycle-bar:hover { opacity: 1 !important; }
 
-  /* Pipeline flow */
+  /* ─── Pipeline ─── */
   .pipeline {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     overflow-x: auto;
-    padding: 4px 0;
+    padding: 2px 0;
+    -webkit-overflow-scrolling: touch;
   }
   .pipeline-step {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
+    gap: 5px;
+    padding: 6px 12px;
     border-radius: 8px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    font-size: 12px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    font-size: 11px;
     font-weight: 500;
     color: var(--dim);
     white-space: nowrap;
-    transition: all 0.15s;
   }
-  .pipeline-step.active {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-dim);
-  }
-  .pipeline-step.done {
-    border-color: var(--green);
-    color: var(--green);
-    background: var(--green-dim);
-  }
-  .pipeline-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-  }
-  .pipeline-arrow { color: var(--dim); font-size: 14px; flex-shrink: 0; }
+  .pipeline-step.done { border-color: rgba(52,211,153,0.2); color: var(--green); background: var(--green-dim); }
+  .pipeline-step.active { border-color: rgba(167,139,250,0.2); color: var(--accent); background: var(--accent-glow); }
+  .pipeline-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .pipeline-arrow { color: var(--dim); font-size: 12px; flex-shrink: 0; opacity: 0.4; }
 
-  /* Card wrapper */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-  }
-  .card h3 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--dim);
-    margin-bottom: 16px;
-    font-weight: 500;
-  }
-
-  .empty { text-align: center; padding: 48px 24px; color: var(--dim); font-size: 13px; }
-  .update-meta { font-size: 12px; color: var(--dim); margin-top: 8px; }
-
-  /* Section hints */
-  .section-hint {
-    font-size: 12px; color: var(--dim); font-weight: 400;
-    text-transform: none; letter-spacing: 0; margin-left: 8px;
-  }
-
-  /* Theory legend */
-  .legend {
-    display: flex; flex-wrap: wrap; gap: 6px 14px;
-    padding: 10px 16px; background: var(--surface);
-    border: 1px solid var(--border); border-radius: 8px;
-    margin-bottom: 24px; font-size: 11px; color: var(--dim);
-  }
-  .legend-item { white-space: nowrap; }
-  .legend-dot {
-    display: inline-block; width: 6px; height: 6px;
-    border-radius: 50%; margin-right: 4px; vertical-align: middle;
-  }
-
-  /* Intro */
-  .intro {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px 28px;
-    margin-bottom: 32px;
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-  }
+  /* ─── Intro ─── */
+  .intro { padding: 20px; margin-bottom: 12px; }
+  .intro-inner { display: flex; gap: 24px; align-items: flex-start; }
   .intro-text { flex: 1; }
   .intro-text p {
-    color: var(--text-secondary);
-    font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 10px;
+    color: var(--text-secondary); font-size: 12px; line-height: 1.7; margin-bottom: 8px;
   }
   .intro-text p:last-child { margin-bottom: 0; }
   .intro-text strong { color: var(--text); font-weight: 600; }
   .intro-toggle {
-    font-size: 12px;
-    color: var(--accent);
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
+    font-size: 11px; color: var(--accent); cursor: pointer;
+    background: none; border: none; padding: 0; font-family: inherit;
   }
   .intro-toggle:hover { text-decoration: underline; }
   .intro-kv {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 4px 16px;
-    font-size: 12px;
-    min-width: 200px;
+    gap: 3px 14px;
+    font-size: 11px;
+    min-width: 160px;
     flex-shrink: 0;
   }
-  .intro-kv dt { color: var(--dim); text-transform: uppercase; letter-spacing: 0.3px; }
+  .intro-kv dt { color: var(--dim); text-transform: uppercase; letter-spacing: 0.3px; font-size: 10px; }
   .intro-kv dd { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+
+  /* ─── Section labels ─── */
+  .section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--dim);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .section-hint {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--dim);
+    margin-left: 6px;
+    font-size: 10px;
+  }
+
+  /* ─── Legend ─── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    font-size: 10px;
+    color: var(--dim);
+  }
+  .legend-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  .empty { text-align: center; padding: 32px 16px; color: var(--dim); font-size: 12px; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 640px) {
+    .container { padding: 16px 12px; }
+    h1 { font-size: 20px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .stat-card { padding: 14px 12px; }
+    .stat-value { font-size: 24px; }
+    .bento { grid-template-columns: 1fr; }
+    .bento-item { padding: 16px; }
+    .intro-inner { flex-direction: column; gap: 16px; }
+    .intro-kv { min-width: 100%; }
+    .opp-name { font-size: 13px; }
+    .legend { flex-direction: column; gap: 4px; }
+    .heat-cell { min-width: 70px; padding: 8px 10px; }
+    .heat-cell .count { font-size: 18px; }
+  }
+
+  @media (min-width: 641px) and (max-width: 960px) {
+    .stat-grid { grid-template-columns: repeat(4, 1fr); }
+  }
 </style>
 </head>
 <body>
@@ -361,44 +453,59 @@
   </header>
 
   <!-- Intro -->
-  <div class="intro" id="intro-section">
-    <div class="intro-text">
-      <p>
-        <strong>What is this?</strong> An AI-powered research engine that maps the landscape of businesses
-        likely to thrive in the AI economy over the next 3&ndash;5 years. It applies classical economic theories
-        as operational lenses &mdash; Baumol, Schumpeter, Jevons, Perez, Polanyi &mdash; to detect structural
-        forces and construct business models from the data up.
-      </p>
-      <p id="intro-detail" style="display:none;">
-        The engine uses a construct-first pipeline: <strong>Agent A</strong> scans data (FRED, BLS, EDGAR, O*NET, web)
-        and extracts structural signals. <strong>Agent C</strong> grades signals by economic force, structural advantage,
-        and timing readiness. <strong>Agent B</strong> constructs 5 business model types per opportunity &mdash; Direct Play,
-        Structural Play, Jevons Expansion, Judgment-Premium (AGG), and Human-Premium (Baumol). <strong>Master</strong>
-        synthesizes into a tiered landscape map.
-      </p>
-      <p id="intro-detail2" style="display:none;">
-        v2 engine: landscape-first, construct before filtering. Barriers are moats, not vetoes. Competitive density
-        means the structural force is real. Three Polanyi categories per sector (routine-cognitive, tacit-manual,
-        tacit-cognitive) yield three distinct business models, not one. Perez crash resilience check on every opportunity.
-      </p>
-      <button class="intro-toggle" id="intro-toggle" onclick="
-        var d1=document.getElementById('intro-detail'),d2=document.getElementById('intro-detail2'),b=this;
-        if(d1.style.display==='none'){d1.style.display='block';d2.style.display='block';b.textContent='Show less';}
-        else{d1.style.display='none';d2.style.display='none';b.textContent='How does it work?';}
-      ">How does it work?</button>
+  <div class="glass intro" id="intro-section">
+    <div class="intro-inner">
+      <div class="intro-text">
+        <p>
+          <strong>What is this?</strong> An AI-powered research engine that maps the landscape of businesses
+          likely to thrive in the AI economy over the next 3&ndash;5 years. It applies classical economic theories
+          as operational lenses &mdash; Baumol, Schumpeter, Jevons, Perez, Polanyi &mdash; to detect structural
+          forces and construct business models from the data up.
+        </p>
+        <p id="intro-detail" style="display:none;">
+          The engine uses a construct-first pipeline: <strong>Agent A</strong> scans data (FRED, BLS, EDGAR, O*NET, web)
+          and extracts structural signals. <strong>Agent C</strong> grades signals by economic force, structural advantage,
+          and timing readiness. <strong>Agent B</strong> constructs business models per opportunity. <strong>Master</strong>
+          synthesizes into a tiered landscape map.
+        </p>
+        <button class="intro-toggle" id="intro-toggle" onclick="
+          var d=document.getElementById('intro-detail'),b=this;
+          if(d.style.display==='none'){d.style.display='block';b.textContent='Show less';}
+          else{d.style.display='none';b.textContent='How does it work?';}
+        ">How does it work?</button>
+      </div>
+      <dl class="intro-kv" id="intro-stats">
+        <dt>Cycles</dt><dd id="intro-cycles">--</dd>
+        <dt>Signals</dt><dd id="intro-signals">--</dd>
+        <dt>Models</dt><dd id="intro-evaluated">--</dd>
+        <dt>Tier 1</dt><dd id="intro-tier1">--</dd>
+        <dt>Tier 2</dt><dd id="intro-tier2">--</dd>
+      </dl>
     </div>
-    <dl class="intro-kv" id="intro-stats">
-      <dt>Cycles</dt><dd id="intro-cycles">--</dd>
-      <dt>Signals</dt><dd id="intro-signals">--</dd>
-      <dt>Models</dt><dd id="intro-evaluated">--</dd>
-      <dt>Tier 1</dt><dd id="intro-killed">--</dd>
-      <dt>Tier 2</dt><dd id="intro-pursue">--</dd>
-    </dl>
+  </div>
+
+  <!-- Stats -->
+  <div class="stat-grid">
+    <div class="glass stat-card">
+      <div class="stat-label">Signals</div>
+      <div class="stat-value" id="total-signals">0</div>
+    </div>
+    <div class="glass stat-card">
+      <div class="stat-label">Models</div>
+      <div class="stat-value" id="total-verified" style="color:var(--green)">0</div>
+    </div>
+    <div class="glass stat-card">
+      <div class="stat-label">Tier 1</div>
+      <div class="stat-value" id="active-pipeline" style="color:var(--accent)">0</div>
+    </div>
+    <div class="glass stat-card">
+      <div class="stat-label">Tier 2</div>
+      <div class="stat-value" id="total-killed" style="color:var(--amber)">0</div>
+    </div>
   </div>
 
   <!-- Pipeline -->
-  <section>
-    <h2>Pipeline</h2>
+  <div class="glass bento-item" style="margin-bottom:12px; padding:14px 18px;">
     <div class="pipeline" id="pipeline">
       <div class="pipeline-step"><div class="pipeline-dot"></div>Scan</div>
       <div class="pipeline-arrow">&rarr;</div>
@@ -410,71 +517,48 @@
       <div class="pipeline-arrow">&rarr;</div>
       <div class="pipeline-step"><div class="pipeline-dot"></div>Synthesize</div>
     </div>
-  </section>
-
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-label">Signals</div>
-      <div class="stat-value" id="total-signals">0</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-label">Models</div>
-      <div class="stat-value" id="total-verified" style="color:var(--green)">0</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-label">Tier 1</div>
-      <div class="stat-value" id="active-pipeline" style="color:var(--accent)">0</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-label">Tier 2</div>
-      <div class="stat-value" id="total-killed" style="color:var(--amber)">0</div>
-    </div>
   </div>
 
-  <!-- Theory legend -->
-  <div class="legend">
-    <span class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction, near-term</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; strong signal, needs validation</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; early signal, monitoring</span>
-    <span class="legend-item" style="margin-left:auto; border-left:1px solid var(--border); padding-left:14px;">Baumol = cost disease cure &middot; Jevons = demand expansion &middot; Perez = tech revolution phase &middot; Polanyi = automation boundary &middot; AGG = prediction/judgment split</span>
+  <!-- Synthesis (hero) -->
+  <div class="glass synthesis" id="edge-box">
+    <div class="synthesis-label">Landscape Synthesis</div>
+    <div class="synthesis-text" id="synthesis-text">Run a research cycle to map the opportunity landscape.</div>
   </div>
 
-  <!-- Edge insight -->
-  <div class="edge-box" id="edge-box">
-    <div class="label">Landscape Synthesis</div>
-    <div class="content" id="synthesis-text">Run a research cycle to map the opportunity landscape.</div>
+  <!-- Legend -->
+  <div class="glass legend">
+    <span><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction</span>
+    <span><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; needs validation</span>
+    <span><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; monitoring</span>
   </div>
 
-  <!-- Opportunities + Signals -->
-  <div class="grid-2">
-    <section>
-      <h2>Top Opportunities <span class="section-hint">ranked by economic force</span></h2>
+  <!-- Bento: Opportunities + Signals -->
+  <div class="bento">
+    <div class="glass bento-item bento-wide" style="padding-bottom:12px;">
+      <div class="section-label">Top Opportunities <span class="section-hint">ranked by economic force</span></div>
       <div class="opp-list" id="opp-list">
         <div class="empty">No opportunities yet</div>
       </div>
-    </section>
-    <section>
-      <h2>Latest Signals <span class="section-hint">raw data extracted this cycle</span></h2>
+    </div>
+    <div class="glass bento-item">
+      <div class="section-label">Latest Signals</div>
       <div class="signal-list" id="signal-list">
         <div class="empty">No signals yet</div>
       </div>
-    </section>
-  </div>
-
-  <!-- Heatmaps + History -->
-  <div class="grid-2" style="margin-top:8px;">
-    <div class="card">
-      <h3>Sectors <span class="section-hint" style="text-transform:none;letter-spacing:0;font-size:11px">signal density by industry</span></h3>
+    </div>
+    <div class="glass bento-item">
+      <div class="section-label">Sectors</div>
       <div class="heat-grid" id="sector-heat">
         <div class="empty" style="width:100%">No sector data</div>
       </div>
     </div>
-    <div class="card">
-      <h3>Cycle History <span class="section-hint" style="text-transform:none;letter-spacing:0;font-size:11px">signals per cycle (taller = more signals)</span></h3>
-      <div class="cycle-chart" id="cycle-chart">
-        <div class="empty" style="width:100%">No cycles</div>
-      </div>
+  </div>
+
+  <!-- Cycle history -->
+  <div class="glass bento-item" style="margin-bottom:12px;">
+    <div class="section-label">Cycle History <span class="section-hint">signals per cycle</span></div>
+    <div class="cycle-chart" id="cycle-chart">
+      <div class="empty" style="width:100%">No cycles</div>
     </div>
   </div>
 </div>
@@ -494,28 +578,26 @@ function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.
 function renderOpps(opps) {
   const el = document.getElementById('opp-list');
   if (!opps || !opps.length) return;
-  el.innerHTML = opps.slice(0, 10).map(o => {
-    // v2: tier-based coloring; v1: horizon-based
+  el.innerHTML = opps.slice(0, 12).map(o => {
     const tier = (o.tier || '').toLowerCase();
-    const h = (o.horizon || tier || '').toLowerCase();
-    const hCls = (h.includes('1') || h === 'h1') ? 'tag-h1' : (h.includes('2') || h === 'h2') ? 'tag-h2' : 'tag-h3';
-    const s = (o.status || o.tier || 'scanning').toLowerCase();
-    const sCls = s.includes('tier 1') || s === 'verified' || s === 'pursue' ? 'tag-status-verified' : s.includes('tier 2') ? 'tag-status-scanning' : s.includes('tier 3') ? 'tag-status-parked' : s === 'killed' ? 'tag-status-killed' : 'tag-status-scanning';
+    const tierNum = tier.includes('1') ? 1 : tier.includes('2') ? 2 : 3;
+    const tierCls = 'tier-' + tierNum;
+    const scoreCls = 'score-t' + tierNum;
+    const pillCls = 'pill-tier' + tierNum;
     const score = o.score || o.opportunity_score || o.economic_force_score || o.total_score || '--';
-    // v2: show model types or theories; v1: show principles
-    const tags = o.model_types || o.theoretical_lenses || o.business_models || o.principles_passed || [];
-    const tagArr = Array.isArray(tags) ? tags : [];
-    return `<div class="opp">
+    const type = o.type || o.landscape_type || '';
+    const desc = o.cycle_3_change || o.cycle_4_change || o.thesis || o.description || o.note || '';
+    return `<div class="glass opp ${tierCls}">
       <div class="opp-top">
         <span class="opp-name">${esc(o.name)}</span>
-        <span class="opp-score">${score}</span>
+        <span class="opp-score ${scoreCls}">${score}</span>
       </div>
-      <div class="opp-thesis">${esc(o.thesis || o.description || o.key_signals || o.note || '')}</div>
-      <div class="opp-tags">
-        <span class="tag ${hCls}">${esc(o.tier || o.horizon || '')}</span>
-        <span class="tag ${sCls}">${esc(o.status || o.tier || '')}</span>
-        ${tagArr.slice(0, 3).map(t => `<span class="tag">${esc(typeof t === 'string' ? t : t.type || t.name || '')}</span>`).join('')}
+      <div class="opp-meta">
+        <span class="pill ${pillCls}">${esc(o.tier || '')}</span>
+        ${o.economic_force ? `<span class="pill pill-type">${esc(o.economic_force)}</span>` : ''}
+        ${type ? `<span class="pill pill-type">${esc(type)}</span>` : ''}
       </div>
+      ${desc ? `<div class="opp-desc">${esc(desc)}</div>` : ''}
     </div>`;
   }).join('');
 }
@@ -523,13 +605,13 @@ function renderOpps(opps) {
 function renderSignals(signals) {
   const el = document.getElementById('signal-list');
   if (!signals || !signals.length) return;
-  el.innerHTML = signals.slice(0, 15).map(s => {
+  el.innerHTML = signals.slice(0, 12).map(s => {
     const sc = s.relevance_score;
-    const cls = sc >= 7 ? 'score-high' : sc >= 4 ? 'score-med' : 'score-low';
+    const cls = sc >= 7 ? 'dot-high' : sc >= 4 ? 'dot-med' : 'dot-low';
     return `<div class="signal">
-      <div class="signal-score ${cls}">${sc}</div>
+      <div class="signal-dot ${cls}"></div>
       <div class="signal-text">${esc(s.headline)}</div>
-      <div class="signal-meta">${esc(s.source || s.category)}</div>
+      <div class="signal-src">${esc(s.source || s.category)}</div>
     </div>`;
   }).join('');
 }
@@ -539,9 +621,9 @@ function renderHeat(data) {
   if (!data || !Object.keys(data).length) return;
   const max = Math.max(...Object.values(data).map(d => d.signal_count || 0), 1);
   el.innerHTML = Object.entries(data).map(([name, d]) => {
-    const a = 0.15 + (d.signal_count / max) * 0.55;
-    return `<div class="heat-cell" style="background:rgba(167,139,250,${a.toFixed(2)})">
-      <div class="count">${d.signal_count}</div>
+    const intensity = 0.03 + (d.signal_count / max) * 0.12;
+    return `<div class="heat-cell" style="background:rgba(167,139,250,${intensity.toFixed(3)});border:1px solid rgba(167,139,250,${(intensity*2).toFixed(3)})">
+      <div class="count" style="color:var(--accent)">${d.signal_count}</div>
       <div class="name">${esc(name)}</div>
     </div>`;
   }).join('');
@@ -551,9 +633,11 @@ function renderCycles(cycles) {
   const el = document.getElementById('cycle-chart');
   if (!cycles || !cycles.length) return;
   const max = Math.max(...cycles.map(c => c.signals || 0), 1);
-  el.innerHTML = cycles.map((c, i) =>
-    `<div class="cycle-bar" style="height:${Math.max(8, (c.signals/max)*100)}%" title="Cycle ${c.cycle}: ${c.signals} signals"></div>`
-  ).join('');
+  el.innerHTML = cycles.map((c, i) => {
+    const h = Math.max(10, (c.signals/max)*100);
+    const opacity = 0.15 + (i / cycles.length) * 0.7;
+    return `<div class="cycle-bar" style="height:${h}%;background:var(--gradient-accent);opacity:${opacity.toFixed(2)}" title="Cycle ${c.cycle}: ${c.signals} signals"></div>`;
+  }).join('');
 }
 
 async function refresh() {
@@ -566,54 +650,37 @@ async function refresh() {
     document.getElementById('last-updated').textContent =
       ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'awaiting first run';
 
-    // v2 landscape data: flatten tiers into a single opportunities list
     const landscape = d.opportunity_landscape || d.landscape || {};
     const tier1 = (landscape.tier_1 || []).map(o => Object.assign({tier:'Tier 1', name: o.name || o.structural_shift}, o));
     const tier2 = (landscape.tier_2 || []).map(o => Object.assign({tier:'Tier 2', name: o.name || o.structural_shift}, o));
     const tier3 = (landscape.tier_3 || []).map(o => Object.assign({tier:'Tier 3', name: o.name || o.structural_shift}, o));
     const allLandscape = [...tier1, ...tier2, ...tier3];
-
-    // Fall back to v1 top_opportunities if no landscape data
     const opps = allLandscape.length ? allLandscape : (d.top_opportunities || []);
     const stats = d.pipeline_stats || {};
 
-    // Barrier count (v2) or kill count (v1)
-    const bi = d.barrier_index || d.kill_index;
-    const biSummary = d.barrier_index_summary;
-    const barrierCount = biSummary ? (biSummary.total || 0) : bi ? (Array.isArray(bi) ? bi.length : (bi.barriers||bi.entries||[]).length || bi.total_barriers || bi.total_active || 0) : 0;
-
-    // Stats: Signals, Models, Tier 1, Tier 2
     const signalCount = d.signals_scanned || d.total_signals_scanned || stats.total_ever_evaluated || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
     const modelCount = d.models_constructed || d.total_models_constructed || stats.models_constructed || opps.length || 0;
 
     document.getElementById('total-signals').textContent = signalCount;
     document.getElementById('total-verified').textContent = modelCount;
     document.getElementById('active-pipeline').textContent = tier1.length || stats.tier_1 || d.active_opportunities || 0;
-    document.getElementById('total-killed').textContent = tier2.length || stats.tier_2 || barrierCount;
+    document.getElementById('total-killed').textContent = tier2.length || stats.tier_2 || 0;
 
     const synthesis = d.summary || d.master_synthesis || d.engine_status || '';
-    if (synthesis) {
-      document.getElementById('synthesis-text').textContent = synthesis;
-    }
+    if (synthesis) document.getElementById('synthesis-text').textContent = synthesis;
 
-    // Intro stats
     document.getElementById('intro-cycles').textContent = d.cycle || d.current_cycle || 0;
     document.getElementById('intro-signals').textContent = signalCount;
     document.getElementById('intro-evaluated').textContent = modelCount;
-    document.getElementById('intro-killed').textContent = tier1.length || 0;
-    document.getElementById('intro-pursue').textContent = tier2.length || 0;
+    document.getElementById('intro-tier1').textContent = tier1.length || 0;
+    document.getElementById('intro-tier2').textContent = tier2.length || 0;
 
-    // For v2: add tier as status/horizon tag for rendering
-    const renderableOpps = opps.map((o, i) => Object.assign({rank: o.rank != null ? o.rank : i+1}, o));
-    renderOpps(renderableOpps);
+    renderOpps(opps);
     renderHeat(d.sector_heatmap);
     renderCycles(d.cycle_history);
   }
   if (f) {
     renderSignals(f.recent_signals || f.signals);
-    if (!d && (f.opportunity_clusters || f.opportunities)) {
-      renderOpps(f.opportunity_clusters || f.opportunities);
-    }
   }
 }
 
