@@ -1,8 +1,8 @@
-"""O*NET Web Services connector.
+"""O*NET Web Services v2 connector.
 
 Key data for the research engine:
 - Task-level occupation data for Polanyi classification (T21)
-- Work activities with importance/level scores
+- Work activities with importance scores
 - Technology skills for AI adoption indicators
 - Abilities and knowledge for judgment vs prediction decomposition (T22)
 
@@ -18,7 +18,7 @@ O*NET classifies occupations using the Acemoglu-Autor framework:
 - Routine Manual: Controlling machines, repetitive physical tasks
 - Non-routine Manual: Caring, assisting, operating in unstructured environments
 
-API docs: https://services.onetcenter.org/reference/
+API docs: https://api-v2.onetcenter.org/
 Free key: https://services.onetcenter.org/developer
 Rate limit: ~50 requests/minute (throttled, not hard-blocked)
 """
@@ -27,7 +27,11 @@ import requests
 import time
 from .config import ONET_API_KEY
 
-BASE_URL = 'https://services.onetcenter.org/ws/'
+BASE_URL = 'https://api-v2.onetcenter.org/'
+
+# v2 API uses 'details/' endpoints (with importance scores) instead of 'summary/' (no scores).
+# Scores are flat integers 0-100 (e.g. "importance": 87), not nested scale objects.
+# Pagination defaults to 5 items; pass start=1&end=100 to get all.
 
 # Acemoglu-Autor task classification via O*NET Work Activity IDs
 # Maps O*NET Generalized Work Activity (GWA) element IDs to Polanyi categories
@@ -134,7 +138,7 @@ KEY_OCCUPATIONS = {
 
 
 class ONetConnector:
-    """Pull occupation and task data from O*NET Web Services for Polanyi classification."""
+    """Pull occupation and task data from O*NET Web Services v2 for Polanyi classification."""
 
     def __init__(self, api_key=None):
         self.api_key = api_key or ONET_API_KEY
@@ -143,7 +147,7 @@ class ONetConnector:
         self._min_interval = 1.2  # seconds between requests (respect rate limits)
 
     def _get(self, endpoint, params=None):
-        """O*NET uses HTTP Basic Auth (username=key, password=empty)."""
+        """Make authenticated request to O*NET v2 API using X-API-Key header."""
         if not self.api_key:
             raise RuntimeError(
                 'O*NET API key required. Get one free at '
@@ -157,13 +161,16 @@ class ONetConnector:
             time.sleep(self._min_interval - elapsed)
 
         url = f'{self.base_url}{endpoint}'
-        headers = {'Accept': 'application/json'}
+        headers = {
+            'Accept': 'application/json',
+            'User-Agent': 'python-OnetWebService/2.00 (bot)',
+            'X-API-Key': self.api_key,
+        }
 
         r = requests.get(
             url,
             params=params,
             headers=headers,
-            auth=(self.api_key, ''),
             timeout=15,
         )
         self._last_request_time = time.time()
@@ -176,50 +183,68 @@ class ONetConnector:
     # ── Core data retrieval ──────────────────────────────────────────
 
     def get_occupation_details(self, soc_code):
-        """Get basic occupation info (title, description, sample tasks)."""
+        """Get basic occupation info (title, description, sample titles)."""
         return self._get(f'online/occupations/{soc_code}')
 
     def get_tasks(self, soc_code):
         """Get all tasks for an occupation with importance scores.
 
-        Returns task statements + relevance/importance ratings.
-        Critical for Polanyi classification — each task is classifiable.
+        v2 returns: {'task': [{'id', 'title', 'importance': 0-100, 'category': 'Core'|'Supplemental'}]}
         """
-        return self._get(f'online/occupations/{soc_code}/summary/tasks')
+        return self._get(f'online/occupations/{soc_code}/details/tasks',
+                         params={'start': 1, 'end': 100})
 
     def get_work_activities(self, soc_code):
-        """Get Generalized Work Activities (GWAs) with importance and level scores.
+        """Get Generalized Work Activities (GWAs) with importance scores.
 
+        v2 returns: {'element': [{'id', 'name', 'importance': 0-100}]}
         These map directly to Acemoglu-Autor task categories via POLANYI_CLASSIFICATION.
         """
-        return self._get(f'online/occupations/{soc_code}/summary/work_activities')
+        return self._get(f'online/occupations/{soc_code}/details/work_activities',
+                         params={'start': 1, 'end': 100})
 
     def get_detailed_work_activities(self, soc_code):
         """Get Detailed Work Activities (DWAs) — finer-grained than GWAs."""
-        return self._get(f'online/occupations/{soc_code}/summary/detailed_work_activities')
+        return self._get(f'online/occupations/{soc_code}/details/detailed_work_activities',
+                         params={'start': 1, 'end': 100})
 
     def get_technology_skills(self, soc_code):
         """Get technology skills for an occupation.
 
-        Indicators of current tech adoption and AI integration potential.
-        Occupations already using data tools are closer to AI augmentation.
+        v2 returns: {'category': [{'code', 'title', 'example': [{'title', 'hot_technology': bool}]}]}
         """
-        return self._get(f'online/occupations/{soc_code}/summary/technology_skills')
+        return self._get(f'online/occupations/{soc_code}/details/technology_skills',
+                         params={'start': 1, 'end': 100})
 
     def get_knowledge(self, soc_code):
-        """Get knowledge requirements — distinguishes codified vs tacit knowledge."""
-        return self._get(f'online/occupations/{soc_code}/summary/knowledge')
+        """Get knowledge requirements — distinguishes codified vs tacit knowledge.
+
+        v2 returns: {'element': [{'id', 'name', 'importance': 0-100}]}
+        """
+        return self._get(f'online/occupations/{soc_code}/details/knowledge',
+                         params={'start': 1, 'end': 100})
 
     def get_abilities(self, soc_code):
-        """Get cognitive and physical abilities — maps to judgment vs prediction."""
-        return self._get(f'online/occupations/{soc_code}/summary/abilities')
+        """Get cognitive and physical abilities — maps to judgment vs prediction.
+
+        v2 returns: {'element': [{'id', 'name', 'importance': 0-100}]}
+        """
+        return self._get(f'online/occupations/{soc_code}/details/abilities',
+                         params={'start': 1, 'end': 100})
 
     def get_skills(self, soc_code):
-        """Get skills with importance/level — broad competency profile."""
-        return self._get(f'online/occupations/{soc_code}/summary/skills')
+        """Get skills with importance — broad competency profile.
+
+        v2 returns: {'element': [{'id', 'name', 'importance': 0-100}]}
+        """
+        return self._get(f'online/occupations/{soc_code}/details/skills',
+                         params={'start': 1, 'end': 100})
 
     def search_occupations(self, keyword, start=1, end=20):
-        """Search occupations by keyword."""
+        """Search occupations by keyword.
+
+        v2 returns: {'occupation': [{'code', 'title', 'tags'}]}
+        """
         return self._get('online/search', params={
             'keyword': keyword,
             'start': start,
@@ -257,7 +282,7 @@ class ONetConnector:
             }
         }
         """
-        # Get work activities with importance/level scores
+        # Get work activities with importance scores
         wa_data = self.get_work_activities(soc_code)
         if 'error' in wa_data:
             return wa_data
@@ -270,23 +295,22 @@ class ONetConnector:
         category_scores = {}
         matched_activities = {}
 
-        for activity in wa_data.get('element', wa_data.get('work_activity', [])):
+        for activity in wa_data.get('element', []):
             element_id = activity.get('id', '')
-            importance = _extract_score(activity, 'Importance')
-            level = _extract_score(activity, 'Level')
+            # v2 API returns importance as flat int 0-100
+            importance = activity.get('importance', 0)
             name = activity.get('name', '')
 
             if element_id in _ELEMENT_TO_CATEGORY:
                 cat, _ = _ELEMENT_TO_CATEGORY[element_id]
-                # Combined score: importance × level gives weighted task intensity
-                score = (importance or 0) * (level or 0)
+                # Use importance directly as score (0-100 scale)
+                score = importance or 0
                 category_scores.setdefault(cat, 0)
                 category_scores[cat] += score
                 matched_activities.setdefault(cat, [])
                 matched_activities[cat].append({
                     'name': name,
                     'importance': importance,
-                    'level': level,
                     'score': score,
                 })
 
@@ -393,30 +417,32 @@ class ONetConnector:
         if 'error' in classification:
             return classification
 
-        # Extract task statements for context
+        # Extract task statements (v2: 'title' field, 'importance' as flat int)
         task_list = []
-        for t in tasks.get('task', tasks.get('element', [])):
+        for t in tasks.get('task', []):
             task_list.append({
-                'statement': t.get('statement', t.get('name', '')),
-                'importance': _extract_score(t, 'Importance'),
+                'statement': t.get('title', ''),
+                'importance': t.get('importance', 0),
+                'category': t.get('category', ''),
             })
 
-        # Extract technology tools
+        # Extract technology tools (v2: nested under 'category' with 'example' lists)
         tech_tools = []
-        for t in tech.get('technology', tech.get('element', [])):
-            tech_tools.append({
-                'name': t.get('name', ''),
-                'hot_technology': t.get('hot_technology', False),
-            })
+        for cat in tech.get('category', []):
+            for example in cat.get('example', []):
+                tech_tools.append({
+                    'name': example.get('title', ''),
+                    'category': cat.get('title', ''),
+                    'hot_technology': example.get('hot_technology', False),
+                })
 
-        # Extract cognitive vs physical abilities
+        # Extract cognitive vs physical abilities (v2: flat 'importance' int)
         cognitive_abilities = []
         physical_abilities = []
-        for a in abilities.get('ability', abilities.get('element', [])):
+        for a in abilities.get('element', []):
             name = a.get('name', '')
-            importance = _extract_score(a, 'Importance')
+            importance = a.get('importance', 0)
             entry = {'name': name, 'importance': importance}
-            # O*NET cognitive ability IDs start with 1.A.1, physical with 1.A.3
             aid = a.get('id', '')
             if aid.startswith('1.A.1') or aid.startswith('1.A.2'):
                 cognitive_abilities.append(entry)
@@ -464,20 +490,3 @@ class ONetConnector:
             return {'status': 'error', 'source': 'O*NET', 'error': str(e)}
         except Exception as e:
             return {'status': 'error', 'source': 'O*NET', 'error': str(e)}
-
-
-def _extract_score(element, scale_name):
-    """Extract a score value from O*NET's nested scale structure.
-
-    O*NET returns scores as: {'scale': {'id': 'IM', 'name': 'Importance'}, 'value': 3.5}
-    nested within a 'score' list on each element.
-    """
-    for score in element.get('score', element.get('scales', [])):
-        if isinstance(score, dict):
-            scale = score.get('scale', {})
-            if isinstance(scale, dict) and scale.get('name') == scale_name:
-                return score.get('value')
-            # Flat structure fallback
-            if score.get('name') == scale_name:
-                return score.get('value')
-    return None

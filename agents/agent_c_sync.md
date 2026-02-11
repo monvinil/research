@@ -207,7 +207,6 @@ SIGNAL STRENGTH (0-15) — from scanning data
 - VC Differentiation REMOVED entirely. The test is economic force and structural advantage, not how novel the pitch sounds.
 - Economic Force is now the LARGEST component (35%). This prioritizes massive markets with large cost advantages — even "obvious" ones.
 - Structural Advantage (30%) rewards deep moats including regulatory barriers.
-- Founder Fit scored SEPARATELY — does not affect opportunity score. A great opportunity for the wrong team is still a great opportunity on the landscape map.
 
 ### 8. UI Data Push
 

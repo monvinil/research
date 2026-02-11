@@ -160,7 +160,7 @@ For each structural shift Agent A identifies:
    - Business Models: [list of 2-3 models Agent B constructed]
    - Strongest Principle: P[N] — [strength]
    - Barriers: [list with moat potential noted]
-   - Founder Fit: [score] / 25
+   - Entry Budget: $XM (capital stack details)
    - Next Steps: [specific actions]
 
 #### TIER 2 — Significant ($10B-$50B)
