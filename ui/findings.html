@@ -342,7 +342,7 @@ function renderPatterns(patterns){
         <span class="pattern-name">${esc(p.name||p.pattern||p.shift||'Unnamed')}</span>
         <div class="strength-bar"><div class="strength-fill ${si.cls}" style="width:${si.pct}%"></div></div>
       </div>
-      <div class="pattern-evidence">${esc(p.evidence||p.description||'')}</div>
+      <div class="pattern-evidence">${esc(p.evidence||p.description||p.note||'')}</div>
       <div class="pattern-status">${esc(p.status||'')}</div>
     </div>`;
   }).join('');

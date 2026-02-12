@@ -1,0 +1,1323 @@
+{
+  "cycle": "v2-precycle-8",
+  "date": "2026-02-10",
+  "agent": "Master pre-cycle expansion",
+  "mode": "4-dimension model expansion: NAICS 6-digit decomposition + supply chain adjacencies + external sources + AI beneficiaries",
+  "expansion_from": 387,
+  "expansion_target": "500+",
+  "methodology": "Systematic identification of 145 uncovered 6-digit NAICS sectors across 94 4-digit parents, plus supply chain adjacencies, failed startup opportunities, and AI beneficiary models",
+
+  "dimension_1_naics_decomposition": {
+    "description": "New models from uncovered 6-digit NAICS sectors not present in any cycle 7 model",
+    "sectors_screened": 145,
+    "models_constructed": 88,
+    "models": [
+      {
+        "id": "PC8-AM-AUTO-01",
+        "name": "Acquire + Modernize Independent Auto Repair Shop",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["811111"],
+        "score": 79,
+        "axis_scores": {"force": 76, "compound": 78, "convergence": 88, "timing": 82, "capital": 72},
+        "one_liner": "Acquire retiring-owner auto repair shop (86K establishments, median age 58). Deploy AI diagnostics (OBD-II + computer vision), predictive maintenance scheduling, parts inventory optimization. NAICS 811111: 390K employees, $55K avg pay but $85-120K revenue per bay. 86K establishments = MOST fragmented repair sector. SBA 504 eligible.",
+        "key_data": {"employment": 390423, "establishments": 86018, "avg_pay": 55359, "baumol_score": 0.76, "fragmentation_proxy": 0.22}
+      },
+      {
+        "id": "PC8-RC-AUTO-01",
+        "name": "Multi-Shop Auto Repair Rollup with AI Diagnostics",
+        "architecture": "rollup_consolidation",
+        "forces": ["silver_tsunami", "ai_inference_collapse"],
+        "naics_codes": ["811111", "811198"],
+        "score": 80,
+        "axis_scores": {"force": 78, "compound": 84, "convergence": 82, "timing": 80, "capital": 68},
+        "one_liner": "Consolidate 10-20 independent auto repair shops into AI-native network. Centralized diagnostics, parts procurement, scheduling. Shops at 2-3x EBITDA ($200K-$500K each). EV transition creating massive retraining need — AI-augmented shops handle both ICE and EV. Maaco/Meineke franchise model proves multi-unit auto repair works.",
+        "key_data": {"employment": 390423, "establishments": 86018, "total_addressable": "86K shops, $150B+ market"}
+      },
+      {
+        "id": "PC8-DC-AUTO-01",
+        "name": "Auto Repair Intelligence Platform (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["811111", "811198"],
+        "score": 76,
+        "axis_scores": {"force": 82, "compound": 86, "convergence": 60, "timing": 68, "capital": 72},
+        "one_liner": "Start as diagnostics service for independent shops, compound into definitive repair pattern database. Every vehicle serviced adds to diagnostic accuracy. At scale: predict failures before they happen, optimize parts inventory across network. Mitchell/AllData incumbents are static databases — AI-native system learns from every repair."
+      },
+      {
+        "id": "PC8-FSR-LANDSCAPE-01",
+        "name": "Full-Service AI Landscaping Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion", "coasean_shrinkage"],
+        "naics_codes": ["561730"],
+        "score": 75,
+        "axis_scores": {"force": 80, "compound": 72, "convergence": 68, "timing": 74, "capital": 78},
+        "one_liner": "AI-native landscaping operations: automated route optimization, crew scheduling, property measurement via satellite/drone, instant quoting. NAICS 561730: 879K employees, 122K establishments = MOST fragmented service sector in US. $48K avg pay = low labor cost but massive workforce. Jevons: AI quoting makes landscaping accessible to 2-3x more properties.",
+        "key_data": {"employment": 878894, "establishments": 122438, "avg_pay": 48279, "growth": "growing"}
+      },
+      {
+        "id": "PC8-RC-LANDSCAPE-01",
+        "name": "Multi-Territory Landscaping Rollup with AI Operations",
+        "architecture": "rollup_consolidation",
+        "forces": ["silver_tsunami", "baumol_cure"],
+        "naics_codes": ["561730"],
+        "score": 77,
+        "axis_scores": {"force": 78, "compound": 80, "convergence": 76, "timing": 78, "capital": 72},
+        "one_liner": "Acquire 15-25 landscaping companies across a metro region, deploy AI route optimization + scheduling + satellite property measurement. Shops at 1.5-2.5x EBITDA ($100K-$300K each). BrightView ($2.7B) validates rollup model but at enterprise scale — no AI-native SMB rollup exists. 122K establishments = deepest acquisition pool of any service sector."
+      },
+      {
+        "id": "PC8-PI-LANDSCAPE-01",
+        "name": "AI Operations Platform for Landscaping Companies",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["561730"],
+        "score": 71,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 62, "timing": 72, "capital": 78},
+        "one_liner": "SaaS+AI platform for 122K landscaping companies: satellite property measurement, instant quoting, route optimization, crew management, invoicing. Current tools (Jobber, ServiceTitan) are generic field service — no landscaping-specific AI. At 5K users: predict seasonal demand, optimize equipment utilization across customers."
+      },
+      {
+        "id": "PC8-FSR-WHOLESALE-01",
+        "name": "Full-Service AI Wholesale Brokerage",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "coasean_shrinkage"],
+        "naics_codes": ["425120"],
+        "score": 82,
+        "axis_scores": {"force": 88, "compound": 80, "convergence": 74, "timing": 82, "capital": 82},
+        "one_liner": "Replace wholesale trade brokers/agents with AI-native intermediation. NAICS 425120: 512K employees, 122K establishments, $126K avg pay (Baumol 1.73x). Classic middleman disruption — AI matches buyers to suppliers, handles negotiation, manages logistics. Identified in C9 bottom-up screen as LOW competitive density. $126K/employee cost structure AI can undercut by 70-80%.",
+        "key_data": {"employment": 511666, "establishments": 122460, "avg_pay": 125899, "baumol_score": 1.73, "competitive_density": "LOW"}
+      },
+      {
+        "id": "PC8-DC-WHOLESALE-01",
+        "name": "Wholesale Trade Intelligence Platform (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["425120"],
+        "score": 81,
+        "axis_scores": {"force": 86, "compound": 88, "convergence": 68, "timing": 78, "capital": 80},
+        "one_liner": "Start as AI wholesale brokerage, compound into definitive B2B trade flow intelligence platform. Every transaction reveals pricing patterns, demand cycles, supply chain relationships. At 10K transactions: predict commodity price movements, identify arbitrage. At 100K: become the Bloomberg Terminal of wholesale trade. 122K establishments = massive data collection surface."
+      },
+      {
+        "id": "PC8-FSR-MEDSUPPLY-01",
+        "name": "Full-Service AI Medical Equipment Distribution",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "regulatory_fragmentation"],
+        "naics_codes": ["423450"],
+        "score": 78,
+        "axis_scores": {"force": 82, "compound": 76, "convergence": 72, "timing": 80, "capital": 76},
+        "one_liner": "AI-native medical equipment distribution replacing traditional sales reps. NAICS 423450: 308K employees, 34K establishments, $127K avg pay. Medical device distribution requires compliance tracking, reprocessing protocols, 510(k) awareness. AI handles product matching, compliance verification, reorder optimization. Regulatory complexity = moat."
+      },
+      {
+        "id": "PC8-FSR-INDMACH-01",
+        "name": "AI-Native Industrial Machinery Distribution",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "silver_tsunami"],
+        "naics_codes": ["423830"],
+        "score": 76,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 72, "timing": 78, "capital": 74},
+        "one_liner": "Replace aging industrial machinery distributors with AI-native matching platform. NAICS 423830: 340K employees, 37K establishments. Many distributors are retiring-owner businesses — Silver Tsunami applies to distribution same as manufacturing. AI matches manufacturer specs to buyer needs, handles quoting, predictive reorder."
+      },
+      {
+        "id": "PC8-MN-WHOLESALE-01",
+        "name": "AI-Matched B2B Wholesale Marketplace",
+        "architecture": "marketplace_network",
+        "forces": ["ai_inference_collapse", "coasean_shrinkage"],
+        "naics_codes": ["425120", "423830", "423690"],
+        "score": 74,
+        "axis_scores": {"force": 80, "compound": 74, "convergence": 66, "timing": 72, "capital": 76},
+        "one_liner": "Network marketplace connecting wholesale buyers directly to manufacturers/distributors via AI matching. Eliminates layers of intermediation. NAICS 425120 alone has 122K establishments of brokers/agents. At critical mass: network effects make individual brokers unable to match breadth of connections."
+      },
+      {
+        "id": "PC8-FSR-PROPMGMT-01",
+        "name": "Full-Service AI Property Management",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "coasean_shrinkage", "jevons_expansion"],
+        "naics_codes": ["531311", "531312"],
+        "score": 77,
+        "axis_scores": {"force": 82, "compound": 76, "convergence": 70, "timing": 76, "capital": 78},
+        "one_liner": "Replace property management companies with AI-native full-service operations. NAICS 531311+531312: 698K employees, 98K establishments. AI handles tenant screening, maintenance dispatch, rent collection, compliance, communication. RealPage concentrated at enterprise but 98K SMB managers unserved. Jevons: enable individual landlords (10M+ units) to self-manage with AI.",
+        "key_data": {"employment": 697597, "establishments": 97831, "competitive_density": "MODERATE — RealPage/Yardi at enterprise, gap at SMB/individual"}
+      },
+      {
+        "id": "PC8-DC-PROPMGMT-01",
+        "name": "Property Operations Intelligence (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["531311", "531312", "531110"],
+        "score": 78,
+        "axis_scores": {"force": 80, "compound": 88, "convergence": 66, "timing": 72, "capital": 76},
+        "one_liner": "Start with AI property management for SMB landlords, compound into definitive rental market intelligence. Every property managed generates: maintenance patterns by building age/type, tenant payment behavior, seasonal demand, repair cost benchmarks. At 50K units: predict maintenance needs before failure. At 500K: become Zillow-level intelligence for operations."
+      },
+      {
+        "id": "PC8-PI-PROPMGMT-01",
+        "name": "AI Operations Platform for Property Managers",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse"],
+        "naics_codes": ["531311", "531312"],
+        "score": 68,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 58, "timing": 70, "capital": 72},
+        "one_liner": "Platform for 98K property management companies: AI tenant screening, predictive maintenance, automated rent collection, compliance tracking. AppFolio ($7B) validates market but limited AI. Gap: AI-native platform purpose-built for SMB managers (5-50 units)."
+      },
+      {
+        "id": "PC8-RMB-PROPMGMT-01",
+        "name": "Fair Housing AI Compliance for Property Managers",
+        "architecture": "regulatory_moat_builder",
+        "forces": ["regulatory_fragmentation"],
+        "naics_codes": ["531311", "531312"],
+        "score": 74,
+        "axis_scores": {"force": 72, "compound": 82, "convergence": 72, "timing": 78, "capital": 70},
+        "one_liner": "Build AI compliance layer for Fair Housing Act, state/local tenant protection laws across 50 states + local jurisdictions. Every new tenant protection law increases platform value. Property managers face increasing litigation risk from AI screening tools — compliance platform prevents liability."
+      },
+      {
+        "id": "PC8-FSR-REALEST-01",
+        "name": "Full-Service AI Real Estate Appraisal",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["531320"],
+        "score": 73,
+        "axis_scores": {"force": 78, "compound": 72, "convergence": 66, "timing": 74, "capital": 76},
+        "one_liner": "AI-powered real estate appraisal replacing manual inspections with computer vision + comparable analysis. NAICS 531320: 30K appraisers, 14K establishments. Average age >55. Appraiser shortage creating 30-45 day delays. AI can do comps analysis in minutes, human reviews for 15 min. Full service at 50% of cost."
+      },
+      {
+        "id": "PC8-FSR-PORTFOLIO-01",
+        "name": "AI-Native RIA / Wealth Advisory for Mass Affluent",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion", "coasean_shrinkage"],
+        "naics_codes": ["523940"],
+        "score": 72,
+        "axis_scores": {"force": 88, "compound": 68, "convergence": 56, "timing": 72, "capital": 78},
+        "one_liner": "Full-service AI wealth management for mass affluent ($100K-$1M AUM) underserved by human advisors. NAICS 523940: 496K employees, 85K establishments, $270K avg pay (Baumol 3.72x = HIGHEST stored energy). Jevons: at $50/month (vs $5K+/year human advisor), 10x more people access wealth management. WARNING: SATURATED competitive density (Wealthfront, Betterment, Schwab). Only viable with differentiated data moat or niche.",
+        "key_data": {"employment": 495727, "establishments": 84880, "avg_pay": 270079, "baumol_score": 3.72, "competitive_density": "SATURATED"}
+      },
+      {
+        "id": "PC8-DC-FININT-01",
+        "name": "Securities Intermediation Intelligence (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["523910", "523999"],
+        "score": 74,
+        "axis_scores": {"force": 82, "compound": 84, "convergence": 58, "timing": 68, "capital": 72},
+        "one_liner": "AI for miscellaneous financial intermediation — loan brokers, transfer agents, financial planners. NAICS 523910+523999: 69K employees, 17K establishments, $230K+ avg pay. Start as AI-powered intermediation service, compound into financial flow intelligence. MODERATE density — less saturated than core wealth management."
+      },
+      {
+        "id": "PC8-AM-BEAUT-01",
+        "name": "Acquire + Modernize Beauty Salon Chain",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "jevons_expansion"],
+        "naics_codes": ["812112"],
+        "score": 70,
+        "axis_scores": {"force": 68, "compound": 72, "convergence": 76, "timing": 72, "capital": 68},
+        "one_liner": "Acquire retiring-owner beauty salons, deploy AI scheduling, inventory management, client personalization. NAICS 812112: 366K employees, est. 80K+ establishments. Low avg pay ($35K) but $200K+ revenue per chair. AI enables: predictive scheduling (reduce no-shows 30-40%), product recommendation, dynamic pricing."
+      },
+      {
+        "id": "PC8-PI-BEAUT-01",
+        "name": "AI Operations Platform for Beauty/Salon Industry",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["812112", "812111"],
+        "score": 67,
+        "axis_scores": {"force": 72, "compound": 66, "convergence": 58, "timing": 70, "capital": 72},
+        "one_liner": "Platform for beauty/salon industry: AI booking, client preference learning, inventory optimization, social media content generation. Fresha, Vagaro exist but limited AI. Gap: AI-native platform that actually generates social content and predicts trends."
+      },
+      {
+        "id": "PC8-FSR-COMMEQREP-01",
+        "name": "Full-Service AI Commercial Equipment Repair",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["811310"],
+        "score": 74,
+        "axis_scores": {"force": 76, "compound": 74, "convergence": 72, "timing": 72, "capital": 74},
+        "one_liner": "AI-augmented commercial/industrial equipment repair: predictive maintenance, remote diagnostics, AR-guided repair for field techs. NAICS 811310: 236K employees. Equipment gets smarter (IoT sensors) but repair workforce aging. AI bridges: remote expert + on-site tech with AR guidance = 2x more repairs per tech per day."
+      },
+      {
+        "id": "PC8-DC-COMMEQREP-01",
+        "name": "Equipment Reliability Intelligence (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["811310", "811210"],
+        "score": 76,
+        "axis_scores": {"force": 78, "compound": 86, "convergence": 64, "timing": 70, "capital": 72},
+        "one_liner": "Start with AI-augmented equipment repair, compound into definitive equipment failure pattern database. Every repair generates: failure mode, time-to-failure, parts consumed, environmental conditions. At 100K repairs: predict failures weeks before they happen. At 1M: become the predictive maintenance intelligence layer for industrial equipment."
+      },
+      {
+        "id": "PC8-FSR-MOTIONPIC-01",
+        "name": "AI-Native Video Production Studio",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["512110"],
+        "score": 73,
+        "axis_scores": {"force": 84, "compound": 68, "convergence": 60, "timing": 78, "capital": 74},
+        "one_liner": "Full-service video production at 80% lower cost using AI: script generation, storyboarding, AI-assisted editing, automated color grading, AI dubbing/localization. NAICS 512110: 206K employees, 25K establishments, $115K avg pay, DECLINING employment. Baumol cure in action. Jevons: 10x more businesses can afford professional video at AI-native cost. WARNING: tools layer crowded (Runway, Pika, Sora).",
+        "key_data": {"employment": 205865, "establishments": 25215, "avg_pay": 114869, "emp_growth": -0.023, "competitive_density": "HIGH at tool layer, LOW at full-service"}
+      },
+      {
+        "id": "PC8-FSR-PUBREL-01",
+        "name": "AI-Native PR/Communications Agency",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "coasean_shrinkage"],
+        "naics_codes": ["541820"],
+        "score": 71,
+        "axis_scores": {"force": 78, "compound": 68, "convergence": 58, "timing": 72, "capital": 78},
+        "one_liner": "Full-service AI PR agency: media monitoring, press release drafting, journalist matching, crisis response, social listening. NAICS 541820: 66K employees, 15K establishments, $135K avg pay (Baumol 1.86x). AI can handle 80% of PR tasks (monitoring, drafting, distribution) with human review for strategy and relationships."
+      },
+      {
+        "id": "PC8-FSR-MKTCONSULT-01",
+        "name": "Full-Service AI Marketing Agency",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["541613"],
+        "score": 73,
+        "axis_scores": {"force": 80, "compound": 70, "convergence": 62, "timing": 74, "capital": 78},
+        "one_liner": "AI-native marketing agency replacing traditional consultancies. NAICS 541613: 323K employees, 89K establishments, $102K avg pay. AI handles: market research, competitor analysis, campaign strategy, content creation, performance tracking. Jevons: SMBs ($1K-5K/month) access agency-quality marketing at 10x lower cost. 89K establishments = highly fragmented."
+      },
+      {
+        "id": "PC8-FSR-ADVAGENCY-01",
+        "name": "Full-Service AI Advertising Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541810"],
+        "score": 71,
+        "axis_scores": {"force": 78, "compound": 68, "convergence": 58, "timing": 72, "capital": 76},
+        "one_liner": "AI-native advertising agency: creative generation, media buying optimization, performance analytics, A/B testing at scale. NAICS 541810: 223K employees, 38K establishments, $123K avg pay. WPP/Omnicom at enterprise — gap at SMB where AI can deliver enterprise-quality creative at SMB prices."
+      },
+      {
+        "id": "PC8-FSR-TALENT-01",
+        "name": "AI Talent Agent / Artist Management Platform",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "coasean_shrinkage", "ai_inference_collapse"],
+        "naics_codes": ["711410"],
+        "score": 70,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 60, "timing": 70, "capital": 74},
+        "one_liner": "AI-native talent management for independent creators, athletes, entertainers. NAICS 711410: 30K employees, 7K establishments, $133K avg pay. AI handles: contract analysis, brand deal matching, scheduling, social media optimization, revenue tracking. Coasean: creators who needed a 15-person agency team now need AI + 1 human."
+      },
+      {
+        "id": "PC8-FSR-INDARTIST-01",
+        "name": "Full-Service AI Creative Operations for Independent Artists",
+        "architecture": "full_service_replacement",
+        "forces": ["coasean_shrinkage", "jevons_expansion"],
+        "naics_codes": ["711510"],
+        "score": 68,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 56, "timing": 68, "capital": 74},
+        "one_liner": "AI operations layer for independent artists/writers/performers. NAICS 711510: 60K employees, 39K establishments = HIGHLY fragmented gig economy. AI handles: invoicing, contract review, IP management, royalty tracking, marketing. Jevons: at $49/month vs $5K/month traditional management, 10x more artists access professional operations."
+      },
+      {
+        "id": "PC8-DC-FREIGHT-01",
+        "name": "Freight Arrangement Intelligence (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["488510"],
+        "score": 73,
+        "axis_scores": {"force": 78, "compound": 82, "convergence": 58, "timing": 68, "capital": 72},
+        "one_liner": "AI freight brokerage starting as matching service, compounding into definitive freight intelligence. NAICS 488510: 271K employees, 24K establishments. WARNING: Convoy $900M failure at 100-1000x capital. Differential: don't try to be Uber-for-freight. Focus on specialized freight intelligence (cold chain, hazmat, oversized) where domain data creates moat.",
+        "key_data": {"employment": 270919, "establishments": 24206, "competitive_density": "HIGH — Convoy failed, but Flexport $8B+, Echo $2B+. Niche specialized freight = MODERATE"}
+      },
+      {
+        "id": "PC8-FSR-LOCALTRUCK-01",
+        "name": "AI-Native Local Specialized Freight",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "silver_tsunami"],
+        "naics_codes": ["484220"],
+        "score": 71,
+        "axis_scores": {"force": 72, "compound": 70, "convergence": 72, "timing": 74, "capital": 68},
+        "one_liner": "AI-managed local specialized freight (not-for-hire exemption). NAICS 484220: 225K employees, 31K establishments. Local specialized freight (construction materials, refrigerated, flatbed) is fragmented and aging. AI handles: route optimization, load matching, regulatory compliance, predictive maintenance. Different from Convoy (long-haul general) — local specialized has relationship moats."
+      },
+      {
+        "id": "PC8-PI-WAREHOUSE-01",
+        "name": "AI Warehouse Operations Platform",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "robotics_ai"],
+        "naics_codes": ["493110"],
+        "score": 72,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 62, "timing": 72, "capital": 72},
+        "one_liner": "AI operations platform for warehousing. NAICS 493110: 1.73M employees, 17K establishments. AI handles: inventory optimization, pick path optimization, demand forecasting, workforce scheduling. Robotics integration for automated picking. Amazon sets the bar but 17K independent warehouses lack these capabilities. $51K avg pay — massive labor cost to optimize."
+      },
+      {
+        "id": "PC8-FSR-PHARMA-01",
+        "name": "AI-Native Pharmaceutical Distribution Intelligence",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "regulatory_fragmentation"],
+        "naics_codes": ["424210"],
+        "score": 70,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 64, "timing": 68, "capital": 68},
+        "one_liner": "AI layer for pharmaceutical distribution: drug interaction checking, formulary optimization, 340B compliance, inventory management for independent pharmacies. NAICS 424210: 259K employees, 23K establishments, $162K avg pay. WARNING: McKesson/AmerisourceBergen/Cardinal Health = concentrated at top, but 23K establishments suggests fragmented tail serving independent pharmacies.",
+        "key_data": {"competitive_density": "CONCENTRATED at top 3 (92% share), but MODERATE at independent pharmacy distribution tail"}
+      },
+      {
+        "id": "PC8-FSR-ELECDIST-01",
+        "name": "AI-Native Electrical Distribution",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "silver_tsunami"],
+        "naics_codes": ["423610"],
+        "score": 72,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 68, "timing": 74, "capital": 72},
+        "one_liner": "AI wholesale distribution for electrical apparatus and supplies. NAICS 423610: 195K employees, 19K establishments, $102K avg pay. Electrification trend (EV chargers, solar, battery storage) creating new product complexity that aging distributors struggle with. AI handles: product specification matching, code compliance, inventory optimization."
+      },
+      {
+        "id": "PC8-FSR-CHEMDIST-01",
+        "name": "AI Chemical Distribution with Safety Intelligence",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "regulatory_fragmentation"],
+        "naics_codes": ["424690"],
+        "score": 71,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 70, "timing": 68, "capital": 68},
+        "one_liner": "AI-native chemical distribution: SDS management, compatibility checking, regulatory compliance (EPA, OSHA, DOT), inventory optimization. NAICS 424690: 121K employees, 14K establishments, $109K avg pay. Chemical distribution requires extensive safety documentation — AI automates compliance while human handles physical logistics. Regulatory complexity = moat."
+      },
+      {
+        "id": "PC8-FSR-CARDEALER-01",
+        "name": "AI-Augmented New Car Dealership Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["441110"],
+        "score": 70,
+        "axis_scores": {"force": 74, "compound": 68, "convergence": 66, "timing": 72, "capital": 68},
+        "one_liner": "AI operations layer for car dealerships: lead scoring, inventory optimization, trade-in valuation, F&I product recommendation, service scheduling. NAICS 441110: 1.1M employees, 21K dealerships. EV transition creating massive retraining/retooling need. Dealerships are franchise-protected (state dealer laws) but operationally inefficient. CDK Global ($6B) shows platform market exists but is pre-AI."
+      },
+      {
+        "id": "PC8-FSR-PRIVHH-01",
+        "name": "AI-Native Private Household Services Platform",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion", "coasean_shrinkage"],
+        "naics_codes": ["814110"],
+        "score": 69,
+        "axis_scores": {"force": 72, "compound": 66, "convergence": 62, "timing": 70, "capital": 74},
+        "one_liner": "AI matchmaking and operations for private household employers (nannies, housekeepers, private chefs, estate managers). NAICS 814110: 207K employees, 198K establishments (near 1:1 ratio = each employer is an 'establishment'). Declining employment (-2.5%) but growing demand — gap is matching + compliance (payroll tax, I-9). Care.com ($500M) acquired but limited AI."
+      },
+      {
+        "id": "PC8-FSR-HOSPMGMT-01",
+        "name": "AI Hospital Operations Intelligence",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["622110"],
+        "score": 75,
+        "axis_scores": {"force": 84, "compound": 74, "convergence": 64, "timing": 76, "capital": 72},
+        "one_liner": "AI operations layer for hospitals: patient flow optimization, OR scheduling, staffing prediction, supply chain management. NAICS 622110: 4.9M employees, 10.8K establishments, $81K avg pay. $394B total wages = MASSIVE addressable labor cost. Hospitals concentrated at top but operationally similar — platform sells to all. Epic/Cerner are EHR, not operations AI.",
+        "key_data": {"employment": 4885638, "establishments": 10802, "total_wages": 394000000000}
+      },
+      {
+        "id": "PC8-DC-HOSPMGMT-01",
+        "name": "Hospital Operations Intelligence (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["622110"],
+        "score": 77,
+        "axis_scores": {"force": 82, "compound": 86, "convergence": 64, "timing": 72, "capital": 72},
+        "one_liner": "Start with OR scheduling/patient flow optimization for independent hospitals, compound into definitive hospital operations benchmark database. Every hospital generates: procedure duration distributions, staffing ratios vs outcomes, supply utilization patterns. At 100 hospitals: predict optimal staffing levels. At 500: become the definitive hospital operations intelligence layer."
+      },
+      {
+        "id": "PC8-FSR-MEDLAB-01",
+        "name": "AI-Native Medical Laboratory Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["621511"],
+        "score": 74,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 68, "timing": 74, "capital": 72},
+        "one_liner": "AI operations for medical/diagnostic laboratories. NAICS 621511: 231K employees. AI handles: test result interpretation assistance, quality control automation, sample routing optimization, billing/coding. Lab technician shortage (ASCP reports 20%+ vacancy rates) makes AI augmentation critical. Quest/LabCorp at enterprise but thousands of independent hospital and reference labs."
+      },
+      {
+        "id": "PC8-FSR-EDUTECH-01",
+        "name": "AI-Native Professional Training Delivery",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["611430"],
+        "score": 72,
+        "axis_scores": {"force": 78, "compound": 70, "convergence": 60, "timing": 74, "capital": 78},
+        "one_liner": "AI-native professional training: personalized learning paths, automated assessment, AI tutoring, simulation-based training. NAICS 611430: 54K employees. Baumol cure in education — instructor costs rising but AI can deliver personalized training at 10x lower cost. Jevons: 5x more workers access professional development at AI-native pricing."
+      },
+      {
+        "id": "PC8-FSR-EDUSUPPORT-01",
+        "name": "AI Educational Support Services",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["611710"],
+        "score": 70,
+        "axis_scores": {"force": 74, "compound": 68, "convergence": 58, "timing": 72, "capital": 74},
+        "one_liner": "AI-powered educational support: tutoring, test prep, academic advising, learning disability screening. NAICS 611710: 204K employees. AI tutoring can be 24/7, personalized, and 10x cheaper than human tutoring ($15/hour AI vs $60-150/hour human). Khanmigo exists but limited. Jevons: every student gets personal tutor."
+      },
+      {
+        "id": "PC8-FSR-BIZASSOC-01",
+        "name": "AI-Native Business Association Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "coasean_shrinkage"],
+        "naics_codes": ["813910"],
+        "score": 66,
+        "axis_scores": {"force": 68, "compound": 66, "convergence": 58, "timing": 66, "capital": 72},
+        "one_liner": "AI operations for business/trade associations: member engagement, event management, advocacy tracking, research/reporting. NAICS 813910: 117K employees, 21K establishments. Associations are classic Baumol — membership dues rise with economy but operations haven't improved. AI handles: member communication, research briefs, regulatory monitoring."
+      },
+      {
+        "id": "PC8-PI-SELFSTORE-01",
+        "name": "AI Operations Platform for Self-Storage",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse"],
+        "naics_codes": ["531130"],
+        "score": 68,
+        "axis_scores": {"force": 70, "compound": 68, "convergence": 62, "timing": 66, "capital": 72},
+        "one_liner": "AI operations for self-storage facilities: dynamic pricing, demand forecasting, automated move-in/move-out, security monitoring, marketing optimization. NAICS 531130: 59K employees, 18K establishments. Public Storage/Extra Space dominate REITs but thousands of independent operators. Storeganise and similar exist but pre-AI."
+      },
+      {
+        "id": "PC8-AM-COMMER-01",
+        "name": "Acquire + Modernize Commercial HVAC/Mechanical Repair",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "jevons_expansion"],
+        "naics_codes": ["811310"],
+        "score": 75,
+        "axis_scores": {"force": 74, "compound": 76, "convergence": 82, "timing": 78, "capital": 70},
+        "one_liner": "Acquire retiring-owner commercial/industrial repair shops. Deploy AI diagnostics, predictive maintenance, remote monitoring. Physical assets (tools, test equipment, customer contracts) create convergence resistance. NAICS 811310: 236K employees. Data center cooling demand creating new growth in commercial HVAC repair."
+      },
+      {
+        "id": "PC8-AM-ELECREPAIR-01",
+        "name": "Acquire + Modernize Electronic Equipment Repair",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "ai_inference_collapse"],
+        "naics_codes": ["811210"],
+        "score": 72,
+        "axis_scores": {"force": 70, "compound": 72, "convergence": 78, "timing": 74, "capital": 68},
+        "one_liner": "Acquire electronic/precision equipment repair businesses (oscilloscopes, medical devices, industrial controls). NAICS 811210: 106K employees. Retiring technicians with specialized knowledge. AI-assisted diagnostics + AR-guided repair extends capability of junior techs. Right-to-repair legislation expanding addressable market."
+      },
+      {
+        "id": "PC8-FSR-PETROL-01",
+        "name": "AI Operations for Petroleum Distribution",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure"],
+        "naics_codes": ["424720"],
+        "score": 67,
+        "axis_scores": {"force": 72, "compound": 66, "convergence": 62, "timing": 64, "capital": 68},
+        "one_liner": "AI operations for petroleum product wholesalers: demand forecasting, route optimization, regulatory compliance (EPA underground tank regs), hedging recommendations. NAICS 424720: 67K employees, 6K establishments, $117K avg pay. Declining long-term due to EV transition but still $50B+ market."
+      },
+      {
+        "id": "PC8-FSR-POWERUTIL-01",
+        "name": "AI Grid Operations for Electric Utilities",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["221122"],
+        "score": 74,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 68, "timing": 76, "capital": 68},
+        "one_liner": "AI operations platform for electric power distribution. NAICS 221122: 224K employees, $128K avg pay. Grid modernization (DER integration, EV charging, solar/storage) creating massive complexity that manual operations can't handle. AI handles: load forecasting, outage prediction, DER optimization, rate design. Regulated utility = slow but guaranteed adoption."
+      },
+      {
+        "id": "PC8-FSR-GASUTIL-01",
+        "name": "AI Pipeline/Gas Distribution Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "regulatory_fragmentation"],
+        "naics_codes": ["221210", "486210"],
+        "score": 72,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 68, "timing": 70, "capital": 68},
+        "one_liner": "AI for natural gas distribution: leak detection, pipeline integrity management, demand forecasting, regulatory compliance (PHMSA). NAICS 221210+486210: 147K employees. Methane reduction mandates (EPA Quad Ob) creating compliance urgency. AI leak detection (satellite + sensor fusion) can reduce methane emissions and compliance costs simultaneously."
+      },
+      {
+        "id": "PC8-FSR-GROCERY-01",
+        "name": "AI Operations for Independent Grocery",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["445110"],
+        "score": 69,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 60, "timing": 70, "capital": 72},
+        "one_liner": "AI operations for independent grocery stores: demand forecasting, dynamic pricing, waste reduction, automated ordering, planogram optimization. NAICS 445110: 2.6M employees, $48K avg pay. Kroger/Walmart dominate but thousands of independent and ethnic grocers underserved by enterprise tech. Spoilage reduction alone can improve margins 2-3 percentage points."
+      },
+      {
+        "id": "PC8-FSR-PERIODORIG-01",
+        "name": "AI-Native Publishing Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["513120", "513199"],
+        "score": 69,
+        "axis_scores": {"force": 74, "compound": 66, "convergence": 56, "timing": 72, "capital": 76},
+        "one_liner": "AI operations for periodical and niche publishers: content generation assistance, ad sales optimization, subscription analytics, audience segmentation. NAICS 513120+513199: 117K employees, 15K establishments, DECLINING employment. Baumol cure: editorial costs rising but AI can handle research, drafting, fact-checking. Full-service replaces 3-person editorial team."
+      },
+      {
+        "id": "PC8-FSR-CONSTRUCT-01",
+        "name": "AI Operations for Heavy/Highway Construction",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["237310", "237130"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 68, "timing": 74, "capital": 70},
+        "one_liner": "AI operations for highway/power line construction: project scheduling, equipment utilization, compliance tracking, progress monitoring (drone/satellite). NAICS 237310+237130: 584K employees. Infrastructure Investment and Jobs Act ($1.2T) creating demand surge that existing workforce can't meet. AI extends each worker's productivity."
+      },
+      {
+        "id": "PC8-FSR-HOTEL-01",
+        "name": "AI-Native Hotel Operations for Independent Properties",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["721110"],
+        "score": 70,
+        "axis_scores": {"force": 74, "compound": 68, "convergence": 60, "timing": 72, "capital": 72},
+        "one_liner": "Full-service AI hotel management for independent hotels. NAICS 721110: 1.5M employees, est. 55K properties. AI handles: dynamic pricing, guest communication, maintenance scheduling, housekeeping optimization, revenue management. Marriott/Hilton have enterprise tech — independent hotels (40% of market) lack it. $500-2K/month replaces $50K+/year revenue manager."
+      },
+      {
+        "id": "PC8-DC-HOTEL-01",
+        "name": "Hospitality Revenue Intelligence (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["721110"],
+        "score": 72,
+        "axis_scores": {"force": 76, "compound": 80, "convergence": 58, "timing": 68, "capital": 72},
+        "one_liner": "Start with AI revenue management for independent hotels, compound into definitive hospitality intelligence. Every property generates: pricing sensitivity curves, demand patterns, competitive set dynamics, seasonal coefficients. At 1K properties: predict citywide demand 30 days out. At 10K: become the STR of AI-native hospitality data."
+      },
+      {
+        "id": "PC8-MN-TOWING-01",
+        "name": "AI-Dispatched Motor Vehicle Towing Network",
+        "architecture": "marketplace_network",
+        "forces": ["ai_inference_collapse", "coasean_shrinkage"],
+        "naics_codes": ["488410"],
+        "score": 66,
+        "axis_scores": {"force": 68, "compound": 66, "convergence": 60, "timing": 66, "capital": 72},
+        "one_liner": "AI dispatch marketplace for towing services. NAICS 488410: 74K employees, 11K establishments. Towing is hyper-local and fragmented. AI handles: automated dispatch (GPS-based closest truck), dynamic pricing, insurance/roadside integration. AAA dispatches 32M calls/year through manual dispatch. Honk/Swoop exist but neither dominant."
+      },
+      {
+        "id": "PC8-FSR-COURIER-01",
+        "name": "AI-Native Local Courier/Delivery Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["492210"],
+        "score": 68,
+        "axis_scores": {"force": 72, "compound": 66, "convergence": 58, "timing": 70, "capital": 74},
+        "one_liner": "AI-native local courier/delivery: route optimization, demand prediction, dynamic pricing, fleet management. NAICS 492210: 177K employees, 9K establishments. Same-day delivery demand growing 20%+ annually. AI handles route optimization (30-40% fuel savings) + predictive demand staffing. Different from DoorDash (food) — B2B local delivery (medical samples, legal docs, parts)."
+      },
+      {
+        "id": "PC8-AM-CONSTRUCTSPECIAL-01",
+        "name": "Acquire + Modernize Specialty Trade Construction",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "baumol_cure"],
+        "naics_codes": ["238991", "238990"],
+        "score": 74,
+        "axis_scores": {"force": 74, "compound": 74, "convergence": 80, "timing": 78, "capital": 68},
+        "one_liner": "Acquire retiring-owner specialty trade contractors (waterproofing, excavation, wrecking, scaffolding). NAICS 2389: 767K employees across 4 sub-sectors. Same Silver Tsunami affecting manufacturing — trade contractors aging with no succession plan. AI assists: estimating, project scheduling, safety compliance, equipment management."
+      },
+      {
+        "id": "PC8-FSR-TELECOM-01",
+        "name": "AI Network Operations for Regional Telecoms",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["517111", "517810"],
+        "score": 71,
+        "axis_scores": {"force": 74, "compound": 70, "convergence": 64, "timing": 72, "capital": 70},
+        "one_liner": "AI network operations for wired/wireless telecoms. NAICS 517111+517810: 513K employees. AI handles: network optimization, predictive maintenance, customer churn prediction, capacity planning. AT&T/Verizon at enterprise but 1,300+ regional ISPs and CLECs underserved. 5G/fiber buildout creating new complexity."
+      },
+      {
+        "id": "PC8-FSR-PETROLREF-01",
+        "name": "AI Process Optimization for Refineries",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "regulatory_fragmentation"],
+        "naics_codes": ["324110"],
+        "score": 71,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 66, "timing": 68, "capital": 64},
+        "one_liner": "AI process optimization for petroleum refineries: yield optimization, predictive maintenance, emissions monitoring, blending optimization. NAICS 324110: 62K employees, 659 establishments, $171K avg pay. Small number of large facilities but each refinery spends $50-200M/year on operations. AI yield improvement of 1% = $10-30M/year per refinery."
+      },
+      {
+        "id": "PC8-PI-AUTORETAIL-01",
+        "name": "AI Platform for Furniture/Home Furnishings Retail",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["449210"],
+        "score": 65,
+        "axis_scores": {"force": 68, "compound": 64, "convergence": 56, "timing": 66, "capital": 70},
+        "one_liner": "AI for furniture/home retailers: AR room visualization, inventory optimization, customer preference learning, delivery route optimization. NAICS 449210: 415K employees, est. 30K establishments. Wayfair ($12B) at online but physical furniture retail (70% of sales) still analog. AI bridges online visualization with in-store experience."
+      },
+      {
+        "id": "PC8-FSR-SEMICON-01",
+        "name": "AI-Augmented Semiconductor Manufacturing Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "robotics_ai"],
+        "naics_codes": ["334413"],
+        "score": 73,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 68, "timing": 72, "capital": 64},
+        "one_liner": "AI operations for semiconductor fabs: yield optimization, defect detection, process control, predictive maintenance. NAICS 334413: 204K employees, 2.4K establishments, $201K avg pay. CHIPS Act ($52B) creating massive new fab construction. Each fab spends $1B+/year on operations. AI yield improvement of 0.5% = $50-100M/year per fab."
+      },
+      {
+        "id": "PC8-FSR-PHARMMFG-01",
+        "name": "AI Pharmaceutical Manufacturing Process Optimization",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "regulatory_fragmentation"],
+        "naics_codes": ["325412"],
+        "score": 73,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 70, "timing": 70, "capital": 66},
+        "one_liner": "AI for pharmaceutical manufacturing: batch optimization, deviation management, process analytical technology (PAT), regulatory documentation (FDA 21 CFR Part 11). NAICS 325412: 228K employees, 4.7K establishments, $137K avg pay. FDA compliance documentation is 40-60% of pharma manufacturing cost — AI can reduce this while improving compliance."
+      },
+      {
+        "id": "PC8-RC-HEAVYCIVIL-01",
+        "name": "Heavy Civil Construction Rollup with AI Project Management",
+        "architecture": "rollup_consolidation",
+        "forces": ["silver_tsunami", "baumol_cure"],
+        "naics_codes": ["237310", "237130", "237990"],
+        "score": 75,
+        "axis_scores": {"force": 76, "compound": 78, "convergence": 74, "timing": 78, "capital": 66},
+        "one_liner": "Consolidate 5-10 heavy civil contractors into AI-managed construction platform. NAICS 237: 1.1M employees across highway, power, and specialty construction. Infrastructure Investment and Jobs Act creating $550B in new federal spending. Aging owners + massive backlog + AI project management = acquisition opportunity. SBA 504 eligible for equipment-heavy acquisitions."
+      },
+      {
+        "id": "PC8-FSR-LEASING-01",
+        "name": "AI-Native Commercial Leasing Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["531120"],
+        "score": 70,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 62, "timing": 72, "capital": 72},
+        "one_liner": "AI operations for nonresidential building lessors: tenant matching, lease optimization, maintenance scheduling, utility analysis, market comps. NAICS 531120: 157K employees, 27K establishments. Commercial real estate in turmoil (office vacancy 20%+, conversion to other uses). AI helps: adaptive reuse analysis, tenant credit scoring, operating cost optimization."
+      },
+      {
+        "id": "PC8-PI-GRANTMFG-01",
+        "name": "AI Platform for Manufacturing Grant/Incentive Capture",
+        "architecture": "platform_infrastructure",
+        "forces": ["regulatory_fragmentation"],
+        "naics_codes": ["334111", "334413", "325412"],
+        "score": 69,
+        "axis_scores": {"force": 70, "compound": 72, "convergence": 66, "timing": 74, "capital": 68},
+        "one_liner": "AI platform matching manufacturers to federal/state grants and incentives: CHIPS Act, IRA, IIJA, state tax credits, workforce training grants. 50-state + federal = 5,000+ programs. Every new program increases platform value. No manufacturer has capacity to track all programs — AI monitors, matches, and assists applications. Regulatory moat: compliance complexity."
+      },
+      {
+        "id": "PC8-AW-MEDIA-01",
+        "name": "Acquire Distressed Media/Publishing Properties",
+        "architecture": "arbitrage_window",
+        "forces": ["pe_minsky_vulnerability", "ai_inference_collapse"],
+        "naics_codes": ["512110", "513120", "513199"],
+        "score": 70,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 66, "timing": 78, "capital": 68},
+        "one_liner": "Acquire distressed media properties (local news, trade publications, niche content) at 1-2x EBITDA, operate with AI-native cost structure. NAICS 512110+513120+513199: declining employment, massive PE write-downs. AI handles: content generation, ad sales, audience analysis. Revenue: existing subscriber base + AI-enabled content expansion. Vice, BuzzFeed bankruptcies prove distress; niche/local content still has value."
+      },
+      {
+        "id": "PC8-FSR-SPORTSTCH-01",
+        "name": "AI Analytics for Sports Teams/Organizations",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["711211"],
+        "score": 67,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 56, "timing": 68, "capital": 70},
+        "one_liner": "AI analytics for sports organizations: player performance prediction, injury prevention, fan engagement, ticket pricing, sponsorship valuation. NAICS 711211: 109K employees, 3.5K establishments, $266K avg pay. MLB/NFL/NBA at cutting edge but minor leagues, college sports, international leagues underserved. Jevons: AI analytics accessible to every high school team."
+      },
+      {
+        "id": "PC8-FSR-AIRLINE-01",
+        "name": "AI Operations for Regional Airlines/Charter",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["481111", "481211"],
+        "score": 68,
+        "axis_scores": {"force": 74, "compound": 68, "convergence": 60, "timing": 68, "capital": 64},
+        "one_liner": "AI operations for regional/charter airlines: route optimization, crew scheduling, maintenance prediction, fuel optimization, revenue management. NAICS 481111+481211: 521K employees. Major airlines have AI teams but 200+ regional/charter operators lack capabilities. Each 1% fuel savings = $100K-1M/year per aircraft."
+      },
+      {
+        "id": "PC8-FSR-CHARITY-01",
+        "name": "AI Operations for Grantmaking Foundations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["813211"],
+        "score": 66,
+        "axis_scores": {"force": 68, "compound": 66, "convergence": 58, "timing": 68, "capital": 72},
+        "one_liner": "AI for grantmaking organizations: grant application review, impact measurement, portfolio analysis, compliance monitoring. NAICS 813211: 77K employees, est. 12K foundations. Foundations review 10-50x more applications than they fund — AI can pre-screen and rank. Impact measurement still manual — AI enables continuous tracking."
+      },
+      {
+        "id": "PC8-FSR-SOCIALSERV-01",
+        "name": "AI Operations for Elder Care/Disability Services",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion", "silver_tsunami"],
+        "naics_codes": ["624120"],
+        "score": 76,
+        "axis_scores": {"force": 82, "compound": 74, "convergence": 68, "timing": 78, "capital": 72},
+        "one_liner": "AI operations for elder/disability services. NAICS 624120: 2.23M employees, 925K establishments = MOST FRAGMENTED sector in entire economy. $26K avg pay = lowest-wage major sector. Demographic demand (65+ population growing 3%/year) vs declining real wages = Baumol cure prime target. AI handles: care coordination, medication reminders, fall detection, family communication, Medicaid billing.",
+        "key_data": {"employment": 2230715, "establishments": 924605, "avg_pay": 26496, "fragmentation": "HIGHEST in US economy"}
+      },
+      {
+        "id": "PC8-RC-ELDERCARE-01",
+        "name": "Elder Care Services Rollup with AI Operations",
+        "architecture": "rollup_consolidation",
+        "forces": ["silver_tsunami", "baumol_cure"],
+        "naics_codes": ["624120"],
+        "score": 77,
+        "axis_scores": {"force": 80, "compound": 80, "convergence": 72, "timing": 78, "capital": 68},
+        "one_liner": "Consolidate 20-50 elder care agencies into AI-managed network. 925K establishments = deepest acquisition pool of any sector. Agencies at 1-2x revenue ($100K-$500K each). AI enables: centralized scheduling, quality monitoring, predictive staffing, family communication. Medicaid compliance across states = regulatory moat. 65+ population growth = structural demand guarantee."
+      },
+      {
+        "id": "PC8-DC-ELDERCARE-01",
+        "name": "Elder Care Intelligence Platform (Data Compounding)",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["624120"],
+        "score": 78,
+        "axis_scores": {"force": 80, "compound": 88, "convergence": 64, "timing": 72, "capital": 72},
+        "one_liner": "Start with AI elder care coordination, compound into definitive aging population care intelligence. Every client generates: health trajectory patterns, medication interaction data, caregiver effectiveness metrics, cost-of-care benchmarks. At 10K clients: predict health crises before they happen. At 100K: become the definitive elder care data layer for insurers, hospitals, and policymakers."
+      },
+      {
+        "id": "PC8-RMB-ELDERCARE-01",
+        "name": "Elder Care AI Compliance Platform (Multi-State Medicaid)",
+        "architecture": "regulatory_moat_builder",
+        "forces": ["regulatory_fragmentation"],
+        "naics_codes": ["624120"],
+        "score": 76,
+        "axis_scores": {"force": 74, "compound": 82, "convergence": 74, "timing": 78, "capital": 70},
+        "one_liner": "Compliance platform for elder care: 50-state Medicaid billing, EVV (Electronic Visit Verification) requirements, licensure tracking, HIPAA compliance, state-specific care plan documentation. 21st Century Cures Act mandated EVV — every state implemented differently. Compliance complexity = permanent moat. Each new regulation increases platform value."
+      },
+      {
+        "id": "PC8-PI-ELDERCARE-01",
+        "name": "AI Operations Platform for Home/Elder Care Agencies",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["624120"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 64, "timing": 72, "capital": 74},
+        "one_liner": "SaaS+AI platform for 925K elder care agencies: caregiver scheduling, EVV compliance, care plan management, family portal, Medicaid billing. Current tools (ClearCare, Axxess) are pre-AI. Gap: AI-native platform that predicts staffing needs, automates compliance, and coordinates across providers."
+      },
+      {
+        "id": "PC8-AM-AUTOBODY-01",
+        "name": "Acquire + Modernize Auto Body/Collision Repair",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "ai_inference_collapse"],
+        "naics_codes": ["811121"],
+        "score": 74,
+        "axis_scores": {"force": 72, "compound": 74, "convergence": 80, "timing": 76, "capital": 70},
+        "one_liner": "Acquire retiring-owner auto body shops. Deploy AI estimating (photo-to-estimate), ADAS calibration capabilities, DRP management. ADAS-equipped vehicles require specialized calibration after collision — many shops can't do this. AI + ADAS calibration capability = competitive moat. Caliber/Service King at scale but thousands of independents."
+      },
+      {
+        "id": "PC8-FSR-ENVIRON-01",
+        "name": "AI Environmental Consulting/Compliance",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "regulatory_fragmentation"],
+        "naics_codes": ["541620"],
+        "score": 72,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 68, "timing": 72, "capital": 72},
+        "one_liner": "AI-native environmental consulting: emissions monitoring, NEPA compliance documentation, ESG reporting, permit management. Regulatory complexity increasing exponentially (EPA methane rules, SEC climate disclosure, state GHG programs). AI handles: document generation, data collection, regulatory tracking. Each new regulation = more revenue + deeper moat."
+      },
+      {
+        "id": "PC8-FSR-VETSERVICE-01",
+        "name": "AI-Native Veterinary Lab/Diagnostics Service",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["541940"],
+        "score": 75,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 70, "timing": 76, "capital": 72},
+        "one_liner": "AI-powered veterinary diagnostics: image analysis (radiology, cytology, dermatology), lab result interpretation, treatment recommendation. NAICS 541940: part of vet services. IDEXX dominates lab equipment ($14B) but interpretation is still manual. AI can provide specialist-level diagnostic interpretation to general practitioners at 10x lower cost. Jevons: rural/small practices access specialist diagnostics."
+      },
+      {
+        "id": "PC8-FSR-RESEARCHSVC-01",
+        "name": "AI-Native Contract Research/R&D Services",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541714", "541715"],
+        "score": 74,
+        "axis_scores": {"force": 80, "compound": 72, "convergence": 62, "timing": 74, "capital": 74},
+        "one_liner": "AI-augmented contract R&D services: literature review, experiment design, data analysis, patent landscape analysis, regulatory pathway mapping. NAICS 541714+541715: 830K employees, 47K establishments, $180K+ avg pay. AI can handle 60-70% of early-stage research tasks (lit review, data analysis, hypothesis generation). Jevons: small biotechs access Fortune 500-level R&D capabilities."
+      }
+    ]
+  },
+
+  "dimension_2_supply_chain_adjacencies": {
+    "description": "Models generated from BEA Input-Output supply chain analysis — businesses that emerge from second-order disruption propagation",
+    "methodology": "If professional services / accounting / legal costs collapse 50-80%, downstream industries that consumed those services now have surplus budget. If manufacturing modernizes, upstream suppliers and downstream distributors must adapt.",
+    "models_constructed": 18,
+    "models": [
+      {
+        "id": "PC8-SC-BANKINFRA-01",
+        "name": "AI Banking Infrastructure for Community Banks",
+        "architecture": "platform_infrastructure",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["522110"],
+        "score": 75,
+        "axis_scores": {"force": 78, "compound": 76, "convergence": 68, "timing": 74, "capital": 72},
+        "one_liner": "SUPPLY CHAIN: Banks (NAICS 522110, 1.39M employees) are DOWNSTREAM consumers of legal, accounting, and compliance services. As AI collapses those input costs, community banks gain margin — but need AI operations themselves. Platform for 4,000+ community banks: AI underwriting, compliance monitoring, customer service, fraud detection. Jack Henry ($13B) is pre-AI core banking."
+      },
+      {
+        "id": "PC8-SC-INSINFRA-01",
+        "name": "AI Infrastructure for Independent Insurance Agencies",
+        "architecture": "platform_infrastructure",
+        "forces": ["baumol_cure", "coasean_shrinkage"],
+        "naics_codes": ["524210"],
+        "score": 74,
+        "axis_scores": {"force": 76, "compound": 74, "convergence": 66, "timing": 72, "capital": 74},
+        "one_liner": "SUPPLY CHAIN: Insurance agencies (NAICS 524210, 971K employees, 158K establishments) consume accounting, legal, compliance services upstream. As those costs fall, margin improves — but agencies need AI for quoting, claims, customer service. Platform for 158K independent agencies. Applied Epic/Vertafore are pre-AI. Coasean: AI enables 1-2 person agencies to compete with 50-person shops."
+      },
+      {
+        "id": "PC8-SC-ENGINFRA-01",
+        "name": "AI Operations for Engineering Services Firms",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541330"],
+        "score": 76,
+        "axis_scores": {"force": 80, "compound": 74, "convergence": 66, "timing": 76, "capital": 74},
+        "one_liner": "SUPPLY CHAIN: Engineering services (NAICS 541330, 1.14M employees, 96K establishments) sits downstream of manufacturing modernization — as manufacturing adopts AI, engineering must also adapt. AI handles: CAD review, code compliance checking, structural analysis, project management, RFP response generation. $117K avg pay = significant Baumol energy. Infrastructure bill creating demand surge."
+      },
+      {
+        "id": "PC8-SC-MFGSUPPLY-01",
+        "name": "AI Supply Chain Platform for Modernized Manufacturers",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "robotics_ai"],
+        "naics_codes": ["423830", "423510", "423830"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 64, "timing": 74, "capital": 72},
+        "one_liner": "SUPPLY CHAIN: As manufacturing shops modernize (our top models), their supply chain must adapt. AI platform for industrial distributors: predictive reordering based on manufacturer production schedules, quality tracking across suppliers, just-in-time optimization. Connects upgraded manufacturers to upgraded suppliers."
+      },
+      {
+        "id": "PC8-SC-LEGALOPS-01",
+        "name": "AI Legal Operations for Mid-Market Companies",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541110"],
+        "score": 77,
+        "axis_scores": {"force": 84, "compound": 74, "convergence": 64, "timing": 78, "capital": 78},
+        "one_liner": "SUPPLY CHAIN: Law firms (NAICS 541110, 1.08M employees, 187K establishments, $129K avg pay) serve every business in the economy. As AI collapses legal cost 50-80%, full-service AI legal ops replaces outside counsel for mid-market companies. Contract review, compliance monitoring, litigation analytics, regulatory tracking. Harvey, CoCounsel at enterprise — gap at $1K-10K/month mid-market."
+      },
+      {
+        "id": "PC8-SC-FOODDIST-01",
+        "name": "AI Food Distribution Intelligence for Modernized Producers",
+        "architecture": "data_compounding",
+        "forces": ["ai_inference_collapse", "robotics_ai"],
+        "naics_codes": ["424490", "424410"],
+        "score": 71,
+        "axis_scores": {"force": 74, "compound": 78, "convergence": 60, "timing": 70, "capital": 70},
+        "one_liner": "SUPPLY CHAIN: As specialty food producers modernize (our AM-FOOD models), distribution becomes the bottleneck. AI food distribution: demand forecasting, spoilage prediction, cold chain optimization, retailer matching. NAICS 424490+424410: 500K employees. Connects AI-modernized food producers to distributors to retailers. Data from production + distribution + retail = compound intelligence."
+      },
+      {
+        "id": "PC8-SC-PROFTRAIN-01",
+        "name": "AI Workforce Retraining for Disrupted Industries",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["611430", "611710"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 62, "timing": 78, "capital": 76},
+        "one_liner": "SUPPLY CHAIN: As AI disrupts professional services, workers need retraining. AI-native reskilling platform for displaced accountants, paralegals, administrative staff. Personalized learning paths, competency assessment, job matching. NAICS 611430+611710: 258K employees. Government workforce development funds ($3B+ annually) available. Structural demand: every Baumol cure creates retraining demand."
+      },
+      {
+        "id": "PC8-SC-COMPEQUIP-01",
+        "name": "AI IT Equipment Lifecycle Management",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse"],
+        "naics_codes": ["423430"],
+        "score": 72,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 62, "timing": 72, "capital": 72},
+        "one_liner": "SUPPLY CHAIN: As businesses deploy more AI, IT equipment needs change dramatically (GPU servers, edge devices, networking). AI lifecycle management: procurement optimization, refresh planning, capacity forecasting, vendor negotiation. NAICS 423430: 235K employees, 18K establishments. CDW ($22B) is pre-AI procurement — gap for AI-native equipment lifecycle intelligence."
+      },
+      {
+        "id": "PC8-SC-OILFIELD-01",
+        "name": "AI Operations for Oilfield Services",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["213112"],
+        "score": 71,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 66, "timing": 68, "capital": 66},
+        "one_liner": "SUPPLY CHAIN: Oil/gas extraction drives massive service industry downstream. NAICS 213112: 220K employees, 14K establishments, $107K avg pay. AI handles: drilling optimization, reservoir modeling, predictive maintenance, safety compliance. Halliburton/SLB at enterprise but thousands of independent service companies lack AI capabilities."
+      },
+      {
+        "id": "PC8-SC-REALESTATE-01",
+        "name": "AI Real Estate Transaction Intelligence",
+        "architecture": "data_compounding",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["531210"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 80, "convergence": 60, "timing": 72, "capital": 74},
+        "one_liner": "SUPPLY CHAIN: Real estate agents/brokers (NAICS 531210, 356K employees, 163K establishments) consume legal, title, and inspection services upstream. As those costs fall, transaction costs fall — enabling more transactions. AI transaction platform: automated CMA, contract generation, title review, closing coordination. Jevons: lower transaction costs = more transactions."
+      },
+      {
+        "id": "PC8-SC-ACADOPS-01",
+        "name": "AI Administrative Operations for Higher Education",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["611310"],
+        "score": 72,
+        "axis_scores": {"force": 78, "compound": 70, "convergence": 60, "timing": 74, "capital": 72},
+        "one_liner": "SUPPLY CHAIN: Universities (NAICS 611310, 1.26M employees) are downstream consumers of accounting, legal, IT, and administrative services. AI operations for universities: admissions processing, financial aid optimization, course scheduling, research administration, donor management. Workday/Ellucian are pre-AI ERP — gap for AI-native university operations."
+      },
+      {
+        "id": "PC8-SC-AUTOPARTS-01",
+        "name": "AI Parts Intelligence for Auto Repair Modernization",
+        "architecture": "data_compounding",
+        "forces": ["ai_inference_collapse"],
+        "naics_codes": ["423120", "441310"],
+        "score": 70,
+        "axis_scores": {"force": 72, "compound": 78, "convergence": 58, "timing": 68, "capital": 72},
+        "one_liner": "SUPPLY CHAIN: As auto repair shops modernize (our AM-AUTO models), parts procurement becomes data-rich. AI parts intelligence: predictive reordering, cross-reference optimization, counterfeit detection, pricing comparison. Every repair generates parts consumption data. At scale: predict parts demand by vehicle age/model/region weeks in advance."
+      },
+      {
+        "id": "PC8-SC-MEDDEVICE-01",
+        "name": "AI Medical Device Lifecycle for Healthcare AI Adoption",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "regulatory_fragmentation"],
+        "naics_codes": ["423450", "339112"],
+        "score": 72,
+        "axis_scores": {"force": 74, "compound": 72, "convergence": 68, "timing": 72, "capital": 68},
+        "one_liner": "SUPPLY CHAIN: As healthcare practices adopt AI (our HC models), they need AI-compatible medical devices and integration. AI medical device lifecycle: procurement, integration with AI diagnostic systems, regulatory compliance (510(k)), maintenance prediction. FDA SaMD (Software as Medical Device) framework creates compliance moat."
+      },
+      {
+        "id": "PC8-SC-CONSTRUCTMAT-01",
+        "name": "AI Construction Materials Distribution",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["423310", "444180"],
+        "score": 69,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 62, "timing": 72, "capital": 68},
+        "one_liner": "SUPPLY CHAIN: Infrastructure bill + construction modernization drives materials demand. AI materials distribution: demand forecasting from permit data, price optimization, logistics coordination, substitution recommendation. NAICS 423310+444180: 365K employees. Connects AI-modernized contractors to optimized supply chain."
+      },
+      {
+        "id": "PC8-SC-CYBERSEC-01",
+        "name": "AI Cybersecurity Operations for SMBs",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "regulatory_fragmentation"],
+        "naics_codes": ["541512"],
+        "score": 74,
+        "axis_scores": {"force": 78, "compound": 72, "convergence": 64, "timing": 78, "capital": 74},
+        "one_liner": "SUPPLY CHAIN: As every business deploys AI, cybersecurity becomes critical. AI-native managed security for SMBs: threat detection, compliance monitoring (SOC2, HIPAA, PCI), incident response, vulnerability management. NAICS 541512: 1.14M employees but enterprise-focused. Gap: AI-native security operations at $500-2K/month for SMBs. SEC cyber disclosure rules + state privacy laws = regulatory tailwind."
+      },
+      {
+        "id": "PC8-SC-STAFFTRANS-01",
+        "name": "AI Workforce Transition Services",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["561311", "561320"],
+        "score": 72,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 60, "timing": 78, "capital": 74},
+        "one_liner": "SUPPLY CHAIN: As staffing industry declines (NAICS 5613, -7.6% employment), workers need transition services. AI workforce transition: skills assessment, reskilling pathways, job matching, career coaching. Different from staffing (placing bodies) — transition services (upskilling people). Government WIOA funding ($3B+/year) available. Every AI disruption cycle creates more demand."
+      },
+      {
+        "id": "PC8-SC-ENERGYSVC-01",
+        "name": "AI Energy Services for Electrification Transition",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["221122", "237130"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 66, "timing": 76, "capital": 70},
+        "one_liner": "SUPPLY CHAIN: Electrification (EV, heat pumps, solar) transforms both power distribution and power line construction. AI energy services: load analysis for EV charger placement, DER optimization, interconnection queue management, rate design analysis. Every utility needs this but internal teams understaffed. IRA incentives creating demand surge."
+      },
+      {
+        "id": "PC8-SC-GOVTECH-01",
+        "name": "AI Operations for State/Local Government Services",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["921110", "921120"],
+        "score": 68,
+        "axis_scores": {"force": 74, "compound": 66, "convergence": 58, "timing": 72, "capital": 64},
+        "one_liner": "SUPPLY CHAIN: Government is the largest downstream consumer of professional services. As AI collapses those costs, government operations must also modernize. AI for state/local government: permit processing, constituent services, records management, budget analysis. 12-24 month procurement cycles but DOGE-driven modernization pressure creating urgency. Tyler Technologies ($1.8B) is incumbent but pre-AI."
+      }
+    ]
+  },
+
+  "dimension_3_external_sources": {
+    "description": "Models generated from external source analysis: failed startups, YC batches, BizBuySell patterns, market failure analysis",
+    "models_constructed": 15,
+    "note": "Awaiting external research agent results — models below constructed from known market intelligence",
+    "models": [
+      {
+        "id": "PC8-EXT-DEADBIZ-LOCALCONTENT-01",
+        "name": "AI-Native Local News/Content Revival",
+        "architecture": "arbitrage_window",
+        "forces": ["pe_minsky_vulnerability", "ai_inference_collapse"],
+        "naics_codes": ["513110", "513120"],
+        "score": 72,
+        "axis_scores": {"force": 74, "compound": 70, "convergence": 66, "timing": 78, "capital": 72},
+        "one_liner": "DEAD BUSINESS REVIVAL: Local newspapers/news sites are dying (2,900+ closures since 2005). Acquire at distressed pricing (1-2x revenue), operate with AI-native editorial + AI ad sales. Content generation cost drops 80%, ad targeting improves 3-5x. Local news has unique value (zoning, school boards, police reports) that AI-only content can't replicate. Combine local reporters + AI amplification."
+      },
+      {
+        "id": "PC8-EXT-DEADBIZ-TRAVELAGENT-01",
+        "name": "AI-Native Travel Advisory Service Revival",
+        "architecture": "arbitrage_window",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["561510"],
+        "score": 68,
+        "axis_scores": {"force": 72, "compound": 66, "convergence": 58, "timing": 70, "capital": 74},
+        "one_liner": "DEAD BUSINESS REVIVAL: Traditional travel agencies killed by Expedia/Booking. But complex travel (group, luxury, multi-destination, corporate) still needs human judgment. AI-native travel advisory: AI handles research/booking/logistics, human handles relationship/preferences/problem-solving. At $99/trip (vs $500+ traditional agent), Jevons: 5x more travelers use advisory services."
+      },
+      {
+        "id": "PC8-EXT-DEADBIZ-PHOTOLAB-01",
+        "name": "AI-Native Photo/Video Post-Production Service",
+        "architecture": "arbitrage_window",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["512199"],
+        "score": 67,
+        "axis_scores": {"force": 72, "compound": 64, "convergence": 54, "timing": 72, "capital": 78},
+        "one_liner": "DEAD BUSINESS REVIVAL: Photo labs died with digital. But demand for professional post-production (color grading, retouching, compositing) surging with social media/e-commerce. AI handles 90% of post-production (auto color, background removal, upscaling). Full-service at $5-20/image vs $50-200 traditional. Jevons: every e-commerce seller gets professional product photos."
+      },
+      {
+        "id": "PC8-EXT-YCINSPIRED-AIAGENT-01",
+        "name": "AI Agent Operations Platform for Service Businesses",
+        "architecture": "platform_infrastructure",
+        "forces": ["ai_inference_collapse", "coasean_shrinkage"],
+        "naics_codes": ["541511", "541519"],
+        "score": 71,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 58, "timing": 76, "capital": 74},
+        "one_liner": "YC-INSPIRED: Every service business (law, accounting, consulting, real estate) needs AI agents but can't build them. Platform providing pre-built, compliant AI agents for specific service verticals. Different from Zapier/Make (workflow automation) — these are full agents that handle client communication, research, document preparation. Vertical-specific compliance built in."
+      },
+      {
+        "id": "PC8-EXT-YCINSPIRED-AIRECRUIT-01",
+        "name": "AI Recruiting for Blue-Collar/Trades Workers",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "silver_tsunami"],
+        "naics_codes": ["561311"],
+        "score": 72,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 64, "timing": 76, "capital": 72},
+        "one_liner": "YC-INSPIRED: Most AI recruiting targets white-collar/tech. Blue-collar/trades recruiting is different: skills verification, certification tracking, availability scheduling, geographic matching. 7.4M unfilled trade jobs (NAHB). AI handles: credential verification, skills matching, schedule optimization. LinkedIn/Indeed don't serve this market well."
+      },
+      {
+        "id": "PC8-EXT-YCINSPIRED-AICOMPLI-01",
+        "name": "AI Compliance-as-a-Service for Regulated Industries",
+        "architecture": "regulatory_moat_builder",
+        "forces": ["regulatory_fragmentation", "ai_inference_collapse"],
+        "naics_codes": ["541611", "541618"],
+        "score": 76,
+        "axis_scores": {"force": 76, "compound": 82, "convergence": 72, "timing": 76, "capital": 72},
+        "one_liner": "YC-INSPIRED: Every regulated industry needs compliance. AI compliance-as-a-service: continuous monitoring, automated reporting, regulatory change tracking, audit preparation. Multi-sector (healthcare, finance, environmental, food safety). Each new regulation permanently increases value. Different from point solutions — horizontal compliance layer that works across industries."
+      },
+      {
+        "id": "PC8-EXT-BIZBUY-PLUMBING-01",
+        "name": "Acquire + Modernize Plumbing/HVAC Company",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "jevons_expansion"],
+        "naics_codes": ["238220"],
+        "score": 76,
+        "axis_scores": {"force": 74, "compound": 76, "convergence": 82, "timing": 78, "capital": 72},
+        "one_liner": "BIZBUYSELL: Plumbing/HVAC companies actively listed for sale ($300K-$2M). Owner age 55+ with no succession plan. Deploy AI: scheduling optimization, predictive maintenance for service contracts, dynamic pricing, automated dispatching. Physical assets (trucks, tools, licenses) = convergence resistance. Data center cooling demand creating new HVAC growth."
+      },
+      {
+        "id": "PC8-EXT-BIZBUY-CLEANING-01",
+        "name": "Acquire + Modernize Commercial Cleaning Company",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "baumol_cure"],
+        "naics_codes": ["561720"],
+        "score": 72,
+        "axis_scores": {"force": 70, "compound": 72, "convergence": 76, "timing": 74, "capital": 72},
+        "one_liner": "BIZBUYSELL: Janitorial/cleaning companies actively listed ($100K-$500K). Deploy AI: route optimization, quality verification (computer vision), dynamic scheduling, supply ordering. NAICS 561720: 1.06M employees, 97K establishments. Low-margin but high-volume. AI can improve margins 5-10 percentage points through efficiency."
+      },
+      {
+        "id": "PC8-EXT-BIZBUY-PEST-01",
+        "name": "Acquire + Modernize Pest Control Company",
+        "architecture": "acquire_and_modernize",
+        "forces": ["silver_tsunami", "jevons_expansion"],
+        "naics_codes": ["561710"],
+        "score": 73,
+        "axis_scores": {"force": 72, "compound": 74, "convergence": 78, "timing": 74, "capital": 72},
+        "one_liner": "BIZBUYSELL: Pest control companies listed ($200K-$1M). Deploy AI: route optimization, predictive treatment scheduling, automated customer communication, IoT monitoring. Rentokil ($20B) and Terminix at scale but 25K+ independent operators. License requirements = moat. Climate change extending pest seasons = demand growth."
+      },
+      {
+        "id": "PC8-EXT-FAILSTUDY-CONVOY-01",
+        "name": "Specialized Freight Intelligence (Post-Convoy Lesson)",
+        "architecture": "data_compounding",
+        "forces": ["ai_inference_collapse"],
+        "naics_codes": ["488510", "484230"],
+        "score": 69,
+        "axis_scores": {"force": 72, "compound": 76, "convergence": 58, "timing": 66, "capital": 68},
+        "one_liner": "FAILURE STUDY: Convoy ($900M failure) tried to be Uber-for-freight in general trucking — marketplace without differentiation. Lesson: general freight matching is commoditized. Opportunity: SPECIALIZED freight intelligence (cold chain, hazmat, oversized, high-value) where domain expertise creates data moat. Focus on 1-2 specialized segments, not general marketplace."
+      },
+      {
+        "id": "PC8-EXT-FAILSTUDY-BENCH-02",
+        "name": "AI SMB Financial Operations (Post-Bench, Post-Pilot Lesson)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["541211", "561110"],
+        "score": 79,
+        "axis_scores": {"force": 86, "compound": 76, "convergence": 68, "timing": 82, "capital": 78},
+        "one_liner": "FAILURE STUDY: Bench ($113M), Pilot ($200M+), Decimal — all failed at human-heavy bookkeeping model. Lesson: full-service bookkeeping with 80% human labor doesn't scale. Opportunity: AI-native model where AI does 95% of work, human reviews 5%. At $0.05/month inference vs $150+/hour human bookkeeper. 35K Bench orphan customers immediately available. This IS our DC-FIN-01 but validated by 3 independent failures."
+      },
+      {
+        "id": "PC8-EXT-AIBENE-REALESTATE-01",
+        "name": "AI-Augmented Real Estate Brokerage",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["531210"],
+        "score": 68,
+        "axis_scores": {"force": 72, "compound": 66, "convergence": 56, "timing": 72, "capital": 74},
+        "one_liner": "AI BENEFICIARY: Traditional real estate agents enhanced (not replaced) by AI: automated CMA generation, listing description writing, lead scoring, showing scheduling, contract review. NAICS 531210: 356K employees, 163K establishments. Agent stays for relationship/negotiation but AI handles 70% of research/admin. Agent productivity 2-3x higher = more deals per agent."
+      },
+      {
+        "id": "PC8-EXT-AIBENE-DENTIST-01",
+        "name": "AI-Enhanced Dental Practice Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["621210"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 66, "timing": 74, "capital": 72},
+        "one_liner": "AI BENEFICIARY: Dental practices enhanced by AI: radiograph interpretation, treatment planning, insurance verification, patient communication. Dentist stays for procedures but AI handles 60% of diagnostic/admin. Independent practices (120K+) compete better against PE rollups by having AI cost structure without PE debt."
+      },
+      {
+        "id": "PC8-EXT-AIBENE-FARMOPS-01",
+        "name": "AI-Enhanced Small Farm Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["111998", "111419"],
+        "score": 70,
+        "axis_scores": {"force": 72, "compound": 70, "convergence": 64, "timing": 72, "capital": 70},
+        "one_liner": "AI BENEFICIARY: Small/specialty farms (not commodity row crop) enhanced by AI: pest/disease detection via phone camera, irrigation optimization, market price monitoring, harvest timing, regulatory compliance (organic/GAP). Davis CA location = direct access to UC Davis ag AI research and Central Valley growers. Jevons: AI makes precision agriculture accessible to 50-acre farms, not just 5000-acre operations."
+      }
+    ]
+  },
+
+  "dimension_4_ai_beneficiaries": {
+    "description": "Traditional businesses that don't get REPLACED by AI but THRIVE with AI adoption — the 'AI beneficiary' lens",
+    "key_insight": "Most research focuses on AI replacing businesses. But many traditional businesses become 2-5x more profitable when they adopt AI tools. These are the 'rising tide' opportunities — building the tools/services that help traditional businesses capture AI benefits.",
+    "models_constructed": 14,
+    "models": [
+      {
+        "id": "PC8-AB-ACCPRACTICE-01",
+        "name": "AI-Supercharged Accounting Practice (New Entrant)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "coasean_shrinkage"],
+        "naics_codes": ["541211", "541213"],
+        "score": 78,
+        "axis_scores": {"force": 82, "compound": 76, "convergence": 70, "timing": 80, "capital": 78},
+        "one_liner": "AI BENEFICIARY: Don't sell accounting software — BE an accounting firm that uses AI internally. New-entrant practice using AI for 90% of work: tax prep, bookkeeping, audit prep, payroll. 1 CPA + AI handles workload of 10-person traditional firm. CA AB 1175 (effective Jan 2027) lowers CPA experience requirements. Price at 40% of traditional firms. Operate nationally via virtual model."
+      },
+      {
+        "id": "PC8-AB-LAWPRACTICE-01",
+        "name": "AI-Supercharged Law Practice (New Entrant)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "coasean_shrinkage"],
+        "naics_codes": ["541110"],
+        "score": 76,
+        "axis_scores": {"force": 82, "compound": 74, "convergence": 66, "timing": 78, "capital": 78},
+        "one_liner": "AI BENEFICIARY: AI-native law firm where 1 attorney + AI handles workload of 5-person traditional firm. Focus on high-volume practice areas: immigration, business formation, estate planning, IP filing. AI handles: research, drafting, document review, client communication. Attorney focuses on judgment calls and court appearances. Price at 50% of traditional firms."
+      },
+      {
+        "id": "PC8-AB-INSAGENCY-01",
+        "name": "AI-Supercharged Insurance Agency (New Entrant)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "coasean_shrinkage"],
+        "naics_codes": ["524210"],
+        "score": 74,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 66, "timing": 74, "capital": 76},
+        "one_liner": "AI BENEFICIARY: AI-native insurance agency where 1 agent + AI handles portfolio of 500+ clients (vs traditional 150-200). AI handles: quoting, policy comparison, renewal management, claims assistance, regulatory compliance. Agent focuses on relationships and complex cases. Each additional client has near-zero marginal cost. 158K existing agencies are potential acquisition targets."
+      },
+      {
+        "id": "PC8-AB-VETPRACTICE-01",
+        "name": "AI-Supercharged Veterinary Practice (New Entrant)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["541940"],
+        "score": 75,
+        "axis_scores": {"force": 78, "compound": 74, "convergence": 70, "timing": 76, "capital": 72},
+        "one_liner": "AI BENEFICIARY: AI-native veterinary practice where AI handles diagnostics (radiograph interpretation, lab analysis), treatment protocols, client communication, inventory management. DVM focuses on procedures and complex cases. Throughput 2-3x traditional practice. Mars/IDEXX dominate corporate vet, but independent practices (75%+ of market) can compete with AI augmentation."
+      },
+      {
+        "id": "PC8-AB-ARCHFIRM-01",
+        "name": "AI-Supercharged Architecture Firm (New Entrant)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541310"],
+        "score": 72,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 62, "timing": 74, "capital": 76},
+        "one_liner": "AI BENEFICIARY: AI-native architecture firm. AI handles: code compliance checking, energy modeling, rendering, construction document generation, specification writing. Architect focuses on design and client relationships. 1 architect + AI produces work of 5-person traditional firm. Infrastructure demand + housing shortage = structural demand growth."
+      },
+      {
+        "id": "PC8-AB-ENGFIRM-01",
+        "name": "AI-Supercharged Engineering Consulting (New Entrant)",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541330"],
+        "score": 73,
+        "axis_scores": {"force": 78, "compound": 72, "convergence": 62, "timing": 74, "capital": 76},
+        "one_liner": "AI BENEFICIARY: AI-native engineering consulting firm. AI handles: structural calculations, code checking, report generation, CAD review, RFP response. Engineer PE stamp still required (moat). 1 PE + AI handles projects that required 5-person team. Infrastructure bill creating demand surge. Price at 40% of traditional engineering firms."
+      },
+      {
+        "id": "PC8-AB-SURVEYING-01",
+        "name": "AI-Supercharged Land Surveying Practice",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["541370"],
+        "score": 71,
+        "axis_scores": {"force": 74, "compound": 70, "convergence": 68, "timing": 72, "capital": 72},
+        "one_liner": "AI BENEFICIARY: AI-native surveying practice using drone/LiDAR + AI processing. Traditional survey takes 2-3 days fieldwork + 1 week office processing. AI-native: 4-hour drone flight + same-day AI processing. PLS stamp still required (moat). Surveyor shortage (avg age 59, retiring faster than graduating). Price at 50% of traditional. Infrastructure bill creating demand surge."
+      },
+      {
+        "id": "PC8-AB-TAXPREP-01",
+        "name": "AI-Native Tax Preparation Service",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["541213"],
+        "score": 74,
+        "axis_scores": {"force": 78, "compound": 72, "convergence": 62, "timing": 76, "capital": 80},
+        "one_liner": "AI BENEFICIARY: AI-native tax preparation for small businesses and individuals with complex situations (rental income, K-1s, multi-state). AI handles: data extraction, form preparation, optimization analysis, audit risk assessment. EA/CPA reviews and signs. TurboTax for simple returns, expensive CPAs for complex — gap in middle at $199-499 for AI-prepared + human-reviewed complex returns."
+      },
+      {
+        "id": "PC8-AB-CONSTRUCTMGMT-01",
+        "name": "AI-Supercharged Construction Management",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["236220"],
+        "score": 73,
+        "axis_scores": {"force": 76, "compound": 72, "convergence": 66, "timing": 74, "capital": 72},
+        "one_liner": "AI BENEFICIARY: AI-native construction management firm. AI handles: scheduling, cost estimation, RFI processing, change order analysis, progress monitoring (drone/photo). PM focuses on relationships and problem-solving. 1 PM + AI manages projects that required 4-person team. Infrastructure bill + housing shortage = structural demand. Price competitively vs 20-person CM firms."
+      },
+      {
+        "id": "PC8-AB-INSPSERV-01",
+        "name": "AI-Augmented Home/Building Inspection Service",
+        "architecture": "full_service_replacement",
+        "forces": ["ai_inference_collapse", "jevons_expansion"],
+        "naics_codes": ["541350"],
+        "score": 70,
+        "axis_scores": {"force": 72, "compound": 68, "convergence": 64, "timing": 72, "capital": 74},
+        "one_liner": "AI BENEFICIARY: AI-augmented building inspection: computer vision for defect detection, thermal imaging analysis, automated report generation, code compliance checking. Inspector still goes on-site but AI analyzes photos, generates report, flags issues. Throughput 3x (4 inspections/day vs 1-2). Price at 70% of traditional. Inspector licensing = moat."
+      },
+      {
+        "id": "PC8-AB-PHYSTHERAPY-01",
+        "name": "AI-Supercharged Physical Therapy Practice",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "jevons_expansion"],
+        "naics_codes": ["621340"],
+        "score": 72,
+        "axis_scores": {"force": 76, "compound": 70, "convergence": 66, "timing": 72, "capital": 72},
+        "one_liner": "AI BENEFICIARY: AI-augmented PT practice. AI handles: exercise program generation, progress tracking (computer vision for range-of-motion measurement), billing/coding, patient communication, outcome prediction. PT focuses on manual therapy and complex cases. Throughput 2x with AI-guided home exercise programs monitored remotely. Jevons: AI monitoring enables treating 3x more patients."
+      },
+      {
+        "id": "PC8-AB-PHARMRETAIL-01",
+        "name": "AI-Enhanced Independent Pharmacy Operations",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "regulatory_fragmentation"],
+        "naics_codes": ["456110"],
+        "score": 71,
+        "axis_scores": {"force": 74, "compound": 70, "convergence": 66, "timing": 72, "capital": 70},
+        "one_liner": "AI BENEFICIARY: Independent pharmacies (21K+) competing against CVS/Walgreens with AI: drug interaction checking, formulary optimization, adherence prediction, clinical services documentation, PBM contract analysis. Pharmacist license = moat. PBM reform legislation (FTC actions) creating window for independent pharmacy viability."
+      },
+      {
+        "id": "PC8-AB-MORTGAGE-01",
+        "name": "AI-Supercharged Mortgage Brokerage",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["522310"],
+        "score": 71,
+        "axis_scores": {"force": 76, "compound": 68, "convergence": 62, "timing": 74, "capital": 74},
+        "one_liner": "AI BENEFICIARY: AI-native mortgage brokerage. AI handles: rate shopping across 100+ lenders, document collection/verification, underwriting pre-qualification, compliance checking (TRID, HMDA). Broker focuses on complex cases and relationships. 1 broker + AI handles volume of 5-person traditional shop. Rate environment volatility creating need for faster, more responsive brokers."
+      },
+      {
+        "id": "PC8-AB-STAFFAUGMENT-01",
+        "name": "AI-Native Professional Staffing Agency",
+        "architecture": "full_service_replacement",
+        "forces": ["baumol_cure", "ai_inference_collapse"],
+        "naics_codes": ["561312", "561311"],
+        "score": 71,
+        "axis_scores": {"force": 76, "compound": 68, "convergence": 60, "timing": 76, "capital": 74},
+        "one_liner": "AI BENEFICIARY: As traditional staffing declines (-7.6% employment), AI-native staffing firms gain share. AI handles: candidate screening, skills assessment, matching, interview scheduling, onboarding. Recruiter focuses on relationship management and complex placements. 1 recruiter + AI fills roles at rate of 5-person traditional team. Price at 10-12% fee vs traditional 20-25%."
+      }
+    ]
+  },
+
+  "expansion_summary": {
+    "total_new_models": 135,
+    "by_dimension": {
+      "naics_decomposition": 88,
+      "supply_chain_adjacencies": 18,
+      "external_sources": 15,
+      "ai_beneficiaries": 14
+    },
+    "by_architecture": {
+      "full_service_replacement": 52,
+      "data_compounding": 14,
+      "acquire_and_modernize": 12,
+      "platform_infrastructure": 13,
+      "rollup_consolidation": 8,
+      "regulatory_moat_builder": 6,
+      "marketplace_network": 3,
+      "arbitrage_window": 6
+    },
+    "score_distribution": {
+      "80_plus": 4,
+      "75_79": 20,
+      "70_74": 53,
+      "65_69": 38,
+      "below_65": 20
+    },
+    "new_4digit_naics_sectors_covered": 58,
+    "total_models_after_expansion": "387 + 135 = 522",
+    "key_new_sectors": [
+      "811111 Auto Repair (390K emp, 86K estabs) — Silver Tsunami + AI diagnostics",
+      "561730 Landscaping (879K emp, 122K estabs) — MOST fragmented service sector",
+      "624120 Elder Care (2.23M emp, 925K estabs) — MOST fragmented overall + demographic demand",
+      "425120 Wholesale Brokers (512K emp, 122K estabs) — HIGH Baumol middleman disruption",
+      "531311/2 Property Management (698K emp, 98K estabs) — fragmented + Fair Housing compliance moat",
+      "622110 Hospitals (4.9M emp) — operations AI for $394B total wages",
+      "541330 Engineering (1.14M emp) — infrastructure bill demand surge",
+      "237310 Heavy Construction (360K emp) — IIJA $1.2T spending",
+      "512110 Motion Picture (206K emp, declining) — dead business revival",
+      "811310 Commercial Equipment Repair (236K emp) — data center cooling demand"
+    ]
+  }
+}

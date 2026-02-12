@@ -1,236 +1,483 @@
 {
-  "last_updated": "2026-02-10T23:59:00Z",
-  "current_cycle": 7,
+  "last_updated": "2026-02-11T04:00:00Z",
+  "current_cycle": "v2-8",
   "engine_version": "v2.0",
-  "engine_mode": "naics_systematic_expansion",
-  "engine_status": "V2 CYCLE 7 COMPLETE -- NAICS-SYSTEMATIC EXPANSION + STRESS TEST. 187 -> 387 models via NAICS QCEW screening of 293 4-digit industries. Stress-tested scoring with 3 alternative weight vectors: 7 of top 10 robust across ALL vectors. Mapped 80-cell force x architecture matrix (16 impossible, 12 previously unexplored now filled). 8 new high-value sectors discovered via bottom-up NAICS scanning. TOP 5: (1) Multi-Shop CNC/Metal Fab Rollup (88), (2) AI Financial Intelligence Platform (87), (3) Acquire+Modernize CNC Shop (87), (4) Acquire+Modernize Specialty Food (86), (5) Healthcare AI Compliance Platform (86). KEY FINDINGS: Physical > digital is partially weight-conditional (physical more durable, digital data compounding more force). NAICS bottom-up scanning > top-down theme scanning for sector discovery. PE distress cascade extends to veterinary, dental, staffing, printing. 3 new patterns: P-019 NAICS Systematic Discovery, P-020 Weight-Conditional Rankings, P-021 PE Distress Multi-Sector.",
+  "engine_mode": "multi_source_cross_referencing",
+  "engine_status": "V2 CYCLE 8 COMPLETE -- MULTI-SOURCE CROSS-REFERENCING. 7 data source types (FRED, BLS, EDGAR, YFinance, Census CBP, Web Search, QCEW), 70+ connector methods activated. Top 20 models cross-referenced against 3-7 independent data sources each. 17 upgraded, 2 downgraded, 21 unchanged. NEW #1: AI Financial Intelligence Platform (90, +3). KEY DISCOVERIES: (1) Financial services cascade CONFIRMED — accounting employment -49K YoY (BLS), financials ETF dead last +0.5% (YFinance), delinquency rising 1.78% (FRED). (2) Staffing canary STRONGEST signal — RHI -53%, MAN -44%, KELYA -25% in 1yr. (3) Physical production CONFIRMED — Industrials +15.1%, Materials +20.1% ETF. (4) Zero-density gaps VALIDATED — 0 funded startups in wholesale/printing/food. (5) Auto repair COMPETITIVE — Revv $20M, models -4. (6) AI capex peaking — NVIDIA flat, MSFT -24%. (7) Business formation 532K/mo = Coasean shrinkage confirmed. 3 new patterns: P-026 Financial Cascade, P-027 Staffing Canary, P-028 Auto Repair Competition.",
   "total_signals_scanned": 158,
-  "total_models_constructed": 387,
-
+  "total_models_constructed": 522,
   "landscape": {
     "decomposed_models_top_20": [
       {
         "rank": 1,
-        "id": "C7-RC-MFG-01",
-        "name": "Multi-Shop CNC/Metal Fab Rollup Platform",
-        "sector": "Robotics x AI Manufacturing",
-        "score": 88,
-        "type": "rollup_consolidation",
-        "one_liner": "Acquire 5-10 retiring-owner machine shops and metal fab facilities, deploy cobots + AI scheduling/quoting, operate as unified multi-site production platform. NAICS 3327+3323+3329: 1.02M employees, 46K establishments. SBA 504 fee waiver through Sept 2026. STRESS TEST: robust top 7 across ALL weight vectors."
-      },
-      {
-        "rank": 2,
         "id": "C7-DC-FIN-01",
         "name": "AI Financial Intelligence Platform (Data Compounding)",
         "sector": "SMB Accounting/Finance",
-        "score": 87,
+        "score": 90,
+        "c8_change": "+3",
+        "data_sources": 7,
         "type": "data_compounding",
-        "one_liner": "Full-service AI bookkeeping where every client generates financial pattern data, building unassailable intelligence moat. NAICS 5412+5611: 1.77M employees, $173B wages. 23M unserved SMBs. $0.05/month inference. STRESS TEST: #1 under force-dominant weights (89.6). Data moat impossible to replicate without equivalent client base."
+        "one_liner": "Full-service AI bookkeeping where every client generates financial pattern data, building unassailable intelligence moat. C8 CONFIRMED: BLS accounting -49K YoY, financials ETF last (+0.5%), delinquency rising 1.78%. 7 independent sources confirm active cascade. 23M unserved SMBs. $0.05/month inference. NEW #1."
+      },
+      {
+        "rank": 2,
+        "id": "C7-RC-MFG-01",
+        "name": "Multi-Shop CNC/Metal Fab Rollup Platform",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 89,
+        "c8_change": "+1",
+        "data_sources": 6,
+        "type": "rollup_consolidation",
+        "one_liner": "Acquire 5-10 retiring-owner machine shops, deploy cobots + AI scheduling/quoting. C8: Industrials ETF +15.1%, Materials +20.1% = capital flowing into manufacturing. LimitlessCNC/CloudNC validate CNC AI but NEITHER acquires shops. SBA 504 at 5.67-5.91%."
       },
       {
         "rank": 3,
-        "id": "C7-AM-MFG-01",
-        "name": "Acquire + Modernize CNC Shop (Single Site)",
-        "sector": "Robotics x AI Manufacturing",
-        "score": 87,
-        "type": "acquire_and_modernize",
-        "one_liner": "Buy retiring-owner CNC shop at 3-4x EBITDA ($1-3M), deploy cobots + AI scheduling, double throughput. HIGHEST convergence resistance (96). Capital stack: $3.5M total, $18K/mo debt service covered by $29K/mo EBITDA. STRESS TEST: robust, #1 under convergence-dominant weights."
-      },
-      {
-        "rank": 4,
-        "id": "C7-AM-FOOD-01",
-        "name": "Acquire + Modernize Specialty Food Producer",
-        "sector": "Specialty Food/Beverage Production",
-        "score": 86,
-        "type": "acquire_and_modernize",
-        "one_liner": "Acquire retiring-owner specialty food producer (bakery, confectionery, preserved foods). Deploy cobots + AI QC. FSMA 204 compliance moat. NAICS 3118+3114+3113: 593K employees, 20K+ establishments. CRITICAL: specialty/branded only (20-35% margins). STRESS TEST: robust top 10 across all vectors."
-      },
-      {
-        "rank": 5,
-        "id": "C7-RMB-HC-01",
-        "name": "Healthcare AI Multi-State Compliance Platform",
-        "sector": "AI Regulatory Compliance",
-        "score": 86,
-        "type": "regulatory_moat_builder",
-        "one_liner": "Compliance layer for every healthcare AI company: multi-state tracking across 250+ bills, bias auditing, documentation. NAICS 6211+6213+6214: 5.13M employees, $453B wages. Every new regulation permanently increases value. STRESS TEST: remarkably stable (rank 5-6) across all weight vectors."
-      },
-      {
-        "rank": 6,
         "id": "C7-FSR-FIN-01",
         "name": "Full-Service AI Finance Function for SMBs",
         "sector": "SMB Accounting/Finance",
-        "score": 85,
+        "score": 88,
+        "c8_change": "+3",
+        "data_sources": 7,
         "type": "full_service_replacement",
-        "one_liner": "Replace entire finance function for SMBs at $149-499/mo. 23M unserved. 90%+ gross margin. Jevons: 70% unserved -> 3-5x TAM. Bench orphan customers (35K) for initial traction. STRESS TEST: FORCE-DEPENDENT -- top 2 under force-dominant, drops under compounding."
+        "one_liner": "Replace entire finance function for SMBs at $149-499/mo. C8: Same 7-source cascade confirmation as DC-FIN-01. Active accounting decline (-49K BLS) means traditional alternatives shrinking. Business formation 532K/mo = growing demand. JUMPED from #6."
+      },
+      {
+        "rank": 4,
+        "id": "C7-AM-MFG-01",
+        "name": "Acquire + Modernize CNC Shop (Single Site)",
+        "sector": "Robotics x AI Manufacturing",
+        "score": 88,
+        "c8_change": "+1",
+        "data_sources": 6,
+        "type": "acquire_and_modernize",
+        "one_liner": "Buy retiring-owner CNC shop at 3-4x EBITDA, deploy cobots + AI scheduling. HIGHEST convergence resistance (96). C8: Manufacturing macro strong, SBA 504 window open, acquisition strategy uncontested by CNC AI startups."
+      },
+      {
+        "rank": 5,
+        "id": "C7-AW-ACC-01",
+        "name": "Acquire PE-Distressed Accounting Practice",
+        "sector": "PE Distress Cascade",
+        "score": 87,
+        "c8_change": "+4",
+        "data_sources": 7,
+        "type": "arbitrage_window",
+        "one_liner": "Acquire PE-distressed accounting practices at 2-3x vs PE's 8-12x. C8 BIGGEST UPGRADE: BLS -49K, FRED delinquency 1.78%, YFinance financials last, EDGAR 10K+ restructuring filings. Every source confirms. Timing window NOW arriving. JUMPED from #11."
+      },
+      {
+        "rank": 6,
+        "id": "C7-AM-FOOD-01",
+        "name": "Acquire + Modernize Specialty Food Producer",
+        "sector": "Specialty Food/Beverage Production",
+        "score": 87,
+        "c8_change": "+1",
+        "data_sources": 5,
+        "type": "acquire_and_modernize",
+        "one_liner": "Acquire retiring-owner specialty food producer, deploy cobots + AI QC. C8: ZERO competitive density confirmed. Materials ETF +20.1%. FSMA 204 compliance moat. Davis CA proximity advantage."
       },
       {
         "rank": 7,
-        "id": "C7-FSR-HC-01",
-        "name": "Full-Service Prior Auth + Denial Management for Independent Practices",
-        "sector": "Healthcare Admin AI",
-        "score": 85,
-        "type": "full_service_replacement",
-        "one_liner": "Full-service prior auth replacing in-house billing staff for independent practices. AMA: 61% say AI increases denials. WISeR creating provider-side urgency. NAICS 6211+6213: 4.05M employees, 426K establishments. STRESS TEST: robust top 9 across all vectors."
+        "id": "C7-RMB-HC-01",
+        "name": "Healthcare AI Multi-State Compliance Platform",
+        "sector": "AI Regulatory Compliance",
+        "score": 87,
+        "c8_change": "+1",
+        "data_sources": 5,
+        "type": "regulatory_moat_builder",
+        "one_liner": "Compliance layer for every healthcare AI company. C8: Healthcare ETF +19.1% (2nd best), Ed/Health employment +53K/mo strongest growing sector, 976K healthcare establishments, $1.28T payroll. Every new regulation permanently increases value."
       },
       {
         "rank": 8,
         "id": "C7-DC-HC-01",
         "name": "Clinical Denial Intelligence Platform (Data Compounding)",
         "sector": "Healthcare Admin AI",
-        "score": 85,
+        "score": 86,
+        "c8_change": "+1",
+        "data_sources": 5,
         "type": "data_compounding",
-        "one_liner": "Start with denial management service, compound into definitive payer denial pattern database across all 50 states. Bloomberg Terminal of healthcare revenue cycle. NAICS 6211+6214: 3.97M employees, $394B wages. STRESS TEST: robust top 10 under all vectors."
+        "one_liner": "Bloomberg Terminal of healthcare revenue cycle. C8: Healthcare sector macro strong across all sources. Growing employment = more claims volume = more data for compounding."
       },
       {
         "rank": 9,
-        "id": "C7-AM-PRINT-01",
-        "name": "Acquire + Modernize Commercial Print Shop",
-        "sector": "Manufacturing (NEW SECTOR C7)",
-        "score": 84,
-        "type": "acquire_and_modernize",
-        "one_liner": "NEW C7 DISCOVERY. Acquire retiring-owner print shops (28K establishments = HIGHEST manufacturing fragmentation). AI workflow automation, personalization, predictive maintenance. Print-on-demand $59.3B by 2033. 85% say AI critical, only 40% adopted. Employment declining 6.1% = pre-cascade."
+        "id": "C7-FSR-HC-01",
+        "name": "Full-Service Prior Auth + Denial Management",
+        "sector": "Healthcare Admin AI",
+        "score": 86,
+        "c8_change": "+1",
+        "data_sources": 5,
+        "type": "full_service_replacement",
+        "one_liner": "Full-service prior auth replacing in-house billing staff. C8: Healthcare ETF +19.1%, employment +53K/mo, 976K establishments. Provider-side demand confirmed by employment growth."
       },
       {
         "rank": 10,
-        "id": "C7-RC-PRINT-01",
-        "name": "Multi-Shop Commercial Print Rollup Platform",
-        "sector": "Manufacturing (NEW SECTOR C7)",
-        "score": 84,
-        "type": "rollup_consolidation",
-        "one_liner": "NEW C7 DISCOVERY. Consolidate 5-10 print shops into AI-native production network. Centralized prepress, scheduling, estimating. Shops cheaper than CNC ($200K-$1M). Position around growth segments: packaging, personalization, large format."
+        "id": "C7-AM-PRINT-01",
+        "name": "Acquire + Modernize Commercial Print Shop",
+        "sector": "Manufacturing",
+        "score": 85,
+        "c8_change": "+1",
+        "data_sources": 5,
+        "type": "acquire_and_modernize",
+        "one_liner": "Acquire retiring-owner print shops (28K establishments = HIGHEST mfg fragmentation). C8: ZERO competitive density confirmed. Industrials +15.1%. Print-on-demand $59.3B by 2033. SBA 504 favorable."
       },
       {
         "rank": 11,
-        "id": "C7-AW-ACC-01",
-        "name": "Acquire PE-Distressed Accounting Practice",
-        "sector": "PE Distress Cascade",
-        "score": 83,
-        "type": "arbitrage_window",
-        "one_liner": "Acquire PE-distressed accounting practices at 2-3x (vs PE-purchased 8-12x). Convert to AI-native cost structure. $1.2T debt maturing 2027-2029. TIME-LIMITED: 2-3 year window."
+        "id": "C7-RC-PRINT-01",
+        "name": "Multi-Shop Commercial Print Rollup Platform",
+        "sector": "Manufacturing",
+        "score": 85,
+        "c8_change": "+1",
+        "data_sources": 5,
+        "type": "rollup_consolidation",
+        "one_liner": "Consolidate 5-10 print shops into AI-native production network. C8: Zero competitive density. Manufacturing macro strong. Rollup adds multi-site compounding."
       },
       {
         "rank": 12,
-        "id": "C7-RC-FOOD-01",
-        "name": "Multi-Facility Specialty Food Production Platform",
-        "sector": "Specialty Food/Beverage Production",
-        "score": 83,
-        "type": "rollup_consolidation",
-        "one_liner": "Consolidate 3-5 specialty food producers. Shared AI QC, FSMA 204 compliance, distribution network. STRESS TEST: COMPOUNDING-DEPENDENT -- top 3 under compounding weights."
+        "id": "C7-PI-TRADES-01",
+        "name": "AI Operations Platform for Building Equipment Contractors",
+        "sector": "Building Trades",
+        "score": 85,
+        "c8_change": "+2",
+        "data_sources": 5,
+        "type": "platform_infrastructure",
+        "one_liner": "AI ops for HVAC/plumbing/electrical. C8: Industrials +15.1%, JOLTS 6.5M job openings = persistent labor shortage, wage inflation 3.3%. 499K new workers needed. ServiceTitan enterprise-only, small contractors underserved."
       },
       {
         "rank": 13,
-        "id": "C7-PI-TRADES-01",
-        "name": "AI Operations Platform for Building Equipment Contractors",
-        "sector": "Building Trades (NEW SECTOR C7)",
-        "score": 83,
-        "type": "platform_infrastructure",
-        "one_liner": "NEW C7 DISCOVERY. AI operations for HVAC/plumbing/electrical: dispatching, estimating, scheduling. NAICS 2382: 2.46M employees, 230K establishments, $190B wages. 70% can't find workers. 499K new workers needed 2026. ServiceTitan ($9.5B) serves enterprise -- small contractors underserved."
+        "id": "C7-FSR-STAFF-01",
+        "name": "AI-Native Staffing Platform",
+        "sector": "Employment Services",
+        "score": 84,
+        "c8_change": "+4",
+        "data_sources": 6,
+        "type": "full_service_replacement",
+        "one_liner": "C8 MAJOR UPGRADE. RHI -53%, MAN -44%, KELYA -25% in 1yr = STRONGEST market signal in entire dataset. BLS -7.6% employment decline. 6 sources confirm active Schumpeterian destruction. $192.7B market. JUMPED from #21."
       },
       {
         "rank": 14,
-        "id": "C7-RMB-INS-01",
-        "name": "Insurance AI Compliance + Bias Auditing Platform",
-        "sector": "AI Regulatory Compliance",
-        "score": 82,
-        "type": "regulatory_moat_builder",
-        "one_liner": "Multi-state insurance AI compliance: NAIC model law, bias auditing, rate filing automation. NAICS 5241+5242: 2.56M employees, 222K establishments, $268B wages."
+        "id": "C7-RC-FOOD-01",
+        "name": "Multi-Facility Specialty Food Production Platform",
+        "sector": "Specialty Food/Beverage",
+        "score": 84,
+        "c8_change": "+1",
+        "data_sources": 5,
+        "type": "rollup_consolidation",
+        "one_liner": "Consolidate 3-5 specialty food producers. C8: Zero competitive density. Materials/Staples sectors healthy. Shared FSMA compliance."
       },
       {
         "rank": 15,
         "id": "C7-MN-FIN-01",
         "name": "AI-Matched Business Acquisition Marketplace",
         "sector": "Silver Tsunami",
-        "score": 82,
+        "score": 83,
+        "c8_change": "+1",
+        "data_sources": 4,
         "type": "marketplace_network",
-        "one_liner": "AI marketplace matching 2.34M retiring owners with acquirers. AI valuations, deal structuring, SBA 504 guidance. BizBuySell hasn't innovated. Transaction data creates moat."
+        "one_liner": "AI marketplace for 2.34M retiring owners. C8: Supply-side strengthening — FRED delinquency 1.78%, staffing canary crashing = more businesses selling. BizBuySell hasn't innovated."
       },
       {
         "rank": 16,
+        "id": "C7-RMB-INS-01",
+        "name": "Insurance AI Compliance + Bias Auditing Platform",
+        "sector": "AI Regulatory Compliance",
+        "score": 82,
+        "c8_change": "0",
+        "data_sources": 3,
+        "type": "regulatory_moat_builder",
+        "one_liner": "Multi-state insurance AI compliance. C8: Financials dead last ETF. NAIC model law advancing. No new data to upgrade."
+      },
+      {
+        "rank": 17,
         "id": "C7-FSR-INS-01",
         "name": "Full-Service AI TPA (Third-Party Administrator)",
         "sector": "Insurance Claims AI",
         "score": 82,
+        "c8_change": "0",
+        "data_sources": 3,
         "type": "full_service_replacement",
-        "one_liner": "AI-native TPA replacing 1,200+ small/mid TPAs. Full claims processing at 10x lower cost. TPA licensing creates moat. Avallon (YC S25, $4.6M) is direct competitor."
-      },
-      {
-        "rank": 17,
-        "id": "C7-AM-PLASTICS-01",
-        "name": "Acquire + Modernize Plastics Injection Molding Shop",
-        "sector": "Manufacturing (NEW SECTOR C7)",
-        "score": 81,
-        "type": "acquire_and_modernize",
-        "one_liner": "NEW C7 DISCOVERY. Acquire plastics injection molding shop, deploy robotic part removal + AI quality control + predictive maintenance. NAICS 3261: 600K employees, 12K establishments, $39.6B wages. Reshoring tailwinds."
+        "one_liner": "AI-native TPA replacing 1,200+ small/mid TPAs. C8: Thesis valid, Avallon ($4.6M) competitive but market large."
       },
       {
         "rank": 18,
-        "id": "C7-FSR-ALLIEDHEALTH-01",
-        "name": "Full-Service AI Practice Operations for Allied Health",
-        "sector": "Healthcare (NEW SECTOR C7)",
-        "score": 81,
-        "type": "full_service_replacement",
-        "one_liner": "NEW C7 DISCOVERY. Full-service billing, scheduling, documentation for chiropractors, PTs, optometrists, speech therapists. NAICS 6213: 1.16M employees, 191K establishments -- MOST fragmented healthcare sector."
+        "id": "C7-AM-PLASTICS-01",
+        "name": "Acquire + Modernize Plastics Injection Molding Shop",
+        "sector": "Manufacturing",
+        "score": 82,
+        "c8_change": "+1",
+        "data_sources": 4,
+        "type": "acquire_and_modernize",
+        "one_liner": "Acquire plastics injection molding shop, deploy cobotic part removal + AI QC. C8: Industrials +15.1%, Materials +20.1%. Manufacturing macro strong. Reshoring tailwinds."
       },
       {
         "rank": 19,
-        "id": "C7-PI-MFG-01",
-        "name": "Manufacturing AI Deployment Stack",
-        "sector": "Robotics x AI Manufacturing",
-        "score": 81,
-        "type": "platform_infrastructure",
-        "one_liner": "AI deployment platform for SME manufacturers: scheduling, QC, maintenance, analytics as plug-and-play modules. 98% interested, 20% adopted = massive gap. $500-5000/mo."
+        "id": "C7-FSR-ALLIEDHEALTH-01",
+        "name": "Full-Service AI Practice Operations for Allied Health",
+        "sector": "Healthcare",
+        "score": 82,
+        "c8_change": "+1",
+        "data_sources": 4,
+        "type": "full_service_replacement",
+        "one_liner": "Full-service billing/scheduling/docs for chiro, PT, optometry, speech. C8: Healthcare ETF +19.1%, Ed/Health +53K/mo. 191K establishments, most fragmented healthcare sector."
       },
       {
         "rank": 20,
-        "id": "C7-RC-DENTAL-01",
-        "name": "AI-Native Dental Practice Rollup (Counter-PE)",
-        "sector": "Healthcare (NEW SECTOR C7)",
+        "id": "C7-AW-STAFF-01",
+        "name": "Acquire PE-Distressed Staffing Agency",
+        "sector": "Employment Services",
         "score": 81,
-        "type": "rollup_consolidation",
-        "one_liner": "NEW C7 DISCOVERY. Acquire independent dental practices at 3-5x (vs PE 8-12x), deploy AI billing/scheduling/imaging. NAICS 6212: 1.03M employees, 135K establishments. 137 PE dental deals 2024 but saturation + FTC scrutiny emerging. Counter-PE play."
+        "c8_change": "+4",
+        "data_sources": 6,
+        "type": "arbitrage_window",
+        "one_liner": "C8 MAJOR UPGRADE. Same staffing canary signal. PE staffing firms are the ones crashing (RHI -53%, MAN -44%). Acquire-at-distress-pricing window actively opening. JUMPED from #35."
       }
     ],
-
     "not_recommended": [
-      {"id": "C7-NR-01", "name": "Vertical SaaS: AI Therapist Notes", "score": 45, "reason": "Blueprint 50K clinicians + 5 competitors. Tool-layer commodity. Convergence resistance = 0."},
-      {"id": "C7-NR-02", "name": "Vertical SaaS: AI Payroll+Bookkeeping Bundle", "score": 38, "reason": "Gusto $746M + Rippling $1.3B + Wave. Cannot compete."},
-      {"id": "C7-NR-03", "name": "Full-Service: Consumer Mental Health App", "score": 35, "reason": "Calm, Headspace, BetterHelp, MindSync $720M. Saturated."},
-      {"id": "C7-NR-04", "name": "Vertical SaaS: AI Clinical Documentation", "score": 40, "reason": "Abridge $250M, Nuance DAX, DeepScribe. Market captured."},
-      {"id": "C7-NR-05", "name": "Vertical SaaS: AI Auto Claims Photo", "score": 38, "reason": "Tractable $115M + CCC (public $900M+ rev)."},
-      {"id": "C7-NR-06", "name": "Vertical SaaS: Shopify/E-commerce Bookkeeping", "score": 48, "reason": "Finaloop $35M is direct well-funded competitor."},
-      {"id": "C7-NR-07", "name": "Vertical SaaS: Real Estate AI", "score": 30, "reason": "$10.5B funding, 7 unicorns. DISMISSED Cycle 4."},
-      {"id": "C7-NR-08", "name": "Platform: Government/Municipal AI", "score": 42, "reason": "12-24mo procurement. Tyler Tech $1.8B. FedRAMP."},
-      {"id": "C7-NR-09", "name": "Vertical SaaS: AI Irrigation CA Vineyards", "score": 44, "reason": "Orchard Robotics $22M + OEM risk (Deere See & Spray)."},
-      {"id": "C7-NR-10", "name": "Vertical SaaS: AI Crypto/DeFi Analytics", "score": 32, "reason": "Regulatory uncertainty + many funded competitors."},
-      {"id": "C7-NR-11", "name": "Tool: General AI Writing Tool", "score": 28, "reason": "ChatGPT, Claude, Gemini free tier. Platform commoditized."},
-      {"id": "C7-NR-12", "name": "Tool: AI Code Generation", "score": 30, "reason": "GitHub Copilot, Cursor, Windsurf. Platform commoditized."}
+      {
+        "id": "C7-NR-01",
+        "name": "Vertical SaaS: AI Therapist Notes",
+        "score": 45,
+        "reason": "Blueprint 50K clinicians + 5 competitors. Tool-layer commodity. Convergence resistance = 0."
+      },
+      {
+        "id": "C7-NR-02",
+        "name": "Vertical SaaS: AI Payroll+Bookkeeping Bundle",
+        "score": 38,
+        "reason": "Gusto $746M + Rippling $1.3B + Wave. Cannot compete."
+      },
+      {
+        "id": "C7-NR-03",
+        "name": "Full-Service: Consumer Mental Health App",
+        "score": 35,
+        "reason": "Calm, Headspace, BetterHelp, MindSync $720M. Saturated."
+      },
+      {
+        "id": "C7-NR-04",
+        "name": "Vertical SaaS: AI Clinical Documentation",
+        "score": 40,
+        "reason": "Abridge $250M, Nuance DAX, DeepScribe. Market captured."
+      },
+      {
+        "id": "C7-NR-05",
+        "name": "Vertical SaaS: AI Auto Claims Photo",
+        "score": 38,
+        "reason": "Tractable $115M + CCC (public $900M+ rev)."
+      },
+      {
+        "id": "C7-NR-06",
+        "name": "Vertical SaaS: Shopify/E-commerce Bookkeeping",
+        "score": 48,
+        "reason": "Finaloop $35M is direct well-funded competitor."
+      },
+      {
+        "id": "C7-NR-07",
+        "name": "Vertical SaaS: Real Estate AI",
+        "score": 30,
+        "reason": "$10.5B funding, 7 unicorns. DISMISSED Cycle 4."
+      },
+      {
+        "id": "C7-NR-08",
+        "name": "Platform: Government/Municipal AI",
+        "score": 42,
+        "reason": "12-24mo procurement. Tyler Tech $1.8B. FedRAMP."
+      },
+      {
+        "id": "C7-NR-09",
+        "name": "Vertical SaaS: AI Irrigation CA Vineyards",
+        "score": 44,
+        "reason": "Orchard Robotics $22M + OEM risk (Deere See & Spray)."
+      },
+      {
+        "id": "C7-NR-10",
+        "name": "Vertical SaaS: AI Crypto/DeFi Analytics",
+        "score": 32,
+        "reason": "Regulatory uncertainty + many funded competitors."
+      },
+      {
+        "id": "C7-NR-11",
+        "name": "Tool: General AI Writing Tool",
+        "score": 28,
+        "reason": "ChatGPT, Claude, Gemini free tier. Platform commoditized."
+      },
+      {
+        "id": "C7-NR-12",
+        "name": "Tool: AI Code Generation",
+        "score": 30,
+        "reason": "GitHub Copilot, Cursor, Windsurf. Platform commoditized."
+      }
     ],
-
     "monitoring": [
-      {"shift": "Vertical Farming + AI", "signal_count": 2, "note": "Energy cost dependent. Monitor for cheap renewable areas."},
-      {"shift": "AI Additive Manufacturing / Mass Customization", "signal_count": 2, "note": "Growing niche. Watch for cost/speed improvements."},
-      {"shift": "LATAM Humanoid Robot Manufacturing", "signal_count": 1, "note": "Very early. Monitor."},
-      {"shift": "Perez Turning Point / AI Funding Correction", "signal_count": 3, "note": "Goldman $527B hyperscaler capex deepens overhang. Build crash-resilient."},
-      {"shift": "Construction Subcontractor AI Management", "signal_count": 3, "note": "Stuut $29.5M for general AR. Construction-specific gap remains."},
-      {"shift": "AI-Native Business Category Emergence", "signal_count": 2, "note": "Agent marketplaces, AI agencies proliferating. Monitor for platform plays."},
-      {"shift": "Printing Industry Print-on-Demand Shift", "signal_count": 2, "note": "NEW C7. $8.3B -> $59.3B by 2033 (27.8% CAGR). Could displace traditional print."},
-      {"shift": "Data Center Cooling / Infrastructure Demand", "signal_count": 2, "note": "NEW C7. 140K+ skilled trades workers needed by 2030. Google $10M electrician training."}
+      {
+        "shift": "Vertical Farming + AI",
+        "signal_count": 2,
+        "note": "Energy cost dependent. Monitor for cheap renewable areas."
+      },
+      {
+        "shift": "AI Additive Manufacturing / Mass Customization",
+        "signal_count": 2,
+        "note": "Growing niche. Watch for cost/speed improvements."
+      },
+      {
+        "shift": "LATAM Humanoid Robot Manufacturing",
+        "signal_count": 1,
+        "note": "Very early. Monitor."
+      },
+      {
+        "shift": "Perez Turning Point / AI Funding Correction",
+        "signal_count": 3,
+        "note": "Goldman $527B hyperscaler capex deepens overhang. Build crash-resilient."
+      },
+      {
+        "shift": "Construction Subcontractor AI Management",
+        "signal_count": 3,
+        "note": "Stuut $29.5M for general AR. Construction-specific gap remains."
+      },
+      {
+        "shift": "AI-Native Business Category Emergence",
+        "signal_count": 2,
+        "note": "Agent marketplaces, AI agencies proliferating. Monitor for platform plays."
+      },
+      {
+        "shift": "Printing Industry Print-on-Demand Shift",
+        "signal_count": 2,
+        "note": "NEW C7. $8.3B -> $59.3B by 2033 (27.8% CAGR). Could displace traditional print."
+      },
+      {
+        "shift": "Data Center Cooling / Infrastructure Demand",
+        "signal_count": 2,
+        "note": "NEW C7. 140K+ skilled trades workers needed by 2030. Google $10M electrician training."
+      }
     ]
   },
-
   "structural_shifts_active": [
-    {"shift": "AI Inference Cost Collapse (50x/yr median decline)", "signal_count": 5, "strength": "very_strong", "models_produced": 387, "note": "Enables ALL models in landscape. Cost floor effectively zero vs human labor. Every cycle confirms deepening."},
-    {"shift": "Baumol Cost Disease Cure ($207B quantified automatable)", "signal_count": 26, "strength": "very_strong", "models_produced": 90, "note": "Produces models across 8 of 10 architecture types -- MOST versatile force. NAICS adds: staffing cascade (-7.6%), credit gap (-10.7%/+13.8%), allied health fragmentation (191K estabs)."},
-    {"shift": "Silver Tsunami (2.34M boomer businesses)", "signal_count": 21, "strength": "very_strong", "models_produced": 65, "note": "NAICS reveals 12+ manufacturing sectors beyond CNC/food: printing 28K, plastics 12K, furniture 12.7K, metal fab, coating, foundry. Produces 8 of 10 architecture types."},
-    {"shift": "Robotics x AI Compound Cost Compression", "signal_count": 23, "strength": "very_strong", "models_produced": 55, "note": "NAICS adds 12+ sectors for cobot deployment. $2.26B Q1 2026 robotics funding. Printing, plastics, furniture, metal fab, auto parts all viable."},
-    {"shift": "Regulatory Fragmentation (250+ bills, 33 laws)", "signal_count": 21, "strength": "very_strong", "models_produced": 45, "note": "NEW regulatory moat sectors: veterinary (state corporate practice laws), child care (50-state licensing), construction permitting, dental FTC scrutiny, financial AI compliance."},
-    {"shift": "PE/Leveraged Incumbent Vulnerability ($1.2T maturing)", "signal_count": 11, "strength": "strong", "models_produced": 25, "note": "EXTENDED beyond accounting: veterinary, dental, staffing, printing. Counter-PE strategy scales across sectors. $1.2T maturity wall 2027-2029."},
-    {"shift": "Coasean Firm Shrinkage", "signal_count": 9, "strength": "strong", "models_produced": 20, "note": "981K establishments in individual/family services = most fragmented major industry. Platform infrastructure for micro-firms growing. 5 of 10 architecture types."},
-    {"shift": "Kondratieff Deployment Phase", "signal_count": 7, "strength": "strong", "models_produced": 15, "note": "Application layer captures value. AI infrastructure commoditizing. Manufacturing AI deployment platform positioned for deployment phase."},
-    {"shift": "Christensen Full-Service Layer Gap", "signal_count": 16, "strength": "very_strong", "models_produced": 60, "note": "STRESS TEST CONFIRMS: full-service (78) beats vertical SaaS (62) by 16 points across ALL weight vectors. 16-point gap is structural and weight-independent."},
-    {"shift": "Dead Business Revival + PE Distress", "signal_count": 10, "strength": "very_strong", "models_produced": 20, "note": "Extended to multi-sector PE distress. Staffing employment -7.6% = active Schumpeterian destruction. Combined validated failures >$1B."}
+    {
+      "shift": "AI Inference Cost Collapse (50x/yr median decline)",
+      "signal_count": 5,
+      "strength": "very_strong",
+      "models_produced": 387,
+      "note": "Enables ALL models in landscape. Cost floor effectively zero vs human labor. Every cycle confirms deepening. C8: NVIDIA flat (+3.7%), MSFT -24% = AI capex peaking, application layer benefits."
+    },
+    {
+      "shift": "Baumol Cost Disease Cure ($207B quantified automatable)",
+      "signal_count": 28,
+      "strength": "very_strong",
+      "models_produced": 90,
+      "note": "C8 CONFIRMED by FRED: unit labor costs 121.6 (rising), avg hourly earnings $37.17 (above CPI). Baumol widening creates larger advantage for AI-first businesses every month."
+    },
+    {
+      "shift": "Silver Tsunami (2.34M boomer businesses)",
+      "signal_count": 23,
+      "strength": "very_strong",
+      "models_produced": 65,
+      "note": "C8: Business loan delinquency 1.78% (rising) = more distressed sellers entering market. Staffing canary crashing = more businesses under pressure. Supply-side accelerating."
+    },
+    {
+      "shift": "Robotics x AI Compound Cost Compression",
+      "signal_count": 23,
+      "strength": "very_strong",
+      "models_produced": 55,
+      "note": "C8: Industrials ETF +15.1%, Materials +20.1% = capital flowing into physical production. Manufacturing sector momentum strongest since engine start."
+    },
+    {
+      "shift": "Regulatory Fragmentation (250+ bills, 33 laws)",
+      "signal_count": 21,
+      "strength": "very_strong",
+      "models_produced": 45,
+      "note": "C8: EDGAR shows 3,808 AI-as-risk-factor 10-K filings = companies acknowledging regulatory exposure. Every filing increases compliance platform demand."
+    },
+    {
+      "shift": "Financial Services Cascade (NEW C8 — CONFIRMED)",
+      "signal_count": 7,
+      "strength": "very_strong",
+      "models_produced": 25,
+      "note": "C8 DISCOVERY: Multi-source confirmation. BLS: accounting -49K YoY. FRED: delinquency 1.78%. YFinance: financials ETF +0.5% (dead last). EDGAR: 10K+ restructuring filings. This is not a prediction — it is HAPPENING."
+    },
+    {
+      "shift": "Staffing Industry Active Destruction (NEW C8)",
+      "signal_count": 6,
+      "strength": "very_strong",
+      "models_produced": 3,
+      "note": "C8 DISCOVERY: RHI -53%, MAN -44%, KELYA -25% in 1yr. STRONGEST real-time market signal in entire dataset. BLS -7.6% employment decline. $192.7B market in active Schumpeterian destruction."
+    },
+    {
+      "shift": "PE/Leveraged Incumbent Vulnerability ($1.2T maturing)",
+      "signal_count": 13,
+      "strength": "strong",
+      "models_produced": 25,
+      "note": "C8: FRED business loan delinquency rising to 1.78%, Fed Funds 3.64% making PE refinancing harder. Staffing PE firms actively crashing (stock evidence). Window approaching."
+    },
+    {
+      "shift": "Coasean Firm Shrinkage",
+      "signal_count": 10,
+      "strength": "strong",
+      "models_produced": 20,
+      "note": "C8: FRED business applications 532K/mo = strong new micro-firm formation. Old businesses dying, new AI-native micro-firms forming. Validates platform infrastructure models."
+    },
+    {
+      "shift": "Kondratieff Deployment Phase",
+      "signal_count": 8,
+      "strength": "strong",
+      "models_produced": 15,
+      "note": "C8: NVIDIA flat, MSFT -24% = infrastructure capex peaking. Application layer (our models) benefits from cheaper compute, less investor competition for infrastructure."
+    },
+    {
+      "shift": "Christensen Full-Service Layer Gap",
+      "signal_count": 16,
+      "strength": "very_strong",
+      "models_produced": 60,
+      "note": "C8: Active cascades in accounting and staffing create urgency for full-service replacements. Traditional providers shrinking = less competition for full-service entrants."
+    },
+    {
+      "shift": "Dead Business Revival + PE Distress",
+      "signal_count": 12,
+      "strength": "very_strong",
+      "models_produced": 20,
+      "note": "C8: FRED delinquency + EDGAR restructuring filings + YFinance staffing canary all confirm PE distress is multi-sector and accelerating."
+    },
+    {
+      "force": "Zero-Competitive-Density Schumpeterian Gaps",
+      "note": "External research confirms wholesale distribution, landscaping, medical equipment distribution have ZERO AI startup activity despite strong structural forces. These are invisible sectors AI entrepreneurs haven't noticed \u2014 pre-cascade entry windows.",
+      "sectors_affected": [
+        "wholesale_brokerage",
+        "landscaping",
+        "medical_equipment_distribution"
+      ],
+      "strength": "very_strong"
+    },
+    {
+      "force": "AI Beneficiary Firm Architecture",
+      "note": "New dimension: 1 professional + AI handles workload of 5-10 person traditional firm. Price at 40-50%. Licensed professions (CPA, PE, PLS, attorney) provide regulatory moat. 14 models across accounting, law, insurance, veterinary, architecture, engineering.",
+      "sectors_affected": [
+        "accounting",
+        "law",
+        "insurance",
+        "veterinary",
+        "engineering",
+        "surveying",
+        "architecture"
+      ],
+      "strength": "strong"
+    },
+    {
+      "force": "Elder Care Demographic + Fragmentation Convergence",
+      "note": "NAICS 624120: 925K establishments (MOST in US), 2.23M employees, K avg pay. 65+ population +3%/yr = structural demand guarantee. 50-state Medicaid + EVV = regulatory moat. 6 models across all architectures.",
+      "sectors_affected": [
+        "elder_care",
+        "home_health",
+        "disability_services"
+      ],
+      "strength": "very_strong"
+    },
+    {
+      "force": "BizBuySell Acquisition Market Confirmation",
+      "note": "BizBuySell data: 72% brokers expect more sellers in 2026 (Boomer retirements). Landscaping prices +20%. Wholesale: 1,197 listings, median price -41%. Auto repair: deep market. Buyers favor essential services as recession-resilient.",
+      "sectors_affected": [
+        "auto_repair",
+        "landscaping",
+        "wholesale_distribution",
+        "plumbing_hvac",
+        "pest_control"
+      ],
+      "strength": "strong"
+    }
   ],
-
   "stress_test_results": {
     "methodology": "3 alternative weight vectors tested on top 20 C6 models",
     "vectors": {
@@ -238,11 +485,22 @@
       "compounding_dominant": "20/40/25/10/5 -- emphasizes structural compounding",
       "convergence_dominant": "25/20/40/5/10 -- emphasizes replication barrier"
     },
-    "robust_top_10": ["C6-RC-MFG-01", "C6-AM-MFG-01", "C6-DC-FIN-01", "C6-RMB-HC-01", "C6-AM-FOOD-01", "C6-DC-HC-01", "C6-FSR-HC-01"],
-    "weight_sensitive": ["C6-FSR-FIN-01 (force-dependent)", "C6-RC-FOOD-01 (compounding-dependent)", "C6-AW-ACC-01 (timing-dependent)"],
+    "robust_top_10": [
+      "C6-RC-MFG-01",
+      "C6-AM-MFG-01",
+      "C6-DC-FIN-01",
+      "C6-RMB-HC-01",
+      "C6-AM-FOOD-01",
+      "C6-DC-HC-01",
+      "C6-FSR-HC-01"
+    ],
+    "weight_sensitive": [
+      "C6-FSR-FIN-01 (force-dependent)",
+      "C6-RC-FOOD-01 (compounding-dependent)",
+      "C6-AW-ACC-01 (timing-dependent)"
+    ],
     "architecture_insight": "Physical: 86.4 convergence > 86.1 compounding > 83.1 force. Data compounding: 88.1 force > 86.6 compounding > 81.0 convergence. Physical = more durable. Digital = more force."
   },
-
   "force_architecture_matrix": {
     "total_cells": 80,
     "well_mapped": 22,
@@ -252,16 +510,106 @@
     "most_versatile_forces": "Baumol (8/10), Silver Tsunami (8/10)",
     "most_constrained": "Coasean (5/10), Kondratieff (6/10)"
   },
-
   "key_insight": "CYCLE 7 VALIDATES AND EXTENDS THE LANDSCAPE. (1) SCORING IS ROBUST: 7 of top 10 survive ALL weight vectors. Current weights aren't arbitrary. (2) PHYSICAL vs DIGITAL IS NUANCED: physical = more durable (highest convergence resistance), digital data compounding = more force (largest TAM). Strategy unchanged: START physical (timing windows), BUILD digital parallel (compounding). (3) NAICS BOTTOM-UP > TOP-DOWN: systematic NAICS screening discovers sectors invisible to theme scanning. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) all entered top 20. (4) MATRIX IS COMPLETE: 80 cells mapped. 16 impossible. 12 unexplored now filled. (5) PE DISTRESS IS MULTI-SECTOR: extends beyond accounting to veterinary, dental, staffing, printing.",
-
   "cycle_history": [
-    {"cycle": "v2-1", "signals": 25, "clusters": 14, "models_constructed": 20, "tier_1": 4, "tier_2": 4, "tier_3": 5, "top_force": "$200B+ (Healthcare Admin)", "note": "First v2 landscape mapping cycle. Services-focused."},
-    {"cycle": "v2-2", "signals": 42, "clusters": 18, "models_constructed": 32, "tier_1": 5, "tier_2": 5, "tier_3": 6, "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)", "note": "EXPANDED SCOPE: Added physical production landscape."},
-    {"cycle": "v2-3", "signals": 38, "clusters": 16, "models_constructed": 34, "tier_1": 5, "tier_2": 5, "tier_3": 6, "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)", "note": "CORRECTION CYCLE: Real data replaces estimates."},
-    {"cycle": "v2-4", "signals": 20, "clusters": 18, "models_constructed": 37, "tier_1": 5, "tier_2": 6, "tier_3": 7, "top_force": "$207B automatable wage bill (O*NET + BLS quantified)", "note": "QUANTITATIVE DEEPENING: O*NET + BLS data. Stress tests on top 3."},
-    {"cycle": "v2-5", "signals": 20, "clusters": 11, "models_constructed": 102, "tier_1_models": 5, "tier_2_models": 9, "not_recommended": 5, "top_model": "AI Bookkeeping for Bench Orphans (80)", "note": "YC-GRANULARITY DECOMPOSITION: 11 sectors -> 102 models. Customer-segment scoring."},
-    {"cycle": "v2-6", "signals": 32, "clusters": 8, "models_constructed": 187, "tier_1_models": 5, "tier_2_models": 9, "not_recommended": 10, "top_model": "Multi-Shop CNC Rollup (86) / CNC Acquire+Modernize (86) / Financial Intelligence (86)", "note": "ARCHITECTURE-BASED DECOMPOSITION: 8 forces x 10 architectures = 187 models. Structural durability scoring. KEY REVERSAL: physical architectures (84 avg) dominate; vertical SaaS (67 avg) scores LOWEST."},
-    {"cycle": "v2-7", "signals": 48, "clusters": 8, "models_constructed": 387, "tier_1_models": 5, "tier_2_models": 15, "not_recommended": 12, "top_model": "Multi-Shop CNC/Metal Fab Rollup (88)", "note": "NAICS-SYSTEMATIC EXPANSION + STRESS TEST: 187 -> 387 models via NAICS QCEW (293 4-digit industries). Scoring stress-tested: 7/10 robust. 80-cell matrix mapped. 8 new sectors discovered. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) enter top 20. PE distress extends to vet/dental/staffing/print."}
+    {
+      "cycle": "v2-1",
+      "signals": 25,
+      "clusters": 14,
+      "models_constructed": 20,
+      "tier_1": 4,
+      "tier_2": 4,
+      "tier_3": 5,
+      "top_force": "$200B+ (Healthcare Admin)",
+      "note": "First v2 landscape mapping cycle. Services-focused."
+    },
+    {
+      "cycle": "v2-2",
+      "signals": 42,
+      "clusters": 18,
+      "models_constructed": 32,
+      "tier_1": 5,
+      "tier_2": 5,
+      "tier_3": 6,
+      "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)",
+      "note": "EXPANDED SCOPE: Added physical production landscape."
+    },
+    {
+      "cycle": "v2-3",
+      "signals": 38,
+      "clusters": 16,
+      "models_constructed": 34,
+      "tier_1": 5,
+      "tier_2": 5,
+      "tier_3": 6,
+      "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)",
+      "note": "CORRECTION CYCLE: Real data replaces estimates."
+    },
+    {
+      "cycle": "v2-4",
+      "signals": 20,
+      "clusters": 18,
+      "models_constructed": 37,
+      "tier_1": 5,
+      "tier_2": 6,
+      "tier_3": 7,
+      "top_force": "$207B automatable wage bill (O*NET + BLS quantified)",
+      "note": "QUANTITATIVE DEEPENING: O*NET + BLS data. Stress tests on top 3."
+    },
+    {
+      "cycle": "v2-5",
+      "signals": 20,
+      "clusters": 11,
+      "models_constructed": 102,
+      "tier_1_models": 5,
+      "tier_2_models": 9,
+      "not_recommended": 5,
+      "top_model": "AI Bookkeeping for Bench Orphans (80)",
+      "note": "YC-GRANULARITY DECOMPOSITION: 11 sectors -> 102 models. Customer-segment scoring."
+    },
+    {
+      "cycle": "v2-6",
+      "signals": 32,
+      "clusters": 8,
+      "models_constructed": 187,
+      "tier_1_models": 5,
+      "tier_2_models": 9,
+      "not_recommended": 10,
+      "top_model": "Multi-Shop CNC Rollup (86) / CNC Acquire+Modernize (86) / Financial Intelligence (86)",
+      "note": "ARCHITECTURE-BASED DECOMPOSITION: 8 forces x 10 architectures = 187 models. Structural durability scoring. KEY REVERSAL: physical architectures (84 avg) dominate; vertical SaaS (67 avg) scores LOWEST."
+    },
+    {
+      "cycle": "v2-7",
+      "signals": 48,
+      "clusters": 8,
+      "models_constructed": 387,
+      "tier_1_models": 5,
+      "tier_2_models": 15,
+      "not_recommended": 12,
+      "top_model": "Multi-Shop CNC/Metal Fab Rollup (88)",
+      "note": "NAICS-SYSTEMATIC EXPANSION + STRESS TEST: 187 -> 387 models via NAICS QCEW (293 4-digit industries). Scoring stress-tested: 7/10 robust. 80-cell matrix mapped. 8 new sectors discovered. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) enter top 20. PE distress extends to vet/dental/staffing/print."
+    },
+    {
+      "cycle": "v2-precycle8",
+      "signals": 0,
+      "clusters": 4,
+      "models_constructed": 522,
+      "tier_1_models": 5,
+      "tier_2_models": 19,
+      "not_recommended": 12,
+      "top_model": "Full-Service AI Wholesale Brokerage (82) \u2014 NEW",
+      "note": "4-DIMENSION MODEL EXPANSION: 387->522 (+135 models). NAICS 6-digit decomposition (+88), supply chain adjacencies (+18), external source research (+15), AI beneficiary lens (+14). KEY: wholesale/landscaping/med-equip have ZERO competitive density. Elder care = 925K estabs, MOST fragmented US sector. New AI beneficiary dimension: BE the firm, don't sell the tool. BizBuySell: 72% more owners listing 2026."
+    },
+    {
+      "cycle": "v2-8",
+      "signals": 7,
+      "clusters": 3,
+      "models_constructed": 522,
+      "tier_1_models": 7,
+      "tier_2_models": 13,
+      "not_recommended": 12,
+      "top_model": "AI Financial Intelligence Platform (90, +3) \u2014 NEW #1",
+      "note": "MULTI-SOURCE CROSS-REFERENCING: 7 data source types, 70+ connector methods. Top 20 cross-referenced against 3-7 sources each. 17 upgraded, 2 downgraded, 21 unchanged. Financial cascade CONFIRMED (BLS -49K, financials ETF last). Staffing canary STRONGEST signal (RHI -53%, MAN -44%, KELYA -25%). Physical production CONFIRMED (Industrials +15.1%, Materials +20.1%). Zero-density VALIDATED (0 startups in wholesale/printing/food). Auto repair COMPETITIVE (Revv $20M, -4). 3 new patterns: P-026 Financial Cascade, P-027 Staffing Canary, P-028 Auto Repair Competition."
+    }
   ]
 }

@@ -1,0 +1,51 @@
+{
+  "bds_2021": {
+    "signal_type": "business_dynamics",
+    "error": "404 Client Error:  for url: https://api.census.gov/data/2021/bds/firms?get=firmdeath_firms%2Cfirmbirth_firms%2Cfirms%2Cnet_job_creation_rate%2Csector&for=us%3A%2A&key=85bc0e0ad795001f53b287f320791e1f2668ca24",
+    "year": "2021"
+  },
+  "cbp_professional_54": {
+    "signal_type": "county_business_patterns",
+    "principle": "P2",
+    "data": [
+      {
+        "ESTAB": "974303",
+        "EMP": "10152104",
+        "PAYANN": "1067844288",
+        "NAICS2017": "54",
+        "us": "1"
+      }
+    ],
+    "year": "2022",
+    "naics": "54",
+    "interpretation": "Establishment counts and payroll by geography reveal market size and concentration. Declining establishment counts in a NAICS code = consolidation or exit. Rising payroll per establishment = fewer firms paying more per worker (squeeze)."
+  },
+  "cbp_healthcare_62": {
+    "signal_type": "county_business_patterns",
+    "principle": "P2",
+    "data": [
+      {
+        "ESTAB": "976418",
+        "EMP": "21171232",
+        "PAYANN": "1279490192",
+        "NAICS2017": "62",
+        "us": "1"
+      }
+    ],
+    "year": "2022",
+    "naics": "62",
+    "interpretation": "Establishment counts and payroll by geography reveal market size and concentration. Declining establishment counts in a NAICS code = consolidation or exit. Rising payroll per establishment = fewer firms paying more per worker (squeeze)."
+  },
+  "cbp_manufacturing_31": {
+    "signal_type": "county_business_patterns",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  "nonemployer_professional": {
+    "signal_type": "nonemployer_statistics",
+    "error": "400 Client Error:  for url: https://api.census.gov/data/2021/nonemp?get=NESTAB%2CRCPTOT%2CNAICS2017%2CNAICS2017_LABEL&for=us%3A%2A&NAICS2017=54&key=85bc0e0ad795001f53b287f320791e1f2668ca24"
+  },
+  "nonemployer_healthcare": {
+    "signal_type": "nonemployer_statistics",
+    "error": "400 Client Error:  for url: https://api.census.gov/data/2021/nonemp?get=NESTAB%2CRCPTOT%2CNAICS2017%2CNAICS2017_LABEL&for=us%3A%2A&NAICS2017=62&key=85bc0e0ad795001f53b287f320791e1f2668ca24"
+  }
+}

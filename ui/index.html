@@ -5,80 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Research Engine</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
 
   :root {
-    --bg: #050507;
-    --surface: rgba(255,255,255,0.03);
-    --surface-hover: rgba(255,255,255,0.055);
-    --glass: rgba(255,255,255,0.04);
-    --glass-border: rgba(255,255,255,0.06);
-    --glass-border-hover: rgba(255,255,255,0.12);
-    --text: #f0f0f5;
-    --text-secondary: #8b8b9e;
-    --dim: #55556a;
+    --bg: #06060b;
+    --surface: rgba(255,255,255,0.025);
+    --surface-hover: rgba(255,255,255,0.045);
+    --glass: rgba(255,255,255,0.03);
+    --glass-border: rgba(255,255,255,0.055);
+    --glass-border-hover: rgba(255,255,255,0.1);
+    --text: #ededf4;
+    --text-secondary: #8e8ea0;
+    --dim: #4e4e6a;
     --accent: #a78bfa;
-    --accent-glow: rgba(167,139,250,0.15);
+    --accent-soft: rgba(167,139,250,0.12);
     --green: #34d399;
-    --green-dim: rgba(52,211,153,0.1);
+    --green-dim: rgba(52,211,153,0.08);
     --red: #f87171;
-    --red-dim: rgba(248,113,113,0.08);
+    --red-dim: rgba(248,113,113,0.06);
     --amber: #fbbf24;
-    --amber-dim: rgba(251,191,36,0.08);
+    --amber-dim: rgba(251,191,36,0.06);
     --blue: #60a5fa;
-    --blue-dim: rgba(96,165,250,0.08);
+    --blue-dim: rgba(96,165,250,0.06);
     --cyan: #22d3ee;
-    --gradient-1: linear-gradient(135deg, rgba(167,139,250,0.12) 0%, rgba(96,165,250,0.08) 50%, rgba(52,211,153,0.06) 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(167,139,250,0.08) 0%, rgba(96,165,250,0.05) 50%, rgba(52,211,153,0.03) 100%);
     --gradient-accent: linear-gradient(135deg, #a78bfa, #818cf8, #60a5fa);
-    --gradient-iridescent: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(129,140,248,0.05), rgba(96,165,250,0.08), rgba(52,211,153,0.05));
-    --radius: 16px;
-    --radius-sm: 10px;
-    --blur: 20px;
+    --gradient-bar: linear-gradient(180deg, rgba(167,139,250,0.7), rgba(96,165,250,0.5));
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-xs: 6px;
+    --blur: 24px;
+    --transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-size: 14px;
+    font-size: 13.5px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     min-height: 100dvh;
     overflow-x: hidden;
   }
 
-  /* Ambient glow */
+  /* Ambient */
   body::before {
     content: '';
     position: fixed;
-    top: -40%;
-    left: -20%;
-    width: 80%;
-    height: 80%;
-    background: radial-gradient(ellipse, rgba(167,139,250,0.04) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
+    top: -50%; left: -30%;
+    width: 90%; height: 90%;
+    background: radial-gradient(ellipse at 30% 30%, rgba(167,139,250,0.035) 0%, transparent 55%);
+    pointer-events: none; z-index: 0;
   }
   body::after {
     content: '';
     position: fixed;
-    bottom: -30%;
-    right: -20%;
-    width: 70%;
-    height: 70%;
-    background: radial-gradient(ellipse, rgba(52,211,153,0.03) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
+    bottom: -40%; right: -25%;
+    width: 80%; height: 80%;
+    background: radial-gradient(ellipse at 70% 70%, rgba(52,211,153,0.02) 0%, transparent 55%);
+    pointer-events: none; z-index: 0;
   }
 
   .container {
-    max-width: 960px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 24px 16px;
-    padding-top: max(24px, env(safe-area-inset-top));
-    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    padding: 32px 24px;
+    padding-top: max(32px, env(safe-area-inset-top));
+    padding-bottom: max(48px, env(safe-area-inset-bottom));
     position: relative;
     z-index: 1;
   }
@@ -87,28 +84,25 @@
   nav {
     display: flex;
     gap: 2px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     background: var(--glass);
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--glass-border);
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 3px;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    width: fit-content;
   }
   nav a {
-    flex: 1;
     color: var(--dim);
     text-decoration: none;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 9px;
-    transition: all 0.2s;
-    text-align: center;
+    padding: 7px 18px;
+    border-radius: 7px;
+    transition: all var(--transition);
     white-space: nowrap;
+    letter-spacing: 0.01em;
   }
   nav a:hover { color: var(--text-secondary); }
   nav a.active {
@@ -117,18 +111,35 @@
   }
 
   /* ─── Header ─── */
-  header { margin-bottom: 24px; }
+  header { margin-bottom: 32px; }
   h1 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 2px;
+    letter-spacing: -0.6px;
+    margin-bottom: 4px;
     background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .subtitle { color: var(--dim); font-size: 13px; }
+  .subtitle {
+    color: var(--dim);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .subtitle .cycle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+  }
 
   /* ─── Glass card base ─── */
   .glass {
@@ -137,64 +148,136 @@
     -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color var(--transition), background var(--transition);
   }
   .glass:hover {
     border-color: var(--glass-border-hover);
     background: var(--surface-hover);
   }
-
-  /* ─── Bento grid ─── */
-  .bento {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 12px;
+  .glass-static {
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
   }
-  .bento-wide { grid-column: 1 / -1; }
-  .bento-item { padding: 20px; }
 
-  /* ─── Stat cards (top row) ─── */
-  .stat-grid {
+  /* ─── KPI Row ─── */
+  .kpi-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
-  .stat-card {
-    padding: 16px;
-    text-align: center;
-  }
-  .stat-label {
+  .kpi { padding: 18px 14px; text-align: center; }
+  .kpi-label {
     font-size: 10px;
     color: var(--dim);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
-  .stat-value {
-    font-size: 28px;
+  .kpi-value {
+    font-size: 30px;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
+    line-height: 1;
+  }
+  .kpi-delta {
+    font-size: 10.5px;
+    font-weight: 500;
+    margin-top: 4px;
+    letter-spacing: 0.01em;
+  }
+  .delta-up { color: var(--green); }
+  .delta-down { color: var(--red); }
+  .delta-neutral { color: var(--dim); }
+
+  /* ─── Intro ─── */
+  .intro { padding: 22px 24px; margin-bottom: 16px; }
+  .intro-inner { display: flex; gap: 28px; align-items: flex-start; }
+  .intro-text { flex: 1; }
+  .intro-text p {
+    color: var(--text-secondary); font-size: 12.5px; line-height: 1.75; margin-bottom: 8px;
+  }
+  .intro-text p:last-of-type { margin-bottom: 0; }
+  .intro-text strong { color: var(--text); font-weight: 600; }
+  .intro-toggle {
+    font-size: 11.5px; color: var(--accent); cursor: pointer;
+    background: none; border: none; padding: 4px 0; font-family: inherit;
+    font-weight: 500; letter-spacing: 0.01em;
+    transition: opacity var(--transition);
+  }
+  .intro-toggle:hover { opacity: 0.8; }
+  .intro-kv {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 16px;
+    font-size: 11.5px;
+    min-width: 170px;
+    flex-shrink: 0;
+  }
+  .intro-kv dt {
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .intro-kv dd {
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
   }
 
-  /* ─── Synthesis card (hero) ─── */
+  /* ─── Pipeline ─── */
+  .pipeline-wrap {
+    padding: 12px 20px;
+    margin-bottom: 16px;
+  }
+  .pipeline {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pipeline-step {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: var(--radius-xs);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--dim);
+    white-space: nowrap;
+    transition: all var(--transition);
+  }
+  .pipeline-step.done { border-color: rgba(52,211,153,0.15); color: var(--green); background: var(--green-dim); }
+  .pipeline-step.active { border-color: rgba(167,139,250,0.15); color: var(--accent); background: var(--accent-soft); }
+  .pipeline-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .pipeline-arrow { color: var(--dim); font-size: 11px; flex-shrink: 0; opacity: 0.3; }
+
+  /* ─── Synthesis hero ─── */
   .synthesis {
-    padding: 24px;
-    background: var(--gradient-1);
-    border-color: rgba(167,139,250,0.1);
-    margin-bottom: 12px;
+    padding: 26px 28px;
+    background: var(--gradient-hero);
+    border-color: rgba(167,139,250,0.07);
+    margin-bottom: 16px;
     position: relative;
     overflow: hidden;
   }
   .synthesis::before {
     content: '';
     position: absolute;
-    top: 0; right: 0;
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);
+    top: -20px; right: -20px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(167,139,250,0.06) 0%, transparent 65%);
     pointer-events: none;
   }
   .synthesis-label {
@@ -203,21 +286,72 @@
     letter-spacing: 1.5px;
     color: var(--accent);
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   .synthesis-text {
     color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: 13px;
+    line-height: 1.85;
     position: relative;
   }
 
+  /* ─── Section chrome ─── */
+  .section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--dim);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-hint {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--dim);
+    font-size: 10.5px;
+    opacity: 0.7;
+  }
+  .section-count {
+    padding: 1px 7px;
+    border-radius: 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ─── Legend ─── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    padding: 11px 18px;
+    margin-bottom: 16px;
+    font-size: 10.5px;
+    color: var(--dim);
+    font-weight: 400;
+  }
+  .legend-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
   /* ─── Opportunity cards ─── */
-  .opp-list { display: flex; flex-direction: column; gap: 8px; }
+  .opp-list { display: flex; flex-direction: column; gap: 6px; }
   .opp {
-    padding: 16px 18px;
+    padding: 14px 18px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
   .opp::before {
     content: '';
@@ -225,216 +359,298 @@
     left: 0; top: 0; bottom: 0;
     width: 3px;
     border-radius: 3px;
-    background: var(--accent);
   }
   .opp.tier-1::before { background: var(--green); }
   .opp.tier-2::before { background: var(--amber); }
   .opp.tier-3::before { background: var(--accent); }
-  .opp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; gap: 12px; }
-  .opp-name { font-weight: 600; font-size: 14px; flex: 1; }
+  .opp-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .opp-rank {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--dim);
+    min-width: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+  .opp-name {
+    font-weight: 600;
+    font-size: 13.5px;
+    flex: 1;
+    letter-spacing: -0.01em;
+  }
+  .opp-badges { display: flex; gap: 5px; align-items: center; flex-shrink: 0; }
   .opp-score {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 800;
     padding: 2px 10px;
-    border-radius: 8px;
-    flex-shrink: 0;
-    letter-spacing: -0.5px;
+    border-radius: 20px;
+    letter-spacing: -0.3px;
+    font-variant-numeric: tabular-nums;
   }
   .score-t1 { background: var(--green-dim); color: var(--green); }
   .score-t2 { background: var(--amber-dim); color: var(--amber); }
-  .score-t3 { background: rgba(167,139,250,0.1); color: var(--accent); }
+  .score-t3 { background: var(--accent-soft); color: var(--accent); }
+  .opp-change {
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+  .change-up { background: var(--green-dim); color: var(--green); }
+  .change-down { background: var(--red-dim); color: var(--red); }
+  .change-none { background: var(--glass); color: var(--dim); }
   .opp-meta {
     display: flex;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: wrap;
     align-items: center;
-    font-size: 11px;
+    margin-top: 6px;
+    padding-left: 20px;
   }
   .pill {
     padding: 2px 8px;
-    border-radius: 6px;
+    border-radius: 20px;
     font-weight: 500;
     font-size: 10px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.02em;
   }
-  .pill-tier1 { background: var(--green-dim); color: var(--green); }
-  .pill-tier2 { background: var(--amber-dim); color: var(--amber); }
-  .pill-tier3 { background: rgba(167,139,250,0.1); color: var(--accent); }
   .pill-type {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.03);
     color: var(--dim);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .pill-sources {
+    background: var(--blue-dim);
+    color: var(--blue);
+    border: 1px solid rgba(96,165,250,0.1);
   }
   .opp-desc {
     color: var(--text-secondary);
     font-size: 12px;
-    margin-top: 6px;
-    line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    margin-top: 8px;
+    padding-left: 20px;
+    line-height: 1.7;
+    display: none;
   }
+  .opp.expanded .opp-desc { display: block; }
+  .opp-expand-hint {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dim);
+    font-size: 10px;
+    opacity: 0;
+    transition: opacity var(--transition);
+    pointer-events: none;
+  }
+  .opp:hover .opp-expand-hint { opacity: 0.5; }
+  .opp.expanded .opp-expand-hint { opacity: 0; }
+
+  /* ─── Grid layout ─── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .grid-full { margin-bottom: 16px; }
+  .card { padding: 22px 24px; }
 
   /* ─── Signal list ─── */
   .signal-list { display: flex; flex-direction: column; }
   .signal {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
-    font-size: 13px;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.025);
+    font-size: 12.5px;
   }
   .signal:last-child { border-bottom: none; }
   .signal-dot {
-    width: 8px; height: 8px;
+    width: 7px; height: 7px;
     border-radius: 50%;
     flex-shrink: 0;
-    margin-top: 6px;
+    margin-top: 5px;
   }
-  .dot-high { background: var(--green); box-shadow: 0 0 8px rgba(52,211,153,0.3); }
-  .dot-med { background: var(--amber); box-shadow: 0 0 8px rgba(251,191,36,0.2); }
+  .dot-high { background: var(--green); box-shadow: 0 0 6px rgba(52,211,153,0.25); }
+  .dot-med { background: var(--amber); box-shadow: 0 0 6px rgba(251,191,36,0.15); }
   .dot-low { background: var(--red); }
-  .signal-text { flex: 1; color: var(--text-secondary); font-size: 12px; line-height: 1.5; }
-  .signal-src { color: var(--dim); font-size: 11px; flex-shrink: 0; }
+  .signal-text { flex: 1; color: var(--text-secondary); font-size: 11.5px; line-height: 1.55; }
+  .signal-src { color: var(--dim); font-size: 10.5px; flex-shrink: 0; max-width: 80px; text-align: right; }
 
   /* ─── Heatmap ─── */
-  .heat-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .heat-grid { display: flex; flex-wrap: wrap; gap: 5px; }
   .heat-cell {
-    padding: 10px 14px;
+    padding: 10px 12px;
     border-radius: var(--radius-sm);
     text-align: center;
-    min-width: 80px;
+    min-width: 75px;
     flex: 1;
     border: 1px solid transparent;
-    transition: border-color 0.2s;
+    transition: border-color var(--transition);
   }
   .heat-cell:hover { border-color: var(--glass-border-hover); }
-  .heat-cell .count { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
-  .heat-cell .name { font-size: 10px; color: var(--dim); margin-top: 1px; }
+  .heat-cell .count { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+  .heat-cell .name { font-size: 9.5px; color: var(--dim); margin-top: 2px; font-weight: 400; }
 
-  /* ─── Cycle bars ─── */
-  .cycle-chart { display: flex; gap: 3px; align-items: flex-end; height: 56px; }
+  /* ─── Cycle history ─── */
+  .cycle-chart { display: flex; gap: 3px; align-items: flex-end; height: 64px; }
   .cycle-bar {
     flex: 1;
-    min-width: 14px;
+    min-width: 16px;
     border-radius: 4px 4px 0 0;
-    transition: opacity 0.2s;
+    transition: opacity var(--transition);
     cursor: default;
     position: relative;
   }
-  .cycle-bar:last-child { opacity: 0.9; }
   .cycle-bar:hover { opacity: 1 !important; }
-
-  /* ─── Pipeline ─── */
-  .pipeline {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    overflow-x: auto;
-    padding: 2px 0;
-    -webkit-overflow-scrolling: touch;
+  .cycle-bar:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 10px;
+    border-radius: var(--radius-xs);
+    background: rgba(20,20,30,0.95);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    font-size: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
   }
-  .pipeline-step {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 12px;
-    border-radius: 8px;
+
+  /* ─── Evolution timeline ─── */
+  .evo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 8px;
+  }
+  .evo-card {
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
     background: var(--glass);
     border: 1px solid var(--glass-border);
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--dim);
-    white-space: nowrap;
+    transition: border-color var(--transition);
   }
-  .pipeline-step.done { border-color: rgba(52,211,153,0.2); color: var(--green); background: var(--green-dim); }
-  .pipeline-step.active { border-color: rgba(167,139,250,0.2); color: var(--accent); background: var(--accent-glow); }
-  .pipeline-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-  .pipeline-arrow { color: var(--dim); font-size: 12px; flex-shrink: 0; opacity: 0.4; }
-
-  /* ─── Intro ─── */
-  .intro { padding: 20px; margin-bottom: 12px; }
-  .intro-inner { display: flex; gap: 24px; align-items: flex-start; }
-  .intro-text { flex: 1; }
-  .intro-text p {
-    color: var(--text-secondary); font-size: 12px; line-height: 1.7; margin-bottom: 8px;
-  }
-  .intro-text p:last-child { margin-bottom: 0; }
-  .intro-text strong { color: var(--text); font-weight: 600; }
-  .intro-toggle {
-    font-size: 11px; color: var(--accent); cursor: pointer;
-    background: none; border: none; padding: 0; font-family: inherit;
-  }
-  .intro-toggle:hover { text-decoration: underline; }
-  .intro-kv {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3px 14px;
-    font-size: 11px;
-    min-width: 160px;
-    flex-shrink: 0;
-  }
-  .intro-kv dt { color: var(--dim); text-transform: uppercase; letter-spacing: 0.3px; font-size: 10px; }
-  .intro-kv dd { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-
-  /* ─── Section labels ─── */
-  .section-label {
+  .evo-card:hover { border-color: var(--glass-border-hover); }
+  .evo-cycle {
     font-size: 10px;
+    color: var(--accent);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--dim);
-    font-weight: 600;
-    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
   }
-  .section-hint {
+  .evo-metric {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+  .evo-label {
+    font-size: 10px;
+    color: var(--dim);
+    margin-top: 2px;
     font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--dim);
-    margin-left: 6px;
+  }
+  .evo-note {
     font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    line-height: 1.4;
+    opacity: 0.7;
   }
 
-  /* ─── Legend ─── */
-  .legend {
+  /* ─── Not Recommended ─── */
+  .nr-list { display: flex; flex-direction: column; gap: 3px; }
+  .nr-item {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    font-size: 10px;
-    color: var(--dim);
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: var(--radius-xs);
+    font-size: 11.5px;
   }
-  .legend-dot {
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    margin-right: 4px;
-    vertical-align: middle;
+  .nr-item:hover { background: rgba(255,255,255,0.02); }
+  .nr-score {
+    font-weight: 700;
+    color: var(--red);
+    font-variant-numeric: tabular-nums;
+    min-width: 24px;
+    font-size: 11px;
+  }
+  .nr-name { color: var(--text-secondary); flex: 1; font-weight: 400; }
+  .nr-reason { color: var(--dim); font-size: 10.5px; max-width: 260px; text-align: right; }
+
+  /* ─── Expand/collapse sections ─── */
+  .expandable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .expand-icon {
+    font-size: 14px;
+    color: var(--dim);
+    transition: transform var(--transition);
+    line-height: 1;
+  }
+  .expanded .expand-icon { transform: rotate(180deg); }
+  .expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .expanded .expandable-content {
+    max-height: 3000px;
   }
 
-  .empty { text-align: center; padding: 32px 16px; color: var(--dim); font-size: 12px; }
+  .empty { text-align: center; padding: 28px 16px; color: var(--dim); font-size: 12px; }
+
+  .show-more-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    background: none;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .show-more-btn:hover {
+    border-color: var(--glass-border-hover);
+    color: var(--text);
+  }
 
   /* ─── Responsive ─── */
   @media (max-width: 640px) {
-    .container { padding: 16px 12px; }
-    h1 { font-size: 20px; }
-    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .stat-card { padding: 14px 12px; }
-    .stat-value { font-size: 24px; }
-    .bento { grid-template-columns: 1fr; }
-    .bento-item { padding: 16px; }
+    .container { padding: 20px 14px; }
+    h1 { font-size: 22px; }
+    .kpi-row { grid-template-columns: repeat(3, 1fr); }
+    .kpi-row .kpi:nth-child(4),
+    .kpi-row .kpi:nth-child(5) { grid-column: span 1; }
+    .kpi { padding: 14px 10px; }
+    .kpi-value { font-size: 24px; }
+    .grid-2 { grid-template-columns: 1fr; }
     .intro-inner { flex-direction: column; gap: 16px; }
     .intro-kv { min-width: 100%; }
-    .opp-name { font-size: 13px; }
+    .opp-name { font-size: 12.5px; }
     .legend { flex-direction: column; gap: 4px; }
-    .heat-cell { min-width: 70px; padding: 8px 10px; }
-    .heat-cell .count { font-size: 18px; }
-  }
-
-  @media (min-width: 641px) and (max-width: 960px) {
-    .stat-grid { grid-template-columns: repeat(4, 1fr); }
+    .heat-cell { min-width: 65px; }
+    .evo-grid { grid-template-columns: repeat(2, 1fr); }
+    nav { width: 100%; overflow-x: auto; }
+    .nr-reason { display: none; }
   }
 </style>
 </head>
@@ -449,24 +665,29 @@
 
   <header>
     <h1>Research Engine</h1>
-    <div class="subtitle">Cycle <span id="cycle-num">0</span> &middot; <span id="last-updated">awaiting first run</span></div>
+    <div class="subtitle">
+      <span class="cycle-badge" id="cycle-badge">Cycle <span id="cycle-num">0</span></span>
+      &nbsp;<span id="last-updated" style="opacity:0.6">awaiting first run</span>
+    </div>
   </header>
 
   <!-- Intro -->
-  <div class="glass intro" id="intro-section">
+  <div class="glass-static intro" id="intro-section">
     <div class="intro-inner">
       <div class="intro-text">
         <p>
-          <strong>What is this?</strong> An AI-powered research engine that maps the landscape of businesses
-          likely to thrive in the AI economy over the next 3&ndash;5 years. It applies classical economic theories
-          as operational lenses &mdash; Baumol, Schumpeter, Jevons, Perez, Polanyi &mdash; to detect structural
-          forces and construct business models from the data up.
+          <strong>What is this?</strong> A multi-agent economic research engine that maps the landscape of
+          businesses worth building in the AI-driven economy. It applies classical economic theories
+          &mdash; Baumol, Schumpeter, Jevons, Perez, Polanyi, Coase &mdash; as operational lenses to detect
+          structural forces and construct business models from the data up.
         </p>
         <p id="intro-detail" style="display:none;">
-          The engine uses a construct-first pipeline: <strong>Agent A</strong> scans data (FRED, BLS, EDGAR, O*NET, web)
-          and extracts structural signals. <strong>Agent C</strong> grades signals by economic force, structural advantage,
-          and timing readiness. <strong>Agent B</strong> constructs business models per opportunity. <strong>Master</strong>
-          synthesizes into a tiered landscape map.
+          The engine runs a <strong>construct-first pipeline</strong>: Agent A scans data (FRED, BLS, EDGAR,
+          O*NET, Census, YFinance, web) and extracts structural signals. Agent C grades signals by economic
+          force, structural advantage, and timing readiness. Agent B constructs specific business models per
+          opportunity. The Master synthesizes a tiered landscape map. Every model is scored on 5 axes:
+          economic force (35%), structural compounding (25%), convergence resistance (20%),
+          timing (10%), capital efficiency (10%).
         </p>
         <button class="intro-toggle" id="intro-toggle" onclick="
           var d=document.getElementById('intro-detail'),b=this;
@@ -480,32 +701,37 @@
         <dt>Models</dt><dd id="intro-evaluated">--</dd>
         <dt>Tier 1</dt><dd id="intro-tier1">--</dd>
         <dt>Tier 2</dt><dd id="intro-tier2">--</dd>
+        <dt>Sources</dt><dd id="intro-sources">--</dd>
       </dl>
     </div>
   </div>
 
-  <!-- Stats -->
-  <div class="stat-grid">
-    <div class="glass stat-card">
-      <div class="stat-label">Signals</div>
-      <div class="stat-value" id="total-signals">0</div>
+  <!-- KPI Row -->
+  <div class="kpi-row">
+    <div class="glass kpi">
+      <div class="kpi-label">Signals</div>
+      <div class="kpi-value" id="total-signals">0</div>
     </div>
-    <div class="glass stat-card">
-      <div class="stat-label">Models</div>
-      <div class="stat-value" id="total-verified" style="color:var(--green)">0</div>
+    <div class="glass kpi">
+      <div class="kpi-label">Models</div>
+      <div class="kpi-value" id="total-verified" style="color:var(--green)">0</div>
     </div>
-    <div class="glass stat-card">
-      <div class="stat-label">Tier 1</div>
-      <div class="stat-value" id="active-pipeline" style="color:var(--accent)">0</div>
+    <div class="glass kpi">
+      <div class="kpi-label">Tier 1</div>
+      <div class="kpi-value" id="active-pipeline" style="color:var(--accent)">0</div>
     </div>
-    <div class="glass stat-card">
-      <div class="stat-label">Tier 2</div>
-      <div class="stat-value" id="total-killed" style="color:var(--amber)">0</div>
+    <div class="glass kpi">
+      <div class="kpi-label">Tier 2</div>
+      <div class="kpi-value" id="total-tier2" style="color:var(--amber)">0</div>
+    </div>
+    <div class="glass kpi">
+      <div class="kpi-label">Patterns</div>
+      <div class="kpi-value" id="total-patterns" style="color:var(--cyan)">0</div>
     </div>
   </div>
 
   <!-- Pipeline -->
-  <div class="glass bento-item" style="margin-bottom:12px; padding:14px 18px;">
+  <div class="glass-static pipeline-wrap">
     <div class="pipeline" id="pipeline">
       <div class="pipeline-step"><div class="pipeline-dot"></div>Scan</div>
       <div class="pipeline-arrow">&rarr;</div>
@@ -513,58 +739,96 @@
       <div class="pipeline-arrow">&rarr;</div>
       <div class="pipeline-step"><div class="pipeline-dot"></div>Grade</div>
       <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><div class="pipeline-dot"></div>Cross-Ref</div>
+      <div class="pipeline-arrow">&rarr;</div>
       <div class="pipeline-step"><div class="pipeline-dot"></div>Verify</div>
       <div class="pipeline-arrow">&rarr;</div>
       <div class="pipeline-step"><div class="pipeline-dot"></div>Synthesize</div>
     </div>
   </div>
 
-  <!-- Synthesis (hero) -->
+  <!-- Synthesis hero -->
   <div class="glass synthesis" id="edge-box">
     <div class="synthesis-label">Landscape Synthesis</div>
     <div class="synthesis-text" id="synthesis-text">Run a research cycle to map the opportunity landscape.</div>
   </div>
 
   <!-- Legend -->
-  <div class="glass legend">
+  <div class="glass-static legend">
     <span><span class="legend-dot" style="background:var(--green)"></span>Tier 1 &mdash; high conviction</span>
-    <span><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; needs validation</span>
+    <span><span class="legend-dot" style="background:var(--amber)"></span>Tier 2 &mdash; strong, validating</span>
     <span><span class="legend-dot" style="background:var(--accent)"></span>Tier 3 &mdash; monitoring</span>
+    <span><span class="legend-dot" style="background:var(--red)"></span>Not recommended</span>
   </div>
 
-  <!-- Bento: Opportunities + Signals -->
-  <div class="bento">
-    <div class="glass bento-item bento-wide" style="padding-bottom:12px;">
-      <div class="section-label">Top Opportunities <span class="section-hint">ranked by economic force</span></div>
-      <div class="opp-list" id="opp-list">
-        <div class="empty">No opportunities yet</div>
-      </div>
+  <!-- Top Opportunities (full list) -->
+  <div class="glass-static card grid-full">
+    <div class="section-label">
+      Top Opportunities
+      <span class="section-hint">ranked by structural durability score</span>
+      <span class="section-count" id="opp-count">0</span>
     </div>
-    <div class="glass bento-item">
-      <div class="section-label">Latest Signals</div>
+    <div class="opp-list" id="opp-list">
+      <div class="empty">No opportunities yet</div>
+    </div>
+    <button class="show-more-btn" id="show-more-btn" style="display:none;" onclick="toggleShowMore()">Show all</button>
+  </div>
+
+  <!-- Grid: Signals + Sectors -->
+  <div class="grid-2">
+    <div class="glass-static card">
+      <div class="section-label">Latest Signals <span class="section-count" id="signal-count">0</span></div>
       <div class="signal-list" id="signal-list">
         <div class="empty">No signals yet</div>
       </div>
     </div>
-    <div class="glass bento-item">
-      <div class="section-label">Sectors</div>
+    <div class="glass-static card">
+      <div class="section-label">Structural Forces</div>
       <div class="heat-grid" id="sector-heat">
         <div class="empty" style="width:100%">No sector data</div>
       </div>
     </div>
   </div>
 
-  <!-- Cycle history -->
-  <div class="glass bento-item" style="margin-bottom:12px;">
-    <div class="section-label">Cycle History <span class="section-hint">signals per cycle</span></div>
+  <!-- Engine Evolution -->
+  <div class="glass-static card grid-full" id="evo-section">
+    <div class="expandable-header" onclick="toggleSection('evo-section')">
+      <div class="section-label" style="margin-bottom:0;">Engine Evolution <span class="section-hint">across cycles</span></div>
+      <span class="expand-icon">&#x25BC;</span>
+    </div>
+    <div class="expandable-content">
+      <div style="height:12px"></div>
+      <div class="evo-grid" id="evo-grid">
+        <div class="empty">No cycle history</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cycle History Chart -->
+  <div class="glass-static card grid-full">
+    <div class="section-label">Cycle History <span class="section-hint">models constructed per cycle</span></div>
     <div class="cycle-chart" id="cycle-chart">
       <div class="empty" style="width:100%">No cycles</div>
+    </div>
+  </div>
+
+  <!-- Not Recommended -->
+  <div class="glass-static card grid-full" id="nr-section" style="display:none;">
+    <div class="expandable-header" onclick="toggleSection('nr-section')">
+      <div class="section-label" style="margin-bottom:0;">Not Recommended <span class="section-hint">dismissed due to competitive density or platform commoditization</span></div>
+      <span class="expand-icon">&#x25BC;</span>
+    </div>
+    <div class="expandable-content">
+      <div style="height:12px"></div>
+      <div class="nr-list" id="nr-list"></div>
     </div>
   </div>
 </div>
 
 <script>
 const BASE = '../data/ui';
+let showAll = false;
+let allOpps = [];
 
 async function load(path) {
   try {
@@ -573,45 +837,95 @@ async function load(path) {
   } catch { return null; }
 }
 
-function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function toggleSection(id) {
+  document.getElementById(id).classList.toggle('expanded');
+}
+
+function toggleShowMore() {
+  showAll = !showAll;
+  renderOpps(allOpps);
+}
+
+function toggleOpp(el) {
+  el.classList.toggle('expanded');
+}
+
+function formatType(t) {
+  if (!t) return '';
+  return t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
 
 function renderOpps(opps) {
+  allOpps = opps;
   const el = document.getElementById('opp-list');
+  const btn = document.getElementById('show-more-btn');
   if (!opps || !opps.length) return;
-  el.innerHTML = opps.slice(0, 12).map(o => {
+
+  const visible = showAll ? opps : opps.slice(0, 10);
+  document.getElementById('opp-count').textContent = opps.length;
+
+  el.innerHTML = visible.map((o, i) => {
     const tier = (o.tier || '').toLowerCase();
     const tierNum = tier.includes('1') ? 1 : tier.includes('2') ? 2 : 3;
     const tierCls = 'tier-' + tierNum;
     const scoreCls = 'score-t' + tierNum;
-    const pillCls = 'pill-tier' + tierNum;
-    const score = o.score || o.opportunity_score || o.economic_force_score || o.total_score || '--';
-    const type = o.type || o.landscape_type || '';
-    const desc = o.one_liner || o.cycle_3_change || o.cycle_4_change || o.thesis || o.description || o.note || '';
-    return `<div class="glass opp ${tierCls}">
+    const score = o.score || '--';
+    const type = o.type || '';
+    const desc = o.one_liner || o.description || o.note || '';
+    const rank = o.rank || (i + 1);
+    const change = o.c8_change || '';
+    const sources = o.data_sources || 0;
+
+    let changeBadge = '';
+    if (change && change !== '0') {
+      const isUp = change.startsWith('+');
+      changeBadge = `<span class="opp-change ${isUp ? 'change-up' : 'change-down'}">${esc(change)}</span>`;
+    }
+
+    return `<div class="glass opp ${tierCls}" onclick="toggleOpp(this)">
       <div class="opp-top">
+        <span class="opp-rank">${rank}</span>
         <span class="opp-name">${esc(o.name)}</span>
-        <span class="opp-score ${scoreCls}">${score}</span>
+        <div class="opp-badges">
+          ${changeBadge}
+          <span class="opp-score ${scoreCls}">${score}</span>
+        </div>
       </div>
       <div class="opp-meta">
-        <span class="pill ${pillCls}">${esc(o.tier || '')}</span>
-        ${o.economic_force ? `<span class="pill pill-type">${esc(o.economic_force)}</span>` : ''}
-        ${type ? `<span class="pill pill-type">${esc(type)}</span>` : ''}
+        ${type ? `<span class="pill pill-type">${esc(formatType(type))}</span>` : ''}
+        ${o.sector ? `<span class="pill pill-type">${esc(o.sector)}</span>` : ''}
+        ${sources ? `<span class="pill pill-sources">${sources} sources</span>` : ''}
       </div>
       ${desc ? `<div class="opp-desc">${esc(desc)}</div>` : ''}
     </div>`;
   }).join('');
+
+  if (opps.length > 10) {
+    btn.style.display = 'block';
+    btn.textContent = showAll ? `Show top 10` : `Show all ${opps.length}`;
+  } else {
+    btn.style.display = 'none';
+  }
 }
 
 function renderSignals(signals) {
   const el = document.getElementById('signal-list');
   if (!signals || !signals.length) return;
-  el.innerHTML = signals.slice(0, 12).map(s => {
+  document.getElementById('signal-count').textContent = signals.length;
+  el.innerHTML = signals.slice(0, 15).map(s => {
     const sc = s.relevance_score;
-    const cls = sc >= 7 ? 'dot-high' : sc >= 4 ? 'dot-med' : 'dot-low';
+    const cls = sc >= 8 ? 'dot-high' : sc >= 5 ? 'dot-med' : 'dot-low';
+    const src = (s.source || s.category || '').substring(0, 30);
     return `<div class="signal">
       <div class="signal-dot ${cls}"></div>
       <div class="signal-text">${esc(s.headline)}</div>
-      <div class="signal-src">${esc(s.source || s.category)}</div>
     </div>`;
   }).join('');
 }
@@ -621,10 +935,11 @@ function renderHeat(data) {
   if (!data || !Object.keys(data).length) return;
   const max = Math.max(...Object.values(data).map(d => d.signal_count || 0), 1);
   el.innerHTML = Object.entries(data).map(([name, d]) => {
-    const intensity = 0.03 + (d.signal_count / max) * 0.12;
-    return `<div class="heat-cell" style="background:rgba(167,139,250,${intensity.toFixed(3)});border:1px solid rgba(167,139,250,${(intensity*2).toFixed(3)})">
+    const intensity = 0.03 + (d.signal_count / max) * 0.1;
+    const n = name.length > 22 ? name.substring(0, 20) + '..' : name;
+    return `<div class="heat-cell" style="background:rgba(167,139,250,${intensity.toFixed(3)});border:1px solid rgba(167,139,250,${(intensity*1.8).toFixed(3)})">
       <div class="count" style="color:var(--accent)">${d.signal_count}</div>
-      <div class="name">${esc(name)}</div>
+      <div class="name">${esc(n)}</div>
     </div>`;
   }).join('');
 }
@@ -632,11 +947,56 @@ function renderHeat(data) {
 function renderCycles(cycles) {
   const el = document.getElementById('cycle-chart');
   if (!cycles || !cycles.length) return;
-  const max = Math.max(...cycles.map(c => c.signals || 0), 1);
+  const max = Math.max(...cycles.map(c => c.models_constructed || c.signals || 0), 1);
   el.innerHTML = cycles.map((c, i) => {
-    const h = Math.max(10, (c.signals/max)*100);
-    const opacity = 0.15 + (i / cycles.length) * 0.7;
-    return `<div class="cycle-bar" style="height:${h}%;background:var(--gradient-accent);opacity:${opacity.toFixed(2)}" title="Cycle ${c.cycle}: ${c.signals} signals"></div>`;
+    const val = c.models_constructed || c.signals || 0;
+    const h = Math.max(8, (val/max)*100);
+    const opacity = 0.2 + (i / cycles.length) * 0.7;
+    const tip = `${c.cycle}: ${val} models`;
+    return `<div class="cycle-bar" style="height:${h}%;background:var(--gradient-bar);opacity:${opacity.toFixed(2)}" data-tooltip="${esc(tip)}"></div>`;
+  }).join('');
+}
+
+function renderEvolution(cycles) {
+  const el = document.getElementById('evo-grid');
+  if (!cycles || !cycles.length) return;
+
+  const milestones = cycles.map(c => {
+    const models = c.models_constructed || c.signals || 0;
+    const note = (c.note || '').substring(0, 90);
+    const topModel = c.top_model || '';
+    const t1 = c.tier_1_models || c.tier_1 || 0;
+    return {
+      cycle: c.cycle,
+      models,
+      t1,
+      note: note + (note.length >= 90 ? '...' : ''),
+      topModel
+    };
+  });
+
+  el.innerHTML = milestones.map(m => {
+    return `<div class="evo-card">
+      <div class="evo-cycle">${esc(m.cycle)}</div>
+      <div class="evo-metric">${m.models}</div>
+      <div class="evo-label">models &middot; ${m.t1} tier 1</div>
+      ${m.note ? `<div class="evo-note">${esc(m.note)}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function renderNotRecommended(nrList) {
+  const section = document.getElementById('nr-section');
+  const el = document.getElementById('nr-list');
+  if (!nrList || !nrList.length) return;
+
+  section.style.display = 'block';
+  el.innerHTML = nrList.map(nr => {
+    return `<div class="nr-item">
+      <span class="nr-score">${nr.score || '--'}</span>
+      <span class="nr-name">${esc(nr.name)}</span>
+      <span class="nr-reason">${esc(nr.reason || '')}</span>
+    </div>`;
   }).join('');
 }
 
@@ -648,24 +1008,21 @@ async function refresh() {
     document.getElementById('cycle-num').textContent = d.cycle || d.current_cycle || 0;
     const ts = d.updated || d.last_updated;
     document.getElementById('last-updated').textContent =
-      ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'awaiting first run';
+      ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'}) : 'awaiting first run';
 
     const landscape = d.opportunity_landscape || d.landscape || {};
-    const stats = d.pipeline_stats || {};
     let opps = [];
     let tier1Count = 0, tier2Count = 0;
 
-    // v2.5+ format: decomposed_models_top_20
     const decomposed = landscape.decomposed_models_top_20 || [];
     if (decomposed.length) {
       opps = decomposed.map(m => {
-        const tier = m.score >= 75 ? 'Tier 1' : m.score >= 68 ? 'Tier 2' : 'Tier 3';
-        return Object.assign({tier, name: m.name, score: m.score, economic_force: m.sector, description: m.one_liner, type: m.type}, m);
+        const tier = m.score >= 85 ? 'Tier 1' : m.score >= 75 ? 'Tier 2' : 'Tier 3';
+        return Object.assign({tier}, m);
       });
-      tier1Count = opps.filter(o => o.tier === 'Tier 1').length;
-      tier2Count = opps.filter(o => o.tier === 'Tier 2').length;
+      tier1Count = d.tier_1_models || opps.filter(o => o.tier === 'Tier 1').length;
+      tier2Count = d.tier_2_models || opps.filter(o => o.tier === 'Tier 2').length;
     } else {
-      // Legacy format: tier_1/tier_2/tier_3 arrays
       const tier1 = (landscape.tier_1 || []).map(o => Object.assign({tier:'Tier 1', name: o.name || o.structural_shift}, o));
       const tier2 = (landscape.tier_2 || []).map(o => Object.assign({tier:'Tier 2', name: o.name || o.structural_shift}, o));
       const tier3 = (landscape.tier_3 || []).map(o => Object.assign({tier:'Tier 3', name: o.name || o.structural_shift}, o));
@@ -673,38 +1030,45 @@ async function refresh() {
       tier1Count = tier1.length;
       tier2Count = tier2.length;
     }
-    if (!opps.length) opps = d.top_opportunities || [];
 
-    const signalCount = d.signals_scanned || d.total_signals_scanned || stats.total_ever_evaluated || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
-    const modelCount = d.models_constructed || d.total_models_constructed || stats.models_constructed || opps.length || 0;
+    const signalCount = d.signals_scanned || d.total_signals_scanned || (d.cycle_history||[]).reduce((s,c)=>s+(c.signals||0),0) || 0;
+    const modelCount = d.models_constructed || d.total_models_constructed || opps.length || 0;
+    const patternCount = (d.structural_shifts_active || []).length || 0;
 
     document.getElementById('total-signals').textContent = signalCount;
     document.getElementById('total-verified').textContent = modelCount;
-    document.getElementById('active-pipeline').textContent = tier1Count || stats.tier_1 || d.active_opportunities || 0;
-    document.getElementById('total-killed').textContent = tier2Count || stats.tier_2 || 0;
+    document.getElementById('active-pipeline').textContent = tier1Count || 0;
+    document.getElementById('total-tier2').textContent = tier2Count || 0;
+    document.getElementById('total-patterns').textContent = patternCount;
 
     const synthesis = d.summary || d.master_synthesis || d.engine_status || '';
     if (synthesis) document.getElementById('synthesis-text').textContent = synthesis;
 
-    document.getElementById('intro-cycles').textContent = d.cycle || d.current_cycle || 0;
+    const cycleCount = d.cycle || d.current_cycle || (d.cycle_history||[]).length || 0;
+    document.getElementById('intro-cycles').textContent = cycleCount;
     document.getElementById('intro-signals').textContent = signalCount;
     document.getElementById('intro-evaluated').textContent = modelCount;
     document.getElementById('intro-tier1').textContent = tier1Count || 0;
     document.getElementById('intro-tier2').textContent = tier2Count || 0;
+    document.getElementById('intro-sources').textContent = '7 types';
 
     renderOpps(opps);
 
-    // Sector heatmap: use sector_heatmap if available, else build from structural_shifts_active
     let heatData = d.sector_heatmap;
     if (!heatData && d.structural_shifts_active) {
       heatData = {};
       d.structural_shifts_active.forEach(s => {
-        const name = (s.shift || '').replace(/\s*\(.*?\)\s*/g, '').substring(0, 20);
-        heatData[name] = { signal_count: s.signal_count || s.models_decomposed || 0 };
+        const rawName = s.shift || s.force || '';
+        const name = rawName.replace(/\s*\(.*?\)\s*/g, '').substring(0, 24);
+        if (name) heatData[name] = { signal_count: s.signal_count || s.models_produced || 0 };
       });
     }
     renderHeat(heatData);
     renderCycles(d.cycle_history);
+    renderEvolution(d.cycle_history);
+
+    const nrList = (landscape.not_recommended || d.not_recommended || []);
+    renderNotRecommended(nrList);
   }
   if (f) {
     renderSignals(f.recent_signals || f.signals);
@@ -712,7 +1076,7 @@ async function refresh() {
 }
 
 refresh();
-setInterval(refresh, 5000);
+setInterval(refresh, 8000);
 </script>
 </body>
 </html>
