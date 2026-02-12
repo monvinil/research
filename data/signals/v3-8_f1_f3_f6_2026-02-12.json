@@ -1,0 +1,415 @@
+{
+  "cycle": "v3-8",
+  "date": "2026-02-12",
+  "scan_coverage": ["F1_technology", "F3_geopolitics", "F6_energy"],
+  "signal_count": 22,
+  "signals": [
+    {
+      "id": "v38-S01",
+      "force": "F1_technology",
+      "title": "GPT-5.3-Codex Classified 'High' Cybersecurity Risk — First Frontier Model to Trip Safety Threshold",
+      "source": "Fortune (Feb 5, 2026); Benzinga (Feb 10, 2026)",
+      "key_data": [
+        "OpenAI CEO Sam Altman confirmed GPT-5.3-Codex is the first model to hit 'high' risk on OpenAI's Preparedness Framework for cybersecurity",
+        "Full API access delayed; high-risk uses gated behind trusted-access program for security professionals",
+        "The Midas Project watchdog alleged OpenAI violated California SB 53 by failing to implement required safeguards before launch",
+        "OpenAI disputes the allegation; SB 53 allows fines up to $1M per violation for noncompliance"
+      ],
+      "confidence": "high",
+      "implication": "First time a frontier lab has self-classified a model as 'high' cybersecurity risk. This creates a new precedent: capability advances are now triggering internal safety gates that constrain deployment speed. The SB 53 legal challenge is the first real enforcement test of state-level AI safety law — outcome will determine whether self-governance frameworks are sufficient or if external enforcement is necessary. If OpenAI faces penalties, every future frontier release faces a compliance gauntlet.",
+      "patterns_affected": ["P-001"],
+      "geographic_scope": ["US"],
+      "time_horizon": "near-term (2026-2027)"
+    },
+    {
+      "id": "v38-S02",
+      "force": "F1_technology",
+      "title": "Opus 4.6 Benchmark Deltas Quantified — 144 Elo Lead on GDPval, 76% Long-Context MRCR",
+      "source": "Anthropic (Feb 5, 2026); Vellum, Geeky Gadgets (Feb 2026)",
+      "key_data": [
+        "GDPval-AA (enterprise knowledge work): Opus 4.6 leads GPT-5.2 by 144 Elo points and Opus 4.5 by 190 Elo points",
+        "Long-context retrieval (8-needle 1M MRCR v2): 76% vs Sonnet 4.5's 18.5% — 4x improvement",
+        "SWE-bench: 80.8% (Opus 4.6) vs 56.8% SWE-Bench Pro (GPT-5.3-Codex) — different benchmarks but both at new highs",
+        "ARC AGI 2 Test: 68.8% (Opus 4.6) vs 45.1% (Gemini 3 Deep Think) — Gemini leads on extended reasoning variant"
+      ],
+      "confidence": "high",
+      "implication": "The benchmark landscape is fragmenting — no single model dominates all axes. Opus 4.6 leads on enterprise knowledge work and long-context, GPT-5.3 leads on agentic coding speed, Gemini 3 leads on extended reasoning. This fragmentation favors multi-model enterprise strategies over single-vendor lock-in. The 144 Elo gap on GDPval is the most commercially significant: it measures the exact tasks enterprises pay knowledge workers to do.",
+      "patterns_affected": ["P-001"],
+      "geographic_scope": ["Global"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S03",
+      "force": "F1_technology",
+      "title": "Gemini 3 Deep Think Scores 45.1% on ARC-AGI-2 — Substantial Jump in General Reasoning",
+      "source": "Google DeepMind (Feb 5, 2026); VentureBeat (Feb 2026)",
+      "key_data": [
+        "Gemini 3 Deep Think scored 45.1% on ARC-AGI-2, up from mid-teens to low-twenties for prior frontier models",
+        "Gemini 3 Pro tops LMArena Leaderboard at 1501 Elo; leads 19 of 20 benchmarks vs prior generation",
+        "91.9% on GPQA Diamond (PhD-level science), 23.4% on MathArena Apex (new SOTA in mathematics)",
+        "Gemini 3 Flash achieves 78% on SWE-bench Verified for agentic coding — outperforms Gemini 3 Pro"
+      ],
+      "confidence": "high",
+      "implication": "The ARC-AGI-2 jump from ~20% to 45.1% is the single most important benchmark move this cycle — it measures general reasoning rather than specialized knowledge. If this trajectory continues, the 2027-2028 timeframe for systems that match human-level general problem solving becomes plausible. Flash outperforming Pro on agentic coding suggests smaller, faster models may be superior for agentic workflows — challenging the assumption that bigger is better for agent deployment.",
+      "patterns_affected": ["P-001"],
+      "geographic_scope": ["Global"],
+      "time_horizon": "near-term (2026-2027)"
+    },
+    {
+      "id": "v38-S04",
+      "force": "F1_technology",
+      "title": "Anthropic Cowork Ships Windows + 11 Open-Source Enterprise Plugins — Agent Platform War Escalates",
+      "source": "TechCrunch (Jan 30, 2026); VentureBeat (Feb 10, 2026); Law.com (Feb 2, 2026)",
+      "key_data": [
+        "Cowork launched on Windows with full feature parity on Feb 10 — removes last major platform barrier",
+        "11 enterprise plugins open-sourced: legal, finance, sales, compliance verticals",
+        "Legal plugin specifically designed for contract review, regulatory analysis, and case research",
+        "The Briefing enterprise event scheduled NYC Feb 24 — live demos of agent workflows"
+      ],
+      "confidence": "high",
+      "implication": "Anthropic and OpenAI are now running parallel enterprise agent platforms: Cowork (desktop-centric, plugin ecosystem) vs Frontier (cloud-centric, fleet management). The open-sourcing of 11 plugins is strategically significant — it creates an ecosystem moat through developer community, not just model quality. Legal plugin launch directly targets the highest-margin professional services vertical. Windows launch is table-stakes but critical: enterprise IT runs on Windows.",
+      "patterns_affected": ["P-001"],
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S05",
+      "force": "F1_technology",
+      "title": "AI Coding Tool Adoption Hits 84% of Developers — 41% of Code Now AI-Generated",
+      "source": "Panto AI Statistics (2026); Stack Overflow Developer Survey; Index.dev (2026)",
+      "key_data": [
+        "84% of developers now use AI coding tools; only 15% have not adopted any AI assistant",
+        "AI tools now write 41% of all code in production",
+        "55% task completion speed improvement measured in controlled experiments",
+        "Trust gap persists: 46% of developers do not fully trust AI output; only 33% express trust",
+        "Leading AI adopter organizations: ~90% developer usage; typical organizations: ~50%"
+      ],
+      "confidence": "high",
+      "implication": "The 84% adoption rate means AI coding has crossed from early-majority to late-majority phase. The 41% code generation figure is structurally transformative: nearly half of all production code is now AI-assisted. But the 46% distrust rate creates a verification bottleneck — developers are using tools they don't fully trust, implying a massive latent demand for AI code verification and quality assurance tools. The gap between leading (90%) and typical (50%) organizations signals a productivity divergence that will compound over 2-3 years.",
+      "patterns_affected": ["P-001"],
+      "geographic_scope": ["Global"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S06",
+      "force": "F1_technology",
+      "title": "Alibaba Open-Sources RynnBrain — Vision-Language-Action Model for Robotics",
+      "source": "Bloomberg, CNBC (Feb 10, 2026); Yahoo Finance (Feb 10, 2026)",
+      "key_data": [
+        "RynnBrain is a vision-language-action (VLA) model: interprets visual input, understands language, translates to physical robot actions",
+        "Three specialized variants: RynnBrain-Plan (manipulation), RynnBrain-Nav (navigation), RynnBrain-CoP (spatial reasoning)",
+        "Available in 2B, 8B, and 30B MoE versions; fully open-source on Hugging Face and GitHub",
+        "Claims SOTA results on benchmarks vs Google Gemini Robotics-ER 1.5 and NVIDIA Cosmos-Reason2"
+      ],
+      "confidence": "high",
+      "implication": "China's open-source robotics AI strategy mirrors DeepSeek's LLM approach: release frontier-quality models for free, accelerate global adoption, commoditize the US/NVIDIA proprietary stack. A VLA model that combines vision, language, AND action planning in one architecture is the missing piece for general-purpose robotics. If RynnBrain benchmarks hold, it democratizes robotics AI in the same way Llama democratized LLMs. The 2B parameter version enables edge deployment on consumer hardware.",
+      "patterns_affected": ["P-006", "P-028"],
+      "geographic_scope": ["China", "Global"],
+      "time_horizon": "near-term (2026-2027)"
+    },
+    {
+      "id": "v38-S07",
+      "force": "F1_technology",
+      "title": "NVIDIA Jetson T4000 Ships — $1,999 Blackwell-Powered Robot Brain at 1,200 TFLOPS",
+      "source": "NVIDIA Newsroom (Jan-Feb 2026); Tom's Hardware",
+      "key_data": [
+        "Jetson T4000: Blackwell architecture for robots, 1,200 FP4 TFLOPS, 64GB memory, 70W envelope",
+        "$1,999 at 1,000-unit volume — 4x performance per watt over prior generation",
+        "Partners: Boston Dynamics, Caterpillar, Franka Robotics, LG Electronics, NEURA Robotics",
+        "New open models: Cosmos and GR00T for robot learning; Isaac Lab-Arena for evaluation; OSMO edge-to-cloud framework"
+      ],
+      "confidence": "high",
+      "implication": "NVIDIA is executing the 'Android of robotics' strategy: provide the compute module + software stack + development tools, let OEMs build diverse robots. $1,999 for 1,200 TFLOPS makes the 'robot brain' cheaper than a high-end smartphone. Combined with RynnBrain (open-source software) and 1X NEO ($20K hardware), the full stack for a capable humanoid robot is approaching $25K — below annual minimum wage in most US states. The partner list spanning industrial (Caterpillar) to consumer (LG) signals breadth of deployment.",
+      "patterns_affected": ["P-006"],
+      "geographic_scope": ["Global"],
+      "time_horizon": "near-term (2026-2028)"
+    },
+    {
+      "id": "v38-S08",
+      "force": "F1_technology",
+      "title": "Opus 4.6 Agent Teams — Parallel Multi-Agent Orchestration Ships as Product Feature",
+      "source": "TechCrunch (Feb 5, 2026); Anthropic (Feb 5, 2026)",
+      "key_data": [
+        "Agent teams allow multiple Claude agents to split larger tasks into segmented jobs running in parallel",
+        "OSWorld agentic computer use: 72.7% (up from 66.3% for Opus 4.5)",
+        "Terminal-Bench: 65.4% (up from 59.8%)",
+        "Claude Opus 4.6 ranks first on Artificial Analysis Intelligence Index across agent tasks, terminal coding, and physics research"
+      ],
+      "confidence": "high",
+      "implication": "Agent teams is the first shipped multi-agent orchestration feature from a frontier lab. This moves multi-agent systems from research papers and open-source frameworks to a first-party product. The OSWorld improvement (+6.4 points) measures real-world computer use — not abstract benchmarks. If parallel agent teams reliably complete complex workflows, it fundamentally changes the unit economics of knowledge work: one human orchestrating N agents rather than one human doing N tasks sequentially.",
+      "patterns_affected": ["P-001"],
+      "geographic_scope": ["Global"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S09",
+      "force": "F3_geopolitics",
+      "title": "Trump-India Trade Deal Formalized — Executive Order Feb 6 Cuts Tariffs to 18%",
+      "source": "CNBC (Feb 2, 2026); White House Fact Sheet (Feb 2, 2026); Bloomberg (Feb 6, 2026)",
+      "key_data": [
+        "Tariffs on India cut from 50% (combined) to 18% via executive order signed Feb 6",
+        "India committed to stop purchasing Russian oil and increase US product purchases",
+        "Interim trade agreement framework released — reduces tariffs and non-tariff barriers toward zero",
+        "Deal positioned within broader bilateral pattern: India, Argentina, Bangladesh deals all in same period"
+      ],
+      "confidence": "high",
+      "implication": "The formalization via executive order (not just announcement) makes this operationally real. India's commitment to cut Russian oil purchases is a major geopolitical realignment — India was Russia's largest oil customer. Combined with India's zero-tax AI policy through 2047, this creates a US-India economic corridor specifically optimized for technology transfer. The bilateral deal pattern (bypassing WTO/multilateral) is building an alternative trade architecture. India AI Impact Summit (Feb 16-20) becomes the next test of this alignment.",
+      "patterns_affected": ["P-028"],
+      "geographic_scope": ["US", "India"],
+      "time_horizon": "near-term (2026-2027)"
+    },
+    {
+      "id": "v38-S10",
+      "force": "F3_geopolitics",
+      "title": "Supreme Court IEEPA Tariff Ruling Imminent — Next Bench Date Feb 20",
+      "source": "CNBC (Jan 14, 2026); SCOTUSblog (Jan 2026); PIIE (Jan 2026)",
+      "key_data": [
+        "Supreme Court evaluating whether IEEPA grants authority for sweeping trade tariffs",
+        "Lower courts (Court of International Trade, Federal Circuit) struck down all IEEPA tariffs as unauthorized",
+        "Oral arguments heard Nov 5 — conventional wisdom: majority skeptical of executive tariff authority",
+        "Next bench session Feb 20 — ruling could come any time after that date",
+        "$133 billion in tariff revenue at stake in the ruling"
+      ],
+      "confidence": "high",
+      "implication": "This is the highest-stakes economic court case in decades. If IEEPA tariffs are struck down, roughly half of current US tariffs lose legal basis — creating a sudden trade liberalization shock. If upheld, executive tariff authority is confirmed and further escalation becomes legally permissible. The $133B figure understates the impact: business planning, supply chain decisions, and capital allocation have all been made under the current tariff regime. Either outcome creates a discontinuity. Feb 20 bench date makes this a near-term catalyst.",
+      "patterns_affected": ["P-028"],
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S11",
+      "force": "F3_geopolitics",
+      "title": "300 State AI Bills Filed in 2026 Sessions — Regulatory Fragmentation Accelerating",
+      "source": "Transparency Coalition (Feb 6, 2026); IAPP State AI Tracker (2026); Wiley (2026)",
+      "key_data": [
+        "300+ AI-related bills tracked as of Feb 1, 2026 across 38 active state legislatures",
+        "New Jersey SB 1802: mandatory AI safety testing for products sold in state",
+        "Delaware HB 28: AI Transparency Act requiring consumer notification of AI interaction",
+        "Michigan SB 760: prohibits chatbots from encouraging self-harm in minors",
+        "Multiple states pursuing AI liability expansion, insurance requirements, and health AI regulation"
+      ],
+      "confidence": "high",
+      "implication": "300 bills across 38 legislatures creates a compliance maze that structurally favors large firms with legal teams over startups. The March 11 federal deadline (Commerce Department AI evaluation) is the critical variable: if federal preemption occurs, these state bills become moot; if not, every AI company needs 50-state compliance. NJ's mandatory safety testing and the SB 53 enforcement against OpenAI suggest a trend toward treating AI models like regulated products (pharmaceuticals, automobiles) rather than software.",
+      "patterns_affected": [],
+      "geographic_scope": ["US"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S12",
+      "force": "F3_geopolitics",
+      "title": "Germany Approves EUR 108.2B Defense Budget — Largest in Federal Republic History",
+      "source": "German Federal Ministry of Defence (Nov 2025); Atlantic Council (Feb 2026); DSEI (2026)",
+      "key_data": [
+        "EUR 108.2B total defense budget approved: EUR 82.69B Bundeswehr + EUR 25.5B Special Fund",
+        "2.5% of GDP — more than double the 2021 budget of EUR 48B",
+        "Military procurement increased by EUR 16.8B (27.06% of budget)",
+        "10,000 new soldiers and 2,000 civilian posts authorized",
+        "Goal: build 'Europe's strongest conventional army'"
+      ],
+      "confidence": "high",
+      "implication": "Germany doubling its defense budget in 5 years is the single clearest indicator that European rearmament is structural, not cyclical. The EUR 16.8B procurement increase is where the economic impact concentrates: defense contractors, dual-use technology firms, and AI/autonomous systems vendors all benefit. 'Europe's strongest conventional army' framing is a historic shift in German strategic posture. Combined with ReArm Europe EUR 800B, this creates a European defense-industrial complex that didn't exist 5 years ago.",
+      "patterns_affected": ["P-030"],
+      "geographic_scope": ["EU", "Germany"],
+      "time_horizon": "medium-term (2026-2030)"
+    },
+    {
+      "id": "v38-S13",
+      "force": "F3_geopolitics",
+      "title": "NATO DIANA 2026 — 150 Innovators in Largest Defense Tech Cohort",
+      "source": "GovCon Exec International (Feb 2026); NATO (2026)",
+      "key_data": [
+        "DIANA 2026 program includes 150 innovators — largest cohort to date",
+        "Focus areas: AI, autonomy, quantum, biotech, hypersonics, space, novel materials, energy, comms",
+        "Rapid Adoption Action Plan: target 24 months from concept to frontline deployment",
+        "Rapid Adoption Service enables operational testing by NATO militaries before formal procurement"
+      ],
+      "confidence": "high",
+      "implication": "NATO's defense innovation pipeline is scaling from proof-of-concept to deployment. The 24-month target compresses traditional 7-10 year procurement cycles by 75%. 150 innovators means a diverse portfolio approach — not betting on single technologies. The Rapid Adoption Service that allows operational testing before procurement is the key mechanism: it de-risks adoption for militaries while giving startups a path to revenue. AI and autonomy as top priorities confirm that software-defined warfare is NATO's strategic direction.",
+      "patterns_affected": ["P-030"],
+      "geographic_scope": ["NATO", "EU", "US"],
+      "time_horizon": "near-term (2026-2028)"
+    },
+    {
+      "id": "v38-S14",
+      "force": "F3_geopolitics",
+      "title": "India AI Impact Summit Feb 16-20 — 15+ Heads of State, 'Third Way' AI Governance",
+      "source": "Government of India PIB (Feb 2026); Business Standard (Feb 11, 2026); StartupNews.fyi (Feb 11, 2026)",
+      "key_data": [
+        "Summit branded as 'third way' between US permissive and Chinese state-directed AI models",
+        "15-20 Heads of Government, 50+ ministers, 40+ global CEOs (Pichai, Gates, Ambani, Altman)",
+        "Seven thematic 'Chakras': Human Capital, Inclusion, Safe AI, Resilience, Science, Democratization, Social Good",
+        "India AI stack for 'population-scale impact' — from apps to models to compute to energy"
+      ],
+      "confidence": "high",
+      "implication": "India formally positioning itself as the third pole in global AI governance. The 'third way' framing explicitly challenges the US-China binary. Population-scale AI deployment (1.4B users) creates a distinct governance challenge that neither US nor EU frameworks address. The concentration of global tech CEOs at a government-hosted summit signals India's leverage: access to the world's largest untapped AI market in exchange for governance influence. This summit's outcomes will shape AI regulation across the Global South.",
+      "patterns_affected": ["P-028"],
+      "geographic_scope": ["India", "Global South"],
+      "time_horizon": "near-term (2026-2027)"
+    },
+    {
+      "id": "v38-S15",
+      "force": "F6_energy",
+      "title": "Meta 6.6 GW Nuclear Deal — Largest Corporate Nuclear Procurement in History",
+      "source": "Meta (Jan 9, 2026); CNBC (Jan 9, 2026); Power Magazine (Jan 2026)",
+      "key_data": [
+        "Vistra: 20-year PPAs for 2,609 MW from Perry, Davis-Besse (OH), Beaver Valley (PA) plants; deliveries starting late 2026",
+        "TerraPower: funding for 8 Natrium sodium fast reactors — 2x345 MW (2032) + 6 units at 2.1 GW (2035)",
+        "Oklo: 1.2 GW advanced nuclear campus in Pike County, OH; pre-construction 2026, first phase by 2030",
+        "Purpose: power Prometheus AI supercluster; thousands of construction + operational jobs"
+      ],
+      "confidence": "high",
+      "implication": "Meta's 6.6 GW commitment exceeds the total nuclear capacity of most countries. The three-partner structure hedges technology risk: existing reactors (Vistra, near-term), sodium fast (TerraPower, 2032), advanced (Oklo, 2030). The 20-year PPA structure creates guaranteed revenue for nuclear operators — solving the financing problem that has killed prior nuclear projects. Vistra deliveries starting late 2026 means this is not aspirational; Meta will be a major nuclear power consumer within 12 months. This validates nuclear as the baseload solution for AI compute at scale.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["US"],
+      "time_horizon": "near-to-medium-term (2026-2035)"
+    },
+    {
+      "id": "v38-S16",
+      "force": "F6_energy",
+      "title": "DOE Directs FERC to Accelerate Data Center Interconnection — April 30 Deadline",
+      "source": "White & Case (2026); Department of Energy (2025-2026); Gibson Dunn (2026)",
+      "key_data": [
+        "Secretary of Energy Chris Wright directed FERC to finalize rulemaking by April 30, 2026",
+        "Proposed: FERC jurisdiction over large loads >20 MW — historically a state-regulated domain",
+        "Joint co-located load + generation interconnection requests permitted under proposed rule",
+        "Aims to significantly reduce study times and grid upgrade costs for data center connections"
+      ],
+      "confidence": "high",
+      "implication": "DOE invoking directive authority over FERC is rare and signals the administration views data center grid access as a national priority. The jurisdictional shift (federal over state for >20 MW loads) would fundamentally restructure power grid governance. If finalized by April 30, it removes the 5+ year interconnection queue bottleneck that has forced the behind-the-meter strategy. Joint load + generation requests mean data centers can propose their own power supply alongside their grid connection — institutionalizing the hybrid model. This is the most significant US energy policy development for AI infrastructure in 2026.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["US"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S17",
+      "force": "F6_energy",
+      "title": "15 Nuclear Reactors Coming Online in 2026 — 12 GW Rebound After 2025 Decline",
+      "source": "Bloomberg (Dec 2025); Carbon Credits (2026); ASME (2026)",
+      "key_data": [
+        "15 reactors adding ~12 GW of new capacity in 2026, rebounding from a 1.1 GW decline in 2025",
+        "China: 10 new units approved, ~$27B investment; Linglong One SMR targeting H1 2026 commercial operation",
+        "US DOE: working with 11 advanced reactor projects targeting criticality of at least 3 reactors by July 4, 2026",
+        "Kairos Power Hermes demonstration reactor in visible construction phases at Oak Ridge"
+      ],
+      "confidence": "high",
+      "implication": "12 GW of new nuclear in a single year represents the strongest annual addition in decades. China's dominance (10 of 15 units) continues its lead in nuclear deployment. The US July 4 target for 3 advanced reactors is politically symbolic but technically ambitious — meeting it would validate the 'nuclear renaissance' narrative. Linglong One going commercial in H1 2026 would make China the first country with an operational commercial SMR, establishing technology standards and export positioning for the global SMR market.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["Global", "China", "US"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S18",
+      "force": "F6_energy",
+      "title": "Copper Holds Above $5.90/lb on Data Center Demand — 330 kt Global Deficit Forecast",
+      "source": "Trading Economics (Feb 2026); Tom's Hardware (2026); J.P. Morgan (2026); US Funds (2026)",
+      "key_data": [
+        "Copper at ~$5.90-5.95/lb in early February 2026; LME average forecast $10,710/t for H1 2026",
+        "Data center copper demand projected at 475 kt in 2026 — up ~110 kt year-over-year",
+        "Global refined copper deficit forecast: 330 kt in 2026 (Wood Mackenzie); wider than 2025 deficit of 304 kt",
+        "AI data centers could consume 500 kt annually by 2030 — approaching 2% of global copper demand"
+      ],
+      "confidence": "high",
+      "implication": "Copper is emerging as a structural bottleneck for AI infrastructure buildout. The 330 kt deficit means there is literally not enough refined copper being produced to meet current demand. Data centers are now a material demand driver (475 kt is equivalent to the copper consumption of a mid-sized country). The deficit widening from 304 kt to 330 kt despite high prices suggests supply cannot respond fast enough — mining projects take 7-10 years from discovery to production. This is the physical commodity constraint that financial models of AI scaling consistently underestimate.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["Global"],
+      "time_horizon": "near-to-medium-term (2026-2030)"
+    },
+    {
+      "id": "v38-S19",
+      "force": "F6_energy",
+      "title": "OpenAI-SoftBank 1.2 GW Texas Data Center + $1B SB Energy Investment",
+      "source": "Data Center Knowledge (Feb 2026); SB Energy (2026)",
+      "key_data": [
+        "OpenAI and SoftBank invested $1B in SB Energy for US data center buildout",
+        "SB Energy selected to build and operate 1.2 GW data center in Milam County, Texas",
+        "1.2 GW single-site capacity would be among the largest data center power installations globally",
+        "Part of broader Stargate project infrastructure"
+      ],
+      "confidence": "high",
+      "implication": "1.2 GW is equivalent to the output of a large nuclear power plant — for a single data center. Texas continues to attract hyperscale data centers due to deregulated power market and available land. The SoftBank partnership structure (separate infrastructure company) separates AI model operations from power/facility operations — creating a specialized energy infrastructure layer. This signals that frontier AI labs are becoming major energy companies by necessity, not just technology companies.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["US"],
+      "time_horizon": "near-term (2026-2027)"
+    },
+    {
+      "id": "v38-S20",
+      "force": "F6_energy",
+      "title": "Renewable Curtailment Exploding — CAISO 738K MWh Cut in First 4 Months of 2025",
+      "source": "Amperon (2026); EIA; Energy Central (2025-2026)",
+      "key_data": [
+        "4 of 7 US ISOs set annual curtailment records in 2024; 2025 breaking those records again",
+        "CAISO curtailed 738,000+ MWh of wind/solar in first 4 months of 2025; California curtailed 3.4M MWh total in 2024 (+29% YoY)",
+        "Germany: solar curtailment surged 97% to 1,389 GWh in 2024",
+        "Without grid investment, curtailment projected to reach 15-20% by 2030, costing $50B annually globally"
+      ],
+      "confidence": "high",
+      "implication": "Curtailment is the paradox of the energy transition: there is abundant renewable generation that the grid cannot absorb. The 29% YoY increase in California and 97% surge in Germany demonstrate that this is an accelerating structural problem, not an edge case. This creates an economic opportunity for battery storage and demand flexibility — but also means renewable capacity additions produce diminishing returns without grid modernization. Data center co-location with curtailed renewable sources (behind-the-meter) becomes the rational market response.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["US", "EU", "Global"],
+      "time_horizon": "near-to-medium-term (2026-2030)"
+    },
+    {
+      "id": "v38-S21",
+      "force": "F6_energy",
+      "title": "Lithium Rebounds 80% YoY to 138,000 CNY/T — Energy Storage Boom Drives Demand",
+      "source": "Trading Economics (Feb 11, 2026); Nasdaq (2026); MIT Technology Review (Jan 2026)",
+      "key_data": [
+        "Lithium at 138,000 CNY/T on Feb 11, 2026 — up 80.27% year-over-year despite recent pullback from 180,000 CNY/T peak",
+        "Lithium carbonate futures trimmed from 2-year high of 180,000 CNY/T (Jan 26) to ~160,000 CNY/T",
+        "Energy storage boom driving demand alongside EV sector",
+        "2026 forecast range: 80,000-200,000 CNY/T ($11,432-$28,580/ton) — wide uncertainty band"
+      ],
+      "confidence": "medium",
+      "implication": "The 80% YoY rebound from the 2024-2025 lithium price crash signals a supply-demand rebalancing. The wide forecast range (80K-200K) reflects genuine uncertainty about storage deployment pace and Chinese EV demand trajectory. Grid-scale storage is now the marginal demand driver alongside EVs — and both are being pulled forward by AI data center power needs (batteries for backup and peak shaving). Lithium price recovery, if sustained, validates the commodity supercycle thesis for energy transition metals.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["Global", "China"],
+      "time_horizon": "near-term (2026)"
+    },
+    {
+      "id": "v38-S22",
+      "force": "F6_energy",
+      "title": "Texas Data Center Boom — 2+ GW of New Capacity Announced Feb 2026",
+      "source": "Data Center Knowledge (Feb 2026); Construction Dive (2026)",
+      "key_data": [
+        "OpenAI/SB Energy: 1.2 GW Milam County data center",
+        "Rowan Digital Infrastructure: 300 MW Project Temple, 700-acre site, operations 2027",
+        "Crow Holdings: 245 MW data center campus in central Dallas",
+        "Soluna/Metrobloks: 100+ MW initial, 300+ MW expansion roadmap in Willacy County",
+        "KKR committed additional $1.5B equity to data center operator GTR"
+      ],
+      "confidence": "high",
+      "implication": "Texas is becoming the default location for hyperscale data center deployment: deregulated ERCOT grid, no state income tax, available land, favorable permitting. 2+ GW of announced capacity in a single month for a single state is unprecedented. The KKR $1.5B equity commitment confirms institutional capital continues to flow into data center infrastructure. The risk is ERCOT grid reliability — Texas grid has demonstrated vulnerability under extreme weather, and adding 2+ GW of data center load increases that systemic risk.",
+      "patterns_affected": ["P-038"],
+      "geographic_scope": ["US"],
+      "time_horizon": "near-term (2026-2027)"
+    }
+  ],
+  "force_velocity_assessments": {
+    "F1_technology": {
+      "velocity": "accelerating",
+      "change": "unchanged from v3-7",
+      "rationale": "Post-launch data confirms the Feb 5 triple release created genuine capability discontinuity. Key new signal: benchmark fragmentation means no single model dominates all axes, driving multi-model strategies. AI coding adoption at 84% with 41% of code AI-generated confirms professional services transformation is underway. Agent platforms (Cowork + Frontier) both shipping enterprise-grade features. Alibaba RynnBrain extends the Chinese open-source strategy to physical AI/robotics. GPT-5.3 'high' cybersecurity risk classification creates a new precedent for deployment constraints."
+    },
+    "F3_geopolitics": {
+      "velocity": "accelerating",
+      "change": "intensifying — multiple binary events approaching",
+      "rationale": "Three catalysts converging: Supreme Court IEEPA ruling (Feb 20+), India AI Summit (Feb 16-20), and March 11 federal AI regulatory deadline. The Trump-India trade deal formalization (Feb 6 EO) shifts India toward US alignment. 300 state AI bills create regulatory fragmentation that March 11 outcome may resolve or worsen. Germany EUR 108B defense budget confirms European rearmament is structural. NATO DIANA scaling. SB 53 enforcement against OpenAI tests state AI safety law viability."
+    },
+    "F6_energy": {
+      "velocity": "accelerating",
+      "change": "supply constraints sharpening",
+      "rationale": "Meta's 6.6 GW nuclear commitment validates nuclear as the baseload solution. DOE directive to FERC (April 30 deadline) could eliminate the grid interconnection bottleneck. But physical constraints are compounding: copper deficit widening to 330 kt, curtailment exploding, 2+ GW of new Texas data center capacity announced in a single month. 15 nuclear reactors coming online globally in 2026 helps but addresses medium-term, not the near-term gap. The tension between AI infrastructure demand growth rate and energy supply growth rate is the defining constraint of 2026."
+    }
+  },
+  "patterns_reinforced": ["P-001", "P-006", "P-028", "P-030", "P-038"],
+  "new_pattern_candidates": [
+    {
+      "description": "P-NEW: AI Safety Regulation Enforcement Cycle — SB 53 enforcement against OpenAI, 300 state bills, March 11 federal deadline converging into first real regulatory test for frontier AI deployment. If enforcement holds, creates a 'compliance moat' favoring large labs; if preempted, accelerates deployment but defers safety governance.",
+      "evidence": ["v38-S01", "v38-S11"]
+    },
+    {
+      "description": "P-NEW: Physical Commodity Bottleneck for AI Scaling — Copper deficit, CoWoS packaging capacity, grid interconnection queues, and lithium supply volatility collectively define the physical limits of AI infrastructure growth. Financial models project exponential AI scaling; physical commodity constraints impose linear or sub-linear supply responses.",
+      "evidence": ["v38-S18", "v38-S20", "v38-S21", "v38-S22"]
+    }
+  ]
+}

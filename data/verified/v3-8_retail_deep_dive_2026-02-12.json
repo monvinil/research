@@ -1,0 +1,673 @@
+{
+  "sector": "Retail Trade",
+  "naics": "44-45",
+  "cycle": "v3-8",
+  "date": "2026-02-12",
+  "agent": "Agent B (Analyst)",
+  "type": "sector_deep_dive",
+
+  "sector_overview": {
+    "headline": "NAICS 44-45 is the largest private-sector employer in the US economy (15.53M workers, 1.07M establishments) and the sector where AI automation meets the average American worker. Retail wages ($791/wk, $41,140 annual) are 43% below the economy average ($1,392/wk), creating LOW Baumol stored energy (0.57 score) but MASSIVE absolute scale for transformation. The sector is bifurcating: e-commerce (16.4-18% of sales, growing) versus physical retail (800+ closures announced 2026) with an emerging third category -- AI-augmented omnichannel -- absorbing both. Retail media networks ($69B in 2026) are creating a new profit layer that subsidizes consumer-facing losses. Dollar stores expanding (450+ new DG stores in 2026) while department stores and specialty retail contract. Self-checkout adoption at 87% of consumers, cashierless market growing 13.7% CAGR. Warehouse automation ($181B by 2031) and micro-fulfillment ($10B by 2026) are restructuring the back-end while front-end labor displacement concentrates on entry-level, young, female, and minority workers -- the most politically sensitive displacement in the economy.",
+
+    "sector_economics": {
+      "total_employment_2023": 15529320,
+      "total_employment_2022": 15479044,
+      "employment_growth_pct": 0.3,
+      "total_establishments_2023": 1072099,
+      "total_establishments_2022": 1058672,
+      "establishment_growth_pct": 1.3,
+      "avg_weekly_wage_2023": 791,
+      "avg_annual_pay_2023": 41140,
+      "avg_weekly_wage_2022": 778,
+      "wage_growth_pct": 1.7,
+      "economy_avg_weekly_wage_2023": 1392,
+      "wage_ratio_to_economy": 0.57,
+      "sector_baumol_score": 0.57,
+      "total_annual_wages_2023": 638881883966,
+      "avg_workers_per_establishment": 14.5,
+      "fragmentation_proxy": 0.069,
+      "labor_share_of_costs_estimate": 12,
+      "notes": "Baumol score of 0.57 (wages 43% below economy average) means LOW stored energy for wage-driven disruption -- opposite of financial services or healthcare. The opportunity is SCALE and LABOR SUBSTITUTION, not Baumol cure. 15.53M workers makes this the single largest pool of jobs exposed to AI automation. Labor share of costs ~12% for retail overall (low vs 30-50% in services), but labor IS the customer experience in physical retail. Establishment growth (+1.3%) outpacing employment growth (+0.3%) signals fragmentation through new small formats (dollar stores, specialty) while large formats shed workers."
+    },
+
+    "force_drivers": ["F1_technology", "F2_demographics", "F5_psychology", "F4_capital"],
+    "primary_patterns": ["P-027", "P-006", "P-036"],
+
+    "data_sources": [
+      "BLS QCEW 2022-2023 annual averages (private sector, national)",
+      "US Census Bureau Quarterly Retail E-Commerce Sales (Q3 2025)",
+      "Coresight Research Store Tracker 2025-2026",
+      "Fortune Business Insights Self-Checkout Market Report",
+      "eMarketer Retail Media Ad Spending Forecast H2 2025",
+      "ThredUp 2025 Resale Report",
+      "Symbotic-Walmart robotics deal announcements",
+      "Dollar General FY2025-2026 expansion guidance",
+      "v3-8 signal batch: v38-S30 through v38-S53"
+    ]
+  },
+
+  "subsector_analysis": {
+    "441_motor_vehicles_parts": {
+      "naics": "441",
+      "employment_2023": 2031592,
+      "employment_2022": 2006581,
+      "employment_change_pct": 1.2,
+      "establishments_2023": 123827,
+      "avg_weekly_wage_2023": 1321,
+      "avg_annual_pay_2023": 68668,
+      "wage_change_pct": -2.4,
+      "ai_readiness": "medium",
+      "notes": "Highest-wage retail subsector ($68.7K annual). Auto dealers (4411: 1.27M emp) dominate. EV transition creating parts dealer decline (44112: -6.3% employment). Commission-based sales force partially insulated from automation but AI pricing tools, virtual showrooms, and online-first buying (Carvana, CarMax digital) are restructuring. Tire/parts stores (4413: 582K emp) growing +1.7% as vehicle fleet ages. Wage DECLINE of -2.4% suggests post-pandemic normalization of pandemic-era pricing power."
+    },
+    "444_building_materials": {
+      "naics": "444",
+      "employment_2023": 1408284,
+      "employment_2022": 1428420,
+      "employment_change_pct": -1.4,
+      "establishments_2023": 72722,
+      "avg_weekly_wage_2023": 830,
+      "avg_annual_pay_2023": 43149,
+      "wage_change_pct": 2.9,
+      "ai_readiness": "low-medium",
+      "notes": "Home improvement (4441: 1.22M emp, dominated by Home Depot/Lowes duopoly). Hardware stores declining (-3.6% at 44411 level). Lawn/garden stores (44414: 175K emp) growing +2.1%. This is a sector where physical product inspection matters -- low e-commerce penetration (~15%). AI opportunity is in project estimation, inventory optimization, and contractor services. Construction labor crisis (v38-S36) creates downstream demand."
+    },
+    "445_food_beverage": {
+      "naics": "445",
+      "employment_2023": 3221092,
+      "employment_2022": 3177503,
+      "employment_change_pct": 1.4,
+      "establishments_2023": 159884,
+      "avg_weekly_wage_2023": 619,
+      "avg_annual_pay_2023": 32194,
+      "wage_change_pct": 3.9,
+      "ai_readiness": "high",
+      "notes": "LARGEST retail subsector by employment. Supermarkets (445110: 2.6M emp) are the core. Grocery is THE frontier for retail automation: self-checkout already at 87% consumer adoption, micro-fulfillment centers ($10B market by 2026), automated inventory scanning robots (Simbe Tally in 5,000+ stores). Specialty food (4452: 240K emp) growing. Convenience stores (445132: 36K private emp, but much more under 457 gasoline). Wages extremely low ($32K annual) -- among lowest in economy. This is where displaced workers come FROM, not where they go TO. Immigration enforcement (v38-S36) affects grocery workforce in processing and stocking."
+    },
+    "449_furniture_home_electronics": {
+      "naics": "449",
+      "employment_2023": 842336,
+      "employment_2022": 899228,
+      "employment_change_pct": -6.3,
+      "establishments_2023": 91288,
+      "avg_weekly_wage_2023": 1134,
+      "avg_annual_pay_2023": 58952,
+      "wage_change_pct": 4.5,
+      "ai_readiness": "high",
+      "notes": "FASTEST DECLINING retail subsector. Electronics/appliance (4492: 415K emp) lost -6.0% YoY -- Amazon effect at maximum. Furniture (4491: 427K emp) lost -6.7%. Home furnishings (44912: 216K emp) lost -8.9%. This is the subsector most fully disrupted by e-commerce. Remaining physical stores are showroom models (Wayfair, RH). Higher wages ($59K) reflect remaining commission-heavy and knowledge-intensive roles. Establishments declining -1.4% -- slower than employment, meaning stores are shrinking headcount before closing."
+    },
+    "455_general_merchandise": {
+      "naics": "455",
+      "employment_2023": 3212411,
+      "employment_2022": 3180362,
+      "employment_change_pct": 1.0,
+      "establishments_2023": 79980,
+      "avg_weekly_wage_2023": 619,
+      "avg_annual_pay_2023": 32171,
+      "wage_change_pct": 2.1,
+      "ai_readiness": "high",
+      "notes": "Second largest subsector. Department stores (4551: 966K emp) barely growing +0.2% -- structural stagnation. Warehouse clubs/supercenters (455211: 1.63M emp, dominated by Walmart/Costco/Sam's) growing +0.6%. Other general merchandise (455219: 614K emp, includes dollar stores) growing +3.4% with 5.8% establishment growth -- fastest-growing format in retail. Dollar General (450 new stores 2026) and Dollar Tree (300 new stores) driving expansion. This bifurcation (dollar stores growing, department stores dying) is THE structural story of general merchandise."
+    },
+    "456_health_personal_care": {
+      "naics": "456",
+      "employment_2023": 1097725,
+      "employment_2022": 1099643,
+      "employment_change_pct": -0.2,
+      "establishments_2023": 117738,
+      "avg_weekly_wage_2023": 929,
+      "avg_annual_pay_2023": 48331,
+      "wage_change_pct": 3.3,
+      "ai_readiness": "medium",
+      "notes": "Pharmacies (45611: 722K emp) declining -1.7% as CVS/Walgreens close hundreds of stores. Cosmetics (45612: 183K emp) growing +3.6% -- experience retail. Optical (45613: 74K emp) growing +4.7%. Pharmacy automation (robotic dispensing, AI drug interaction checking) is advancing but pharmacist licensing creates regulatory moat. The CVS/Walgreens closure wave is restructuring healthcare access in communities. Higher wages ($48K) reflect pharmacist/technician labor."
+    },
+    "457_gasoline_stations": {
+      "naics": "457",
+      "employment_2023": 1047472,
+      "employment_2022": 1029932,
+      "employment_change_pct": 1.7,
+      "establishments_2023": 118088,
+      "avg_weekly_wage_2023": 641,
+      "avg_annual_pay_2023": 33314,
+      "wage_change_pct": 4.7,
+      "ai_readiness": "medium",
+      "notes": "Gas stations with convenience (45711: 882K emp) growing +2.2% as c-stores expand food and services. Fuel dealers (4572: 71K emp) stable. EV transition creates long-term existential threat but timeline is 10-15 years for majority displacement. Near-term, gas stations are evolving into convenience/food hubs. AI opportunity in demand forecasting, inventory, and EV charging network optimization."
+    },
+    "458_clothing_accessories": {
+      "naics": "458",
+      "employment_2023": 1152891,
+      "employment_2022": 1139670,
+      "employment_change_pct": 1.2,
+      "establishments_2023": 120399,
+      "avg_weekly_wage_2023": 640,
+      "avg_annual_pay_2023": 33266,
+      "wage_change_pct": 2.1,
+      "ai_readiness": "medium-high",
+      "notes": "Clothing stores (45811: 856K emp) growing modestly. Shoe stores (4582: 174K emp) stable. Jewelry (4583: 123K emp) stable. Low wages ($33K) and high part-time share. E-commerce penetration high in apparel (~30%). AI opportunity in virtual try-on, personalization, demand forecasting. Recommerce/resale ($97.7B global market, 10.5% CAGR) is creating parallel channel that disrupts new clothing sales. 800+ store closures in 2026 concentrated in apparel (Saks Off 5th 57 stores, Carter's 150 stores)."
+    },
+    "459_sporting_hobby_book_misc": {
+      "naics": "459",
+      "employment_2023": 1515518,
+      "employment_2022": 1517704,
+      "employment_change_pct": -0.1,
+      "establishments_2023": 188173,
+      "avg_weekly_wage_2023": 706,
+      "avg_annual_pay_2023": 36690,
+      "wage_change_pct": 2.2,
+      "ai_readiness": "medium",
+      "notes": "Most fragmented subsector (188K establishments). Sporting goods (4591: 494K emp) stable. Used merchandise (4592: 69K emp) declining -6.1% as online resale platforms absorb market. Tobacco/cannabis (45991: 139K emp) stable but regulatory risk. Pet supplies (4595: 202K emp) growing +6.1% -- fastest growing category. Florists declining. Art dealers stable but small. All other retail (45999: 484K emp) is a catch-all growing modestly. This subsector is the 'long tail' of retail -- many small niches."
+    }
+  },
+
+  "transformation_projections": {
+    "2026": "CURRENT STATE: Retail bifurcation accelerates. 800+ announced store closures (Saks Off 5th, Carter's, Macy's locations) concentrate in apparel and department stores. Dollar stores expand 750+ new locations. E-commerce reaches 17-18% of total retail. Self-checkout at 87% consumer adoption. Amazon passes $700B revenue. Retail media networks hit $69B. Micro-fulfillment centers reach $10B cumulative deployment. First widespread AI pricing tools (dynamic markdown, demand-responsive) deployed by top-20 retailers. Cashier roles begin measurable decline in grocery and general merchandise. Tariffs ($1,300/household) compress consumer spending, accelerating shift to discount formats. Humanoid robotics (warehouse) in pilot at Walmart, Amazon facilities.",
+    "2027": "ACCELERATION: AI checkout and inventory automation move from pilot to standard in top-50 retailers. Self-checkout kiosks with AI vision (no scanning) deploy at scale, reducing cashier demand by 10-15% at adopting stores. Warehouse automation reaches critical mass -- Symbotic-type systems operational in 200+ fulfillment centers. Retail media becomes majority of profit for Amazon and Walmart grocery operations. First AI-native retail formats emerge (fully automated convenience stores in urban cores). Dollar store/discount format becomes default for 25%+ of US consumer spending. Grocery delivery/BOPIS (buy online pick up in store) exceeds 20% of grocery sales. Department store closures accelerate -- Macy's, Nordstrom, JCPenney further shrink footprints. Net retail employment begins measurable decline (-50K to -100K annual).",
+    "2028": "BIFURCATION CRYSTALLIZES: Retail splits into three distinct employment tiers: (1) High-automation warehouse/fulfillment (fewer workers, higher wages), (2) Experience retail (cosmetics, pet, sporting goods -- growing but small), (3) AI-augmented mass retail (grocery, general merchandise -- same stores, fewer workers). Cashierless/scan-and-go becomes standard at grocery chains. AI demand forecasting reduces overstock waste by 20-30%, compressing need for markdown/clearance operations. Recommerce reaches 15%+ of clothing sales. EV transition begins visible impact on gas station economics in coastal markets. Humanoid robots operational in 500+ warehouses. Net retail employment down 200-300K from 2026 peak.",
+    "2029": "LABOR MARKET IMPACT PEAK: Cumulative retail job losses reach 500K-700K from 2026 baseline. Grocery automation matures -- average supermarket operates with 30% fewer workers than 2025. Pharmacy closures plateau as remaining CVS/Walgreens reinvent as healthcare hubs. AI visual merchandising and store layout optimization standard. Retail becomes politically contested -- state-level legislation to protect cashier jobs emerges (similar to NJ gas pump attendant laws). Rural retail deserts expand as dollar stores and online replace traditional Main Street retail. Last-mile delivery automation (drones, autonomous vehicles) begins material deployment in suburban markets.",
+    "2030": "NEW EQUILIBRIUM EMERGING: Retail employment stabilizes at ~14M (down ~1.5M from 2023 peak) as new AI-augmented roles partially offset automation losses. Warehouse clubs/supercenters have fully automated back-of-store operations. E-commerce reaches 25%+ of total retail. Retail media networks exceed $120B. Physical stores that survive are 'experience + pickup' hybrid models. Department store format largely extinct outside luxury tier. Dollar stores peak and begin their own automation cycle. Grocery dark stores and micro-fulfillment serve 30%+ of urban grocery demand.",
+    "2031": "STRUCTURAL TRANSFORMATION COMPLETE: Retail is a fundamentally different sector -- fewer workers ($14M vs $15.5M), higher wages for remaining workers ($50K+ vs $41K), more automated, more concentrated. Amazon, Walmart, Costco control 40%+ of total retail sales. Independent retail survives in experience niches (pet, sporting goods, specialty food) and dollar/discount. The 1.5M displaced workers have distributed to healthcare (~400K), warehouse/logistics (~300K), gig economy (~200K), and structural unemployment/underemployment (~600K). This is the largest sectoral labor reallocation since manufacturing decline 2000-2010."
+  },
+
+  "labor_reallocation_model": {
+    "thesis": "Where do 1.5M displaced retail workers go? This is the central social question of AI-era retail transformation. Retail workers are disproportionately young (median age 28-32), female (52%), minority (35% Hispanic, 12% Black), and without 4-year degrees (70%+). These demographics have LIMITED transferability to high-growth AI/tech sectors.",
+    "total_displacement_estimate_2026_2031": "1.2M-1.8M net jobs eliminated (central estimate: 1.5M)",
+    "displacement_confidence": "medium",
+    "healthcare_absorption": "300K-500K. Healthcare is the only sector consistently adding 50K+/month jobs. Retail workers can transition to home health aides, medical assistants, and nursing support roles. BUT: healthcare training pipeline is bottlenecked (92K qualified nursing applicants rejected, per v38-S33). Realistic absorption: 400K over 5 years, primarily in lower-wage care roles ($30-40K).",
+    "warehouse_logistics_shift": "200K-400K. Warehouse and fulfillment centers are growing BUT increasingly automated. Amazon and Walmart adding warehouse capacity while reducing per-facility headcount. Net absorption limited to 300K, and these jobs are often worse conditions than retail (injury rates, schedules). Humanoid robotics (v38-S40) threatens this absorption channel by 2029-2030.",
+    "gig_economy_absorption": "150K-250K. Delivery driving (DoorDash, Instacart, Amazon Flex) absorbs some displaced retail workers but at lower total compensation (no benefits, variable hours). This is displacement-to-precarity, not displacement-to-stability. Autonomous delivery threatens this channel by 2030.",
+    "remaining_retail_reabsorption": "200K-300K. Growing retail segments (dollar stores, pet, cosmetics/experience retail, cannabis) absorb some displaced workers. Dollar General adding 450+ stores/year creates ~15K-20K jobs annually. But these are often lower-wage than jobs lost.",
+    "structural_unemployment": "300K-600K. The uncomfortable truth: a significant fraction of displaced retail workers will not find equivalent employment. Without college degrees and with limited technical skills, many face permanent downward mobility or withdrawal from labor force. This concentrates in rural areas where retail is often the largest employer and alternatives are scarce.",
+    "net_displacement_estimate": "At 15.53M current workers, even a 10% displacement (1.55M) over 5 years is 310K per year -- more than twice the monthly job creation rate of the entire economy in 2025 (15K/month revised). This displacement will be partially masked by natural attrition (high turnover sector, 60%+ annual turnover) but the JOBS will not be recreated as workers leave.",
+    "demographic_equity_impact": "Retail displacement is regressive: it falls hardest on workers least equipped to transition. Hispanic women (overrepresented in grocery), young Black workers (overrepresented in general merchandise), and rural workers (limited alternatives) bear disproportionate burden. This is the inverse of financial services displacement (which affects higher-income, better-educated workers with more mobility)."
+  },
+
+  "format_evolution": {
+    "physical_stores": {
+      "current_share": "82-84% of retail sales",
+      "trajectory": "Declining but NOT disappearing. 800+ closures in 2026, concentrated in apparel and department stores. Dollar store expansion partially offsets. By 2031, physical stores serve as experience/pickup/community hubs rather than primary transaction venues for many categories.",
+      "2031_share": "72-75% of retail sales",
+      "confidence": "medium-high"
+    },
+    "e_commerce": {
+      "current_share": "16.4-18% of retail sales (Census Q3 2025: 16.4%)",
+      "trajectory": "Steady growth at ~1-1.5 pp per year. Amazon at $700B revenue. Social commerce emerging (TikTok Shop). AI personalization driving conversion rates higher. Categories still resistant: grocery (but growing fast), home improvement, automotive.",
+      "2031_share": "22-25% of retail sales",
+      "confidence": "high"
+    },
+    "hybrid_omnichannel": {
+      "current_share": "Not separately measured but estimated 8-12% of retail transactions involve cross-channel (BOPIS, ship-from-store, showrooming)",
+      "trajectory": "Fastest growing format. Retailers with integrated online+offline outperform pure-play in both channels (6.9% online sales lift from new store openings). This becomes the dominant model for surviving physical retailers.",
+      "2031_share": "15-20% of retail transactions (as distinct measured category)",
+      "confidence": "medium"
+    },
+    "autonomous_formats": {
+      "current_share": "<0.1% (Amazon Go mostly closed; cashierless convenience in pilot)",
+      "trajectory": "Slow start due to Amazon Go failure, but AI vision technology improving rapidly. Cashierless will re-emerge as scan-and-go mobile checkout rather than Amazon's sensor-ceiling model. Unattended retail (vending, micro-markets) growing in workplace and transit.",
+      "2031_share": "2-4% of retail transactions",
+      "confidence": "low-medium"
+    }
+  },
+
+  "geographic_impact": {
+    "rural_counties": {
+      "headline": "Retail is the largest private employer in 25%+ of rural US counties",
+      "dynamics": "Dollar store expansion is both lifeline and threat: Dollar General/Dollar Tree provide access to goods but eliminate local grocery stores and independent retailers. Walmart supercenter closures in marginal-volume rural markets create 'retail deserts.' Online retail partially fills gap but requires broadband access. Immigration enforcement (v38-S36) compounds rural retail labor shortage in agricultural regions. Rural retail displacement has NO absorption alternatives -- healthcare, warehouse, and gig economy are concentrated in urban/suburban areas.",
+      "severity": "high"
+    },
+    "urban_cores": {
+      "headline": "Urban retail transforming toward convenience, experience, and dark stores",
+      "dynamics": "Dense urban areas see grocery automation first (micro-fulfillment, dark stores, 15-minute delivery). High rents accelerate store closures faster than suburbs. But experience retail (cosmetics, pet, food halls) replaces traditional retail in desirable locations. Urban retail workers have more alternative employment options (healthcare, services, gig). Pharmacy closures (CVS/Walgreens) create urban healthcare access gaps.",
+      "severity": "medium"
+    },
+    "suburban": {
+      "headline": "Suburban retail faces format transformation more than elimination",
+      "dynamics": "Strip malls and power centers converting from pure retail to mixed-use (retail + healthcare + services + last-mile logistics). Warehouse clubs (Costco) and supercenters (Walmart) remain suburban anchors but with reduced labor per square foot. Dollar stores expanding into inner-ring suburbs. BOPIS/curbside pickup optimized for suburban car-centric shopping patterns. Suburban retail employment decline is moderate (-5-10% over 5 years) but concentrated in traditional anchor stores.",
+      "severity": "medium"
+    }
+  },
+
+  "fear_friction_assessment": {
+    "consumer_adoption_friction": {
+      "level": "low",
+      "rationale": "87% of consumers already use self-checkout. E-commerce adoption is mature. Consumers have demonstrated willingness to adopt AI-powered retail (personalized recommendations, chatbots, automated checkout). The fear friction for retail is on the WORKER side, not the consumer side. Consumers actively prefer automation that reduces wait times and friction."
+    },
+    "worker_displacement_anxiety": {
+      "level": "high",
+      "rationale": "64% of workers 'job hugging' (v38-S45) -- refusing to change roles due to AI fear. Retail workers are among the MOST anxious because: (1) they can see self-checkout kiosks replacing their colleagues in real-time; (2) they lack transferable skills for AI-economy roles; (3) media narrative of 'retail apocalypse' is constant; (4) they are already in low-wage precarious positions. The anticipatory displacement loop (v38-S47, P-041-candidate) is strongest in retail because the threat is visible and personal."
+    },
+    "community_impact_anxiety": {
+      "level": "high",
+      "rationale": "Retail stores are community anchors, especially in rural areas and small towns. Store closures affect foot traffic for adjacent businesses, tax revenue for local governments, and social gathering spaces. The 'Main Street death' narrative is politically potent and drives resistance to further automation. State-level 'cashier protection' legislation may emerge by 2028-2029 (precedent: NJ gas pump attendant law, pharmacy staffing minimums)."
+    },
+    "political_sensitivity": {
+      "level": "very high",
+      "rationale": "Retail displacement is the most politically visible AI impact. Unlike financial services (concentrated in NYC/Charlotte, affects affluent workers) or IT services (affects credentialed workers), retail displacement hits every congressional district, every small town, every demographic group. It affects the voters most likely to be swing votes in 2026 midterms. Tariff affordability ($1,300/household, v38-S42) + AI job anxiety (v38-S45) + retail closures create a compound political issue."
+    }
+  },
+
+  "patterns_affected": ["P-027", "P-006", "P-036", "P-041-candidate"],
+  "patterns_notes": {
+    "P-027_staffing_agencies": "Retail staffing agencies (seasonal hiring, temp workers) face structural decline as AI scheduling optimizes permanent workforce and automation reduces peak-season hiring needs. Retail temp staffing was ~$8B market -- projected to decline 20-30% by 2030.",
+    "P-006_ai_platform": "Retail is the MASS MARKET deployment target for AI platforms. Unlike enterprise AI (Trough of Disillusionment, v38-S44), retail AI has clear, measurable ROI: checkout automation, inventory optimization, shrinkage reduction, demand forecasting. 9 in 10 retailers already deploy some AI.",
+    "P-036_white_collar_displacement": "Retail's white-collar layer (buyers, merchandisers, marketing, supply chain planners) faces AI displacement alongside blue-collar (cashiers, stockers). AI demand forecasting replaces merchandising teams; AI marketing replaces retail marketing teams. But scale is smaller than blue-collar impact.",
+    "P-041_anticipatory_displacement": "Retail is ground zero for the anticipatory displacement loop. Workers SEE self-checkout replacing cashiers. They hear about warehouse robots. They fear AI pricing will eliminate sales jobs. This fear suppresses consumption (frugality) and job mobility (job hugging), creating a self-reinforcing cycle."
+  },
+
+  "cross_references": {
+    "staffing_canary_P027": "Retail staffing agencies already in decline. Seasonal hiring agencies reporting 15-20% volume drops as retailers use AI scheduling to reduce temp needs.",
+    "entry_level_extinction": "Retail has historically been America's entry-level employer: first job for teenagers, immigrants, career changers. As automation eliminates cashier and stocker roles, the entry ramp to the labor market narrows. This has generational implications for workforce development.",
+    "healthcare_monoculture_P040": "Healthcare absorbing displaced retail workers creates single-sector dependency (v38-S30: healthcare = 63% of job creation). If retail sends 400K workers to healthcare, it amplifies the monoculture risk.",
+    "tariff_consumption_squeeze": "Tariffs ($1,300/household) + inflation + AI job anxiety = consumer frugality. This accelerates shift to discount formats (dollar stores, Walmart) and away from full-price retail (department stores, specialty). The macro environment is amplifying retail's structural challenges.",
+    "humanoid_robotics_timeline": "Humanoid robotics funding up 300% (v38-S40). Warehouse deployment 2026-2028, store deployment 2029-2031. This creates a SECOND wave of retail automation after the current software/AI wave. Workers displaced by cashier automation who move to warehouse roles face re-displacement by robotics within 3-5 years."
+  },
+
+  "retail_media_networks": {
+    "market_size_2025": 58790000000,
+    "market_size_2026": 69330000000,
+    "growth_rate": "18-20% annually",
+    "amazon_share": "77% of US digital retail media",
+    "walmart_connect_revenue": 4400000000,
+    "significance": "Retail media networks are transforming the profit structure of retail. Amazon and Walmart increasingly monetize their customer data and traffic through advertising, not product margins. This means: (1) physical retail operations can run at break-even or loss while advertising generates profit; (2) smaller retailers without media networks face structural profit disadvantage; (3) retail becomes an ADVERTISING business with a logistics problem, not a LOGISTICS business with a sales problem. This is the most important structural shift in retail economics since e-commerce.",
+    "model_card_reference": "MC-V38-44-003"
+  },
+
+  "recommerce_disruption": {
+    "global_market_2026": 97680000000,
+    "us_market_2025": 64290000000,
+    "growth_rate": "10.5% CAGR global, 11.2% US",
+    "online_resale_growth": "23% in 2024 (ThredUp)",
+    "gen_z_participation": "80% identify as recommerce participants",
+    "significance": "Recommerce creates a parallel retail channel that cannibalizes new merchandise sales. Every dollar spent on secondhand is a dollar NOT spent at traditional retailers. Gen Z's 80% participation rate means this is generational, not cyclical. ThredUp's Resale-as-a-Service model (powering Adidas, Crocs, JCPenney) means even traditional retailers are building the infrastructure that disrupts their own primary sales.",
+    "model_card_reference": "MC-V38-44-010"
+  },
+
+  "model_cards": [
+    {
+      "id": "MC-V38-44-001",
+      "name": "AI-Powered Autonomous Checkout Platform",
+      "architecture": "saas",
+      "sector_naics": "4451",
+      "sector_name": "Grocery and Convenience Stores",
+      "one_liner": "Computer vision + weight sensor checkout that eliminates scanning, reducing cashier labor 60-80% per store while cutting shrinkage 30%. Serves the 58K supermarkets and 100K+ convenience stores.",
+      "forces": ["F1_technology", "F4_capital"],
+      "macro_source": "F1: AI vision models (87% consumer self-checkout adoption + cashierless market growing 13.7% CAGR) meet F4: retailer capex shifting from labor to automation",
+      "scores": {
+        "SN": 9,
+        "FA": 8,
+        "EC": 8,
+        "TG": 8,
+        "CE": 7
+      },
+      "composite": 81.0,
+      "category": ["STRUCTURAL_WINNER"],
+      "deep_dive_evidence": "Self-checkout at 87% consumer adoption. Cashierless market $6.89B growing to $13.5B by 2030 (13.7% CAGR). 9 in 10 retailers deploying AI. Grocery (3.22M workers, $32K avg wage) is the largest subsector with lowest wages -- maximum labor substitution incentive. AI vision replaces the failing Amazon Go sensor-ceiling model with cheaper, scalable alternatives.",
+      "what_must_be_true": [
+        "Computer vision accuracy must exceed 99.5% for scan-free checkout to avoid customer friction and shrinkage increase",
+        "Retailer capex budgets must prioritize checkout automation over other investments",
+        "Labor cost savings must exceed technology implementation cost within 18-24 months",
+        "Consumer acceptance must remain high despite job displacement visibility"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-002",
+      "name": "Warehouse Fulfillment Robotics Platform",
+      "architecture": "automation",
+      "sector_naics": "4541",
+      "sector_name": "E-Commerce and Fulfillment",
+      "one_liner": "End-to-end warehouse automation (goods-to-person robots, automated sorting, AI pick-path optimization) for retail fulfillment centers. $181B market by 2031 at 31.6% CAGR.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "macro_source": "F1: Robotics + AI convergence (Symbotic $200M Walmart deal, NVIDIA Jetson T4000 at $1,999). F2: Labor shortage in warehouse roles. F4: $700B hyperscaler capex creating logistics infrastructure demand.",
+      "scores": {
+        "SN": 9,
+        "FA": 9,
+        "EC": 9,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 84.0,
+      "category": ["STRUCTURAL_WINNER"],
+      "deep_dive_evidence": "Retail robotics growing from $20.1B (2024) to $181.1B (2031) at 31.6% CAGR. Symbotic acquired Walmart's Advanced Systems division for $200M. Humanoid robotics funding up 300% (v38-S40). AMR/AGV market $13.2B by 2026. NVIDIA Jetson T4000 ($1,999) makes robot compute cheaper than smartphones. Alibaba open-sourced RynnBrain VLA model (v38-S06). Physical AI is the next major platform after software AI.",
+      "what_must_be_true": [
+        "Humanoid robot cost must reach <$25K for mass retail deployment (NVIDIA + hardware currently approaching this)",
+        "VLA models must achieve reliability for varied warehouse environments (RynnBrain claims SOTA)",
+        "Warehouse operators must have capital for automation conversion ($5-15M per facility)",
+        "Labor shortage in warehouse must persist (currently structural, reinforced by immigration enforcement)"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-003",
+      "name": "Retail Media Network Platform",
+      "architecture": "platform",
+      "sector_naics": "44-45",
+      "sector_name": "Retail Trade (Cross-Sector)",
+      "one_liner": "Advertising platform built on retailer first-party data, transforming retail from margin business to media business. $69.3B market in 2026, growing 20% annually. Amazon (77% share) + Walmart Connect ($4.4B) dominate.",
+      "forces": ["F1_technology", "F4_capital"],
+      "macro_source": "F1: AI-powered ad targeting on first-party retail purchase data. F4: Advertising dollars shifting from social media to retail media where purchase intent is directly measurable.",
+      "scores": {
+        "SN": 10,
+        "FA": 9,
+        "EC": 9,
+        "TG": 6,
+        "CE": 8
+      },
+      "composite": 86.5,
+      "category": ["STRUCTURAL_WINNER"],
+      "deep_dive_evidence": "US retail media spending: $58.8B (2025) to $69.3B (2026), growing 20%/year. Amazon Ads at $56B, 77% market share. Walmart Connect $4.4B, up 27% YoY, +53% globally with Vizio acquisition. Retail media fundamentally changes retail economics: stores and logistics operate at near break-even, advertising generates profit margin. This is why Amazon can undercut on price -- they monetize traffic, not products. Mid-market retailers building their own networks (Kroger Precision Marketing, Target Roundel).",
+      "what_must_be_true": [
+        "First-party retail data must remain more valuable than social media data for ad targeting (currently true and strengthening as cookies phase out)",
+        "Advertisers must continue shifting budgets from social to retail media (strong trend, 20% annual growth)",
+        "Privacy regulation must not restrict retail data monetization (lower risk than social media due to transactional relationship)",
+        "Mid-market retailers must be able to build viable networks, or market concentrates further to Amazon/Walmart"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-004",
+      "name": "AI Demand Forecasting & Inventory Optimization",
+      "architecture": "saas",
+      "sector_naics": "44-45",
+      "sector_name": "Retail Trade (Cross-Sector)",
+      "one_liner": "ML-powered demand prediction that reduces overstock 20-30% and prevents 65% of stockouts. Serves 1M+ retail establishments. $9.6B market growing to $27.2B by 2030.",
+      "forces": ["F1_technology"],
+      "macro_source": "F1: AI forecasting models trained on POS data, weather, events, and economic indicators outperform traditional statistical methods by 30-50% in accuracy.",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 8,
+        "TG": 7,
+        "CE": 5
+      },
+      "composite": 74.0,
+      "category": ["FORCE_RIDER"],
+      "deep_dive_evidence": "AI inventory management market: $7.38B (2023) to $9.6B (2025) to $27.23B by decade end. AI-driven supply chains cutting inventory 20-30%, logistics costs 5-20%. Modern AI prevents 65% of stockouts. With $639B in annual retail wages at stake and thin margins (2-5% net), even small inventory efficiency gains justify significant AI investment. Tariff-driven price volatility (v38-S42) makes accurate demand forecasting MORE valuable, not less.",
+      "what_must_be_true": [
+        "AI demand models must demonstrate ROI within 6-12 months for mid-market retailers",
+        "Data quality from POS systems must be sufficient for ML training",
+        "Retailers must invest in data infrastructure (many small retailers still on legacy systems)",
+        "Forecast accuracy improvements must translate to measurable margin improvement"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-005",
+      "name": "Dynamic Pricing & Markdown Optimization AI",
+      "architecture": "saas",
+      "sector_naics": "4551",
+      "sector_name": "Department Stores and General Merchandise",
+      "one_liner": "Real-time AI pricing engine that optimizes markdowns, promotions, and competitive pricing across millions of SKUs. Reduces markdown losses 15-25% and increases same-store revenue 2-5%.",
+      "forces": ["F1_technology", "F4_capital"],
+      "macro_source": "F1: ML models can process competitor prices, inventory levels, demand signals, and margin targets simultaneously. F4: Tariff-driven cost pressure (v38-S42) makes pricing optimization critical for margin preservation.",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 8,
+        "CE": 5
+      },
+      "composite": 68.5,
+      "category": ["TIMING_ARBITRAGE"],
+      "deep_dive_evidence": "Retailers lose $300B+ annually to markdowns. AI pricing can reduce markdown losses 15-25% by optimizing timing and depth. Amazon changes prices 2.5M times/day; traditional retailers change prices weekly or monthly. This creates a competitive arbitrage: AI-enabled retailers capture margin that manual-pricing retailers give away. Tariff-induced cost volatility ($1,300/household additional costs) makes dynamic pricing MORE valuable as input costs become unpredictable. Department stores (966K employees) and general merchandise (3.21M employees) are primary market.",
+      "what_must_be_true": [
+        "Retailers must overcome organizational resistance to algorithmic pricing (cultural barrier, not technical)",
+        "Consumer backlash to visible dynamic pricing must remain manageable",
+        "Tariff and supply chain volatility must persist (creating demand for real-time pricing adjustment)",
+        "Implementation must not require full POS system replacement (integration with legacy systems)"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-006",
+      "name": "Grocery Micro-Fulfillment & Dark Store Platform",
+      "architecture": "managed_service",
+      "sector_naics": "4451",
+      "sector_name": "Grocery Stores",
+      "one_liner": "Automated micro-fulfillment centers (MFCs) and dark stores enabling 15-minute grocery delivery. $10B market by 2026, growing 17.9% CAGR to $28.6B by 2036.",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "macro_source": "F1: Robotics (automated picking/sorting) + AI (demand forecasting, delivery routing). F2: Urban demographic shift demands convenience. F5: Post-pandemic consumer expectation of rapid delivery now permanent.",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 68.5,
+      "category": ["CONDITIONAL"],
+      "deep_dive_evidence": "Dark store fulfillment market $5.7B (2026) to $28.6B (2036) at 17.9% CAGR. Grocery MFCs represent $10B cumulative opportunity by 2026. Instacart partnered with Fabric for MFC technology. Takeoff Technologies launched AI-driven dark store orchestration (Sep 2025). Grocery is largest retail subsector (3.22M workers) with lowest wages ($32K) -- automation ROI is high. BOPIS/curbside already at 15%+ of grocery, trending to 20%+ by 2027. Urban areas with high labor costs are first adopters.",
+      "what_must_be_true": [
+        "Unit economics of MFC-based delivery must reach profitability (currently marginal; improving with volume)",
+        "Consumer willingness to pay delivery fees must persist (or advertising subsidizes delivery cost)",
+        "Urban real estate for dark stores must be available at viable rents (CRE vacancy helps this)",
+        "Fresh grocery picking accuracy must exceed 98% for automated systems"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-007",
+      "name": "Retail Workforce Management AI",
+      "architecture": "saas",
+      "sector_naics": "44-45",
+      "sector_name": "Retail Trade (Cross-Sector)",
+      "one_liner": "AI scheduling, task allocation, and labor optimization platform that reduces labor costs 8-15% by matching staffing to real-time demand. Serves the 15.5M-worker retail labor force.",
+      "forces": ["F1_technology", "F2_demographics"],
+      "macro_source": "F1: ML models optimize scheduling based on traffic patterns, sales forecasts, and employee preferences. F2: Retail's 60%+ annual turnover rate means constant scheduling optimization need.",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 6,
+        "CE": 5
+      },
+      "composite": 65.5,
+      "category": ["CONDITIONAL"],
+      "deep_dive_evidence": "Retail employs 15.53M workers with $639B in annual wages. Even a 10% labor efficiency gain = $64B in savings. 60%+ annual turnover creates constant scheduling churn that AI handles better than human managers. AI scheduling reduces overstaffing during slow periods and understaffing during peaks. This tool is the 'quiet automation' -- it doesn't eliminate cashier JOBS, it eliminates cashier HOURS. Net effect: same number of employees, fewer hours per employee, lower total labor cost. Already deployed by Walmart, Target, Kroger through platforms like Legion Technologies.",
+      "what_must_be_true": [
+        "Predictive labor laws (Oregon, NYC, Chicago) must not prohibit AI scheduling optimization",
+        "Employee satisfaction with AI-generated schedules must be adequate to avoid turnover increase",
+        "Demand forecasting models must account for anomalous events (weather, social media virality)",
+        "Integration with existing HRIS and POS systems must be seamless"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-008",
+      "name": "Last-Mile Delivery Automation Platform",
+      "architecture": "platform",
+      "sector_naics": "4541",
+      "sector_name": "Electronic Shopping and Mail-Order",
+      "one_liner": "Autonomous delivery (sidewalk robots, drones, autonomous vans) platform reducing last-mile delivery cost from $10-15 to $2-4 per package. Pre-revenue but $500B addressable market.",
+      "forces": ["F1_technology", "F6_energy"],
+      "macro_source": "F1: Autonomous driving + drone technology maturing. F6: Electric autonomous vehicles reduce delivery energy costs. Combined with labor shortage in delivery driving.",
+      "scores": {
+        "SN": 7,
+        "FA": 6,
+        "EC": 6,
+        "TG": 9,
+        "CE": 5
+      },
+      "composite": 65.5,
+      "category": ["TIMING_ARBITRAGE"],
+      "deep_dive_evidence": "Last-mile is 53% of total shipping cost. Amazon, Walmart, and Starship Technologies deploying autonomous delivery in select markets. Drone delivery FAA approvals expanding. Autonomous van pilots in sunbelt cities. Market is pre-mass-deployment but timing arbitrage is massive: first mover to autonomous last-mile captures 70-80% cost advantage. E-commerce reaching 17-18% of retail ($1.5T+) means last-mile volume is growing while delivery driver availability is not. Timeline: suburban deployment 2028-2029, urban 2030+.",
+      "what_must_be_true": [
+        "Autonomous vehicle/drone regulatory approval must continue expanding (FAA, state DOTs)",
+        "Technology must handle diverse weather and road conditions (current limitation)",
+        "Consumer acceptance of package delivery by robot/drone must remain positive",
+        "Liability framework for autonomous delivery incidents must be established"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-009",
+      "name": "Dollar Store AI Operations Platform",
+      "architecture": "saas",
+      "sector_naics": "455219",
+      "sector_name": "All Other General Merchandise Stores (Dollar/Discount)",
+      "one_liner": "AI-optimized operations for the fastest-growing retail format: demand forecasting, automated reordering, shrinkage detection, and store layout optimization for 40K+ dollar/discount stores.",
+      "forces": ["F1_technology", "F5_psychology"],
+      "macro_source": "F1: AI optimization for high-volume, low-margin, limited-assortment retail. F5: Consumer frugality driven by tariff costs and AI job anxiety (v38-S42, v38-S45) accelerates shift to discount formats.",
+      "scores": {
+        "SN": 7,
+        "FA": 8,
+        "EC": 7,
+        "TG": 8,
+        "CE": 5
+      },
+      "composite": 71.0,
+      "category": ["FORCE_RIDER"],
+      "deep_dive_evidence": "Other general merchandise (455219: 614K emp) growing 3.4% with 5.8% establishment growth -- fastest format expansion in retail. Dollar General opening 450+ stores in 2026. Dollar Tree opening 300 + converting 2,000 to 3.0 model. Consumer frugality (tariffs $1,300/household, job hugging anxiety) drives customers to discount. Dollar stores operate on 2-3% net margin -- AI optimization of inventory and shrinkage can double margins. Currently 40K+ US stores, heading to 45K+ by 2028.",
+      "what_must_be_true": [
+        "Consumer frugality trend must persist (tariffs and AI anxiety suggest yes through 2028+)",
+        "Dollar store unit economics must remain viable despite wage inflation",
+        "Technology implementation cost must be low enough for thin-margin retailers ($50-100K per store)",
+        "Dollar store expansion must not saturate markets (some evidence of cannibalization in dense areas)"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-010",
+      "name": "AI-Powered Recommerce & Resale Platform",
+      "architecture": "marketplace",
+      "sector_naics": "4592",
+      "sector_name": "Used Merchandise Stores / Online Resale",
+      "one_liner": "AI-driven authentication, pricing, and matching platform for secondhand goods. US recommerce market $64.3B (2025), growing 11.2% annually. Gen Z 80% participation rate signals generational adoption.",
+      "forces": ["F1_technology", "F5_psychology", "F2_demographics"],
+      "macro_source": "F1: AI image recognition for authentication, ML pricing models. F5: Consumer frugality + sustainability psychology. F2: Gen Z demographic (digital-native, sustainability-conscious) becoming primary consumer cohort.",
+      "scores": {
+        "SN": 7,
+        "FA": 8,
+        "EC": 7,
+        "TG": 7,
+        "CE": 5
+      },
+      "composite": 69.5,
+      "category": ["CONDITIONAL"],
+      "deep_dive_evidence": "Global recommerce $97.7B (2026) to $242.9B (2035) at 10.5% CAGR. US market $64.3B (2025), $92B by 2029. Online resale grew 23% in 2024 (ThredUp). Gen Z 80% participation. ThredUp Resale-as-a-Service powers Adidas, Crocs, JCPenney. Recommerce platform market growing 24.3% CAGR. Every recommerce dollar cannibalizes traditional retail. This is both a sustainability trend and an affordability response to tariff-driven price increases. AI authentication reduces fraud (biggest barrier to luxury resale).",
+      "what_must_be_true": [
+        "Secondhand goods quality perception must continue improving (Gen Z shows this is happening)",
+        "AI authentication must reliably detect counterfeits (critical for luxury resale)",
+        "Logistics of secondhand (variable condition, no standard packaging) must become efficient",
+        "Brand resistance to resale cannibalization must give way to brand-operated resale (Resale-as-a-Service)"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-011",
+      "name": "Retail Customer Service AI Agent",
+      "architecture": "saas",
+      "sector_naics": "44-45",
+      "sector_name": "Retail Trade (Cross-Sector)",
+      "one_liner": "AI agent handling 70-80% of retail customer inquiries (returns, order status, product questions) across chat, voice, and in-store kiosk. Reduces customer service headcount 40-60%.",
+      "forces": ["F1_technology"],
+      "macro_source": "F1: LLM-powered agents reaching 80%+ resolution rates for structured retail queries. ChatGPT at 2.8B monthly users (v38-S48) normalizes AI interaction. Retail gets 1,000+ deepfake scam calls/day (v38-S49), increasing need for AI-verified customer interaction.",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 6,
+        "CE": 4
+      },
+      "composite": 64.0,
+      "category": ["CONDITIONAL"],
+      "deep_dive_evidence": "AI will impact 80% of retail customer interactions by 2026. ChatGPT at 2.8B users normalizes conversational AI. Retailers receive 1,000+ AI-generated scam calls daily (v38-S49), making AI-based fraud detection necessary. Returns processing (a major retail cost center) is highly automatable. Deepfake threat means retail needs AI to fight AI -- verification and authentication of customer identity becomes critical. LLM resolution rates for structured queries (order status, return policy, product specs) exceed 80%.",
+      "what_must_be_true": [
+        "Customer satisfaction with AI agents must meet or exceed human agent satisfaction",
+        "Complex/emotional customer issues must be seamlessly escalated to humans",
+        "AI must reliably distinguish legitimate customers from deepfake scammers",
+        "State AI transparency laws (v38-S50: 1,200+ bills) must not prohibit AI customer service"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    },
+    {
+      "id": "MC-V38-44-012",
+      "name": "Shrinkage Detection & Loss Prevention AI",
+      "architecture": "saas",
+      "sector_naics": "44-45",
+      "sector_name": "Retail Trade (Cross-Sector)",
+      "one_liner": "Computer vision + transaction analytics platform detecting theft, employee fraud, and inventory discrepancies in real-time. Addresses $112B annual US retail shrinkage problem.",
+      "forces": ["F1_technology", "F4_capital"],
+      "macro_source": "F1: AI vision systems can monitor entire stores and flag anomalous behavior in real-time. F4: $112B annual shrinkage is a direct profit drain that justifies significant technology investment.",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 71.0,
+      "category": ["FORCE_RIDER"],
+      "deep_dive_evidence": "US retail shrinkage: $112B in 2022 (NRF), growing. Self-checkout increases shoplifting risk by 4-6x (unmonitored scanning). As retailers deploy more self-checkout, they MUST deploy AI loss prevention simultaneously. Computer vision can identify basket-skipping, ticket-switching, and organized retail crime patterns that human LP staff miss. The self-checkout expansion (87% consumer adoption) mechanically creates demand for AI shrinkage detection. This is the counter-investment to autonomous checkout -- they are sold as a package.",
+      "what_must_be_true": [
+        "AI false positive rates must be low enough to avoid customer harassment and liability",
+        "Privacy regulations must permit in-store computer vision surveillance",
+        "Shrinkage savings must demonstrably exceed system cost (typically 5-10x ROI)",
+        "Organized retail crime must continue at current or increasing levels (unfortunately likely)"
+      ],
+      "source_batch": "v38_deep_dive_retail"
+    }
+  ],
+
+  "model_card_summary": {
+    "total_cards": 12,
+    "structural_winners": 3,
+    "force_riders": 3,
+    "timing_arbitrage": 2,
+    "conditional": 4,
+    "capital_moat": 0,
+    "fear_economy": 0,
+    "parked": 0,
+    "composite_range": "64.0 - 86.5",
+    "highest_composite": "MC-V38-44-003 (Retail Media Network Platform: 86.5)",
+    "scoring_methodology": "Composite = (SN*25 + FA*25 + EC*20 + TG*15 + CE*15) / 10. Categories: STRUCTURAL_WINNER >= 80 AND SN >= 9; FORCE_RIDER >= 70 AND FA >= 7; TIMING_ARBITRAGE: TG >= 8 AND SN >= 6; CONDITIONAL: 60-69.",
+    "cards_by_category": {
+      "STRUCTURAL_WINNER": ["MC-V38-44-001 (81.0)", "MC-V38-44-002 (84.0)", "MC-V38-44-003 (86.5)"],
+      "FORCE_RIDER": ["MC-V38-44-004 (74.0)", "MC-V38-44-009 (71.0)", "MC-V38-44-012 (71.0)"],
+      "TIMING_ARBITRAGE": ["MC-V38-44-005 (68.5)", "MC-V38-44-008 (65.5)"],
+      "CONDITIONAL": ["MC-V38-44-006 (68.5)", "MC-V38-44-007 (65.5)", "MC-V38-44-010 (69.5)", "MC-V38-44-011 (64.0)"]
+    }
+  },
+
+  "key_uncertainties": [
+    {
+      "uncertainty": "Pace of cashier role elimination",
+      "range": "Slow (500K by 2031) to Fast (1.5M by 2031)",
+      "key_variable": "Self-checkout and cashierless technology deployment speed in mid-market retailers (top-20 retailers already committed)",
+      "confidence": "medium"
+    },
+    {
+      "uncertainty": "E-commerce share ceiling",
+      "range": "22% (physical resilience) to 30% (acceleration)",
+      "key_variable": "Whether grocery e-commerce crosses 20% (it was 15% as of 2025). Grocery is the last major holdout category.",
+      "confidence": "medium"
+    },
+    {
+      "uncertainty": "Political intervention (cashier protection laws)",
+      "range": "None (market-driven) to Significant (mandated staffing minimums)",
+      "key_variable": "2026 midterm outcomes and state legislative activity. Retail displacement is the most politically visible AI impact.",
+      "confidence": "low"
+    },
+    {
+      "uncertainty": "Humanoid robot deployment timeline in retail",
+      "range": "2029 (warehouse only) to 2031+ (warehouse + store)",
+      "key_variable": "Whether the $39B Figure AI, $5B Apptronik, $14B Skild AI valuations translate to deployable products",
+      "confidence": "low-medium"
+    },
+    {
+      "uncertainty": "Consumer frugality persistence",
+      "range": "Temporary (tariff reversal, AI anxiety fades) to Structural (generational shift)",
+      "key_variable": "Supreme Court IEEPA tariff ruling (v38-S10), 2026 midterm policy implications, AI employment data",
+      "confidence": "medium"
+    }
+  ],
+
+  "falsification_criteria": [
+    "If retail employment INCREASES by >1% annually 2026-2028, the automation displacement thesis is too aggressive",
+    "If e-commerce share plateaus below 20% through 2028, the physical retail decline thesis is overstated",
+    "If dollar store expansion slows to <200 new stores/year, the consumer frugality driver is weaker than projected",
+    "If self-checkout deployment reverses (as some retailers have started pulling back), the autonomous checkout timeline extends 2-3 years",
+    "If retail media network growth decelerates below 10% annual, the advertising subsidy model is not sustainable",
+    "If humanoid robotics fails to deploy at >100 warehouse sites by 2028, the second wave of automation is delayed significantly",
+    "If recommerce growth slows below 8% CAGR, it remains a niche rather than a structural retail channel"
+  ],
+
+  "synthesis": "Retail Trade (NAICS 44-45) is the largest private employer in the US economy and faces the most politically sensitive AI-driven transformation of any sector. Unlike financial services (high Baumol, concentrated displacement on affluent workers) or healthcare (growing, absorbing workers), retail represents AI meeting the average American worker. The transformation is real but nuanced: (1) E-commerce continues steady growth but physical retail retains 75%+ share through 2031; (2) The real transformation is INSIDE physical stores -- fewer workers per store, AI-optimized operations, self-checkout as default; (3) Retail media networks are creating a new profit layer that changes who captures value in retail; (4) Dollar stores and discount formats grow while department stores and specialty retail contract; (5) 1.2-1.8M net jobs eliminated by 2031, concentrated among young, female, minority, and rural workers; (6) This displacement has limited absorption pathways -- healthcare is bottlenecked, warehouse is also automating, gig economy is precarious. The central insight: retail's low Baumol score (0.57) means the disruption is driven by LABOR SUBSTITUTION at scale, not by curing high-cost inefficiency. This makes retail the opposite of the engine's typical high-Baumol targets -- but the absolute scale (15.5M workers, $639B annual wages) means even small percentage improvements create massive value and massive displacement simultaneously."
+}
