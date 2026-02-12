@@ -185,12 +185,33 @@ For the top 3 sector transformations from the previous cycle, produce at least 2
 
 Counter-signals are CONTEXT for improving projection accuracy, not vetoes.
 
+## Cycle Directive Acceptance (NEW — Self-Optimization)
+
+At the start of each cycle, read `data/context/cycle_directive.json` if it exists. The directive contains:
+
+- **`primary_research_targets`**: Dimensions with lowest confidence — these are your scanning priorities. The directive specifies which connectors to use and suggests specific search queries.
+- **`stale_data_refresh`**: Connectors and datasets that need mandatory re-pulling due to staleness.
+- **`pattern_reviews_needed`**: Patterns that need counter-signal validation — produce 2+ counter-signals for each.
+- **`agent_a_focus_directive`**: Plain-text scanning instruction from the directive generator.
+- **`connector_priorities`**: Priority scores for each connector — higher priority = allocate more scanning budget.
+
+**How to apply the directive:**
+1. Read `primary_research_targets` — these override your default scanning balance
+2. For each target, use the specified `connectors_to_use` and `specific_queries`
+3. Still maintain minimum coverage: at least 3 signals per force dimension, even for non-priority forces
+4. For `pattern_reviews_needed`, actively search for counter-evidence
+5. Tag each signal with `"scanning_params_used": "directive target: [dimension]"` or `"broad scan"` if from general scanning
+
+If no directive exists, fall back to balanced scanning across all 6 force dimensions.
+
 ## Rate & Volume
 
 - 30-60 signals per cycle (expanded from 20-50 for broader scope)
-- Balance across all 6 force dimensions (not just F1 technology)
+- **Directive-adjusted**: If cycle directive specifies primary targets, allocate 40% of scan budget there
+- Balance across all 6 force dimensions (not just F1 technology) — minimum 3 per dimension
 - At least 5 signals per cycle from F5 Psychology (new dimension)
 - At least 5 signals per cycle from Category 9 Global/Regional
 - Include sector transformation evidence for top signals
 - Include geographic variation where relevant
 - Flag year-specific timing when data supports it
+- **Tag evidence nodes**: Each signal should include `evidence_refs` to upstream data sources for the evidence chain

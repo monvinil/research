@@ -190,6 +190,189 @@ When signals suggest a new economic category is forming:
 - What labor roles does it create?
 - How large could it become by 2031?
 
+## Model Card Output (NEW — Institutional Grade)
+
+For each business model identified within a sector transformation, produce a **Model Card** alongside the transformation projection. Model cards are the atomic unit of the rating system.
+
+### Model Card JSON Structure
+
+```json
+{
+  "card_id": "MC-[NAICS]-[NNN]",
+  "model_name": "string",
+  "model_type": "direct | expansion | acquisition_modernization | platform | hybrid",
+  "sector_naics": "NN",
+  "sector_name": "string",
+  "one_line": "120 char max elevator pitch",
+
+  "rating_inputs": {
+    "structural_necessity_evidence": {
+      "demand_drivers": ["what structural forces create demand"],
+      "supply_gap": "what gap exists that this fills",
+      "inevitability_argument": "why this MUST exist",
+      "pattern_refs": ["P-NNN"]
+    },
+    "force_alignment_detail": [
+      {
+        "force_id": "F1_technology",
+        "contribution_score": 0,
+        "mechanism": "HOW this force creates the opportunity"
+      }
+    ],
+    "geographic_assessment": {
+      "us": {"score": 0, "notes": "string"},
+      "china": {"score": 0, "notes": "string"},
+      "eu": {"score": 0, "notes": "string"},
+      "japan": {"score": 0, "notes": "string"},
+      "india": {"score": 0, "notes": "string"},
+      "latam": {"score": 0, "notes": "string"},
+      "sea": {"score": 0, "notes": "string"},
+      "mena": {"score": 0, "notes": "string"}
+    },
+    "timing_assessment": {
+      "optimal_entry_window": "YYYY-YYYY",
+      "perez_phase_target": "frenzy | turning_point | synergy | maturity",
+      "crash_resilience": "high | medium | low",
+      "crash_resilience_reason": "string",
+      "time_sensitivity": "high | medium | low"
+    },
+    "capital_assessment": {
+      "capital_required": "$XK-$YM",
+      "time_to_revenue_months": 0,
+      "gross_margin_pct": 0,
+      "cost_advantage_ratio": "Nx vs incumbent",
+      "survives_18mo_funding_freeze": true
+    }
+  },
+
+  "unit_economics": {
+    "revenue_per_unit": "string",
+    "cost_per_unit_ai": "string",
+    "cost_per_unit_incumbent": "string",
+    "break_even_volume": "string",
+    "jevons_multiplier": "string",
+    "economic_force_tam": "string"
+  },
+
+  "fear_friction": {
+    "economic_readiness": 0,
+    "psychological_readiness": 0,
+    "gap": 0,
+    "primary_friction": "string",
+    "resolution_path": "string",
+    "fear_driven_demand_created": "string or null"
+  },
+
+  "what_must_be_true": {
+    "confirmed": ["string"],
+    "likely": ["string"],
+    "uncertain": ["string"],
+    "unlikely": ["string"]
+  },
+
+  "competitive_density": {
+    "status": "zero | low | emerging | crowded",
+    "funded_entrants": 0,
+    "total_funding": "string",
+    "layer": "tool | platform | full_service",
+    "moat_sources": ["string"]
+  },
+
+  "evidence_refs": ["E-NNN — evidence node IDs that support this model"],
+
+  "falsification_criteria": ["what evidence would kill this thesis"],
+
+  "v2_model_refs": ["C7-DC-FIN-01 — references to original v2 cycle models if applicable"]
+}
+```
+
+Agent C will compute the final 5-axis scores and category labels from these `rating_inputs`. Agent B provides the raw assessment data; Agent C applies the scoring rubric consistently.
+
+### Sector Brief JSON Structure
+
+In addition to the markdown transformation projection, output structured JSON for each sector:
+
+```json
+{
+  "brief_id": "SB-[NAICS]",
+  "sector_naics": "NN",
+  "sector_name": "string",
+  "transformation_phase": "pre_disruption | early_disruption | acceleration | restructuring | new_equilibrium",
+  "phase_confidence": "high | medium | low",
+
+  "current_state_2026": {
+    "employment_millions": 0.0,
+    "revenue_billions": 0.0,
+    "establishments": 0,
+    "avg_firm_size": 0,
+    "cost_structure": {"labor_pct": 0, "materials_pct": 0, "overhead_pct": 0, "compliance_pct": 0},
+    "ai_adoption": "none | early | growing | mature"
+  },
+
+  "projected_state_2031": {
+    "employment_millions": 0.0,
+    "employment_change_pct": 0.0,
+    "revenue_billions": 0.0,
+    "dominant_business_model": "string",
+    "new_roles_created": ["string"],
+    "roles_eliminated": ["string"]
+  },
+
+  "transformation_path": [
+    {"year_range": "2026-2027", "phase_name": "string", "what_happens": "string", "employment_effect": "string", "confidence": "high | medium | low"},
+    {"year_range": "2027-2028", "phase_name": "string", "what_happens": "string", "employment_effect": "string", "confidence": "high | medium | low"},
+    {"year_range": "2028-2029", "phase_name": "string", "what_happens": "string", "employment_effect": "string", "confidence": "high | medium | low"},
+    {"year_range": "2029-2030", "phase_name": "string", "what_happens": "string", "employment_effect": "string", "confidence": "high | medium | low"},
+    {"year_range": "2030-2031", "phase_name": "string", "what_happens": "string", "employment_effect": "string", "confidence": "high | medium | low"}
+  ],
+
+  "force_impact_breakdown": [
+    {"force_id": "F1_technology", "impact_score": 0, "mechanism": "string"}
+  ],
+
+  "barbell_classification": {
+    "routine_cognitive_pct": 0, "routine_cognitive_tasks": ["string"],
+    "tacit_manual_pct": 0, "tacit_manual_tasks": ["string"],
+    "tacit_cognitive_pct": 0, "tacit_cognitive_tasks": ["string"]
+  },
+
+  "second_order_effects": {
+    "upstream": ["string"], "downstream": ["string"],
+    "adjacent": ["string"], "labor_migration": ["string"]
+  },
+
+  "geographic_variation": {
+    "us": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "china": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "eu": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "japan": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "india": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "latam": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "sea": {"dynamics": "string", "velocity": "fast | moderate | slow"},
+    "mena": {"dynamics": "string", "velocity": "fast | moderate | slow"}
+  },
+
+  "fear_friction": {
+    "economic_readiness": 0, "psychological_readiness": 0, "gap": 0,
+    "fear_drivers": [{"driver": "string", "type": "string", "severity": "string", "resolution_trigger": "string"}],
+    "fear_driven_demand": ["string"]
+  },
+
+  "confidence_assessment": {
+    "direction": "high | medium | low",
+    "timing": "high | medium | low",
+    "magnitude": "high | medium | low",
+    "key_assumptions": ["string"],
+    "falsification_criteria": ["string"]
+  },
+
+  "evidence_refs": ["P-NNN", "E-NNN"],
+  "business_models_arising": ["MC-SECTOR-NNN"]
+}
+```
+
+**Produce BOTH the markdown transformation projection (for human reading) AND the JSON structures (for the rating system and UI).** The markdown is for the human operator reading cycle summaries; the JSON feeds the dashboard and rating system.
+
 ## Output Standards
 
 1. **Every projection includes confidence levels** with specific falsification criteria
@@ -199,3 +382,6 @@ When signals suggest a new economic category is forming:
 5. **Psychology/fear friction is assessed** for every sector — the gap between economic readiness and actual adoption
 6. **The Barbell Economy** classification (routine/tacit/judgment split) is applied to every sector
 7. **Evidence from cycles 1-9** is cited where relevant (pattern IDs, model IDs, signal IDs)
+8. **Model cards produced** for every business model identified within sector transformations
+9. **Sector briefs produced** as structured JSON alongside the markdown projection
+10. **Geographic assessment** included per model card across all 8 regions

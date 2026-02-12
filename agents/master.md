@@ -110,6 +110,7 @@ For each of F1-F6:
 - Key data points this cycle
 - Velocity: accelerating / steady / decelerating / reversing
 - Notable interactions with other forces
+- Cascade triggers fired (if any)
 
 ### SECTOR TRANSFORMATIONS
 For each priority sector:
@@ -120,13 +121,23 @@ For each priority sector:
 - Geographic variation
 - Fear friction assessment
 - Confidence + key assumptions
+- Phase transitions triggered (with evidence)
 
-### GEOGRAPHIC MAP
+### RATED MODEL HIGHLIGHTS
+- Top models by composite score (list top 10 with categories)
+- New STRUCTURAL_WINNERs identified this cycle
+- Category distribution: how many models in each category
+- Notable category changes (model moved from CONDITIONAL → STRUCTURAL_WINNER)
+- Force alignment summary: which forces drive the most high-rated models
+
+### GEOGRAPHIC INTELLIGENCE
 For each priority region:
-- Transformation velocity (fastest/slowest sectors)
-- Policy direction
-- Capital flows
-- Unique dynamics
+- Transformation velocity scorecard (5 sub-scores)
+- Sector-by-sector outlook
+- Policy direction + key regulations
+- Capital flows + key deals
+- Demographic trajectory
+- Unique opportunities and risks
 
 ### EMERGENT ECONOMY
 - New economic categories appearing
@@ -140,11 +151,86 @@ For each priority region:
 - Geographic divergences
 - Feedback loops identified
 
-### CONFIDENCE & UNKNOWNS
-- Projections strengthened this cycle
-- Projections weakened this cycle
-- New unknowns identified
+### CONFIDENCE & SELF-OPTIMIZATION
+- Confidence map summary: highest/lowest confidence dimensions
+- Projections strengthened this cycle (with evidence)
+- Projections weakened this cycle (with counter-evidence)
+- Pattern evolution: new patterns detected, patterns strengthened/weakened
+- Staleness alerts: which data is aging or critical
+- Auto-generated directive for next cycle (from confidence gaps)
 - Key assumptions to watch
+```
+
+## Multi-Dimensional Rating Oversight
+
+The Master reviews and validates the category classifications produced by Agent C:
+
+### Category Classification Validation
+
+| Category | Criteria | Master Override Authority |
+|----------|----------|-------------------------|
+| **STRUCTURAL_WINNER** | SN ≥ 8 AND FA ≥ 8 | Can downgrade if key assumption is fragile |
+| **FORCE_RIDER** | FA ≥ 7 (4+ accelerating forces) | Can upgrade if force convergence is unique |
+| **GEOGRAPHIC_PLAY** | GG variance > 4 across regions | Can flag if geographic data is thin |
+| **TIMING_ARBITRAGE** | TG ≥ 8, SN ≥ 6 | Can adjust based on Perez cycle assessment |
+| **CAPITAL_MOAT** | CE ≥ 8, SN ≥ 6 | Can validate crash resilience claim |
+| **FEAR_ECONOMY** | fear_friction_gap > 3 | Can validate fear-driven demand thesis |
+| **EMERGING_CATEGORY** | No NAICS match, SN ≥ 5 | Must confirm novelty — not just a niche |
+| **CONDITIONAL** | Composite ≥ 60, uncertain assumptions | Must specify which assumptions are blocking |
+| **PARKED** | Composite < 60 | Can override if timing is the only blocker |
+
+The Master can override any category assignment with written rationale. Overrides are tracked in the cycle summary.
+
+## Geographic Intelligence Report Synthesis
+
+For each of the 8 priority regions, synthesize Agent B's geographic variation data into a comprehensive report:
+
+```json
+{
+  "report_id": "GR-[REGION]",
+  "region_key": "us | china | eu | japan | india | latam | sea | mena",
+  "region_name": "string",
+  "transformation_velocity_scorecard": {
+    "overall_velocity": "fast | moderate | slow | nascent",
+    "ai_adoption_rate": {"score": 0, "notes": "string"},
+    "regulatory_enablement": {"score": 0, "notes": "string"},
+    "capital_availability": {"score": 0, "notes": "string"},
+    "demographic_pressure": {"score": 0, "notes": "string"},
+    "infrastructure_readiness": {"score": 0, "notes": "string"}
+  },
+  "sector_outlook": [
+    {"sector_naics": "NN", "sector_name": "string", "regional_phase": "string", "regional_velocity": "string", "unique_dynamics": "string"}
+  ],
+  "policy_environment": {
+    "regulatory_stance": "permissive | balanced | restrictive",
+    "key_regulations": [{"name": "string", "status": "string", "effective_date": "string", "moat_potential": "string"}]
+  },
+  "capital_flow_analysis": {
+    "inbound_investment": "string", "outbound_investment": "string",
+    "vc_pe_activity": "string", "sovereign_wealth": "string"
+  },
+  "demographic_trajectory": {
+    "population_trend": "growing | stable | declining",
+    "median_age": 0, "working_age_pct": 0, "key_pressure": "string"
+  },
+  "unique_opportunities": [{"opportunity": "string", "confidence": "string"}],
+  "unique_risks": [{"risk": "string", "severity": "string"}]
+}
+```
+
+## Force Cascade Summary
+
+When force velocity cascade triggers fire during a cycle, produce a Force Cascade Summary:
+
+```
+### FORCE CASCADE — [Force that changed]
+- Trigger: [what threshold was crossed]
+- Models affected: [count]
+- Rating changes:
+  - [Model Name]: [old composite] → [new composite], category [old] → [new]
+  - ...
+- Sector implications: [how this changes sector transformation projections]
+- Action: [what the directive generator should prioritize next cycle]
 ```
 
 ## Communication Protocol
