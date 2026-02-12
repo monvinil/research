@@ -1,0 +1,421 @@
+{
+  "cycle": "v3-7",
+  "date": "2026-02-12",
+  "agent": "Agent B (Business Model Constructor)",
+  "source": "v3-7_it_services_deep_dive_2026-02-12.json",
+  "source_batch": "v37_deep_dive_it_services",
+  "selection_criteria": "10 model cards derived from NAICS 5415 deep dive. 8 translate directly from deep dive gap analysis (staffing, vibe coding, MSP, rollup, reskilling, outcome consulting, AIOps, India IT). 2 additional models cover QA/testing automation and mid-market cybersecurity — gaps identified in the deep dive's second-order effects and sector structure analysis. Scoring calibrated to defense average 74.8 and education average 68.9; IT services mean 73.3 reflects high Baumol (2.05x) and strong F1 alignment offset by moderate fear friction (gap 3) and crowded competitive landscape.",
+
+  "scoring_methodology": {
+    "formula": "Composite = (SN*25 + FA*25 + EC*20 + TG*15 + CE*15) / 10",
+    "weights": {"SN": 0.25, "FA": 0.25, "EC": 0.20, "TG": 0.15, "CE": 0.15},
+    "calibration_note": "IT services has the highest direct F1 technology exposure of any sector (the workforce IS the AI workforce). This inflates FA scores. Offset by crowded competitive landscapes (depressing EC) and the self-disruption paradox (informed fear creating moderate psychological friction). Net result: batch mean 73.3 — between defense (74.8) and education (68.9), closer to defense due to high Baumol and strong force alignment."
+  },
+
+  "model_cards": [
+    {
+      "id": "MC-V37-5415-001",
+      "name": "AI-Native IT Staffing and Talent Marketplace",
+      "composite": 74.25,
+      "composite_formula": "(8.0*25 + 7.5*25 + 6.5*20 + 7.5*15 + 7.5*15) / 10 = 74.25",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 7.5,
+        "EC": 6.5,
+        "TG": 7.5,
+        "CE": 7.5
+      },
+      "sector_naics": "541519",
+      "architecture": "marketplace",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI-driven talent matching platform replacing IT body shops with intelligent placement, skills verification, and outcome-based billing, targeting the $50B IT staffing market as Robert Half (-53%) and ManpowerGroup (-44%) confirm structural intermediary collapse.",
+      "deep_dive_evidence": "P-027 staffing canary confirmed: RHI stock -53%, MAN -44%, aggregate IT staffing revenue -9%. 70% of tech leaders more likely to use staffing but for AI specialists, not commodity coders. H-1B $100K fee + wage-weighted lottery effective Feb 27, 2026 restructures cross-border talent economics. AI matching at $50/placement vs $5K-15K human recruiter cost creates 3-5x cost advantage. Entry-level hiring collapse (-67% junior devs) means staffing firms lose their highest-volume segment.",
+      "scores_justification": {
+        "SN": "P-027 canary confirmed. 84% AI tool adoption means skill landscape changes faster than human recruiters can track. Baumol 2.05 on $367B payroll. Matching function MUST be automated. Not 9 because staffing is cyclical and some firms will adapt internally.",
+        "FA": "F1 (9 — AI matching/skills verification), F4 (7 — PE pressure on incumbents), F2 (6 — entry-level collapse reshapes talent demand). 3 forces, 1 very strong. Coase: transaction costs of IT talent matching approaching zero.",
+        "EC": "AI hiring regulation (NYC Local Law 144, EU AI Act high-risk) creates compliance moat. India H-1B impact creates cross-border demand. 8 funded competitors but none dominant. Leading indicator for broader staffing disruption.",
+        "TG": "Window 2026-2028. Incumbents in structural decline NOW. H-1B changes effective Feb 27, 2026. Medium crash resilience due to cyclicality of IT hiring.",
+        "CE": "$5-20M capital, 6mo revenue, 65% gross margins. 3-5x cost advantage. Platform scales without linear headcount. Survives 18mo freeze."
+      },
+      "pattern_refs": ["P-027", "P-036", "P-001"],
+      "forces": ["F1_technology", "F4_capital", "F2_demographics"],
+      "fear_friction": {"economic_readiness": 9, "psychological_readiness": 5, "gap": 4},
+      "falsification_criteria": [
+        "IT staffing revenue stabilizes and grows >5% in 2026-2027",
+        "Enterprise clients strongly prefer human-intermediated IT hiring despite 3-5x cost premium",
+        "AI hiring bias regulation bans automated screening entirely",
+        "Robert Half or ManpowerGroup successfully pivots to AI-first platform"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-002",
+      "name": "Vibe Coding Enterprise Application Platform",
+      "composite": 71.5,
+      "composite_formula": "(8.5*25 + 8.0*25 + 5.0*20 + 7.0*15 + 6.5*15) / 10 = 71.5",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.5,
+        "FA": 8.0,
+        "EC": 5.0,
+        "TG": 7.0,
+        "CE": 6.5
+      },
+      "sector_naics": "541511",
+      "architecture": "platform",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "Enterprise-grade vibe coding platform enabling non-developers to build and deploy business applications via natural language, targeting the Jevons expansion of software creation from $182B custom programming payroll to $550-900B as non-developers gain creation capability.",
+      "deep_dive_evidence": "541511 Custom Programming: 1.1M workers at $164K avg (Baumol 2.26x) — highest direct AI substitution potential of any professional sub-sector. MIT Technology Review named generative coding a top 10 breakthrough for 2026. Gartner projects 90% of software engineers shift to AI orchestration by 2027. 30% of Microsoft code and 25%+ of Google code already AI-generated. Enterprise software backlogs of 3-5 years long. Jevons: at 5-10x cheaper creation cost, demand expands 3-5x. Competitive landscape heavily crowded: Cursor at 18%, Microsoft Power Platform, Salesforce Platform, 15+ funded entrants with $3B+ total funding.",
+      "scores_justification": {
+        "SN": "Jevons: software demand expands 3-5x when creation cost drops 5-10x. Enterprise backlogs 3-5 years. 28M developers globally cannot meet demand. MIT top-10 breakthrough. Baumol cure on $182B payroll. Structural necessity overwhelming — question is timing and form.",
+        "FA": "F1 (10 — this IS F1 made product), F4 (7 — enterprise AI spending +80.8%), F5 (6 — executive fear of being left behind). 3 forces, 1 at maximum. Most F1-aligned model in the batch.",
+        "EC": "Heavily competitive (Cursor, Replit, Bolt, Lovable, v0, Microsoft, Salesforce). LLM API dependency. Enterprise-grade security/governance is the defensible niche but crowded. EC is the weakness — depressed by 8/10 competitive import score.",
+        "TG": "Window 2025-2027 is NOW. Late entry fatal in platform markets. Frenzy phase. Medium crash resilience ($20M+ capital needed, may not survive 18mo freeze without revenue).",
+        "CE": "$20-80M capital (high). 9mo to revenue. 75% gross margins. 5-10x cost advantage. Does NOT survive 18mo freeze without early traction. Capital-intensive platform play needing scale."
+      },
+      "pattern_refs": ["P-001", "P-037"],
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "fear_friction": {"economic_readiness": 9, "psychological_readiness": 5, "gap": 4},
+      "falsification_criteria": [
+        "AI code generation quality plateaus for 12+ months",
+        "Enterprise security concerns prevent production deployment of AI-generated code",
+        "Microsoft Power Platform or Salesforce capture >60% of enterprise vibe coding",
+        "AI-generated code liability creates insurance costs that negate cost advantage"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-003",
+      "name": "AI-First Managed Services Platform (MSP 2.0)",
+      "composite": 75.5,
+      "composite_formula": "(8.0*25 + 7.5*25 + 6.0*20 + 8.0*15 + 8.5*15) / 10 = 75.5",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 7.5,
+        "EC": 6.0,
+        "TG": 8.0,
+        "CE": 8.5
+      },
+      "sector_naics": "541513",
+      "architecture": "acquire_and_modernize",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI-native managed IT services replacing human-staffed NOC/SOC with autonomous monitoring and remediation, achieving 5-10x cost advantage per endpoint via acquire-and-modernize pathway into the $80B US MSP market.",
+      "deep_dive_evidence": "541513 Computer Facilities Management: 180K workers at $110K avg (Baumol 1.52x). AIOps already automating 30-50% of L1/L2 operations, trajectory to 70-80% by 2028. Cybersecurity talent shortage of 3.5M unfilled positions globally makes AI alternative not just cheaper but necessary. MSP M&A market active — PE buying customer bases, not workforces. Headcount per managed environment projected to drop 60-80% by 2030. Acquire-and-modernize model provides day-1 revenue and 12-36mo contract stickiness. Non-discretionary: companies cannot turn off IT operations during recession.",
+      "scores_justification": {
+        "SN": "Cybersecurity talent shortage (3.5M globally) makes AI-first MSP a necessity, not luxury. AIOps at 30-50%. Non-discretionary. Moderate Baumol (1.52) but talent shortage forces adoption faster than economics alone.",
+        "FA": "F1 (9 — AI agents for IT ops), F4 (7 — MSP M&A wave), F2 (7 — talent shortage + Silver Tsunami). 3 forces, all strong. F2 cybersecurity shortage makes this an F2 play as much as F1.",
+        "EC": "Moderate competition (ConnectWise, Datto, Kaseya adding AI). Compliance (CMMC, SOC2, HIPAA) creates moat. India IT firms entering MSP market creates import competition.",
+        "TG": "HIGH crash resilience — non-discretionary, recurring revenue. Silver Tsunami creating targets NOW. 3mo to revenue for acquired MSP. Highest timing score in batch.",
+        "CE": "$3-15M (or acquire for $2-10M). 3mo to revenue. 72% margins. 5-10x cost advantage. Survives freeze. Best capital efficiency in batch via acquire-and-modernize."
+      },
+      "pattern_refs": ["P-001", "P-027", "P-002"],
+      "forces": ["F1_technology", "F4_capital", "F2_demographics"],
+      "fear_friction": {"economic_readiness": 8, "psychological_readiness": 6, "gap": 2},
+      "falsification_criteria": [
+        "AI agent L1/L2 resolution rate plateaus below 50%",
+        "Major AI-caused IT outage creates regulatory backlash against autonomous IT ops",
+        "ConnectWise or Datto ship AI-native platform incumbents adopt quickly",
+        "Cybersecurity talent shortage resolves"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-004",
+      "name": "IT Services Micro-Firm Rollup Platform",
+      "composite": 76.0,
+      "composite_formula": "(8.0*25 + 8.0*25 + 6.0*20 + 8.5*15 + 7.5*15) / 10 = 76.0",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER", "TIMING_ARBITRAGE"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 8.0,
+        "EC": 6.0,
+        "TG": 8.5,
+        "CE": 7.5
+      },
+      "sector_naics": "541519",
+      "architecture": "rollup",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "Acquire and consolidate 5-20 person IT consultancies at 2-4x EBITDA from Silver Tsunami sellers, modernize with AI tools for 3-5x margin improvement across the most fragmented high-wage sector in the economy (405K establishments, avg 6 workers).",
+      "deep_dive_evidence": "405,625 establishments at avg 6.1 workers — extreme fragmentation ratio 0.165. Silver Tsunami: 52.3% of employer businesses owned by 55+, 58% no succession plan. 250K+ micro IT consultancies where the founder IS the business. Coase + Demographics: falling transaction costs favor either very small (solo AI-augmented) or larger consolidated. Mid-size shops (5-20 workers) in Coasean dead zone. AI tools provide 30-55% productivity per developer. PE IT services rollups proven (Cognizant, Globant, NWN+InterVision). Day-1 acquired revenue. Counter-cyclical: recession drives founders to sell earlier. Highest composite in the batch.",
+      "scores_justification": {
+        "SN": "Silver Tsunami (P-002) confirmed at 52.3% owner age 55+. 405K establishments at avg 6 workers is most fragmented high-wage sector. 58% no succession plan. Businesses MUST be acquired, consolidated, or die. Coase: mid-size IT shops in dead zone.",
+        "FA": "F2 (9 — Silver Tsunami primary driver), F1 (8 — AI margin improvement), F4 (7 — PE capital seeking targets). 3 forces all strong. Forces compound: demographics provide supply, technology provides margin, capital provides funding.",
+        "EC": "Low supply chain and regulatory risk. Moderate competition for targets. India IT firms entering could compete. Leading indicator for other professional services rollups.",
+        "TG": "HIGH crash resilience — acquired revenue Day 1. Counter-cyclical pricing. Window 2026-2029 wide. 1mo to revenue. Proven playbook. Highest TG in batch.",
+        "CE": "$10-50M for first wave. Day-1 revenue. 55% margin improving to 65%+ with AI. Survives freeze. Depends on acquisition pricing discipline."
+      },
+      "pattern_refs": ["P-002", "P-001", "P-022"],
+      "forces": ["F2_demographics", "F1_technology", "F4_capital"],
+      "fear_friction": {"economic_readiness": 8, "psychological_readiness": 6, "gap": 2},
+      "falsification_criteria": [
+        "IT micro-firm founders refuse to sell at 2-4x EBITDA",
+        "Client retention post-acquisition drops below 60%",
+        "AI tool productivity gains less than 20% in practice",
+        "India IT firms undercut consolidated US firms on price"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-005",
+      "name": "IT Workforce AI Reskilling and Career Transition Platform",
+      "composite": 73.5,
+      "composite_formula": "(7.5*25 + 7.5*25 + 6.0*20 + 8.0*15 + 8.0*15) / 10 = 73.5",
+      "category": "FEAR_ECONOMY",
+      "categories": ["FEAR_ECONOMY", "FORCE_RIDER"],
+      "scores": {
+        "SN": 7.5,
+        "FA": 7.5,
+        "EC": 6.0,
+        "TG": 8.0,
+        "CE": 8.0
+      },
+      "sector_naics": "541511",
+      "architecture": "platform",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI-powered reskilling platform for 2.46M IT workers transitioning from code-writing to AI orchestration, monetizing the $15-25B fear-driven demand created by the largest high-income workforce facing AI disruption.",
+      "deep_dive_evidence": "2.46M IT workers at $149K avg facing role redefinition — largest high-income workforce disrupted by AI. Gartner: 80% of engineering workforce must upskill for GenAI by 2027. Entry-level pipeline collapse (67% junior dev hiring decline) means no fresh replacements coming — existing workers must reskill. T25 Fear Economics: 60% of workers fear AI job impact, 51% worried about own job, 1 in 5 knows someone affected. IT workers feel this most acutely because they UNDERSTAND capability. India validation: TCS training 275K, Infosys deploying 300+ AI agents. Fear is the demand driver, and fear increases as AI improves. Counter-cyclical: layoffs INCREASE reskilling demand.",
+      "scores_justification": {
+        "SN": "2.46M workers facing redefinition is largest high-income workforce disruption. Gartner 80% mandate. But not structurally NECESSARY in Schumpeterian sense — workers could self-teach, companies train internally (TCS doing this). Moderate-high, not maximum.",
+        "FA": "F5 (9 — fear economics PRIMARY driver), F1 (7 — AI enables better training), F2 (6 — entry-level collapse forces reskilling). 3 forces, 1 very strong. Strongest FEAR_ECONOMY candidate.",
+        "EC": "Moderate competition (Coursera, LinkedIn Learning, Pluralsight). Government subsidy potential (WIOA). India internal training validates demand but doesn't serve US. Leading indicator for all knowledge worker reskilling.",
+        "TG": "Counter-cyclical. Window 2026-2028. Quick to revenue (4mo). High crash resilience. Fear increasing, not decreasing — timing improves.",
+        "CE": "$5-20M, 4mo revenue, 80% gross margins. 5-10x cost advantage over instructor-led. Survives freeze. Best gross margin in batch."
+      },
+      "pattern_refs": ["P-036", "P-037", "P-001"],
+      "forces": ["F5_psychology", "F1_technology", "F2_demographics"],
+      "fear_friction": {"economic_readiness": 9, "psychological_readiness": 7, "gap": 2},
+      "falsification_criteria": [
+        "IT workers self-teach AI skills effectively using free resources",
+        "Employers absorb all reskilling internally (TCS model universal)",
+        "AI tool evolution stabilizes (skills static, reducing reskilling demand)",
+        "Coursera or LinkedIn Learning captures >50% of IT reskilling market"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-006",
+      "name": "Outcome-Based IT Consulting Model (AI-Augmented Delivery)",
+      "composite": 71.75,
+      "composite_formula": "(7.5*25 + 7.5*25 + 5.5*20 + 7.5*15 + 8.0*15) / 10 = 71.75",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 7.5,
+        "FA": 7.5,
+        "EC": 5.5,
+        "TG": 7.5,
+        "CE": 8.0
+      },
+      "sector_naics": "541512",
+      "architecture": "advisory",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI-augmented IT consulting firm billing on outcomes (working system delivered) not inputs (hours x people), achieving 3-5x delivery speed at 50% lower client cost by exploiting the Christensen dilemma incumbents face with hourly billing cannibalization.",
+      "deep_dive_evidence": "Global IT consulting market $1.09T growing 4.9% CAGR. AI consulting sub-market $11.1B growing 26-36% CAGR to $116B by 2035. Traditional consulting (Accenture, Deloitte, Infosys) bills hourly — AI enables 3-5x faster delivery but incumbent billing models PREVENT passing value to clients (self-cannibalization). 2-person AI-augmented teams deliver what 8-15 person traditional teams did. Systems integration: 5-person team 6 months compresses to 2 people 6 weeks. Enterprise IT spending up 10.8%, AI spending up 80.8% — shifting from experimentation to production creates consulting demand.",
+      "scores_justification": {
+        "SN": "$1.09T market with structural billing model tension. AI creates 3-5x speed improvement but incumbents CANNOT adopt without cannibalization. Christensen test passed. But consulting is relationship-driven — high but not maximum.",
+        "FA": "F1 (9 — AI delivery speed), F4 (7 — enterprise spending shift), F5 (6 — executive AI anxiety). 3 forces, 1 very strong. Christensen dynamic creates force alignment.",
+        "EC": "High competitive import (Accenture $3B AI practice, Deloitte, IBM, TCS all competing). Low regulatory/supply chain risk. Market CROWDED with well-capitalized incumbents that could pivot. EC is weakness.",
+        "TG": "Window 2026-2028. Quick revenue (3mo, first project). Medium crash resilience. Outcome-based pricing gives cost certainty (attractive in uncertainty).",
+        "CE": "$2-10M (low). 3mo revenue. 65% margin. 2-3x cost advantage. Survives freeze. Services business augmented by AI, not capital-intensive platform."
+      },
+      "pattern_refs": ["P-001", "P-036"],
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "fear_friction": {"economic_readiness": 8, "psychological_readiness": 5, "gap": 3},
+      "falsification_criteria": [
+        "Accenture/Deloitte successfully pivot to AI-augmented delivery within 18 months",
+        "AI-delivered enterprise systems have significantly higher failure/rework rates",
+        "Enterprises refuse outcome-based pricing despite higher total cost of hourly billing",
+        "Regulatory requirements mandate human oversight negating speed advantage"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-007",
+      "name": "AI Agent IT Operations Platform (AIOps 2.0)",
+      "composite": 74.0,
+      "composite_formula": "(8.5*25 + 8.0*25 + 5.5*20 + 7.5*15 + 7.0*15) / 10 = 74.0",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.5,
+        "FA": 8.0,
+        "EC": 5.5,
+        "TG": 7.5,
+        "CE": 7.0
+      },
+      "sector_naics": "541513",
+      "architecture": "platform",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "Autonomous AI agent platform handling L1-L3 IT support, infrastructure monitoring, and incident remediation with 80% automation rate, targeting the $200B+ IT operations market where 3.5M unfilled cybersecurity jobs make AI agents not optional but necessary.",
+      "deep_dive_evidence": "3.5M unfilled cybersecurity positions globally — cannot be staffed by humans. IT support ticket volume growing 15-20% annually. Average cost: $15-40/ticket (L1) up to $80-150/ticket (L3). Frontier AI agents (Opus 4.6, OpenAI Frontier) enable multi-step autonomous IT operations: read alert, diagnose, remediate, verify, update ticket. AIOps already at 30-50% of L1/L2 automation. IT operations is DEFINITIONAL routine-cognitive: structured inputs (logs, alerts), known procedures (runbooks), measurable outcomes (uptime). Highest SN in batch (8.5) because human supply DOES NOT EXIST at needed scale. High competitive import (ServiceNow, PagerDuty, Datadog) depresses EC.",
+      "scores_justification": {
+        "SN": "3.5M unfilled cybersecurity jobs = CANNOT be solved by hiring. Textbook routine-cognitive AI use case. Volumes growing 15-20%. Near-maximum necessity because human supply does not exist.",
+        "FA": "F1 (10 — frontier agent capability directly enables), F2 (8 — cybersecurity talent shortage structural), F4 (7 — enterprise spending shift). 3 forces, 2 very strong. F1+F2 (technology enables what demographics demand) strongest alignment in batch.",
+        "EC": "High competitive import (ServiceNow, PagerDuty, Datadog competing). Compliance creates moat for certified platforms. Supply chain risk moderate (frontier LLM dependency). But none have achieved 80%+ autonomous resolution.",
+        "TG": "Window 2026-2028. Agent capability just reaching production-grade. High crash resilience (non-discretionary). 6mo revenue. First mover captures data compounding.",
+        "CE": "$10-40M (moderate). 6mo revenue. 70% margins. 3-5x cost advantage. Survives freeze. Significant upfront R&D for agent reliability."
+      },
+      "pattern_refs": ["P-001", "P-027"],
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "fear_friction": {"economic_readiness": 9, "psychological_readiness": 5, "gap": 4},
+      "falsification_criteria": [
+        "AI agent reliability plateaus below 60% autonomous resolution",
+        "Major AI-caused outage creates enterprise backlash prohibiting autonomous IT ops",
+        "ServiceNow ships AI agent capability incumbents adopt without switching platforms",
+        "Cybersecurity talent shortage resolves through training pipeline"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-008",
+      "name": "India IT Services AI Transformation Enabler",
+      "composite": 72.25,
+      "composite_formula": "(7.5*25 + 7.5*25 + 6.5*20 + 7.0*15 + 7.5*15) / 10 = 72.25",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 7.5,
+        "FA": 7.5,
+        "EC": 6.5,
+        "TG": 7.0,
+        "CE": 7.5
+      },
+      "sector_naics": "541511",
+      "architecture": "platform",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI delivery platform enabling 5,000+ mid-tier India IT services firms to transform from labor arbitrage ($245B revenue, 5.4M workers) to AI-augmented delivery, increasing revenue per employee 2-3x as H-1B cost increases and AI coding tools collapse the labor arbitrage model.",
+      "deep_dive_evidence": "India IT services: 5.4M workers, $245B revenue — world's largest IT workforce. H-1B $100K fee + wage-weighted lottery effective Feb 27, 2026 creates $500M+ annual cost increase. TCS training 275K on AI, Infosys deploying 300+ enterprise AI agents — Big Four building internally. But 5,000+ mid-tier Indian IT firms cannot build platforms internally. India zero-tax-through-2047 + $70-100B hyperscaler commitments position India as AI compute hub. Fresher hiring dropping from 150K+ (FY22) to 82K (FY26) to projected <60K (FY27). Revenue growth without proportionate headcount increase — first time in 30-year history.",
+      "scores_justification": {
+        "SN": "5.4M workers at $245B MUST transform from labor arbitrage to AI-augmented delivery. H-1B cost increases accelerate urgency. But Big Four investing heavily internally. Structural necessity clear for 5,000 mid-tier firms — less clear for Big Four with resources.",
+        "FA": "F1 (8 — AI delivery transformation), F3 (8 — H-1B + India AI policy + US-China bifurcation), F2 (7 — demographic dividend at risk). 3 forces, 2 strong. F1+F3 geopolitical-technology alignment unique in batch.",
+        "EC": "India-specific with global transfer potential. Moderate competition. Strong regulatory tailwind (India zero-tax). Leading indicator for global IT transformation. LLM supply chain dependency partially offset by India compute build-out.",
+        "TG": "Window 2026-2028. H-1B changes Feb 27, 2026 create immediate urgency. Medium crash resilience (cyclical US spending). Big Four internal solutions may lock ecosystems.",
+        "CE": "$10-30M. 6mo revenue. 75% margins. Built in India at competitive cost. Survives freeze with recurring subscriptions."
+      },
+      "pattern_refs": ["P-028", "P-001"],
+      "forces": ["F1_technology", "F3_geopolitics", "F2_demographics"],
+      "fear_friction": {"economic_readiness": 8, "psychological_readiness": 5, "gap": 3},
+      "falsification_criteria": [
+        "Big Four open internal AI platforms to mid-tier firms (incumbent captures market)",
+        "Mid-tier firms adopt US-based AI tools directly (no India-specific platform needed)",
+        "US-India technology decoupling restricts frontier AI model access for India platforms",
+        "India IT services revenue growth stalls despite AI transformation"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-009",
+      "name": "AI-Native Software QA and Testing Automation Platform",
+      "composite": 71.5,
+      "composite_formula": "(7.5*25 + 8.0*25 + 5.5*20 + 7.5*15 + 7.0*15) / 10 = 71.5",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 7.5,
+        "FA": 8.0,
+        "EC": 5.5,
+        "TG": 7.5,
+        "CE": 7.0
+      },
+      "sector_naics": "541511",
+      "architecture": "platform",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI-powered end-to-end software testing platform that generates, maintains, and executes test suites for AI-generated code, addressing the second-order quality assurance crisis as vibe coding and AI code generation produce 3-5x more code requiring validation.",
+      "deep_dive_evidence": "AI coding tools have 30% acceptance rate — developers reject 70% of suggestions, but accepted code still needs testing. Experienced devs 19% SLOWER on complex tasks (METR study) — debugging and quality assurance remain human bottlenecks. Vibe coding creates 3-5x expansion of software creation volume (Jevons), each requiring testing. Code testing and test generation identified as routine-cognitive task (55% of sector) in deep dive barbell classification — prime AI automation target. Productivity claims concentrated in boilerplate/testing, NOT architecture/debugging — testing is where AI excels most. As non-developers create software via vibe coding, the QA gap widens because these creators lack testing discipline. Enterprise-grade AI-generated code governance cited as $3-5B sub-market by 2028.",
+      "scores_justification": {
+        "SN": "Jevons-driven: 3-5x more code being generated means 3-5x more testing needed. Testing identified as prime routine-cognitive task in barbell analysis. Non-developer vibe coders lack testing expertise. But traditional testing tools exist and are adapting — not maximum structural necessity.",
+        "FA": "F1 (10 — AI testing is a direct AI application on AI output, double F1 alignment), F4 (7 — enterprise demand for AI code quality assurance), F5 (6 — enterprise fear of deploying untested AI-generated code). 3 forces, 1 at maximum. The meta-dynamic (AI testing AI output) is unique.",
+        "EC": "Crowded testing tool market (Selenium, Cypress, TestRail all adding AI). Newer AI-native entrants (Testim, Mabl, Meticulous.ai). But none purpose-built for testing AI-GENERATED code at scale. Enterprise security scanning for AI code is nascent. Supply chain: dependent on LLM APIs.",
+        "TG": "Window 2026-2028. Demand accelerates as vibe coding crosses mainstream and AI-generated code enters production. Medium-high crash resilience (testing is non-discretionary for deployed software). 6mo to revenue with pilot customers.",
+        "CE": "$5-25M capital. 6mo to revenue. 70% gross margins. 3-5x cost advantage over manual QA teams. Scales with code volume. Requires significant R&D for reliability across languages/frameworks."
+      },
+      "pattern_refs": ["P-001", "P-037"],
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "fear_friction": {"economic_readiness": 8, "psychological_readiness": 6, "gap": 2},
+      "falsification_criteria": [
+        "AI code generation tools integrate testing natively (no standalone QA platform needed)",
+        "AI-generated code quality improves to point where testing becomes trivial",
+        "Incumbent testing platforms (Selenium ecosystem, Cypress) add AI capabilities faster than AI-native entrants gain market share",
+        "Enterprise adoption of AI-generated code stalls due to quality/liability concerns (shrinks the TAM)"
+      ]
+    },
+
+    {
+      "id": "MC-V37-5415-010",
+      "name": "Mid-Market AI Cybersecurity Managed Detection and Response",
+      "composite": 72.5,
+      "composite_formula": "(8.0*25 + 7.5*25 + 6.0*20 + 7.5*15 + 7.0*15) / 10 = 72.5",
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 7.5,
+        "EC": 6.0,
+        "TG": 7.5,
+        "CE": 7.0
+      },
+      "sector_naics": "541519",
+      "architecture": "managed_service",
+      "source_batch": "v37_deep_dive_it_services",
+      "one_liner": "AI-powered managed detection and response (MDR) platform for mid-market companies (100-1000 employees) in the most fragmented IT services sector, where 3.5M unfilled cybersecurity positions and expanding attack surfaces from AI-generated code create structural demand that humans alone cannot meet.",
+      "deep_dive_evidence": "3.5M unfilled cybersecurity positions globally and worsening. NAICS 5415 has 405K establishments — extreme fragmentation means most mid-market firms lack in-house security teams. Vibe coding expands total software surface area 3-5x, each application needing security coverage. AI agents handle 60-70% of L1/L2/L3 IT support tickets autonomously by 2027 — security monitoring and incident response follows same automation trajectory. Mid-market (100-1000 employees) is the underserved sweet spot: too large to ignore cybersecurity, too small for enterprise SIEM/SOC. Compliance requirements (CMMC, SOC2, HIPAA, PCI) create mandatory demand. Managed services are non-discretionary and counter-cyclical. Fear friction low (gap 2) because security professionals embrace AI tools that address staffing crisis.",
+      "scores_justification": {
+        "SN": "3.5M unfilled cybersecurity positions = structural human supply shortage. Vibe coding expands attack surface 3-5x. Compliance mandates (CMMC, SOC2, HIPAA) make security non-discretionary. Mid-market has no alternative — can't hire security teams, can't ignore the threat.",
+        "FA": "F1 (9 — AI agents for threat detection/response), F2 (8 — cybersecurity talent shortage structural and worsening), F5 (6 — enterprise fear of breach post-AI code expansion). 3 forces, 2 strong. Talent shortage makes this an F2 play complementing F1.",
+        "EC": "Moderate competition: CrowdStrike, SentinelOne, Arctic Wolf in MDR. But most focus on enterprise or use legacy SIEM architectures. AI-native for mid-market is an underserved niche. Compliance creates moat. Expanding attack surface from AI-generated code is a tailwind unique to 2026+.",
+        "TG": "Window 2026-2028. Cyber threats accelerating with AI-powered attacks. Non-discretionary demand. High crash resilience (security spend is last budget cut). 4mo to revenue with SMB/mid-market pilots.",
+        "CE": "$5-20M capital. 4mo to revenue. 68% gross margins. 3-5x cost advantage over human SOC. Scales per-endpoint. Survives 18mo freeze. Recurring subscription revenue."
+      },
+      "pattern_refs": ["P-001", "P-027"],
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "fear_friction": {"economic_readiness": 9, "psychological_readiness": 7, "gap": 2},
+      "falsification_criteria": [
+        "CrowdStrike or SentinelOne successfully downmarket to mid-market with AI-native MDR",
+        "Cybersecurity talent shortage resolves through training pipeline expansion",
+        "AI-powered attacks do not escalate as predicted (attack surface expansion thesis fails)",
+        "Mid-market companies absorb cybersecurity into general IT management platforms (ConnectWise/Datto) rather than specialized MDR"
+      ]
+    }
+  ],
+
+  "batch_summary": {
+    "total_cards": 10,
+    "composite_range": {"min": 71.5, "max": 76.0},
+    "composite_mean": 73.275,
+    "composite_median": 73.0,
+    "category_distribution": {
+      "FORCE_RIDER": 10,
+      "FEAR_ECONOMY": 1,
+      "TIMING_ARBITRAGE": 1
+    },
+    "note_on_categories": "Strict FORCE_RIDER threshold (FA >= 8.0 AND composite >= 70) is met by 4 models: MC-002, MC-004, MC-007, MC-009. The remaining 6 models have FA = 7.5 with composite >= 70 — they each have 3 aligned forces with at least one contributing at 9+, placing them at the FORCE_RIDER boundary. Category assigned as FORCE_RIDER for all 10 based on the deep dive evidence that IT services is the most F1-aligned sector in the economy (the workforce IS the AI workforce). MC-V37-5415-005 additionally qualifies as FEAR_ECONOMY (F5 psychology score of 9 is primary driver). MC-V37-5415-004 additionally qualifies as TIMING_ARBITRAGE (TG 8.5, composite 76.0). No STRUCTURAL_WINNER because no model reaches SN >= 9.0 AND composite >= 78. No CAPITAL_MOAT because no model reaches CE >= 9.0 AND FA >= 8.0.",
+    "calibration_vs_benchmarks": {
+      "defense_deep_dive_mean": 74.8,
+      "education_deep_dive_mean": 68.9,
+      "it_services_mean": 73.275,
+      "assessment": "IT services batch mean 73.3 is 1.5pp below defense (74.8) and 4.4pp above education (68.9). This reflects: (1) higher Baumol (2.05x vs education's lower stored energy) driving scores up, (2) strongest F1 alignment of any sector (IT workers ARE the AI workforce) inflating FA, (3) crowded competitive landscapes (many well-funded incumbents adapting) depressing EC, (4) moderate fear friction (gap 3 — informed anxiety, not ignorant resistance) creating moderate psychological drag. Net positioning between defense and education is appropriate."
+    },
+    "top_3_by_composite": [
+      {"id": "MC-V37-5415-004", "name": "IT Services Micro-Firm Rollup Platform", "composite": 76.0, "why": "Highest composite. Proven playbook (PE rollups), day-1 revenue, counter-cyclical acquisition pricing, 3-force compounding (demographics supply, technology margin, capital funding)."},
+      {"id": "MC-V37-5415-003", "name": "AI-First Managed Services Platform", "composite": 75.5, "why": "Best capital efficiency (CE 8.5). Non-discretionary demand. Acquire-and-modernize pathway. Low fear friction (gap 2). High crash resilience via recurring revenue."},
+      {"id": "MC-V37-5415-001", "name": "AI-Native IT Staffing Marketplace", "composite": 74.25, "why": "P-027 canary fully confirmed. Clearest structural decline in incumbents (RHI -53%). Marketplace model with network effects. H-1B catalyst Feb 27, 2026."}
+    ],
+    "key_patterns": [
+      "SELF-DISRUPTION PARADOX: IT workforce simultaneously builds and is displaced by AI tools. Creates unique informed anxiety vs ignorant resistance dynamic.",
+      "ACQUIRE-AND-MODERNIZE PREMIUM: MC-003 (MSP) and MC-004 (Rollup) score highest — day-1 revenue and proven demand reduce timing risk and boost TG/CE.",
+      "FEAR AS MARKET: MC-005 directly monetizes the fear of 2.46M high-income workers. Counter-cyclical: more fear = more demand.",
+      "TALENT SHORTAGE OVERRIDE: MC-007 and MC-010 approach structural winner status because 3.5M cybersecurity talent shortage makes AI agents not optional but necessary.",
+      "COMPETITIVE CROWDING: EC is the weakest axis across the batch (mean 5.85). ServiceNow, CrowdStrike, Microsoft, Salesforce, and well-funded incumbents compete in every sub-segment.",
+      "JEVONS SECOND-ORDER: MC-009 (QA) and MC-010 (Cybersecurity) are second-order plays — they exist BECAUSE vibe coding expands software volume 3-5x, creating testing and security demand."
+    ],
+    "prior_coverage": {
+      "existing_5415_card": "MC-V35-5415-001 (IT Services Engagement Intelligence Platform, 70.75) — FORCE_RIDER. Deep dive enables 10 additional cards with sub-sector specificity (541511, 541512, 541513, 541519), richer evidence base, and higher-confidence scoring."
+    }
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "cycle": "v3-7",
+  "date": "2026-02-12",
+  "agent": "Agent B (Business Model Constructor)",
+  "source_batch": "v37_deep_dive_securities",
+  "source_analysis": "v3-7_securities_deep_dive_2026-02-12.json",
+  "sector_naics": "523",
+  "sector_name": "Securities, Commodity Contracts, and Other Financial Investments and Related Activities",
+  "sector_context": {
+    "baumol_score": 3.71,
+    "employment": 1067731,
+    "establishments": 147761,
+    "avg_pay": 269149,
+    "emp_growth_pct": 4.06,
+    "wage_growth_pct": -2.41,
+    "fear_friction_gap": 1,
+    "transformation_phase": "acceleration",
+    "key_divergence": "Inverse Baumol: wages declining -2.4% while employment grows +4.1%. Front-office shrinks, back-office grows. Sector adding bodies at lower per-head cost as AI-augmented operations replace high-compensation human traders/analysts."
+  },
+  "note_on_existing_cards": "MC-V35-5239-001 (RegTech for Alt Investments, composite 78.75) and MC-V35-5259-001 (AI-Native Fund Administration, composite 77.25) already exist from v3-5 cycle. Not duplicated here. These 9 cards target distinct sub-segments identified in the securities deep dive.",
+
+  "model_cards": [
+    {
+      "id": "MC-V37-523-001",
+      "name": "AI-Augmented RIA Rollup Platform",
+      "composite": 79.75,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.5,
+        "FA": 8.5,
+        "EC": 7.0,
+        "TG": 8.0,
+        "CE": 7.5
+      },
+      "composite_calculation": "(8.5*25 + 8.5*25 + 7.0*20 + 8.0*15 + 7.5*15) / 10 = (212.5 + 212.5 + 140.0 + 120.0 + 112.5) / 10 = 79.75",
+      "sector_naics": "523940",
+      "architecture": "rollup_consolidation",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "Acquire retiring RIA practices at 5-8x earnings, consolidate onto AI-native platform, serve 3x clients per advisor at 40% lower cost. 85K establishments with 5.8 avg workers = most fragmented high-wage sub-sector in the economy.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "38% of financial advisors plan to retire within a decade -- biological clock is non-negotiable",
+          "RIA M&A at record: 345 deals Q3 2025, $1.22T transacted, 440+ deals projected for full year",
+          "85,000 establishments averaging 5.8 workers -- extreme fragmentation invites platform consolidation",
+          "$68T intergenerational wealth transfer creates surging demand from digital-native heirs",
+          "Fee compression (83% of advisors <1% for $5M+ clients) makes sub-$200M standalone practices unviable"
+        ],
+        "force_alignment": {
+          "F2_demographics": {"score": 9, "mechanism": "Silver Tsunami forces 38% of advisors toward exit. No replacement pipeline (entry-level hiring -24pp). $68T wealth transfer means demand surges as supply contracts."},
+          "F1_technology": {"score": 9, "mechanism": "AI automates 60-80% of routine advisory work. Each advisor can serve 300-500 clients vs current 100-150. 5-person firm becomes 2-person AI-augmented team."},
+          "F4_capital": {"score": 8, "mechanism": "PE validated model (75% of deals PE-backed) but adds overhead. AI-native rollup acquires at same multiples with lower operating cost. PE refinancing wall (2027-2028) opens secondary acquisition window."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$500K-$3M/yr per acquired practice (0.6-1.0% of AUM)",
+          "cost_advantage": "2-3x vs traditional practice (AI reduces labor per client by 60%)",
+          "break_even": "Each practice break-even at acquisition. Platform break-even at 20-30 practices.",
+          "capital_required": "$5-20M for first 10-20 acquisitions; $50-100M for 100-practice platform",
+          "gross_margin_pct": 55,
+          "time_to_revenue_months": 0,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 9, "psychological_readiness": 7, "gap": 2, "note": "RIA owners identify personally as 'trusted advisor.' Resolution: retain senior advisor 12-24mo, AI handles back-office, frame as capacity expansion not replacement."},
+        "timing": {"window": "2026-2028", "crash_resilience": "high", "time_sensitivity": "high"},
+        "competitive_density": "PE consolidators at large-cap ($1B+ AUM). AI-native sub-$200M rollup: <5 funded entrants. Long tail of 50K+ sub-$200M practices underserved.",
+        "TAM": "$50B acquirable revenue (50K+ sub-$200M practices x $1M avg). AI margin expansion = $10-15B. Jevons expansion to mass-affluent = $20-30B additional."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-002",
+      "name": "Securities Compliance Automation Platform",
+      "composite": 80.50,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER", "TIMING_ARBITRAGE"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 8.0,
+        "EC": 7.5,
+        "TG": 8.5,
+        "CE": 8.5
+      },
+      "composite_calculation": "(8.0*25 + 8.0*25 + 7.5*20 + 8.5*15 + 8.5*15) / 10 = (200.0 + 200.0 + 150.0 + 127.5 + 127.5) / 10 = 80.50",
+      "sector_naics": "5239",
+      "architecture": "regulatory_moat_builder",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI-powered SEC/FINRA compliance for broker-dealers and RIAs -- automate 80% of regulatory reporting at 5x lower cost than compliance staff. SEC 2026 exam priorities targeting AI use creates urgent demand.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "SEC 2026 exam priorities explicitly target AI in advisory -- every RIA must demonstrate AI compliance",
+          "SEC enforcing 'AI washing' under Section 206 anti-fraud provisions -- firms must prove AI claims",
+          "148K establishments in NAICS 523 need compliance infrastructure, fragmentation means most cannot build in-house",
+          "RIA M&A creates compliance complexity as merged firms harmonize regulatory obligations",
+          "Compliance staff costs $269K avg -- Baumol 3.71x makes dedicated compliance officers unaffordable for small firms"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 9, "mechanism": "AI parses regulations, auto-generates compliance reports, monitors trading violations, maintains audit trails. NLP/LLM makes regulatory text interpretation production-ready."},
+          "F3_geopolitics": {"score": 6, "mechanism": "Cross-border regulatory divergence (US vs EU MiFID II vs UK FCA) creates multi-jurisdiction compliance automation demand."},
+          "F4_capital": {"score": 7, "mechanism": "RIA consolidation creates compliance complexity. Fee compression makes compliance cost larger share of revenue -- automation preserves margins."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$20-80K/yr per firm (tiered by AUM and complexity)",
+          "cost_advantage": "5-8x vs dedicated compliance staff ($40K platform vs $200K+ compliance officer)",
+          "break_even": "100-200 firm subscriptions at $40K avg ARR",
+          "capital_required": "$3-10M",
+          "gross_margin_pct": 82,
+          "time_to_revenue_months": 4,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 9, "psychological_readiness": 8, "gap": 1, "note": "Fear of SEC AI examination DRIVES demand. Fear IS the sales trigger. Compliance is non-discretionary."},
+        "timing": {"window": "2026-2028", "crash_resilience": "high", "time_sensitivity": "high"},
+        "competitive_density": "Legacy regtech (RegEd, ComplySci, COMPLY) serves larger firms. AI-native small-RIA focused: <5 entrants. Analogous to CMMC defense compliance (MC-DEF-011 scored 82.5).",
+        "TAM": "85K+ RIAs + 3,500 broker-dealers + 20K+ fund managers = 108K+ firms. At $40K avg ARR = $4.3B direct TAM. Jevons expansion to unserved micro-advisors = $6B+ total.",
+        "note": "Highest composite in securities deep dive at 80.50 but SN 8.0 < 9.0 prevents STRUCTURAL_WINNER classification. Regulatory moat + counter-cyclical demand + highest CE. Also qualifies as TIMING_ARBITRAGE (TG 8.5 >= 8.5 and composite >= 65)."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-003",
+      "name": "Investment Banking Junior Analyst AI Workforce System",
+      "composite": 79.25,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 8.5,
+        "EC": 7.0,
+        "TG": 7.5,
+        "CE": 8.5
+      },
+      "composite_calculation": "(8.0*25 + 8.5*25 + 7.0*20 + 7.5*15 + 8.5*15) / 10 = (200.0 + 212.5 + 140.0 + 112.5 + 127.5) / 10 = 79.25",
+      "sector_naics": "52315",
+      "architecture": "full_service_replacement",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI system replacing 60-70% of entry-level IB analyst tasks -- financial modeling, pitch decks, data rooms, due diligence at 90% cost reduction. Entry-level hiring already down 24pp.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "Entry-level finance hiring down 24 percentage points -- structural, not cyclical",
+          "Firms targeting 60-70% automation of junior analyst tasks within 12 months",
+          "PwC UK explicitly cut 200 entry-level roles citing generative AI",
+          "Cost of junior analyst ($100-150K all-in) vs AI system ($10-20K/yr) = 7-10x advantage",
+          "66% of enterprises reducing entry-level hiring due to AI (Stanford study)"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 10, "mechanism": "LLMs build financial models, generate comp analyses, draft pitch decks, parse data rooms, produce DD summaries. Structured rule-based tasks with clear outputs -- ideal for automation."},
+          "F2_demographics": {"score": 7, "mechanism": "Entry-level pipeline destruction (-24pp decline, 67% junior dev collapse cross-sector) means firms cannot hire juniors even if they want to. AI fills supply gap."},
+          "F4_capital": {"score": 7, "mechanism": "Fee compression in advisory puts pressure on deal execution costs. AI reduces cost per deal by 30-50%."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$50-200K/yr per IB firm (tiered by deal volume and features)",
+          "cost_advantage": "7-10x vs junior analyst ($15K/yr system vs $100-150K/yr analyst all-in)",
+          "break_even": "50-100 mid-market IB firm subscriptions at $100K avg ARR",
+          "capital_required": "$5-15M",
+          "gross_margin_pct": 80,
+          "time_to_revenue_months": 6,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 9, "psychological_readiness": 9, "gap": 0, "note": "Zero friction at decision-maker level. Wall Street culture rewards performance. Firms ACTIVELY seeking to replace junior tasks. Fear exists only at entry-level being eliminated."},
+        "timing": {"window": "2026-2027", "crash_resilience": "medium", "time_sensitivity": "high"},
+        "competitive_density": "Bulge brackets building in-house (Goldman, JPM). Point solutions exist (AlphaSense, Kira). No integrated mid-market IB workflow platform. 2,000+ mid-market IB firms is addressable.",
+        "TAM": "2,000+ mid-market IB firms x $100K avg = $200M direct. Plus bulge bracket add-on: $100M. Plus PE/family offices: $200M. Total: $500M.",
+        "pattern_ref": "P-037 (Entry-Level Extinction)"
+      }
+    },
+
+    {
+      "id": "MC-V37-523-004",
+      "name": "Agentic AI Financial Advisory Operating System",
+      "composite": 78.25,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 8.5,
+        "EC": 6.5,
+        "TG": 8.0,
+        "CE": 8.0
+      },
+      "composite_calculation": "(8.0*25 + 8.5*25 + 6.5*20 + 8.0*15 + 8.0*15) / 10 = (200.0 + 212.5 + 130.0 + 120.0 + 120.0) / 10 = 78.25",
+      "sector_naics": "523940",
+      "architecture": "platform_infrastructure",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI operating system for RIAs: autonomous client communication, portfolio monitoring, compliance, proactive financial planning. Advisor focuses on judgment and relationships while AI handles operations.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "Fee compression: 83% of advisors charging <1% for $5M+ clients -- margins demand AI augmentation",
+          "Agentic AI now production-ready (OpenAI Frontier Feb 2026, Claude agent teams)",
+          "Feb 10, 2026 sector sell-off confirms market pricing in AI transformation of advisory",
+          "Current advisor capacity 100-150 clients; AI OS enables 300-500 without quality degradation",
+          "RIA tech stacks fragmented across 5+ separate tools -- no unified AI orchestration layer"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 10, "mechanism": "Agentic AI autonomously monitors portfolios, drafts client communications, prepares compliance reports, generates financial plans, executes proactive outreach. Multi-agent orchestration is enabling breakthrough."},
+          "F4_capital": {"score": 8, "mechanism": "Advisory firms earning 0.6-0.8% AUM (down from 1.0%) need 30-50% cost reduction to maintain margins. AI OS delivers this."},
+          "F5_psychology": {"score": 7, "mechanism": "Feb 2026 sell-off creates urgency. Advisors complacent about AI now face existential pressure. Fear becomes adoption catalyst."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$10-40K/yr per RIA firm (tiered by AUM, client count, features)",
+          "cost_advantage": "3-5x reduction in per-client operational cost",
+          "break_even": "200-400 RIA firm subscriptions at $20K avg ARR",
+          "capital_required": "$8-20M",
+          "gross_margin_pct": 78,
+          "time_to_revenue_months": 6,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 9, "psychological_readiness": 7, "gap": 2, "note": "Advisors fear losing control of client relationships to autonomous agents. Resolution: human-in-the-loop for all client-facing communications, start with back-office, expand as trust builds."},
+        "timing": {"window": "2026-2027", "crash_resilience": "medium-high", "time_sensitivity": "high"},
+        "competitive_density": "Orion, Envestnet adding AI features. Altruist is AI-native but custody-focused. Dedicated agentic AI OS for RIAs: <3 entrants. 12-18 month competitive window before incumbents catch up.",
+        "TAM": "85K+ RIA firms x $20K avg ARR = $1.7B direct. Plus broker-dealers/hybrid advisors: $500M. Total: $2.2B."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-005",
+      "name": "Wealth Transfer Orchestration Platform",
+      "composite": 76.00,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.5,
+        "FA": 8.0,
+        "EC": 6.5,
+        "TG": 7.0,
+        "CE": 7.5
+      },
+      "composite_calculation": "(8.5*25 + 8.0*25 + 6.5*20 + 7.0*15 + 7.5*15) / 10 = (212.5 + 200.0 + 130.0 + 105.0 + 112.5) / 10 = 76.00",
+      "sector_naics": "523940",
+      "architecture": "platform_infrastructure",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI platform orchestrating the $68T intergenerational wealth transfer -- estate planning, tax optimization, heir onboarding, advisor transition unified in one system. 70% of heirs fire parents' advisor.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "$68T intergenerational wealth transfer by 2030 -- largest in history, biology-driven",
+          "70% of heirs fire their parents' financial advisor -- current advisory model fails at transfer",
+          "Estate planning complexity increasing (blended families, cross-border assets, digital/crypto assets)",
+          "38% of advisors retiring compounds transfer chaos -- both wealth AND advisory relationships transfer simultaneously",
+          "Tax optimization during transfer saves 10-30% of estate value -- AI models complex scenarios"
+        ],
+        "force_alignment": {
+          "F2_demographics": {"score": 10, "mechanism": "$68T wealth transfer is the single largest demographic event in financial services. Biology-driven, non-negotiable. 12M businesses also changing hands."},
+          "F1_technology": {"score": 8, "mechanism": "AI models complex estate scenarios (multi-state, cross-border, blended family, digital assets, charitable structures) in hours vs weeks of manual planning."},
+          "F4_capital": {"score": 7, "mechanism": "10-30% of estate value at risk from suboptimal transfer planning. For $5M estate = $500K-$1.5M in tax savings."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$5,000-25,000 per transfer engagement + $500-2,000/yr ongoing monitoring",
+          "cost_advantage": "3-5x vs separate professional engagements (integrated platform reduces total cost by 60%)",
+          "break_even": "500 transfer engagements/year at $10K avg revenue",
+          "capital_required": "$5-15M",
+          "gross_margin_pct": 70,
+          "time_to_revenue_months": 6,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 8, "psychological_readiness": 5, "gap": 3, "note": "Estate planning emotionally charged -- mortality, family dynamics, generational tension. Highest fear friction in securities sub-sector. Resolution: position as enabling professionals (attorney/CPA remain client-facing), AI handles modeling and coordination."},
+        "timing": {"window": "2026-2030", "crash_resilience": "high", "time_sensitivity": "medium"},
+        "competitive_density": "Trust and Wills, Vanilla, FP Alpha offer partial solutions. No integrated AI-powered transfer orchestration. Low competitive density (<5 funded entrants).",
+        "TAM": "$68T transferring over ~10 years = ~$6.8T/yr. At 0.1% platform fee = $6.8B annual. Plus ongoing monitoring: $2B. Total: $8.8B addressable."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-006",
+      "name": "AI Commodity Intelligence and Trading System",
+      "composite": 73.50,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 7.5,
+        "FA": 8.0,
+        "EC": 6.5,
+        "TG": 7.0,
+        "CE": 7.5
+      },
+      "composite_calculation": "(7.5*25 + 8.0*25 + 6.5*20 + 7.0*15 + 7.5*15) / 10 = (187.5 + 200.0 + 130.0 + 105.0 + 112.5) / 10 = 73.50",
+      "sector_naics": "523160",
+      "architecture": "data_compounding",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI-powered commodity market intelligence combining satellite imagery, NLP, and ML for energy, metals, and agriculture price prediction. NAICS 523160 has highest Baumol in sector (4.50).",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "NAICS 523160 Baumol 4.50 -- highest in NAICS 523, extreme stored disruption energy",
+          "AI data center energy demand restructuring energy commodity markets (copper 50K tonnes per facility)",
+          "Gold forecast $5K/oz by end-2026 (JPM) -- volatility creates demand for better prediction",
+          "Copper structural deficit 10MT by 2040 -- AI prediction of supply/demand dynamics is high-value",
+          "ML absorbs satellite imagery, shipping data, weather, geopolitical signals for nonlinear price prediction"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 9, "mechanism": "ML models absorb diverse inputs (satellite, ship tracking, weather, inventory, geopolitical signals) to identify nonlinear relationships in commodity pricing."},
+          "F6_energy": {"score": 8, "mechanism": "AI data center demand (945 TWh by 2030, IEA) restructuring energy markets. Firms modeling AI energy demand have structural intelligence advantage."},
+          "F3_geopolitics": {"score": 7, "mechanism": "US-China tariffs (47.5%), energy sanctions, rare earth controls create geopolitically-driven commodity dislocations. AI processes geopolitical signal faster than humans."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$50-200K/yr per institutional client",
+          "cost_advantage": "3-5x vs traditional commodity research (AI processes 1000x more data sources at fraction of analyst cost)",
+          "break_even": "50-100 institutional clients at $100K avg ARR",
+          "capital_required": "$5-15M",
+          "gross_margin_pct": 72,
+          "time_to_revenue_months": 6,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 8, "psychological_readiness": 8, "gap": 0, "note": "Commodity traders are quantitative and performance-driven. Zero psychological resistance. If AI predicts better, they adopt."},
+        "timing": {"window": "2026-2028", "crash_resilience": "medium-high", "time_sensitivity": "medium"},
+        "competitive_density": "Hedge funds (Citadel, Two Sigma) have proprietary models but do not sell tools. Platts/Argus serve pricing not prediction. ChAI and startups early. Low density (<5 funded entrants).",
+        "TAM": "Commodity intelligence ~$5B globally. AI-native expansion = $8-12B. Plus trading alpha (performance fees) = $2-5B.",
+        "note": "Rare F6 (energy) force alignment. Only card in securities portfolio with direct energy vector."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-007",
+      "name": "Mass-Market AI Wealth Management Platform",
+      "composite": 73.25,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 7.5,
+        "FA": 8.0,
+        "EC": 6.0,
+        "TG": 7.0,
+        "CE": 8.0
+      },
+      "composite_calculation": "(7.5*25 + 8.0*25 + 6.0*20 + 7.0*15 + 8.0*15) / 10 = (187.5 + 200.0 + 120.0 + 105.0 + 120.0) / 10 = 73.25",
+      "sector_naics": "523940",
+      "architecture": "full_service_replacement",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI-native wealth management for the $100K-$500K household segment at 0.25-0.40% fees, 10x cheaper than human advisors. 100M+ US households currently unserved by professional advisory.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "Only ~30M US households have financial advisor relationships -- 100M+ unserved",
+          "Robo-advisory services market growing 30.8% CAGR to $54.7B by 2030",
+          "$68T wealth transfer creates millions of new digital-first clients",
+          "Gen Z/Millennials are 75% of robo-advisory users; current advisory minimum ($500K-$1M) excludes 70%+ of households",
+          "Inference cost decline (50x/yr) makes AI advisory economically viable at $50-200/yr per household"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 10, "mechanism": "Inference cost decline makes personalized AI advisory viable at $50-200/yr per household. Agentic AI executes multi-step financial planning workflows. LLMs explain complex concepts in plain language."},
+          "F2_demographics": {"score": 8, "mechanism": "$68T wealth transfer creates millions of new clients who expect mobile-first, low-fee, AI-powered advisory."},
+          "F5_psychology": {"score": 6, "mechanism": "77% of consumers are price-sensitive or AI-receptive. But 23% willing to pay premium for human advice creates ceiling on pure AI adoption."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$200-800/yr per household (0.25-0.40% of AUM or subscription)",
+          "cost_advantage": "10x vs human advisor ($200/yr vs $2,700/yr for equivalent service)",
+          "break_even": "50,000 households at $400 avg revenue",
+          "capital_required": "$10-30M",
+          "gross_margin_pct": 75,
+          "time_to_revenue_months": 6,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 9, "psychological_readiness": 7, "gap": 2, "note": "Mass-market clients fear trusting AI with life savings. Resolution: hybrid model (AI handles 95%, human advisor available on-demand for major decisions), transparent portfolio reasoning, start with small accounts."},
+        "timing": {"window": "2026-2028", "crash_resilience": "medium", "time_sensitivity": "medium"},
+        "competitive_density": "CROWDED. Betterment, Wealthfront, Schwab Intelligent Portfolios established. Banks scaling at 35.5% CAGR. 30+ funded entrants, >$5B deployed. Differentiation requires depth of AI personalization and behavioral coaching.",
+        "TAM": "100M unserved households x $400 avg = $40B direct. Plus 30M existing households switching = $20B fee pool displacement. Total: $60B.",
+        "note": "Largest TAM in securities portfolio but most competitive. EC 6.0 reflects crowded market dragging down external context. Differentiation through agentic behavioral coaching is the wedge."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-008",
+      "name": "Private Credit AI Underwriting Platform",
+      "composite": 76.50,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "scores": {
+        "SN": 8.0,
+        "FA": 8.0,
+        "EC": 7.0,
+        "TG": 7.5,
+        "CE": 7.5
+      },
+      "composite_calculation": "(8.0*25 + 8.0*25 + 7.0*20 + 7.5*15 + 7.5*15) / 10 = (200.0 + 200.0 + 140.0 + 112.5 + 112.5) / 10 = 76.50",
+      "sector_naics": "52391",
+      "architecture": "platform_infrastructure",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI-powered underwriting and portfolio monitoring for private credit funds -- the dominant distress liquidity source as PE refinancing wall ($1.5-1.8T 2026-2028) forces credit restructuring at unprecedented scale.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "PE refinancing wall: $930B CRE + $1.5-1.8T total maturities 2026-2028 creates unprecedented distressed credit volume",
+          "Private credit has displaced banks as dominant non-bank lending source -- $1.7T+ AUM and growing",
+          "NAICS 52391 Miscellaneous Intermediation: extreme fragmentation (9,725 establishments, 0.284 fragmentation proxy)",
+          "Traditional credit underwriting requires 2-4 weeks per deal; AI compresses to 2-4 days for standard structures",
+          "Distressed asset evaluation requires rapid due diligence -- speed premium during refinancing wall"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 8, "mechanism": "AI parses financial statements, covenant packages, collateral documentation, and market comparables at 10x speed of human underwriters. NLP extracts risk signals from unstructured deal documents."},
+          "F4_capital": {"score": 9, "mechanism": "PE refinancing wall creates $1.5-1.8T of maturity events requiring credit assessment. Private credit funds deploying $200B+/year need faster, more accurate underwriting to capture distressed opportunities."},
+          "F3_geopolitics": {"score": 5, "mechanism": "Higher-for-longer rates (3.50-3.75% FFR) sustain private credit advantage over bank lending. Cross-border credit flows create multi-jurisdiction underwriting complexity."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$100-500K/yr per credit fund client (tiered by AUM and deal volume)",
+          "cost_advantage": "3-5x vs traditional underwriting team ($200K/yr platform vs $600K-$1M underwriting staff for equivalent throughput)",
+          "break_even": "30-50 private credit fund subscriptions at $200K avg ARR",
+          "capital_required": "$5-15M",
+          "gross_margin_pct": 75,
+          "time_to_revenue_months": 6,
+          "survives_18mo_funding_freeze": true
+        },
+        "fear_friction": {"economic_readiness": 8, "psychological_readiness": 7, "gap": 1, "note": "Credit professionals are quantitative but cautious -- bad underwriting = bad loans. Resolution: AI as screening layer (processes 10x more deals) with human credit committee final approval. Position as deal flow expansion not judgment replacement."},
+        "timing": {"window": "2026-2028", "crash_resilience": "high", "time_sensitivity": "high"},
+        "competitive_density": "Banks have internal credit models. FinTech lenders (Upstart, etc.) serve consumer credit. Enterprise private credit underwriting AI: <5 entrants. Distressed credit evaluation is the least-served niche.",
+        "TAM": "Private credit AUM $1.7T+ with 3-5% management fees = $50-85B revenue pool. Underwriting tools at 1-2% of revenue = $500M-$1.7B addressable. Growing 15-20% annually.",
+        "note": "Counter-cyclical: recessions increase distressed credit volume, which increases underwriting demand. PE refinancing wall is a time-specific catalyst (2026-2028) that elevates timing grade."
+      }
+    },
+
+    {
+      "id": "MC-V37-523-009",
+      "name": "AI-Native Trading Analytics Platform",
+      "composite": 66.00,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL"],
+      "scores": {
+        "SN": 7.0,
+        "FA": 7.5,
+        "EC": 5.5,
+        "TG": 6.5,
+        "CE": 6.0
+      },
+      "composite_calculation": "(7.0*25 + 7.5*25 + 5.5*20 + 6.5*15 + 6.0*15) / 10 = (175.0 + 187.5 + 110.0 + 97.5 + 90.0) / 10 = 66.00",
+      "sector_naics": "52315",
+      "architecture": "platform_infrastructure",
+      "source_batch": "v37_deep_dive_securities",
+      "one_liner": "AI-powered market intelligence and trading analytics at $5-10K/user vs Bloomberg $25K -- Jevons expansion from 325K terminals to 2M+ potential users. Conditional on overcoming Bloomberg moat.",
+      "deep_dive_evidence": {
+        "structural_drivers": [
+          "Bloomberg Terminal market ~$10B, with $2.1B at risk from AI-native alternatives",
+          "EU MiFID II 2026 updates enforce data accessibility -- weakens Bloomberg data exclusivity moat",
+          "Algorithmic trading market $23-33B growing at 12.9% CAGR creates AI-native analytics demand",
+          "AI trading platforms growing at 20% CAGR outpacing terminal-based workflows",
+          "Bloomberg's $25K/seat pricing reflects pre-AI data scarcity economics now being disrupted"
+        ],
+        "force_alignment": {
+          "F1_technology": {"score": 10, "mechanism": "LLMs parse financial documents, synthesize market data, answer complex queries, generate reports at fraction of Bloomberg cost. Agentic AI executes multi-step research workflows."},
+          "F4_capital": {"score": 7, "mechanism": "Fee compression in asset management makes $25K/seat terminal costs a target for cost-cutting."},
+          "F3_geopolitics": {"score": 6, "mechanism": "EU MiFID II data accessibility mandate breaks Bloomberg data exclusivity moat. Regulatory tailwind for open data platforms."}
+        },
+        "unit_economics": {
+          "revenue_per_unit": "$5,000-12,000/yr per seat (vs Bloomberg $25,000)",
+          "cost_advantage": "3-5x vs Bloomberg ($5-10K vs $25K per seat)",
+          "break_even": "5,000-10,000 seats at $8K avg revenue",
+          "capital_required": "$15-50M",
+          "gross_margin_pct": 70,
+          "time_to_revenue_months": 9,
+          "survives_18mo_funding_freeze": false
+        },
+        "fear_friction": {"economic_readiness": 8, "psychological_readiness": 7, "gap": 1, "note": "Bloomberg workflow lock-in -- traders built careers around Terminal. 'Nobody gets fired for buying Bloomberg.' Resolution: target 2M underserved users who cannot afford $25K, complement then compete."},
+        "timing": {"window": "2026-2029", "crash_resilience": "medium", "time_sensitivity": "medium"},
+        "competitive_density": "Bloomberg 33.4% market share with deep moat (network effects, data exclusivity, workflow lock-in). AlphaSense, Kensho/S&P emerging. Extremely difficult incumbent displacement.",
+        "TAM": "2M potential seats x $8K avg = $16B TAM (vs current $10B terminal market). Plus API/data layer = $5B. Total: $21B.",
+        "note": "Lowest composite in securities portfolio at 66.00. Bloomberg moat, $15-50M capital, does NOT survive funding freeze. CONDITIONAL category -- viable only if Bloomberg fails to adapt AND sustained VC funding available. Largest Jevons multiplier (5-7x) if executed."
+      }
+    }
+  ],
+
+  "portfolio_summary": {
+    "total_cards": 9,
+    "by_category": {
+      "FORCE_RIDER": 8,
+      "CONDITIONAL": 1
+    },
+    "composite_stats": {
+      "mean": 75.89,
+      "median": 76.50,
+      "max": {"id": "MC-V37-523-002", "name": "Securities Compliance Automation", "composite": 80.50},
+      "min": {"id": "MC-V37-523-009", "name": "AI-Native Trading Analytics", "composite": 66.00},
+      "distribution": {
+        "above_80": 1,
+        "75_to_80": 5,
+        "70_to_75": 2,
+        "below_70": 1
+      }
+    },
+    "scoring_notes": [
+      "Securities sector scores well (mean 75.89 vs engine-wide ~64) due to Baumol 3.71x, low fear friction (gap=1), and strong multi-force alignment",
+      "No STRUCTURAL_WINNER cards despite high composites -- SN ceiling at 8.5 because sector-specific transformation does not reach economy-level inevitability threshold (SN >= 9.0)",
+      "MC-V37-523-002 (Compliance, 80.50) is analogous to defense CMMC card (82.5) -- regulatory moat with counter-cyclical demand, blocked from SW by SN < 9.0",
+      "MC-V37-523-008 (Private Credit AI Underwriting) is NEW card not in deep dive MC-SEC series -- captures PE refinancing wall catalyst",
+      "Existing cards MC-V35-5239-001 (RegTech, 78.75) and MC-V35-5259-001 (Fund Admin, 77.25) not duplicated; MC-V37-523-002 targets broker-dealer/RIA compliance specifically vs alt-investment compliance in V35 card"
+    ],
+    "timing_convergence": "All 9 models have optimal entry windows starting 2026. Peak opportunity 2026-2028 driven by: RIA retirement wave, agentic AI production readiness (Feb 2026), SEC AI exam priorities, fee compression forcing adoption, PE refinancing wall creating distressed opportunities.",
+    "cross_references": {
+      "related_v35_cards": ["MC-V35-5239-001 (RegTech, 78.75)", "MC-V35-5259-001 (Fund Admin, 77.25)"],
+      "related_cascade_cards": "v3-5_financial_services_cascade_2026-02-11.json (MC-FS-CASCADE-01 through 06)",
+      "patterns_confirmed": ["P-001 (Baumol Cure)", "P-002 (Silver Tsunami)", "P-026 (FS Cascade)", "P-037 (Entry-Level Extinction)"]
+    }
+  }
+}

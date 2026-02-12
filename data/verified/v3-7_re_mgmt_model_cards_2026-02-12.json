@@ -1,0 +1,905 @@
+{
+  "scoring_metadata": {
+    "cycle": "v3-7",
+    "date": "2026-02-12",
+    "cards_scored": 17,
+    "sources": ["v3-7_real_estate_deep_dive_2026-02-12.json", "v3-7_management_deep_dive_2026-02-12.json"],
+    "calibration_reference": "v3-7_normalized top 20 + v3-6 scored deep dive cards",
+    "calibration_notes": "Real Estate (NAICS 53): moderate scores in 65-75 range. Most fragmented major sector (fragmentation proxy 0.204, avg 4.9 workers/establishment). Cascade receptor, not cascade originator. Higher scores for distressed debt and conversion plays that exploit the capital markets cascade (P-026). Management (NAICS 55): moderate-to-high scores in 68-78 range. Corporate OS scores highest as NEW category -- the coordination overhead layer being compressed. Jevons runs IN REVERSE for management (cheaper coordination = less coordination, not more). Calibrated against existing top: V3-FEAR-001 84.0, V3-DEF-001 81.0. Most new cards expected in CONDITIONAL to FORCE_RIDER range.",
+    "qcew_economy_avg_pay": 72608,
+    "scoring_method": "5-axis manual scoring with deep dive evidence, calibrated against existing inventory",
+    "sector_stats": {
+      "real_estate": {
+        "sector_naics": "53",
+        "total_employment": 2389846,
+        "avg_pay": 74536,
+        "baumol_score": 1.03,
+        "fragmentation_proxy": 0.204,
+        "establishments": 488000,
+        "cards_created": 9
+      },
+      "management": {
+        "sector_naics": "55",
+        "total_employment": 2550000,
+        "avg_pay": 146963,
+        "baumol_score": 2.02,
+        "fragmentation_proxy": 0.037,
+        "establishments": 94657,
+        "cards_created": 8
+      }
+    }
+  },
+
+  "real_estate_cards": [
+    {
+      "id": "MC-V37-53-001",
+      "name": "CRE Distressed Debt Acquisition Fund",
+      "composite": 75.5,
+      "category": "TIMING_ARBITRAGE",
+      "categories": ["TIMING_ARBITRAGE", "FORCE_RIDER"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "5311",
+      "architecture": "acquire_and_modernize",
+      "one_liner": "Acquire CRE assets at 30-60 cents on dollar from distressed banks and CMBS, reposition through conversion, re-tenanting, or data center sale -- exploiting $936B maturity wall",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "$936B CRE debt maturing 2026, $1.5-1.8T through 2028",
+          "Office CMBS delinquency 12.34% -- all-time record, above 2008 Financial Crisis peak",
+          "900+ banks with CRE exposure >300% of capital",
+          "Double-defaults surged 90% to $5.5B",
+          "Brookfield $16B distressed RE fund, Blackstone $20B CRE debt push",
+          "Office values 35-50% below 2020 peaks"
+        ],
+        "patterns": ["P-026", "P-001"],
+        "forces": ["F4_capital", "F1_technology", "F6_energy"],
+        "fear_friction_gap": 2,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 8.0, "justification": "$936B CRE debt MUST mature in 2026. Extend-and-pretend exhausting (double-defaults up 90%). Assets MUST change hands. But this is an institutional capital play, not a startup -- PE megafunds (Brookfield $16B, Blackstone $20B) already positioning. SN penalized from deep dive 9.0 to 8.0 for competitive crowding at the asset level."},
+        "FA": {"score": 7.5, "justification": "Strong F4 alignment (debt maturity wall, PE dry powder). F1 enables AI-driven repositioning and data center conversion. F6 creates demand for power-proximate conversions. But F5 (extend-and-pretend psychology) is a headwind that may slow the timeline. Penalized from deep dive 8.5 for the psychological drag on pipeline velocity."},
+        "EC": {"score": 7.0, "justification": "US-centric opportunity with moderate international applicability (UK, EU office distress is smaller). PE competition HIGH -- $50B+ in committed capital targeting this space. Regulatory environment mixed: bank regulators may force faster resolution (positive) or provide forbearance (negative). Low supply chain dependency."},
+        "TG": {"score": 8.5, "justification": "Optimal window 2026-2028 at peak maturity wall. Crash-EXPLOITING model. Revenue within 12-18 months from rental income on acquired assets. Time sensitivity extreme: best assets acquired in 2026-2027. But capital intensity limits accessibility."},
+        "CE": {"score": 5.0, "justification": "Capital INTENSIVE: $50M-$500M+ per fund. Not a lean startup. Requires institutional LP capital, workout expertise, CRE operations. Basis advantage (30-60 cents) creates 2-3x equity multiples but requires massive upfront deployment. Survives 18-month freeze because assets generate cash flow immediately."}
+      },
+      "composite_formula": "(8.0*25 + 7.5*25 + 7.0*20 + 8.5*15 + 5.0*15) / 10 = (200 + 187.5 + 140 + 127.5 + 75) / 10 = 73.0",
+      "composite_check": 73.0,
+      "composite_override": 75.5,
+      "override_reason": "Bumped +2.5 for the strongest timing signal in any RE card -- $936B is a hard calendar date, not a projection. The maturity wall is the most falsifiable and confirmed data point in the engine.",
+      "unit_economics": {
+        "revenue_model": "$2M-$20M/year per acquired property (rental income + repositioning value)",
+        "tam": "$200B-$400B total distressed CRE value reallocation 2026-2028",
+        "capital_required": "$50M-$500M+",
+        "gross_margin_pct": "40-60% on stabilized assets"
+      },
+      "falsification_criteria": [
+        "If Fed cuts rates to 2.5% or below by 2027, enabling painless refinancing",
+        "If Congress provides CRE-specific relief program (TARP-like for CRE)",
+        "If return-to-office mandates restore 80%+ office occupancy",
+        "If bank CRE delinquency remains below 3% through 2027"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-002",
+      "name": "AI-Native Residential Transaction Platform",
+      "composite": 69.5,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER", "CONDITIONAL"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "5312",
+      "architecture": "full_service_replacement",
+      "one_liner": "End-to-end AI residential real estate platform: listing, buyer matching, document prep, negotiation support, closing coordination at 1-1.5% total fee vs 5-6% traditional",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "NAR settlement broke commission cartel (Aug 2024), buyer-agent commissions fell to 2.42%",
+          "138K brokerage establishments averaging 3.3 workers -- extreme fragmentation",
+          "PropTech funding $16.7B in 2025 (+67.9% YoY)",
+          "Rocket/Redfin $1.75B merger creating AI mortgage-to-close pipeline",
+          "500+ AI-powered RE companies globally",
+          "60-70% of standard residential transaction tasks are routine-cognitive"
+        ],
+        "patterns": ["P-001", "P-002"],
+        "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+        "fear_friction_gap": 5,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.5, "justification": "NAR settlement permanently disrupted commission cartel. Standard residential transactions are 60-70% routine-cognitive and AI-automatable. But TRUST barrier is real -- buying a home is the largest financial decision most people make. Consumers still want human guidance. Penalized from deep dive 8.0 for consumer trust headwind."},
+        "FA": {"score": 7.0, "justification": "Strong F1 alignment (AI agents for lead qualification, property matching, documents). F4 supports (PropTech capital $16.7B). But F5 psychology is a HEADWIND -- fear friction gap of 5 in residential brokerage is the highest of any RE sub-segment. 50-state regulatory fragmentation (MLS access, licensing) adds friction."},
+        "EC": {"score": 6.0, "justification": "US residential only -- different legal frameworks internationally. 50 different state RE licensing regimes. MLS access controlled by NAR-affiliated boards. Competitive import HIGH: Zillow, Redfin, Rocket, 500+ PropTech startups. Fair housing compliance adds complexity. Score penalized for crowded field."},
+        "TG": {"score": 7.0, "justification": "NAR settlement creates window but consumer adoption is SLOW -- multi-year transition. Revenue within 12-18 months. Crash-resilient (transactions happen in up/down markets). But this is a gradual disruption, not a sudden window like CRE distress."},
+        "CE": {"score": 7.0, "justification": "$5M-$20M for MVP with MLS integration. 70-80% gross margins on transaction fees. But high customer acquisition costs in real estate (each listing is a contest). Needs network effects. $1-1.5M/state for licensing and MLS integration. Break-even at 500-1000 transactions/year."}
+      },
+      "composite_formula": "(7.5*25 + 7.0*25 + 6.0*20 + 7.0*15 + 7.0*15) / 10 = (187.5 + 175 + 120 + 105 + 105) / 10 = 69.25",
+      "composite_check": 69.25,
+      "unit_economics": {
+        "revenue_model": "$5K-$12K per transaction (1-1.5% of median $380K home)",
+        "tam": "$80B-$100B (current US residential commission pool)",
+        "capital_required": "$5M-$20M",
+        "gross_margin_pct": "70-80%"
+      },
+      "falsification_criteria": [
+        "If NAR settlement is overturned on appeal",
+        "If state legislatures mandate human agent involvement for all transactions",
+        "If consumer trust surveys show no improvement in AI RE acceptance over 2 years",
+        "If Zillow/Redfin/Rocket capture 80%+ of AI-enabled transactions"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-003",
+      "name": "AI Property Management Operating System",
+      "composite": 72.5,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "5313",
+      "architecture": "vertical_saas",
+      "one_liner": "AI-native property management platform automating tenant communication, maintenance dispatch, rent collection, lease admin, and compliance for multi-unit portfolios at $50-200/unit/month",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "664K workers in NAICS 5313, 110K establishments averaging 6 workers",
+          "Institutional landlords at 50%+ AI tool adoption already",
+          "45% growth in property management software adoption",
+          "AI leasing bots reducing inquiry response times 60%+",
+          "EliseAI, AppFolio Realm-X, Yardi Chat IQ achieving mainstream adoption",
+          "Fear friction gap = 1 (lowest of any RE sub-segment)"
+        ],
+        "patterns": ["P-001"],
+        "forces": ["F1_technology", "F4_capital", "F2_demographics"],
+        "fear_friction_gap": 1,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.5, "justification": "PM is labor-intensive and operationally repetitive: 60%+ of staff time on tenant communication, maintenance coordination, rent collection, compliance -- all AI-automatable. Institutional landlords at 50%+ adoption creates competitive pressure. But AppFolio ($8B market cap), Yardi, Entrata are well-funded incumbents already adding AI. SN penalized from deep dive 8.0 for incumbent strength."},
+        "FA": {"score": 7.5, "justification": "Strong F1 (AI chatbots, predictive maintenance are mature). F4 supports (institutional capital expanding in rental housing). F2 secondary (Silver Tsunami affecting small PM firms). Penalized from deep dive 8.0 because force alignment is good but not exceptional -- PM AI is an incremental improvement, not a structural reimagination."},
+        "EC": {"score": 6.5, "justification": "US primary but applicable internationally. State-by-state landlord-tenant laws require compliance customization. Fair housing regulations add liability risk. Competitive import HIGH: AppFolio, Yardi, Entrata, RealPage well-funded. Differentiation must come from AI-native architecture, not features."},
+        "TG": {"score": 7.5, "justification": "Early-growth phase for AI-native PM. Legacy platforms architecturally constrained. Window 2026-2028 before incumbents catch up. Revenue within 6-12 months (SaaS). Crash-resilient: PM needed in any market. But timing is not uniquely advantageous -- steady adoption curve, not a window."},
+        "CE": {"score": 8.0, "justification": "$2M-$8M to MVP. SaaS at $50-200/unit/month. 80-85% gross margins. Low CAC (B2B to property managers). Data flywheel: more properties = better predictive maintenance. Break-even at 20K-40K units. Best capital efficiency among RE cards."}
+      },
+      "composite_formula": "(7.5*25 + 7.5*25 + 6.5*20 + 7.5*15 + 8.0*15) / 10 = (187.5 + 187.5 + 130 + 112.5 + 120) / 10 = 73.75",
+      "composite_check": 73.75,
+      "composite_override": 72.5,
+      "override_reason": "Lowered -1.25 to account for crowded competitive field and incremental nature of the opportunity. AppFolio Realm-X is already an AI-native rebuild of an incumbent platform with distribution.",
+      "unit_economics": {
+        "revenue_model": "$100-200/unit/month (multifamily), $150-300/property/month (SFR)",
+        "tam": "$30B-$50B US property management services",
+        "capital_required": "$2M-$8M",
+        "gross_margin_pct": "80-85%"
+      },
+      "falsification_criteria": [
+        "If AppFolio/Yardi successfully transition to AI-native architecture before 2028",
+        "If tenant-facing AI generates fair housing violations or lawsuits",
+        "If rental market softens significantly (vacancy above 8%)",
+        "If small landlord adoption stays below 20% by 2028"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-004",
+      "name": "Office-to-Residential Conversion Platform",
+      "composite": 71.0,
+      "category": "TIMING_ARBITRAGE",
+      "categories": ["TIMING_ARBITRAGE"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "5311",
+      "architecture": "platform_infrastructure",
+      "one_liner": "Integrated platform for identifying, underwriting, designing, and managing office-to-residential adaptive reuse conversions using AI feasibility analysis -- exploiting 19-25% structural office vacancy",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "Office vacancy 19-25% nationally, structurally permanent",
+          "NYC conversion pipeline 70,700 units (2.2x 2025 volume), 9.5M SF starting in 2026",
+          "Housing shortage: 3.8M homes below demand nationally",
+          "Tax incentives active in NYC (467-m), LA, SF, and 12+ cities",
+          "15+ cities adopting adaptive reuse policies",
+          "Only 20-30% of office buildings structurally suitable for conversion"
+        ],
+        "patterns": ["P-026"],
+        "forces": ["F4_capital", "F1_technology", "F2_demographics"],
+        "fear_friction_gap": 3,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Office vacancy is structural and conversion solves two problems (stranded CRE + housing shortage). NYC pipeline tripled in 3 years. Tax incentives confirm policy alignment. But only 20-30% of buildings are structurally suitable, sharply limiting TAM. Construction cost and labor constraints are real bottlenecks. Penalized from deep dive 8.5."},
+        "FA": {"score": 7.0, "justification": "Moderate F4 alignment (capital required but incentives help). F1 enables AI feasibility analysis compressing underwriting from months to weeks. F2 supports (housing demand from millennials). But F5 is a headwind: NIMBY resistance, tenant opposition, permitting delays. Overall alignment moderate, not strong."},
+        "EC": {"score": 6.5, "justification": "US-centric with applicability to London, Tokyo, EU. Strong policy tailwind but HIGH regulatory complexity: each municipality has different zoning, building code, incentive structure. Labor availability for construction may be constrained (499K new trades workers needed). Some international relevance lifts slightly."},
+        "TG": {"score": 8.0, "justification": "Optimal window 2026-2028: office values at nadir, tax incentives front-loaded (NYC 467-m rewards speed), housing demand acute. Revenue within 24-36 months (construction timeline). Time sensitivity HIGH for incentive capture. Crash-resilient: housing demand is structural."},
+        "CE": {"score": 4.5, "justification": "Capital INTENSIVE for development: $10M-$100M+ per project. Platform layer is leaner ($3M-$10M) with 70-80% margins on feasibility analysis fees. But the value creation happens in the development layer at 15-25% margins. Not a software-economics model."}
+      },
+      "composite_formula": "(7.5*25 + 7.0*25 + 6.5*20 + 8.0*15 + 4.5*15) / 10 = (187.5 + 175 + 130 + 120 + 67.5) / 10 = 68.0",
+      "composite_check": 68.0,
+      "composite_override": 71.0,
+      "override_reason": "Bumped +3.0 for unique convergence: housing shortage + stranded office + tax incentives is a triple alignment that creates value where none existed. The NYC 467-m incentive alone makes the economics work for qualifying buildings.",
+      "unit_economics": {
+        "revenue_model": "Platform: $50K-$500K per feasibility analysis + 1-3% of project value. Development: $150-250/converted SF profit.",
+        "tam": "$50B-$100B national adaptive reuse pipeline over 5 years",
+        "capital_required": "$3M-$10M (platform) or $10M-$100M+ (development)",
+        "gross_margin_pct": "70-80% (platform), 15-25% (development)"
+      },
+      "falsification_criteria": [
+        "If only 15-20% of vacant office is structurally suitable (limits TAM dramatically)",
+        "If construction costs escalate 20%+ due to labor shortage",
+        "If tax incentives expire or are not renewed",
+        "If converted units fail to lease at projected rents"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-005",
+      "name": "CRE Debt Workout and Restructuring Advisory",
+      "composite": 75.0,
+      "category": "TIMING_ARBITRAGE",
+      "categories": ["TIMING_ARBITRAGE", "FEAR_ECONOMY"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "531390",
+      "architecture": "data_compounding",
+      "one_liner": "AI-powered CRE loan workout advisory: automated asset valuation, restructuring scenario modeling, lender-borrower negotiation support for the $936B maturity wall and 900+ overleveraged banks",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "$936B CRE debt maturing 2026 with 12.34% CMBS delinquency",
+          "900+ banks with CRE >300% of capital NEED workout advisory",
+          "Double-defaults surged 90% to $5.5B",
+          "Special servicers overwhelmed ($1.6B net monthly increase in delinquent loans)",
+          "Volume of restructuring work EXCEEDS available human capacity",
+          "Advisory fees: $200K-$500K per engagement"
+        ],
+        "patterns": ["P-026"],
+        "forces": ["F4_capital", "F1_technology"],
+        "fear_friction_gap": 2,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 8.0, "justification": "Volume of workout demand exceeds traditional advisory capacity -- AI augmentation is structurally necessary to handle the pipeline. 900+ banks need advisory. Special servicers overwhelmed. But the advisory relationship remains human -- AI augments, does not replace the advisor. And demand is time-bounded (peak 2026-2028)."},
+        "FA": {"score": 7.5, "justification": "F4 directly creates demand (debt maturity wall). F1 enables solution (AI valuation, scenario analysis, document processing at 3x throughput). But only 2-force alignment -- this is primarily a capital-cycle play with AI as accelerant. Penalized from deep dive 8.0 for narrow force alignment."},
+        "EC": {"score": 6.5, "justification": "US-centric with modest UK/EU applicability. Regulatory tailwind (bank regulators pushing resolution). But competitive risk from CBRE, Cushman, JLL workout divisions adding AI tools. Boutique advisory firms (Houlihan Lokey, FTI) handle large deals. Small advisory market overall."},
+        "TG": {"score": 8.5, "justification": "Peak demand 2026-2028. Revenue within 3-6 months. Time sensitivity EXTREME: banks need help NOW. Data compounding from each workout improves models. Crash-EXPLOITING. But time-bounded -- by 2029-2030 bulk of workouts complete."},
+        "CE": {"score": 8.0, "justification": "$1M-$3M for AI platform. Advisory at $200K-$500K per engagement. 75-85% gross margins. Team of 5-15 serves dozens of clients with AI leverage. Generates cash immediately from advisory fees. No external funding needed after seed. Among the best CE in RE cards."}
+      },
+      "composite_formula": "(8.0*25 + 7.5*25 + 6.5*20 + 8.5*15 + 8.0*15) / 10 = (200 + 187.5 + 130 + 127.5 + 120) / 10 = 76.5",
+      "composite_check": 76.5,
+      "composite_override": 75.0,
+      "override_reason": "Lowered -1.5 because the workout advisory market is time-bounded (peak 2026-2028) and the total market ($10-20B) is modest relative to other RE opportunities. Strong economics but limited long-term durability reduces composite to calibrate with engine norms.",
+      "unit_economics": {
+        "revenue_model": "$200K-$500K per advisory engagement",
+        "tam": "$10B-$20B CRE workout advisory market 2026-2029",
+        "capital_required": "$1M-$3M",
+        "gross_margin_pct": "75-85%"
+      },
+      "falsification_criteria": [
+        "If Fed cuts rates to 2.5% or below, enabling painless refinancing",
+        "If Congress provides CRE-specific relief program",
+        "If large advisory firms build competitive AI tools before 2027",
+        "If banks handle workouts entirely internally"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-006",
+      "name": "AI-Powered Commercial Appraisal and Valuation Platform",
+      "composite": 67.0,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL", "FORCE_RIDER"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "531320",
+      "architecture": "data_compounding",
+      "one_liner": "AI-powered property valuation replacing traditional appraisals for standard residential and commercial properties with lender-grade accuracy and 24-hour turnaround at $50-150 vs $400-700",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "Appraisal workforce shrinking (-2.1% employment, median age 60+)",
+          "Traditional appraisals: $400-$700 per residential, 2-4 weeks turnaround",
+          "AI AVM: $50-$150, 24-hour turnaround, competitive accuracy for standard properties",
+          "GSE appraisal waivers expanding",
+          "CRE repricing (values 35-50% below 2020) creates massive revaluation demand",
+          "22K establishments with 58K workers -- concentrated sub-sector"
+        ],
+        "patterns": ["P-001", "P-002"],
+        "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+        "fear_friction_gap": 4,
+        "transformation_phase": "early_acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Appraisal workforce is shrinking and aging, creating supply constraint. AI AVMs competitive for standard properties. CRE repricing creates demand. But regulatory barriers (USPAP, state licensing, CFPB fair-lending) limit speed of adoption. Full replacement requires regulatory change that may take 3-5 years."},
+        "FA": {"score": 7.0, "justification": "F1 strong (AI computer vision + MLS data + satellite imagery). F2 strong (workforce aging crisis). F4 moderate (mortgage lenders need speed). But regulatory alignment UNCERTAIN -- Dodd-Frank mandates independent appraisals for some loans. USPAP reform timeline unclear."},
+        "EC": {"score": 5.5, "justification": "US primary. Different appraisal regimes internationally. Regulatory contagion HIGH: USPAP, state appraisal boards, GSE requirements, CFPB fair-lending concerns. Competitive import HIGH: Zillow Zestimate, HouseCanary, CoreLogic all in market. Score heavily penalized for regulatory and competitive density."},
+        "TG": {"score": 6.5, "justification": "GSE waiver expansion creates immediate opportunity. But full market disruption needs regulatory reform (3-5 years). Not time-sensitive like CRE distress -- gradual transition. Revenue within 6-12 months from lender partnerships. Moderate crash resilience."},
+        "CE": {"score": 7.5, "justification": "$2M-$5M for platform. Revenue per valuation: $50-150 at scale. 80-85% gross margins. Data flywheel from more valuations. Jevons multiplier: 5x (lower price unlocks HELOCs, insurance, portfolio monitoring use cases). Strong SaaS economics."}
+      },
+      "composite_formula": "(7.0*25 + 7.0*25 + 5.5*20 + 6.5*15 + 7.5*15) / 10 = (175 + 175 + 110 + 97.5 + 112.5) / 10 = 67.0",
+      "composite_check": 67.0,
+      "unit_economics": {
+        "revenue_model": "$50-150/valuation (residential), $500-2000/valuation (commercial)",
+        "tam": "$5B-$10B (current market ~$5B, Jevons expansion to $10B+)",
+        "capital_required": "$2M-$5M",
+        "gross_margin_pct": "80-85%"
+      },
+      "falsification_criteria": [
+        "If CFPB restricts AI-only valuations due to fair-lending concerns",
+        "If state appraisal boards mandate human appraisers for all mortgage transactions",
+        "If AVM accuracy fails to improve for non-standard properties",
+        "If Zillow/CoreLogic dominate AVM market before new entrants achieve scale"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-007",
+      "name": "PropTech Transaction Intermediation Platform",
+      "composite": 66.0,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "5312",
+      "architecture": "marketplace_network",
+      "one_liner": "AI agent-powered residential brokerage platform enabling commission restructuring post-NAR settlement: flat-fee + AI agent intermediation replacing percentage-based agent model for standard transactions",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "NAR membership projected to fall from 1.49M to 1.2M (290K decline)",
+          "Buyer-agent commission averaged 2.42% Q3 2025, down from ~3% pre-settlement",
+          "453K workers in 138K establishments (3.3 workers per office)",
+          "Median realtor age 60 -- Silver Tsunami accelerates exits",
+          "AI agents handle lead qualification, property matching, document prep",
+          "Consumers WANT savings but FEAR automated experience (fear friction gap = 5)"
+        ],
+        "patterns": ["P-001", "P-002"],
+        "forces": ["F1_technology", "F5_psychology", "F4_capital"],
+        "fear_friction_gap": 5,
+        "transformation_phase": "early_acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Commission restructuring is inevitable post-settlement. Fragmented brokerage model is structurally inefficient. AI can automate 60-70% of standard transaction tasks. But the TRUST barrier is the dominant constraint -- home purchase is the largest financial decision for most Americans. The fear friction gap of 5 is the highest in any RE sub-segment."},
+        "FA": {"score": 6.5, "justification": "F1 supports (AI agents capable). F4 moderate (PropTech capital flowing). But F5 psychology is a major HEADWIND at 5-point gap. Consumers fear AI handling their largest purchase. NAR lobby (1.49M members) actively campaigns against disruption. Net force alignment is positive but significantly dampened by psychology."},
+        "EC": {"score": 5.5, "justification": "US only. 50-state regulatory fragmentation. MLS access controlled by incumbents. Crowded field: Zillow, Redfin, Rocket, Side, eXp, Compass + 500 PropTech startups. Fair housing compliance requires human judgment for edge cases. Hard to differentiate in this market."},
+        "TG": {"score": 7.0, "justification": "NAR settlement created the opening, but adoption is slow -- multi-year generational shift. Revenue within 12-18 months. Platform operates in any market condition. But this is not a timing window -- it is a gradual transformation."},
+        "CE": {"score": 7.0, "justification": "$5M-$20M to build MVP with MLS integration. 70-80% gross margins. But HIGH customer acquisition costs. Network effects needed for each local market. $1-1.5M/state for licensing and integration."}
+      },
+      "composite_formula": "(7.0*25 + 6.5*25 + 5.5*20 + 7.0*15 + 7.0*15) / 10 = (175 + 162.5 + 110 + 105 + 105) / 10 = 65.75",
+      "composite_check": 65.75,
+      "composite_override": 66.0,
+      "override_reason": "Minor rounding adjustment.",
+      "unit_economics": {
+        "revenue_model": "$3K-$5K per transaction (flat fee) vs $15K-$22K traditional commission",
+        "tam": "$80B-$100B current US residential commission pool",
+        "capital_required": "$5M-$20M",
+        "gross_margin_pct": "70-80%"
+      },
+      "falsification_criteria": [
+        "If NAR settlement overturned on appeal",
+        "If state legislatures mandate human agent for all transactions",
+        "If consumer trust in AI real estate shows no improvement over 2 years",
+        "If Zillow/Redfin/Rocket capture 80%+ of AI-enabled transactions"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-008",
+      "name": "CRE-to-Data-Center Conversion Specialist",
+      "composite": 69.0,
+      "category": "TIMING_ARBITRAGE",
+      "categories": ["TIMING_ARBITRAGE"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "531120",
+      "architecture": "arbitrage_window",
+      "one_liner": "Acquire and convert power-proximate distressed office/industrial buildings into AI data center facilities -- arbitraging CRE distress pricing vs insatiable AI compute demand",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "Data center electricity demand doubling to 945 TWh by 2030 (IEA)",
+          "Data center occupancy 95%+ by late 2026",
+          "2,600 GW in grid queue (5+ year wait for new connections)",
+          "CRE distressed assets at 30-60 cents on dollar near power infrastructure",
+          "Conversion delivers capacity 12-18 months faster than 24-36 month ground-up builds",
+          "Most distressed office buildings NOT suitable -- this is niche within niche"
+        ],
+        "patterns": ["P-038", "P-026"],
+        "forces": ["F6_energy", "F4_capital", "F1_technology"],
+        "fear_friction_gap": 1,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Data center demand is structurally insatiable and power-proximate CRE at distressed prices is an arbitrage. But only a SUBSET of properties qualify: adequate power access, structural load capacity (250+ lbs/SF), cooling potential, fiber connectivity. This is a niche within a niche. Most distressed offices are NOT suitable."},
+        "FA": {"score": 7.5, "justification": "Strong F6 alignment (data center grid bottleneck makes power-proximate facilities extremely valuable). Strong F4 (CRE distress + $600B+ hyperscaler capex). F1 (AI compute demand is the underlying driver). Weakened by physical constraints -- many buildings simply cannot convert."},
+        "EC": {"score": 7.0, "justification": "US primary, relevant where CRE distress meets data center demand globally. Supply chain moderate (requires utility cooperation, specialized construction). Regulatory moderate (data center permitting varies). Competition low in conversion-specific niche -- hyperscalers prefer purpose-built but conversion offers speed."},
+        "TG": {"score": 8.0, "justification": "Optimal window 2026-2028: CRE at nadir, data center demand exceeding supply, grid queue creating urgency. Revenue within 18-24 months (construction-to-lease). Best power-proximate assets go first. After 2028, new grid connections begin clearing and purpose-built supply increases."},
+        "CE": {"score": 4.0, "justification": "Highly capital intensive: $30M-$200M+ per conversion. Requires institutional partners. But the spread is compelling: acquire at $50-100/SF, invest $200-400/SF in conversion, lease at $150-250/SF/year triple-net. 2-3 year payback. Scale limited by capital, not demand."}
+      },
+      "composite_formula": "(7.0*25 + 7.5*25 + 7.0*20 + 8.0*15 + 4.0*15) / 10 = (175 + 187.5 + 140 + 120 + 60) / 10 = 68.25",
+      "composite_check": 68.25,
+      "composite_override": 69.0,
+      "override_reason": "Minor bump +0.75 for the unique convergence of two structural shortages (compute space + power) that amplify each other. The grid queue creates a genuine scarcity premium for conversion-eligible assets.",
+      "unit_economics": {
+        "revenue_model": "$5M-$30M/year per converted facility (data center lease income by MW capacity)",
+        "tam": "$20B-$50B distressed CRE assets with conversion potential",
+        "capital_required": "$30M-$200M+ per project",
+        "gross_margin_pct": "40-60% on stabilized assets"
+      },
+      "falsification_criteria": [
+        "If grid queue clears faster than expected (new connections within 2 years)",
+        "If utilities refuse additional power to conversion sites",
+        "If less than 3% of distressed CRE is technically suitable",
+        "If hyperscaler capex slowdown reduces data center demand"
+      ]
+    },
+
+    {
+      "id": "MC-V37-53-009",
+      "name": "Small Brokerage Silver Tsunami Rollup",
+      "composite": 65.0,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL"],
+      "source_batch": "v37_deep_dive_real_estate",
+      "sector_naics": "5312",
+      "architecture": "rollup_consolidation",
+      "one_liner": "Acquire retiring small RE brokerages (median owner age 60, 138K establishments), consolidate onto AI platform, retain agent relationships while automating back-office at 50-70% cost reduction",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "138K RE brokerage establishments averaging 3.3 workers",
+          "Median realtor age 60 -- owner-operators retiring",
+          "52.3% of employer businesses owned by 55+ (P-002)",
+          "NAR membership projected decline of 290K",
+          "AI back-office reduces per-agent overhead from $15-25K to $3-8K",
+          "Agent retention post-acquisition is the critical variable"
+        ],
+        "patterns": ["P-002", "P-001"],
+        "forces": ["F2_demographics", "F1_technology", "F4_capital"],
+        "fear_friction_gap": 3,
+        "transformation_phase": "early_acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Silver Tsunami creates acquisition pipeline from 138K fragmented brokerages. AI back-office reduces overhead 50-70%. But agents can simply move to eXp, Compass, or KW -- not all retiring brokerages need acquiring. Value often evaporates when owner leaves because it was built on personal relationships."},
+        "FA": {"score": 6.5, "justification": "F2 alignment strong (demographics). F1 moderate (AI back-office helps but agent productivity is the real bottleneck, and agents are independent contractors). F4 moderate (PE rollup capital available but RE brokerage rollups have MIXED track record -- Compass $8B+ raised, still unprofitable)."},
+        "EC": {"score": 5.5, "justification": "US-only. State licensing complexity. COMPETITIVE RISK HIGH: Compass, eXp, Real, Side all executing rollup/platform strategies at scale. Compass has $8B+ invested. Agent retention is the critical variable. Score penalized for well-funded competition."},
+        "TG": {"score": 7.0, "justification": "Silver Tsunami window is NOW through 2030. NAR decline creates buyer's market for acquisitions. Revenue from Day 1 (acquired brokerages generate commissions). But timing competition: multiple well-funded strategies already executing."},
+        "CE": {"score": 6.0, "justification": "$500K-$2M per brokerage acquisition, $2M-$5M for AI platform. Thin margins: agent commissions typically 70-90% of gross. Revenue per acquisition: $500K-$2M/year. Break-even requires 10-15 acquisitions. Capital-moderate but margin-constrained."}
+      },
+      "composite_formula": "(7.0*25 + 6.5*25 + 5.5*20 + 7.0*15 + 6.0*15) / 10 = (175 + 162.5 + 110 + 105 + 90) / 10 = 64.25",
+      "composite_check": 64.25,
+      "composite_override": 65.0,
+      "override_reason": "Minor bump +0.75 for the scale of the demographic wave (138K establishments with aging owners) that provides persistent deal flow even in competitive environment.",
+      "unit_economics": {
+        "revenue_model": "$500K-$2M/year per acquired brokerage",
+        "tam": "$15B-$25B independent brokerage revenue pool",
+        "capital_required": "$20M-$50M total fund size for 15-25 acquisitions",
+        "gross_margin_pct": "15-25% (after agent splits)"
+      },
+      "falsification_criteria": [
+        "If agent retention after acquisition falls below 60% within 2 years",
+        "If Compass or eXp scale AI platforms making independent brokerages obsolete",
+        "If commission compression makes brokerage margins unviable",
+        "If retiring brokers prefer to close rather than sell"
+      ]
+    }
+  ],
+
+  "management_cards": [
+    {
+      "id": "MC-V37-55-001",
+      "name": "Corporate AI Operating System",
+      "composite": 77.5,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER", "EMERGING_CATEGORY"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "551114",
+      "architecture": "platform_infrastructure",
+      "one_liner": "Enterprise platform replacing middle-management coordination with AI agents for planning, reporting, and cross-functional orchestration -- targeting the $206B routine cognitive payroll in NAICS 55",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "2.55M NAICS 55 workers at $147K avg = $375B annual coordination cost",
+          "55% of HQ work is routine cognitive (reporting, planning, status aggregation)",
+          "AI agent market growing 46.3% CAGR from $7.84B to $52.6B by 2030",
+          "88% of AI agent users report favorable ROI, 4.3x ROI in advanced deployments",
+          "20% of orgs projected to eliminate >50% middle management by 2026 (Gartner)",
+          "108K Jan 2026 layoffs with 60% cutting for AI potential"
+        ],
+        "patterns": ["P-001", "P-036", "P-037"],
+        "forces": ["F1_technology", "F4_capital"],
+        "fear_friction_gap": 5,
+        "coasean_analysis": "Jevons runs IN REVERSE: cheaper coordination creates LESS need for coordination layer. One of few sectors where demand contracts as costs fall. $62B-$103B payroll compression target by 2031.",
+        "transformation_phase": "turning_point"
+      },
+      "scores": {
+        "SN": {"score": 8.0, "justification": "$375B coordination payroll with 55% routine cognitive is an enormous addressable cost. 108K Jan layoffs + Gartner 20% prediction confirm demand. But the reflexive resistance (managers decide their own fate) is the strongest counter-force in the engine. SN penalized from deep dive 8.5 for this unique reflexive resistance."},
+        "FA": {"score": 8.0, "justification": "Strong F1 (multi-agent orchestration just reached production quality). Strong F4 (PE overhead pressure from $930B refinancing wall). But F2 is secondary and F5 psychology is a HEADWIND at gap=5. The people being replaced control the adoption decision. Penalized from deep dive 8.5."},
+        "EC": {"score": 6.5, "justification": "Competitive landscape crowded at horizontal agent layer (Microsoft Copilot Studio, Google Agentspace, Salesforce AgentForce). Startup opportunity is in verticalized corporate OS. EU AI Act and state agentic AI laws create regulatory uncertainty. No geographic limitation (global problem). Score penalized for competitive density at platform layer."},
+        "TG": {"score": 8.0, "justification": "Multi-agent capability just reached enterprise grade (Q1 2026). Entry window 2026-2028 before Microsoft/Google vertically integrate. Revenue within 6 months. Crash-resilient: overhead cutting ACCELERATES in downturns. But Gartner predicts 40% agentic AI project failure by 2027 -- early adoption backlash possible."},
+        "CE": {"score": 7.0, "justification": "$5-20M capital. 75% gross margins. Revenue per enterprise $5K-$25K/month. But enterprise sales cycle (6-12 months) is slow. Data flywheel creates moat but requires investment to reach scale. Competitive pressure from tech giants caps CE."}
+      },
+      "composite_formula": "(8.0*25 + 8.0*25 + 6.5*20 + 8.0*15 + 7.0*15) / 10 = (200 + 200 + 130 + 120 + 105) / 10 = 75.5",
+      "composite_check": 75.5,
+      "composite_override": 77.5,
+      "override_reason": "Bumped +2.0 for EMERGING_CATEGORY status. This is a genuinely new economic category -- the coordination overhead layer being compressed -- that maps to no existing NAICS model. Coasean firm size is shrinking, confirmed by 532K business applications/month. The $206B routine cognitive payroll in NAICS 55 is the largest single category of automatable white-collar work in the economy. Highest-scoring management card by design -- this IS the sector's transformation thesis.",
+      "unit_economics": {
+        "revenue_model": "$5K-$25K/month per enterprise (tiered by employee count)",
+        "tam": "$62B-$103B addressable payroll compression. Platform captures 1-3% = $620M-$3.1B.",
+        "capital_required": "$5M-$20M",
+        "gross_margin_pct": "75%"
+      },
+      "falsification_criteria": [
+        "If middle management layoffs reverse and companies re-hire coordination roles at scale by 2028",
+        "If Microsoft Copilot Studio or Google Agentspace builds dominant corporate coordination vertical",
+        "If >40% of early corporate AI agent deployments fail catastrophically, creating backlash",
+        "If regulatory action restricts AI-driven employment decisions in management roles"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-002",
+      "name": "AI-Augmented PE Portfolio Operations Platform",
+      "composite": 76.0,
+      "category": "FORCE_RIDER",
+      "categories": ["FORCE_RIDER", "TIMING_ARBITRAGE"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "551112",
+      "architecture": "vertical_saas",
+      "one_liner": "AI operations platform enabling PE firms to manage 5-10x more portfolio companies per operating partner, replacing subsidiary management layers during $930B refinancing wall",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "$930B PE debt maturing 2026, $1.5-1.8T through 2028",
+          "PE distress rate 11.98% (+148%) -- portfolio companies under margin pressure",
+          "86K holding company establishments at Baumol 2.47",
+          "Typical PE portfolio company: 5-15 management team at $200K+ each",
+          "AI agents generate board reports, track KPIs, reconcile financials across portfolio",
+          "Counter-cyclical: recession INCREASES demand for overhead reduction"
+        ],
+        "patterns": ["P-001", "P-036"],
+        "forces": ["F1_technology", "F4_capital"],
+        "fear_friction_gap": 3,
+        "transformation_phase": "turning_point"
+      },
+      "scores": {
+        "SN": {"score": 8.0, "justification": "PE refinancing wall creates structural necessity -- overhead reduction is survival imperative for $930B in maturing debt. Baumol 2.47 confirms premium-priced coordination overhead. But PE is a sophisticated buyer that may build in-house. And only ~15K US PE firms total, limiting addressable count. Penalized from deep dive 8.5."},
+        "FA": {"score": 8.5, "justification": "Near-perfect F4 alignment ($930B refinancing wall is the primary driver at 10/10). Strong F1 (multi-agent orchestration enables the model). This is as force-aligned as any non-defense model. Counter-cyclical demand profile amplifies alignment. Only slight penalty for being 2-force rather than 3-force model."},
+        "EC": {"score": 7.0, "justification": "Low regulatory risk (PE lightly regulated). Strong leading indicators (PE distress rate, maturity schedule). Good talent availability. Moderate competitive import from existing PE tech platforms adding AI. Cross-geography applicability (global PE industry). Better EC than most management cards."},
+        "TG": {"score": 8.5, "justification": "Timing exceptional -- $930B maturing NOW. Counter-cyclical (recession increases urgency). Revenue in 4 months. First-mover captures relationships during refinancing wave. Very high time sensitivity."},
+        "CE": {"score": 7.0, "justification": "$3-10M capital. 80% gross margins. Counter-cyclical demand. PE operating data creates moat. But enterprise PE sales cycle is relationship-driven, requiring investment. Market limited to ~15K PE firms. Penalized from deep dive 8.0 for market size limitation."}
+      },
+      "composite_formula": "(8.0*25 + 8.5*25 + 7.0*20 + 8.5*15 + 7.0*15) / 10 = (200 + 212.5 + 140 + 127.5 + 105) / 10 = 78.5",
+      "composite_check": 78.5,
+      "composite_override": 76.0,
+      "override_reason": "Lowered -2.5 for market size limitation (~15K PE firms, ~45K portfolio companies) and the strong possibility that PE firms build in-house using generic tools (Claude, Copilot) rather than purchasing specialized platform. PE culture is relationship-driven and may resist platform-mediated operations. Calibrated against existing engine inventory.",
+      "unit_economics": {
+        "revenue_model": "$10K-$50K/month per PE firm (tiered by portfolio size). Alt: $2K-$5K/month per portfolio company.",
+        "tam": "~15K US PE firms x ~$50K/yr avg = $750M addressable. Platform captures 15-25% = $110M-$190M.",
+        "capital_required": "$3M-$10M",
+        "gross_margin_pct": "80%"
+      },
+      "falsification_criteria": [
+        "If PE refinancing wall resolves without significant overhead restructuring",
+        "If PE firms build effective in-house AI operations using generic tools",
+        "If AI agent reliability proves insufficient for PE-grade financial accuracy",
+        "If major PE firm AI operations failure creates industry backlash"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-003",
+      "name": "AI Strategy and Consulting Engine",
+      "composite": 68.5,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL", "FORCE_RIDER"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "541611",
+      "architecture": "full_service_replacement",
+      "one_liner": "AI-native consulting platform delivering strategy, operations, and org design at 80% lower cost than McKinsey/BCG/Bain with 10x faster delivery -- targeting the $976B consulting market's mid-market underserved segment",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "Global management consulting market $976B, growing 4.2% CAGR",
+          "McKinsey cutting 10% workforce -- incumbents restructuring themselves",
+          "Deloitte overhauling job titles effective Jun 2026",
+          "70% of consulting firms now operating with blended workforce",
+          "Entry-level consulting salaries flat 3rd straight year",
+          "60-80% of consulting time is research/analysis -- AI-automatable"
+        ],
+        "patterns": ["P-001", "P-036"],
+        "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+        "fear_friction_gap": 3,
+        "transformation_phase": "turning_point"
+      },
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Strong Baumol cure candidate -- $976B market with 60-80% routine cognitive content. Consulting's relationship and trust dimensions create durable human premium. But the mid-market expansion thesis (companies that never hired MBB become addressable at 80% lower cost) is compelling Jevons expansion."},
+        "FA": {"score": 7.0, "justification": "Good F1 alignment (AI can perform research, analysis, framework application at near-consultant quality). F4 moderate (consulting is discretionary, cut in downturns). F5 cuts both ways -- fear drives advisory demand but also creates resistance to AI-generated advice. Net alignment positive but not dominant."},
+        "EC": {"score": 5.0, "justification": "HIGH competitive density -- MBB + Accenture ($3B AI investment) + Big 4 + dozens of startups. McKinsey brand moat is real. Regulatory favorable but competitive import is the major risk. Score heavily penalized for the most crowded competitive field in the engine. The consulting market is large enough for many entrants but differentiation is extremely difficult."},
+        "TG": {"score": 7.0, "justification": "Good timing -- AI capability sufficient, incumbents restructuring. But not urgently time-sensitive like PE refinancing. Medium time sensitivity (large market supports late entrants). Revenue in 3 months for lean operation. Moderate crash resilience (consulting partly discretionary)."},
+        "CE": {"score": 7.0, "justification": "$2M-$10M capital. 70% gross margins. Fast revenue. But consulting is relationship-driven. Moat from proprietary knowledge bases but competitors can build similar. Jevons multiplier of 3-5x is the upside: millions of mid-market companies become addressable at $10-30K per strategy sprint vs $500K+ at MBB."}
+      },
+      "composite_formula": "(7.5*25 + 7.0*25 + 5.0*20 + 7.0*15 + 7.0*15) / 10 = (187.5 + 175 + 100 + 105 + 105) / 10 = 67.25",
+      "composite_check": 67.25,
+      "composite_override": 68.5,
+      "override_reason": "Bumped +1.25 for the 3-5x Jevons expansion potential. If mid-market companies (currently priced out of strategy consulting) adopt at $10-30K per engagement, the TAM expansion is enormous. This is one of the clearest Jevons expansion cases in the engine.",
+      "unit_economics": {
+        "revenue_model": "$10K-$100K per engagement. Strategy sprint: $10-30K in 2 weeks vs 8-12 weeks at MBB.",
+        "tam": "$976B global consulting. Mid-market segment: $50-100B latent demand at 80% lower price.",
+        "capital_required": "$2M-$10M",
+        "gross_margin_pct": "70%"
+      },
+      "falsification_criteria": [
+        "If MBB firms successfully transform to AI-native models and maintain market share",
+        "If CEOs prove unwilling to trust AI-generated strategy even at 80% lower cost",
+        "If AI analysis quality plateaus below board-level recommendation threshold",
+        "If consulting demand drops alongside AI adoption"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-004",
+      "name": "Corporate HQ-to-Flex Workspace Conversion Platform",
+      "composite": 68.0,
+      "category": "TIMING_ARBITRAGE",
+      "categories": ["TIMING_ARBITRAGE", "CONDITIONAL"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "531120",
+      "architecture": "marketplace_network",
+      "one_liner": "Marketplace matching downsizing corporate HQs with flex workspace operators and conversion developers, capturing the 15-20% office lease expiration wave of 2026-2028 driven by NAICS 55 management layer compression",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "Office CMBS delinquency 12.34% all-time record",
+          "15-20% of total office inventory has leases expiring 2026-2028",
+          "32% of CRE leaders plan further footprint reduction",
+          "70,700 units in NYC office-to-residential conversion pipeline",
+          "NAICS 55 HQ downsizing directly reduces Class A office demand in top metros",
+          "Hub-and-spoke model replacing monolithic HQs"
+        ],
+        "patterns": ["P-026"],
+        "forces": ["F4_capital", "F1_technology", "F2_demographics"],
+        "fear_friction_gap": 2,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Strong demand driver (CMBS 12.34%, 15-20% lease expiration wave). But the marketplace model is not structurally necessary -- corporates can use traditional brokers. The wave creates opportunity but does not mandate a new platform. Differentiation challenge against established CRE platforms."},
+        "FA": {"score": 7.0, "justification": "Strong F4 alignment (CRE distress creates transaction volume). Moderate F1 (AI analytics enabler, not primary driver). F2 secondary. This is primarily a capital-cycle play with AI as an add-on. Force alignment is real but not exceptional."},
+        "EC": {"score": 5.5, "justification": "Crowded CRE platform market: IWG, WeWork, CBRE, JLL, Cushman, VTS, CoStar. Data access concentration (CoStar dominance). Municipal regulatory variation creates complexity. CRE decisions are relationship-driven, resisting platform disintermediation."},
+        "TG": {"score": 8.5, "justification": "The lease expiration wave is a known, calendared event. First-mover during 2026-2027 captures highest transaction volume. Revenue in 6 months. Time sensitivity critical -- after 2028, the wave has passed. Best TIMING score among management cards."},
+        "CE": {"score": 6.0, "justification": "$3M-$15M capital. 60% gross margins (lower than pure SaaS). Transaction-based revenue is lumpy. Network effects create moat at scale but require dual-sided marketplace investment. Revenue depends on transaction volume that peaks in 2026-2028."}
+      },
+      "composite_formula": "(7.0*25 + 7.0*25 + 5.5*20 + 8.5*15 + 6.0*15) / 10 = (175 + 175 + 110 + 127.5 + 90) / 10 = 67.75",
+      "composite_check": 67.75,
+      "composite_override": 68.0,
+      "override_reason": "Minor rounding adjustment.",
+      "unit_economics": {
+        "revenue_model": "3-5% transaction fee on space disposition ($500K-$5M per large HQ downsizing). Analytics: $2K-$10K/month.",
+        "tam": "15-20% of ~5.5B sq ft US office inventory expiring 2026-2028 at $30-50/SF = $25-55B lease value. Platform captures 1-3%.",
+        "capital_required": "$3M-$15M",
+        "gross_margin_pct": "60%"
+      },
+      "falsification_criteria": [
+        "If return-to-office mandates reverse HQ downsizing trend",
+        "If CMBS market recovers without significant repricing",
+        "If established CRE brokerages build effective marketplace features",
+        "If lease expiration wave absorbed by subletting rather than permanent downsizing"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-005",
+      "name": "Silver Tsunami Executive Succession + AI Augmentation Platform",
+      "composite": 73.5,
+      "category": "STRUCTURAL_WINNER",
+      "categories": ["STRUCTURAL_WINNER"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "551114",
+      "architecture": "acquire_and_modernize",
+      "one_liner": "Acquisition platform targeting aging-executive-owned companies (52.3% of businesses owned by 55+), replacing retiring C-suite with AI-augmented lean leadership teams at 30-50% lower management cost",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "52.3% of employer businesses owned by 55+ (Census)",
+          "58% have NO succession plan, 70% never successfully sell",
+          "10,000 workers retiring every day through 2027",
+          "12M businesses changing hands this decade -- $68T transfer including $5.1T small business value",
+          "AI-augmented successor teams can run companies with 30-50% fewer management positions",
+          "SBA 504 loans up to $5.5M for acquisition"
+        ],
+        "patterns": ["P-002", "P-001"],
+        "forces": ["F2_demographics", "F1_technology", "F4_capital"],
+        "fear_friction_gap": 3,
+        "transformation_phase": "acceleration"
+      },
+      "scores": {
+        "SN": {"score": 8.5, "justification": "Demographics create absolute structural necessity -- 52.3% of businesses owned by 55+, 58% with no succession plan. P-002 is one of the engine's strongest confirmed patterns (very_strong). The gap between businesses needing succession and viable successors is structural and widening. AI augmentation makes more successions viable. Among the strongest SN scores for any non-defense card."},
+        "FA": {"score": 7.5, "justification": "Excellent F2 alignment (demographics is primary driver at 10/10). Good F1 (AI knowledge capture and operational augmentation). Moderate F4 (acquisition pricing favorable, SBA lending available). Three-force convergence is solid. But the AI knowledge capture thesis for tacit executive knowledge is unproven at scale."},
+        "EC": {"score": 6.0, "justification": "Moderate competitive density from search funds, ETA, PE firms. But differentiation through AI knowledge capture is novel. Regulatory favorable (SBA lending stable). Broad geographic applicability. But uncertain whether AI can replicate retiring executive's tacit knowledge (relationships, judgment). Score penalized for competitive alternatives and knowledge capture uncertainty."},
+        "TG": {"score": 7.5, "justification": "Silver Tsunami accelerating, AI capability sufficient. Revenue in 6 months from first acquisition. Crash-resilient (succession crisis worsens in recession, multiples decline). Medium time sensitivity -- decade-long wave. Not as urgently time-critical as PE operations or CRE."},
+        "CE": {"score": 6.5, "justification": "Requires acquisition capital ($2-10M per company), not just software. 50% gross margins for operating businesses (vs 70-80% pure software). SBA lending reduces equity requirement. AI reduces post-acquisition operating costs. But operationally intensive -- running businesses is harder than running software."}
+      },
+      "composite_formula": "(8.5*25 + 7.5*25 + 6.0*20 + 7.5*15 + 6.5*15) / 10 = (212.5 + 187.5 + 120 + 112.5 + 97.5) / 10 = 73.0",
+      "composite_check": 73.0,
+      "composite_override": 73.5,
+      "override_reason": "Minor bump +0.5 for the demographic inevitability. P-002 cannot be reversed -- 52.3% of businesses owned by 55+ ages by one year annually. This is the most falsification-resistant structural driver in the engine.",
+      "unit_economics": {
+        "revenue_model": "$1M-$10M annual revenue per acquired company. Platform licensing: $2K-$5K/month for AI tools sold to other acquirers.",
+        "tam": "12M businesses changing hands x avg $425K = $5.1T. 30% fail to find buyers = $1.5T at-risk value. Platform captures 1-3% = $15-45B.",
+        "capital_required": "$2M-$10M (platform + first acquisitions)",
+        "gross_margin_pct": "50%"
+      },
+      "falsification_criteria": [
+        "If business owners delay retirement significantly (working beyond 70+ at scale)",
+        "If AI knowledge capture proves unable to replicate tacit executive knowledge",
+        "If SBA lending tightens or acquisition financing becomes unavailable",
+        "If traditional search funds adopt AI augmentation, eliminating differentiation"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-006",
+      "name": "Enterprise AI Agent Governance and Orchestration Layer",
+      "composite": 75.0,
+      "category": "FEAR_ECONOMY",
+      "categories": ["FEAR_ECONOMY", "FORCE_RIDER"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "551114",
+      "architecture": "regulatory_moat_builder",
+      "one_liner": "Governance platform ensuring AI agents operating in corporate management environments comply with policies, audit trails, and emerging regulations -- the fear of AI agent autonomy IS the demand driver",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "79-96% of organizations deploying or increasing AI agent deployments",
+          "Gartner predicts 40% of agentic AI projects will fail by 2027 due to governance gaps",
+          "Colorado AI Act effective 2026 -- first US state requiring algorithmic accountability",
+          "EU AI Act high-risk provisions delayed to Dec 2027 but preparation needed NOW",
+          "280 state lawmakers pursuing AI regulation",
+          "$86B fear economy TAM by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B)"
+        ],
+        "patterns": ["P-036", "P-033"],
+        "forces": ["F1_technology", "F5_psychology", "F4_capital"],
+        "fear_friction_gap": 2,
+        "transformation_phase": "turning_point"
+      },
+      "scores": {
+        "SN": {"score": 8.0, "justification": "Every AI agent deployment creates a governance requirement. 40% failure rate prediction from Gartner specifically due to governance gaps. Colorado AI Act creates legal mandate. When AI agents make management decisions (hiring, budgeting, allocation), audit trails become legally required. But market is still early and exact requirements are evolving."},
+        "FA": {"score": 8.0, "justification": "Excellent F5 alignment (fear IS the demand driver at 9/10 -- rare for psychology to be a TAILWIND). Strong F1 (AI deployment creates governance need). F4 secondary but supportive. Three-force alignment with F5 psychology as a positive force. This model benefits from more fear, not less."},
+        "EC": {"score": 7.0, "justification": "Regulatory contagion is maximum positive (10/10 -- regulation creates demand). Emerging competitive category with moderate density (Credo AI, Holistic AI, IBM OpenPages). Good leading indicators. Talent is the constraint (scarce AI + compliance + legal combination). Score reflects positive regulatory dynamics offsetting competitive risk."},
+        "TG": {"score": 7.5, "justification": "Colorado AI Act effective 2026, EU AI Act preparing for 2027. First movers capture governance standard. Very high crash resilience (compliance is non-discretionary). But federal preemption risk unclear -- could simplify or eliminate state regulatory patchwork. Revenue in 4 months possible. Penalized from deep dive 8.0 for regulatory timeline uncertainty."},
+        "CE": {"score": 7.0, "justification": "$3-12M capital. 78% gross margins. Compliance mandates create sticky revenue. Data flywheel from governance patterns. Governance enables MORE AI deployment (2-3x Jevons -- companies deploy once governance is in place). But moderate competitive pressure from platform incumbents adding governance features."}
+      },
+      "composite_formula": "(8.0*25 + 8.0*25 + 7.0*20 + 7.5*15 + 7.0*15) / 10 = (200 + 200 + 140 + 112.5 + 105) / 10 = 75.75",
+      "composite_check": 75.75,
+      "composite_override": 75.0,
+      "override_reason": "Minor reduction -0.75 to calibrate against existing FEAR_ECONOMY leader V3-FEAR-001 (84.0) and cross-sector AI governance cards. This is a NAICS 55-specific variant, not the category leader. Score reflects genuine fear-economy dynamics with management-specific governance focus.",
+      "unit_economics": {
+        "revenue_model": "$5K-$30K/month per enterprise (tiered by AI agent count and regulatory jurisdictions)",
+        "tam": "$86B fear economy TAM by 2030. Corporate AI governance: ~$3-5B NAICS 55 slice.",
+        "capital_required": "$3M-$12M",
+        "gross_margin_pct": "78%"
+      },
+      "falsification_criteria": [
+        "If federal preemption eliminates state-level AI governance requirements",
+        "If AI platform vendors build sufficient governance into their agent frameworks",
+        "If enterprises adopt move-fast-fix-later approach and governance demand lags 3+ years",
+        "If AI agent deployment plateaus due to broad backlash"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-007",
+      "name": "AI-Era Leadership Development Platform",
+      "composite": 68.0,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "611430",
+      "architecture": "data_compounding",
+      "one_liner": "Leadership development platform preparing managers for AI-augmented organizations, filling the pipeline gap from 67% entry-level hiring collapse and 41% middle management trimming",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "67% drop in junior developer hiring 2024-2026 (Revelio Labs)",
+          "35% decline in ALL entry-level hiring",
+          "37% of managers prefer AI over Gen Z hire",
+          "41% of employees report management layers trimmed in 2025",
+          "By 2031-2035: acute shortage of executives with operational experience",
+          "Executive coaching market $20.4B growing 16.2% CAGR"
+        ],
+        "patterns": ["P-037", "P-036"],
+        "forces": ["F2_demographics", "F1_technology", "F5_psychology"],
+        "fear_friction_gap": 1,
+        "transformation_phase": "early_acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Strong structural argument: entry-level pipeline destruction (P-037) creates 5-10 year leadership crisis. But demand materializes gradually (not urgent until 2029-2031). The crisis is locked in but the payment for it is deferred. Competitors exist in adjacent markets (BetterUp $4.7B, LinkedIn Learning)."},
+        "FA": {"score": 7.0, "justification": "Good F2 alignment (demographic pipeline destruction). F5 alignment (fear drives demand for AI-era leadership skills). F1 is both cause and solution. Three-force alignment but none at maximum contribution. The forces point in the right direction but do not create immediate urgency."},
+        "EC": {"score": 5.5, "justification": "Crowded market with well-funded incumbents (BetterUp $4.7B, Hone, Torch, LinkedIn Learning, traditional business schools). No regulatory moat. Differentiation through AI-native curriculum is valid but potentially replicable. Competitive risk is the primary constraint."},
+        "TG": {"score": 7.0, "justification": "Pipeline crisis locked in. Demand growing. Medium time sensitivity (decade-long wave). Medium crash resilience (L&D budgets cut in recessions but AI leadership may be protected). Revenue in 4 months with corporate pilot approach."},
+        "CE": {"score": 7.0, "justification": "$2-8M capital. 75% margins. Fast revenue. Data compounding from leadership assessment creates long-term moat. Cost advantage: $5K-$15K AI platform vs $30K-$100K HBS/Wharton executive programs. Jevons expansion to mid-level managers previously excluded from executive development."}
+      },
+      "composite_formula": "(7.0*25 + 7.0*25 + 5.5*20 + 7.0*15 + 7.0*15) / 10 = (175 + 175 + 110 + 105 + 105) / 10 = 67.0",
+      "composite_check": 67.0,
+      "composite_override": 68.0,
+      "override_reason": "Bumped +1.0 for the certainty of the structural driver. P-037 pipeline destruction is a locked-in future crisis. Even if entry-level hiring recovers in 2028, the 2025-2027 cohort gap creates a permanent shortage. The question is timing of payment, not whether the crisis exists.",
+      "unit_economics": {
+        "revenue_model": "$500-$2K/person/month subscriptions. Enterprise licenses: $50K-$200K/year.",
+        "tam": "Executive coaching market $20.4B. AI-era leadership development captures 5-10% = $1-2B initially.",
+        "capital_required": "$2M-$8M",
+        "gross_margin_pct": "75%"
+      },
+      "falsification_criteria": [
+        "If entry-level hiring recovers to pre-2024 levels by 2028 (P-037 proves cyclical)",
+        "If BetterUp or LinkedIn Learning launches AI-era leadership curriculum capturing market",
+        "If companies prefer internal AI leadership programs over external platforms",
+        "If L&D budgets cut significantly during downturn"
+      ]
+    },
+
+    {
+      "id": "MC-V37-55-008",
+      "name": "Fractional C-Suite AI Operations Network",
+      "composite": 68.0,
+      "category": "CONDITIONAL",
+      "categories": ["CONDITIONAL"],
+      "source_batch": "v37_deep_dive_management",
+      "sector_naics": "551114",
+      "architecture": "marketplace_network",
+      "one_liner": "Marketplace connecting AI-augmented fractional executives with mid-market companies -- enabling C-suite capability at 1/3 the cost of full-time hires, powered by 532K new businesses per month needing executive talent they cannot afford",
+      "deep_dive_evidence": {
+        "key_data_points": [
+          "532K new business applications per month (Coasean shrinkage confirmed)",
+          "Silver Tsunami creates supply of retiring executives for fractional work",
+          "Mid-market companies need CFO/COO/CTO but cannot afford $300K-$500K hires",
+          "AI augments fractional executives: one CFO + AI serves 5-8 companies vs 1-2 without AI",
+          "Fractional C-suite market growing 30%+ annually from $9B base",
+          "Counter-cyclical: recessions INCREASE demand for fractional over full-time"
+        ],
+        "patterns": ["P-002", "P-001"],
+        "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+        "fear_friction_gap": 2,
+        "transformation_phase": "early_acceleration"
+      },
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Good structural argument: Coasean shrinkage (532K new businesses/month) + Silver Tsunami (executive supply) + AI augmentation. But fractional executive market already exists and is growing without a dominant platform. AI augmentation adds differentiation but is not structurally unique enough for higher score."},
+        "FA": {"score": 7.0, "justification": "Good three-force alignment (F1+F2+F4). F2 demographics drives both supply and demand. F1 augmentation differentiates. F4 cost efficiency appeals. Solid but not exceptional -- no single force is overwhelming."},
+        "EC": {"score": 5.5, "justification": "Competitive market: Toptal, Chief, Bolster, The Fractional CFO. No regulatory moat. Worker classification risk (contractor vs employee). AI augmentation differentiates but may be quickly replicated by existing platforms with distribution advantage."},
+        "TG": {"score": 7.0, "justification": "Market growing, AI capability available, Silver Tsunami supply increasing. High crash resilience (counter-cyclical). Medium time sensitivity -- multi-year entry window without critical urgency."},
+        "CE": {"score": 6.5, "justification": "$2M-$8M capital. 45% marketplace take rate -- lower than SaaS margins. Dual-sided marketplace investment needed. Network effects at scale create moat but require initial investment for liquidity. Revenue in 3 months possible."}
+      },
+      "composite_formula": "(7.0*25 + 7.0*25 + 5.5*20 + 7.0*15 + 6.5*15) / 10 = (175 + 175 + 110 + 105 + 97.5) / 10 = 66.25",
+      "composite_check": 66.25,
+      "composite_override": 68.0,
+      "override_reason": "Bumped +1.75 for the counter-cyclical demand profile (fractional demand increases in downturns) and the double-sided demographic driver (retiring executives supply + new business demand). The Coasean shrinkage trend (532K new businesses/month) provides a structural demand floor that persists regardless of economic cycle.",
+      "unit_economics": {
+        "revenue_model": "15-25% take rate on fractional engagements. Avg engagement $8K-$20K/month. Platform: $1.2K-$5K/month per engagement.",
+        "tam": "US fractional C-suite ~$9B. Growing 30%+ annually. Jevons to $18-20B by 2030.",
+        "capital_required": "$2M-$8M",
+        "gross_margin_pct": "45%"
+      },
+      "falsification_criteria": [
+        "If existing platforms (Toptal, Chief, Bolster) add AI augmentation quickly, blocking new entrants",
+        "If worker classification rules tighten, increasing fractional costs",
+        "If full-time executive hiring returns to dominance at small/mid-market",
+        "If marketplace fails to achieve liquidity before competitors scale"
+      ]
+    }
+  ],
+
+  "summary": {
+    "total_cards": 17,
+    "real_estate_cards": 9,
+    "management_cards": 8,
+    "composite_stats": {
+      "overall_mean": 70.82,
+      "overall_median": 68.5,
+      "re_mean": 70.06,
+      "re_median": 69.0,
+      "mgmt_mean": 71.81,
+      "mgmt_median": 68.25
+    },
+    "category_distribution": {
+      "STRUCTURAL_WINNER": 1,
+      "FORCE_RIDER": 6,
+      "TIMING_ARBITRAGE": 4,
+      "FEAR_ECONOMY": 1,
+      "EMERGING_CATEGORY": 1,
+      "CONDITIONAL": 6
+    },
+    "top_5_by_composite": [
+      {"id": "MC-V37-55-001", "name": "Corporate AI Operating System", "composite": 77.5, "category": "FORCE_RIDER"},
+      {"id": "MC-V37-55-002", "name": "AI-Augmented PE Portfolio Operations Platform", "composite": 76.0, "category": "FORCE_RIDER"},
+      {"id": "MC-V37-53-001", "name": "CRE Distressed Debt Acquisition Fund", "composite": 75.5, "category": "TIMING_ARBITRAGE"},
+      {"id": "MC-V37-55-006", "name": "Enterprise AI Agent Governance and Orchestration Layer", "composite": 75.0, "category": "FEAR_ECONOMY"},
+      {"id": "MC-V37-53-005", "name": "CRE Debt Workout and Restructuring Advisory", "composite": 75.0, "category": "TIMING_ARBITRAGE"}
+    ],
+    "key_findings": [
+      "Management (NAICS 55) scores higher on average (71.8 vs 70.1) despite having fewer cards -- the coordination overhead compression is a genuine new economic category",
+      "Real Estate's most fragmented sector status (0.204 fragmentation proxy) creates more CONDITIONAL models because fragmentation distributes opportunity but also competition",
+      "The CRE cascade (P-026) creates the strongest timing signals: both MC-V37-53-001 and MC-V37-53-005 score TG >= 8.5",
+      "Corporate AI OS (MC-V37-55-001) is the only EMERGING_CATEGORY card -- Coasean firm size shrinkage is creating a genuinely new economic structure",
+      "Fear friction gap >= 5 in residential brokerage (MC-V37-53-002, MC-V37-53-007) caps scores in 65-69 range despite strong structural forces",
+      "Management sector is unique: Jevons runs in REVERSE. Cheaper coordination = less coordination, not more. This means the sector's economic force is deflationary for itself.",
+      "Silver Tsunami (P-002) appears in both sectors: RE agent succession (MC-V37-53-009) and executive succession (MC-V37-55-005). The demographic wave is cross-sectoral.",
+      "Capital intensity (CE <= 5.0) limits two RE cards: distressed debt fund and data center conversion. These are structurally sound but not startup-accessible."
+    ]
+  }
+}
