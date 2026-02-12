@@ -1,0 +1,436 @@
+{
+  "title": "Geopolitical & Global Economic Data for AI Transformation Mapping (2031 Projection)",
+  "compiled": "2026-02-11",
+  "purpose": "External context layer for economy mapping engine -- global structural forces shaping the AI-driven economy through 2031",
+  "data_freshness": "2025-2026 sources",
+
+  "sections": {
+    "1_us_china_ai_decoupling": {
+      "summary": "Two parallel AI ecosystems are forming. US holds 74% of global AI compute vs China's 14%. China has achieved 35% semiconductor equipment self-sufficiency and is building a fully independent AI stack (hardware through software). Export control policy has oscillated under Trump administration but the structural bifurcation is accelerating regardless of policy.",
+
+      "chip_export_controls": {
+        "biden_ai_diffusion_rule_jan_2025": "Three-tier global framework: Tier 1 (18 close allies, unrestricted), Tier 2 (most countries, quantity limits), Tier 3 (China/Russia/Iran/NK, prohibited). RESCINDED by Trump administration.",
+        "trump_policy_oscillation": "April 2025: banned Nvidia H20 sales to China. July 2025: reversed ban. August 2025: began issuing licenses after Nvidia agreed to give federal government 15% of China chip revenue. December 2025: permitted some chip sales to approved Chinese customers.",
+        "january_2026_bis_rule": "Final rule revising export licensing to allow case-by-case review (rather than presumption of denial) for exports to mainland China, Hong Kong, and Macau under specific conditions.",
+        "net_effect": "Policy instability creates uncertainty but does not reverse structural bifurcation. China's domestic AI chip production = 1-4% of US output, projected to fall further in 2026."
+      },
+
+      "china_ai_ecosystem": {
+        "deepseek": {
+          "status": "Released R1 (Jan 2025) which achieved high performance at low cost, surpassed ChatGPT as #1 iOS download. DeepSeek V4 expected mid-February 2026.",
+          "significance": "Proved China can compete on model quality despite hardware constraints. Open-source strategy drives global adoption."
+        },
+        "alibaba_qwen": "Replaced Meta's Llama as most downloaded LLM family on Hugging Face (Sept 2025). Building parallel ecosystem to US models.",
+        "baidu_ernie": "Ernie 5.0 claimed to outperform Gemini-2.5-Pro. Shifted from closed to open models (Ernie 4.5 open-sourced June 2025).",
+        "bytedance": "Preparing Doubao 2.0 LLM, Seeddream 5.0 image gen, Seeddance 2.0 video gen for February 2026 launch.",
+        "chinese_ai_global_share": "Chinese AI models reached ~15% global share by November 2025."
+      },
+
+      "supply_chain_bifurcation": {
+        "two_track_ai_world": "Nvidia dominates one track (cutting-edge GPUs + CUDA ecosystem). Huawei builds parallel track (Ascend 910 + MindSpore framework). Baidu's PaddlePaddle provides alternative software stack.",
+        "smic_progress": "Manufacturing Huawei's Ascend 910 at 7nm using older tools. Costly and inefficient but functional. SMEE's DUV machines (SSA800 series) now in full-scale production at 28nm, achieving 7nm and 5nm yields through multi-patterning.",
+        "equipment_self_sufficiency": "China reached 35% semiconductor equipment self-sufficiency as of early 2026. Validated Power-750H ion implanter, scaled SMEE DUV systems.",
+        "outlook": "Significant self-sufficiency in mature/moderate nodes achievable. Absolute leading edge gap persists but narrowing. Parallel supply chain is being built and is increasingly resilient."
+      },
+
+      "projection_to_2031": "By 2031, two largely independent AI ecosystems will be operational. China will likely have achieved 50-60% equipment self-sufficiency and competitive model performance. The bifurcation creates TWO addressable markets for AI businesses -- US/allied and China/aligned -- with different regulatory, hardware, and software stacks. Companies must choose which ecosystem to build for, or design for both.",
+      "confidence": "High"
+    },
+
+    "2_eu_ai_act_implementation": {
+      "summary": "The EU AI Act is the world's first comprehensive AI regulation. Enforcement is phased through 2027. Already causing compliance delays and feature downgrades for 60% of EU developers. Large companies advantaged over startups. Europe risks becoming a regulated-but-slower AI market vs the US.",
+
+      "implementation_timeline": {
+        "feb_2025": "Prohibited AI practices banned. AI literacy requirements active.",
+        "aug_2025": "GPAI rules apply. National authorities designated. Penalty regime active (up to EUR 35M or 7% global turnover). AI Office operational.",
+        "aug_2026": "Majority of rules apply. High-risk AI systems (Annex III) regulated. Transparency rules (Article 50) active. Mandatory AI regulatory sandbox per member state. Full enforcement begins.",
+        "aug_2027": "Extended transition for high-risk AI in regulated products (medical devices, automotive, etc.)."
+      },
+
+      "impact_on_adoption": {
+        "developer_delays": "60% of EU and UK developers report launch delays due to compliance.",
+        "feature_degradation": "More than one-third forced to strip or downgrade AI features.",
+        "startup_disadvantage": "Large tech companies (Microsoft, Google, Amazon) better equipped with compliance resources, potentially solidifying market positions against smaller competitors.",
+        "model_access": "60% of EU/UK tech startups and SMEs face delayed access to frontier AI models.",
+        "founder_backlash": "30+ founders and VCs signed open letter arguing Act creates 'fragmented, unpredictable regulatory environment that will undermine innovation.'",
+        "sme_relief": "Conformity assessment fees will be lowered for SMEs/startups."
+      },
+
+      "digital_omnibus_amendment": "November 2025: European Commission published proposals to amend multiple EU digital laws including the AI Act and GDPR, including deferring high-risk AI system rules. Suggests political recognition that Act may be too aggressive.",
+
+      "projection_to_2031": "By 2031, the EU AI Act will be fully enforced and create a distinct regulatory zone. This produces TWO effects relevant to the engine: (1) REGULATORY MOAT OPPORTUNITY -- companies that build EU-compliant AI systems first gain barriers to entry. (2) INNOVATION DRAG -- EU will lag US and China in AI adoption velocity, particularly in high-risk applications (healthcare, finance, employment). EU-compliant AI products become exportable to other regulated markets adopting similar frameworks.",
+      "confidence": "High"
+    },
+
+    "3_japan_demographics_ai_robotics": {
+      "summary": "Japan is the world's most advanced laboratory for demographic decline + AI/robotics response. Population shrinking ~500K/year, fertility at 1.15. Robot density 5th globally (419/10K workers). Society 5.0 strategy targeting labor-intensive sectors. Japan's trajectory previews what US/EU will face 10-15 years later.",
+
+      "population_data": {
+        "current_population": "123.4 million (April 2025), down from 128.5M peak (2010)",
+        "annual_decline": "~550,000/year (14 consecutive years of decline)",
+        "birth_rate": "Fertility rate 1.15 (2024). On track for fewer than 670,000 births in 2025 -- 10th consecutive record low year.",
+        "aging": "28% aged 65+, world record. Working age (15-64) population projected to decline by 24M by 2050.",
+        "labor_shortfall_projection": "11 million worker shortfall by 2040 (Recruit Works Institute).",
+        "causes": "Economic insecurity: stagnant wages, rising living costs, expensive childcare discouraging marriage and family formation."
+      },
+
+      "robot_density": {
+        "overall": "419 units per 10,000 manufacturing employees (5th globally after Singapore, South Korea, China, Germany)",
+        "automotive": "1,531 robots per 10,000 employees (4th globally in automotive)",
+        "installations_2024": "44,500 units installed (slight 4% decrease). Operational stock: 450,500 units (+3%).",
+        "global_production_share": "Japan manufactures 38% of global industrial robots."
+      },
+
+      "society_5_0_progress": {
+        "strategy": "Greater adoption of AI, robotics, and big data to enhance long-term productivity and fill declining workforce.",
+        "sectors_automating_first": "Manufacturing, food processing, accommodations, eating/drinking services, retailing, eldercare, nursing.",
+        "labor_saving_shift": "Firms in labor-intensive sectors (hospitality, retail, care) leading adoption of labor-saving technologies.",
+        "automation_impact": "Estimated to mitigate 25-35% of labor shortages in manufacturing and eldercare by 2030."
+      },
+
+      "projection_to_2031": "Japan by 2031 will have 5+ years of scaled AI/robotics deployment in eldercare, hospitality, and manufacturing -- producing real-world data on what works. US/EU eldercare automation strategies should study Japan's outcomes. Japan's robot manufacturing dominance (38% global share) means it will be a critical supplier for global automation buildout. Engine relevance: eldercare AI models (P-024, 925K US establishments) should monitor Japanese deployments for architecture validation.",
+      "confidence": "High"
+    },
+
+    "4_india_ai_emergence": {
+      "summary": "India is emerging as a major AI market with demographic tailwinds (median age 29, 600M working-age), explosive digital infrastructure (228B UPI transactions in 2025), and fast-growing GenAI startup ecosystem (890+ startups, 3.7x surge). AI market projected at $17B by 2027. Potential leapfrog in financial services and healthcare.",
+
+      "demographic_dividend": {
+        "median_age": "~29 years (one of youngest major economies)",
+        "working_age_population": "~600 million",
+        "ai_talent_pool": "Projected to reach 1.25 million AI professionals by 2027",
+        "ai_demand": "1 million AI professionals needed by 2026"
+      },
+
+      "digital_economy_scale": {
+        "upi_2025": "228.3 billion transactions, Rs 299.7 lakh crore value (up from 172.2B in 2024). December 2025: 21.63 billion transactions in single month (record).",
+        "upi_2026_projection": "379 billion transactions annually by FY2026-27, ~90% of retail digital payments.",
+        "upi_users": "Surpassed 500 million unique users by early 2026.",
+        "significance": "World's largest real-time digital payments infrastructure. Leapfrogged card-based payments entirely."
+      },
+
+      "ai_startup_landscape": {
+        "genai_startups": "890+ by H1 CY2025 (3.7x cumulative growth)",
+        "funding": "$990M cumulative GenAI funding by H1 CY2025 (30% YoY growth). Q2FY2025: $51M quarter (6x QoQ surge).",
+        "total_startup_funding_2025": "$11B across all sectors (investors growing more selective).",
+        "enterprise_adoption": "80% of Indian companies consider AI a core strategic priority. 69% plan to increase tech investments in 2025. One-third allocating >$25M to AI."
+      },
+
+      "ai_market_projections": {
+        "nasscom_bcg": "$17 billion AI market by 2027",
+        "growth_rate": "25-35% CAGR",
+        "government_support": "IndiaAI Mission: Rs 10,371.92 crore over 5 years (approved March 2024). Budget 2025: Rs 2,000 crore for FY 2025-26."
+      },
+
+      "leapfrog_sectors": [
+        "Financial services: UPI infrastructure enables AI-native financial products that skip Western banking architecture entirely",
+        "Healthcare: Massive population + low doctor density = AI triage/diagnostics at scale",
+        "IT services: NASSCOM ecosystem transitioning from outsourcing to AI product development"
+      ],
+
+      "projection_to_2031": "India by 2031 will be a $30-50B AI market with global implications. Key dynamics: (1) UPI-native financial AI products will be exportable to other emerging markets. (2) India-trained AI models for low-resource healthcare will serve 3B+ people globally. (3) India's IT services workforce (5M+) will either transform into AI product companies or face Schumpeterian destruction. Engine relevance: LATAM market access (engine founding conditions) could leverage India-developed AI tools adapted for similar demographic/infrastructure profiles.",
+      "confidence": "Medium-High"
+    },
+
+    "5_latam_nearshoring": {
+      "summary": "LATAM nearshoring accelerating but uneven. Mexico FDI surged to $34.3B in H1 2025 (+10.2% YoY), Brazil leads deal volume ($46B). LATAM AI market projected at $30.2B by 2033. Argentina's Milei reforms opening new investment channels. EU-Mercosur deal progressing. AI adoption driven by fintech, nearshoring, and industry demand.",
+
+      "mexico": {
+        "fdi_h1_2025": "$34.3 billion (10.2% YoY growth)",
+        "fdi_2025_forecast": "$43 billion (Mexican Business Council)",
+        "manufacturing_share": "36% of total FDI ($12.7B as of mid-2025)",
+        "key_investments": "Mexico Pacific $15B, Amazon $5B, DHL $4B, Japanese auto suppliers $18B. Stellantis expanding Saltillo to 1M engines/year. Volvo Monterrey plant increased from $700M to $1B.",
+        "government_incentives": "$1.5B USD tax incentives over 6 years for nearshoring companies (Plan Mexico presidential decree).",
+        "regional_concentration": "Northern states (Nuevo Leon, Chihuahua, Coahuila) dominant. US is 43% of FDI ($14.7B).",
+        "tariff_risk": "Trump tariff policy creates uncertainty for 2026+ projections."
+      },
+
+      "brazil": {
+        "deal_activity": "1,600+ deals, ~$46 billion in value by late 2025",
+        "ai_strategy": "$4 billion budget for four-year National AI Strategy",
+        "ai_market_lead": "Emerging as LATAM AI leader but investment and innovation gaps remain"
+      },
+
+      "argentina": {
+        "milei_reforms": "Ley de Bases (June 2024): broad economic reform package. RIGI incentive regime: 30-year tax concessions + trade incentives for investments >$200M in energy, mining, tech, steel.",
+        "growth": "IMF forecasts 4.5% (2025), 3.5% (2026), settling at 3.0-3.2%.",
+        "inflation": "From 41.3% (2025) to projected 18% (2026), 12% (2027), 8% (2028).",
+        "imf_support": "$20B EFF (April 2025), $12B immediate disbursement.",
+        "mercosur_eu": "EU-Mercosur agreement forwarded for signature/ratification (Sept 2025)."
+      },
+
+      "latam_ai_market": {
+        "current_value": "$4.71 billion (2024)",
+        "projection": "$30.20 billion by 2033 (22.9% CAGR)",
+        "colombia_ai": "$110M five-year AI policy commitment (2025-2030)",
+        "adoption_drivers": "Fintech, nearshoring operations, industry demand"
+      },
+
+      "projection_to_2031": "LATAM will be a $20B+ AI market by 2031, driven by: (1) Mexico nearshoring creating manufacturing demand for AI/automation (but tariff risk is real). (2) Brazil's large domestic market + government AI investment. (3) Argentina's Milei reforms potentially unlocking tech investment if reforms hold. (4) EU-Mercosur deal opening European market access. Engine relevance: Founding team's Argentina background + Spanish fluency = direct access. LATAM financial AI built on UPI-equivalent (Pix in Brazil, digital peso in Argentina) is a specific opportunity.",
+      "confidence": "Medium (tariff uncertainty + Argentina reform durability)"
+    },
+
+    "6_mena_sovereign_wealth_ai": {
+      "summary": "Gulf sovereign wealth funds have collectively deployed $66B in AI/digital investments by 2025. Abu Dhabi's Mubadala alone invested $12.9B in AI/digitalization. Saudi PIF partnering on $10B Google Cloud AI hub + $100B tech capability plan through Alat. MENA tech spending projected at $169B in 2026. These funds are becoming the world's largest non-corporate AI investors.",
+
+      "fund_investments": {
+        "collective_gcc_ai_digital": "$66 billion deployed by 2025 (PIF, Mubadala, QIA combined)",
+        "mubadala": {
+          "ai_digital_investment": "$12.9 billion in AI and digitalization (2025)",
+          "focus": "AI infrastructure, semiconductors, core AI technologies, AI models, software, data, life sciences, robotics",
+          "major_deal": "Partnered with G42 to back MGX. MGX + BlackRock GIP: $40B Aligned Data Centers acquisition."
+        },
+        "saudi_pif": {
+          "google_partnership": "$10B partnership to build global AI hub in Saudi Arabia (HUMAIN)",
+          "alat_subsidiary": "$100B plan to enhance Saudi tech capabilities by 2030",
+          "a16z_talks": "In talks with Andreessen Horowitz for additional $40B AI fund"
+        },
+        "adia": {
+          "data_centers": "Partnered with SC Capital Partners for Asia-Pacific data center investments",
+          "research": "Established ADIA Lab for data science, AI, and ML research"
+        },
+        "kwia": "$6 billion in AI/digital (2025)",
+        "qia": "$4 billion in AI/digital (2025)"
+      },
+
+      "regional_spend": {
+        "mena_tech_2026": "$169 billion (Gartner forecast)",
+        "swf_deal_flow_2025": "$56.3 billion in 97 transactions (first 3 quarters)"
+      },
+
+      "projection_to_2031": "By 2031, Gulf SWFs will be among the world's top 5 AI capital allocators alongside US tech companies and Chinese state funds. This creates: (1) A third AI capital center (after US and China) with different strategic objectives (economic diversification from oil). (2) Massive demand for AI infrastructure buildout in the Middle East -- data centers, cloud computing, AI talent. (3) Potential as co-investors or customers for AI businesses built on the engine's models. Engine relevance: SWF capital could be an alternative funding source for capital-intensive physical production models (acquire-and-modernize at scale).",
+      "confidence": "High"
+    },
+
+    "7_us_reshoring": {
+      "summary": "Reshoring intentions are at record highs but actual execution hit a reality check. Kearney's 2025 Reshoring Index fell 311 points. US manufacturing output grew only 1%. Imports from Asian low-cost countries surged $90B. Gap between CEO intention and operational capacity is the defining challenge. AI and robotics are essential enablers -- 95% of manufacturers plan new automation by 2028.",
+
+      "kearney_2025_index": {
+        "index_change": "Fell 311 points after two positive years",
+        "us_manufacturing_output": "Expanded only 1%",
+        "asian_imports": "Increased 10% ($90B) from 14 Asian low-cost countries",
+        "mexico_performance": "Imports growth from Mexico trailing boom of previous two years",
+        "canada_performance": "Year-over-year contraction in exports to US",
+        "ceo_intentions": "Share planning to reshore increased 15% YoY. 50% more CEOs cite geopolitical tensions as reshoring motivation.",
+        "reality_check": "Index exposes gap between reshoring intention and facts -- supply/demand basics still dominate."
+      },
+
+      "ai_robotics_role": {
+        "automation_plans": "95% of US industrial businesses plan new automation within 3 years",
+        "physical_ai": "22% of manufacturers plan to use physical AI (autonomous robots) within 2 years -- more than double current adoption",
+        "unfilled_jobs": "~500,000 manufacturing jobs remain unfilled due to digital/robotics/AI skills gap",
+        "worker_skills_concern": "More than one-third of manufacturing executives cite equipping workers for smart manufacturing as top concern"
+      },
+
+      "policy_environment": {
+        "tariffs": "Trump administration tariffs creating reshoring pressure but also disrupting supply chains",
+        "tax_incentives": "Fresh tax incentives in 2025-2026 tilting momentum toward automation",
+        "one_big_beautiful_bill": "Robotics positioned as major investment theme for 2026"
+      },
+
+      "projection_to_2031": "By 2031, reshoring will be a major structural force but primarily in sectors where AI/robotics can close the labor gap. The 500K unfilled manufacturing job gap CONFIRMS the engine's thesis: acquire-and-modernize with AI/robotics is not a nice-to-have, it's the only viable path to reshoring. Sectors where automation is most mature (CNC machining, injection molding, food production, printing) will reshore first. Engine relevance: DIRECTLY validates acquire-and-modernize architecture as the dominant model for US manufacturing. 95% automation planning = massive TAM for the engine's physical production models.",
+      "confidence": "High"
+    },
+
+    "8_global_ai_regulation": {
+      "summary": "Regulatory divergence is accelerating. EU (comprehensive/binding), US (decentralized/innovation-focused), China (state-controlled/content-aligned), India (sandbox-to-regulation), Brazil (risk-based/EU-inspired). The divergence creates compliance moats for first movers in each jurisdiction and friction for cross-border AI businesses. By 2031, navigating 5+ distinct regulatory frameworks will be a core business capability.",
+
+      "by_region": {
+        "eu": {
+          "approach": "Comprehensive, risk-based, binding",
+          "key_law": "EU AI Act (phased enforcement 2025-2027)",
+          "penalties": "Up to EUR 35M or 7% global turnover",
+          "extraterritorial": "Applies to non-EU providers serving EU market",
+          "recent_adjustment": "November 2025 digital omnibus proposal suggests deferring some high-risk rules"
+        },
+        "us": {
+          "approach": "Decentralized, innovation-led, voluntary frameworks",
+          "federal": "December 2025 executive order establishing minimally burdensome national standard, limiting state-level divergence",
+          "state_level": "Utah, Colorado, California enacted AI laws. States moving faster than federal government.",
+          "enforcement": "FTC, DOJ, NIST guidance rather than single national law"
+        },
+        "china": {
+          "approach": "Centralized state oversight, mandatory ethical reviews, content-control requirements",
+          "key_laws": "Measures for Labelling AI-Generated Content (Sept 2025), Amended Cybersecurity Law (Jan 2026) with AI security reviews and data localization",
+          "content_requirement": "AI-generated content must align with state values",
+          "detection": "Mandatory detection mechanisms: audio Morse codes, encrypted metadata, VR-based watermarking"
+        },
+        "india": {
+          "approach": "Sandbox-to-regulation model",
+          "status": "No specific AI laws yet. Active shaping of framework aligned with OECD/G20 principles.",
+          "data_protection": "Digital Personal Data Protection Act 2023 as foundation"
+        },
+        "brazil": {
+          "approach": "Risk-based, EU-inspired but adapted for domestic context",
+          "status": "Developing comprehensive AI Bill: prohibits high-risk systems, establishes regulatory body, imposes civil liability on developers/deployers",
+          "requirements": "Prompt breach reporting, right to understand AI decisions, bias correction"
+        },
+        "japan": {
+          "approach": "Voluntary guidelines with strong industry coordination",
+          "status": "AI governance guidelines rather than binding law. Emphasizes innovation while encouraging responsible development."
+        }
+      },
+
+      "regulatory_divergence_effects": {
+        "compliance_cost": "Cross-border AI businesses face 5+ distinct regulatory frameworks by 2026",
+        "eu_export": "EU regulations apply to non-EU providers, effectively exporting EU standards globally",
+        "innovation_gap": "EU/China regulation may slow adoption relative to US/India lighter-touch approaches",
+        "trade_friction": "Growing regulatory divergence between democratic and authoritarian AI approaches"
+      },
+
+      "projection_to_2031": "By 2031, regulatory navigation will be a standalone business capability. This DIRECTLY validates the engine's regulatory moat builder architecture (avg score 76, 40 models). Companies that master multi-jurisdiction AI compliance first gain structural barriers to entry. Engine relevance: Healthcare AI compliance (C7-RMB-HC-01, score 87) and Insurance AI compliance (C7-RMB-INS-01, score 82) are well-positioned. Add: cross-border AI compliance as a new model opportunity for 2031 projection.",
+      "confidence": "High"
+    },
+
+    "9_defense_military_ai": {
+      "summary": "Global defense spending tops $2.6T in 2026. US DoD dedicating $13.4B specifically to autonomy/AI in FY2026. NATO raised target to 5% GDP by 2035. European defense spending surpassed $693B in 2026. China spending $293-450B on defense. Ukraine conflict is live testing ground for AI weapons. Defense AI spending creates massive downstream demand for AI infrastructure and talent.",
+
+      "us_dod": {
+        "total_budget_fy2026": "$1.01 trillion (first-ever trillion-dollar defense budget)",
+        "it_budget_fy2026": "$66 billion ($1.8B increase from 2025)",
+        "ai_autonomy_dedicated": "$13.4 billion (first-ever separate budget line for autonomy/AI)",
+        "ai_autonomy_breakdown": {
+          "unmanned_aerial": "$9.4 billion",
+          "maritime_autonomous": "$1.7 billion",
+          "underwater": "$734 million",
+          "ground_autonomous": "$210 million",
+          "counter_uas": "$3.1 billion"
+        },
+        "ai_programs_fy2025": "$25.2B for programs incorporating AI/autonomous systems (~3% of total budget)",
+        "replicator_program": "Delivering hundreds of autonomous drones, thousands more on contract. Billion-dollar initiative for low-cost attritable autonomous systems.",
+        "collaborative_combat_aircraft": "$789M requested by Air Force, $28B planned through 2029",
+        "service_ai_increases": "Navy AI +$308M (+22.7%), Air Force AI +$415M (+21.7%) from FY2025"
+      },
+
+      "china_pla": {
+        "official_budget_2025": "$293 billion (7.2% increase YoY)",
+        "estimated_real_spending": "$330-450 billion (including off-budget spending)",
+        "focus_areas": "Military AI, biotechnology, hypersonic missiles",
+        "note": "True AI-specific allocation not disclosed. Embedded across programs."
+      },
+
+      "nato": {
+        "new_target": "5% of GDP by 2035 (3.5% core defense + 1.5% security-related)",
+        "previous_target": "2% GDP (now met by all Allies)",
+        "spending_growth": "22% real terms increase between 2022-2025. European members + Canada up 50%.",
+        "european_collective_2026": "$693+ billion",
+        "leading_nations": "Poland 4.12% GDP (2024), targeting 4.7% (2025). Estonia pledged 5.0%+ from 2026. Lithuania targeting 5-6% by 2026.",
+        "common_budget_2026": "EUR 5.3 billion",
+        "diana_program": "150 companies from 24 NATO countries selected for 2026 Challenge Program across 10 priority defense areas including autonomy and unmanned systems."
+      },
+
+      "autonomous_weapons_governance": {
+        "nato_framework": "6 Principles of Responsible Use: Lawfulness, Responsibility/Accountability, Explainability/Traceability, Reliability, Governability, Bias Mitigation",
+        "un_process": "UN General Assembly voted (2024) to begin formal negotiations on lethal autonomous weapons treaty. Target: concrete rules by 2026.",
+        "ukraine_testbed": "Ukraine conflict serving as live testing ground for AI-enabled autonomous weapons systems."
+      },
+
+      "projection_to_2031": "By 2031, defense AI spending will be $50-100B+ annually across NATO + US alone. This creates: (1) Massive demand for AI talent, competing with commercial sector for engineers. (2) Defense-funded AI infrastructure that commercializes (as GPS, internet, and drones previously did). (3) Autonomous systems manufacturing demand that benefits robotics supply chain. (4) Cybersecurity AI demand across all NATO nations. Engine relevance: Defense spending validates robotics x AI production models and creates downstream demand for manufacturing automation (military hardware production). Pick-and-shovel AI infrastructure models benefit from defense capital flows.",
+      "confidence": "High"
+    }
+  },
+
+  "cross_cutting_themes": {
+    "three_ai_blocs_forming": {
+      "description": "US-led (US + Tier 1 allies), China-led (China + aligned nations), and EU-regulated (EU + countries adopting similar frameworks) AI ecosystems are diverging in hardware, software, data governance, and regulatory approach. India and MENA are swing players.",
+      "engine_relevance": "Business models must specify which bloc they serve. Cross-bloc compliance becomes its own business opportunity."
+    },
+
+    "demographic_acceleration_of_ai_adoption": {
+      "description": "Japan (shrinking 500K/year), EU (aging), US (manufacturing labor gap of 500K) all face demographic pressure that accelerates AI/robotics adoption. India's young workforce creates different opportunity -- AI augmentation rather than replacement.",
+      "engine_relevance": "DIRECTLY validates acquire-and-modernize and robotics x AI architectures. Demographic pressure is the structural force that makes AI adoption non-optional."
+    },
+
+    "sovereign_capital_entering_ai": {
+      "description": "Gulf SWFs ($66B deployed), government AI strategies (Brazil $4B, India Rs 10K crore, Colombia $110M), and defense budgets (US $13.4B AI-specific) represent massive non-VC capital flows into AI.",
+      "engine_relevance": "Alternative capital sources for physical production models. Government and sovereign capital favor infrastructure and physical assets over pure software."
+    },
+
+    "regulatory_fragmentation_as_structural_force": {
+      "description": "5+ distinct AI regulatory frameworks by 2026. EU extraterritorial reach. China content alignment. US state-by-state divergence. Cross-border compliance increasingly complex.",
+      "engine_relevance": "VALIDATES regulatory moat builder architecture. Every new regulation increases value of compliance platforms. First-mover advantage in multi-jurisdiction compliance."
+    },
+
+    "reshoring_requires_automation": {
+      "description": "Kearney Index reality check shows reshoring CANNOT succeed without AI/robotics to close the labor gap. 95% of manufacturers plan automation. Policy (tariffs, incentives) pushes demand; technology (AI/robotics) is the supply-side enabler.",
+      "engine_relevance": "The engine's top-ranked physical production models are not just AI opportunities -- they are PREREQUISITES for the reshoring trend to succeed."
+    }
+  },
+
+  "sources": {
+    "us_china_decoupling": [
+      {"title": "US Export Controls and China: Advanced Semiconductors", "url": "https://www.congress.gov/crs-product/R48642"},
+      {"title": "Decoupling Risks: Semiconductor Export Controls", "url": "https://itif.org/publications/2025/11/10/decoupling-risks-semiconductor-export-controls-harm-us-chipmakers-innovation/"},
+      {"title": "How US Export Controls Have (and Haven't) Curbed Chinese AI", "url": "https://ai-frontiers.org/articles/us-chip-export-controls-china-ai"},
+      {"title": "The US Pivot on Regulating AI Diffusion", "url": "https://www.iiss.org/publications/strategic-comments/2025/12/the-us-pivot-on-regulating-ai-diffusion/"},
+      {"title": "Chinese AI Models Hit ~15% Global Share", "url": "https://www.trendforce.com/news/2026/01/26/news-chinese-ai-models-reportedly-hit-15-global-share-in-nov-2025-fueled-by-deepseek-open-source-push/"},
+      {"title": "Beyond DeepSeek: China's Diverse Open-Weight AI Ecosystem (Stanford HAI)", "url": "https://hai.stanford.edu/policy/beyond-deepseek-chinas-diverse-open-weight-ai-ecosystem-and-its-policy-implications"},
+      {"title": "China Reaches 35% Semiconductor Equipment Self-Sufficiency", "url": "https://business.smdailypress.com/smdailypress/article/tokenring-2026-1-21-china-reaches-35-semiconductor-equipment-self-sufficiency-amid-advanced-lithography-breakthroughs"},
+      {"title": "China's Key Weapons in AI Battle: Massive Chip Clusters and Cheap Energy", "url": "https://www.cnbc.com/2025/11/07/chinas-strategy-in-ai-race-with-us-big-chip-clusters-cheap-energy.html"}
+    ],
+    "eu_ai_act": [
+      {"title": "EU AI Act Implementation Timeline", "url": "https://artificialintelligenceact.eu/implementation-timeline/"},
+      {"title": "Latest Wave of EU AI Act Obligations (DLA Piper)", "url": "https://www.dlapiper.com/en-us/insights/publications/2025/08/latest-wave-of-obligations-under-the-eu-ai-act-take-effect"},
+      {"title": "EU AI Act Compliance Timeline by Risk Tier", "url": "https://trilateralresearch.com/responsible-ai/eu-ai-act-implementation-timeline-mapping-your-models-to-the-new-risk-tiers"},
+      {"title": "Comprehensive EU AI Act Summary (Jan 2026)", "url": "https://www.softwareimprovementgroup.com/blog/eu-ai-act-summary/"},
+      {"title": "Hidden Cost of AI Regulations Survey", "url": "https://actonline.org/the-hidden-cost-of-ai-regulations-a-survey-of-eu-uk-and-u-s-companies/"}
+    ],
+    "japan_demographics": [
+      {"title": "Births in Japan Hit New Record Low (Nippon.com)", "url": "https://www.nippon.com/en/japan-data/h02522/"},
+      {"title": "Japan's Population Falls by Half Million (Bloomberg)", "url": "https://www.bloomberg.com/news/articles/2025-04-15/japan-s-population-falls-by-half-million-as-birth-rate-stays-low"},
+      {"title": "Japan's Labor Market under Demographic Decline (BOJ)", "url": "https://www.boj.or.jp/en/about/press/koen_2025/data/ko250824a1.pdf"},
+      {"title": "World Robotics 2025 Report (IFR)", "url": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years"},
+      {"title": "Global Robot Density Doubled in Seven Years (IFR)", "url": "https://ifr.org/ifr-press-releases/news/global-robot-density-in-factories-doubled-in-seven-years"}
+    ],
+    "india_ai": [
+      {"title": "India GenAI Startup Landscape 2025 (NASSCOM)", "url": "https://nasscom.in/knowledge-center/publications/india-generative-ai-startup-landscape-2025-mapping-momentum"},
+      {"title": "India AI Market $17B by 2027 (NASSCOM-BCG)", "url": "https://indiaai.gov.in/news/nasscom-bcg-report-says-india-s-ai-market-is-expected-to-touch-17-billion-usd-by-2027"},
+      {"title": "India Startup Funding $11B in 2025 (TechCrunch)", "url": "https://techcrunch.com/2025/12/27/india-startup-funding-hits-11b-in-2025-as-investors-grow-more-selective/"},
+      {"title": "India AI Talent Pool to 1.25M by 2027 (NASSCOM-Deloitte)", "url": "https://indiaai.gov.in/article/india-s-ai-talent-pool-to-grow-to-1-25-million-by-2027-nasscom-deloitte-india-report"},
+      {"title": "UPI Statistics 2025", "url": "https://coinlaw.io/upi-statistics/"},
+      {"title": "UPI Market Share & Growth Statistics 2026", "url": "https://www.demandsage.com/upi-statistics/"}
+    ],
+    "latam_nearshoring": [
+      {"title": "LATAM 2025-2026: M&A and Investment Surge", "url": "https://combinegr.com/latams-2026-ma-and-investment-surge-trends-and-talent-implications/"},
+      {"title": "LATAM AI Market $30.2B by 2033", "url": "https://www.intelligentcio.com/latam/2025/11/27/latin-americas-ai-market-set-to-hit-us-30-20-billion-by-2033/"},
+      {"title": "Brazil AI Leader in LATAM", "url": "https://www.intelligentcio.com/latam/2025/11/26/brazil-emerges-as-latin-americas-ai-leader-but-investment-and-innovation-gaps-remain/"},
+      {"title": "Mexico FDI Surge 2025: $34.3B", "url": "https://mexicocre.beehiiv.com/p/september-7-2025-mexicocre-mexicofdi-newsletter-edition"},
+      {"title": "Mexico Manufacturing Sector Trends 2025", "url": "https://www.tecma.com/mexicos-manufacturing-sector-trends-and-challenges/"},
+      {"title": "Argentina Economic Transformation Under Milei", "url": "https://www.vizionapi.com/blog/argentinas-economic-transformation-under-javier-milei-from-crisis-to-opportunity"},
+      {"title": "Argentina 2025 Investment Climate (US State Dept)", "url": "https://www.state.gov/reports/2025-investment-climate-statements/argentina/"},
+      {"title": "Milei's Economy in 2026 (Buenos Aires Herald)", "url": "https://buenosairesherald.com/economics/mileis-economy-in-2026-between-macroeconomic-consolidation-and-politics"}
+    ],
+    "mena_sovereign_wealth": [
+      {"title": "Gulf Sovereign Wealth Funds Reshaping AI (Chronograph)", "url": "https://www.chronograph.pe/how-gulf-sovereign-wealth-funds-are-reshaping-ai-sports-and-renewable-energy/"},
+      {"title": "Middle East SWFs: $3.2T Opportunity", "url": "https://www.dakota.com/resources/blog/middle-east-sovereign-wealth-funds-3.2t-opportunity"},
+      {"title": "Abu Dhabi Tops MENA SWF Spending", "url": "https://www.thenationalnews.com/business/economy/2025/10/01/abu-dhabi-wealth-funds-top-mena-swf-spending/"},
+      {"title": "Sovereign Funds Push Into Tech", "url": "https://sg.finance.yahoo.com/news/sovereign-funds-push-tech-assets-003406044.html"},
+      {"title": "SWFs in Middle East Driving VC Growth (Ashurst)", "url": "https://www.ashurst.com/en/insights/sovereign-wealth-funds-in-the-middle-east/"}
+    ],
+    "reshoring": [
+      {"title": "Kearney 2025 Reshoring Index Falls 311 Points", "url": "https://www.consulting.us/news/11784/kearneys-2025-reshoring-index-falls-by-311-points"},
+      {"title": "Kearney Reshoring Index: The Great Reality Check", "url": "https://www.kearney.com/service/operations-performance/us-reshoring-index"},
+      {"title": "95% of US Manufacturers Plan New Automation by 2028", "url": "https://www.supplychain247.com/article/us-factories-automation-reshoring-labor-shortages-2025"},
+      {"title": "Deloitte: Reshoring and AI Power 2026 US Supply Chains", "url": "https://supplychaindigital.com/news/deloitte-reshoring-ai-2026-us-supply-chains"},
+      {"title": "2026 Manufacturing Industry Outlook (Deloitte)", "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/manufacturing-industry-outlook.html"},
+      {"title": "Reshoring and AI: IBM Think", "url": "https://www.ibm.com/think/topics/ai-reshoring"}
+    ],
+    "global_regulation": [
+      {"title": "AI Regulations Around the World 2026 (GDPR Local)", "url": "https://gdprlocal.com/ai-regulations-around-the-world/"},
+      {"title": "New Rules of AI: Global Legal Overview (Morgan Lewis)", "url": "https://www.morganlewis.com/pubs/2025/12/the-new-rules-of-ai-a-global-legal-overview"},
+      {"title": "Global AI Law and Policy Tracker (IAPP)", "url": "https://iapp.org/news/a/global-ai-law-and-policy-tracker-highlights-and-takeaways"},
+      {"title": "AI Regulation 2026: US, EU, Global Overview", "url": "https://medium.com/@kumon/ai-regulation-developments-in-2026-6292eed8d125"},
+      {"title": "Global AI Governance (EU, US, China)", "url": "https://medium.com/@adnanmasood/global-ai-governance-how-eu-u-s-6ae739db98cd"}
+    ],
+    "defense_ai": [
+      {"title": "Global Defense Spending Tops $2.6T in 2026", "url": "https://www.nationaldefensemagazine.org/articles/2026/1/29/global-defense-spending-to-top-2-6-trillion-in-2026"},
+      {"title": "DoD $66B IT Budget Pivots to AI", "url": "https://www.washingtontechnology.com/opinion/2026/02/dods-66b-it-budget-pivots-ai-and-efficiency/411370/"},
+      {"title": "$900B NDAA: Defense Spending Bill", "url": "https://www.military.com/daily-news/2025/12/11/900-billion-ndaa-what-what-was-left-out-of-major-defense-spending-bill.html"},
+      {"title": "DoD Budget Goes Hard on AI, Autonomy (Defense One)", "url": "https://www.defenseone.com/technology/2025/07/defense-department-budget-request-goes-hard-ai-autonomy/406438/"},
+      {"title": "Pentagon $1.01T FY2026 Budget (MeriTalk)", "url": "https://www.meritalk.com/articles/pentagon-unveils-1-01t-fy2026-budget-with-cyber-space-ai-focus/"},
+      {"title": "Billions for Uncrewed Systems in Pentagon 2026 Budget", "url": "https://defensescoop.com/2025/06/26/dod-fy26-budget-request-autonomy-unmanned-systems/"},
+      {"title": "NATO 5% Defense Commitment", "url": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment"},
+      {"title": "NATO 2026 Common Funded Budgets", "url": "https://www.nato.int/en/news-and-events/articles/news/2025/12/17/nato-agrees-its-2026-common-funded-budgets-strengthening-allied-resolve-in-a-new-era-of-collective-defence"}
+    ]
+  }
+}

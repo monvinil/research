@@ -968,3 +968,113 @@ ROBOTICS × AI COMPOUND SIGNALS:
 | **T22 Prediction Machines** | **judgment_premium** | **N5-N6** | **T21, T3, T7** |
 | **T23 Innovation Stack** | **competitive_immunity** | **N4-N6** | **T11, T20, T16** |
 | **T24 Robotics × AI** | **production_cost_compression** | **N3-N6** | **T3, T6, T4, T18** |
+| **T25 Fear Economics** | **fear_friction** | **N4-N6** | **T14, T17, T19** |
+
+---
+
+## Part 7: Fear Economics — Psychology as Structural Force (T25)
+
+### T25: Fear Economics — The Adoption Friction Model
+
+**Theory:** Economic transformation is not purely rational. Fear of displacement, loss aversion (T14), status quo bias, institutional resistance (T17), and attention-driven narratives (T19) create predictable, measurable gaps between economic readiness and actual adoption. These gaps are not noise — they are structural forces that shape transformation timing, create market distortions, and generate their own economic categories.
+
+**Core insight:** For every sector transformation, there are TWO timelines:
+1. **Economic timeline:** When AI/robotics makes transformation viable (cost ratio, capability, infrastructure)
+2. **Psychological timeline:** When stakeholders actually adopt (workers accept, customers trust, regulators allow, institutions change)
+
+The GAP between these timelines is the **fear friction** — and it's predictable, measurable, and exploitable.
+
+**Five dimensions of fear friction:**
+
+```
+FEAR FRICTION DIMENSIONS:
+
+1. WORKER DISPLACEMENT FEAR
+   ├── Measurement: Union action frequency, political party AI platforms,
+   │   protest events, "AI replacing jobs" search volume
+   ├── Effect: Slows employer adoption, drives regulatory protection
+   ├── Resolution: Labor shortage makes fear irrelevant (can't displace
+   │   workers who don't exist), retraining programs reduce anxiety
+   └── Economy map impact: Delays transformation 1-3 years in affected sectors
+
+2. CUSTOMER TRUST BARRIER
+   ├── Measurement: NPS before/after AI, "AI-free" labeling premium,
+   │   Edelman Trust Barometer AI sections, sector-specific trust surveys
+   ├── Effect: Customers reject AI outputs even when quality is equivalent
+   ├── Resolution: Generational shift (younger cohorts more trusting),
+   │   high-profile success stories, gradual exposure
+   └── Economy map impact: Creates "trust premium" for human-verified services
+
+3. REGULATORY FEAR RESPONSE
+   ├── Measurement: AI bill count by jurisdiction, licensing restriction
+   │   changes, sector-specific AI regulation velocity
+   ├── Effect: Creates compliance burden that slows adoption but also
+   │   creates moat for first-movers who navigate it
+   ├── Resolution: Evidence of safety/benefit accumulates, lobbying by
+   │   AI beneficiaries, crisis forces pragmatism
+   └── Economy map impact: Creates regulatory moat opportunities AND
+       slows transformation in heavily regulated sectors
+
+4. INSTITUTIONAL RESISTANCE
+   ├── Measurement: Professional association AI policy statements,
+   │   university curriculum changes, certification body responses
+   ├── Effect: Incumbent institutions actively resist disruption
+   ├── Resolution: Institutional tipping point (T17) — first defector
+   │   forces all to follow
+   └── Economy map impact: Delays transformation until tipping point,
+       then accelerates rapidly (hockey stick adoption curve)
+
+5. MEDIA NARRATIVE
+   ├── Measurement: Positive/negative AI coverage ratio by sector,
+   │   social media sentiment, influencer positions
+   ├── Effect: Shapes public perception independent of reality
+   ├── Resolution: Narrative fatigue (outrage cycles are short),
+   │   counter-narratives from beneficiaries
+   └── Economy map impact: Can accelerate or delay adoption by 1-2 years
+```
+
+**Fear-driven demand creation:**
+
+Fear doesn't just SLOW transformation — it CREATES new economic categories:
+- **AI compliance services**: Fear of AI regulation → demand for compliance tools
+- **AI safety/audit**: Fear of AI failures → demand for testing/verification
+- **Human verification**: Fear of AI quality → "verified human" premium services
+- **Job retraining**: Fear of displacement → education/upskilling market
+- **AI insurance**: Fear of AI liability → new insurance products
+- **Cybersecurity**: Fear of AI-enabled attacks → security spending
+- **AI ethics consulting**: Fear of bias/harm → ethics review services
+
+These are REAL economic categories that emerge from fear, not despite it.
+
+**What to scan for:**
+```
+FEAR FRICTION SIGNALS:
+  Google Trends: "AI replacing jobs" volume by country/sector
+  Pew Research: AI perception surveys (tracked quarterly)
+  Edelman: Trust in AI scores by demographic
+  Legislative trackers: AI bills filed, passed, enforced
+  Union activity: AI-related actions, negotiations, strikes
+  Professional associations: AI policy statements, certification changes
+  Job postings: "human required" language, "AI-free" marketing
+  Consumer surveys: Willingness to use AI in [sector] by age/income/region
+
+  → Fear friction INDEX by sector and geography
+  → Fear-driven demand SIZING by category
+  → Fear resolution TIMELINE by trigger mechanism
+
+FEAR FRICTION SCORING:
+  Economic readiness: [1-10] (is AI viable in this sector?)
+  Psychological readiness: [1-10] (are stakeholders willing?)
+  Gap: [economic - psychological]
+
+  Gap 0-2: Low friction. Adoption tracks economics.
+  Gap 3-5: Moderate friction. 1-2 year delay.
+  Gap 6-8: High friction. 2-4 year delay.
+  Gap 9-10: Extreme friction. May not resolve within 5 years.
+```
+
+**Integration with economy map:**
+- For EVERY sector transformation, the fear friction gap modifies the timeline
+- High-friction sectors (healthcare, education, legal) transform LATER than economics predict
+- Low-friction sectors (back-office, logistics, manufacturing) transform ON SCHEDULE
+- Fear-driven demand creates NEW sectors that are part of the emergent economy

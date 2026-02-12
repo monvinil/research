@@ -1,615 +1,456 @@
 {
-  "last_updated": "2026-02-11T04:00:00Z",
-  "current_cycle": "v2-8",
-  "engine_version": "v2.0",
-  "engine_mode": "multi_source_cross_referencing",
-  "engine_status": "V2 CYCLE 8 COMPLETE -- MULTI-SOURCE CROSS-REFERENCING. 7 data source types (FRED, BLS, EDGAR, YFinance, Census CBP, Web Search, QCEW), 70+ connector methods activated. Top 20 models cross-referenced against 3-7 independent data sources each. 17 upgraded, 2 downgraded, 21 unchanged. NEW #1: AI Financial Intelligence Platform (90, +3). KEY DISCOVERIES: (1) Financial services cascade CONFIRMED — accounting employment -49K YoY (BLS), financials ETF dead last +0.5% (YFinance), delinquency rising 1.78% (FRED). (2) Staffing canary STRONGEST signal — RHI -53%, MAN -44%, KELYA -25% in 1yr. (3) Physical production CONFIRMED — Industrials +15.1%, Materials +20.1% ETF. (4) Zero-density gaps VALIDATED — 0 funded startups in wholesale/printing/food. (5) Auto repair COMPETITIVE — Revv $20M, models -4. (6) AI capex peaking — NVIDIA flat, MSFT -24%. (7) Business formation 532K/mo = Coasean shrinkage confirmed. 3 new patterns: P-026 Financial Cascade, P-027 Staffing Canary, P-028 Auto Repair Competition.",
+  "engine_version": "v3.0",
+  "engine_mode": "economy_mapping",
+  "current_cycle": "v3-1",
+  "last_updated": "2026-02-11T06:00:00Z",
+  "projection_horizon": "2026-2031",
+  "data_sources_used": 42,
   "total_signals_scanned": 158,
   "total_models_constructed": 522,
-  "landscape": {
-    "decomposed_models_top_20": [
-      {
-        "rank": 1,
-        "id": "C7-DC-FIN-01",
-        "name": "AI Financial Intelligence Platform (Data Compounding)",
-        "sector": "SMB Accounting/Finance",
-        "score": 90,
-        "c8_change": "+3",
-        "data_sources": 7,
-        "type": "data_compounding",
-        "one_liner": "Full-service AI bookkeeping where every client generates financial pattern data, building unassailable intelligence moat. C8 CONFIRMED: BLS accounting -49K YoY, financials ETF last (+0.5%), delinquency rising 1.78%. 7 independent sources confirm active cascade. 23M unserved SMBs. $0.05/month inference. NEW #1."
-      },
-      {
-        "rank": 2,
-        "id": "C7-RC-MFG-01",
-        "name": "Multi-Shop CNC/Metal Fab Rollup Platform",
-        "sector": "Robotics x AI Manufacturing",
-        "score": 89,
-        "c8_change": "+1",
-        "data_sources": 6,
-        "type": "rollup_consolidation",
-        "one_liner": "Acquire 5-10 retiring-owner machine shops, deploy cobots + AI scheduling/quoting. C8: Industrials ETF +15.1%, Materials +20.1% = capital flowing into manufacturing. LimitlessCNC/CloudNC validate CNC AI but NEITHER acquires shops. SBA 504 at 5.67-5.91%."
-      },
-      {
-        "rank": 3,
-        "id": "C7-FSR-FIN-01",
-        "name": "Full-Service AI Finance Function for SMBs",
-        "sector": "SMB Accounting/Finance",
-        "score": 88,
-        "c8_change": "+3",
-        "data_sources": 7,
-        "type": "full_service_replacement",
-        "one_liner": "Replace entire finance function for SMBs at $149-499/mo. C8: Same 7-source cascade confirmation as DC-FIN-01. Active accounting decline (-49K BLS) means traditional alternatives shrinking. Business formation 532K/mo = growing demand. JUMPED from #6."
-      },
-      {
-        "rank": 4,
-        "id": "C7-AM-MFG-01",
-        "name": "Acquire + Modernize CNC Shop (Single Site)",
-        "sector": "Robotics x AI Manufacturing",
-        "score": 88,
-        "c8_change": "+1",
-        "data_sources": 6,
-        "type": "acquire_and_modernize",
-        "one_liner": "Buy retiring-owner CNC shop at 3-4x EBITDA, deploy cobots + AI scheduling. HIGHEST convergence resistance (96). C8: Manufacturing macro strong, SBA 504 window open, acquisition strategy uncontested by CNC AI startups."
-      },
-      {
-        "rank": 5,
-        "id": "C7-AW-ACC-01",
-        "name": "Acquire PE-Distressed Accounting Practice",
-        "sector": "PE Distress Cascade",
-        "score": 87,
-        "c8_change": "+4",
-        "data_sources": 7,
-        "type": "arbitrage_window",
-        "one_liner": "Acquire PE-distressed accounting practices at 2-3x vs PE's 8-12x. C8 BIGGEST UPGRADE: BLS -49K, FRED delinquency 1.78%, YFinance financials last, EDGAR 10K+ restructuring filings. Every source confirms. Timing window NOW arriving. JUMPED from #11."
-      },
-      {
-        "rank": 6,
-        "id": "C7-AM-FOOD-01",
-        "name": "Acquire + Modernize Specialty Food Producer",
-        "sector": "Specialty Food/Beverage Production",
-        "score": 87,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "acquire_and_modernize",
-        "one_liner": "Acquire retiring-owner specialty food producer, deploy cobots + AI QC. C8: ZERO competitive density confirmed. Materials ETF +20.1%. FSMA 204 compliance moat. Davis CA proximity advantage."
-      },
-      {
-        "rank": 7,
-        "id": "C7-RMB-HC-01",
-        "name": "Healthcare AI Multi-State Compliance Platform",
-        "sector": "AI Regulatory Compliance",
-        "score": 87,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "regulatory_moat_builder",
-        "one_liner": "Compliance layer for every healthcare AI company. C8: Healthcare ETF +19.1% (2nd best), Ed/Health employment +53K/mo strongest growing sector, 976K healthcare establishments, $1.28T payroll. Every new regulation permanently increases value."
-      },
-      {
-        "rank": 8,
-        "id": "C7-DC-HC-01",
-        "name": "Clinical Denial Intelligence Platform (Data Compounding)",
-        "sector": "Healthcare Admin AI",
-        "score": 86,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "data_compounding",
-        "one_liner": "Bloomberg Terminal of healthcare revenue cycle. C8: Healthcare sector macro strong across all sources. Growing employment = more claims volume = more data for compounding."
-      },
-      {
-        "rank": 9,
-        "id": "C7-FSR-HC-01",
-        "name": "Full-Service Prior Auth + Denial Management",
-        "sector": "Healthcare Admin AI",
-        "score": 86,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "full_service_replacement",
-        "one_liner": "Full-service prior auth replacing in-house billing staff. C8: Healthcare ETF +19.1%, employment +53K/mo, 976K establishments. Provider-side demand confirmed by employment growth."
-      },
-      {
-        "rank": 10,
-        "id": "C7-AM-PRINT-01",
-        "name": "Acquire + Modernize Commercial Print Shop",
-        "sector": "Manufacturing",
-        "score": 85,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "acquire_and_modernize",
-        "one_liner": "Acquire retiring-owner print shops (28K establishments = HIGHEST mfg fragmentation). C8: ZERO competitive density confirmed. Industrials +15.1%. Print-on-demand $59.3B by 2033. SBA 504 favorable."
-      },
-      {
-        "rank": 11,
-        "id": "C7-RC-PRINT-01",
-        "name": "Multi-Shop Commercial Print Rollup Platform",
-        "sector": "Manufacturing",
-        "score": 85,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "rollup_consolidation",
-        "one_liner": "Consolidate 5-10 print shops into AI-native production network. C8: Zero competitive density. Manufacturing macro strong. Rollup adds multi-site compounding."
-      },
-      {
-        "rank": 12,
-        "id": "C7-PI-TRADES-01",
-        "name": "AI Operations Platform for Building Equipment Contractors",
-        "sector": "Building Trades",
-        "score": 85,
-        "c8_change": "+2",
-        "data_sources": 5,
-        "type": "platform_infrastructure",
-        "one_liner": "AI ops for HVAC/plumbing/electrical. C8: Industrials +15.1%, JOLTS 6.5M job openings = persistent labor shortage, wage inflation 3.3%. 499K new workers needed. ServiceTitan enterprise-only, small contractors underserved."
-      },
-      {
-        "rank": 13,
-        "id": "C7-FSR-STAFF-01",
-        "name": "AI-Native Staffing Platform",
-        "sector": "Employment Services",
-        "score": 84,
-        "c8_change": "+4",
-        "data_sources": 6,
-        "type": "full_service_replacement",
-        "one_liner": "C8 MAJOR UPGRADE. RHI -53%, MAN -44%, KELYA -25% in 1yr = STRONGEST market signal in entire dataset. BLS -7.6% employment decline. 6 sources confirm active Schumpeterian destruction. $192.7B market. JUMPED from #21."
-      },
-      {
-        "rank": 14,
-        "id": "C7-RC-FOOD-01",
-        "name": "Multi-Facility Specialty Food Production Platform",
-        "sector": "Specialty Food/Beverage",
-        "score": 84,
-        "c8_change": "+1",
-        "data_sources": 5,
-        "type": "rollup_consolidation",
-        "one_liner": "Consolidate 3-5 specialty food producers. C8: Zero competitive density. Materials/Staples sectors healthy. Shared FSMA compliance."
-      },
-      {
-        "rank": 15,
-        "id": "C7-MN-FIN-01",
-        "name": "AI-Matched Business Acquisition Marketplace",
-        "sector": "Silver Tsunami",
-        "score": 83,
-        "c8_change": "+1",
-        "data_sources": 4,
-        "type": "marketplace_network",
-        "one_liner": "AI marketplace for 2.34M retiring owners. C8: Supply-side strengthening — FRED delinquency 1.78%, staffing canary crashing = more businesses selling. BizBuySell hasn't innovated."
-      },
-      {
-        "rank": 16,
-        "id": "C7-RMB-INS-01",
-        "name": "Insurance AI Compliance + Bias Auditing Platform",
-        "sector": "AI Regulatory Compliance",
-        "score": 82,
-        "c8_change": "0",
-        "data_sources": 3,
-        "type": "regulatory_moat_builder",
-        "one_liner": "Multi-state insurance AI compliance. C8: Financials dead last ETF. NAIC model law advancing. No new data to upgrade."
-      },
-      {
-        "rank": 17,
-        "id": "C7-FSR-INS-01",
-        "name": "Full-Service AI TPA (Third-Party Administrator)",
-        "sector": "Insurance Claims AI",
-        "score": 82,
-        "c8_change": "0",
-        "data_sources": 3,
-        "type": "full_service_replacement",
-        "one_liner": "AI-native TPA replacing 1,200+ small/mid TPAs. C8: Thesis valid, Avallon ($4.6M) competitive but market large."
-      },
-      {
-        "rank": 18,
-        "id": "C7-AM-PLASTICS-01",
-        "name": "Acquire + Modernize Plastics Injection Molding Shop",
-        "sector": "Manufacturing",
-        "score": 82,
-        "c8_change": "+1",
-        "data_sources": 4,
-        "type": "acquire_and_modernize",
-        "one_liner": "Acquire plastics injection molding shop, deploy cobotic part removal + AI QC. C8: Industrials +15.1%, Materials +20.1%. Manufacturing macro strong. Reshoring tailwinds."
-      },
-      {
-        "rank": 19,
-        "id": "C7-FSR-ALLIEDHEALTH-01",
-        "name": "Full-Service AI Practice Operations for Allied Health",
-        "sector": "Healthcare",
-        "score": 82,
-        "c8_change": "+1",
-        "data_sources": 4,
-        "type": "full_service_replacement",
-        "one_liner": "Full-service billing/scheduling/docs for chiro, PT, optometry, speech. C8: Healthcare ETF +19.1%, Ed/Health +53K/mo. 191K establishments, most fragmented healthcare sector."
-      },
-      {
-        "rank": 20,
-        "id": "C7-AW-STAFF-01",
-        "name": "Acquire PE-Distressed Staffing Agency",
-        "sector": "Employment Services",
-        "score": 81,
-        "c8_change": "+4",
-        "data_sources": 6,
-        "type": "arbitrage_window",
-        "one_liner": "C8 MAJOR UPGRADE. Same staffing canary signal. PE staffing firms are the ones crashing (RHI -53%, MAN -44%). Acquire-at-distress-pricing window actively opening. JUMPED from #35."
-      }
-    ],
-    "not_recommended": [
-      {
-        "id": "C7-NR-01",
-        "name": "Vertical SaaS: AI Therapist Notes",
-        "score": 45,
-        "reason": "Blueprint 50K clinicians + 5 competitors. Tool-layer commodity. Convergence resistance = 0."
-      },
-      {
-        "id": "C7-NR-02",
-        "name": "Vertical SaaS: AI Payroll+Bookkeeping Bundle",
-        "score": 38,
-        "reason": "Gusto $746M + Rippling $1.3B + Wave. Cannot compete."
-      },
-      {
-        "id": "C7-NR-03",
-        "name": "Full-Service: Consumer Mental Health App",
-        "score": 35,
-        "reason": "Calm, Headspace, BetterHelp, MindSync $720M. Saturated."
-      },
-      {
-        "id": "C7-NR-04",
-        "name": "Vertical SaaS: AI Clinical Documentation",
-        "score": 40,
-        "reason": "Abridge $250M, Nuance DAX, DeepScribe. Market captured."
-      },
-      {
-        "id": "C7-NR-05",
-        "name": "Vertical SaaS: AI Auto Claims Photo",
-        "score": 38,
-        "reason": "Tractable $115M + CCC (public $900M+ rev)."
-      },
-      {
-        "id": "C7-NR-06",
-        "name": "Vertical SaaS: Shopify/E-commerce Bookkeeping",
-        "score": 48,
-        "reason": "Finaloop $35M is direct well-funded competitor."
-      },
-      {
-        "id": "C7-NR-07",
-        "name": "Vertical SaaS: Real Estate AI",
-        "score": 30,
-        "reason": "$10.5B funding, 7 unicorns. DISMISSED Cycle 4."
-      },
-      {
-        "id": "C7-NR-08",
-        "name": "Platform: Government/Municipal AI",
-        "score": 42,
-        "reason": "12-24mo procurement. Tyler Tech $1.8B. FedRAMP."
-      },
-      {
-        "id": "C7-NR-09",
-        "name": "Vertical SaaS: AI Irrigation CA Vineyards",
-        "score": 44,
-        "reason": "Orchard Robotics $22M + OEM risk (Deere See & Spray)."
-      },
-      {
-        "id": "C7-NR-10",
-        "name": "Vertical SaaS: AI Crypto/DeFi Analytics",
-        "score": 32,
-        "reason": "Regulatory uncertainty + many funded competitors."
-      },
-      {
-        "id": "C7-NR-11",
-        "name": "Tool: General AI Writing Tool",
-        "score": 28,
-        "reason": "ChatGPT, Claude, Gemini free tier. Platform commoditized."
-      },
-      {
-        "id": "C7-NR-12",
-        "name": "Tool: AI Code Generation",
-        "score": 30,
-        "reason": "GitHub Copilot, Cursor, Windsurf. Platform commoditized."
-      }
-    ],
-    "monitoring": [
-      {
-        "shift": "Vertical Farming + AI",
-        "signal_count": 2,
-        "note": "Energy cost dependent. Monitor for cheap renewable areas."
-      },
-      {
-        "shift": "AI Additive Manufacturing / Mass Customization",
-        "signal_count": 2,
-        "note": "Growing niche. Watch for cost/speed improvements."
-      },
-      {
-        "shift": "LATAM Humanoid Robot Manufacturing",
-        "signal_count": 1,
-        "note": "Very early. Monitor."
-      },
-      {
-        "shift": "Perez Turning Point / AI Funding Correction",
-        "signal_count": 3,
-        "note": "Goldman $527B hyperscaler capex deepens overhang. Build crash-resilient."
-      },
-      {
-        "shift": "Construction Subcontractor AI Management",
-        "signal_count": 3,
-        "note": "Stuut $29.5M for general AR. Construction-specific gap remains."
-      },
-      {
-        "shift": "AI-Native Business Category Emergence",
-        "signal_count": 2,
-        "note": "Agent marketplaces, AI agencies proliferating. Monitor for platform plays."
-      },
-      {
-        "shift": "Printing Industry Print-on-Demand Shift",
-        "signal_count": 2,
-        "note": "NEW C7. $8.3B -> $59.3B by 2033 (27.8% CAGR). Could displace traditional print."
-      },
-      {
-        "shift": "Data Center Cooling / Infrastructure Demand",
-        "signal_count": 2,
-        "note": "NEW C7. 140K+ skilled trades workers needed by 2030. Google $10M electrician training."
-      }
-    ]
+  "evidence_base": {
+    "v2_cycles": 8,
+    "v2_models": 522,
+    "v2_patterns": 28,
+    "naics_sectors_mapped": 293
   },
-  "structural_shifts_active": [
-    {
-      "shift": "AI Inference Cost Collapse (50x/yr median decline)",
-      "signal_count": 5,
-      "strength": "very_strong",
-      "models_produced": 387,
-      "note": "Enables ALL models in landscape. Cost floor effectively zero vs human labor. Every cycle confirms deepening. C8: NVIDIA flat (+3.7%), MSFT -24% = AI capex peaking, application layer benefits."
-    },
-    {
-      "shift": "Baumol Cost Disease Cure ($207B quantified automatable)",
-      "signal_count": 28,
-      "strength": "very_strong",
-      "models_produced": 90,
-      "note": "C8 CONFIRMED by FRED: unit labor costs 121.6 (rising), avg hourly earnings $37.17 (above CPI). Baumol widening creates larger advantage for AI-first businesses every month."
-    },
-    {
-      "shift": "Silver Tsunami (2.34M boomer businesses)",
-      "signal_count": 23,
-      "strength": "very_strong",
-      "models_produced": 65,
-      "note": "C8: Business loan delinquency 1.78% (rising) = more distressed sellers entering market. Staffing canary crashing = more businesses under pressure. Supply-side accelerating."
-    },
-    {
-      "shift": "Robotics x AI Compound Cost Compression",
-      "signal_count": 23,
-      "strength": "very_strong",
-      "models_produced": 55,
-      "note": "C8: Industrials ETF +15.1%, Materials +20.1% = capital flowing into physical production. Manufacturing sector momentum strongest since engine start."
-    },
-    {
-      "shift": "Regulatory Fragmentation (250+ bills, 33 laws)",
-      "signal_count": 21,
-      "strength": "very_strong",
-      "models_produced": 45,
-      "note": "C8: EDGAR shows 3,808 AI-as-risk-factor 10-K filings = companies acknowledging regulatory exposure. Every filing increases compliance platform demand."
-    },
-    {
-      "shift": "Financial Services Cascade (NEW C8 — CONFIRMED)",
-      "signal_count": 7,
-      "strength": "very_strong",
-      "models_produced": 25,
-      "note": "C8 DISCOVERY: Multi-source confirmation. BLS: accounting -49K YoY. FRED: delinquency 1.78%. YFinance: financials ETF +0.5% (dead last). EDGAR: 10K+ restructuring filings. This is not a prediction — it is HAPPENING."
-    },
-    {
-      "shift": "Staffing Industry Active Destruction (NEW C8)",
-      "signal_count": 6,
-      "strength": "very_strong",
-      "models_produced": 3,
-      "note": "C8 DISCOVERY: RHI -53%, MAN -44%, KELYA -25% in 1yr. STRONGEST real-time market signal in entire dataset. BLS -7.6% employment decline. $192.7B market in active Schumpeterian destruction."
-    },
-    {
-      "shift": "PE/Leveraged Incumbent Vulnerability ($1.2T maturing)",
-      "signal_count": 13,
-      "strength": "strong",
-      "models_produced": 25,
-      "note": "C8: FRED business loan delinquency rising to 1.78%, Fed Funds 3.64% making PE refinancing harder. Staffing PE firms actively crashing (stock evidence). Window approaching."
-    },
-    {
-      "shift": "Coasean Firm Shrinkage",
-      "signal_count": 10,
-      "strength": "strong",
-      "models_produced": 20,
-      "note": "C8: FRED business applications 532K/mo = strong new micro-firm formation. Old businesses dying, new AI-native micro-firms forming. Validates platform infrastructure models."
-    },
-    {
-      "shift": "Kondratieff Deployment Phase",
-      "signal_count": 8,
-      "strength": "strong",
-      "models_produced": 15,
-      "note": "C8: NVIDIA flat, MSFT -24% = infrastructure capex peaking. Application layer (our models) benefits from cheaper compute, less investor competition for infrastructure."
-    },
-    {
-      "shift": "Christensen Full-Service Layer Gap",
-      "signal_count": 16,
-      "strength": "very_strong",
-      "models_produced": 60,
-      "note": "C8: Active cascades in accounting and staffing create urgency for full-service replacements. Traditional providers shrinking = less competition for full-service entrants."
-    },
-    {
-      "shift": "Dead Business Revival + PE Distress",
-      "signal_count": 12,
-      "strength": "very_strong",
-      "models_produced": 20,
-      "note": "C8: FRED delinquency + EDGAR restructuring filings + YFinance staffing canary all confirm PE distress is multi-sector and accelerating."
-    },
-    {
-      "force": "Zero-Competitive-Density Schumpeterian Gaps",
-      "note": "External research confirms wholesale distribution, landscaping, medical equipment distribution have ZERO AI startup activity despite strong structural forces. These are invisible sectors AI entrepreneurs haven't noticed \u2014 pre-cascade entry windows.",
-      "sectors_affected": [
-        "wholesale_brokerage",
-        "landscaping",
-        "medical_equipment_distribution"
+
+  "force_velocities": {
+    "F1_technology": {
+      "name": "AI & Technology",
+      "velocity": "accelerating",
+      "confidence": "high",
+      "direction": "up",
+      "key_metric": "50x/yr inference cost decline",
+      "key_data": [
+        "AI VC funding = 50% of all global VC ($192.7B through Oct 2025)",
+        "Enterprise AI revenue: $37B in 2025 (3x YoY)",
+        "Application spend ($19B) now exceeds infrastructure spend ($18B)",
+        "85% of AI startups expected out of business within 3 years",
+        "Perez cycle: late Installation, approaching Turning Point"
       ],
-      "strength": "very_strong"
+      "2031_projection": "Early Deployment phase — AI shifts from infrastructure build to systematic economic integration"
+    },
+    "F2_demographics": {
+      "name": "Demographics",
+      "velocity": "steady",
+      "confidence": "high",
+      "direction": "diverging",
+      "key_metric": "3 demographic regimes forming",
+      "key_data": [
+        "Japan: -500K population/yr, 397 robots per 10K workers (world #1)",
+        "China: fertility 1.12 (among world's lowest), population halves to 633M by 2100",
+        "US: native-born working-age population shrinking, immigration = 100% of growth",
+        "EU: losing ~1M workers/yr, 22 of 27 countries declining",
+        "India: median age 29.8, adding 183M working-age people by 2050",
+        "Africa: 830M youth aged 15-35 by 2050"
+      ],
+      "2031_projection": "World splits into shrinking (Japan/China/EU), peak dividend (India/SEA), and pre-dividend (Africa) labor regimes"
+    },
+    "F3_geopolitics": {
+      "name": "Geopolitics",
+      "velocity": "accelerating",
+      "confidence": "medium",
+      "direction": "fragmenting",
+      "key_metric": "3 AI blocs forming",
+      "key_data": [
+        "US chip export controls: 4th major revision, 120+ Chinese entities restricted",
+        "China: 35% semiconductor equipment self-sufficiency, 15% global AI model share",
+        "EU AI Act: high-risk obligations effective Aug 2026, penalties up to 7% global turnover",
+        "Global defense spending tops $2.6T; US DoD $13.4B for AI/autonomy",
+        "NATO target raised to 5% GDP by 2035",
+        "Gulf SWFs: $66B deployed in AI/digital"
+      ],
+      "2031_projection": "Three distinct AI regulatory/technology blocs — US-led, China-led, EU-regulated — with India and MENA as swing players"
+    },
+    "F4_capital": {
+      "name": "Capital Flows",
+      "velocity": "shifting",
+      "confidence": "high",
+      "direction": "rotating",
+      "key_metric": "$500B+ AI spend vs 56% seeing no benefit",
+      "key_data": [
+        "68% of CEOs increasing AI spend despite 56% reporting zero financial benefit",
+        "Only 12% of companies achieved both cost and revenue gains from AI",
+        "PE refinancing wall: $1.2T debt maturing 2027-2029",
+        "Physical production ETFs: Industrials +15.1%, Materials +20.1%",
+        "Kearney Reshoring Index fell 311 points — intention vs execution gap",
+        "95% of manufacturers plan new automation within 3 years"
+      ],
+      "2031_projection": "Capital rotation from pure-digital to hard-tech/physical accelerates through Perez Turning Point correction"
+    },
+    "F5_psychology": {
+      "name": "Psychology & Fear",
+      "velocity": "intensifying",
+      "confidence": "medium",
+      "direction": "bifurcating",
+      "key_metric": "Fear-driven market: $40B+ → $300-500B by 2031",
+      "key_data": [
+        "50% of Americans more concerned than excited about AI (up from 37% in 2021)",
+        "US AI trust: 32% (lowest major economy) vs China: 87%",
+        "Employee job-loss fear: 28% → 40% in 2 years",
+        "Only 2% of executives made layoffs from actual AI implementation — rest anticipatory",
+        "86% of consumers say human interaction important in brand experience",
+        "96% of music professionals open to paying more for human-created content"
+      ],
+      "2031_projection": "Fear normalizes but creates permanent parallel economy — human premium, verification, trust-bridging services"
+    },
+    "F6_energy": {
+      "name": "Energy & Resources",
+      "velocity": "constraining",
+      "confidence": "medium",
+      "direction": "tightening",
+      "key_metric": "AI data centers: 4.4% US electricity by 2030",
+      "key_data": [
+        "US data center electricity: 4.4% of total by 2030 (up from ~2%)",
+        "Hyperscaler power deals: Microsoft (Three Mile Island restart), Amazon (nuclear), Google (Kairos SMR)",
+        "Solar LCOE: $24-96/MWh (cheapest new electricity in history)",
+        "Global battery storage: 120 GWh installed (2025), doubling annually",
+        "China controls 60-90% of rare earth processing",
+        "Copper structural deficit: $9,500/ton, new mines take 15-20 years"
+      ],
+      "2031_projection": "Energy becomes THE gatekeeper of AI deployment — winners defined by power access, nuclear restarts, and mineral supply chains"
+    }
+  },
+
+  "geographic_profiles": {
+    "us": {
+      "name": "United States",
+      "emoji": "🇺🇸",
+      "transformation_velocity": "fast",
+      "key_metrics": {
+        "ai_trust": "32%",
+        "working_age_trend": "shrinking (native-born)",
+        "defense_ai_budget": "$13.4B",
+        "business_formation": "532K/mo",
+        "silver_tsunami": "2.34M businesses",
+        "manufacturing_gap": "500K unfilled jobs"
+      },
+      "top_forces": ["Financial cascade ACTIVE", "Silver Tsunami accelerating", "Reshoring intention vs execution gap"],
+      "2031_outlook": "Fastest AI adoption in services, reshoring dependent on automation, financial services cascade creates mass restructuring"
+    },
+    "china": {
+      "name": "China",
+      "emoji": "🇨🇳",
+      "transformation_velocity": "fast (state-directed)",
+      "key_metrics": {
+        "ai_trust": "87%",
+        "population_trend": "declining (-4.3M total)",
+        "fertility_rate": "1.12",
+        "semi_self_sufficiency": "35%",
+        "robot_density": "392 per 10K workers",
+        "defense_spending": "$293-450B"
+      },
+      "top_forces": ["Demographic urgency driving automation", "Parallel AI ecosystem forming", "State-directed capital allocation"],
+      "2031_outlook": "Automation adoption among world's highest from demographic necessity, parallel tech stack matures, worker-to-retiree ratio hits 4:1"
+    },
+    "eu": {
+      "name": "European Union",
+      "emoji": "🇪🇺",
+      "transformation_velocity": "moderate (regulation-gated)",
+      "key_metrics": {
+        "ai_act_status": "High-risk rules Aug 2026",
+        "working_age_loss": "~1M workers/yr",
+        "defense_spending": "$693B+",
+        "compliance_penalty": "Up to 7% global turnover",
+        "countries_declining": "22 of 27",
+        "regulation_approach": "Comprehensive risk-based"
+      },
+      "top_forces": ["AI Act creates compliance moat/drag", "Defense spending surge post-Ukraine", "Eastern EU worst labor shortages"],
+      "2031_outlook": "Slower AI adoption vs US/China but deeper regulatory framework exports globally, defense-tech surge"
+    },
+    "japan": {
+      "name": "Japan",
+      "emoji": "🇯🇵",
+      "transformation_velocity": "fast (demographic-driven)",
+      "key_metrics": {
+        "population_change": "-500K/yr",
+        "robot_density": "397 per 10K (world #1)",
+        "births_2025": "record low",
+        "working_age_2031": "~68M (from 73.7M)",
+        "dependency_ratio": "0.54",
+        "automation_approach": "Robotics-first"
+      },
+      "top_forces": ["Most acute demographic laboratory", "Highest robot density globally", "Care economy crisis"],
+      "2031_outlook": "Template for every aging economy — solutions that work in Japan export to US/EU within 5-15 years"
+    },
+    "india": {
+      "name": "India",
+      "emoji": "🇮🇳",
+      "transformation_velocity": "accelerating (leapfrog potential)",
+      "key_metrics": {
+        "median_age": "29.8 years",
+        "working_age_pct": "68.4%",
+        "annual_workforce_entrants": "12M",
+        "upi_transactions": "16.6B/month",
+        "ai_talent_pool_2027": "1.25M",
+        "startup_funding_2025": "$11B"
+      },
+      "top_forces": ["Demographic dividend peak until 2055", "Digital infrastructure (UPI) enabling AI services", "70% youth skills gap = massive reskilling opportunity"],
+      "2031_outlook": "World's largest supplier of new workers, AI augmentation (not replacement) model, education-tech epicenter"
+    },
+    "latam": {
+      "name": "Latin America",
+      "emoji": "🌎",
+      "transformation_velocity": "moderate (nearshoring boost)",
+      "key_metrics": {
+        "population": "663M",
+        "urbanization": "82%",
+        "mexico_fdi": "$34.3B",
+        "ai_market_2033": "$30.2B",
+        "brazil_ai_position": "Regional leader",
+        "nearshoring_status": "Accelerating"
+      },
+      "top_forces": ["Nearshoring wave from US-China decoupling", "Extreme urbanization concentrates markets", "Weak incumbents = lower entry barriers"],
+      "2031_outlook": "Nearshoring-driven manufacturing growth, Brazil as regional AI leader, Argentina reform experiment"
+    },
+    "mena": {
+      "name": "Middle East & North Africa",
+      "emoji": "🏜️",
+      "transformation_velocity": "fast (capital-driven)",
+      "key_metrics": {
+        "swf_ai_investment": "$66B deployed",
+        "tech_spending_2026": "$169B",
+        "saudi_tech_plan": "$100B (Alat)",
+        "mubadala_ai": "$12.9B",
+        "pif_google_deal": "$10B",
+        "swf_total_assets": "$3.2T+"
+      },
+      "top_forces": ["SWFs becoming top-5 global AI capital allocators", "Economic diversification from oil driving AI investment", "Third AI capital center forming"],
+      "2031_outlook": "Third global AI capital center alongside US and China, massive infrastructure buildout, alternative funding source for physical production"
+    },
+    "africa": {
+      "name": "Africa",
+      "emoji": "🌍",
+      "transformation_velocity": "nascent (infrastructure-constrained)",
+      "key_metrics": {
+        "population": "1.5B",
+        "youth_2050": "830M aged 15-35",
+        "smartphone_2026": "65% penetration",
+        "rural_internet": "<10%",
+        "digital_training": "10-15% of youth",
+        "cities_1m_plus": "100+"
+      },
+      "top_forces": ["Only continent with explosive working-age growth", "Mobile-first leapfrog pattern", "Infrastructure the binding constraint"],
+      "2031_outlook": "Largest untapped market for AI-native services, mobile-first model, constrained by connectivity and digital skills"
+    }
+  },
+
+  "fear_friction_index": [
+    {
+      "sector": "Healthcare",
+      "economic_readiness": 7,
+      "psychological_readiness": 3,
+      "fear_friction_gap": 4,
+      "resistance_level": "High",
+      "primary_drivers": "Patient trust, opacity, liability, clinical vs admin split",
+      "2031_projection": "Admin/back-office AI normalized, clinical AI still contested"
     },
     {
-      "force": "AI Beneficiary Firm Architecture",
-      "note": "New dimension: 1 professional + AI handles workload of 5-10 person traditional firm. Price at 40-50%. Licensed professions (CPA, PE, PLS, attorney) provide regulatory moat. 14 models across accounting, law, insurance, veterinary, architecture, engineering.",
-      "sectors_affected": [
-        "accounting",
-        "law",
-        "insurance",
-        "veterinary",
-        "engineering",
-        "surveying",
-        "architecture"
-      ],
-      "strength": "strong"
+      "sector": "Legal Services",
+      "economic_readiness": 8,
+      "psychological_readiness": 3,
+      "fear_friction_gap": 5,
+      "resistance_level": "High (declining)",
+      "primary_drivers": "Billable-hour conflict, 700+ AI hallucination court cases, liability",
+      "2031_projection": "AI-augmented practice standard, human judgment premium remains"
     },
     {
-      "force": "Elder Care Demographic + Fragmentation Convergence",
-      "note": "NAICS 624120: 925K establishments (MOST in US), 2.23M employees, K avg pay. 65+ population +3%/yr = structural demand guarantee. 50-state Medicaid + EVV = regulatory moat. 6 models across all architectures.",
-      "sectors_affected": [
-        "elder_care",
-        "home_health",
-        "disability_services"
-      ],
-      "strength": "very_strong"
+      "sector": "Education",
+      "economic_readiness": 6,
+      "psychological_readiness": 4,
+      "fear_friction_gap": 2,
+      "resistance_level": "Moderate-High",
+      "primary_drivers": "Academic integrity, cultural values, faculty resistance",
+      "2031_projection": "AI tools ubiquitous, human teaching premium emerges"
     },
     {
-      "force": "BizBuySell Acquisition Market Confirmation",
-      "note": "BizBuySell data: 72% brokers expect more sellers in 2026 (Boomer retirements). Landscaping prices +20%. Wholesale: 1,197 listings, median price -41%. Auto repair: deep market. Buyers favor essential services as recession-resilient.",
-      "sectors_affected": [
-        "auto_repair",
-        "landscaping",
-        "wholesale_distribution",
-        "plumbing_hvac",
-        "pest_control"
-      ],
-      "strength": "strong"
+      "sector": "Financial Services",
+      "economic_readiness": 9,
+      "psychological_readiness": 6,
+      "fear_friction_gap": 3,
+      "resistance_level": "Moderate",
+      "primary_drivers": "Regulatory caution, governance gaps, explainability",
+      "2031_projection": "Heavy AI back-office, human-in-loop client-facing"
+    },
+    {
+      "sector": "Manufacturing",
+      "economic_readiness": 8,
+      "psychological_readiness": 7,
+      "fear_friction_gap": 1,
+      "resistance_level": "Low",
+      "primary_drivers": "500K labor gap makes automation non-optional",
+      "2031_projection": "95% plan automation by 2028, robotics standard in new facilities"
+    },
+    {
+      "sector": "Professional Services",
+      "economic_readiness": 9,
+      "psychological_readiness": 4,
+      "fear_friction_gap": 5,
+      "resistance_level": "High",
+      "primary_drivers": "Business model conflict, expertise identity, client trust",
+      "2031_projection": "Barbell: routine cognitive eliminated, judgment premium rises"
+    },
+    {
+      "sector": "Creative/Media",
+      "economic_readiness": 8,
+      "psychological_readiness": 2,
+      "fear_friction_gap": 6,
+      "resistance_level": "Very High",
+      "primary_drivers": "Identity/authenticity crisis, union action, human premium demand",
+      "2031_projection": "Parallel artisan economy, verification infrastructure, premium human content"
+    },
+    {
+      "sector": "Retail/Customer Service",
+      "economic_readiness": 9,
+      "psychological_readiness": 5,
+      "fear_friction_gap": 4,
+      "resistance_level": "Moderate",
+      "primary_drivers": "80% automation risk in call centers, but 86% want human interaction",
+      "2031_projection": "Automated base layer, human premium tier, loyalty-driven differentiation"
     }
   ],
-  "stress_test_results": {
-    "methodology": "3 alternative weight vectors tested on top 20 C6 models",
-    "vectors": {
-      "force_dominant": "50/20/15/10/5 -- emphasizes TAM x cost advantage",
-      "compounding_dominant": "20/40/25/10/5 -- emphasizes structural compounding",
-      "convergence_dominant": "25/20/40/5/10 -- emphasizes replication barrier"
-    },
-    "robust_top_10": [
-      "C6-RC-MFG-01",
-      "C6-AM-MFG-01",
-      "C6-DC-FIN-01",
-      "C6-RMB-HC-01",
-      "C6-AM-FOOD-01",
-      "C6-DC-HC-01",
-      "C6-FSR-HC-01"
-    ],
-    "weight_sensitive": [
-      "C6-FSR-FIN-01 (force-dependent)",
-      "C6-RC-FOOD-01 (compounding-dependent)",
-      "C6-AW-ACC-01 (timing-dependent)"
-    ],
-    "architecture_insight": "Physical: 86.4 convergence > 86.1 compounding > 83.1 force. Data compounding: 88.1 force > 86.6 compounding > 81.0 convergence. Physical = more durable. Digital = more force."
-  },
-  "force_architecture_matrix": {
-    "total_cells": 80,
-    "well_mapped": 22,
-    "partially_mapped": 30,
-    "unexplored_filled": 12,
-    "structurally_unlikely": 16,
-    "most_versatile_forces": "Baumol (8/10), Silver Tsunami (8/10)",
-    "most_constrained": "Coasean (5/10), Kondratieff (6/10)"
-  },
-  "key_insight": "CYCLE 7 VALIDATES AND EXTENDS THE LANDSCAPE. (1) SCORING IS ROBUST: 7 of top 10 survive ALL weight vectors. Current weights aren't arbitrary. (2) PHYSICAL vs DIGITAL IS NUANCED: physical = more durable (highest convergence resistance), digital data compounding = more force (largest TAM). Strategy unchanged: START physical (timing windows), BUILD digital parallel (compounding). (3) NAICS BOTTOM-UP > TOP-DOWN: systematic NAICS screening discovers sectors invisible to theme scanning. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) all entered top 20. (4) MATRIX IS COMPLETE: 80 cells mapped. 16 impossible. 12 unexplored now filled. (5) PE DISTRESS IS MULTI-SECTOR: extends beyond accounting to veterinary, dental, staffing, printing.",
-  "cycle_history": [
+
+  "key_findings": [
     {
-      "cycle": "v2-1",
-      "signals": 25,
-      "clusters": 14,
-      "models_constructed": 20,
-      "tier_1": 4,
-      "tier_2": 4,
-      "tier_3": 5,
-      "top_force": "$200B+ (Healthcare Admin)",
-      "note": "First v2 landscape mapping cycle. Services-focused."
+      "id": "KF-01",
+      "title": "Fear Is a Market, Not Just Sentiment",
+      "magnitude": "$40B → $300-500B",
+      "detail": "Fear-driven markets (safety, compliance, governance, ethics, insurance, verification) total ~$40B today growing at 20-45% CAGR. AI Ethics Consulting alone at 45.9% CAGR. By 2031 these could exceed $300-500B. Fear of AI is itself a massive economic force creating entirely new industry categories.",
+      "confidence": "high"
     },
     {
-      "cycle": "v2-2",
-      "signals": 42,
-      "clusters": 18,
-      "models_constructed": 32,
-      "tier_1": 5,
-      "tier_2": 5,
-      "tier_3": 6,
-      "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)",
-      "note": "EXPANDED SCOPE: Added physical production landscape."
+      "id": "KF-02",
+      "title": "The Great Anticipatory Overshoot",
+      "magnitude": "98% of AI layoffs are anticipatory",
+      "detail": "Only 2% of executives report making large layoffs from actual AI implementation. The vast majority are anticipatory — based on AI's potential, not performance. This creates psychological overshoot: more fear, displacement, and safety demand than actual technology warranted. Correction likely by 2028-2029.",
+      "confidence": "high"
     },
     {
-      "cycle": "v2-3",
-      "signals": 38,
-      "clusters": 16,
-      "models_constructed": 34,
-      "tier_1": 5,
-      "tier_2": 5,
-      "tier_3": 6,
-      "top_force": "$200B+ (Healthcare Admin) + $80B+ (Manufacturing Acquisition)",
-      "note": "CORRECTION CYCLE: Real data replaces estimates."
+      "id": "KF-03",
+      "title": "Three Demographic Regimes Diverge",
+      "magnitude": "Shapes all sector transformations",
+      "detail": "Shrinking labor force (Japan -500K/yr, China fertility 1.12, EU -1M/yr, US native-born declining) creates automation pull. Peak dividend (India median age 29.8, adding 183M workers) creates skills opportunity. Pre-dividend (Africa 830M youth by 2050) creates future market. Same technology, completely different adoption paths.",
+      "confidence": "high"
     },
     {
-      "cycle": "v2-4",
-      "signals": 20,
-      "clusters": 18,
-      "models_constructed": 37,
-      "tier_1": 5,
-      "tier_2": 6,
-      "tier_3": 7,
-      "top_force": "$207B automatable wage bill (O*NET + BLS quantified)",
-      "note": "QUANTITATIVE DEEPENING: O*NET + BLS data. Stress tests on top 3."
+      "id": "KF-04",
+      "title": "Perez Turning Point Approaching",
+      "magnitude": "2026-2028 highest-risk, highest-opportunity window",
+      "detail": "AI startup failure: 85% expected out within 3 years. Application spend now exceeds infrastructure spend. $500B/yr invested but 56% of CEOs see no benefit. These are classic late-Installation Frenzy signals. Correction before Deployment phase when structural forces create maximum leverage.",
+      "confidence": "medium"
     },
     {
-      "cycle": "v2-5",
-      "signals": 20,
-      "clusters": 11,
-      "models_constructed": 102,
-      "tier_1_models": 5,
-      "tier_2_models": 9,
-      "not_recommended": 5,
-      "top_model": "AI Bookkeeping for Bench Orphans (80)",
-      "note": "YC-GRANULARITY DECOMPOSITION: 11 sectors -> 102 models. Customer-segment scoring."
+      "id": "KF-05",
+      "title": "Human Premium Is Durable",
+      "magnitude": "$50-100B market by 2031",
+      "detail": "96% of music professionals open to paying more for human-created. 86% of consumers want human interaction. Up to 16% willingness to pay more for human service. Blockchain verification targeting mainstream by mid-2026. Not replacing AI — creating parallel artisan economy like organic food movement.",
+      "confidence": "high"
     },
     {
-      "cycle": "v2-6",
-      "signals": 32,
-      "clusters": 8,
-      "models_constructed": 187,
-      "tier_1_models": 5,
-      "tier_2_models": 9,
-      "not_recommended": 10,
-      "top_model": "Multi-Shop CNC Rollup (86) / CNC Acquire+Modernize (86) / Financial Intelligence (86)",
-      "note": "ARCHITECTURE-BASED DECOMPOSITION: 8 forces x 10 architectures = 187 models. Structural durability scoring. KEY REVERSAL: physical architectures (84 avg) dominate; vertical SaaS (67 avg) scores LOWEST."
+      "id": "KF-06",
+      "title": "Energy Is the Gatekeeper",
+      "magnitude": "Data centers: 2% → 4.4% of US electricity",
+      "detail": "AI compute demand outpacing energy supply. Hyperscalers restarting nuclear (Three Mile Island), building SMRs, signing dedicated renewable PPAs. Winners defined by power access. Creates new Ricardian rent around power-advantaged locations. Water stress emerging as secondary constraint.",
+      "confidence": "high"
     },
     {
-      "cycle": "v2-7",
-      "signals": 48,
-      "clusters": 8,
-      "models_constructed": 387,
-      "tier_1_models": 5,
-      "tier_2_models": 15,
-      "not_recommended": 12,
-      "top_model": "Multi-Shop CNC/Metal Fab Rollup (88)",
-      "note": "NAICS-SYSTEMATIC EXPANSION + STRESS TEST: 187 -> 387 models via NAICS QCEW (293 4-digit industries). Scoring stress-tested: 7/10 robust. 80-cell matrix mapped. 8 new sectors discovered. Printing (28K estabs), building trades (2.46M workers), allied health (191K estabs) enter top 20. PE distress extends to vet/dental/staffing/print."
+      "id": "KF-07",
+      "title": "Three AI Blocs Are Forming",
+      "magnitude": "5+ regulatory frameworks by 2026",
+      "detail": "US-led (innovation-first, state-level patchwork), China-led (state-controlled, content-aligned), EU-regulated (comprehensive risk-based, extraterritorial). India and MENA are swing players. Cross-bloc compliance becomes its own business category. Each bloc develops distinct tech stacks.",
+      "confidence": "high"
     },
     {
-      "cycle": "v2-precycle8",
-      "signals": 0,
-      "clusters": 4,
-      "models_constructed": 522,
-      "tier_1_models": 5,
-      "tier_2_models": 19,
-      "not_recommended": 12,
-      "top_model": "Full-Service AI Wholesale Brokerage (82) \u2014 NEW",
-      "note": "4-DIMENSION MODEL EXPANSION: 387->522 (+135 models). NAICS 6-digit decomposition (+88), supply chain adjacencies (+18), external source research (+15), AI beneficiary lens (+14). KEY: wholesale/landscaping/med-equip have ZERO competitive density. Elder care = 925K estabs, MOST fragmented US sector. New AI beneficiary dimension: BE the firm, don't sell the tool. BizBuySell: 72% more owners listing 2026."
-    },
-    {
-      "cycle": "v2-8",
-      "signals": 7,
-      "clusters": 3,
-      "models_constructed": 522,
-      "tier_1_models": 7,
-      "tier_2_models": 13,
-      "not_recommended": 12,
-      "top_model": "AI Financial Intelligence Platform (90, +3) \u2014 NEW #1",
-      "note": "MULTI-SOURCE CROSS-REFERENCING: 7 data source types, 70+ connector methods. Top 20 cross-referenced against 3-7 sources each. 17 upgraded, 2 downgraded, 21 unchanged. Financial cascade CONFIRMED (BLS -49K, financials ETF last). Staffing canary STRONGEST signal (RHI -53%, MAN -44%, KELYA -25%). Physical production CONFIRMED (Industrials +15.1%, Materials +20.1%). Zero-density VALIDATED (0 startups in wholesale/printing/food). Auto repair COMPETITIVE (Revv $20M, -4). 3 new patterns: P-026 Financial Cascade, P-027 Staffing Canary, P-028 Auto Repair Competition."
+      "id": "KF-08",
+      "title": "Reskilling Chasm Is the Central Policy Challenge",
+      "magnitude": "39% skills obsolete, 59% won't get training",
+      "detail": "170M new jobs created but 92M displaced by 2030 (WEF). 39% of current skills will be obsolete. 59% of workers won't receive adequate training. Entry-level workers aged 22-25 already seeing 13% employment decline in AI-exposed occupations. Alternative credentials surging: certificates +28%.",
+      "confidence": "high"
     }
+  ],
+
+  "worker_displacement": {
+    "ai_layoffs_2025": 55000,
+    "anticipatory_pct": 98,
+    "entry_level_decline": "13%",
+    "entry_level_postings_decline": "15% YoY",
+    "most_vulnerable": [
+      {"role": "Customer service / call centers", "risk": "80%", "timeline": "Now-2028"},
+      {"role": "Data entry / clerical", "risk": "Very high", "timeline": "By 2027"},
+      {"role": "Paralegals", "risk": "80%", "timeline": "By 2026"},
+      {"role": "Legal researchers", "risk": "65%", "timeline": "By 2027"},
+      {"role": "Banking operations", "risk": "70%", "timeline": "80% by 2030"},
+      {"role": "Entry-level white collar", "risk": "15% YoY decline", "timeline": "Accelerating"}
+    ],
+    "wef_2030": {
+      "jobs_created": 170000000,
+      "jobs_displaced": 92000000,
+      "net_growth": 78000000
+    }
+  },
+
+  "fear_driven_markets": [
+    {"category": "AI Safety / TRiSM", "size_2025": "$2.9B", "projected": "$8-10B (2030)", "cagr": "23%"},
+    {"category": "AI Compliance Monitoring", "size_2025": "$1.8B", "projected": "$5.2B (2030)", "cagr": "19.4%"},
+    {"category": "AI Ethics Consulting", "size_2025": "$0.27B", "projected": "$11.8B (2034)", "cagr": "45.9%"},
+    {"category": "AI Governance", "size_2025": "$2.2B", "projected": "$9.5B (2035)", "cagr": "15.8%"},
+    {"category": "AI Insurance", "size_2025": "$10.8B", "projected": "$176.6B (2035)", "cagr": "32.2%"},
+    {"category": "AI Consulting", "size_2025": "$22.3B", "projected": "$257.6B (2033)", "cagr": "35.8%"},
+    {"category": "Authenticity Verification", "size_2025": "Nascent", "projected": "~$10B (2030)", "cagr": "N/A"}
+  ],
+
+  "sentiment_trajectory": [
+    {"metric": "Americans concerned about AI", "baseline": "50%", "direction": "up then plateau", "est_2031": "55-60%"},
+    {"metric": "Consumer confidence", "baseline": "Near 12yr low", "direction": "recovery likely", "est_2031": "85-100 range"},
+    {"metric": "CEO AI investment", "baseline": "$500B/yr", "direction": "sustained, ROI-gated", "est_2031": "$1T+/yr"},
+    {"metric": "Trust in AI (US)", "baseline": "32%", "direction": "slowly rising", "est_2031": "45-55%"},
+    {"metric": "Fear-driven market size", "baseline": "~$40B", "direction": "rapid growth", "est_2031": "$300-500B"},
+    {"metric": "Human premium market", "baseline": "Nascent", "direction": "formalizing", "est_2031": "$50-100B"},
+    {"metric": "Workers fearing displacement", "baseline": "40%", "direction": "peaks 2027-28", "est_2031": "25-30%"}
+  ],
+
+  "defense_ai": {
+    "global_defense_2026": "$2.6T",
+    "us_dod_ai_autonomy": "$13.4B",
+    "us_dod_total": "$1.01T",
+    "nato_target": "5% GDP by 2035",
+    "european_defense": "$693B+",
+    "china_defense": "$293-450B"
+  },
+
+  "perez_cycle": {
+    "current_phase": "Late Installation / Early Turning Point",
+    "ai_vc_share": "50% of all global VC",
+    "startup_failure_rate": "85% within 3 years",
+    "app_vs_infra": "Applications ($19B) > Infrastructure ($18B)",
+    "enterprise_ai_revenue": "$37B (3x YoY)",
+    "turning_point_signals": ["Application spend exceeding infrastructure", "High failure rates", "CEO ROI disappointment", "Rhetoric shifting to efficiency"]
+  },
+
+  "v2_landscape_preserved": {
+    "note": "v2 business models preserved as evidence base for sector transformation projections",
+    "top_3_models": [
+      {"name": "AI Financial Intelligence Platform", "score": 90, "sector": "SMB Accounting/Finance"},
+      {"name": "Multi-Shop CNC/Metal Fab Rollup", "score": 89, "sector": "Manufacturing"},
+      {"name": "Full-Service AI Finance for SMBs", "score": 88, "sector": "SMB Accounting/Finance"}
+    ],
+    "confirmed_cascades": [
+      "Financial services: BLS -49K, financials ETF last (+0.5%), delinquency 1.78%",
+      "Staffing: RHI -53%, MAN -44%, KELYA -25% in 1yr",
+      "Physical production renaissance: Industrials +15.1%, Materials +20.1%"
+    ]
+  },
+
+  "cycle_history": [
+    {"cycle": "v2-1", "type": "landscape", "models_constructed": 20, "note": "First v2 landscape. Services-focused."},
+    {"cycle": "v2-2", "type": "landscape", "models_constructed": 32, "note": "Added physical production."},
+    {"cycle": "v2-3", "type": "landscape", "models_constructed": 34, "note": "Correction: real data replaces estimates."},
+    {"cycle": "v2-4", "type": "landscape", "models_constructed": 37, "note": "O*NET + BLS quantitative deepening."},
+    {"cycle": "v2-5", "type": "decomposition", "models_constructed": 102, "note": "YC-granularity decomposition."},
+    {"cycle": "v2-6", "type": "decomposition", "models_constructed": 187, "note": "Architecture-based: physical dominates."},
+    {"cycle": "v2-7", "type": "expansion", "models_constructed": 387, "note": "NAICS systematic + stress test."},
+    {"cycle": "v2-pre8", "type": "expansion", "models_constructed": 522, "note": "4-dimension expansion."},
+    {"cycle": "v2-8", "type": "validation", "models_constructed": 522, "note": "Multi-source cross-referencing. 7 data types."},
+    {"cycle": "v3-1", "type": "economy_map", "models_constructed": 522, "note": "PIVOT: Economy mapping. 6 forces, 8 regions, fear friction, demographics, geopolitics."}
   ]
 }
