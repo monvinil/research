@@ -116,6 +116,68 @@ After computing 5-axis ratings, assign category labels. Models can have multiple
 | 7 | **CONDITIONAL** | Composite ≥ 60, no other category matched |
 | 8 | **PARKED** | Composite < 60 |
 
+### 4b. Competitive Landscape Assessment (CLA) — Opportunity Scoring
+
+**DUAL RANKING SYSTEM (v3-8+):** Every model gets TWO independent rankings:
+1. **Transformation Rank** — 5-axis composite (will this transformation happen?)
+2. **Opportunity Rank** — CLA composite (can a new entrant play this?)
+
+These are NEVER merged into a single number. A model can be Rank #1 in Transformation and #413 in Opportunity.
+
+Using the `competitive_landscape_assessment` from Agent B's model card, compute the 4-axis CLA score:
+
+```
+CLA SCORING SYSTEM (Opportunity)
+
+AXIS 1: MARKET OPENNESS (MO) [1-10] weight: 30%
+├── How open is this market to new entrants?
+├── 9-10: Nascent/emerging, no incumbents, greenfield
+├── 7-8:  Fragmented market, many players, low structural barriers
+├── 5-6:  Concentrated but with viable entry paths
+├── 3-4:  Oligopoly (3-5 players dominate), high barriers
+├── 1-2:  Monopoly/duopoly (>80% top-2 share), regulatory capture
+└── Data inputs: competitive_density.status, market concentration data, funded_entrants
+
+AXIS 2: MOAT ARCHITECTURE (MA) [1-10] weight: 25%
+├── How fragile are incumbent moats? (Higher = more fragile = better for entrants)
+├── 9-10: No meaningful moats, or moats about to be disrupted
+├── 7-8:  Weak moats (switching costs, legacy relationships)
+├── 5-6:  Moderate moats (brand, scale) that technology could erode
+├── 3-4:  Strong data or network effects with some cracks
+├── 1-2:  Network effects + data moat + regulatory capture (nearly unbreakable)
+└── Data inputs: moat_sources, architecture type, sector concentration
+
+AXIS 3: VALUE CHAIN DEPTH (VD) [1-10] weight: 20%
+├── How many independent defensible entry points exist?
+├── 9-10: Deep multi-layer stack, entrants can own unique positions
+├── 7-8:  Multiple entry points at different stack levels
+├── 5-6:  3+ layers with some defensible positions
+├── 3-4:  2 layers but unclear differentiation
+├── 1-2:  Single-layer opportunity, easily commoditized
+└── Data inputs: architecture type, layer analysis, value_chain_depth.layers
+
+AXIS 4: DISRUPTION VECTORS (DV) [1-10] weight: 25%
+├── How many plausible mechanisms create openings for new entrants?
+├── 9-10: Incumbent position actively eroding from multiple vectors
+├── 7-8:  Multiple disruption vectors simultaneously opening
+├── 5-6:  1-2 plausible disruption paths in play
+├── 3-4:  Theoretical disruption, requires massive capital
+├── 1-2:  No credible disruption path
+└── Data inputs: disruption_vectors.vectors, force_velocities, regulatory changes
+```
+
+**OPPORTUNITY COMPOSITE** = (MO × 30 + MA × 25 + VD × 20 + DV × 25) / 10
+Scale: 10-100.
+
+**OPPORTUNITY CATEGORIES:**
+| Category | Criteria |
+|----------|----------|
+| **WIDE_OPEN** | OPP ≥ 75 |
+| **ACCESSIBLE** | OPP ≥ 60 |
+| **CONTESTED** | OPP ≥ 45 |
+| **FORTIFIED** | OPP ≥ 30 |
+| **LOCKED** | OPP < 30 |
+
 ### 5. Force Velocity Cascade Triggers
 
 When a force velocity changes, cascade to affected model ratings:

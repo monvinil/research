@@ -703,7 +703,7 @@
     },
     "top_10": [
       {"rank": 1, "id": "MC-V38-44-003", "name": "Retail Media Network Platform", "composite": 86.5, "category": "STRUCTURAL_WINNER"},
-      {"rank": 2, "id": "MC-V38-44-005", "name": "Warehouse Fulfillment Robotics", "composite": 84.0, "category": "STRUCTURAL_WINNER"},
+      {"rank": 2, "id": "MC-V38-44-002", "name": "Warehouse Fulfillment Robotics Platform", "composite": 84.0, "category": "STRUCTURAL_WINNER"},
       {"rank": 3, "id": "V3-FEAR-001", "name": "AI Governance and Compliance Operating System", "composite": 83.0, "category": "STRUCTURAL_WINNER"},
       {"rank": 4, "id": "MC-DEF-011", "name": "CMMC Compliance Automation Platform", "composite": 82.5, "category": "FORCE_RIDER"},
       {"rank": 5, "id": "MC-INFO-002", "name": "AI Code Quality and Security Audit Platform", "composite": 82.5, "category": "STRUCTURAL_WINNER"},
@@ -746,7 +746,43 @@
       "batch_calibration": true,
       "gg_replaced_with_ec": true,
       "categories_hard_enforced": true,
-      "deduplication": true
+      "deduplication": true,
+      "cla_dual_ranking": true
+    },
+    "cla_system": {
+      "name": "Competitive Landscape Assessment",
+      "purpose": "Independent second ranking measuring entrant opportunity (vs 5-axis transformation certainty)",
+      "axes": {
+        "MO": {"name": "Market Openness", "weight": 0.30},
+        "MA": {"name": "Moat Architecture (fragility)", "weight": 0.25},
+        "VD": {"name": "Value Chain Depth", "weight": 0.20},
+        "DV": {"name": "Disruption Vectors", "weight": 0.25}
+      },
+      "composite_formula": "(MO*30 + MA*25 + VD*20 + DV*25) / 10",
+      "categories": ["WIDE_OPEN (>=75)", "ACCESSIBLE (>=60)", "CONTESTED (>=45)", "FORTIFIED (>=30)", "LOCKED (<30)"],
+      "scoring_method": "Manual overrides for top 49 models + heuristic engine for remaining 364",
+      "dual_ranking_principle": "Transformation Rank and Opportunity Rank are NEVER merged into a single number",
+      "opportunity_stats": {
+        "max": 88.0,
+        "min": 31.0,
+        "mean": 61.8,
+        "median": 62.5
+      },
+      "opportunity_category_distribution": {
+        "WIDE_OPEN": 31,
+        "ACCESSIBLE": 233,
+        "CONTESTED": 126,
+        "FORTIFIED": 23,
+        "LOCKED": 0
+      },
+      "top_5_actionable": [
+        {"id": "V3-EMRG-001", "name": "Micro-Firm AI Operating System", "t_rank": 13, "o_rank": 2, "geo_mean": 84.17},
+        {"id": "V3-FEAR-001", "name": "AI Governance and Compliance OS", "t_rank": 3, "o_rank": 14, "geo_mean": 81.74},
+        {"id": "C7-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "t_rank": 19, "o_rank": 19, "geo_mean": 78.25},
+        {"id": "PC8-AM-AUTO-01", "name": "Acquire + Modernize Auto Repair", "t_rank": 110, "o_rank": 6, "geo_mean": 77.12},
+        {"id": "MC-V37-5415-004", "name": "IT Services Micro-Firm Rollup", "t_rank": 45, "o_rank": 18, "geo_mean": 76.99}
+      ],
+      "key_insight": "Transformation Rank #1 (Retail Media, 86.5) is Opportunity Rank #413 (last). Amazon 77% share makes it the most locked market. The most actionable models score high on BOTH dimensions."
     }
   },
   "force_velocity_triggers": {

@@ -129,11 +129,44 @@ For each business model, produce a **Model Card**:
     "moat_sources": ["string"]
   },
 
+  "competitive_landscape_assessment": {
+    "market_openness": {
+      "score": 0,
+      "concentration": "monopoly | duopoly | oligopoly | fragmented | nascent",
+      "top_players": ["string"],
+      "entry_barriers": ["string"],
+      "notes": "string"
+    },
+    "moat_architecture": {
+      "score": 0,
+      "moat_type": "network_effects | data | regulatory | capital | brand | switching_costs | none",
+      "fragility_assessment": "string — what would break this moat?",
+      "notes": "string"
+    },
+    "value_chain_depth": {
+      "score": 0,
+      "layers": ["string — each defensible position in the stack"],
+      "best_entry_point": "string",
+      "notes": "string"
+    },
+    "disruption_vectors": {
+      "score": 0,
+      "vectors": ["string — each plausible mechanism that creates openings"],
+      "strongest_vector": "string",
+      "notes": "string"
+    }
+  },
+
   "falsification_criteria": ["what evidence would kill this thesis"]
 }
 ```
 
-Agent C computes the final 5-axis scores (SN, FA, EC, TG, CE) and category labels from the `rating_inputs`. Agent B provides raw assessment data; Agent C applies the scoring rubric consistently.
+Agent C computes both the 5-axis scores (SN, FA, EC, TG, CE) and the CLA Opportunity scores (MO, MA, VD, DV) from the `rating_inputs` and `competitive_landscape_assessment`. Agent B provides raw assessment data; Agent C applies the scoring rubrics consistently.
+
+**DUAL RANKING**: Every model gets TWO independent rankings:
+1. **Transformation Rank** — 5-axis composite (will this transformation happen?)
+2. **Opportunity Rank** — CLA composite (can a new entrant play this?)
+These are NEVER merged into a single number.
 
 ## Economic Force Quantification
 
