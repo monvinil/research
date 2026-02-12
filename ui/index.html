@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Business Model Engine v3.6</title>
+<title>Research Engine v3.10</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -352,13 +352,24 @@
   .model-table tr { cursor: pointer; transition: background var(--transition); }
   .model-table tbody tr:hover { background: rgba(255,255,255,0.02); }
   .model-table .rank-cell { font-weight: 600; color: var(--dim); width: 40px; font-variant-numeric: tabular-nums; }
-  .model-table .name-cell { font-weight: 600; color: var(--text); max-width: 280px; }
+  .model-table .name-cell { font-weight: 600; color: var(--text); max-width: 240px; }
   .model-table .composite-cell { font-weight: 800; font-variant-numeric: tabular-nums; font-size: 14px; }
+  .model-table .opp-cell { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 13px; }
   .new-badge {
     display: inline-block; font-size: 8px; font-weight: 800;
     padding: 1px 5px; border-radius: 4px; margin-left: 6px;
     background: rgba(248,113,113,0.15); color: var(--red);
     letter-spacing: 0.5px; vertical-align: middle;
+  }
+  .sub-badge {
+    display: inline-block; font-size: 8px; font-weight: 800;
+    padding: 1px 5px; border-radius: 4px; margin-left: 6px;
+    background: rgba(34,211,238,0.15); color: var(--cyan);
+    letter-spacing: 0.5px; vertical-align: middle;
+  }
+  .decomposed-indicator {
+    font-size: 9px; font-weight: 500; color: var(--dim);
+    margin-left: 4px;
   }
 
   /* Axis mini-bars */
@@ -390,6 +401,13 @@
   .cat-CONDITIONAL { background: rgba(255,255,255,0.06); color: var(--text-secondary); }
   .cat-PARKED { background: rgba(255,255,255,0.04); color: var(--dim); }
 
+  /* Opportunity category badges */
+  .opp-WIDE_OPEN { background: rgba(52,211,153,0.15); color: var(--green); }
+  .opp-ACCESSIBLE { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .opp-CONTESTED { background: rgba(251,191,36,0.15); color: var(--amber); }
+  .opp-FORTIFIED { background: rgba(248,113,113,0.15); color: var(--red); }
+  .opp-LOCKED { background: rgba(248,113,113,0.25); color: var(--red); }
+
   /* Expanded model detail */
   .model-detail {
     display: none;
@@ -402,12 +420,20 @@
   .detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
   .detail-name { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; }
   .detail-id { font-size: 11px; color: var(--dim); margin-top: 2px; }
+  .detail-composites { display: flex; gap: 20px; align-items: flex-end; }
+  .detail-composite-block { text-align: center; }
+  .detail-composite-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--dim); margin-bottom: 2px; }
   .detail-composite { font-size: 36px; font-weight: 900; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; }
+  .detail-composite-opp { font-size: 28px; font-weight: 800; color: var(--blue); font-variant-numeric: tabular-nums; line-height: 1; }
   .detail-axes {
     display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+    margin-bottom: 12px;
+  }
+  .detail-cla-axes {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
     margin-bottom: 16px;
   }
-  @media (max-width: 600px) { .detail-axes { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px) { .detail-axes { grid-template-columns: repeat(3, 1fr); } .detail-cla-axes { grid-template-columns: repeat(2, 1fr); } }
   .detail-axis {
     text-align: center; padding: 12px 8px;
     background: rgba(255,255,255,0.02); border-radius: var(--radius-xs);
@@ -420,6 +446,16 @@
   .detail-meta span { display: flex; align-items: center; gap: 4px; }
   .detail-meta .meta-label { color: var(--dim); font-weight: 600; }
   .detail-cats { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .detail-sub-info {
+    font-size: 11.5px; color: var(--cyan); padding: 8px 12px;
+    background: rgba(34,211,238,0.05); border-radius: var(--radius-xs);
+    border-left: 3px solid var(--cyan); margin-bottom: 12px;
+  }
+  .detail-decomp-info {
+    font-size: 11.5px; color: var(--accent); padding: 8px 12px;
+    background: rgba(167,139,250,0.05); border-radius: var(--radius-xs);
+    border-left: 3px solid var(--accent); margin-bottom: 12px;
+  }
   .detail-oneliner {
     font-size: 12.5px; color: var(--text-secondary); line-height: 1.7;
     padding: 12px; background: rgba(167,139,250,0.03); border-radius: var(--radius-xs);
@@ -439,9 +475,11 @@
   .mci-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
   .mci-score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
   .mci-composite { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .mci-opp-composite { font-size: 16px; font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
   .mci-scores { display: flex; gap: 6px; flex-wrap: wrap; }
   .mci-axis { font-size: 10px; font-weight: 600; color: var(--text-secondary); }
   .mci-axis-label { color: var(--dim); font-size: 8px; }
+  .mci-cats { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
 
   /* Pagination */
   .pagination {
@@ -691,21 +729,21 @@
   </nav>
 
   <header>
-    <h1>Business Model Engine</h1>
+    <h1>Research Engine v3.10</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-6</span>
-      &nbsp; <span id="model-total-sub">325 rated models</span> &middot; 5-axis scoring &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      <span class="cycle-badge" id="cycle-badge">v3-10</span>
+      &nbsp; <span id="model-total-sub">454 rated models</span> &middot; dual ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
   </header>
 
   <!-- KPI Row (always visible) -->
   <div class="kpi-row" id="kpi-row">
     <div class="glass kpi"><div class="kpi-label">Rated Models</div><div class="kpi-value" style="color:var(--accent)" id="kpi-rated">--</div><div class="kpi-sub">individually scored</div></div>
-    <div class="glass kpi"><div class="kpi-label">Total Inventory</div><div class="kpi-value" style="color:var(--blue)" id="kpi-total">--</div><div class="kpi-sub" id="kpi-total-sub">rated + stubs</div></div>
     <div class="glass kpi"><div class="kpi-label">Structural Winners</div><div class="kpi-value" style="color:var(--green)" id="kpi-winners">--</div><div class="kpi-sub">composite &ge;80, SN&ge;9</div></div>
     <div class="glass kpi"><div class="kpi-label">Top Composite</div><div class="kpi-value" style="color:var(--amber)" id="kpi-top">--</div><div class="kpi-sub" id="kpi-mean-sub">mean --</div></div>
     <div class="glass kpi"><div class="kpi-label">New This Cycle</div><div class="kpi-value" style="color:var(--red)" id="kpi-new">--</div><div class="kpi-sub">from deep dives</div></div>
-    <div class="glass kpi"><div class="kpi-label">Forces &times; Regions</div><div class="kpi-value" style="color:var(--cyan)">6&times;8</div><div class="kpi-sub">grading context</div></div>
+    <div class="glass kpi"><div class="kpi-label">Sub-Models</div><div class="kpi-value" style="color:var(--cyan)" id="kpi-sub-models">--</div><div class="kpi-sub">granularity layers</div></div>
+    <div class="glass kpi"><div class="kpi-label">Decomposed</div><div class="kpi-value" style="color:var(--pink)" id="kpi-decomposed">--</div><div class="kpi-sub">parent models</div></div>
   </div>
 
   <!-- ═══ VIEW: MODELS ═══ -->
@@ -717,9 +755,13 @@
     <div class="controls-bar">
       <input type="text" class="search-box" id="model-search" placeholder="Search name, ID, NAICS, architecture...">
       <select class="sort-select" id="model-sort">
-        <option value="rank">Rank</option>
-        <option value="composite-desc">Composite (high)</option>
-        <option value="composite-asc">Composite (low)</option>
+        <option value="rank">Rank (Transformation)</option>
+        <option value="composite-desc">T-Score (high)</option>
+        <option value="composite-asc">T-Score (low)</option>
+        <option value="opp-rank">Opportunity Rank</option>
+        <option value="opp-desc">Opportunity (high)</option>
+        <option value="opp-asc">Opportunity (low)</option>
+        <option value="actionable">Actionable (geo mean)</option>
         <option value="sn">SN (Structural)</option>
         <option value="fa">FA (Force Alignment)</option>
         <option value="ec">EC (Econ Capture)</option>
@@ -734,8 +776,11 @@
       </div>
     </div>
 
-    <!-- Category Filters -->
+    <!-- Transformation Category Filters -->
     <div class="filter-chips" id="cat-filters"></div>
+    <div style="height:6px"></div>
+    <!-- Opportunity Category Filters -->
+    <div class="filter-chips" id="opp-cat-filters"></div>
     <div style="height:8px"></div>
 
     <!-- Results info -->
@@ -833,7 +878,7 @@
     </div>
   </div>
 
-  <div class="footer">Business Model Engine v3.6 &middot; 5-axis scoring (SN/FA/EC/TG/CE) &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v3.10 &middot; dual ranking (transformation + opportunity) &middot; 5-axis + CLA scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -845,6 +890,7 @@ const PAGE_SIZE = 50;
 let viewMode = 'table';
 let newOnlyActive = false;
 let activeCatFilter = null;
+let activeOppFilter = null;
 let expandedModelId = null;
 
 async function load(path) {
@@ -876,6 +922,9 @@ document.querySelectorAll('#main-nav a').forEach(a => {
 const axisColor = {
   SN: 'var(--green)', FA: 'var(--blue)', EC: 'var(--amber)', TG: 'var(--cyan)', CE: 'var(--accent)'
 };
+const claColor = {
+  MO: 'var(--green)', MA: 'var(--amber)', VD: 'var(--cyan)', DV: 'var(--accent)'
+};
 
 // ─── MODEL CONTROLS ───
 document.getElementById('model-search').addEventListener('input', () => { currentPage = 1; applyFilters(); });
@@ -898,8 +947,18 @@ function setViewMode(mode, btn) {
 function setCatFilter(cat) {
   if (activeCatFilter === cat) { activeCatFilter = null; }
   else { activeCatFilter = cat; }
-  document.querySelectorAll('.filter-chip').forEach(c => {
+  document.querySelectorAll('#cat-filters .filter-chip').forEach(c => {
     c.classList.toggle('active', c.dataset.cat === activeCatFilter);
+  });
+  currentPage = 1;
+  applyFilters();
+}
+
+function setOppFilter(cat) {
+  if (activeOppFilter === cat) { activeOppFilter = null; }
+  else { activeOppFilter = cat; }
+  document.querySelectorAll('#opp-cat-filters .filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeOppFilter);
   });
   currentPage = 1;
   applyFilters();
@@ -912,8 +971,9 @@ function applyFilters() {
   filteredModels = allModels.filter(m => {
     if (newOnlyActive && !m.new_in_v36) return false;
     if (activeCatFilter && m.category !== activeCatFilter) return false;
+    if (activeOppFilter && m.opportunity_category !== activeOppFilter) return false;
     if (q) {
-      const hay = [m.name, m.id, m.sector_naics, m.architecture, m.category, m.one_liner || ''].join(' ').toLowerCase();
+      const hay = [m.name, m.id, m.sector_naics, m.architecture, m.category, m.opportunity_category || '', m.one_liner || '', m.layer_name || ''].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -924,6 +984,14 @@ function applyFilters() {
     'rank': (a, b) => a.rank - b.rank,
     'composite-desc': (a, b) => b.composite - a.composite,
     'composite-asc': (a, b) => a.composite - b.composite,
+    'opp-rank': (a, b) => (a.opportunity_rank || 9999) - (b.opportunity_rank || 9999),
+    'opp-desc': (a, b) => (b.opportunity_composite || 0) - (a.opportunity_composite || 0),
+    'opp-asc': (a, b) => (a.opportunity_composite || 0) - (b.opportunity_composite || 0),
+    'actionable': (a, b) => {
+      const gA = Math.sqrt((a.composite || 0) * (a.opportunity_composite || 0));
+      const gB = Math.sqrt((b.composite || 0) * (b.opportunity_composite || 0));
+      return gB - gA;
+    },
     'sn': (a, b) => (b.scores.SN || 0) - (a.scores.SN || 0),
     'fa': (a, b) => (b.scores.FA || 0) - (a.scores.FA || 0),
     'ec': (a, b) => (b.scores.EC || 0) - (a.scores.EC || 0),
@@ -943,8 +1011,11 @@ function renderModelList() {
   const start = (currentPage - 1) * PAGE_SIZE;
   const pageModels = filteredModels.slice(start, start + PAGE_SIZE);
 
-  document.getElementById('results-info').textContent =
-    total + ' model' + (total !== 1 ? 's' : '') + (newOnlyActive ? ' (new only)' : '') + (activeCatFilter ? ' \u2014 ' + activeCatFilter.replace(/_/g, ' ') : '');
+  let infoText = total + ' model' + (total !== 1 ? 's' : '');
+  if (newOnlyActive) infoText += ' (new only)';
+  if (activeCatFilter) infoText += ' \u2014 ' + activeCatFilter.replace(/_/g, ' ');
+  if (activeOppFilter) infoText += ' \u2014 opp: ' + activeOppFilter.replace(/_/g, ' ');
+  document.getElementById('results-info').textContent = infoText;
 
   const container = document.getElementById('model-list-container');
 
@@ -953,9 +1024,11 @@ function renderModelList() {
       <thead><tr>
         <th class="sorted" data-sort="rank">#</th>
         <th data-sort="name">Name</th>
-        <th data-sort="composite-desc">Score</th>
+        <th data-sort="composite-desc">T-Score</th>
+        <th data-sort="opp-desc">O-Score</th>
+        <th data-sort="category">T-Category</th>
+        <th>O-Category</th>
         <th>Axes</th>
-        <th data-sort="category">Category</th>
         <th>NAICS</th>
       </tr></thead>
       <tbody>${pageModels.map(m => modelTableRow(m)).join('')}</tbody>
@@ -969,7 +1042,10 @@ function renderModelList() {
 
 function modelTableRow(m) {
   const catCls = 'cat-' + (m.category || 'CONDITIONAL');
+  const oppCatCls = 'opp-' + (m.opportunity_category || 'CONTESTED');
   const newBadge = m.new_in_v36 ? '<span class="new-badge">NEW</span>' : '';
+  const subBadge = m.parent_id ? '<span class="sub-badge">SUB</span>' : '';
+  const decompIndicator = m.decomposed ? '<span class="decomposed-indicator">(' + (m.sub_model_count || '?') + ' layers)</span>' : '';
   const axes = ['SN','FA','EC','TG','CE'].map(a => {
     const v = m.scores[a] || 0;
     const pct = (v / 10) * 100;
@@ -981,34 +1057,46 @@ function modelTableRow(m) {
   }).join('');
 
   const compColor = m.composite >= 80 ? 'var(--green)' : m.composite >= 70 ? 'var(--blue)' : m.composite >= 60 ? 'var(--text)' : 'var(--dim)';
+  const oppComp = m.opportunity_composite || 0;
+  const oppColor = oppComp >= 75 ? 'var(--green)' : oppComp >= 60 ? 'var(--blue)' : oppComp >= 45 ? 'var(--amber)' : 'var(--red)';
 
   return `<tr onclick="toggleModelDetail('${esc(m.id)}')">
     <td class="rank-cell">${m.rank}</td>
-    <td class="name-cell">${esc(m.name)}${newBadge}</td>
+    <td class="name-cell">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}</td>
     <td class="composite-cell" style="color:${compColor}">${m.composite.toFixed(1)}</td>
-    <td><div class="axis-bars">${axes}</div></td>
+    <td class="opp-cell" style="color:${oppColor}">${oppComp.toFixed(1)}</td>
     <td><span class="cat-badge ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</span></td>
+    <td><span class="cat-badge ${oppCatCls}">${esc((m.opportunity_category || '').replace(/_/g, ' '))}</span></td>
+    <td><div class="axis-bars">${axes}</div></td>
     <td style="font-size:11px;color:var(--dim)">${esc(m.sector_naics)}</td>
   </tr>`;
 }
 
 function modelCardHtml(m) {
   const catCls = 'cat-' + (m.category || 'CONDITIONAL');
+  const oppCatCls = 'opp-' + (m.opportunity_category || 'CONTESTED');
   const newBadge = m.new_in_v36 ? '<span class="new-badge">NEW</span>' : '';
+  const subBadge = m.parent_id ? '<span class="sub-badge">SUB</span>' : '';
+  const decompIndicator = m.decomposed ? '<span class="decomposed-indicator">(' + (m.sub_model_count || '?') + ' layers)</span>' : '';
   const axisHtml = ['SN','FA','EC','TG','CE'].map(a => {
     const v = m.scores[a] || 0;
     return `<span class="mci-axis"><span class="mci-axis-label">${a}</span> ${v.toFixed(1)}</span>`;
   }).join('');
+  const oppComp = m.opportunity_composite || 0;
 
   return `<div class="glass model-card-item" onclick="toggleModelDetail('${esc(m.id)}')">
     <div class="mci-top">
       <span class="mci-rank">#${m.rank}</span>
       <span class="cat-badge ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</span>
     </div>
-    <div class="mci-name">${esc(m.name)}${newBadge}</div>
+    <div class="mci-name">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}</div>
     <div class="mci-score-row">
       <span class="mci-composite">${m.composite.toFixed(1)}</span>
+      <span class="mci-opp-composite">OPP ${oppComp.toFixed(1)}</span>
       <div class="mci-scores">${axisHtml}</div>
+    </div>
+    <div class="mci-cats">
+      <span class="cat-badge ${oppCatCls}" style="font-size:8px">${esc((m.opportunity_category || '').replace(/_/g, ' '))}</span>
     </div>
   </div>`;
 }
@@ -1027,7 +1115,8 @@ function toggleModelDetail(id) {
   const axes = ['SN','FA','EC','TG','CE'];
   const axisNames = { SN: 'Structural Necessity', FA: 'Force Alignment', EC: 'Economic Capture', TG: 'Timing & Geography', CE: 'Competitive Edge' };
   const axisWeights = { SN: '25%', FA: '25%', EC: '20%', TG: '15%', CE: '15%' };
-  const newBadge = m.new_in_v36 ? ' <span class="new-badge" style="font-size:10px;padding:2px 8px">NEW IN v3-6</span>' : '';
+  const newBadge = m.new_in_v36 ? ' <span class="new-badge" style="font-size:10px;padding:2px 8px">NEW</span>' : '';
+  const subBadge = m.parent_id ? ' <span class="sub-badge" style="font-size:10px;padding:2px 8px">SUB-MODEL</span>' : '';
 
   const axesHtml = axes.map(a => {
     const v = m.scores[a] || 0;
@@ -1040,18 +1129,66 @@ function toggleModelDetail(id) {
     </div>`;
   }).join('');
 
+  // CLA axes
+  const claAxes = ['MO','MA','VD','DV'];
+  const claNames = { MO: 'Market Openness', MA: 'Market Accessibility', VD: 'Value Chain Depth', DV: 'Defensibility Vulnerability' };
+  const claScores = m.cla_scores || {};
+  const claHtml = claAxes.map(a => {
+    const v = claScores[a] || 0;
+    const pct = (v / 10) * 100;
+    return `<div class="detail-axis">
+      <div class="da-label" style="color:${claColor[a]}">${a}</div>
+      <div class="da-value" style="color:${claColor[a]}">${v}</div>
+      <div class="da-bar"><div class="da-bar-fill" style="width:${pct}%;background:${claColor[a]}"></div></div>
+      <div style="font-size:8px;color:var(--dim);margin-top:3px">${claNames[a]}</div>
+    </div>`;
+  }).join('');
+
   const cats = (m.categories || [m.category]).map(c => `<span class="cat-badge cat-${c}">${esc(c.replace(/_/g, ' '))}</span>`).join('');
+  const oppCatCls = 'opp-' + (m.opportunity_category || 'CONTESTED');
+  const oppCatBadge = m.opportunity_category ? `<span class="cat-badge ${oppCatCls}">OPP: ${esc(m.opportunity_category.replace(/_/g, ' '))}</span>` : '';
+  const oppComp = m.opportunity_composite || 0;
+
+  // Sub-model info
+  let subInfoHtml = '';
+  if (m.parent_id) {
+    const parent = allModels.find(x => x.id === m.parent_id);
+    const parentName = parent ? parent.name : m.parent_id;
+    subInfoHtml = `<div class="detail-sub-info">Sub-model of <strong>${esc(parentName)}</strong> &mdash; Layer: <strong>${esc(m.layer_name || 'Layer ' + (m.layer || '?'))}</strong></div>`;
+  }
+
+  // Decomposed parent info
+  let decompInfoHtml = '';
+  if (m.decomposed && m.sub_model_count) {
+    const range = m.sub_model_opp_range || [];
+    const rangeStr = range.length === 2 ? range[0].toFixed(1) + ' - ' + range[1].toFixed(1) : '?';
+    decompInfoHtml = `<div class="detail-decomp-info">Decomposed into <strong>${m.sub_model_count} layers</strong> (OPP range ${rangeStr})</div>`;
+  }
 
   panel.innerHTML = `
     <div class="detail-header">
       <div>
-        <div class="detail-name">${esc(m.name)}${newBadge}</div>
-        <div class="detail-id">${esc(m.id)} &middot; Rank #${m.rank}</div>
+        <div class="detail-name">${esc(m.name)}${newBadge}${subBadge}</div>
+        <div class="detail-id">${esc(m.id)} &middot; T-Rank #${m.rank} &middot; O-Rank #${m.opportunity_rank || '--'}</div>
       </div>
-      <div class="detail-composite">${m.composite.toFixed(1)}</div>
+      <div class="detail-composites">
+        <div class="detail-composite-block">
+          <div class="detail-composite-label">Transformation</div>
+          <div class="detail-composite">${m.composite.toFixed(1)}</div>
+        </div>
+        <div class="detail-composite-block">
+          <div class="detail-composite-label">Opportunity</div>
+          <div class="detail-composite-opp">${oppComp.toFixed(1)}</div>
+        </div>
+      </div>
     </div>
+    ${subInfoHtml}
+    ${decompInfoHtml}
+    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Transformation Axes (SN/FA/EC/TG/CE)</div>
     <div class="detail-axes">${axesHtml}</div>
-    <div class="detail-cats">${cats}</div>
+    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Opportunity Axes (CLA)</div>
+    <div class="detail-cla-axes">${claHtml}</div>
+    <div class="detail-cats">${cats} ${oppCatBadge}</div>
     <div class="detail-meta">
       <span><span class="meta-label">NAICS:</span> ${esc(m.sector_naics)}</span>
       <span><span class="meta-label">Architecture:</span> ${esc(m.architecture)}</span>
@@ -1104,17 +1241,27 @@ function renderWhatsNew(d) {
   const rp = d.running_patterns || {};
   (rp.new_this_cycle || []).forEach(p => { items.push({ text: p, cls: 'wn-pattern' }); });
 
+  // Granularity framework
+  const eb = d.evidence_base || {};
+  if (eb.granularity_framework_version) {
+    items.push({ text: 'Granularity Framework v' + eb.granularity_framework_version, cls: 'wn-pattern' });
+  }
+
   // New models
   const nm = d.new_models_this_cycle || 0;
   if (nm > 0) items.push({ text: nm + ' new model cards scored', cls: 'wn-model' });
 
+  // Sub-models from decomposition
+  const subCount = eb.v3_sub_models || 0;
+  if (subCount > 0) items.push({ text: subCount + ' sub-models from granularity decomposition', cls: 'wn-model' });
+
   // Deep dives
-  const dives = (d.evidence_base || {}).v3_sector_deep_dives || 0;
+  const dives = eb.v3_sector_deep_dives || 0;
   if (dives) items.push({ text: dives + ' sector deep dives', cls: 'wn-sector' });
 
   if (!items.length) { el.style.display = 'none'; return; }
 
-  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-6'}</div>
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-10'}</div>
     <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
 }
 
@@ -1126,6 +1273,16 @@ function renderCatFilters(summary) {
   el.innerHTML = order.filter(k => dist[k] > 0).map(k => {
     const cls = 'cat-' + k;
     return `<span class="filter-chip cat-badge ${cls}" data-cat="${k}" onclick="setCatFilter('${k}')">${dist[k]} ${k.replace(/_/g, ' ')}</span>`;
+  }).join('');
+}
+
+function renderOppCatFilters(summary) {
+  const el = document.getElementById('opp-cat-filters');
+  const dist = summary.opportunity_category_distribution || {};
+  const order = ['WIDE_OPEN','ACCESSIBLE','CONTESTED','FORTIFIED','LOCKED'];
+  el.innerHTML = order.filter(k => dist[k] > 0).map(k => {
+    const cls = 'opp-' + k;
+    return `<span class="filter-chip cat-badge ${cls}" data-cat="${k}" onclick="setOppFilter('${k}')">${dist[k]} ${k.replace(/_/g, ' ')}</span>`;
   }).join('');
 }
 
@@ -1325,25 +1482,36 @@ async function refresh() {
 
   if (d) {
     // Header
-    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-6';
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-10';
     const ts = d.last_updated;
     document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
     // KPIs
-    const rs = d.rating_system || {};
-    const ratedCount = rs.total_models_rated || rs.total_models_individually_rated || d.total_models_rated || 0;
+    const ratedCount = d.total_models_rated || 0;
     if (ratedCount) document.getElementById('kpi-rated').textContent = ratedCount;
-    const enumCount = rs.enumerated_stubs || d.enumerated_stubs || 0;
-    if (ratedCount || enumCount) {
-      document.getElementById('kpi-total').textContent = ratedCount + enumCount;
-      document.getElementById('kpi-total-sub').textContent = ratedCount + ' rated + ' + enumCount.toLocaleString() + ' stubs';
-    }
-    const sw = (rs.category_distribution || {}).STRUCTURAL_WINNER;
+
+    // Structural Winners — root-level category_distribution
+    const rootCatDist = d.category_distribution || {};
+    const sw = rootCatDist.STRUCTURAL_WINNER;
     if (sw !== undefined) document.getElementById('kpi-winners').textContent = sw;
+
+    // Composite stats
+    const rs = d.rating_system || {};
     const cs = rs.composite_stats || {};
     if (cs.max) { document.getElementById('kpi-top').textContent = cs.max; }
     if (cs.mean) { document.getElementById('kpi-mean-sub').textContent = 'mean ' + cs.mean; }
+
+    // New models
     if (d.new_models_this_cycle) document.getElementById('kpi-new').textContent = d.new_models_this_cycle;
+
+    // Sub-models
+    const eb = d.evidence_base || {};
+    if (eb.v3_sub_models) document.getElementById('kpi-sub-models').textContent = eb.v3_sub_models;
+
+    // Decomposed parents
+    if (eb.v3_decomposed_parents) document.getElementById('kpi-decomposed').textContent = eb.v3_decomposed_parents;
+
+    // Subtitle
     if (ratedCount) document.getElementById('model-total-sub').textContent = ratedCount + ' rated models';
 
     // Render sections
@@ -1366,6 +1534,7 @@ async function refresh() {
   if (m && m.models) {
     allModels = m.models;
     renderCatFilters(m.summary || {});
+    renderOppCatFilters(m.summary || {});
     applyFilters();
   }
 }
