@@ -1,8 +1,8 @@
 {
-  "state_version": 19,
-  "current_cycle": "v3-9",
+  "state_version": 20,
+  "current_cycle": "v3-10",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "engine_version": "3.9 -- 'Opportunity First' cycle: Manufacturing (31-33) + Micro-Firm emerging category deep dives, 22 new model cards (12 manufacturing + 10 micro-firm), 44 signals, 38 CLA refinements applied to mid-tier models, P-041 Manufacturing Modernization Bimodality candidate pattern, 435 models rated (413→435), first physical economy deep dive, first emerging category deep dive. Dual ranking active with expanded manual CLA overrides (49→87).",
+  "engine_version": "3.10 -- 'Granularity Layer' cycle: First standardized value chain decomposition of FORTIFIED models. 10 parent models analyzed (2 commercial, 6 defense, 2 utilities), 19 sub-models created from 7 decomposed parents, 3 parent CLAs confirmed accurate (defense — procurement barriers universal). 454 models total (435→454). Granularity Framework v1.0 standardized. Sub-models span ACCESSIBLE (9), CONTESTED (7), FORTIFIED (3) — revealing hidden entry points within fortress markets. Dual ranking preserved. Key findings: Retail Media Measurement (L3) OPP=66.5 ACCESSIBLE vs parent's 31.0 FORTIFIED (+35.5pt), Defense Cloud Compliance (L4) OPP=66.5 ACCESSIBLE, DC Energy Management Software (L5) OPP=66.5 ACCESSIBLE with highest sub-model composite (80.75). Physical layers remain FORTIFIED, software layers are ACCESSIBLE — consistent cross-sector pattern.",
   "force_velocities": {
     "F1_technology": {
       "velocity": "accelerating",
@@ -855,14 +855,14 @@
       "CONDITIONAL",
       "PARKED"
     ],
-    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced.",
-    "total_models_rated": 435
+    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced. v3-10: Granularity decomposition sub-models added.",
+    "total_models_rated": 454
   },
   "rated_models_index": {
-    "total_models_rated": 435,
+    "total_models_rated": 454,
     "total_before_dedup": 415,
     "variants_merged": 2,
-    "latest_file": "data/verified/v3-9_normalized_2026-02-12.json",
+    "latest_file": "data/verified/v3-10_normalized_2026-02-12.json",
     "deep_dive_scored_file": "data/verified/v3-6_scored_deep_dive_cards_2026-02-12.json",
     "unscored_deep_dive_cards": {
       "total_unscored": 0,
@@ -881,12 +881,12 @@
     "composite_stats": {
       "max": 86.5,
       "min": 29.25,
-      "mean": 66.26,
-      "median": 66.85
+      "mean": 66.76,
+      "median": 67.25
     },
     "composite_distribution": {
-      "above_80": 15,
-      "70_to_80": 117,
+      "above_80": 24,
+      "70_to_80": 127,
       "60_to_70": 210,
       "50_to_60": 45,
       "below_50": 26
@@ -995,6 +995,15 @@
           "Manufacturing (31-33)",
           "Micro-Firm AI Economy (Emerging)"
         ]
+      },
+      "v310": {
+        "count": 19,
+        "type": "value_chain_decomposition",
+        "sectors": [
+          "Retail Trade (44-45) — 6 sub-models from 2 parents",
+          "Defense (928110) — 3 sub-models from 3 parents (3 parents confirmed all-layers-FORTIFIED)",
+          "Utilities (22) — 10 sub-models from 2 parents"
+        ]
       }
     },
     "source_batches": {
@@ -1016,14 +1025,16 @@
       "v38_deep_dive_healthcare": 12,
       "v38_deep_dive_retail": 12,
       "v39_deep_dive_manufacturing": 12,
-      "v39_deep_dive_micro_firm": 10
+      "v39_deep_dive_micro_firm": 10,
+      "v310_decomposition": 19
     },
     "normalization_applied": {
       "batch_calibration": true,
       "gg_replaced_with_ec": true,
       "categories_hard_enforced": true,
       "deduplication": true,
-      "cla_dual_ranking": true
+      "cla_dual_ranking": true,
+      "granularity_decomposition": true
     },
     "cla_system": {
       "name": "Competitive Landscape Assessment",
@@ -1054,19 +1065,19 @@
         "FORTIFIED (>=30)",
         "LOCKED (<30)"
       ],
-      "scoring_method": "Manual overrides for 87 models (49 original + 38 v3-9 refinements) + heuristic engine for remaining 348",
+      "scoring_method": "Manual overrides for 87 models (49 original + 38 v3-9 refinements) + heuristic engine for remaining 348 + 19 independent sub-model CLA scores from v3-10 decomposition",
       "dual_ranking_principle": "Transformation Rank and Opportunity Rank are NEVER merged into a single number",
       "opportunity_stats": {
         "max": 88.0,
         "min": 31.0,
-        "mean": 61.06,
+        "mean": 60.80,
         "median": 62.0
       },
       "opportunity_category_distribution": {
-        "WIDE_OPEN": 31,
-        "ACCESSIBLE": 233,
-        "CONTESTED": 126,
-        "FORTIFIED": 23,
+        "WIDE_OPEN": 27,
+        "ACCESSIBLE": 248,
+        "CONTESTED": 150,
+        "FORTIFIED": 29,
         "LOCKED": 0
       },
       "top_5_actionable": [
@@ -1106,7 +1117,38 @@
           "geo_mean": 78.25
         }
       ],
-      "key_insight": "v3-9 Opportunity First: 4 of top 5 actionable models are now from opportunity-first sectors (micro-firm + manufacturing). CLA refinement lowered 31 mid-tier models, confirming heuristic systematically overscored wholesale, education, and capital-market A&M models."
+      "key_insight": "v3-10 Granularity Layer: Decomposition reveals hidden ACCESSIBLE positions within FORTIFIED fortress markets. Top finding: Retail Media Measurement (MC-V38-44-003-L3) OPP=66.5 ACCESSIBLE within parent OPP=31.0 FORTIFIED (+35.5pt improvement). Cross-sector pattern: physical layers remain FORTIFIED, software layers are ACCESSIBLE. Defense procurement barriers confirmed universal in 3 of 6 models (V3-DEF-001, V3-DEF-010, V3-DEF-004) — granularity analysis validated their CLA accuracy."
+    },
+    "granularity_framework": {
+      "version": "1.0",
+      "introduced_cycle": "v3-10",
+      "trigger_formula": "FORTIFIED/LOCKED + VD >= 4 + (T_rank <= 50 OR sector_emp >= 1M OR (T_comp >= 75 AND OPP <= 45))",
+      "method": "Value Chain Layer Decomposition with Independently Viable Business Test",
+      "scoring_inheritance": "FA/EC inherited from parent; SN/TG/CE re-scored independently; CLA fully independent",
+      "id_convention": "Parent ID + -L[N] where N is layer number",
+      "one_level_only": true,
+      "targets_analyzed": 10,
+      "sub_models_created": 19,
+      "parents_decomposed": 7,
+      "parents_confirmed_uniform": 3,
+      "sub_model_opp_distribution": {
+        "ACCESSIBLE": 9,
+        "CONTESTED": 7,
+        "FORTIFIED": 3
+      },
+      "framework_document": "GRANULARITY_FRAMEWORK.md",
+      "decomposition_files": [
+        "data/verified/v3-10_decomposition_commercial_2026-02-12.json",
+        "data/verified/v3-10_decomposition_defense_2026-02-12.json",
+        "data/verified/v3-10_decomposition_utilities_2026-02-12.json"
+      ],
+      "key_findings": [
+        "Physical layers remain FORTIFIED, software layers are ACCESSIBLE — consistent cross-sector pattern",
+        "Retail Media Measurement (L3) is T#2 ACCESSIBLE within T#1 FORTIFIED parent — 35.5pt OPP improvement",
+        "Defense Cloud Compliance (MC-DEF-012-L4) escapes procurement barriers via commercial cloud stack — OPP=66.5",
+        "DC Energy Management Software (MC-UTL-004-L5) has highest sub-model composite (80.75) — pure SaaS on physical infrastructure",
+        "3 of 6 defense parents confirmed universally FORTIFIED — granularity analysis validated existing CLA"
+      ]
     },
     "new_cards_v39": {
       "count": 22,
@@ -1214,8 +1256,8 @@
     "v3_sectors_with_transformations": 16,
     "v3_geographies_profiled": 8,
     "v3_force_dimensions_tracked": 6,
-    "v3_cycles_completed": 9,
-    "v3_models_rated": 435,
+    "v3_cycles_completed": 10,
+    "v3_models_rated": 454,
     "v3_models_unscored": 0,
     "v3_patterns_total": 21,
     "v3_sector_deep_dives": 12,
@@ -1400,6 +1442,8 @@
     "PRIORITY 5: Arts/Entertainment deep dive (NAICS 71) — deferred from v3-8. Deepfake/synthetic content + streaming economics + live experience premium.",
     "PRIORITY 6: Manufacturing sub-sector 6-digit expansion — v3-9 deep dive at 4-digit level. Machine shops (332710), auto parts (336390), food manufacturing (311xxx) warrant 6-digit analysis for more precise opportunity mapping.",
     "PRIORITY 7: Micro-firm infrastructure competition tracking — Intuit QuickBooks AI expansion, Mercury banking, point solution consolidation. The AI OS vs best-in-class battle resolves within 18 months.",
-    "PRIORITY 8: CLA manual override expansion — self-reflection directed 100+ overrides (up from 87). Prioritize mid-tier T#50-150 where heuristic is least reliable."
+    "PRIORITY 8: CLA manual override expansion — self-reflection directed 100+ overrides (up from 87). Prioritize mid-tier T#50-150 where heuristic is least reliable.",
+    "PRIORITY 9: Granularity decomposition expansion — v3-10 analyzed 10 of 26 FORTIFIED parents. Remaining candidates include lower T-rank FORTIFIED models not yet analyzed. Also consider Autonomous Drone Swarm (V3-DEF-001, 0 sub-models but may have dual-use commercial layers).",
+    "PRIORITY 10: Reverse direction granularity check — ACCESSIBLE/WIDE_OPEN models in platform/marketplace architectures may mask aggregation risk (multiple models consolidating into CONTESTED platform plays). Framework specifies synthesis notes, not model merging."
   ]
 }

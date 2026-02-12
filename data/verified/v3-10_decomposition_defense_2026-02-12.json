@@ -1,0 +1,1161 @@
+{
+  "cycle": "v3-10",
+  "type": "granularity_decomposition",
+  "category": "defense",
+  "date": "2026-02-12",
+  "framework_version": "1.0",
+  "defense_special_case_note": "Procurement barriers (clearances, ITAR, classification) tested at each value chain layer. Only layers that escape procurement barriers AND pass IVB test become sub-models. Defense FORTIFICATION is structurally different from commercial FORTIFICATION: procurement barriers are regulatory/security-based and often apply uniformly across all layers, unlike commercial concentration where different layers may have different competitive dynamics.",
+
+  "decomposition_targets": [
+    {
+      "parent_id": "V3-DEF-001",
+      "parent_name": "Autonomous Drone Swarm Command Platform",
+      "parent_scores": {
+        "SN": 8.5, "FA": 8.2, "EC": 10.0, "TG": 8.5, "CE": 5.0
+      },
+      "parent_composite": 82.0,
+      "parent_rank": 9,
+      "parent_cla": {
+        "scores": {"MO": 3, "MA": 3, "VD": 5, "DV": 5},
+        "composite": 39.0,
+        "category": "FORTIFIED"
+      },
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 39.0,
+        "vd_score": 5,
+        "t_rank": 9,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "layer_name": "Drone Airframe Hardware",
+          "description": "Physical drone platforms — fixed-wing, rotary, VTOL airframes with payloads",
+          "who_controls": "Anduril (Altius, Ghost), Shield AI (V-BAT), L3Harris, General Atomics, Kratos. Deep ITAR + production security.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": true,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Military drone airframes are ITAR-controlled munitions. Manufacturing requires cleared facilities, export controlled. No pathway around this for military end-use."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Same DoD/allied military buyers as parent model. Customer base is identical. Hardware layer is independently viable as a business (see: Kratos, AeroVironment) but does not escape procurement barriers."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. ITAR-controlled, cleared facility required, same customer as parent."
+        },
+        {
+          "layer": 2,
+          "layer_name": "Swarm Autonomy AI Software",
+          "description": "Multi-agent coordination algorithms, mission planning AI, swarm behavior models",
+          "who_controls": "Shield AI (Hivemind), Anduril (Lattice), DARPA OFFSET graduates. Core classified IP.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": true,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Swarm autonomy algorithms for military use are classified as munitions under ITAR Category XI. Development requires cleared personnel and SCIFs. Even the unclassified research layer (university partnerships) feeds into classified applications."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Same military buyers. Competitive landscape differs from hardware (software-first companies like Shield AI vs. traditional primes) but procurement barriers are identical."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Swarm autonomy classified as munitions, ITAR Category XI."
+        },
+        {
+          "layer": 3,
+          "layer_name": "Ground Control Station / C2 Integration",
+          "description": "Ground-based command interfaces, JADC2 integration, tactical data links",
+          "who_controls": "Anduril (Lattice), L3Harris, Palantir (TITAN), Raytheon. DoD C2 infrastructure deeply entrenched.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "C2 systems integrate into classified military networks (SIPRNet, JWICS). Must interface with existing DoD infrastructure. Requires cleared development and classified testing environments."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Same military customer. C2 integration is arguably a separate competitive landscape (Palantir TITAN vs. traditional C2 vendors) but procurement barriers are absolute."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. C2 systems require classified network access."
+        },
+        {
+          "layer": 4,
+          "layer_name": "Commercial Inspection/Survey Drones",
+          "description": "Non-military drone platforms for infrastructure inspection, agriculture, surveying, mapping",
+          "who_controls": "DJI (75%+ commercial share), Skydio, Autel, Wingtra. VERY different competitive landscape from defense.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Commercial inspection drones operate outside defense procurement entirely. No clearances, no ITAR (unless exported to sanctioned countries), no classification. FAA Part 107 is the primary regulation, not defense procurement."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Commercial drone inspection is a $5B+ and growing market. Customers are utilities, construction, agriculture, insurance — entirely different from defense buyers. Competitors (DJI, Skydio) are different from defense primes. Revenue comes from commercial sales/SaaS, not government contracts."
+          },
+          "becomes_sub_model": false,
+          "reason": "Passes BOTH tests but is NOT a sub-model of this parent. Commercial inspection drones are already captured by existing commercial drone models in the inventory. The autonomous drone swarm command platform's transformation signal (SN=8.5, driven by military ISR/logistics demand, Ukraine conflict proof) does not apply to commercial inspection. Creating a sub-model here would be double-counting — the commercial drone market has its own transformation drivers. This layer confirms the parent model's FORTIFICATION is accurate for its actual scope (military autonomous swarms)."
+        },
+        {
+          "layer": 5,
+          "layer_name": "Allied Nation Export (AUKUS/NATO)",
+          "description": "Autonomous drone swarm systems sold to allied militaries under FMS/DCS agreements",
+          "who_controls": "Same companies (Anduril, Shield AI, L3Harris) selling through Foreign Military Sales. BAE Systems, Thales, Leonardo on European side.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": true,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "AUKUS/NATO sales still require ITAR export licenses, cleared personnel, technology transfer agreements. The buyer is different (allied MoDs vs. DoD) but the procurement barriers are IDENTICAL. FMS and DCS pathways both require State Department approval and ITAR compliance. European defense procurement has its OWN procurement barriers (national security clearances, offset requirements) that are equally restrictive."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Allied market is a genuinely different customer base (NATO MoDs, not DoD). But the competitive landscape is the same companies competing through the same ITAR-controlled supply chain. European alternatives (BAE, Thales) add competitors but all face identical procurement barriers."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. ITAR export controls and allied procurement barriers are equally restrictive as US defense procurement."
+        },
+        {
+          "layer": 6,
+          "layer_name": "Counter-UAS Defense Systems",
+          "description": "Systems to detect, track, and neutralize hostile drone swarms — the defensive counterpart to swarm command",
+          "who_controls": "Fortem Technologies (DroneHunter F700, Replicator 2 winner), Anduril (Sentry Tower), RTX, Northrop Grumman. $7.5B counter-UAS budget line.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": true,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Counter-UAS systems are military weapons systems. Same procurement barriers as offensive swarm platforms. Even the detection/radar layer requires classified integration with military air defense networks."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Counter-UAS has somewhat different competitors (Fortem, DroneShield vs. Shield AI, Anduril) but same DoD buyer and identical procurement barriers."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Military weapons system with full ITAR/clearance requirements."
+        }
+      ],
+
+      "decomposition_result": "parent_cla_confirmed",
+      "result_rationale": "All 6 value chain layers are subject to defense procurement barriers (clearances, ITAR, classification). Layer 4 (commercial inspection drones) escapes procurement barriers but is a separate market already tracked elsewhere in the inventory — it shares the parent's name but NOT its transformation signal. The parent CLA (MO=3, MA=3, VD=5, DV=5, OPP=39.0, FORTIFIED) is confirmed accurate at every granularity level for the military autonomous swarm domain. The VD=5 correctly identifies multiple defensible positions in the stack, but ALL positions share the same procurement barrier profile.",
+      "sub_models": []
+    },
+
+    {
+      "parent_id": "V3-DEF-002",
+      "parent_name": "Defense AI/ML Intelligence Fusion Platform",
+      "parent_scores": {
+        "SN": 8.5, "FA": 7.7, "EC": 9.5, "TG": 8.5, "CE": 6.0
+      },
+      "parent_composite": 81.25,
+      "parent_rank": 11,
+      "parent_cla": {
+        "scores": {"MO": 3, "MA": 2, "VD": 4, "DV": 4},
+        "composite": 32.0,
+        "category": "FORTIFIED"
+      },
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 32.0,
+        "vd_score": 4,
+        "t_rank": 11,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "layer_name": "Classified Analytics Core (Palantir Gotham/Apollo)",
+          "description": "Full-stack classified multi-INT fusion platform deployed on classified networks (SIPRNet, JWICS, NSAnet)",
+          "who_controls": "Palantir dominates ($2.65B revenue, 90%+ classified analytics). Maven MSS contract $1.3B ceiling through 2029. Near-monopoly.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Requires TS/SCI clearances, SCIF development, deployment on classified networks. Palantir's $1.3B Maven MSS contract is THE classified analytics backbone. Highest possible procurement barriers."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "This IS the parent model. Palantir near-monopoly. Same customer, same competitors."
+          },
+          "becomes_sub_model": false,
+          "reason": "This is the core of the parent model, not a decomposable layer. Procurement barriers absolute."
+        },
+        {
+          "layer": 2,
+          "layer_name": "Tactical-Edge Intelligence Fusion",
+          "description": "Lightweight fusion tools running on tactical-edge devices (tablets, ruggedized laptops) for battalion/company-level units",
+          "who_controls": "Palantir (TITAN), Anduril (Lattice), CACI, Rebellion Defense. Less concentrated than core analytics but still cleared.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Tactical edge fusion still processes classified data (SECRET minimum). Requires cleared developers, classified testing, DISA certification. Even though the hardware is commercial (ruggedized tablets), the software handles classified data and must run on classified networks."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different competitive landscape than Palantir's core (CACI, Rebellion Defense, smaller firms winning tactical contracts). But same military customer and identical clearance requirements."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Classified data handling requires full clearance infrastructure regardless of edge form factor."
+        },
+        {
+          "layer": 3,
+          "layer_name": "OSINT/Commercial Intelligence Analytics",
+          "description": "Open-source intelligence (OSINT) collection and analysis — social media monitoring, news aggregation, commercial data fusion",
+          "who_controls": "Babel Street, Recorded Future (Mastercard), Dataminr, Primer AI, Flashpoint. More fragmented than classified analytics.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "OSINT by definition uses only unclassified, publicly available data. No clearance required to build the platform. Government customers may require facility clearances for delivery, but the PRODUCT itself handles no classified data. Many OSINT tools are sold commercially to enterprises, financial firms, and media companies alongside government customers."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "OSINT analytics has its own customer base (hedge funds, journalists, corporate security, risk consultancies) entirely separate from classified intelligence consumers. Competitors (Babel Street, Recorded Future, Dataminr) are different from Palantir's classified competitors. Market is $5B+ and growing rapidly. Revenue model (SaaS subscriptions) works without any government customer."
+          },
+          "becomes_sub_model": true,
+          "reason": "Passes BOTH tests. OSINT analytics escapes defense procurement barriers entirely and has an independently viable commercial market with distinct competitors and customers."
+        },
+        {
+          "layer": 4,
+          "layer_name": "Allied Intel Sharing / Five Eyes Fusion",
+          "description": "Intelligence fusion platforms for Five Eyes and NATO allies, operating under bilateral intelligence sharing agreements",
+          "who_controls": "Palantir (UK MoD, ADF contracts), BAE Systems Applied Intelligence, Thales. Same cleared ecosystem.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Allied intelligence sharing is HIGHER barrier than US-only because it requires bilateral security agreements, country-specific clearances, and compliance with BOTH US and allied classification rules. Five Eyes sharing agreements are among the most restricted international arrangements in existence."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different customers (allied MoDs) but same competitive landscape (Palantir also dominates UK MoD and Australian contracts). Procurement barriers are even stricter than US alone."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Allied intel sharing has HIGHER barriers than US defense procurement."
+        },
+        {
+          "layer": 5,
+          "layer_name": "Training/Simulation Synthetic Data",
+          "description": "Generating synthetic training data and simulation environments for training intelligence analysts and fusion algorithms",
+          "who_controls": "Bohemia Interactive Simulations, CAE, SAIC, Improbable Defence. More fragmented but still defense-contracted.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Training simulations for intelligence fusion must incorporate realistic classified scenarios and data formats. Even unclassified training tools must be tested against classified benchmarks. The simulation environment itself may not be classified, but generating realistic training data that accurately represents classified intelligence workflows requires cleared access to understand what those workflows look like."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different competitors (CAE, BISim vs. Palantir) but same DoD/allied military customer. Defense training/simulation is a viable independent business but procurement barriers persist."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Intelligence simulation requires classified access to create realistic training scenarios."
+        }
+      ],
+
+      "decomposition_result": "sub_models_created",
+      "result_rationale": "Layer 3 (OSINT/Commercial Intelligence Analytics) escapes defense procurement barriers entirely. OSINT by definition operates on unclassified publicly available data. The market has distinct commercial customers (financial firms, corporate security, media), distinct competitors (Babel Street, Recorded Future, Dataminr vs. Palantir in classified space), and is independently viable at $5B+ scale. This layer warrants a sub-model. The remaining 4 layers are all subject to classified procurement barriers, confirming the parent CLA is accurate for the classified intelligence fusion domain.",
+      "sub_models": [
+        {
+          "id": "V3-DEF-002-L3",
+          "parent_id": "V3-DEF-002",
+          "parent_name": "Defense AI/ML Intelligence Fusion Platform",
+          "layer": 3,
+          "layer_name": "OSINT/Commercial Intelligence Analytics",
+          "name": "AI-Native OSINT & Commercial Intelligence Fusion Platform",
+          "one_liner": "Multi-source open intelligence fusion using LLMs to synthesize social media, news, commercial data, and public records into actionable threat/opportunity briefs for enterprises and government agencies.",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "541715",
+          "architecture": "vertical_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "OSINT analytics has dual commercial + government revenue streams. Hedge funds (Recorded Future's largest segment), corporate security teams, journalists, and risk consultancies buy OSINT tools without any government contracting overhead. Competitors (Babel Street, Dataminr, Flashpoint, Primer AI) are distinct from classified analytics players. Market is $5B+ with 20%+ CAGR."
+          },
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "OSINT operates exclusively on publicly available, unclassified data. No security clearances required to build or deploy. Government customers may request FedRAMP certification (IL-2, not IL-5/6) which is materially cheaper ($500K-$2M vs. $100M+ for classified). Commercial customers require no government certification at all."
+          },
+          "inherited_scores": {
+            "FA": 7.7,
+            "EC": 9.5
+          },
+          "independent_scores": {
+            "SN": 7.5,
+            "TG": 8.0,
+            "CE": 8.0
+          },
+          "score_rationale": {
+            "SN": "7.5 (vs parent 8.5) — OSINT is structurally necessary for threat intelligence but slightly less critical than classified multi-INT fusion. Organizations can (and do) operate with ad hoc OSINT processes. The AI-native fusion is a strong efficiency gain but not the existential necessity that classified SIGINT/HUMINT/GEOINT fusion represents.",
+            "TG": "8.0 (vs parent 8.5) — Entry window is open NOW. LLM capability makes multi-language OSINT fusion possible for the first time. No dominant AI-native OSINT platform exists. Recorded Future was acquired by Mastercard (2024) — integration disruption creates window. Timing slightly less urgent than classified (where Maven deadline forces adoption).",
+            "CE": "8.0 (vs parent 5.0) — This is the key divergence. OSINT platforms are pure SaaS with no classified infrastructure costs. No SCIFs, no cleared personnel required, no $100M certification. A capable team can build an OSINT fusion platform for $2-5M vs. $50M+ for classified. Capital efficiency is radically better than the parent model."
+          },
+          "scores": {
+            "SN": 7.5,
+            "FA": 7.7,
+            "EC": 9.5,
+            "TG": 8.0,
+            "CE": 8.0
+          },
+          "composite": 81.0,
+          "composite_calculation": "(7.5*25 + 7.7*25 + 9.5*20 + 8.0*15 + 8.0*15) / 10 = (187.5 + 192.5 + 190.0 + 120.0 + 120.0) / 10 = 81.0",
+          "cla": {
+            "scores": {
+              "MO": 6,
+              "MA": 7,
+              "VD": 4,
+              "DV": 7
+            },
+            "composite": 61.0,
+            "composite_calculation": "(6*30 + 7*25 + 4*20 + 7*25) / 10 = (180 + 175 + 80 + 175) / 10 = 61.0",
+            "category": "ACCESSIBLE",
+            "rationale": "MO=6: Market fragmented among Babel Street, Recorded Future (Mastercard), Dataminr, Primer AI, Flashpoint. No dominant AI-native fusion platform. Recorded Future acquisition by Mastercard creating integration disruption. MA=7: Incumbent moats are primarily data pipeline breadth and customer relationships — both breakable by AI-native approaches that can ingest broader sources. No network effects or regulatory capture. VD=4: Within OSINT, value chain is shallower — data collection, processing, analysis, delivery. Fewer independent defensible positions than full classified fusion. DV=7: LLM revolution enables multi-language processing at scale for the first time. Mastercard acquisition of Recorded Future disrupts market leader. Growing enterprise demand for threat intelligence beyond government. AI-native approach can deliver 10x analyst throughput vs. legacy keyword-based OSINT."
+          },
+          "primary_category": "TIMING_ARBITRAGE",
+          "category": ["TIMING_ARBITRAGE", "FORCE_RIDER"],
+          "source_batch": "decomposition_v3-10"
+        }
+      ]
+    },
+
+    {
+      "parent_id": "MC-DEF-012",
+      "parent_name": "Classified Environment AI Deployment Platform (IL5/IL6)",
+      "parent_scores": {
+        "SN": 8.0, "FA": 8.0, "EC": 8.0, "TG": 8.5, "CE": 6.5
+      },
+      "parent_composite": 78.5,
+      "parent_rank": 29,
+      "parent_cla": {
+        "scores": {"MO": 3, "MA": 3, "VD": 5, "DV": 4},
+        "composite": 36.5,
+        "category": "FORTIFIED"
+      },
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 36.5,
+        "vd_score": 5,
+        "t_rank": 29,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "layer_name": "Core Classified Cloud Infrastructure (IL5/IL6)",
+          "description": "IaaS/PaaS deployed in air-gapped or classified environments meeting DoD Impact Level 5 and 6 requirements",
+          "who_controls": "AWS GovCloud (IL5/6), Microsoft Azure Government Secret (IL6), Google Distributed Cloud (IL5). $100M+ certification cost creates absolute barrier.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "IL-5/IL-6 cloud requires DISA PA (Provisional Authorization), FedRAMP High, air-gapped data centers with cleared operations staff. Certification cost $100M+, timeline 2-4 years. Only 3 hyperscalers have achieved IL-6. Absolute procurement barrier."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Same DoD buyer, same hyperscaler competitors. This IS the parent model's core."
+          },
+          "becomes_sub_model": false,
+          "reason": "Core of parent model. $100M+ certification is an absolute barrier to entry."
+        },
+        {
+          "layer": 2,
+          "layer_name": "Edge/Tactical Compute (Disconnected, Intermittent, Low-bandwidth — DIL)",
+          "description": "Computing infrastructure deployed at tactical edge — forward operating bases, ships, aircraft — that must operate disconnected from cloud",
+          "who_controls": "Anduril (Lattice), Palantir (Gotham Edge), CACI, Scale AI, Dell Federal. More fragmented than core cloud.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Tactical edge compute processes classified data (often TS/SCI) in disconnected environments. Hardware must be TEMPEST-certified or equivalent. Software must handle classified data handling procedures. Even though the hardware may be commercial (ruggedized NVIDIA GPUs), the deployment context requires full cleared infrastructure."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different competitors (Anduril/Palantir vs. AWS/Azure) but same military customer and identical clearance requirements. Edge compute is genuinely different from cloud but procurement barriers are identical."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Tactical edge still processes classified data with full clearance requirements."
+        },
+        {
+          "layer": 3,
+          "layer_name": "DevSecOps Tooling for Classified Environments",
+          "description": "CI/CD pipelines, container orchestration, MLOps tools certified for deployment in classified environments",
+          "who_controls": "Platform One (DoD), Sigma Defense, Second Front Systems (Game Warden), Anchore, Iron Bank registry. More fragmented.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "DevSecOps tools for classified environments must be certified through Iron Bank (DoD container hardening), DISA STIG-compliant, and deployed by cleared personnel. The tools themselves may be open-source (GitLab, Kubernetes) but the certified, hardened versions require classified environment access for testing and validation."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "DevSecOps tooling has different competitors (Second Front Systems, Anchore vs. hyperscalers) but same cleared customer base. Revenue model (platform fees) is independent but procurement barriers persist."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Certified for classified environments requires cleared access and DISA/Iron Bank certification."
+        },
+        {
+          "layer": 4,
+          "layer_name": "FedRAMP/CMMC Compliance Automation",
+          "description": "Tools that help organizations achieve and maintain FedRAMP, CMMC, and NIST compliance for cloud deployments",
+          "who_controls": "Coalfire, Schellman, A-LIGN (assessment), Drata, Vanta, Secureframe, RegScale (automation). Fragmented.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Compliance automation tools themselves do NOT handle classified data. They help organizations document and track their compliance posture. Drata, Vanta, Secureframe operate as commercial SaaS products that happen to support government compliance frameworks. No clearance required to build or sell these tools. FedRAMP IL-2 (Low/Moderate) certification is achievable for $500K-$2M, not the $100M+ required for IL-5/6."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Compliance automation serves the 220K+ DIB companies (CMMC), 100K+ federal contractors (FedRAMP), and commercial enterprises seeking SOC2/ISO27001. Customer base is radically different from IL-5/6 cloud buyers (most are small/mid DIB companies, not DoD itself). Competitors (Drata, Vanta, Secureframe) are entirely different from hyperscalers. Market is $3B+ and growing 30%+. Note: This layer overlaps significantly with MC-DEF-011 (CMMC Compliance Platform, T#4, CONTESTED). The sub-model should be cross-referenced but is independently grounded in the classified cloud value chain."
+          },
+          "becomes_sub_model": true,
+          "reason": "Passes BOTH tests. Compliance automation tools operate on unclassified data, serve a distinct customer base (DIB companies, not DoD directly), and have different competitors than classified cloud providers.",
+          "cross_reference_note": "Significant overlap with MC-DEF-011 (CMMC Compliance Platform). MC-DEF-011 covers the broader CMMC compliance market; this sub-model is specifically the compliance layer WITHIN the classified cloud deployment value chain — focused on FedRAMP/ATO compliance automation rather than full CMMC lifecycle management."
+        },
+        {
+          "layer": 5,
+          "layer_name": "Data Pipeline / ETL for Classified Data",
+          "description": "Data ingestion, transformation, and movement tools for classified environments — cross-domain solutions, data diodes, classification-aware ETL",
+          "who_controls": "Everfox (formerly Forcepoint Federal), Owl Cyber Defense, BAE Systems, Palantir. Specialized and cleared.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Cross-domain solutions and classified data pipelines are among the most security-critical components in the entire stack. Moving data between classification levels (CDS) requires NSA certification. Data diodes and guards require NIAP Common Criteria evaluation. These products handle the most sensitive data flows in existence."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Specialized competitors (Everfox, Owl Cyber Defense) differ from cloud providers, but same cleared customer base. Cross-domain solutions market is viable ($2B+) but procurement barriers are the highest in the entire stack."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Cross-domain solutions require NSA certification — the HIGHEST procurement barrier in the defense stack."
+        }
+      ],
+
+      "decomposition_result": "sub_models_created",
+      "result_rationale": "Layer 4 (FedRAMP/CMMC Compliance Automation) escapes classified procurement barriers. Compliance tools manage documentation and tracking of compliance posture — they do not themselves handle classified data. The customer base (220K+ DIB companies) is radically different from IL-5/6 cloud buyers. The remaining 4 layers are deeply classified with absolute procurement barriers, confirming the parent CLA accuracy for those layers. Note: This sub-model has significant overlap with existing MC-DEF-011 (CMMC Compliance Platform) and should be cross-referenced in the inventory.",
+      "sub_models": [
+        {
+          "id": "MC-DEF-012-L4",
+          "parent_id": "MC-DEF-012",
+          "parent_name": "Classified Environment AI Deployment Platform (IL5/IL6)",
+          "layer": 4,
+          "layer_name": "FedRAMP/CMMC Compliance Automation",
+          "name": "AI-Powered Cloud Compliance & Accreditation Automation Platform",
+          "one_liner": "Automated FedRAMP ATO, CMMC, and NIST compliance management platform that reduces accreditation timeline from 18 months to 90 days for DIB companies and federal contractors.",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "518210",
+          "architecture": "vertical_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "220K+ DIB companies need CMMC certification. 100K+ federal contractors need FedRAMP/NIST compliance. Customers are mostly small/mid-size companies (73% of DIB is small business) — entirely different buyer profile from IL-5/6 cloud procurement (DoD CIO, combatant commands). Competitors (Drata, Vanta, RegScale, Secureframe) are commercial SaaS companies, not hyperscalers. Revenue from SaaS subscriptions + assessment fees."
+          },
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Compliance automation platforms track documentation, controls, evidence collection — they never handle classified data. FedRAMP IL-2 certification (for selling to federal customers) costs $500K-$2M, achievable by startups. Most customers (DIB companies) don't require FedRAMP at all — just CMMC/NIST self-assessment tools."
+          },
+          "inherited_scores": {
+            "FA": 8.0,
+            "EC": 8.0
+          },
+          "independent_scores": {
+            "SN": 8.5,
+            "TG": 9.0,
+            "CE": 8.5
+          },
+          "score_rationale": {
+            "SN": "8.5 (vs parent 8.0) — CMMC enforcement is now embedded in DFARS contracts (2026). 220K+ DIB companies MUST certify. 15-20% expected to exit the DIB entirely because they cannot afford compliance. This creates structural necessity for automated compliance tools — the alternative is going out of business or losing defense contracts. Slightly HIGHER SN than parent because compliance is mandatory while classified cloud adoption is optional for many use cases.",
+            "TG": "9.0 (vs parent 8.5) — CMMC enforcement deadline is a HARD forcing function creating immediate demand. FedRAMP continuous monitoring requirements (2025+) add urgency. Window is wide open NOW because no dominant AI-native compliance platform exists. Drata and Vanta are SOC2-focused; government-specific compliance (FedRAMP ATO, CMMC Level 2/3, NIST 800-171) is underserved by AI-native tools.",
+            "CE": "8.5 (vs parent 6.5) — Pure SaaS model with no classified infrastructure costs. No SCIFs, no cleared personnel (unless pursuing FedRAMP High, which is optional). A capable team can build and deploy for $2-5M. Contrast with parent model's $100M+ IL-5/6 certification cost. Capital efficiency is dramatically better."
+          },
+          "scores": {
+            "SN": 8.5,
+            "FA": 8.0,
+            "EC": 8.0,
+            "TG": 9.0,
+            "CE": 8.5
+          },
+          "composite": 83.5,
+          "composite_calculation": "(8.5*25 + 8.0*25 + 8.0*20 + 9.0*15 + 8.5*15) / 10 = (212.5 + 200.0 + 160.0 + 135.0 + 127.5) / 10 = 83.5",
+          "cla": {
+            "scores": {
+              "MO": 7,
+              "MA": 7,
+              "VD": 4,
+              "DV": 8
+            },
+            "composite": 66.5,
+            "composite_calculation": "(7*30 + 7*25 + 4*20 + 8*25) / 10 = (210 + 175 + 80 + 200) / 10 = 66.5",
+            "category": "ACCESSIBLE",
+            "rationale": "MO=7: Market fragmented — Drata and Vanta dominate SOC2 but government compliance (FedRAMP/CMMC) is underserved by AI-native tools. Coalfire, Schellman are assessment firms not platform companies. RegScale and Secureframe early but no dominant player. MA=7: Incumbent moats are weak — Drata's SOC2 automation doesn't transfer to CMMC Level 3 which requires fundamentally different control frameworks. No network effects. Switching costs moderate (compliance documentation is portable). VD=4: Within compliance automation, value chain is relatively flat — control mapping, evidence collection, continuous monitoring, assessment management. Fewer independent layers than full classified cloud. DV=8: CMMC enforcement deadline is a regulatory forcing function. AI can automate 80%+ of compliance documentation vs. manual. Legacy GRC tools (Archer, ServiceNow GRC) are heavyweight and expensive, creating opening for specialized vertical SaaS. 15-20% DIB exit rate means surviving companies desperately need efficient compliance."
+          },
+          "primary_category": "TIMING_ARBITRAGE",
+          "category": ["TIMING_ARBITRAGE", "FORCE_RIDER"],
+          "source_batch": "decomposition_v3-10",
+          "cross_reference": "MC-DEF-011 (CMMC Compliance Platform, T#4, OPP=64.5, CONTESTED) — Related but distinct. MC-DEF-011 covers full CMMC lifecycle management; this sub-model focuses on the cloud accreditation automation layer specifically grounded in the classified cloud deployment value chain."
+        }
+      ]
+    },
+
+    {
+      "parent_id": "V3-DEF-010",
+      "parent_name": "Defense Predictive Maintenance AI",
+      "parent_scores": {
+        "SN": 7.5, "FA": 7.7, "EC": 9.5, "TG": 7.5, "CE": 6.5
+      },
+      "parent_composite": 78.0,
+      "parent_rank": 37,
+      "parent_cla": {
+        "scores": {"MO": 4, "MA": 4, "VD": 5, "DV": 5},
+        "composite": 44.5,
+        "category": "FORTIFIED"
+      },
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 44.5,
+        "vd_score": 5,
+        "t_rank": 37,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "layer_name": "Platform-Level PdM (Aircraft/Ship/Vehicle)",
+          "description": "Predictive maintenance for major weapon platforms — F-35, F-22, Abrams tank, DDG-51, etc. OEM-contracted.",
+          "who_controls": "Lockheed Martin (F-35 sustainment $16B+), Raytheon, BAE Systems, General Dynamics. Long-term OEM contracts with exclusive data access.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": true,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Platform-level maintenance data is classified (weapon system performance data, operational readiness rates). OEM contracts are 20-30 year sustainment deals with exclusive data rights. ITAR controls all weapon system technical data. This layer is the most locked in the entire defense value chain — OEMs have contractual monopolies on their own platforms' maintenance."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "This IS the core of the parent model. Same customer (DoD), same competitors (OEM primes). Each platform has a contractual monopoly holder."
+          },
+          "becomes_sub_model": false,
+          "reason": "Core of parent model. OEM data monopolies + ITAR + classification create absolute barrier."
+        },
+        {
+          "layer": 2,
+          "layer_name": "Subsystem PdM (Engines, Electronics, Hydraulics)",
+          "description": "Predictive maintenance for subsystems and components that cross multiple platforms — jet engines (Pratt & Whitney), avionics, power systems",
+          "who_controls": "Pratt & Whitney (F135 engine), GE Aerospace, Honeywell, Collins Aerospace. Subsystem OEMs with their own data moats.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": true,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Engine and avionics data is ITAR-controlled and often classified. F135 engine health monitoring data is among the most sensitive technical data in the military. Even non-classified subsystem data requires DFARS 252.204-7012 compliance and CUI handling."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different competitors (engine/subsystem OEMs) than platform primes. But same DoD customer and identical ITAR/classification barriers."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Subsystem data is ITAR-controlled, often classified."
+        },
+        {
+          "layer": 3,
+          "layer_name": "Defense Supply Chain Prediction",
+          "description": "Predicting part failures and supply chain needs across the defense logistics network — DLA, depot-level maintenance",
+          "who_controls": "DLA (Defense Logistics Agency) internal systems, SAIC, Leidos, Booz Allen Hamilton. Government-run with contractor support.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Defense supply chain data is classified (readiness rates, part failure rates reveal weapon system vulnerabilities). DLA systems require cleared access. Even aggregate demand forecasting for military parts involves CUI handling."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "IT services competitors (SAIC, Leidos, Booz Allen) differ from OEM primes. But same DoD/DLA customer and classified data handling requirements."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Defense supply chain data is classified."
+        },
+        {
+          "layer": 4,
+          "layer_name": "Non-OEM Vehicle Fleet PdM (Tactical Vehicles, Support Equipment)",
+          "description": "Predictive maintenance for non-classified support vehicles — HMMWVs, trucks, generators, HVAC, ground support equipment where data is NOT OEM-locked",
+          "who_controls": "Oshkosh Defense (JLTV), AM General (HMMWV), Navistar Defense. But DoD has more data rights for commodity vehicles than weapon systems.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": false,
+            "rationale": "Tactical vehicles are less classified than weapon systems — HMMWV maintenance data is CUI but NOT classified. However, fleet management still requires cleared facilities, DFARS compliance, and integration with Army/Marine Corps logistics systems (GCSS-Army, MCLIPS). Even though the data classification is lower, the procurement process (DoD contracting, DFARS compliance, system integration) remains a barrier. A company COULD build unclassified vehicle PdM but could NOT sell it to DoD without defense procurement compliance."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Same DoD customer even though vehicle types are different. Competitors differ from weapon system OEMs but procurement pathway is identical."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Even non-classified vehicle PdM requires DFARS compliance and integration with military logistics systems. Procurement barriers are lower but NOT eliminated."
+        },
+        {
+          "layer": 5,
+          "layer_name": "Commercial/Industrial PdM Crossover",
+          "description": "Predictive maintenance AI applied to commercial and industrial equipment — airlines, manufacturing, utilities, mining, shipping",
+          "who_controls": "Uptake Technologies, SparkCognition, C3.ai, Augury, Samsara. Highly fragmented commercial market.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Commercial/industrial PdM operates entirely outside defense procurement. Airlines, manufacturers, utilities buy PdM tools through standard enterprise procurement. No clearances, no ITAR, no classification. FAA certification may apply for aviation but that is a different (and more accessible) regulatory framework."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Commercial PdM is a $15B+ market with entirely different customers (airlines, manufacturers, utilities), different competitors (Uptake, SparkCognition, C3.ai, Samsara vs. Lockheed, Raytheon), and independent revenue models (SaaS subscriptions, not defense contracts). The technology overlaps (same ML techniques for anomaly detection) but the market is completely distinct."
+          },
+          "becomes_sub_model": false,
+          "reason": "Passes BOTH tests but is NOT a sub-model of this parent. Commercial/industrial predictive maintenance is already a well-established market category with its own models tracked in the inventory. The parent model's transformation signal (SN=7.5, driven by military readiness requirements, $90B DoD maintenance budget, OEM data lock-in dynamics) does NOT apply to commercial PdM where data is more accessible and no OEM lock-in exists. Creating a sub-model would be double-counting a separate market."
+        }
+      ],
+
+      "decomposition_result": "parent_cla_confirmed",
+      "result_rationale": "All 5 value chain layers within the defense PdM scope are subject to procurement barriers (ITAR, clearances, OEM data monopolies, or DFARS compliance). Layer 5 (commercial PdM crossover) escapes procurement but is a separate market already tracked elsewhere — it shares the underlying technology but NOT the transformation signal or competitive landscape of defense PdM. The parent CLA (MO=4, MA=4, VD=5, DV=5, OPP=44.5, FORTIFIED) is confirmed accurate. The slightly higher MO/MA (4 vs. 3) relative to other defense models correctly reflects that defense PdM is marginally more accessible than drone swarms or intelligence fusion due to DoD-mandated data sharing programs (PANDA, CBM+) that partially break OEM data monopolies.",
+      "sub_models": []
+    },
+
+    {
+      "parent_id": "V3-DEF-004",
+      "parent_name": "Defense Logistics AI Optimizer",
+      "parent_scores": {
+        "SN": 7.5, "FA": 7.7, "EC": 10.0, "TG": 7.5, "CE": 5.5
+      },
+      "parent_composite": 77.5,
+      "parent_rank": 42,
+      "parent_cla": {
+        "scores": {"MO": 3, "MA": 3, "VD": 5, "DV": 5},
+        "composite": 39.0,
+        "category": "FORTIFIED"
+      },
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 39.0,
+        "vd_score": 5,
+        "t_rank": 42,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "layer_name": "Strategic Logistics Planning (Theater/COCOM Level)",
+          "description": "AI-optimized strategic logistics planning for combatant commands — force deployment, theater-level supply chain modeling, TPFDD optimization",
+          "who_controls": "USTRANSCOM internal + Palantir, Leidos, SAIC. Strategic planning deeply embedded in classified command structures.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Theater-level logistics planning involves classified force deployment data, operational plans (OPLAN/CONPLAN), and readiness information that is TS/SCI. USTRANSCOM and combatant commands operate on classified networks. No pathway around classification."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different competitors (Palantir, Leidos) than tactical supply chain players but same DoD/COCOM customer with identical classified requirements."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Theater-level logistics is TS/SCI classified."
+        },
+        {
+          "layer": 2,
+          "layer_name": "Tactical Supply Chain (Division/Brigade Level)",
+          "description": "AI optimization of tactical supply distribution — parts, ammunition, fuel, food from logistics hubs to combat units",
+          "who_controls": "GCSS-Army (Army's ERP), SAP (runs GCSS-Army backbone), SAIC, Lockheed Martin. Legacy ERP integration dominant.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Tactical supply chain data reveals unit locations, consumption rates, and operational tempo — all classified (SECRET minimum). Integration with GCSS-Army and other military logistics systems requires cleared access and system integration authority."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "ERP/integration competitors (SAP, SAIC) differ from strategic planning competitors but same classified military customer."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Tactical supply data is classified SECRET."
+        },
+        {
+          "layer": 3,
+          "layer_name": "Defense Inventory Optimization (DLA/Depot Level)",
+          "description": "AI-optimized inventory management for Defense Logistics Agency — 5.2M items, $120B inventory, demand forecasting",
+          "who_controls": "DLA internal systems, IBM (DLA legacy), Deloitte, Accenture Federal. Government-run with contractor integration support.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": false,
+            "rationale": "DLA inventory data is largely CUI (Controlled Unclassified Information) rather than classified. However, DLA procurement requires cleared facilities, DFARS compliance, and integration with government-owned logistics systems (DAAS, BSM). The procurement PROCESS is the barrier even though the data classification is lower. Federal acquisition regulations (FAR/DFARS) and DLA's contracting requirements remain restrictive."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Different competitors (IBM, Deloitte, Accenture Federal) but DLA is still a single federal buyer with standard defense procurement requirements."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. DLA procurement requires DFARS compliance and cleared system integration."
+        },
+        {
+          "layer": 4,
+          "layer_name": "Last-Mile Delivery to Forward Operating Bases",
+          "description": "Optimizing delivery from logistics hubs to forward-deployed units — route optimization, autonomous resupply, convoy management",
+          "who_controls": "Military units themselves + prime contractors (KBR, Fluor for base operations). Autonomous resupply emerging (JTARV, autonomous trucks).",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Last-mile delivery in theater involves operational security — convoy routes, FOB locations, supply consumption rates are classified. Autonomous resupply vehicles operate in combat zones under military command authority. Even route optimization reveals force disposition."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Autonomous resupply competitors (Robotic Research, Kodiak, JTARV participants) differ from strategic logistics competitors but same operational military customer."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Operational logistics in theater is classified."
+        },
+        {
+          "layer": 5,
+          "layer_name": "Commercial Logistics AI Crossover",
+          "description": "Supply chain optimization AI for commercial logistics — FedEx, UPS, Amazon, Walmart supply chains, port optimization",
+          "who_controls": "FourKites, project44, Blue Yonder (Panasonic), Kinaxis, o9 Solutions. Large fragmented commercial market.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Commercial logistics AI operates entirely outside defense procurement. No clearances, no classification, standard enterprise sales process."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Commercial supply chain AI is a $20B+ market with entirely different customers (retailers, manufacturers, 3PLs), different competitors (FourKites, project44, Blue Yonder), and independent SaaS revenue models."
+          },
+          "becomes_sub_model": false,
+          "reason": "Passes BOTH tests but is NOT a sub-model of this parent. Commercial logistics AI is a separate market already well-served and tracked in the inventory. The parent model's transformation signal (SN=7.5, driven by military readiness, 60-70% of defense cost is sustainment, Ukraine logistics failures) is specific to military supply chain dynamics — classified data, OEM-controlled parts, combat zone delivery constraints. Commercial logistics has fundamentally different competitive dynamics and transformation drivers."
+        }
+      ],
+
+      "decomposition_result": "parent_cla_confirmed",
+      "result_rationale": "All 5 value chain layers within the defense logistics scope are subject to procurement barriers. Layers 1-4 involve classified data at varying levels (TS/SCI for strategic, SECRET for tactical, CUI for DLA inventory, SECRET for operational last-mile). Layer 5 (commercial logistics crossover) escapes procurement but is a separate market not driven by the parent's military transformation signal. The parent CLA (MO=3, MA=3, VD=5, DV=5, OPP=39.0, FORTIFIED) is confirmed accurate. The VD=5 correctly identifies depth in the stack, but procurement barriers apply uniformly across all military layers.",
+      "sub_models": []
+    },
+
+    {
+      "parent_id": "V3-DEF-007",
+      "parent_name": "Satellite/Space ISR AI Analytics",
+      "parent_scores": {
+        "SN": 7.5, "FA": 7.2, "EC": 10.0, "TG": 7.5, "CE": 6.0
+      },
+      "parent_composite": 77.0,
+      "parent_rank": 44,
+      "parent_cla": {
+        "scores": {"MO": 4, "MA": 4, "VD": 5, "DV": 5},
+        "composite": 44.5,
+        "category": "FORTIFIED"
+      },
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 44.5,
+        "vd_score": 5,
+        "t_rank": 44,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "layer_name": "Satellite Data Collection (Constellation Operation)",
+          "description": "Operating satellite constellations that collect optical, SAR, RF, and hyperspectral imagery — the raw data layer",
+          "who_controls": "Planet Labs (200+ satellites), Maxar (WorldView), BlackSky (14 satellites), Capella Space (SAR), HawkEye 360 (RF). Capital-intensive with significant data moats.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": true,
+            "requires_classification": false,
+            "escapes_procurement": false,
+            "rationale": "Satellite manufacturing and launch are ITAR-controlled. However, satellite OPERATIONS and DATA SALES are less restricted — Planet Labs sells imagery commercially worldwide (with some export restrictions). The hybrid nature makes this nuanced: building satellites requires ITAR, but operating them and selling data does not always require clearances. NRO/NGA contracts for dedicated tasking DO require clearances. The procurement barrier is PARTIAL — commercial data sales escape, NRO-tasked collection does not."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Same satellite companies (Planet, Maxar) sell to both commercial and defense. Competitive landscape is identical regardless of buyer. Capital barrier ($100M+ to operate a constellation) is the real moat, not procurement."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails IVB competitive independence test. Same satellite operators serve both commercial and defense markets — decomposing by buyer does not create a distinct competitive landscape."
+        },
+        {
+          "layer": 2,
+          "layer_name": "Image Processing / Computer Vision AI",
+          "description": "AI/ML models that process raw satellite imagery — object detection, change detection, activity monitoring, classification",
+          "who_controls": "Maxar (SecureWatch), Planet Labs (analytics), BlackSky (Spectra AI), Orbital Insight, Descartes Labs. Increasingly integrated with data providers.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "When processing imagery for defense intelligence, the ANALYSIS is classified even when the underlying imagery is commercial. Identifying military targets, tracking force movements, and monitoring WMD facilities makes the output classified. NGA's GEOINT standards require classified handling of analysis products. Processing for defense requires TS/SCI cleared analysts and classified compute environments."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Analytics competitors (Orbital Insight, Descartes Labs) differ from data collectors (Planet, Maxar). But defense imagery analysis requires classified handling — same procurement barriers as parent."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test for defense use case. Defense imagery analysis output is classified."
+        },
+        {
+          "layer": 3,
+          "layer_name": "GEOINT Fusion (Multi-Source Geospatial Intelligence)",
+          "description": "Fusing satellite imagery with other geospatial data — mapping, terrain analysis, signals intelligence overlay, human geography",
+          "who_controls": "NGA (National Geospatial-Intelligence Agency) internal + Palantir, BAE Systems, Leidos. Deeply classified multi-INT domain.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "GEOINT fusion is one of the most classified intelligence disciplines. NGA operates at TS/SCI with additional compartments. Multi-source fusion (combining SAT imagery with SIGINT, HUMINT) requires the highest clearances. NGA relationships are critical — years-long trust-building process."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "GEOINT fusion competitors differ from commercial imagery providers but NGA is the primary (nearly sole) customer with absolute clearance requirements."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. TS/SCI with compartments. Maximum classification level."
+        },
+        {
+          "layer": 4,
+          "layer_name": "Commercial Earth Observation Analytics",
+          "description": "Satellite imagery analytics for non-defense customers — agriculture, insurance, real estate, commodities trading, environmental monitoring, infrastructure",
+          "who_controls": "Planet Labs (commercial), Descartes Labs, Orbital Insight, RS Metrics, Kayrros. Growing fragmented market.",
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Commercial Earth observation analytics operates entirely outside defense procurement. Agricultural monitoring, insurance risk assessment, commodities tracking, urban planning — all use publicly available satellite imagery. No clearances, no ITAR for the analytics layer (satellite manufacturing is ITAR but imagery consumption is not), no classification."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Commercial EO analytics is a $5B+ market with distinct customers (agriculture firms, insurers, hedge funds, city planners), different competitors (Kayrros, RS Metrics, Orbital Insight in commercial mode), and independent revenue models (SaaS analytics subscriptions, data feeds to trading desks). The customer base, use cases, and competitive dynamics are fundamentally different from defense ISR."
+          },
+          "becomes_sub_model": true,
+          "reason": "Passes BOTH tests. Commercial EO analytics escapes defense procurement entirely. Distinct customer base (agriculture, insurance, finance, infrastructure), distinct competitive landscape (commercial analytics vs. classified GEOINT), and independently viable at $5B+ market size. This is the strongest decomposition candidate in the entire defense set because the SAME satellite data (Planet, Maxar) feeds two completely different markets with different competitive dynamics."
+        },
+        {
+          "layer": 5,
+          "layer_name": "Allied ISR Sharing (Five Eyes / NATO)",
+          "description": "Satellite ISR analytics shared with allied intelligence agencies under bilateral/multilateral agreements",
+          "who_controls": "Same players as Layer 3 (Palantir, BAE, Leidos) operating under Five Eyes and NATO intelligence sharing frameworks.",
+          "procurement_barrier_test": {
+            "requires_clearance": true,
+            "requires_itar": false,
+            "requires_classification": true,
+            "escapes_procurement": false,
+            "rationale": "Allied ISR sharing operates under bilateral intelligence sharing agreements with classification requirements HIGHER than unilateral US operations due to cross-national classification handling. REL TO markings, NOFORN restrictions, and bilateral security agreements add complexity."
+          },
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": false,
+            "scale_sufficiency": true,
+            "passes": false,
+            "rationale": "Allied MoDs are different customers than NGA, but same companies (Palantir, BAE) dominate. Competitive landscape identical."
+          },
+          "becomes_sub_model": false,
+          "reason": "Fails procurement barrier test. Allied ISR sharing has equal or higher classification requirements."
+        }
+      ],
+
+      "decomposition_result": "sub_models_created",
+      "result_rationale": "Layer 4 (Commercial Earth Observation Analytics) escapes defense procurement barriers entirely. The SAME underlying satellite data feeds two distinct markets: defense ISR (classified, procurement-gated, NGA-dominated) and commercial analytics (unclassified, enterprise-sold, fragmented). This is the cleanest decomposition in the defense set — the value chain literally bifurcates at the analytics layer based on customer classification level. The defense layers (1-3, 5) remain FORTIFIED with procurement barriers confirmed. The commercial layer has fundamentally different competitive dynamics warranting an independent sub-model.",
+      "sub_models": [
+        {
+          "id": "V3-DEF-007-L4",
+          "parent_id": "V3-DEF-007",
+          "parent_name": "Satellite/Space ISR AI Analytics",
+          "layer": 4,
+          "layer_name": "Commercial Earth Observation Analytics",
+          "name": "AI-Powered Commercial Earth Observation Analytics Platform",
+          "one_liner": "AI analytics platform processing commercial satellite imagery for agriculture, insurance, commodities, infrastructure, and ESG monitoring — the unclassified twin of defense ISR.",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "334511",
+          "architecture": "data_compounding",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Commercial EO analytics serves agriculture (crop monitoring, yield prediction), insurance (catastrophe assessment, property risk), finance (commodities tracking, supply chain monitoring), government-civilian (urban planning, environmental monitoring), and ESG (methane emissions, deforestation). Total addressable market $5B+ growing 20%+ CAGR. Customers are enterprise buyers, not intelligence agencies. Competitors (Kayrros, RS Metrics, EarthDaily Analytics) differ from defense GEOINT players."
+          },
+          "procurement_barrier_test": {
+            "requires_clearance": false,
+            "requires_itar": false,
+            "requires_classification": false,
+            "escapes_procurement": true,
+            "rationale": "Uses commercially available satellite imagery (Planet, Maxar commercial, Sentinel/Copernicus open data). No clearance, no ITAR for analytics consumption, no classification. Standard enterprise SaaS/data sales process."
+          },
+          "inherited_scores": {
+            "FA": 7.2,
+            "EC": 10.0
+          },
+          "independent_scores": {
+            "SN": 7.0,
+            "TG": 7.5,
+            "CE": 7.5
+          },
+          "score_rationale": {
+            "SN": "7.0 (vs parent 7.5) — Commercial EO analytics is structurally necessary for several verticals (agriculture precision, insurance catastrophe modeling) but slightly less existential than defense ISR where the alternative is analysts drowning in unprocessable imagery volume. Commercial users have workaround alternatives (field surveys, manual assessment). Still high SN because satellite data volume growth (10x in 5 years) makes AI processing structurally necessary across all customers.",
+            "TG": "7.5 (same as parent) — Commercial EO market timing is nearly identical to defense. Satellite constellation capacity has expanded 10x, AI vision models are capable, and market demand is growing across agriculture/insurance/ESG. No hard forcing function like a defense mandate, but organic growth is strong. Planet Labs IPO (2021) and Maxar acquisition by Advent (2023) confirm market validation.",
+            "CE": "7.5 (vs parent 6.0) — Better capital efficiency than defense ISR because no classified infrastructure costs. The main capital requirement is data access (Planet/Maxar API subscriptions, $500K-$2M/year) and compute for ML model training. No SCIFs, no cleared personnel, no multi-year certification processes. However, satellite data costs and compute-intensive processing prevent this from being as capital-efficient as pure SaaS."
+          },
+          "scores": {
+            "SN": 7.0,
+            "FA": 7.2,
+            "EC": 10.0,
+            "TG": 7.5,
+            "CE": 7.5
+          },
+          "composite": 78.0,
+          "composite_calculation": "(7.0*25 + 7.2*25 + 10.0*20 + 7.5*15 + 7.5*15) / 10 = (175.0 + 180.0 + 200.0 + 112.5 + 112.5) / 10 = 78.0",
+          "cla": {
+            "scores": {
+              "MO": 6,
+              "MA": 5,
+              "VD": 4,
+              "DV": 6
+            },
+            "composite": 53.5,
+            "composite_calculation": "(6*30 + 5*25 + 4*20 + 6*25) / 10 = (180 + 125 + 80 + 150) / 10 = 53.5",
+            "category": "CONTESTED",
+            "rationale": "MO=6: Market is growing with several established players (Planet Labs analytics, Orbital Insight, Descartes Labs, Kayrros) but no dominant AI-native analytics platform. Planet and Maxar have data moats but their analytics layers are not dominant — most customers buy data and run their own analytics. Room for specialized vertical analytics providers. MA=5: Moderate moats. Planet Labs and Maxar have satellite data moats (hard to replicate constellations) but analytics layer moats are weaker — customers can switch analytics providers while keeping data sources. Historical data accumulation creates some moat. Brand relationships in specific verticals (insurance, agriculture) matter. VD=4: Within commercial EO analytics, the stack is moderately deep — data access/ingestion, processing/feature extraction, vertical-specific analytics, delivery/API/dashboard. Some independent positions but fewer than the full ISR value chain. DV=6: AI vision model improvements (foundation models for remote sensing) democratize analytics capability. Open satellite data (Copernicus/Sentinel) reduces data moat for basic analytics. Vertical specialization (agriculture vs. insurance vs. ESG) creates niches where depth beats breadth. Climate/ESG regulation mandates create new demand vectors."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER", "TIMING_ARBITRAGE"],
+          "source_batch": "decomposition_v3-10"
+        }
+      ]
+    }
+  ],
+
+  "summary": {
+    "targets_analyzed": 6,
+    "procurement_barrier_universal": 3,
+    "sub_models_created": 3,
+    "parent_cla_confirmed": 3,
+    "models_with_sub_models": 3,
+
+    "sub_model_inventory": [
+      {
+        "id": "V3-DEF-002-L3",
+        "name": "AI-Native OSINT & Commercial Intelligence Fusion Platform",
+        "parent": "V3-DEF-002 (Defense AI/ML Intelligence Fusion Platform)",
+        "t_composite": 81.0,
+        "opp_composite": 61.0,
+        "opp_category": "ACCESSIBLE",
+        "escapes_via": "OSINT operates on unclassified publicly available data — no clearances, no classification"
+      },
+      {
+        "id": "MC-DEF-012-L4",
+        "name": "AI-Powered Cloud Compliance & Accreditation Automation Platform",
+        "parent": "MC-DEF-012 (Classified Environment AI Deployment IL5/IL6)",
+        "t_composite": 83.5,
+        "opp_composite": 66.5,
+        "opp_category": "ACCESSIBLE",
+        "escapes_via": "Compliance automation tools track documentation, not classified data — standard SaaS model",
+        "cross_reference": "MC-DEF-011 (CMMC Compliance Platform, T#4, OPP=64.5)"
+      },
+      {
+        "id": "V3-DEF-007-L4",
+        "name": "AI-Powered Commercial Earth Observation Analytics Platform",
+        "parent": "V3-DEF-007 (Satellite/Space ISR AI Analytics)",
+        "t_composite": 78.0,
+        "opp_composite": 53.5,
+        "opp_category": "CONTESTED",
+        "escapes_via": "Commercial satellite imagery analytics on publicly available data — no defense procurement"
+      }
+    ],
+
+    "sub_model_opp_distribution": {
+      "ACCESSIBLE": 2,
+      "CONTESTED": 1,
+      "FORTIFIED": 0,
+      "WIDE_OPEN": 0,
+      "LOCKED": 0
+    },
+
+    "key_finding": "Defense FORTIFICATION is partially penetrable at 3 of 6 models, but ONLY through layers that escape the defense procurement system entirely — operating on unclassified data (OSINT), managing compliance documentation (not classified data itself), or serving commercial customers with the same satellite data. The pattern is consistent: defense procurement barriers (clearances, ITAR, classification) are BINARY — either a layer handles classified/controlled data and is fully FORTIFIED, or it operates on public/unclassified data and can be ACCESSIBLE. There is no gradient. This confirms that within the classified defense domain, parent CLAs are accurate and decomposition reveals no hidden accessible positions. The accessible sub-models exist at the BOUNDARY between defense and commercial markets, not within the defense procurement system.",
+
+    "defense_decomposition_pattern": {
+      "finding": "Defense value chains bifurcate at the classification boundary",
+      "explanation": "Unlike commercial FORTIFIED markets (e.g., Retail Media Networks) where concentration varies by layer, defense FORTIFICATION is driven by a binary classification regime: classified data handling vs. unclassified. Within the classified domain, ALL layers face identical procurement barriers regardless of competitive landscape. Accessible positions exist only where a layer can operate entirely on unclassified data while sharing the parent's transformation signal.",
+      "implications": [
+        "Parent CLA scores are accurate for the classified domain — no hidden accessible positions within defense procurement",
+        "The 3 sub-models created represent genuine boundary opportunities where commercial markets intersect with defense transformation forces",
+        "VD scores (value chain depth) correctly identify that defense markets HAVE multiple layers — but all layers share the same procurement barrier profile",
+        "Future defense model creation should explicitly tag whether the model requires classified data handling — if yes, decomposition is unlikely to reveal accessible sub-positions"
+      ]
+    },
+
+    "cross_references": {
+      "MC-DEF-012-L4_vs_MC-DEF-011": "The compliance automation sub-model (MC-DEF-012-L4) overlaps with the existing CMMC Compliance Platform (MC-DEF-011, T#4, OPP=64.5 CONTESTED). MC-DEF-011 is the broader model covering full CMMC lifecycle; MC-DEF-012-L4 is specifically the cloud accreditation layer. These should be cross-referenced in the inventory but NOT merged — they have different scope, different transformation signals (MC-DEF-011 driven by CMMC enforcement, MC-DEF-012-L4 grounded in classified cloud value chain), and slightly different customer focuses."
+    }
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "cycle": "v3-10",
+  "type": "granularity_decomposition",
+  "category": "utilities",
+  "date": "2026-02-12",
+  "framework_version": "1.0",
+  "methodology": "Value Chain Layer Decomposition per GRANULARITY_FRAMEWORK.md. Each layer tested against Independently Viable Business (IVB) test. Revenue independence and competitive independence are hard gates. Passing layers scored as sub-models with inherited (FA, EC) and independent (SN, TG, CE) transformation scores, plus fully independent CLA.",
+  "decomposition_targets": [
+    {
+      "parent_id": "MC-UTL-002",
+      "parent_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+      "parent_rank": 26,
+      "parent_composite": 79.0,
+      "parent_scores": {"SN": 8.5, "FA": 8.5, "EC": 7.0, "TG": 7.5, "CE": 7.5},
+      "parent_cla": {
+        "scores": {"MO": 4, "MA": 4, "VD": 5, "DV": 5},
+        "composite": 44.5,
+        "category": "FORTIFIED",
+        "scoring_method": "manual"
+      },
+      "parent_architecture": "vertical_saas",
+      "parent_naics": "221113",
+      "parent_forces": ["F1_technology", "F6_energy", "F4_capital"],
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 44.5,
+        "vd_score": 5,
+        "t_rank": 26,
+        "t_composite": 79.0,
+        "significance": "T_rank <= 50 AND T_composite >= 75 AND OPP_composite <= 45"
+      },
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "name": "Core Reactor Monitoring & Safety AI",
+          "description": "Real-time reactor instrumentation, safety parameter monitoring, NRC-regulated safety-critical AI systems",
+          "who_controls": "Framatome (AREVA), Westinghouse, GE-Hitachi through reactor design IP. NRC 10 CFR 50.59 requires OEM involvement for safety-system changes. Emerson and Siemens own DCS/I&C.",
+          "ivb_result": "FAIL",
+          "ivb_rationale": "Safety-critical reactor AI cannot be sold independently of reactor vendor relationship. NRC 10 CFR 50.59 change process requires OEM involvement. Revenue and competitive independence both fail — this IS the fortress the parent model describes."
+        },
+        {
+          "layer": 2,
+          "name": "Predictive Maintenance for Existing BOP Fleet",
+          "description": "Vibration analysis, thermal monitoring, pump/valve/turbine degradation prediction for non-safety-related Balance of Plant equipment across 93 US and 440 global nuclear plants",
+          "who_controls": "OEM vendors (Framatome, Westinghouse) have data lock-in on reactor-side. BOP equipment (turbines, condensers, cooling towers) served by industrial PdM vendors (Augury, SparkCognition, Uptake) but none nuclear-specialized.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 3,
+          "name": "SMR Construction & Commissioning AI",
+          "description": "Digital twin, construction scheduling optimization, commissioning sequence AI for new Small Modular Reactor builds (NuScale, Kairos Power, Holtec, X-energy, TerraPower)",
+          "who_controls": "Nascent market. SMR vendors building their own processes without mature construction AI. General construction tech (Procore, Bentley Systems) lacks nuclear domain expertise. No incumbent in nuclear-specific construction AI.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 4,
+          "name": "Nuclear Workforce Training & Simulation",
+          "description": "VR/AR + AI training platforms for licensed reactor operators (SRO/RO), maintenance technicians, emergency response. NRC requires ongoing requalification training.",
+          "who_controls": "L3Harris (formerly CORYS) and Western Services Corporation dominate NRC-certified full-scope simulators ($50M+ per simulator). GSE Solutions provides part-task trainers. AI/VR supplemental training is a new adjacent market.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 5,
+          "name": "Spent Fuel & Waste Management AI",
+          "description": "AI optimization of spent fuel dry cask loading, waste characterization, decommissioning planning, and long-term storage management",
+          "who_controls": "Holtec International dominates dry cask storage. EnergySolutions and Waste Control Specialists handle waste disposal. DOE/NRC regulate. AI optimization layer is new and unoccupied.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 6,
+          "name": "Nuclear Grid Integration & DC Power AI",
+          "description": "AI dispatch optimization for nuclear-to-grid and nuclear-to-DC direct power, load following for SMRs, hydrogen co-production optimization. Grid-side (less NRC-regulated than reactor-side).",
+          "who_controls": "Grid operators (ISOs/RTOs), general grid AI (AutoGrid, Opus One, GE Vernova DERMS). No player specializes in nuclear-specific grid integration or nuclear-to-DC power optimization.",
+          "ivb_result": "PASS"
+        }
+      ],
+      "sub_models": [
+        {
+          "id": "MC-UTL-002-L2",
+          "parent_id": "MC-UTL-002",
+          "parent_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+          "layer": 2,
+          "layer_name": "Predictive Maintenance for Existing BOP Fleet",
+          "name": "Nuclear Balance-of-Plant Predictive Maintenance AI",
+          "one_liner": "AI-driven vibration, thermal, and degradation monitoring for non-safety-related nuclear plant equipment (turbines, condensers, cooling towers, pumps) — preventing $500K-2M/day forced outages across 93 US and 440 global plants",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221113",
+          "architecture": "vertical_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "BOP predictive maintenance sold as standalone SaaS to plant maintenance managers, separate from reactor OEM contracts. Competitors are industrial PdM vendors (Augury, SparkCognition, Uptake), not reactor OEMs. TAM: 93 US plants * $500K-1M/yr = $46-93M domestically; 440 global plants = $220-440M. Revenue: subscription + performance-based pricing tied to avoided outage cost."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 7.0},
+          "independent_scores": {"SN": 7.5, "TG": 7.0, "CE": 8.0},
+          "independent_rationale": {
+            "SN": "BOP maintenance is important but not safety-critical. Existing threshold-based monitoring works — AI is an enhancement (10-30% improvement in early detection), not a structural requirement. Scores lower than parent's reactor-inclusive SN.",
+            "TG": "Window is now: aging fleet (average age 42 years) with increasing BOP failures. But nuclear utility procurement cycles are 12-18 months. No hard forcing function like NRC mandate — this is ROI-driven adoption.",
+            "CE": "SaaS + ruggedized wireless sensors. Moderate capital for nuclear-grade sensor certification (IEEE 323/344 qualification for some BOP locations). Better capital profile than reactor-grade systems. Subscription model with strong recurring revenue."
+          },
+          "scores": {"SN": 7.5, "FA": 8.5, "EC": 7.0, "TG": 7.0, "CE": 8.0},
+          "composite": 76.5,
+          "cla": {
+            "scores": {"MO": 5, "MA": 5, "VD": 3, "DV": 5},
+            "composite": 46.0,
+            "category": "CONTESTED",
+            "rationale": "Industrial PdM market exists (Augury, SparkCognition, Uptake) but none specialize in nuclear BOP — nuclear-specific compliance, security requirements, and plant-specific equipment profiles create differentiation opportunity. OEM data lock-in is moderate for BOP (unlike reactor systems, BOP sensor data can be independently collected). Within-layer depth is limited (sensors, analytics, integration). AI/ML advancement and NRC digital modernization push are real disruption vectors, but small addressable market limits disruption energy."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER"]
+        },
+        {
+          "id": "MC-UTL-002-L3",
+          "parent_id": "MC-UTL-002",
+          "parent_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+          "layer": 3,
+          "layer_name": "SMR Construction & Commissioning AI",
+          "name": "Small Modular Reactor Digital Construction & Commissioning Platform",
+          "one_liner": "AI-powered digital twin, construction scheduling, and commissioning sequence optimization for the global SMR build wave — serving NuScale, Kairos, X-energy, TerraPower, and Holtec across 300+ announced units",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221113",
+          "architecture": "vertical_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "SMR construction AI tools are distinct from operating plant AI. Customers are SMR developers (NuScale, Kairos, TerraPower) and construction firms — net-new buyers not in existing fleet market. Competitors are construction tech companies (Procore, Bentley Systems), not reactor OEMs or PdM vendors. TAM: 300+ SMR units globally at $1-5M per unit for digital commissioning = $300M-1.5B over 2026-2035. Revenue from project-based licensing + ongoing digital twin subscription."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 7.0},
+          "independent_scores": {"SN": 8.0, "TG": 8.5, "CE": 7.0},
+          "independent_rationale": {
+            "SN": "SMRs are being built — NuScale VOYGR, Kairos Hermes, X-energy Xe-100, TerraPower Natrium all have active projects. First-of-a-kind construction demands digital optimization to manage cost overruns (historically 2-5x for nuclear). AI commissioning tools are structurally needed to prove SMR economics.",
+            "TG": "Timing is excellent — SMR construction breaking ground 2026-2030. Digital commissioning tools needed NOW before the build wave peaks. First-mover advantage: early deployments build domain-specific training data that creates a compounding moat. The window closes as SMR vendors build in-house capability.",
+            "CE": "Digital twin + construction AI is software-heavy but requires significant domain expertise investment. Nuclear-specific validation and NRC interaction add cost. Moderate capital — more than pure SaaS but less than hardware businesses."
+          },
+          "scores": {"SN": 8.0, "FA": 8.5, "EC": 7.0, "TG": 8.5, "CE": 7.0},
+          "composite": 78.5,
+          "cla": {
+            "scores": {"MO": 7, "MA": 7, "VD": 4, "DV": 7},
+            "composite": 64.0,
+            "category": "ACCESSIBLE",
+            "rationale": "SMR construction tools market is nascent — no dominant player exists. NuScale, Kairos are building processes but lack mature construction AI. General construction tech (Procore, Bentley) lacks nuclear domain expertise. No incumbent moats to break — the moat is domain expertise to BUILD, not to overcome. Multiple SMR designs (PWR, MSR, HTGR, SFR) create diverse tool needs that prevent single-vendor lock-in. New build wave, NRC modernization, and AI advancement create multiple simultaneous disruption vectors."
+          },
+          "primary_category": "TIMING_ARBITRAGE",
+          "category": ["TIMING_ARBITRAGE", "FORCE_RIDER"]
+        },
+        {
+          "id": "MC-UTL-002-L4",
+          "parent_id": "MC-UTL-002",
+          "parent_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+          "layer": 4,
+          "layer_name": "Nuclear Workforce Training & Simulation",
+          "name": "AI-Native Nuclear Workforce Training & VR Simulation Platform",
+          "one_liner": "VR/AR + AI training platform for licensed nuclear operators, maintenance technicians, and emergency responders — supplementing $50M+ full-scope simulators with affordable AI-driven part-task and scenario training",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221113",
+          "architecture": "platform_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Training platforms sold separately from operational tools — annual training budgets ($2-5M per plant) are distinct line items. Buyer is training department/HR, not operations. Competitors are L3Harris/CORYS, GSE Solutions, Western Services — different from reactor OEMs and PdM vendors. TAM: 93 US plants * $2-5M training spend = $186-465M US; growing with SMR workforce ramp. Revenue from platform licensing, content creation, per-user subscriptions."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 7.0},
+          "independent_scores": {"SN": 7.0, "TG": 7.0, "CE": 7.5},
+          "independent_rationale": {
+            "SN": "NRC mandates operator training and requalification (10 CFR 55), creating regulatory-driven structural necessity. However, AI/VR training is an enhancement to existing NRC-accepted methods, not a replacement. Existing full-scope simulators work. AI/VR supplements reduce cost and increase scenario coverage but aren't yet NRC-mandated.",
+            "TG": "Growing need: SMR workforce must be trained from scratch (no existing operating experience), and aging workforce retirement creates knowledge transfer urgency. But NRC acceptance of new training methods is slow — NRC evaluation of VR/AI training for license credit is multi-year. Window is opening but not urgent.",
+            "CE": "VR/AR + AI platforms are dramatically more capital-efficient than $50M+ full-scope simulators. Part-task trainers and scenario-based AI training can be delivered at $100K-500K per plant — 100x cheaper. Hardware is commodity VR headsets. Content creation is the main investment."
+          },
+          "scores": {"SN": 7.0, "FA": 8.5, "EC": 7.0, "TG": 7.0, "CE": 7.5},
+          "composite": 74.5,
+          "cla": {
+            "scores": {"MO": 5, "MA": 6, "VD": 3, "DV": 6},
+            "composite": 51.0,
+            "category": "CONTESTED",
+            "rationale": "L3Harris/CORYS dominates full-scope simulators but that moat is irrelevant for AI/VR supplemental training — different product, different price point, different deployment model. GSE Solutions has part-task trainer presence but is aging technology. Training content + NRC acceptance letter are moderate moats but no network effects or data lock-in. VR/AR technology maturing, NRC considering digital training modernization, workforce shortage forcing innovation. SMR training is entirely greenfield — no existing training programs to displace."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER"]
+        },
+        {
+          "id": "MC-UTL-002-L5",
+          "parent_id": "MC-UTL-002",
+          "parent_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+          "layer": 5,
+          "layer_name": "Spent Fuel & Waste Management AI",
+          "name": "Nuclear Spent Fuel & Decommissioning AI Optimization",
+          "one_liner": "AI optimization of spent fuel dry cask loading sequences, waste characterization, and decommissioning project planning — serving 93 operating plants managing spent fuel and 20+ plants in active decommissioning",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221113",
+          "architecture": "vertical_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Waste management is a completely separate revenue stream from plant operations. Decommissioning projects are $500M-1B per plant. Buyers include decommissioning companies (Holtec Decommissioning International, NorthStar, EnergySolutions) — different from plant operators. NRC Decommissioning Trust Fund is the funding source. Competitors are waste management specialists, not reactor OEMs. TAM: 20+ plants in decommissioning + 93 managing spent fuel = $10B+ industry over 2026-2040."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 7.0},
+          "independent_scores": {"SN": 7.0, "TG": 6.5, "CE": 6.5},
+          "independent_rationale": {
+            "SN": "Spent fuel management is a permanent regulatory obligation (no disposal pathway — Yucca Mountain stalled). Every plant must manage fuel indefinitely. AI optimization is helpful for cask loading, characterization, and decommissioning planning, but the underlying process is fundamentally physical and heavily prescribed by NRC regulations. AI augments rather than transforms.",
+            "TG": "Steady ongoing need rather than a time-sensitive window. Decommissioning wave is a 10-20 year horizon as plants reach end of license. No hard forcing function for AI adoption specifically — existing methods work, AI just improves efficiency 10-20%. Not urgent.",
+            "CE": "Waste characterization + optimization software requires nuclear-specific certification and domain expertise. Sensor systems for waste characterization are specialized. Moderate capital — not pure SaaS due to physical integration requirements. Decommissioning planning software is more capital-efficient but TAM per customer is project-based, not recurring."
+          },
+          "scores": {"SN": 7.0, "FA": 8.5, "EC": 7.0, "TG": 6.5, "CE": 6.5},
+          "composite": 72.25,
+          "cla": {
+            "scores": {"MO": 5, "MA": 5, "VD": 3, "DV": 4},
+            "composite": 43.5,
+            "category": "FORTIFIED",
+            "rationale": "Holtec dominates cask storage, EnergySolutions dominates waste disposal — physical asset moats (cask IP, disposal site licenses) are strong. However, the AI optimization layer sits on top and is less moated — no one has built dominant nuclear waste AI yet. Within-layer depth is limited: characterization, loading optimization, decommissioning planning. AI can improve efficiency but the underlying physical and regulatory processes change slowly. Limited disruption energy in a conservative, safety-culture-dominated market. The layer is FORTIFIED primarily due to the small, concentrated market and conservative buyers."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER"]
+        },
+        {
+          "id": "MC-UTL-002-L6",
+          "parent_id": "MC-UTL-002",
+          "parent_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+          "layer": 6,
+          "layer_name": "Nuclear Grid Integration & DC Power AI",
+          "name": "Nuclear-to-Grid & Nuclear-to-Data-Center Power Optimization AI",
+          "one_liner": "AI dispatch optimization connecting nuclear output to grid markets and data center direct power — enabling SMR load following, nuclear-DC co-location power management, and hydrogen co-production scheduling",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221113",
+          "architecture": "platform_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Grid integration software sold to grid operators, utilities, data center operators, and hydrogen producers — all different buyers than nuclear plant operations teams. Competitors are grid software companies (AutoGrid, Opus One, GE Vernova DERMS), not reactor OEMs. Nuclear-to-DC direct power is a multi-billion dollar emerging market (Microsoft/Constellation restart Three Mile Island). Revenue from SaaS licensing for dispatch optimization + performance-based fees on energy cost savings."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 7.0},
+          "independent_scores": {"SN": 8.0, "TG": 8.0, "CE": 8.0},
+          "independent_rationale": {
+            "SN": "Nuclear-to-grid integration is becoming structurally necessary: SMRs designed for load-following need sophisticated dispatch AI; data center direct power arrangements (Microsoft-Constellation, Amazon-Talen) need behind-the-meter optimization; nuclear hydrogen co-production requires real-time allocation between electricity and H2. Grid complexity doubling with bidirectional flow makes AI essential.",
+            "TG": "Timing is excellent: DC power demand creating urgent need NOW. Microsoft restarted Three Mile Island for DC power. Amazon bought Talen's nuclear plant. SMR load-following capability is a key selling point that needs software. Nuclear hydrogen pilot projects starting 2026-2028. Multiple simultaneous demand signals.",
+            "CE": "Pure software — grid optimization algorithms, dispatch optimization, capacity market bidding strategies. No nuclear-specific hardware required (works with existing grid infrastructure). Leverages existing SCADA/EMS interfaces. High capital efficiency — SaaS with strong margins."
+          },
+          "scores": {"SN": 8.0, "FA": 8.5, "EC": 7.0, "TG": 8.0, "CE": 8.0},
+          "composite": 79.25,
+          "cla": {
+            "scores": {"MO": 7, "MA": 7, "VD": 4, "DV": 7},
+            "composite": 64.0,
+            "category": "ACCESSIBLE",
+            "rationale": "Nuclear-specific grid integration AI is a genuinely new category — no incumbent dominates. General grid AI (AutoGrid, Opus One) doesn't specialize in nuclear dispatch characteristics (baseload vs load-following, must-run constraints, NRC power maneuver limits). GE Vernova and Siemens have grid products but not nuclear-specific optimization. DC power demand is a massive disruption vector — hyperscalers signing multi-billion dollar nuclear PPAs need optimization tools. Nuclear renaissance creates new capacity to integrate. Carbon-free attributes increasingly valuable in capacity markets. Hydrogen economy adds a third demand dimension (electricity vs grid vs H2)."
+          },
+          "primary_category": "TIMING_ARBITRAGE",
+          "category": ["TIMING_ARBITRAGE", "FORCE_RIDER"]
+        }
+      ]
+    },
+    {
+      "parent_id": "MC-UTL-004",
+      "parent_name": "Solar + Storage Development for Data Center Campuses",
+      "parent_rank": 63,
+      "parent_composite": 75.0,
+      "parent_scores": {"SN": 8.0, "FA": 8.5, "EC": 6.0, "TG": 8.0, "CE": 6.5},
+      "parent_cla": {
+        "scores": {"MO": 4, "MA": 4, "VD": 5, "DV": 5},
+        "composite": 44.5,
+        "category": "FORTIFIED",
+        "scoring_method": "heuristic"
+      },
+      "parent_architecture": "project_developer",
+      "parent_naics": "221114",
+      "parent_forces": ["F6_energy", "F4_capital", "F1_technology"],
+      "trigger": {
+        "opp_category": "FORTIFIED",
+        "opp_composite": 44.5,
+        "vd_score": 5,
+        "t_rank": 63,
+        "t_composite": 75.0,
+        "significance": "T_composite >= 75 AND OPP_composite <= 45 (actionable score mismatch)"
+      },
+      "value_chain_stack": [
+        {
+          "layer": 1,
+          "name": "Project Development & Land Rights",
+          "description": "Site selection, land acquisition/lease, permitting, interconnection queue management, environmental review for DC-proximate solar+storage projects",
+          "who_controls": "NextEra Energy Resources, AES, Invenergy, Lightsource bp dominate large-scale solar development. Top 10 developers control 60%+ of US pipeline. Capital + utility relationships + land banks create severe barriers.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 2,
+          "name": "EPC (Engineering, Procurement, Construction)",
+          "description": "Detailed engineering, equipment procurement (panels, inverters, racking, batteries), construction management for utility-scale solar+storage installations",
+          "who_controls": "McCarthy Building, Mortenson, Blattner Energy, Primoris for utility-scale solar. Fluor, Bechtel for megaprojects. Established firms with bonding capacity and trained labor.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 3,
+          "name": "Battery Storage Technology & Management",
+          "description": "Battery system design, BMS, thermal management, degradation modeling, warranty optimization for co-located DC campus storage",
+          "who_controls": "Fluence (Siemens/AES JV), Tesla Energy (Megapack), Wartsila for grid storage systems. CATL, BYD, Samsung SDI for cells. Stem Inc for AI-driven storage optimization.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 4,
+          "name": "Behind-the-Meter Interconnection",
+          "description": "Utility interconnection agreements, metering, BTM configuration, net metering/billing negotiation, DC campus electrical connection permitting",
+          "who_controls": "Local utilities control interconnection approval. Specialized consultants (highly fragmented). Jurisdiction-specific permitting.",
+          "ivb_result": "FAIL",
+          "ivb_rationale": "Interconnection consulting/services are bundled with project development — not a standalone product at scale. Revenue and customer independence both fail. This is a project phase, not a business. Too fine-grained for the Independently Viable Business test."
+        },
+        {
+          "layer": 5,
+          "name": "Energy Management Software",
+          "description": "AI optimization of solar+storage dispatch, peak shaving, demand response, real-time grid arbitrage, DC workload-aware energy scheduling, carbon accounting",
+          "who_controls": "Stem Inc (Athena), AutoGrid, Fluence (Mosaic) for general storage optimization. No dominant player for DC-specific behind-the-meter solar+storage AI optimization. Tesla Autobidder for Tesla systems only.",
+          "ivb_result": "PASS"
+        },
+        {
+          "layer": 6,
+          "name": "PPA Structuring & Financial Advisory",
+          "description": "Power Purchase Agreement structuring (fixed/indexed, virtual/physical), ITC/PTC tax equity structuring, project finance advisory for DC clean energy deals",
+          "who_controls": "Law firms (Latham & Watkins, Norton Rose Fulbright), financial advisors (Lazard Renewable Energy, Marathon Capital), specialized boutiques. Fragmented.",
+          "ivb_result": "PASS"
+        }
+      ],
+      "sub_models": [
+        {
+          "id": "MC-UTL-004-L1",
+          "parent_id": "MC-UTL-004",
+          "parent_name": "Solar + Storage Development for Data Center Campuses",
+          "layer": 1,
+          "layer_name": "Project Development & Land Rights",
+          "name": "DC-Proximate Solar+Storage Project Development",
+          "one_liner": "Develop and secure land rights, permits, and interconnection for co-located solar+storage projects within transmission distance of data center campuses — targeting the grid-queue-bypass opportunity for hyperscaler clean energy procurement",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221114",
+          "architecture": "project_developer",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Project development generates revenue through development fees and project sale proceeds. Projects are frequently sold to IPPs/utilities after development. Competitors are other developers (NextEra, Invenergy, Lightsource), distinct from EPC contractors or software vendors. US solar development pipeline $100B+, DC-specific subset $10B+. Revenue from development margin on project sale (15-30% of total project value)."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 6.0},
+          "independent_scores": {"SN": 8.0, "TG": 8.0, "CE": 4.5},
+          "independent_rationale": {
+            "SN": "Hyperscaler clean energy commitments (Google carbon-free by 2030, Microsoft carbon-negative by 2030, Amazon 100% renewable by 2025) + grid interconnection queue bottleneck (5+ year average wait) make behind-the-meter DC-proximate solar development structurally necessary. The grid cannot deliver clean power fast enough — developers who can bypass the queue capture structural demand.",
+            "TG": "Window is now: IRA Investment Tax Credit (30%+ with adders), DC power demand surging (40% CAGR), land near major DC markets getting scarce. First-movers securing DC-proximate land rights have durable advantage. But window may narrow as land competition intensifies and IRA certainty post-2028 election is questioned.",
+            "CE": "Extremely capital-intensive: land options/acquisition ($1-10M), interconnection studies and deposits ($500K-5M), environmental review, permitting counsel. $5-50M in development capital per project before any revenue. 2-4 year development cycle before sale. Capital efficiency score reflects this heavy upfront investment."
+          },
+          "scores": {"SN": 8.0, "FA": 8.5, "EC": 6.0, "TG": 8.0, "CE": 4.5},
+          "composite": 72.0,
+          "cla": {
+            "scores": {"MO": 3, "MA": 3, "VD": 2, "DV": 5},
+            "composite": 33.0,
+            "category": "FORTIFIED",
+            "rationale": "NextEra, AES, Invenergy dominate US solar development — top 10 control 60%+ of pipeline. Capital requirements ($5-50M per project), utility relationships (decades-old), land bank inventories (millions of acres under option), and project finance relationships create durable, overlapping moats. Project development is fundamentally single-layer (develop or don't) with limited sub-positions for differentiation. DC-specific demand is a disruption vector — hyperscalers will work with smaller developers for speed-to-power — but the fundamental advantages of scale, capital, and relationships persist. This is the MOST fortified layer, confirming the parent CLA is accurate for this value chain position."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER", "CAPITAL_MOAT"]
+        },
+        {
+          "id": "MC-UTL-004-L2",
+          "parent_id": "MC-UTL-004",
+          "parent_name": "Solar + Storage Development for Data Center Campuses",
+          "layer": 2,
+          "layer_name": "EPC (Engineering, Procurement, Construction)",
+          "name": "Utility-Scale Solar+Storage EPC for Data Center Campuses",
+          "one_liner": "Engineering, procurement, and construction of co-located solar+storage installations at data center campuses — managing panel deployment, inverter installation, battery integration, and grid connection for 50-500MW projects",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221114",
+          "architecture": "service",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "EPC is a distinct contract type (fixed-price or cost-plus) with revenue independent of who developed or will own the project. Buyers are project developers and asset owners — EPC firms serve many developers. Competitors are construction firms (Mortenson, McCarthy, Blattner), different from developers or technology vendors. US solar EPC market $30B+/yr. Revenue from construction contracts at 5-10% margin."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 6.0},
+          "independent_scores": {"SN": 7.5, "TG": 7.5, "CE": 4.0},
+          "independent_rationale": {
+            "SN": "Every solar+storage project requires EPC — it's structurally necessary but it's commodity execution, not transformative. The structural transformation is in development, software, and grid integration, not construction. Score reflects necessity without differentiation.",
+            "TG": "Construction labor and equipment demand is high — project pipeline exceeds construction capacity. But EPC is execution, not innovation. Timing benefit is purely demand-driven, not window-dependent. No first-mover advantage in EPC.",
+            "CE": "EPC is capital-intensive: performance bonds (5-15% of contract value), heavy equipment fleet, trained labor force (electricians, steel workers, equipment operators). Margins are thin at 5-10%. Working capital requirements are substantial. This is the lowest capital-efficiency layer in the value chain."
+          },
+          "scores": {"SN": 7.5, "FA": 8.5, "EC": 6.0, "TG": 7.5, "CE": 4.0},
+          "composite": 69.25,
+          "cla": {
+            "scores": {"MO": 4, "MA": 4, "VD": 2, "DV": 4},
+            "composite": 36.0,
+            "category": "FORTIFIED",
+            "rationale": "Mortenson, McCarthy, Blattner Energy dominate utility-scale solar EPC. Bonding capacity (requires $500M+ bonding lines), trained labor force, and equipment fleet create barriers that aren't technology-solvable. Regional contractors exist but cannot compete on 200MW+ projects. EPC is fundamentally single-layer with no sub-positions for technology differentiation. Modular construction and robotics for solar installation are emerging disruption vectors but are 3-5 years from commercial deployment. This is a capital-and-labor fortress, not a technology fortress."
+          },
+          "primary_category": "CAPITAL_MOAT",
+          "category": ["CAPITAL_MOAT"]
+        },
+        {
+          "id": "MC-UTL-004-L3",
+          "parent_id": "MC-UTL-004",
+          "parent_name": "Solar + Storage Development for Data Center Campuses",
+          "layer": 3,
+          "layer_name": "Battery Storage Technology & Management",
+          "name": "DC Campus Battery Storage System & AI Management",
+          "one_liner": "Battery storage systems with AI-native battery management for data center campus co-location — optimizing charge/discharge cycles, thermal management, and degradation modeling to maximize 20-year asset value for DC clean power",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221114",
+          "architecture": "hardware_plus_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Battery storage sold separately from solar. BMS software is a distinct product. Stem and Fluence sell standalone storage solutions. Buyers include utilities, IPPs, C&I sites — not just DC solar projects. Competitors are battery/storage companies (Fluence, Tesla Energy, Stem, Wartsila), not solar developers or EPC firms. US battery storage market $15B+ growing 30%+ annually."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 6.0},
+          "independent_scores": {"SN": 8.5, "TG": 8.0, "CE": 5.5},
+          "independent_rationale": {
+            "SN": "Storage is the critical differentiator for DC solar — data centers need 24/7 power but solar produces only during daylight. Without storage, solar cannot serve DC baseload. Battery degradation optimization over 20-year asset life is where AI creates the most value. Structurally essential for the solar+DC thesis.",
+            "TG": "Battery costs declined 90% since 2010, still declining 10-15%/yr. IRA standalone storage ITC (30%+) is new. DC demand surging. Window is excellent but storage market is already active — this is riding a wave, not catching a window.",
+            "CE": "Hardware (battery cells, enclosures, thermal management) is capital-intensive. But BMS software layer is capital-efficient. Hybrid position — if focusing on BMS/optimization software only, CE would be 8+. As integrated system provider, CE is moderate. Score reflects the most viable hybrid position."
+          },
+          "scores": {"SN": 8.5, "FA": 8.5, "EC": 6.0, "TG": 8.0, "CE": 5.5},
+          "composite": 74.75,
+          "cla": {
+            "scores": {"MO": 4, "MA": 5, "VD": 5, "DV": 6},
+            "composite": 49.5,
+            "category": "CONTESTED",
+            "rationale": "Fluence (Siemens/AES JV), Tesla Megapack, and Wartsila dominate grid storage systems — concentrated at hardware level. CATL/BYD dominate cell manufacturing. But BMS and optimization software moats are more fragile — data and algorithms, not physical manufacturing scale. Multiple sub-layers exist: cells, modules, BMS, thermal management, degradation modeling, warranty optimization, grid services participation. New battery chemistries (LFP replacing NMC, sodium-ion emerging) are disrupting supply chains and creating openings. AI-native BMS is demonstrably outperforming rule-based systems (5-15% more cycles over battery lifetime). DC-specific load profiles create specialized optimization demand that generic storage tools don't address."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER"]
+        },
+        {
+          "id": "MC-UTL-004-L5",
+          "parent_id": "MC-UTL-004",
+          "parent_name": "Solar + Storage Development for Data Center Campuses",
+          "layer": 5,
+          "layer_name": "Energy Management Software",
+          "name": "DC Campus Solar+Storage AI Dispatch & Energy Optimization",
+          "one_liner": "AI-native energy management platform optimizing solar+storage dispatch, DC workload-aware scheduling, grid arbitrage, demand response, and carbon accounting for behind-the-meter data center clean power systems",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221114",
+          "architecture": "vertical_saas",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": true,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "Energy management SaaS sold as subscription, independent of who built or owns physical assets. Buyers are DC operators and energy procurement teams — different from project developers. Competitors are software companies (Stem/Athena, AutoGrid, Fluence/Mosaic), not developers or EPC firms. Energy management software market $5B+ growing. DC-specific optimization is nascent with no dominant player. Revenue from SaaS subscription + performance-based fees on energy cost reduction."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 6.0},
+          "independent_scores": {"SN": 8.5, "TG": 8.5, "CE": 9.0},
+          "independent_rationale": {
+            "SN": "AI dispatch optimization is the key to making solar+storage economically viable for DCs. Suboptimal dispatch wastes 15-30% of storage value — the difference between a profitable and unprofitable clean energy installation. DC workload variability (AI training runs vs inference vs idle) creates optimization complexity that only AI can solve. Structurally essential for the economics of the entire value chain.",
+            "TG": "Market timing is excellent: DCs deploying behind-the-meter solar+storage NOW (2025-2027 build wave). Need optimization software immediately upon commissioning. First movers building data moats — every deployment generates training data on DC load profiles, solar production patterns, grid price signals. The data advantage compounds. Window is open but early movers will be hard to displace.",
+            "CE": "Pure SaaS — no hardware, no construction, no capital-intensive physical deployment. Subscription + performance fees. Cloud-hosted optimization engine. Development cost is engineering talent, not capital equipment. Highest capital efficiency in the entire solar+storage value chain. Gross margins 80%+."
+          },
+          "scores": {"SN": 8.5, "FA": 8.5, "EC": 6.0, "TG": 8.5, "CE": 9.0},
+          "composite": 80.75,
+          "cla": {
+            "scores": {"MO": 7, "MA": 7, "VD": 4, "DV": 8},
+            "composite": 66.5,
+            "category": "ACCESSIBLE",
+            "rationale": "DC-specific solar+storage optimization is nascent — no dominant player. Stem (Athena) and AutoGrid focus on general storage optimization, not DC workload-aware dispatch. Fluence Mosaic focuses on front-of-meter utility-scale. Tesla Autobidder is Tesla-ecosystem-only. No incumbent has the DC workload understanding that makes this layer unique. Existing EMS vendor moats are data-based but early — performance data from deployed sites hasn't yet accumulated to create barriers. AI advancement makes real-time dispatch optimization dramatically better than rule-based systems. DC workload variability creates specialized demand. Carbon accounting regulation (SEC climate disclosure, EU CSRD) adds mandatory feature requirements. Multiple simultaneous disruption vectors opening this market."
+          },
+          "primary_category": "TIMING_ARBITRAGE",
+          "category": ["TIMING_ARBITRAGE", "FORCE_RIDER"]
+        },
+        {
+          "id": "MC-UTL-004-L6",
+          "parent_id": "MC-UTL-004",
+          "parent_name": "Solar + Storage Development for Data Center Campuses",
+          "layer": 6,
+          "layer_name": "PPA Structuring & Financial Advisory",
+          "name": "DC Clean Energy PPA Structuring & Financial Advisory",
+          "one_liner": "Specialized financial advisory for data center clean energy procurement — structuring physical and virtual PPAs, ITC/PTC tax equity, and project finance for hyperscaler and colocation solar+storage deals",
+          "granularity_type": "value_chain_layer",
+          "sector_naics": "221114",
+          "architecture": "advisory",
+          "ivb_test": {
+            "revenue_independence": true,
+            "customer_independence": false,
+            "competitive_independence": true,
+            "scale_sufficiency": true,
+            "passes": true,
+            "rationale": "PPA advisory generates fees independent of project ownership. Financial advisory is a standalone service purchased by finance/legal teams. Competitors are financial advisory firms and law firms (Lazard, Marathon Capital, Latham & Watkins), not developers or technology vendors. US renewable PPA market $20B+/yr transaction volume; advisory fees 0.5-2% = $100-400M. DC-specific subset growing rapidly with hyperscaler deal sizes ($500M-5B+)."
+          },
+          "inherited_scores": {"FA": 8.5, "EC": 6.0},
+          "independent_scores": {"SN": 6.5, "TG": 7.0, "CE": 7.5},
+          "independent_rationale": {
+            "SN": "PPA structuring is needed for every DC clean energy deal, but it's a professional service — advisory firms already exist, the role is well-understood. The transformation is that DC clean energy deal volume is exploding, creating more demand for advisory. But PPA structuring itself isn't being structurally transformed by technology.",
+            "TG": "DC clean energy PPA demand is high now — Microsoft, Google, Amazon signing $1B+ deals annually. But advisory scales linearly with deal flow (no network effects or compounding). The window is demand-driven, not technology-driven.",
+            "CE": "Advisory is low-capital — expertise, relationships, and deal execution capability. No hardware, no software development (though AI can enhance modeling). Revenue is fee-based. Capital efficiency is good relative to the physical layers of the value chain."
+          },
+          "scores": {"SN": 6.5, "FA": 8.5, "EC": 6.0, "TG": 7.0, "CE": 7.5},
+          "composite": 71.25,
+          "cla": {
+            "scores": {"MO": 6, "MA": 5, "VD": 2, "DV": 5},
+            "composite": 47.0,
+            "category": "CONTESTED",
+            "rationale": "Renewable energy PPA advisory is fragmented — many boutiques (Marathon Capital, CohnReznick Capital, Akin Gump, Latham & Watkins) serve the market. No single firm dominates DC-specific clean energy advisory. Moats are relationship-based and expertise-based — no data lock-in or network effects. Switching advisors is easy. Within-layer depth is minimal: structuring, negotiation, execution — not deep enough for sub-positions. AI could automate PPA modeling and scenario analysis, creating a disruption vector. DC demand volume is the primary opening, not technology shift."
+          },
+          "primary_category": "FORCE_RIDER",
+          "category": ["FORCE_RIDER"]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "targets_analyzed": 2,
+    "sub_models_created": 10,
+    "layers_analyzed": 12,
+    "layers_failed_ivb": 2,
+    "layers_passed_ivb": 10,
+    "sub_model_opp_distribution": {
+      "WIDE_OPEN": 0,
+      "ACCESSIBLE": 3,
+      "CONTESTED": 4,
+      "FORTIFIED": 3,
+      "LOCKED": 0
+    },
+    "sub_model_composite_range": {
+      "min": 69.25,
+      "max": 80.75,
+      "mean": 73.85
+    },
+    "sub_model_opp_range": {
+      "min": 33.0,
+      "max": 66.5,
+      "mean": 50.05
+    },
+    "key_finding": "Decomposition reveals genuine heterogeneity in both FORTIFIED parents. MC-UTL-002 (Nuclear AI, OPP=44.5) decomposes into layers spanning FORTIFIED (43.5) to ACCESSIBLE (64.0) — the SMR Construction AI and Grid Integration AI layers are independently ACCESSIBLE with composites of 78.5 and 79.25 respectively, matching or exceeding the parent's transformation score while being dramatically more accessible. MC-UTL-004 (Solar+Storage, OPP=44.5) shows even wider dispersion: project development is MORE fortified than the parent (OPP=33.0), while the energy management software layer is ACCESSIBLE (OPP=66.5) with the HIGHEST composite in either decomposition (80.75). The parent CLA averages across fortress layers (development, EPC) and open layers (software), confirming the Granularity Framework's core thesis.",
+    "cross_decomposition_insight": "Both decompositions converge on the same structural pattern: PHYSICAL layers (reactor operations, project development, construction, hardware) remain FORTIFIED or more concentrated than the parent, while SOFTWARE layers (dispatch optimization, energy management, commissioning AI, grid integration AI) are ACCESSIBLE or CONTESTED. This is a utilities-sector-specific manifestation of the broader 'software layer accessibility' pattern — physical infrastructure moats don't extend upward into the optimization software layer. The most actionable sub-models in both value chains are pure SaaS plays that sit on top of physical assets controlled by others.",
+    "parent_annotation": {
+      "MC-UTL-002": "Sector-level assessment (OPP=44.5, FORTIFIED) averages across 5 layers ranging from FORTIFIED to ACCESSIBLE. Sub-models MC-UTL-002-L3 (SMR Construction AI, OPP=64.0) and MC-UTL-002-L6 (Grid Integration AI, OPP=64.0) represent ACCESSIBLE entry points within the nuclear value chain. Core reactor monitoring (L1) failed IVB — it IS the fortress.",
+      "MC-UTL-004": "Sector-level assessment (OPP=44.5, FORTIFIED) averages across 5 layers ranging from 33.0 (MORE fortified) to 66.5 (ACCESSIBLE). Sub-model MC-UTL-004-L5 (Energy Management Software, OPP=66.5) is the standout — highest composite (80.75) and highest accessibility in either decomposition. Project development (L1, OPP=33.0) is MORE fortified than the parent, confirming NextEra/AES dominance."
+    }
+  }
+}

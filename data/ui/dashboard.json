@@ -1,19 +1,20 @@
 {
-  "engine_version": "v3.9",
+  "engine_version": "v3.10",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "current_cycle": "v3-9",
-  "last_updated": "2026-02-12T23:30:00Z",
+  "current_cycle": "v3-10",
+  "last_updated": "2026-02-12T23:59:00Z",
   "projection_horizon": "2026-2031",
   "data_sources_used": 44,
   "total_signals_scanned": 397,
-  "total_models_rated": 435,
+  "total_models_rated": 454,
   "total_models_unscored": 0,
   "enumerated_stubs": 2823,
-  "new_models_this_cycle": 22,
+  "new_models_this_cycle": 19,
+  "new_model_type": "value_chain_decomposition_sub_models",
   "evidence_base": {
     "v2_cycles": 9,
     "v2_models_original": 522,
-    "v3_models_rated": 435,
+    "v3_models_rated": 454,
     "v3_models_unscored": 0,
     "v3_enumerated_stubs": 2823,
     "v2_patterns": 28,
@@ -25,7 +26,11 @@
     "v3_cascade_models": 3,
     "v3_sector_screener_candidates": 10,
     "connectors_available": 17,
-    "v3_counter_signals": 9
+    "v3_counter_signals": 9,
+    "v3_decomposed_parents": 7,
+    "v3_sub_models": 19,
+    "v3_confirmed_uniform_fortified": 3,
+    "granularity_framework_version": "1.0"
   },
   "force_velocities": {
     "F1_technology": {
@@ -2471,32 +2476,72 @@
       "name": "Retail Media Network Platform",
       "composite": 86.5,
       "category": "STRUCTURAL_WINNER",
-      "opportunity_rank": 435,
+      "opportunity_rank": 454,
       "opp_composite": 31.0,
-      "opp_category": "FORTIFIED"
+      "opp_category": "FORTIFIED",
+      "decomposed": true,
+      "sub_model_count": 3
     },
     {
       "rank": 2,
+      "id": "MC-V38-44-003-L3",
+      "name": "Retail Media Measurement & Attribution Platform",
+      "composite": 84.5,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 131,
+      "opp_composite": 66.5,
+      "opp_category": "ACCESSIBLE",
+      "is_sub_model": true,
+      "parent_id": "MC-V38-44-003"
+    },
+    {
+      "rank": 3,
       "id": "MC-V38-44-002",
       "name": "Warehouse Fulfillment Robotics Platform",
       "composite": 84.0,
       "category": "STRUCTURAL_WINNER",
-      "opportunity_rank": 428,
+      "opportunity_rank": 445,
       "opp_composite": 41.0,
-      "opp_category": "FORTIFIED"
+      "opp_category": "FORTIFIED",
+      "decomposed": true,
+      "sub_model_count": 3
     },
     {
-      "rank": 3,
+      "rank": 4,
+      "id": "MC-DEF-012-L4",
+      "name": "AI-Powered Cloud Compliance & Accreditation Automation Platform",
+      "composite": 83.5,
+      "category": "FORCE_RIDER",
+      "opportunity_rank": 129,
+      "opp_composite": 66.5,
+      "opp_category": "ACCESSIBLE",
+      "is_sub_model": true,
+      "parent_id": "MC-DEF-012"
+    },
+    {
+      "rank": 5,
+      "id": "MC-V38-44-002-L3",
+      "name": "AI-Native Warehouse Orchestration Platform",
+      "composite": 83.0,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 378,
+      "opp_composite": 50.5,
+      "opp_category": "CONTESTED",
+      "is_sub_model": true,
+      "parent_id": "MC-V38-44-002"
+    },
+    {
+      "rank": 6,
       "id": "MC-V39-MFG-011",
       "name": "Defense Manufacturing Compliance Platform (CMMC)",
       "composite": 83.0,
       "category": "STRUCTURAL_WINNER",
-      "opportunity_rank": 140,
+      "opportunity_rank": 144,
       "opp_composite": 66.0,
       "opp_category": "ACCESSIBLE"
     },
     {
-      "rank": 4,
+      "rank": 7,
       "id": "V3-FEAR-001",
       "name": "AI Governance and Compliance Operating System",
       "composite": 83.0,
@@ -2506,17 +2551,17 @@
       "opp_category": "WIDE_OPEN"
     },
     {
-      "rank": 5,
+      "rank": 8,
       "id": "MC-DEF-011",
       "name": "CMMC Compliance Automation Platform",
       "composite": 82.5,
       "category": "FORCE_RIDER",
-      "opportunity_rank": 153,
+      "opportunity_rank": 157,
       "opp_composite": 65.0,
       "opp_category": "ACCESSIBLE"
     },
     {
-      "rank": 6,
+      "rank": 9,
       "id": "MC-INFO-002",
       "name": "AI Code Quality and Security Audit Platform",
       "composite": 82.5,
@@ -2526,54 +2571,72 @@
       "opp_category": "ACCESSIBLE"
     },
     {
-      "rank": 7,
+      "rank": 10,
       "id": "MC-V39-MFG-009",
       "name": "Semiconductor Test & Packaging Services Platform",
       "composite": 82.5,
       "category": "STRUCTURAL_WINNER",
-      "opportunity_rank": 190,
+      "opportunity_rank": 196,
       "opp_composite": 63.0,
       "opp_category": "ACCESSIBLE"
-    },
-    {
-      "rank": 8,
-      "id": "MC-INFO-001",
-      "name": "AI-Native Data Center Operations Platform",
-      "composite": 82.0,
-      "category": "FORCE_RIDER",
-      "opportunity_rank": 353,
-      "opp_composite": 52.5,
-      "opp_category": "CONTESTED"
-    },
-    {
-      "rank": 9,
-      "id": "V3-DEF-001",
-      "name": "Autonomous Drone Swarm Command Platform",
-      "composite": 82.0,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_rank": 429,
-      "opp_composite": 39.0,
-      "opp_category": "FORTIFIED"
-    },
-    {
-      "rank": 10,
-      "id": "V3-DEF-003",
-      "name": "Cybersecurity AI for Defense Networks",
-      "composite": 81.75,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_rank": 338,
-      "opp_composite": 54.5,
-      "opp_category": "CONTESTED"
     }
   ],
   "category_distribution": {
-    "STRUCTURAL_WINNER": 15,
-    "FORCE_RIDER": 147,
-    "TIMING_ARBITRAGE": 18,
-    "CAPITAL_MOAT": 4,
+    "STRUCTURAL_WINNER": 20,
+    "FORCE_RIDER": 164,
+    "TIMING_ARBITRAGE": 19,
+    "CAPITAL_MOAT": 5,
     "FEAR_ECONOMY": 16,
-    "EMERGING_CATEGORY": 6,
+    "EMERGING_CATEGORY": 4,
     "CONDITIONAL": 157,
-    "PARKED": 72
+    "PARKED": 69
+  },
+  "granularity_decomposition": {
+    "framework_version": "1.0",
+    "parents_analyzed": 10,
+    "parents_decomposed": 7,
+    "parents_confirmed_uniform": 3,
+    "sub_models_created": 19,
+    "sub_model_opp_distribution": {
+      "ACCESSIBLE": 9,
+      "CONTESTED": 7,
+      "FORTIFIED": 3
+    },
+    "key_finding": "FORTIFIED fortress markets contain hidden ACCESSIBLE sub-positions. Physical layers remain FORTIFIED, software layers are ACCESSIBLE — consistent cross-sector pattern.",
+    "top_sub_models": [
+      {
+        "id": "MC-V38-44-003-L3",
+        "name": "Retail Media Measurement & Attribution Platform",
+        "parent": "Retail Media Network Platform (T#1)",
+        "t_rank": 2,
+        "composite": 84.5,
+        "opp": 66.5,
+        "opp_category": "ACCESSIBLE",
+        "parent_opp": 31.0,
+        "delta": 35.5
+      },
+      {
+        "id": "MC-DEF-012-L4",
+        "name": "AI-Powered Cloud Compliance & Accreditation Platform",
+        "parent": "Classified AI Deployment (IL5/6) (T#39)",
+        "t_rank": 4,
+        "composite": 83.5,
+        "opp": 66.5,
+        "opp_category": "ACCESSIBLE",
+        "parent_opp": 36.5,
+        "delta": 30.0
+      },
+      {
+        "id": "MC-UTL-004-L5",
+        "name": "DC Campus Solar+Storage AI Dispatch & Energy Optimization",
+        "parent": "Solar+Storage for DC Campuses (T#76)",
+        "t_rank": 22,
+        "composite": 80.75,
+        "opp": 66.5,
+        "opp_category": "ACCESSIBLE",
+        "parent_opp": 44.5,
+        "delta": 22.0
+      }
+    ]
   }
 }
