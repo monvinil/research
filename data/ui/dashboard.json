@@ -6,14 +6,14 @@
   "projection_horizon": "2026-2031",
   "data_sources_used": 44,
   "total_signals_scanned": 344,
-  "total_models_rated": 345,
+  "total_models_rated": 389,
   "total_models_unscored": 0,
   "enumerated_stubs": 2823,
-  "new_models_this_cycle": 20,
+  "new_models_this_cycle": 64,
   "evidence_base": {
     "v2_cycles": 9,
     "v2_models_original": 522,
-    "v3_models_rated": 345,
+    "v3_models_rated": 389,
     "v3_models_unscored": 0,
     "v3_enumerated_stubs": 2823,
     "v2_patterns": 28,
@@ -21,8 +21,8 @@
     "naics_sectors_mapped": 293,
     "v3_sectors_with_transformations": 13,
     "v3_geographies_profiled": 8,
-    "v3_sector_deep_dives": 7,
-    "v3_cascade_models": 1,
+    "v3_sector_deep_dives": 8,
+    "v3_cascade_models": 3,
     "v3_sector_screener_candidates": 10,
     "connectors_available": 17
   },
@@ -550,27 +550,27 @@
   "rating_system": {
     "version": "v3.7",
     "axes": ["SN (25%)", "FA (25%)", "EC (20%)", "TG (15%)", "CE (15%)"],
-    "total_models_rated": 345,
+    "total_models_rated": 389,
     "enumerated_stubs": 2823,
     "unscored_model_cards": 0,
     "category_distribution": {
-      "STRUCTURAL_WINNER": 9,
-      "FORCE_RIDER": 101,
-      "TIMING_ARBITRAGE": 13,
-      "CAPITAL_MOAT": 3,
-      "FEAR_ECONOMY": 8,
+      "STRUCTURAL_WINNER": 10,
+      "FORCE_RIDER": 130,
+      "TIMING_ARBITRAGE": 16,
+      "CAPITAL_MOAT": 4,
+      "FEAR_ECONOMY": 10,
       "EMERGING_CATEGORY": 4,
-      "CONDITIONAL": 138,
+      "CONDITIONAL": 146,
       "PARKED": 69
     },
     "composite_stats": {
       "max": 83.0,
       "min": 29.25,
-      "mean": 64.58,
-      "median": 64.5,
-      "above_80": 10,
-      "70_to_80": 82,
-      "60_to_70": 182,
+      "mean": 65.48,
+      "median": 65.75,
+      "above_80": 12,
+      "70_to_80": 110,
+      "60_to_70": 196,
       "50_to_60": 45,
       "below_50": 26
     },
@@ -581,30 +581,30 @@
       {"sector": "Sector screener: 10 candidates identified", "models": "NAICS 51 (Information), 523 (Securities), 55 (Management), 22 (Utilities), 53 (Real Estate), 21 (Mining/O&G), 5415 (Computer Systems), 44-45 (Retail), 71 (Arts/Entertainment), 81 (Other Services)"}
     ],
     "top_20_by_composite": [
-      {"rank": 1, "id": "MC-GOV-AI-01", "name": "AI Governance and Compliance OS", "composite": 83.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 1, "id": "V3-FEAR-001", "name": "AI Governance and Compliance OS", "composite": 83.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
       {"rank": 2, "id": "MC-DEF-011", "name": "CMMC Compliance Automation Platform", "composite": 82.5, "category": "FORCE_RIDER", "source": "defense_deep_dive"},
-      {"rank": 3, "id": "MC-DEF-DRONE-01", "name": "Autonomous Drone Swarm Command Platform", "composite": 82.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
-      {"rank": 4, "id": "MC-DEF-CYBER-01", "name": "Cybersecurity AI for Defense Networks", "composite": 81.75, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
-      {"rank": 5, "id": "MC-DEF-INTEL-01", "name": "Defense AI/ML Intelligence Fusion", "composite": 81.25, "category": "FORCE_RIDER", "source": "new_macro"},
-      {"rank": 6, "id": "MC-MICRO-OS-01", "name": "Micro-Firm AI Operating System", "composite": 80.5, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
-      {"rank": 7, "id": "C7-FSR-HCMULTI-01", "name": "Healthcare AI Multi-State Compliance", "composite": 80.25, "category": "FORCE_RIDER", "source": "v2_top40"},
-      {"rank": 8, "id": "C7-AM-CNC-01", "name": "Acquire + Modernize CNC Shop", "composite": 79.0, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
-      {"rank": 9, "id": "MC-V35-5239-001", "name": "RegTech Orchestration Layer for Alt Investment Compliance", "composite": 78.75, "category": "FORCE_RIDER", "source": "v35_model_cards"},
-      {"rank": 10, "id": "C7-DC-FIN-01", "name": "AI Financial Intelligence Platform", "composite": 78.75, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
-      {"rank": 11, "id": "MC-V35-5223-001", "name": "Mortgage and Loan Servicing AI Operations Platform", "composite": 78.5, "category": "FORCE_RIDER", "source": "v35_model_cards"},
-      {"rank": 12, "id": "MC-DEF-012", "name": "Classified Environment AI Deployment Platform (IL5/IL6)", "composite": 78.5, "category": "FORCE_RIDER", "source": "defense_deep_dive"},
-      {"rank": 13, "id": "PC8-FSR-WHOLESALE-01", "name": "Full-Service AI Wholesale Brokerage", "composite": 78.2, "category": "STRUCTURAL_WINNER", "source": "expansion"},
-      {"rank": 14, "id": "MC-DEF-MAINT-01", "name": "Defense Predictive Maintenance AI", "composite": 78.0, "category": "FORCE_RIDER", "source": "new_macro"},
-      {"rank": 15, "id": "MC-DEF-017", "name": "Defense AI T&E Platform (T&E-as-a-Service)", "composite": 77.75, "category": "FORCE_RIDER", "source": "defense_deep_dive"},
-      {"rank": 16, "id": "C7-RC-MFG-01", "name": "Multi-Shop CNC/Metal Fab Rollup", "composite": 77.5, "category": "FORCE_RIDER", "source": "v2_top40"},
-      {"rank": 17, "id": "MC-ENERGY-001", "name": "Grid Interconnection Platform", "composite": 77.25, "category": "FORCE_RIDER", "source": "new_macro"},
-      {"rank": 18, "id": "MC-V35-5259-001", "name": "AI-Native Fund Administration Platform", "composite": 77.25, "category": "FORCE_RIDER", "source": "v35_model_cards"},
-      {"rank": 19, "id": "MC-52-001", "name": "AI-Native Accounting Practice Platform", "composite": 77.0, "category": "FORCE_RIDER", "source": "v3-2"},
-      {"rank": 20, "id": "V3-EDU-004", "name": "Corporate AI Reskilling-as-a-Service", "composite": 76.5, "category": "FORCE_RIDER", "source": "new_macro"}
+      {"rank": 3, "id": "MC-INFO-002", "name": "AI Code Quality and Security Audit Platform", "composite": 82.5, "category": "STRUCTURAL_WINNER", "source": "v36_deep_dive_information"},
+      {"rank": 4, "id": "MC-INFO-001", "name": "AI-Native Data Center Operations Platform", "composite": 82.0, "category": "FORCE_RIDER", "source": "v36_deep_dive_information"},
+      {"rank": 5, "id": "V3-DEF-001", "name": "Autonomous Drone Swarm Command Platform", "composite": 82.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 6, "id": "V3-DEF-003", "name": "Cybersecurity AI for Defense Networks", "composite": 81.75, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 7, "id": "V3-DEF-002", "name": "Defense AI/ML Intelligence Fusion Platform", "composite": 81.25, "category": "FORCE_RIDER", "source": "new_macro"},
+      {"rank": 8, "id": "MC-UTL-001", "name": "AI-Powered Grid Optimization and Dispatch Platform", "composite": 81.0, "category": "FORCE_RIDER", "source": "v36_deep_dive_utilities"},
+      {"rank": 9, "id": "MC-V37-523-002", "name": "Securities Compliance Automation Platform", "composite": 80.5, "category": "FORCE_RIDER", "source": "v37_deep_dive_securities", "new": true},
+      {"rank": 10, "id": "V3-EMRG-001", "name": "Micro-Firm AI Operating System", "composite": 80.5, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 11, "id": "C7-RMB-HC-01", "name": "Healthcare AI Multi-State Compliance", "composite": 80.25, "category": "FORCE_RIDER", "source": "v2_top40"},
+      {"rank": 12, "id": "MC-V37-62-003", "name": "Healthcare Revenue Cycle AI Automation", "composite": 80.0, "category": "STRUCTURAL_WINNER", "source": "v37_healthcare_monoculture", "new": true},
+      {"rank": 13, "id": "MC-V37-523-001", "name": "AI-Augmented RIA Rollup Platform", "composite": 79.75, "category": "FORCE_RIDER", "source": "v37_deep_dive_securities", "new": true},
+      {"rank": 14, "id": "MC-INFO-003", "name": "Content Authentication and Provenance Platform", "composite": 79.25, "category": "FORCE_RIDER", "source": "v36_deep_dive_information"},
+      {"rank": 15, "id": "MC-V37-523-003", "name": "Investment Banking Junior Analyst AI Workforce", "composite": 79.25, "category": "FORCE_RIDER", "source": "v37_deep_dive_securities", "new": true},
+      {"rank": 16, "id": "C7-AM-CNC-01", "name": "Acquire + Modernize CNC Shop", "composite": 79.0, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
+      {"rank": 17, "id": "MC-UTL-002", "name": "Nuclear Plant AI Operations and Predictive Maintenance", "composite": 79.0, "category": "FORCE_RIDER", "source": "v36_deep_dive_utilities"},
+      {"rank": 18, "id": "C7-DC-FIN-01", "name": "AI Financial Intelligence Platform", "composite": 78.75, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
+      {"rank": 19, "id": "MC-V35-5239-001", "name": "RegTech Alt Investment Compliance", "composite": 78.75, "category": "FORCE_RIDER", "source": "v35_model_cards"},
+      {"rank": 20, "id": "MC-DEF-012", "name": "Classified Environment AI Deployment Platform", "composite": 78.5, "category": "FORCE_RIDER", "source": "defense_deep_dive"}
     ],
     "v37_changes": [
       "4 sector deep dives completed: IT Services (5415), Management (55), Real Estate (53), Securities (523)",
-      "20 new model cards integrated (325→345 total rated models)",
+      "64 new model cards integrated (345→389 total rated models) from deep dives + healthcare monoculture",
       "49 new signals scanned across all 6 forces",
       "2 new patterns confirmed: P-039 (Healthcare Employment Monoculture), P-040 (Securities Inverse Baumol)",
       "Triple frontier AI launch: Opus 4.6 + GPT-5.3-Codex + Gemini 3 on same day (Feb 5)",
@@ -615,7 +615,11 @@
       "Securities inverse Baumol: highest Baumol sector (3.71x) shows wages DOWN while employment UP",
       "Management sector identified as economy's coordination overhead layer — 55% routine-cognitive, Coasean compression",
       "Real Estate confirmed as primary cascade receptor — CMBS + remote work + AI workforce reduction converge",
-      "4 new sector transformations mapped (total now 13)"
+      "4 new sector transformations mapped (total now 13)",
+      "MC-V37-523-002 (Securities Compliance Automation) enters top 10 at 80.5",
+      "MC-V37-62-003 (Healthcare RCM Automation) earns STRUCTURAL_WINNER at 80.0",
+      "MC-V37-523-001 (AI-Augmented RIA Rollup) enters top 15 at 79.75",
+      "MC-V37-523-003 (IB Junior Analyst AI Workforce) enters top 15 at 79.25"
     ]
   },
 
@@ -636,8 +640,8 @@
   ],
 
   "model_inventory": {
-    "note": "345 rated models (325 from v3-6 + 20 new from v3-7 deep dives across IT Services, Management, Real Estate, Securities) + 2,823 enumerated stubs. 5-axis scoring: SN/FA/EC/TG/CE.",
-    "rated_models_file": "data/verified/v3-7_normalized_2026-02-12.json",
+    "note": "389 rated models (345 base + 44 new model cards from IT Services, Securities, Real Estate, Management deep dives + Healthcare monoculture) + 2,823 enumerated stubs. 5-axis scoring: SN/FA/EC/TG/CE.",
+    "rated_models_file": "data/verified/v3-7_normalized_final_2026-02-12.json",
     "model_cards_file": "data/verified/v35_model_cards_2026-02-11.json",
     "scored_deep_dive_file": "data/verified/v3-6_scored_deep_dive_cards_2026-02-12.json",
     "sector_screener_file": "data/verified/v3-6_sector_screener_candidates_2026-02-12.json",
@@ -645,10 +649,10 @@
     "education_deep_dive_file": "data/verified/education_sector_deep_dive_2026-02-11.json",
     "enumerated_4digit_file": "data/verified/enumerated_4digit_2026-02-11.json",
     "enumerated_6digit_file": "data/verified/enumerated_6digit_2026-02-11.json",
-    "rated": 345,
+    "rated": 389,
     "unscored_deep_dive_cards": 0,
     "enumerated_stubs": 2823,
-    "total_candidates": 3148,
+    "total_candidates": 3212,
     "sources": {
       "v3-2_cycle": {"count": 15},
       "new_macro_45": {"count": 45},
@@ -658,7 +662,11 @@
       "v35_deep_dives_scored": {"count": 16, "file": "v35 model cards (16) — all now scored"},
       "defense_deep_dive_scored": {"count": 8, "file": "defense cards MC-DEF-011 through MC-DEF-018"},
       "education_deep_dive_scored": {"count": 8, "file": "education cards MC-EDU-CORP-01 through MC-EDU-FEAR-01"},
-      "v36_note": "v3-6 scored all 31 previously unscored cards + added MC-DEF-011 (82.5) which enters top 10"
+      "v36_note": "v3-6 scored all 31 previously unscored cards + added MC-DEF-011 (82.5) which enters top 10",
+      "v37_deep_dive_it_services": {"count": 10, "file": "IT Services model cards MC-V37-5415-001 through 010"},
+      "v37_deep_dive_securities": {"count": 9, "file": "Securities model cards MC-V37-523-001 through 009"},
+      "v37_deep_dive_re_mgmt": {"count": 17, "file": "Real Estate (9) + Management (8) model cards"},
+      "v37_healthcare_monoculture": {"count": 8, "file": "Healthcare model cards MC-V37-62-001 through 008"}
     },
     "confirmed_cascades": [
       "Financial services: 98% adoption, 320+ branch closures, $800B-$1.2T value reallocation cascade modeled, CMBS 12.34% record",
@@ -712,6 +720,6 @@
     {"cycle": "v3-4", "type": "system_audit", "models_constructed": 293, "note": "System audit: batch normalization, GG->EC replacement, category hard-enforcement (STRUCTURAL_WINNER 27->8), dedup (295->293), agent prompt rewrite, top-down enumeration pipeline (2,823 stubs). Engine integrity restored."},
     {"cycle": "v3-5", "type": "sector_deep_dives", "models_constructed": 324, "note": "Sector deep dives (defense, education), FS cascade modeling, force refresh, 31 new model cards from deep dives. 3 new patterns (P-033, P-034, P-035). 2 new sectors tracked (Defense AI, Education). F5 velocity shifted, F4 PE trigger activated."},
     {"cycle": "v3-6", "type": "scoring_and_force_upgrade", "models_constructed": 325, "note": "43 signals + 10 counter-signals scanned. 32 deep-dive cards scored. 3 new patterns (P-036, P-037, P-038). F2/F5 UPGRADED accelerating. Defense UPGRADED acceleration. Sector screener identifies 10 candidates."},
-    {"cycle": "v3-7", "type": "sector_deep_dives_expansion", "models_constructed": 345, "note": "4 sector deep dives: IT Services (NAICS 5415, 2.46M workers, Baumol 2.05x), Management (NAICS 55, 2.55M workers — economy's command/control layer), Real Estate (NAICS 53, cascade receptor, most fragmented sector), Securities (NAICS 523, highest Baumol 3.71x, inverse Baumol divergence). 49 signals scanned. 2 new patterns: P-039 (Healthcare Monoculture — 95% of job creation), P-040 (Securities Inverse Baumol — wages down while employment up). Triple frontier launch (Opus 4.6 + GPT-5.3-Codex + Gemini 3). Chinese AI Spring (5 labs at frontier simultaneously). BLS 898K revision (1.7M cumulative overstatement). H-1B wage-weighted lottery Feb 27 binary event. 20 new model cards integrated (325→345)."}
+    {"cycle": "v3-7", "type": "sector_deep_dives_expansion", "models_constructed": 389, "note": "4 sector deep dives + 44 model cards from IT Services (10), Securities (9), Real Estate (9), Management (8), Healthcare monoculture (8). Total 345→389. Securities Compliance Automation (MC-V37-523-002) enters top 10 at 80.5. Healthcare RCM (MC-V37-62-003) earns STRUCTURAL_WINNER at 80.0. 49 signals scanned. 2 new patterns: P-039 (Healthcare Monoculture), P-040 (Securities Inverse Baumol). Triple frontier launch (Opus 4.6 + GPT-5.3-Codex + Gemini 3). Chinese AI Spring. BLS 898K revision (1.7M cumulative overstatement)."}
   ]
 }

@@ -2,7 +2,7 @@
   "state_version": 17,
   "current_cycle": "v3-7",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "engine_version": "3.7 -- 4 sector deep dives (IT Services 5415, Management 55, Real Estate 53, Securities 523), 49 signals scanned, 345 models rated (325→345), healthcare monoculture pattern identified, BLS 898K revision integrated, Chinese AI Spring (5 labs at frontier simultaneously)",
+  "engine_version": "3.7 -- 4 sector deep dives (IT Services 5415, Management 55, Real Estate 53, Securities 523) + 44 model cards from deep dives + healthcare monoculture, 49 signals scanned, 389 models rated (345→389), healthcare monoculture pattern identified, BLS 898K revision integrated, Chinese AI Spring (5 labs at frontier simultaneously)",
   "force_velocities": {
     "F1_technology": {
       "velocity": "accelerating",
@@ -632,66 +632,75 @@
       "CONDITIONAL",
       "PARKED"
     ],
-    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced."
+    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced.",
+    "total_models_rated": 389
   },
   "rated_models_index": {
-    "total_models_rated": 345,
-    "total_before_dedup": 347,
+    "total_models_rated": 389,
+    "total_before_dedup": 391,
     "variants_merged": 2,
-    "latest_file": "data/verified/v3-7_normalized_2026-02-12.json",
+    "latest_file": "data/verified/v3-7_normalized_final_2026-02-12.json",
     "deep_dive_scored_file": "data/verified/v3-6_scored_deep_dive_cards_2026-02-12.json",
     "unscored_deep_dive_cards": {
       "total_unscored": 0,
       "status": "All deep-dive cards scored through v3-7"
     },
     "category_distribution": {
-      "STRUCTURAL_WINNER": 9,
-      "FORCE_RIDER": 101,
-      "TIMING_ARBITRAGE": 13,
-      "CAPITAL_MOAT": 3,
-      "FEAR_ECONOMY": 8,
+      "STRUCTURAL_WINNER": 10,
+      "FORCE_RIDER": 130,
+      "TIMING_ARBITRAGE": 16,
+      "CAPITAL_MOAT": 4,
+      "FEAR_ECONOMY": 10,
       "EMERGING_CATEGORY": 4,
-      "CONDITIONAL": 138,
+      "CONDITIONAL": 146,
       "PARKED": 69
     },
     "composite_stats": {
       "max": 83.0,
       "min": 29.25,
-      "mean": 64.58,
-      "median": 64.5
+      "mean": 65.48,
+      "median": 65.75
     },
     "composite_distribution": {
-      "above_80": 10,
-      "70_to_80": 82,
-      "60_to_70": 182,
+      "above_80": 12,
+      "70_to_80": 110,
+      "60_to_70": 196,
       "50_to_60": 45,
       "below_50": 26
     },
     "top_10": [
-      {"rank": 1, "id": "MC-GOV-AI-01", "name": "AI Governance and Compliance Operating System", "composite": 84.0, "category": "STRUCTURAL_WINNER"},
+      {"rank": 1, "id": "V3-FEAR-001", "name": "AI Governance and Compliance Operating System", "composite": 83.0, "category": "STRUCTURAL_WINNER"},
       {"rank": 2, "id": "MC-DEF-011", "name": "CMMC Compliance Automation Platform", "composite": 82.5, "category": "FORCE_RIDER"},
-      {"rank": 3, "id": "MC-DEF-DRONE-01", "name": "Autonomous Drone Swarm Command Platform", "composite": 82.0, "category": "STRUCTURAL_WINNER"},
-      {"rank": 4, "id": "MC-DEF-CYBER-01", "name": "Cybersecurity AI for Defense Networks", "composite": 81.75, "category": "STRUCTURAL_WINNER"},
-      {"rank": 5, "id": "MC-DEF-INTEL-01", "name": "Defense AI/ML Intelligence Fusion Platform", "composite": 81.25, "category": "FORCE_RIDER"},
-      {"rank": 6, "id": "MC-MICRO-OS-01", "name": "Micro-Firm AI Operating System", "composite": 80.5, "category": "STRUCTURAL_WINNER"},
-      {"rank": 7, "id": "C7-FSR-HCMULTI-01", "name": "Healthcare AI Multi-State Compliance Platform", "composite": 80.25, "category": "FORCE_RIDER"},
-      {"rank": 8, "id": "C7-AM-CNC-01", "name": "Acquire + Modernize CNC Shop (Single Site)", "composite": 79.0, "category": "STRUCTURAL_WINNER"},
-      {"rank": 9, "id": "MC-V35-5239-001", "name": "RegTech Alt Investment Compliance", "composite": 78.75, "category": "FORCE_RIDER"},
-      {"rank": 10, "id": "MC-V35-5223-001", "name": "Mortgage Servicing AI Operations", "composite": 78.5, "category": "FORCE_RIDER"}
+      {"rank": 3, "id": "MC-INFO-002", "name": "AI Code Quality and Security Audit Platform", "composite": 82.5, "category": "STRUCTURAL_WINNER"},
+      {"rank": 4, "id": "MC-INFO-001", "name": "AI-Native Data Center Operations Platform", "composite": 82.0, "category": "FORCE_RIDER"},
+      {"rank": 5, "id": "V3-DEF-001", "name": "Autonomous Drone Swarm Command Platform", "composite": 82.0, "category": "STRUCTURAL_WINNER"},
+      {"rank": 6, "id": "V3-DEF-003", "name": "Cybersecurity AI for Defense Networks", "composite": 81.75, "category": "STRUCTURAL_WINNER"},
+      {"rank": 7, "id": "V3-DEF-002", "name": "Defense AI/ML Intelligence Fusion Platform", "composite": 81.25, "category": "FORCE_RIDER"},
+      {"rank": 8, "id": "MC-UTL-001", "name": "AI-Powered Grid Optimization and Dispatch Platform", "composite": 81.0, "category": "FORCE_RIDER"},
+      {"rank": 9, "id": "MC-V37-523-002", "name": "Securities Compliance Automation Platform", "composite": 80.5, "category": "FORCE_RIDER"},
+      {"rank": 10, "id": "V3-EMRG-001", "name": "Micro-Firm AI Operating System", "composite": 80.5, "category": "STRUCTURAL_WINNER"}
     ],
     "new_cards_v37": {
-      "count": 20,
-      "sectors_covered": ["IT Services (5415)", "Management (55)", "Real Estate (53)", "Securities (523)"],
-      "note": "20 new model cards from 4 sector deep dives integrated into normalized inventory"
+      "count": 64,
+      "sectors_covered": ["IT Services (5415)", "Management (55)", "Real Estate (53)", "Securities (523)", "Healthcare (62)"],
+      "note": "64 new model cards from 4 sector deep dives + healthcare monoculture model cards integrated (345→389 final)"
     },
     "source_batches": {
       "v3-2_cycle": 15,
       "new_macro_45": 45,
       "top_40_deep": 40,
       "expansion_123": 123,
-      "mid_41to112": 72,
-      "v36_deep_dive_cards": 32,
-      "v37_deep_dive_cards": 20
+      "mid_41to112": 70,
+      "v36_deep_dive_defense": 8,
+      "v36_deep_dive_education": 8,
+      "v36_deep_dive_information": 10,
+      "v36_deep_dive_utilities": 10,
+      "v36_deep_dive_v35_model_cards": 16,
+      "v37_deep_dive_it_services": 10,
+      "v37_deep_dive_management": 8,
+      "v37_deep_dive_real_estate": 9,
+      "v37_deep_dive_securities": 9,
+      "v37_healthcare_monoculture": 8
     },
     "normalization_applied": {
       "batch_calibration": true,
@@ -797,11 +806,11 @@
     "v3_geographies_profiled": 8,
     "v3_force_dimensions_tracked": 6,
     "v3_cycles_completed": 7,
-    "v3_models_rated": 345,
+    "v3_models_rated": 389,
     "v3_models_unscored": 0,
     "v3_patterns_total": 20,
-    "v3_sector_deep_dives": 7,
-    "v3_cascade_models": 1,
+    "v3_sector_deep_dives": 8,
+    "v3_cascade_models": 3,
     "v3_signals_this_cycle": 49,
     "v3_counter_signals_this_cycle": 10,
     "connectors_available": 17,
