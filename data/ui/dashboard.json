@@ -1,30 +1,30 @@
 {
-  "engine_version": "v3.6",
+  "engine_version": "v3.7",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "current_cycle": "v3-6",
-  "last_updated": "2026-02-12T12:00:00Z",
+  "current_cycle": "v3-7",
+  "last_updated": "2026-02-12T14:00:00Z",
   "projection_horizon": "2026-2031",
-  "data_sources_used": 42,
-  "total_signals_scanned": 295,
-  "total_models_rated": 325,
+  "data_sources_used": 44,
+  "total_signals_scanned": 344,
+  "total_models_rated": 345,
   "total_models_unscored": 0,
   "enumerated_stubs": 2823,
-  "new_models_this_cycle": 32,
+  "new_models_this_cycle": 20,
   "evidence_base": {
     "v2_cycles": 9,
     "v2_models_original": 522,
-    "v3_models_rated": 325,
+    "v3_models_rated": 345,
     "v3_models_unscored": 0,
     "v3_enumerated_stubs": 2823,
     "v2_patterns": 28,
-    "v3_patterns": 18,
+    "v3_patterns": 20,
     "naics_sectors_mapped": 293,
-    "v3_sectors_with_transformations": 9,
+    "v3_sectors_with_transformations": 13,
     "v3_geographies_profiled": 8,
-    "v3_sector_deep_dives": 3,
+    "v3_sector_deep_dives": 7,
     "v3_cascade_models": 1,
     "v3_sector_screener_candidates": 10,
-    "connectors_available": 15
+    "connectors_available": 17
   },
 
   "force_velocities": {
@@ -33,7 +33,7 @@
       "velocity": "accelerating",
       "confidence": "high",
       "direction": "up",
-      "key_metric": "Agentic AI platforms launched (OpenAI Frontier, Claude Opus 4.6 agent teams); open-source gap near real-time parity",
+      "key_metric": "Triple frontier launch (Opus 4.6 + GPT-5.3-Codex + Gemini 3 same day); Chinese AI Spring (5 labs at frontier simultaneously); DeepSeek V4 imminent",
       "key_data": [
         "OpenAI Frontier: first enterprise agent management platform launched Feb 5, 2026 (Intuit, Uber, State Farm, Thermo Fisher)",
         "Claude Opus 4.6: agent teams with multi-agent parallel task decomposition; 500+ zero-day vulnerabilities discovered in testing",
@@ -50,14 +50,14 @@
         "Enterprise GenAI spending $37B in 2025 (3.2x YoY); 66% report productivity gains but enterprise-wide EBIT impact still rare",
         "Agentic AI shifting from single-task to multi-step autonomous workflows — now platform-level deployment"
       ],
-      "2031_projection": "Early Deployment phase — AI shifts from infrastructure build to systematic economic integration. Agentic AI platforms operationalize multi-agent workflows across enterprises. ROI plateau persists for most; concentrated returns for platform winners."
+      "2031_projection": "Early Deployment phase — AI shifts from infrastructure build to systematic economic integration. Triple frontier launch (Feb 5) + Chinese AI Spring (5 labs) confirms AI is a race, not a march. Open-source parity measured in days. Multi-agent orchestration deployed at enterprise scale."
     },
     "F2_demographics": {
       "name": "Demographics",
       "velocity": "accelerating",
       "confidence": "high",
       "direction": "diverging",
-      "key_metric": "China births collapse -17% to 7.92M (1738 levels); US 898K job revision reveals weaker labor market; college enrollment cliff NOW hitting",
+      "key_metric": "Healthcare monoculture: 95% of Jan 2026 job creation; BLS 898K revision (1.7M cumulative overstatement); H-1B wage-weighted lottery Feb 27 binary event",
       "key_data": [
         "China 2025 births: 7.92M (from 9.54M, -17%) — comparable to 1738 when population was 150M",
         "China women aged 20-34: 105M (2025) -> 58M by 2050 (-45%) — irreversible demographic decline",
@@ -548,31 +548,31 @@
   },
 
   "rating_system": {
-    "version": "v3.6",
+    "version": "v3.7",
     "axes": ["SN (25%)", "FA (25%)", "EC (20%)", "TG (15%)", "CE (15%)"],
-    "total_models_rated": 325,
+    "total_models_rated": 345,
     "enumerated_stubs": 2823,
     "unscored_model_cards": 0,
     "category_distribution": {
-      "STRUCTURAL_WINNER": 8,
-      "FORCE_RIDER": 87,
-      "TIMING_ARBITRAGE": 12,
+      "STRUCTURAL_WINNER": 9,
+      "FORCE_RIDER": 101,
+      "TIMING_ARBITRAGE": 13,
       "CAPITAL_MOAT": 3,
       "FEAR_ECONOMY": 8,
       "EMERGING_CATEGORY": 4,
-      "CONDITIONAL": 136,
+      "CONDITIONAL": 138,
       "PARKED": 69
     },
     "composite_stats": {
       "max": 83.0,
       "min": 29.25,
-      "mean": 64.2,
+      "mean": 64.58,
       "median": 64.5,
-      "above_80": 7,
-      "70_to_80": 55,
-      "60_to_70": 178,
-      "50_to_60": 55,
-      "below_50": 30
+      "above_80": 10,
+      "70_to_80": 82,
+      "60_to_70": 182,
+      "50_to_60": 45,
+      "below_50": 26
     },
     "new_sectors_this_cycle": [
       {"sector": "Defense AI (NAICS 928110)", "models": "8 newly scored from deep dive (MC-DEF-011 through MC-DEF-018)"},
@@ -602,18 +602,20 @@
       {"rank": 19, "id": "MC-52-001", "name": "AI-Native Accounting Practice Platform", "composite": 77.0, "category": "FORCE_RIDER", "source": "v3-2"},
       {"rank": 20, "id": "V3-EDU-004", "name": "Corporate AI Reskilling-as-a-Service", "composite": 76.5, "category": "FORCE_RIDER", "source": "new_macro"}
     ],
-    "v36_changes": [
-      "32 deep-dive cards scored through 5-axis system: 16 v35 model cards, 8 defense, 8 education",
-      "MC-DEF-011 CMMC Compliance: 82.5 composite — enters top 10 at rank 2, strongest new card",
-      "0 unscored cards remain (all 31 from v3-5 now scored)",
-      "Category distribution: FORCE_RIDER 66->87 (+21), FEAR_ECONOMY 7->8 (+1), CONDITIONAL 126->136 (+10)",
-      "Defense cards average 74.8 composite (highest source); education cards 68.9 (lowest, fear friction explains)",
-      "F2 Demographics velocity UPGRADED: steady -> accelerating (China births collapse, US 898K revision, entry-level extinction)",
-      "F5 Psychology velocity UPGRADED: shifting -> accelerating (60% worker fear, experiential fear, deepfake crisis)",
-      "Defense AI phase UPGRADED: early_disruption -> acceleration ($54.4B exits exceed investment, AUKUS interop, ReArm EUR 800B)",
-      "3 new patterns: P-036 (Anticipatory Displacement), P-037 (Entry-Level Extinction), P-038 (AI Infrastructure Chain Constraint)",
-      "Sector screener identifies 10 deep-dive candidates led by NAICS 51 (Information) and 22 (Utilities)",
-      "43 signals + 10 counter-signals scanned across all 6 forces"
+    "v37_changes": [
+      "4 sector deep dives completed: IT Services (5415), Management (55), Real Estate (53), Securities (523)",
+      "20 new model cards integrated (325→345 total rated models)",
+      "49 new signals scanned across all 6 forces",
+      "2 new patterns confirmed: P-039 (Healthcare Employment Monoculture), P-040 (Securities Inverse Baumol)",
+      "Triple frontier AI launch: Opus 4.6 + GPT-5.3-Codex + Gemini 3 on same day (Feb 5)",
+      "Chinese AI Spring: 5 labs at near-frontier simultaneously — export controls strategically irrelevant",
+      "Healthcare monoculture: 95% of Jan 2026 net job creation in one sector",
+      "BLS 898K revision + 818K prior = 1.7M cumulative overstatement — 2024 economy weaker than reported",
+      "H-1B wage-weighted lottery effective Feb 27 — binary event for IT services labor supply",
+      "Securities inverse Baumol: highest Baumol sector (3.71x) shows wages DOWN while employment UP",
+      "Management sector identified as economy's coordination overhead layer — 55% routine-cognitive, Coasean compression",
+      "Real Estate confirmed as primary cascade receptor — CMBS + remote work + AI workforce reduction converge",
+      "4 new sector transformations mapped (total now 13)"
     ]
   },
 
@@ -626,12 +628,16 @@
     {"naics": "23", "name": "Construction", "phase": "pre_disruption", "employment_2026": 8.2, "employment_2031": 8.0, "change_pct": -2.4, "top_model": "\u2014", "v36_evidence": "Construction +33K in Jan 2026. Data center construction driving demand. 70 GW solar rush-to-build before Jul 2026 credit expiry. AEC design/permitting AI emerging (MC-V35-5413-001)."},
     {"naics": "42", "name": "Wholesale Trade", "phase": "pre_disruption", "employment_2026": 3.1, "employment_2031": 2.6, "change_pct": -16.1, "top_model": "PC8-FSR-WHOLESALE-01", "v36_evidence": "US-China tariff truce at risk from Iran linkage. 47.5% average US tariff on Chinese goods. $1,300/household tariff tax estimated."},
     {"naics": "928110", "name": "Defense AI", "phase": "acceleration", "employment_2026": 3.4, "employment_2031": 3.8, "change_pct": 11.8, "top_model": "MC-DEF-011", "v36_evidence": "PHASE UPGRADED: early_disruption -> acceleration. Defense tech exits $54.4B (3x YoY, exceed investment). AUKUS AI interoperability proven. ReArm Europe EUR 800B. CMMC enforcement ramping. MC-DEF-011 (CMMC Compliance) scores 82.5, enters top 10. 8 defense cards scored avg 74.8."},
-    {"naics": "61", "name": "Educational Services", "phase": "early_disruption", "employment_2026": 14.8, "employment_2031": 13.2, "change_pct": -10.8, "top_model": "V3-EDU-004", "v36_evidence": "College enrollment cliff NOW: 15% decline projected 2025-2029, 400 schools could vanish. Brookings: AI risks outweigh benefits for children. Ohio mandates AI frameworks by Jul 2026. 8 education cards scored avg 68.9 (fear friction constrains). MC-EDU-FEAR-01 creates new FEAR_ECONOMY category for education governance."}
+    {"naics": "61", "name": "Educational Services", "phase": "early_disruption", "employment_2026": 14.8, "employment_2031": 13.2, "change_pct": -10.8, "top_model": "V3-EDU-004", "v36_evidence": "College enrollment cliff NOW: 15% decline projected 2025-2029, 400 schools could vanish. Brookings: AI risks outweigh benefits for children. Ohio mandates AI frameworks by Jul 2026. 8 education cards scored avg 68.9 (fear friction constrains). MC-EDU-FEAR-01 creates new FEAR_ECONOMY category for education governance."},
+    {"naics": "5415", "name": "IT Services", "phase": "early_disruption", "employment_2026": 2.46, "employment_2031": 1.8, "change_pct": -26.8, "top_model": "—", "v37_evidence": "NEW v3-7 deep dive. 2.46M workers, $366.8B payroll, Baumol 2.05x. Custom programming (541511) = 1.11M workers at $164K, highest AI substitution potential. 84% developers using AI coding daily. Employment flat (-0.4%) while wages +5% = Baumol squeeze onset. Extreme fragmentation (405K establishments, avg 6.1 workers). Solo/micro IT consultants (250K+) lose cost advantage to AI tools."},
+    {"naics": "55", "name": "Management of Companies", "phase": "early_disruption", "employment_2026": 2.55, "employment_2031": 2.1, "change_pct": -17.6, "top_model": "—", "v37_evidence": "NEW v3-7 deep dive. Economy's COMMAND AND CONTROL layer: 2.55M workers, $375B payroll, Baumol 2.02x. 55% routine-cognitive (reporting, budgets, coordination). Gartner: 20% of orgs eliminating >50% middle management by 2026. McKinsey cutting 10% workforce. Coasean theory: when AI collapses coordination cost, this sector's rationale weakens."},
+    {"naics": "53", "name": "Real Estate", "phase": "acceleration", "employment_2026": 2.39, "employment_2031": 1.9, "change_pct": -20.5, "top_model": "—", "v37_evidence": "NEW v3-7 deep dive. Primary SECOND-ORDER CASCADE RECEPTOR. Most fragmented major sector (488K establishments, avg 4.9 workers). CMBS 12.34% + $936B maturity wall + remote work + AI workforce reduction converge simultaneously. Office values 35-50% below 2020 peaks. NAR settlement + AI agents = existential pressure on 453K brokers."},
+    {"naics": "523", "name": "Securities & Investments", "phase": "acceleration", "employment_2026": 1.07, "employment_2031": 0.95, "change_pct": -11.2, "top_model": "—", "v37_evidence": "NEW v3-7 deep dive. Highest Baumol (3.71x), $287B payroll. KEY DIVERGENCE: wages DECLINING (-2.4%) while employment GROWS (+4.1%) = inverse Baumol. Structural shift from high-comp traders to AI-augmented ops. RIA M&A record 345 deals ($1.22T). 38% advisors plan to retire within decade. Entry-level analyst hiring -24pp."}
   ],
 
   "model_inventory": {
-    "note": "325 rated models (post-v3-6 scoring of 32 deep-dive cards) + 2,823 enumerated stubs. 5-axis scoring: SN/FA/EC/TG/CE. All 31 previously unscored cards now scored. Sector screener identified 10 new deep-dive candidates.",
-    "rated_models_file": "data/verified/v3-4_normalized_2026-02-11.json",
+    "note": "345 rated models (325 from v3-6 + 20 new from v3-7 deep dives across IT Services, Management, Real Estate, Securities) + 2,823 enumerated stubs. 5-axis scoring: SN/FA/EC/TG/CE.",
+    "rated_models_file": "data/verified/v3-7_normalized_2026-02-12.json",
     "model_cards_file": "data/verified/v35_model_cards_2026-02-11.json",
     "scored_deep_dive_file": "data/verified/v3-6_scored_deep_dive_cards_2026-02-12.json",
     "sector_screener_file": "data/verified/v3-6_sector_screener_candidates_2026-02-12.json",
@@ -639,7 +645,7 @@
     "education_deep_dive_file": "data/verified/education_sector_deep_dive_2026-02-11.json",
     "enumerated_4digit_file": "data/verified/enumerated_4digit_2026-02-11.json",
     "enumerated_6digit_file": "data/verified/enumerated_6digit_2026-02-11.json",
-    "rated": 325,
+    "rated": 345,
     "unscored_deep_dive_cards": 0,
     "enumerated_stubs": 2823,
     "total_candidates": 3148,
@@ -664,8 +670,8 @@
   },
 
   "running_patterns": {
-    "total": 18,
-    "new_this_cycle": ["P-036", "P-037", "P-038"],
+    "total": 20,
+    "new_this_cycle": ["P-039", "P-040"],
     "patterns": [
       {"id": "P-001", "name": "Multi-Sector Baumol Cure", "strength": "very_strong", "sectors": "NAICS 52, 54, 61, 62"},
       {"id": "P-002", "name": "Silver Tsunami", "strength": "very_strong", "sectors": "NAICS 31-33, cross-sector ($68T transfer)"},
@@ -684,7 +690,9 @@
       {"id": "P-035", "name": "Education Baumol Cure Sequencing", "strength": "strong", "sectors": "NAICS 61"},
       {"id": "P-036", "name": "Anticipatory Displacement", "strength": "confirmed", "sectors": "Cross-sector (60% orgs cut headcount on AI potential, only 2% on actual AI implementation)"},
       {"id": "P-037", "name": "Entry-Level Extinction", "strength": "confirmed", "sectors": "NAICS 5112, 54, 51 (67% junior dev drop, 35% all entry-level, 37% managers prefer AI over Gen Z)"},
-      {"id": "P-038", "name": "AI Infrastructure Chain Constraint", "strength": "strong", "sectors": "NAICS 518+22+21+486 (compute->energy->pipelines->mining interconnected; slowest link constrains AI scaling)"}
+      {"id": "P-038", "name": "AI Infrastructure Chain Constraint", "strength": "strong", "sectors": "NAICS 518+22+21+486 (compute->energy->pipelines->mining interconnected; slowest link constrains AI scaling)"},
+      {"id": "P-039", "name": "Healthcare Employment Monoculture", "strength": "strong", "sectors": "NAICS 62 (95% of Jan 2026 job creation = one sector masking structural weakness everywhere else)"},
+      {"id": "P-040", "name": "Securities Inverse Baumol", "strength": "strong", "sectors": "NAICS 523 (wages -2.4% while employment +4.1% at highest Baumol 3.71x — AI restructures cost per head downward)"}
     ]
   },
 
@@ -703,6 +711,7 @@
     {"cycle": "v3-3", "type": "model_migration_expansion", "models_constructed": 582, "note": "PIVOT BACK: Models as central output. 235 v2 models individually migrated through 5-axis rating, 287 algorithmically estimated, 45 NEW models from macro gaps (defense, education, fear, energy, geo, emerging). Economy map is grading context, not standalone output."},
     {"cycle": "v3-4", "type": "system_audit", "models_constructed": 293, "note": "System audit: batch normalization, GG->EC replacement, category hard-enforcement (STRUCTURAL_WINNER 27->8), dedup (295->293), agent prompt rewrite, top-down enumeration pipeline (2,823 stubs). Engine integrity restored."},
     {"cycle": "v3-5", "type": "sector_deep_dives", "models_constructed": 324, "note": "Sector deep dives (defense, education), FS cascade modeling, force refresh, 31 new model cards from deep dives. 3 new patterns (P-033, P-034, P-035). 2 new sectors tracked (Defense AI, Education). F5 velocity shifted, F4 PE trigger activated."},
-    {"cycle": "v3-6", "type": "scoring_and_force_upgrade", "models_constructed": 325, "note": "43 signals + 10 counter-signals scanned. 32 deep-dive cards scored through 5-axis system (0 unscored remaining). MC-DEF-011 (CMMC Compliance, 82.5) enters top 10 at rank 2. 3 new patterns: P-036 (Anticipatory Displacement), P-037 (Entry-Level Extinction), P-038 (AI Infrastructure Chain Constraint). F2 Demographics UPGRADED steady->accelerating (China births collapse, 898K US revision, entry-level extinction). F5 Psychology UPGRADED shifting->accelerating (60% worker fear, experiential fear, deepfake crisis). Defense UPGRADED early_disruption->acceleration (exits exceed investment, AUKUS interop, ReArm EUR 800B). Sector screener identifies 10 deep-dive candidates for future cycles, led by NAICS 51 (Information) and 22 (Utilities). Office CMBS hits 12.34% all-time record (worse than 2008). Agentic AI platforms launched (OpenAI Frontier, Claude Opus 4.6 agent teams)."}
+    {"cycle": "v3-6", "type": "scoring_and_force_upgrade", "models_constructed": 325, "note": "43 signals + 10 counter-signals scanned. 32 deep-dive cards scored. 3 new patterns (P-036, P-037, P-038). F2/F5 UPGRADED accelerating. Defense UPGRADED acceleration. Sector screener identifies 10 candidates."},
+    {"cycle": "v3-7", "type": "sector_deep_dives_expansion", "models_constructed": 345, "note": "4 sector deep dives: IT Services (NAICS 5415, 2.46M workers, Baumol 2.05x), Management (NAICS 55, 2.55M workers — economy's command/control layer), Real Estate (NAICS 53, cascade receptor, most fragmented sector), Securities (NAICS 523, highest Baumol 3.71x, inverse Baumol divergence). 49 signals scanned. 2 new patterns: P-039 (Healthcare Monoculture — 95% of job creation), P-040 (Securities Inverse Baumol — wages down while employment up). Triple frontier launch (Opus 4.6 + GPT-5.3-Codex + Gemini 3). Chinese AI Spring (5 labs at frontier simultaneously). BLS 898K revision (1.7M cumulative overstatement). H-1B wage-weighted lottery Feb 27 binary event. 20 new model cards integrated (325→345)."}
   ]
 }

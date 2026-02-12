@@ -1,0 +1,1105 @@
+{
+  "analysis_id": "v3-7_entry_level_extinction_cascade",
+  "analysis_type": "cross_sector_cascade_model",
+  "date": "2026-02-12",
+  "analyst": "Agent B (Analyst)",
+  "engine_cycle": "v3-7",
+  "resolves_priority": "PRIORITY 2: Model entry-level extinction cascade (P-037) cross-sector",
+  "pattern_refs": ["P-037", "P-036", "P-027", "P-001", "P-002", "P-039"],
+
+  "executive_summary": "Entry-level hiring is collapsing across the US economy at a pace and breadth that exceeds any cyclical downturn. The 67% junior developer decline is the most visible signal, but the phenomenon spans professional services, financial services, management, healthcare administration, and education. This is not a hiring freeze -- it is a structural redefinition of how organizations build talent. The cascade chain runs: entry-level extinction (2024-2027) -> skill pipeline collapse (2027-2029) -> leadership vacuum (2029-2033) -> organizational capability degradation (2031-2036). The 5-10 year lag between pipeline destruction and leadership shortage means decisions made in 2025-2026 will manifest as an acute senior talent crisis in 2031-2036, precisely when AI-augmented organizations need experienced human judgment the most. Counter-forces exist (AI-accelerated training, apprenticeship revival, credential reform) but none operate at the scale or speed needed to close the gap. The most likely outcome is a barbell labor market: a small cohort of AI-native professionals who navigated the transition successfully commanding extreme premiums, alongside a large cohort locked out of traditional career paths entirely.",
+
+  "core_thesis": {
+    "statement": "The entry-level extinction is structural, not cyclical. It is driven by three reinforcing mechanisms: (1) AI substitution of routine cognitive tasks that historically defined entry-level roles, (2) anticipatory displacement where firms cut junior headcount based on AI's POTENTIAL rather than proven performance (P-036: 60% cut for potential, 2% for actual implementation), and (3) a preference cascade where managers who observe peers replacing juniors with AI feel compelled to follow. The structural nature means recovery of traditional entry-level hiring is unlikely even in a strong economy.",
+    "confidence": "high",
+    "theoretical_basis": ["T1 Schumpeterian Creative Destruction", "T3 Baumol Cost Disease (Cure)", "T10 Coasean Transaction Costs", "T25 Fear Economics"],
+    "key_distinction": "Cyclical hiring freezes preserve the ROLE while reducing the NUMBER of hires. Structural extinction eliminates the ROLE itself. When AI can do 60-70% of what a junior analyst, junior developer, or first-year associate did, the role does not come back when the economy improves -- it is permanently redefined or eliminated."
+  },
+
+  "section_1_sector_impact_assessment": {
+    "methodology": "Sectors ranked by severity using a composite of: (a) measured entry-level hiring decline, (b) AI substitution potential for junior-role tasks, (c) speed of organizational adoption, (d) size of affected workforce, (e) criticality of the apprenticeship function to long-term sector health. Data sourced from QCEW, BLS, deep dives (v3-7), and signal files.",
+
+    "severity_ranking": [
+      {
+        "rank": 1,
+        "sector": "Technology / IT Services",
+        "naics": "5415",
+        "severity_score": 9.5,
+        "severity_label": "EXTREME",
+        "total_sector_employment": 2460000,
+        "entry_level_share_est_pct": 22,
+        "entry_level_workers_est": 541000,
+        "measured_hiring_decline": {
+          "junior_developer_hiring_collapse": "-67% (2024-2026)",
+          "all_entry_level_decline": "-35% (Revelio Labs)",
+          "big_tech_entry_hiring": "-25% at 15 biggest tech firms (2023 to 2024)",
+          "recent_grad_share": "7% of 2024 hires (down from ~15% historical)",
+          "ghost_posting_gap": "+47% job postings but -73% actual entry-level hires"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 9,
+          "detail": "Custom programming (541511, 1.11M workers) is the epicenter. AI code generation directly replaces the boilerplate, testing, documentation, and simple feature work that defined junior developer roles. 84% of developers using AI daily. 25-40% of Google code is AI-generated. Vibe coding tools (Cursor, Replit, Bolt) enable non-developers to build functional applications.",
+          "tasks_automated": ["Boilerplate code generation", "Unit test writing", "Documentation generation", "Simple bug fixes", "Code review for standard patterns", "Data pipeline assembly", "Basic API integration", "QA test case creation"],
+          "tasks_remaining_human": ["Complex system architecture", "Debugging novel edge cases", "Cross-system integration judgment", "Security architecture", "Performance optimization at scale"]
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Active pipeline destruction (2024-2027)",
+          "mid_career_gap_manifests": "2029-2031 (today's missing juniors would be 3-5 year experienced devs)",
+          "senior_leadership_crisis": "2032-2036 (missing 8-12 year experience cohort for tech leads, engineering managers, CTOs)",
+          "severity_note": "Technology has the shortest pipeline-to-leadership timeline of any sector because promotion velocity is high. A developer hired in 2025 might be a tech lead by 2029. Missing the 2025-2027 cohort creates a gap that hits leadership 4-6 years sooner than in slower-promotion sectors."
+        },
+        "apprenticeship_function_criticality": 9,
+        "apprenticeship_detail": "Software engineering is learned primarily through practice on production codebases, code review feedback loops, and mentorship from senior engineers. There is no AI substitute for the judgment developed by debugging a production outage at 2am, understanding why architectural decisions were made, or learning to balance technical debt against feature velocity. The apprenticeship function in tech is the bridge between theoretical knowledge (university CS) and practical capability (shipping reliable software at scale)."
+      },
+      {
+        "rank": 2,
+        "sector": "Securities / Financial Investments",
+        "naics": "523",
+        "severity_score": 9.0,
+        "severity_label": "EXTREME",
+        "total_sector_employment": 1068000,
+        "entry_level_share_est_pct": 18,
+        "entry_level_workers_est": 192000,
+        "measured_hiring_decline": {
+          "entry_level_analyst_decline": "-24 percentage points",
+          "junior_task_automation": "60-70% of junior analyst tasks now automated",
+          "pwc_uk_signal": "PwC UK cut 200 entry-level roles citing AI directly",
+          "big_four_uk_grad_listings": "-44% YoY"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 9,
+          "detail": "Junior financial analyst work (spreadsheet modeling, pitch deck assembly, market screening, compliance reporting) is 60-70% automatable TODAY. Bloomberg AI document search, AI-powered DCF models, and automated compliance tools directly replace 2-3 years of traditional analyst grunt work. The sector's 55% routine cognitive classification means entry-level roles sit squarely in the automatable middle.",
+          "tasks_automated": ["Financial modeling (standard DCF, comparables)", "Pitch deck assembly and formatting", "Market data screening and aggregation", "Compliance reporting and regulatory filings", "Client onboarding and KYC/AML screening", "Performance attribution analysis", "Prospectus drafting", "Trade reconciliation"],
+          "tasks_remaining_human": ["Complex deal structuring", "Client relationship management during volatility", "Novel investment strategy design", "Regulatory interpretation and lobbying", "Risk judgment in illiquid markets"]
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Active pipeline destruction (2024-2027)",
+          "mid_career_gap_manifests": "2030-2032 (missing VP/director-level talent with deal experience)",
+          "senior_leadership_crisis": "2033-2038 (missing MD/partner pipeline -- firms cannot promote what they did not hire)",
+          "severity_note": "Wall Street's up-or-out culture means the apprenticeship pipeline is already narrow. Cutting entry-level hiring by 24pp while automating 60-70% of junior tasks eliminates the funnel that produces MDs 10-15 years later. The inverse Baumol signal (P-040: wages declining while employment grows) confirms the shift from high-comp analysts to lower-cost ops staff -- the WRONG kind of pipeline for leadership development."
+        },
+        "apprenticeship_function_criticality": 9,
+        "apprenticeship_detail": "Investment banking and advisory careers are apprenticeship-intensive by design. Junior analysts learn deal judgment by observing 50+ transactions, client management by sitting in thousands of hours of meetings, and risk assessment by building models that get challenged by senior bankers. There is no simulation that replicates the judgment required to advise a CEO on a $5B acquisition. The 2-year analyst program IS the training -- without it, the pipeline to Managing Director breaks."
+      },
+      {
+        "rank": 3,
+        "sector": "Professional Services (Legal, Accounting, Consulting)",
+        "naics": "54 (5411, 5412, 5416)",
+        "severity_score": 8.5,
+        "severity_label": "SEVERE",
+        "total_sector_employment": 9800000,
+        "entry_level_share_est_pct": 20,
+        "entry_level_workers_est": 1960000,
+        "measured_hiring_decline": {
+          "cpa_pipeline_decline": "-33% new candidates since 2016",
+          "big_four_grad_listings_uk": "-44% YoY",
+          "ey_delayed_starts": "3 years running of delayed graduate starts",
+          "kpmg_audit_cuts": "4% of audit workforce (330 positions)",
+          "consulting_workforce_restructure": "McKinsey cutting 10% workforce; BCG/Bain pivoting to AI-augmented delivery",
+          "legal_associate_automation": "AI contract review reduces associate document review time by 60-80%"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 8,
+          "detail": "Professional services entry roles are defined by volume processing: first-year associates review documents, first-year auditors test controls, first-year consultants build slide decks. All three are highly automatable. CPA pipeline at -33% is BOTH a cause (fewer candidates) and effect (rational response to shrinking career prospects). Legal has highest fear friction (82% ethical concern) which slows but does not prevent AI adoption.",
+          "tasks_automated": {
+            "accounting": ["Standard tax return preparation", "Audit workpaper compilation", "Bank reconciliation", "Accounts payable/receivable processing", "Regulatory filing preparation"],
+            "legal": ["Document review and due diligence", "Contract clause analysis", "Legal research memoranda", "Regulatory compliance checking", "Patent prior art search"],
+            "consulting": ["Market sizing and benchmarking", "Slide deck creation from data", "Process mapping and documentation", "Survey analysis and reporting", "Competitive intelligence compilation"]
+          },
+          "tasks_remaining_human": {
+            "accounting": ["Complex tax strategy and estate planning", "Fraud investigation", "Business advisory and M&A due diligence"],
+            "legal": ["Trial advocacy and courtroom judgment", "Complex negotiation", "Regulatory interpretation", "Client counseling on ambiguous situations"],
+            "consulting": ["C-suite relationship management", "Organizational change leadership", "Strategy under deep uncertainty", "Cross-cultural transformation guidance"]
+          }
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Accelerating pipeline erosion (2024-2028)",
+          "mid_career_gap_manifests": "2030-2033 (missing senior associates, senior auditors, engagement managers)",
+          "senior_leadership_crisis": "2034-2040 (missing partner pipeline -- professional services requires 10-15 year apprenticeship to partner)",
+          "severity_note": "Professional services has the LONGEST apprenticeship pipeline (10-15 years to partner). The CPA pipeline decline (-33%) is already 8 years old, meaning the partner shortage is beginning NOW for accounting. Legal and consulting are 2-4 years behind. The compounding effect: fewer juniors -> fewer mid-levels -> fewer seniors -> acute partner shortage -> firm consolidation/failure."
+        },
+        "apprenticeship_function_criticality": 10,
+        "apprenticeship_detail": "Professional services is the archetypal apprenticeship profession. CPAs, lawyers, and consultants are trained through supervised practice over 10-15 years. There is NO shortcut to the judgment required to advise a Fortune 500 CEO on tax strategy, defend a criminal case, or restructure a failing organization. The apprenticeship function is not an efficiency to be optimized -- it IS the product. When firms stop training juniors, they stop producing the seniors who generate revenue."
+      },
+      {
+        "rank": 4,
+        "sector": "Management of Companies / Corporate HQ",
+        "naics": "55",
+        "severity_score": 8.0,
+        "severity_label": "SEVERE",
+        "total_sector_employment": 2550000,
+        "entry_level_share_est_pct": 15,
+        "entry_level_workers_est": 383000,
+        "measured_hiring_decline": {
+          "middle_management_elimination": "20% of orgs cutting >50% of middle management (Gartner)",
+          "anticipatory_cuts": "60% of companies cut headcount for AI potential, not performance (HBR)",
+          "mckinseys_restructuring": "10% workforce cut including entry-level positions",
+          "management_trainee_programs": "Multiple Fortune 500 companies suspending or downsizing rotational management trainee programs"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 8,
+          "detail": "Entry-level corporate roles (analyst, coordinator, specialist) in corporate HQ settings are 55% routine cognitive: reporting, planning, scheduling, status aggregation. AI agents (OpenAI Frontier, Claude agent teams) handle these workflows. The Coasean coordination layer (T10) is precisely what AI compresses -- and entry-level coordinators are the lowest layer of that coordination stack.",
+          "tasks_automated": ["Management reporting and KPI compilation", "Budget variance analysis", "Meeting scheduling and agenda preparation", "Status aggregation across business units", "Compliance monitoring", "HR administration workflows", "Procurement coordination", "Internal communications drafting", "Data collection and dashboard maintenance"],
+          "tasks_remaining_human": ["Strategic decision-making under uncertainty", "Stakeholder relationship management", "Organizational culture shaping", "Crisis management", "M&A integration leadership", "Cross-functional conflict resolution"]
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Accelerating reduction (2025-2027)",
+          "mid_career_gap_manifests": "2030-2032 (missing VP-level operational leaders)",
+          "senior_leadership_crisis": "2033-2037 (missing C-suite pipeline -- executives who never managed people, budgets, or crises at entry level)",
+          "severity_note": "Corporate leadership is developed through progressive responsibility: manage a team -> manage a budget -> manage a division -> manage a company. If entry-level management roles are eliminated, the first rung of this ladder disappears. AI can assist with coordination tasks but cannot develop the political savvy, crisis judgment, and organizational intuition that come from managing humans through ambiguity."
+        },
+        "apprenticeship_function_criticality": 8,
+        "apprenticeship_detail": "Management capability is almost entirely tacit -- learned through observation, practice, failure, and mentorship. There is no MBA course that teaches how to fire someone with dignity, resolve a conflict between two high-performing teams, or decide which project to kill. These capabilities develop over 8-15 years of progressive management responsibility. Eliminating the entry point (analyst/coordinator roles) removes the first exposure to organizational decision-making."
+      },
+      {
+        "rank": 5,
+        "sector": "Administrative and Support Services",
+        "naics": "56",
+        "severity_score": 7.5,
+        "severity_label": "HIGH",
+        "total_sector_employment": 9000000,
+        "entry_level_share_est_pct": 40,
+        "entry_level_workers_est": 3600000,
+        "measured_hiring_decline": {
+          "staffing_sector_revenue_decline": "-9% (larger firms suffering more)",
+          "rhi_stock_collapse": "-53% from peak (P-027 canary)",
+          "manpower_stock": "-44% from peak",
+          "ai_agents_handling": "80% of transactional recruitment tasks automated",
+          "overall_entry_level_decline": "-35% (Revelio Labs, cross-sector)"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 7,
+          "detail": "Administrative services is the economy's largest employer of entry-level workers. Roles like administrative assistant, data entry clerk, call center agent, and office coordinator face direct AI substitution. The staffing sector itself (P-027 canary) is collapsing as AI handles candidate sourcing, screening, and matching. However, physical administrative tasks (reception, mail room, facilities) persist longer.",
+          "tasks_automated": ["Data entry and form processing", "Call center tier 1 responses", "Calendar management and scheduling", "Invoice processing", "Basic customer service", "Candidate sourcing and screening", "Document filing and retrieval"],
+          "tasks_remaining_human": ["Complex customer escalations", "Physical facility management", "In-person reception and hospitality", "Executive assistance requiring judgment"]
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Active collapse (2024-2027)",
+          "mid_career_gap_manifests": "2028-2030 (shorter pipeline due to faster promotion cycles)",
+          "senior_leadership_crisis": "2031-2034",
+          "severity_note": "Administrative services has a shorter pipeline-to-leadership chain but a much LARGER affected workforce (3.6M entry-level workers). The sector also serves as a career entry point for workers without college degrees, making the social mobility implications outsized."
+        },
+        "apprenticeship_function_criticality": 5,
+        "apprenticeship_detail": "Unlike professional services, many administrative roles have lower apprenticeship requirements. The skills are more transferable and can be learned through structured training programs in months rather than years. However, the ECONOMIC MOBILITY function is critical: admin roles have historically been the entry point for workers who advance into management, operations, and professional roles. Eliminating this entry point concentrates economic opportunity among the already-credentialed."
+      },
+      {
+        "rank": 6,
+        "sector": "Healthcare (Administrative / Non-Clinical)",
+        "naics": "62 (admin components)",
+        "severity_score": 6.5,
+        "severity_label": "MODERATE-HIGH",
+        "total_sector_employment": 21000000,
+        "entry_level_share_est_pct": 25,
+        "entry_level_workers_est": 5250000,
+        "measured_hiring_decline": {
+          "admin_hiring_decline": "Moderate -- healthcare admin hiring down ~15-20% for coding, billing, scheduling roles",
+          "clinical_counter_trend": "Nursing shortage WIDENING (78K to 200K unfilled)",
+          "healthcare_job_creation": "+82K Jan 2026 (63% of all new jobs) -- but concentrated in clinical, not admin",
+          "net_effect": "Healthcare is a SPLIT STORY: clinical entry-level is in acute shortage, administrative entry-level is being automated"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score_admin": 7,
+          "score_clinical": 2,
+          "detail": "Healthcare entry-level bifurcates sharply. Administrative roles (medical coding, billing, scheduling, prior authorization, claims processing) are highly automatable -- 54% of customer interactions already automated in healthcare. Clinical roles (nursing, technician, therapy assistant) have extremely low AI substitution due to physical care requirements and trust barriers (fear friction gap = 4). The sector's overall P-039 healthcare monoculture pattern (95% of job creation) is driven by CLINICAL demand, not administrative growth.",
+          "admin_tasks_automated": ["Medical coding and billing", "Prior authorization processing", "Appointment scheduling", "Insurance claims submission", "Patient intake forms", "Referral coordination"],
+          "clinical_tasks_persisting": ["Direct patient care", "Physical therapy delivery", "Nursing assessment and intervention", "Surgical assistance", "Emergency response", "Mental health counseling"]
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Divergent -- admin pipeline shrinking, clinical pipeline in crisis for DIFFERENT reasons (burnout, not AI)",
+          "nursing_pipeline_crisis": "ALREADY MANIFESTING: 78K->200K unfilled positions by 2030. 44% of nurses report burnout. This is NOT an AI problem -- it is a working conditions and compensation problem.",
+          "admin_leadership_gap": "2030-2033 (missing healthcare administrators who understood operations from the ground up)",
+          "clinical_leadership_gap": "2028-2031 (nursing leadership shortage from burnout-driven attrition at mid-career)"
+        },
+        "apprenticeship_function_criticality": {
+          "admin": 5,
+          "clinical": 9,
+          "note": "Clinical healthcare is the highest-stakes apprenticeship in the economy. A nursing error can kill a patient. Clinical judgment develops through thousands of supervised patient interactions over 3-10 years. AI cannot substitute for this -- it can only augment it. The nursing shortage is therefore categorically different from the tech/finance entry-level collapse: it is a Baumol Premium crisis (T3), not a Baumol Cure crisis."
+        }
+      },
+      {
+        "rank": 7,
+        "sector": "Education",
+        "naics": "61",
+        "severity_score": 6.0,
+        "severity_label": "MODERATE-HIGH",
+        "total_sector_employment": 3900000,
+        "entry_level_share_est_pct": 30,
+        "entry_level_workers_est": 1170000,
+        "measured_hiring_decline": {
+          "teacher_shortage": "411K positions vacant or uncertified across 42 states",
+          "teacher_attrition": "14%+ annual teacher attrition rate",
+          "adjunct_faculty_compression": "73% of higher ed faculty are contingent/adjunct",
+          "university_hiring_freeze": "Widespread hiring freezes at institutions facing enrollment cliff",
+          "paradox": "Education has BOTH entry-level extinction (university admin, adjunct faculty) AND entry-level shortage (K-12 teachers) simultaneously"
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 6,
+          "detail": "Education entry-level splits into three categories: (1) University administration -- highly automatable (admissions processing, financial aid, scheduling = 45% routine cognitive). (2) Adjunct faculty -- partially automatable (AI tutoring handles content delivery for established material, but facilitation and mentorship persist). (3) K-12 teachers -- low AI substitution for core teaching but AI assists with grading, lesson planning, and administrative burden. The fear friction gap (=5, highest of any sector) slows adoption regardless of technical feasibility.",
+          "tasks_automated": ["Grading standardized assessments", "Lesson plan generation", "Administrative processing (admissions, financial aid)", "Content delivery for established material", "Progress tracking and reporting", "Tutoring on structured subjects"],
+          "tasks_remaining_human": ["Mentorship and social-emotional development", "Classroom management", "Motivating disengaged students", "Special education support", "Career counseling"]
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Already in crisis for K-12 (42 states with shortages)",
+          "university_admin_gap": "2028-2030 (as enrollment cliff forces closures, institutional knowledge is lost)",
+          "research_pipeline_gap": "2030-2035 (fewer PhD students -> fewer future faculty -> reduced research output)",
+          "k12_leadership_gap": "2027-2029 (burnout-driven principal shortage already acute)"
+        },
+        "apprenticeship_function_criticality": 8,
+        "apprenticeship_detail": "Teaching is an apprenticeship profession disguised as a credentialed one. Teacher preparation programs provide theoretical foundation, but classroom competence develops through 3-5 years of supervised teaching, mentorship from experienced teachers, and learning from failure in real time. The teacher shortage (411K) means new teachers get LESS mentorship because experienced teachers are stretched thin -- a vicious cycle where pipeline erosion degrades the quality of training for remaining pipeline entrants."
+      },
+      {
+        "rank": 8,
+        "sector": "Construction / Skilled Trades",
+        "naics": "23",
+        "severity_score": 4.0,
+        "severity_label": "MODERATE (Inverse Pattern)",
+        "total_sector_employment": 8200000,
+        "entry_level_share_est_pct": 25,
+        "entry_level_workers_est": 2050000,
+        "measured_hiring_decline": {
+          "net_direction": "OPPOSITE -- entry-level SHORTAGE, not extinction",
+          "unfilled_positions": "499K new workers needed in building trades (2026)",
+          "monthly_openings": "723K new construction job openings (near record)",
+          "under_35_gap": "7-10% below pre-pandemic participation levels",
+          "wage_inflation": "6-8% annual (2-3x overall wage growth)",
+          "average_trucker_age": 57
+        },
+        "ai_substitution_potential_for_entry_tasks": {
+          "score": 2,
+          "detail": "Construction and trades are the inverse case: entry-level roles are physically demanding, location-specific, and require tacit manual skills that AI/robots cannot yet replicate at scale. Cobots at $25-60K are entering controlled factory environments but cannot yet navigate a construction site. The entry-level crisis here is driven by GENERATIONAL OPT-OUT from physical labor, not AI substitution. This makes construction the primary ABSORBER of displaced cognitive workers who are willing to retrain.",
+          "ai_impact": "AI affects construction through design optimization, project management, and safety monitoring -- augmenting rather than replacing workers. Robotics timeline for construction site work is 2030+ at earliest."
+        },
+        "timeline_to_leadership_vacuum": {
+          "current_phase": "Already in shortage -- foreman/supervisor gap is acute",
+          "note": "Construction has the opposite problem: not enough entry-level workers means not enough mid-career supervisors in 5-8 years. The difference is that this shortage is driven by labor supply (generational opt-out) rather than labor demand (firms not hiring)."
+        },
+        "apprenticeship_function_criticality": 10,
+        "apprenticeship_detail": "Trades are the purest surviving apprenticeship system in the US economy. Electricians, plumbers, and carpenters require 4-5 years of on-the-job training under licensed journeymen. This is legally mandated (licensing requirements), practically essential (errors are dangerous), and cannot be compressed by AI. The apprenticeship function here is the BOTTLENECK -- there are not enough journeymen to train apprentices at the scale needed."
+      }
+    ],
+
+    "cross_sector_summary": {
+      "total_entry_level_workers_affected": "~15.1M across ranked sectors (excluding construction which has inverse pattern)",
+      "estimated_entry_level_positions_eliminated_by_2031": "3.5M-5.5M (23-36% of current entry-level positions)",
+      "sectors_with_irreversible_pipeline_damage": ["Technology (5415)", "Securities (523)", "Professional Services (54)", "Management (55)"],
+      "sectors_with_parallel_shortage": ["Healthcare clinical", "Construction", "K-12 Teaching"],
+      "key_insight": "The economy is simultaneously destroying entry-level cognitive jobs while facing acute shortages of entry-level physical/care jobs. This is the Barbell Economy (T3) manifesting at the career entry level -- the cognitive middle collapses while physical/care extremes face undersupply. The barbell is widening, not narrowing."
+    }
+  },
+
+  "section_2_cascade_chain": {
+    "model_description": "Four-stage cascade with year-by-year projections. Each stage feeds the next with increasing severity and decreasing reversibility.",
+
+    "stage_1_entry_level_extinction": {
+      "timeframe": "2024-2027",
+      "status": "ACTIVE -- well into execution",
+      "mechanism": "Firms reduce or eliminate entry-level hiring driven by three reinforcing forces: (1) AI tools directly substitute junior task portfolios (code generation, document review, financial modeling), (2) Anticipatory displacement (P-036) where firms cut juniors based on AI's potential not performance, (3) Manager preference cascade where 37% prefer AI over Gen Z hire.",
+
+      "year_by_year": {
+        "2024": {
+          "description": "Onset year -- signals emerge across multiple sectors simultaneously",
+          "key_data": [
+            "Junior developer hiring begins -67% decline trajectory",
+            "Only 7% of all hires are recent graduates (down from ~15%)",
+            "Big Four accounting firms begin delaying graduate starts",
+            "CPA candidate pipeline already -32% from 2016 baseline"
+          ],
+          "entry_level_hiring_index": 70,
+          "index_note": "Baseline 2022 = 100"
+        },
+        "2025": {
+          "description": "Acceleration -- anticipatory displacement goes mainstream",
+          "key_data": [
+            "60% of organizations reduce headcount anticipating AI (HBR/Oxford Economics)",
+            "35% all entry-level decline confirmed (Revelio Labs)",
+            "37% of managers express preference for AI over Gen Z hire",
+            "108K Jan 2026 layoffs (+118% YoY) with 'forever layoffs' narrative",
+            "IT staffing revenue -9%, RHI stock -53%"
+          ],
+          "entry_level_hiring_index": 55
+        },
+        "2026": {
+          "description": "Structural entrenchment -- entry-level elimination becomes organizational norm",
+          "key_data_projected": [
+            "Entry-level job postings continue at +47% but actual hires decline further (-73% vs postings = ghost posting economy)",
+            "AI coding tools cross mainstream threshold (Cursor, Claude Code, Copilot used by non-developers)",
+            "H-1B wage-weighted lottery (Feb 27) reshapes international talent supply",
+            "Securities firms complete automation of 60-70% of junior analyst tasks",
+            "University enrollment cliff begins executing (locked in by 2008 birth rates)"
+          ],
+          "entry_level_hiring_index": 45,
+          "confidence": "high"
+        },
+        "2027": {
+          "description": "New equilibrium -- most sectors have permanently redefined 'entry level'",
+          "key_data_projected": [
+            "Surviving entry-level roles require AI proficiency as baseline (not differentiator)",
+            "30-50K small IT consultancies close (out of 250K micro-firms)",
+            "India IT fresher hiring drops below 60K combined for Big Four (from 150K+ in FY22 peak)",
+            "Junior analyst headcount at major banks down 30-40% from 2024",
+            "Teaching shortage worsens to 500K+ nationally as pipeline response fails"
+          ],
+          "entry_level_hiring_index": 40,
+          "confidence": "medium-high"
+        }
+      }
+    },
+
+    "stage_2_skill_pipeline_collapse": {
+      "timeframe": "2027-2029",
+      "status": "EMERGING -- early signals visible in CPA and nursing pipelines",
+      "mechanism": "When firms stop hiring juniors, three pipeline effects compound: (a) universities lose enrollment in affected programs (rational response by students), (b) mid-career talent pool shrinks as the missing cohort ages through, (c) remaining workers receive less mentorship because there are fewer experienced colleagues.",
+
+      "year_by_year": {
+        "2027": {
+          "description": "University program enrollment declines become measurable",
+          "key_projections": [
+            "CS/IT program enrollment plateaus or declines for first time (signal: why study CS if entry-level hiring collapsed 67%?)",
+            "Accounting program enrollment drops 15-20% as CPA pipeline decline becomes widely known",
+            "MBA applications shift from finance/consulting to entrepreneurship/AI (program composition changes, not necessarily total decline)",
+            "College enrollment cliff removes 5-8% of overall higher ed enrollment (demographic lock-in)",
+            "15-25 additional college closures (cumulative ~100 this decade so far)"
+          ],
+          "pipeline_health_index": 75,
+          "index_note": "Baseline 2022 = 100. Measures flow of new entrants into affected professions."
+        },
+        "2028": {
+          "description": "Mid-career talent gaps become visible in hiring data",
+          "key_projections": [
+            "Companies seeking 3-5 year experienced workers find thin cohorts (the 2024-2025 entry-level cut is now the 2028 mid-career gap)",
+            "IT services sector employment drops to 2.15M (-12.5% from 2023 baseline) as Jevons expansion creates new roles at 1:3 replacement ratio",
+            "Professional services firms compete aggressively for remaining mid-career talent, driving wage inflation for 3-7 year experienced workers",
+            "Solo/micro IT consultancy count drops from 250K to ~150K (40% attrition)",
+            "Silver Tsunami succession crisis peaks (52.3% of businesses owned by 55+, no replacement cohort)"
+          ],
+          "pipeline_health_index": 60
+        },
+        "2029": {
+          "description": "Pipeline collapse becomes self-reinforcing feedback loop",
+          "key_projections": [
+            "Universities unable to staff affected programs (who teaches CS when senior engineers are in extreme demand?)",
+            "CPA exam pass rates decline as programs weaken and candidates are less prepared",
+            "Nursing shortage crosses 200K unfilled positions as burnout compounds demographic pressure",
+            "Consulting firms restructure from pyramid (many juniors, few partners) to diamond (AI-augmented mid-career teams)",
+            "K-12 principal shortage becomes acute (no pipeline of experienced teachers to promote)"
+          ],
+          "pipeline_health_index": 50
+        }
+      },
+
+      "feedback_loops": [
+        {
+          "loop_name": "Student Rational Avoidance",
+          "mechanism": "Prospective students observe collapsed entry-level hiring -> rationally choose different fields or no degree -> program enrollment declines -> programs close -> even fewer trained graduates -> pipeline permanently smaller",
+          "sectors_affected": ["Accounting (already visible: CPA -33%)", "IT/CS (beginning 2026-2027)", "Finance (2027-2028)", "Legal (2028-2029)"],
+          "strength": "strong -- supported by 400 schools at risk of closure and 15% enrollment cliff"
+        },
+        {
+          "loop_name": "Mentorship Dilution",
+          "mechanism": "Fewer juniors hired -> remaining juniors get less mentorship (senior workers spread thin) -> lower quality development -> weaker mid-career cohort -> poorer organizational performance",
+          "sectors_affected": "All apprenticeship-dependent sectors",
+          "strength": "moderate -- partially offset by AI training tools, but tacit skills require human mentorship"
+        },
+        {
+          "loop_name": "Credential Devaluation Spiral",
+          "mechanism": "AI handles tasks that credentials certify -> credential loses signaling value -> fewer pursue credential -> pipeline shrinks -> surviving credential holders have less competition but credential itself becomes less meaningful",
+          "sectors_affected": ["CPA certification", "Law degrees (for document review roles)", "Financial analyst certifications (CFA Level I)", "IT certifications (CompTIA, CCNA)"],
+          "strength": "moderate -- credentials persist for regulatory reasons but economic signaling value declines"
+        }
+      ]
+    },
+
+    "stage_3_leadership_vacuum": {
+      "timeframe": "2029-2033",
+      "status": "PROJECTED -- no current data because the lag has not yet materialized",
+      "mechanism": "The missing entry-level cohort of 2024-2027 would normally be the 5-9 year experienced professionals of 2029-2033 -- the pipeline to senior leadership. Their absence creates a leadership vacuum that AI cannot fill because leadership requires tacit cognitive skills developed through years of progressive responsibility.",
+
+      "year_by_year": {
+        "2029": {
+          "description": "First visible leadership gaps in fast-promotion sectors",
+          "key_projections": [
+            "Technology: tech lead shortage becomes visible as the 2024-2025 missing junior cohort should have reached TL/senior engineer level",
+            "Securities: VP-level talent shortage as entry-level analyst pipeline crisis (24pp decline) manifests 5 years later",
+            "Entry-level finance pipeline crisis noted by sector deep dive materializes as mid-career shortage",
+            "Consulting firms unable to staff engagement teams -- AI augments delivery but cannot lead client relationships",
+            "First corporate buyers of 'AI-era leadership development' programs ($500M+ market emerges)"
+          ],
+          "leadership_gap_index": 85,
+          "index_note": "Baseline 2024 = 100. Measures availability of 5-10yr experienced candidates for leadership roles."
+        },
+        "2030": {
+          "description": "Leadership gaps compound across sectors",
+          "key_projections": [
+            "Securities sector employment stabilizes at ~800K (down 25% from 1.07M) but remaining roles need experienced judgment that the pipeline cannot supply",
+            "IT services sector employment at ~1.85M (-25% cumulative from 2023) with severe shortage of engineering managers who grew up building systems",
+            "Professional services mid-career talent commands 40-60% wage premium over 2024 levels",
+            "Management layer compression (NAICS 55 down to 2.2-2.3M) creates demand for AI-native leaders who never existed in prior organizational designs",
+            "Corporate succession failures become measurable: companies unable to fill VP/SVP roles internally at 2-3x 2024 rates"
+          ],
+          "leadership_gap_index": 70
+        },
+        "2031": {
+          "description": "Structural leadership shortage acknowledged across economy",
+          "key_projections": [
+            "The cohort that entered professional careers in 2024-2027 (diminished by 35-67%) is now expected at senior manager/director level -- and the missing mass is undeniable",
+            "Board-level concern about leadership pipeline becomes standard governance topic",
+            "PE firms discover portfolio companies lack operational leadership for AI-augmented business models",
+            "International talent competition intensifies: India (1B working-age), EU, and MENA compete for experienced professionals",
+            "First generation of AI-native professionals (those who DID enter careers 2024-2027 with AI skills) command extraordinary premiums"
+          ],
+          "leadership_gap_index": 60
+        },
+        "2032_2033": {
+          "description": "Peak leadership vacuum for fast-pipeline sectors",
+          "key_projections": [
+            "Technology and securities hit peak leadership crisis (8-9 year lag from 2024 entry-level collapse)",
+            "CTO/VP Engineering positions at mid-size companies unfillable from domestic talent pool",
+            "Managing Director pipeline at investment banks permanently thinner -- firms restructure around fewer, more AI-augmented partners",
+            "Organizations that maintained some entry-level hiring during 2024-2027 (counter-cyclical talent investors) have significant competitive advantage",
+            "New organizational forms emerge: AI-coordinated federations that require less hierarchical leadership"
+          ],
+          "leadership_gap_index": 50
+        }
+      },
+
+      "roles_affected_by_sector": {
+        "technology": {
+          "disappearing_roles": ["Junior developer/engineer", "QA tester (manual)", "Level 1-2 support engineer", "Data entry/migration specialist"],
+          "transforming_roles": ["Mid-level developer -> AI orchestrator/reviewer", "QA -> AI test framework designer", "Data analyst -> AI data pipeline architect", "DevOps engineer -> AI infrastructure manager"],
+          "persisting_roles": ["Principal/staff engineer", "Engineering manager (people leader)", "Security architect", "CTO/VP Engineering"],
+          "leadership_vacuum_role": "Engineering Manager -- requires 6-10 years of hands-on development followed by people management. Cannot be shortcut."
+        },
+        "securities": {
+          "disappearing_roles": ["Junior analyst (IB/ER)", "Trade operations associate", "Compliance analyst (routine)", "Back-office reconciliation"],
+          "transforming_roles": ["Research analyst -> AI-augmented alpha generator", "Financial advisor -> AI-human hybrid advisor", "Risk analyst -> AI risk system designer", "Sales/trading -> relationship + AI execution"],
+          "persisting_roles": ["Managing Director (deal origination)", "Portfolio manager (judgment-intensive)", "UHNW relationship manager", "Complex deal structurer"],
+          "leadership_vacuum_role": "Managing Director / Partner -- requires 10-15 years of deal experience. Pipeline destruction means fewer candidates for every open MD seat."
+        },
+        "professional_services": {
+          "disappearing_roles": ["First-year associate (document review)", "Staff auditor (control testing)", "Junior consultant (slide decks/analysis)", "Paralegal (routine research)"],
+          "transforming_roles": ["Senior associate -> AI-augmented case manager", "Audit manager -> AI audit system overseer", "Engagement manager -> AI-blended delivery leader", "Tax preparer -> Tax strategy advisor"],
+          "persisting_roles": ["Partner (client relationships + rainmaking)", "Trial lawyer", "Tax strategist", "Change management leader"],
+          "leadership_vacuum_role": "Partner -- 10-15 year pipeline. CPA pipeline already -33%. Law and consulting 2-4 years behind. This is the longest-fuse, highest-stakes leadership vacuum."
+        },
+        "management": {
+          "disappearing_roles": ["Corporate analyst/coordinator", "Middle management (reporting/status)", "HR generalist (admin)", "Internal audit staff (routine)"],
+          "transforming_roles": ["Senior manager -> AI-augmented operations leader", "Strategy analyst -> AI scenario modeler", "HR business partner -> organizational AI change agent", "Finance manager -> AI financial planning overseer"],
+          "persisting_roles": ["C-suite executive (judgment + relationships)", "Crisis manager", "M&A integration leader", "Culture/values leader"],
+          "leadership_vacuum_role": "VP/SVP Operations -- developed through 10+ years of progressive management. When coordinator and analyst roles disappear, the development path to VP breaks."
+        },
+        "healthcare": {
+          "disappearing_roles": ["Medical coder (routine)", "Claims processor", "Scheduling coordinator", "Prior authorization specialist"],
+          "transforming_roles": ["Nurse -> AI-augmented clinical decision maker", "Medical technician -> AI-assisted diagnostician", "Healthcare administrator -> AI operations manager"],
+          "persisting_roles": ["Physician (judgment + procedure)", "Nurse (direct patient care)", "Therapist (relationship-based care)", "Surgeon"],
+          "leadership_vacuum_role": "Nurse manager / Hospital administrator -- clinical leadership requires years of bedside experience. Nursing shortage means fewer candidates for leadership roles."
+        },
+        "education": {
+          "disappearing_roles": ["Adjunct faculty (content delivery only)", "University admin assistant", "Test proctor", "Enrollment counselor (routine)"],
+          "transforming_roles": ["Teacher -> AI-augmented mentor/facilitator", "Professor -> research director + AI curriculum designer", "Academic advisor -> AI-informed career coach"],
+          "persisting_roles": ["Master teacher/mentor", "Research faculty", "Special education specialist", "School principal/superintendent"],
+          "leadership_vacuum_role": "School principal -- requires 5-10 years of teaching experience. Teacher shortage means fewer candidates for principalship."
+        }
+      }
+    },
+
+    "stage_4_organizational_capability_degradation": {
+      "timeframe": "2031-2036",
+      "status": "THEORETICAL -- no current data, extrapolated from cascade logic",
+      "mechanism": "When leadership vacuums compound across an organization, institutional capability degrades. Organizations lose the ability to: (a) train remaining workers effectively (no experienced mentors), (b) make complex judgment calls (insufficient seasoned leaders), (c) manage crises (no one with deep operational experience), (d) innovate strategically (AI generates options but humans must choose direction). This is the terminal cascade stage.",
+      "confidence": "medium-low (5+ year projection with many intervening variables)",
+
+      "projected_manifestations": [
+        {
+          "manifestation": "Institutional knowledge loss acceleration",
+          "mechanism": "Silver Tsunami retirements (4M/year) combined with thin replacement pipeline means organizations lose accumulated knowledge faster than they can transfer it. AI can capture explicit knowledge but NOT the tacit judgment (which client to trust, which corner to not cut, when to override the model).",
+          "affected_sectors": "All, but especially professional services and healthcare",
+          "severity": "high"
+        },
+        {
+          "manifestation": "Crisis management capability decline",
+          "mechanism": "Crises require experienced leaders who have navigated similar situations. If the 2024-2027 entry-level cohort never develops crisis experience, organizations in 2031-2036 face novel situations with inexperienced leadership. AI can provide decision support but cannot provide the calm under pressure that comes from having survived previous crises.",
+          "affected_sectors": "Financial services, healthcare, defense, energy",
+          "severity": "high"
+        },
+        {
+          "manifestation": "Innovation bottleneck from judgment deficit",
+          "mechanism": "AI excels at optimization and analysis but cannot set strategic direction. The missing generation of mid-career professionals who would normally drive innovation (old enough to have judgment, young enough to be ambitious) creates an innovation gap. Organizations have AI tools but insufficient human judgment about WHERE to point them.",
+          "affected_sectors": "Technology, professional services, management",
+          "severity": "medium-high"
+        },
+        {
+          "manifestation": "Client/patient trust erosion",
+          "mechanism": "In relationship-dependent sectors (healthcare, financial advisory, legal), client trust is built through years of human interaction. If organizations cannot staff experienced client-facing roles, trust erodes. Patients want an experienced surgeon, not a brilliant AI-augmented junior.",
+          "affected_sectors": "Healthcare, financial advisory, legal services",
+          "severity": "medium"
+        },
+        {
+          "manifestation": "Competitive advantage accrual to counter-cyclical talent investors",
+          "mechanism": "Organizations that maintained entry-level hiring during the 2024-2027 extinction (or invested in AI-augmented apprenticeship programs) will have a structural talent advantage by 2031-2036. This creates a new form of competitive moat: talent pipeline continuity.",
+          "affected_sectors": "All sectors -- talent pipeline becomes a differentiator",
+          "severity_note": "This is the OPPORTUNITY within the crisis. Firms that invest in human development during the AI transition gain a 5-10 year head start."
+        }
+      ]
+    }
+  },
+
+  "section_3_cross_sector_effects": {
+    "professional_services": {
+      "naics": "54 (5411 Legal, 5412 Accounting, 5416 Consulting)",
+      "total_employment": 9800000,
+      "entry_level_impact": {
+        "accounting": {
+          "pipeline_status": "CRITICAL -- CPA candidate decline of -33% since 2016 is the LONGEST-RUNNING entry-level decline in the dataset. This is an 8-year secular trend, not a cycle.",
+          "big_four_response": "EY delaying graduate starts 3 years running. KPMG cut 4% of audit workforce. UK Big Four graduate listings -44% YoY. Firms are substituting AI for juniors while maintaining partner structure.",
+          "structural_driver": "150-hour CPA requirement increasingly irrational when AI handles 60%+ of what CPAs do in year 1-3. Students rationally avoiding 5-year education investment for declining entry-level prospects.",
+          "leadership_timeline": "Partner pipeline crisis begins NOW (8-year lag means 2016 decline hits partner ranks in 2026-2030). Small/mid-size firms facing acute succession + pipeline crises simultaneously."
+        },
+        "legal": {
+          "pipeline_status": "ERODING -- law school applications recovered from 2013 trough but career placement declining for non-T14 graduates",
+          "ai_impact": "AI contract review reduces associate document review hours by 60-80%. Discovery (historically billing 30-40% of litigation revenue) is being automated. But trial work, complex transactions, and regulatory interpretation remain human.",
+          "fear_friction": "82% ethical concern (highest of any professional field) slows AI adoption but does not prevent it. Adoption follows invisible pathway: law firms use AI internally while marketing human judgment to clients.",
+          "leadership_timeline": "8-15 year pipeline to partner. The current entry-level compression will manifest as mid-law-firm talent gaps by 2032-2037."
+        },
+        "consulting": {
+          "pipeline_status": "RESTRUCTURING -- McKinsey cutting 10% workforce, BCG/Bain pivoting to AI-augmented delivery",
+          "ai_impact": "AI handles the analytical pyramid base (market sizing, benchmarking, competitive analysis, slide creation) that justifies a firm's leverage model. When 3 analysts can be replaced by 1 analyst + AI, the pyramid collapses into a modular team structure.",
+          "structural_shift": "70% blended workforce (human + AI) projected by 2027 (McKinsey estimate for their own operations). Consulting shifts from leveraged delivery (many juniors billing high rates) to AI-augmented advisory (fewer, more experienced consultants with AI tools).",
+          "leadership_timeline": "7-12 year pipeline to principal/partner. Missing analyst cohort of 2024-2027 hits principal pipeline by 2031-2039."
+        }
+      }
+    },
+
+    "technology": {
+      "naics": "5415",
+      "total_employment": 2460000,
+      "entry_level_impact": {
+        "developers": {
+          "pipeline_status": "SEVERE DISRUPTION -- 67% junior developer hiring collapse is the most acute signal in the entire dataset",
+          "ai_substitution_detail": "AI code generation (Copilot, Cursor, Claude Code) directly replaces the boilerplate, testing, documentation, and simple feature work that constituted 60-80% of a junior developer's workload. The remaining 20-40% (complex debugging, architecture, cross-system integration) requires experience that juniors by definition lack.",
+          "vibe_coding_displacement": "Non-developers can now build functional applications using conversational AI tools. This creates a new class of software creators (designers, product managers, domain experts) who bypass the traditional developer career path entirely.",
+          "india_impact": "India IT fresher hiring dropping from 150K+ (FY22) to 82K (FY26) to projected <60K (FY28). 5.4M Indian IT workers facing revenue growth without proportional headcount growth for the first time in 30 years."
+        },
+        "qa_engineers": {
+          "pipeline_status": "COLLAPSING -- AI test generation and automated QA tools replacing manual testing pipeline",
+          "substitution_level": "70-80% of manual QA work automatable by 2028. Remaining QA roles transform to AI test framework design and edge-case identification."
+        },
+        "data_analysts": {
+          "pipeline_status": "TRANSFORMING -- entry-level data cleaning and dashboard creation automating, but data literacy demand expanding",
+          "substitution_level": "50-60% of entry-level data work automatable. However, Jevons Paradox applies: as AI makes analysis cheaper, more organizations want more analysis, partially offsetting job losses with transformed roles."
+        }
+      }
+    },
+
+    "financial_services": {
+      "naics": "523 (Securities) + 52 (broader FS)",
+      "total_employment": 6900000,
+      "entry_level_impact": {
+        "investment_banking_analysts": {
+          "pipeline_status": "SEVERE -- 24pp decline in entry-level analyst hiring + 60-70% of junior tasks automated",
+          "structural_change": "The 2-year analyst program that produced Wall Street's future MDs is being hollowed out. AI handles the spreadsheets, comps, and pitch decks that justified hiring 20-30 analysts per bulge bracket bank per year. Remaining analysts focus on live deal execution.",
+          "inverse_baumol": "P-040 confirmed: wages DECLINING while employment GROWS. The sector is adding lower-cost operations staff while cutting high-cost junior analysts. This is structurally different from traditional layoffs -- the wage mix is permanently shifting downward."
+        },
+        "financial_advisors": {
+          "pipeline_status": "ACUTE SUCCESSION CRISIS -- 38% of advisors plan to retire within decade. Entry-level advisor hiring declining as robo-advisory and hybrid models reduce need for human advisors at lower AUM tiers.",
+          "timeline": "RIA M&A already at record 345 deals. By 2028, 10,000-15,000 small advisory firms absorbed or closed. The apprenticeship pipeline from junior advisor to senior advisor is breaking."
+        },
+        "accounting_adjacent": {
+          "pipeline_status": "CPA candidate decline -33% directly affects bookkeeping, tax prep, and audit -- the entry points for accounting careers",
+          "bank_teller": "15K branches closed since 2012 peak. Each closure eliminates 5-15 entry-level positions (tellers, new accounts, customer service)."
+        }
+      }
+    },
+
+    "healthcare": {
+      "naics": "62",
+      "total_employment": 21000000,
+      "entry_level_impact": {
+        "nurses": {
+          "pipeline_status": "CRISIS -- but driven by burnout and working conditions, NOT AI displacement",
+          "shortage_trajectory": "78K unfilled now -> projected 200K+ by 2030",
+          "entry_level_problem": "Nursing has the OPPOSITE problem: not enough entry-level workers due to (a) program capacity constraints, (b) clinical site limitations, (c) burnout-driven attrition of experienced nurses who train new ones, (d) compensation inadequacy relative to educational requirements",
+          "ai_role": "AI augments rather than replaces clinical nursing. AI clinical decision support (FDA deregulated Jan 6, 2026) helps nurses make better decisions, potentially reducing burnout by automating documentation and decision support."
+        },
+        "medical_technicians": {
+          "pipeline_status": "MODERATE SHORTAGE -- similar to nursing but less acute",
+          "ai_impact": "AI imaging analysis, lab automation, and diagnostic tools change the technician role from operator to overseer. Entry-level technician roles persist but transform."
+        },
+        "healthcare_admin": {
+          "pipeline_status": "DECLINING -- medical coding, billing, scheduling roles being automated",
+          "substitution_level": "60-70% of healthcare admin entry-level work automatable by 2028. But healthcare employment monoculture (P-039: 95% of Jan 2026 job creation) means sector ABSORBS workers displaced from other sectors into clinical and care roles."
+        }
+      }
+    },
+
+    "education": {
+      "naics": "61",
+      "total_employment": 3900000,
+      "entry_level_impact": {
+        "k12_teachers": {
+          "pipeline_status": "CHRONIC SHORTAGE -- 411K positions vacant or uncertified, 42 states with shortages",
+          "entry_level_problem": "Teaching faces a triple pipeline crisis: (a) fewer education majors (rational avoidance given low pay), (b) 14%+ annual attrition (burnout), (c) insufficient mentorship for new teachers (experienced teachers stretched thin). This is a Baumol Premium (T3) problem, not a Baumol Cure.",
+          "ai_role": "AI alleviates some workload (grading, lesson planning, administrative tasks) but cannot substitute for classroom presence, mentorship, or behavioral management."
+        },
+        "university_faculty": {
+          "pipeline_status": "CONTINGENT CRISIS -- 73% of faculty are adjunct/contingent. Full-time tenure-track positions declining while PhD programs continue graduating students into a contracting market.",
+          "enrollment_cliff_effect": "15% enrollment decline 2025-2029. Each closed program eliminates faculty positions AND the pipeline that trains next-generation researchers/teachers.",
+          "research_implications": "Fewer PhD students -> fewer future faculty -> reduced research output. This affects innovation capacity across the entire economy, not just education."
+        },
+        "university_admin": {
+          "pipeline_status": "DECLINING -- AI automating admissions processing, financial aid, scheduling, student services",
+          "scope": "Admin costs $3,771/FTE student. 60%+ of admin tasks are routine cognitive. As enrollment cliff forces cost reduction, admin positions are first to be cut or automated."
+        }
+      }
+    }
+  },
+
+  "section_4_counter_forces": {
+    "description": "Forces that could mitigate, slow, or partially reverse the entry-level extinction cascade. Each is assessed for scale, speed, and likelihood of deployment.",
+
+    "counter_force_1_ai_as_training_tool": {
+      "mechanism": "AI could ACCELERATE professional development by compressing the apprenticeship timeline. Instead of learning by doing grunt work for 3-5 years, AI-augmented training could simulate years of experience in months. An AI tutor could provide personalized, high-frequency feedback that replicates the benefits of mentorship at scale.",
+      "current_evidence": [
+        "AI tutoring scaling from 40K to 1.4M users (Khanmigo) in education",
+        "AI coding assistants providing real-time code review that mimics senior engineer feedback",
+        "AI simulation tools in medical training reducing time-to-competency for specific procedures",
+        "Flight simulator analogy: airline pilots develop proficiency through simulation before live flying"
+      ],
+      "scale_assessment": "MODERATE. AI can compress EXPLICIT knowledge transfer (facts, procedures, standard patterns) by 50-80%. But TACIT knowledge transfer (judgment under uncertainty, political navigation, crisis response) requires real-world experience that AI cannot simulate with current technology.",
+      "speed_assessment": "FAST for explicit skills (deployable 2026-2028), SLOW for tacit skills (no solution on current trajectory)",
+      "likelihood": "HIGH for deployment but LOW for closing the full gap. AI training tools will become standard by 2028 but will not replicate the 10-year apprenticeship that produces partners, managing directors, or engineering leaders.",
+      "gap_closure_estimate": "20-35% of the pipeline gap mitigated by AI-accelerated training. The remaining 65-80% requires human experiential learning that cannot be compressed.",
+      "confidence": "medium"
+    },
+
+    "counter_force_2_apprenticeship_model_revival": {
+      "mechanism": "Organizations could create structured apprenticeship programs that pair AI-augmented work with deliberate human mentorship. Instead of eliminating junior roles, firms redesign them: juniors spend 40% on AI-assisted production work and 60% on structured learning, shadowing, and mentored practice.",
+      "current_evidence": [
+        "Construction trades apprenticeship model still functioning (legally mandated, 4-5 year programs)",
+        "Germany's dual education system (60% of youth in apprenticeships) as international benchmark",
+        "JP Morgan, Goldman Sachs maintain analyst programs despite AI -- competitive advantage in talent development",
+        "Some tech companies creating 'AI-augmented residency' programs modeled on medical residency"
+      ],
+      "scale_assessment": "LOW currently. The economic incentive runs against apprenticeship: why pay someone to learn when AI can do the work? Only organizations with long time horizons (major banks, Big Four, large tech) can afford the investment. 98% of IT firms have <20 employees -- they cannot run apprenticeship programs.",
+      "speed_assessment": "SLOW -- requires cultural and organizational redesign. 3-5 year adoption timeline for early movers, 7-10 years for broad adoption.",
+      "likelihood": "MODERATE for large organizations, LOW for small/mid-size. The firms that invest in apprenticeship gain a 5-10 year talent advantage but must absorb 2-3 years of higher costs upfront.",
+      "gap_closure_estimate": "10-20% of pipeline gap if adopted by top-100 employers in each affected sector. Insufficient at current trajectory.",
+      "confidence": "medium-low"
+    },
+
+    "counter_force_3_credential_reform": {
+      "mechanism": "If traditional credentials (4-year degree, CPA license, bar exam) lose signaling value because AI does what they certified, new credentialing systems could emerge that certify AI-augmented competency. Micro-credentials, continuous assessment, and skills-based hiring could create alternative pathways into careers.",
+      "current_evidence": [
+        "53% of employers removed degree requirements (+30% from 2024)",
+        "1.85M unique credentials in US (Credential Engine) -- already fragmented beyond meaning",
+        "Google, IBM, Apple no longer require degrees for many roles",
+        "Skills-based hiring platforms growing (Indeed Skills Tests, LinkedIn Skill Assessments)",
+        "39% of skills obsolete by 2030 (WEF) -- credentials cannot keep pace"
+      ],
+      "scale_assessment": "MODERATE. Credential reform is happening but slowly and unevenly. Large employers lead; small/mid employers lag. Regulatory barriers persist (CPA, bar exam, medical licensing legally require traditional credentials).",
+      "speed_assessment": "MODERATE -- 5-10 year transition. Regulated professions will be slowest (legal, medical, accounting).",
+      "likelihood": "HIGH that some credential reform occurs, LOW that it fully replaces traditional pathways by 2031.",
+      "gap_closure_estimate": "5-15% of pipeline gap addressed by credential reform enabling alternative entry paths.",
+      "confidence": "medium"
+    },
+
+    "counter_force_4_immigration_policy_shift": {
+      "mechanism": "Faced with domestic entry-level collapse, firms could advocate for expanded immigration to fill talent gaps. H-1B reform, O-1 expansion, or new visa categories for AI-skilled workers could supplement the domestic pipeline.",
+      "current_evidence": [
+        "H-1B wage-weighted lottery (Feb 27, 2026) actually RESTRICTS lower-wage immigration -- running counter to this force",
+        "$100K H-1B fee increases costs for all employers",
+        "India producing massive AI talent pool (1B working-age, zero-tax-through-2047)",
+        "Canada and Australia actively recruiting tech talent with faster immigration pathways",
+        "Current US political environment is restrictionist, not expansionist"
+      ],
+      "scale_assessment": "LOW in current political environment. Immigration policy is moving AGAINST talent import, not toward it. H-1B reforms raise costs and reduce volume. Border policy focus is on restriction, not skill-based expansion.",
+      "speed_assessment": "SLOW -- immigration reform requires legislation (not executive action for structural changes). 3-7 year timeline even in favorable political environment.",
+      "likelihood": "LOW for 2026-2029. MODERATE for 2030+ if leadership vacuum becomes politically salient.",
+      "gap_closure_estimate": "5-10% through existing visa programs. Would require major policy reform to meaningfully close the gap.",
+      "confidence": "medium",
+      "paradox": "The H-1B wage-weighted system may WORSEN the entry-level crisis by making it more expensive to bring in international junior talent, further incentivizing AI substitution over human hiring."
+    },
+
+    "counter_force_5_economic_downturn_hiring_reversal": {
+      "mechanism": "A severe recession could reduce AI investment budgets, slow automation adoption, and create a cyclical need for cheaper human labor over expensive AI infrastructure.",
+      "current_evidence": [
+        "Higher-for-longer rates (3.50-3.75%, zero 2027 cuts priced) constrain capital expenditure",
+        "PE refinancing wall ($930B maturing 2026) creates financial stress",
+        "Enterprise AI ROI still elusive at scale ($37B GenAI spent, but EBIT impact rare)",
+        "Perez crash risk: if AI investment bubble bursts, automation budgets could freeze"
+      ],
+      "scale_assessment": "MODERATE in theory but LIMITED in practice. Even during the 2008-2009 recession, automation trends continued. Technology adoption ratchets: once firms learn to operate with AI and fewer juniors, they do not reverse when the economy improves. They may SLOW further automation but not REHIRE eliminated positions.",
+      "speed_assessment": "IMMEDIATE if crash occurs, but effect is TEMPORARY. The structural drivers (AI capability, manager preference, cost incentive) reassert after any downturn.",
+      "likelihood": "LOW as a reversal force. Perez crash would slow the pace but not reverse the direction.",
+      "gap_closure_estimate": "0-5% structural, 10-20% cyclical (temporary rehiring during downturn that reverses as economy recovers).",
+      "confidence": "medium"
+    },
+
+    "counter_force_aggregate_assessment": {
+      "total_gap_closure_estimate": "40-85% gap remaining after all counter-forces",
+      "best_case": "AI training tools (35%) + apprenticeship revival (20%) + credential reform (15%) + immigration (10%) + cyclical effects (5%) = 85% closure. Requires coordinated policy + corporate investment at unprecedented scale. Probability: <10%.",
+      "base_case": "AI training tools (25%) + apprenticeship (10%) + credential reform (8%) + immigration (5%) + cyclical (5%) = 53% closure. 47% structural gap persists. Probability: 50-60%.",
+      "worst_case": "AI training tools (15%) + apprenticeship (5%) + credential reform (3%) + immigration (2%) + cyclical (0%) = 25% closure. 75% structural gap. Probability: 20-30%.",
+      "conclusion": "Under all realistic scenarios, a significant structural gap (40-75%) persists between the entry-level talent destroyed in 2024-2027 and the leadership talent needed in 2031-2036. Counter-forces help but are insufficient in scale and speed."
+    }
+  },
+
+  "section_5_falsification_criteria": {
+    "description": "Evidence that would show the entry-level extinction is cyclical (temporary) rather than structural (permanent). If multiple criteria are met by 2027-2028, the cascade model should be downgraded from structural to cyclical.",
+
+    "criteria": [
+      {
+        "criterion_id": "F1",
+        "description": "Entry-level hiring rebounds to within 15% of 2022 baseline by Q4 2027",
+        "measurement": "Revelio Labs or Indeed Hiring Lab entry-level posting-to-hire ratio returns to 0.70+ (currently ~0.27)",
+        "current_status": "NOT MET -- gap widening, not narrowing",
+        "would_indicate": "Standard cyclical downturn with delayed recovery, not structural elimination",
+        "confidence_it_will_be_met": "LOW (15%)"
+      },
+      {
+        "criterion_id": "F2",
+        "description": "AI productivity gains plateau or reverse for junior-level tasks specifically",
+        "measurement": "Independent studies show AI code generation quality declining, or AI financial modeling accuracy insufficient for production use, or AI legal document review error rates unacceptable for firm use",
+        "current_status": "NOT MET -- AI capability accelerating (triple frontier launch Feb 5, 2026)",
+        "would_indicate": "AI substitution of junior tasks hits practical ceiling, requiring human juniors for quality",
+        "confidence_it_will_be_met": "VERY LOW (5%)"
+      },
+      {
+        "criterion_id": "F3",
+        "description": "Manager preference for human juniors over AI reverses",
+        "measurement": "Survey data showing <20% of managers prefer AI over entry-level hires (currently 37%)",
+        "current_status": "NOT MET -- preference trending toward AI, not away",
+        "would_indicate": "Social/organizational value of entry-level humans exceeds AI utility for most managers",
+        "confidence_it_will_be_met": "LOW (10%)"
+      },
+      {
+        "criterion_id": "F4",
+        "description": "CS/Finance/Accounting program enrollment grows >5% by 2028",
+        "measurement": "NCES enrollment data for affected programs shows growth, not decline",
+        "current_status": "COUNTER-SIGNAL -- college enrollment cliff (15% decline 2025-2029) locked in by demographics. CPA candidates -33% is 8-year trend. CS enrollment data pending.",
+        "would_indicate": "Students believe entry-level career prospects are improving despite current signals",
+        "confidence_it_will_be_met": "VERY LOW for accounting and finance (5%), UNCERTAIN for CS (25% -- AI hype could temporarily boost enrollment)"
+      },
+      {
+        "criterion_id": "F5",
+        "description": "Major employers publicly commit to entry-level hiring restoration with targets",
+        "measurement": "5+ Fortune 100 companies announce >20% entry-level hiring increases with verifiable metrics",
+        "current_status": "NOT MET -- companies announcing AI-driven headcount reduction, not restoration",
+        "would_indicate": "Corporate leadership recognizes pipeline risk and acts counter-cyclically",
+        "confidence_it_will_be_met": "LOW (15%) by 2027, MODERATE (30%) by 2030 as pipeline crisis becomes visible"
+      },
+      {
+        "criterion_id": "F6",
+        "description": "Regulatory intervention mandates minimum entry-level hiring ratios",
+        "measurement": "US federal or state regulations requiring minimum apprenticeship or entry-level positions, similar to construction trades requirements",
+        "current_status": "NO SIGNAL of this policy direction in any jurisdiction",
+        "would_indicate": "Political recognition of pipeline crisis severe enough to warrant regulation",
+        "confidence_it_will_be_met": "VERY LOW (5%) before 2030. Possible after 2030 if leadership vacuum becomes politically salient."
+      },
+      {
+        "criterion_id": "F7",
+        "description": "Historical precedent: previous technology transitions (ATMs, spreadsheets, ERP) caused temporary entry-level disruption that resolved within 5 years",
+        "measurement": "Historical analysis showing that bank teller jobs recovered after ATMs, accountant jobs recovered after Excel, etc.",
+        "current_status": "PARTIALLY SUPPORTS cyclical view -- ATMs reduced tellers per branch but total branches grew (Bessen 2015). BUT: AI substitution breadth (simultaneous across ALL cognitive sectors) is qualitatively different from single-sector automation.",
+        "would_indicate": "Current entry-level disruption follows historical pattern of technology-specific displacement followed by new role creation",
+        "confidence_it_will_be_met": "MODERATE (30%) -- there IS historical precedent for this pattern, but the simultaneous cross-sector nature of AI disruption may be unprecedented"
+      }
+    ],
+
+    "composite_cyclical_probability": {
+      "estimate": "15-25%",
+      "reasoning": "The weight of evidence favors structural over cyclical interpretation. The entry-level collapse is: (a) simultaneous across multiple sectors (not sector-specific), (b) driven by technology capability that is ACCELERATING (not plateauing), (c) reinforced by manager behavior change (preference cascade), (d) compounded by demographic headwinds (enrollment cliff). Historical precedent (F7) provides the strongest counter-argument, but the cross-sector breadth of AI disruption is qualitatively different from previous single-technology transitions.",
+      "confidence": "medium-high"
+    }
+  },
+
+  "section_6_second_order_effects": {
+
+    "university_enrollment_implications": {
+      "headline": "Entry-level extinction creates a feedback loop that accelerates the college enrollment cliff beyond demographic projections",
+      "mechanism": "When entry-level jobs in CS, finance, accounting, and law decline, prospective students rationally avoid these majors. This enrollment decline compounds the DEMOGRAPHIC enrollment cliff (15% decline 2025-2029 locked in by birth rates). The result is enrollment pressure from BOTH supply (fewer 18-year-olds) AND demand (fewer career pathways justifying tuition investment).",
+      "projected_impacts": [
+        {
+          "impact": "CS program enrollment stagnation despite AI hype",
+          "timeline": "2027-2029",
+          "mechanism": "Students observe 67% junior developer hiring collapse and rationally question whether a CS degree leads to a job. Counter-force: AI hype temporarily boosts enrollment among students who believe they can beat the odds. Net effect: enrollment plateaus rather than grows, despite massive AI industry expansion.",
+          "confidence": "medium"
+        },
+        {
+          "impact": "Accounting program closures accelerate",
+          "timeline": "2026-2029",
+          "mechanism": "CPA pipeline -33% is already 8 years old. 150-hour requirement increasingly irrational when AI handles year 1-3 tasks. Smaller accounting programs at universities facing enrollment cliff are first to close. 10-20% of accounting programs at risk by 2028.",
+          "confidence": "high"
+        },
+        {
+          "impact": "MBA programs restructure toward AI/entrepreneurship",
+          "timeline": "2026-2028",
+          "mechanism": "Traditional MBA pathways (consulting, banking, corporate management) face pipeline disruption. MBA programs pivot curriculum toward AI strategy, entrepreneurship, and portfolio management. Programs that fail to pivot face enrollment decline.",
+          "confidence": "medium-high"
+        },
+        {
+          "impact": "400 schools at risk of closure (demographic + demand compound)",
+          "timeline": "2025-2032",
+          "mechanism": "Demographic enrollment cliff was projected to close 400 schools based on birth rates alone. Entry-level extinction adds demand-side pressure: fewer students see college as the pathway to professional careers. Net effect could increase closures to 500-600 over the decade. 5 states (IL, CA, NY, PA, MI) account for 75% of decline.",
+          "confidence": "medium"
+        },
+        {
+          "impact": "$18B+ endowment redistribution",
+          "timeline": "2026-2035",
+          "mechanism": "Closing institutions release endowment funds. Surviving institutions absorb displaced students and faculty. Net effect is consolidation of higher education into fewer, larger, AI-augmented institutions.",
+          "confidence": "medium"
+        }
+      ]
+    },
+
+    "professional_certification_pipeline": {
+      "headline": "Certification systems designed for a pre-AI economy face existential relevance questions",
+      "affected_certifications": [
+        {
+          "certification": "CPA (Certified Public Accountant)",
+          "pipeline_status": "-33% candidates since 2016",
+          "ai_impact": "AI handles 60%+ of what years 1-3 CPAs do. 150-hour requirement increasingly irrational.",
+          "projected_response": "AICPA may reduce hour requirements or allow AI-augmented exam formats by 2028-2029. If not, the pipeline continues to erode.",
+          "structural_risk": "If CPA pipeline falls below critical mass, state boards may allow alternative certifications or lower requirements -- potentially undermining quality standards."
+        },
+        {
+          "certification": "CFA (Chartered Financial Analyst)",
+          "pipeline_status": "Level I pass rates declining; fewer candidates pursuing all three levels",
+          "ai_impact": "CFA Level I and II material (financial analysis, portfolio theory) is increasingly AI-automatable. Level III (portfolio management, behavioral finance) retains human relevance.",
+          "projected_response": "CFA Institute may restructure exam around AI-augmented practice by 2027-2028."
+        },
+        {
+          "certification": "Bar Exam / JD",
+          "pipeline_status": "Law school enrollment stable but career placement declining for non-T14 schools",
+          "ai_impact": "AI contract review, legal research, and document drafting reduce entry-level associate billable work. Bar passage is regulatory requirement that persists regardless of AI capability.",
+          "projected_response": "Bar exam may incorporate AI tool proficiency by 2029-2030. Alternative legal practice pathways may emerge (licensed legal technicians in some states)."
+        },
+        {
+          "certification": "Medical licensing (USMLE, nursing boards)",
+          "pipeline_status": "Nursing pipeline in crisis (78K->200K unfilled), physician pipeline stable but bottlenecked by residency slots",
+          "ai_impact": "Clinical certifications retain full relevance because AI cannot perform physical care. Licensing may add AI clinical decision support proficiency by 2028.",
+          "projected_response": "Nursing certification may relax educational requirements to expand pipeline (BSN vs ASN debate). Residency slots may expand if federal funding increases."
+        },
+        {
+          "certification": "IT Certifications (CompTIA, AWS, CCNA)",
+          "pipeline_status": "Shifting from infrastructure-specific to AI/cloud-specific certifications",
+          "ai_impact": "Traditional IT certifications (networking, help desk, server management) losing relevance as AI handles routine IT operations. New AI/ML certifications growing but credentialing systems lag capability.",
+          "projected_response": "Rapid evolution of certification landscape. Micro-credentials and vendor-specific AI certifications (AWS AI Practitioner, Google AI Engineer) replace traditional IT cert pathways."
+        }
+      ]
+    },
+
+    "immigration_policy_impact": {
+      "headline": "H-1B reform is WORSENING the entry-level crisis in the short term while potentially improving it in the long term",
+      "current_policy_state": {
+        "h1b_wage_weighted_lottery": "Effective Feb 27, 2026. Higher-paying positions receive preferential selection weight. Structurally disadvantages body-shop model (high volume, moderate wages).",
+        "h1b_100k_fee": "New $100K fee for employers. Particularly impacts IT services firms using H-1B for commodity staffing.",
+        "55_pct_self_selection": "55% of H-1B registrants may self-select out due to unfavorable odds at lower wage levels.",
+        "net_effect_entry_level": "H-1B reform REDUCES international entry-level talent supply (most H-1B juniors are priced below the new preference threshold). This COMPOUNDS the domestic entry-level extinction by removing the international supplement."
+      },
+      "projected_impacts": [
+        {
+          "impact": "Indian IT services accelerate offshore model (fewer US-based workers)",
+          "timeline": "2026-2028",
+          "mechanism": "$100K fee + wage-weighted lottery makes bringing Indian workers to US 30-50% more expensive. Rational response: serve US clients from India at lower cost. Accelerates the trend of US companies having offshore teams rather than onshore H-1B workers.",
+          "confidence": "high"
+        },
+        {
+          "impact": "Tech companies invest more heavily in AI to compensate for reduced talent pipeline",
+          "timeline": "2026-2028",
+          "mechanism": "If both domestic entry-level hiring AND international talent supply are contracting, AI becomes the only scaling lever. This further reinforces the entry-level extinction cycle.",
+          "confidence": "high"
+        },
+        {
+          "impact": "Canada/Australia/UK absorb talent that would have sought US H-1B",
+          "timeline": "2026-2030",
+          "mechanism": "US immigration restrictions push internationally mobile talent to countries with more accessible work visa programs. Canada's Global Talent Stream (2-week processing), Australia's Global Talent visa, and UK's Scale-Up visa all compete for the same talent pool.",
+          "confidence": "medium-high"
+        },
+        {
+          "impact": "Long-term: H-1B wage-weighted system may IMPROVE quality of incoming talent",
+          "timeline": "2028-2031",
+          "mechanism": "By selecting for higher-wage positions, the new system imports experienced, highly skilled workers rather than entry-level body-shop labor. This could partially fill mid-career gaps (from the domestic pipeline collapse) with international talent.",
+          "confidence": "medium"
+        }
+      ]
+    },
+
+    "geographic_concentration": {
+      "headline": "Entry-level extinction hits knowledge economy metros disproportionately, creating regional economic restructuring",
+      "most_affected_metros": [
+        {
+          "metro": "San Francisco / Bay Area",
+          "affected_sectors": ["Technology (5415)", "Financial Services (523)"],
+          "mechanism": "Highest concentration of tech employment in the US. Junior developer hiring collapse hits disproportionately. Combined with office vacancy (35%) and remote work structural shift. Young professional population may decline as career entry points disappear.",
+          "severity": "EXTREME"
+        },
+        {
+          "metro": "New York City",
+          "affected_sectors": ["Securities (523)", "Professional Services (54)", "Management (55)"],
+          "mechanism": "Wall Street analyst hiring decline + Big Four accounting compression + corporate HQ management cuts converge. NYC has highest concentration of NAICS 55 employment. Financial district vacancy compounds CRE crisis. Young professional rental market weakens.",
+          "severity": "EXTREME"
+        },
+        {
+          "metro": "Chicago",
+          "affected_sectors": ["Professional Services (54)", "Financial Services (52)", "Management (55)"],
+          "mechanism": "Major accounting, consulting, and corporate HQ concentration. Office vacancy already near 35%. Entry-level cuts in professional services compound demographic decline (IL is one of 5 states with 75% of enrollment cliff impact).",
+          "severity": "SEVERE"
+        },
+        {
+          "metro": "Washington DC / Northern Virginia",
+          "affected_sectors": ["IT Services (5415 - government contracting)", "Professional Services (54)"],
+          "mechanism": "Government contractor IT services face budget pressure + AI substitution. DOGE-style government efficiency programs reduce contractor headcount. Professional services firms with government practice concentrated in DC metro.",
+          "severity": "HIGH"
+        },
+        {
+          "metro": "Boston",
+          "affected_sectors": ["Education (61)", "Healthcare (62)", "Financial Services (523)"],
+          "mechanism": "Highest concentration of universities facing enrollment cliff. Biotech/pharma entry-level affected but partially offset by clinical demand. Financial services presence (Fidelity, State Street, Putnam) exposed to analyst hiring decline.",
+          "severity": "HIGH"
+        },
+        {
+          "metro": "Bangalore / Hyderabad / Pune (India)",
+          "affected_sectors": ["IT Services (5415)"],
+          "mechanism": "India IT fresher hiring declining from 150K+ to projected <60K. India Big Four (TCS, Infosys, Wipro, HCL) historically hired 40-50K freshers combined per year. Revenue growth without headcount growth = productivity dividend for firms but employment crisis for cities where IT is 25-40% of formal economy.",
+          "severity": "SEVERE (internationally)"
+        }
+      ],
+
+      "least_affected_metros": [
+        {
+          "metro": "Sun Belt metros (Phoenix, Dallas, Austin, Nashville, Raleigh)",
+          "reason": "Net migration beneficiary. Mix of healthcare (growing), construction (shortage), and tech (but at smaller scale than SF/NYC). Entry-level extinction is real but diluted by sector diversity and population growth."
+        },
+        {
+          "metro": "Houston / Gulf Coast",
+          "reason": "Energy sector + healthcare + construction demand creates alternative entry-level pathways. Entry-level cognitive decline exists but offset by physical/clinical demand."
+        }
+      ],
+
+      "regional_economic_multiplier": {
+        "mechanism": "Each entry-level knowledge worker supports 2-3 local service jobs (restaurants, transportation, retail, housing). When entry-level hiring declines 35-67% in a metro, the multiplier effect reduces local service demand by 15-30%. This compounds the CRE cascade: office vacancy -> entry-level cuts -> fewer young workers -> less local spending -> retail/restaurant closures -> further CRE weakness.",
+        "magnitude": "For NYC and SF alone, estimated $8-15B in reduced annual local spending from entry-level knowledge worker decline by 2028-2029.",
+        "confidence": "medium"
+      }
+    },
+
+    "barbell_labor_market_formation": {
+      "headline": "The entry-level extinction accelerates the formation of a barbell labor market: extreme premiums for experienced AI-augmented professionals, economic exclusion for those locked out of the pipeline",
+      "upper_barbell": {
+        "description": "Small cohort of professionals who entered careers 2024-2027 with AI skills and survived the pipeline contraction. Plus experienced professionals who successfully adopted AI augmentation.",
+        "projected_premium": "40-100% wage premium over pre-AI peers by 2030-2031",
+        "size": "Estimated 15-25% of the pre-AI entry-level cohort size -- the missing 75-85% is the gap",
+        "characteristics": ["AI-native workflow proficiency", "Tacit judgment from surviving in thin pipeline", "Extreme employer demand", "Geographic mobility (remote-capable)"]
+      },
+      "lower_barbell": {
+        "description": "Workers who cannot enter cognitive professional careers because entry-level pathways have been eliminated. Pushed toward physical work (construction, trades, healthcare clinical) or gig economy.",
+        "projected_size": "2-4M workers who would have entered cognitive professions but cannot find entry points",
+        "characteristics": ["College-educated but career-displaced", "Student debt without proportionate career ROI", "Gravitating toward healthcare, trades, gig economy", "Geographic concentration in metros with high cost of living"],
+        "social_implications": "An entire generation of college graduates locked out of professional careers creates political and social pressure. Student debt reform becomes more urgent when degrees do not lead to jobs they were designed to lead to."
+      },
+      "hollow_middle": {
+        "description": "The routine cognitive middle (data entry, document review, basic analysis, standard coding) that historically provided career entry and progression has been automated. This is the Baumol Cure (T3) manifesting at the career level, not just the sector level.",
+        "estimated_positions_eliminated": "3.5M-5.5M entry-level positions by 2031",
+        "replacement_ratio": "For every 3 entry-level positions eliminated, approximately 1 AI-augmented mid/senior position is created. Net effect: -2.3M to -3.7M positions."
+      }
+    },
+
+    "generational_wealth_impact": {
+      "headline": "Entry-level extinction compounds with student debt and housing unaffordability to create a generational economic setback for 2000-2005 birth cohorts",
+      "mechanism": "Workers born 2000-2005 face simultaneous headwinds: (a) entry-level job market extinction when they enter workforce 2022-2027, (b) average student debt of $37K+ with limited forgiveness, (c) housing unaffordability (median home price / median income at all-time high), (d) K-shaped recovery where capital owners benefit from AI while labor loses. This cohort may become the first in modern US history to have LOWER lifetime earnings than their parents despite higher educational attainment.",
+      "affected_population": "Approximately 20M Americans in the 2000-2005 birth cohort entering workforce 2022-2027",
+      "economic_magnitude": "If entry-level wages are 15-25% lower and career advancement is delayed 3-5 years relative to pre-AI cohorts, the lifetime earnings impact is $300K-$800K per affected worker. Aggregate impact: $2-6T in reduced lifetime earnings for the cohort.",
+      "confidence": "low-medium (long-range projection with many variables)",
+      "political_implications": "This generational economic disadvantage will likely generate political pressure for: student debt reform, AI regulation, minimum entry-level hiring requirements, universal basic income / guaranteed employment, credential reform. The political response is a key unknown that could modify the cascade trajectory."
+    }
+  },
+
+  "section_7_synthesis": {
+    "what_the_economy_becomes": {
+      "2026_2027": "The entry-level extinction reaches structural entrenchment. Most cognitive sectors have permanently redefined their talent intake model. Ghost posting (47% more postings, 73% fewer hires) becomes normalized. The college enrollment cliff begins executing on demographic schedule. The simultaneous nature of the disruption (tech + finance + professional services + management + admin) distinguishes this from any previous technology transition. Organizations that maintain entry-level hiring are making a deliberate counter-cyclical talent investment, not following market norms.",
+
+      "2028_2029": "The skill pipeline collapse becomes measurable. Mid-career talent markets tighten sharply as the missing 2024-2027 cohort should be 3-5 year experienced professionals. Wage premiums for AI-augmented mid-career workers rise 30-50%. Universities close at accelerating rates (400-600 total by decade end). Professional certification systems begin restructuring. The barbell labor market solidifies: AI-native professionals at a premium, displaced cognitive workers pushed toward physical/care work or gig economy.",
+
+      "2030_2031": "The leadership vacuum becomes visible at organizational level. Companies cannot fill VP, director, and senior manager roles from internal pipeline because the entry-level cohort that should have progressed is too thin. Securities sector stabilizes at ~800K (down 25%). IT services at ~1.85M (-25%). Management layer compressed to 2.0-2.2M. The organizations that invested in human development during 2024-2027 possess a structural talent advantage that takes competitors 5-10 years to replicate.",
+
+      "2032_2036": "The full cascade materializes. Organizational capability degradation becomes measurable in crisis response quality, innovation velocity, and institutional knowledge retention. Counter-cyclical talent investors are the winners. New organizational forms (AI-coordinated federations, micro-firms with AI operating systems) partially compensate for the leadership gap by requiring fewer traditional leaders. But sectors where judgment is irreplaceable (healthcare, complex legal, strategic advisory) face acute human capital crises."
+    },
+
+    "key_numbers": {
+      "entry_level_positions_eliminated_by_2031": "3.5M-5.5M",
+      "sectors_with_irreversible_damage": 4,
+      "years_until_leadership_vacuum_visible": "3-5 (2029-2031)",
+      "years_until_full_cascade": "6-10 (2032-2036)",
+      "counter_force_gap_closure": "25-60% (leaves 40-75% structural gap)",
+      "cyclical_probability": "15-25%",
+      "structural_probability": "75-85%",
+      "affected_birth_cohort": "2000-2005 (20M Americans)",
+      "most_affected_metros": ["San Francisco", "New York City", "Chicago", "Washington DC", "Bangalore"]
+    },
+
+    "confidence_assessment": {
+      "stage_1_entry_level_extinction": {"confidence": "high", "data_quality": "strong -- multiple independent sources confirm"},
+      "stage_2_pipeline_collapse": {"confidence": "medium-high", "data_quality": "moderate -- CPA/nursing pipelines visible, other sectors inferred"},
+      "stage_3_leadership_vacuum": {"confidence": "medium", "data_quality": "projected from pipeline logic, no direct observation possible yet"},
+      "stage_4_capability_degradation": {"confidence": "medium-low", "data_quality": "theoretical -- 5+ year projection with many intervening variables"}
+    },
+
+    "patterns_updated": [
+      {
+        "pattern_id": "P-037",
+        "update": "Entry-level extinction CASCADE MODEL validated and extended. Cross-sector analysis confirms simultaneous pipeline destruction in 5+ sectors. Leadership vacuum timeline modeled year-by-year. Second-order effects on universities, certifications, immigration, and geographic economies quantified. Strength upgraded to VERY_STRONG.",
+        "new_sub_patterns": [
+          "P-037a: Student Rational Avoidance feedback loop",
+          "P-037b: Barbell labor market formation at career-entry level",
+          "P-037c: Counter-cyclical talent investment as competitive moat",
+          "P-037d: Ghost posting economy (47% more postings, 73% fewer hires)"
+        ]
+      }
+    ],
+
+    "key_unknowns_remaining": [
+      "Can AI training tools compress the 10-year apprenticeship into 3-5 years? If so, pipeline gap narrows significantly.",
+      "Will any Fortune 100 firms publicly commit to counter-cyclical entry-level hiring? Early movers would gain structural advantage.",
+      "Does the Perez crash (T5) hit before the leadership vacuum materializes? If AI investment collapses in 2027-2028, firms may temporarily rehire humans.",
+      "Will credential reform happen fast enough to create alternative entry pathways? Current pace (5-10 years) is too slow.",
+      "How does the 2000-2005 birth cohort respond politically? Their economic frustration could drive policy changes that modify the cascade trajectory.",
+      "Is the securities inverse Baumol (P-040) the template? If all high-Baumol sectors add lower-cost AI-augmented workers while cutting high-cost juniors, the wage structure of the economy permanently shifts downward.",
+      "Does the healthcare monoculture (P-039) absorb enough displaced cognitive workers to prevent social crisis? Healthcare added 82K jobs in Jan 2026 alone -- but at $62.5K avg pay vs $164K for the IT jobs being destroyed."
+    ]
+  },
+
+  "metadata": {
+    "data_sources": [
+      "BLS Employment Situation Summary (Feb 2026)",
+      "BLS Occupational Outlook Handbook",
+      "QCEW National 2022-2023 (NAICS 5415, 523, 55, 53, 61, 62)",
+      "Revelio Labs entry-level hiring tracker",
+      "HBR / Oxford Economics AI displacement survey",
+      "McKinsey Global Survey on AI (2025-2026)",
+      "Gartner Management Automation Forecast",
+      "AICPA Trends in Accounting Pipeline",
+      "NCES / Western Interstate Commission enrollment projections",
+      "Stack Overflow Developer Survey 2025",
+      "GitHub / METR AI coding productivity studies",
+      "SIFMA Securities Industry Data",
+      "NAR Membership and Transaction Data",
+      "FDA AI Device Database",
+      "USCIS H-1B Registry and Policy Updates",
+      "v3-7 deep dives: IT Services, Securities, Management, Real Estate",
+      "v3-5 Financial Services Cascade model",
+      "v3-4 Education Sector Deep Dive",
+      "v3-7 signal files (F2, F4, F5)"
+    ],
+    "cross_references": [
+      "data/verified/v3-7_it_services_deep_dive_2026-02-12.json",
+      "data/verified/v3-7_securities_deep_dive_2026-02-12.json",
+      "data/verified/v3-7_management_deep_dive_2026-02-12.json",
+      "data/verified/v3-7_real_estate_deep_dive_2026-02-12.json",
+      "data/verified/v3-5_financial_services_cascade_2026-02-11.json",
+      "data/verified/education_sector_deep_dive_2026-02-11.json",
+      "data/context/state.json"
+    ],
+    "theoretical_lenses_applied": ["T1 Schumpeter/Christensen", "T3 Baumol", "T5 Perez", "T8 Demographics", "T10 Coase", "T25 Fear Economics"],
+    "word_count_note": "This is a comprehensive cascade model, not a brief. Depth is deliberate -- the cascade has 6+ year time horizon across 8 sectors with second-order effects on 5 systems (universities, certifications, immigration, geography, generational wealth)."
+  }
+}
