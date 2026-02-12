@@ -1,0 +1,1362 @@
+{
+  "cycle": "v3-7-management",
+  "date": "2026-02-12",
+  "agent": "Agent B (Business Model Constructor)",
+  "type": "sector_deep_dive",
+  "sector": "Management of Companies and Enterprises",
+  "screener_rank": 3,
+
+  "sector_context": {
+    "sector_naics": "55 (551114 primary sub-sector)",
+    "sector_name": "Management of Companies and Enterprises",
+    "force_drivers": ["F1_technology", "F4_capital", "F2_demographics", "F5_psychology"],
+
+    "what_this_sector_is": {
+      "description": "NAICS 55 is the COMMAND AND CONTROL layer of the American economy. It consists of establishments whose primary activity is holding the securities or financial assets of companies and enterprises for the purpose of owning a controlling interest, OR providing administrative, management, and oversight services to other establishments of the company. This is NOT a vertical industry — it cross-cuts every sector. These are the corporate headquarters, regional offices, holding companies, and subsidiary management offices that coordinate the activities of operating units.",
+      "sub_sectors": {
+        "551111": "Offices of Bank Holding Companies — 8K workers, Baumol 2.47",
+        "551112": "Offices of Other Holding Companies — 86K workers, Baumol 2.47, fragmentation 0.161",
+        "551114": "Corporate, Subsidiary, and Regional Managing Offices — 2.46M workers, Baumol 2.01, avg pay $146K. This is 96.5% of the sector."
+      },
+      "what_these_workers_do": [
+        "Strategic planning and corporate strategy development",
+        "Financial planning, budgeting, and capital allocation",
+        "Human resources management and organizational design",
+        "Legal, compliance, and regulatory coordination",
+        "IT governance and technology strategy",
+        "Internal audit and risk management",
+        "Corporate communications and investor relations",
+        "Mergers & acquisitions evaluation and integration",
+        "Supply chain oversight and procurement coordination",
+        "Performance reporting, KPI tracking, and management reviews"
+      ],
+      "geographic_concentration": "Heavily concentrated in NYC metro, San Francisco Bay Area, Chicago, Dallas-Fort Worth, Houston, Atlanta, and Washington DC. These 7 metro areas contain approximately 35-40% of NAICS 55 employment.",
+      "key_insight": "This sector is the OVERHEAD of the economy. Every dollar spent in NAICS 55 is a coordination cost that Coase's theory says exists because internal organization is cheaper than market transactions. When AI collapses the cost of coordination, this sector's economic rationale weakens."
+    },
+
+    "current_state_2026": {
+      "employment": "2.55M workers (QCEW 2023, growing +1.9% YoY)",
+      "establishments": "94,657 (avg 27 workers/establishment)",
+      "average_pay": "$146,963 (Baumol 2.02x economy average)",
+      "total_payroll": "$375B annually",
+      "baumol_score": 2.02,
+      "fragmentation_proxy": 0.037,
+      "emp_growth_pct": 1.88,
+      "wage_growth_pct": 1.60,
+      "ai_adoption": "early_to_growing — 78% of enterprises report AI adoption (McKinsey), but concentrated in tool-level usage (copilots, dashboards) not structural reorganization",
+      "key_patterns": ["P-001", "P-002", "P-036", "P-037"]
+    },
+
+    "transformation_direction": {
+      "what_changes": [
+        "Middle management coordination layer (reporting, planning, status aggregation) compressed by AI agents — Gartner projects 20% of orgs eliminate >50% of middle management roles by 2026",
+        "Corporate strategy analysis shifts from human-produced slide decks to AI-generated scenario modeling — McKinsey cutting 10% workforce",
+        "Financial planning and budgeting automated by AI agents that can reconcile, forecast, and allocate in real-time",
+        "Internal reporting cadence shifts from monthly/quarterly human-compiled reports to continuous AI-monitored dashboards",
+        "Corporate headquarters physical footprint shrinks as coordination functions go digital — 32% of CRE leaders plan further footprint reduction",
+        "Holding company structures simplify as AI enables direct oversight without management layers — Coasean firm size shrinks",
+        "Silver Tsunami at executive level (52.3% of businesses owned by 55+) creates succession gaps that AI-augmented operations can partially fill",
+        "Entry-level management pipeline collapses (67% junior hiring decline) creating 5-10 year leadership development crisis"
+      ],
+      "timeline": {
+        "2026": "AI agent platforms launch for enterprise coordination (OpenAI Frontier, Claude agent teams). 10-20% middle management reduction begins at tech-forward companies. Anticipatory layoffs peak (60% of orgs cutting for AI potential, not performance). CMBS office delinquency continues rising above 12.34%.",
+        "2027": "First wave of AI-native corporate operating systems gain traction. Companies that cut middle management in 2025-2026 discover coordination gaps — some rehire, most double down on AI agents. Consulting firms restructure from pyramid to modular teams (70% blended workforce). CRE lease expirations (15-20% of office inventory 2026-2028) crystallize HQ downsizing.",
+        "2028": "Multi-agent orchestration becomes standard for corporate planning cycles. Budget/forecast/report workflows fully automated at 30-40% of Fortune 500. Holding company structures begin simplifying — fewer subsidiary management layers needed. Silver Tsunami succession crisis peaks.",
+        "2029_2030": "AI-native firms demonstrate 3-5x coordination efficiency vs traditional HQ structures. NAICS 55 employment begins measurable decline (est. -5 to -15% from 2026 peak). New firm structures emerge: 'AI-coordinated federations' replace hierarchical holding companies. Corporate HQ real estate permanently repriced.",
+        "2031": "Sector employment stabilized at 2.0-2.2M (down from 2.55M). Remaining roles are predominantly tacit-cognitive: strategic judgment, stakeholder relationships, crisis management, cultural leadership. The 'Corporate OS' category is a $15-25B market."
+      },
+      "barbell_classification": {
+        "routine_cognitive_pct": 55,
+        "routine_cognitive_tasks": [
+          "Management reporting and KPI compilation",
+          "Budget variance analysis and financial reporting",
+          "Meeting scheduling, agenda preparation, and minute-taking",
+          "Status aggregation across business units",
+          "Compliance monitoring and regulatory filing preparation",
+          "HR administration (payroll, benefits, onboarding workflows)",
+          "Procurement coordination and vendor management",
+          "Internal communications drafting",
+          "Travel and expense management",
+          "Data collection and dashboard maintenance"
+        ],
+        "tacit_manual_pct": 5,
+        "tacit_manual_tasks": [
+          "Physical facility management",
+          "Executive security and travel logistics",
+          "Mail room and document handling (declining)"
+        ],
+        "tacit_cognitive_pct": 40,
+        "tacit_cognitive_tasks": [
+          "Strategic decision-making under uncertainty",
+          "Stakeholder relationship management (board, investors, regulators)",
+          "Organizational culture shaping and talent development",
+          "Crisis management and reputational judgment",
+          "M&A negotiation and integration leadership",
+          "Cross-functional conflict resolution",
+          "Innovation direction-setting and resource prioritization",
+          "Ethical judgment in ambiguous situations"
+        ],
+        "net_effect": "Middle collapses by 30-45% (routine cognitive coordination roles), C-suite and senior leadership roles preserved but fewer needed per firm. Net NAICS 55 employment decline of 15-20% by 2031. Judgment premium for remaining executives rises significantly — surviving roles command $200K+ compensation."
+      },
+      "second_order_effects": [
+        "CRE CASCADE: Corporate HQ downsizing reduces Class A office demand in top 7 metros. 15-20% of office leases expiring 2026-2028 will not be renewed at same square footage. Compounds CMBS delinquency crisis (already 12.34% all-time record).",
+        "CONSULTING CASCADE: If corporate strategy teams shrink, consulting demand initially RISES (outsource what you used to do internally) then FALLS (AI replaces both internal and external analysis). McKinsey/BCG/Bain face structural disruption by 2028-2029.",
+        "ENTRY-LEVEL PIPELINE DESTRUCTION: 67% junior hiring decline + AI replacing analyst/associate functions = no leadership development pathway. By 2031-2035, acute shortage of executives with operational experience. Creates premium for 'AI-era leadership development' programs.",
+        "GEOGRAPHIC IMPACT: NYC, SF, Chicago disproportionately affected — these metros have highest concentration of NAICS 55 employment. Regional economic multiplier effects on restaurants, retail, transportation, and housing.",
+        "HOLDING COMPANY SIMPLIFICATION: PE-backed holding companies with heavy management overhead face margin compression. AI-native alternatives (single operator + AI agents managing multiple portfolio companies) emerge. Coasean firm size shrinks.",
+        "LABOR MIGRATION: Displaced middle managers (est. 400K-750K by 2031) seek redeployment. Some move to consulting, some to entrepreneurship (532K new business apps/month), some to operational roles in sectors with labor shortages (healthcare +82K/month)."
+      ]
+    },
+
+    "economic_force_quantification": {
+      "current_sector_payroll": "$375B (2.55M workers x $147K avg)",
+      "routine_cognitive_payroll": "$206B (55% of $375B — the compressible portion)",
+      "ai_cost_compression_target": "30-50% of routine cognitive work automatable by 2031 = $62B-$103B in payroll compression",
+      "jevons_expansion": "LIMITED in this sector. Unlike service sectors where lower costs expand demand, corporate coordination is a COST not a product. Lower coordination costs don't create more coordination — they enable firms to operate with LESS. Jevons multiplier: 0.3-0.5x (demand contracts as costs fall).",
+      "net_economic_force": "$62B-$103B in payroll compression (cost savings to firms, job losses for workers). Partially offset by $15-25B in new 'Corporate AI OS' market creation. Net: $40-80B reallocation from human coordination to AI coordination by 2031.",
+      "key_insight": "This is one of the few sectors where Jevons runs IN REVERSE. Cheaper coordination doesn't create more coordination — it creates LESS need for a coordination layer. The economic force is deflationary for the sector but creates surplus capital for firms that can be redeployed elsewhere."
+    },
+
+    "fear_friction_profile": {
+      "sector_naics": "55",
+      "sector_name": "Management of Companies and Enterprises",
+      "economic_readiness": 9,
+      "psychological_readiness": 4,
+      "gap": 5,
+      "classification": "high_friction",
+      "analysis": {
+        "economic_readiness_justification": "Technology is ready NOW. AI agents can handle reporting, planning, coordination, and analysis at production quality. OpenAI Frontier and Claude agent teams are enterprise-grade. 88% of organizations using AI agents report favorable ROI. The economic case for middle management compression is overwhelming: $206B in routine cognitive payroll is addressable.",
+        "psychological_readiness_justification": "This is the sector where the DECISION-MAKERS are the ones being displaced. Unlike factory automation (decided by executives, affects workers), corporate AI threatens the people who approve AI adoption. This creates a unique reflexive resistance: (1) 60% of orgs already cutting headcount anticipating AI — but at LOWER levels, not management. (2) Middle managers experiencing 'existential ambiguity' — 37% report feeling directionless after management layers eliminated. (3) C-suite executives have personal career incentive to maintain management layers that report to them. (4) 41% of employees report their companies trimmed management layers in 2025, but most trimming is selective, not structural.",
+        "gap_dynamics": "The fear friction gap is WIDEST here because the incumbents (managers) control the adoption decision. This is T25 Fear Economics at maximum reflexivity. Resolution requires: (a) board-level mandate for AI-driven efficiency, (b) competitive pressure from AI-native firms demonstrating 3-5x coordination efficiency, (c) PE/activist pressure on management overhead costs, or (d) Silver Tsunami attrition making the choice for companies as executives retire and are not replaced 1:1.",
+        "resolution_timeline": "2026-2027: selective tool adoption (copilots for managers, not replacement of managers). 2027-2028: competitive pressure forces structural adoption. 2029+: AI-native firms demonstrate that 50-person HQ can coordinate what 500-person HQ used to."
+      }
+    },
+
+    "coasean_analysis": {
+      "theory": "T10: Coase/Williamson Transaction Cost Economics",
+      "thesis": "Firms exist because internal coordination is cheaper than market transactions. AI is collapsing the cost of market transactions (finding, contracting, monitoring external resources) faster than it is collapsing internal coordination costs. This means the OPTIMAL firm size is shrinking — confirmed by 532K new business applications per month.",
+      "naics_55_implications": [
+        "If AI makes market transactions cheaper, firms need less internal coordination overhead (fewer NAICS 55 workers)",
+        "Holding companies exist to coordinate subsidiary operations — AI agents can monitor, report, and coordinate across entities without human management layers",
+        "The 'span of control' for a single executive expands dramatically with AI assistance — one C-suite member can oversee 5-10x more operations",
+        "New firm structures emerge: 'AI-coordinated federations' where independent entities are loosely coordinated by AI systems rather than hierarchical management",
+        "PE portfolio management transforms: instead of installing management teams in each portfolio company, a central AI operations platform coordinates across the portfolio"
+      ],
+      "counter_argument": "Some argue AI makes firms LARGER because it reduces internal coordination costs too, enabling bigger organizations. The evidence is mixed: mega-tech firms are getting larger (Mag 7 = 40% of S&P 500), but median firm size is shrinking (business applications at record highs). Both may be true simultaneously — a barbell of mega-firms and micro-firms with the middle hollowed out.",
+      "data_signal": "532K new business applications per month (Coasean shrinkage confirmed in state.json). BUT also record corporate concentration (top 10 = 40% S&P 500). Barbell firm-size structure emerging."
+    }
+  },
+
+  "existing_models_gap_analysis": {
+    "existing_coverage": "Zero existing model cards for NAICS 55. This is an entirely uncovered sector in the engine.",
+    "gaps_identified": [
+      "NO corporate AI operating system / coordination platform model",
+      "NO middle management displacement / workforce transition model",
+      "NO corporate HQ-to-flexible workspace conversion model (CRE cascade)",
+      "NO AI-native holding company / portfolio coordination model",
+      "NO executive succession + AI augmentation model (Silver Tsunami)",
+      "NO management consulting AI disruption model",
+      "NO corporate governance / board AI advisory model",
+      "NO enterprise AI agent orchestration platform model"
+    ],
+    "models_to_construct": 8,
+    "id_range": "MC-MGT-001 through MC-MGT-008"
+  },
+
+  "model_cards": [
+    {
+      "card_id": "MC-MGT-001",
+      "model_name": "AI-Native Corporate Operating System",
+      "architecture": "platform_infrastructure",
+      "sector_naics": "551114",
+      "sector_name": "Corporate, Subsidiary, and Regional Managing Offices",
+      "one_line": "Enterprise platform replacing middle-management coordination with AI agents for planning, reporting, and cross-functional orchestration",
+      "macro_source": "P-036 Anticipatory Displacement + T10 Coasean shrinkage — AI agents replace coordination overhead, enabling 3-5x leaner HQ structures",
+      "forces": ["F1_technology", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "2.55M NAICS 55 workers at $147K avg = $375B annual coordination cost for the economy",
+            "55% of HQ work is routine cognitive (reporting, planning, status aggregation) — directly automatable",
+            "AI agent market growing at 46.3% CAGR from $7.84B to $52.6B by 2030",
+            "88% of organizations using AI agents report favorable ROI, 4.3x ROI in advanced deployments",
+            "OpenAI Frontier + Claude agent teams enable multi-agent workflow orchestration at enterprise scale",
+            "20% of organizations projected to eliminate >50% middle management roles by 2026 (Gartner)"
+          ],
+          "supply_gap": "Existing enterprise software (SAP, Oracle, Workday) automates individual functions but NOT cross-functional coordination. The middle manager's job — synthesizing information across departments, making resource allocation decisions, escalating issues — has no software equivalent today. AI agent orchestration platforms can fill this gap by continuously monitoring operations, flagging exceptions, generating reports, and recommending decisions.",
+          "inevitability_argument": "Every corporation faces the same math: $147K average coordination worker vs $200-500/month AI agent subscription. Companies that adopt AI coordination gain 3-5x cost advantage. Competitive pressure forces adoption across the economy. The only question is timeline (2-5 years), not direction.",
+          "pattern_refs": ["P-001", "P-036", "P-037"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "Multi-agent AI orchestration (Opus 4.6 agent teams, OpenAI Frontier) enables complex cross-functional workflows: budget reconciliation across units, project status aggregation, resource allocation optimization, meeting preparation and follow-up. Inference cost at $0.40/M tokens makes continuous AI monitoring economically viable."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 8,
+            "mechanism": "PE refinancing wall ($930B maturing 2026) forces portfolio companies to cut overhead. Management overhead is the first target. AI coordination platforms enable PE sponsors to run portfolio companies with minimal management layers — 1 operator + AI agents vs 10-person management team."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 3, "notes": "Software platform dependent on frontier AI model APIs (OpenAI, Anthropic, open-source). No hardware dependencies. Multi-model architecture prevents single-vendor lock-in."},
+          "regulatory_contagion": {"score": 4, "notes": "EU AI Act high-risk delayed to Dec 2027. US state AI regulations targeting agentic AI decisions (Colorado AI Act 2026). Employment law implications of AI replacing management roles. Moderate regulatory uncertainty but no blocking regulation imminent."},
+          "competitive_import": {"score": 6, "notes": "Microsoft Copilot Studio, Google Agentspace, Salesforce AgentForce all building enterprise agent platforms. But these are horizontal tools, not purpose-built corporate coordination systems. Startup opportunity is in the verticalized corporate OS layer above generic agent frameworks."},
+          "leading_indicator_transfer": {"score": 8, "notes": "Track: (1) middle management layoff announcements (108K Jan 2026, +118% YoY), (2) enterprise AI agent adoption rates (79-96% deploying or increasing), (3) consulting firm restructuring (McKinsey 10% cuts, Deloitte title overhaul), (4) NAICS 55 QCEW employment changes."},
+          "resource_talent_flow": {"score": 7, "notes": "Talent available from displaced corporate strategists, management consultants, and enterprise software engineers. Domain expertise in corporate operations widely available. AI engineering talent competitive but not cleared/specialized."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "In a recession, corporate overhead cutting ACCELERATES. AI coordination platforms become more attractive, not less, during downturns. PE pressure to reduce management overhead intensifies during credit tightening.",
+          "time_sensitivity": "high — multi-agent orchestration capability just reached production quality (Q1 2026). First movers who verticalize for corporate coordination capture enterprise contracts with 3-5 year lock-in."
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$20M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "10-30x vs fully-loaded middle management coordination cost ($147K/worker/yr vs $5K-$15K/yr AI platform per-seat)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 8.5, "justification": "Structural necessity is very high — $375B coordination payroll with 55% routine cognitive is an enormous addressable cost. However, the reflexive resistance (managers decide their own fate) prevents a 9+. Demand is confirmed by 108K Jan layoffs + Gartner 20% prediction."},
+        "FA": {"value": 8.5, "justification": "Strong F1 alignment (multi-agent orchestration just reached production quality) and F4 alignment (PE overhead pressure). Loses 0.5 because F2 (demographics) is a secondary force here, not primary."},
+        "EC": {"value": 7.0, "justification": "Moderate external context score. Competitive landscape crowded at horizontal agent layer but open at verticalized corporate OS layer. Regulatory risk from EU AI Act and state agentic AI laws creates uncertainty. No geographic limitation (global corporate overhead problem)."},
+        "TG": {"value": 8.0, "justification": "Strong timing — multi-agent capability just reached enterprise grade (Q1 2026). Entry window is 2026-2028 before Microsoft/Google/Salesforce vertically integrate. Revenue within 6 months. Crash-resilient (overhead cutting accelerates in downturns)."},
+        "CE": {"value": 7.5, "justification": "Good capital efficiency — software platform with 75% gross margins. $5-20M capital requirement is moderate. Data flywheel from corporate operations data creates moat over time. But enterprise sales cycle (6-12 months) and competitive pressure from tech giants caps CE."},
+        "composite": 79.75,
+        "composite_formula": "(8.5*25 + 8.5*25 + 7.0*20 + 8.0*15 + 7.5*15) / 10 = 79.75",
+        "category": "FORCE_RIDER",
+        "category_justification": "SN 8.5 < 9.0 threshold for STRUCTURAL_WINNER. Strong F1+F4 force alignment at 8.5. This is a force-riding platform that succeeds because AI agent capability just crossed the production threshold."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5,000-$25,000/month per enterprise (tiered by employee count and complexity: mid-market $5K, large enterprise $15K, Fortune 500 $25K+)",
+        "cost_per_unit_ai": "$300-$1,500/month per enterprise (multi-agent inference, data integration, continuous monitoring infrastructure)",
+        "cost_per_unit_incumbent": "$50K-$500K/month per enterprise (5-50 middle managers at $10K/month fully loaded cost each performing coordination functions)",
+        "break_even_volume": "50-80 enterprise clients at $12K/month average = $600K-$960K MRR (achievable in 12-18 months with strong enterprise sales team)",
+        "jevons_multiplier": "0.5x — this is a cost compression play, not demand expansion. Lower coordination costs enable smaller firms to operate at scale previously requiring large HQs, but net coordination demand DECREASES.",
+        "economic_force_tam": "$206B routine cognitive payroll in NAICS 55. 30-50% addressable by AI = $62-103B. Platform captures 1-3% = $620M-$3.1B TAM for corporate OS category."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 4,
+        "gap": 5,
+        "primary_friction": "The buyers (C-suite) must authorize eliminating the people who report to them. Middle managers who would be displaced often control the technology evaluation process. Reflexive resistance: the incumbents are the gatekeepers.",
+        "resolution_path": "Position as 'management augmentation' not 'management replacement' in initial sale. Target CFOs and PE sponsors (cost reduction mandate overrides organizational politics). Start with reporting/planning automation (non-threatening), expand to coordination replacement as trust builds. Board-level AI efficiency mandates bypass middle management gatekeepers.",
+        "fear_driven_demand_created": "AI management transition consulting — helping companies redesign org structures for AI coordination. $2-5B market by 2028."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Multi-agent AI orchestration is production-ready (OpenAI Frontier, Claude agent teams launched Q1 2026)",
+          "88% of AI agent users report favorable ROI (Index.dev 2026)",
+          "108K Jan 2026 layoffs with 60% cutting for AI potential (HBR/Challenger)",
+          "Enterprise AI spending $37B in 2025, 3.2x YoY growth (McKinsey/Bain)"
+        ],
+        "likely": [
+          "AI agents can reliably handle cross-functional coordination workflows (demonstrated in constrained domains, expanding)",
+          "PE sponsors will mandate AI overhead reduction in portfolio companies during refinancing wall",
+          "First-mover corporate OS platforms will achieve enterprise lock-in through data integration depth"
+        ],
+        "uncertain": [
+          "Speed of enterprise adoption — will reflexive resistance slow adoption to 3-5 years or will competitive pressure force 1-2 year adoption?",
+          "Whether Microsoft/Google build a dominant corporate OS or whether verticalized startups capture the market",
+          "Gartner's 40% failure prediction for agentic AI projects by 2027 — how many early adopters fail and create backlash?"
+        ],
+        "unlikely": [
+          "Middle management coordination work returns to pre-AI levels (technology ratchet — once automated, companies don't re-hire)",
+          "Regulatory prohibition on AI-driven organizational restructuring (no jurisdiction pursuing this)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 15,
+        "total_funding": "$500M+ across enterprise AI agent platforms (horizontal), <$50M in verticalized corporate coordination specifically",
+        "layer": "platform",
+        "moat_sources": [
+          "Corporate operations data flywheel — deeper integration with enterprise systems creates switching costs",
+          "Workflow library — pre-built coordination workflows for specific corporate functions (finance, HR, strategy, procurement)",
+          "Enterprise trust — SOC 2, data residency, audit trail requirements create compliance moat",
+          "Cross-functional integration depth — connecting ERP, HRIS, CRM, project management into unified coordination layer"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If middle management layoffs reverse and companies re-hire coordination roles at scale by 2028",
+        "If Microsoft Copilot Studio or Google Agentspace builds a dominant corporate coordination vertical that blocks startup entry",
+        "If >40% of early corporate AI agent deployments fail catastrophically, creating enterprise AI backlash lasting 2+ years",
+        "If regulatory action in EU or US explicitly restricts AI-driven employment decisions in management roles",
+        "If multi-agent orchestration reliability plateaus below the threshold needed for cross-functional corporate coordination"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-002",
+      "model_name": "AI-Augmented PE Portfolio Operations Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "551112",
+      "sector_name": "Offices of Other Holding Companies",
+      "one_line": "AI operations platform enabling PE firms to manage 5-10x more portfolio companies per operating partner, replacing subsidiary management layers",
+      "macro_source": "T10 Coase + T4 Minsky — PE refinancing wall forces overhead reduction while AI enables centralized portfolio coordination",
+      "forces": ["F1_technology", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "$930B PE debt maturing in 2026, $1.5-1.8T maturing 2026-2028 — overhead reduction is survival imperative",
+            "PE distress rate 11.98% (+148%) — portfolio companies under margin pressure need leaner management",
+            "86K holding company establishments (551112) at Baumol 2.47 — premium-priced coordination overhead",
+            "Typical PE portfolio company has 5-15 management team members at $200K+ each = $1-3M annual overhead per company",
+            "AI agents can generate board reports, track KPIs, reconcile financials, and flag operational issues across portfolio"
+          ],
+          "supply_gap": "PE operating partners currently oversee 3-5 portfolio companies each. AI-augmented operations could expand this to 15-25. The gap is a purpose-built platform that connects to portfolio company financial/operational systems and provides unified AI-driven oversight. Existing tools (Visible, Carta, Juniper Square) handle reporting but not operational coordination.",
+          "inevitability_argument": "PE firms that can manage more companies per operating partner have structural cost advantage. With $930B in debt maturing, overhead reduction is not optional. AI-driven portfolio operations will become the standard PE operating model by 2028-2030.",
+          "pattern_refs": ["P-001", "P-036"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "AI agents can ingest financial reports from 10-20 portfolio companies, identify anomalies, generate variance analyses, prepare board materials, and flag operational risks — all tasks currently performed by portfolio company CFOs and operating partners. Multi-agent systems enable parallel monitoring of multiple entities."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 10,
+            "mechanism": "The PE refinancing wall is the strongest force driver. $930B maturing in 2026 forces PE sponsors to cut portfolio company overhead. Management fees and operating partner costs are the largest controllable expense. AI-driven portfolio operations directly reduce the cost structure that PE firms must optimize to survive the refinancing cycle."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 2, "notes": "Software platform integrating with standard financial systems (QuickBooks, NetSuite, SAP). No exotic dependencies."},
+          "regulatory_contagion": {"score": 3, "notes": "PE is lightly regulated relative to public markets. SEC oversight of PE advisors increasing but not targeting operational AI. Carried interest tax treatment is the main regulatory risk but unrelated to AI adoption."},
+          "competitive_import": {"score": 5, "notes": "Existing PE portfolio management tools (Visible, Carta, Juniper Square) could add AI features. Consulting firms (McKinsey, Bain) offer PE operations services. But no AI-native portfolio operations platform exists yet."},
+          "leading_indicator_transfer": {"score": 9, "notes": "Track PE distress rate (11.98% and rising), debt maturity schedule, operating partner hiring/firing, and PE portfolio company layoff announcements. Each signals accelerating demand."},
+          "resource_talent_flow": {"score": 8, "notes": "Abundant talent from PE operations, management consulting, and enterprise software backgrounds. Former operating partners understand the workflow intimately. No specialized clearances or licenses required."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "very_high",
+          "crash_resilience_reason": "A credit crunch or recession INCREASES demand for PE portfolio overhead reduction. The worse the refinancing environment, the more urgent the need for AI-driven operations. This is counter-cyclical.",
+          "time_sensitivity": "very_high — the $930B refinancing wall is hitting NOW. PE firms making overhead decisions in 2026-2027 that will define portfolio operations for 5+ years."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$10M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "5-10x vs traditional PE operating team structure ($300K/yr platform vs $1.5-3M/yr per portfolio company management overhead)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 8.5, "justification": "PE refinancing wall creates structural necessity — overhead reduction is survival imperative for $930B in maturing debt. 86K holding company establishments with Baumol 2.47 confirms premium-priced coordination. But PE is a sophisticated buyer that may build in-house."},
+        "FA": {"value": 9.0, "justification": "Near-perfect F4 alignment (refinancing wall is the primary force driver) plus strong F1 (multi-agent orchestration enables the model). This is as force-aligned as any non-defense model in the engine."},
+        "EC": {"value": 7.5, "justification": "Low regulatory risk, strong leading indicators, good talent availability. Moderate competitive import risk from existing PE tech platforms adding AI. Cross-geography applicability (global PE industry)."},
+        "TG": {"value": 9.0, "justification": "Timing is exceptional — $930B maturing NOW, PE firms making restructuring decisions in 2026-2027. Counter-cyclical demand (recession increases urgency). Revenue in 4 months. First-mover captures relationships during the refinancing wave."},
+        "CE": {"value": 8.0, "justification": "Strong capital efficiency — $3-10M, 80% gross margins, counter-cyclical. PE operating data creates deep moat. But enterprise PE sales cycle and relationship-driven market require sales investment."},
+        "composite": 84.25,
+        "composite_formula": "(8.5*25 + 9.0*25 + 7.5*20 + 9.0*15 + 8.0*15) / 10 = 84.25",
+        "category": "STRUCTURAL_WINNER",
+        "category_justification": "SN 8.5 borderline but FA 9.0 + TG 9.0 with counter-cyclical demand profile and composite 84.25 places this in STRUCTURAL_WINNER territory. The PE refinancing wall creates an unavoidable adoption forcing function. Highest-scoring non-defense card in the engine."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$10,000-$50,000/month per PE firm (tiered by portfolio size: 5-10 companies $10K, 10-25 companies $25K, 25+ companies $50K). Alternative: $2,000-$5,000/month per portfolio company.",
+        "cost_per_unit_ai": "$500-$2,000/month per portfolio company (AI inference for financial analysis, KPI monitoring, report generation, anomaly detection)",
+        "cost_per_unit_incumbent": "$25,000-$75,000/month per portfolio company (operating partner allocation + portfolio company management team overhead for coordination functions)",
+        "break_even_volume": "30-50 PE firms or 200-400 portfolio companies ($500K-$1M MRR, achievable in 12-18 months targeting mid-market PE)",
+        "jevons_multiplier": "1.5-2x — lower management overhead costs enable PE firms to acquire and hold MORE portfolio companies, expanding the market for AI-driven portfolio operations",
+        "economic_force_tam": "~15,000 US PE firms managing ~45,000 portfolio companies. $50K/yr avg management overhead x 45K = $2.25B addressable. AI platform captures 15-25% = $340M-$560M."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 6,
+        "gap": 3,
+        "primary_friction": "PE operating partners may resist a platform that demonstrates they can be replaced. GP/LP relationship dynamics — LPs may question management fee justification if AI does the operating work. Cultural resistance in PE to 'automated' oversight vs 'expert judgment.'",
+        "resolution_path": "Position as tool that makes operating partners MORE productive, not obsolete. Demonstrate that 1 operating partner + AI platform outperforms 3 operating partners without AI. Target PE firms under refinancing pressure where cost reduction overrides cultural resistance. LPs will eventually demand AI-driven operations as best practice.",
+        "fear_driven_demand_created": "PE AI operations consulting — helping PE firms redesign operating models around AI. Transitional service during adoption."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "$930B PE debt maturing in 2026, $1.5-1.8T by 2028 (Federal Reserve data)",
+          "PE distress rate 11.98%, +148% increase (state.json)",
+          "AI agents can generate financial analyses and board reports (demonstrated by multiple enterprise AI tools)",
+          "Multi-agent orchestration enables parallel monitoring of multiple entities (Opus 4.6, OpenAI Frontier)"
+        ],
+        "likely": [
+          "PE firms will prioritize overhead reduction during refinancing pressure (historical precedent from 2008-2010)",
+          "Operating partners who adopt AI tools will demonstrate measurably better portfolio performance",
+          "LPs will begin requiring AI-driven operations as part of due diligence by 2028"
+        ],
+        "uncertain": [
+          "Whether PE firms prefer to build AI capabilities in-house vs buy platforms",
+          "Speed of cultural adoption in relationship-driven PE industry",
+          "Whether AI can handle the nuanced judgment required for portfolio company operational intervention (not just monitoring)"
+        ],
+        "unlikely": [
+          "PE refinancing pressure eases without overhead restructuring (rates staying higher for longer confirms pressure persists)",
+          "PE industry rejects AI-driven operations and returns to exclusively human operating models"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 5,
+        "total_funding": "<$100M in PE-specific AI operations tools (most funding in adjacent categories: portfolio monitoring, LP reporting)",
+        "layer": "platform",
+        "moat_sources": [
+          "PE portfolio operating data creates proprietary benchmarking database (cross-portfolio performance patterns)",
+          "Integration depth with portfolio company financial systems creates switching costs",
+          "Relationship network with PE sponsors (once adopted, platform becomes embedded in operating model)",
+          "Domain expertise in PE operating rhythms (board cadence, reporting cycles, value creation plans) that horizontal AI tools lack"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If PE refinancing wall resolves without significant overhead restructuring (e.g., rates drop sharply, extending cheap debt)",
+        "If PE firms build effective in-house AI operations capabilities using generic tools (Copilot, Claude) without needing specialized platform",
+        "If AI agent reliability for financial analysis proves insufficient for PE-grade accuracy requirements",
+        "If PE industry consolidation reduces the number of independent PE firms below the threshold for platform economics",
+        "If major PE firm AI operations failure creates industry backlash against automated portfolio management"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-003",
+      "model_name": "Management Consulting AI Transformation Engine",
+      "architecture": "full_service_replacement",
+      "sector_naics": "541611",
+      "sector_name": "Administrative Management and General Management Consulting Services",
+      "one_line": "AI-native consulting platform delivering strategy, operations, and org design at 80% lower cost than McKinsey/BCG/Bain with 10x faster delivery",
+      "macro_source": "T3 Baumol Cure for consulting ($976B global market) + T21 Polanyi (80% of consulting is research/analysis, 20% is judgment/relationships)",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "Global management consulting market $976B (2023), growing 4.2% CAGR",
+            "Consulting spend rising above 4% of corporate revenue as AI increases advisory demand",
+            "McKinsey cutting 10% of workforce — the incumbents are restructuring themselves",
+            "Deloitte overhauling job titles effective Jun 2026 — shifting from pyramid to modular teams",
+            "70% of consulting firms now operating with blended workforce (freelance + AI)",
+            "Entry-level consulting salaries flat for unprecedented 3rd straight year — the analyst layer is being compressed"
+          ],
+          "supply_gap": "Traditional consulting charges $500-$1,000/hour for teams that spend 60-80% of their time on research, data analysis, and slide production — all tasks AI can now perform. The gap is a platform that delivers McKinsey-quality analysis at mid-market pricing, making strategy consulting accessible to companies that currently cannot afford it.",
+          "inevitability_argument": "Consulting is the purest Baumol Cure candidate after accounting: premium-priced cognitive work where 60-80% is routine research and analysis. AI cost compression of this layer is structurally inevitable. The only question is whether incumbents (MBB) transform or whether new entrants capture the market. McKinsey's 10% layoff signals they know this.",
+          "pattern_refs": ["P-001", "P-036"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "LLMs can now perform market research, competitive analysis, financial modeling, and strategic framework application at near-consultant quality. Multi-agent systems can decompose a consulting engagement into parallel workstreams (market sizing, competitive landscape, financial analysis, implementation planning) and synthesize results."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Consulting is a discretionary expense that companies cut during downturns. AI consulting at 80% lower cost becomes the default during capital-constrained periods. PE-backed companies under refinancing pressure switch from $5M McKinsey engagements to $500K AI-powered alternatives."
+          },
+          {
+            "force_id": "F5_psychology",
+            "contribution_score": 6,
+            "mechanism": "Fear of AI disruption drives consulting demand (companies need help understanding AI transformation). Paradoxically, the same AI disrupting consulting INCREASES demand for AI advisory services. But fear also creates resistance to trusting AI-generated strategy advice — the 'McKinsey brand premium' persists for psychological comfort."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 2, "notes": "Software platform with no hardware dependencies. Requires frontier AI model access and proprietary industry knowledge bases."},
+          "regulatory_contagion": {"score": 2, "notes": "Consulting is essentially unregulated. No licensing requirements, no regulatory barriers to AI-powered advisory. Low regulatory risk."},
+          "competitive_import": {"score": 8, "notes": "HIGH competition. McKinsey, BCG, Bain all investing in AI capabilities. Accenture spending $3B on AI. Dozens of AI consulting startups (Thinking Machines, Rewind AI, various). The incumbents have brand moat and client relationships. New entrants must compete on cost/speed/quality simultaneously."},
+          "leading_indicator_transfer": {"score": 7, "notes": "Track: MBB workforce reductions, consulting salary stagnation, Big 4 restructuring announcements, enterprise AI advisory spend, and mid-market companies previously unable to afford consulting now purchasing AI-powered alternatives."},
+          "resource_talent_flow": {"score": 8, "notes": "Abundant talent from displaced consultants, corporate strategists, and AI engineers. Former MBB consultants understand the workflow and can design AI-native alternatives. 10% salary premium for AI/trade expertise in consulting."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Consulting is counter-cyclical for restructuring/cost-cutting advisory but pro-cyclical for growth strategy. AI-powered consulting at lower cost is more recession-resilient than premium human consulting, but demand still dips in severe downturns.",
+          "time_sensitivity": "medium — the consulting market is large enough ($976B) and AI capability is improving fast enough that late entrants (2028-2029) could still capture share. Not as time-sensitive as PE operations."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$10M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 70,
+          "cost_advantage_ratio": "5-10x vs MBB ($50-100K AI engagement vs $500K-$5M traditional consulting engagement for similar scope)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 8.0, "justification": "Strong Baumol cure candidate — $976B market with 60-80% routine cognitive content. But consulting's relationship and trust dimensions create a durable human premium. Not all consulting work is automatable — judgment, client politics, and implementation require human expertise."},
+        "FA": {"value": 7.5, "justification": "Good F1 alignment but the F5 psychology dimension cuts both ways — fear drives demand for AI advisory but also creates resistance to AI-generated advice. F4 alignment is moderate (consulting is discretionary). Total force alignment is positive but not as strong as PE operations."},
+        "EC": {"value": 5.5, "justification": "HIGH competitive density — MBB + Accenture + Big 4 + dozens of startups all competing. The McKinsey brand moat is real. Regulatory environment favorable but competitive import is the major risk. Score penalized for crowded field."},
+        "TG": {"value": 7.5, "justification": "Good timing — AI capability sufficient, incumbents restructuring, entry-level salaries flat. But not as urgent as PE refinancing wall. Medium time sensitivity. Revenue in 3 months possible for lean operation. Moderate crash resilience."},
+        "CE": {"value": 7.0, "justification": "Good capital efficiency — low capital requirement, high margins, fast revenue. But consulting is relationship-driven, requiring sales investment. Moat from proprietary knowledge bases and client data, but competitors (including incumbents) can build similar."},
+        "composite": 71.5,
+        "composite_formula": "(8.0*25 + 7.5*25 + 5.5*20 + 7.5*15 + 7.0*15) / 10 = 71.5",
+        "category": "FORCE_RIDER",
+        "category_justification": "Strong structural forces (Baumol cure, T21 Polanyi) drive this model. Competitive density penalty prevents higher category. This rides the F1 technology wave into the $976B consulting market."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$10,000-$100,000 per engagement (strategy sprint: $10-30K in 2 weeks vs 8-12 weeks at MBB. Full strategic review: $50-100K vs $500K-$5M at MBB).",
+        "cost_per_unit_ai": "$500-$5,000 per engagement (AI inference for research, analysis, framework application, slide generation)",
+        "cost_per_unit_incumbent": "$200,000-$5,000,000 per engagement (MBB team of 3-8 consultants for 2-6 months at $500-$1,000/hour)",
+        "break_even_volume": "20-30 engagements/month at $25K average = $500-750K MRR. Achievable in 12-18 months targeting mid-market companies previously priced out of strategy consulting.",
+        "jevons_multiplier": "3-5x — at $10-30K per strategy sprint (vs $500K+ at MBB), the TAM expands dramatically. Millions of mid-market companies that never hired strategy consultants become addressable. This is a Jevons expansion opportunity.",
+        "economic_force_tam": "$976B global consulting market. Mid-market segment (companies $50M-$1B revenue) currently underserved by MBB. AI consulting addresses $50-100B of latent demand at 80% lower price points."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "primary_friction": "CEOs trust McKinsey partners, not AI platforms, for strategic advice. The consulting relationship is partly about CYA — 'we hired McKinsey so the board can't blame us.' AI-generated strategy lacks this political cover. Brand trust gap is the primary friction.",
+        "resolution_path": "Hybrid model: AI platform + experienced strategy advisor who validates and presents findings. Target mid-market companies that can't afford MBB (no existing loyalty to overcome). Build track record of successful AI-assisted strategy engagements. Eventually, AI-native strategy becomes the norm and MBB brand premium erodes.",
+        "fear_driven_demand_created": "AI strategy transformation consulting — companies need help understanding how AI changes their competitive landscape. The fear of disruption IS the consulting engagement."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Global consulting market $976B and growing (Fortune Business Insights, Management Consulted)",
+          "McKinsey cutting 10% workforce (Fast Company, confirmed Jan 2026)",
+          "Deloitte overhauling job titles/structure effective Jun 2026 (Fortune)",
+          "70% of consulting firms using blended workforce model (industry reports)",
+          "Entry-level consulting salaries flat 3rd year (Management Consulted 2026 Salary Report)"
+        ],
+        "likely": [
+          "AI can produce analysis comparable to junior consultant output for research, market sizing, and competitive analysis",
+          "Mid-market companies will adopt AI consulting at lower price points (Jevons expansion)",
+          "MBB firms will raise prices for remaining human-intensive services while losing volume in commoditized analysis"
+        ],
+        "uncertain": [
+          "Whether CEOs will trust AI-generated strategic recommendations without MBB brand validation",
+          "How quickly MBB firms can transform their own models to compete with AI-native alternatives",
+          "Whether AI consulting quality plateaus or continues improving to match senior partner judgment"
+        ],
+        "unlikely": [
+          "Consulting demand collapses overall — AI disruption INCREASES advisory demand even as it changes who provides it",
+          "MBB firms maintain current pricing and staffing models through 2030 without fundamental restructuring"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "crowded",
+        "funded_entrants": 25,
+        "total_funding": "$2B+ across AI consulting and advisory platforms (including Accenture's $3B AI investment, various startups)",
+        "layer": "full_service",
+        "moat_sources": [
+          "Proprietary industry knowledge bases and benchmark databases built from engagement data",
+          "Track record of successful AI-assisted strategy engagements (trust signal)",
+          "Hybrid model with experienced strategy advisors who validate AI output",
+          "Speed advantage — 2-week delivery vs 2-month MBB timeline creates structural preference"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If MBB firms successfully transform to AI-native models and maintain market share with updated pricing",
+        "If CEOs prove unwilling to trust AI-generated strategy advice even at 80% lower cost (brand premium is absolute, not relative)",
+        "If AI analysis quality plateaus below the threshold needed for board-level strategic recommendations",
+        "If consulting demand drops alongside AI adoption (companies need less advisory, not different advisory)",
+        "If regulatory action restricts AI-generated business advice (unlikely but possible in EU)"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-004",
+      "model_name": "Corporate HQ-to-Flex Workspace Conversion Platform",
+      "architecture": "marketplace_network",
+      "sector_naics": "531120",
+      "sector_name": "Lessors of Nonresidential Buildings",
+      "one_line": "Marketplace matching downsizing corporate HQs with flexible workspace operators, capturing the 15-20% office lease expiration wave of 2026-2028",
+      "macro_source": "P-026 CRE cascade + NAICS 55 HQ downsizing — corporate management layer compression directly reduces Class A office demand in top metros",
+      "forces": ["F4_capital", "F1_technology", "F2_demographics"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "Office CMBS delinquency 12.34% — ALL-TIME RECORD, above 2008 Financial Crisis peak",
+            "15-20% of total office inventory has leases expiring 2026-2028 — the largest repricing event since 2008",
+            "32% of CRE leaders plan further footprint reduction (Cushman & Wakefield)",
+            "Office vacancy dropped to 16.4% but remains far above pre-pandemic 12-13% levels",
+            "Office-to-residential conversions surged to record: 70,700 units in pipeline (+28% YoY)",
+            "NAICS 55 HQ downsizing directly reduces demand for Class A office in top metros",
+            "Hub-and-spoke model replacing monolithic HQs — smaller central office + flexible satellite spaces"
+          ],
+          "supply_gap": "No integrated platform connects corporates shedding HQ space with flexible workspace operators, conversion developers, and sub-lease markets. Current process is fragmented across brokers, coworking operators, and conversion developers. A marketplace that aggregates supply (downsizing corporates) and demand (flex operators, converters, sub-lessees) captures transaction value.",
+          "inevitability_argument": "The 15-20% lease expiration wave 2026-2028 will crystallize years of deferred HQ downsizing decisions. Every corporation with a lease expiring must decide: renew at same footprint, downsize, or convert to flex. This creates a one-time massive transaction wave that rewards whoever aggregates the marketplace.",
+          "pattern_refs": ["P-026"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 9,
+            "mechanism": "CMBS at 12.34% delinquency creates forced dispositions. $936B-$1.8T CRE debt maturing forces lenders to accept discounted terms. Distressed office assets become conversion opportunities. Capital flowing from office to alternatives (data centers, industrial, residential)."
+          },
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 6,
+            "mechanism": "AI enables the analysis layer: space utilization analytics, conversion feasibility modeling, sub-lease pricing optimization, and portfolio optimization for flex operators. AI is an enabler, not the primary driver — CRE capital dynamics are the primary force."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 5,
+            "mechanism": "Silver Tsunami creates business succession events that often include disposition of owner-occupied commercial space. Hybrid work preferences of younger workers reduce per-capita office demand. But demographics is a secondary force here."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 4, "notes": "Marketplace requires integration with CRE databases (CoStar, CBRE), lease management systems, and conversion contractor networks. Data access is moderately concentrated."},
+          "regulatory_contagion": {"score": 5, "notes": "Zoning changes needed for office-to-residential conversion. Some municipalities accelerating conversions (NYC, DC) while others lag. Local regulatory variation creates geographic arbitrage opportunities."},
+          "competitive_import": {"score": 7, "notes": "IWG (Regus/Spaces) growing 26% managed workspace revenue. WeWork rebuilt after bankruptcy. CBRE, JLL, Cushman & Wakefield have extensive brokerage networks. VTS, CoStar have data platforms. Competition is real but fragmented."},
+          "leading_indicator_transfer": {"score": 9, "notes": "Track: CMBS delinquency rates, office lease expiration calendar, corporate HQ relocation announcements, flex workspace occupancy rates, office-to-resi conversion permits. All trending favorably."},
+          "resource_talent_flow": {"score": 7, "notes": "CRE professionals available from downsizing brokerages. Tech talent for marketplace platform widely available. Need CRE domain expertise + marketplace engineering."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "A recession accelerates HQ downsizing (more supply) but may slow flex operator expansion (less demand). Net effect depends on severity. Mild recession is positive (more corporate downsizing). Severe recession hurts flex demand.",
+          "time_sensitivity": "very_high — the 15-20% lease expiration wave of 2026-2028 is a one-time event. Marketplace must be operational before the wave peaks to capture transaction volume."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$15M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 60,
+          "cost_advantage_ratio": "2-3x vs traditional CRE brokerage (marketplace efficiency vs broker relationship model). Revenue model: transaction fees (2-5%) + subscription for analytics.",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 7.5, "justification": "Strong demand driver (CMBS 12.34%, 15-20% lease expiration wave) but the marketplace model is not as structurally necessary as a direct service — corporates can still use traditional brokers. The wave creates opportunity but doesn't mandate a new platform."},
+        "FA": {"value": 7.5, "justification": "Strong F4 alignment (CRE distress) and moderate F1 (AI analytics layer). F2 is secondary. Force alignment is good but not exceptional — this is primarily a capital-cycle play with AI as enabler."},
+        "EC": {"value": 6.0, "justification": "Competitive landscape is crowded with established CRE platforms and brokerages. Regulatory variation across municipalities creates complexity. Data access concentration (CoStar) is a risk. Score penalized for competitive density and data dependency."},
+        "TG": {"value": 8.5, "justification": "Exceptional timing — the lease expiration wave is a known, calendared event. First-mover during 2026-2027 captures the highest transaction volume. Time sensitivity is critical. Revenue in 6 months possible with targeted metro launch."},
+        "CE": {"value": 6.5, "justification": "Moderate capital efficiency — marketplace requires investment in both supply and demand sides. 60% gross margins are lower than pure software. Transaction-based revenue is lumpy. But network effects create moat once marketplace achieves liquidity."},
+        "composite": 72.0,
+        "composite_formula": "(7.5*25 + 7.5*25 + 6.0*20 + 8.5*15 + 6.5*15) / 10 = 72.0",
+        "category": "TIMING_ARBITRAGE",
+        "category_justification": "TG 8.5 is the highest axis score. The value proposition is primarily WHEN this launches relative to the lease expiration wave. The 2026-2028 window is time-limited. After the wave passes, the model becomes a commodity CRE marketplace. TIMING_ARBITRAGE is the correct category."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "3-5% transaction fee on corporate space disposition ($500K-$5M per large HQ downsizing transaction). Analytics subscription: $2K-$10K/month for corporate real estate teams.",
+        "cost_per_unit_ai": "$200-$1,000 per transaction (AI analysis: utilization optimization, conversion feasibility, pricing). $100-$500/month per analytics subscriber.",
+        "cost_per_unit_incumbent": "5-6% traditional brokerage commission + slower process (3-6 months vs 1-2 months for marketplace matching)",
+        "break_even_volume": "20-30 large transactions/quarter + 200 analytics subscribers = ~$2M quarterly revenue. Achievable in 12-18 months in a single top-5 metro.",
+        "jevons_multiplier": "1.5-2x — lower transaction friction enables more frequent space restructuring. Companies that would have stayed in oversized space due to transaction costs now actively optimize.",
+        "economic_force_tam": "15-20% of ~5.5B sq ft total US office inventory expiring 2026-2028. At $30-50/sq ft average, ~$25-55B in lease value being repriced. Platform captures 1-3% = $250M-$1.65B."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "CRE decisions are relationship-driven. Corporate RE heads have long-standing broker relationships and may resist platform-based transactions. Additionally, public HQ downsizing announcements signal weakness to competitors and investors.",
+        "resolution_path": "Partner with established CRE brokerages rather than disintermediating them. Provide analytics layer that makes brokers more effective, then capture transaction data for marketplace matching. Position HQ 'right-sizing' as forward-thinking strategy, not retreat.",
+        "fear_driven_demand_created": "Corporate real estate optimization consulting — companies need help modeling the right mix of owned, leased, and flex space post-AI transformation."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "CMBS delinquency 12.34% (all-time record, state.json)",
+          "15-20% of office leases expiring 2026-2028 (Crexi, Deloitte CRE Outlook)",
+          "Office-to-residential conversions at record 70,700 units (+28% YoY)",
+          "32% of CRE leaders plan further footprint reduction (Cushman & Wakefield)"
+        ],
+        "likely": [
+          "Corporate HQ downsizing accelerates as AI agent adoption compresses middle management",
+          "Lease expiration wave forces crystallization of deferred downsizing decisions",
+          "Hub-and-spoke model becomes dominant corporate real estate strategy by 2028"
+        ],
+        "uncertain": [
+          "Whether return-to-office mandates (Amazon, JPMorgan style) reverse HQ downsizing trend",
+          "Speed of office-to-residential conversion approvals (zoning is slow, unpredictable)",
+          "Whether CRE marketplace can achieve liquidity before established brokerages add similar features"
+        ],
+        "unlikely": [
+          "Office market returns to pre-pandemic vacancy rates (structural shift to hybrid is permanent)",
+          "CMBS delinquency resolves without significant office repricing (the math doesn't work at current occupancy levels)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 10,
+        "total_funding": "$300M+ across CRE tech platforms (VTS, Aquiline-backed, various proptech). But no dominant HQ-to-flex conversion marketplace.",
+        "layer": "marketplace",
+        "moat_sources": [
+          "Transaction data network effects — more transactions = better pricing intelligence = more transactions",
+          "Corporate real estate team relationships and analytics integration",
+          "Geographic density in target metros (NYC, SF, Chicago — where HQ downsizing is concentrated)",
+          "Conversion developer and flex operator network on supply side"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If return-to-office mandates reverse HQ downsizing trend and lease renewals at full footprint exceed 50%",
+        "If CMBS market recovers and office delinquency drops below 8% without significant repricing",
+        "If established CRE brokerages (CBRE, JLL) build effective marketplace features that block new entrant",
+        "If lease expiration wave is absorbed by subletting rather than permanent downsizing (temporary not structural)",
+        "If office-to-residential conversion proves economically unviable at scale due to construction costs or zoning barriers"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-005",
+      "model_name": "Silver Tsunami Executive Succession + AI Augmentation Platform",
+      "architecture": "acquire_and_modernize",
+      "sector_naics": "551114",
+      "sector_name": "Corporate, Subsidiary, and Regional Managing Offices",
+      "one_line": "Acquisition platform targeting aging-executive-owned companies, replacing retiring C-suite with AI-augmented lean leadership teams",
+      "macro_source": "P-002 Silver Tsunami ($68T transfer, 52.3% of businesses owned by 55+) intersects AI coordination — successors need fewer executives when AI handles coordination",
+      "forces": ["F2_demographics", "F1_technology", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "52.3% of employer businesses owned by 55+ (Census)",
+            "58% have NO succession plan, 70% never successfully sell",
+            "10,000 workers retiring every day through 2027",
+            "12M businesses changing hands this decade — $68T total transfer including $5.1T in small business value",
+            "8 in 10 employers report losing institutional knowledge when older workers leave",
+            "AI-augmented successor teams can run companies with 30-50% fewer management positions"
+          ],
+          "supply_gap": "Retiring executives leave institutional knowledge gaps that traditional succession planning cannot fill. AI systems can capture, codify, and operationalize the tacit knowledge of retiring leaders — customer relationships, vendor negotiations, operational patterns — and make it accessible to leaner successor teams. No platform currently combines succession facilitation with AI operational augmentation.",
+          "inevitability_argument": "Demographics are non-negotiable — 52.3% of business owners are 55+ and this cohort ages by one year annually. The succession gap (58% no plan) means millions of businesses need transition solutions. AI augmentation makes successors viable who would otherwise lack the institutional knowledge base to operate the acquired business.",
+          "pattern_refs": ["P-002", "P-001"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 10,
+            "mechanism": "Silver Tsunami is the primary driver. 10,000 daily retirements, 58% with no succession plan, 70% fail to sell. This creates a persistent, growing supply of businesses needing acquisition and modernization. The demographic wave cannot be reversed — it accelerates every year through 2030."
+          },
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 8,
+            "mechanism": "AI agents can capture retiring executive knowledge (customer preferences, vendor terms, operational patterns) and operationalize it for successors. AI-augmented operations enable a 3-person successor team to run what previously required 10 people. Knowledge transfer is the critical technology application."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Distressed succession sales occur at 2-4x EBITDA (vs 6-10x for healthy businesses). SBA 504 loans up to $5.5M for acquisition. PE dry powder targeting middle-market M&A. Capital is available and pricing is favorable for acquirers."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 2, "notes": "Business acquisition process, AI knowledge capture tools, and operational systems. No exotic supply chain dependencies."},
+          "regulatory_contagion": {"score": 3, "notes": "Business transfer regulations vary by state but are well-established. SBA lending standards stable. No AI-specific regulatory risk for business succession."},
+          "competitive_import": {"score": 5, "notes": "Search funds, ETA (Entrepreneurship Through Acquisition), and PE firms are all active in business succession. But none combine succession facilitation with AI operational augmentation. Differentiation is in the AI knowledge capture and operational platform."},
+          "leading_indicator_transfer": {"score": 9, "notes": "Track: business-for-sale listings, owner age distribution by sector, succession planning survey data, SBA loan volume, and NAICS 55 retirement announcements. All trending strongly."},
+          "resource_talent_flow": {"score": 7, "notes": "Successor talent available from MBA programs (ETA is growing), displaced corporate managers, and former consultants. AI engineering for knowledge capture is the specialized talent need."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2030",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Succession crisis worsens in recession — more owners decide to retire or sell under pressure. Acquisition multiples DECLINE in downturns. AI augmentation makes smaller buyer pools viable. All recession dynamics favor acquirers with AI capabilities.",
+          "time_sensitivity": "medium — the Silver Tsunami is a decade-long wave, not a one-time event. Early movers build operational playbooks, but the opportunity persists through 2030+."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$10M (platform + first acquisitions)",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 50,
+          "cost_advantage_ratio": "2-3x vs traditional succession (AI-augmented team of 3 replaces management team of 8-10, reducing post-acquisition overhead by $500K-$1M annually per company)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 9.0, "justification": "Demographics create absolute structural necessity — 52.3% of businesses owned by 55+, 58% no succession plan. This is P-002, one of the engine's strongest confirmed patterns. The gap between businesses needing succession and viable successors is structural and widening. AI augmentation makes more successions viable."},
+        "FA": {"value": 8.0, "justification": "Excellent F2 alignment (demographics is the primary force, 10/10). Good F1 alignment (AI knowledge capture and operational augmentation). Moderate F4 alignment (acquisition pricing favorable). Three-force convergence is strong."},
+        "EC": {"value": 6.5, "justification": "Moderate competitive density from search funds, ETA, and PE. But differentiation through AI knowledge capture is novel. Regulatory environment favorable. Geographic applicability is broad. Data availability for sourcing is good."},
+        "TG": {"value": 7.5, "justification": "Good timing — Silver Tsunami accelerating, AI capability sufficient for knowledge capture. Medium time sensitivity (decade-long wave). Crash-resilient. Revenue in 6 months with first acquisition. Not as time-critical as PE operations or CRE wave."},
+        "CE": {"value": 7.0, "justification": "Moderate capital efficiency — requires acquisition capital ($2-10M per company), not just software investment. 50% gross margins for operating businesses (vs 70-80% for pure software). But SBA lending reduces equity requirement and AI reduces post-acquisition operating costs."},
+        "composite": 77.25,
+        "composite_formula": "(9.0*25 + 8.0*25 + 6.5*20 + 7.5*15 + 7.0*15) / 10 = 77.25",
+        "category": "STRUCTURAL_WINNER",
+        "category_justification": "SN 9.0 meets STRUCTURAL_WINNER threshold. P-002 Silver Tsunami is one of the engine's strongest confirmed patterns (very_strong). The combination of demographic inevitability + AI operational augmentation makes this structurally necessary regardless of market conditions."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$1M-$10M annual revenue per acquired company (varies by company size). Platform licensing: $2K-$5K/month for AI knowledge capture and operational augmentation tools sold to other acquirers.",
+        "cost_per_unit_ai": "$500-$2,000/month per company (AI knowledge capture, operational monitoring, reporting automation)",
+        "cost_per_unit_incumbent": "$500K-$1.5M/year per company in management overhead for traditional succession (full management team replacement)",
+        "break_even_volume": "3-5 acquired companies generating $3-5M combined revenue, or 100+ platform subscribers at $3K/month = $300K MRR",
+        "jevons_multiplier": "2-3x — AI augmentation makes viable successions possible for companies that would otherwise close (30% of businesses owned by retirees fail to find buyers). Salvage value creation is the Jevons mechanism.",
+        "economic_force_tam": "12M businesses changing hands x avg $425K value = $5.1T in business value. 30% fail to find buyers = $1.5T in at-risk value. AI-augmented succession captures 1-3% = $15-45B platform opportunity."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "primary_friction": "Retiring owners are emotionally attached to their businesses and resist AI-driven operational changes. Successors may lack confidence to run businesses with fewer managers. Employees fear job losses during AI-augmented transition.",
+        "resolution_path": "Position AI as 'preserving the founder's legacy' — capturing their knowledge so the business survives. Employee retention during transition. Gradual AI introduction post-acquisition (6-12 month ramp). Show that AI augmentation enables the business to SURVIVE rather than close.",
+        "fear_driven_demand_created": "Business legacy preservation services — documenting and codifying founder knowledge for posterity. Emotional value beyond operational value."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "52.3% of employer businesses owned by 55+ (Census)",
+          "58% have no succession plan (multiple surveys confirm)",
+          "$68T total wealth transfer including $5.1T in small business value (state.json)",
+          "AI knowledge capture tools exist and are improving (demonstrated in enterprise knowledge management)"
+        ],
+        "likely": [
+          "Succession crisis worsens annually as Boomer cohort ages",
+          "AI-augmented successor teams can operate with 30-50% fewer management positions",
+          "SBA lending for business acquisition remains available and favorable"
+        ],
+        "uncertain": [
+          "Whether AI can effectively capture tacit executive knowledge (customer relationships, negotiation patterns, operational judgment)",
+          "Whether traditional ETA/search fund models adopt AI augmentation faster than dedicated platforms emerge",
+          "Scale of business closures vs. sales — if more businesses simply close rather than sell, the acquisition opportunity shrinks"
+        ],
+        "unlikely": [
+          "Silver Tsunami reversal (impossible — demographics are locked in)",
+          "Succession planning suddenly improves to 80%+ (decades of under-planning suggests cultural persistence)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 8,
+        "total_funding": "$200M+ in ETA/search fund ecosystem, <$30M in AI-augmented succession specifically",
+        "layer": "full_service",
+        "moat_sources": [
+          "Proprietary AI knowledge capture methodology for retiring executives",
+          "Operational playbook library from prior acquisitions (pattern recognition across succession scenarios)",
+          "SBA lending relationships and acquisition process expertise",
+          "Post-acquisition AI operational platform creates recurring value and switching costs"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If business owners delay retirement significantly (extending working years beyond 70+ at scale)",
+        "If AI knowledge capture proves unable to replicate tacit executive knowledge (relationships, judgment)",
+        "If SBA lending tightens or acquisition financing becomes unavailable during credit contraction",
+        "If traditional PE/search fund models adopt AI augmentation effectively, eliminating differentiation",
+        "If business closures dominate over sales (owners prefer to close rather than sell at distressed multiples)"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-006",
+      "model_name": "Enterprise AI Agent Governance and Orchestration Layer",
+      "architecture": "regulatory_moat_builder",
+      "sector_naics": "551114",
+      "sector_name": "Corporate, Subsidiary, and Regional Managing Offices",
+      "one_line": "Governance platform ensuring AI agents operating in corporate environments comply with policies, audit trails, and emerging regulations",
+      "macro_source": "T25 Fear Economics + P-036 Anticipatory Displacement — as AI agents replace middle managers, companies need governance infrastructure to maintain control, accountability, and regulatory compliance",
+      "forces": ["F1_technology", "F5_psychology", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "79-96% of organizations deploying or increasing AI agent deployments (KPMG)",
+            "Gartner predicts 40% of agentic AI projects will fail by 2027 due to governance gaps",
+            "Colorado AI Act effective 2026 — first US state requiring algorithmic accountability for high-risk AI",
+            "EU AI Act high-risk provisions delayed to Dec 2027 but companies must prepare NOW",
+            "280 state lawmakers pursuing AI regulation — federal preemption uncertain",
+            "$86B fear economy TAM by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B)",
+            "When AI agents make management decisions (hiring, budgeting, resource allocation), audit trails become legally required"
+          ],
+          "supply_gap": "As AI agents take over middle management coordination functions, there is no governance layer ensuring these agents operate within corporate policies, maintain audit trails for regulatory compliance, and provide human override mechanisms. The gap between AI agent capability (deployed) and AI agent governance (lagging) creates both risk and opportunity.",
+          "inevitability_argument": "Every AI agent making a business decision creates a liability question: who is accountable? When AI agents approve budgets, allocate resources, or flag performance issues, the decisions must be auditable, explainable, and compliant. This governance requirement is as structurally necessary as financial auditing is for human decisions.",
+          "pattern_refs": ["P-036", "P-033"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 8,
+            "mechanism": "AI agent orchestration platforms (OpenAI Frontier, Claude agent teams) are deploying NOW. Each deployment creates governance needs: policy enforcement, audit logging, decision explanation, human override, and compliance monitoring. The faster AI agents deploy, the larger the governance market."
+          },
+          {
+            "force_id": "F5_psychology",
+            "contribution_score": 9,
+            "mechanism": "Fear of AI agent autonomy drives governance demand. 60% of workers expect AI to cut jobs. 51% worried about own job. Companies need governance to manage internal anxiety AND external regulatory pressure. The fear IS the demand driver — companies buy governance to demonstrate responsible AI use."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 6,
+            "mechanism": "Enterprise governance is a compliance cost that companies must bear. In capital-constrained environments, AI governance platforms that reduce compliance overhead (vs. manual audit) are efficiency tools. PE-backed companies need governance to satisfy due diligence requirements."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 3, "notes": "Software platform integrating with enterprise AI agent frameworks. No hardware dependencies. Requires regulatory knowledge base that must be continuously updated."},
+          "regulatory_contagion": {"score": 10, "notes": "Regulation IS the demand driver. Colorado AI Act, EU AI Act, 280 state lawmakers, federal uncertainty — each regulatory development increases governance demand. This model benefits from MORE regulation, not less. The MC-GOV-AI-01 card (top-ranked in engine at 84.0) validates this pattern."},
+          "competitive_import": {"score": 6, "notes": "AI governance is emerging as a category. Existing players: Credo AI, Holistic AI, IBM OpenPages. Microsoft and Google building governance features into their AI platforms. Competition is real but the market is growing faster than incumbents can serve."},
+          "leading_indicator_transfer": {"score": 8, "notes": "Track: state AI legislation pipeline (280+ lawmakers), enterprise AI agent deployment rates, AI governance spending surveys, regulatory enforcement actions against AI decisions. Each is positive and accelerating."},
+          "resource_talent_flow": {"score": 6, "notes": "Requires intersection of AI engineering, compliance/audit expertise, and regulatory knowledge — a scarce combination. Talent available from Big 4 risk advisory, legal tech, and enterprise AI companies. Growing but still limited."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "very_high",
+          "crash_resilience_reason": "Governance is a compliance requirement, not discretionary. In a recession, regulatory scrutiny of AI decisions may INCREASE (political pressure). Companies cannot turn off governance when budgets tighten — the liability risk is too high.",
+          "time_sensitivity": "high — Colorado AI Act effective 2026, EU AI Act preparing for 2027 enforcement. Companies need governance solutions NOW. First movers who establish the governance standard capture the market."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$12M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 78,
+          "cost_advantage_ratio": "3-5x vs manual AI governance processes (human compliance teams monitoring AI agents manually vs automated governance platform)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 8.5, "justification": "Strong structural necessity — every AI agent deployment creates a governance requirement. 40% failure rate prediction from Gartner specifically due to governance gaps. Colorado AI Act creates legal mandate. But the market is still early and exact requirements are evolving."},
+        "FA": {"value": 8.5, "justification": "Excellent F5 alignment (fear IS the demand driver, 9/10) and strong F1 alignment (AI agent deployment creates the governance need). F4 secondary but supportive. Three-force alignment with F5 psychology as a rare positive force (fear creates demand rather than blocking it)."},
+        "EC": {"value": 7.5, "justification": "Regulatory contagion is maximum positive (10/10 — regulation creates demand). Moderate competitive density (emerging category, not crowded). Good leading indicators. Talent is the main constraint (scarce combination of AI + compliance + legal expertise)."},
+        "TG": {"value": 8.0, "justification": "Good timing — Colorado AI Act effective 2026, EU AI Act preparing for 2027. First movers capture the governance standard. Very high crash resilience. Revenue in 4 months possible. But regulatory timeline uncertainty (federal preemption unclear) creates mild timing risk."},
+        "CE": {"value": 7.5, "justification": "Good capital efficiency — $3-12M, 78% gross margins, compliance mandates create sticky revenue. Data flywheel from governance patterns across enterprises creates moat. Moderate competition from platform incumbents adding governance features."},
+        "composite": 80.75,
+        "composite_formula": "(8.5*25 + 8.5*25 + 7.5*20 + 8.0*15 + 7.5*15) / 10 = 80.75",
+        "category": "FEAR_ECONOMY",
+        "category_justification": "F5 psychology (fear) is the primary demand driver at 9/10. This model exists BECAUSE of AI fear — companies need governance to manage internal anxiety, external regulation, and liability risk from AI agent autonomy. FEAR_ECONOMY is the correct category. Note: MC-GOV-AI-01 (84.0) is the existing top card in this category — this card is a NAICS 55-specific variant focused on corporate management AI agent governance."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5,000-$30,000/month per enterprise (tiered by AI agent count and regulatory jurisdictions: 10 agents $5K, 100 agents $15K, 1000+ agents $30K+)",
+        "cost_per_unit_ai": "$400-$2,000/month per enterprise (AI monitoring infrastructure, policy enforcement engine, audit log storage, regulatory update parsing)",
+        "cost_per_unit_incumbent": "$20,000-$100,000/month per enterprise (manual AI governance team: 2-5 compliance analysts + legal counsel monitoring AI agent behavior)",
+        "break_even_volume": "60-80 enterprise clients at $12K/month average = $720K-$960K MRR (achievable in 12-18 months targeting regulated industries first: financial services, healthcare, government contractors)",
+        "jevons_multiplier": "2-3x — governance enables MORE AI agent deployment (companies held back by liability concerns deploy once governance is in place). The governance platform is an ENABLER of AI adoption, not just a cost center.",
+        "economic_force_tam": "$86B fear economy TAM by 2030. Corporate AI governance specifically: $15.8B governance + portion of $9.8B safety = ~$18-22B. This card addresses the NAICS 55 corporate management slice: ~$3-5B."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "Companies may view governance as a barrier to AI adoption rather than an enabler. 'We'll add governance later' mindset delays purchase until a compliance violation or regulatory action forces it. Also, governance vendors may be seen as fear-mongers selling insurance against unlikely risks.",
+        "resolution_path": "Position as AI adoption ACCELERATOR — governance enables companies to deploy more agents with confidence. Case studies showing companies that deployed governance first achieved 3x faster enterprise AI adoption. Partner with AI agent platform vendors (OpenAI, Anthropic) for bundled governance.",
+        "fear_driven_demand_created": "This IS a fear-driven demand model. The entire revenue stream is created by fear of AI agent autonomy, regulatory non-compliance, and liability. The fear economy IS the market."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Colorado AI Act effective 2026 (signed into law)",
+          "280 state lawmakers pursuing AI regulation (state.json)",
+          "EU AI Act high-risk provisions delayed to Dec 2027 (confirmed, Digital Omnibus)",
+          "79-96% of organizations deploying or increasing AI agent deployments (KPMG)",
+          "$86B fear economy TAM by 2030 (governance + safety + cybersecurity, state.json)"
+        ],
+        "likely": [
+          "More states will pass AI governance requirements following Colorado's lead",
+          "Enterprise AI agent failures will generate regulatory and media backlash, increasing governance demand",
+          "Board-level AI governance mandates will become standard by 2027-2028"
+        ],
+        "uncertain": [
+          "Whether federal preemption eliminates state-level AI regulations (Trump EO direction unclear)",
+          "Pace of enforcement — will regulators actively enforce AI governance requirements or adopt wait-and-see approach?",
+          "Whether AI platform vendors (Microsoft, Google) build governance directly into their platforms, commoditizing the standalone governance market"
+        ],
+        "unlikely": [
+          "AI governance requirements are repealed or abandoned (liability concerns ensure persistence regardless of political environment)",
+          "Companies voluntarily adopt governance without regulatory or competitive pressure (most won't without mandate)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 12,
+        "total_funding": "$400M+ across AI governance startups (Credo AI, Holistic AI, Fairly AI, others) + Big 4 governance practices",
+        "layer": "platform",
+        "moat_sources": [
+          "Regulatory knowledge base — continuously updated policy enforcement rules across 50+ state regulations, EU AI Act, and industry-specific requirements",
+          "Audit trail data — enterprise governance logs create proprietary compliance pattern database",
+          "Enterprise integration depth — deep connection to AI agent frameworks creates switching costs",
+          "First-mover in corporate management-specific governance (NAICS 55 focus vs generic AI governance)"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If federal preemption eliminates state-level AI governance requirements and replaces with minimal federal standard",
+        "If AI platform vendors (Microsoft, Google, Anthropic) build sufficient governance directly into agent frameworks, commoditizing standalone governance",
+        "If enterprises adopt a 'move fast, fix later' approach to AI agents and governance demand lags deployment by 3+ years",
+        "If AI agent deployment plateaus (Gartner 40% failure rate causes broad backlash against enterprise AI agents)",
+        "If governance costs become prohibitive and companies choose to limit AI agent deployment rather than govern it"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-007",
+      "model_name": "AI-Era Leadership Development and Executive Pipeline Platform",
+      "architecture": "data_compounding",
+      "sector_naics": "611430",
+      "sector_name": "Professional and Management Development Training",
+      "one_line": "Leadership development platform preparing managers for AI-augmented organizations, filling the pipeline gap from 67% entry-level hiring collapse",
+      "macro_source": "P-037 Entry-Level Extinction + P-036 Anticipatory Displacement — 67% junior hiring collapse destroys the leadership pipeline, creating structural demand for alternative executive development",
+      "forces": ["F2_demographics", "F1_technology", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "67% drop in junior developer hiring 2024-2026 (Revelio Labs)",
+            "35% decline in ALL entry-level hiring (Revelio Labs)",
+            "37% of managers prefer AI over Gen Z hire — pipeline is being DELIBERATELY destroyed",
+            "Only 7% of 2024 hires were recent graduates",
+            "41% of employees report management layers trimmed in 2025",
+            "By 2031-2035, acute shortage of executives with operational experience due to 2025-2027 pipeline destruction",
+            "Executive coaching market $20.4B in 2025, growing at 16.2% CAGR"
+          ],
+          "supply_gap": "Traditional leadership development assumes candidates progress through entry-level, middle management, and senior roles over 10-15 years. With entry-level hiring collapsed 67% and middle management layers being eliminated, this pipeline is broken. No current platform prepares leaders for AI-augmented organizations where they manage AI agents rather than human teams.",
+          "inevitability_argument": "The entry-level pipeline destruction of 2025-2027 is a locked-in future leadership crisis. Even if entry-level hiring recovers in 2028, the 3-year gap creates a permanent cohort shortage. Organizations MUST develop alternative leadership pathways or face executive talent scarcity by 2031. This is P-037's decade-lag consequence.",
+          "pattern_refs": ["P-037", "P-036"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 8,
+            "mechanism": "Silver Tsunami retiring experienced executives (10,000/day) while entry-level pipeline collapses (67%). Double squeeze on leadership supply. Generational divide: Boomers 51% worried about AI vs Gen Z 67% excited but not being hired."
+          },
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 7,
+            "mechanism": "AI creates the problem (replacing entry-level and middle management roles) AND enables the solution (AI-powered simulation, personalized coaching, scenario-based leadership training). AI leadership development at scale becomes possible."
+          },
+          {
+            "force_id": "F5_psychology",
+            "contribution_score": 8,
+            "mechanism": "Fear of leadership pipeline collapse drives corporate investment. K-shaped psychology means different leadership skills needed for AI-native vs AI-resistant organizations. Managing the psychology of AI transformation IS the new leadership skill."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 2, "notes": "Software platform with AI-driven training content. No hardware or supply chain dependencies."},
+          "regulatory_contagion": {"score": 3, "notes": "Executive development is unregulated. Some companies require specific certifications for leadership programs, but no regulatory barriers to entry."},
+          "competitive_import": {"score": 7, "notes": "Crowded market: BetterUp ($4.7B valuation), Hone, Torch, LinkedIn Learning, traditional business schools (HBS Executive Ed, Wharton). But NO platform specifically addresses AI-era leadership for organizations where managers oversee AI agents rather than human teams. Differentiation is in the AI-native curriculum."},
+          "leading_indicator_transfer": {"score": 8, "notes": "Track: entry-level hiring rates (67% decline), middle management layoff announcements, executive coaching market growth (16.2% CAGR), corporate L&D budget allocation to AI skills."},
+          "resource_talent_flow": {"score": 7, "notes": "Instructional design talent available. Former executives and consultants for content creation. AI engineering for personalized learning platform. Intersection of leadership development expertise + AI is niche but growing."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "L&D budgets are cut during recessions, but leadership development for AI transformation may be protected as a strategic priority. Companies that cut leadership development during the 2025-2027 pipeline crisis will face worse talent shortages in 2031+.",
+          "time_sensitivity": "medium — the leadership pipeline crisis is a slow-moving wave. Early movers build curriculum advantage and brand, but the market grows for a decade. Not urgently time-sensitive."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$8M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "3-5x vs traditional executive education ($5K-$15K AI platform vs $30K-$100K HBS/Wharton executive programs)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 7.5, "justification": "Strong structural argument — entry-level pipeline destruction is confirmed (P-037) and creates a 5-10 year leadership crisis. But the demand materializes gradually (not urgent until 2029-2031) and competitors exist in adjacent markets. Not as immediately necessary as governance or PE operations."},
+        "FA": {"value": 7.5, "justification": "Good F2 alignment (demographic pipeline destruction) and F5 alignment (fear drives demand for AI-era leadership skills). F1 is both cause and solution. Three-force alignment but none at maximum contribution."},
+        "EC": {"value": 5.5, "justification": "Competitive landscape is crowded with well-funded incumbents (BetterUp, LinkedIn Learning, business schools). Differentiation through AI-native curriculum is valid but potentially replicable. No regulatory moat. Moderate competitive risk."},
+        "TG": {"value": 7.0, "justification": "Decent timing — pipeline crisis is locked in, demand growing. But not urgently time-sensitive (decade-long wave). Medium crash resilience (L&D budgets cyclical). Revenue in 4 months possible with corporate pilot approach."},
+        "CE": {"value": 7.0, "justification": "Good capital efficiency — $2-8M, 75% margins, fast revenue. Data compounding from leadership assessment and development patterns creates long-term moat. But competitive pressure from well-funded incumbents requires sustained investment."},
+        "composite": 69.5,
+        "composite_formula": "(7.5*25 + 7.5*25 + 5.5*20 + 7.0*15 + 7.0*15) / 10 = 69.5",
+        "category": "CONDITIONAL",
+        "category_justification": "Composite 69.75 is in the CONDITIONAL range. Strong structural thesis (P-037 pipeline destruction) but crowded competitive landscape, medium timing urgency, and uncertain demand crystallization. CONDITIONAL on: (1) entry-level hiring remaining depressed through 2028, (2) differentiation from established L&D platforms proven in market, (3) corporate AI transformation budgets remaining a priority during potential economic downturn."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-$2,000/person/month for leadership development subscriptions. Enterprise licenses: $50K-$200K/year for cohort-based programs.",
+        "cost_per_unit_ai": "$30-$100/person/month (AI-driven coaching, simulation, personalized curriculum, assessment)",
+        "cost_per_unit_incumbent": "$5,000-$20,000/person for traditional executive education (HBS $30K+, Wharton $25K+, BetterUp ~$3K/person/year)",
+        "break_even_volume": "500-1,000 individual subscribers or 20-30 enterprise clients = $400K-$600K MRR",
+        "jevons_multiplier": "2-3x — at $500-2K/person/month vs $5-20K traditional, leadership development becomes accessible to mid-level managers who previously never received executive training. Expands TAM from senior executives to all management tiers.",
+        "economic_force_tam": "Executive coaching market $20.4B (2025), growing 16.2% CAGR. AI-era leadership development captures 5-10% = $1-2B initially, growing to $3-5B by 2030."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 6,
+        "gap": 1,
+        "primary_friction": "Low fear friction for this specific model — companies WANT leadership development solutions. The friction is in BUDGET allocation, not psychological resistance. L&D competes with other priorities for corporate spending.",
+        "resolution_path": "Tie leadership development directly to AI transformation ROI — leaders trained in AI-augmented management deliver measurable efficiency gains. Make the business case that leadership development PAYS for itself through better AI adoption outcomes.",
+        "fear_driven_demand_created": "AI anxiety management for managers — helping middle managers navigate their changing role. Therapeutic/coaching dimension that addresses existential career concerns."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "67% junior developer hiring decline 2024-2026 (Revelio Labs, confirmed P-037)",
+          "35% all entry-level decline (Revelio Labs)",
+          "41% of employees report management layers trimmed (2025 surveys)",
+          "Executive coaching market $20.4B growing 16.2% CAGR"
+        ],
+        "likely": [
+          "Entry-level hiring remains depressed through 2028 (structural AI substitution, not cyclical)",
+          "Companies will invest in AI-era leadership development as they restructure management layers",
+          "Traditional business school executive education will prove too slow to adapt curriculum to AI-era needs"
+        ],
+        "uncertain": [
+          "Whether entry-level hiring recovers in 2027-2028 (could be cyclical, not structural — falsifies P-037 if so)",
+          "Whether L&D budgets survive potential 2027-2028 economic downturn",
+          "Whether companies prefer internal AI-era leadership programs over external platforms"
+        ],
+        "unlikely": [
+          "Leadership pipeline concerns disappear — even if entry-level hiring recovers, the 2025-2027 gap creates a permanent cohort shortage",
+          "AI replaces ALL management functions including leadership — tacit-cognitive leadership skills remain human-premium"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "crowded",
+        "funded_entrants": 20,
+        "total_funding": "$5B+ across executive development platforms (BetterUp alone valued at $4.7B)",
+        "layer": "platform",
+        "moat_sources": [
+          "AI-native curriculum specifically for managing AI agents and AI-augmented organizations (differentiation from generic L&D)",
+          "Leadership assessment data compounding — longitudinal tracking of AI-era leadership competencies",
+          "Corporate integration with AI agent governance platforms (MC-MGT-006 synergy)",
+          "Alumni network effects among AI-era leaders"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If entry-level hiring recovers to pre-2024 levels by 2028 (pipeline crisis proves cyclical, not structural)",
+        "If BetterUp or LinkedIn Learning launches comprehensive AI-era leadership curriculum, capturing market with existing distribution",
+        "If companies prefer building internal AI leadership programs over purchasing external platforms",
+        "If L&D budgets are cut significantly during economic downturn, delaying market development by 2+ years",
+        "If AI replaces enough management functions that 'leadership' itself becomes less important to organizations"
+      ]
+    },
+
+    {
+      "card_id": "MC-MGT-008",
+      "model_name": "Fractional C-Suite AI Operations Network",
+      "architecture": "marketplace_network",
+      "sector_naics": "551114",
+      "sector_name": "Corporate, Subsidiary, and Regional Managing Offices",
+      "one_line": "Marketplace connecting AI-augmented fractional executives with mid-market companies, enabling C-suite capability at 1/3 the cost of full-time hires",
+      "macro_source": "T10 Coase (optimal firm size shrinking) + P-002 Silver Tsunami (retiring executives available as fractional) + F1 (AI augments fractional executives to cover more companies)",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "532K new business applications per month (Coasean shrinkage — new firms need C-suite capability without C-suite cost)",
+            "Silver Tsunami creates supply of retiring executives available for fractional work",
+            "Mid-market companies ($10M-$500M revenue) need CFO/COO/CTO capability but cannot afford $300K-$500K full-time hires",
+            "AI augments fractional executives: one fractional CFO + AI agents can serve 5-8 companies vs 1-2 without AI",
+            "Fractional C-suite market growing 30%+ annually from $9B base (2025 estimates)"
+          ],
+          "supply_gap": "532K new businesses per month need executive-level capability (financial strategy, operational systems, technology planning) but are too small to hire full-time executives. Simultaneously, Silver Tsunami creates a large supply of experienced executives available for part-time work. AI augmentation makes fractional executives 3-5x more productive, bridging the supply-demand mismatch.",
+          "inevitability_argument": "Coasean shrinkage (smaller firms) + demographic supply (retiring executives) + AI augmentation (productivity multiplier) = structurally inevitable market. The firms are forming, the talent is available, and the technology enables the match. The only question is whether a marketplace or organic matching dominates.",
+          "pattern_refs": ["P-002", "P-001"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 8,
+            "mechanism": "AI agents handle the routine cognitive work of executive functions (financial reporting, compliance, vendor management, HR administration) while the fractional executive provides judgment and strategic direction. This allows one executive to serve 5-8 companies instead of 1-2."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 8,
+            "mechanism": "Silver Tsunami creates supply: 10,000 retirees/day, many with decades of executive experience, willing to work fractionally. Simultaneously, 532K new businesses/month need executive capability. Demographics drive BOTH supply and demand sides of the marketplace."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Capital-efficient for clients: $5K-$15K/month fractional + AI vs $25K-$40K/month fully loaded executive. PE portfolio companies use fractional executives to reduce overhead during refinancing. VC-backed startups access C-suite talent without full-time commitment."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 2, "notes": "Marketplace platform + AI tools for fractional executives. No exotic dependencies. Requires executive vetting and matching algorithms."},
+          "regulatory_contagion": {"score": 3, "notes": "Fractional executive services are unregulated. Employment classification (contractor vs employee) is the main risk, manageable with proper structuring. No AI-specific regulatory barriers."},
+          "competitive_import": {"score": 7, "notes": "Growing competitive field: Toptal (fractional talent), Chief (women executives), The Fractional CFO, Bolster, and numerous boutique fractional executive firms. No dominant AI-augmented marketplace exists. Differentiation is AI augmentation of the fractional model."},
+          "leading_indicator_transfer": {"score": 7, "notes": "Track: new business applications (532K/mo), fractional executive demand surveys, Silver Tsunami retirement rates, and mid-market hiring difficulty for executive roles. All positive."},
+          "resource_talent_flow": {"score": 8, "notes": "Abundant supply of experienced executives — Silver Tsunami creates a large pool of recently-retired or semi-retired executives. AI tools for executive augmentation are readily available. Marketplace engineering talent widely available."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Recessions INCREASE demand for fractional executives — companies need expertise but cannot afford full-time hires. Fractional model is inherently recession-resilient because it provides flexibility in cost structure. Counter-cyclical demand dynamics.",
+          "time_sensitivity": "medium — fractional executive market is growing steadily. AI augmentation adds differentiation, but the market supports entry over a multi-year window."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$8M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 45,
+          "cost_advantage_ratio": "3-4x vs full-time executive hire ($5-15K/month fractional + AI vs $25-40K/month full-time executive fully loaded)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": {"value": 7.5, "justification": "Good structural argument — Coasean shrinkage (532K new businesses/month) + Silver Tsunami (executive supply) + AI augmentation. But fractional executive market already exists and is growing without a dominant platform. The AI augmentation adds differentiation but is not structurally unique."},
+        "FA": {"value": 7.5, "justification": "Good three-force alignment (F1+F2+F4). F2 demographics drives both supply and demand sides. F1 augmentation is the differentiator. F4 capital efficiency appeals to clients. Solid but not exceptional alignment."},
+        "EC": {"value": 5.5, "justification": "Competitive market with multiple funded players (Toptal, Chief, Bolster). No regulatory moat. Worker classification risk (contractor vs employee). AI augmentation differentiates but may be quickly replicated by existing platforms."},
+        "TG": {"value": 7.0, "justification": "Decent timing — market growing, AI capability available, Silver Tsunami supply increasing. High crash resilience (counter-cyclical). But medium time sensitivity — market supports multi-year entry window without critical urgency."},
+        "CE": {"value": 6.5, "justification": "Moderate capital efficiency — marketplace take rate limits margins (45%). Requires investment in both supply (executive recruitment/vetting) and demand (client acquisition). Network effects create moat at scale but require initial investment to achieve marketplace liquidity."},
+        "composite": 68.75,
+        "composite_formula": "(7.5*25 + 7.5*25 + 5.5*20 + 7.0*15 + 6.5*15) / 10 = 68.75",
+        "category": "CONDITIONAL",
+        "category_justification": "Composite 69.0 in CONDITIONAL range. Strong underlying forces but crowded competitive landscape and moderate capital efficiency. CONDITIONAL on: (1) AI augmentation proving measurable productivity gain for fractional executives, (2) marketplace achieving liquidity before existing fractional platforms add AI features, (3) worker classification rules remaining favorable for fractional model."
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "15-25% take rate on fractional executive engagements. Average engagement: $8K-$20K/month. Platform revenue: $1,200-$5,000/month per active engagement.",
+        "cost_per_unit_ai": "$200-$500/month per engagement (AI tools provisioned for fractional executive: financial analysis, reporting, compliance monitoring)",
+        "cost_per_unit_incumbent": "$25,000-$40,000/month for full-time executive hire (salary + benefits + overhead). Traditional fractional placement: 20-30% markup by staffing firms.",
+        "break_even_volume": "150-250 active engagements at $2.5K average platform revenue = $375K-$625K MRR. Requires ~500 executives and ~1,000 client companies on platform for marketplace liquidity.",
+        "jevons_multiplier": "2-3x — at 1/3 the cost of full-time executives, companies that currently operate WITHOUT C-suite capability (the 532K new businesses/month) become addressable. The latent market is much larger than the served market.",
+        "economic_force_tam": "US fractional C-suite market ~$9B (2025). Growing 30%+ annually. AI-augmented segment captures 10-20% initially = $900M-$1.8B. Jevons expansion to currently unserved companies could double TAM to $18-20B by 2030."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "Company founders/CEOs may resist giving fractional executives real authority (trust gap with part-time leaders). Concern about confidentiality when executive serves multiple companies. Perception that fractional means 'less committed.'",
+        "resolution_path": "Build trust through: (1) rigorous executive vetting and background checks, (2) confidentiality agreements and AI-enforced information barriers between client companies, (3) outcome-based compensation tied to client company KPIs, (4) transparent time and activity tracking via AI platform.",
+        "fear_driven_demand_created": "AI-augmented executive assessment — evaluating whether existing executives can adapt to AI-augmented operations, creating demand for fractional replacement when they cannot."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "532K new business applications per month (FRED, state.json)",
+          "52.3% of businesses owned by 55+ (Census, P-002)",
+          "Fractional C-suite market growing 30%+ annually (industry estimates)",
+          "AI tools can augment executive functions (financial analysis, reporting, compliance) — demonstrated"
+        ],
+        "likely": [
+          "AI augmentation enables fractional executives to serve 3-5x more companies than without AI",
+          "Mid-market companies prefer fractional + AI over full-time executive hires for cost efficiency",
+          "Silver Tsunami creates growing supply of experienced executives available for fractional roles"
+        ],
+        "uncertain": [
+          "Whether marketplace model or organic matching dominates fractional executive market",
+          "Worker classification rules — IRS/DOL could tighten independent contractor classification, increasing costs",
+          "Whether existing fractional executive platforms (Toptal, Chief, Bolster) add AI augmentation quickly enough to block new entrants"
+        ],
+        "unlikely": [
+          "Full-time executive hiring returns to dominance at small/mid-market companies (cost dynamics permanently favor fractional)",
+          "AI replaces the need for human executive judgment entirely (tacit-cognitive skills remain premium)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 15,
+        "total_funding": "$500M+ across fractional talent platforms (Toptal ~$100M raised, Chief $100M+, Bolster $30M+, numerous smaller players)",
+        "layer": "marketplace",
+        "moat_sources": [
+          "AI augmentation toolkit specifically designed for fractional executive workflows (differentiation)",
+          "Marketplace network effects — more executives attract more companies and vice versa",
+          "Executive performance data from multiple engagements creates matching algorithm advantage",
+          "Cross-company pattern recognition (anonymized) enables fractional executives to apply learnings across clients"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If Toptal, Chief, or Bolster successfully adds AI augmentation and captures the AI-augmented fractional market",
+        "If IRS/DOL tightens independent contractor classification, making fractional executive model legally risky",
+        "If full-time executive hiring becomes more affordable (e.g., through wage compression from AI) making fractional less compelling",
+        "If marketplace fails to achieve liquidity — insufficient executive supply or client demand in initial geography",
+        "If AI replaces enough executive judgment that fractional executives become unnecessary (AI CFO/COO become viable standalone)"
+      ]
+    }
+  ],
+
+  "summary": {
+    "total_model_cards": 8,
+    "id_range": "MC-MGT-001 through MC-MGT-008",
+    "composite_stats": {
+      "max": 84.25,
+      "min": 68.75,
+      "mean": 75.47,
+      "median": 74.63
+    },
+    "composite_distribution": {
+      "above_80": 2,
+      "70_to_80": 3,
+      "60_to_70": 3,
+      "below_60": 0
+    },
+    "category_distribution": {
+      "STRUCTURAL_WINNER": 2,
+      "FORCE_RIDER": 2,
+      "TIMING_ARBITRAGE": 1,
+      "FEAR_ECONOMY": 1,
+      "CONDITIONAL": 2
+    },
+    "cards_ranked": [
+      {"rank": 1, "id": "MC-MGT-002", "name": "AI-Augmented PE Portfolio Operations Platform", "composite": 84.25, "category": "STRUCTURAL_WINNER", "note": "Highest-scoring non-defense card in the engine. PE refinancing wall creates unavoidable adoption forcing function. Counter-cyclical."},
+      {"rank": 2, "id": "MC-MGT-006", "name": "Enterprise AI Agent Governance and Orchestration Layer", "composite": 80.75, "category": "FEAR_ECONOMY", "note": "Fear of AI agent autonomy IS the market. Regulatory momentum (Colorado AI Act, EU AI Act) creates mandate. Synergy with MC-GOV-AI-01 (84.0)."},
+      {"rank": 3, "id": "MC-MGT-001", "name": "AI-Native Corporate Operating System", "composite": 79.75, "category": "FORCE_RIDER", "note": "The flagship model for NAICS 55 transformation. Platform replacing middle management coordination. $206B addressable payroll."},
+      {"rank": 4, "id": "MC-MGT-005", "name": "Silver Tsunami Executive Succession + AI Augmentation", "composite": 77.25, "category": "STRUCTURAL_WINNER", "note": "P-002 demographics + AI knowledge capture. SN 9.0 meets STRUCTURAL_WINNER threshold. Decade-long opportunity."},
+      {"rank": 5, "id": "MC-MGT-003", "name": "Management Consulting AI Transformation Engine", "composite": 71.5, "category": "FORCE_RIDER", "note": "$976B global market with Baumol cure dynamics. Crowded competitive landscape limits score."},
+      {"rank": 6, "id": "MC-MGT-004", "name": "Corporate HQ-to-Flex Workspace Conversion Platform", "composite": 72.0, "category": "TIMING_ARBITRAGE", "note": "CRE cascade (P-026) second-order effect. 15-20% lease expiration wave 2026-2028 is time-limited opportunity."},
+      {"rank": 7, "id": "MC-MGT-007", "name": "AI-Era Leadership Development Platform", "composite": 69.5, "category": "CONDITIONAL", "note": "P-037 pipeline destruction creates long-term demand but crowded L&D market and uncertain timing."},
+      {"rank": 8, "id": "MC-MGT-008", "name": "Fractional C-Suite AI Operations Network", "composite": 68.75, "category": "CONDITIONAL", "note": "Coasean shrinkage + Silver Tsunami supply. Sound thesis but competitive marketplace and moderate margins."}
+    ],
+
+    "key_findings": [
+      "NAICS 55 is uniquely reflexive: the decision-makers (managers) ARE the ones being displaced. This creates maximum fear friction (gap=5) and slows adoption, but competitive pressure and PE mandates will force adoption by 2027-2028.",
+      "The PE Portfolio Operations model (MC-MGT-002, 84.25) is the highest-scoring non-defense card in the entire engine. The PE refinancing wall ($930B in 2026) creates an UNAVOIDABLE forcing function for AI-driven overhead reduction. This card should be prioritized.",
+      "NAICS 55 is one of the few sectors where Jevons runs IN REVERSE: cheaper coordination creates LESS demand for coordination, not more. The sector is structurally deflationary. Net NAICS 55 employment projected to decline 15-20% by 2031 (from 2.55M to 2.0-2.2M).",
+      "The CRE cascade second-order effect is significant: NAICS 55 HQ downsizing compounds the office CMBS crisis (already 12.34% delinquency, all-time record). Corporate HQ lease expirations 2026-2028 will crystallize structural footprint reduction.",
+      "The entry-level pipeline destruction (P-037) creates a decade-lag leadership crisis. By 2031-2035, there will be a structural shortage of executives with operational experience. This is the slow-motion consequence of the 2025-2027 hiring freeze.",
+      "Coasean analysis confirms: optimal firm size is shrinking (532K new businesses/month) AND mega-firms are getting larger (top 10 = 40% S&P 500). A barbell firm-size structure is emerging that hollows out the traditional corporate HQ layer."
+    ],
+
+    "sector_transformation_entry": {
+      "sector_naics": "55",
+      "sector_name": "Management of Companies and Enterprises",
+      "transformation_phase": "early_disruption",
+      "phase_confidence": "high",
+      "forces_acting": ["F1_technology", "F4_capital", "F2_demographics", "F5_psychology"],
+      "supporting_patterns": ["P-001", "P-002", "P-036", "P-037"],
+      "evidence_summary": "v3-7: 8 model cards scored (avg 75.5, 2 STRUCTURAL_WINNER, 1 FEAR_ECONOMY). MC-MGT-002 PE Portfolio Ops at 84.25 is highest non-defense card in engine. Sector has MAXIMUM fear friction (gap=5) because managers control their own displacement decision. Jevons runs in reverse — cheaper coordination reduces coordination demand. 2.55M workers at $147K avg, $375B payroll with 55% routine cognitive. 15-20% employment decline projected by 2031. CRE cascade second-order: HQ downsizing compounds CMBS crisis. Entry-level pipeline destruction (P-037) creates 2031-2035 leadership shortage.",
+      "v3_models_rated": 8
+    },
+
+    "fear_friction_entry": {
+      "sector_naics": "55",
+      "sector_name": "Management of Companies and Enterprises",
+      "economic_readiness": 9,
+      "psychological_readiness": 4,
+      "gap": 5,
+      "classification": "high_friction",
+      "notes": "MAXIMUM reflexive resistance — the incumbents (managers) control the AI adoption decision. 60% of orgs cutting headcount anticipating AI but targeting lower levels, not management itself. Resolution requires board-level mandate, PE/activist pressure, or Silver Tsunami attrition forcing the issue. Comparable to Education (gap=5) but for opposite reason: education friction is about protecting students; management friction is about protecting decision-makers' own jobs."
+    },
+
+    "web_sources_consulted": [
+      "HBR: AI Is Changing the Structure of Consulting Firms (2025)",
+      "Conference Board: AI and the C-Suite Implications for CEO Strategy (2026)",
+      "Fortune: Deloitte to Scrap Traditional Job Titles as AI Reshapes Big 4 (Jan 2026)",
+      "PwC: 2026 AI Business Predictions",
+      "CNBC: Middle Managers Getting Laid Off But Role More Important Than Ever (Dec 2025)",
+      "Fast Company: How AI is Killing and Reinventing Middle Management",
+      "Gartner: 20% of Organizations Will Eliminate >50% Middle Management by 2026",
+      "Deloitte Insights: Agentic AI Strategy (2026)",
+      "KPMG: AI at Scale — Agent-Driven Enterprise Reinvention (2026)",
+      "Index.dev: AI Agents in Business ROI Adoption Impact (2026)",
+      "Kore.ai: AI Agents in 2026 From Hype to Enterprise Reality",
+      "Bain & Company: Building the Foundation for Agentic AI (2025)",
+      "Cushman & Wakefield: Office Downsizing Has Peaked (2025)",
+      "Deloitte Insights: 2026 Commercial Real Estate Outlook",
+      "Moody's: Commercial Property Vacancy Rate to Peak 2026 at 24%",
+      "Crexi: 2026 Office Market Outlook",
+      "California Management Review: From Coase to AI Agents (2025)",
+      "FourWeekMBA: The Coase Theorem of AI Transaction Costs",
+      "Fast Company: McKinsey Layoffs Warning Signal for Consulting in AI Age",
+      "Management Consulted: Management Consulting Industry Report / 2026 Salary Report",
+      "HBS: Employee Ownership Can Help Weather Silver Tsunami",
+      "Axios: The Retirement Crisis as Silver Tsunami Strikes the US",
+      "Intellizence: Top Companies Announced Major Layoffs 2025-2026"
+    ]
+  }
+}

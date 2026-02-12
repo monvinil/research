@@ -1,0 +1,415 @@
+{
+  "cycle": "v3-7",
+  "date": "2026-02-12",
+  "scan_coverage": ["F2_demographics", "F4_capital", "F5_psychology"],
+  "signal_count": 25,
+  "signals": [
+    {
+      "id": "v37-S25",
+      "force": "F2_demographics",
+      "title": "Healthcare Employment Monoculture — 95% of Net Jan 2026 Job Creation",
+      "source": "BLS (Feb 7, 2026)",
+      "key_data": [
+        "143K total nonfarm jobs added in January 2026",
+        "Healthcare + Social Assistance accounted for 137K (95% of total)",
+        "Education/Healthcare sector: 54.1% of all private job creation in trailing 3 months",
+        "No other sector contributed meaningfully to net job creation"
+      ],
+      "confidence": "high",
+      "implication": "The US labor market is becoming a healthcare monoculture. When one sector accounts for 95% of job creation, the headline jobs number is masking structural weakness in every other sector. This concentration also means healthcare policy changes (Medicaid, Medicare reimbursement) have outsized employment impact. The trailing 3-month trend (54.1%) confirms this is not a single-month anomaly.",
+      "patterns_affected": ["P-040-candidate"]
+    },
+    {
+      "id": "v37-S26",
+      "force": "F2_demographics",
+      "title": "BLS 898K Jobs Revision — Largest Downward Revision Since 2009",
+      "source": "BLS (Feb 2026)",
+      "key_data": [
+        "Total nonfarm employment reduced by 898K for March 2024 benchmark revision",
+        "Combined with prior 818K preliminary revision = 1.7M jobs overstated",
+        "Largest benchmark revision since 2009 financial crisis",
+        "Suggests labor market was materially weaker throughout 2024 than reported"
+      ],
+      "confidence": "high",
+      "implication": "1.7M cumulative overstatement means the Fed, businesses, and policymakers were operating on materially incorrect labor market data for 12+ months. This undermines the 'resilient labor market' narrative that supported higher-for-longer monetary policy. Retroactively, the 2024 economy was weaker than believed — implications for current period estimates and forward guidance.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S27",
+      "force": "F2_demographics",
+      "title": "H-1B Self-Selection Day — February 27 Binary Event",
+      "source": "USCIS (Feb 2026)",
+      "key_data": [
+        "New wage-weighted H-1B lottery system takes effect for FY2027",
+        "Higher-paying positions receive preferential selection weight",
+        "55% of registrants may self-select out due to unfavorable odds at lower wage levels",
+        "Indian IT services firms (TCS, Infosys, Wipro) most affected by wage-weighted system"
+      ],
+      "confidence": "high",
+      "implication": "February 27 is a binary event for the H-1B pipeline. The wage-weighted system structurally disadvantages the body-shop model (high volume, moderate wages) that drove Indian IT services growth. 55% self-selection means the effective H-1B applicant pool may halve overnight. This accelerates offshoring (why bring workers to US at high wages when you can serve from India at low cost?) and reshapes the tech labor supply chain.",
+      "patterns_affected": ["P-002"]
+    },
+    {
+      "id": "v37-S28",
+      "force": "F2_demographics",
+      "title": "College Enrollment Cliff Executing — 15-Year Demographic Lock",
+      "source": "NCES, Western Interstate Commission (Feb 2026)",
+      "key_data": [
+        "2026-2037 enrollment pipeline locked in by birth rates from 2008-2019",
+        "Public university enrollment decline beginning in 2026",
+        "Only international students and adult learners partially offset domestic decline",
+        "Small and mid-size private colleges face existential enrollment shortfalls"
+      ],
+      "confidence": "high",
+      "implication": "This is a 15-year demographic certainty — the students who would enroll in 2026-2037 have already been born (or not born). No policy can change the pipeline. Higher education faces structural contraction that will close institutions, reshape faculty labor markets, and reduce the college-educated workforce pipeline. International students become the margin that determines institutional survival.",
+      "patterns_affected": ["P-033"]
+    },
+    {
+      "id": "v37-S29",
+      "force": "F2_demographics",
+      "title": "Construction Labor Crisis — 6-8% Annual Wage Inflation",
+      "source": "AGC, NAHB (Jan-Feb 2026)",
+      "key_data": [
+        "1/3 of construction firms cite federal immigration enforcement as direct cause of project delays",
+        "723K new construction job openings monthly — near record levels",
+        "Under-35 participation in construction 7-10% below pre-pandemic levels",
+        "6-8% annual wage inflation in construction trades — 2-3x overall wage growth"
+      ],
+      "confidence": "high",
+      "implication": "Construction labor crisis is where immigration policy meets infrastructure reality. Data center buildout, defense construction, and housing all require the same skilled trades labor pool. 6-8% wage inflation compounds project costs and extends timelines. The under-35 participation gap means this is not a cyclical shortage but a generational opt-out from physical labor. Immigration enforcement intensifies the structural deficit.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S30",
+      "force": "F2_demographics",
+      "title": "Silver Tsunami Acceleration — 4M Turning 65/Year, 6M Worker Deficit by 2032",
+      "source": "WebProNews, US News (Jan-Feb 2026)",
+      "key_data": [
+        "4 million Americans turning 65 annually — 10,000 per day",
+        "Projected 6 million worker deficit by 2032",
+        "GDP growth reduced by 7.3% cumulatively through 2030 due to demographic drag",
+        "65-74 labor force participation rate at 30.2% — delayed retirement partially offsetting but insufficient"
+      ],
+      "confidence": "high",
+      "implication": "The silver tsunami is now executing, not approaching. 4M/year retiring with no replacement cohort of equivalent size. The 30.2% participation rate for 65-74 shows delayed retirement is a partial buffer but cannot close a 6M gap. This is the structural driver for both AI adoption (replace missing workers) and healthcare employment monoculture (aging population needs care). GDP impact of -7.3% by 2030 makes this the single largest economic headwind.",
+      "patterns_affected": ["P-002"]
+    },
+    {
+      "id": "v37-S31",
+      "force": "F2_demographics",
+      "title": "Entry-Level Job Posting Fraud — 47% More Postings But 73% Fewer Hires",
+      "source": "Stack Overflow (Dec 2025), Rezi AI (2026)",
+      "key_data": [
+        "Entry-level job postings increased 47% but actual entry-level hires declined 73%",
+        "Companies posting junior-sounding roles but filling with experienced candidates",
+        "Only 7% of 2024 hires were recent graduates (down from ~15% historical average)",
+        "AI tools enable companies to screen out junior candidates more efficiently"
+      ],
+      "confidence": "high",
+      "implication": "The entry-level job market is structurally broken. Companies are ghost-posting junior roles while hiring senior talent — the posting data actively misleads about labor market accessibility. 7% recent grad hire rate means the traditional career pipeline (education to entry-level to advancement) is collapsing. Combined with AI coding tools reducing need for junior developers, this creates a missing generation of professional workers.",
+      "patterns_affected": ["P-037"]
+    },
+    {
+      "id": "v37-S32",
+      "force": "F2_demographics",
+      "title": "India Demographic Dividend vs H-1B Filter",
+      "source": "Penn Wharton, India AI Summit (Feb 2026)",
+      "key_data": [
+        "H-1B wage-weighted lottery structurally disadvantages Indian IT services model",
+        "India zero-tax-through-2047 for AI companies creates alternative to US expansion",
+        "1 billion working-age population — largest in the world",
+        "India AI Summit (Feb 16-20) positions India as AI talent hub rather than talent exporter"
+      ],
+      "confidence": "medium",
+      "implication": "The H-1B wage-weighted system combined with India's zero-tax AI policy may invert the traditional Indian IT talent flow. Instead of Indian workers coming to the US, US companies may increasingly deploy AI workloads to India. India's 1B working-age population is the largest demographic dividend in history — the question is whether it gets captured domestically or exported.",
+      "patterns_affected": ["P-028"]
+    },
+    {
+      "id": "v37-S33",
+      "force": "F4_capital",
+      "title": "Gartner $2.52T AI Spending — Inference > Training Crossover",
+      "source": "Gartner (Jan 15, 2026)",
+      "key_data": [
+        "Inference spending reached $20.6B (55% of AI cloud infrastructure), surpassing training spending",
+        "$2.52T total AI spending = approximately 3% of global GDP",
+        "Infrastructure spending $1.366T (54% of total)",
+        "The inference > training crossover signals shift from building models to deploying them"
+      ],
+      "confidence": "high",
+      "implication": "Inference exceeding training spending is a phase transition marker. It means the AI industry has shifted from 'building capability' to 'deploying capability at scale.' Inference costs are recurring and scale with usage — this crossover means AI compute demand becomes a permanent, growing operating expense rather than episodic capital expenditure. The economic structure of AI shifts from R&D to production.",
+      "patterns_affected": ["P-038"]
+    },
+    {
+      "id": "v37-S34",
+      "force": "F4_capital",
+      "title": "Goldman Sachs $160B US IPO Forecast, SpaceX $1.5T Listing",
+      "source": "Goldman Sachs, Reuters (Feb 2026)",
+      "key_data": [
+        "Goldman Sachs forecasts $160B in US IPO proceeds in 2026",
+        "SpaceX targeting June 2026 listing at ~$1.5T valuation",
+        "OpenAI targeting late 2026 or early 2027 IPO",
+        "120 IPOs expected across the year — highest since 2021"
+      ],
+      "confidence": "medium",
+      "implication": "The IPO window reopening at $160B with SpaceX as anchor signals a potential capital markets regime change. SpaceX at $1.5T would be the largest IPO in history and the most valuable private-to-public transition ever. OpenAI listing would be the first frontier AI lab to go public. These two listings alone could reshape market concentration and index composition.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S35",
+      "force": "F4_capital",
+      "title": "Office CMBS — $21.3B Maturing, 83.7% Already Delinquent",
+      "source": "Trepp, CoStar (Jan-Feb 2026)",
+      "key_data": [
+        "Office CMBS delinquency rate reached 11.76% — highest in the asset class",
+        "$21.3B in office CMBS loans maturing in 2026",
+        "83.7% of maturing loans already show distress signals",
+        "$2.38B with debt service coverage ratio (DSCR) <= 1.09 — cannot cover debt payments"
+      ],
+      "confidence": "high",
+      "implication": "Office CMBS is entering forced resolution. 83.7% already distressed before maturity means refinancing is not available — these are workouts, extensions, or defaults. The 11.76% delinquency rate exceeds the 2010 post-GFC peak for office. This is the commercial real estate reckoning that was deferred by pandemic-era extensions now arriving at scale. Contagion risk to regional banks holding office CRE loans.",
+      "patterns_affected": ["P-026"]
+    },
+    {
+      "id": "v37-S36",
+      "force": "F4_capital",
+      "title": "PE Refinancing Wall — $1.5-1.8T Maturing, 30% of Bankruptcies",
+      "source": "PwC, PE Stakeholder (Feb 2026)",
+      "key_data": [
+        "PE-backed companies account for 30% of all US bankruptcies in 2024",
+        "$1.5-1.8T in PE portfolio company debt maturing in 2026-2027",
+        "Refinancing at 6-7% vs original 3-4% origination rates",
+        "IRR compression forcing GPs to extend hold periods or accept markdowns"
+      ],
+      "confidence": "high",
+      "implication": "The PE refinancing wall is the largest single source of corporate financial stress. 30% of bankruptcies being PE-backed means the leverage model built on 3-4% rates is structurally broken at 6-7%. $1.5-1.8T maturing forces a trilemma: refinance at higher rates (crush returns), extend and pretend (LP patience exhausting), or sell at distressed prices (crystallize losses). This is a multi-year workout, not a one-quarter event.",
+      "patterns_affected": ["P-026", "P-002"]
+    },
+    {
+      "id": "v37-S37",
+      "force": "F4_capital",
+      "title": "Bank Earnings Strong BUT Lending Decelerating to 3-4%",
+      "source": "BofA, Popular Bank (Jan 2026)",
+      "key_data": [
+        "Major bank earnings beat expectations in Q4 2025",
+        "Credit card lending declining sequentially",
+        "Credit standards tightened across commercial and consumer categories",
+        "Banks optimizing margin not volume — NIM expansion, not loan growth"
+      ],
+      "confidence": "high",
+      "implication": "Strong bank earnings masking a lending deceleration is a classic late-cycle signal. Banks are making more money on each loan (margin) but making fewer loans (volume). This means credit availability is contracting even as the banking sector appears healthy. Small businesses and consumers face tighter credit precisely when AI transition requires investment. The margin-over-volume strategy is rational for banks but contractionary for the economy.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S38",
+      "force": "F4_capital",
+      "title": "VC Capital Concentration — >50% to AI, Physical AI Emerging",
+      "source": "Crunchbase (Jan-Feb 2026)",
+      "key_data": [
+        "Over 50% of VC funding directed to AI companies",
+        "Nearly half of top 10 funding rounds involve physical AI (robotics, hardware)",
+        "Non-AI companies face a capital desert — funding availability declining",
+        "$440-480B total VC deployment expected in 2026"
+      ],
+      "confidence": "high",
+      "implication": "VC capital concentration exceeding 50% to AI creates a two-tier startup economy. AI companies have abundant capital; everyone else faces a funding desert. Physical AI emerging in top rounds (robotics, embodied AI) signals VC conviction that AI is moving from software to physical world. Non-AI founders face a structural disadvantage in fundraising that may last multiple years.",
+      "patterns_affected": ["P-006", "P-022"]
+    },
+    {
+      "id": "v37-S39",
+      "force": "F4_capital",
+      "title": "Enterprise AI Budget +75%, Fewer Vendors",
+      "source": "a16z CIO survey (Dec 2025-Feb 2026)",
+      "key_data": [
+        "88% of enterprises increasing AI budgets in 2026",
+        "Average AI budget increase of 75% year-over-year",
+        "Inference spending grew from $9.2B to $20.6B — more than doubling",
+        "Shadow AI usage at 78-86% of enterprises — unauthorized tools proliferating"
+      ],
+      "confidence": "high",
+      "implication": "75% budget increases with vendor consolidation means enterprises are spending dramatically more but concentrating on fewer platforms. This creates winner-take-most dynamics in enterprise AI. Shadow AI at 78-86% means the real AI spending is even higher than budgeted — employees are buying tools with personal or departmental budgets. Enterprise AI adoption has outrun enterprise AI governance.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S40",
+      "force": "F4_capital",
+      "title": "Fed Hold at 3.50-3.75%, Max 2 Cuts in 2026",
+      "source": "FOMC (Jan 28, 2026)",
+      "key_data": [
+        "Federal funds rate held at 3.50-3.75% at January meeting",
+        "2 dissents — unusual for a hold decision",
+        "Zero additional 2027 rate cuts priced by futures markets",
+        "Core inflation running ~3% — above 2% target"
+      ],
+      "confidence": "high",
+      "implication": "Higher-for-longer is becoming higher-for-permanent. Zero 2027 cuts priced means the market expects the current rate regime to persist for 2+ years. 3% inflation with 3.50-3.75% rates means real rates are barely positive — the Fed has limited room for further cuts without reigniting inflation. This rate environment is the structural backdrop for all capital allocation decisions: PE refinancing, CRE workouts, startup fundraising, and consumer credit.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S41",
+      "force": "F5_psychology",
+      "title": "AI Confidence COLLAPSE — Usage Up 13%, Confidence Down 18%",
+      "source": "ManpowerGroup (Jan 2026)",
+      "key_data": [
+        "AI tool usage increased 13% across surveyed workforce",
+        "Worker confidence in AI outcomes decreased 18% simultaneously",
+        "Boomers show -35% confidence decline — sharpest generational drop",
+        "56% of workers report receiving no AI training from employer"
+      ],
+      "confidence": "high",
+      "implication": "Usage up / confidence down is the signature of coerced adoption. Workers are being forced to use tools they do not trust and have not been trained on. The -35% Boomer confidence drop combined with 56% no-training rate suggests enterprises are deploying AI without adequate change management. This creates a toxic adoption pattern where workers comply behaviorally but resist psychologically — reducing the productivity gains AI is supposed to deliver.",
+      "patterns_affected": ["P-039-candidate"]
+    },
+    {
+      "id": "v37-S42",
+      "force": "F5_psychology",
+      "title": "Michigan Consumer Sentiment 57.3 — K-Shaped Widening",
+      "source": "University of Michigan (Feb 2026)",
+      "key_data": [
+        "Consumer sentiment index at 57.3 — third consecutive monthly increase",
+        "Year-over-year still -11.4% — recovery from very low base",
+        "Stock-holders recovering sentiment; non-stock-holders stagnating",
+        "Long-term inflation expectations at 3.4% — elevated and rising"
+      ],
+      "confidence": "high",
+      "implication": "K-shaped sentiment mirrors K-shaped economy. Asset owners benefit from market recovery; non-asset-owners face persistent inflation anxiety. 3.4% long-term inflation expectations becoming embedded in consumer psychology — once expectations anchor above target, they become self-fulfilling through wage demands and pricing behavior. The -11.4% YoY gap shows the recovery narrative is fragile.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S43",
+      "force": "F5_psychology",
+      "title": "Forever Layoffs — AI-Washing Confirmed at Scale",
+      "source": "Fortune (Feb 10, 2026), HBR (Jan 2026)",
+      "key_data": [
+        "28,825 tech workers laid off year-to-date across 76 companies in 2026",
+        "60% of companies that cut headcount cited AI as justification",
+        "Only 2% of layoffs were actually tied to demonstrated AI capability replacement",
+        "AI-washing: using AI narrative to justify cost cuts unrelated to technology"
+      ],
+      "confidence": "high",
+      "implication": "AI-washing layoffs are poisoning the AI adoption narrative. When companies blame AI for layoffs that are actually financial restructuring, they simultaneously destroy worker trust in AI (fear of replacement) and overstate AI capability (suggesting it can replace roles it cannot). The 60% vs 2% gap is the AI trust deficit in a single number. This damages both labor psychology and accurate assessment of AI's actual impact.",
+      "patterns_affected": ["P-036"]
+    },
+    {
+      "id": "v37-S44",
+      "force": "F5_psychology",
+      "title": "2026 Edelman Trust Barometer — Insularity as Next Trust Crisis",
+      "source": "Edelman (Jan-Feb 2026)",
+      "key_data": [
+        "Global society sliding from grievance to insularity — withdrawal from collective institutions",
+        "AI trust is experience-driven: 40-50 point swing between AI users and non-users",
+        "Developing markets more AI-enthusiastic than developed markets",
+        "Trust in employers remains highest of all institutions but declining"
+      ],
+      "confidence": "high",
+      "implication": "Insularity as a trust mode means people withdraw from institutions rather than protest them. This is worse for AI adoption than active resistance — insularity means disengagement, not engagement. The 40-50pt AI trust swing based on experience suggests the trust problem is solvable through exposure, but insularity reduces willingness to try. Developing market enthusiasm creates a geographic trust divide that may accelerate AI deployment offshore.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S45",
+      "force": "F5_psychology",
+      "title": "Shadow AI at 78-86% — Adoption Has Outrun Governance",
+      "source": "SurveyMonkey, ITSM.tools (2026)",
+      "key_data": [
+        "78-86% of enterprises report unauthorized AI tool usage by employees",
+        "1 in 4 employees say they don't trust their employer to implement AI responsibly",
+        "Shadow AI creates data security, compliance, and IP exposure risks",
+        "Most shadow AI usage is for productivity — workers self-solving efficiency problems"
+      ],
+      "confidence": "high",
+      "implication": "78-86% shadow AI means enterprise AI strategy is largely fiction — employees are making their own adoption decisions. The 1-in-4 distrust rate explains why: workers adopt AI tools they choose (high trust) while distrusting employer-mandated AI (low trust). This inversion means bottom-up AI adoption is outpacing top-down AI governance. Enterprise AI policy must accommodate existing shadow usage rather than attempting to control it.",
+      "patterns_affected": ["P-039-candidate"]
+    },
+    {
+      "id": "v37-S46",
+      "force": "F5_psychology",
+      "title": "Federal-State AI Regulation War — DOJ Task Force vs NY RAISE Act",
+      "source": "King & Spalding (Jan-Feb 2026)",
+      "key_data": [
+        "Trump Executive Order seeks federal preemption of state AI laws",
+        "New York signed RAISE Act after the federal preemption EO — direct defiance",
+        "DOJ AI Task Force established to pursue enforcement at federal level",
+        "March 11 Commerce Department deadline for regulatory framework recommendation"
+      ],
+      "confidence": "high",
+      "implication": "Federal-state regulatory collision creates maximum uncertainty for AI deployment. Companies cannot comply with both federal deregulation and state-level AI accountability laws simultaneously. NY signing RAISE Act after the preemption EO is an explicit constitutional challenge. March 11 deadline may trigger either federal preemption (legal challenges from states) or inaction (continued fragmentation). Either path extends regulatory uncertainty through 2026.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S47",
+      "force": "F5_psychology",
+      "title": "Deepfake Trust Destruction — Voice Cloning Indistinguishable",
+      "source": "Fortune (Dec 2025), TechTimes (Feb 2026)",
+      "key_data": [
+        "Creating convincing deepfakes now requires 10 minutes and $10-20",
+        "Voice cloning quality is indistinguishable from real voices in blind tests",
+        "Financial fraud losses attributable to deepfakes reached $12.5B in 2025",
+        "Deepfake creation has been effectively democratized — no technical skill required"
+      ],
+      "confidence": "high",
+      "implication": "Deepfake democratization is destroying the trust infrastructure that digital communication relies on. When voice cloning is indistinguishable and costs $10, every phone call, voice message, and video becomes suspect. $12.5B in fraud losses is the measurable cost; the unmeasurable cost is the erosion of trust in all mediated communication. This accelerates demand for verified identity infrastructure and in-person authentication.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S48",
+      "force": "F5_psychology",
+      "title": "Consumer Frugality Intensifies — 18pp Net Negative Spending",
+      "source": "AlixPartners (2026)",
+      "key_data": [
+        "Consumer spending sentiment 18 percentage points net negative",
+        "AI-driven job instability cited as primary driver of conservative spending",
+        "Brand loyalty weakening — consumers trading down across categories",
+        "Frugality pattern strongest in 25-45 age cohort — prime spending years"
+      ],
+      "confidence": "medium",
+      "implication": "AI anxiety is now affecting consumer spending, not just labor markets. When workers fear AI-driven job loss, they reduce consumption preemptively — this is the psychological transmission mechanism from technology disruption to demand destruction. 25-45 cohort frugality is particularly concerning as this is the household formation and peak consumption demographic. Brand loyalty erosion compounds the demand problem for consumer-facing businesses.",
+      "patterns_affected": []
+    },
+    {
+      "id": "v37-S49",
+      "force": "F5_psychology",
+      "title": "Pew Global AI Sentiment — Most Adults Anxious",
+      "source": "Pew Research (Feb 2026)",
+      "key_data": [
+        "Gen Z: 67% excited about AI vs Boomers: 29% excited",
+        "Majority of adults across all demographics report AI anxiety",
+        "AI avoiders prioritize financial caution over technological engagement",
+        "Generational divide is the strongest predictor of AI sentiment"
+      ],
+      "confidence": "high",
+      "implication": "The generational AI sentiment divide (67% vs 29% excited) is the psychological version of the digital divide. Boomers controlling the most wealth and institutional positions are the most anxious about AI; Gen Z with the least institutional power is the most enthusiastic. This creates a structural tension where AI adoption decisions are made by the demographic least comfortable with AI, while the most comfortable demographic lacks decision authority.",
+      "patterns_affected": []
+    }
+  ],
+  "force_velocity_assessments": {
+    "F2_demographics": {
+      "velocity": "accelerating",
+      "change": "confirmed",
+      "rationale": "898K jobs revision confirms labor market weaker than reported. H-1B Feb 27 binary event reshaping immigration pipeline. Entry-level posting fraud confirms broken career pipeline. Healthcare monoculture (95% of job creation) reveals single-sector dependency."
+    },
+    "F4_capital": {
+      "velocity": "accelerating",
+      "change": "upgraded from shifting",
+      "rationale": "$2.52T AI spending at 3% of global GDP. $160B IPO pipeline reopening. Inference > training crossover marks phase transition. PE-backed = 30% of bankruptcies. Higher-for-longer becoming permanent rate regime."
+    },
+    "F5_psychology": {
+      "velocity": "accelerating",
+      "change": "intensifying",
+      "rationale": "AI confidence COLLAPSE (-18% while usage +13%). Shadow AI at 78-86% — governance has lost control. Deepfake voice cloning indistinguishable. Federal-state regulatory war creating maximum uncertainty. Consumer frugality 18pp net negative driven by AI job anxiety."
+    }
+  },
+  "patterns_reinforced": ["P-002", "P-026", "P-033", "P-036", "P-037", "P-038"],
+  "new_pattern_candidates": [
+    {
+      "id": "P-039-candidate",
+      "name": "Toxic AI Adoption",
+      "description": "Workers forced to use AI tools without training or trust. Usage increases while confidence collapses. Shadow AI at 78-86% means adoption has outrun governance. Coerced adoption reduces productivity gains and poisons long-term AI integration.",
+      "supporting_signals": ["v37-S41", "v37-S45"]
+    },
+    {
+      "id": "P-040-candidate",
+      "name": "Healthcare Employment Monoculture",
+      "description": "Healthcare + Social Assistance accounts for 95% of net job creation in January 2026 and 54.1% of trailing 3-month private job creation. The US labor market is becoming a single-sector dependency. All other sectors are net zero or negative contributors to employment growth.",
+      "supporting_signals": ["v37-S25"]
+    }
+  ]
+}

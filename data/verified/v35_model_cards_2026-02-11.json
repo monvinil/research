@@ -1,0 +1,1532 @@
+{
+  "cycle": "v3-5",
+  "date": "2026-02-11",
+  "agent": "Agent B (Business Model Constructor)",
+  "source": "enumerated_4digit_2026-02-11.json top_50 stubs",
+  "selection_criteria": "Top 15 stubs selected for sector diversity (12 unique NAICS), architecture diversity (8 unique architectures), and specificity of unit economics reasoning. Generic stubs skipped in favor of those where structural forces yield concrete cost-advantage math.",
+  "model_cards": [
+    {
+      "card_id": "MC-V35-5239-001",
+      "model_name": "RegTech Orchestration Layer for Alternative Investment Compliance",
+      "architecture": "regulatory_moat_builder",
+      "sector_naics": "5239",
+      "sector_name": "Other financial investment activities",
+      "one_line": "Unified compliance engine for 104K alt-investment firms: KYC/AML, Form ADV, Form PF, and beneficial ownership in one AI-native platform",
+      "macro_source": "Financial regulation complexity compounding at 8-12% annually while compliance staff costs 3.6x economy average ($261K avg pay). AI collapses the cost of regulatory interpretation and filing, turning the regulatory moat from a barrier into an advantage for whoever builds the compliance infrastructure layer.",
+      "forces": ["F1_technology", "F4_capital", "F3_geopolitics", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "104,599 establishments — extreme fragmentation means most firms lack in-house compliance teams",
+            "SEC rulemaking velocity: 25+ new rules in 2024-2025 cycle including private fund adviser rules, beneficial ownership, expanded Reg D",
+            "Average annual pay $260K (Baumol 3.59x) — compliance officers are among the most expensive hires in the economy",
+            "Employment growing 5% YoY — sector is expanding, compounding the compliance burden"
+          ],
+          "supply_gap": "Compliance staffing for alternative investments requires deep domain expertise (securities law + fund structures + tax) that takes 5-10 years to develop. The CPA/JD pipeline is collapsing (-33% CPA candidates). AI is the only way to scale compliance expertise across 104K fragmented firms.",
+          "inevitability_argument": "Regulatory requirements are non-negotiable: every fund must comply or face enforcement. The gap between compliance complexity (growing) and available compliance professionals (shrinking) can only be closed by automation. This is a structural inevitability, not a discretionary purchase.",
+          "pattern_refs": ["P-001", "P-026", "P-027"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "LLM-powered regulatory interpretation can parse 500+ page rule releases and map them to client-specific obligations in minutes vs. weeks. AI agents can auto-fill Form ADV, Form PF, and generate compliance testing schedules. Inference cost at $0.40/M tokens means compliance review costs pennies per filing."},
+          {"force_id": "F4_capital", "contribution_score": 8, "mechanism": "PE refinancing wall ($936B-$1.8T) hits alt-investment firms hard — compliance cost-cutting is the first lever. New fund launches (532K business applications/mo) need day-one compliance. Capital rotation to physical economy means financial service firms must run leaner."},
+          {"force_id": "F3_geopolitics", "contribution_score": 6, "mechanism": "EU AI Act and MiCA create regulatory divergence requiring multi-jurisdiction compliance mapping. US-EU DORA alignment creates cross-border compliance demand. Regulatory arbitrage between jurisdictions is a technical problem AI can solve."},
+          {"force_id": "F5_psychology", "contribution_score": 7, "mechanism": "Financial services has 73% AI adoption — the lowest fear friction of any sector. Compliance teams are already the most receptive to AI tools because the alternative (regulatory violation) is worse than the adoption risk."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Compliance is legally mandatory. A market crash actually INCREASES compliance burden (more reporting, more audits, more enforcement actions). The 2008 crisis led to Dodd-Frank, which tripled compliance requirements. Recession = more regulation = more demand."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$8M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 82,
+          "cost_advantage_ratio": "8-12x vs incumbent compliance consulting firms",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$2,000-$8,000/firm/month (tiered by AUM and complexity: small RIA $2K, mid-market fund $5K, multi-strategy $8K+)",
+        "cost_per_unit_ai": "$150-$400/firm/month (AI inference for document parsing, form generation, monitoring alerts, and regulatory change tracking)",
+        "cost_per_unit_incumbent": "$3,000-$15,000/firm/month (compliance consultant at $260K+/yr serves 3-5 clients; CCO salary $180-$350K allocated across fund)",
+        "break_even_volume": "80-120 firms ($320K-$480K MRR at blended $4K/firm, covering $300K/mo engineering + ops)",
+        "economic_force_tam": "$260K avg pay x 585K employees = $152B sector payroll. Compliance is ~15-20% of operational cost = $23-$30B addressable compliance spend"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 8,
+        "gap": 1,
+        "primary_friction": "Regulatory liability — who is responsible if AI-generated filing contains errors? CCOs need assurance the platform maintains audit trails and passes SEC examination.",
+        "resolution_path": "Platform positions as 'compliance copilot' with human-in-the-loop for final sign-off. Every AI action logged with full audit trail. SOC 2 Type II certification from launch. Build relationships with SEC examination staff to establish platform credibility."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "LLMs can accurately parse SEC rule releases and map to compliance obligations (demonstrated by multiple legal AI companies)",
+          "Alt-investment sector is growing (5% employment growth, 104K establishments confirmed by QCEW)",
+          "Compliance costs are 3.6x economy average (confirmed by Baumol score)"
+        ],
+        "likely": [
+          "SEC continues expanding regulatory scope for private fund advisers (trajectory established under current and prior administrations)",
+          "AI compliance tools will be accepted by SEC examiners (precedent: e-discovery tools accepted by courts)",
+          "Mid-market firms ($100M-$5B AUM) will adopt first — too large to ignore compliance, too small for dedicated team"
+        ],
+        "uncertain": [
+          "Whether SEC will formally endorse or restrict AI-generated compliance filings",
+          "Speed of adoption among smallest RIAs (1-2 person shops) who may resist any new technology",
+          "Whether large compliance consulting firms (ACA, Foreside) can build competitive AI tools quickly enough"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 5,
+        "moat_sources": [
+          "Regulatory knowledge graph — each rule interpretation compounds the platform's mapping accuracy",
+          "SEC examination data (anonymized) becomes training data for future compliance patterns",
+          "Multi-jurisdiction compliance mapping is extremely hard to replicate from scratch",
+          "SOC 2 + regulatory body relationships take 12-18 months to establish"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If SEC deregulates private fund reporting (reducing Form PF/ADV requirements by >50%)",
+        "If incumbent compliance platforms (ACA ComplianceAlpha, ComplySci) achieve similar AI capability within 12 months",
+        "If alt-investment sector contracts >20% (reducing addressable market below critical mass)",
+        "If AI compliance tools produce errors that trigger high-profile SEC enforcement action, poisoning market trust"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-3341-001",
+      "model_name": "AI-Optimized Custom Compute Hardware Foundry",
+      "architecture": "arbitrage_window",
+      "sector_naics": "3341",
+      "sector_name": "Computer and peripheral equipment manufacturing",
+      "one_line": "Acquire distressed US computer hardware facilities and retool for AI inference hardware, edge computing devices, and custom silicon assembly",
+      "macro_source": "Computer hardware manufacturing pays 3.76x economy average ($273K) with wages rising 4.8% YoY — massive stored Baumol energy. Only 2,387 establishments nationwide (extremely concentrated). CHIPS Act is injecting $52B but focused on leading-edge fabs, leaving mid-tier assembly/packaging/customization underserved. The arbitrage window is the gap between CHIPS Act investment timeline (2026-2029 ramp) and immediate demand for AI inference hardware.",
+      "forces": ["F1_technology", "F2_demographics", "F3_geopolitics", "F4_capital", "F6_energy"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "AI inference hardware demand growing 40-60% annually (edge AI: 114M AI PCs in 2025, +88%)",
+            "Only 2,387 establishments in US computer hardware manufacturing — severe supply concentration",
+            "4.8% wage growth vs 2.5% CPI = widening AI cost advantage every year",
+            "CHIPS Act creating $52B investment wave but focused on leading-edge, not mid-tier assembly"
+          ],
+          "supply_gap": "The gap between AI inference hardware demand (exponential) and US manufacturing capacity (slow CHIPS Act buildout) creates a 3-5 year window where any facility capable of assembly, testing, and customization commands premium pricing. Mid-tier hardware assembly is the bottleneck.",
+          "inevitability_argument": "Every AI deployment needs physical hardware. Cloud providers are capacity-constrained. On-prem/edge inference is the fastest growing segment. Someone must assemble, test, and customize this hardware in the US. The question is only who captures the margin.",
+          "pattern_refs": ["P-003", "P-008"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI inference demand creates insatiable hardware appetite. Edge AI (114M devices, +88%) requires customized form factors that large fabs don't produce. AI-optimized assembly lines (cobots + predictive quality) cut manufacturing defect rates by 30-50%."},
+          {"force_id": "F3_geopolitics", "contribution_score": 9, "mechanism": "US-China chip controls create premium for US-manufactured hardware. ITAR/defense customers require domestic production. CHIPS Act provides tax credits (25% ITC) for qualifying facilities. Reshoring Kearney index at -311 signals sustained demand."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "VC rotation to hard-tech/physical ($2.26B robotics funding Q1 2026). Distressed mid-tier manufacturers available at 4-6x EBITDA as PE refinancing wall hits. CHIPS Act grants reduce effective capital cost."},
+          {"force_id": "F6_energy", "contribution_score": 6, "mechanism": "Data center energy constraint (2,600 GW queue) pushes demand toward energy-efficient edge inference hardware. Manufacturing facilities near cheap power (solar LCOE $0.02-0.03/kWh) gain structural cost advantage."},
+          {"force_id": "F2_demographics", "contribution_score": 5, "mechanism": "Silver Tsunami: 52% of employer businesses owned by 55+. Aging computer hardware manufacturing owners with no succession plan = acquisition targets at 3-5x EBITDA."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "AI infrastructure spending has been resilient through market corrections (Magnificent 7 capex commitments through 2027). Defense spending ($13.4B AI line) is counter-cyclical. However, consumer hardware demand would soften in recession."
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$25M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 35,
+          "cost_advantage_ratio": "2-3x vs new-build facility (acquiring existing with CHIPS Act credits vs greenfield)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-$5,000/unit (custom AI inference server assembly: $2-5K; edge AI device: $500-1,500; defense-grade compute module: $10-50K)",
+        "cost_per_unit_ai": "$300-$3,000/unit (AI-optimized assembly with cobots reduces labor from 40% to 15% of COGS; predictive quality reduces defect scrap by 30%)",
+        "cost_per_unit_incumbent": "$400-$4,500/unit (traditional manually-intensive assembly lines with $273K average wages per worker)",
+        "break_even_volume": "500-1,000 units/month (at blended $2K/unit, $1M-$2M/mo revenue against $800K-$1.2M fixed + variable costs)",
+        "economic_force_tam": "$273K avg pay x 162K employees = $44B sector payroll. Total sector revenue ~$80B. Custom/edge hardware growing at 40%+ CAGR = $15-25B addressable within 3 years"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 7,
+        "gap": 1,
+        "primary_friction": "Hardware customers (cloud providers, defense contractors) require quality certifications (ISO 9001, ITAR) and supplier track record. New entrant must prove reliability.",
+        "resolution_path": "Acquire existing certified facility (inheriting certifications). Start with lower-stakes edge device assembly, build track record for 6-12 months, then bid on higher-margin defense and hyperscaler contracts."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "AI inference hardware demand is growing 40%+ annually (confirmed by Nvidia, AMD, Intel earnings)",
+          "CHIPS Act provides 25% ITC for qualifying manufacturing investments (enacted law)",
+          "US computer hardware manufacturing is extremely concentrated (2,387 establishments per QCEW)"
+        ],
+        "likely": [
+          "Edge AI hardware demand continues accelerating (114M AI PCs is just the beginning)",
+          "Defense spending on AI hardware continues expanding ($13.4B DoD AI line in 2026 budget)",
+          "Distressed mid-tier hardware manufacturers will be available for acquisition through 2028"
+        ],
+        "uncertain": [
+          "Whether CHIPS Act grants will cover mid-tier assembly (most grants to date have gone to leading-edge fabs)",
+          "Speed at which cobots can be deployed in precision electronics assembly (vs general manufacturing)",
+          "Whether hyperscalers will vertically integrate custom hardware or continue outsourcing assembly"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 2,
+        "moat_sources": [
+          "ITAR certification and security clearances (12-18 month process)",
+          "CHIPS Act tax credits locked to specific facilities",
+          "Customer qualification processes take 6-12 months per OEM",
+          "Physical facility + equipment = real asset backing, not just IP"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If hyperscalers vertically integrate all hardware assembly (building own factories rather than outsourcing)",
+        "If CHIPS Act grants exclusively fund leading-edge fabs, excluding mid-tier assembly",
+        "If AI inference shifts entirely to cloud (killing edge hardware demand)",
+        "If a recession crashes enterprise IT capex by >30%, eliminating the demand signal"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5415-001",
+      "model_name": "IT Services Engagement Intelligence Platform",
+      "architecture": "data_compounding",
+      "sector_naics": "5415",
+      "sector_name": "Computer systems design and related services",
+      "one_line": "Data flywheel from IT services engagements: every project feeds a compounding knowledge graph of system architectures, failure patterns, and resolution playbooks",
+      "macro_source": "2.46M employees across 405K establishments at $149K avg pay (Baumol 2.05x). Wages rising 5% YoY while employment is flat (-0.4%). This sector is at the Baumol inflection: paying premium wages for increasingly automatable knowledge work. The firm that captures structured data from IT engagements builds an unassailable moat — every engagement makes the platform smarter, cheaper, and faster.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "405,625 establishments — most fragmented professional services sector in the economy",
+            "5% wage growth vs flat employment = classic Baumol disease compression (paying more for same output)",
+            "Every enterprise has IT systems that need design, integration, and maintenance — non-discretionary",
+            "25-40% of Google code is AI-generated — the tool capability exists, but IT services firms haven't operationalized it"
+          ],
+          "supply_gap": "IT services firms sell hours of human expertise. The expertise is increasingly capturable in data (system architectures, integration patterns, failure modes, resolution steps). No platform currently captures this engagement data in a structured, reusable format across firms.",
+          "inevitability_argument": "IT services is a $600B+ US market selling human hours. AI can automate 40-60% of implementation tasks. The firm that converts engagement hours into structured data first creates a compounding advantage that becomes impossible to replicate — each project makes the next project cheaper and faster.",
+          "pattern_refs": ["P-001", "P-004"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI coding agents can handle 25-40% of implementation work. But the real leverage is in the data layer: capturing which system architectures work together, which integrations fail, which configurations cause problems. This is a knowledge graph problem that compounds with every engagement."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "PE-backed IT services firms (Cognizant, Infosys models) face margin pressure as clients demand AI-augmented delivery. Firms that can demonstrate AI-driven productivity gain win contracts. Data compounding = demonstrable productivity proof."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Senior IT architects retiring (Silver Tsunami) take irreplaceable tacit knowledge. A data platform that captures their expertise before they leave converts human knowledge into institutional IP."},
+          {"force_id": "F5_psychology", "contribution_score": 5, "mechanism": "IT services firms are culturally receptive to technology adoption (they sell technology). But they resist tools that make their billable hours look automatable. Position as 'augmentation' not 'replacement.'"}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "IT spending is partially discretionary — new projects get delayed in recession. But maintenance, security, and compliance IT work is non-discretionary. A data-compounding platform is MORE valuable in a downturn because firms need to deliver more efficiently with fewer staff."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$10M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 78,
+          "cost_advantage_ratio": "3-5x after 1,000 engagements (each engagement reduces cost of the next; incumbents start from zero every time)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5,000-$25,000/engagement (AI-augmented IT project delivery billed at 40-60% of traditional rates but completed 3x faster)",
+        "cost_per_unit_ai": "$1,500-$7,000/engagement (AI agents handle implementation, data platform provides architecture patterns; human architect oversees)",
+        "cost_per_unit_incumbent": "$15,000-$75,000/engagement (3-5 human consultants at $149K avg pay, 2-6 week timeline per project)",
+        "break_even_volume": "50-100 engagements/month ($500K-$1M MRR against $400K/mo platform + ops cost)",
+        "economic_force_tam": "$149K avg pay x 2.46M employees = $367B sector payroll. IT project delivery is ~60% of spend = $220B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "IT services firms fear that sharing engagement data (even anonymized) reveals their methods to competitors. Clients fear that their system architectures become visible.",
+        "resolution_path": "Strict data isolation with federated learning approach. Each firm's data trains their own instance. Cross-firm learning happens only on anonymized architectural patterns (e.g., 'Salesforce + SAP integration pattern X has 85% success rate'). SOC 2 + contractual data ownership guarantees."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "AI coding agents can handle 25-40% of IT implementation work (confirmed at Google, Microsoft, Meta)",
+          "IT services sector is 405K establishments and $149K avg pay (QCEW confirmed)",
+          "Wage growth outpacing employment growth = Baumol disease in progress"
+        ],
+        "likely": [
+          "IT engagement data can be structured into a reusable knowledge graph (enterprise knowledge management is proven; domain-specific application is the gap)",
+          "Mid-market IT firms ($5-50M revenue) will adopt first — they feel the margin pressure most acutely",
+          "Data compounding effects will be visible within 500-1,000 engagements"
+        ],
+        "uncertain": [
+          "Whether federated learning can maintain data isolation while still enabling cross-firm pattern learning",
+          "Speed of enterprise adoption — IT services procurement cycles are typically 3-6 months",
+          "Whether Accenture/Deloitte/Infosys build equivalent data platforms internally"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 4,
+        "moat_sources": [
+          "Data compounding — every engagement makes the platform smarter (exponential moat)",
+          "Integration pattern library — after 10,000 engagements, no competitor can replicate the failure/success data",
+          "Client lock-in through knowledge graph (switching means losing accumulated intelligence)",
+          "Network effects — more firms on platform = richer cross-pattern learning"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If IT engagement data proves too heterogeneous to structure into reusable patterns",
+        "If IT services firms refuse to adopt any platform that captures their engagement data",
+        "If hyperscalers (AWS, Azure, GCP) build and give away equivalent engagement intelligence tools",
+        "If AI coding agents advance to the point where IT services projects become trivial (eliminating the need for pattern data)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5259-001",
+      "model_name": "AI-Native Fund Administration and Operations Platform",
+      "architecture": "full_service_replacement",
+      "sector_naics": "5259",
+      "sector_name": "Other investment pools and funds",
+      "one_line": "Full-stack AI replacement for fund administration: NAV calculation, investor reporting, capital calls, and audit support for the 7,731 most fragmented fund shops",
+      "macro_source": "NAICS 5259 has the highest fragmentation of any financial sector: 7,731 establishments for just 18,350 employees (2.4 employees per establishment). Average pay is $228K (Baumol 3.13x). Employment is exploding at 10% YoY — new fund formation is outrunning operational capacity. This is a sector where most firms are 2-3 people running a fund and outsourcing everything.",
+      "forces": ["F1_technology", "F4_capital", "F3_geopolitics", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "10% employment growth YoY — fastest growing financial subsector",
+            "Fragmentation ratio 0.42 (highest in dataset) — average firm has 2.4 employees",
+            "Baumol score 3.13x — each of those 2.4 employees costs $228K/year",
+            "532K/month new business applications — many are new fund vehicles needing back-office from day one"
+          ],
+          "supply_gap": "New funds are forming faster than fund administration staff can be hired. At 2.4 employees per fund, there is no room for in-house operations. Fund administrators (Citco, SS&C, Apex) are expensive ($50K-$150K/year per fund). AI can provide the same services at 80% lower cost.",
+          "inevitability_argument": "Fund formation is accelerating while administrative costs per fund are rising. The structural math demands an AI-first administration platform. Every new fund needs NAV calculation, investor communications, regulatory filings, and audit support. Humans at $228K each cannot scale to meet demand.",
+          "pattern_refs": ["P-001", "P-026"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "NAV calculation, waterfall distribution, capital call generation, and investor reporting are highly structured, rules-based processes that AI handles with near-zero error rates. LLMs can generate investor letters and K-1 documentation. Inference cost per fund per month: ~$20."},
+          {"force_id": "F4_capital", "contribution_score": 8, "mechanism": "New fund formation is booming while incumbent fund admins charge premium pricing. The Coasean shrinkage pattern (532K/mo business applications) means more, smaller funds — each needing lightweight administration, not legacy enterprise solutions."},
+          {"force_id": "F5_psychology", "contribution_score": 7, "mechanism": "Financial services has 73% AI adoption — lowest fear friction. Fund managers are quantitative and data-driven by nature. They will adopt the tool that gives them accurate, cheaper administration with less hassle."},
+          {"force_id": "F3_geopolitics", "contribution_score": 5, "mechanism": "Multi-jurisdiction fund structures (US, Cayman, Luxembourg, Ireland) create compliance complexity that AI handles better than humans — parsing multiple regulatory frameworks simultaneously."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Fund administration is non-discretionary — every fund must calculate NAV, report to investors, and file regulatory documents regardless of market conditions. A crash actually drives demand for cheaper administration as fund managers cut costs."
+        },
+        "capital_assessment": {
+          "capital_required": "$1M-$5M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 88,
+          "cost_advantage_ratio": "5-8x vs incumbent fund administrators (SS&C, Citco, Apex)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$1,500-$5,000/fund/month (small fund $1.5K, mid-market $3K, multi-strategy $5K+)",
+        "cost_per_unit_ai": "$100-$400/fund/month (AI inference for NAV calc, report generation, regulatory filing, investor portal hosting)",
+        "cost_per_unit_incumbent": "$4,000-$12,500/fund/month (SS&C/Citco/Apex pricing: 3-10 bps of AUM or flat fee, plus human fund accountant at $228K/yr covering 3-5 funds)",
+        "break_even_volume": "40-60 funds ($100K-$180K MRR against $80K/mo engineering + compliance + ops)",
+        "economic_force_tam": "$228K avg pay x 18.4K employees = $4.2B sector payroll. Fund administration outsourcing market ~$8B US. AI-addressable portion: $5-6B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 8,
+        "gap": 1,
+        "primary_friction": "Audit firms (Big 4) need to accept AI-generated work papers. If auditors won't sign off on AI-prepared NAVs, funds can't use the platform.",
+        "resolution_path": "Build audit trail that exceeds manual documentation standards. Partner with mid-tier audit firms (BDO, Grant Thornton, RSM) who are more receptive to AI. Generate audit work papers in the exact format auditors expect."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Fund administration is rules-based and highly automatable (NAV calculation, waterfall, capital calls are deterministic)",
+          "Sector is growing at 10% YoY with extreme fragmentation (QCEW confirmed)",
+          "Average firm size is 2.4 employees — no room for in-house operations"
+        ],
+        "likely": [
+          "New fund formation continues accelerating (532K/mo business applications, secular trend)",
+          "Audit firms will accept AI-generated work papers with proper documentation (precedent: Excel automation accepted)",
+          "AI accuracy on NAV calculation will exceed human accuracy within 6 months of deployment"
+        ],
+        "uncertain": [
+          "Whether large fund administrators (SS&C, Citco) can retool fast enough to compete on price",
+          "Regulatory response to AI-generated fund reporting (SEC review)",
+          "Whether emerging fund managers will adopt AI-first admin or stick with established brand-name administrators"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 3,
+        "moat_sources": [
+          "Fund data accumulation — each fund's historical data makes administration more accurate over time",
+          "Audit firm partnerships — getting Big 4 / mid-tier auditor acceptance is a 12-month process per firm",
+          "Multi-jurisdiction regulatory mapping (US, Cayman, Luxembourg, Ireland, BVI)",
+          "Investor portal lock-in — LPs interact through the platform, creating switching costs"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If audit firms refuse to accept AI-generated NAV calculations and work papers",
+        "If SEC mandates human-certified fund administration (explicitly prohibiting AI)",
+        "If SS&C or Citco launch AI-native platforms at comparable pricing within 12 months",
+        "If fund formation reverses sharply (>25% decline in new fund launches)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-3341-002",
+      "model_name": "Cobot-Integrated Electronics Assembly Line Modernizer",
+      "architecture": "physical_production_ai",
+      "sector_naics": "3341",
+      "sector_name": "Computer and peripheral equipment manufacturing",
+      "one_line": "Deploy cobot + AI quality inspection systems into existing computer hardware factories, cutting labor costs 40% and defect rates 50% without facility relocation",
+      "macro_source": "Computer hardware manufacturing has the highest economic concentration in the dataset: 161K employees across only 2,387 establishments (68 employees per facility). Average pay $273K (3.76x Baumol) with 4.8% wage growth. The sector cannot hire more people — it is already paying nearly 4x the economy average. The only path to expanded output is physical automation. Cobots at $25-60K with 6-18 month ROI are now cheaper than one year of one worker's salary.",
+      "forces": ["F1_technology", "F2_demographics", "F3_geopolitics", "F4_capital", "F6_energy"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "Cobots at $25-60K cost less than 3 months of one worker's salary at $273K/yr",
+            "AI inference hardware demand growing 40%+ annually — factories need to expand output",
+            "Defect rates in electronics assembly cost $5-15K per unit in rework/scrap at these price points",
+            "Manufacturing readiness gap: 98% exploring AI, only 20% deployed — 78-point execution gap"
+          ],
+          "supply_gap": "Factories know they need automation but lack integration expertise. Cobot vendors sell hardware; AI vision vendors sell software; neither provides the integrated assembly line modernization package. The gap is the systems integrator who combines cobots + AI quality + predictive maintenance into a turnkey deployment.",
+          "inevitability_argument": "At $273K average wages growing 4.8%/yr, human assembly labor costs will make US computer manufacturing uncompetitive within 3-5 years unless automation compensates. The 78-point manufacturing readiness gap (98% exploring, 20% ready) is the market — factories that don't automate will close.",
+          "pattern_refs": ["P-003", "P-008"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 10, "mechanism": "Cobots at $25-60K, ROI 6-18 months. AI vision systems for quality inspection achieve 99.5%+ defect detection (vs 85-90% human). Predictive maintenance reduces downtime 30-40%. The technology is proven; the deployment is the gap."},
+          {"force_id": "F2_demographics", "contribution_score": 7, "mechanism": "Manufacturing workforce aging — 52% of employer businesses owned by 55+. Workers at $273K are retiring and cannot be replaced at the same skill level. Cobots don't retire."},
+          {"force_id": "F3_geopolitics", "contribution_score": 8, "mechanism": "CHIPS Act + reshoring imperative require expanded US manufacturing capacity. Automation is the only way to scale US hardware production to compete with Asian labor costs."},
+          {"force_id": "F6_energy", "contribution_score": 5, "mechanism": "AI-optimized energy management in factories can reduce electricity costs 15-25%. Solar LCOE at $0.02-0.03/kWh makes factory power costs a competitive advantage if co-located."},
+          {"force_id": "F4_capital", "contribution_score": 6, "mechanism": "VC rotation to physical/robotics ($2.26B Q1 2026). CHIPS Act 25% ITC applies to automation equipment installed in qualifying facilities."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Factory automation is a capex decision that can be deferred in recession. However, factories facing wage pressure and output demands may accelerate automation during downturns to maintain competitiveness. Defense hardware demand is counter-cyclical."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$15M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 45,
+          "cost_advantage_ratio": "2.5-4x labor cost reduction per assembly station (cobot + AI vision vs human assembler at $273K/yr)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$200K-$1M per factory deployment (turnkey cobot + AI quality system: design, install, validate, train)",
+        "cost_per_unit_ai": "$100K-$500K per deployment (cobots $25-60K each x 3-8 per line + AI vision hardware + integration labor)",
+        "cost_per_unit_incumbent": "$500K-$2M per equivalent capacity expansion using human labor (hire + train 5-10 workers at $273K + ramp time)",
+        "break_even_volume": "8-15 factory deployments per year ($2.5M-$5M revenue against $1.5M/yr engineering team + inventory)",
+        "economic_force_tam": "2,387 establishments x $300K average deployment = $716M immediate addressable. Broader electronics manufacturing (NAICS 334x): 20K+ facilities = $6B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 5,
+        "gap": 4,
+        "primary_friction": "Factory operators fear production disruption during installation. The 78-point manufacturing readiness gap (98% exploring, 20% ready) is primarily psychological, not technical. Workers unions may resist automation.",
+        "resolution_path": "Parallel deployment model: install cobot cells alongside existing human lines, prove output and quality parity over 30-60 days, then transition. Risk-free pilot programs with money-back guarantee on defect rate improvements. Target non-unionized facilities first."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Cobots cost $25-60K with 6-18 month ROI (confirmed by Universal Robots, FANUC, ABB pricing)",
+          "AI vision achieves 99.5%+ defect detection in electronics assembly (demonstrated at multiple fabs)",
+          "US computer hardware manufacturing has only 2,387 establishments (QCEW confirmed)"
+        ],
+        "likely": [
+          "Factory operators will adopt automation within 2-3 years given wage pressure trajectory",
+          "CHIPS Act ITC will cover automation equipment (qualifying manufacturing investment)",
+          "Cobot costs will decline 15-20% annually as production scales"
+        ],
+        "uncertain": [
+          "Speed of factory-by-factory adoption (each deployment is a custom integration)",
+          "Whether large automation integrators (Rockwell, Siemens) will build competitive electronics-specific packages",
+          "Union response in the minority of organized facilities"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 6,
+        "moat_sources": [
+          "Electronics assembly domain expertise — general cobot vendors don't know PCB/PCBA workflows",
+          "Factory-specific training data from each deployment improves AI vision models",
+          "Customer reference network — factory operators trust peer recommendations",
+          "CHIPS Act facility certifications carry over to automation equipment"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If cobot precision proves insufficient for fine-pitch electronics assembly (< 0.1mm tolerances)",
+        "If factory operators defer all automation capex for >3 years (extending the 78-point gap)",
+        "If Rockwell/Siemens/ABB launch turnkey electronics-specific automation packages",
+        "If reshoring stalls and US hardware manufacturing contracts rather than expands"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5417-001",
+      "model_name": "AI Lab Notebook and Experiment Intelligence Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "5417",
+      "sector_name": "Scientific research and development services",
+      "one_line": "AI-native electronic lab notebook that auto-structures experimental data, detects patterns across experiments, and generates reproducible protocols for 55K R&D firms",
+      "macro_source": "Scientific R&D employs 923K people across 55,600 establishments at $167K average pay (Baumol 2.30x). Employment growing 4% YoY with 3.3% wage growth. The core problem: R&D generates massive amounts of experimental data that is poorly structured, rarely cross-referenced, and largely lost when researchers leave. AI can transform unstructured lab data into a compounding knowledge asset.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "55,600 R&D establishments — substantial fragmentation with most being small labs and contract research orgs",
+            "Reproducibility crisis: 70% of researchers have failed to reproduce another's experiment; 50% have failed to reproduce their own",
+            "FDA requiring 1,250+ AI medical device submissions shows regulatory acceptance of AI in scientific workflows",
+            "923K employees at $167K = $154B in research labor; even 10% efficiency gain = $15B value"
+          ],
+          "supply_gap": "Existing electronic lab notebooks (LabArchives, Benchling, IDBS) are glorified document management systems. They store data but don't analyze it, detect patterns, or learn from experimental outcomes. The gap is intelligence, not storage.",
+          "inevitability_argument": "The reproducibility crisis is a structural failure of how scientific data is captured and shared. AI can parse unstructured lab notes, standardize data formats, detect cross-experiment patterns, and generate reproducible protocols. This transforms R&D from an artisanal craft to a data-compounding system.",
+          "pattern_refs": ["P-001", "P-004"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "LLMs can parse handwritten and typed lab notes, extract structured data (reagent quantities, conditions, outcomes), and map relationships across experiments. AI can predict experiment outcomes based on historical data, reducing wasted experiments."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Senior researchers retiring take decades of tacit knowledge. An AI-structured lab notebook captures their experimental intuition as structured data before they leave."},
+          {"force_id": "F4_capital", "contribution_score": 6, "mechanism": "Pharma R&D spend ~$250B globally with 90%+ failure rates. Tools that improve hit rates by even 5% save billions. VC is funding AI-for-science ($2B+ in 2025)."},
+          {"force_id": "F5_psychology", "contribution_score": 5, "mechanism": "Scientists are evidence-driven but conservative about changing workflows. The 46% AI adoption plateau applies. Must demonstrate clear productivity gains, not just 'AI features.'"}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "R&D spending is structurally supported: pharma has multi-year pipelines that cannot be paused, defense R&D is counter-cyclical, and government R&D funding (NIH, NSF, DOE) is politically durable. R&D productivity tools SAVE money during downturns."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$8M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "3-5x vs hiring additional research assistants for data management ($167K/yr per person)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-$3,000/lab/month (small biotech lab $500, mid-size CRO $1,500, pharma division $3K+)",
+        "cost_per_unit_ai": "$30-$150/lab/month (AI inference for note parsing, pattern detection, protocol generation; cloud hosting for data)",
+        "cost_per_unit_incumbent": "$200-$800/lab/month (existing ELN licenses: Benchling $100-300/user, but without intelligence; data management personnel at $167K/yr shared across 3-5 labs = $3K/lab/mo)",
+        "break_even_volume": "150-250 lab subscriptions ($200K-$400K MRR against $150K-$250K/mo development + ops)",
+        "economic_force_tam": "$167K avg pay x 923K employees = $154B sector payroll. Lab data management + reproducibility tools: $5-8B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "primary_friction": "Scientists worry about IP leakage — lab data is their most valuable asset. Also concerns about AI 'hallucinating' experimental patterns that don't actually exist, leading to wasted research cycles.",
+        "resolution_path": "On-premise deployment option for pharma/defense. All pattern detections presented with statistical confidence intervals, not as definitive conclusions. SOC 2 + HIPAA compliance for biomedical data. Peer-reviewed validation studies published in Nature Methods / PLOS ONE."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Reproducibility crisis is real and quantified (Nature survey: 70% failure rate)",
+          "LLMs can parse and structure scientific text with high accuracy (demonstrated by PubMedGPT, SciBERT, Galactica)",
+          "R&D sector growing at 4% YoY (QCEW confirmed)"
+        ],
+        "likely": [
+          "Labs will adopt AI-native tools if they demonstrably improve reproducibility (the crisis is universally acknowledged)",
+          "FDA/NIH will accept AI-structured experimental data (trajectory of 1,250+ AI device approvals)",
+          "Pharma companies will pay premium for tools that reduce clinical trial failure rates"
+        ],
+        "uncertain": [
+          "Whether cross-experiment pattern detection will produce actionable insights (vs noise)",
+          "Speed of adoption among academic labs (budget-constrained, change-resistant culture)",
+          "Whether existing ELN vendors (Benchling, IDBS) can add comparable AI intelligence before a new entrant gains traction"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 7,
+        "moat_sources": [
+          "Experimental data graph — every lab's experiments compound the pattern detection capability",
+          "Domain-specific scientific language models trained on actual lab data (not just literature)",
+          "Regulatory validation — FDA/GLP compliance for AI-structured data takes 12+ months to achieve",
+          "Switching cost — once experiments are in the platform, migration is extremely painful"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If LLM pattern detection in experimental data produces unacceptably high false positive rates (>30%)",
+        "If scientists categorically refuse to use AI tools for data capture (cultural resistance proves intractable)",
+        "If Benchling or IDBS ships comparable AI features within 12 months",
+        "If R&D budgets contract >15% in a recession (historically unlikely but possible in extreme scenarios)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5223-001",
+      "model_name": "Mortgage and Loan Servicing AI Operations Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "5223",
+      "sector_name": "Activities related to credit intermediation",
+      "one_line": "AI-native loan servicing platform for 34K credit intermediation firms, automating document processing, compliance checks, and borrower communications at 80% lower cost",
+      "macro_source": "NAICS 5223 shows the most extreme labor market signal in the dataset: 13.8% wage growth while employment is DECLINING 10.7%. This is textbook Baumol crisis in real-time — the sector is hemorrhaging workers while paying dramatically more for those who remain. At $138K average pay (1.90x Baumol) with 34,602 establishments, the structural pressure for AI automation is acute and accelerating.",
+      "forces": ["F1_technology", "F4_capital", "F3_geopolitics", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "13.8% wage growth — the highest in the top 30 stubs, signaling extreme labor scarcity",
+            "-10.7% employment decline — workers are leaving the sector even as wages spike",
+            "34,602 establishments — highly fragmented, mostly small servicers and processors",
+            "Mortgage origination volumes recovering from 2023 lows creates processing demand against shrinking workforce"
+          ],
+          "supply_gap": "Credit intermediation workers (loan processors, underwriters, closers, servicers) are leaving the industry while wages spike. The work is document-intensive, compliance-heavy, and increasingly unpleasant for humans. AI handles document processing, compliance verification, and borrower communications better and at 90% lower marginal cost.",
+          "inevitability_argument": "When an industry loses 10.7% of its workforce in one year while wages grow 13.8%, the labor market is screaming that humans don't want to do this work at any price. AI is not a choice — it is the only viable staffing strategy. The sector literally cannot fill positions.",
+          "pattern_refs": ["P-001", "P-026"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI document processing (OCR + LLM) can handle mortgage applications, title documents, appraisals, and compliance verification at 95%+ accuracy. Inference cost per loan: ~$0.50 vs $200+ human processing cost."},
+          {"force_id": "F4_capital", "contribution_score": 8, "mechanism": "Business loan delinquency at 1.78% and rising. Mortgage servicing rights (MSRs) trading at elevated levels. PE-backed mortgage companies face refinancing wall. Cost reduction through AI is the primary lever to survive."},
+          {"force_id": "F5_psychology", "contribution_score": 7, "mechanism": "Financial services at 73% AI adoption. Loan servicing is back-office — borrowers don't care if a human or AI processes their payment. The fear friction is near-zero for document processing automation."},
+          {"force_id": "F3_geopolitics", "contribution_score": 4, "mechanism": "CFPB regulatory pressure on loan servicing practices creates compliance burden that AI handles more consistently than humans (every interaction documented, every regulation checked)."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Loan servicing is counter-cyclical: when rates rise, servicing volumes increase (fewer refis = longer servicing periods). When defaults rise, servicing work increases (loss mitigation, foreclosure processing). The work exists in every economic scenario."
+        },
+        "capital_assessment": {
+          "capital_required": "$1.5M-$6M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 85,
+          "cost_advantage_ratio": "10-15x vs human loan processor ($138K/yr handles 150-200 loans vs AI handling 5,000-10,000 at same quality)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$3-$8/loan/month servicing automation (at 10,000 loans: $30K-$80K/month per client)",
+        "cost_per_unit_ai": "$0.30-$0.80/loan/month (AI inference for document processing, compliance checks, borrower communications, payment processing)",
+        "cost_per_unit_incumbent": "$5-$15/loan/month (human servicer at $138K/yr covers 1,500-2,000 loans including overhead)",
+        "break_even_volume": "200K-500K loans under management across clients ($60K-$150K MRR against $50K-$100K/mo platform + compliance)",
+        "economic_force_tam": "$138K avg pay x 290K employees = $40B sector payroll. Loan servicing operations ~60% of payroll = $24B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 10,
+        "psychological_readiness": 8,
+        "gap": 2,
+        "primary_friction": "CFPB compliance risk — AI-generated borrower communications must meet specific regulatory standards (TILA, RESPA, ECOA). A single compliance failure can result in multi-million dollar penalties.",
+        "resolution_path": "Pre-certified communication templates reviewed by compliance counsel. AI fills templates rather than generating free-text. Full audit trail exceeding CFPB examination expectations. Hire former CFPB examiners as compliance advisors."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "13.8% wage growth and -10.7% employment decline in credit intermediation (QCEW confirmed)",
+          "AI document processing achieves 95%+ accuracy on financial documents (demonstrated by multiple vendors)",
+          "Financial services AI adoption at 73% (sector survey data)"
+        ],
+        "likely": [
+          "Workforce exodus from credit intermediation continues for 2-3 more years (structural, not cyclical)",
+          "CFPB will accept AI-processed loan servicing with adequate compliance documentation",
+          "Mid-size servicers ($5B-$50B portfolio) adopt first — large enough to benefit, small enough to be flexible"
+        ],
+        "uncertain": [
+          "Whether CFPB will impose specific AI regulation on loan servicing (could add cost or create moat)",
+          "Speed of adoption among the 34,602 fragmented establishments (sales cycle complexity)",
+          "Whether large servicers (Mr. Cooper, Nationstar) build equivalent internal AI capabilities"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 5,
+        "moat_sources": [
+          "CFPB compliance certification — once approved for a specific use case, competitors face same 12+ month approval cycle",
+          "Loan data accumulation — processing 1M+ loans trains models on default patterns, document variations, compliance edge cases",
+          "Integration with loan origination systems (Encompass, Black Knight) creates switching costs",
+          "Regulatory moat: each new CFPB rule change requires interpretation that the platform handles first"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If CFPB explicitly prohibits AI-automated borrower communications (regulatory block)",
+        "If workforce decline reverses (wage growth normalizes below 5%, employment stabilizes)",
+        "If Black Knight / ICE Mortgage Technology builds equivalent AI servicing into their dominant LOS platforms",
+        "If mortgage volumes decline >40% in sustained downturn, reducing servicing demand below break-even"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-3344-001",
+      "model_name": "Semiconductor Test and Packaging Automation Integrator",
+      "architecture": "arbitrage_window",
+      "sector_naics": "3344",
+      "sector_name": "Semiconductor and other electronic component manufacturing",
+      "one_line": "Acquire undervalued US semiconductor test/packaging capacity during CHIPS Act transition, deploy AI-driven test automation to capture reshoring demand",
+      "macro_source": "Semiconductor manufacturing has 395K employees across 6,907 establishments at $143K average pay (Baumol 1.97x). Wages growing 4.5% with employment up 2.6%. CHIPS Act is pouring $52B into US fabs, but the test and packaging bottleneck is largely ignored. Every chip manufactured must be tested and packaged — this is the chokepoint. The arbitrage is acquiring test/packaging capacity before CHIPS Act fab output creates insatiable demand.",
+      "forces": ["F1_technology", "F2_demographics", "F3_geopolitics", "F4_capital", "F6_energy"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "CHIPS Act $52B investment will produce chips that must be tested and packaged — test/packaging is the bottleneck",
+            "6,907 establishments — moderate fragmentation with many small specialty test houses",
+            "4.5% wage growth outpacing CPI — human testers becoming more expensive every year",
+            "AI chip demand growing 40%+ annually requires advanced packaging (chiplets, 2.5D/3D integration)"
+          ],
+          "supply_gap": "The US has invested heavily in wafer fabrication (CHIPS Act) but test and packaging capacity is concentrated in Asia (80%+ of advanced packaging in TSMC, ASE, Amkor facilities in Taiwan, China, Korea). Reshoring fabs without reshoring test/packaging creates a structural bottleneck.",
+          "inevitability_argument": "You cannot ship a chip without testing and packaging it. Every CHIPS Act fab that comes online needs domestic test/packaging or the reshoring strategy fails. The arbitrage window is the 2-3 years before this becomes obvious and capacity commands premium pricing.",
+          "pattern_refs": ["P-003", "P-008"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F3_geopolitics", "contribution_score": 10, "mechanism": "US-China chip controls make Taiwan-dependent packaging a strategic vulnerability. CHIPS Act explicitly funds advanced packaging. ITAR/defense requirements mandate US-based test. 80% of advanced packaging in Asia = strategic gap."},
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "AI-driven test optimization reduces test time by 30-50% (machine learning on failure patterns, adaptive test sequences). AI vision for package inspection achieves 99.9% defect detection. Advanced packaging (chiplets) requires AI-controlled precision bonding."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "CHIPS Act provides 25% ITC for qualifying semiconductor investments. VC rotation to hard-tech validates capital availability. Mid-tier test houses may be acquirable at 5-8x EBITDA as owners age."},
+          {"force_id": "F6_energy", "contribution_score": 5, "mechanism": "Test and packaging is energy-intensive. Facilities near cheap solar ($0.02-0.03/kWh) gain 20-30% cost advantage. Battery storage enables load-shifting for off-peak testing."},
+          {"force_id": "F2_demographics", "contribution_score": 5, "mechanism": "Semiconductor test engineers are aging and hard to replace. AI-driven test automation reduces dependence on scarce human expertise."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "CHIPS Act funding is committed regardless of economic cycle. Defense semiconductor demand is counter-cyclical. Advanced packaging for AI chips is the fastest-growing semiconductor segment. Even in recession, this capacity will be needed when CHIPS Act fabs come online."
+        },
+        "capital_assessment": {
+          "capital_required": "$10M-$50M",
+          "time_to_revenue_months": 8,
+          "gross_margin_pct": 40,
+          "cost_advantage_ratio": "1.5-2.5x vs new-build facility (acquire existing + CHIPS Act credits + AI automation vs greenfield)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$0.50-$5.00 per chip tested and packaged (standard test: $0.50-1.00; advanced packaging: $2-5; defense-grade: $5-20)",
+        "cost_per_unit_ai": "$0.20-$2.00 per chip (AI-optimized test sequences reduce time 30-50%; cobot handling reduces labor; predictive equipment maintenance reduces downtime)",
+        "cost_per_unit_incumbent": "$0.40-$4.00 per chip (manual test programming, human-supervised handling, higher defect miss rates requiring re-test)",
+        "break_even_volume": "5M-10M chips/month ($5M-$15M monthly revenue against $3M-$8M facility + equipment + labor costs)",
+        "economic_force_tam": "$143K avg pay x 395K employees = $56B sector payroll. US test and packaging market ~$12B. With CHIPS Act reshoring: projected $20-25B by 2030"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 7,
+        "gap": 1,
+        "primary_friction": "Chip manufacturers require qualification of test and packaging facilities (6-12 months per customer). New capacity must prove yield and quality match or exceed Asian facilities.",
+        "resolution_path": "Acquire existing qualified facility (inheriting customer qualifications). Deploy AI test optimization on existing qualified processes first, then expand to new customers. ITAR/defense qualification provides premium customer base less sensitive to transition risk."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "CHIPS Act $52B committed with 25% ITC (enacted law)",
+          "80%+ of advanced packaging in Asia (industry data confirmed by SIA)",
+          "AI test optimization reduces test time 30-50% (demonstrated at multiple facilities)"
+        ],
+        "likely": [
+          "CHIPS Act fabs will need domestic test/packaging within 2-3 years of coming online",
+          "Advanced packaging demand (chiplets, 2.5D/3D) will grow faster than standard packaging",
+          "Defense and intelligence agencies will mandate US-based test/packaging for sensitive chips"
+        ],
+        "uncertain": [
+          "Whether CHIPS Act will fund test/packaging specifically (most grants to date are for fabs)",
+          "Whether TSMC/ASE/Amkor will build US test/packaging capacity fast enough to eliminate the gap",
+          "Exact timing of CHIPS Act fab production ramp (delays are common in semiconductor construction)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 3,
+        "moat_sources": [
+          "Customer qualification cycles (6-12 months) create switching barriers",
+          "ITAR/security clearances for defense chip testing (12-18 month process)",
+          "CHIPS Act tax credits locked to specific facilities",
+          "AI test data from each chip design improves optimization models (data moat)"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If TSMC, ASE, and Amkor build US test/packaging capacity fast enough to meet reshoring demand",
+        "If CHIPS Act funding is cut or redirected away from semiconductor manufacturing",
+        "If advanced packaging technology shifts to a completely different approach (making acquired capacity obsolete)",
+        "If US-China tensions de-escalate sufficiently to eliminate reshoring imperative"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5411-001",
+      "model_name": "AI Legal Document Factory for Small and Mid-Size Law Firms",
+      "architecture": "vertical_saas",
+      "sector_naics": "5411",
+      "sector_name": "Legal services",
+      "one_line": "AI-powered document drafting, review, and due diligence platform for 207K law firms, delivering BigLaw quality at solo-practice prices",
+      "macro_source": "Legal services has 1.18M employees across 207,408 establishments at $125K average pay (Baumol 1.72x). Extremely fragmented (5.7 employees per firm). Wages growing 3.8% while employment is nearly flat (0.5%). Legal work is 60-70% document-intensive: drafting contracts, reviewing filings, conducting due diligence. AI can do 80% of this at 95%+ accuracy for pennies per page.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "207,408 establishments — extremely fragmented, average firm has 5.7 people",
+            "82% of Americans cite ethical concerns about AI in legal services — this fear creates a MOAT for firms that solve the trust problem",
+            "Legal spending per capita is increasing while law school enrollment is flat — supply/demand imbalance",
+            "Small/mid firms cannot afford associates at $125K+ to do document-intensive work that AI handles"
+          ],
+          "supply_gap": "Small and mid-size firms (90%+ of the 207K establishments) cannot compete with BigLaw on document-intensive work. They cannot afford enough associates for large due diligence projects, complex contract reviews, or high-volume litigation document production. AI eliminates this structural disadvantage.",
+          "inevitability_argument": "Legal services is 60-70% document work. AI handles document work at 100x speed and 10x lower cost. The 207K small firms MUST adopt AI document tools or lose clients to firms that do. The only question is which platform wins.",
+          "pattern_refs": ["P-001", "P-004"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "LLMs achieve 90-95% accuracy on contract review, clause extraction, and legal document drafting. AI due diligence at $0.01/page vs $50-200/hour for associate review. Multi-jurisdictional legal research in seconds vs days."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Senior partners retiring (Silver Tsunami) take client relationships but also institutional knowledge of document patterns, clause language, and deal structures. AI platform captures this as data."},
+          {"force_id": "F4_capital", "contribution_score": 5, "mechanism": "Legal tech VC funding has grown to $3B+ annually. PE-backed law firms (post-Arizona/Utah regulatory sandbox) need efficiency tools. Alt legal service providers (ALSPs) growing at 15%+ annually."},
+          {"force_id": "F5_psychology", "contribution_score": 4, "mechanism": "82% ethical concern rate is the highest of any sector. But this creates market segmentation: firms that solve the trust problem capture clients from firms that don't. Fear is a differentiator, not just a barrier."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Legal work is largely non-discretionary: litigation defense is mandatory, regulatory compliance continues, real estate transactions require legal review. In recession, demand for cost-effective legal services INCREASES as clients demand lower fees."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$8M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 82,
+          "cost_advantage_ratio": "5-10x vs junior associate time for document-intensive work",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-$3,000/firm/month (solo practice $500, 5-person firm $1,500, 20-person firm $3K)",
+        "cost_per_unit_ai": "$30-$150/firm/month (AI inference for document drafting, review, research; cloud hosting)",
+        "cost_per_unit_incumbent": "$2,000-$10,000/firm/month equivalent (1st-year associate at $125K handles document work that AI replaces; paralegal at $55K covers remaining)",
+        "break_even_volume": "300-500 firm subscriptions ($300K-$500K MRR against $200K-$350K/mo engineering + legal compliance + ops)",
+        "economic_force_tam": "$125K avg pay x 1.18M employees = $147B sector payroll. Document-intensive work is ~60% = $88B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 4,
+        "gap": 4,
+        "primary_friction": "82% ethical concern rate. Lawyers fear malpractice liability for AI-generated documents. Bar associations are unclear on AI disclosure obligations. Judges have already sanctioned lawyers for citing AI-hallucinated cases.",
+        "resolution_path": "Attorney-supervised model: every AI output reviewed by licensed attorney before delivery. Malpractice insurance partnership (carrier approves the platform). Build-in citation verification that checks every legal reference against actual case law. State bar advisory opinion engagement."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "LLMs achieve 90-95% accuracy on contract review (demonstrated in Thomson Reuters, Lexis+ AI, Harvey AI)",
+          "207,408 legal establishments in the US (QCEW confirmed)",
+          "AI hallucination of legal citations is a known, solvable problem (citation verification tools exist)"
+        ],
+        "likely": [
+          "Bar associations will permit AI with disclosure (trajectory: ABA issued guidance, several states have rules)",
+          "Small/mid firms will adopt AI tools within 2-3 years when competitors' pricing forces it",
+          "Malpractice insurance carriers will develop AI-specific coverage (market demand is clear)"
+        ],
+        "uncertain": [
+          "Whether the 82% ethical concern rate declines fast enough for rapid adoption",
+          "Whether bar associations in conservative states will restrict AI use (creating jurisdictional fragmentation)",
+          "Whether Thomson Reuters/LexisNexis (dominant legal research providers) will build equivalent drafting tools"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "crowded",
+        "funded_entrants": 15,
+        "moat_sources": [
+          "Jurisdiction-specific legal knowledge (50 states x federal x specialty areas = massive long tail)",
+          "Document outcome data — knowing which contract clauses led to disputes creates predictive advantage",
+          "Bar association approval / malpractice insurance partnerships are firm-specific relationships",
+          "Integration with practice management systems (Clio, MyCase, PracticePanther) creates switching cost"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If bar associations broadly prohibit AI-generated legal documents (regulatory kill)",
+        "If AI hallucination rates in legal content prove irreducible above 5% (quality threshold)",
+        "If Thomson Reuters and LexisNexis build equivalent AI drafting into existing platforms (platform bundling)",
+        "If legal malpractice carriers refuse to cover AI-assisted work (insurance block)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-2111-001",
+      "model_name": "AI-Powered Reservoir and Production Optimization Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "2111",
+      "sector_name": "Oil and gas extraction",
+      "one_line": "Predictive AI platform for 6,396 O&G operators: reservoir modeling, production optimization, predictive maintenance, and regulatory reporting in one system",
+      "macro_source": "Oil and gas extraction has 115K employees across 6,396 establishments at $206K average pay (Baumol 2.84x). Wages growing 4.7% with employment up 2.5%. The sector is capital-intensive and data-rich: every well generates millions of sensor readings per day. But most operators (especially the 6,396 smaller establishments) analyze this data manually or with 1990s-era software. AI can extract 15-25% more production from existing wells — a massive economic force in a sector where each percentage point is worth billions.",
+      "forces": ["F6_energy", "F3_geopolitics", "F1_technology", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "6,396 establishments — most are independent operators with 5-50 wells each, too small for in-house data science",
+            "$206K average pay (2.84x Baumol) — petroleum engineers and geologists are among the most expensive technical workers",
+            "Data center energy demand projected 6-12% of US grid by 2030 — oil and gas must produce more efficiently to meet total energy demand",
+            "Each 1% production improvement on a $5B field = $50M/year — massive ROI on optimization tools"
+          ],
+          "supply_gap": "Major operators (ExxonMobil, Chevron) have in-house data science teams. The 6,396 independent operators — who produce ~30% of US oil — do not. They use spreadsheets and legacy software from the 1990s (OFM, Aries). The gap is AI optimization accessible to mid-market operators.",
+          "inevitability_argument": "Energy demand is increasing (data centers, reshoring, electrification). Production decline rates on existing wells are 5-15% per year. AI production optimization is the only way to maintain output without proportional drilling investment. The physics requires it.",
+          "pattern_refs": ["P-003", "P-008"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F6_energy", "contribution_score": 9, "mechanism": "Data center grid demand (2,600 GW queue) drives energy demand. Grid bottleneck means existing production must be optimized. AI reservoir modeling can extend well life 3-5 years and boost recovery by 5-15%."},
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "ML models on downhole sensor data predict equipment failures 2-4 weeks in advance (vs reactive maintenance). AI-driven lift optimization adjusts pump rates in real-time. LLMs can parse 50 years of geological reports to inform drilling decisions."},
+          {"force_id": "F3_geopolitics", "contribution_score": 6, "mechanism": "US energy independence strategy requires maximizing domestic production efficiency. Sanctions on Russian oil increase global supply pressure. LNG export growth demands consistent production."},
+          {"force_id": "F4_capital", "contribution_score": 6, "mechanism": "O&G sector ETF rotation (+29.9%) confirms capital is flowing. Independent operators need to demonstrate efficiency to attract debt financing. AI optimization directly improves cash flow metrics that lenders evaluate."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Oil prices are volatile. However, even at $50/barrel, optimization tools that reduce cost-per-barrel by $5-10 are essential for survival. Production optimization is more valuable in a low-price environment, not less."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$12M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "10-20x vs hiring petroleum engineers ($206K/yr) to do manual optimization",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5,000-$25,000/operator/month (scaled by well count: 5-well operator $5K, 50-well operator $15K, 200-well operator $25K+)",
+        "cost_per_unit_ai": "$500-$2,000/operator/month (AI inference for sensor analysis, reservoir modeling, predictive maintenance; cloud compute for simulations)",
+        "cost_per_unit_incumbent": "$15,000-$50,000/operator/month equivalent (1-2 petroleum engineers at $206K + legacy software licenses at $50K-200K/year + consulting fees)",
+        "break_even_volume": "30-50 operators ($250K-$500K MRR against $150K-$300K/mo engineering + domain expertise + cloud)",
+        "economic_force_tam": "$206K avg pay x 115K employees = $24B sector payroll. Production optimization services market: $5-8B. AI-addressable portion: $3-5B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "O&G operators are conservative and risk-averse — a bad AI recommendation that shuts down a well for a week costs $500K+. They need to see results on their own wells before committing.",
+        "resolution_path": "Free 90-day pilot on 3-5 wells with guaranteed production improvement or no contract. Start with low-risk applications (predictive maintenance, reporting automation) before optimization recommendations. Hire experienced petroleum engineers as product leaders."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "AI/ML models can predict equipment failures 2-4 weeks in advance from sensor data (demonstrated at ConocoPhillips, BP, Shell)",
+          "6,396 independent O&G operators in the US (QCEW confirmed)",
+          "Production optimization can improve recovery by 5-15% (documented in SPE literature)"
+        ],
+        "likely": [
+          "Independent operators will adopt AI tools when offered with low-risk trial periods",
+          "Energy demand growth (data centers, reshoring) sustains oil demand for 10+ years",
+          "AI optimization accuracy will continue improving as more well data is processed"
+        ],
+        "uncertain": [
+          "Whether small operators (< 10 wells) generate enough data for meaningful AI optimization",
+          "Speed of adoption in a traditionally conservative industry (petroleum engineering culture)",
+          "Whether major oilfield service companies (SLB, Halliburton, Baker Hughes) build competitive AI platforms"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 8,
+        "moat_sources": [
+          "Basin-specific geological data — training on Permian wells doesn't transfer to Bakken without basin-specific data",
+          "Well-level performance history creates per-operator switching costs",
+          "Domain expertise barrier — general AI companies can't serve O&G without petroleum engineering knowledge",
+          "Regulatory reporting integration (state commissions, EPA) creates compliance dependency"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If oil prices collapse below $40/barrel for sustained period (operators cut ALL discretionary spending)",
+        "If SLB/Halliburton/Baker Hughes bundle equivalent AI optimization into existing service contracts at no extra cost",
+        "If small operator well data proves insufficient for meaningful AI predictions (minimum data threshold too high)",
+        "If regulatory changes (drilling bans, carbon taxes) fundamentally reduce US oil production activity"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5417-002",
+      "model_name": "Contract Research Marketplace with AI Matching",
+      "architecture": "marketplace_network",
+      "sector_naics": "5417",
+      "sector_name": "Scientific research and development services",
+      "one_line": "Two-sided marketplace matching R&D demand (pharma, biotech, defense) with 55K research service providers, using AI to assess capability fit and predict project outcomes",
+      "macro_source": "The R&D services sector has 55,600 establishments with moderate fragmentation (16.6 employees per firm). Most contract research organizations (CROs) and research service providers are small, specialized shops invisible to potential clients. Meanwhile, pharma companies spend $250B+ annually on R&D, much of it outsourced to CROs they find through personal networks and legacy RFP processes. AI-powered matching eliminates this information asymmetry.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "Global pharma R&D spend >$250B with 40-60% outsourced to CROs",
+            "55,600 research establishments — most are invisible to potential clients (no discovery mechanism)",
+            "4% employment growth = expanding supply of research providers needing clients",
+            "Clinical trial costs averaging $48K per patient — any efficiency in CRO matching saves millions per trial"
+          ],
+          "supply_gap": "The research services market has a severe discovery problem. Small CROs with deep specialization (e.g., 'specific expertise in CRISPR delivery in hepatocytes') cannot be found by sponsors who need that exact capability. Current discovery is via personal networks, Thomson Reuters database searches, and multi-week RFP processes.",
+          "inevitability_argument": "Every other fragmented professional services market has been transformed by intelligent matching platforms (Upwork for freelancers, Angi for home services, Deel for international hiring). R&D services is a $100B+ outsourcing market still running on personal networks and PDFs. AI matching is structurally inevitable.",
+          "pattern_refs": ["P-004", "P-001"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI can parse CRO capabilities from publications, FDA submissions, and equipment lists to create deep capability profiles. ML matching algorithms assess fit between sponsor needs and CRO capabilities across 100+ dimensions. NLP analyzes project success/failure patterns to predict outcomes."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "Pharma companies under cost pressure (IRA drug price negotiation, patent cliffs) need to reduce R&D spending per drug. Better CRO matching reduces failed outsourcing (estimated 20-30% of outsourced R&D relationships fail due to poor fit)."},
+          {"force_id": "F2_demographics", "contribution_score": 5, "mechanism": "Senior pharma R&D leaders retiring take their personal networks of CRO contacts. A marketplace platform replaces personal network dependence with data-driven matching."},
+          {"force_id": "F5_psychology", "contribution_score": 4, "mechanism": "Pharma procurement is risk-averse — they prefer known CROs. But the marketplace can surface proven track records (FDA submissions, publication history) that provide MORE confidence than personal referrals."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Pharma R&D spending is structurally durable: pipeline compounds take 10-15 years, companies cannot stop mid-program. A tool that reduces outsourcing costs is MORE valuable during budget pressure. Defense R&D is counter-cyclical."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$10M",
+          "time_to_revenue_months": 8,
+          "gross_margin_pct": 70,
+          "cost_advantage_ratio": "5-10x faster CRO selection (weeks vs months) with 30-50% lower failed engagement rate",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "5-8% take rate on matched contracts (average contract $500K-$5M, commission $25K-$400K per match) plus $2K-$10K/month SaaS fee for sponsor-side search and analytics",
+        "cost_per_unit_ai": "$500-$2,000 per match (AI capability profiling, matching algorithm, quality assessment; amortized across platform volume)",
+        "cost_per_unit_incumbent": "$15,000-$50,000 per CRO selection process (consultant-led RFP: 6-12 weeks of internal procurement team time + external advisor fees)",
+        "break_even_volume": "50-100 matched contracts/year ($2.5M-$10M take-rate revenue against $2M/yr platform + ops + sales)",
+        "economic_force_tam": "R&D outsourcing market ~$100B globally, ~$40B US. At 5-8% take rate = $2-3.2B marketplace revenue opportunity"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 5,
+        "gap": 2,
+        "primary_friction": "Pharma procurement teams have established CRO relationships and preferred vendor lists. Switching to a marketplace requires organizational change in how outsourcing decisions are made.",
+        "resolution_path": "Start as a discovery supplement, not a replacement. Integrate with existing procurement workflows. Demonstrate value by surfacing CROs for niche capabilities that preferred vendors can't handle. Once proven for edge cases, expand to routine outsourcing."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "R&D outsourcing is a $100B+ market (industry data from Evaluate, Grand View Research)",
+          "20-30% of outsourced R&D relationships fail due to poor CRO-sponsor fit (industry surveys)",
+          "AI can parse scientific publications and regulatory filings to build capability profiles (demonstrated)"
+        ],
+        "likely": [
+          "Pharma companies will use a marketplace for niche CRO discovery (the pain point is well-documented)",
+          "AI matching accuracy will exceed human procurement team accuracy within 1 year of training",
+          "Small CROs will eagerly join a platform that gives them visibility to pharma sponsors"
+        ],
+        "uncertain": [
+          "Whether pharma procurement will shift routine outsourcing to a marketplace (vs. just niche discovery)",
+          "Whether Clarivate/IQVIA/Informa build competitive matching platforms (they have the data)",
+          "Speed of marketplace liquidity — need both sides (sponsors + CROs) to reach critical mass simultaneously"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 3,
+        "moat_sources": [
+          "Matching data flywheel — every successful match improves prediction of future matches",
+          "CRO capability profiles (built from publications, FDA data, equipment lists) are expensive to replicate",
+          "Network effects — more CROs = better matching = more sponsors = more CROs",
+          "Outcome data (which matches led to successful projects) is the ultimate moat — no competitor has this"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If pharma procurement teams categorically refuse to use marketplace platforms for CRO selection",
+        "If Clarivate or IQVIA build equivalent matching into their existing platforms (data advantage)",
+        "If the marketplace fails to achieve liquidity (cold start problem proves intractable)",
+        "If pharma R&D outsourcing contracts >30% (insourcing trend eliminates the market)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-3364-001",
+      "model_name": "Aerospace MRO Digital Thread and Predictive Maintenance Platform",
+      "architecture": "arbitrage_window",
+      "sector_naics": "3364",
+      "sector_name": "Aerospace product and parts manufacturing",
+      "one_line": "Capture the MRO data layer for aerospace during the 7.5% workforce expansion, building the digital thread that connects design, manufacturing, and maintenance",
+      "macro_source": "Aerospace manufacturing has 537K employees across 4,259 establishments at $119K average pay (Baumol 1.65x). Most critically: employment is growing 7.5% YoY (one of the fastest in any manufacturing sector) while wages rise 5%. The sector is desperately expanding to meet commercial aviation backlog (Boeing/Airbus 14,000+ aircraft backlog) and defense spending ($2,718B globally). The arbitrage: aerospace MRO (maintenance, repair, overhaul) is a $100B market that still runs on paper-based work orders and tribal knowledge.",
+      "forces": ["F1_technology", "F2_demographics", "F3_geopolitics", "F4_capital", "F6_energy"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "7.5% employment growth — aerospace is hiring aggressively but can't find enough skilled workers",
+            "Boeing/Airbus combined aircraft backlog: 14,000+ units, 10+ year production schedules",
+            "Global defense spending $2,718B (+9.4%) with $13.4B DoD AI line item",
+            "Aerospace MRO market $100B+, growing 5-7% annually as fleet ages"
+          ],
+          "supply_gap": "Aerospace MRO runs on paper work orders, disconnected ERP systems, and decades of tribal knowledge in the heads of retiring mechanics. New hires take 3-5 years to become fully productive. The digital thread (connecting design data to manufacturing to maintenance) does not exist for most aircraft programs.",
+          "inevitability_argument": "The fleet is aging, the backlog is growing, and workers are retiring. Aerospace MRO MUST digitize or face safety incidents and grounded aircraft. The FAA, EASA, and DoD are all pushing for digital maintenance records. The arbitrage window is building the data layer now, before it becomes mandated.",
+          "pattern_refs": ["P-003", "P-008"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F3_geopolitics", "contribution_score": 9, "mechanism": "Defense spending at $2,718B (+9.4%) with NATO targeting 5% GDP. DoD $13.4B AI line item. Military aircraft MRO is a direct national security priority. ITAR requirements mandate US-based systems for defense maintenance."},
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "AI can parse 50 years of maintenance records to predict failures. Computer vision inspects airframes in minutes vs hours. NLP converts tribal knowledge into structured work instructions. Digital twins simulate component wear."},
+          {"force_id": "F2_demographics", "contribution_score": 8, "mechanism": "Aerospace mechanics average age 55+. Retirement wave in progress. 499K new workers needed in building trades. Each retiring mechanic takes decades of tacit knowledge. AI captures this knowledge before it's lost."},
+          {"force_id": "F4_capital", "contribution_score": 6, "mechanism": "VC rotation to hard-tech/defense. Aerospace MRO companies (HEICO, TransDigm) trading at 30-50x earnings = market values this space. Defense primes (Lockheed, RTX) have AI integration mandates."},
+          {"force_id": "F6_energy", "contribution_score": 4, "mechanism": "Fuel efficiency improvements require precise maintenance — worn components reduce fuel efficiency 3-8%. Predictive maintenance maintains optimal fuel consumption."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Aircraft must be maintained regardless of economic conditions (FAA mandate). Defense MRO is counter-cyclical. Commercial aviation downturns delay NEW aircraft purchases but increase MRO spending on existing fleets (operators keep planes flying longer)."
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$20M",
+          "time_to_revenue_months": 8,
+          "gross_margin_pct": 65,
+          "cost_advantage_ratio": "3-5x for maintenance planning time; 2-3x for unplanned maintenance reduction through predictive analytics",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$10K-$100K/aircraft tail number/year (small fleet operator $10K-30K per tail; airline $30-50K per tail; defense program $50-100K per tail)",
+        "cost_per_unit_ai": "$1K-$10K/tail/year (AI inference for maintenance prediction, work order generation, inspection analysis; cloud hosting for digital thread data)",
+        "cost_per_unit_incumbent": "$20K-$200K/tail/year equivalent (maintenance planners at $119K, inspector hours, unplanned AOG events at $10-50K each, paper-based record management staff)",
+        "break_even_volume": "200-500 tail numbers ($3M-$10M ARR against $2M-$5M/yr engineering + domain expertise + compliance)",
+        "economic_force_tam": "Global aerospace MRO market $100B+. Digital MRO solutions addressable market: $8-15B. US defense MRO: $25B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "Aviation safety culture is extremely conservative. Maintenance decisions directly affect airworthiness. Any AI system must be FAA-approved for the specific maintenance context. Trust gap between AI recommendation and mechanic judgment.",
+        "resolution_path": "AI as decision support, not decision maker. FAA Parts Manufacturer Approval (PMA) pathway for digital inspection tools. Start with non-safety-critical MRO (cabin interiors, ground equipment) then expand to structural as track record builds. Partner with DER/DAR engineers for regulatory pathway."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Aerospace employment growing 7.5% YoY (QCEW confirmed)",
+          "Commercial aviation backlog 14,000+ aircraft (Boeing and Airbus investor reports)",
+          "Global defense spending $2,718B growing 9.4% (SIPRI confirmed)"
+        ],
+        "likely": [
+          "FAA will establish digital maintenance record standards within 3-5 years (trajectory of rulemaking)",
+          "Defense primes will mandate digital thread capability for MRO subcontractors (DoD AI strategy)",
+          "Retiring mechanics' knowledge can be captured in structured AI training data"
+        ],
+        "uncertain": [
+          "FAA timeline for approving AI-assisted maintenance inspection (regulatory uncertainty)",
+          "Whether defense primes build digital thread internally (vs buying)",
+          "Speed of adoption among commercial airlines (procurement cycles are 12-24 months)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 6,
+        "moat_sources": [
+          "Aircraft-specific maintenance history data (decades of records per tail number) creates per-customer moat",
+          "FAA/EASA approval for digital inspection tools takes 18-36 months (regulatory moat)",
+          "ITAR compliance for defense MRO systems (12-18 months to certify)",
+          "Digital thread data becomes more valuable with each maintenance event (compounding asset)"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If FAA explicitly blocks AI-assisted maintenance decisions (regulatory kill)",
+        "If Boeing/Airbus/Lockheed build proprietary digital thread platforms and mandate them for their aircraft",
+        "If commercial aviation backlog contracts >40% (reducing MRO growth trajectory)",
+        "If aerospace workforce expansion succeeds in hiring enough workers without AI augmentation (unlikely given demographics)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5413-001",
+      "model_name": "AI-Augmented AEC Design and Permitting Accelerator",
+      "architecture": "vertical_saas",
+      "sector_naics": "5413",
+      "sector_name": "Architectural, engineering, and related services",
+      "one_line": "AI platform that automates 60% of code compliance checking, structural analysis iteration, and permit documentation for 167K AEC firms",
+      "macro_source": "Architecture, engineering, and related services employs 1.65M people across 166,975 establishments at $109K average pay (Baumol 1.51x). Employment growing 3.4% with wages up 4.3%. The sector sits at the Baumol threshold (1.5x) — just expensive enough that AI automation is economically compelling, but not so expensive that firms have already invested heavily in technology. The core bottleneck: building code compliance checking and permit documentation consume 20-30% of project hours but are highly systematizable.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "166,975 establishments — extremely fragmented, average firm has 9.9 employees",
+            "Building code compliance checking takes 20-30% of project hours but follows rule-based logic",
+            "499K new construction workers needed (trades shortage) increases demand for faster AEC turnaround",
+            "CHIPS Act + reshoring + data center construction creating unprecedented demand for engineering services"
+          ],
+          "supply_gap": "AEC firms are drowning in project volume. Reshoring, data center construction, infrastructure investment, and housing demand all converging simultaneously. Firms cannot hire fast enough (3.4% employment growth against 5-8% demand growth). AI that handles routine code compliance and permit prep frees engineers for higher-value design work.",
+          "inevitability_argument": "Building code compliance is a deterministic, rule-based process. Every jurisdiction has a codified set of requirements. AI is better at checking 10,000 code requirements against a design than a human reviewer. The question is not IF this will be automated but WHEN and by whom.",
+          "pattern_refs": ["P-001", "P-004"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI can parse building codes (IBC, local amendments) and check designs against all requirements simultaneously. Generative design tools iterate structural analysis 100x faster than human. NLP automates permit application narrative generation."},
+          {"force_id": "F2_demographics", "contribution_score": 7, "mechanism": "Senior structural engineers and architects retiring. Each takes 30+ years of building code expertise. AI captures institutional knowledge of code interpretation and local permitting preferences."},
+          {"force_id": "F4_capital", "contribution_score": 6, "mechanism": "Construction tech VC funding growing. AEC firms under margin pressure as clients demand faster delivery. CHIPS Act + infrastructure bill create massive project pipeline needing engineering services."},
+          {"force_id": "F5_psychology", "contribution_score": 5, "mechanism": "Engineers are analytically minded and receptive to tools that improve accuracy. But professional liability (stamping drawings) creates caution. Position as checking tool, not design tool."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Construction is cyclical, but infrastructure (CHIPS Act, IIJA) is committed multi-year spending. Data center construction is non-cyclical (driven by AI compute demand). Residential may soften but commercial/industrial/infrastructure will sustain."
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$8M",
+          "time_to_revenue_months": 5,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "5-8x for code compliance checking time; 3-5x for permit documentation preparation",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-$3,000/firm/month (small firm 2-5 people: $500; mid-size 10-50: $1,500; large 50+: $3K+)",
+        "cost_per_unit_ai": "$30-$150/firm/month (AI inference for code compliance, structural iteration, permit generation; building code database maintenance)",
+        "cost_per_unit_incumbent": "$2,000-$8,000/firm/month equivalent (junior engineer at $109K spends 30% of time on code compliance = $33K/yr per engineer; firm with 5 engineers = $165K/yr or $14K/mo in compliance labor)",
+        "break_even_volume": "300-500 firm subscriptions ($300K-$500K MRR against $200K-$350K/mo engineering + code database + ops)",
+        "economic_force_tam": "$109K avg pay x 1.65M employees = $180B sector payroll. Code compliance + permitting is ~20% = $36B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "Licensed engineers and architects must stamp drawings. They are personally liable for code compliance. AI must be demonstrably more accurate than human checking, not just faster.",
+        "resolution_path": "Position as pre-check tool that catches errors BEFORE the engineer stamps. AI identifies potential code violations; human engineer confirms and resolves. Insurance integration: demonstrate that firms using AI checking have lower E&O claims."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Building codes are rule-based and systematizable (IBC, IRC, local amendments are codified)",
+          "166,975 AEC establishments in the US (QCEW confirmed)",
+          "Code compliance checking consumes 20-30% of project hours (industry surveys)"
+        ],
+        "likely": [
+          "AEC firms will adopt AI checking tools when demonstrated to reduce errors and time",
+          "Construction demand from CHIPS Act + infrastructure bill sustains through 2030",
+          "Building departments will accept AI-assisted compliance reports (trajectory of digital permitting)"
+        ],
+        "uncertain": [
+          "Whether local building code variations (thousands of jurisdictions) can be systematically captured in AI",
+          "Speed of adoption in a fragmented market with 167K firms (sales efficiency)",
+          "Whether Autodesk/Bentley/Trimble build equivalent AI checking into existing BIM platforms"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 5,
+        "moat_sources": [
+          "Building code database across thousands of jurisdictions (extremely expensive to replicate)",
+          "Local permitting authority relationships and preferences (tacit knowledge captured as data)",
+          "Integration with BIM tools (Revit, ArchiCAD) creates workflow dependency",
+          "Error pattern data from checked designs improves detection accuracy over time"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If Autodesk builds AI code compliance into Revit and bundles it at no extra cost",
+        "If building departments refuse to accept AI-assisted compliance reports",
+        "If construction demand collapses >30% (reducing AEC firm willingness to invest in tools)",
+        "If local code variation proves too complex for AI systematization (long tail problem)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5416-001",
+      "model_name": "Consulting Engagement Knowledge Compounding Engine",
+      "architecture": "data_compounding",
+      "sector_naics": "5416",
+      "sector_name": "Management, scientific, and technical consulting services",
+      "one_line": "Platform that converts consulting engagements into structured knowledge assets: every project makes the next project faster, cheaper, and more accurate for 395K consulting firms",
+      "macro_source": "Management consulting is the most fragmented professional services sector: 1.85M employees across 395,324 establishments (4.7 employees per firm). Average pay $117K (Baumol 1.61x) with modest 1.9% wage growth. The defining feature of consulting is that every engagement reinvents the wheel — firms solve similar problems hundreds of times without systematically capturing what worked. The firm that builds a compounding knowledge graph from engagement data transforms consulting from artisanal to scalable.",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "395,324 establishments — the most fragmented professional services sector in the economy",
+            "1.85M employees — massive workforce doing knowledge work that is largely unstructured",
+            "Consulting firms sell hours but deliver insights — AI can deliver insights without the hours",
+            "PE-backed consulting firms facing margin pressure need productivity tools"
+          ],
+          "supply_gap": "McKinsey charges $500K for a strategy engagement. A 5-person boutique charges $100K. Both start from a blank page for each new client. Neither has systematically structured what they learned from the last 100 engagements into reusable frameworks. The gap is institutional knowledge that compounds.",
+          "inevitability_argument": "Consulting is a $350B US market that sells human hours. 40-60% of a typical engagement is research and analysis that AI can automate. The firm that converts past engagements into structured data delivers better results in half the time. Every engagement makes the next one more valuable. This is the ultimate compounding moat.",
+          "pattern_refs": ["P-001", "P-004"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "LLMs can parse engagement deliverables, extract frameworks, identify patterns across engagements, and generate first-draft analyses. AI research agents can do in hours what analysts do in weeks. The compounding effect: after 1,000 engagements, the platform has seen every common problem."},
+          {"force_id": "F2_demographics", "contribution_score": 7, "mechanism": "Senior consultants (partners, principals) retiring take 20-30 years of client knowledge. Knowledge compounding platform captures their frameworks, decision patterns, and industry expertise as structured data before they leave."},
+          {"force_id": "F4_capital", "contribution_score": 6, "mechanism": "PE-backed consulting roll-ups ($B+ in acquisitions over past 5 years) need to demonstrate productivity improvements to justify valuations. Knowledge compounding is the technology integration thesis for consulting M&A."},
+          {"force_id": "F5_psychology", "contribution_score": 5, "mechanism": "Consultants fear AI will replace them. But the platform positions as making each consultant 3-5x more productive — they do more engagements, not fewer. The fear converts to enthusiasm when paired with compensation tied to utilization."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "low",
+          "crash_resilience_reason": "Consulting is partially discretionary — companies cut consultants early in recessions. However, transformation consulting (AI adoption, restructuring, cost reduction) grows in downturns. A platform that reduces engagement cost is more attractive during budget cuts."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$10M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "3-5x after 500 engagements (compounding reduces research time from 40% to 10% of engagement hours)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$1,000-$5,000/firm/month (solo consultant $1K; 5-person boutique $2.5K; 20-person firm $5K; enterprise pricing for 50+ person firms)",
+        "cost_per_unit_ai": "$50-$250/firm/month (AI inference for engagement analysis, framework extraction, research automation; knowledge graph hosting)",
+        "cost_per_unit_incumbent": "$3,000-$15,000/firm/month equivalent (analyst time at $117K/yr for research + knowledge management staff + subscriptions to CB Insights, Gartner, etc.)",
+        "break_even_volume": "300-500 firm subscriptions ($500K-$1M MRR against $300K-$500K/mo engineering + knowledge curation + ops)",
+        "economic_force_tam": "$117K avg pay x 1.85M employees = $216B sector payroll. Research and analysis portion ~40% = $86B addressable"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 5,
+        "gap": 2,
+        "primary_friction": "Consulting firms view their engagement data as their most proprietary asset. Sharing it with any platform (even anonymized) feels like giving away their competitive advantage.",
+        "resolution_path": "On-premise deployment for each firm. Cross-firm learning only on anonymized industry patterns (e.g., 'SaaS companies with $10-50M revenue implementing ERP typically face these 7 issues'). Each firm's specific data stays isolated. Value proposition: YOUR data works harder for YOU."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Consulting is 395K establishments averaging 4.7 employees (QCEW confirmed)",
+          "40-60% of consulting engagement time is research and analysis (industry benchmark)",
+          "LLMs can parse and structure business documents at 90%+ accuracy"
+        ],
+        "likely": [
+          "Boutique consulting firms ($1-20M revenue) will adopt first — they feel margin pressure most acutely",
+          "Knowledge compounding effects will be measurable within 500 engagements (research time reduction)",
+          "PE-backed consulting firms will mandate productivity tools as part of portfolio optimization"
+        ],
+        "uncertain": [
+          "Whether engagement data is structured enough to extract reusable frameworks (vs too messy)",
+          "Speed of adoption given consulting culture of 'every client is unique' mindset",
+          "Whether McKinsey/BCG/Bain build internal platforms that trickle down to mid-market"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 4,
+        "moat_sources": [
+          "Knowledge graph compounds with every engagement (exponential moat over time)",
+          "Industry-specific pattern libraries become impossible to replicate from scratch",
+          "Client-specific engagement history creates switching costs (losing accumulated intelligence)",
+          "Network of consulting firms creates cross-industry insight capability"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If consulting engagement data proves too unstructured for AI extraction (frameworks are too tacit to capture)",
+        "If consulting firms categorically refuse to put engagement data on any platform (even on-premise)",
+        "If general AI tools (ChatGPT, Claude) become good enough at consulting research to eliminate the need for structured engagement data",
+        "If a recession destroys >40% of consulting demand (making the market too small)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-5239-002",
+      "model_name": "Alternative Investment Firms Roll-Up with AI Back-Office",
+      "architecture": "rollup_consolidation",
+      "sector_naics": "5239",
+      "sector_name": "Other financial investment activities",
+      "one_line": "Acquire small alt-investment firms (5-10 employees) at 4-6x EBITDA, consolidate onto AI back-office platform, achieve 40%+ margin expansion across the roll-up",
+      "macro_source": "NAICS 5239 is the #1 ranked sector by screener composite (0.6837). It has 585K employees across 104,599 establishments at $261K average pay (Baumol 3.59x) with 5% employment growth. The fragmentation ratio (0.179) means the average firm has 5.6 employees. This is a sector of small, expensive shops doing high-value work with minimal technology. The roll-up thesis: acquire 50-100 of these shops at 4-6x EBITDA, consolidate their back-office onto an AI platform, and achieve margin expansion that turns 4-6x EBITDA into 8-12x effective multiple.",
+      "forces": ["F1_technology", "F4_capital", "F3_geopolitics", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "104,599 establishments — one of the most fragmented financial sectors",
+            "Average pay $261K (3.59x Baumol) — massive stored energy for AI disruption",
+            "52% of employer businesses owned by 55+ — Silver Tsunami creating forced sellers",
+            "5% employment growth — sector is expanding, making each acquired firm's clients more valuable"
+          ],
+          "supply_gap": "Thousands of small alt-investment firms (RIAs, family offices, fund administrators, broker-dealers) are run by 55+ year-old principals with no succession plan and no technology beyond spreadsheets. They serve loyal client bases but cannot scale. An AI-powered acquirer can buy these firms at 4-6x EBITDA (typical for small RIAs), consolidate the back-office, and serve the same clients at 40% lower cost.",
+          "inevitability_argument": "The Silver Tsunami guarantees that thousands of these firms will need to be sold or closed within 5-10 years. 58% have no succession plan. The acquirer that can scale AI back-office operations to serve acquired client bases wins the roll-up. This is a demographic inevitability meeting a technology enabler.",
+          "pattern_refs": ["P-001", "P-026", "P-027"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F4_capital", "contribution_score": 9, "mechanism": "PE refinancing wall creates distressed sellers. RIA acquisition multiples at 4-6x EBITDA (vs 10-15x for technology companies). Business loan delinquency rising. Capital rotation to physical economy means PE firms are not re-bidding on financial service roll-ups — reducing competition."},
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI back-office can handle portfolio accounting, client reporting, compliance, billing, and communications for 10-50 acquired firms simultaneously. What required 5 employees per firm now requires 0.5 — the 40% margin expansion comes from headcount consolidation."},
+          {"force_id": "F2_demographics", "contribution_score": 8, "mechanism": "52% of employer businesses owned by 55+, 58% no succession plan. This creates a predictable, multi-year pipeline of acquisition targets. Each year, more firms become available as principals retire."},
+          {"force_id": "F5_psychology", "contribution_score": 6, "mechanism": "Financial services at 73% AI adoption. Acquired firms' clients are accustomed to technology platforms (schwab, fidelity). The transition from human-operated to AI-augmented is less jarring in finance than in other sectors."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2029",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Market downturns ACCELERATE acquisition opportunities — more firms become distressed, multiples compress further, and principal retirement decisions are forced by AUM decline. The roll-up thesis is counter-cyclical: buy low during downturns, benefit from recovery."
+        },
+        "capital_assessment": {
+          "capital_required": "$8M-$30M (initial platform + first 10-20 acquisitions)",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 65,
+          "cost_advantage_ratio": "2-3x margin expansion on acquired firms (from 25-35% EBITDA margin to 50-65% through AI back-office consolidation)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500K-$2M per acquired firm per year (inherited client revenue: avg firm with 5.6 employees at $261K pay serves ~$1-3M in fee revenue)",
+        "cost_per_unit_ai": "$50K-$150K per acquired firm per year (AI back-office: compliance, reporting, portfolio management, client communications — replacing 2-3 employees)",
+        "cost_per_unit_incumbent": "$300K-$800K per firm per year (3-4 employees at $261K average handling back-office operations)",
+        "break_even_volume": "10-15 acquired firms (combined revenue $8-20M against AI platform cost of $1.5M/yr + retained staff $2-4M/yr)",
+        "economic_force_tam": "104,599 establishments x $1.5M avg revenue = $157B sector. 10% addressable for roll-up (Silver Tsunami, distressed) = $15.7B. At 4-6x EBITDA, $5-10B in acquisition capital could consolidate 3,000-5,000 firms."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "Selling principals worry about their clients being treated well post-acquisition. They built relationships over decades and fear AI will damage client trust and retention.",
+        "resolution_path": "Earnout structure tied to client retention (2-3 year earnout at 15-20% of deal value). AI handles back-office while acquired principal maintains client relationships during transition period. Demonstrate that clients get better service (faster reporting, 24/7 portal access) not worse."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "104,599 establishments at $261K avg pay (QCEW confirmed)",
+          "52% of employer businesses owned by 55+ (Census data)",
+          "RIA acquisition multiples at 4-6x EBITDA (M&A market data from DeVoe, Echelon)"
+        ],
+        "likely": [
+          "Thousands of alt-investment firms will seek exits within 5-10 years (demographic inevitability)",
+          "AI back-office consolidation can achieve 40%+ cost reduction per acquired firm",
+          "Client retention through AI transition achievable at 85-90% (similar to other RIA roll-ups)"
+        ],
+        "uncertain": [
+          "Whether AI back-office can handle the full complexity of alt-investment operations (hedge fund waterfalls, PE capital calls, etc.)",
+          "Speed of acquisition pipeline (competing against Focus Financial, Hightower, Dynasty)",
+          "Whether regulatory changes (SEC, FINRA) will restrict AI automation in investment advisory"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 4,
+        "moat_sources": [
+          "Scale economies — AI platform cost is fixed; each acquired firm adds revenue at near-zero marginal cost",
+          "Client relationship data across acquired firms creates cross-selling opportunities",
+          "Regulatory compliance platform serves as shared infrastructure moat",
+          "Acquisition pipeline from reputation (more successful acquisitions = more sellers approach you)"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If RIA acquisition multiples rise above 8x EBITDA (eliminating margin expansion math)",
+        "If Focus Financial / Hightower / Dynasty outcompete on acquisition pipeline with AI counter-strategy",
+        "If client retention post-AI-transition falls below 75% (destroying acquired revenue)",
+        "If SEC restricts AI-automated investment advisory services (regulatory block)"
+      ]
+    },
+
+    {
+      "card_id": "MC-V35-4862-001",
+      "model_name": "Pipeline Integrity and Operations AI Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "4862",
+      "sector_name": "Pipeline transportation of natural gas",
+      "one_line": "AI platform for 2,114 gas pipeline operators: predictive leak detection, integrity management, PHMSA compliance, and operations optimization in one system",
+      "macro_source": "Natural gas pipeline transportation has 32,674 employees across 2,114 establishments at $162K average pay (Baumol 2.23x). Wages growing 6.1% with employment up 3.6%. This sector is uniquely positioned: it is the critical infrastructure connecting natural gas supply to data center power demand. With 2,600 GW in the grid interconnection queue and nuclear/gas being the bridge fuels for AI scaling, pipeline capacity and reliability are suddenly strategic assets. The operators are mostly mid-size utilities running decades-old SCADA systems.",
+      "forces": ["F1_technology", "F2_demographics", "F3_geopolitics", "F6_energy"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "6.1% wage growth — among the highest in infrastructure sectors, signaling acute labor scarcity",
+            "Data center power demand (4%+ of US grid, projected 6-12%) drives natural gas demand",
+            "PHMSA pipeline safety regulations are intensifying (2024 mega-rule on gas transmission)",
+            "2,114 establishments — manageable target market with high willingness to pay for safety tools"
+          ],
+          "supply_gap": "Pipeline operators face a dual challenge: expanding capacity to meet data center demand while maintaining safety compliance with aging infrastructure. The average gas transmission pipeline is 50+ years old. Integrity management (leak detection, corrosion monitoring, stress analysis) requires expertise that is retiring faster than it can be replaced.",
+          "inevitability_argument": "Gas pipelines are the critical link between energy supply and AI compute demand. PHMSA regulations mandate integrity management programs. The workforce that knows how to run these programs is retiring. AI is the only way to maintain pipeline safety and meet expanding demand simultaneously.",
+          "pattern_refs": ["P-003", "P-008"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F6_energy", "contribution_score": 10, "mechanism": "Data center grid demand (2,600 GW queue) makes gas pipelines the bottleneck for AI scaling. Every GW of gas-fired generation needs pipeline capacity. The grid bottleneck creates a premium for pipeline reliability and throughput optimization."},
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "AI can process inline inspection data (smart pigs) 10x faster than human analysts. ML models predict leak probability from corrosion growth rates, pressure cycles, and environmental data. Computer vision analyzes aerial/satellite pipeline imagery for encroachment and leak indicators."},
+          {"force_id": "F3_geopolitics", "contribution_score": 6, "mechanism": "US energy independence requires domestic pipeline infrastructure. LNG export growth demands reliable pipeline supply chains. Critical infrastructure security mandates (TSA Pipeline Security Directive) create compliance requirements."},
+          {"force_id": "F2_demographics", "contribution_score": 7, "mechanism": "Pipeline integrity engineers average 55+. NACE-certified corrosion specialists take 10+ years to develop. The expertise gap is acute and widening. AI captures retiring specialists' judgment as predictive models."}
+        ],
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Pipeline safety is federally mandated — PHMSA regulations apply regardless of economic conditions. Natural gas is the bridge fuel for AI — data center demand is resilient through downturns. Pipeline maintenance cannot be deferred without risking catastrophic incidents."
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$12M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 78,
+          "cost_advantage_ratio": "5-8x for integrity analysis time; 10-20x for leak detection accuracy vs manual patrol",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$10,000-$50,000/operator/month (small municipal operator $10K; mid-size interstate $25K; major transmission company $50K+)",
+        "cost_per_unit_ai": "$1,000-$5,000/operator/month (AI inference for integrity analysis, leak detection, compliance reporting; cloud hosting for pipeline data)",
+        "cost_per_unit_incumbent": "$30,000-$150,000/operator/month equivalent (integrity engineering team at $162K/yr per person, 3-10 engineers per operator; third-party inspection services $200-500K/yr; PHMSA compliance staff)",
+        "break_even_volume": "20-40 operators ($400K-$800K MRR against $250K-$500K/mo engineering + pipeline domain expertise + compliance)",
+        "economic_force_tam": "$162K avg pay x 32.7K employees = $5.3B sector payroll. Pipeline integrity + operations technology market: $2-4B. AI-addressable portion: $1.5-3B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "Pipeline safety is life-or-death. A missed leak detection can cause explosions and fatalities (San Bruno 2010: 8 deaths). Operators are extremely cautious about any technology change in safety-critical systems.",
+        "resolution_path": "AI as augmentation layer on top of existing SCADA and integrity systems (not replacement). Start with analysis acceleration (faster smart pig data processing) rather than autonomous detection. PHMSA engagement to establish AI integrity analysis as compliant approach. Reference deployments with utility industry leaders."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Data center energy demand is driving natural gas consumption growth (confirmed by EIA, IEA)",
+          "PHMSA 2024 mega-rule increases integrity management requirements (enacted regulation)",
+          "2,114 pipeline operators in the US (QCEW confirmed)"
+        ],
+        "likely": [
+          "Pipeline integrity workforce shortage will worsen as experienced engineers retire",
+          "PHMSA will accept AI-assisted integrity analysis (trajectory of digital inspection acceptance)",
+          "Data center power demand growth sustains natural gas demand for 10+ years"
+        ],
+        "uncertain": [
+          "Whether operators will adopt AI for safety-critical functions (extreme conservatism)",
+          "PHMSA regulatory timeline for AI acceptance (could take 3-5 years)",
+          "Whether renewable energy transition reduces natural gas pipeline demand faster than expected"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 3,
+        "moat_sources": [
+          "Pipeline-specific integrity data from each operator improves predictive models (data moat)",
+          "PHMSA compliance documentation creates regulatory switching costs",
+          "TSA Pipeline Security Directive compliance adds another regulatory layer of lock-in",
+          "Pipeline integrity domain expertise (corrosion science, metallurgy, fluid dynamics) is extremely deep"
+        ]
+      },
+
+      "falsification_criteria": [
+        "If renewable energy transition eliminates natural gas demand faster than expected (< 10 years)",
+        "If PHMSA explicitly prohibits AI-assisted integrity management decisions",
+        "If pipeline operators categorically refuse to adopt AI for safety-critical applications",
+        "If major pipeline incident is attributed to AI recommendation error (poisoning market trust)"
+      ]
+    }
+  ]
+}

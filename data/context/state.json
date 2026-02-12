@@ -1,8 +1,8 @@
 {
-  "state_version": 13,
-  "current_cycle": "v3-3",
-  "engine_mode": "model_grading_with_economy_context",
-  "engine_version": "v3.3 -- models as central output, economy map as grading context",
+  "state_version": 16,
+  "current_cycle": "v3-6",
+  "engine_mode": "economy_map_with_cascade_modeling",
+  "engine_version": "3.6 -- v3-6 signal scan (43 signals + 10 counter-signals across all 6 forces), 32 deep-dive cards scored and integrated (293→325), sector screener identifies next 10 deep-dive candidates, 3 new patterns confirmed",
   "force_velocities": {
     "F1_technology": {
       "velocity": "accelerating",
@@ -10,99 +10,109 @@
         "inference_cost": "$0.40/M tokens (GPT-4 equivalent), 50x/yr decline confirmed",
         "cobot_cost": "$25-60K, ROI 6-18mo",
         "robotics_funding": "$2.26B Q1 2026",
-        "open_source_gap": "DeepSeek R1 approaching frontier performance",
-        "ai_coding": "25-40% of Google code AI-generated",
-        "fda_ai_devices": "1,250+ cumulative, 295 in 2025",
-        "edge_ai": "114M AI PCs 2025 (+88%)",
-        "manufacturing_gap": "98% exploring, 20% ready, 78-point gap"
+        "humanoid_robots": "China 90% global market — Unitree 5,500 shipped, AgiBot 5,168 shipped, exceeding Tesla target. Tesla Optimus Gen 3 mass production launched Jan 21 but 'no useful work' yet (Musk Jan 28)",
+        "open_source_gap": "DeepSeek V4 expected ~Feb 17 with Engram memory, targeting Opus 4.5 SWE-bench parity. Open-proprietary lag approaching real-time",
+        "ai_coding": "25-40% of Google code AI-generated BUT experienced devs 19% SLOWER on complex tasks (perception-reality gap). Gains concentrated in narrow workflows (20-30%)",
+        "fda_ai_devices": "1,250+ cumulative. FDA DEREGULATED AI clinical decision support Jan 6, 2026 — AI single-recommendation CDS exempt from device regulation",
+        "enterprise_adoption": "78% (McKinsey), 95% GenAI (Bain). $37B GenAI spending 2025 (3.2x YoY). But EBIT impact still rare. Shift to disciplined deployment (fewer licenses, higher spend/license)",
+        "ai_agents": "OpenAI Frontier enterprise agent platform launched Feb 5. Claude Opus 4.6 agent teams (multi-agent parallel decomposition). Frontier capability unlocked.",
+        "nvidia_backlog": "3.6M Blackwell units, $500B orders through 2026, GPU cabinets 28K→60K+. CoWoS/HBM multi-year shortage",
+        "anticipatory_displacement": "HBR: 60% of orgs reduced headcount anticipating AI, only 2% tied to actual AI implementation. Companies acting on potential, not performance",
+        "maven_ai": "DoD Maven targeting 100% machine-generated intel by mid-2026"
       },
-      "direction": "AI capability curve steepening. Inference costs approaching near-zero for many applications. Robotics × AI compound effect validated. Automation boundary expanding from routine-cognitive toward tacit-cognitive tasks.",
-      "last_update_cycle": "v3-2",
+      "direction": "Frontier capability steepening: Opus 4.6 agent teams + OpenAI Frontier platform = multi-agent orchestration era. Open-source approaching real-time parity (DeepSeek V4). China won humanoid robot volume race (90% market). FDA deregulated AI CDS. BUT: experienced devs 19% SLOWER on complex AI-assisted tasks reveals Solow Paradox deeper than assumed. Enterprise ROI shifting from 'try everything' to 'prove ROI' — Installation→Deployment transition in enterprise AI.",
+      "last_update_cycle": "v3-6",
       "confidence": "high"
     },
     "F2_demographics": {
-      "velocity": "steady",
+      "velocity": "accelerating",
       "key_metrics": {
-        "us_silver_tsunami": "52.3% of employer businesses owned by 55+, 2.34M businesses",
-        "succession_gap": "58% have no succession plan",
-        "japan_population": "Declining ~900K/yr (UPGRADED from ~500K), leading indicator 5-7 years ahead",
-        "us_baumol_wages": "$207B automatable wages, professional services +4%/yr vs CPI 2.5%",
+        "us_silver_tsunami": "52.3% of employer businesses owned by 55+, 2.34M businesses. $68T total boomer wealth transfer by 2030 including $5.1T in small business value. 12M businesses changing hands this decade.",
+        "succession_gap": "58% have no succession plan, 70% never successfully sell",
+        "japan_population": "Declining ~919K/yr, sub-670K births 2025 (new record low). $22.3B annual family spending from FY2026",
+        "china_births": "7.92M in 2025 (-17% YoY), comparable to 1738 levels. Women 20-34 declining from 105M to 58M by 2050 — irreversible",
+        "us_labor_market": "Jan 2026 BLS: +130K jobs (healthcare +82K dominates). BUT 898K DOWNWARD REVISION to 2025 employment. JOLTS plunged to 6.54M (0.87 jobs/worker — reversal from 2+ in 2022). Market restructuring, not collapsing.",
+        "college_enrollment_cliff": "15% decline projected 2025-2029, up to 80 additional closures, 400 total possible this decade. 5 states = 75% of decline (IL, CA, NY, PA, MI). $18B endowment redistribution",
+        "h1b_impact": "$100K fee crystallizing: startups 10-20% of revenue, IT services $500M+. Wage-weighted lottery effective Feb 27, 2026. 2 major lawsuits filed",
+        "entry_level_collapse": "67% drop in junior developer hiring 2024-2026. 35% all entry-level decline (Revelio Labs). 37% managers prefer AI over Gen Z hire. Only 7% of 2024 hires were recent grads",
         "trades_shortage": "499K new workers needed in building trades (2026)",
-        "china_fertility": "TFR ~1.0 (below Japan 1.20)",
-        "pipeline_collapse": "CPA -33%, nursing 78K->200K, teaching 42 states, trucking age 57",
-        "india_dividend": "1.44B population, 1B working-age, median 28"
+        "pipeline_collapse": "CPA -33%, nursing 78K->200K, teaching 42 states (411K vacant), trucking age 57",
+        "india_dividend": "1.44B population, 1B working-age, median 28. Zero-tax-through-2047 for AI. $70-100B hyperscaler commitments"
       },
-      "direction": "Demographic forces are slow but inexorable. US Silver Tsunami creating acquisition opportunities in manufacturing and services. Japan 5-10 years ahead of US/EU in aging effects. India demographic dividend growing.",
-      "last_update_cycle": "v3-2",
+      "direction": "UPGRADED steady→accelerating. Silver Tsunami now quantified at $68T total transfer including $5.1T in small business value. China birth collapse irreversible (women 20-34 declining 45% by 2050). US labor market RESTRUCTURING not collapsing — healthcare dominates job creation while finance/tech contract. Entry-level hiring in structural collapse (67% junior devs, 35% all entry-level). College enrollment cliff hitting NOW with geographic concentration in 5 states.",
+      "last_update_cycle": "v3-6",
       "confidence": "high"
     },
     "F3_geopolitics": {
       "velocity": "accelerating",
       "key_metrics": {
-        "us_china_chip_controls": "Expanding scope, parallel AI ecosystems forming",
-        "eu_ai_act": "Implementation phase, creating regulatory divergence",
-        "latam_nearshoring": "Growing manufacturing FDI to Mexico, Brazil, Argentina",
-        "taiwan_risk": "TSMC concentration, fab construction in US/Japan/EU",
-        "us_china_bifurcation": "Two-ecosystem model: US subscription vs China open-source/free",
-        "deepseek": "R1 captured 3%->13% global LLM share in 2 months",
-        "gulf_ai": "Saudi Humain $77B, UAE MGX $25B, Abu Dhabi 5GW campus",
-        "defense_spending": "$2,718B global (+9.4%), NATO 5% GDP target, DoD $13.4B AI line",
-        "reshoring": "Kearney -311, Mexico FDI $40.9B, India $19B (+18%)",
-        "chips_act": "Intel 1.8nm HVM, TSMC Arizona volume, Samsung Taylor 90%+"
+        "us_china_tariffs": "47.5% avg US tariff on China (100% coverage). Nov 2025 truce through Nov 10, 2026 at risk — Iran 25% tariff threatens destabilization",
+        "eu_ai_act": "Digital Omnibus delays high-risk Annex III from Aug 2026 to Dec 2027 (16mo). Conditional on standards readiness. Creates regulatory uncertainty window",
+        "rearm_europe": "EUR 800B ReArm Europe/Readiness 2030 — 1.5% GDP fiscal escape clause (EUR 650B), EUR 150B SAFE loans. Drones and air defense prioritized",
+        "india_ai": "Zero taxes on cloud/AI revenues through 2047. $70-100B from Google/Amazon/Microsoft. AI Impact Summit Feb 16-20 (first Global South). 9.2 GW data center target by 2030",
+        "aukus": "Pillar II autonomous warfare trials expanding 2026. AI models proven interoperable across US/UK/Australia platforms",
+        "china_chips": "3 new AI chip fabs by late 2026, 80% domestic demand capture target. 25% US 'security tariff' on chip exports. Busan 1-year suspension",
+        "gulf_ai": "$200B+ combined Saudi/UAE. HUMAIN deploying 18,000 GB300s. UAE Stargate 1GW cluster (G42/OpenAI/Oracle/Nvidia/SoftBank). Positioning as neutral compute hub in US-China bifurcation",
+        "defense_spending": "$2,750B global defense (9.4%+ YoY). NATO 5% GDP target. DoD $961.6B base + $150B reconciliation. $13.4B AI/autonomy line",
+        "us_ai_regulation": "Trump EO creates AI Litigation Task Force vs 280 bipartisan state lawmakers. Federal preemption uncertain — EO cannot overturn state law. March 11 Commerce/FTC deadlines imminent",
+        "cmmc_enforcement": "CMMC 2.0 enforcement begins, 220K+ DIB companies must certify",
+        "counter_uas": "$7.5B C-UAS budget, 25.8% CAGR"
       },
-      "direction": "US-China decoupling accelerating across technology, trade, and capital. EU regulatory divergence creating distinct transformation path. Nearshoring wave beginning to materialize in LATAM. Energy geopolitics remain volatile.",
-      "last_update_cycle": "v3-2",
+      "direction": "Multiple escalation vectors. ReArm Europe EUR 800B is the largest European defense mobilization since Cold War. India executing zero-tax-through-2047 AI attraction at unprecedented scale. Gulf $200B+ positioning as neutral third node between US-China. US-China tariff truce at risk from Iran linkage. EU AI Act high-risk delayed 16 months. Federal-state AI regulation tension creates maximum compliance uncertainty.",
+      "last_update_cycle": "v3-6",
       "confidence": "high"
     },
     "F4_capital": {
       "velocity": "shifting",
       "key_metrics": {
-        "fed_funds": "3.50-3.75% (Jan 2026)",
+        "fed_funds": "3.50-3.75% (Jan 2026 hold). 2 FOMC dissents favoring cut. Futures: at most 2 cuts in 2026, ZERO in 2027. Higher-for-longer structural",
+        "cre_cmbs": "Office CMBS delinquency 12.34% — ALL-TIME RECORD, 1.6pp above 2008 Financial Crisis peak. $1.6B net monthly increase. $936B-$1.8T CRE maturing 2026. New loan rate 6.24% vs 4.76% expiring (148bp gap)",
+        "ai_mega_rounds": "Anthropic $20B at $350B (doubled in 5mo). OpenAI $100B at $830B. xAI $20B at $230B. Humans& $480M seed at $4.48B. Total Jan-Feb 2026 frontier raises >$140B",
+        "defense_tech": "$17.9B equity funding 2025 (2.45x YoY). Exits record $54.4B (3x YoY). Nvidia/Groq $20B. 41% more active defense investors. Exits > investment = Deployment phase signal",
+        "pe_distress": "Bankruptcies trending up early 2026. Most exposed: retail, dining, RE, energy, healthcare, education. PE dry powder positioning for aggressive middle-market M&A. Private credit as dominant distress liquidity source",
+        "sp500_concentration": "Top 10 = 40% of index weight (all-time record). Forward P/E 22x (matches 2021 peak). But Mag 7 earnings share declining to 31% — broadening",
+        "vc_2026": "10-25% funding increase expected. AI + robotics + defense gaining share. Climate, crypto, undifferentiated AI losing. Secondaries becoming mainstream liquidity",
         "hy_spread": "2.87% (tight but diverging from fundamentals)",
-        "pe_refinancing_wall": "$936B-$1.8T maturing 2026-2028, distress rate 11.98% (+148%)",
-        "business_applications": "532K/mo (Coasean shrinkage confirmed)",
-        "business_loan_delinquency": "1.78% and rising",
-        "sector_etf_rotation": "Energy +29.9%, Materials +20.1%, Industrials +15.1%, Financials +0.5%",
-        "staffing_canary": "RHI -53%, MAN -44%, KELYA -25%",
-        "vc_rotation": "Moving from pure-digital to hard-tech, robotics, physical economy",
-        "vc_ai_share": "35-40% of ~$500B global VC",
-        "cre_vacancy": "Office 20.1% (record), $929B CRE debt maturing",
-        "sp500_concentration": "Magnificent 7 = 33% of S&P 500"
+        "pe_refinancing_wall": "$930B maturing in 2026, $1.5-1.8T total 2026-2028, distress rate 11.98% (+148%)",
+        "business_applications": "532K/mo (Coasean shrinkage confirmed)"
       },
-      "direction": "Capital decisively rotating from digital/financial to physical/industrial. PE refinancing wall approaching. Financial services stocks signal active destruction. Business formation remains high despite rising delinquency = Schumpeterian rotation in progress.",
-      "last_update_cycle": "v3-2",
+      "direction": "Office CMBS hits all-time record 12.34% — WORSE than 2008 Financial Crisis. AI mega-rounds at unprecedented scale ($140B+ in Jan-Feb 2026 alone). Defense tech exits ($54.4B) exceeding investment ($49.1B) = first AI sector entering Deployment phase. Market concentration at record (top 10 = 40%) while earnings broaden — late Installation signature. Higher-for-longer confirmed (zero 2027 cuts priced).",
+      "last_update_cycle": "v3-6",
       "confidence": "high"
     },
     "F5_psychology": {
-      "velocity": "decelerating",
+      "velocity": "accelerating",
       "key_metrics": {
-        "ai_adoption_plateau": "46% for 12 months (flat)",
-        "healthcare_trust_gap": "34 points (providers 7/10 vs patients 3.6/10)",
-        "financial_services_adoption": "73% (control group — lowest fear friction)",
-        "consumer_sentiment": "Michigan 57.3 (4-yr low), CEO Confidence 84.5 (12-yr low)",
-        "fear_economy_tam": "~$86B by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B)",
-        "generational_divide": "Gen Z 67% excited vs Boomers 29% excited / 51% worried",
-        "trust_premium": "23% willing to pay 15-20% for human services",
-        "sector_resistance_map": "Education 55% uncomfortable, Legal 82% ethical concerns, Healthcare 34-pt gap"
+        "worker_fear": "ESCALATED: 60% expect AI to cut more jobs than it adds (from 40% in v3-4). 51% worried about own job. 1 in 5 knows someone who lost job to AI — fear transitioning from abstract to experiential",
+        "ai_washing_layoffs": "108,435 Jan 2026 job cuts (+118% YoY). HBR: 60% orgs cut headcount anticipating AI, only 2% tied to actual implementation. 'Forever layoffs' amid profits",
+        "entry_level_extinction": "67% junior dev hiring collapse. 37% managers prefer AI over Gen Z. 35% all entry-level decline. Pipeline destruction with decade-lag leadership consequences",
+        "k_shaped_sentiment": "Michigan 57.3 (6-mo high). 7-point gap: wealthy (stock-driven) vs hourly workers. Spending strong despite low confidence — behavioral decoupling",
+        "deepfake_trust_collapse": "Europol: 90% of online content may be synthetic by 2026. 8M deepfakes 2025 (16x from 2023). 'Liar's Dividend' — authentic content dismissed as fake",
+        "enterprise_roi": "$37B GenAI spent 2025 (3.2x). 66% productivity gains. But enterprise-wide EBIT rare. Fewer licenses, higher spend — disciplined deployment",
+        "education_fear": "Brookings: AI risks outweigh benefits for children (50-country study). Ohio mandates AI frameworks by Jul 2026. Michigan proposes chatbot liability for minors. Alpha School parents report child anxiety",
+        "state_regulation_wave": "2026 bills target NEW categories: agentic AI, algorithmic pricing, chatbot liability for minors. Colorado AI Act effective 2026. Liability shifting from governance to outcomes",
+        "generational_divide": "Gen Z 67% excited vs Boomers 29% excited / 51% worried. Boomer confidence dropped 35%",
+        "fear_economy_tam": "~$86B by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B)"
       },
-      "direction": "FIRST QUANTIFICATION (v3-2). Adoption momentum decelerating due to psychology factors. 46% plateau is unprecedented S-curve flattening. Fear is a MARKET CREATOR ($86B fear economy), not just friction. Psychology determines adoption speed, not technology capability. Financial services (73% adoption) is the control group.",
-      "last_update_cycle": "v3-2",
-      "confidence": "medium-high"
+      "direction": "UPGRADED shifting→accelerating. Worker fear now experiential (1 in 5 knows someone affected), not just anticipatory. AI-washing confirmed as mainstream corporate behavior (60% cut for potential, 2% for performance). Entry-level extinction is structural (67% junior devs). K-shaped psychology: capital-owners recovering confidence while labor remains anxious. Deepfake scale creating systemic trust collapse (Europol 90% projection). Education fear crystallizing with first legislative responses (Michigan chatbot liability). State regulation evolving from governance to liability.",
+      "last_update_cycle": "v3-6",
+      "confidence": "high"
     },
     "F6_energy": {
       "velocity": "accelerating",
       "key_metrics": {
-        "data_center_grid_share": "4%+ of US electricity, projected 6-12% by 2030",
+        "data_center_electricity": "IEA: doubling to 945 TWh global by 2030. US: 133% growth to 426 TWh. AI servers growing 30%/yr (4x other sectors). Occupancy 95%+ peak late 2026",
         "grid_bottleneck": "2,600 GW in queue, 5+ year wait — THE binding constraint on AI scaling",
-        "nuclear_renaissance": "10GW+ committed for AI (TMI restart, Kairos SMR, Talen)",
-        "solar_lcoe": "$0.02-0.03/kWh best locations (all-time low)",
-        "battery_costs": "$115/kWh (2024), projected $80/kWh by 2027",
-        "lithium_surplus": "Prices crashed 80% from 2022 peak, surplus through 2027",
-        "water_stress": "1.7B gallons/day for data center cooling globally",
-        "renewable_investment": "$1.1T globally — first time exceeding fossil fuel investment"
+        "pjm_capacity": "$16.4B auction (3rd consecutive record). Price at $333/MW-day CAP. Data centers 63% of price increase. 8+ year queue wait",
+        "zero_water_cooling": "Microsoft piloting zero-water-evaporation cooling in Phoenix and Wisconsin (2026). Trades water for energy — resource substitution",
+        "copper": "Conflicting: ICSG 150K deficit vs Red Cloud 126K surplus (tariff demand destruction). Citi $13-15K/tonne. Long-term: 766K deficit by 2030. DC demand 330-500K tonnes/yr by 2030",
+        "renewable_policy": "One Big Beautiful Bill terminates residential solar credit Dec 2025. Wind/solar phase-out for construction after Jul 2026. Solar LCOE still competitive ($38-78/MWh) but 15-30% more expensive without credits",
+        "nuclear_renaissance": "10GW+ committed for AI (TMI restart, Kairos SMR, Talen). QCEW: nuclear employment (38K workers) at Baumol 2.22",
+        "solar_growth": "Solar electric (221114) employment +51.6% YoY — fastest-growing sub-sector in entire QCEW dataset",
+        "water_stress": "1.7B gallons/day for data center cooling globally. Microsoft zero-water pilot is first hyperscaler response"
       },
-      "direction": "FULLY CHARACTERIZED (v3-2). Grid bottleneck is THE binding constraint on AI transformation (2,600 GW in 5+ year queues). Nuclear renaissance underway for AI baseload. Solar at all-time low LCOE. Creates geographic winners (Texas, Southeast, Gulf) and losers (Northern Virginia). Data centers at 4%+ of grid, approaching 5% trigger.",
-      "last_update_cycle": "v3-2",
+      "direction": "IEA confirms doubling to 945 TWh by 2030. PJM at 3rd consecutive record auction ($16.4B). Data center occupancy projected 95%+ by late 2026 — physical capacity crisis. Policy headwind: One Big Beautiful Bill terminates renewable credits, creating rush-to-build then cliff. Microsoft solving water with energy tradeoff. Solar employment exploding (+51.6%) even as policy shifts against it. Copper signal conflicting near-term but deficit trajectory from 2027+.",
+      "last_update_cycle": "v3-6",
       "confidence": "high"
     }
   },
@@ -112,90 +122,47 @@
       "sector_name": "Financial Services",
       "transformation_phase": "acceleration",
       "phase_confidence": "high",
-      "forces_acting": [
-        "F1_technology",
-        "F4_capital",
-        "F2_demographics",
-        "F5_psychology"
-      ],
-      "supporting_patterns": [
-        "P-001",
-        "P-013",
-        "P-021",
-        "P-026",
-        "P-027"
-      ],
-      "evidence_summary": "PHASE UPGRADED to acceleration (v3-2). 54% customer interactions automated. 87% AI fraud detection at 92% interception. 339 branch closures. RPA->AI agents. Accounting displacement peak 2026-2028. CPA pipeline -33%. PE refinancing wall $936B-$1.8T. 9 supporting signals, zero contradictions.",
+      "forces_acting": ["F1_technology", "F4_capital", "F2_demographics", "F5_psychology"],
+      "supporting_patterns": ["P-001", "P-013", "P-021", "P-026", "P-027", "P-036"],
+      "evidence_summary": "v3-6: Office CMBS 12.34% (all-time record, above 2008). CRE cascade chain validated. 3 new FS model cards scored (5239-001: 78.75, 5223-001: 78.5, 5239-002: 71.25). Mortgage servicing most extreme labor signal: 13.8% wage growth AND -10.7% employment simultaneously. RIA sector (523940) has 496K workers at $270K avg and extreme fragmentation — identified by sector screener as next FS deep-dive target.",
       "v2_models_count": 45,
-      "last_updated": "v3-2",
-      "v3_models_rated": 3
+      "last_updated": "v3-6",
+      "v3_models_rated": 22
     },
     {
       "sector_naics": "54",
       "sector_name": "Professional Services",
       "transformation_phase": "early_disruption",
       "phase_confidence": "high",
-      "forces_acting": [
-        "F1_technology",
-        "F4_capital",
-        "F2_demographics"
-      ],
-      "supporting_patterns": [
-        "P-001",
-        "P-009",
-        "P-013",
-        "P-023"
-      ],
-      "evidence_summary": "Deepening (v3-2). $207B Baumol stored energy growing at 1.5pp/yr. 532K/month business applications. CPA -33%. Accounting entering displacement peak Phase 2 (2026-2028). Micro-firm OS demand emerging. 974K establishments, $1.07T payroll.",
+      "forces_acting": ["F1_technology", "F4_capital", "F2_demographics"],
+      "supporting_patterns": ["P-001", "P-009", "P-013", "P-023"],
+      "evidence_summary": "v3-6: 5 new model cards scored across sub-sectors (5415-001: 70.75, 5417-001: 69.5, 5417-002: 64.75, 5413-001: 68.5, 5416-001: 63.75). Legal services (5411) has highest fear friction of any professional sector at 82% ethical concern. IT services (5415) is self-disrupting: 2.46M workers, AI coding 19% SLOWER for experienced devs. Sector screener identifies 5415 as standalone deep-dive candidate.",
       "v2_models_count": 78,
-      "last_updated": "v3-2",
-      "v3_models_rated": 3
+      "last_updated": "v3-6",
+      "v3_models_rated": 8
     },
     {
       "sector_naics": "31-33",
       "sector_name": "Manufacturing",
       "transformation_phase": "early_disruption",
       "phase_confidence": "high",
-      "forces_acting": [
-        "F1_technology",
-        "F2_demographics",
-        "F3_geopolitics",
-        "F4_capital"
-      ],
-      "supporting_patterns": [
-        "P-002",
-        "P-006",
-        "P-016",
-        "P-018",
-        "P-019",
-        "P-025"
-      ],
-      "evidence_summary": "Deepening (v3-2). 78-point implementation gap (98% exploring, 20% ready). 73K cobots (+31% YoY). $34B->$155B manufacturing AI TAM. Silver Tsunami peak approaching. SBA 504 fee waiver through Sept 2026. China robot density 470/10K surpassed Germany/Japan.",
+      "forces_acting": ["F1_technology", "F2_demographics", "F3_geopolitics", "F4_capital"],
+      "supporting_patterns": ["P-002", "P-006", "P-016", "P-018", "P-019", "P-025"],
+      "evidence_summary": "v3-6: China controls 90% of humanoid robot market (Unitree 5,500, AgiBot 5,168). Tesla Optimus Gen 3 launched but 'no useful work' yet. 3 new cards scored (3341-001: 74.0, 3341-002: 70.0, 3344-001: 74.25, 3364-001: 73.0). CHIPS Act fabs driving semiconductor test/packaging demand. ReArm Europe EUR 800B creates additional defense manufacturing demand.",
       "v2_models_count": 74,
-      "last_updated": "v3-2",
-      "v3_models_rated": 3
+      "last_updated": "v3-6",
+      "v3_models_rated": 7
     },
     {
       "sector_naics": "62",
       "sector_name": "Healthcare",
       "transformation_phase": "early_disruption",
       "phase_confidence": "high",
-      "forces_acting": [
-        "F1_technology",
-        "F2_demographics",
-        "F5_psychology",
-        "F4_capital"
-      ],
-      "supporting_patterns": [
-        "P-001",
-        "P-003",
-        "P-005",
-        "P-024",
-        "P-032"
-      ],
-      "evidence_summary": "CONFIDENCE UPGRADED medium->high (v3-2). 3%->22% AI adoption in 2 years via physician-invisible pathway. 66% physician usage. 295 FDA clearances in 2025. 78K unfilled RN positions growing to 200K. Trust barrier circumvented, not overcome. Healthcare admin $200B+ addressable.",
+      "forces_acting": ["F1_technology", "F2_demographics", "F5_psychology", "F4_capital"],
+      "supporting_patterns": ["P-001", "P-003", "P-005", "P-024", "P-032"],
+      "evidence_summary": "v3-6: FDA DEREGULATED AI clinical decision support (Jan 6, 2026) — qualitative regulatory shift. Healthcare dominated Jan 2026 jobs (+82K of +130K = 63% of all new jobs). Baumol dynamics confirmed: healthcare absorbing labor while cognitive sectors shed. PE distress now flagged in healthcare sector specifically.",
       "v2_models_count": 52,
-      "last_updated": "v3-2",
+      "last_updated": "v3-6",
       "v3_models_rated": 3
     },
     {
@@ -203,16 +170,11 @@
       "sector_name": "Administrative Services",
       "transformation_phase": "acceleration",
       "phase_confidence": "high",
-      "forces_acting": [
-        "F1_technology",
-        "F4_capital"
-      ],
-      "supporting_patterns": [
-        "P-027"
-      ],
-      "evidence_summary": "Acceleration deepening (v3-2). RHI -53%, MAN -44%, KELYA -25%. Employment -7.6% YoY. 3.57M employees, $192.7B wages. Staffing intermediation becoming structurally redundant. PE-backed staffing roll-ups face refinancing wall + revenue collapse simultaneously.",
+      "forces_acting": ["F1_technology", "F4_capital"],
+      "supporting_patterns": ["P-027"],
+      "evidence_summary": "v3-6: Staffing canary continues — sector screener confirms structural collapse. UPS cut 30K (Amazon split). Entry-level hiring collapse (-67% junior devs) further undermines staffing model viability.",
       "v2_models_count": 18,
-      "last_updated": "v3-2",
+      "last_updated": "v3-6",
       "v3_models_rated": 3
     },
     {
@@ -220,32 +182,46 @@
       "sector_name": "Construction",
       "transformation_phase": "pre_disruption",
       "phase_confidence": "medium",
-      "forces_acting": [
-        "F1_technology",
-        "F2_demographics",
-        "F3_geopolitics"
-      ],
-      "supporting_patterns": [
-        "P-005"
-      ],
-      "evidence_summary": "Building trades shortage (499K workers needed). 230K establishments, 70% can't find workers. AI augmentation opportunity but high tacit-manual content = Baumol Premium, not Cure. Data center construction driving demand.",
+      "forces_acting": ["F1_technology", "F2_demographics", "F3_geopolitics"],
+      "supporting_patterns": ["P-005"],
+      "evidence_summary": "Jan 2026 BLS: construction +33K. Data center construction driving demand. 70 GW solar deployment rush before Jul 2026 credit expiration. AEC design card (5413-001) scored 68.5.",
       "v2_models_count": 25,
-      "last_updated": "v2-8"
+      "last_updated": "v3-6"
     },
     {
       "sector_naics": "42",
       "sector_name": "Wholesale Trade",
       "transformation_phase": "pre_disruption",
       "phase_confidence": "medium",
-      "forces_acting": [
-        "F1_technology"
-      ],
-      "supporting_patterns": [
-        "P-022"
-      ],
-      "evidence_summary": "Zero-density Schumpeterian gap. 122K establishments. AI intermediation replacing human brokers. Coasean shrinkage. ZERO funded AI startups found.",
+      "forces_acting": ["F1_technology"],
+      "supporting_patterns": ["P-022"],
+      "evidence_summary": "Zero-density Schumpeterian gap persists. US-China tariff truce at risk could disrupt trade flows.",
       "v2_models_count": 8,
       "last_updated": "v2-8"
+    },
+    {
+      "sector_naics": "928110",
+      "sector_name": "Defense AI / National Security Technology",
+      "transformation_phase": "acceleration",
+      "phase_confidence": "high",
+      "forces_acting": ["F1_technology", "F3_geopolitics", "F4_capital"],
+      "supporting_patterns": ["P-030", "P-029", "P-034"],
+      "evidence_summary": "UPGRADED early_disruption→acceleration (v3-6). 8 defense cards scored (avg 74.8, highest batch). MC-DEF-011 CMMC at 82.5 is strongest new card. Defense tech exits $54.4B (3x YoY) > investment ($49.1B) = first AI sector in Deployment phase. ReArm Europe EUR 800B. AUKUS autonomous warfare interoperability proven. Counter-UAS $7.5B budget. Nvidia/Groq $20B validates defense-AI hardware convergence.",
+      "v2_models_count": 0,
+      "v3_models_rated": 26,
+      "last_updated": "v3-6"
+    },
+    {
+      "sector_naics": "61",
+      "sector_name": "Educational Services",
+      "transformation_phase": "early_disruption",
+      "phase_confidence": "high",
+      "forces_acting": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "supporting_patterns": ["P-001", "P-005", "P-027", "P-033", "P-035"],
+      "evidence_summary": "v3-6: 8 education cards scored (avg 68.9, lowest batch due to fear friction). Brookings 50-country study confirms AI risks outweigh benefits for children. Ohio mandates AI frameworks by Jul 2026. Michigan chatbot liability for minors. Fear economy card (EDU-FEAR-01: 72.25) confirms fear creates market. College cliff NOW: 400 schools could close this decade, $18B endowment redistribution, 5 states = 75% of decline.",
+      "v2_models_count": 0,
+      "v3_models_rated": 15,
+      "last_updated": "v3-6"
     }
   ],
   "geographic_profiles": [
@@ -254,33 +230,34 @@
       "demographic_profile": {
         "population_trend": "slow_growth",
         "median_age": 38.5,
-        "key_pressure": "Silver Tsunami (52.3% of businesses owned by 55+), trades shortage"
+        "key_pressure": "Silver Tsunami ($68T transfer, $5.1T SMB value). Entry-level extinction (67% junior dev collapse). College cliff (400 schools, 5-state concentration). Labor market restructuring (healthcare absorbs, tech/finance shed)"
       },
       "ai_readiness": {
         "frontier_access": "full",
         "adoption_rate": "leading",
-        "regulatory_stance": "permissive_sector_specific"
+        "regulatory_stance": "federal_state_conflict — Trump EO vs 280 state lawmakers, March 11 deadlines imminent"
       },
       "transformation_velocity": {
         "fastest_sectors": [
-          "Financial Services (cascade confirmed)",
-          "Administrative Services (staffing destruction)",
-          "Professional Services (Baumol cure)"
+          "Financial Services (CMBS 12.34% all-time record, acceleration confirmed)",
+          "Defense AI (exits > investment = Deployment phase)",
+          "Administrative Services (staffing destruction + entry-level collapse)",
+          "Professional Services (Baumol cure, AI coding disruption)"
         ],
         "slowest_sectors": [
-          "Healthcare (trust barriers)",
-          "Education (institutional resistance)",
+          "Education (highest fear friction gap=5, Brookings study, chatbot liability)",
+          "Healthcare (trust barriers, but FDA deregulation + invisible pathway working)",
           "Government (procurement friction)"
         ]
       },
-      "last_updated": "v3-0"
+      "last_updated": "v3-6"
     },
     {
       "region": "Japan",
       "demographic_profile": {
         "population_trend": "declining",
         "median_age": 49,
-        "key_pressure": "Most advanced aging economy, population declining ~500K/yr"
+        "key_pressure": "Population declining ~919K/yr. Births sub-670K (record low). $22.3B annual family spending from FY2026"
       },
       "ai_readiness": {
         "frontier_access": "full",
@@ -296,80 +273,82 @@
           "Services (cultural barriers to AI interaction)"
         ]
       },
-      "last_updated": "v3-0"
+      "last_updated": "v3-6"
     },
     {
       "region": "China",
       "demographic_profile": {
-        "population_trend": "declining",
+        "population_trend": "declining_accelerating",
         "median_age": 39,
-        "key_pressure": "Population decline onset, one-child policy effects, aging acceleration"
+        "key_pressure": "Birth collapse to 7.92M (-17%), comparable to 1738 levels. Women 20-34 declining 105M→58M by 2050 — IRREVERSIBLE. One-child policy echo effects compounding"
       },
       "ai_readiness": {
-        "frontier_access": "partial",
+        "frontier_access": "partial_but_closing",
         "adoption_rate": "leading",
         "regulatory_stance": "state_directed"
       },
       "transformation_velocity": {
         "fastest_sectors": [
-          "Manufacturing (state priority)",
-          "Surveillance/security",
+          "Humanoid robots (90% global market, Unitree/AgiBot leading)",
+          "Manufacturing (state priority + demographic imperative)",
+          "AI chips (3 new fabs, 80% domestic capture target)",
           "Fintech"
         ],
         "slowest_sectors": [
           "Professional services (state-owned sector dominance)"
         ]
       },
-      "last_updated": "v3-0"
+      "last_updated": "v3-6"
     },
     {
       "region": "EU",
       "demographic_profile": {
         "population_trend": "stable_to_declining",
         "median_age": 44,
-        "key_pressure": "Aging workforce, migration debates, productivity stagnation"
+        "key_pressure": "Aging workforce, migration debates, productivity stagnation, defense rearmament at Cold War scale"
       },
       "ai_readiness": {
         "frontier_access": "full",
         "adoption_rate": "lagging",
-        "regulatory_stance": "restrictive"
+        "regulatory_stance": "restrictive_but_delaying — Digital Omnibus delays AI Act high-risk to Dec 2027"
       },
       "transformation_velocity": {
         "fastest_sectors": [
+          "Defense (ReArm Europe EUR 800B, largest mobilization since Cold War)",
           "Manufacturing (Germany Industry 4.0)",
           "Financial compliance"
         ],
         "slowest_sectors": [
-          "Most sectors (AI Act friction)",
+          "Most sectors (AI Act friction, despite delay)",
           "Healthcare (strong unions)"
         ]
       },
-      "last_updated": "v3-0"
+      "last_updated": "v3-6"
     },
     {
       "region": "India",
       "demographic_profile": {
         "population_trend": "growing",
         "median_age": 28,
-        "key_pressure": "Demographic dividend, youth employment challenge, digital leapfrog"
+        "key_pressure": "Demographic dividend + AI leapfrog opportunity. Zero-tax-through-2047 + $70-100B hyperscaler commitments = AI compute hub strategy"
       },
       "ai_readiness": {
         "frontier_access": "full",
-        "adoption_rate": "average",
-        "regulatory_stance": "permissive"
+        "adoption_rate": "accelerating",
+        "regulatory_stance": "aggressively_permissive — zero-tax-through-2047 is most aggressive AI attraction globally"
       },
       "transformation_velocity": {
         "fastest_sectors": [
-          "IT services (domestic disruption)",
-          "Fintech (UPI infrastructure)",
-          "Education (scale)"
+          "Computing infrastructure (9.2 GW data center target, Google/Amazon/Microsoft commitments)",
+          "IT services (domestic disruption but also largest employer at risk)",
+          "Fintech (UPI infrastructure)"
         ],
         "slowest_sectors": [
           "Manufacturing (infrastructure gaps)",
           "Agriculture (small-holder dominance)"
         ]
       },
-      "last_updated": "v3-0"
+      "last_updated": "v3-6"
     },
     {
       "region": "LATAM",
@@ -424,15 +403,16 @@
       "demographic_profile": {
         "population_trend": "growing",
         "median_age": 28,
-        "key_pressure": "Energy transition pressure, sovereign wealth-driven AI investment, youth unemployment"
+        "key_pressure": "Oil-to-AI conversion executing at $200B+ scale. Positioning as neutral third compute node"
       },
       "ai_readiness": {
-        "frontier_access": "partial",
-        "adoption_rate": "average",
+        "frontier_access": "partial_but_investing",
+        "adoption_rate": "accelerating",
         "regulatory_stance": "permissive"
       },
       "transformation_velocity": {
         "fastest_sectors": [
+          "AI infrastructure ($200B+ combined, 18K GB300s deployed, 1GW Stargate cluster)",
           "Energy (transition imperative)",
           "Financial services (sovereign wealth)",
           "Smart cities (greenfield)"
@@ -442,7 +422,7 @@
           "Healthcare (institutional barriers)"
         ]
       },
-      "last_updated": "v3-1"
+      "last_updated": "v3-6"
     }
   ],
   "fear_friction_index": [
@@ -460,7 +440,8 @@
       "economic_readiness": 8,
       "psychological_readiness": 5,
       "gap": 3,
-      "classification": "moderate_friction"
+      "classification": "moderate_friction",
+      "notes": "Legal sub-sector at 82% ethical concern is highest of any professional field"
     },
     {
       "sector_naics": "31-33",
@@ -473,10 +454,11 @@
     {
       "sector_naics": "62",
       "sector_name": "Healthcare",
-      "economic_readiness": 7,
+      "economic_readiness": 8,
       "psychological_readiness": 4,
-      "gap": 3,
-      "classification": "high_friction_context_dependent"
+      "gap": 4,
+      "classification": "high_friction_context_dependent",
+      "notes": "FDA deregulation (Jan 6, 2026) increases economic readiness but may WIDEN trust gap"
     },
     {
       "sector_naics": "56",
@@ -501,114 +483,140 @@
       "psychological_readiness": 5,
       "gap": 0,
       "classification": "neutral"
+    },
+    {
+      "sector_naics": "928110",
+      "sector_name": "Defense AI / National Security Technology",
+      "economic_readiness": 9,
+      "psychological_readiness": 9,
+      "gap": 0,
+      "classification": "zero_friction_inverted",
+      "notes": "UPGRADED to gap=0 (from 1). Defense tech exits > investment = market validated. Fear runs OPPOSITE: fear of NOT adopting AI while adversaries do."
+    },
+    {
+      "sector_naics": "61",
+      "sector_name": "Educational Services",
+      "economic_readiness": 8,
+      "psychological_readiness": 3,
+      "gap": 5,
+      "classification": "highest_friction_sector",
+      "notes": "CONFIRMED by Brookings 50-country study. Ohio mandates, Michigan chatbot liability. Entry sequence: corporate (gap 2) → teacher-facing (gap 2) → university admin (gap 3) → student-facing (gap 6)."
+    },
+    {
+      "sector_naics": "51",
+      "sector_name": "Information",
+      "economic_readiness": 9,
+      "psychological_readiness": 7,
+      "gap": 2,
+      "classification": "low_friction",
+      "notes": "NEW (v3-6). Sector screener candidate #1. Internally bifurcating — AI infra grows while content creation contracts. Workers ARE the AI adopters so friction is low."
+    },
+    {
+      "sector_naics": "22",
+      "sector_name": "Utilities",
+      "economic_readiness": 6,
+      "psychological_readiness": 5,
+      "gap": 1,
+      "classification": "low_friction",
+      "notes": "NEW (v3-6). Sector screener candidate #4. AI readiness limited by legacy grid infrastructure, not psychology."
     }
   ],
   "rating_system": {
-    "version": "v1.0",
+    "version": "v2.0",
     "axes": [
       "structural_necessity",
       "force_alignment",
-      "geographic_grade",
+      "external_context",
       "timing_grade",
       "capital_efficiency"
     ],
-    "weights": [
-      0.25,
-      0.25,
-      0.2,
-      0.15,
-      0.15
-    ],
+    "axis_labels": ["SN", "FA", "EC", "TG", "CE"],
+    "weights": [0.25, 0.25, 0.20, 0.15, 0.15],
+    "composite_formula": "(SN*25 + FA*25 + EC*20 + TG*15 + CE*15) / 10",
     "categories": [
       "STRUCTURAL_WINNER",
       "FORCE_RIDER",
-      "GEOGRAPHIC_PLAY",
       "TIMING_ARBITRAGE",
       "CAPITAL_MOAT",
       "FEAR_ECONOMY",
       "EMERGING_CATEGORY",
       "CONDITIONAL",
       "PARKED"
-    ]
+    ],
+    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced."
   },
   "rated_models_index": {
-    "total_models_rated": 15,
-    "category_distribution": {
-      "STRUCTURAL_WINNER": 7,
-      "FORCE_RIDER": 1,
-      "GEOGRAPHIC_PLAY": 2,
-      "TIMING_ARBITRAGE": 2,
-      "CAPITAL_MOAT": 1,
-      "FEAR_ECONOMY": 1,
-      "EMERGING_CATEGORY": 0,
-      "CONDITIONAL": 1,
-      "PARKED": 0
+    "total_models_rated": 325,
+    "total_before_dedup": 327,
+    "variants_merged": 2,
+    "latest_file": "data/verified/v3-4_normalized_2026-02-11.json",
+    "deep_dive_scored_file": "data/verified/v3-6_scored_deep_dive_cards_2026-02-12.json",
+    "unscored_deep_dive_cards": {
+      "total_unscored": 0,
+      "status": "All 32 deep-dive cards scored and integrated in v3-6"
     },
-    "top_10_composite": [
-      {
-        "rank": 1,
-        "card_id": "MC-52-001",
-        "composite": 83.0,
-        "category": "STRUCTURAL_WINNER"
-      },
-      {
-        "rank": 2,
-        "card_id": "MC-54-001",
-        "composite": 81.0,
-        "category": "STRUCTURAL_WINNER"
-      },
-      {
-        "rank": 3,
-        "card_id": "MC-62-001",
-        "composite": 77.75,
-        "category": "STRUCTURAL_WINNER"
-      },
-      {
-        "rank": 4,
-        "card_id": "MC-56-001",
-        "composite": 76.25,
-        "category": "STRUCTURAL_WINNER"
-      },
-      {
-        "rank": 5,
-        "card_id": "MC-31-001",
-        "composite": 74.75,
-        "category": "STRUCTURAL_WINNER"
-      },
-      {
-        "rank": 6,
-        "card_id": "MC-52-003",
-        "composite": 74.0,
-        "category": "FEAR_ECONOMY"
-      },
-      {
-        "rank": 7,
-        "card_id": "MC-54-002",
-        "composite": 74.0,
-        "category": "STRUCTURAL_WINNER"
-      },
-      {
-        "rank": 8,
-        "card_id": "MC-31-002",
-        "composite": 73.25,
-        "category": "CAPITAL_MOAT"
-      },
-      {
-        "rank": 9,
-        "card_id": "MC-54-003",
-        "composite": 73.0,
-        "category": "GEOGRAPHIC_PLAY"
-      },
-      {
-        "rank": 10,
-        "card_id": "MC-62-002",
-        "composite": 72.0,
-        "category": "STRUCTURAL_WINNER"
-      }
+    "category_distribution": {
+      "STRUCTURAL_WINNER": 8,
+      "FORCE_RIDER": 87,
+      "TIMING_ARBITRAGE": 12,
+      "CAPITAL_MOAT": 3,
+      "FEAR_ECONOMY": 8,
+      "EMERGING_CATEGORY": 4,
+      "CONDITIONAL": 136,
+      "PARKED": 69
+    },
+    "composite_stats": {
+      "max": 84.0,
+      "min": 29.25,
+      "mean": 64.2,
+      "median": 64.5
+    },
+    "composite_distribution": {
+      "above_80": 7,
+      "70_to_80": 71,
+      "60_to_70": 173,
+      "50_to_60": 45,
+      "below_50": 29
+    },
+    "top_10": [
+      {"rank": 1, "id": "MC-GOV-AI-01", "name": "AI Governance and Compliance Operating System", "composite": 84.0, "category": "STRUCTURAL_WINNER"},
+      {"rank": 2, "id": "MC-DEF-011", "name": "CMMC Compliance Automation Platform", "composite": 82.5, "category": "FORCE_RIDER", "note": "NEW v3-6. SN 8.5 < 9.0 prevents SW category"},
+      {"rank": 3, "id": "MC-DEF-DRONE-01", "name": "Autonomous Drone Swarm Command Platform", "composite": 82.0, "category": "STRUCTURAL_WINNER"},
+      {"rank": 4, "id": "MC-DEF-CYBER-01", "name": "Cybersecurity AI for Defense Networks", "composite": 81.75, "category": "STRUCTURAL_WINNER"},
+      {"rank": 5, "id": "MC-DEF-INTEL-01", "name": "Defense AI/ML Intelligence Fusion Platform", "composite": 81.25, "category": "FORCE_RIDER"},
+      {"rank": 6, "id": "MC-MICRO-OS-01", "name": "Micro-Firm AI Operating System", "composite": 80.5, "category": "STRUCTURAL_WINNER"},
+      {"rank": 7, "id": "C7-FSR-HCMULTI-01", "name": "Healthcare AI Multi-State Compliance Platform", "composite": 80.25, "category": "FORCE_RIDER"},
+      {"rank": 8, "id": "C7-AM-CNC-01", "name": "Acquire + Modernize CNC Shop (Single Site)", "composite": 79.0, "category": "STRUCTURAL_WINNER"},
+      {"rank": 9, "id": "MC-V35-5239-001", "name": "RegTech Alt Investment Compliance", "composite": 78.75, "category": "FORCE_RIDER", "note": "NEW v3-6"},
+      {"rank": 10, "id": "MC-V35-5223-001", "name": "Mortgage Servicing AI Operations", "composite": 78.5, "category": "FORCE_RIDER", "note": "NEW v3-6 (tied with MC-DEF-012)"}
     ],
-    "last_cascade_trigger": "pe_refinancing_wall_above_300B (recommended)",
-    "v2_models_migrated": 0,
-    "v2_models_pending": 522
+    "new_cards_v36": {
+      "count": 32,
+      "mean_composite": 71.7,
+      "structural_winners": 0,
+      "force_riders": 21,
+      "fear_economy": 1,
+      "conditional": 10,
+      "top_card": "MC-DEF-011 CMMC Compliance 82.5",
+      "defense_avg": 74.8,
+      "v35_avg": 71.6,
+      "education_avg": 68.9,
+      "note": "Defense premium (+5.9pp over education) driven by $13.4B dedicated budget, regulatory moats, low fear friction, geopolitical urgency"
+    },
+    "source_batches": {
+      "v3-2_cycle": 15,
+      "new_macro_45": 45,
+      "top_40_deep": 40,
+      "expansion_123": 123,
+      "mid_41to112": 72,
+      "v36_deep_dive_cards": 32
+    },
+    "normalization_applied": {
+      "batch_calibration": true,
+      "gg_replaced_with_ec": true,
+      "categories_hard_enforced": true,
+      "deduplication": true
+    }
   },
   "force_velocity_triggers": {
     "F1_technology": [
@@ -631,6 +639,13 @@
         "threshold_type": "above",
         "threshold_value": 55,
         "action": "recalc_acquisition_models"
+      },
+      {
+        "metric": "entry_level_hiring_decline_pct",
+        "threshold_type": "above",
+        "threshold_value": 75,
+        "action": "recalc_pipeline_dependent_models",
+        "status": "APPROACHING — currently at 67% junior dev decline"
       }
     ],
     "F3_geopolitics": [
@@ -638,7 +653,14 @@
         "metric": "eu_ai_act_enforcement_active",
         "threshold_type": "equals",
         "threshold_value": true,
-        "action": "recalc_eu_geographic_grades"
+        "action": "recalc_eu_geographic_grades",
+        "status": "DELAYED to Dec 2027 (Digital Omnibus)"
+      },
+      {
+        "metric": "us_china_tariff_truce_collapsed",
+        "threshold_type": "equals",
+        "threshold_value": true,
+        "action": "recalc_all_manufacturing_and_trade_models"
       }
     ],
     "F4_capital": [
@@ -646,7 +668,15 @@
         "metric": "pe_refinancing_wall_maturing_billions",
         "threshold_type": "above",
         "threshold_value": 300,
-        "action": "recalc_pe_cascade_models"
+        "action": "recalc_pe_cascade_models",
+        "status": "TRIGGERED — $930B maturing in 2026"
+      },
+      {
+        "metric": "office_cmbs_delinquency_pct",
+        "threshold_type": "above",
+        "threshold_value": 15,
+        "action": "recalc_cre_cascade_models",
+        "status": "APPROACHING — 12.34% (all-time record, 1.6pp above 2008)"
       }
     ],
     "F5_psychology": [
@@ -655,6 +685,13 @@
         "threshold_type": "above",
         "threshold_value": 50,
         "action": "recalc_fear_friction_all"
+      },
+      {
+        "metric": "worker_displacement_fear_pct",
+        "threshold_type": "above",
+        "threshold_value": 70,
+        "action": "recalc_all_labor_models",
+        "status": "APPROACHING — 60% expect net job losses (from 40% in v3-4)"
       }
     ],
     "F6_energy": [
@@ -662,17 +699,10 @@
         "metric": "data_center_pct_grid",
         "threshold_type": "above",
         "threshold_value": 5,
-        "action": "recalc_compute_dependent_models"
+        "action": "recalc_compute_dependent_models",
+        "status": "APPROACHING — 4%+ US, IEA projects 6-12% by 2030"
       }
     ]
-  },
-  "self_optimization": {
-    "confidence_map_initialized": true,
-    "staleness_index_initialized": false,
-    "pattern_registry_initialized": true,
-    "connector_performance_initialized": false,
-    "last_directive_cycle": "v3-2",
-    "total_auto_directives_generated": 7
   },
   "evidence_base": {
     "v2_total_signals_scanned": 500,
@@ -681,38 +711,42 @@
     "v2_naics_sectors_screened": 293,
     "v2_data_sources_validated": 7,
     "v2_cycles_completed": 9,
-    "v3_sectors_with_transformations": 7,
+    "v3_sectors_with_transformations": 9,
     "v3_geographies_profiled": 8,
     "v3_force_dimensions_tracked": 6,
-    "v3_cycles_completed": 1,
-    "v3_signals_scanned": 84,
-    "v3_signals_graded": 30,
-    "v3_sector_briefs": 5,
-    "v3_model_cards_rated": 15,
-    "v3_patterns_total": 12,
-    "v3_geographic_reports": 4
+    "v3_cycles_completed": 6,
+    "v3_models_rated": 325,
+    "v3_models_unscored": 0,
+    "v3_patterns_total": 18,
+    "v3_sector_deep_dives": 3,
+    "v3_cascade_models": 1,
+    "v3_signals_this_cycle": 43,
+    "v3_counter_signals_this_cycle": 10,
+    "connectors_available": 15,
+    "sector_screener_candidates": 10,
+    "qcew_sectors_analyzed": 2064
   },
   "running_patterns": [
     {
       "pattern_id": "P-001",
-      "description": "Multi-Sector Baumol Cure: Healthcare, legal, accounting, insurance releasing stored above-CPI energy",
+      "description": "Multi-Sector Baumol Cure: Healthcare, legal, accounting, insurance, education releasing stored above-CPI energy",
       "strength": "very_strong",
       "status": "confirmed",
-      "economy_map_relevance": "Defines the transformation path for NAICS 52, 54, 62 — routine cognitive middle collapses, judgment premium rises"
+      "economy_map_relevance": "Defines the transformation path for NAICS 52, 54, 61, 62 — routine cognitive middle collapses, judgment premium rises"
     },
     {
       "pattern_id": "P-002",
-      "description": "Silver Tsunami: 52.3% of businesses owned by 55+, 2.34M businesses, 58% no succession plan",
+      "description": "Silver Tsunami: $68T total wealth transfer including $5.1T small business value, 12M businesses changing hands, 58% no succession",
       "strength": "very_strong",
       "status": "confirmed",
-      "economy_map_relevance": "Defines the transformation path for NAICS 31-33 manufacturing — acquisition-modernization wave incoming"
+      "economy_map_relevance": "Scale upgraded v3-6: $68T total transfer (was $10T business assets). Employee ownership models emerging as succession alternative."
     },
     {
       "pattern_id": "P-006",
-      "description": "Robotics × AI Compound: cobots $25-60K, 6-18mo ROI, $2.26B Q1 2026 funding",
+      "description": "Robotics × AI Compound: China wins volume race (90% humanoid market, Unitree 5,500, AgiBot 5,168). Cobots $25-60K, 6-18mo ROI.",
       "strength": "very_strong",
       "status": "confirmed",
-      "economy_map_relevance": "Defines the transformation path for physical production — COGS compression in 12+ manufacturing sectors"
+      "economy_map_relevance": "China's humanoid robot dominance shifts narrative from US-led to China-led physical AI. Tesla Optimus no useful work yet despite mass production launch."
     },
     {
       "pattern_id": "P-016",
@@ -730,73 +764,115 @@
     },
     {
       "pattern_id": "P-026",
-      "description": "Financial Services Cascade CONFIRMED: 7 data sources, active Schumpeterian destruction",
+      "description": "Financial Services Cascade DEEPENED: Office CMBS 12.34% all-time record (above 2008). CRE cascade validated. $800B-$1.2T value reallocation.",
       "strength": "very_strong",
       "status": "confirmed",
-      "economy_map_relevance": "Financial services is the furthest-along sector transformation — real-time evidence of the cascade"
+      "economy_map_relevance": "FS cascade now has CRE validation — office CMBS WORSE than 2008 Financial Crisis. Second-order effects to real estate and regional banking confirmed."
     },
     {
       "pattern_id": "P-027",
-      "description": "Staffing Canary: RHI -53%, MAN -44%, KELYA -25% — strongest real-time market signal",
+      "description": "Staffing Canary: RHI -53%, MAN -44%, KELYA -25% — entry-level collapse (-67% junior devs) deepens signal",
       "strength": "very_strong",
       "status": "confirmed",
-      "economy_map_relevance": "Administrative services (NAICS 56) transformation has entered acceleration phase"
+      "economy_map_relevance": "Administrative services + entry-level employment in structural collapse"
     },
     {
       "pattern_id": "P-028",
-      "description": "Global AI Ecosystem Bifurcation: US proprietary/subscription vs China open-source/free-access. DeepSeek 3%->13% share. Gulf as third node.",
+      "description": "Global AI Ecosystem Trifurcation: US proprietary/subscription vs China open-source/free-access vs Gulf neutral compute hub",
       "strength": "strong",
       "status": "confirmed",
-      "economy_map_relevance": "Most significant geographic finding. Business models predicated on exclusive frontier access have 6-12 month windows. All geographic profiles require updating."
+      "economy_map_relevance": "Updated v3-6: Gulf ($200B+) positioning as NEUTRAL third node. India ($70-100B+, zero-tax-through-2047) emerging as fourth compute center."
     },
     {
       "pattern_id": "P-029",
-      "description": "Reshoring Reality Gap: Record capital ($40.9B Mexico, $19B India) but US output +1%. Kearney Index -311. 2-5 year investment-to-production lag.",
+      "description": "Reshoring Reality Gap: Record capital but 2-5 year investment-to-production lag",
       "strength": "confirmed",
       "status": "confirmed",
-      "economy_map_relevance": "Manufacturing models must account for 2-5 year lag between capital commitment and operational output. India emerging as primary alternative."
+      "economy_map_relevance": "Manufacturing models must account for 2-5 year lag between capital commitment and operational output."
     },
     {
       "pattern_id": "P-030",
-      "description": "Defense AI Supercycle: $2,718B global (+9.4%), NATO 5% GDP target, DoD $13.4B AI/autonomy dedicated line, European rearmament +83%.",
-      "strength": "confirmed",
+      "description": "Defense AI Supercycle DEPLOYED: $2,750B+ global defense. Exits ($54.4B) > investment ($49.1B) = first AI sector in Deployment phase. ReArm Europe EUR 800B.",
+      "strength": "very_strong",
       "status": "confirmed",
-      "economy_map_relevance": "Multi-decade structural commitment. Largest government spending outside AI infrastructure. Creates massive demand for autonomous systems, AI/ML, cybersecurity."
+      "economy_map_relevance": "UPGRADED v3-6. Defense is the first AI sector where Deployment-phase capital dynamics are visible. Exits exceeding investment confirms market maturity."
     },
     {
       "pattern_id": "P-031",
-      "description": "Gulf Oil-to-AI Conversion: $100B+ SWF AI infrastructure (Saudi Humain $77B, UAE MGX $25B). Fastest-moving compute investors globally.",
+      "description": "Gulf Oil-to-AI Conversion: $200B+ combined Saudi/UAE. HUMAIN 18K GB300s. UAE Stargate 1GW. Neutral compute hub positioning.",
       "strength": "confirmed",
       "status": "confirmed",
-      "economy_map_relevance": "MENA geographic profile requires major upgrade. Gulf becoming primary AI infrastructure provider. Creates compute availability for Africa and South Asia."
+      "economy_map_relevance": "UPGRADED v3-6: commitments scaled to $200B+. Neutral third node strategy between US-China explicit."
     },
     {
       "pattern_id": "P-032",
-      "description": "Healthcare Invisible AI Pathway: Trust barrier circumvented via physician-tool adoption (66% usage). 3%->22% in 2 years. 295 FDA clearances in 2025.",
+      "description": "Healthcare Invisible AI Pathway: FDA deregulated AI CDS (Jan 6, 2026). Physician-tool adoption (66%). Trust barrier circumvented, not overcome.",
       "strength": "confirmed",
       "status": "confirmed",
-      "economy_map_relevance": "Defines healthcare AI adoption pathway: admin (low friction) -> physician tools (low-medium) -> patient-facing (high). Exposure effect erodes trust over 2-4 years."
+      "economy_map_relevance": "UPGRADED v3-6: FDA deregulation qualitatively shifts the adoption path. AI CDS software exempt from device regulation."
+    },
+    {
+      "pattern_id": "P-033",
+      "description": "Education Fear Friction Maximum: Brookings 50-country study confirms. Ohio mandates, Michigan chatbot liability. Gap=5 holds.",
+      "strength": "confirmed",
+      "status": "confirmed",
+      "economy_map_relevance": "v3-6 crystallized with first academic evidence (Brookings), state mandates (Ohio), and liability proposals (Michigan). Fear creates $5-10B governance sub-market."
+    },
+    {
+      "pattern_id": "P-034",
+      "description": "Defense Regulatory Moat Cascade: CMMC + FedRAMP + ITAR + ATO + clearance. 220K DIB companies must certify. Top card MC-DEF-011 at 82.5.",
+      "strength": "strong",
+      "status": "confirmed",
+      "economy_map_relevance": "v3-6: CMMC card scored highest of all 32 new cards (82.5). Regulatory moat thesis confirmed by scoring data."
+    },
+    {
+      "pattern_id": "P-035",
+      "description": "Education Baumol Cure Sequencing: Corporate→teacher tools→university admin→K-12 tutoring (gap 2→2→3→6).",
+      "strength": "strong",
+      "status": "confirmed",
+      "economy_map_relevance": "v3-6: 8 education cards scored, confirming sequence. Corporate (74.5) > Teacher (72.25) > University (67.5) > K-12 Tutoring (62.25)."
+    },
+    {
+      "pattern_id": "P-036",
+      "description": "Anticipatory Displacement: 60% of companies cut headcount for AI potential not performance. 108K Jan 2026 layoffs (+118% YoY). HBR/Oxford Economics confirm firms NOT replacing workers with AI at scale. Fear-driven self-fulfilling prophecy.",
+      "strength": "strong",
+      "status": "confirmed",
+      "economy_map_relevance": "NEW (v3-6). Companies and workers BOTH acting on AI fear. Corporate anticipatory displacement (60%) + worker fear (60%) creates bilateral feedback loop. Actual AI-driven layoffs remain ~4.5% but narrative-driven displacement is structural."
+    },
+    {
+      "pattern_id": "P-037",
+      "description": "Entry-Level Extinction: 67% junior dev collapse, 35% all entry-level decline, 37% managers prefer AI over Gen Z. Pipeline destruction with decade-lag leadership consequences.",
+      "strength": "strong",
+      "status": "confirmed",
+      "economy_map_relevance": "NEW (v3-6). The apprenticeship function of entry-level work has no AI substitute. 67% fewer potential leaders in 2031-2036. This creates a LONG-TERM human capital formation crisis across all sectors."
+    },
+    {
+      "pattern_id": "P-038",
+      "description": "AI Infrastructure Chain Constraint: NVIDIA $500B backlog → IEA 945 TWh by 2030 → PJM $16.4B capacity auction → copper 766K deficit by 2030 → water stress 1.7B gal/day. Each layer of Jevons cascade constrains the layer above.",
+      "strength": "strong",
+      "status": "confirmed",
+      "economy_map_relevance": "NEW (v3-6). AI scaling constrained by multi-layer physical resource chain. Compute demand → energy demand → grid capacity → raw materials → water. The slowest link determines overall AI scaling velocity. Data center occupancy 95%+ by late 2026 = physical capacity crisis."
     }
   ],
   "key_unknowns": [
-    "F5 Psychology adoption interventions: What breaks the 46% plateau? Technology alone is insufficient.",
-    "Second-order cascades: Financial Services acceleration -> CRE -> regional banks -> credit tightening chain not yet modeled.",
-    "Emergent economy categories: AI workforce platforms, fear economy, micro-firm OS — what other NAICS-incompatible categories are forming?",
-    "Year-specific timing: Most projections are ranges. Perez crash timing remains uncertain.",
-    "Labor migration paths: Where do displaced routine-cognitive workers actually go? Retraining outcomes unknown.",
-    "Defense AI sector: P-030 supercycle detected but no sector brief or model cards yet constructed.",
-    "Education sector: 55% discomfort but large Baumol opportunity. No sector brief yet.",
-    "China AI ecosystem capability: DeepSeek R1 shattered assumptions. How durable is bifurcation?",
-    "Gulf AI execution: $100B+ committed but operational capability unproven.",
-    "MENA geographic profile outdated: Gulf AI pivot makes current profile obsolete."
+    "Enterprise ROI inflection: When does disciplined deployment ($37B, 3.2x, fewer licenses) convert to measurable EBIT? Task-level ROI is real; enterprise transformation ROI remains elusive.",
+    "Perez crash timing: Capital still ACCELERATING ($140B+ frontier raises Jan-Feb 2026). Defense tech exits > investment = Deployment. Crash may be 2027-2028, not 2026.",
+    "AI coding productivity truth: Experienced devs 19% SLOWER on complex tasks. Is this temporary learning curve or fundamental Solow Paradox?",
+    "Entry-level extinction permanence: Is 67% junior dev collapse cyclical (hiring freeze) or structural (AI substitution)? If structural, leadership pipeline crisis by 2031.",
+    "China humanoid robot commercialization: 90% market share in volume but Tesla admits 'no useful work.' When does shipped volume translate to productive commercial deployment?",
+    "US federal-state AI regulation resolution: Trump EO vs 280 lawmakers. March 11 Commerce/FTC deadlines. Legal challenges timeline measured in years. Creates maximum uncertainty.",
+    "Office CMBS cascade: 12.34% delinquency (above 2008) but bank CRE delinquency only 1.2%. Will CMBS stress transmit to regional banking system?",
+    "India AI execution: Zero-tax-through-2047 and $70-100B hyperscaler commitments are unprecedented. Can India's infrastructure (power, cooling, connectivity) support 9.2 GW data center target?",
+    "Deepfake trust collapse: Europol 90% synthetic content projection. Does 'Liar's Dividend' create permanent trust destruction or does verification technology keep pace?",
+    "College enrollment cliff geographic cascade: 400 schools closing affects 600K students and $18B in endowments. What happens to campus real estate and local economies in IL, CA, NY, PA, MI?"
   ],
   "next_cycle_suggestions": [
-    "PRIORITY 1: Migrate v2 model inventory (522 models) through 5-axis rating system",
-    "PRIORITY 2: Defense AI sector brief and model cards (P-030 supercycle, $2.72T global, NATO 5% GDP)",
-    "PRIORITY 3: Education sector brief (55% discomfort, high Baumol, large market)",
-    "PRIORITY 4: Second-order cascade modeling for Financial Services acceleration",
-    "PRIORITY 5: F5 Psychology adoption intervention research (breaking 46% plateau)",
-    "PRIORITY 6: MENA geographic profile overhaul (Gulf AI pivot makes current profile obsolete)",
-    "PRIORITY 7: Wholesale Trade zero-density refresh (P-022 staleness penalty accumulating)"
+    "PRIORITY 1: Deep dive on Information sector (NAICS 51) — highest Baumol uncovered sector (2.13), 3M workers, internal bifurcation (AI infra grows while content contracts), AI epicenter",
+    "PRIORITY 2: Deep dive on Utilities (NAICS 22) — binding constraint on AI scaling, F6 nexus, solar +51.6% growth, nuclear renaissance, PJM capacity crisis",
+    "PRIORITY 3: Model FS cascade second-order timeline with CRE data — office CMBS 12.34% → regional bank stress → credit tightening. Year-specific projections",
+    "PRIORITY 4: Merge v3-6 scored cards into normalized inventory (create unified v3-6_normalized.json with all 325 models)",
+    "PRIORITY 5: Update dashboard.json and UI to v3-6 — integrate 43 signals, 32 cards, sector screener, 3 new patterns, updated force velocities",
+    "PRIORITY 6: 6-digit NAICS expansion for top-scoring sectors (defense, financial services sub-sectors)",
+    "PRIORITY 7: Model the entry-level extinction cascade (P-037) — which sectors are most affected, what are the 5-10 year consequences for professional pipelines"
   ]
 }

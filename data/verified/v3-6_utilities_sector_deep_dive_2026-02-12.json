@@ -1,0 +1,1003 @@
+{
+  "cycle": "v3-6-utilities",
+  "date": "2026-02-12",
+  "agent": "Agent B (Analyst)",
+  "type": "sector_deep_dive",
+  "sector": "Utilities (NAICS 22)",
+  "pattern_ref": "P-038",
+
+  "sector_overview": {
+    "sector_naics": "22",
+    "sector_name": "Utilities",
+    "force_drivers": ["F6_energy", "F1_technology", "F4_capital", "F3_geopolitics"],
+    "primary_hypothesis": "Utilities are the BINDING CONSTRAINT on AI scaling. AI demand is restructuring the energy generation mix while AI is simultaneously transforming utility operations. This creates a dual transformation: utilities must produce vastly more energy AND modernize how they operate — simultaneously.",
+
+    "current_state_2026": {
+      "total_employment": 575491,
+      "employment_growth_pct": 3.91,
+      "avg_annual_pay": 128473,
+      "wage_growth_pct": 3.56,
+      "establishments": 23573,
+      "baumol_score": 1.77,
+      "us_electricity_generation_mix_2025": {
+        "natural_gas_pct": 40,
+        "nuclear_pct": 17,
+        "coal_pct": 16,
+        "wind_pct": 10,
+        "solar_pct": 9,
+        "hydro_pct": 6,
+        "other_renewables_pct": 2,
+        "total_generation_twh": 4178,
+        "notes": "Solar + wind combined (19%) outproduced coal (16%) in Q1 2025 for first time. Gas remains dominant at 40% but share declining."
+      },
+      "data_center_demand": {
+        "current_us_share_pct": 4.0,
+        "projected_2026_gw": 75.8,
+        "projected_2030_gw": 134.4,
+        "projected_2030_share_pct": 7.8,
+        "ai_server_twh_2025": 93,
+        "ai_server_twh_2030": 432,
+        "global_dc_twh_2025": 448,
+        "global_dc_twh_2030": 980,
+        "occupancy_rate_2026": "95%+",
+        "pjm_capacity_auction_2025_bn": 16.4,
+        "pjm_dc_share_of_costs_pct": 40,
+        "note": "First sustained US electricity demand growth in 20 years, driven entirely by AI compute"
+      },
+      "grid_interconnection_queue": {
+        "total_gw_queued": 2300,
+        "pjm_wait_years": "8+",
+        "caiso_avg_years": 9.2,
+        "nyiso_avg_years": 6.5,
+        "ercot_requests": "2000+",
+        "miso_2023_cycle_completion": "2026",
+        "ferc_order_2023_status": "compliance approved May 2025, cluster studies + first-ready-first-served",
+        "doe_directive": "FERC must create large-load acceleration rules by April 30, 2026",
+        "note": "PJM went from <2 year wait (2008) to 8+ years (2025). THE bottleneck being attacked by policy."
+      }
+    },
+
+    "sub_sector_analysis": {
+      "fastest_growing": [
+        {"naics": "221114", "name": "Solar Electric Power Generation", "emp_growth_pct": 51.6, "note": "Fastest-growing sub-sector in ENTIRE QCEW dataset"},
+        {"naics": "221115", "name": "Wind Electric Power Generation", "emp_growth_pct": 17.0},
+        {"naics": "221118", "name": "Other Electric Power Generation", "emp_growth_pct": 17.5},
+        {"naics": "221117", "name": "Biomass Electric Power Generation", "emp_growth_pct": 12.6}
+      ],
+      "highest_baumol": [
+        {"naics": "221113", "name": "Nuclear Electric Power Generation", "baumol": 2.22, "workers": 37538, "note": "Highest Baumol in utilities = most stored disruption energy"},
+        {"naics": "2212", "name": "Natural Gas Distribution", "baumol": 1.87, "workers": 114000},
+        {"naics": "22111", "name": "Electric Power Generation (total)", "baumol": 1.85, "workers": 403000}
+      ],
+      "structural_observations": [
+        "Solar employment +51.6% YoY is the strongest employment growth signal in ANY sector in the QCEW dataset",
+        "Nuclear Baumol 2.22 signals extreme stored disruption energy — high wages, specialized labor, ripe for AI-augmented operations",
+        "Natural gas distribution (114K workers, Baumol 1.87) faces long-term structural shift as generation mix changes but near-term growth from data center gas peakers",
+        "Total electric power generation (403K workers) is the core employment block undergoing generational transformation"
+      ]
+    },
+
+    "transformation_thesis": {
+      "core_argument": "The US utility sector is experiencing a once-in-a-century demand shock. After 20 years of flat electricity demand, AI compute is driving 2%+ annual growth — requiring more new generation capacity than was built in the prior two decades. This demand shock arrives simultaneously with: (1) renewable cost dominance making solar/wind/storage the cheapest new generation, (2) nuclear renaissance driven by hyperscaler PPAs, (3) policy headwinds on renewable tax credits, (4) grid infrastructure inadequate for bidirectional power flows, (5) AI tools transforming grid operations. The result is a sector that must grow AND transform simultaneously — the most complex utility challenge since rural electrification.",
+      "barbell_classification": {
+        "routine_cognitive_pct": 30,
+        "routine_cognitive_tasks": ["Meter reading", "billing", "outage detection and reporting", "load forecasting (basic)", "compliance documentation", "maintenance scheduling", "vegetation management planning"],
+        "tacit_manual_pct": 40,
+        "tacit_manual_tasks": ["Line work (transmission/distribution)", "power plant operations", "substation maintenance", "emergency storm response", "nuclear plant operations", "pipeline maintenance", "construction of generation/transmission assets"],
+        "tacit_cognitive_pct": 30,
+        "tacit_cognitive_tasks": ["Grid stability management", "capacity planning", "regulatory strategy", "rate case negotiation", "generation dispatch optimization", "long-term resource planning", "nuclear safety oversight"]
+      },
+      "fear_friction_profile": {
+        "economic_readiness": 7,
+        "psychological_readiness": 6,
+        "gap": 1,
+        "classification": "low_friction",
+        "notes": "Utility AI adoption constrained by legacy infrastructure, not psychology. Utilities are generally pragmatic about technology adoption but face: (1) regulatory approval requirements for rate-based technology investments, (2) safety-critical operations requiring validation before AI deployment, (3) union labor considerations in operational automation. Community-level fear of data centers (water, rates, noise) is the more significant psychological barrier."
+      }
+    }
+  },
+
+  "generation_mix_analysis": {
+    "current_mix_2025": {
+      "gas": {"pct": 40, "trend": "stable_to_declining", "role": "dominant baseload + peaker, share declining as renewables grow"},
+      "nuclear": {"pct": 17, "trend": "stable_with_upside", "role": "baseload, restarts + SMRs adding capacity for first time in decades"},
+      "coal": {"pct": 16, "trend": "declining", "role": "accelerating retirement, down from 23% in 2020, approaching 13% by 2027"},
+      "wind": {"pct": 10, "trend": "growing", "role": "intermittent but cost-competitive, growing despite policy headwinds"},
+      "solar": {"pct": 9, "trend": "rapidly_growing", "role": "fastest-growing source, employment +51.6%, deployment accelerating pre-credit expiration"},
+      "hydro": {"pct": 6, "trend": "stable", "role": "baseload where available, limited expansion potential"},
+      "other_renewables": {"pct": 2, "trend": "growing", "role": "biomass, geothermal, waste-to-energy"}
+    },
+    "projected_mix_2030": {
+      "gas": {"pct": 35, "notes": "Declines as share but absolute generation may increase for data center peakers. New gas capacity: 250+ GW in development, ~80 GW in Texas alone."},
+      "nuclear": {"pct": 18, "notes": "Slight increase from restarts (Palisades 800MW, TMI 835MW) + first SMRs. TMI reactivation 2027. Google 500MW SMR fleet. 10GW+ committed for AI."},
+      "coal": {"pct": 10, "notes": "Continued decline. Most retirements already scheduled. Approaching obsolescence threshold."},
+      "wind": {"pct": 13, "notes": "Continued growth but moderated by policy headwinds after Jul 2026 credit expiration."},
+      "solar": {"pct": 16, "notes": "Largest growth category. Rush-to-build before Jul 2026 credit expiration then policy-cliff adjustment. LCOE advantage ($38-78/MWh) maintains deployment even without credits, but at 15-30% lower pace."},
+      "battery_storage": {"pct": 3, "notes": "New category as standalone share. 130+ GW global additions by 2026. 4-hour storage below $100/MWh. Essential for renewable intermittency management."},
+      "hydro_other": {"pct": 5, "notes": "Stable to slightly declining share as other sources grow faster."}
+    },
+    "key_shifts": [
+      {
+        "shift": "Solar + wind surpassing coal permanently",
+        "timeline": "2025 (already occurred in Q1 2025)",
+        "confidence": "very_high",
+        "evidence": "Solar + wind produced 19% vs coal 16% in first 11 months of 2025. Irreversible given cost curves and retirement schedules."
+      },
+      {
+        "shift": "Nuclear renaissance: first capacity additions since Vogtle",
+        "timeline": "2026-2030",
+        "confidence": "high",
+        "evidence": "Palisades restart Feb/Mar 2026 (800MW). TMI/Crane restart 2027 (835MW). Kairos Hermes demo 2026. Google 500MW SMR fleet by 2030. 10GW+ committed total. $1B+ DOE loan commitments."
+      },
+      {
+        "shift": "Behind-the-meter gas generation for data centers",
+        "timeline": "2026-2028",
+        "confidence": "high",
+        "evidence": "25%+ of new 500MW+ facilities will have BTM power by 2030 (up from 1% today). Meta 5GW BTM project. Texas: 80GW gas capacity in development, ~half for data centers. Bypasses grid queue entirely."
+      },
+      {
+        "shift": "Battery storage as grid-critical infrastructure",
+        "timeline": "2025-2027",
+        "confidence": "high",
+        "evidence": "13.4GW added in US in 2025 (+49.4%). 21.5GW planned next 12 months. 4-hour storage below $100/MWh. 130+ GW global additions expected 2026. VPPs grew 13.7% to 37.5GW in 2025."
+      },
+      {
+        "shift": "One Big Beautiful Bill renewable credit termination",
+        "timeline": "Jul 2026 (construction deadline)",
+        "confidence": "medium",
+        "evidence": "Residential solar credit terminated Dec 2025. Wind/solar construction must begin by Jul 2026 for credits. Creates rush-to-build then cliff. Solar still competitive without credits ($38-78/MWh) but 15-30% more expensive."
+      }
+    ]
+  },
+
+  "grid_constraint_timeline": {
+    "the_bottleneck": "The grid interconnection queue is the single most binding constraint on AI scaling. 2,300GW of generation projects are waiting to connect, with PJM wait times at 8+ years. Even if solar, wind, nuclear, and gas projects are built, they cannot serve load without grid interconnection. The queue clears slower than new projects enter it.",
+    "constraint_layers": [
+      {
+        "layer": "Grid interconnection queue",
+        "severity": "critical",
+        "resolution_timeline": "2026-2028 (partial via FERC reform)",
+        "details": "2,300GW queued. PJM 8+ years. FERC Order 2023 transitioning to cluster studies. DOE directive for April 2026 large-load acceleration rules. PJM expects 1-2 year wait post-reform. But reform implementation takes 12-24 months.",
+        "workaround": "Behind-the-meter generation bypasses queue entirely. Data centers building own gas turbines, fuel cells. 25%+ of large facilities by 2030."
+      },
+      {
+        "layer": "Transmission infrastructure",
+        "severity": "high",
+        "resolution_timeline": "2028-2032",
+        "details": "Transmission buildout takes 5-10 years from permitting to completion. DOE identified $100B+ needed. HVDC corridors for renewable energy transport (Southwest solar to demand centers) require massive capital and permitting.",
+        "workaround": "Distributed generation + storage reduces transmission needs. Microgrids for campus-scale facilities."
+      },
+      {
+        "layer": "Data center physical capacity",
+        "severity": "critical",
+        "resolution_timeline": "2026-2027 (peak constraint)",
+        "details": "Occupancy 95%+ by late 2026. New builds take 18-36 months. Pre-built modular data centers emerging but limited capacity. Data center construction itself limited by power availability.",
+        "workaround": "Modular/prefab data centers. Edge computing reduces central capacity needs for inference."
+      },
+      {
+        "layer": "Copper supply",
+        "severity": "moderate_to_high",
+        "resolution_timeline": "2027-2030",
+        "details": "$11K/tonne (+30% in 2 years). 27-33 tonnes per MW of data center capacity. 500K tonnes/year AI demand by 2030 (~2% global production). Mining projects take 5-10 years to develop.",
+        "workaround": "Recycling economics improving at $11K+. Aluminum substitution in some applications. Design optimization to reduce copper per MW."
+      },
+      {
+        "layer": "Water cooling",
+        "severity": "moderate",
+        "resolution_timeline": "2026-2028 (technology transition)",
+        "details": "160+ data centers in water-scarce areas. Phoenix: 177M gal/day for ~60 data centers. Regulators mandating dry/hybrid cooling. Agricultural vs. data center water competition active.",
+        "workaround": "Direct-to-chip liquid cooling, immersion cooling (50-60% power reduction). Microsoft zero-water-evaporation pilot. Site selection shifting to water-abundant regions."
+      },
+      {
+        "layer": "Critical minerals (Chinese control)",
+        "severity": "moderate",
+        "resolution_timeline": "2030+ (5-10 year alternatives)",
+        "details": "China controls refining of 19/20 strategic minerals (70% avg share, 90% rare earths). Export controls on rare earths (Apr 2025) and lithium battery chain (Oct 2025). Western alternatives 5-10 years from scale.",
+        "workaround": "Battery chemistry diversification (LFP, sodium-ion). Strategic stockpiling. EU 60 Strategic Projects. US executive actions."
+      }
+    ],
+    "unlock_sequence": [
+      {"year": 2026, "event": "FERC large-load acceleration rules (Apr 2026). Palisades restart (800MW). Behind-the-meter gas turbines begin scaling. Data center physical capacity crisis peaks."},
+      {"year": 2027, "event": "TMI/Crane restart (835MW, Microsoft PPA). FERC cluster study reforms begin clearing PJM queue. First wave of post-reform interconnections. 4-hour storage drops below $80/MWh."},
+      {"year": 2028, "event": "PJM queue wait times drop to 2-4 years. First commercial SMR operations (BWRX-300 Canada). Transmission HVDC corridors under construction. Gas peaker buildout stabilizes."},
+      {"year": 2029, "event": "Second wave of nuclear restarts/SMRs. Grid-scale storage at 50+ GW US installed. BTM generation becomes standard for 500MW+ data centers."},
+      {"year": 2030, "event": "Data center electricity at 7.8% of US grid. Nuclear adds 5-8GW since 2025. Renewable generation exceeds 35% of mix. Grid modernization substantially complete in high-growth corridors."}
+    ]
+  },
+
+  "transformation_timeline": {
+    "2026": {
+      "generation": "Rush-to-build solar/wind before Jul 2026 credit expiration. Palisades restart (800MW) — first nuclear decom-to-restart in US history. Behind-the-meter gas turbines scaling (Meta, Fermi America, Chevron in Texas). 99.2% of net new capacity = renewables + storage.",
+      "grid": "FERC Order 2023 cluster studies beginning. DOE April 2026 deadline for large-load acceleration rules. PJM capacity auction at $16.4B (3rd record). Data centers = 40% of PJM capacity costs. Grid queue remains 8+ years in PJM but reform pathway clear.",
+      "ai_operations": "Utility AI adoption reaching critical mass: 40%+ using AI for predictive maintenance, outage management, demand forecasting. Digital twins deployed at 100+ utilities. VPPs at 37.5GW North America. AI grid optimization reducing outages 10% and improving uptime 11%.",
+      "market_dynamics": "PJM capacity prices at $333/MW-day cap. Virginia new rate class for data centers starting Jan 2027. Ohio data center pipeline cut in half (30GW to 13GW) due to new tariff. Georgia legislating against ratepayer cost pass-through. Political backlash against data center energy demands intensifying.",
+      "employment": "575K workers, growing +3.9% YoY. Solar employment +51.6%. Nuclear workforce recruitment beginning for restarts. AI/software talent entering utilities sector. Trades shortage (499K needed in building trades nationally) constraining construction.",
+      "confidence": "high",
+      "key_uncertainties": ["FERC April deadline — will rule be aggressive enough?", "One Big Beautiful Bill final passage and implementation", "Palisades restart execution (NRC requesting more repair details as of Feb 2026)"]
+    },
+    "2027": {
+      "generation": "TMI/Crane restart (835MW for Microsoft). Post-credit-cliff solar/wind deployment adjusts downward 15-30% but LCOE advantage maintains baseline deployment. Kairos Hermes demo reactor operational in Tennessee. Gas peaker construction peaks. Battery storage surges to fill intermittency gap.",
+      "grid": "FERC reforms begin materially reducing queue times. First cluster study results clear backlog projects. PJM targeting 2-4 year wait times. Transmission investment programs at DOE reaching $10B+. Virginia data center rate class takes effect.",
+      "ai_operations": "AI utility operations becoming standard. Predictive maintenance AI saves $5-8B/yr industry-wide. Grid-edge AI managing distributed resources autonomously. Digital twins universal at top-50 utilities. AI demand forecasting incorporating data center growth curves.",
+      "market_dynamics": "Utility capex at highest levels since 1970s. Rate cases increasing across all states to fund grid modernization. First utility AI startups reaching $100M+ revenue. Hyperscaler-utility PPAs becoming standard financial instrument.",
+      "employment": "Employment approaching 600K. Nuclear engineering talent shortage becomes acute. Renewable installer demand remains strong despite credit expiration. Grid modernization driving electrical engineer demand.",
+      "confidence": "high",
+      "key_uncertainties": ["TMI restart execution and NRC approval timeline", "Depth of post-credit-cliff solar deployment decline", "Speed of FERC reform implementation"]
+    },
+    "2028": {
+      "generation": "BWRX-300 commercial operations in Ontario (Canada) — first commercial SMR. US TVA construction permit approved for Clinch River BWRX-300. Solar LCOE below $30/MWh in best locations even without credits. Offshore wind projects beginning to deliver. Battery storage at 30+ GW US installed.",
+      "grid": "Queue wait times down to 2-4 years in reformed ISOs. Transmission HVDC corridors under construction. Grid-scale storage becoming grid-critical infrastructure. Smart grid sensors at 80%+ coverage in top-20 markets.",
+      "ai_operations": "Autonomous grid management in pilot deployments. AI dispatching generation assets in real-time. Predictive maintenance preventing 90%+ of unplanned outages at AI-enabled utilities. Virtual power plants at 60+ GW. AI optimizing renewable + storage dispatch.",
+      "market_dynamics": "Utility sector market cap exceeds pre-2020 levels. Nuclear utilities commanding premium valuations. Behind-the-meter power providers emerging as new utility sub-sector. Copper prices drive substitution and recycling innovation.",
+      "employment": "Employment 610-630K. First wave of AI-displaced utility workers (meter readers, basic scheduling) offset by massive hiring in construction, engineering, and AI operations. Net employment growth continues.",
+      "confidence": "medium",
+      "key_uncertainties": ["SMR cost/schedule performance vs. projections", "Offshore wind execution", "Political environment for nuclear regulation"]
+    },
+    "2029": {
+      "generation": "Second nuclear restart wave if TMI/Palisades prove economics. Google SMR fleet construction underway. Solid-state batteries entering utility-scale testing. Natural gas share dropping below 37%. Solar + wind + storage exceeding 35% of generation.",
+      "grid": "Grid queue substantially cleared in reformed regions. Next-gen grid architecture (bidirectional, AI-managed, distributed) deployed in high-growth corridors. Interstate transmission capacity growing for first time in decades.",
+      "ai_operations": "Full AI-managed grid operations at leading utilities. Autonomous demand response. AI-optimized generation dispatch reducing costs 15-25%. Utility workforce restructured: fewer field workers, more AI operations specialists.",
+      "market_dynamics": "AI-managed grid operations creating measurable cost advantages. Utilities with AI operations outperforming peers by 200-400bp in margins. M&A wave as AI-enabled utilities acquire laggards.",
+      "employment": "Employment 620-640K. AI displacement of routine cognitive roles accelerating but construction/engineering demand maintaining total employment growth. Wage premium for AI-skilled utility workers at 25-40% above sector average.",
+      "confidence": "medium",
+      "key_uncertainties": ["Solid-state battery commercialization timeline", "Pace of AI displacement vs. construction hiring", "Political stability of nuclear expansion"]
+    },
+    "2030": {
+      "generation": "Data center electricity at 7.8% of US grid (from 4% in 2025). Nuclear at 18-20% of mix (restarts + SMRs). Solar + wind + storage at 35%+ of generation. Coal below 10%. First microreactors deployed for data center campuses. Behind-the-meter power at 25-33% of large data center supply.",
+      "grid": "Modernized grid in top-30 markets. Grid-scale storage at 50+ GW US installed. VPPs at 100+ GW. Transmission adequate in reformed corridors. Remaining bottlenecks in politically resistant regions.",
+      "ai_operations": "AI manages 60-80% of routine grid operations autonomously. Utility AI operations market at $7-10B. Digital twins universal. Predictive maintenance standard. Human oversight focused on judgment-intensive decisions (safety, capacity planning, regulatory).",
+      "market_dynamics": "Utilities sector transformed from low-growth regulated monopoly to high-growth AI-infrastructure provider. Total utility capex 2025-2030 exceeds $500B. Data center PPAs represent 15-20% of utility revenue for growth regions.",
+      "employment": "Employment 640-670K. Sector has added 65-95K jobs since 2025. Composition shift: fewer manual meter/billing roles, more engineering, construction, AI operations, nuclear. Highest-paid utility sector in history.",
+      "confidence": "medium",
+      "key_uncertainties": ["Total data center demand materialization (could overshoot or undershoot IEA projections)", "SMR cost learning curve", "Political stability of current expansion trajectory"]
+    },
+    "2031": {
+      "generation": "First commercial SMR fleet operations in US (Google/Kairos or TVA/GE-Hitachi). Data center demand approaching 10% of grid. Coal approaching de minimis share. Renewable + storage + nuclear exceeding 60% of generation for first time.",
+      "grid": "Next-generation grid architecture operational in 40%+ of US markets. AI-managed grid reliability exceeds human-managed by measurable margin. Interstate transmission capacity supporting cross-region renewable energy flow.",
+      "ai_operations": "Fully autonomous grid management in leading markets. Human role shifts entirely to oversight, planning, and exception handling. Utility AI creates exportable technology platform for global markets.",
+      "market_dynamics": "US utility sector recognized as global leader in AI-integrated grid management. Export of utility AI technology to EU, MENA, SEA markets. Utility sector employment and wages at all-time highs despite AI automation of routine tasks.",
+      "employment": "Employment 650-680K. Sector workforce fully restructured: AI operations center model replaces field-heavy model at leading utilities. Average pay exceeds $150K (from $128K in 2025).",
+      "confidence": "low_to_medium",
+      "key_uncertainties": ["Pace of SMR commercial scale-up", "Total data center demand trajectory post-2030", "International competition in utility AI technology"]
+    }
+  },
+
+  "binding_constraints_analysis": {
+    "primary_binding_constraint": {
+      "constraint": "Grid interconnection queue",
+      "severity": "critical",
+      "why_binding": "Even when generation projects (solar farms, gas plants, nuclear restarts) are ready to build, they cannot connect to serve data center load. 2,300GW queued with 8+ year waits in PJM. This is the single point where AI scaling physically stops — compute requires electrons, electrons require grid connection.",
+      "unlock_mechanism": "FERC Order 2023 + DOE April 2026 directive. Transition from serial to cluster studies. First-ready-first-served prioritization. PJM expects 1-2 year waits post-reform.",
+      "unlock_timeline": "Partial 2026-2027, substantial 2028-2029",
+      "risk": "Reform implementation slower than demand growth. Queue may re-clog with new applications faster than reforms clear old ones."
+    },
+    "secondary_constraints": [
+      {
+        "constraint": "Physical data center capacity",
+        "severity": "critical_near_term",
+        "why_binding": "95%+ occupancy by late 2026. New builds take 18-36 months. Even with available power, there are not enough physical data centers to house the GPUs.",
+        "unlock_mechanism": "Modular/prefab data centers. Edge computing for inference. Hyperscaler campus construction ($100B+ committed by Microsoft, Google, Amazon, Meta).",
+        "unlock_timeline": "Peak constraint late 2026, gradually easing 2027-2028",
+        "risk": "Construction labor shortage delays builds. Permitting opposition in some jurisdictions."
+      },
+      {
+        "constraint": "Behind-the-meter power availability",
+        "severity": "moderate_but_growing",
+        "why_binding": "BTM is the primary workaround for grid queue. But gas turbine delivery has 18-24 month backlog. Fuel cell supply chains constrained. Nuclear microreactors not available until late 2020s.",
+        "unlock_mechanism": "Gas turbine manufacturing expansion. Fuel cell scale-up. Multiple parallel BTM solutions (gas + solar + storage hybrid).",
+        "unlock_timeline": "Scaling 2026-2028",
+        "risk": "Gas turbine delivery backlog could delay a quarter to a third of BTM projects."
+      },
+      {
+        "constraint": "Nuclear regulatory timeline",
+        "severity": "moderate",
+        "why_binding": "Nuclear restarts and SMRs require NRC approval. NRC under 18-month review mandate but historically slower. Palisades already delayed from Oct 2025 to Feb/Mar 2026. TMI restart targeting 2027.",
+        "unlock_mechanism": "NRC mandate for accelerated review. Political support for nuclear from both parties. Industry learning from Palisades/TMI processes.",
+        "unlock_timeline": "First restarts 2026-2027, SMRs 2028-2032",
+        "risk": "NRC finds safety issues requiring additional review. Public opposition at specific sites."
+      },
+      {
+        "constraint": "Workforce availability",
+        "severity": "moderate",
+        "why_binding": "499K new workers needed in building trades nationally. Nuclear engineering workforce atrophied over 30 years. Electrical engineers in high demand across sectors. Grid construction requires specialized labor.",
+        "unlock_mechanism": "Apprenticeship expansion. Nuclear engineering program growth at universities. Immigration for skilled trades. AI tools reducing labor requirements per project.",
+        "unlock_timeline": "Gradual improvement 2026-2030",
+        "risk": "Labor shortage extends construction timelines by 6-18 months across the sector."
+      }
+    ],
+    "constraint_interaction_model": {
+      "description": "The constraints form a sequential chain: GPU demand -> data center capacity -> power availability -> grid connection -> generation capacity -> raw materials. The slowest link determines overall AI scaling velocity. Currently, grid interconnection is the slowest link (8+ years). If FERC reforms succeed, the binding constraint shifts to data center physical capacity (18-36 months) and then to power generation construction (2-5 years for nuclear, 1-2 years for solar/gas).",
+      "chain": "NVIDIA GPU backlog ($500B) -> Data center construction (18-36mo) -> Grid interconnection (8+ years, reforming to 1-2) -> Generation capacity (solar 1yr, gas 2yr, nuclear 5yr) -> Raw materials (copper 5-10yr, critical minerals 5-10yr)",
+      "current_bottleneck": "Grid interconnection queue (PJM 8+ years)",
+      "next_bottleneck_after_reform": "Data center physical construction capacity (peak constraint late 2026)",
+      "ultimate_constraint": "Nuclear/SMR deployment timeline (5-10 years for firm baseload to match 24/7 data center demand)"
+    }
+  },
+
+  "second_order_effects": [
+    {
+      "effect": "Electricity price increases for all ratepayers",
+      "mechanism": "Data centers = 40% of PJM's $16.4B capacity auction costs. Starting Jun 2026, ratepayers across PJM region pay additional $1.4B in capacity costs. Virginia demand projected to rise 183% by 2040. Rate cases increasing in every state with major data center build.",
+      "affected_sectors": ["All (via electricity costs)", "11 (Agriculture — rural ratepayers disproportionately affected)", "31-33 (Manufacturing — energy-intensive production costs rise)"],
+      "severity": "high",
+      "timeline": "2026-2030",
+      "confidence": "high"
+    },
+    {
+      "effect": "AI scaling velocity constrained by physical infrastructure",
+      "mechanism": "Every AI-dependent sector's transformation timeline is bounded by energy availability. If grid queue takes 8 years, AI compute capacity cannot grow fast enough to meet demand projections. This affects inference costs, model training speed, and enterprise AI deployment timelines across ALL sectors.",
+      "affected_sectors": ["51 (Information/AI)", "54 (Professional Services)", "52 (Financial Services)", "62 (Healthcare)", "928110 (Defense AI)"],
+      "severity": "high",
+      "timeline": "2026-2028 (peak constraint)",
+      "confidence": "high"
+    },
+    {
+      "effect": "Water-energy-agriculture competition",
+      "mechanism": "Data centers in arid regions consume millions of gallons/day competing with agricultural water. Phoenix: 177M gal/day for ~60 data centers vs. farming water allocations. Regulators mandating dry/hybrid cooling shifts energy vs. water tradeoff — less water requires more electricity for cooling.",
+      "affected_sectors": ["11 (Agriculture)", "22 (Utilities/Water)", "23 (Construction — site selection constraints)"],
+      "severity": "moderate",
+      "timeline": "2026-2030",
+      "confidence": "high"
+    },
+    {
+      "effect": "Nuclear supply chain resurrection",
+      "mechanism": "10GW+ nuclear committed for AI requires reactivating supply chains dormant for 30 years. Specialized steel, reactor components, nuclear-grade concrete, instrumentation and controls — all need manufacturing capacity that has atrophied. Creates manufacturing demand and engineering jobs but also introduces supply chain risk.",
+      "affected_sectors": ["31-33 (Manufacturing — nuclear supply chain)", "61 (Education — nuclear engineering programs)", "54 (Professional Services — nuclear engineering consulting)"],
+      "severity": "moderate",
+      "timeline": "2026-2032",
+      "confidence": "medium"
+    },
+    {
+      "effect": "Political backlash reshapes data center siting",
+      "mechanism": "Ohio cut data center pipeline in half (30GW to 13GW) via new tariff. Virginia legislating data center reform bills. Georgia prohibiting ratepayer cost pass-through. Community opposition becoming electoral issue. This redirects data center investment from saturated/politically hostile markets to welcoming regions.",
+      "affected_sectors": ["23 (Construction — geographic shift)", "53 (Real Estate — data center land values)", "92 (Government — policy/permitting)"],
+      "severity": "moderate_to_high",
+      "timeline": "2026-2028",
+      "confidence": "high"
+    },
+    {
+      "effect": "Behind-the-meter power creates new utility sub-sector",
+      "mechanism": "Data centers building own gas turbines, fuel cells, and solar+storage bypasses traditional utility model entirely. 25-33% of large data center power will be BTM by 2030. This creates a parallel power sector outside traditional utility regulation — the 'hyperscaler utility' — with implications for grid reliability, emissions accounting, and utility revenue.",
+      "affected_sectors": ["22 (Utilities — revenue displacement)", "31-33 (Manufacturing — gas turbine/fuel cell demand)", "23 (Construction — BTM infrastructure)"],
+      "severity": "moderate",
+      "timeline": "2026-2030",
+      "confidence": "high"
+    },
+    {
+      "effect": "Grid modernization creates massive construction demand",
+      "mechanism": "Utility capex at highest levels since 1970s. Transmission, distribution, substation, smart grid sensor deployment — all require construction labor. Compounds the 499K building trades shortage. Grid construction competes with data center construction for same labor pool.",
+      "affected_sectors": ["23 (Construction — labor demand)", "31-33 (Manufacturing — electrical equipment)", "61 (Education — trades training)"],
+      "severity": "moderate",
+      "timeline": "2026-2030",
+      "confidence": "high"
+    },
+    {
+      "effect": "Copper price escalation propagates to all electrical infrastructure",
+      "mechanism": "$11K/tonne copper (+30% in 2 years) increases cost of ALL electrical construction — not just data centers. Home wiring, EV charging, grid upgrades, manufacturing equipment, all more expensive. Data center copper demand (500K tonnes/yr by 2030) competes with electrification broadly.",
+      "affected_sectors": ["23 (Construction — material costs)", "31-33 (Manufacturing — electrical equipment)", "44-45 (Retail — EV charging)", "22 (Utilities — grid upgrade costs)"],
+      "severity": "moderate",
+      "timeline": "2026-2030",
+      "confidence": "medium"
+    }
+  ],
+
+  "geographic_analysis": {
+    "us_regional_winners": [
+      {
+        "region": "Texas (ERCOT)",
+        "status": "biggest_winner",
+        "advantages": ["Deregulated market allows faster permitting", "80GW gas capacity in development", "Abundant land and solar resource", "ERCOT queue faster than PJM", "Pro-business state policy", "Fermi America 6GW and Chevron 5GW projects for data centers"],
+        "risks": ["Grid reliability concerns (2021 winter storm)", "Water stress in some locations", "Gas pipeline capacity constraints"],
+        "dc_pipeline_gw": 80,
+        "employment_impact": "Largest utility employment growth state through 2030"
+      },
+      {
+        "region": "Virginia (PJM)",
+        "status": "saturating",
+        "advantages": ["Existing data center hub (Northern Virginia = largest in world)", "Proximity to US internet exchange points", "Established workforce and supply chain"],
+        "risks": ["PJM queue 8+ years", "New data center rate class (Jan 2027) increases costs", "Legislative reform bills (2026 session)", "Demand projected to rise 183% by 2040 vs. constrained supply", "Community backlash intensifying"],
+        "dc_pipeline_gw": "Constrained by PJM queue — existing pipeline under pressure",
+        "employment_impact": "High-wage utility jobs but political tension over ratepayer costs"
+      },
+      {
+        "region": "Georgia",
+        "status": "growing_with_limits",
+        "advantages": ["Nuclear capacity (Vogtle 3&4 online)", "Growing data center market", "Moderate climate reduces cooling costs"],
+        "risks": ["SB 34 prohibiting ratepayer cost pass-through from data centers", "Political backlash in 2025 elections around data center impacts"],
+        "dc_pipeline_gw": "Moderate growth, limited by political environment",
+        "employment_impact": "Positive from Vogtle operations and new generation"
+      },
+      {
+        "region": "Ohio / Midwest (PJM / MISO)",
+        "status": "cooling_after_boom",
+        "advantages": ["Available grid capacity in some areas", "Nuclear baseload (FirstEnergy, etc.)", "Lower land costs", "Water availability"],
+        "risks": ["Ohio data center pipeline cut from 30GW to 13GW by new tariff", "AEP customer pushback", "PJM queue issues"],
+        "dc_pipeline_gw": 13,
+        "employment_impact": "Moderate growth, moderated by tariff policy"
+      },
+      {
+        "region": "Southeast (Tennessee, Carolinas, Alabama)",
+        "status": "emerging_winner",
+        "advantages": ["TVA nuclear expertise (Clinch River SMR site)", "Available grid capacity", "Water availability", "Lower costs", "Pro-business policy", "Nuclear workforce from TVA/SRS"],
+        "risks": ["Transmission constraints to major population centers", "Limited existing data center ecosystem"],
+        "dc_pipeline_gw": "Growing — TVA actively courting data center load",
+        "employment_impact": "Nuclear restart/SMR employment growth + data center construction"
+      },
+      {
+        "region": "Pacific Northwest (Oregon, Washington)",
+        "status": "niche_winner",
+        "advantages": ["Hydroelectric baseload (cheap, reliable, clean)", "Cool climate reduces cooling costs", "Established data center market (Oregon)"],
+        "risks": ["Environmental review requirements", "Salmon habitat concerns vs. hydro expansion", "Limited expansion beyond hydro capacity"],
+        "dc_pipeline_gw": "Moderate, constrained by hydro limits",
+        "employment_impact": "Stable utility employment, niche data center growth"
+      }
+    ],
+    "international": [
+      {
+        "region": "MENA (Gulf States)",
+        "role": "Massive expansion but unique constraints",
+        "details": "$200B+ combined Saudi/UAE AI investment. HUMAIN 18K GB300s. UAE Stargate 1GW cluster. BUT: extreme water/cooling challenges in desert climate. Positioning as neutral third compute node between US-China. Energy-abundant from oil/gas but targeting solar for AI infrastructure.",
+        "energy_strategy": "Solar + gas generation with massive desalination for cooling",
+        "employment_impact": "Creating entirely new utility workforce for AI-era power infrastructure"
+      },
+      {
+        "region": "India",
+        "role": "Leapfrog opportunity",
+        "details": "9.2GW data center target by 2030. $70-100B hyperscaler commitments. Zero-tax-through-2047. BUT: grid infrastructure inadequate for current demand, let alone AI expansion. Frequent power outages. Massive transmission investment needed.",
+        "energy_strategy": "Solar (abundant resource) + grid modernization + distributed generation",
+        "employment_impact": "Could create 500K+ new energy/utility jobs if infrastructure investment materializes"
+      },
+      {
+        "region": "EU",
+        "role": "Constrained by regulation and policy",
+        "details": "Aggressive climate targets constrain generation mix options. AI Act creates additional compliance layer. ReArm Europe EUR 800B diverts fiscal capacity from energy investment. BUT: EU installed 27.1 GWh battery storage in 2025. Germany/Nordics have grid capacity advantage.",
+        "energy_strategy": "Renewables + offshore wind + nuclear (France) + cross-border interconnection",
+        "employment_impact": "Moderate utility employment growth, focused on grid modernization"
+      },
+      {
+        "region": "Japan",
+        "role": "Nuclear restart drives AI infrastructure",
+        "details": "Post-Fukushima nuclear restarts accelerating due to AI demand + aging demographics requiring automation. Limited land for solar/wind at scale. Nuclear historically 30%+ of generation, now rebuilding.",
+        "energy_strategy": "Nuclear restart + LNG + limited renewables",
+        "employment_impact": "Nuclear workforce rebuilding from demographic-driven shortage"
+      }
+    ]
+  },
+
+  "model_cards": [
+    {
+      "card_id": "MC-UTL-001",
+      "model_name": "AI-Powered Grid Optimization and Dispatch Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "221118",
+      "sector_name": "Electric Power Generation / Grid Operations",
+      "one_line": "AI platform for real-time grid dispatch optimization, renewable integration, and load balancing — reducing outages 10%+ and improving uptime 11% for utilities managing intermittent generation and data center load",
+      "macro_source": "P-038 AI Infrastructure Chain Constraint — grid must manage 2x complexity (bidirectional flows + data center demand spikes) with existing infrastructure",
+      "forces": ["F1_technology", "F6_energy"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "US electricity demand growing 2%+ annually for first time in 20 years",
+            "Solar + wind at 19% of generation creates intermittency management challenge that exceeds human capability",
+            "Data center load is 24/7 baseload demand on a grid designed for diurnal patterns",
+            "PJM fell 6,625MW short of reliability target in latest capacity auction",
+            "Predictive maintenance AI saves $5-8B/yr industry-wide; grid dispatch optimization saves additional $10-15B/yr",
+            "Virtual power plants at 37.5GW need AI orchestration to deliver reliability"
+          ],
+          "supply_gap": "Utilities managing 21st-century complexity (bidirectional flows, intermittent renewables, data center baseload, distributed storage, VPPs) with 20th-century control systems. Human operators cannot optimize dispatch across thousands of generation sources in real-time. AI dispatch optimization proven to reduce costs 15-25% and improve reliability measurably.",
+          "inevitability_argument": "Grid complexity is growing exponentially (more generation sources, bidirectional flows, intermittent supply, variable demand) while the physics of electricity require real-time balancing. AI is the only scalable solution for managing this complexity. Every major grid operator will deploy AI dispatch within 5 years.",
+          "pattern_refs": ["P-038"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "ML/reinforcement learning can optimize multi-variable dispatch problems with thousands of generation sources in real-time. Digital twin technology enables simulation of grid scenarios before deployment. Edge AI enables local optimization at substation level."},
+          {"force_id": "F6_energy", "contribution_score": 10, "mechanism": "F6 is THE driver. Data center demand growth + renewable intermittency + storage integration + grid constraint = AI grid optimization is the enabler that makes the energy transition possible at data center scale."}
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 3, "notes": "Software platform with cloud compute requirements. No hardware dependencies. Requires grid data feeds (SCADA, PMU) which are utility-operated."},
+          "regulatory_contagion": {"score": 8, "notes": "FERC and state PUC regulations govern grid operations. AI grid optimization must comply with reliability standards (NERC). Regulatory approval required for rate-basing AI investments. BUT: regulatory environment supportive of grid modernization."},
+          "competitive_import": {"score": 6, "notes": "GE Vernova, Siemens, ABB have grid management solutions. AutoGrid, Stem, Uplight in adjacent markets. No dominant AI-native grid dispatch platform yet. Incumbent SCADA/EMS vendors are 20+ year old architectures."},
+          "leading_indicator_transfer": {"score": 7, "notes": "Track: utility AI pilot announcements, FERC dockets on AI-enabled grid management, PJM/ERCOT AI integration plans. Leading indicators: VPP capacity growth, utility AI capital spend in rate cases."},
+          "resource_talent_flow": {"score": 6, "notes": "Requires power systems engineers + ML engineers — rare combination. University programs expanding (Stanford, MIT, Georgia Tech power systems + AI). Talent available from Google DeepMind energy optimization (Tapestry) alumni."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2025-2027",
+          "perez_phase_target": "deployment",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Grid optimization is regulated utility infrastructure — not discretionary tech spend. Utilities rate-base AI investments through PUC approval. Revenue from regulated utilities is recession-resistant. Grid complexity only increases regardless of economic conditions.",
+          "time_sensitivity": "high — grid complexity is growing faster than utility capacity to manage it. First movers with proven AI dispatch capture utility procurement cycles (3-5 year contracts)."
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$20M",
+          "time_to_revenue_months": 12,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "15-25% grid operations cost reduction vs. manual dispatch + legacy SCADA",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "scores": {
+        "SN": 8.5,
+        "SN_justification": "Grid complexity outpacing human management is structural. 19% intermittent generation + data center baseload + distributed storage + VPPs = human operators physically cannot optimize. AI dispatch is the only scalable solution. Deducted 0.5 for regulated utility procurement cycles (slow adoption even when necessity is high).",
+        "FA": 9.0,
+        "FA_justification": "F6 energy (accelerating, 10/10) + F1 technology (accelerating, 9/10). Strongest possible dual-force alignment. Both forces driving adoption independently — demand growth requires optimization, and AI capability enables it.",
+        "EC": 7.0,
+        "EC_justification": "Regulatory approval required (rate-basing through PUC). Competitive landscape has incumbents (GE, Siemens) but they have legacy architectures. FERC modernization directive supportive. Utility procurement cycles are slow (12-24 months). International transferability strong (EU, MENA, India all need grid AI).",
+        "TG": 8.0,
+        "TG_justification": "2025-2027 window optimal: grid complexity crossing human management threshold NOW. FERC reforms creating openness to new technology. Utility AI budgets expanding. Cash-flow positive within 18 months from first utility contract. Crash-resilient (regulated revenue).",
+        "CE": 7.5,
+        "CE_justification": "SaaS margins at 75%. Data flywheel: more grid data = better AI optimization. Utility switching costs high (3-5 year contracts, integration depth). Capital efficient relative to value delivered ($10-15B/yr industry savings addressable). Deducted for long sales cycles."
+      },
+      "composite": 80.5,
+      "composite_calculation": "(8.5*25 + 9.0*25 + 7.0*20 + 8.0*15 + 7.5*15) / 10 = (212.5 + 225 + 140 + 120 + 112.5) / 10 = 81.0",
+      "composite_corrected": 81.0,
+      "category": "STRUCTURAL_WINNER",
+      "category_justification": "SN >= 8.5 threshold with all axes >= 7.0. Grid complexity outpacing human management is a structural inevitability. Meets all STRUCTURAL_WINNER criteria.",
+      "qcew_reference": "NAICS 22111 Electric Power Generation: 403K workers, Baumol 1.85, +6.1% employment growth",
+
+      "falsification_criteria": [
+        "If utility AI adoption proves slower than projected (< 30% by 2028), reduces TAM timing",
+        "If incumbent SCADA vendors successfully integrate AI (GE/Siemens AI refresh), reduces market share opportunity",
+        "If grid complexity flattens (data center demand undershoots), reduces urgency",
+        "If regulatory barriers to AI in grid operations emerge (safety incidents with AI dispatch)"
+      ]
+    },
+
+    {
+      "card_id": "MC-UTL-002",
+      "model_name": "Nuclear Plant AI Operations and Predictive Maintenance",
+      "architecture": "vertical_saas",
+      "sector_naics": "221113",
+      "sector_name": "Nuclear Electric Power Generation",
+      "one_line": "AI platform for nuclear plant predictive maintenance, operational optimization, and NRC compliance automation — targeting 37,538 nuclear workers at highest-Baumol subsector (2.22)",
+      "macro_source": "P-038 + Nuclear Renaissance — 10GW+ committed for AI requires operational excellence at aging and restarted plants",
+      "forces": ["F1_technology", "F6_energy", "F4_capital"],
+
+      "scores": {
+        "SN": 8.5,
+        "SN_justification": "Nuclear plant operations is the highest-Baumol utility subsector (2.22) — massive stored disruption energy. 37,538 workers at high wages performing safety-critical but substantially routine-cognitive tasks (monitoring, compliance documentation, maintenance scheduling). Nuclear restarts (Palisades, TMI) and SMRs will operate with smaller crews, requiring AI augmentation. Workforce aging (30-year talent gap) creates structural necessity.",
+        "FA": 8.5,
+        "FA_justification": "F6 nuclear renaissance (10GW+ committed) + F1 AI capability for safety-critical predictive maintenance + F4 capital flowing ($1B+ DOE loans, hyperscaler PPAs worth $10B+). Triple-force alignment. Deducted 0.5 for nuclear psychology friction (TMI name association).",
+        "EC": 7.0,
+        "EC_justification": "NRC regulatory approval required for AI in nuclear operations — significant but navigable barrier. NRC under 18-month review mandate and generally supportive of operational efficiency. Limited competitive field (nuclear-specific AI is niche). International transfer: France (56 reactors), Japan (restarts), Korea, China (6-8/yr construction).",
+        "TG": 7.5,
+        "TG_justification": "Palisades restart Feb/Mar 2026 and TMI 2027 create immediate market entry. SMRs begin operations 2028-2032. Window opening NOW as industry gears up. But nuclear sales cycles are long (12-24 months) and NRC-driven. Cash-flow within 18 months of first deployment.",
+        "CE": 7.5,
+        "CE_justification": "Extreme switching costs (nuclear safety systems validated over years). NRC compliance integration creates regulatory moat. Data flywheel from plant operations data. Small addressable market (93 US reactors + restarts + SMRs) but very high revenue per deployment ($2-10M/plant/year). International expansion (440 global reactors)."
+      },
+      "composite": 79.75,
+      "composite_calculation": "(8.5*25 + 8.5*25 + 7.0*20 + 7.5*15 + 7.5*15) / 10 = (212.5 + 212.5 + 140 + 112.5 + 112.5) / 10 = 79.0",
+      "composite_corrected": 79.0,
+      "category": "FORCE_RIDER",
+      "category_justification": "FA >= 8.0 with SN >= 7.0 and composite >= 70. Strong dual-force alignment (F6 nuclear renaissance + F1 AI capability). Not STRUCTURAL_WINNER because market size is small (93 US reactors) and NRC approval adds timing uncertainty.",
+      "qcew_reference": "NAICS 221113 Nuclear Electric Power Generation: 37,538 workers, Baumol 2.22 (highest in utilities), stable employment"
+    },
+
+    {
+      "card_id": "MC-UTL-003",
+      "model_name": "Grid-Scale Battery Storage Development and AI Management Platform",
+      "architecture": "platform_infrastructure",
+      "sector_naics": "221118",
+      "sector_name": "Electric Power Generation / Energy Storage",
+      "one_line": "Develop, deploy, and AI-manage grid-scale battery storage assets — the critical infrastructure bridging intermittent renewables and 24/7 data center demand, at costs below $100/MWh",
+      "macro_source": "P-038 — Storage is the binding constraint between renewable generation (cheap, intermittent) and data center demand (24/7 baseload)",
+      "forces": ["F6_energy", "F1_technology", "F4_capital"],
+
+      "scores": {
+        "SN": 9.0,
+        "SN_justification": "Grid-scale storage is the bridge between cheap-but-intermittent renewables and 24/7 data center demand. Without storage, renewable generation cannot serve baseload. 13.4GW added in US 2025 (+49.4%), 21.5GW planned next 12 months. This is the fastest-growing infrastructure category in the energy sector. 4-hour storage below $100/MWh makes it economically inevitable. Every grid with significant renewable penetration MUST have storage.",
+        "FA": 9.0,
+        "FA_justification": "F6 energy demand (accelerating, storage is THE solution for intermittency) + F1 technology (AI management optimizes storage dispatch, extending asset life and maximizing revenue) + F4 capital (infrastructure investors seeking long-duration yield assets, $35B+ gas turbine investment could partially redirect to storage). Triple-force alignment at maximum.",
+        "EC": 6.5,
+        "EC_justification": "Capital-intensive ($50-100M per 100MW/400MWh project). Supply chain dependent on lithium-ion batteries (China dominance, export controls). Permitting and interconnection queue still applies (though shorter for storage-only projects). Competitive field includes Fluence, Tesla Energy, NextEra, AES. Policy uncertainty from credit termination.",
+        "TG": 7.5,
+        "TG_justification": "2025-2027 window: storage costs below $100/MWh, renewable deployment creating immediate need, IRA credits still available for projects started before Jul 2026. After credit expiration, storage still economic but margins compressed. Revenue from arbitrage, capacity markets, and ancillary services. Cash-flow positive within 24-36 months per project.",
+        "CE": 6.0,
+        "CE_justification": "Capital-intensive infrastructure (not SaaS). Each project $50-100M. But: long-duration revenue streams (15-20 year contracts), regulated utility procurement provides revenue certainty, AI management creates operational advantage. Deducted for capital intensity and supply chain risk."
+      },
+      "composite": 77.5,
+      "composite_calculation": "(9.0*25 + 9.0*25 + 6.5*20 + 7.5*15 + 6.0*15) / 10 = (225 + 225 + 130 + 112.5 + 90) / 10 = 78.25",
+      "composite_corrected": 78.25,
+      "category": "FORCE_RIDER",
+      "category_justification": "FA >= 8.0 with SN >= 7.0 and composite >= 70. Maximum F6 alignment. Not STRUCTURAL_WINNER due to capital intensity (CE 6.0) and supply chain dependency. Would upgrade if storage costs continue declining and supply chain diversifies.",
+      "qcew_reference": "NAICS 221118 Other Electric Power Generation: +17.5% employment growth. NAICS 221114 Solar: +51.6% (storage co-located with solar)"
+    },
+
+    {
+      "card_id": "MC-UTL-004",
+      "model_name": "Solar + Storage Development for Data Center Campuses",
+      "architecture": "project_developer",
+      "sector_naics": "221114",
+      "sector_name": "Solar Electric Power Generation",
+      "one_line": "Develop and deploy co-located solar + battery storage systems for data center campuses — providing behind-the-meter clean power that bypasses grid queue and reduces hyperscaler energy costs",
+      "macro_source": "P-038 — Grid queue bypass + fastest-growing sub-sector (+51.6% employment) + data center demand",
+      "forces": ["F6_energy", "F4_capital", "F1_technology"],
+
+      "scores": {
+        "SN": 8.0,
+        "SN_justification": "Data centers need power NOW but grid queue is 8+ years. BTM solar+storage bypasses queue entirely. Solar LCOE $38-78/MWh is cheapest new generation. 25%+ of new 500MW+ data centers will have BTM power by 2030 (up from 1%). Solar employment +51.6% signals massive market demand. BUT: solar alone is intermittent — requires storage pairing and gas backup for 24/7 reliability. Deducted 1.0 for intermittency limitation requiring hybrid solutions.",
+        "FA": 8.5,
+        "FA_justification": "F6 energy demand (data centers MUST have power) + F4 capital (hyperscalers committing $100B+ to data center campus buildout, PPAs for clean energy) + F1 technology (AI optimizes solar+storage dispatch, improves capacity factors). Strong triple-force alignment. Deducted 0.5 for One Big Beautiful Bill credit termination headwind.",
+        "EC": 6.0,
+        "EC_justification": "IRA solar credits expire for construction starting after Jul 2026 (15-30% cost impact). Supply chain concentrated in China (80%+ of solar panels). Competitive field intense (Nextracker, First Solar, many EPCs). Permitting delays in some jurisdictions. But: LCOE still competitive without credits in best locations.",
+        "TG": 8.0,
+        "TG_justification": "URGENT: rush-to-build before Jul 2026 credit expiration creates immediate market. Data centers signing PPAs NOW for solar+storage. After Jul 2026, market adjusts but demand continues (LCOE advantage holds). Cash-flow within 12-18 months from PPA signing. Crash-resilient (PPAs are 10-20 year contracts).",
+        "CE": 6.5,
+        "CE_justification": "Capital-intensive ($1-2M per MW solar + $50-100/kWh storage). But: project finance available (infrastructure debt at 5-6%), PPA revenue certainty, 20-year asset life. Revenue per project $5-50M depending on scale. Margins 15-25% on development + ongoing operations fee. Not SaaS-level capital efficiency but proven project finance model."
+      },
+      "composite": 75.5,
+      "composite_calculation": "(8.0*25 + 8.5*25 + 6.0*20 + 8.0*15 + 6.5*15) / 10 = (200 + 212.5 + 120 + 120 + 97.5) / 10 = 75.0",
+      "composite_corrected": 75.0,
+      "category": "TIMING_ARBITRAGE",
+      "category_justification": "TG >= 8.0 with SN >= 7.0 and composite >= 65. The Jul 2026 credit expiration creates a specific timing window. Pre-Jul 2026 projects capture IRA credits worth 15-30% of project cost. Post-Jul 2026, still viable but lower margin. Time-sensitive entry window.",
+      "qcew_reference": "NAICS 221114 Solar Electric Power Generation: +51.6% employment growth (fastest in QCEW dataset)"
+    },
+
+    {
+      "card_id": "MC-UTL-005",
+      "model_name": "Virtual Power Plant AI Orchestration Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "221118",
+      "sector_name": "Electric Power Generation / Distributed Energy",
+      "one_line": "AI platform orchestrating distributed energy resources (solar, storage, EV chargers, smart thermostats) into virtual power plants — aggregating 37.5GW today toward 100GW+ by 2030",
+      "macro_source": "P-038 — Distributed energy management is the software layer enabling grid flexibility without new transmission",
+      "forces": ["F1_technology", "F6_energy"],
+
+      "scores": {
+        "SN": 7.5,
+        "SN_justification": "VPPs grew to 37.5GW in 2025 but market is 'broadening faster than deepening' — many deployments but limited scale per deployment. The structural need is clear: distributed resources (rooftop solar, home batteries, EV chargers) must be coordinated for grid value. But: VPPs compete with utility-owned grid upgrades, and coordination of millions of small assets is technically challenging. The need is real but execution is unproven at scale.",
+        "FA": 8.0,
+        "FA_justification": "F1 technology (AI/ML essential for real-time optimization of thousands of distributed assets) + F6 energy (grid needs flexibility without new transmission, DERs growing rapidly). Dual-force alignment. Deducted for VPP-specific policy uncertainty (state-by-state DER compensation varies widely).",
+        "EC": 6.5,
+        "EC_justification": "State regulatory variation in DER compensation creates fragmented market. Competitive landscape: AutoGrid (acquired by Schneider), Stem, Swell Energy, Tesla Autobidder, multiple utility-internal platforms. But no dominant AI-native VPP platform at 100GW+ scale. Utility procurement cycles slow.",
+        "TG": 7.0,
+        "TG_justification": "2026 identified as make-or-break year for VPP scaling (Utility Dive analysis). Market must 'scale or be left behind.' IRA incentives for demand response and grid flexibility. But: revenue models still proving out. Cash-flow within 18-24 months from utility partnerships. Crash-resilient if utility contracts secured.",
+        "CE": 7.0,
+        "CE_justification": "Software-first model (SaaS + performance-based fees). Margins 65-80%. Data flywheel from DER performance data. Platform economics (each new asset improves coordination for all). Low capital intensity relative to grid hardware alternatives. Deducted for slow utility sales cycles."
+      },
+      "composite": 73.0,
+      "composite_calculation": "(7.5*25 + 8.0*25 + 6.5*20 + 7.0*15 + 7.0*15) / 10 = (187.5 + 200 + 130 + 105 + 105) / 10 = 72.75",
+      "composite_corrected": 72.75,
+      "category": "FORCE_RIDER",
+      "category_justification": "FA >= 8.0 with SN >= 7.0 and composite >= 70. Riding F6 energy + F1 technology waves. VPP market must prove it can scale — but the forces driving it are strong and accelerating.",
+      "qcew_reference": "NAICS 221118 Other Electric Power Generation: +17.5% employment growth"
+    },
+
+    {
+      "card_id": "MC-UTL-006",
+      "model_name": "Data Center Power Infrastructure Developer (Behind-the-Meter)",
+      "architecture": "project_developer",
+      "sector_naics": "22111",
+      "sector_name": "Electric Power Generation",
+      "one_line": "Develop behind-the-meter power infrastructure for data centers (gas turbines + solar + storage hybrid) — bypassing 8+ year grid queue for hyperscaler and colocation operators",
+      "macro_source": "P-038 — Grid queue bypass is the highest-urgency need in AI infrastructure chain",
+      "forces": ["F6_energy", "F4_capital"],
+
+      "scores": {
+        "SN": 8.5,
+        "SN_justification": "Grid queue is 8+ years. Data center demand is NOW. BTM power is the ONLY path to power data centers within business-relevant timelines. 25-33% of incremental DC electricity demand will be BTM through 2030. Meta 5GW, Fermi 6GW, Chevron 5GW projects. Gas turbine investment topping $35B/yr. The gap between power demand and grid availability MUST be bridged by BTM solutions. This is structural necessity at its most urgent.",
+        "FA": 8.0,
+        "FA_justification": "F6 energy demand (data centers will pay premium for immediate power) + F4 capital (hyperscalers have $500B+ committed capex, $35B+ gas turbine investment flowing). Strong dual-force alignment. Deducted for emissions/environmental concerns with gas-based BTM power.",
+        "EC": 6.0,
+        "EC_justification": "Gas turbine delivery backlog 18-24 months. Fuel cell supply chains constrained. Permitting required even for BTM (environmental review). Competitive field: major gas turbine OEMs (GE, Siemens), project developers (Woodway Energy, Fermi America). Emissions concerns may create regulatory risk. Natural gas price volatility affects project economics.",
+        "TG": 8.5,
+        "TG_justification": "MOST URGENT timing of any utility model card. Data center operators need power in 12-24 months, not 8+ years. Every quarter of delay costs hyperscalers billions in lost compute capacity. First movers with gas turbine procurement relationships and permitting expertise capture the wave. Cash-flow within 18-24 months of project start.",
+        "CE": 5.5,
+        "CE_justification": "Capital-intensive ($500M-$2B per major BTM project). Requires gas turbine procurement, site development, fuel infrastructure. But: long-term PPAs from hyperscalers provide revenue certainty. Margins 10-20% on development. Not capital-efficient in isolation but bankable with PPA backing."
+      },
+      "composite": 75.25,
+      "composite_calculation": "(8.5*25 + 8.0*25 + 6.0*20 + 8.5*15 + 5.5*15) / 10 = (212.5 + 200 + 120 + 127.5 + 82.5) / 10 = 74.25",
+      "composite_corrected": 74.25,
+      "category": "TIMING_ARBITRAGE",
+      "category_justification": "TG >= 8.0 with SN >= 7.0 and composite >= 65. The 8+ year grid queue creates a specific timing window where BTM power commands premium pricing. As grid reforms reduce wait times (2028+), BTM urgency premium declines. Act NOW.",
+      "qcew_reference": "NAICS 22111 Electric Power Generation: 403K workers, Baumol 1.85, +6.1% employment growth"
+    },
+
+    {
+      "card_id": "MC-UTL-007",
+      "model_name": "Utility Digital Twin and Predictive Maintenance Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "22111",
+      "sector_name": "Electric Power Generation / Utility Operations",
+      "one_line": "AI-powered digital twin platform for utility asset management, predictive maintenance, and operational optimization — reducing maintenance costs 30-50% and preventing 90%+ of unplanned outages",
+      "macro_source": "P-038 + T3 Baumol Cure — Utilities sector Baumol 1.77, AI reducing operational costs that have inflated above CPI for decades",
+      "forces": ["F1_technology", "F6_energy"],
+
+      "scores": {
+        "SN": 7.5,
+        "SN_justification": "Baumol 1.77 across utilities = significant stored disruption energy. Predictive maintenance is 3-5x less expensive than reactive. National Grid avoided 1,000 outages/yr and saved $7.8M with AI. Siemens digital twin for steam generators saves $1.7B/yr industry-wide. 40%+ of utilities already using AI for predictive maintenance (adoption approaching near-total by 2028). Structural need confirmed but adoption already underway — window closing.",
+        "FA": 7.5,
+        "FA_justification": "F1 technology (AI/ML + IoT sensors + digital twins are mature and proven for utility applications) + F6 energy (grid reliability requirements increasing as demand grows and generation mix shifts). Solid dual-force alignment. Deducted for technology maturity — this is proven, not frontier, which reduces first-mover advantage.",
+        "EC": 6.5,
+        "EC_justification": "Competitive landscape: GE Vernova, Siemens, ABB, Bentley Systems, Hitachi Energy all have digital twin / predictive maintenance solutions. IBM Watson IoT for utilities. Established market with incumbents. But: most incumbent solutions are pre-AI generation and being rebuilt. AI-native platforms can leapfrog. International market (EU, MENA, SEA) large and underpenetrated.",
+        "TG": 7.0,
+        "TG_justification": "Market is active NOW — 40%+ adoption already. Window for entry is 2025-2027 before incumbents complete AI upgrades. Crash-resilient (utility operations is non-discretionary spend). Cash-flow within 12-18 months from utility pilot. But: not as urgent as grid dispatch or BTM power.",
+        "CE": 7.5,
+        "CE_justification": "SaaS model with 70-80% margins. Utility switching costs high (digital twin integration requires deep data connection). Data flywheel from asset performance data across multiple utilities. Lower capital intensity than infrastructure models. Deducted for long utility sales cycles (12-24 months)."
+      },
+      "composite": 72.75,
+      "composite_calculation": "(7.5*25 + 7.5*25 + 6.5*20 + 7.0*15 + 7.5*15) / 10 = (187.5 + 187.5 + 130 + 105 + 112.5) / 10 = 72.25",
+      "composite_corrected": 72.25,
+      "category": "FORCE_RIDER",
+      "category_justification": "FA >= 7.0 (barely) with all axes >= 6.5 and composite >= 70. Riding F1 + F6 technology and energy waves. Proven market with growing demand. Not STRUCTURAL_WINNER due to established competitive landscape.",
+      "qcew_reference": "NAICS 22111 Electric Power Generation: 403K workers, Baumol 1.85, +6.1% employment growth"
+    },
+
+    {
+      "card_id": "MC-UTL-008",
+      "model_name": "Grid Interconnection Queue Navigation and Expediting Service",
+      "architecture": "advisory_platform",
+      "sector_naics": "22111",
+      "sector_name": "Electric Power Generation / Grid Development",
+      "one_line": "AI-augmented platform for navigating the 2,300GW grid interconnection queue — helping generation developers expedite approvals, optimize cluster study positioning, and secure interconnection agreements across ISOs",
+      "macro_source": "P-038 — 2,300GW queued at 8+ years creates $10B+ bottleneck cost that services can partially alleviate",
+      "forces": ["F6_energy", "F1_technology"],
+
+      "scores": {
+        "SN": 7.0,
+        "SN_justification": "2,300GW of projects stuck in queue with 8+ year waits. Every project needs to navigate complex ISO-specific interconnection processes. FERC Order 2023 transition creates new rules that developers must understand. Cluster study optimization can determine whether a project proceeds or dies. But: this is a professional services / advisory business, not a platform with network effects. Demand is real but sustainable competitive advantage is limited.",
+        "FA": 7.0,
+        "FA_justification": "F6 energy demand (every generation project MUST interconnect) + F1 technology (AI can analyze queue data, model cluster study outcomes, optimize application strategy). But: this is a narrow application of AI to a regulatory process — not a deep technology play. Deducted for narrow applicability.",
+        "EC": 5.5,
+        "EC_justification": "Competitive landscape: large law firms (Bracewell, Stoel Rives), consulting firms (ICF, Guidehouse), and ISO-specific consultants already serve this market. AI augmentation is an advantage but the underlying expertise is human-judgment-intensive. Market is fragmented and relationship-driven. If FERC reforms succeed and reduce wait times, TAM declines.",
+        "TG": 8.5,
+        "TG_justification": "MAXIMUM urgency: FERC Order 2023 transition is happening NOW. Developers must reapply under new cluster study rules. 2,300GW of projects need guidance. The transition window (2025-2028) creates intense demand. After reforms stabilize, demand normalizes. This is a pure timing arbitrage opportunity.",
+        "CE": 7.0,
+        "CE_justification": "Low capital requirements ($500K-$2M to build AI tools + hire experts). High margins (advisory/consulting at 60-80%). Revenue per engagement $50K-$500K per project. No capital-intensive infrastructure needed. Cash-flow within 6 months. But: limited scalability beyond human expert capacity unless AI truly automates queue analysis."
+      },
+      "composite": 70.5,
+      "composite_calculation": "(7.0*25 + 7.0*25 + 5.5*20 + 8.5*15 + 7.0*15) / 10 = (175 + 175 + 110 + 127.5 + 105) / 10 = 69.25",
+      "composite_corrected": 69.25,
+      "category": "TIMING_ARBITRAGE",
+      "category_justification": "TG >= 8.0 with SN >= 7.0 and composite >= 65. The FERC Order 2023 transition creates a specific 2-3 year window of intense demand for queue navigation services. After reform stabilization, demand normalizes. Pure timing play.",
+      "qcew_reference": "NAICS 22111 Electric Power Generation: 403K workers, +6.1% growth — projects in queue represent future employment growth"
+    },
+
+    {
+      "card_id": "MC-UTL-009",
+      "model_name": "Natural Gas Distribution AI Operations Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "2212",
+      "sector_name": "Natural Gas Distribution",
+      "one_line": "AI platform for natural gas distribution network optimization, leak detection, safety compliance, and demand forecasting — serving 114K workers at Baumol 1.87 while managing the gas-to-electric transition",
+      "macro_source": "T3 Baumol Cure — Natural gas distribution at Baumol 1.87 with 114K workers is a classic Baumol cure target. Gas distribution must operate efficiently through the multi-decade energy transition.",
+      "forces": ["F1_technology", "F6_energy"],
+
+      "scores": {
+        "SN": 7.0,
+        "SN_justification": "Baumol 1.87 signals significant stored disruption energy in gas distribution operations. 114K workers performing monitoring, leak detection, demand forecasting, maintenance scheduling — substantially routine cognitive. AI leak detection and demand forecasting proven to reduce costs 20-30%. Pipeline Safety Improvement Act mandates advanced leak detection. But: long-term structural question — does natural gas distribution shrink as electrification proceeds? Near-term growth from data center gas demand but long-term uncertainty.",
+        "FA": 6.5,
+        "FA_justification": "F1 technology (AI leak detection, demand forecasting proven) + F6 energy (natural gas role in transition is complex — near-term growth from data center peakers but long-term decline as electrification proceeds). Mixed F6 alignment. Deducted for long-term structural uncertainty of gas distribution.",
+        "EC": 6.5,
+        "EC_justification": "Regulatory mandate for pipeline safety creates compliance floor (Pipeline Safety Improvement Act). Competitive landscape: established pipeline management vendors (Trimble, OSIsoft/AVEVA), plus gas-specific AI startups. Utility procurement cycles slow. International market limited to countries with significant gas distribution networks.",
+        "TG": 6.5,
+        "TG_justification": "Pipeline safety mandates create ongoing compliance demand. Near-term data center gas demand creates growth tailwind. But: not urgently time-sensitive like grid dispatch or BTM power. Cash-flow within 12-18 months from utility pilots. Crash-resilient (regulated utility, safety-mandated).",
+        "CE": 7.0,
+        "CE_justification": "SaaS model with 70-80% margins. Utility switching costs moderate to high. Regulatory compliance creates customer lock-in. Data flywheel from gas network performance data. Lower capital intensity than infrastructure models."
+      },
+      "composite": 67.5,
+      "composite_calculation": "(7.0*25 + 6.5*25 + 6.5*20 + 6.5*15 + 7.0*15) / 10 = (175 + 162.5 + 130 + 97.5 + 105) / 10 = 67.0",
+      "composite_corrected": 67.0,
+      "category": "CONDITIONAL",
+      "category_justification": "Composite between 60-70, no single axis dominant enough for FORCE_RIDER. The model is viable but conditional on natural gas distribution maintaining relevance through the energy transition. If electrification accelerates faster than expected, TAM shrinks. If data center gas demand extends gas infrastructure life, TAM grows.",
+      "qcew_reference": "NAICS 2212 Natural Gas Distribution: 114K workers, Baumol 1.87"
+    },
+
+    {
+      "card_id": "MC-UTL-010",
+      "model_name": "Data Center Cooling Technology and Water Management Platform",
+      "architecture": "hardware_plus_saas",
+      "sector_naics": "221118",
+      "sector_name": "Electric Power Generation / Data Center Infrastructure",
+      "one_line": "Advanced cooling systems (direct-to-chip liquid cooling, immersion cooling) with AI-managed water/energy optimization — solving the data center water-energy tradeoff at 160+ water-scarce facilities",
+      "macro_source": "P-038 second-order — Water stress from data centers is materializing as binding constraint in arid regions. Microsoft zero-water pilot is signal of hyperscaler demand.",
+      "forces": ["F6_energy", "F1_technology"],
+
+      "scores": {
+        "SN": 7.5,
+        "SN_justification": "160+ data centers in water-scarce locations. Phoenix 177M gal/day for ~60 centers. Regulators mandating dry/hybrid cooling. Microsoft zero-water-evaporation pilot signals hyperscaler commitment to solving this. Advanced cooling reduces power 50-60% and water consumption 80-100%. Every new data center in water-scarce region needs this technology. But: cooling technology is hardware-centric with established competitors (Asetek, GRC, Submer, CoolIT).",
+        "FA": 7.5,
+        "FA_justification": "F6 energy (water is the hidden constraint on data center expansion — solving water frees energy for compute) + F1 technology (AI management of cooling systems optimizes water-energy-compute tradeoff in real-time). Solid alignment but narrower than grid-level opportunities.",
+        "EC": 5.5,
+        "EC_justification": "Hardware competition from established liquid cooling companies (Asetek, GRC, Submer, CoolIT, Vertiv). Microsoft, Google developing proprietary cooling. Supply chain for specialty cooling equipment. Patent landscape complex. But: AI-managed optimization layer is less competed. International demand (MENA especially) very high.",
+        "TG": 7.5,
+        "TG_justification": "Demand is immediate — data centers being built NOW in water-scarce locations need cooling solutions. Microsoft pilot signals hyperscaler procurement. Regulatory mandates (Arizona, local jurisdictions) creating compliance floor. Cash-flow within 12-18 months from first deployments.",
+        "CE": 6.0,
+        "CE_justification": "Hardware + software hybrid — higher capital intensity than pure SaaS. Cooling equipment costs $5-20M per large data center. But: recurring revenue from AI management platform ($50-200K/yr per facility). Moderate gross margins (40-60% for hardware, 75%+ for software layer). International market opportunity (MENA, India) large."
+      },
+      "composite": 69.75,
+      "composite_calculation": "(7.5*25 + 7.5*25 + 5.5*20 + 7.5*15 + 6.0*15) / 10 = (187.5 + 187.5 + 110 + 112.5 + 90) / 10 = 68.75",
+      "composite_corrected": 68.75,
+      "category": "CONDITIONAL",
+      "category_justification": "Composite between 65-70. Strong structural need but competitive landscape and hardware capital intensity limit score. Conditional on water regulation tightening further and AI management layer providing differentiation vs. pure hardware competitors.",
+      "qcew_reference": "NAICS 221118 Other Electric Power Generation: +17.5% employment growth"
+    }
+  ],
+
+  "model_cards_summary": {
+    "total_cards": 10,
+    "card_index": [
+      {"id": "MC-UTL-001", "name": "AI-Powered Grid Optimization and Dispatch Platform", "composite": 81.0, "category": "STRUCTURAL_WINNER"},
+      {"id": "MC-UTL-002", "name": "Nuclear Plant AI Operations and Predictive Maintenance", "composite": 79.0, "category": "FORCE_RIDER"},
+      {"id": "MC-UTL-003", "name": "Grid-Scale Battery Storage Development and AI Management", "composite": 78.25, "category": "FORCE_RIDER"},
+      {"id": "MC-UTL-004", "name": "Solar + Storage Development for Data Center Campuses", "composite": 75.0, "category": "TIMING_ARBITRAGE"},
+      {"id": "MC-UTL-005", "name": "Virtual Power Plant AI Orchestration Platform", "composite": 72.75, "category": "FORCE_RIDER"},
+      {"id": "MC-UTL-006", "name": "Data Center Power Infrastructure Developer (BTM)", "composite": 74.25, "category": "TIMING_ARBITRAGE"},
+      {"id": "MC-UTL-007", "name": "Utility Digital Twin and Predictive Maintenance", "composite": 72.25, "category": "FORCE_RIDER"},
+      {"id": "MC-UTL-008", "name": "Grid Interconnection Queue Navigation Service", "composite": 69.25, "category": "TIMING_ARBITRAGE"},
+      {"id": "MC-UTL-009", "name": "Natural Gas Distribution AI Operations", "composite": 67.0, "category": "CONDITIONAL"},
+      {"id": "MC-UTL-010", "name": "Data Center Cooling Technology and Water Management", "composite": 68.75, "category": "CONDITIONAL"}
+    ],
+    "stats": {
+      "mean_composite": 73.75,
+      "max_composite": 81.0,
+      "min_composite": 67.0,
+      "structural_winners": 1,
+      "force_riders": 4,
+      "timing_arbitrage": 3,
+      "conditional": 2
+    },
+    "comparison_to_other_sectors": {
+      "vs_defense": "Utilities mean 73.75 vs defense mean 74.8. Close parity — both are high-F6/F1 sectors. Defense has more STRUCTURAL_WINNERS (4 vs 1) due to zero fear friction and unlimited buyer (government). Utilities constrained by regulated procurement cycles and capital intensity.",
+      "vs_financial_services": "Utilities mean 73.75 vs FS deep-dive top cards 78.5-71.25. Utilities competitive at the top (MC-UTL-001 at 81.0 is a potential top-10 card) but capital intensity pulls sector average down.",
+      "vs_education": "Utilities mean 73.75 vs education mean 68.9. Utilities significantly higher due to low fear friction (gap=1 vs education gap=5) and stronger F6 alignment."
+    }
+  },
+
+  "key_findings": [
+    {
+      "finding_id": "UTL-F1",
+      "finding": "Grid interconnection queue is THE binding constraint on AI scaling — and it is being attacked",
+      "detail": "The 2,300GW queue with 8+ year PJM wait times is the single point where AI scaling physically stops. But FERC Order 2023, DOE's April 2026 directive, and PJM-specific reforms are creating a clear resolution pathway. The question is whether reforms can outpace accelerating demand. PJM expects 1-2 year waits post-reform, which would unlock massive latent generation capacity.",
+      "confidence": "high",
+      "evidence": "FERC Order 2023 compliance approved. DOE directive with April 2026 deadline. PJM 1-2 year post-reform target. 2,300GW queued = massive latent supply.",
+      "implication": "Timing of grid queue resolution determines timing of AI scaling inflection. If reforms work by 2027-2028, AI compute capacity accelerates sharply. If reforms stall, AI scaling plateaus."
+    },
+    {
+      "finding_id": "UTL-F2",
+      "finding": "Behind-the-meter power is the dominant workaround — creating a parallel utility sector",
+      "detail": "25-33% of data center electricity demand will be served by behind-the-meter generation by 2030, up from ~1% today. Meta 5GW, Fermi America 6GW, Chevron 5GW in Texas alone. Gas turbine investment topping $35B/yr. This creates a 'hyperscaler utility' sector outside traditional regulation — with implications for grid reliability, emissions accounting, and traditional utility revenue.",
+      "confidence": "high",
+      "evidence": "Meta, Fermi America, Chevron announced projects. Texas 80GW gas capacity pipeline with ~half for data centers. Gas turbine investment $35B/yr. BTM bypasses grid queue entirely.",
+      "implication": "Traditional utility business model faces revenue displacement from BTM. But also opportunity: utilities that partner with hyperscalers for BTM development capture new revenue. BTM power creates environmental tension (gas-based) vs. climate goals."
+    },
+    {
+      "finding_id": "UTL-F3",
+      "finding": "The nuclear renaissance is real but timeline-limited — SMRs are 2028-2032, restarts are 2026-2027",
+      "detail": "10GW+ nuclear committed for AI. Palisades restart Feb/Mar 2026 (800MW). TMI 2027 (835MW). Kairos Hermes demo 2026. Google 500MW SMR fleet by 2030. NRC 18-month mandate. But: nuclear construction timelines are historically unreliable (Vogtle was 7 years late). SMR commercial operations are 2028-2032 at earliest. Nuclear addresses long-term baseload need but does NOT solve near-term (2026-2028) power constraint.",
+      "confidence": "high_for_restarts_medium_for_SMRs",
+      "evidence": "$1B+ DOE loans. NRC restart panels formed. Palisades delays already occurring (Oct 2025 -> Feb/Mar 2026). SMR construction just beginning.",
+      "implication": "Nuclear is a 2028+ solution, not a 2026 solution. Near-term constraint must be solved by solar+storage, gas peakers, and BTM generation. Nuclear matters enormously for 2030+ grid architecture."
+    },
+    {
+      "finding_id": "UTL-F4",
+      "finding": "Solar employment +51.6% is the strongest growth signal in ANY sector — AND faces policy headwinds",
+      "detail": "NAICS 221114 Solar Electric Power Generation has the fastest employment growth in the entire QCEW dataset. 99.2% of net new US generating capacity in 2026 = solar, wind, and storage. Solar LCOE $38-78/MWh is cheapest new generation. BUT: One Big Beautiful Bill terminates residential solar credit (Dec 2025) and phases out construction-start credits after Jul 2026. Solar still competitive without credits but 15-30% more expensive. Creates rush-to-build then cliff dynamic.",
+      "confidence": "high",
+      "evidence": "QCEW employment data. EIA capacity additions. Lazard LCOE analysis. One Big Beautiful Bill legislation.",
+      "implication": "Solar will continue to grow even without credits (LCOE advantage is structural) but growth rate will moderate post-Jul 2026. Employment growth may decelerate from +51.6% to +15-25% after credit expiration. Pre-Jul 2026 is a timing window."
+    },
+    {
+      "finding_id": "UTL-F5",
+      "finding": "Political backlash against data centers is reshaping the geographic map of AI infrastructure",
+      "detail": "Ohio cut data center pipeline from 30GW to 13GW via tariff. Virginia legislating data center reform. Georgia prohibiting ratepayer cost pass-through. Data center energy costs were electoral issue in 2025 Virginia/Georgia elections. This is NOT a temporary phenomenon — it is a structural political force that redirects data center investment from hostile to welcoming jurisdictions.",
+      "confidence": "high",
+      "evidence": "Ohio AEP pipeline cut 50%. Virginia data center reform bills in 2026 session. Georgia SB 34. Electoral outcomes.",
+      "implication": "Geographic winners shift: Texas (deregulated, pro-business) and Southeast (TVA, available capacity) gain at expense of PJM states (Virginia, Ohio). Site selection now includes 'political risk' as a factor alongside grid capacity, water, and cost."
+    },
+    {
+      "finding_id": "UTL-F6",
+      "finding": "AI-powered grid optimization is the highest-scoring utility opportunity — a potential STRUCTURAL_WINNER",
+      "detail": "MC-UTL-001 (AI Grid Optimization and Dispatch) scored 81.0 — making it a potential top-10 card in the entire model inventory. Grid complexity from renewable intermittency + data center demand + distributed storage + VPPs physically exceeds human management capacity. AI dispatch is the only scalable solution. The market is emerging NOW (40%+ utility adoption, $7.7B market growing 25.65% CAGR). Regulated utility revenue provides crash resilience.",
+      "confidence": "high",
+      "evidence": "40%+ utility adoption. 10% reliability improvement. 11% uptime improvement. $7.7B market growing to $26B+ by 2029. Grid complexity exceeding human management.",
+      "implication": "AI grid optimization is the software equivalent of what railroads were to the industrial revolution — the management layer that makes the physical transformation possible. First-mover with utility contracts captures multi-year switching cost lock-in."
+    },
+    {
+      "finding_id": "UTL-F7",
+      "finding": "The utilities sector is undergoing its biggest transformation since rural electrification — employment will GROW despite AI automation",
+      "detail": "After 20 years of flat demand, utilities face: 2%+ annual demand growth (first in 20 years), generation mix revolution (solar/wind/nuclear/storage), grid modernization ($500B+ capex through 2030), AI operational transformation, and regulatory restructuring. Employment is growing +3.9% already and projected to reach 640-680K by 2031 (from 575K). AI will displace routine cognitive roles (meter reading, basic scheduling) but construction, engineering, nuclear, and AI operations demand far exceeds displacement. This is a NET JOB CREATION sector.",
+      "confidence": "high",
+      "evidence": "+3.9% employment growth (QCEW). +51.6% solar employment. Nuclear workforce recruitment for restarts. 499K building trades shortage. Utility capex at highest since 1970s.",
+      "implication": "Utilities counters the dominant AI-displacement narrative. In physical infrastructure sectors facing demand growth, AI is complementary to labor — it enables MORE capacity, not FEWER workers. This is the Jevons Paradox applied to utility labor: AI makes grid management cheaper, but demand for grid management expands faster than cost reduction displaces workers."
+    },
+    {
+      "finding_id": "UTL-F8",
+      "finding": "The energy constraint on AI creates a CEILING on every other sector's AI transformation timeline",
+      "detail": "Every sector's AI transformation path (financial services, professional services, healthcare, defense, education) is bounded by available AI compute, which is bounded by available electricity. If the grid queue adds 3-5 years to generation projects, AI compute capacity cannot grow fast enough to meet demand projections. This means: inference costs decline slower, enterprise AI deployment waits for compute access, and AI model training timelines extend. The energy constraint is not a utilities-only issue — it is the rate-limiting factor for the entire AI-driven economy transformation.",
+      "confidence": "high",
+      "evidence": "IEA projections. PJM capacity shortfall. Data center occupancy 95%+. $500B NVIDIA backlog.",
+      "implication": "Sector transformation timelines in the state.json should incorporate energy availability as a moderating factor. Sectors assuming unlimited AI scaling (some professional services projections) may be over-optimistic by 1-3 years."
+    }
+  ],
+
+  "pattern_updates": {
+    "P-038_update": {
+      "pattern_id": "P-038",
+      "description_updated": "AI Infrastructure Chain Constraint: NVIDIA $500B backlog -> IEA 945 TWh by 2030 -> PJM $16.4B capacity auction (DC = 40% of costs) -> 2,300GW grid queue at 8+ years -> behind-the-meter gas generation bypassing grid ($35B/yr) -> copper $11K/tonne (+30%) -> water stress (160+ DCs in scarce areas). Grid queue is THE binding constraint, but FERC reform + BTM workaround creating resolution pathway.",
+      "strength_updated": "very_strong",
+      "new_evidence": [
+        "PJM capacity auction: data centers = 40% of $16.4B costs, not just 63% of price increase",
+        "BTM generation scaling to 25-33% of DC power by 2030 (up from 1%)",
+        "Ohio cut DC pipeline 50% via tariff — political constraint materializing",
+        "Gas turbine investment topping $35B/yr for data center BTM",
+        "Nuclear restarts: Palisades Feb/Mar 2026, TMI 2027 — CONSTRUCTION PHASE",
+        "Battery storage: 13.4GW added 2025 (+49.4%), 4-hour below $100/MWh",
+        "FERC reform + DOE April 2026 directive = queue resolution pathway clear"
+      ]
+    },
+    "new_pattern_candidate": {
+      "pattern_id": "P-039",
+      "description": "Behind-the-Meter Utility Bypass: Data centers creating parallel power sector outside traditional utility regulation. 25-33% of DC power will be BTM by 2030. Meta 5GW, Fermi 6GW, Chevron 5GW projects. Gas turbine investment $35B/yr. Creates 'hyperscaler utility' with implications for grid reliability, emissions, and traditional utility revenue.",
+      "strength": "strong",
+      "evidence": ["Meta 5GW BTM project", "Texas 80GW gas pipeline (half for DCs)", "Gas turbine investment $35B/yr", "Grid queue bypass as primary motivation"],
+      "economy_map_relevance": "A new category of utility is emerging — the behind-the-meter hyperscaler utility — that operates outside traditional regulation. This parallels the broader Coasean trend (T10) of large firms internalizing functions previously provided by external markets."
+    }
+  },
+
+  "state_update_recommendations": {
+    "sector_transformations_add": {
+      "sector_naics": "22",
+      "sector_name": "Utilities",
+      "transformation_phase": "early_disruption",
+      "phase_confidence": "high",
+      "forces_acting": ["F6_energy", "F1_technology", "F4_capital", "F3_geopolitics"],
+      "supporting_patterns": ["P-038", "P-039"],
+      "evidence_summary": "v3-6 deep dive: 10 model cards scored (mean 73.75, highest MC-UTL-001 at 81.0 = STRUCTURAL_WINNER). Grid queue (2,300GW, 8+ years) is THE binding constraint on AI scaling but FERC reform + DOE directive creating resolution pathway. BTM power creating parallel utility sector (25-33% of DC power by 2030). Nuclear restarts entering construction (Palisades Feb/Mar 2026, TMI 2027). Solar +51.6% employment (fastest in QCEW). Political backlash reshaping geographic distribution. Employment growing +3.9% — NET JOB CREATION despite AI automation.",
+      "v2_models_count": 0,
+      "v3_models_rated": 10,
+      "last_updated": "v3-6"
+    },
+    "fear_friction_update": {
+      "sector_naics": "22",
+      "economic_readiness": 7,
+      "psychological_readiness": 6,
+      "gap": 1,
+      "classification": "low_friction",
+      "notes": "CONFIRMED by deep dive. Utility AI adoption constrained by legacy infrastructure and regulated procurement, not psychology. Community-level fear of data centers (water, rates, noise) is the more significant psychological barrier — but this affects data center SITING, not utility AI OPERATIONS. Ohio tariff and Virginia reform bills are political manifestations of community fear."
+    },
+    "F6_energy_update": {
+      "additional_metrics": {
+        "btm_power_share": "1% (2025) -> 25-33% (2030). Track quarterly via gas turbine orders and hyperscaler announcements.",
+        "grid_queue_reform_progress": "FERC Order 2023 compliance approved. DOE April 2026 deadline. PJM 1-2 year target. Track ISO-by-ISO reform implementation.",
+        "nuclear_restart_progress": "Palisades: NRC requesting more repair details (Feb 2026). TMI: $1B DOE loan, NRC panel, 2027 target. Track NRC milestones.",
+        "state_dc_policy": "Ohio -50% pipeline (tariff). Virginia data center rate class (Jan 2027). Georgia SB 34. Track state-by-state policy changes."
+      }
+    }
+  },
+
+  "evidence_sources": {
+    "data_sources_used": [
+      "QCEW (Bureau of Labor Statistics) — employment, wages, establishments by NAICS",
+      "EIA (Energy Information Administration) — generation mix, capacity additions, demand projections",
+      "IEA (International Energy Agency) — global data center electricity, renewable deployment",
+      "FERC (Federal Energy Regulatory Commission) — interconnection queue, Order 2023, reform status",
+      "DOE (Department of Energy) — nuclear loan programs, grid modernization directives",
+      "NRC (Nuclear Regulatory Commission) — reactor restart status, SMR applications",
+      "PJM Interconnection — capacity auction results, queue data",
+      "Gartner — data center electricity projections",
+      "Lazard — LCOE analysis for generation sources",
+      "Wood Mackenzie — energy storage deployments, copper analysis",
+      "BloombergNEF — data center energy projections",
+      "Utility Dive — utility industry analysis, VPP market",
+      "Deloitte — 2026 Renewable Energy Industry Outlook",
+      "Global Energy Monitor — gas power development pipeline"
+    ],
+    "web_search_queries": [
+      "data center electricity demand 2025 2026 projections TWh growth",
+      "FERC Order 2023 grid interconnection queue reform 2025 2026 status",
+      "nuclear SMR deployment timeline 2026 NuScale BWRX-300 Kairos",
+      "utility AI applications grid optimization predictive maintenance 2025 2026",
+      "renewable energy deployment 2025 2026 solar wind installations GW",
+      "Virginia Texas Georgia Ohio data center energy policy state level",
+      "PJM capacity auction 2026 data center electricity price",
+      "nuclear power plant restart AI data center Three Mile Island Palisades",
+      "grid scale battery storage deployment 2025 2026 GW BESS",
+      "natural gas power plant construction 2025 2026 new capacity GW data center",
+      "utility company AI adoption grid management digital twin virtual power plant",
+      "behind the meter power generation data center gas turbine microreactor",
+      "US electricity generation mix 2025 2026 percentage breakdown",
+      "grid interconnection queue wait time by region ERCOT PJM MISO CAISO"
+    ]
+  }
+}

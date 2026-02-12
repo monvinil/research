@@ -70,6 +70,8 @@ class DataCache:
 DEFAULT_TTLS = {
     'fred': 168,      # 7 days -- publishes monthly
     'bls': 168,       # 7 days -- publishes monthly/quarterly
+    'census_cbp': 168,  # 7 days -- annual dataset, rarely changes
+    'qcew': 168,      # 7 days -- quarterly releases (QCEW manages its own CSV cache)
     'edgar': 12,      # 12 hours -- filings arrive continuously
     'websearch': 6,   # 6 hours -- news changes fast
 }

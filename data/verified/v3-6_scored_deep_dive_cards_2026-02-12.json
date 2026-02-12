@@ -1,0 +1,660 @@
+{
+  "scoring_metadata": {
+    "cycle": "v3-6",
+    "date": "2026-02-12",
+    "cards_scored": 32,
+    "sources": ["v35_model_cards", "defense_deep_dive", "education_deep_dive"],
+    "calibration_reference": "v3-4_normalized top 20 + v3-5 EC rerate top 50",
+    "calibration_notes": "Existing top models: V3-FEAR-001 84.0 (SW), V3-DEF-001 81.0 (SW), V3-DEF-003 81.75 (SW), V3-EMRG-001 80.5 (SW). STRUCTURAL_WINNER requires composite >= 80.0 AND SN >= 9.0 per hard enforcement thresholds. Very few cards should qualify. Most deep dive cards expected in 60-75 range (CONDITIONAL to FORCE_RIDER). Defense cards skew higher due to $13.4B dedicated budget and geopolitical urgency. Education cards skew lower due to fear friction (gap=5) constraining adoption timing.",
+    "qcew_economy_avg_pay": 72608,
+    "scoring_method": "5-axis manual scoring with QCEW data lookup, calibrated against existing inventory"
+  },
+  "scored_cards": [
+    {
+      "card_id": "MC-V35-5239-001",
+      "model_name": "RegTech Orchestration Layer for Alternative Investment Compliance",
+      "sector_naics": "5239",
+      "architecture": "regulatory_moat_builder",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 8.0, "justification": "Baumol 3.59x with 104K establishments creates massive Baumol energy. 5% employment growth compounds compliance demand. Regulatory requirements are non-negotiable. But not economy-level structural necessity — this is one financial subsector."},
+        "FA": {"score": 8.0, "justification": "Strong F1 (9/10 - AI regulatory parsing), F4 (8/10 - PE refinancing wall), F5 (7/10 - 73% finserv AI adoption), F3 (6/10 - multi-jurisdiction). 4 forces, 3 strong."},
+        "EC": {"score": 7.0, "justification": "Supply chain low risk (software). Regulatory contagion high (SEC rulemaking is the driver). Competitive moderate (5 funded entrants). Leading indicators strong. Talent flow moderate (CPA pipeline -33% but compliance professionals available)."},
+        "TG": {"score": 8.0, "justification": "Window open NOW with SEC rulemaking velocity at peak. Crash resilient — compliance demand counter-cyclical. Perez frenzy phase for finserv AI."},
+        "CE": {"score": 8.5, "justification": "$2-8M capital, 4mo to revenue, 82% gross margins. Survives funding freeze. 80-120 firm break-even is achievable. Strong cost advantage ratio (8-12x)."}
+      },
+      "composite": 78.75,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 78.75 >= 70.0 and FA 8.0 >= 7.0. Does not meet STRUCTURAL_WINNER threshold (SN < 9.0).",
+      "qcew_data_used": {"baumol_score": 3.5896, "fragmentation_proxy": 0.1786, "employment": 585756, "establishments": 104599, "emp_growth": 0.0505, "wage_growth": -0.0241}
+    },
+    {
+      "card_id": "MC-V35-3341-001",
+      "model_name": "AI-Optimized Custom Compute Hardware Foundry",
+      "sector_naics": "3341",
+      "architecture": "arbitrage_window",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 3.76x is extreme but only 2,387 establishments and 162K employees — concentrated sector. AI inference hardware demand is real (40%+ CAGR). CHIPS Act creates subsidy window. But acquisition + retooling is execution-heavy."},
+        "FA": {"score": 8.0, "justification": "5 forces aligned: F1 (9), F3 (9 — CHIPS Act + reshoring), F4 (7 — VC rotation to hardtech), F6 (6 — energy constraint), F2 (5 — Silver Tsunami owners). Strong multi-force convergence."},
+        "EC": {"score": 7.5, "justification": "Supply chain moderate (CHIPS Act subsidies but hardware dependencies). Regulatory strong (ITAR creates moat). Competitive low (2 funded entrants). International context very strong (US-China decoupling drives reshoring premium). Critical minerals risk from China export controls tempers slightly."},
+        "TG": {"score": 7.5, "justification": "Arbitrage window 2026-2028 before CHIPS Act fabs create demand spike. Medium crash resilience — defense demand counter-cyclical but consumer hardware cyclical."},
+        "CE": {"score": 6.0, "justification": "$5-25M capital required is substantial. 6mo to revenue but 35% gross margins are low for AI-adjacent. Hardware play with real asset backing but capital-intensive."}
+      },
+      "composite": 74.0,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 74.0 >= 70.0, FA 8.0 >= 7.0. Also qualifies as TIMING_ARBITRAGE (TG 7.5, close but not >= 8.0).",
+      "qcew_data_used": {"baumol_score": 3.7572, "fragmentation_proxy": 0.0148, "employment": 161796, "establishments": 2387, "emp_growth": 0.0067, "wage_growth": 0.0481}
+    },
+    {
+      "card_id": "MC-V35-5415-001",
+      "model_name": "IT Services Engagement Intelligence Platform",
+      "sector_naics": "5415",
+      "architecture": "data_compounding",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 2.05x with 405K establishments and 2.46M employees — massive sector. 5% wage growth vs flat employment is classic Baumol disease. Data compounding thesis is compelling but unproven at scale. IT services is non-discretionary for enterprises."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — AI coding agents), F4 (7 — PE margin pressure), F2 (6 — Silver Tsunami knowledge loss), F5 (5 — cultural receptivity but resistance to automation exposure). 4 forces, 2 strong."},
+        "EC": {"score": 6.0, "justification": "Supply chain moderate (LLM API dependency). No strong regulatory driver. Competitive import moderate (4 funded entrants). Indian IT services firms (Infosys, Wipro) create international competitive pressure. Talent available."},
+        "TG": {"score": 7.0, "justification": "Window 2026-2028. Medium crash resilience — IT spending partially discretionary. Data compounding takes 500-1000 engagements to show value, which takes time."},
+        "CE": {"score": 8.0, "justification": "$3-10M capital, 6mo to revenue, 78% gross margins. Survives funding freeze. Cost advantage compounds over time (3-5x after 1000 engagements). Strong SaaS economics."}
+      },
+      "composite": 70.75,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 70.75 >= 70.0, FA 7.0 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 2.0535, "fragmentation_proxy": 0.1649, "employment": 2460334, "establishments": 405625, "emp_growth": -0.0043, "wage_growth": 0.0499}
+    },
+    {
+      "card_id": "MC-V35-5259-001",
+      "model_name": "AI-Native Fund Administration and Operations Platform",
+      "sector_naics": "5259",
+      "architecture": "full_service_replacement",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 8.0, "justification": "Baumol 3.13x with highest fragmentation in dataset (0.42 — 2.4 employees per firm). 10% employment growth means demand outrunning capacity. Fund admin is non-discretionary. Only 18K employees but 7,731 establishments — extreme fragmentation creates AI opportunity."},
+        "FA": {"score": 7.5, "justification": "F1 (9 — rules-based processes), F4 (8 — new fund formation), F5 (7 — 73% finserv adoption), F3 (5 — multi-jurisdiction). 4 forces, 2 very strong."},
+        "EC": {"score": 6.5, "justification": "Multi-jurisdiction compliance (Cayman, Luxembourg) adds EC value. But small sector (18K employees) limits international scale. Audit firm acceptance uncertainty. Low competitive import (3 funded entrants)."},
+        "TG": {"score": 8.0, "justification": "Window 2026-2027. High crash resilience — fund admin mandatory regardless of market. Counter-cyclical: crash drives cost-cutting demand. Fast entry (3mo to revenue)."},
+        "CE": {"score": 9.0, "justification": "$1-5M capital, 3mo to revenue, 88% gross margins — best unit economics in the batch. 40-60 fund break-even. Survives funding freeze. 5-8x cost advantage over incumbents."}
+      },
+      "composite": 77.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 77.25 >= 70.0, FA 7.5 >= 7.0. Also qualifies as CAPITAL_MOAT (CE 9.0 >= 9.0 and SN 8.0 >= 6.0).",
+      "qcew_data_used": {"baumol_score": 3.1334, "fragmentation_proxy": 0.4213, "employment": 18350, "establishments": 7731, "emp_growth": 0.0995, "wage_growth": 0.0267}
+    },
+    {
+      "card_id": "MC-V35-3341-002",
+      "model_name": "Cobot-Integrated Electronics Assembly Line Modernizer",
+      "sector_naics": "3341",
+      "architecture": "physical_production_ai",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Same QCEW data as 3341-001 (Baumol 3.76x, 2387 establishments). Cobot ROI math is strong ($25-60K vs $273K worker). 78-point manufacturing readiness gap (98% exploring, 20% deployed) confirms demand. But narrow target market (2,387 facilities)."},
+        "FA": {"score": 7.5, "justification": "F1 (10 — proven cobot + AI vision tech), F3 (8 — CHIPS Act reshoring), F2 (7 — aging workforce), F6 (5 — energy optimization), F4 (6 — VC to physical). 5 forces, 2 very strong."},
+        "EC": {"score": 6.5, "justification": "Supply chain moderate (cobots sourced from Universal Robots/FANUC/ABB — international). CHIPS Act 25% ITC is strong regulatory tailwind. Competitive moderate (6 entrants). International context strong for reshoring."},
+        "TG": {"score": 7.0, "justification": "Window 2026-2028. Medium crash resilience — capex can be deferred. But wage pressure trajectory ($273K growing 4.8%/yr) creates urgency even in downturn."},
+        "CE": {"score": 6.0, "justification": "$3-15M capital, 4mo to revenue, but only 45% gross margins — this is a physical deployment business, not SaaS. 8-15 factory deployments/yr for break-even. Capital-intensive."}
+      },
+      "composite": 70.0,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 70.0 >= 70.0, FA 7.5 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 3.7572, "fragmentation_proxy": 0.0148, "employment": 161796, "establishments": 2387, "emp_growth": 0.0067, "wage_growth": 0.0481}
+    },
+    {
+      "card_id": "MC-V35-5417-001",
+      "model_name": "AI Lab Notebook and Experiment Intelligence Platform",
+      "sector_naics": "5417",
+      "architecture": "vertical_saas",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Baumol 2.30x with 55,600 establishments and 923K employees. 4% employment growth. Reproducibility crisis (70% failure rate) is real structural problem. But lab workflow change is slow and adoption friction is high among conservative scientists."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — LLM parsing + pattern detection), F2 (6 — retiring researchers), F4 (6 — AI-for-science VC), F5 (5 — scientist conservatism dampens). 4 forces but only 1 very strong."},
+        "EC": {"score": 6.0, "justification": "Supply chain low risk (SaaS). No strong regulatory driver (FDA acceptance is positive but not mandatory). 7 funded entrants — emerging competitive field. International pharma R&D provides export potential."},
+        "TG": {"score": 7.0, "justification": "Window 2026-2028. High crash resilience (pharma pipelines can't pause, defense R&D counter-cyclical). But academic labs are budget-constrained, slowing adoption."},
+        "CE": {"score": 8.0, "justification": "$2-8M capital, 6mo to revenue, 80% gross margins. 150-250 lab subscriptions for break-even. Strong SaaS economics. Survives funding freeze."}
+      },
+      "composite": 69.5,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 69.5 >= 60.0 but < 70.0. FA 7.0 meets FORCE_RIDER threshold but composite is below 70. Assigned CONDITIONAL as composite < 70.",
+      "qcew_data_used": {"baumol_score": 2.304, "fragmentation_proxy": 0.0602, "employment": 923457, "establishments": 55600, "emp_growth": 0.0403, "wage_growth": 0.0325}
+    },
+    {
+      "card_id": "MC-V35-5223-001",
+      "model_name": "Mortgage and Loan Servicing AI Operations Platform",
+      "sector_naics": "5223",
+      "architecture": "vertical_saas",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 8.5, "justification": "Most extreme labor market signal: 13.8% wage growth AND -10.7% employment decline simultaneously. Baumol 1.90x with 34,602 establishments. The sector is hemorrhaging workers — AI is structurally necessary just to keep operations running. Loan servicing is non-discretionary."},
+        "FA": {"score": 7.5, "justification": "F1 (9 — AI document processing at 95%+ accuracy), F4 (8 — PE refinancing wall), F5 (7 — 73% finserv adoption), F3 (4 — CFPB regulatory). 4 forces, 2 very strong."},
+        "EC": {"score": 6.5, "justification": "Supply chain low risk (software). CFPB regulatory creates both compliance demand and risk. Competitive moderate (5 entrants). Limited international dimension (US mortgage market is domestic). Leading indicators strong (workforce exodus data)."},
+        "TG": {"score": 8.0, "justification": "Window 2026-2027. High crash resilience — loan servicing is counter-cyclical (more defaults = more servicing work). 3mo to revenue. Window urgent given workforce exodus pace."},
+        "CE": {"score": 9.0, "justification": "$1.5-6M capital, 3mo to revenue, 85% gross margins. 10-15x cost advantage. Survives funding freeze. Best cost advantage ratio in the batch. Break-even at 200-500K loans."}
+      },
+      "composite": 78.5,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 78.5 >= 70.0, FA 7.5 >= 7.0. Also qualifies as CAPITAL_MOAT (CE 9.0 >= 9.0, SN 8.5 >= 6.0) and TIMING_ARBITRAGE (TG 8.0 >= 8.0).",
+      "qcew_data_used": {"baumol_score": 1.9028, "fragmentation_proxy": 0.1191, "employment": 290483, "establishments": 34602, "emp_growth": -0.1068, "wage_growth": 0.1379}
+    },
+    {
+      "card_id": "MC-V35-3344-001",
+      "model_name": "Semiconductor Test and Packaging Automation Integrator",
+      "sector_naics": "3344",
+      "architecture": "arbitrage_window",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 1.97x with 395K employees. CHIPS Act test/packaging bottleneck is real (80%+ in Asia). Every chip must be tested. But this is a capital-intensive acquisition play requiring $10-50M."},
+        "FA": {"score": 8.0, "justification": "F3 (10 — US-China chip controls make this strategic), F1 (8 — AI test optimization), F4 (7 — CHIPS Act ITC + VC), F6 (5 — energy), F2 (5 — aging engineers). 5 forces, 2 very strong. Strongest geopolitical alignment of any v35 card."},
+        "EC": {"score": 8.0, "justification": "International context is THE story: 80% of advanced packaging in Asia creates the entire value proposition. CHIPS Act subsidies. ITAR requirements for defense chips. International competitive dynamics directly drive demand. High leading indicator transfer from CHIPS Act fab timelines."},
+        "TG": {"score": 7.5, "justification": "Arbitrage window 2026-2028 before CHIPS Act fabs come online. High crash resilience (CHIPS Act committed, defense counter-cyclical). But timing depends on CHIPS Act fab construction schedules."},
+        "CE": {"score": 5.5, "justification": "$10-50M capital — most capital-intensive card in the batch. 8mo to revenue. Only 40% gross margins. Break-even at 5-10M chips/month. Real asset backing but capital requirements are substantial."}
+      },
+      "composite": 74.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 74.25 >= 70.0, FA 8.0 >= 7.0. Also qualifies as TIMING_ARBITRAGE (TG 7.5 close but below 8.0 threshold).",
+      "qcew_data_used": {"baumol_score": 1.9726, "fragmentation_proxy": 0.0175, "employment": 395312, "establishments": 6907, "emp_growth": 0.0259, "wage_growth": 0.0453}
+    },
+    {
+      "card_id": "MC-V35-5411-001",
+      "model_name": "AI Legal Document Factory for Small and Mid-Size Law Firms",
+      "sector_naics": "5411",
+      "architecture": "vertical_saas",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Baumol 1.72x with 207K establishments and 1.18M employees — massive fragmented market. 60-70% of legal work is document-intensive. But 82% ethical concern rate is the HIGHEST fear friction of any professional sector, severely constraining adoption speed."},
+        "FA": {"score": 6.5, "justification": "F1 (9 — LLM document processing), F2 (6 — retiring partners), F4 (5 — legal tech VC), F5 (4 — 82% ethical concern DEPRESSES this). Only 1 very strong force. Psychology is a negative force here."},
+        "EC": {"score": 5.5, "justification": "No strong international dimension for US legal services. 15 funded entrants — CROWDED competitive field. Thomson Reuters/LexisNexis are powerful incumbents. Jurisdictional fragmentation (50 states) creates complexity. Low regulatory contagion (bar associations slow)."},
+        "TG": {"score": 7.0, "justification": "High crash resilience (legal work non-discretionary). But 82% ethical concern rate means adoption is slow despite clear economics. Window exists but friction delays realization."},
+        "CE": {"score": 8.0, "justification": "$2-8M capital, 4mo to revenue, 82% gross margins. 300-500 firm subscriptions for break-even. Strong SaaS economics. 5-10x cost advantage."}
+      },
+      "composite": 67.25,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 67.25, 60-70 range. FA 6.5 < 7.0 so not FORCE_RIDER. High fear friction constrains both FA and TG scores.",
+      "qcew_data_used": {"baumol_score": 1.7166, "fragmentation_proxy": 0.1756, "employment": 1181363, "establishments": 207408, "emp_growth": 0.0047, "wage_growth": 0.0377}
+    },
+    {
+      "card_id": "MC-V35-2111-001",
+      "model_name": "AI-Powered Reservoir and Production Optimization Platform",
+      "sector_naics": "2111",
+      "architecture": "vertical_saas",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 2.84x with 6,396 establishments. Each 1% production improvement on a $5B field = $50M/year. Data center energy demand drives production necessity. But O&G is conservative and cyclical."},
+        "FA": {"score": 7.5, "justification": "F6 (9 — data center grid demand), F1 (8 — ML sensor optimization), F3 (6 — energy independence), F4 (6 — O&G ETF rotation). 4 forces, 2 strong. Energy force alignment is strongest."},
+        "EC": {"score": 6.5, "justification": "Strong international context: global oil markets, LNG export dynamics, OPEC supply dynamics all affect demand. 8 funded entrants. SLB/Halliburton are powerful incumbents. Basin-specific data creates moat."},
+        "TG": {"score": 7.0, "justification": "Window 2026-2028. Medium crash resilience — oil prices volatile, but optimization tools more valuable at low prices. Conservative industry adoption speed tempers timing grade."},
+        "CE": {"score": 7.5, "justification": "$3-12M capital, 6mo to revenue, 75% gross margins. 30-50 operator break-even. Good SaaS economics. 10-20x cost advantage vs petroleum engineers."}
+      },
+      "composite": 72.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 72.25 >= 70.0, FA 7.5 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 2.8403, "fragmentation_proxy": 0.0554, "employment": 115505, "establishments": 6396, "emp_growth": 0.0247, "wage_growth": 0.0467}
+    },
+    {
+      "card_id": "MC-V35-5417-002",
+      "model_name": "Contract Research Marketplace with AI Matching",
+      "sector_naics": "5417",
+      "architecture": "marketplace_network",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 6.5, "justification": "Same QCEW sector as 5417-001. R&D outsourcing is a $100B+ market with real discovery problem. But marketplace businesses face cold-start problem and unproven product-market fit for this specific application."},
+        "FA": {"score": 6.5, "justification": "F1 (9 — AI capability profiling), F4 (7 — pharma cost pressure), F2 (5 — retiring network holders), F5 (4 — procurement conservatism). 2 moderate forces, 1 strong."},
+        "EC": {"score": 6.0, "justification": "International dimension moderate (global pharma R&D). 3 funded entrants (low competition). But Clarivate/IQVIA have existing data advantages. Marketplace liquidity risk is the key constraint."},
+        "TG": {"score": 6.5, "justification": "Window 2026-2028. High crash resilience (pharma pipelines durable). But marketplace liquidity takes time to build — slow to reach tipping point. 8mo to revenue."},
+        "CE": {"score": 7.0, "justification": "$3-10M capital, 8mo to revenue, 70% gross margins. 50-100 matched contracts/yr for break-even. Take rate model (5-8%) is proven in other marketplaces but unproven here."}
+      },
+      "composite": 64.75,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 64.75, 60-70 range. FA 6.5 < 7.0. Marketplace cold-start risk constrains all scores.",
+      "qcew_data_used": {"baumol_score": 2.304, "fragmentation_proxy": 0.0602, "employment": 923457, "establishments": 55600, "emp_growth": 0.0403, "wage_growth": 0.0325}
+    },
+    {
+      "card_id": "MC-V35-3364-001",
+      "model_name": "Aerospace MRO Digital Thread and Predictive Maintenance Platform",
+      "sector_naics": "3364",
+      "architecture": "arbitrage_window",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 1.65x with 537K employees growing 7.5% YoY — one of fastest manufacturing expansions. Boeing/Airbus 14K aircraft backlog. MRO runs on paper. Aging workforce creates knowledge capture urgency."},
+        "FA": {"score": 8.0, "justification": "F3 (9 — defense $2,718B + ITAR), F1 (8 — AI predictive maintenance), F2 (8 — mechanics averaging 55+), F4 (6 — VC to hard-tech), F6 (4 — fuel efficiency). 5 forces, 3 strong. Excellent multi-force convergence."},
+        "EC": {"score": 7.0, "justification": "Strong international context: Boeing/Airbus global customers, NATO defense MRO demand, EASA regulatory alignment. ITAR creates moat. 6 funded entrants. FAA/EASA approval process is a moat but adds 18-36 month delay."},
+        "TG": {"score": 7.0, "justification": "Window 2026-2028. High crash resilience (FAA mandated maintenance, defense counter-cyclical, fleet ages in downturns = more MRO). But 8mo to revenue and FAA approval timeline tempers."},
+        "CE": {"score": 6.5, "justification": "$5-20M capital, 8mo to revenue, 65% gross margins. 200-500 tail numbers for break-even. More capital-intensive than pure SaaS but real asset value. Physical integration required."}
+      },
+      "composite": 73.0,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 73.0 >= 70.0, FA 8.0 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 1.6456, "fragmentation_proxy": 0.0079, "employment": 536766, "establishments": 4259, "emp_growth": 0.075, "wage_growth": 0.0502}
+    },
+    {
+      "card_id": "MC-V35-5413-001",
+      "model_name": "AI-Augmented AEC Design and Permitting Accelerator",
+      "sector_naics": "5413",
+      "architecture": "vertical_saas",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Baumol 1.51x — at the Baumol threshold, just compelling enough for AI automation. 167K establishments and 1.65M employees — massive market. Code compliance is rule-based and automatable. But Baumol score is low relative to top cards."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — AI code checking), F2 (7 — retiring engineers), F4 (6 — construction tech VC), F5 (5 — professional liability caution). 4 forces, 1 very strong. Good but not exceptional alignment."},
+        "EC": {"score": 5.5, "justification": "Limited international dimension (building codes are local/US). 5 funded entrants. Autodesk/Bentley/Trimble are powerful platform incumbents who could bundle AI. Local code variation is both opportunity and challenge."},
+        "TG": {"score": 7.0, "justification": "Window 2026-2028. Medium crash resilience — construction is cyclical but CHIPS Act + infrastructure bill provide committed pipeline. Residential may soften but commercial/industrial sustains."},
+        "CE": {"score": 8.0, "justification": "$2-8M capital, 5mo to revenue, 80% gross margins. 300-500 firm subscriptions for break-even. Strong SaaS economics. 5-8x cost advantage for code compliance."}
+      },
+      "composite": 68.5,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 68.5, 60-70 range. FA 7.0 meets FORCE_RIDER FA threshold but composite < 70.0.",
+      "qcew_data_used": {"baumol_score": 1.5068, "fragmentation_proxy": 0.1009, "employment": 1654591, "establishments": 166975, "emp_growth": 0.0336, "wage_growth": 0.043}
+    },
+    {
+      "card_id": "MC-V35-5416-001",
+      "model_name": "Consulting Engagement Knowledge Compounding Engine",
+      "sector_naics": "5416",
+      "architecture": "data_compounding",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 6.5, "justification": "Baumol 1.61x with 395K establishments — most fragmented professional services. But only 1.9% wage growth suggests less Baumol pressure than other sectors. Consulting is partially discretionary. Knowledge compounding thesis is compelling but unproven."},
+        "FA": {"score": 6.5, "justification": "F1 (9 — LLM research automation), F2 (7 — retiring partners), F4 (6 — PE margin pressure), F5 (5 — fear of replacement). 4 forces but only 1 strong. Consulting psychology (every client unique) resists systematization."},
+        "EC": {"score": 5.5, "justification": "Limited international dimension for most consulting (domestic clients). 4 funded entrants (low competition). McKinsey/BCG/Bain could build internally. No regulatory driver."},
+        "TG": {"score": 6.0, "justification": "Window 2026-2028. LOW crash resilience — consulting is cut early in recessions. But AI consulting (transformation) grows counter-cyclically. Mixed timing signal."},
+        "CE": {"score": 7.5, "justification": "$3-10M capital, 6mo to revenue, 75% gross margins. 300-500 firm subscriptions for break-even. Good SaaS economics. 3-5x cost advantage after 500 engagements (compounding effect)."}
+      },
+      "composite": 63.75,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 63.75, 60-70 range. FA 6.5 < 7.0. Low crash resilience and unproven compounding thesis constrain scores.",
+      "qcew_data_used": {"baumol_score": 1.6054, "fragmentation_proxy": 0.2133, "employment": 1853227, "establishments": 395324, "emp_growth": 0.0268, "wage_growth": 0.0194}
+    },
+    {
+      "card_id": "MC-V35-5239-002",
+      "model_name": "Alternative Investment Firms Roll-Up with AI Back-Office",
+      "sector_naics": "5239",
+      "architecture": "rollup_consolidation",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Same QCEW as 5239-001 (Baumol 3.59x). Silver Tsunami (52% owned by 55+) creates predictable acquisition pipeline. AI back-office consolidation math works (40% margin expansion). But execution-heavy roll-up model with integration risk."},
+        "FA": {"score": 7.5, "justification": "F4 (9 — PE refinancing wall creates distressed sellers at 4-6x), F1 (9 — AI back-office), F2 (8 — demographic inevitability of forced sales), F5 (6 — 73% finserv adoption). 4 forces, 3 very strong."},
+        "EC": {"score": 6.0, "justification": "Primarily domestic (US RIA market). Multi-jurisdiction for some fund types (Cayman, Luxembourg). 4 funded entrants. Focus Financial/Hightower/Dynasty are significant competitors in RIA roll-up space."},
+        "TG": {"score": 8.0, "justification": "High crash resilience — downturns ACCELERATE acquisition opportunities (more distressed sellers, lower multiples). Counter-cyclical roll-up thesis. Window optimal now as Silver Tsunami accelerates."},
+        "CE": {"score": 6.5, "justification": "$8-30M capital required — substantial. 3mo to revenue from Day 1 (acquired firms have existing revenue). 65% gross margins post-consolidation. But capital intensity for acquisitions is high."}
+      },
+      "composite": 71.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 71.25 >= 70.0, FA 7.5 >= 7.0. Also TIMING_ARBITRAGE (TG 8.0 >= 8.0).",
+      "qcew_data_used": {"baumol_score": 3.5896, "fragmentation_proxy": 0.1786, "employment": 585756, "establishments": 104599, "emp_growth": 0.0505, "wage_growth": -0.0241}
+    },
+    {
+      "card_id": "MC-V35-4862-001",
+      "model_name": "Pipeline Integrity and Operations AI Platform",
+      "sector_naics": "4862",
+      "architecture": "vertical_saas",
+      "source_file": "v35_model_cards",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 2.23x with 2,114 establishments. 6.1% wage growth signals acute labor scarcity. PHMSA regulations mandate integrity management. Pipeline safety is non-negotiable. Data center energy demand makes gas pipelines strategic infrastructure."},
+        "FA": {"score": 7.5, "justification": "F6 (10 — data center grid demand makes pipelines bottleneck for AI scaling), F1 (8 — AI smart pig analysis and leak prediction), F2 (7 — retiring integrity engineers), F3 (6 — energy independence + TSA directive). 4 forces, 2 very strong."},
+        "EC": {"score": 6.0, "justification": "Primarily domestic infrastructure (US pipeline network). TSA Pipeline Security Directive creates regulatory moat. 3 funded entrants (low competition). International dimension limited (some LNG export pipeline relevance)."},
+        "TG": {"score": 7.5, "justification": "Window 2026-2028. High crash resilience (pipeline safety federally mandated, cannot defer). PHMSA 2024 mega-rule creates immediate compliance demand. Data center demand is durable."},
+        "CE": {"score": 7.5, "justification": "$3-12M capital, 6mo to revenue, 78% gross margins. 20-40 operator break-even. Good SaaS economics. 5-8x cost advantage for integrity analysis."}
+      },
+      "composite": 72.0,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 72.0 >= 70.0, FA 7.5 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 2.2292, "fragmentation_proxy": 0.0647, "employment": 32674, "establishments": 2114, "emp_growth": 0.0356, "wage_growth": 0.0614}
+    },
+    {
+      "card_id": "MC-DEF-011",
+      "model_name": "CMMC Compliance Automation Platform for Defense Contractors",
+      "sector_naics": "541512",
+      "architecture": "vertical_saas",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 8.5, "justification": "220K companies MUST certify — this is legally mandated. Only 60 C3PAOs for 220K companies = decade-long queue without automation. 15-20% of DIB expected to exit due to cost — AI preserves the industrial base. CMMC is in DFARS. Non-negotiable demand."},
+        "FA": {"score": 8.0, "justification": "F1 (9 — LLM regulatory parsing), F3 (10 — CMMC exists because of adversary cyber threats), F4 (7 — defense tech VC). 3 forces, 2 at maximum. Geopolitical driver is absolute."},
+        "EC": {"score": 7.5, "justification": "Supply chain minimal (software). Regulatory contagion is the DRIVER (9/10). Competitive moderate (12 funded entrants but no dominant AI-native). Leading indicators strong (CMMC contract solicitations). Resource talent moderate (cleared professionals needed)."},
+        "TG": {"score": 8.5, "justification": "Window OPEN NOW — CMMC enforcement ramping in 2026. High crash resilience (defense contractual requirement). First movers capture 220K-company wave. Very high time sensitivity."},
+        "CE": {"score": 9.0, "justification": "$1-5M capital, 3mo to revenue, 80% gross margins. 100-150 subscriptions for break-even against 220K addressable. 5-10x cost advantage. Survives funding freeze. Exceptional unit economics."}
+      },
+      "composite": 82.5,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 82.5 >= 80.0 but SN 8.5 < 9.0 per HARD ENFORCEMENT threshold. CMMC is mandatory for defense contractors but not the broader economy — this prevents SN from reaching 9.0. Reassigned from STRUCTURAL_WINNER to FORCE_RIDER. This is the strongest FORCE_RIDER in the entire batch and would rank top 8 in the full 293-model inventory.",
+      "qcew_data_used": {"baumol_score": 1.891, "fragmentation_proxy": 0.152, "employment": 1140714, "establishments": 173416, "emp_growth": -0.0016, "wage_growth": 0.0342}
+    },
+    {
+      "card_id": "MC-DEF-012",
+      "model_name": "Classified Environment AI Deployment Platform (IL5/IL6)",
+      "sector_naics": "518210",
+      "architecture": "platform_infrastructure",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 8.0, "justification": "Baumol 2.36x for cloud computing (518210). $13.4B DoD AI budget but 95% of AI tools can't deploy to classified. Gap between commercial AI and classified deployment is the #1 bottleneck. FedRAMP/ATO moat is extreme."},
+        "FA": {"score": 8.0, "justification": "F1 (10 — open-source LLMs enable air-gapped deployment), F3 (10 — great power competition demands classified AI). Only 2 forces but both at MAXIMUM. Narrower force alignment but absolute intensity."},
+        "EC": {"score": 8.0, "justification": "Supply chain moderate (FedRAMP cloud + TEMPEST hardware). Regulatory contagion is maximum (10) — FedRAMP IS the product. Competitive very low (5 entrants). Leading indicators very strong (every DoD AI program). Talent is the constraint (TS/SCI cleared AI engineers extremely scarce)."},
+        "TG": {"score": 8.5, "justification": "Very high time sensitivity — first to ATO captures multi-year incumbency. High crash resilience (national security imperative). Maven 100% machine-generated by mid-2026 creates immediate demand."},
+        "CE": {"score": 6.5, "justification": "$5-20M capital, 12mo to revenue — longest ramp in the defense batch. 70% gross margins. Cleared personnel requirements add cost. But enterprise contract values ($5-50M) are massive once achieved."}
+      },
+      "composite": 78.5,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 78.5 >= 70.0, FA 8.0 >= 7.0. Also TIMING_ARBITRAGE (TG 8.5 >= 8.0). SN 8.0 < 9.0 prevents STRUCTURAL_WINNER. 12mo to revenue is the key constraint.",
+      "qcew_data_used": {"baumol_score": 2.3581, "fragmentation_proxy": 0.1085, "employment": 486208, "establishments": 52766, "emp_growth": 0.0408, "wage_growth": 0.077}
+    },
+    {
+      "card_id": "MC-DEF-013",
+      "model_name": "Counter-UAS AI Detection and Defeat Platform",
+      "sector_naics": "334511",
+      "architecture": "physical_production_ai",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "Baumol 1.77x for defense electronics. Counter-UAS is existentially necessary (Ukraine proved drones destroy multi-million-dollar vehicles). $7.5B C-UAS budget. 25.8% CAGR. But hardware production complexity and 20 funded entrants create execution risk."},
+        "FA": {"score": 8.0, "justification": "F1 (9 — AI multi-sensor fusion), F3 (10 — every conflict proves drone threat), F4 (8 — defense tech VC funding). 3 forces, 2 at maximum. Strongest geopolitical validation of any model."},
+        "EC": {"score": 7.5, "justification": "Supply chain moderate (RF sensors, computing hardware, ITAR components). Regulatory creates moat (ITAR export licensing). Competitive HIGH (20 funded entrants, Anduril/Fortem/DroneShield all well-funded). Leading indicators maximum (10 — Ukraine consumption rates). International demand very strong (NATO allies all need C-UAS)."},
+        "TG": {"score": 8.5, "justification": "Replicator 2 procurement window OPEN NOW. High crash resilience (threat-driven, not budget-driven). FEMA grants FY2026. Battlefield reference accounts become de facto standards."},
+        "CE": {"score": 4.5, "justification": "$10-50M capital. 12mo to revenue. 55% gross margins. Does NOT survive 18mo funding freeze. Hardware manufacturing complexity. 20-30 system sales for break-even. Most capital-intensive defense card."}
+      },
+      "composite": 73.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 73.25 >= 70.0, FA 8.0 >= 7.0. Also TIMING_ARBITRAGE (TG 8.5 >= 8.0). Capital intensity (CE 4.5) is the main constraint preventing higher composite.",
+      "qcew_data_used": {"baumol_score": 1.7679, "fragmentation_proxy": 0.0099, "employment": 127409, "establishments": 1267, "emp_growth": -0.0114, "wage_growth": 0.0159}
+    },
+    {
+      "card_id": "MC-DEF-014",
+      "model_name": "Defense AI Training Simulation Platform (Synthetic Environments)",
+      "sector_naics": "611710",
+      "architecture": "platform_infrastructure",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "QCEW 611710 shows Baumol 0.89x — below economy average. Military simulation is $13.4B market growing to $21.1B. STE fielding creates insertion point. But cultural adoption by senior leaders uncertain. Training transfer to real combat unproven."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — generative AI creates scenarios), F3 (8 — evolving threat landscape), F2 (6 — recruitment shortages, Gen Z VR-native). 3 forces, 2 strong. Good alignment but narrower than other defense cards."},
+        "EC": {"score": 6.0, "justification": "Supply chain minimal (software + VR hardware commodity). Regulatory moderate (MIL-STD, TENA accreditation). Competitive moderate (8 funded entrants + legacy CAE/L3Harris). NATO allies create export market. But classified content restrictions limit commercial access."},
+        "TG": {"score": 7.5, "justification": "STE fielding FY2026 creates 2-3 year window. High crash resilience (military training budgets politically sacrosanct). Medium time sensitivity. AI training CHEAPER than live training = attractive in budget pressure."},
+        "CE": {"score": 7.5, "justification": "$3-15M capital, 6mo to revenue, 75% gross margins. 30-50 installations for break-even. 10-100x cost advantage vs live training. Survives funding freeze. Good SaaS platform economics."}
+      },
+      "composite": 69.5,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 69.5 < 70.0. FA 7.0 meets threshold but composite falls just short. Cultural adoption uncertainty constrains SN and TG.",
+      "qcew_data_used": {"baumol_score": 0.8903, "fragmentation_proxy": 0.15, "employment": 203905, "establishments": 30592, "emp_growth": 0.0686, "wage_growth": 0.0046}
+    },
+    {
+      "card_id": "MC-DEF-015",
+      "model_name": "Defense Contract Capture AI Platform (SBIR/OTA/IDIQ Navigator)",
+      "sector_naics": "541611",
+      "architecture": "vertical_saas",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 6.5, "justification": "Baumol 1.82x for management consulting (541611). Defense procurement is Byzantine — real pain point. $49.1B defense tech VC creates wave of startups needing procurement help. But demand is partially time-limited (startup entry wave may plateau) and this is a tool, not a structural necessity."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — LLM proposal generation), F3 (7 — DoD broadening DIB access), F4 (9 — $49.1B defense tech VC is the direct demand driver). 3 forces, 2 strong. Capital flow is the primary force."},
+        "EC": {"score": 6.5, "justification": "Supply chain minimal (pure software). Regulatory complexity IS the value prop (FAR/DFARS). Competitive moderate (6 funded entrants + Govini/Deltek). Leading indicators strong (SBIR solicitation volume). Resource talent available (retired contracting officers)."},
+        "TG": {"score": 8.0, "justification": "Wave of defense tech startups entering procurement NOW. First platform captures this cohort. Medium crash resilience — if defense tech VC cools, demand slows. HIGH time sensitivity."},
+        "CE": {"score": 9.0, "justification": "$1-5M capital, 3mo to revenue, 85% gross margins. 200-300 subscriptions for break-even targeting funded startups. 10-20x cost advantage vs capture management consultants. Exceptional unit economics."}
+      },
+      "composite": 72.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 72.25 >= 70.0, FA 7.0 >= 7.0. Also TIMING_ARBITRAGE (TG 8.0 >= 8.0) and CAPITAL_MOAT (CE 9.0 >= 9.0, SN 6.5 >= 6.0).",
+      "qcew_data_used": {"baumol_score": 1.8197, "fragmentation_proxy": 0.1984, "employment": 837042, "establishments": 166054, "emp_growth": 0.037, "wage_growth": 0.0101}
+    },
+    {
+      "card_id": "MC-DEF-016",
+      "model_name": "Defense Equipment Predictive Maintenance AI (Tactical Edge)",
+      "sector_naics": "336992",
+      "architecture": "vertical_saas",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "QCEW 336992 shows Baumol 1.24x (low) but only 8.6K employees and 101 establishments — very concentrated. The real driver is DoD $5B/yr maintenance savings and demonstrated 85%->95% uptime. Equipment readiness is a congressional metric. Palantir $85.1M AMC contract validates market."},
+        "FA": {"score": 7.5, "justification": "F1 (9 — edge AI chips enable DDIL inference), F3 (8 — equipment readiness is combat capability), F2 (6 — maintenance workforce aging). 3 forces, 2 strong. DDIL edge deployment is the key differentiator."},
+        "EC": {"score": 6.5, "justification": "Supply chain moderate (edge hardware, sensors — commodity). Regulatory creates moat (MIL-STD, cybersecurity). Competitive moderate (10 funded entrants, Palantir is strong incumbent). NATO allies create export market. Leading indicators strong (AMC contracts)."},
+        "TG": {"score": 7.5, "justification": "Market developing with large contracts (Palantir $85.1M). High crash resilience (equipment maintenance mandatory, readiness politically non-negotiable). Medium time sensitivity — edge AI capability is differentiator vs cloud-only."},
+        "CE": {"score": 7.0, "justification": "$3-15M capital, 9mo to revenue, 70% gross margins. 3-5 fleet contracts for break-even. Survives funding freeze. Hardware edge component adds cost but differentiates."}
+      },
+      "composite": 72.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 72.25 >= 70.0, FA 7.5 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 1.2368, "fragmentation_proxy": 0.0117, "employment": 8616, "establishments": 101, "emp_growth": -0.0039, "wage_growth": 0.0606}
+    },
+    {
+      "card_id": "MC-DEF-017",
+      "model_name": "Defense AI Testing, Evaluation, and Verification Platform (T&E-as-a-Service)",
+      "sector_naics": "541380",
+      "architecture": "vertical_saas",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 8.0, "justification": "QCEW 541380 shows Baumol 1.28x with 175K employees. DoD AI Strategy mandates T&E. NDAA FY2026 requires AI safety framework. Every dollar of $13.4B AI budget requires T&E. Zero fear friction. No standardized platform exists — greenfield structural necessity within defense."},
+        "FA": {"score": 7.5, "justification": "F1 (9 — AI can test AI), F3 (8 — adversary AI creates urgency). Only 2 forces but both near maximum. Narrow force alignment but absolute intensity within defense context."},
+        "EC": {"score": 7.5, "justification": "Supply chain minimal (pure software). Regulatory contagion maximum (10 — DoD AI Strategy and NDAA mandate T&E). Competitive very low (4 — nearly greenfield). Leading indicators very strong (9). Talent is scarce constraint (AI safety + defense T&E intersection)."},
+        "TG": {"score": 8.0, "justification": "DoD AI Strategy published Jan 2026, NDAA mandate creates immediate demand. High crash resilience (AI T&E is regulatory requirement). First mover establishes the standard. High time sensitivity."},
+        "CE": {"score": 8.0, "justification": "$2-10M capital, 6mo to revenue, 80% gross margins. 15-20 program subscriptions for break-even. 5-10x cost advantage vs custom T&E per program. Survives funding freeze."}
+      },
+      "composite": 77.75,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 77.75 >= 70.0, FA 7.5 >= 7.0. SN 8.0 < 9.0 prevents STRUCTURAL_WINNER. Also TIMING_ARBITRAGE (TG 8.0 >= 8.0).",
+      "qcew_data_used": {"baumol_score": 1.2789, "fragmentation_proxy": 0.0657, "employment": 174645, "establishments": 11471, "emp_growth": -0.0146, "wage_growth": 0.036}
+    },
+    {
+      "card_id": "MC-DEF-018",
+      "model_name": "Defense Supply Chain Compliance and Visibility Platform",
+      "sector_naics": "541614",
+      "architecture": "vertical_saas",
+      "source_file": "defense_deep_dive",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "QCEW 541614 shows Baumol 1.22x with 164K employees. ITAR/CMMC supply chain compliance is mandatory with criminal penalties. 10K+ tier 2/3 suppliers using spreadsheets. GAO flagged visibility as national security risk. But Exostar is an established player."},
+        "FA": {"score": 7.5, "justification": "F1 (8 — AI classification and risk scoring), F3 (10 — reshoring imperative, ITAR mandatory), F4 (7 — manufacturing defense VC). 3 forces, 1 at maximum. Geopolitical force is absolute driver."},
+        "EC": {"score": 7.0, "justification": "Supply chain minimal (software). Regulatory contagion maximum (10 — ITAR/EAR/CMMC/Berry Amendment). Competitive moderate (8 funded entrants + Exostar). International dimension strong (allied interoperability, reshoring). Leading indicators moderate."},
+        "TG": {"score": 7.5, "justification": "CMMC supply chain requirements ramping. Reshoring creating supplier qualification demand. High crash resilience (ITAR is criminal law). Medium-high time sensitivity."},
+        "CE": {"score": 7.5, "justification": "$2-10M capital, 6mo to revenue, 78% gross margins. 100-150 subscriptions for break-even. 5-8x cost advantage. Survives funding freeze."}
+      },
+      "composite": 72.75,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 72.75 >= 70.0, FA 7.5 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 1.2214, "fragmentation_proxy": 0.1199, "employment": 163704, "establishments": 19622, "emp_growth": 0.0307, "wage_growth": 0.0218}
+    },
+    {
+      "card_id": "MC-EDU-CORP-01",
+      "model_name": "Enterprise AI Reskilling Platform",
+      "sector_naics": "6114",
+      "architecture": "vertical_saas",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "QCEW 6114 shows Baumol 1.32x with 80K employees — small sector by employment. But the DEMAND comes from cross-sector Baumol displacement: 39% skills obsolete by 2030, 91% companies increasing AI L&D. Structural necessity driven by OTHER sectors' transformations, not this sector's own metrics."},
+        "FA": {"score": 7.5, "justification": "F1 (9 — AI personalized learning at $0.40/M tokens), F2 (7 — Silver Tsunami knowledge transfer), F4 (7 — corporate L&D budgets expanding). 3 forces, 1 very strong. Cross-sector force alignment via Baumol displacement."},
+        "EC": {"score": 6.5, "justification": "Supply chain moderate (LLM API dependency, multi-model mitigates). Regulatory moderate (EU AI Act applies, corporate training has less friction than K-12). Competitive moderate (5 entrants but LinkedIn Learning, Coursera are powerful pre-AI incumbents). Leading indicators strong (P-026, P-027 sector transformations)."},
+        "TG": {"score": 8.0, "justification": "High crash resilience — reskilling is MORE necessary in downturns (automation accelerates). Counter-cyclical demand confirmed. 6mo to revenue. High time sensitivity as displacement wave accelerates."},
+        "CE": {"score": 8.0, "justification": "$3-8M capital, 6mo to revenue, 78% gross margins. 200 enterprise contracts for break-even at $25K ACV. 10-15x cost advantage vs in-person training. Survives funding freeze."}
+      },
+      "composite": 74.5,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 74.5 >= 70.0, FA 7.5 >= 7.0. Also TIMING_ARBITRAGE (TG 8.0 >= 8.0). Strongest education card due to lowest friction (adult buyers, enterprise channel).",
+      "qcew_data_used": {"baumol_score": 1.3196, "fragmentation_proxy": 0.2365, "employment": 80189, "establishments": 18967, "emp_growth": 0.0252, "wage_growth": 0.0511}
+    },
+    {
+      "card_id": "MC-EDU-TUTOR-01",
+      "model_name": "AI-Native K-12 Tutoring Platform",
+      "sector_naics": "611710",
+      "architecture": "full_service_replacement",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "QCEW 611710 Baumol 0.89x — below economy average (tutors are underpaid relative to value). 411K teacher shortage, 80% unserved tutoring market, 30-50x cost reduction ($60/hr -> $1.50/hr). Massive Jevons expansion potential. But FEAR FRICTION GAP = 6 is the highest in any sector."},
+        "FA": {"score": 5.5, "justification": "F1 (9 — AI Socratic tutoring), F2 (7 — teacher shortage + demographic cliff). But F5 is NEGATIVE (-3 contribution): 55% parental discomfort. Net 2 positive forces severely dampened by psychology. Effective force alignment is weak despite strong technology."},
+        "EC": {"score": 5.5, "justification": "Supply chain moderate (LLM API). COPPA/FERPA regulatory complexity. 10 funded entrants + Khanmigo (free). Limited international dimension (US K-12 market). Competitive import moderate — Khanmigo free offering is the key threat."},
+        "TG": {"score": 6.0, "justification": "Medium crash resilience — $20/month consumer subscription is discretionary in recession. Fear friction gap of 6 means adoption is SLOW despite clear economics. Window exists but realization is delayed by psychology."},
+        "CE": {"score": 6.5, "justification": "$5-15M capital, 9mo to revenue — longer ramp due to trust-building requirement. 72% gross margins. 100K subscribers for break-even — ambitious. Consumer acquisition cost in education is high."}
+      },
+      "composite": 62.25,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 62.25, 60-70 range. FA 5.5 < 7.0. Fear friction gap of 6 is the defining constraint — economically powerful model crippled by adoption psychology.",
+      "qcew_data_used": {"baumol_score": 0.8903, "fragmentation_proxy": 0.15, "employment": 203905, "establishments": 30592, "emp_growth": 0.0686, "wage_growth": 0.0046}
+    },
+    {
+      "card_id": "MC-EDU-CRED-01",
+      "model_name": "AI-Era Credential Verification & Skills Marketplace",
+      "sector_naics": "6114",
+      "architecture": "marketplace_network",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 6.5, "justification": "Same QCEW as 6114 (Baumol 1.32x). 53% employers dropping degree requirements is strong signal. 1.85M credentials fragmented. But 1-in-700 execution gap (85% claim skills-based, 0.14% actually are) suggests the market is aspirational, not yet realized. Marketplace cold-start risk."},
+        "FA": {"score": 6.5, "justification": "F1 (8 — AI continuous competency assessment), F4 (7 — HR tech capital), F2 (6 — demographic pipeline constraints). 3 forces, 1 strong. Good but not exceptional alignment."},
+        "EC": {"score": 6.0, "justification": "Network effects create dependency on ecosystem adoption. Professional licensing boards may resist (state-level). 8 funded entrants + LinkedIn as massive incumbent. International talent portability adds some EC value."},
+        "TG": {"score": 6.5, "justification": "Medium crash resilience — hiring slowdowns reduce marketplace volume. But structural shift continues. Medium time sensitivity. 12mo to revenue is longer ramp."},
+        "CE": {"score": 6.5, "justification": "$5-12M capital, 12mo to revenue — longest ramp in education batch. 75% gross margins. 5,000 placements/month for break-even — ambitious marketplace target. Survives funding freeze but slow to reach scale."}
+      },
+      "composite": 64.0,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 64.0, 60-70 range. FA 6.5 < 7.0. Marketplace cold-start risk and 1-in-700 execution gap constrain all scores.",
+      "qcew_data_used": {"baumol_score": 1.3196, "fragmentation_proxy": 0.2365, "employment": 80189, "establishments": 18967, "emp_growth": 0.0252, "wage_growth": 0.0511}
+    },
+    {
+      "card_id": "MC-EDU-TEACH-01",
+      "model_name": "AI Teaching Assistant Platform (K-12)",
+      "sector_naics": "611110",
+      "architecture": "vertical_saas",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "QCEW 611110 Baumol 0.71x — teachers are UNDERPAID (below economy average). 411K positions vacant. 44% burnout. 83% already using AI. 10+ hrs/week on admin that AI can automate. The structural necessity is clear: the system is failing and teachers are self-adopting AI."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — AI automates grading/planning), F2 (8 — 42 states teacher shortage, structural), F5 (4 — positive for THIS model: teachers are buyers, 83% already using). 3 forces, 2 strong. Invisible AI pathway reduces friction."},
+        "EC": {"score": 6.0, "justification": "Supply chain moderate (LLM APIs + 50-state curriculum alignment). FERPA/COPPA compliance needed. Competitive moderate (12 funded entrants + Google/Microsoft). Limited international dimension. Leading indicators very strong (83% teacher usage)."},
+        "TG": {"score": 7.5, "justification": "Very high time sensitivity — 83% already using AI creates urgency for institutional solution. High crash resilience (K-12 government-funded, recession-resistant). 6mo to revenue. ESSER expiring but Title I/II ongoing."},
+        "CE": {"score": 8.5, "justification": "$3-8M capital, 6mo to revenue, 80% gross margins. 50K teachers for break-even at $6/month. 150-300x ROI for districts ($72/yr platform vs $12K/yr productivity gain). Extraordinary ROI story. Survives funding freeze."}
+      },
+      "composite": 72.25,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 72.25 >= 70.0, FA 7.0 >= 7.0. Strongest K-12 education card due to invisible AI pathway (teacher-facing, not student-facing).",
+      "qcew_data_used": {"baumol_score": 0.7122, "fragmentation_proxy": 0.0228, "employment": 934096, "establishments": 21289, "emp_growth": 0.0417, "wage_growth": 0.0386}
+    },
+    {
+      "card_id": "MC-EDU-CERT-01",
+      "model_name": "AI Professional Certification Prep Engine",
+      "sector_naics": "611691",
+      "architecture": "full_service_replacement",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "QCEW 611691 Baumol 0.41x — extremely low, test prep workers are among the lowest-paid in education. But the DEMAND driver is professional pipeline collapse (CPA -33%, nursing 78K->200K gap). $72B test prep market. 8-10x cost reduction ($3K -> $300). Clear Baumol cure."},
+        "FA": {"score": 7.0, "justification": "F1 (9 — AI generates unlimited practice questions), F2 (8 — pipeline crisis creates urgency), F4 (6 — employer-sponsored prep growing). 3 forces, 2 strong. Pipeline crisis is compelling demand driver."},
+        "EC": {"score": 6.0, "justification": "Requires domain expertise per exam (8/10 supply chain dependency on content experts). 5 funded entrants vs established Kaplan/Becker/Barbri. Licensing board acceptance uncertain. Limited international dimension (US professional licensing)."},
+        "TG": {"score": 7.5, "justification": "High crash resilience — certification is counter-cyclical (people pursue credentials in downturns). Medium time sensitivity. 6mo to revenue. Pipeline crisis creates sustained demand."},
+        "CE": {"score": 8.5, "justification": "$2-6M capital, 6mo to revenue, 85% gross margins. 20K candidates/yr for break-even at $350 avg. 8-15x cost advantage. Exceptional unit economics. Survives funding freeze."}
+      },
+      "composite": 71.0,
+      "category": "FORCE_RIDER",
+      "category_rationale": "Composite 71.0 >= 70.0, FA 7.0 >= 7.0.",
+      "qcew_data_used": {"baumol_score": 0.4105, "fragmentation_proxy": 0.1129, "employment": 100305, "establishments": 11327, "emp_growth": 0.0743, "wage_growth": 0.0318}
+    },
+    {
+      "card_id": "MC-EDU-MATCH-01",
+      "model_name": "AI Skills Assessment + Job Matching Platform",
+      "sector_naics": "611430",
+      "architecture": "platform_infrastructure",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "QCEW 611430 Baumol 1.34x with 54K employees. Staffing industry destruction (RHI -53%, MAN -44%) confirms the matching intermediation layer is collapsing and must be replaced. 39% skills obsolescence by 2030. But marketplace/platform cold-start risk and LinkedIn incumbent position constrain."},
+        "FA": {"score": 7.0, "justification": "F1 (8 — AI continuous assessment), F2 (7 — entry-level employment -13%), F4 (7 — staffing industry collapse releases $192B). 3 forces, all moderately strong. Broad but not intense alignment."},
+        "EC": {"score": 6.0, "justification": "Supply chain moderate (network effects dependency). NYC/state AI hiring bias regulations create both moat and cost. 10 funded entrants + LinkedIn massive incumbent. Limited international dimension. Leading indicators strong (staffing industry destruction P-027)."},
+        "TG": {"score": 7.0, "justification": "Mixed crash resilience — hiring volume drops in recession but reskilling need increases. Staffing destruction creates immediate replacement demand. 9mo to revenue. High time sensitivity."},
+        "CE": {"score": 6.5, "justification": "$5-15M capital, 9mo to revenue, 72% gross margins. 3,000 matches/month for break-even at $1K avg — ambitious. Network effects take time to build. 5-10x cost advantage vs traditional staffing."}
+      },
+      "composite": 67.25,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 67.25, 60-70 range. FA 7.0 meets FORCE_RIDER threshold but composite < 70.0. Platform cold-start risk and ambitious break-even constrain.",
+      "qcew_data_used": {"baumol_score": 1.3384, "fragmentation_proxy": 0.2631, "employment": 54319, "establishments": 14294, "emp_growth": 0.0379, "wage_growth": 0.042}
+    },
+    {
+      "card_id": "MC-EDU-UNIV-01",
+      "model_name": "University Back-Office AI Operations Platform",
+      "sector_naics": "611310",
+      "architecture": "vertical_saas",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.5, "justification": "QCEW 611310 Baumol 1.11x with 1.26M employees. 13% decline in 18-year-olds is existential — demographic cliff begins NOW. Admin costs $3,771/student rising 6.3%. 16 closures in 2025, 80+ projected by 2029. Survival-driven demand is the strongest SN driver in education."},
+        "FA": {"score": 7.0, "justification": "F1 (8 — AI automates 60%+ admin tasks), F2 (9 — demographic cliff is the primary driver, absolute), F4 (7 — cost-cutting necessity for survival). 3 forces, 1 at near-maximum. Demographic force is existential."},
+        "EC": {"score": 5.5, "justification": "Supply chain moderate (legacy ERP integration: Banner, Workday Student). FERPA compliance. 5 funded entrants but Ellucian ($3.5B) is dominant incumbent. Limited international dimension (US higher ed). Slow procurement cycles (6-18 months)."},
+        "TG": {"score": 7.0, "justification": "High crash resilience (university operations continue, counter-cyclical enrollment in recessions). Demographic cliff creates INCREASING urgency. But 9mo to revenue and slow university procurement temper timing grade."},
+        "CE": {"score": 6.5, "justification": "$5-12M capital, 9mo to revenue, 75% gross margins. 100 institutions for break-even at $120K ACV. 3-5x cost advantage. Survives funding freeze but slow to reach scale due to procurement cycles."}
+      },
+      "composite": 67.5,
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite 67.5, 60-70 range. FA 7.0 meets FORCE_RIDER threshold but composite < 70.0. Slow university procurement and Ellucian incumbency constrain.",
+      "qcew_data_used": {"baumol_score": 1.1147, "fragmentation_proxy": 0.0108, "employment": 1260085, "establishments": 13551, "emp_growth": 0.0241, "wage_growth": 0.043}
+    },
+    {
+      "card_id": "MC-EDU-FEAR-01",
+      "model_name": "Education AI Safety & Governance Platform",
+      "sector_naics": "611710",
+      "architecture": "regulatory_moat_builder",
+      "source_file": "education_deep_dive",
+      "scores": {
+        "SN": {"score": 7.0, "justification": "Same QCEW as 611710 (Baumol 0.89x). 76-point governance gap (86% using AI, 10% with guidelines) is the largest in any sector. EU AI Act classifies education AI as high-risk. Multiple US states drafting legislation. This is a new category (picks-and-shovels for education AI), not a Baumol cure."},
+        "FA": {"score": 7.0, "justification": "F5 (9 — fear IS the demand creator, 55% discomfort), F1 (7 — AI safety requires AI), F3 (6 — EU AI Act regulatory contagion). 3 forces, 1 very strong. Unique: psychology is the PRIMARY positive force, not a constraint."},
+        "EC": {"score": 7.0, "justification": "Minimal supply chain dependency (8/10). Regulatory contagion is maximum (9/10) — every new rule creates demand. Competitive very low (3 entrants, nearly zero education-specific). Leading indicators strong (healthcare AI governance as precedent). EU AI Act creates international demand."},
+        "TG": {"score": 7.5, "justification": "Very high crash resilience — compliance is non-discretionary. Fear-driven demand is counter-cyclical (uncertainty increases fear). High time sensitivity as regulation materializes. 6mo to revenue."},
+        "CE": {"score": 8.0, "justification": "$3-8M capital, 6mo to revenue, 82% gross margins. $10M ARR target from 500 district + 50 EdTech contracts. Good SaaS economics. Survives funding freeze. First-mover certification standard creates lock-in."}
+      },
+      "composite": 72.25,
+      "category": "FEAR_ECONOMY",
+      "category_rationale": "F5 psychology is the PRIMARY demand driver (55% discomfort creates the market). Also qualifies as FORCE_RIDER (composite 72.25 >= 70.0, FA 7.0 >= 7.0). FEAR_ECONOMY assigned as primary because the fear IS the product — this model exists because of parental/institutional fear of AI in education.",
+      "qcew_data_used": {"baumol_score": 0.8903, "fragmentation_proxy": 0.15, "employment": 203905, "establishments": 30592, "emp_growth": 0.0686, "wage_growth": 0.0046}
+    }
+  ],
+  "summary": {
+    "by_category": {
+      "STRUCTURAL_WINNER": 0,
+      "FORCE_RIDER": 21,
+      "TIMING_ARBITRAGE": 0,
+      "CAPITAL_MOAT": 0,
+      "FEAR_ECONOMY": 1,
+      "EMERGING_CATEGORY": 0,
+      "CONDITIONAL": 10,
+      "PARKED": 0
+    },
+    "primary_category_notes": "STRUCTURAL_WINNER: 0 cards qualify under HARD enforcement (composite >= 80.0 AND SN >= 9.0). MC-DEF-011 (CMMC) scored 82.5 composite but SN = 8.5 < 9.0 threshold — reassigned to FORCE_RIDER. No card in this batch achieves SN >= 9.0 because these are sector-specific models, not economy-wide structural necessities. TIMING_ARBITRAGE and CAPITAL_MOAT appear as secondary categories on several cards but are not assigned as primary where FORCE_RIDER takes precedence.",
+    "composite_range": {"min": 62.25, "max": 82.5},
+    "composite_stats": {"mean": 71.7, "median": 72.25},
+    "composite_distribution": {
+      "above_80": 1,
+      "75_to_80": 5,
+      "70_to_75": 16,
+      "65_to_70": 6,
+      "60_to_65": 4,
+      "below_60": 0
+    },
+    "top_5_new_cards": [
+      {"id": "MC-DEF-011", "composite": 82.5, "name": "CMMC Compliance Automation Platform", "category": "FORCE_RIDER", "note": "Strongest new card. Would be STRUCTURAL_WINNER if SN threshold were 8.5 instead of 9.0."},
+      {"id": "MC-V35-5239-001", "composite": 78.75, "name": "RegTech Orchestration Layer for Alt Investment Compliance", "category": "FORCE_RIDER"},
+      {"id": "MC-V35-5223-001", "composite": 78.5, "name": "Mortgage and Loan Servicing AI Operations Platform", "category": "FORCE_RIDER"},
+      {"id": "MC-DEF-012", "composite": 78.5, "name": "Classified Environment AI Deployment Platform", "category": "FORCE_RIDER"},
+      {"id": "MC-DEF-017", "composite": 77.75, "name": "Defense AI T&E Platform", "category": "FORCE_RIDER"}
+    ],
+    "bottom_5_new_cards": [
+      {"id": "MC-EDU-TUTOR-01", "composite": 62.25, "name": "AI-Native K-12 Tutoring Platform", "category": "CONDITIONAL", "note": "Fear friction gap of 6 is the defining constraint."},
+      {"id": "MC-V35-5416-001", "composite": 63.75, "name": "Consulting Engagement Knowledge Compounding Engine", "category": "CONDITIONAL"},
+      {"id": "MC-EDU-CRED-01", "composite": 64.0, "name": "AI-Era Credential Verification & Skills Marketplace", "category": "CONDITIONAL"},
+      {"id": "MC-V35-5417-002", "composite": 64.75, "name": "Contract Research Marketplace with AI Matching", "category": "CONDITIONAL"},
+      {"id": "MC-V35-5411-001", "composite": 67.25, "name": "AI Legal Document Factory", "category": "CONDITIONAL"}
+    ],
+    "by_source": {
+      "v35_model_cards": {
+        "count": 16,
+        "mean_composite": 71.6,
+        "range": "63.75-78.75",
+        "force_riders": 11,
+        "conditional": 5
+      },
+      "defense_deep_dive": {
+        "count": 8,
+        "mean_composite": 74.8,
+        "range": "69.5-82.5",
+        "force_riders": 7,
+        "conditional": 1
+      },
+      "education_deep_dive": {
+        "count": 8,
+        "mean_composite": 68.9,
+        "range": "62.25-74.5",
+        "force_riders": 3,
+        "conditional": 4,
+        "fear_economy": 1
+      }
+    },
+    "cross_source_analysis": {
+      "defense_premium": "Defense cards average 74.8 composite vs 71.6 (v35) and 68.9 (education). This premium is driven by: (1) $13.4B dedicated budget insulated from economic cycles, (2) regulatory moats (ITAR, FedRAMP, CMMC, clearances) that protect first movers, (3) low fear friction (buyers WANT AI), and (4) geopolitical urgency creating counter-cyclical demand.",
+      "education_discount": "Education cards average 68.9 — lowest of the three sources. This discount is entirely explained by fear friction: education has the LARGEST gap between economic readiness and psychological readiness (gap = 5). The corporate/professional channel (CORP-01: 74.5, TEACH-01: 72.25, CERT-01: 71.0, FEAR-01: 72.25) scores well; the consumer/student-facing channel (TUTOR-01: 62.25) scores lowest due to parental fear.",
+      "v35_breadth": "V35 cards span 16 sectors with diverse architectures. The financial services models (5239-001: 78.75, 5259-001: 77.25, 5223-001: 78.5) score highest due to 73% AI adoption (lowest friction) + Baumol scores of 2-3.6x + counter-cyclical demand. The marketplace models (5417-002: 64.75) and discretionary consulting model (5416-001: 63.75) score lowest due to cold-start risk and cyclical demand."
+    },
+    "calibration_check": {
+      "vs_existing_inventory": "Existing STRUCTURAL_WINNERS score 80.5-84.0. The highest new card (MC-DEF-011: 82.5) would rank in the top 8 of the entire 293-model inventory if it met the SN >= 9.0 threshold. The new cards' mean of 71.7 aligns with the existing inventory mean of 63.1 — the deep dive cards score above average because they were specifically selected for sector depth and architectural specificity, unlike the broad enumeration that includes many thin/speculative models.",
+      "distribution_health": "0 STRUCTURAL_WINNER (expected: 0-1 per batch of 32), 21 FORCE_RIDER (66% — higher than inventory average of 23% due to deep dive selection bias toward high-quality sectors), 10 CONDITIONAL (31% — vs 43% in inventory), 0 PARKED (all deep dive cards are above 60.0 threshold by construction — they were selected for being promising sectors)."
+    }
+  }
+}

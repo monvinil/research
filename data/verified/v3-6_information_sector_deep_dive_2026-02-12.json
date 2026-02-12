@@ -1,0 +1,1437 @@
+{
+  "cycle": "v3-6-information",
+  "date": "2026-02-12",
+  "agent": "Agent B (Analyst)",
+  "type": "sector_deep_dive",
+  "sector": "Information (NAICS 51)",
+
+  "sector_overview": {
+    "sector_naics": "51",
+    "sector_name": "Information",
+    "brief_date": "2026-02-12",
+    "engine_version": "v3-6",
+
+    "headline": "NAICS 51 is the AI economy's self-referential core: the sector PRODUCING AI tools is also the sector most DISRUPTED by them. Internal bifurcation is the defining dynamic -- AI infrastructure sub-sectors (518, 519) are accelerating at 20-30% growth while content creation sub-sectors (512, 516) are collapsing at -6% to -14%. Software publishing (5132) faces existential pressure as AI code generation reaches 82% developer adoption. The sector's $155K average wage creates the single largest Baumol cure opportunity per-worker in the economy. This is not a sector 'being disrupted by AI' -- it IS the disruption engine, eating itself from the inside.",
+
+    "sector_economics": {
+      "total_employment": 2978572,
+      "employment_growth_pct": -2.33,
+      "total_establishments": 285915,
+      "average_annual_pay": 154901,
+      "wage_growth_pct": 6.67,
+      "sector_baumol_score": 2.13,
+      "sector_revenue_estimate": "$1.8T+ (US information sector including software, cloud, media, telecom)",
+      "labor_share_of_costs": 55,
+      "notes": "Highest average pay of any 2-digit sector after Finance (52). Employment contracting (-2.33%) while wages surge (+6.67%) = classic Baumol signature. But unlike healthcare or education where Baumol cure releases stored energy, information sector IS the cure agent for other sectors. The self-referential loop creates unique dynamics."
+    },
+
+    "force_drivers": ["F1_technology", "F4_capital", "F5_psychology", "F6_energy"],
+    "primary_patterns": ["P-001", "P-036", "P-037", "P-038"],
+
+    "key_hypothesis_validated": "The sector screener hypothesis -- 'Information sector is bifurcating: AI infrastructure accelerating while content creation contracts' -- is CONFIRMED and STRONGER than hypothesized. The bifurcation is not just growth-vs-decline but a fundamental restructuring of what 'information work' means. Infrastructure (compute, hosting, data) grows as substrate; content creation (film, publishing, journalism) collapses as AI automates the routine-cognitive middle; software publishing faces existential redefinition as AI shifts the boundary between 'product' and 'service'.",
+
+    "transformation_phase": "acceleration",
+    "phase_confidence": "high",
+    "phase_evidence": [
+      "Motion picture employment -13.91% (QCEW) to -24.1% (v3-6 signals) -- accelerating decline",
+      "Internet publishing employment -6.36% despite +16.4% wage growth -- Baumol signature at extreme",
+      "Cloud infrastructure employment +4.08% with $600B+ hyperscaler capex planned 2026",
+      "AI code assistant market growing from $7.4B (2025) to $24B (2030) at 26.6% CAGR",
+      "Washington Post laid off 1/3 of staff (Feb 2026) -- institutional media collapse accelerating",
+      "Google search market ratio to AI search halved from 10:1 to 4.7:1 in 12 months",
+      "Gartner: traditional search volume drops 25% by 2026",
+      "Data center capex approaching $1T globally in 2026",
+      "Video game industry: 1/3 of US developers laid off in 2025"
+    ]
+  },
+
+  "sub_sector_analysis": [
+    {
+      "naics_code": "518",
+      "name": "Computing Infrastructure Providers, Data Processing, Web Hosting",
+      "status": "ACCELERATING",
+      "employment": 486000,
+      "employment_growth_pct": 4.08,
+      "average_pay": 171000,
+      "baumol_score": 2.36,
+      "establishments": 49000,
+
+      "current_state": {
+        "market_dynamics": "AI workload demand is driving the largest infrastructure buildout since the internet itself. Global cloud infrastructure market at $752B (2025), projected $2.39T by 2030. AWS ($100B+ annual revenue), Azure (31% YoY growth), Google Cloud ($50B run-rate, first profitable year 2025). Hyperscalers spending ~$700B combined capex in 2026, with $450B going to AI infrastructure specifically.",
+        "employment_trajectory": "Growing but QUALITY is shifting. Traditional data center operations (facilities management, hardware racking) being automated. New roles: AI infrastructure engineers, GPU cluster optimization, cooling system specialists, power grid negotiators. Employment growth is in high-skill technical roles, not operational ones.",
+        "key_data_points": [
+          "Cloud market: AWS 31%, Azure 25%, Google Cloud 11% -- Big Three hold 67%",
+          "Data center capex approaching $1T globally in 2026",
+          "IEA: data center electricity doubling to 945 TWh by 2030",
+          "US data center occupancy projected 95%+ by late 2026 -- physical capacity crisis",
+          "PJM capacity auction: $16.4B (3rd consecutive record), data centers 63% of price increase",
+          "2,600 GW in grid interconnection queue, 5+ year wait -- binding constraint on AI scaling"
+        ],
+        "forces_acting": ["F1_technology", "F4_capital", "F6_energy"],
+        "schumpeterian_position": "Late installation, approaching deployment. Capital is FLOODING in ($600B+ hyperscaler capex) but physical constraints (power, cooling, land) are emerging as binding. Jevons Paradox in action: cheaper compute drives MORE demand, not less. The infrastructure layer is the ONLY part of the information sector where physical scarcity creates durable moats.",
+        "baumol_dynamics": "Unlike other information sub-sectors, computing infrastructure has PHYSICAL constraints that limit Baumol cure dynamics. You cannot 10x a data center's capacity with AI -- you need physical land, power, cooling. This creates Baumol Premium characteristics within an otherwise Baumol Cure sector.",
+        "transformation_summary": "Growth accelerating but shifting from 'build more capacity' to 'optimize what exists + build AI-native infrastructure.' The pivot from AI training clusters to inference infrastructure (closer to users, lower latency) is the 2026 inflection. Edge computing and private 5G networks create new infrastructure layer below hyperscale cloud."
+      },
+
+      "year_by_year_projection": {
+        "2026": "Capex peaks for training clusters. Inference infrastructure buildout begins at scale. Physical capacity crisis (95%+ occupancy). Power constraints force hyperscalers into nuclear/solar PPAs. Private 5G network market hits $5.7B.",
+        "2027": "First wave of AI-native data centers operational (designed for inference, not training). Edge computing proliferates. Cooling innovation (zero-water, immersion) becomes competitive advantage. Oracle and neoclouds (CoreWeave, Lambda) gain 5-8% combined share.",
+        "2028": "Grid interconnection queue begins clearing for 2023-2024 applications. New nuclear (SMR) facilities begin contributing. Data center REITs split into AI-optimized vs legacy tiers with 3-5x valuation gap.",
+        "2029": "AI inference at edge becomes standard. Hyperscaler margin pressure as commodity inference competes with premium. Private cloud for AI workloads becomes enterprise default for regulated industries.",
+        "2030-2031": "Data center electricity at 6-12% of US grid (IEA). Industry consolidation: Big Three + 2-3 AI-native clouds dominate. Legacy hosting/colocation either acquired or marginalized. Employment flat despite 3x revenue -- automation of operations."
+      }
+    },
+
+    {
+      "naics_code": "519",
+      "name": "Web Search Portals, Libraries, Archives, and Other Information Services",
+      "status": "RESTRUCTURING",
+      "employment": 183000,
+      "employment_growth_pct": -1.2,
+      "average_pay": 270000,
+      "baumol_score": 3.72,
+      "establishments": 12000,
+
+      "current_state": {
+        "market_dynamics": "The highest Baumol score (3.72) of any sub-sector in the analysis -- $270K average pay with declining employment. This is the AI search revolution in real-time. Google's search monopoly is under pressure: AI search platforms grew 721% in monthly traffic, capturing 8% of search market by mid-2025. The ratio of Google users to AI search users halved from 10:1 to 4.7:1 in 12 months. Gartner predicts 25% traditional search volume drop by 2026.",
+        "employment_trajectory": "Contracting at high wages. The classic 'too expensive to maintain, too complex to automate fully' squeeze. Web search portal employment declining as AI answers replace web crawling/indexing/serving. But AI research roles within these companies (Google DeepMind, Meta FAIR) are growing at premium wages, driving the $270K average higher.",
+        "key_data_points": [
+          "Google search: 89.56% global share but ratio to AI search users halved in 12 months (10:1 -> 4.7:1)",
+          "AI Overviews advertising: 1% of Google search ad revenue in 2025, projected 3% in 2026, 6-7% in 2027",
+          "ChatGPT 810M MAU, but share of AI chatbot traffic fell 87% -> 68%; Gemini rose 5% -> 18%",
+          "Alphabet announced $180B 2026 spending plan (biggest ever) -- all-in on AI",
+          "Baumol score 3.72: highest in NAICS 51, wages growing fastest while employment declines",
+          "Data/analytics companies within 519 growing at 15-20% as AI creates demand for training data and data infrastructure"
+        ],
+        "forces_acting": ["F1_technology", "F4_capital", "F5_psychology"],
+        "schumpeterian_position": "Active creative destruction. The entire 'web search portal' business model is being Schumpeter-destroyed by AI chat/search. Google is attempting sustaining innovation (AI Overviews) but the business model transition from 'show 10 blue links with ads' to 'give one AI answer' threatens the ad-revenue model structurally. This is Christensen's Innovator's Dilemma in real-time: Google cannot fully cannibalize search ads to serve AI answers.",
+        "baumol_dynamics": "Extreme Baumol Cure dynamics. $270K average wages with employment declining = massive stored Baumol energy. But unlike healthcare or legal where AI cures cost disease, here AI is destroying the REVENUE model, not just compressing costs. This is Baumol Destruction, not Baumol Cure -- the sector gets cheaper AND the revenue disappears.",
+        "transformation_summary": "Web search portals face existential transformation as AI answers replace web indexing. Data services within 519 are the counter-story: AI creates insatiable demand for training data, synthetic data, data labeling, and data infrastructure. The sub-sector splits into 'dying search portals' and 'booming data infrastructure' -- another internal bifurcation."
+      },
+
+      "year_by_year_projection": {
+        "2026": "AI search captures 15-20% of information queries (up from 8%). Google AI Overviews generates 3% of search ad revenue. Publisher traffic from search falls another 25-30%. Data infrastructure companies (Snowflake, Databricks, etc.) grow 25%+.",
+        "2027": "Traditional search advertising peaks and begins secular decline. AI-native search (Perplexity, ChatGPT Search) reaches 25% of query volume. Google restructures search division. Data marketplace for AI training data becomes $10B+ market.",
+        "2028": "SEO industry collapses (-40% revenue). Content farms that existed for search traffic become unviable. Data labeling and synthetic data generation becomes larger market than traditional web search advertising.",
+        "2029": "Web portal employment -30% from 2025 baseline. Data services employment +40% from 2025. Net sub-sector employment roughly flat but completely different workforce composition.",
+        "2030-2031": "AI-native information retrieval is default. 'Web search' is legacy terminology. Data infrastructure is the actual growth engine. Sub-sector average pay exceeds $300K as low-skill roles eliminated and data science/AI roles dominate."
+      }
+    },
+
+    {
+      "naics_code": "5132",
+      "name": "Software Publishers",
+      "status": "EXISTENTIAL_PRESSURE",
+      "employment": 648000,
+      "employment_growth_pct": 2.57,
+      "average_pay": 200000,
+      "baumol_score": 2.76,
+      "establishments": 17000,
+
+      "current_state": {
+        "market_dynamics": "The most consequential sub-sector in the entire analysis. Software publishing employs 648K at $200K average pay -- the cognitive elite of the economy. AI code generation has reached 82% developer adoption, with 50% using AI tools daily. But the Solow Paradox signal is strong: experienced devs are 19% SLOWER on complex tasks with AI assistance. The market is bifurcating between 'AI makes simple code free' and 'complex system architecture requires more human judgment than ever.'",
+        "employment_trajectory": "Still growing at +2.57% but this MASKS internal restructuring. Entry-level developer hiring collapsed 67%. Senior/staff roles growing. The middle is being hollowed: junior developer -> AI pair programmer -> senior architect is the new career ladder, with the junior rung removed. AI code assistant market at $7.4B growing to $24B by 2030 (26.6% CAGR).",
+        "key_data_points": [
+          "82% of developers use AI tools to write code; 50% daily",
+          "85% of software workforce projected to adopt GenAI by 2026",
+          "25-40% of Google code is AI-generated",
+          "BUT experienced devs 19% SLOWER on complex tasks with AI -- Solow Paradox",
+          "Entry-level developer hiring -67% (P-037 Entry-Level Extinction)",
+          "AI code assistant market: $7.4B (2025) -> $24B (2030) at 26.6% CAGR",
+          "Enterprise AI market: $37B (fastest-scaling category in software history)",
+          "Code agents and AI app builders 'exploding from near-zero' (Menlo Ventures)",
+          "Software publishers still growing employment +2.57% but quality mix shifting dramatically"
+        ],
+        "forces_acting": ["F1_technology", "F4_capital", "F5_psychology", "F2_demographics"],
+        "schumpeterian_position": "Early-to-mid creative destruction. Software publishers are BOTH the disruptors (selling AI tools) AND the disrupted (their own products being commoditized by AI). Microsoft sells Copilot while Copilot makes competing with Microsoft easier. This is the most extreme Schumpeterian self-referential loop in economic history. The Christensen test: can incumbents adopt AI without cannibalizing revenue? For SaaS companies, the answer is MAYBE -- AI features increase stickiness but also reduce the NEED for the product (if AI can write the code, why buy the software?).",
+        "baumol_dynamics": "Baumol score 2.76 with $200K average pay = enormous stored energy. Software development has been a Baumol-exempt sector for 30 years because productivity kept pace with wages. AI code generation is the first technology that threatens to break the Baumol exemption -- if AI writes 60-80% of routine code, the effective cost of a software developer drops, but wages remain sticky. This creates classic Baumol Cure conditions: the price of software SHOULD drop dramatically, but wage stickiness and complexity premiums will create a Baumol Premium for system architects.",
+        "transformation_summary": "Software publishing faces the most complex transformation of any sub-sector. The routine-cognitive component (writing boilerplate code, bug fixes, documentation, testing) is being rapidly automated. But the tacit-cognitive component (system architecture, security design, user experience strategy, product vision) is becoming MORE valuable as AI handles the mechanical work. The sector will employ FEWER people at HIGHER average wages, with the eliminated jobs concentrated at entry/junior level. By 2031, 'software publisher' may be a misnomer -- 'AI system orchestrator' better describes the surviving firms."
+      },
+
+      "year_by_year_projection": {
+        "2026": "AI coding adoption reaches 85% of workforce. Code agents handle autonomous module creation (beyond suggestion-based completion). Junior hiring continues to collapse. SaaS companies add AI features to prevent churn, temporarily boosting margins. First wave of 'vibe-coded' applications enter market.",
+        "2027": "AI-generated code quality reaches senior developer level for 60% of standard tasks. SaaS pricing pressure as 'build vs. buy' equation shifts toward build (with AI assistance). Mid-tier software companies face margin compression. First major SaaS company acquired because AI made its product replicable.",
+        "2028": "Software publisher employment peaks and begins declining. Architecture/design roles command 2-3x premiums over coding roles. AI code review and security audit become larger markets than code generation. Open-source AI threatens proprietary software moats.",
+        "2029": "Routine software development employment -20% from 2025. System architecture employment +15%. Net sector employment -10%. Average pay rises to $220K+ as low-paid roles eliminated. The 'software is eating the world' era transitions to 'AI is eating software.'",
+        "2030-2031": "Software publishing restructured: firms are AI system orchestrators, not code writers. Employment -25% from 2025 but revenue +30% (AI efficiency). The surviving workforce is 80% senior/architect level. Entry-level pipeline crisis (P-037) creates acute shortage of experienced architects by 2031."
+      }
+    },
+
+    {
+      "naics_code": "5162",
+      "name": "Internet Publishing and Web Search Portals (Digital Content/Media)",
+      "status": "COLLAPSING",
+      "employment": 226000,
+      "employment_growth_pct": -6.36,
+      "average_pay": 239000,
+      "baumol_score": 3.30,
+      "establishments": 8000,
+
+      "current_state": {
+        "market_dynamics": "The most extreme Baumol signature in the entire NAICS 51 sector: employment declining -6.36% while wages surge +16.4%. This sub-sector spans digital media, internet publishing, and online content platforms. It is being squeezed from TWO directions: (1) AI-generated content floods the supply side (Deezer reports 50,000 fully AI-generated songs uploaded DAILY by end 2025, up from 10,000 at start of year), and (2) AI search reduces demand for web-published content (organic search traffic for publishers down 25-50% from AI Overviews and zero-click results).",
+        "employment_trajectory": "Accelerating decline. Washington Post laid off 1/3 of staff (Feb 2026). Entertainment and media layoffs up 18% with 17,000+ jobs in 2025. 3,000+ journalism job cuts in UK/US in 2025 alone. The survivors command ever-higher wages ($239K average, +16.4% growth) because the remaining roles are high-judgment editorial/strategy positions. This is textbook Barbell Economy formation: middle eliminated, premium and commodity endpoints remain.",
+        "key_data_points": [
+          "Employment -6.36% with wage growth +16.4% = most extreme Baumol signature in NAICS 51",
+          "Washington Post: 1/3 of staff laid off (Feb 2026), organic search traffic down ~50% in 3 years",
+          "Entertainment/media layoffs +18% YoY with 17,000+ cuts in 2025",
+          "AI-generated content: 50,000 fully AI songs uploaded to Deezer daily (5x growth in 2025)",
+          "Europol: 90% of online content may be synthetic by 2026",
+          "AI Overviews on Google reducing publisher click-through by 25-40%",
+          "SEO industry facing existential threat from AI search transformation",
+          "Digital advertising remains strong ($740B+ global 2026) but flows to platforms, not publishers"
+        ],
+        "forces_acting": ["F1_technology", "F5_psychology", "F4_capital"],
+        "schumpeterian_position": "Active destruction phase. The internet publishing model (create content -> attract search traffic -> sell ads) is being destroyed by AI on both sides. AI creates competing content at near-zero marginal cost, AND AI search eliminates the traffic that makes ad-supported publishing viable. Schumpeterian destruction is not 'coming' -- it is HERE.",
+        "baumol_dynamics": "Baumol Destruction (not Cure). High wages ($239K) would normally suggest Baumol Cure potential, but AI is not just compressing costs -- it is eliminating the REVENUE mechanism. When AI can write articles, create images, compose music, and answer queries directly, the economic basis for internet publishing as an employer collapses. The surviving premium is 'verified human' content creation and editorial judgment that AI cannot replicate.",
+        "transformation_summary": "Internet publishing is undergoing the most violent transformation in NAICS 51. Content creation at commodity level is becoming effectively free (AI-generated). The premium shifts to: (1) original investigative journalism, (2) verified human authenticity, (3) editorial curation/judgment, (4) live/experiential content that AI cannot generate. Employment will continue declining 5-10% annually through 2031, with survivors commanding $300K+ as the work becomes pure judgment/trust/brand."
+      },
+
+      "year_by_year_projection": {
+        "2026": "Publisher layoffs continue. AI search captures 15-20% of queries. Content authentication/verification becomes emerging market. First major publisher pivots to 'AI-free' brand positioning. Synthetic content detection tools reach $1B market.",
+        "2027": "30% of mid-tier digital publishers cease operations or merge. Surviving publishers split into two models: premium (NYT, Bloomberg -- subscription + verified human) and AI-augmented (AI-generated with human editorial layer). Advertising revenue shifts further to platform-native AI.",
+        "2028": "Internet publishing employment -30% from 2025. 'Content authentication' becomes standard (like SSL certificates). Verified human content commands 3-5x premium over AI content. Journalism restructures around investigation + verification, not information delivery.",
+        "2029": "Consolidation wave: 3-5 major digital media conglomerates survive at scale. Niche/specialist publishers thrive on subscriber loyalty. General interest publishing largely AI-automated. Employment stabilizes at -40% from 2025 peak.",
+        "2030-2031": "Surviving internet publishers are either premium subscription models or AI-native content factories. Employment at roughly 130K-140K (from 226K), but average pay exceeds $300K. The sector has barbelled: AI-generated commodity content (near-zero cost) and human-verified premium content (5-10x historical cost)."
+      }
+    },
+
+    {
+      "naics_code": "512",
+      "name": "Motion Picture and Sound Recording Industries",
+      "status": "COLLAPSING",
+      "employment": 378000,
+      "employment_growth_pct": -13.91,
+      "average_pay": 85000,
+      "baumol_score": 1.17,
+      "establishments": 40000,
+
+      "current_state": {
+        "market_dynamics": "The most dramatic employment collapse in NAICS 51 at -13.91% (v3-6 signals suggest -24.1% including contract/gig workers). Uniquely among information sub-sectors, motion picture has LOW average pay ($85K) and LOW Baumol score (1.17) -- this is NOT a Baumol Cure target but rather a DEMAND COLLAPSE. Post-pandemic streaming bubble bursting, Hollywood production down, and AI threatening VFX, animation, and post-production workflows.",
+        "employment_trajectory": "Catastrophic. One-third of US game industry workers laid off in 2025. Hollywood analysts project 100,000-200,000 entertainment jobs disrupted by AI by end of 2026. Union contracts expire in 2026, raising fears of another labor stoppage. VFX artists, animators, 3D modelers most immediately vulnerable.",
+        "key_data_points": [
+          "Employment -13.91% (QCEW) to -24.1% (v3-6 signals including gig workers)",
+          "Average pay $85K -- lowest in NAICS 51, below economy-wide average for this skill level",
+          "1/3 of US game developers laid off in 2025",
+          "100,000-200,000 entertainment jobs projected disrupted by AI by end 2026",
+          "52% of game industry professionals say GenAI having negative impact (up from 18% two years ago)",
+          "Studios spending <3% of production budgets on AI tools (cautious adoption) but 7% on operational AI",
+          "AI music: 50,000 fully AI songs uploaded to Deezer daily. Suno/Udio settled with major labels",
+          "Union contracts expire 2026 -- potential labor action",
+          "LA production volume declining (Hollywood review 2025)"
+        ],
+        "forces_acting": ["F1_technology", "F5_psychology", "F4_capital"],
+        "schumpeterian_position": "Accelerated destruction. Unlike software publishing where the sector is partially self-disrupting, motion picture is being disrupted by EXTERNAL AI tools (Sora, Runway, Suno, Udio) that originate in the tech sector. The industry's union structure and guild system creates higher institutional resistance but also higher cliff-risk -- when adoption breaks through, it will be sudden, not gradual.",
+        "baumol_dynamics": "LOW Baumol score (1.17) indicates this is NOT a Baumol Cure sector. Wages are low and have not outpaced productivity for decades (film industry already compressed wages through gig/contract structure). AI impact here is DEMAND destruction and SUBSTITUTION, not cost-disease cure. The few Baumol Premium roles (A-list directors, star actors, showrunners) will command even higher premiums as AI handles everything below them.",
+        "transformation_summary": "Motion picture is the canary in the NAICS 51 coal mine. Low wages, high gig dependency, and creative work that AI can increasingly approximate make this the most vulnerable sub-sector. But creative originality, star talent, and live performance remain Baumol Premium. The sector restructures around a much smaller core of premium human creatives directing AI production tools, with middle-tier production roles (VFX, animation, editing, sound design) largely automated."
+      },
+
+      "year_by_year_projection": {
+        "2026": "Union contract negotiations dominate. Studios cautiously adopt AI for dubbing, localization, previz. First 'significantly AI-aided' film released (per industry analysts). Game industry continues restructuring. AI music settles into licensed model (Suno/Udio deals).",
+        "2027": "Post-contract landscape: AI usage terms defined. Production costs drop 15-25% for mid-budget content. AI-generated short-form content floods streaming platforms. Premium theatrical releases double down on human-craft quality as differentiator.",
+        "2028": "Employment -35% from 2025 baseline. AI handles 60%+ of VFX, animation, and post-production for mid-tier content. Premium content (tentpole films, prestige TV) maintains human-heavy production. Independent film renaissance as AI lowers production costs to near-zero.",
+        "2029": "Industry stabilizes around bimodal structure: premium human-craft content (expensive, scarce, high-value) and AI-augmented mass content (cheap, abundant, lower-value). Middle-budget production nearly eliminated.",
+        "2030-2031": "Employment at 220K-250K (from 378K). Average pay rises to $100K+ as low-paid gig roles eliminated and premium creative roles command higher compensation. 'Content' is no longer scarce -- curation, quality verification, and live experience are the scarce resources."
+      }
+    },
+
+    {
+      "naics_code": "513",
+      "name": "Publishing Industries and Telecommunications",
+      "status": "SLOW_DECLINE_WITH_AI_PIVOT",
+      "employment": 935000,
+      "employment_growth_pct": -0.26,
+      "average_pay": 171000,
+      "baumol_score": 2.35,
+      "establishments": 120000,
+
+      "current_state": {
+        "market_dynamics": "The LARGEST sub-sector by employment (935K) combining traditional publishing and telecommunications. Employment nearly flat (-0.26%) but this masks divergent dynamics: telecom employment declining 1-2% annually as network automation advances, while publishing employment declining 3-5% annually from AI content generation and search traffic loss. Telecom is pivoting to AI-as-infrastructure, positioning physical networks as 'AI grids' for distributed inference.",
+        "employment_trajectory": "Gradual decline overall. Telecom undergoing transformation from connectivity provider to AI infrastructure provider. Traditional publishing (newspapers, books, periodicals) in accelerating decline: media industry lost 14,298 jobs/year since 2018 (2x the 2010-2017 rate). But telecom AI investment creating new roles in network AI, edge computing, and private 5G.",
+        "key_data_points": [
+          "935K employees -- largest NAICS 51 sub-sector by headcount",
+          "Telecom AI transformation: 84% of telco executives agree AI agents will reinvent operations",
+          "Private 5G enterprise network market: $5.7B in 2026, projected $29.7B by 2030",
+          "AI in telecom market: $8.76B (2025), projected $203B by 2035",
+          "Traditional publishing: media lost 14,298 jobs/year since 2018 (accelerating from 7,305 pre-2018)",
+          "Washington Post layoffs (1/3 of staff) signal institutional media collapse",
+          "Telecom service commoditization: global revenue stagnation despite 5G rollout",
+          "Telcos repositioning as 'distributed AI grids' for token processing at scale"
+        ],
+        "forces_acting": ["F1_technology", "F6_energy", "F3_geopolitics"],
+        "schumpeterian_position": "Pre-disruption to early disruption. Telecom infrastructure has long replacement cycles (10-20 year network lifecycles) that slow Schumpeterian dynamics. But AI-native network architectures are the first technology that could compress this cycle. Publishing within 513 is further along the destruction curve. The combined sub-sector masks the divergence.",
+        "baumol_dynamics": "Moderate Baumol score (2.35) driven by telecom wages outpacing productivity gains in network operations. AI network automation (predictive maintenance, autonomous operations) represents a genuine Baumol Cure for telecom operations. Publishing Baumol dynamics are similar to 5162 -- Baumol Destruction rather than Cure.",
+        "transformation_summary": "513 is two stories in one NAICS code. Telecom transforms from connectivity commodity to AI infrastructure provider -- the physical network becomes the 'last mile' for AI inference. Publishing transforms (or collapses) as AI content generation and AI search eliminate the traditional model. Both trajectories point to fewer workers, higher skills, and AI-augmented operations."
+      },
+
+      "year_by_year_projection": {
+        "2026": "Telecom begins AI-native network deployments (agentic AI for operations, predictive maintenance). Private 5G reaches 6,500+ deployments. Publishing layoffs continue at accelerated pace.",
+        "2027": "First telcos offer 'AI grid' services (distributed inference on network edge). 6G research funding increases. Traditional publishing employment -10% from 2025.",
+        "2028": "Telecom employment stabilizes as AI operations roles offset traditional operations cuts. Publishing employment -20% from 2025. Local newspapers near extinction except as AI-augmented community platforms.",
+        "2029": "AI-native 6G trials begin. Telecom revenue per employee rises 20%+ from AI optimization. Publishing survivors are subscription-premium or AI-augmented.",
+        "2030-2031": "Total 513 employment at 800K-850K (from 935K). Telecom portion stable-to-growing as AI grid services create new revenue. Publishing portion contracted by 30-40%."
+      }
+    }
+  ],
+
+  "transformation_timeline": {
+    "2026_current_state": {
+      "headline": "The Great Bifurcation Accelerates",
+      "dynamics": [
+        "Infrastructure (518): $700B+ hyperscaler capex, data center capacity crisis (95%+ occupancy), power constraints as binding limit",
+        "Software (5132): AI coding at 82% adoption, entry-level hiring -67%, Solow Paradox (experienced devs 19% slower with AI)",
+        "Content (512, 5162): Motion picture -14% to -24% employment, WashPo layoff 1/3, AI search captures 8-15% of queries",
+        "Data (519): Baumol 3.72 -- highest score, $270K avg pay, search portals dying while data infrastructure booms",
+        "Telecom/Publishing (513): Stable overall but masking telecom-AI pivot vs publishing collapse",
+        "Capital concentration: Top 5 tech companies spending $700B combined on AI infrastructure"
+      ],
+      "key_threshold": "AI search market share crosses 15% of queries -- triggers accelerating publisher traffic loss"
+    },
+    "2027_first_order_effects": {
+      "headline": "AI-Native Replaces AI-Augmented",
+      "dynamics": [
+        "AI code agents move from suggestions to autonomous module creation -- SaaS pricing disrupted",
+        "Traditional search advertising peaks and begins secular decline",
+        "Data center first wave of AI-native facilities operational",
+        "30% of mid-tier digital publishers cease operations",
+        "Hollywood post-contract landscape: AI usage terms defined, production costs drop 15-25%",
+        "Telecom 'AI grid' services launch commercially",
+        "Game industry stabilizes at new lower headcount"
+      ],
+      "key_threshold": "First major SaaS company acquired because AI made its product replicable"
+    },
+    "2028_second_order_cascade": {
+      "headline": "The Middle Collapses",
+      "dynamics": [
+        "Software publisher employment peaks and begins declining",
+        "Architecture/design roles command 2-3x premiums over coding roles",
+        "AI handles 60%+ of VFX, animation, post-production for mid-tier content",
+        "Data center REITs split into AI-optimized vs legacy tiers (3-5x valuation gap)",
+        "SEO industry revenue -40%",
+        "Internet publishing employment -30% from 2025",
+        "Content authentication becomes standard infrastructure",
+        "Telecom employment stabilizes with AI operations offset"
+      ],
+      "key_threshold": "Software developer employment growth turns negative for the first time"
+    },
+    "2029_structural_reconfiguration": {
+      "headline": "New Equilibrium Emerges",
+      "dynamics": [
+        "Routine software development employment -20% from 2025; system architecture +15%",
+        "Media industry bimodal: premium human-craft vs AI-augmented mass content",
+        "Data infrastructure exceeds web search advertising as revenue category",
+        "AI inference at edge becomes standard",
+        "Industry consolidation across all sub-sectors",
+        "Net NAICS 51 employment approximately -15% from 2025"
+      ],
+      "key_threshold": "AI-generated content exceeds human-generated content by volume across all categories"
+    },
+    "2030_2031_new_economy": {
+      "headline": "The Information Sector Restructured",
+      "dynamics": [
+        "NAICS 51 employment at ~2.3-2.5M (from 2.98M in 2025): -16% to -23%",
+        "Average pay rises from $155K to $185K-$200K (low-paid roles eliminated)",
+        "Revenue grows +30-50% despite employment decline (AI productivity)",
+        "Infrastructure (518) is the dominant sub-sector by revenue and strategic importance",
+        "Software publishing (5132) has barbelled: AI system orchestrators at premium + commodity AI-app builders",
+        "Content creation (512, 5162) has restructured around premium human + AI production tools",
+        "The P-037 Entry-Level Extinction crisis manifests: acute shortage of experienced architects/engineers with 5-7 years experience",
+        "Data center electricity at 6-12% of US grid"
+      ],
+      "key_threshold": "Entry-level engineering pipeline crisis creates wage spikes for mid-career talent"
+    }
+  },
+
+  "second_order_effects": [
+    {
+      "effect_name": "Professional Services Cascade",
+      "description": "As AI code generation commoditizes software, IT consulting and systems integration (NAICS 5415, 2.46M workers) faces fundamental disruption. If clients can build with AI, they need fewer consultants. Accenture, Deloitte, Infosys IT practices face 20-30% headcount reduction by 2030.",
+      "affected_sectors": ["5415 (IT Services)", "5416 (Management Consulting)", "5612 (Staffing)"],
+      "magnitude": "high",
+      "confidence": "high",
+      "timeline": "2027-2030",
+      "evidence": "AI coding at 82% adoption. India IT services face $100K H-1B fee + AI substitution dual squeeze. Entry-level developer hiring -67% already affecting staffing pipeline."
+    },
+    {
+      "effect_name": "Education Pipeline Collapse",
+      "description": "Entry-level developer hiring -67% destroys the economic return on computer science degrees. CS enrollment already peaked in 2020. By 2028, CS programs face declining enrollment as the career path becomes less certain. This cascades to university funding (CS departments are cash cows subsidizing other departments), student loan demand, and college town economies.",
+      "affected_sectors": ["611310 (Computer Science Education)", "6111 (Elementary/Secondary)", "5221 (Student Lending)"],
+      "magnitude": "high",
+      "confidence": "medium",
+      "timeline": "2027-2031",
+      "evidence": "P-037 Entry-Level Extinction confirmed. 67% junior dev hiring collapse. 37% managers prefer AI over Gen Z hire. CS enrollment peaked 2020. College enrollment cliff already hitting."
+    },
+    {
+      "effect_name": "Commercial Real Estate Double Hit",
+      "description": "Information sector employment decline compounds the existing office CMBS crisis (12.34% delinquency, all-time record). Tech companies are the largest premium office tenants in SF, NYC, Seattle, Austin. Employment decline + remote work = tech office vacancy rises from 20% to 30%+ in tech hub cities. This accelerates the CRE cascade (P-026).",
+      "affected_sectors": ["531120 (Office Leasing)", "531390 (CRE Services)", "522292 (CMBS)"],
+      "magnitude": "high",
+      "confidence": "high",
+      "timeline": "2026-2029",
+      "evidence": "Office CMBS delinquency 12.34% (above 2008). Tech companies are largest premium tenants. SF office vacancy already 30%+. Information sector employment -2.33% and declining."
+    },
+    {
+      "effect_name": "Advertising Industry Restructuring",
+      "description": "AI search reducing publisher traffic -> ad revenue flows from publishers to platforms -> AI-generated content floods supply side -> ad pricing pressure. The $740B global digital advertising market restructures: programmatic advertising on traditional web declines; AI-native ad formats (sponsored AI answers, AI-generated ad creative) grow. This cascades to advertising agencies (NAICS 5418), media buying firms, and marketing technology companies.",
+      "affected_sectors": ["541810 (Advertising Agencies)", "541890 (Marketing Services)", "511120 (Periodical Publishers)"],
+      "magnitude": "high",
+      "confidence": "high",
+      "timeline": "2026-2029",
+      "evidence": "AI search capturing 8-15% of queries. AI Overviews reducing publisher click-through 25-40%. Gartner: 25% search volume decline by 2026. Google AI Overviews ads growing from 1% to 6-7% by 2027."
+    },
+    {
+      "effect_name": "Energy Grid Transformation",
+      "description": "Data center electricity demand doubling to 945 TWh by 2030 (IEA) cascades to: utility capacity planning, nuclear renaissance (10GW+ committed), grid modernization investment, and power market pricing. PJM capacity auction at $16.4B (3rd record) with data centers driving 63% of the increase. This creates a physical constraint on NAICS 51 growth itself -- a Jevons Paradox where cheaper AI compute drives more demand than the grid can supply.",
+      "affected_sectors": ["2211 (Electric Power)", "2371 (Power Infrastructure)", "3359 (Electrical Equipment)"],
+      "magnitude": "very_high",
+      "confidence": "high",
+      "timeline": "2026-2031",
+      "evidence": "P-038 AI Infrastructure Chain Constraint confirmed. IEA 945 TWh by 2030. PJM $16.4B auction. 2,600 GW in queue, 5+ year wait. Data center occupancy 95%+ by late 2026."
+    },
+    {
+      "effect_name": "Creative Economy Restructuring",
+      "description": "AI content generation transforms the broader creative economy beyond NAICS 51. When AI can generate music, images, video, text, and code, every sector that BUYS creative work is affected. Marketing budgets shift from agency fees to AI tools. Corporate communications become AI-generated. Training content production costs drop 80%. This is a $500B+ reallocation across the economy.",
+      "affected_sectors": ["5414 (Graphic Design)", "5418 (Advertising)", "5419 (Marketing Research)", "6117 (Professional Training)"],
+      "magnitude": "high",
+      "confidence": "medium",
+      "timeline": "2027-2031",
+      "evidence": "AI-generated content reaching critical scale (50K AI songs/day on Deezer alone). Studios adopting AI for 7% of operational spend. Enterprise GenAI $37B market. Content creation costs approaching near-zero marginal cost for commodity content."
+    },
+    {
+      "effect_name": "AI Safety and Governance Market Creation",
+      "description": "The information sector's self-disruption creates DEMAND for governance, safety, compliance, and authentication services. If 90% of online content becomes synthetic (Europol projection), content authentication, AI safety auditing, and trust verification become essential infrastructure. This is a new market created entirely by NAICS 51's transformation.",
+      "affected_sectors": ["5416 (Management Consulting)", "5418 (Marketing)", "511210 (Software -- AI Safety)"],
+      "magnitude": "medium",
+      "confidence": "high",
+      "timeline": "2026-2030",
+      "evidence": "Fear economy TAM ~$86B by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B). Europol 90% synthetic content projection. Deepfake 16x growth (500K to 8M 2023-2025). Content authentication emerging market. AI Governance and Compliance OS is top-scoring model (84.0)."
+    }
+  ],
+
+  "barbell_economy": {
+    "sector_level_analysis": {
+      "routine_cognitive_pct": 50,
+      "routine_cognitive_tasks": [
+        "Writing boilerplate/standard code (software publishing)",
+        "Content creation at commodity level (articles, summaries, reports)",
+        "Data entry and basic data processing",
+        "Network monitoring and basic troubleshooting (telecom)",
+        "Standard video editing, color correction, sound mixing (motion picture)",
+        "SEO optimization, web analytics reporting",
+        "Basic journalism (event coverage, earnings reports, press release rewrites)",
+        "QA testing (automated testing, regression testing)",
+        "IT helpdesk and tier-1 support",
+        "Translation and localization"
+      ],
+      "tacit_manual_pct": 5,
+      "tacit_manual_tasks": [
+        "Data center physical operations (racking, cabling, cooling maintenance)",
+        "On-location film production (camera, lighting, set construction)",
+        "Hardware installation and repair (telecom field technicians)",
+        "Studio recording (live music, foley, practical effects)"
+      ],
+      "tacit_cognitive_pct": 45,
+      "tacit_cognitive_tasks": [
+        "System architecture and infrastructure design (software)",
+        "Security architecture and threat modeling",
+        "Product strategy and user experience vision",
+        "Investigative journalism and source cultivation",
+        "Creative direction (film, music, games)",
+        "AI system design and prompt engineering at scale",
+        "Network architecture for novel requirements (AI grids, edge computing)",
+        "Editorial judgment and content curation",
+        "Algorithm design and optimization for novel problems",
+        "Strategic planning and market positioning"
+      ],
+      "net_effect": "The information sector barbells more dramatically than any other sector because the routine-cognitive component (50%) is EXACTLY what AI does best -- information processing, content generation, code writing. The tacit-cognitive component (45%) commands growing premiums because judgment, creativity, and strategic vision become more valuable as execution becomes free. The tacit-manual component (5%) is small but durable -- you cannot AI your way out of physically racking servers or filming on location."
+    },
+
+    "premium_tier": {
+      "description": "Roles that become MORE valuable as AI handles routine work",
+      "roles": [
+        {
+          "role": "AI System Architect",
+          "current_comp": "$200K-$400K",
+          "projected_2031_comp": "$350K-$700K",
+          "rationale": "Designing AI systems that orchestrate other AI systems requires judgment that AI cannot self-generate. The architect decides WHAT to build and WHY, not HOW (which AI handles)."
+        },
+        {
+          "role": "Security Architect / AI Safety Engineer",
+          "current_comp": "$180K-$350K",
+          "projected_2031_comp": "$300K-$600K",
+          "rationale": "As AI writes more code and generates more content, the attack surface expands exponentially. Security judgment is tacit-cognitive and becomes more critical as AI-generated systems proliferate."
+        },
+        {
+          "role": "Creative Director / Showrunner",
+          "current_comp": "$150K-$500K",
+          "projected_2031_comp": "$250K-$1M+",
+          "rationale": "AI makes execution cheap. Vision and taste become the scarce inputs. A creative director who can orchestrate AI production tools to execute their vision has 10x the output of today."
+        },
+        {
+          "role": "Investigative Journalist / Source Developer",
+          "current_comp": "$80K-$200K",
+          "projected_2031_comp": "$150K-$400K",
+          "rationale": "AI cannot cultivate human sources, conduct undercover investigations, or exercise editorial judgment about public interest. These become premium as commodity journalism is AI-generated."
+        },
+        {
+          "role": "Data Infrastructure Architect",
+          "current_comp": "$200K-$350K",
+          "projected_2031_comp": "$300K-$500K",
+          "rationale": "AI creates insatiable demand for data. Designing the data pipelines, governance frameworks, and infrastructure that feed AI systems is tacit-cognitive work with growing demand."
+        }
+      ]
+    },
+
+    "commodity_tier": {
+      "description": "Roles that become AI-substitutable, with wages converging toward AI-tool-operator compensation",
+      "roles": [
+        {
+          "role": "Junior Software Developer",
+          "current_comp": "$80K-$130K",
+          "projected_2031_status": "Reduced 60-70%. Remaining roles are 'AI pair programming operators' at $60K-$90K.",
+          "rationale": "AI code generation handles 80%+ of routine coding tasks. Junior devs who survive will primarily review and test AI output."
+        },
+        {
+          "role": "Content Writer / Copywriter",
+          "current_comp": "$50K-$90K",
+          "projected_2031_status": "Reduced 70-80%. Remaining roles are 'AI content editors' at $40K-$70K.",
+          "rationale": "AI-generated content quality exceeds average human output for informational/commercial content. Human editors review AI output rather than creating from scratch."
+        },
+        {
+          "role": "VFX Artist / Animator (mid-tier)",
+          "current_comp": "$70K-$120K",
+          "projected_2031_status": "Reduced 50-60%. Remaining roles shift to 'AI VFX director' overseeing AI-generated output.",
+          "rationale": "AI handles 60%+ of standard VFX/animation work by 2028. Premium creative VFX survives; routine production VFX is automated."
+        },
+        {
+          "role": "SEO Specialist",
+          "current_comp": "$60K-$100K",
+          "projected_2031_status": "Category near-eliminated. Transforms into 'AI visibility optimizer' at reduced comp.",
+          "rationale": "Traditional SEO becomes irrelevant as AI search replaces web search. New role focuses on visibility within AI answer engines, fundamentally different skill set."
+        },
+        {
+          "role": "Network Operations Center Analyst",
+          "current_comp": "$60K-$90K",
+          "projected_2031_status": "Reduced 40-50%. AI handles routine monitoring; humans handle exceptions only.",
+          "rationale": "Agentic AI for network operations automates 70-80% of NOC functions by 2029."
+        }
+      ]
+    },
+
+    "barbell_ratio_by_subsector": {
+      "518_computing_infrastructure": {"premium_pct": 55, "commodity_pct": 30, "eliminated_pct": 15, "notes": "Physical infrastructure creates more durable employment than pure-digital sub-sectors"},
+      "519_web_search_data": {"premium_pct": 60, "commodity_pct": 10, "eliminated_pct": 30, "notes": "Extreme bifurcation -- data infrastructure premium vs search portal elimination"},
+      "5132_software_publishers": {"premium_pct": 40, "commodity_pct": 25, "eliminated_pct": 35, "notes": "Largest absolute job elimination in NAICS 51; architecture premium highest"},
+      "5162_internet_publishing": {"premium_pct": 30, "commodity_pct": 15, "eliminated_pct": 55, "notes": "Most severe elimination rate -- AI-generated content destroys the employment model"},
+      "512_motion_picture": {"premium_pct": 25, "commodity_pct": 20, "eliminated_pct": 55, "notes": "Creative premium survives but production middle eliminated"},
+      "513_publishing_telecom": {"premium_pct": 35, "commodity_pct": 35, "eliminated_pct": 30, "notes": "Telecom infrastructure jobs more durable than publishing jobs"}
+    }
+  },
+
+  "model_cards": [
+    {
+      "card_id": "MC-INFO-001",
+      "model_name": "AI-Native Data Center Operations Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "518210",
+      "sector_name": "Computing Infrastructure Providers",
+      "one_line": "AI platform automating data center operations (cooling, power, workload scheduling) to achieve 15-25% efficiency gains at 95%+ occupancy rates",
+      "macro_source": "P-038 AI Infrastructure Chain Constraint + F6 energy constraints + 518 employment +4.08%",
+      "forces": ["F1_technology", "F6_energy", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "518210",
+        "employment": 486000,
+        "emp_growth": "+4.08%",
+        "avg_pay": "$171K",
+        "baumol_score": 2.36,
+        "establishments": 49000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 8.5,
+          "justification": "Data center occupancy at 95%+ by late 2026 means operators MUST optimize existing capacity. $1T+ annual capex creates demand for efficiency tools. Power grid constraints (2,600 GW queue, 5+ year wait) make optimization more critical than expansion. Every percentage point of efficiency gain = billions in avoided capex."
+        },
+        "force_alignment": {
+          "score": 9.0,
+          "justification": "Aligned with F1 (AI for operations), F6 (energy efficiency critical), and F4 (massive capital flowing to infrastructure). P-038 AI Infrastructure Chain Constraint means each optimization layer creates compound value. Microsoft's zero-water cooling pilot shows hyperscalers actively pursuing AI-driven efficiency."
+        },
+        "external_context": {
+          "score": 7.5,
+          "justification": "Global market -- US, EU, India, Gulf all building data centers. EU AI Act delays reduce regulatory friction. India zero-tax-through-2047 creates new market. But hyperscalers may build internally rather than buy (competitive risk from AWS, Azure, Google engineering teams)."
+        },
+        "timing_grade": {
+          "score": 8.0,
+          "justification": "Optimal window 2026-2028 as capacity crisis forces adoption. Revenue-generating within 6 months (efficiency gains measurable immediately). Perez turning point resilient -- data center optimization needed in both boom and bust. Physical infrastructure = crash resistant."
+        },
+        "capital_efficiency": {
+          "score": 7.5,
+          "justification": "Software + sensors platform. $2-5M to MVP. 75-80% gross margins. Data flywheel (more deployments = better optimization models). But requires domain expertise in power systems, cooling, and workload scheduling that narrows talent pool."
+        }
+      },
+      "composite_calculation": "(8.5*25 + 9.0*25 + 7.5*20 + 8.0*15 + 7.5*15) / 10 = (212.5 + 225 + 150 + 120 + 112.5) / 10 = 82.0",
+      "composite_score": 82.0,
+      "category": "STRUCTURAL_WINNER",
+      "category_justification": "SN >= 9.0 not met (8.5) but composite 82.0 with SN 8.5 + FA 9.0 qualifies as borderline. Reclassify as FORCE_RIDER given SN < 9.0 per hard enforcement rules.",
+      "category_final": "FORCE_RIDER",
+
+      "unit_economics": {
+        "revenue_per_unit": "$50K-$200K/month per data center facility (based on size and optimization scope)",
+        "cost_per_unit_ai": "$5K-$20K/facility/month (sensors + AI inference + cloud infrastructure)",
+        "cost_per_unit_incumbent": "$200K-$500K/facility/month (manual operations staff + suboptimal power/cooling)",
+        "break_even_volume": "15-20 facility deployments",
+        "jevons_multiplier": "2x -- efficiency gains allow more workloads per facility, expanding compute availability"
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "key_players": ["Crusoe Energy (AI + energy)", "NVIDIA DGX Cloud (vertical integration)", "Schneider Electric (legacy DCIM)", "Vertiv (cooling/power)", "Nlyte (DCIM)"],
+        "moat_sources": ["Proprietary optimization data from deployments", "Domain expertise in power/cooling/workload interaction", "Hardware sensor integration creates switching costs", "Regulatory knowledge for nuclear/grid compliance"]
+      },
+
+      "falsification_criteria": [
+        "If hyperscalers build all optimization internally (reduces TAM to mid-market/colocation only)",
+        "If power grid constraints ease faster than projected (reduces urgency)",
+        "If data center demand growth slows due to AI training efficiency gains (reduces occupancy pressure)",
+        "If competing platform achieves dominant market share before 2027 (first-mover advantage lost)"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-002",
+      "model_name": "AI Code Quality and Security Audit Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "511210",
+      "sector_name": "Software Publishers",
+      "one_line": "Platform providing automated security auditing, code review, and quality assurance for AI-generated code, addressing the 'trust gap' as 82% of developers use AI coding tools",
+      "macro_source": "P-036 Anticipatory Displacement + 5132 Baumol 2.76 + AI coding 82% adoption",
+      "forces": ["F1_technology", "F5_psychology", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "511210",
+        "employment": 648000,
+        "emp_growth": "+2.57%",
+        "avg_pay": "$200K",
+        "baumol_score": 2.76,
+        "establishments": 17000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 9.0,
+          "justification": "82% of developers using AI coding tools means billions of lines of AI-generated code entering production systems. AI-generated code has different vulnerability patterns than human code. Security auditing of AI output is structurally necessary -- no organization can ship AI-generated code without verification. This is the 'AI writes the code, humans verify it' business model for the entire software industry."
+        },
+        "force_alignment": {
+          "score": 8.5,
+          "justification": "F1 (AI creates the problem AND the solution -- AI auditing AI code), F5 (enterprise fear of AI-generated vulnerabilities drives adoption), F4 (cybersecurity spending at $60.6B growing to $86B). Aligned with P-036 (anticipatory displacement creates demand for verification) and P-038 (security is part of AI infrastructure chain)."
+        },
+        "external_context": {
+          "score": 7.0,
+          "justification": "Global need -- every geography writing AI-generated code needs auditing. EU AI Act (despite delay) will require AI system documentation including code provenance. US state-level AI regulation creating compliance demand. But market is crowded (Snyk, Veracode, SonarQube, plus AI-native entrants)."
+        },
+        "timing_grade": {
+          "score": 8.5,
+          "justification": "Window opening NOW as AI code adoption reaches critical mass (82%). Revenue immediate (enterprises already need this). Crash resilient -- security spending is counter-cyclical (rises in downturns as fear increases). First-mover advantage as AI-specific security patterns are novel."
+        },
+        "capital_efficiency": {
+          "score": 8.0,
+          "justification": "$1-3M to MVP. 80%+ gross margins (software-only). Data flywheel: more code analyzed = better vulnerability detection. API-first architecture enables rapid integration with existing CI/CD pipelines. Low customer acquisition cost -- integrates with tools developers already use."
+        }
+      },
+      "composite_calculation": "(9.0*25 + 8.5*25 + 7.0*20 + 8.5*15 + 8.0*15) / 10 = (225 + 212.5 + 140 + 127.5 + 120) / 10 = 82.5",
+      "composite_score": 82.5,
+      "category": "STRUCTURAL_WINNER",
+      "category_justification": "SN 9.0 meets threshold. Composite 82.5. Security + AI code convergence creates structural necessity that persists regardless of market conditions. Qualifies for STRUCTURAL_WINNER.",
+      "category_final": "STRUCTURAL_WINNER",
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-$5,000/month per development team (tiered by repo count and scan frequency)",
+        "cost_per_unit_ai": "$50-$500/team/month (AI inference for code scanning + pattern database)",
+        "cost_per_unit_incumbent": "$2,000-$10,000/month for manual code review + separate security audit tools",
+        "break_even_volume": "200-300 team subscriptions",
+        "jevons_multiplier": "3x -- as AI-generated code volume grows 5-10x, security scanning demand grows proportionally"
+      },
+
+      "competitive_density": {
+        "status": "crowded_but_AI_native_gap",
+        "key_players": ["Snyk ($8.5B valuation)", "Veracode (legacy SAST/DAST)", "SonarQube (open-source)", "GitHub Advanced Security", "Semgrep"],
+        "moat_sources": ["AI-generated code specific vulnerability database (novel patterns)", "Integration with AI coding tools (Copilot, Cursor, Claude Code)", "Compliance documentation auto-generation", "Real-time scanning during AI code generation (not post-hoc)"]
+      },
+
+      "falsification_criteria": [
+        "If AI coding tools build in sufficient security themselves (Copilot adding security scanning natively)",
+        "If AI-generated code proves no more vulnerable than human code (reduces urgency)",
+        "If major enterprise breach traced to AI-generated code triggers over-regulation that blocks AI coding adoption",
+        "If existing security vendors (Snyk, Veracode) successfully extend to AI-specific patterns"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-003",
+      "model_name": "Content Authentication and Provenance Platform",
+      "architecture": "platform_infrastructure",
+      "sector_naics": "519290",
+      "sector_name": "Web Search / Information Services",
+      "one_line": "Infrastructure platform providing cryptographic content authentication and provenance verification as AI-generated content approaches 90% of online content (Europol projection)",
+      "macro_source": "P-036 Anticipatory Displacement + F5 deepfake trust collapse + 519 Baumol 3.72",
+      "forces": ["F5_psychology", "F1_technology", "F3_geopolitics"],
+
+      "qcew_reference": {
+        "naics": "519290",
+        "employment": 183000,
+        "emp_growth": "-1.2%",
+        "avg_pay": "$270K",
+        "baumol_score": 3.72,
+        "establishments": 12000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 8.5,
+          "justification": "Europol projects 90% of online content may be synthetic by 2026. 8M deepfakes in 2025 (16x from 2023). 'Liar's Dividend' threatens democratic discourse. Content authentication becomes infrastructure-level necessity (like SSL/TLS for security). C2PA and similar standards creating foundation but no dominant platform."
+        },
+        "force_alignment": {
+          "score": 8.0,
+          "justification": "F5 (trust collapse is the primary driver -- deepfake fear creates demand), F1 (AI creates the problem; cryptographic verification and AI detection create the solution), F3 (state-level regulation in 2026 mandating AI content labeling creates compliance requirement). Fear economy TAM $86B by 2030."
+        },
+        "external_context": {
+          "score": 8.5,
+          "justification": "Global need -- every country faces synthetic content challenge. EU AI Act requires AI content labeling (despite enforcement delay). US state bills targeting AI content disclosure. India, UK, Japan all developing content authentication standards. First-mover in standard-setting has outsized advantage (like Verisign for SSL)."
+        },
+        "timing_grade": {
+          "score": 7.5,
+          "justification": "Market forming now but monetization uncertain. Standards (C2PA) still evolving. Revenue path: enterprise licensing (media companies, platforms) + API calls for verification. Moderate crash resilience -- trust infrastructure is necessary but adoption depends on ecosystem coordination."
+        },
+        "capital_efficiency": {
+          "score": 6.5,
+          "justification": "$5-10M to build platform + achieve standard compliance. Network effects are critical (value increases with adoption). Platform economics but high initial investment and ecosystem coordination costs. Margins improve dramatically at scale (80%+ for verification API)."
+        }
+      },
+      "composite_calculation": "(8.5*25 + 8.0*25 + 8.5*20 + 7.5*15 + 6.5*15) / 10 = (212.5 + 200 + 170 + 112.5 + 97.5) / 10 = 79.25",
+      "composite_score": 79.25,
+      "category": "FEAR_ECONOMY",
+      "category_justification": "F5 psychology is the PRIMARY force driver. Content authentication is directly created by fear of synthetic content. Fear economy criteria met: demand would not exist without AI fear. FEAR_ECONOMY category per hard enforcement.",
+      "category_final": "FEAR_ECONOMY",
+
+      "unit_economics": {
+        "revenue_per_unit": "$10K-$100K/month per enterprise customer (media companies, platforms) + $0.001-$0.01 per API verification call",
+        "cost_per_unit_ai": "$1K-$10K/customer/month (cryptographic infrastructure + AI detection models)",
+        "cost_per_unit_incumbent": "No direct incumbent -- this is a NEW market category",
+        "break_even_volume": "50-100 enterprise customers OR 100M+ monthly API calls",
+        "jevons_multiplier": "5x+ -- as synthetic content volume grows exponentially, verification demand grows proportionally"
+      },
+
+      "competitive_density": {
+        "status": "nascent",
+        "key_players": ["C2PA Alliance (Adobe, Microsoft, BBC)", "Truepic", "Hive Moderation", "Reality Defender", "Digimarc"],
+        "moat_sources": ["Standard-setting participation (C2PA)", "Network effects (more verified content = more valuable platform)", "Regulatory compliance certification", "Integration with major content platforms and browsers"]
+      },
+
+      "falsification_criteria": [
+        "If AI detection technology fails to keep pace with AI generation (arms race lost)",
+        "If major platforms build authentication internally (Google, Meta have resources)",
+        "If public apathy toward synthetic content means no market demand ('people don't care')",
+        "If regulatory requirements for content labeling are weakened or unenforced"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-004",
+      "model_name": "AI-Augmented Investigative Journalism Platform",
+      "architecture": "hybrid_service",
+      "sector_naics": "516210",
+      "sector_name": "Internet Publishing / Media",
+      "one_line": "Premium digital media platform combining AI research/analysis tools with human investigative journalists, targeting the 'verified human' premium as AI-generated content floods commodity news",
+      "macro_source": "P-001 Baumol Cure + 5162 Baumol 3.30 + F5 trust collapse",
+      "forces": ["F5_psychology", "F1_technology", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "516210",
+        "employment": 226000,
+        "emp_growth": "-6.36%",
+        "avg_pay": "$239K",
+        "baumol_score": 3.30,
+        "establishments": 8000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 7.0,
+          "justification": "As AI-generated content reaches 90% of online content, 'verified human' journalism becomes a premium good. The structural necessity is driven by trust collapse -- democratic societies NEED credible information sources. But necessity is mediated by willingness to pay (subscription model dependency). NYT, Bloomberg prove premium subscription model works; question is how many can sustain it."
+        },
+        "force_alignment": {
+          "score": 7.5,
+          "justification": "F5 (trust collapse drives premium for verified human content), F1 (AI tools make human journalists 3-5x more productive at research/analysis), F4 (PE distress in media creates acquisition opportunities for premium brands). Counter-force: AI-generated news commoditizes the base layer."
+        },
+        "external_context": {
+          "score": 6.5,
+          "justification": "US-centric opportunity (subscription models work in English-language markets). EU regulatory environment supportive (press subsidies, AI content labeling). But audience size for premium journalism is limited -- perhaps 10-20M households willing to pay $200+/yr per publication."
+        },
+        "timing_grade": {
+          "score": 7.5,
+          "justification": "Window opening now as publisher layoffs (WashPo 1/3 staff) create talent availability and brand distress. Crash resilient -- information demand is counter-cyclical. But building subscriber base takes 2-3 years minimum."
+        },
+        "capital_efficiency": {
+          "score": 6.0,
+          "justification": "High-talent model (investigative journalists are expensive, $100K-$300K each). Revenue per subscriber lower than SaaS ($200-$500/yr vs $1K-$10K/yr). Margins improve with AI augmentation (AI handles research, journalists handle judgment). But capital-intensive talent acquisition."
+        }
+      },
+      "composite_calculation": "(7.0*25 + 7.5*25 + 6.5*20 + 7.5*15 + 6.0*15) / 10 = (175 + 187.5 + 130 + 112.5 + 90) / 10 = 69.5",
+      "composite_score": 69.5,
+      "category": "CONDITIONAL",
+      "category_justification": "Composite below 70.0. Model is viable but conditional on subscriber growth and trust premium monetization. CONDITIONAL per hard enforcement.",
+      "category_final": "CONDITIONAL",
+
+      "unit_economics": {
+        "revenue_per_unit": "$200-$500/year per subscriber. $50K-$200K/year per institutional subscriber (hedge funds, law firms, corporate intelligence).",
+        "cost_per_unit_ai": "$5-$20/subscriber/year (AI research tools, content generation assistance, analytics)",
+        "cost_per_unit_incumbent": "$50-$150/subscriber/year (manual research, editorial overhead, legacy CMS/infrastructure)",
+        "break_even_volume": "50K-100K paid subscribers (at $300/yr average) to support 50-person investigative team",
+        "jevons_multiplier": "1.5x -- premium journalism has limited demand expansion (people pay for trust, which has inherent scarcity)"
+      },
+
+      "falsification_criteria": [
+        "If AI-generated journalism quality exceeds human investigative quality (removes trust premium)",
+        "If 'verified human' branding fails to command price premium (consumer indifference)",
+        "If subscriber acquisition costs exceed $200/subscriber (unit economics fail)",
+        "If media consolidation blocks independent publishers from distribution"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-005",
+      "model_name": "Telecom AI Operations Platform (AIOps for Network Infrastructure)",
+      "architecture": "vertical_saas",
+      "sector_naics": "517311",
+      "sector_name": "Telecommunications / Network Infrastructure",
+      "one_line": "AI platform for autonomous telecom network operations -- predictive maintenance, traffic optimization, and agentic AI for NOC automation, targeting $203B AI-in-telecom market by 2035",
+      "macro_source": "513 Baumol 2.35 + Telecom AI transformation + F1 agentic AI + F6 energy grid nexus",
+      "forces": ["F1_technology", "F6_energy", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "517311",
+        "employment": 935000,
+        "emp_growth": "-0.26%",
+        "avg_pay": "$171K",
+        "baumol_score": 2.35,
+        "establishments": 120000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 8.0,
+          "justification": "84% of telco executives agree AI agents will reinvent operations. Telecom service commoditization means margins compress unless costs compress faster -- AI operations is the structural answer. Network complexity increasing (5G, private networks, AI grids) while workforce declining. AI-native network architectures are inevitable."
+        },
+        "force_alignment": {
+          "score": 8.0,
+          "justification": "F1 (agentic AI for network operations is frontier capability -- multi-agent systems for complex network management), F6 (telecom infrastructure critical for AI data center connectivity), F4 (AI in telecom market $8.76B growing to $203B by 2035). Private 5G market $5.7B in 2026."
+        },
+        "external_context": {
+          "score": 7.5,
+          "justification": "Global opportunity -- every telecom operator globally faces same cost/complexity squeeze. EU and Asian markets adopt faster than US for telecom AI. India's data center buildout creates telecom infrastructure demand. But incumbent telecom vendors (Ericsson, Nokia, Huawei) have deep relationships."
+        },
+        "timing_grade": {
+          "score": 7.0,
+          "justification": "2026 is 'pivot year' for telecom AI (per Omdia). But telecom sales cycles are 12-24 months (long). Revenue timing: 6-12 months from first POC to deployment. Crash resilient -- telecom infrastructure spend is essential-services level."
+        },
+        "capital_efficiency": {
+          "score": 7.0,
+          "justification": "$3-8M to MVP (requires network domain expertise + AI). 70-75% gross margins for SaaS. Long sales cycles reduce capital efficiency. But high LTV (telecom customers have 5-10 year contracts). Data flywheel from network telemetry."
+        }
+      },
+      "composite_calculation": "(8.0*25 + 8.0*25 + 7.5*20 + 7.0*15 + 7.0*15) / 10 = (200 + 200 + 150 + 105 + 105) / 10 = 76.0",
+      "composite_score": 76.0,
+      "category": "FORCE_RIDER",
+      "category_justification": "Composite 76.0 with strong F1 alignment. FA 8.0 qualifies for FORCE_RIDER. Not structural winner (SN 8.0 < 9.0).",
+      "category_final": "FORCE_RIDER",
+
+      "unit_economics": {
+        "revenue_per_unit": "$100K-$500K/year per telecom operator (based on network size and automation scope)",
+        "cost_per_unit_ai": "$10K-$50K/operator/year (AI inference + network monitoring infrastructure)",
+        "cost_per_unit_incumbent": "$500K-$2M/year per operator (manual NOC staffing + legacy management tools)",
+        "break_even_volume": "10-15 operator deployments",
+        "jevons_multiplier": "1.5x -- lower operations costs enable telecom operators to deploy more network capacity, especially for AI data center connectivity"
+      },
+
+      "falsification_criteria": [
+        "If incumbent telecom vendors (Ericsson, Nokia) build superior AI operations tools",
+        "If telecom operators build internally rather than buy",
+        "If telecom industry consolidation reduces number of potential customers",
+        "If AI grid concept fails (telcos don't successfully pivot to AI infrastructure)"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-006",
+      "model_name": "AI-Native SaaS Rebuilder / Software M&A Platform",
+      "architecture": "roll_up_modernize",
+      "sector_naics": "511210",
+      "sector_name": "Software Publishers",
+      "one_line": "Acquire mid-market SaaS companies facing margin pressure from AI commoditization, rebuild products with AI-native architecture at 60-80% lower development cost, and operate as AI-efficient portfolio",
+      "macro_source": "P-001 Baumol Cure + 5132 Baumol 2.76 + F4 PE refinancing wall + Schumpeterian gap in software",
+      "forces": ["F1_technology", "F4_capital", "F2_demographics"],
+
+      "qcew_reference": {
+        "naics": "511210",
+        "employment": 648000,
+        "emp_growth": "+2.57%",
+        "avg_pay": "$200K",
+        "baumol_score": 2.76,
+        "establishments": 17000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 8.0,
+          "justification": "PE-backed SaaS companies facing double squeeze: $930B PE debt maturing 2026 + AI commoditization of their products. Distress rate 11.98% (+148%). Many mid-market SaaS products can be rebuilt with AI at 60-80% lower cost. Acquisition window open as PE funds need exits. Silver Tsunami (52.3% of businesses owned by 55+) creates additional acquisition supply."
+        },
+        "force_alignment": {
+          "score": 8.5,
+          "justification": "F1 (AI code generation enables 60-80% cheaper product development), F4 (PE refinancing wall creates forced sellers at 2-4x EBITDA), F2 (founder aging creates willingness to sell). Triple alignment creates a Schumpeterian acquisition window: buy distressed SaaS, rebuild with AI, operate at structurally lower cost."
+        },
+        "external_context": {
+          "score": 6.5,
+          "justification": "US-centric (PE refinancing wall is primarily US phenomenon). EU SaaS market has different dynamics. Requires significant capital access and operational expertise. Competition from larger PE firms executing similar strategy."
+        },
+        "timing_grade": {
+          "score": 8.5,
+          "justification": "Optimal window 2026-2028 during PE refinancing wall peak. By 2029, distressed assets are either acquired or restructured. First-mover advantage in sector-specific SaaS (vertical market SaaS most vulnerable). Revenue from Day 1 (acquired companies have existing revenue). Crash BENEFICIAL -- recession accelerates distress, creating more acquisition targets."
+        },
+        "capital_efficiency": {
+          "score": 7.0,
+          "justification": "$5-20M per acquisition. SBA 7a/504 loans available for smaller deals. Revenue-generating from Day 1. AI rebuild reduces headcount 40-60% within 12 months (margin expansion). But capital-intensive roll-up strategy has execution risk."
+        }
+      },
+      "composite_calculation": "(8.0*25 + 8.5*25 + 6.5*20 + 8.5*15 + 7.0*15) / 10 = (200 + 212.5 + 130 + 127.5 + 105) / 10 = 77.5",
+      "composite_score": 77.5,
+      "category": "FORCE_RIDER",
+      "category_justification": "Composite 77.5. Strong FA 8.5 and TG 8.5 but SN 8.0 prevents STRUCTURAL_WINNER. F4 capital force is primary driver. FORCE_RIDER per hard enforcement.",
+      "category_final": "FORCE_RIDER",
+
+      "unit_economics": {
+        "revenue_per_unit": "Acquired revenue: $1M-$10M ARR per SaaS company",
+        "cost_per_unit_ai": "AI rebuild: $200K-$1M per product (vs $2-5M original development cost). Operating team: 3-5 AI-augmented engineers per product (vs 10-20 pre-acquisition).",
+        "cost_per_unit_incumbent": "Original development cost $2-5M. Operating team 10-20 engineers at $200K avg = $2-4M/yr overhead.",
+        "break_even_volume": "2-3 acquisitions to create operational portfolio. Payback period: 18-30 months per acquisition.",
+        "jevons_multiplier": "2x -- lower SaaS prices from AI-rebuilt products expand market (currently unserved SMBs access enterprise-grade tools)"
+      },
+
+      "falsification_criteria": [
+        "If AI-generated software quality insufficient to replace mid-market SaaS products",
+        "If PE firms execute AI-rebuild strategy themselves (using internal portfolio operations teams)",
+        "If customer churn during product transition exceeds 30% (destroying acquired value)",
+        "If AI code generation does not reliably reduce development costs by 60%+ (Solow Paradox persists)"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-007",
+      "model_name": "AI Training Data Marketplace and Licensing Platform",
+      "architecture": "platform_marketplace",
+      "sector_naics": "519130",
+      "sector_name": "Internet Publishing / Data Services",
+      "one_line": "Marketplace connecting data owners (publishers, enterprises, creators) with AI companies needing licensed training data, with automated rights management and compliance",
+      "macro_source": "519 Baumol 3.72 + AI training data demand explosion + copyright settlement wave (Suno/Udio)",
+      "forces": ["F1_technology", "F3_geopolitics", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "519130",
+        "employment": 183000,
+        "emp_growth": "-1.2%",
+        "avg_pay": "$270K",
+        "baumol_score": 3.72,
+        "establishments": 12000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 8.0,
+          "justification": "AI model training requires data. Copyright lawsuits (NYT v. OpenAI, Suno/Udio music settlements) are forcing AI companies to LICENSE data rather than scrape. The Suno/Udio settlements with major labels prove the model: AI companies WILL pay for licensed, rights-cleared training data. This creates a structural need for a marketplace that connects data suppliers with AI model trainers."
+        },
+        "force_alignment": {
+          "score": 7.5,
+          "justification": "F1 (AI model training creates insatiable data demand), F3 (EU AI Act requires training data documentation; US copyright enforcement accelerating), F4 ($37B enterprise GenAI market needs compliant data supply). But data marketplace dynamics are winner-take-most (network effects favor consolidation)."
+        },
+        "external_context": {
+          "score": 8.0,
+          "justification": "Global -- EU AI Act Article 53 requires training data documentation. US copyright enforcement creating compliance need. Suno/Udio settlements prove AI companies will pay for licensed data. Music, publishing, image, and video data all need licensing infrastructure."
+        },
+        "timing_grade": {
+          "score": 7.5,
+          "justification": "Window opening now as copyright enforcement creates urgency. But marketplace building takes time (chicken-and-egg: need both data suppliers and AI buyers). First significant revenue in 12-18 months. Moderate crash resilience -- AI companies may reduce data spending in downturn but licensing compliance is sticky."
+        },
+        "capital_efficiency": {
+          "score": 7.0,
+          "justification": "$3-8M to build marketplace infrastructure + rights management system. Take rate: 15-25% of transaction value (marketplace economics). High margins at scale but requires significant investment in rights management technology and legal compliance. Network effects create eventual moat."
+        }
+      },
+      "composite_calculation": "(8.0*25 + 7.5*25 + 8.0*20 + 7.5*15 + 7.0*15) / 10 = (200 + 187.5 + 160 + 112.5 + 105) / 10 = 76.5",
+      "composite_score": 76.5,
+      "category": "FORCE_RIDER",
+      "category_justification": "Composite 76.5. F1 technology force is primary driver. SN 8.0 below STRUCTURAL_WINNER threshold. FORCE_RIDER per hard enforcement.",
+      "category_final": "FORCE_RIDER",
+
+      "unit_economics": {
+        "revenue_per_unit": "15-25% take rate on data licensing transactions. Expected $500K-$5M per major AI company customer annually.",
+        "cost_per_unit_ai": "Rights management infrastructure: $100K-$500K/year. AI-powered content classification and compliance: $50K-$200K/year.",
+        "cost_per_unit_incumbent": "Manual licensing (rights agencies, publishers): 35-50% take rate with 3-6 month negotiation cycles.",
+        "break_even_volume": "$20M-$30M in annual gross merchandise value (GMV) through the platform",
+        "jevons_multiplier": "3-5x -- accessible, compliant training data enables MORE AI model development, expanding the AI ecosystem"
+      },
+
+      "falsification_criteria": [
+        "If synthetic data generation quality eliminates need for real-world training data",
+        "If AI companies successfully defend fair use claims (eliminating licensing necessity)",
+        "If major platforms (Google, Microsoft) build proprietary data licensing directly",
+        "If data marketplace fails to achieve liquidity (chicken-and-egg problem unsolved)"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-008",
+      "model_name": "AI-Powered Streaming Content Intelligence Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "512110",
+      "sector_name": "Motion Picture / Streaming",
+      "one_line": "AI platform for streaming services providing content performance prediction, automated metadata enrichment, personalization optimization, and AI-assisted content commissioning decisions",
+      "macro_source": "512 employment -13.91% + streaming cost control priority + AI operational adoption at 7%",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+
+      "qcew_reference": {
+        "naics": "512110",
+        "employment": 378000,
+        "emp_growth": "-13.91%",
+        "avg_pay": "$85K",
+        "baumol_score": 1.17,
+        "establishments": 40000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 7.0,
+          "justification": "Streaming platforms face dual pressure: content costs rising while subscriber growth slows. Studios spending 7% of operational budgets on AI (separate from 3% on production AI). Content commissioning decisions worth $100M+ each need better prediction. AI metadata enrichment and personalization are table-stakes competitive requirements."
+        },
+        "force_alignment": {
+          "score": 7.5,
+          "justification": "F1 (AI for content analytics and prediction is mature capability), F4 (streaming M&A continuing -- better tools improve acquisition targets), F5 (viewer psychology -- personalization fights churn). But operational AI is less transformative than production AI, limiting upside."
+        },
+        "external_context": {
+          "score": 6.5,
+          "justification": "Global streaming market but dominated by 5-6 major players (Netflix, Disney+, Amazon, Apple, Max, Paramount). Limited TAM (few potential customers, each very large). International market fragmented with different dynamics."
+        },
+        "timing_grade": {
+          "score": 7.5,
+          "justification": "Immediate need -- 2026 is streaming industry's 'cost control year.' Revenue within 6-9 months of deployment. But long enterprise sales cycles (6-12 months to close major streaming platform). Moderate crash resilience -- entertainment spending is discretionary."
+        },
+        "capital_efficiency": {
+          "score": 7.0,
+          "justification": "$2-5M to build platform. 75-80% gross margins. But small number of potential customers (5-10 major streaming platforms globally) means concentrated revenue risk. Each deal is large ($500K-$5M/yr) but total addressable customer count is limited."
+        }
+      },
+      "composite_calculation": "(7.0*25 + 7.5*25 + 6.5*20 + 7.5*15 + 7.0*15) / 10 = (175 + 187.5 + 130 + 112.5 + 105) / 10 = 71.0",
+      "composite_score": 71.0,
+      "category": "FORCE_RIDER",
+      "category_justification": "Composite 71.0. F1 technology force drives value. Limited TAM prevents higher score. FORCE_RIDER per hard enforcement.",
+      "category_final": "FORCE_RIDER",
+
+      "unit_economics": {
+        "revenue_per_unit": "$500K-$5M/year per major streaming platform",
+        "cost_per_unit_ai": "$50K-$200K/customer/year (AI inference for content analysis + recommendation optimization)",
+        "cost_per_unit_incumbent": "$2M-$10M/year (internal data science teams + legacy analytics tools)",
+        "break_even_volume": "3-5 major streaming platform customers",
+        "jevons_multiplier": "1.5x -- better content prediction enables more commissioning decisions, expanding content library"
+      },
+
+      "falsification_criteria": [
+        "If streaming platforms build all AI analytics internally (Netflix has strong internal capability)",
+        "If streaming industry consolidation reduces customer count below viable threshold",
+        "If content prediction accuracy does not meaningfully exceed human executive judgment",
+        "If AI-generated content makes content commissioning less important (infinite supply reduces curation value)"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-009",
+      "model_name": "Enterprise AI Search and Knowledge Infrastructure",
+      "architecture": "platform_saas",
+      "sector_naics": "519290",
+      "sector_name": "Information Services / Enterprise Search",
+      "one_line": "AI-native enterprise search and knowledge management platform replacing traditional intranets, knowledge bases, and internal search -- the 'Google replacement' for organizations",
+      "macro_source": "519 Baumol 3.72 + AI search disrupting consumer search + enterprise parallel transformation",
+      "forces": ["F1_technology", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "519290",
+        "employment": 183000,
+        "emp_growth": "-1.2%",
+        "avg_pay": "$270K",
+        "baumol_score": 3.72,
+        "establishments": 12000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 8.5,
+          "justification": "The same AI search revolution disrupting Google is coming to enterprises. Workers waste 3.6 hours/day searching for information (McKinsey). AI-native enterprise search (RAG over corporate knowledge) saves 20-40% of knowledge worker time. With 82M+ knowledge workers in US alone, the productivity gain is $500B+ annually. Every enterprise will need AI search infrastructure."
+        },
+        "force_alignment": {
+          "score": 8.0,
+          "justification": "F1 (RAG, vector databases, and LLMs enable enterprise AI search that actually works for the first time), F4 (enterprise AI $37B market growing fastest in software history). Aligned with broader 'AI replacing web search' trend. 78% enterprise AI adoption (McKinsey) creates ready market."
+        },
+        "external_context": {
+          "score": 7.0,
+          "justification": "Global enterprise need. But highly competitive market (Microsoft Copilot, Google Workspace AI, Glean, Guru, etc.). Microsoft has distribution advantage through Office 365 installed base. Differentiation requires vertical specialization or superior RAG accuracy."
+        },
+        "timing_grade": {
+          "score": 7.5,
+          "justification": "Market forming rapidly. Enterprise AI budgets allocated now. Revenue within 3-6 months for quick deployments. But Microsoft Copilot is the 800-pound gorilla -- differentiation must be clear. Crash resilient -- productivity tools maintain spend in downturns."
+        },
+        "capital_efficiency": {
+          "score": 7.5,
+          "justification": "$2-5M to MVP. 80%+ gross margins. SaaS model with $10-50/user/month pricing. Low compute costs for inference at enterprise scale. Data flywheel (more usage = better answers). Land-and-expand within enterprises."
+        }
+      },
+      "composite_calculation": "(8.5*25 + 8.0*25 + 7.0*20 + 7.5*15 + 7.5*15) / 10 = (212.5 + 200 + 140 + 112.5 + 112.5) / 10 = 77.75",
+      "composite_score": 77.75,
+      "category": "FORCE_RIDER",
+      "category_justification": "Composite 77.75. F1 technology force is primary driver. SN 8.5 just below STRUCTURAL_WINNER threshold. Competitive density is a concern. FORCE_RIDER per hard enforcement.",
+      "category_final": "FORCE_RIDER",
+
+      "unit_economics": {
+        "revenue_per_unit": "$10-$50/user/month. Enterprise contracts: $100K-$2M/year.",
+        "cost_per_unit_ai": "$1-$5/user/month (LLM inference + vector database + document processing)",
+        "cost_per_unit_incumbent": "$20-$100/user/month (legacy search tools + SharePoint + manual knowledge management)",
+        "break_even_volume": "500-1000 enterprise seats OR 5-10 enterprise contracts",
+        "jevons_multiplier": "2x -- when enterprise search actually works, employees search more (previously gave up due to poor results)"
+      },
+
+      "falsification_criteria": [
+        "If Microsoft Copilot becomes dominant enterprise AI search (distribution advantage overwhelming)",
+        "If enterprise AI search accuracy does not significantly exceed traditional search (adoption stalls)",
+        "If data privacy concerns prevent organizations from deploying AI over internal knowledge",
+        "If market fragments into too many vertical solutions (no winner-take-most dynamics)"
+      ]
+    },
+
+    {
+      "card_id": "MC-INFO-010",
+      "model_name": "AI Video Production and Post-Production Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "512110",
+      "sector_name": "Motion Picture / Video Production",
+      "one_line": "AI platform automating 60%+ of video post-production (editing, color, VFX, sound design) for mid-tier content, targeting the $15-25B post-production services market",
+      "macro_source": "512 employment -13.91% + AI VFX/animation adoption + Hollywood restructuring",
+      "forces": ["F1_technology", "F5_psychology", "F4_capital"],
+
+      "qcew_reference": {
+        "naics": "512110",
+        "employment": 378000,
+        "emp_growth": "-13.91%",
+        "avg_pay": "$85K",
+        "baumol_score": 1.17,
+        "establishments": 40000
+      },
+
+      "scores": {
+        "structural_necessity": {
+          "score": 7.5,
+          "justification": "Studios spending <3% of production budgets on AI tools currently but 7% on operational AI. Post-production costs $5-50M per tentpole film. Mid-tier content ($1-10M budget) needs AI cost compression to remain viable. Production costs must drop 15-25% for mid-budget content survival. AI handles 60%+ of routine post-production by 2028."
+        },
+        "force_alignment": {
+          "score": 7.0,
+          "justification": "F1 (video generation/editing AI improving rapidly -- Sora, Runway, Pika), F5 (guild/union resistance creates friction but also creates demand for tools that work within union frameworks), F4 (streaming consolidation creates demand for cost-efficient content production)."
+        },
+        "external_context": {
+          "score": 6.0,
+          "justification": "Global content market but Hollywood-centric for premium production. International markets (India, Nigeria, Korea) may adopt faster due to lower union resistance. Union contract negotiations in 2026 will define AI usage terms -- major uncertainty. EU AI Act implications for AI-generated content."
+        },
+        "timing_grade": {
+          "score": 6.5,
+          "justification": "Window opening but uncertain due to union negotiations (2026 contracts expire). Revenue timing depends on contract outcomes. Post-contract clarity (2027+) creates more predictable market. Moderate crash resilience -- content production is discretionary spending."
+        },
+        "capital_efficiency": {
+          "score": 7.0,
+          "justification": "$3-8M to build platform. 70-75% gross margins. GPU-intensive for video processing (higher infrastructure costs than text/code AI). But significant market size ($15-25B post-production services) provides revenue opportunity. Vertical specialization creates moat."
+        }
+      },
+      "composite_calculation": "(7.5*25 + 7.0*25 + 6.0*20 + 6.5*15 + 7.0*15) / 10 = (187.5 + 175 + 120 + 97.5 + 105) / 10 = 68.5",
+      "composite_score": 68.5,
+      "category": "CONDITIONAL",
+      "category_justification": "Composite 68.5 < 70.0. Model viability conditional on union contract outcomes and AI video quality reaching production standards. CONDITIONAL per hard enforcement.",
+      "category_final": "CONDITIONAL",
+
+      "unit_economics": {
+        "revenue_per_unit": "$5K-$50K per project (based on production budget size) or $2K-$10K/month subscription for production studios",
+        "cost_per_unit_ai": "$500-$5K per project (GPU compute for video processing + AI model inference)",
+        "cost_per_unit_incumbent": "$50K-$500K per project (manual VFX/post-production crews)",
+        "break_even_volume": "50-100 mid-tier productions per year OR 100+ studio subscriptions",
+        "jevons_multiplier": "3x -- at 80% lower post-production costs, content volume can expand dramatically (more projects become economically viable)"
+      },
+
+      "falsification_criteria": [
+        "If union contracts prohibit or severely restrict AI post-production tools",
+        "If AI video quality does not reach production standards for mid-tier content by 2028",
+        "If major VFX studios (ILM, Weta, Framestore) build AI tools internally rather than buy",
+        "If streaming platforms reduce content spending (shrinking the mid-tier production market)"
+      ]
+    }
+  ],
+
+  "fear_friction_assessment": {
+    "sector_naics": "51",
+    "sector_name": "Information",
+    "overall_economic_readiness": 9,
+    "overall_psychological_readiness": 7,
+    "overall_gap": 2,
+    "overall_classification": "low_friction",
+
+    "analysis": "The Information sector has LOWER fear friction than most sectors because its workers ARE the AI adopters. 82% of developers use AI coding tools daily. The tech workforce has the highest AI literacy and the lowest resistance to adoption. However, WITHIN the sector, fear dynamics vary dramatically by sub-sector.",
+
+    "sub_sector_fear_profiles": [
+      {
+        "naics": "518",
+        "name": "Computing Infrastructure",
+        "economic_readiness": 9,
+        "psychological_readiness": 9,
+        "gap": 0,
+        "classification": "zero_friction",
+        "notes": "Infrastructure workers are the BUILDERS of AI. Fear runs in the opposite direction -- fear of being left behind, not fear of AI itself. Data center demand creates job security."
+      },
+      {
+        "naics": "5132",
+        "name": "Software Publishers",
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "classification": "low_friction_with_entry_level_crisis",
+        "notes": "Senior developers embrace AI tools. Fear is concentrated at ENTRY LEVEL: 67% junior dev hiring collapse, 37% managers prefer AI over Gen Z. The fear is justified -- the career ladder is being shortened. K-shaped fear: seniors benefit, juniors are displaced."
+      },
+      {
+        "naics": "519",
+        "name": "Web Search / Data Services",
+        "economic_readiness": 9,
+        "psychological_readiness": 6,
+        "gap": 3,
+        "classification": "moderate_friction",
+        "notes": "Data workers embrace AI. Search portal workers face existential threat. Fear is proportional to proximity to the 'AI replacing search' front line. Data engineers and ML engineers are fearless; SEO specialists and content strategists are terrified."
+      },
+      {
+        "naics": "5162",
+        "name": "Internet Publishing",
+        "economic_readiness": 8,
+        "psychological_readiness": 4,
+        "gap": 4,
+        "classification": "high_friction",
+        "notes": "Journalists and digital media workers have HIGHEST fear within NAICS 51. Washington Post layoffs (1/3 staff) make the threat concrete. But institutional resistance (editorial standards, brand trust) creates friction that SLOWS AI adoption in journalism specifically."
+      },
+      {
+        "naics": "512",
+        "name": "Motion Picture / Entertainment",
+        "economic_readiness": 7,
+        "psychological_readiness": 3,
+        "gap": 4,
+        "classification": "high_friction_institutional",
+        "notes": "HIGHEST fear within NAICS 51. Union/guild structure creates institutional resistance. 52% of game devs say AI has negative impact (up from 18% two years ago). Hollywood contract negotiations in 2026 will be defined by AI fears. Fear HERE is PRODUCTIVE -- it creates regulatory moats and licensing frameworks (Suno/Udio settlements prove this)."
+      },
+      {
+        "naics": "513",
+        "name": "Telecom / Publishing",
+        "economic_readiness": 7,
+        "psychological_readiness": 6,
+        "gap": 1,
+        "classification": "low_friction",
+        "notes": "Telecom workers have moderate AI readiness. Long upgrade cycles (10-20 year network lifecycles) reduce urgency. Publishing workers within 513 have higher fear (see 5162 profile). Blended gap is low because telecom workforce is larger."
+      }
+    ],
+
+    "fear_driven_market_creation": [
+      {
+        "market": "AI Code Security Auditing",
+        "tam_estimate": "$5-10B by 2030",
+        "driver": "Enterprise fear that AI-generated code contains undiscovered vulnerabilities. 82% of developers using AI tools means billions of lines of unaudited AI code in production.",
+        "model_card_ref": "MC-INFO-002"
+      },
+      {
+        "market": "Content Authentication Infrastructure",
+        "tam_estimate": "$3-8B by 2030",
+        "driver": "Fear of deepfakes (8M in 2025, 16x growth) and synthetic content (Europol 90% projection). Demand for verifiable content provenance.",
+        "model_card_ref": "MC-INFO-003"
+      },
+      {
+        "market": "Verified Human Premium Content",
+        "tam_estimate": "$10-20B by 2030",
+        "driver": "Consumer willingness to pay premium for content confirmed as human-created. NYT/Bloomberg subscription model validated. Fear of misinformation drives subscriber conversion.",
+        "model_card_ref": "MC-INFO-004"
+      },
+      {
+        "market": "AI Content Licensing and Rights Management",
+        "tam_estimate": "$5-15B by 2030",
+        "driver": "Fear of copyright infringement by AI companies. Suno/Udio settlements prove AI companies will pay for licensed data. Rights holders fear unlicensed AI training.",
+        "model_card_ref": "MC-INFO-007"
+      },
+      {
+        "market": "Entertainment Industry AI Governance",
+        "tam_estimate": "$1-3B by 2030",
+        "driver": "Union/guild fear of AI displacement creating demand for AI usage frameworks, compliance tools, and workforce transition programs within entertainment industry.",
+        "model_card_ref": null
+      }
+    ],
+
+    "k_shaped_fear_within_sector": {
+      "description": "Fear within NAICS 51 follows a K-shaped pattern that mirrors the sector's economic bifurcation. Infrastructure and data workers (518, 519 data side) are confident and benefit from AI -- their skills are in higher demand and their wages are rising. Content creators (512, 5162) and entry-level tech workers are experiencing justified existential fear. This K-shape ACCELERATES the bifurcation: confident workers adopt AI faster, gaining productivity; fearful workers resist or are displaced, losing ground. The psychological divide maps directly onto the economic divide.",
+      "confident_cohort": "Senior engineers, AI/ML specialists, data infrastructure, cloud architects, security engineers",
+      "fearful_cohort": "Junior developers, journalists, VFX artists, content writers, SEO specialists, NOC analysts",
+      "productivity_gap_acceleration": "The confidence gap creates a self-reinforcing productivity divergence. Confident AI adopters gain 20-40% productivity. Fearful non-adopters stagnate or decline. The gap widens by 5-10% annually through 2031."
+    }
+  },
+
+  "key_findings": [
+    {
+      "finding_id": "KF-1",
+      "finding": "NAICS 51 is the MOST internally bifurcated sector in the economy",
+      "evidence": "Employment ranges from +4.08% (518 infrastructure) to -13.91% (512 motion picture) within the same 2-digit NAICS. Wages range from $85K (512) to $270K (519). Baumol scores range from 1.17 to 3.72. No other sector shows this degree of internal divergence.",
+      "confidence": "high",
+      "implication": "Treating 'Information' as a single sector is analytically wrong. The sub-sectors are moving in OPPOSITE directions. Infrastructure and content are decoupling into functionally separate economies."
+    },
+    {
+      "finding_id": "KF-2",
+      "finding": "The AI economy is cannibalizing its own labor force while expanding its capital base",
+      "evidence": "NAICS 51 employment -2.33% while sector revenue grows. $700B combined hyperscaler capex in 2026. Entry-level hiring -67% in software. Motion picture -14% to -24%. Capital is REPLACING labor at the sector level, not augmenting it.",
+      "confidence": "high",
+      "implication": "The Information sector provides a 2-3 year preview of what will happen in other cognitive sectors (finance, professional services, education). Capital-labor substitution is happening FIRST in the sector that builds the tools."
+    },
+    {
+      "finding_id": "KF-3",
+      "finding": "The Solow Paradox is deeper in NAICS 51 than in any other sector",
+      "evidence": "82% of developers use AI tools daily. 25-40% of Google code is AI-generated. But experienced devs are 19% SLOWER on complex tasks with AI. Enterprise-wide EBIT impact from AI remains 'rare' despite $37B spending. The sector investing most in AI is ALSO the sector where AI productivity paradox is most visible.",
+      "confidence": "high",
+      "implication": "AI productivity gains are real for ROUTINE-COGNITIVE tasks (code completion, content generation) but negative for TACIT-COGNITIVE tasks (architecture, creative direction, complex debugging). This validates the Barbell Economy thesis: the middle gets automated, the top gets harder."
+    },
+    {
+      "finding_id": "KF-4",
+      "finding": "P-037 Entry-Level Extinction has its EPICENTER in NAICS 51",
+      "evidence": "67% junior developer hiring collapse. 37% managers prefer AI over Gen Z hire. 74% of game industry students concerned about job prospects. The sector that trained the world's software engineers is no longer hiring them at entry level.",
+      "confidence": "high",
+      "implication": "By 2031, the information sector faces an acute mid-career talent shortage. The pipeline that produces senior architects and creative directors runs through entry-level roles that no longer exist. This is a 5-year time bomb: the sector is consuming its own future workforce."
+    },
+    {
+      "finding_id": "KF-5",
+      "finding": "Physical constraints on AI infrastructure are the BINDING LIMIT on Information sector transformation",
+      "evidence": "P-038: Data center occupancy 95%+ by late 2026. Grid queue 2,600 GW, 5+ year wait. PJM auction $16.4B (3rd record). Copper deficit 766K tonnes by 2030. Water stress 1.7B gal/day. The AI revolution's speed is limited by electrons, not algorithms.",
+      "confidence": "high",
+      "implication": "Infrastructure (NAICS 518) is the sector's STRATEGIC BOTTLENECK. Every model card in this analysis is ultimately constrained by compute availability. This makes infrastructure optimization (MC-INFO-001) the highest-leverage opportunity."
+    },
+    {
+      "finding_id": "KF-6",
+      "finding": "Fear friction INVERTS within NAICS 51 -- the sector is simultaneously the most AI-confident AND most AI-fearful",
+      "evidence": "Zero friction in infrastructure (518). High friction in entertainment (512, gap 4) and journalism (5162, gap 4). K-shaped: infrastructure workers embrace AI, content workers fear it. 52% of game devs say negative impact (up from 18% in 2 years). But 82% of software devs use AI daily.",
+      "confidence": "high",
+      "implication": "Fear friction within a sector can vary by 4+ points across sub-sectors. Sector-level fear friction scores are misleading. Sub-sector analysis is required for accurate transformation timing projections."
+    },
+    {
+      "finding_id": "KF-7",
+      "finding": "The Information sector's transformation creates $500B+ in second-order cascade effects across the economy",
+      "evidence": "Professional services cascade ($100B+ IT consulting disruption), education pipeline collapse (CS enrollment decline), CRE double hit (tech office vacancy), advertising restructuring ($740B digital ad market), energy grid transformation (945 TWh by 2030), creative economy restructuring ($500B+ reallocation), and AI safety market creation ($86B by 2030).",
+      "confidence": "medium",
+      "implication": "NAICS 51's transformation is not contained within the sector. It is the PRIMARY transmission mechanism for AI disruption to reach every other sector of the economy. Understanding Information sector dynamics is prerequisite for understanding any other sector's transformation path."
+    },
+    {
+      "finding_id": "KF-8",
+      "finding": "Model card scoring reveals a 14-point spread between infrastructure and content opportunities",
+      "evidence": "MC-INFO-002 (AI Code Security) scored 82.5 (STRUCTURAL_WINNER). MC-INFO-010 (AI Video Production) scored 68.5 (CONDITIONAL). The spread reflects the fundamental bifurcation: infrastructure/security/data opportunities score 76-82; content/media opportunities score 68-71.",
+      "confidence": "high",
+      "implication": "Capital should flow to infrastructure-layer opportunities within NAICS 51, not content-layer opportunities. The Barbell Economy creates premium returns at the infrastructure substrate and the creative pinnacle, with diminishing returns in the automated middle."
+    }
+  ],
+
+  "model_card_summary": {
+    "total_cards": 10,
+    "composite_range": {"min": 68.5, "max": 82.5},
+    "composite_mean": 76.25,
+    "category_distribution": {
+      "STRUCTURAL_WINNER": 1,
+      "FORCE_RIDER": 6,
+      "FEAR_ECONOMY": 1,
+      "CONDITIONAL": 2,
+      "PARKED": 0
+    },
+    "top_3": [
+      {"id": "MC-INFO-002", "name": "AI Code Quality and Security Audit Platform", "composite": 82.5, "category": "STRUCTURAL_WINNER"},
+      {"id": "MC-INFO-001", "name": "AI-Native Data Center Operations Platform", "composite": 82.0, "category": "FORCE_RIDER"},
+      {"id": "MC-INFO-003", "name": "Content Authentication and Provenance Platform", "composite": 79.25, "category": "FEAR_ECONOMY"}
+    ],
+    "id_range": "MC-INFO-001 through MC-INFO-010",
+    "notes": "10 model cards constructed. 1 STRUCTURAL_WINNER (AI code security -- structural necessity as 82% of devs use AI tools). 6 FORCE_RIDERS spanning infrastructure, telecom, software M&A, data licensing, enterprise search, and streaming intelligence. 1 FEAR_ECONOMY card (content authentication -- demand created by synthetic content fear). 2 CONDITIONAL cards (investigative journalism and AI video production -- both dependent on external factors: subscriber willingness and union contract outcomes)."
+  },
+
+  "state_update_recommendations": {
+    "sector_transformation_update": {
+      "sector_naics": "51",
+      "sector_name": "Information",
+      "transformation_phase": "acceleration",
+      "phase_confidence": "high",
+      "forces_acting": ["F1_technology", "F4_capital", "F5_psychology", "F6_energy"],
+      "supporting_patterns": ["P-001", "P-036", "P-037", "P-038"],
+      "evidence_summary": "v3-6 deep dive: 10 model cards scored (mean 76.25, range 68.5-82.5). Internal bifurcation confirmed and quantified: infrastructure (518) growing +4.08% while content (512) collapsing -13.91%. Software publishing (5132) faces existential pressure from 82% AI coding adoption + 67% junior hiring collapse. Baumol scores range 1.17-3.72 within sector. K-shaped fear friction (gap 0 to 4 within sub-sectors). $500B+ second-order cascade effects identified. Entry-level extinction (P-037) has epicenter in NAICS 51.",
+      "v2_models_count": 0,
+      "v3_models_rated": 10,
+      "last_updated": "v3-6"
+    },
+
+    "fear_friction_update": {
+      "sector_naics": "51",
+      "sector_name": "Information",
+      "economic_readiness": 9,
+      "psychological_readiness": 7,
+      "gap": 2,
+      "classification": "low_friction_aggregate_BUT_k_shaped",
+      "notes": "UPDATED from simple 'low friction' to 'low friction aggregate BUT K-shaped.' Sub-sector gaps range from 0 (infrastructure) to 4 (entertainment, journalism). Aggregate gap of 2 is misleading -- must analyze at sub-sector level."
+    },
+
+    "new_pattern_candidates": [
+      {
+        "pattern_id": "P-039_candidate",
+        "description": "Information Sector Self-Cannibalization: The sector building AI tools is the first sector disrupted by them. Capital-labor substitution happening at the source. Employment -2.33% while revenue grows. Entry-level pipeline destruction. This is NOT analogous to any other sector's AI transformation because the sector IS the transformation.",
+        "strength": "strong",
+        "status": "candidate",
+        "evidence": "NAICS 51 employment -2.33% while sector revenue grows. 82% AI coding adoption. 67% junior hiring collapse. $700B hyperscaler capex. Motion picture -14% to -24%. The sector producing AI tools is consuming its own workforce."
+      },
+      {
+        "pattern_id": "P-040_candidate",
+        "description": "Baumol Destruction vs Baumol Cure Divergence: Some sectors experience AI as Baumol Cure (cost compression releasing stored energy in healthcare, legal, education). Information sector content sub-sectors experience AI as Baumol Destruction (both costs AND revenues collapse simultaneously). This is a fundamentally different dynamic requiring different model archetypes.",
+        "strength": "strong",
+        "status": "candidate",
+        "evidence": "Internet publishing (5162): employment -6.36%, wages +16.4%, BUT revenue model (ad-supported web traffic) collapsing from AI search. Motion picture (512): employment -14%, wages flat, revenue model threatened by AI content generation. In both cases, AI does not 'cure' cost disease -- it destroys the economic foundation."
+      }
+    ],
+
+    "next_cycle_integration": [
+      "Merge 10 MC-INFO cards into normalized inventory (325 + 10 = 335 total)",
+      "Update state.json sector_transformations with NAICS 51 entry",
+      "Update fear_friction_index with sub-sector-level detail for NAICS 51",
+      "Cross-reference MC-INFO-001 (data center ops) with P-038 (infrastructure chain constraint)",
+      "Cross-reference MC-INFO-002 (code security) with existing MC-GOV-AI-01 (governance OS) for overlap",
+      "Model the P-037 entry-level extinction cascade specifically for NAICS 51 sub-sectors",
+      "Deep dive on Utilities (NAICS 22) as the binding physical constraint on NAICS 51 growth"
+    ]
+  },
+
+  "data_sources": {
+    "qcew": "Bureau of Labor Statistics Quarterly Census of Employment and Wages (2022-2023)",
+    "web_search": [
+      "Tech layoffs and AI employment trends (Rest of World, HBR, TechCrunch, Fortune)",
+      "Data center infrastructure market (Dell'Oro, JLL, IoT Analytics, MarketsAndMarkets)",
+      "Hollywood/entertainment AI disruption (THR, Wrap, Bloomberg, Deloitte)",
+      "Streaming content AI adoption (NewscastStudio, IBC, AlixPartners)",
+      "Telecom AI transformation (Deloitte TMT, Accenture, Ericsson, Omdia)",
+      "Journalism AI impact (Press Gazette, Poynter, Nieman Lab)",
+      "Software publisher AI coding impact (Menlo Ventures, Bain, MIT Technology Review)",
+      "Cloud infrastructure market share (Synergy Research, Holori, programming-helper)",
+      "AI music industry (Billboard, Music Business Worldwide)",
+      "Video game industry layoffs (GDC State of Industry, Udonis)"
+    ],
+    "engine_state": "data/context/state.json (v3-6)",
+    "framework": "ANALYTICAL_FRAMEWORK.md (25 theories, T1-T25)",
+    "prior_deep_dives": ["v3-4_defense_deep_dive_2026-02-11.json", "education_sector_deep_dive_2026-02-11.json"]
+  }
+}

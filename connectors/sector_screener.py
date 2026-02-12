@@ -565,7 +565,7 @@ class SectorScreener:
             else:
                 economy_avg_pay = 60000  # Reasonable US private sector fallback
 
-        logger.info('Economy average annual pay: $%,.0f', economy_avg_pay)
+        logger.info('Economy average annual pay: $%.0f', economy_avg_pay)
 
         # -- Step 4: Build sector records and compute raw scores ------------
         # Load NAICS titles for human-readable names

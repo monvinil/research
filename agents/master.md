@@ -10,13 +10,7 @@ You are mapping **structural economic transformation** — not ranking business 
 
 ## Framework Reference
 
-See `ECONOMY_MAP_FRAMEWORK.md` for the full 4-layer architecture:
-- **Layer 1**: Macro Forces (F1-F6: Technology, Demographics, Geopolitics, Capital, Psychology, Energy)
-- **Layer 2**: Sector Transformations (NAICS-level, year-by-year 2026→2031)
-- **Layer 3**: Geographic Variation (US, China, EU, Japan, India, LATAM, SEA, MENA)
-- **Layer 4**: Emergent Economy (new categories, firm structures, labor roles, capital structures)
-
-See `ANALYTICAL_FRAMEWORK.md` for the 25 theoretical lenses (T1-T25).
+See `ANALYTICAL_FRAMEWORK.md` for the 15 scoring theories (T1-T25) and 4 scanning-only lenses (S1-S4).
 
 ## Context: 2026 Starting Position
 
@@ -171,7 +165,6 @@ The Master reviews and validates the category classifications produced by Agent 
 |----------|----------|-------------------------|
 | **STRUCTURAL_WINNER** | SN ≥ 8 AND FA ≥ 8 | Can downgrade if key assumption is fragile |
 | **FORCE_RIDER** | FA ≥ 7 (4+ accelerating forces) | Can upgrade if force convergence is unique |
-| **GEOGRAPHIC_PLAY** | GG variance > 4 across regions | Can flag if geographic data is thin |
 | **TIMING_ARBITRAGE** | TG ≥ 8, SN ≥ 6 | Can adjust based on Perez cycle assessment |
 | **CAPITAL_MOAT** | CE ≥ 8, SN ≥ 6 | Can validate crash resilience claim |
 | **FEAR_ECONOMY** | fear_friction_gap > 3 | Can validate fear-driven demand thesis |
@@ -242,22 +235,22 @@ When force velocity cascade triggers fire during a cycle, produce a Force Cascad
 
 ## Theoretical Lenses
 
-All 25 lenses from ANALYTICAL_FRAMEWORK.md apply to economy mapping. Key shifts in application:
+Key theories from ANALYTICAL_FRAMEWORK.md and how they apply to model scoring:
 
-| Theory | Business Model Application (old) | Economy Map Application (new) |
-|--------|--------------------------------|------------------------------|
-| T1 Schumpeter | Which sectors to enter | Which sectors face accelerated destruction |
-| T3 Baumol | Where to build cost-killing services | The Barbell Economy: middle collapses, ends rise |
-| T4 Minsky | Which PE rollups to exploit | Where financial structures collapse systemically |
-| T5 Perez | When to enter application layer | Installation→Deployment transition timing across regions |
-| T6 Jevons | How to size expanded TAM | Total economy growth from AI cost reduction |
-| T8 Demographics | Where labor gaps create openings | How labor supply curves reshape sector structures |
-| T10 Coase | How to build smaller firms | How firm size distribution evolves across the economy |
-| T14 Prospect Theory | How to acquire customers | Where fear delays adoption (psychology layer) |
-| T21 Polanyi | What can be automated | The Barbell Economy: routine middle eliminated, tacit ends elevated |
-| T22 AGG Prediction | Where to build hybrid services | How professions split into prediction (AI) and judgment (human) components |
-| T24 Robotics × AI | Where to deploy physical automation | How physical production costs transform across sectors |
-| T25 Fear Economics (NEW) | N/A | Where psychology creates gaps between economic and actual adoption |
+| Theory | How It Applies |
+|--------|---------------|
+| T1 Schumpeter | SN scoring — pre-cascade signals (rising costs, flat revenue, no AI capex) |
+| T3 Baumol | SN scoring — cost disease cure targets AND premium (human-touch services) |
+| T4 Minsky | TG scoring — PE debt maturity cascade timing, distressed asset windows |
+| T5 Perez | TG scoring — Installation→Deployment transition, crash resilience |
+| T6 Jevons | SN scoring — TAM expansion from cost reduction (10x cost = 3-5x demand) |
+| T8 Demographics | SN scoring — labor gap detection, Silver Tsunami succession |
+| T10 Coase | Architecture — optimal firm size decreasing, micro-firm viability |
+| T14 Prospect Theory | Fear friction — loss aversion delays adoption, creates fear-economy demand |
+| T21 Polanyi | Barbell classification — routine cognitive (AI) vs tacit (human premium) |
+| T22 AGG Prediction | Architecture — prediction (AI) + judgment (human) service splits |
+| T24 Robotics × AI | SN scoring for physical sectors — cobot ROI, manufacturing modernization |
+| T25 Fear Economics | EC scoring — fear-driven regulation, compliance demand, trust premium |
 
 ## Principles for Economy Mapping
 

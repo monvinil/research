@@ -1,7 +1,7 @@
 """Research engine API connectors.
 
-13 data sources:
-  US:    FRED, BLS, BEA, Census, EDGAR, Yahoo Finance, Google Trends, O*NET
+15 data sources:
+  US:    FRED, BLS, BEA, Census, Census CBP, QCEW, EDGAR, Yahoo Finance, Google Trends, O*NET
   Intl:  World Bank, OECD, Eurostat
   Meta:  Web Search, Counter-Signals
 """
@@ -12,6 +12,8 @@ from .edgar import EdgarConnector
 from .websearch import WebSearchConnector
 from .bea import BEAConnector
 from .census import CensusConnector
+from .census_cbp import CensusCBPConnector
+from .qcew import QCEWConnector
 from .worldbank import WorldBankConnector
 from .oecd import OECDConnector
 from .eurostat import EurostatConnector
@@ -25,6 +27,8 @@ from .sector_screener import SectorScreener
 __all__ = [
     # US economic
     'FredConnector', 'BLSConnector', 'BEAConnector', 'CensusConnector',
+    # US economic — establishment & wage detail
+    'CensusCBPConnector', 'QCEWConnector',
     # US labor/occupation
     'ONetConnector',
     # US market/filing

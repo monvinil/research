@@ -1,0 +1,490 @@
+{
+  "cycle": "v3-5",
+  "date": "2026-02-11",
+  "agent": "Agent A (Scanner)",
+  "mode": "F2 Demographics force refresh — all 8 focus areas with 2025-2026 data",
+  "total_signals": 14,
+  "scan_context": "This scan updates all F2 Demographics signals with the latest available data as of February 2026. Previous F2 signals were set in cycle v3-2. Several key metrics have moved materially since that cycle.",
+
+  "force_update": {
+    "F2_demographics": {
+      "velocity": "accelerating",
+      "velocity_change": "UPGRADED from steady to accelerating. Multiple metrics have worsened since v3-2. Silver Tsunami transaction volume surging (+35% SBA acquisition loans). China births collapsed 17% YoY (7.9M, record low). Japan births hit new record low (sub-700K annualized). Nursing vacancy unchanged but teacher and CPA pipelines deteriorating further. H-1B overhaul creates new labor supply uncertainty.",
+      "key_metrics_updated": {
+        "us_silver_tsunami": "UPGRADED: 41-50% of businesses owned by 55+ (varies by survey), $10T in business assets changing hands by 2030, SBA acquisition loans up 35% YoY to $8.29B, 72% of brokers expect more sellers in 2026",
+        "succession_gap": "58% still have no succession plan (UNCHANGED), 70% of businesses never successfully sell",
+        "japan_population": "UPGRADED: ~900K/yr decline continues, births hit new record low (340K in H1 2025, sub-700K annualized), dependency ratio 70.2, worker-retiree headed toward 1:1",
+        "china_fertility": "UPGRADED: TFR ~1.0, births collapsed to 7.9M in 2025 (down 17% from 9.5M in 2024), population fell by 3.4M to 1.405B, fourth consecutive year of decline",
+        "us_manufacturing_gap": "415K unfilled manufacturing positions (Dec 2025), up from 388K Nov. 3.8M new workers needed by 2033, 1.9M at risk of going unfilled. 20.6% of plants below capacity due to labor shortage.",
+        "us_nursing_shortage": "RN vacancy 9.6% nationally (down 0.3pp from prior year), 41.8% of hospitals above 10% vacancy, 500K+ RN shortfall by 2030 (HRSA), 65K+ qualified nursing candidates turned away from programs due to capacity",
+        "cpa_pipeline": "NEW LOW: accounting graduates hit 20-year low at 55,152 (down 6.6% YoY), only 1.4% of college students choose accounting (was 4% a decade ago). First sign of recovery: 12% enrollment growth in 2024-25 school year.",
+        "teacher_shortage": "56K vacant positions + 350K underqualified teachers (2025-26), emergency/provisional credentials doubled from 5.7% to ~10% of workforce, enrollment in teacher prep programs stagnating",
+        "trucking_shortage": "ATA estimates 115K driver shortage (2025), projected 170K by 2030. Average driver age 46 (BLS) to 59.5 (CCJ survey of active drivers). 72% of drivers aged 40+. 1.2M new drivers needed this decade.",
+        "us_immigration_h1b": "NEW: $100K fee requirement (Sept 2025-Sept 2026), lottery replaced by wage-weighted selection effective Feb 26, 2026. Structural shock to tech labor supply pipeline.",
+        "india_dividend": "1.04B working-age by 2030, 65% under 35, but 80% of workforce unskilled vs 20% global average in developed nations. 95% of engineers unfit for software development.",
+        "eu_labor_crisis": "Germany 628K unfilled positions (July 2025), Italy welcoming 500K non-EU workers 2026-2028, EU Blue Card salary threshold raised to EUR 50,700 for 2026",
+        "elder_care_crisis": "Worker-to-senior ratio falling from 4:1 to 2.9:1 in next 5 years. Home health aide shortage ~446K by 2025 (Mercer). Average HHA wage $16.82/hr — barely above fast food ($15.07/hr).",
+        "education_cliff": "Demographic cliff hitting colleges 2025-2026: 15%+ enrollment decline projected over next decade. 57% of colleges reported international enrollment decline fall 2025."
+      },
+      "confidence": "high",
+      "assessment": "F2 velocity is now ACCELERATING. The v3-2 assessment of 'steady' was premature. China's 17% birth collapse, Japan's continued record lows, the SBA acquisition surge, the CPA 20-year low, and the H-1B overhaul all represent material deterioration since the last scan. The demographic forces are slow-moving but every leading indicator is worsening. The key new signal is the H-1B overhaul — the $100K fee and wage-weighted selection create a structural labor supply shock for the US tech sector at exactly the moment when other professional pipelines (CPA, nursing, teaching) are also collapsing."
+    }
+  },
+
+  "signals": [
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-001",
+      "force_category": "F2_demographics",
+      "source_category": "1",
+      "signal_type": "sector_transformation",
+      "headline": "US Silver Tsunami Transaction Surge: SBA 7(a) acquisition loans up 35% YoY to $8.29B funding 7,003 deals; 72% of brokers expect more sellers in 2026",
+      "detail": "The Silver Tsunami is no longer a forecast — it is now visible in transaction data. Through September 2025, SBA 7(a) acquisition loans totaled $8.29B, up 34.58% year-over-year, funding 7,003 deals and supporting nearly 98,000 jobs. Average deal size climbed 6.57% to $1.18M. Total SBA 7(a) lending hit $33.8B in 2025, up 20.5% YoY. Critically, 72% of business brokers expect more sellers entering market in 2026, and 61% expect stronger buyer demand. Baby Boomers are 59% of sellers with 43% citing retirement as primary motivation. The transaction infrastructure is scaling: default rates on acquisition loans are 1.93% vs 2.71% for non-acquisition SBA loans (29% lower risk). The SBA also waived loan fees for small manufacturers in FY2026, further catalyzing manufacturing acquisitions. Over 56% of current buyers have never owned a business before — these are 'corporate refugees' entering entrepreneurship through acquisition rather than founding.",
+      "source": "BizBuySell Insight Reports Q3-Q4 2025, SBA Lender Reports FY2025, IBBA Seller Demographics, EBIT Community SBA Market Pulse Q4 2025",
+      "theoretical_lens": "T8 Demographics + T1 Schumpeter: The Silver Tsunami is a demographic-driven Schumpeterian transfer event. The 35% YoY SBA loan surge is the first quantitative confirmation that the transfer wave has begun. T10 Coase: Transaction costs of business acquisition are falling (SBA streamlining, digital marketplaces, acquisition search platforms) which accelerates the transfer rate.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Concentrated in Midwest and Southeast manufacturing belts. Rural areas face compounding: retiring owners + no local buyers = business deserts. States with SBA fee waivers (manufacturing) seeing disproportionate activity.",
+      "time_horizon": "2026-2032",
+      "confidence": "high",
+      "raw_data_points": [
+        "SBA 7(a) acquisition loans: $8.29B through Sept 2025 (+34.58% YoY)",
+        "Deals funded: 7,003",
+        "Jobs supported: 98,000",
+        "Average deal size: $1.18M (+6.57%)",
+        "Total SBA 7(a): $33.8B (+20.5% YoY)",
+        "72% brokers expect more sellers 2026",
+        "61% expect stronger buyer demand",
+        "Boomers: 59% of sellers, 43% cite retirement",
+        "Acquisition loan default: 1.93% vs 2.71% non-acquisition",
+        "56% of buyers are first-time business owners",
+        "SBA manufacturing fee waiver through Sept 2026"
+      ],
+      "delta_from_v3_2": "NEW SIGNAL. v3-2 tracked the Silver Tsunami as demographic data (52.3% ownership, 58% no plan). This signal captures the TRANSACTION CONFIRMATION — the wave is now visible in lending data. 35% YoY growth in acquisition lending is the strongest quantitative proof yet.",
+      "opportunity_hypotheses": [
+        "Acquire-and-modernize platform targeting the 7,003 SBA-funded deals/year with AI integration at point of transfer",
+        "SBA loan advisory/brokerage for the 56% first-time buyers entering the acquisition market",
+        "Post-acquisition AI integration services for boomer-owned businesses with no technology stack"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-002",
+      "force_category": "F2_demographics",
+      "source_category": "1",
+      "signal_type": "sector_transformation",
+      "headline": "US Manufacturing Labor Shortage: 415K unfilled positions (Dec 2025), 20.6% of plants below capacity; 3.8M workers needed by 2033 with 1.9M at risk of going unfilled",
+      "detail": "Manufacturing labor shortage has worsened since last scan. Unfilled positions rose from 388K (Nov) to 415K (Dec 2025), staying in the 394K-426K range through Q4 2025. The vacancy rate averages 4.2% with nearly a quarter of manufacturers above 5%. More critically, 20.6% of US manufacturing plants now operate below full capacity specifically due to labor or skill shortages — this is not a demand problem, it is a supply problem. Deloitte/Manufacturing Institute project 3.8 million new workers needed by 2033, with 1.9 million at risk of going unfilled. The workforce skews significantly older than national average, meaning replacement demand is accelerating. The skills gap has shifted from pure headcount to SKILL AVAILABILITY as the dominant constraint — manufacturers need workers who can operate CNC, program cobots, and manage automated systems, not just warm bodies.",
+      "source": "BLS JOLTS manufacturing data Dec 2025, Deloitte/Manufacturing Institute workforce study, AMTEC US Manufacturing Workforce Report 2025-2026, US Chamber of Commerce Labor Shortage Analysis",
+      "theoretical_lens": "T8 Demographics + T3 Baumol: Manufacturing faces demographic supply collapse (older workforce retiring) compounded by Baumol dynamics (competing sectors offer higher wages for less physically demanding work). T7 Jevons: Robotics/AI that make manufacturing more productive will INCREASE demand for skilled manufacturing workers, not decrease it (Jevons paradox applied to manufacturing labor).",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Worst in Midwest and Southeast manufacturing belts. States with large manufacturing bases (Ohio, Michigan, Indiana, Texas) face acute shortages. Defense-adjacent manufacturing (Alabama, Mississippi) compounding with defense spending surge.",
+      "time_horizon": "2026-2033",
+      "confidence": "high",
+      "raw_data_points": [
+        "Unfilled manufacturing positions: 415K (Dec 2025)",
+        "Q4 2025 range: 394K-426K",
+        "Average vacancy rate: 4.2%",
+        "Plants below capacity due to labor: 20.6%",
+        "New workers needed by 2033: 3.8M",
+        "At risk of going unfilled: 1.9M",
+        "Skills gap cost projection: $1T by 2030"
+      ],
+      "delta_from_v3_2": "Previous tracking: 499K new workers needed in building trades. This signal now separates MANUFACTURING specifically (415K open Dec 2025) from broader trades shortage. New data point: 20.6% of plants below capacity is the first quantification of production impact from labor shortage.",
+      "opportunity_hypotheses": [
+        "AI-augmented manufacturing training platforms that compress 4-year apprenticeships to 12-18 months",
+        "Cobot deployment services targeting the 20.6% of plants running below capacity",
+        "Manufacturing staffing platform that matches retired/semi-retired skilled workers with flex manufacturing demand"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-003",
+      "force_category": "F2_demographics",
+      "source_category": "6",
+      "signal_type": "labor_migration",
+      "headline": "US Nursing Crisis Deepens: 9.6% RN vacancy rate, 500K+ shortfall by 2030; 65,000 qualified nursing candidates turned away from schools due to capacity limits",
+      "detail": "The nursing shortage is now a structural capacity crisis. The national RN vacancy rate stands at 9.6%, with 41.8% of hospitals reporting vacancy rates above 10%. Annual RN turnover is approximately 16%, with 287,000 staff RNs leaving positions and hospitals hiring 385,000 to backfill and grow. HRSA projects a shortfall exceeding 500,000 registered nurses by 2030. The most alarming upstream signal: between 2024-2025, more than 65,000 qualified candidates were turned away from nursing programs due to operational limitations (insufficient faculty, clinical sites, and classroom space). Nearly half the current nursing workforce is over 50 and approaching retirement. The LPN shortage is even more severe at 20% (vs 10% for RNs). Licensed practical nurses are the first point of contact in eldercare — the category facing the most acute demographic demand increase.",
+      "source": "2025 NSI National Health Care Retention & RN Staffing Report, HRSA Health Workforce Projections, AACN Nursing Shortage Fact Sheet, Nightingale College Nursing Shortage 2026 Analysis",
+      "theoretical_lens": "T3 Baumol + T8 Demographics: Nursing is the canonical Baumol profession — high-touch, hard to automate, costs rising faster than productivity. The pipeline bottleneck (65K turned away) means the shortage CANNOT be solved by wage increases alone; the training infrastructure itself is the constraint. T7 Jevons: AI-augmented nursing (administrative burden reduction, clinical decision support) could enable each nurse to handle more patients, paradoxically increasing demand for nurses who can manage AI-assisted workflows.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Worst in rural and underserved areas where recruitment is hardest. Southern states (Texas, Florida, Alabama) face the steepest demand curves due to aging population and in-migration of retirees. California has highest absolute demand but better training infrastructure.",
+      "time_horizon": "2026-2030",
+      "confidence": "high",
+      "raw_data_points": [
+        "RN vacancy rate: 9.6% nationally",
+        "Hospitals above 10% vacancy: 41.8%",
+        "Annual RN turnover: 16%",
+        "RNs leaving positions annually: 287,000",
+        "RNs hired annually: 385,000",
+        "Projected shortfall by 2030: 500,000+ (HRSA)",
+        "Qualified candidates turned away: 65,000+ (2024-2025)",
+        "Nursing workforce over age 50: ~50%",
+        "LPN shortage rate: 20%"
+      ],
+      "delta_from_v3_2": "Previous: '78K unfilled RN positions growing to 200K by 2030.' Updated: 9.6% vacancy nationally with 500K+ shortfall by 2030 (HRSA). New critical finding: 65K qualified candidates turned away from programs. This shifts the analysis from 'not enough people want to be nurses' to 'the training system cannot absorb the people who DO want to be nurses.'",
+      "opportunity_hypotheses": [
+        "AI-powered nursing education platform that scales clinical simulation (addressing the 65K turned-away bottleneck)",
+        "Nurse administrative burden reduction tools (charting, compliance, scheduling) that give each nurse capacity for 20-30% more patients",
+        "Travel nurse AI-matching platform for the 287K annual turnover flow"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-004",
+      "force_category": "F2_demographics",
+      "source_category": "6",
+      "signal_type": "labor_migration",
+      "headline": "CPA Pipeline Hits 20-Year Low: 55,152 accounting degrees (-6.6% YoY), only 1.4% of students choose accounting (was 4%); first sign of recovery in 2024-25 enrollment",
+      "detail": "The CPA pipeline crisis deepened to a 20-year low. Schools awarded 55,152 accounting bachelor's and master's degrees in 2023-2024, down 6.6% from prior year. Only 1.4% of college students now choose accounting as their major, down from 4% a decade ago. CPA exam first-time candidates dropped 33% from 48,004 (2016) to 32,188 (2021). The 150-hour education requirement is identified as the primary barrier — engineering and computer science graduates earn $10,000-$15,000 more on average with fewer required hours. However, a potential inflection point: National Student Clearinghouse data shows two consecutive semesters of 12% year-over-year growth in accounting enrollment in the 2024-25 school year. If sustained, this could stabilize the pipeline by 2028-2029 — but the gap between current supply and demand will persist for at least 3-4 years. Three-in-four accounting firms that recruited in 2024 plan to hire the same or more in 2025. The AICPA warns that declining high-school graduates over the next decade will constrain even a stabilized pipeline.",
+      "source": "AICPA Pipeline Report 2025, CPA Trendlines (Dec 2025), Journal of Accountancy (Oct 2025), CFO Dive, National Student Clearinghouse Research Center",
+      "theoretical_lens": "T3 Baumol + T8 Demographics: Accounting is a Baumol profession where AI can deliver the Baumol Cure. The pipeline collapse is rational: students correctly perceive that routine accounting will be automated, so they avoid the profession. But the JUDGMENT layer of accounting (tax strategy, audit oversight, advisory) cannot be automated and will command a Baumol Premium. T1 Schumpeter: The accounting profession is being creatively destroyed — the routine layer dies while the judgment layer becomes more valuable.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Pipeline collapse is nationwide but impacts vary. Large metro areas have more alternatives to traditional CPA firms (Big 4, tech companies, fintech). Rural areas face acute shortage as small CPA firms cannot find successors. States with 150-hour requirement see worse pipeline effects than states considering exemptions.",
+      "time_horizon": "2026-2030",
+      "confidence": "high",
+      "raw_data_points": [
+        "Accounting degrees 2023-24: 55,152 (20-year low)",
+        "YoY change: -6.6%",
+        "Share of students choosing accounting: 1.4% (was 4%)",
+        "CPA first-time candidates: 32,188 (2021) vs 48,004 (2016), -33%",
+        "Salary gap vs engineering/CS: $10K-$15K lower",
+        "2024-25 enrollment growth: 12% YoY (potential inflection)",
+        "75% of firms plan same or more hiring in 2025"
+      ],
+      "delta_from_v3_2": "Previous: 'CPA candidates -33%.' Updated: Degrees hit 20-year low at 55,152 (-6.6% YoY), share dropped from 4% to 1.4%. NEW: first recovery signal at 12% enrollment growth in 2024-25, suggesting possible inflection. The narrative shifts from 'collapse' to 'bottoming with early recovery signal.'",
+      "opportunity_hypotheses": [
+        "AI-augmented accounting firm model: 1-3 CPAs + AI handle workload of 10-person traditional firm",
+        "Accounting education alternative: 120-hour AI-augmented pathway competing with the 150-hour requirement",
+        "Small/rural CPA firm acquisition + AI modernization (same acquire-and-modernize thesis as manufacturing)"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-005",
+      "force_category": "F2_demographics",
+      "source_category": "6",
+      "signal_type": "labor_migration",
+      "headline": "Teacher Shortage Structural: 56K vacant + 350K underqualified positions; emergency certifications doubled from 5.7% to ~10% of workforce in 3 years",
+      "detail": "The teacher shortage has transitioned from cyclical to structural. For 2025-2026, at least 56,000 teaching positions are vacant and approximately 350,000 are filled by teachers not fully certified for their assignments. This means roughly 1 in 8 teaching positions is either unfilled or staffed by an underqualified teacher, impacting over 6 million students. The clearest indicator of structural desperation: emergency and provisional certifications have nearly doubled from 5.7% to approximately 10% of the total teacher workforce between 2021-22 and 2024-25. Attrition drives 90% of annual teacher demand — the problem is retention, not just recruitment. The most severe shortages are in special education, science, and mathematics. Teacher preparation program enrollment nationally declined ~100K candidates after the Great Recession and has never recovered; 27 states saw ongoing enrollment declines of 5%+ between 2016-21.",
+      "source": "Learning Policy Institute 2025 Teacher Shortage Overview, Edustaff Teacher Shortage 2025 Analysis, BLS Occupational Outlook, National Center for Education Statistics",
+      "theoretical_lens": "T3 Baumol: Teaching is a pure Baumol profession — one teacher serves ~25 students, productivity has not changed in a century, but costs have risen steadily. AI represents the first potential Baumol Cure through personalized learning, automated grading, and administrative reduction. T8 Demographics: The teacher pipeline collapse is a generational choice — young graduates see low pay, high stress, and AI threat, so they choose other professions. But the actual opportunity is AI AUGMENTATION of teaching, not replacement.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Rural and low-income districts are worst affected. Southern states (Mississippi, Louisiana, Alabama) and mountain West (Arizona, New Mexico) face the most acute shortages. Urban districts can attract teachers with salary premiums but face different challenges (violence, classroom sizes).",
+      "time_horizon": "2026-2030",
+      "confidence": "high",
+      "raw_data_points": [
+        "Vacant teaching positions 2025-26: 56,000+",
+        "Underqualified teachers: ~350,000",
+        "Students impacted: 6M+",
+        "Emergency/provisional credentials: ~10% of workforce (up from 5.7%)",
+        "Attrition drives 90% of annual demand",
+        "Worst shortages: special education, science, mathematics",
+        "Teacher prep enrollment declined ~100K post-Great Recession",
+        "27 states: 5%+ enrollment declines 2016-21"
+      ],
+      "delta_from_v3_2": "Previous: '42 states with teacher shortages.' Updated: 56K vacant + 350K underqualified = 406K total problem positions, emergency certs doubled to 10%. The doubling of emergency certifications in 3 years is the key new signal — systems are formally relaxing standards because supply is structurally insufficient.",
+      "opportunity_hypotheses": [
+        "AI tutoring platforms that give each teacher effective capacity for 50+ students (Baumol Cure)",
+        "Automated grading and assessment tools for the highest-shortage subjects (STEM, special education)",
+        "Teacher retention platform using AI to reduce administrative burden (the 90% attrition problem)"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-006",
+      "force_category": "F2_demographics",
+      "source_category": "6",
+      "signal_type": "labor_migration",
+      "headline": "US Trucking: ATA estimates 115K driver shortage (2025), projected 170K by 2030; CCJ survey finds active driver average age 59.5; 1.2M new drivers needed this decade",
+      "detail": "The trucking driver shortage continues to worsen along demographic lines. ATA estimates a shortage of 115,000 drivers in 2025, projected to exceed 170,000 by 2030. The workforce is extremely aged: while BLS reports average driver age of 46, the CCJ 2025 'What Drivers Want' survey of active company drivers found the average age is 59.5 years. This discrepancy matters — the BLS number includes all CDL holders while CCJ captures the actually-active long-haul population, which skews much older. 72% of truck drivers are aged 40 and above. Average retirement age is 62, meaning a massive wave of retirements will hit by 2030. ATA estimates 1.2 million new truck drivers will be needed over the next decade to replace retirees and meet growing demand. High turnover (driven by long hours, time away from home) means the industry loses drivers faster than it recruits them.",
+      "source": "American Trucking Associations Driver Shortage Update 2025, CCJ 2025 'What Drivers Want' Survey, BLS Occupational Employment Statistics, FinditParts Truck Driver Statistics 2025",
+      "theoretical_lens": "T8 Demographics: The trucking workforce faces pure demographic supply collapse — the median active driver is near retirement age with no replacement pipeline. T1 Schumpeter + T7 Jevons: Autonomous trucking technology (Waymo Via, Aurora, TuSimple) represents Schumpeterian destruction of the traditional driver role, but Jevons paradox suggests that cheaper autonomous trucking will INCREASE total freight volume, creating demand for human drivers in last-mile, hazmat, and complex urban delivery where autonomy is hardest.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Shortage is national but worst in long-haul routes (cross-country). Texas, California, and Florida have highest absolute shortages. Short-haul and local delivery less affected (younger demographics, better work-life balance). Autonomous trucking pilots concentrated in Sun Belt states (Texas, Arizona, California).",
+      "time_horizon": "2026-2032",
+      "confidence": "high",
+      "raw_data_points": [
+        "ATA driver shortage 2025: 115,000",
+        "Projected 2030 shortage: 170,000+",
+        "BLS average driver age: 46",
+        "CCJ active driver average age: 59.5",
+        "Drivers aged 40+: 72%",
+        "Average retirement age: 62",
+        "New drivers needed this decade: 1.2M"
+      ],
+      "delta_from_v3_2": "Previous: 'trucking driver age 57, 80K shortage.' Updated: ATA now estimates 115K shortage (up from 80K), projected 170K by 2030. CCJ survey reveals active drivers average 59.5 years old. The age data is more alarming than previously tracked.",
+      "opportunity_hypotheses": [
+        "Autonomous trucking deployment for long-haul corridors (highest shortage, most routine routes)",
+        "Driver training and placement platform that reduces time-to-CDL with AI simulation",
+        "Logistics optimization AI that reduces total driver-miles needed per ton of freight"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-007",
+      "force_category": "F2_demographics",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "headline": "JOLTS Nov 2025: Job openings fall to 7.15M (14-month low) but quits steady at 3.2M — labor market cooling at top but structural shortages persist underneath",
+      "detail": "The November 2025 JOLTS release shows a complex picture. Job openings fell to 7.146 million, a 14-month low and significantly below expected 7.610 million. This represents overall labor market cooling. However, quits remained steady at 3.2 million and layoffs were little changed at 1.7 million. The divergence matters: total openings are declining (cyclical cooling) but quits are NOT declining (structural confidence). Workers are still leaving jobs at elevated rates, meaning they perceive alternative opportunities exist. For the sectors tracked in F2 demographics signals — manufacturing, healthcare, trucking, accounting, teaching — the JOLTS data shows that aggregate cooling masks continued structural shortages. Manufacturing openings specifically ROSE from 388K to 415K in the same period that total openings fell. Healthcare openings remain persistently elevated. The labor market is bifurcating: surplus in some sectors (tech, media), shortage in others (manufacturing, healthcare, trades).",
+      "source": "BLS JOLTS December 2025 release (November data), BLS JOLTS manufacturing detail, FRED JTSJOL series",
+      "theoretical_lens": "T8 Demographics + T3 Baumol: The JOLTS divergence (total openings down, sector-specific shortages up) reveals the demographic supply collapse underneath the cyclical cooling. T1 Schumpeter: Labor is being reallocated — Schumpeterian destruction in cognitive/office sectors releases workers who CANNOT fill the manufacturing/healthcare/trades gaps due to skill mismatch.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "State-level JOLTS data (released for November) shows significant regional variation. Sun Belt states maintain higher openings-to-unemployed ratios. Northeast showing more cooling.",
+      "time_horizon": "2026-2027",
+      "confidence": "high",
+      "raw_data_points": [
+        "Total job openings Nov 2025: 7.146M (14-month low)",
+        "Expected: 7.610M",
+        "Quits: 3.2M (little changed)",
+        "Layoffs: 1.7M (little changed)",
+        "Hires: 5.1M",
+        "Manufacturing openings: 415K (Dec 2025, UP from 388K Nov)"
+      ],
+      "delta_from_v3_2": "NEW SIGNAL. JOLTS data provides macro context for sector-specific shortage signals. The key insight is the DIVERGENCE: total market cooling but manufacturing/healthcare shortages worsening. This confirms that F2 demographic shortages are structural, not cyclical — they persist even as the overall labor market softens.",
+      "opportunity_hypotheses": [
+        "Cross-sector labor retraining platforms (from shrinking sectors to shortage sectors)",
+        "AI-powered skill-matching that identifies transferable capabilities from cognitive workers to manufacturing/healthcare roles",
+        "Workforce analytics platforms that help manufacturers and healthcare systems identify non-obvious candidate pools"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-008",
+      "force_category": "F2_demographics",
+      "source_category": "9",
+      "signal_type": "geographic_variation",
+      "headline": "Japan Births Hit Record Low: 340K in H1 2025 (sub-700K annualized), population 125.8M declining ~900K/yr; robot density 419 per 10K workers (5th globally, surpassed by China)",
+      "detail": "Japan's demographic crisis continued to deepen. Births hit just 340,000 in the first half of 2025, with total births below 400,000 for the fourth successive half-year period — annualized rate sub-700K, a new record low. Population stands at 125.8M and declining approximately 900,000 per year. Deaths exceed births by ~218K in natural decrease alone. The dependency ratio reached 70.2, meaning fewer than 1.5 working-age people per dependent. Japan is now 5th in robot density at 419 units per 10,000 employees, having been surpassed by China (470/10K). However, Japan's automotive robot density remains world-class at 1,531/10K. Japan installed 44,500 industrial robots in 2024 (slight 4% decrease) with 450,500 units in operational stock (+3%). The key new signal: Japan has been overtaken by China in robot density, suggesting that China's demographic crisis is driving FASTER automation investment than Japan's. Construction, elder care, and agriculture remain critically short-staffed, driving AI/robotics adoption from necessity rather than efficiency.",
+      "source": "Japan Statistics Bureau 2025, Nippon.com H1 2025 births data, IFR World Robotics 2025, Worldometer Japan Population",
+      "theoretical_lens": "T8 Demographics: Japan remains the definitive leading indicator for aging economies. The sub-700K birth rate means each generation is roughly HALF the size of the previous one. T5 Perez: Japan demonstrates that demographic necessity compresses the Perez Installation-to-Deployment gap — when you literally do not have workers, you adopt robotics regardless of other concerns. T7 Jevons: Japan's robot-dense manufacturing is MORE productive per worker, creating export competitiveness despite shrinking workforce.",
+      "geographic_scope": ["Japan", "Global"],
+      "geographic_variation": "Within Japan: Tokyo area maintaining population through internal migration while rural prefectures face near-total demographic collapse. Some rural towns have zero children born in a year. The rural-urban demographic divide is more extreme than any other country. Globally: South Korea (TFR 0.72) now has a WORSE fertility rate but is earlier in the population decline curve.",
+      "time_horizon": "2026-2035",
+      "confidence": "high",
+      "raw_data_points": [
+        "H1 2025 births: 340,000",
+        "Annualized birth rate: sub-700,000",
+        "Population: 125.8M",
+        "Annual decline: ~900,000",
+        "Natural decrease: ~218,000",
+        "Dependency ratio: 70.2",
+        "Robot density: 419/10K workers (5th globally)",
+        "Automotive robot density: 1,531/10K (4th globally)",
+        "2024 robot installations: 44,500",
+        "Operational robot stock: 450,500 (+3%)"
+      ],
+      "delta_from_v3_2": "Previous: '~900K/yr decline, robot density 397/10K.' Updated: Births hit new record low sub-700K annualized. Robot density revised to 419/10K (IFR 2025 data) but Japan surpassed by China. The China overtaking is a significant new data point — it means China's demographic crisis is driving faster automation investment despite China being earlier in its aging curve.",
+      "opportunity_hypotheses": [
+        "Export Japan's elder care robotics solutions to US/EU as those markets hit similar demographic pressure points",
+        "Japan-tested unmanned store / automated logistics solutions adapted for US rural areas losing population",
+        "Agricultural automation solutions from Japan applied to US farm labor shortages"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-009",
+      "force_category": "F2_demographics",
+      "source_category": "9",
+      "signal_type": "geographic_variation",
+      "headline": "China Birth Collapse: 7.9M births in 2025 (down 17% from 9.5M), population fell 3.4M to 1.405B; TFR ~1.0; Xi evokes 'population security' and pushes automation",
+      "detail": "China's demographic crisis accelerated dramatically. Births plummeted to 7.9 million in 2025, down 17% from 9.5 million in 2024 — itself a record low. The birth rate fell to 5.6 per 1,000, the lowest since the founding of the PRC in 1949. Population declined by 3.4 million to 1.405 billion, the fourth consecutive year of decline. Total fertility rate is approximately 1.0, below Japan's 1.20 and far below replacement of 2.1. Government interventions are failing: despite cash rewards, tax breaks, extended maternity leave (158 days, up from 98), and housing subsidies, young Chinese are delaying marriage and child-bearing due to economic pressure and workplace competition. Xi Jinping has explicitly invoked 'population security' as a national priority and is pushing manufacturing automation as the state-directed response. China's robot density surpassed Germany and Japan at 470 per 10,000 employees. The 17% single-year birth collapse is an extraordinary acceleration — this is not gradual decline, this is demographic freefall.",
+      "source": "China National Bureau of Statistics Jan 2026 release, CNBC (Jan 2026), PBS/ABC News, CNN, Project Syndicate (Yi Fuxian analysis), IFR World Robotics 2025",
+      "theoretical_lens": "T8 Demographics: China represents the largest-scale demographic supply collapse in history. The 17% YoY birth decline is a PHASE CHANGE, not a trend continuation. T3 Baumol: Chinese manufacturing wages rising 6-8%/yr will make automation economics increasingly favorable. T2 Ricardo: China's comparative advantage is shifting from cheap labor to automated manufacturing — the same transition Japan made 30 years ago but compressed into a shorter window.",
+      "geographic_scope": ["China", "Global"],
+      "geographic_variation": "Coastal manufacturing cities (Guangdong, Jiangsu, Zhejiang) face the earliest impact as migrant workers age out. Rural China is already depopulated. Northeast China (Heilongjiang, Liaoning) has Japan-like demographics NOW. Manufacturing migration to Vietnam, India, and Indonesia is accelerating as China's labor cost advantage erodes.",
+      "time_horizon": "2026-2040",
+      "confidence": "high",
+      "raw_data_points": [
+        "2025 births: 7.9M (down 17% from 9.5M in 2024)",
+        "Birth rate: 5.6/1,000 (lowest since 1949)",
+        "Population: 1.405B (down 3.4M)",
+        "Fourth consecutive year of decline",
+        "TFR: ~1.0",
+        "Robot density: 470/10K workers (surpassed Germany & Japan)",
+        "Maternity leave extended: 158 days (from 98)",
+        "Government incentives: cash, tax breaks, housing — all failing"
+      ],
+      "delta_from_v3_2": "Previous: 'TFR ~1.0, population peaked 2022.' Updated: 17% SINGLE-YEAR birth collapse (9.5M to 7.9M) is a material acceleration. Population decline of 3.4M is larger than previously tracked. China robot density 470/10K now surpasses both Germany and Japan. The 17% birth collapse is the single most dramatic demographic data point in this scan.",
+      "opportunity_hypotheses": [
+        "China-specific industrial automation solutions (cobots, factory AI) targeting the world's largest and fastest-growing automation market",
+        "Manufacturing relocation advisory/infrastructure for companies moving production from China to India/Vietnam/Indonesia",
+        "Elder care technology for China's rapidly aging population (market that will exceed Japan's within 10 years)"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-010",
+      "force_category": "F2_demographics",
+      "source_category": "9",
+      "signal_type": "geographic_variation",
+      "headline": "India Skills Gap Threatens Dividend: 65% under 35 but only 20% of workforce skilled (vs 80% in developed nations); 95% of engineers unfit for software roles",
+      "detail": "India's demographic dividend is enormous in scale (1.04B working-age by 2030, 65% under 35) but faces a critical skills gap that could prevent its realization. Only 20% of India's 600-million-strong labor force is classified as skilled, compared to an 80% average in developed countries. The NASSCOM finding that 95% of Indian engineers are unfit for software development roles, and more than three-quarters lack basic spoken English, reveals an education quality crisis beneath the enrollment quantity. 88% of India's workforce is employed in low-skill, low-productivity roles. The government's PMKVY (Pradhan Mantri Kaushal Vikas Yojana) has trained 14.2 million individuals since 2015, but this is a fraction of the 500-600M who need upskilling. The working-age peak will last until approximately 2055, providing a 30-year window — but without quality skill development, India risks demographic dividend becoming demographic burden as a large unemployable youth cohort creates social instability.",
+      "source": "IBEF India Demographic Dividend Report, EY India@100, The Wire (India skills gap study), PIB India/PMKVY data, Hudson Institute India analysis",
+      "theoretical_lens": "T8 Demographic Transition: India is in the optimal phase of demographic transition — declining fertility but still-young population. T12 Ricardo: India's comparative advantage SHOULD be labor-intensive services and manufacturing, but the skills gap prevents the comparative advantage from being realized. T3 Baumol: India can become the global Baumol cure exporter if it solves its skills gap — Indian professionals delivered at Indian cost levels providing US/EU-quality services via AI augmentation.",
+      "geographic_scope": ["India", "Global"],
+      "geographic_variation": "Within India: Southern states (Karnataka, Tamil Nadu, Kerala) have higher skill levels and lower fertility — they look like developed nations. Northern states (Bihar, UP, Jharkhand) have high fertility, low skills — they represent the bulk of the demographic dividend and the bulk of the skills gap. Global: India competes with Vietnam, Indonesia, and Philippines for manufacturing FDI but has the largest absolute labor pool.",
+      "time_horizon": "2026-2040",
+      "confidence": "medium",
+      "raw_data_points": [
+        "Working-age population by 2030: 1.04B",
+        "Under 35: 65% of population",
+        "Skilled workforce: 20% (vs 80% developed country average)",
+        "Engineers unfit for software: 95%",
+        "Lacking basic English: 75%+",
+        "Low-skill employment: 88%",
+        "PMKVY trained: 14.2M since 2015",
+        "Demographic dividend window: until ~2055"
+      ],
+      "delta_from_v3_2": "Previous: '1.44B population, 1B working-age, median 28.' Updated with QUALITY data: 20% skilled (vs 80% developed), 95% engineers unfit for software, 88% in low-skill roles. The narrative shifts from 'India has massive labor supply' to 'India has massive labor supply but a skills quality crisis that could prevent the dividend from being captured.'",
+      "opportunity_hypotheses": [
+        "AI-powered mass skilling platform for India's 500M+ unskilled workers (PMKVY-scale but AI-delivered)",
+        "English language AI tutoring for India's tech workforce (addressing the 75%+ English deficit)",
+        "India-based AI services firms that combine cheap labor + AI augmentation to deliver US-quality professional services at 30-50% cost"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-011",
+      "force_category": "F2_demographics",
+      "source_category": "9",
+      "signal_type": "geographic_variation",
+      "headline": "EU/Germany Labor Crisis: 628K German positions unfilled; Italy welcoming 500K non-EU workers 2026-2028; Work-and-Stay Agency to digitize labor immigration by March 2026",
+      "detail": "The EU labor shortage is intensifying and triggering historic immigration policy shifts. Germany has 628,000 unfilled positions as of July 2025, with particularly acute gaps in IT, skilled trades, and healthcare. Baby boomer retirement is leaving a growing hole in the social security system. Italy announced plans to welcome 500,000 non-EU workers between 2026-2028 to address shortages in agriculture, tourism, construction, and healthcare — a remarkable shift from PM Meloni's restrictionist platform. Germany is reorganizing its labor-migration framework: the Work-and-Stay Agency (approved Nov 2025) will digitize and streamline work permits, residency, and credential recognition through a fully digital process independent of asylum procedures, with a firm plan by March 2026. The EU Blue Card salary threshold rises to EUR 50,700 in 2026 (from EUR 48,300 in 2025), with a lower threshold of EUR 45,934 for 'bottleneck professions' (IT, STEM, construction, education). The shortage occupation list has been expanded to include manufacturing, mining, construction, and service management. Despite reforms, processing remains slow — migrants wait months for visas and residence permits.",
+      "source": "OECD Economic Surveys: Germany 2025, EURES Labour Shortages in Europe 2025, The Local Germany immigration changes 2026, ETIAS EU labor shortage analysis, Fragomen Germany Immigration Reform",
+      "theoretical_lens": "T8 Demographics + T10 Coase: EU faces the same demographic supply collapse as Japan but with an additional Coasean friction: the EU's complex multi-country regulatory environment creates higher transaction costs for labor immigration than single-country systems. The Work-and-Stay Agency is an attempt to reduce these Coasean costs. T12 Ricardo: EU nations are importing labor from countries with comparative advantage in surplus labor (Turkey, North Africa, South Asia), a Ricardo-predicted flow.",
+      "geographic_scope": ["EU", "Germany", "Italy"],
+      "geographic_variation": "Germany (628K vacancies) and Italy (500K worker import plan) are leading the response. Eastern EU (Poland, Romania) faces brain drain as young workers migrate west. Nordic countries buffer aging with high automation. France and Ireland have more demographic runway (median ages 42 and 38).",
+      "time_horizon": "2026-2030",
+      "confidence": "high",
+      "raw_data_points": [
+        "Germany unfilled positions: 628,000 (July 2025)",
+        "Italy non-EU worker plan: 500,000 (2026-2028)",
+        "EU Blue Card 2026 threshold: EUR 50,700",
+        "Bottleneck profession threshold: EUR 45,934",
+        "Work-and-Stay Agency: approved Nov 2025, plan by March 2026",
+        "Non-EU workers: 6% of total EU workforce (up from 2% in 2010)"
+      ],
+      "delta_from_v3_2": "Previous: 'EU -1M workers/yr decline.' Updated with specific national data: Germany 628K vacancies, Italy 500K import plan. NEW: Work-and-Stay Agency digitization represents structural shift in EU labor immigration. Italy policy reversal (restrictionist PM welcoming 500K workers) is a significant political indicator of demographic urgency overriding ideology.",
+      "opportunity_hypotheses": [
+        "EU labor immigration tech platform connecting non-EU skilled workers with bottleneck professions",
+        "Credential recognition AI for foreign professionals entering EU workforce",
+        "German/EU-specific AI tools for manufacturing and healthcare that partially substitute for the 628K+ missing workers"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-012",
+      "force_category": "F2_demographics",
+      "source_category": "9",
+      "signal_type": "labor_migration",
+      "headline": "H-1B Overhaul: $100K fee (1,500-5,800% increase) + wage-weighted lottery replacement effective Feb 2026; structural shock to US tech labor supply",
+      "detail": "The Trump administration has enacted the most significant H-1B visa overhaul in the program's history. Two changes effective in 2025-2026: (1) A $100,000 fee requirement for H-1B petitions (effective Sept 2025-Sept 2026), representing a 1,500-5,800% increase over previous filing fees. (2) Replacement of the random lottery with a wage-weighted selection system that favors higher-skilled and higher-paid workers, effective February 26, 2026. The administration's stated rationale is that the lottery system was 'exploited and abused by employers seeking to import foreign workers at lower wages.' Immigration attorneys warn the $100K fee 'risks unintentionally shutting out exactly the employers Congress intended the H-1B program to help.' The H-1B and L-1 Visa Reform Act of 2025 has been introduced in Congress. For the engine, this is a STRUCTURAL LABOR SUPPLY SHOCK: the H-1B program supplied ~85,000 new skilled workers/year to the US economy. A 1,500-5,800% fee increase will dramatically reduce applications from smaller employers (startups, SMBs, universities, hospitals) while large tech companies can absorb the cost.",
+      "source": "USCIS DHS Newsroom (H-1B changes), White House Executive Order (Sept 2025), American Bazaar (new rules Feb 2026), TIME, CSIS H-1B reform analysis, National Immigration Forum bill summary",
+      "theoretical_lens": "T10 Coase: The $100K fee is a massive Coasean transaction cost imposed on the labor market. It does not reduce demand for skilled foreign workers — it increases the cost of the transaction, which means only the highest-value transactions (highest-paid positions) will occur. T8 Demographics: This compounds the pipeline collapses in CPA, nursing, and STEM — reducing foreign talent supply while domestic supply is already shrinking. T12 Ricardo: Restricting labor immigration reduces the US ability to capture comparative advantage from India's demographic dividend.",
+      "geographic_scope": ["US", "India", "Global"],
+      "geographic_variation": "Primary impact on Indian tech workers (70%+ of H-1B recipients). Secondary impact on Chinese researchers (15% of H-1B). US tech hubs (Silicon Valley, Seattle, Austin, NYC) face the most acute supply reduction. Universities (significant H-1B employers for research positions) may be priced out entirely. Canada and UK positioned to absorb redirected talent flows.",
+      "time_horizon": "2026-2028",
+      "confidence": "high",
+      "raw_data_points": [
+        "H-1B fee: $100,000 (Sept 2025 - Sept 2026)",
+        "Fee increase: 1,500-5,800%",
+        "Lottery replacement: wage-weighted selection, effective Feb 26, 2026",
+        "H-1B annual cap: 65,000 + 20,000 masters",
+        "H-1B demand: ~5x cap",
+        "Indian H-1B share: 70%+"
+      ],
+      "delta_from_v3_2": "NEW SIGNAL. H-1B overhaul was not tracked in v3-2. The $100K fee and wage-weighted selection are the most significant US immigration policy changes for tech labor supply in a decade. This intersects with F2 demographic pipeline collapses — the US is simultaneously shrinking domestic professional pipelines AND restricting foreign talent inflow.",
+      "opportunity_hypotheses": [
+        "Remote-first US companies hiring talent in India/Canada/UK instead of importing via H-1B (distributed workforce platform)",
+        "AI-augmented US tech workers handling workload previously requiring H-1B augmentation",
+        "Canada/UK talent attraction platforms for workers redirected from US H-1B pipeline",
+        "Compliance/legal tech for navigating the new H-1B wage-weighted system"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-013",
+      "force_category": "F2_demographics",
+      "source_category": "6",
+      "signal_type": "labor_migration",
+      "headline": "Elder Care Crisis Approaching: Worker-to-senior ratio falling from 4:1 to 2.9:1 in 5 years; home health aides earn $16.82/hr (barely above fast food at $15.07/hr)",
+      "detail": "The US is entering 'peak demand' for aging baby boomers, creating an elder care crisis that compounds the nursing shortage. The worker-to-senior ratio will fall from 4:1 to 2.9:1 within five years. Mercer estimated a shortage of approximately 446,000 home health aides by 2025. The core problem is economic: home health and personal care aides earn an average of $16.82 per hour (BLS May 2024), barely above fast food workers at $15.07/hr. At these wages, the sector cannot compete for workers — why do physically and emotionally demanding elder care when fast food pays nearly the same? Annual turnover in direct care is extremely high due to low wages, poor job quality, and limited career advancement. Federal ARPA funds that supported care worker wages expired March 2025, removing temporary support. The demographic math is relentless: 10,000 baby boomers turn 65 every day through 2030, each requiring progressively more care. This is the intersection of T8 Demographics (aging population creating demand) and T3 Baumol (care work costs rising but wages suppressed by Medicaid reimbursement rates).",
+      "source": "CNBC Senior Caregiving Report (Nov 2025), Mercer Healthcare Workforce Projections, BLS Occupational Employment Wage Statistics May 2024, Penn LDI Home Health Workforce Study, Commonwealth Fund Direct Care Worker Analysis",
+      "theoretical_lens": "T3 Baumol + T8 Demographics: Elder care is the ultimate Baumol profession — inherently labor-intensive, hard to automate, with costs suppressed by government reimbursement rates that don't keep up with market wages. The demographic demand surge (10K boomers/day turning 65) hitting a workforce that earns barely above minimum wage is a formula for systemic crisis. T7 Jevons: Robotics/AI in elder care (monitoring, medication management, mobility assistance) could extend each caregiver's capacity, increasing demand for caregivers who manage AI-assisted care rather than replacing them.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Worst in rural areas where elder care workforce is thinnest and population is oldest. Florida faces the most acute pressure (highest retiree concentration + fastest-growing elderly population). Southern states with lower Medicaid reimbursement rates face worse economics. Urban areas have more workforce options but higher cost of living.",
+      "time_horizon": "2026-2032",
+      "confidence": "high",
+      "raw_data_points": [
+        "Worker-to-senior ratio: falling from 4:1 to 2.9:1 in 5 years",
+        "HHA shortage: ~446,000 (Mercer 2025 estimate)",
+        "Average HHA wage: $16.82/hr",
+        "Fast food worker wage: $15.07/hr",
+        "Wage gap: $1.75/hr above fast food",
+        "Baby boomers turning 65: 10,000/day",
+        "ARPA care worker funding: expired March 2025"
+      ],
+      "delta_from_v3_2": "NEW SIGNAL. Elder care crisis was not separately tracked in v3-2. The worker-to-senior ratio decline from 4:1 to 2.9:1 is the most actionable new data point — it quantifies the care gap that will emerge within 5 years. The $16.82/hr wage (barely above fast food) explains why labor supply is structurally insufficient.",
+      "opportunity_hypotheses": [
+        "AI-powered remote monitoring for elderly that reduces in-person visit requirements by 30-50%",
+        "Elder care robotics (Japan-proven solutions) adapted for US market",
+        "Care coordination platform that matches flexible caregivers with families (gig-economy model for elder care)",
+        "Medicaid optimization AI that helps care agencies maximize reimbursement and margins"
+      ]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C5-F2-014",
+      "force_category": "F2_demographics",
+      "source_category": "6",
+      "signal_type": "force_velocity",
+      "headline": "Education Demographic Cliff: 15%+ enrollment decline projected post-2025; 57% of colleges report international enrollment decline; high-school graduate count falling for a decade",
+      "detail": "The higher education 'demographic cliff' is now hitting. Experts project a 15%+ decline in traditional college-age students enrolling in higher education over the next decade, driven by declining birth rates from the late 2000s and early 2010s. 57% of polled colleges reported a decline in international enrollment during fall 2025, compounding the domestic decline. The number of high school graduates is expected to decline steadily for at least the next decade. This has cascading implications for every professional pipeline tracked in F2 signals: fewer college students means fewer potential CPA candidates (already at 1.4% of students), fewer nursing students (already 65K turned away from capacity-constrained programs), fewer teaching candidates (already in crisis), and fewer STEM graduates for manufacturing. Small, tuition-dependent institutions with limited endowments face existential risk. The education cliff is the upstream demographic force that feeds ALL downstream pipeline collapses. The AICPA specifically warns that 'broader demographic trends, including an expected decline in high-school graduates over the next decade, mean that even a stabilized or slightly growing accounting pipeline will require continuous outreach and innovation.'",
+      "source": "NPR Education Demographic Cliff report (Jan 2025), AGB Impacts of Enrollment Cliff 2025-2026, Hechinger Report enrollment predictions, BestColleges enrollment decline analysis, Higher Ed Dive 2026 trends",
+      "theoretical_lens": "T8 Demographics: The education cliff is a second-order demographic effect — lower birth rates 18 years ago now reduce college enrollment, which 4-6 years later reduces professional workforce entry rates. This is demographic lag made visible. T3 Baumol: Higher education is itself a Baumol institution (costs rising faster than value delivered for many students), which accelerates the enrollment decline as students rationally question ROI. T1 Schumpeter: Alternative credential providers (bootcamps, micro-credentials, employer-direct training) represent Schumpeterian disruption of traditional higher education.",
+      "geographic_scope": ["US"],
+      "geographic_variation": "Northeast and Midwest face the steepest enrollment declines (lowest birth rates, outmigration). Sun Belt institutions are somewhat buffered by population in-migration. Elite institutions are unaffected (excess demand). Regional and community colleges face the worst impact. States with strong alternative credential ecosystems (California, Texas) may partially offset traditional enrollment losses.",
+      "time_horizon": "2026-2035",
+      "confidence": "high",
+      "raw_data_points": [
+        "Projected enrollment decline: 15%+ over next decade",
+        "Colleges reporting international enrollment decline: 57% (fall 2025)",
+        "High school graduates: declining for next decade",
+        "AICPA warning: demographic trends constrain even stabilized pipelines",
+        "Most vulnerable: small, tuition-dependent, limited-endowment institutions"
+      ],
+      "delta_from_v3_2": "NEW SIGNAL. The education demographic cliff was not separately tracked. It is the UPSTREAM FORCE that feeds all pipeline collapse signals (CPA, nursing, teaching, STEM). By tracking it separately, the engine can model the compound effect: demographic cliff -> fewer students -> fewer professional graduates -> worsening shortages -> stronger case for AI augmentation in every affected profession.",
+      "opportunity_hypotheses": [
+        "Alternative credential platforms that bypass the 4-year degree bottleneck for professional entry",
+        "AI-powered higher education that delivers quality education at 50-70% lower cost (saving at-risk institutions)",
+        "Employer-direct training partnerships that replace or supplement traditional degree pathways",
+        "International student recruitment AI for the 57% of colleges losing international enrollment"
+      ]
+    }
+  ],
+
+  "cross_signal_analysis": {
+    "compound_effects": [
+      {
+        "interaction": "Education Cliff (014) -> Pipeline Collapses (003, 004, 005, 006) -> Sector Shortages (002, 003, 013) -> AI Automation Necessity",
+        "description": "The education demographic cliff is the upstream force that feeds all professional pipeline collapses. Fewer students -> fewer CPA/nursing/teaching/STEM graduates -> worsening sector shortages -> stronger economic case for AI augmentation. This is a self-reinforcing cycle that cannot be broken by wages alone.",
+        "confidence": "high"
+      },
+      {
+        "interaction": "Silver Tsunami Transactions (001) + Manufacturing Shortage (002) + SBA Fee Waiver",
+        "description": "The SBA manufacturing fee waiver, combined with the 35% surge in acquisition lending, creates a specific window for acquire-and-modernize strategies in manufacturing. Retiring boomer-owned shops with 415K unfilled positions can be acquired at compressed multiples and automated with cobots/AI.",
+        "confidence": "high"
+      },
+      {
+        "interaction": "H-1B Overhaul (012) + CPA Pipeline (004) + Education Cliff (014)",
+        "description": "The US is simultaneously restricting foreign talent inflow ($100K H-1B fee) while domestic professional pipelines collapse (CPA 20-year low, nursing 65K turned away) and the overall student pool shrinks (15%+ enrollment decline). This triple squeeze creates the most acute skilled labor shortage in US history and makes AI augmentation not optional but necessary.",
+        "confidence": "high"
+      },
+      {
+        "interaction": "China Birth Collapse (009) + Japan Record Low (008) + India Skills Gap (010)",
+        "description": "The global demographic picture is polarizing: China and Japan face accelerating decline while India has massive surplus but poor quality. The equilibrium response is automation in aging economies + skills investment in young economies + labor migration between them. Any business model that facilitates these flows sits on a multi-decade structural force.",
+        "confidence": "high"
+      },
+      {
+        "interaction": "Elder Care Crisis (013) + Nursing Shortage (003) + Boomer Retirement Wave (001)",
+        "description": "The same generation (baby boomers) that is creating the Silver Tsunami in business ownership is simultaneously creating the elder care demand surge. They retire from ownership (creating acquisition opportunities) while requiring more healthcare and care services (from a workforce that is shrinking). The demand side and supply side of the demographic crisis are the same generation.",
+        "confidence": "high"
+      }
+    ],
+    "velocity_assessment": "F2 velocity is UPGRADED from steady to accelerating. Key evidence: (1) China 17% single-year birth collapse, (2) Japan sub-700K annualized births, (3) SBA acquisition lending +35% YoY confirming Silver Tsunami transaction wave, (4) CPA degrees hit 20-year low, (5) H-1B $100K fee creating new labor supply shock. Every leading indicator has worsened since v3-2. The force is slow-moving but the rate of deterioration is increasing.",
+    "trigger_check": {
+      "metric": "silver_tsunami_pct",
+      "threshold": 55,
+      "current_value": "41-52.3% depending on survey and age cutoff",
+      "triggered": false,
+      "note": "The 55% threshold in state.json has not been triggered. However, the TRANSACTION data (SBA +35% YoY) may be a better trigger than the ownership percentage. Consider adding an SBA acquisition volume trigger."
+    }
+  }
+}

@@ -1,0 +1,1228 @@
+{
+  "sector_brief": {
+    "sector_naics": "61",
+    "sector_name": "Educational Services",
+    "brief_date": "2026-02-11",
+    "engine_version": "v3-4",
+    "agent": "Agent B (Business Model Constructor)",
+
+    "sector_context": {
+      "force_drivers": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "current_state_2026": {
+        "employment": "3.9M workers (NAICS 61), ~4.3M including adjacent training/certification (BLS)",
+        "revenue": "$850B+ US education sector (K-12 $800B public+private, higher ed $700B, corporate training $380B — overlapping total ~$1.8T including all segments)",
+        "edtech_market_2026": "$165B-$283B depending on scope (Coherent MI: $165B, Fortune BI: $215B, BRI: $283B)",
+        "ai_in_education_market": "$7.6B (2025), growing at 38.4% CAGR, projected $112B by 2034",
+        "corporate_training_market": "$353B (2025), projected $740B by 2035 at 7.7% CAGR",
+        "corporate_lms_market": "$9.6B (2024), projected $27.4B by 2030 at 19.4% CAGR",
+        "private_tutoring_market": "$70.4B global (2025), US online tutoring $4.3B (2024)",
+        "test_prep_market": "$72B exam prep and tutoring (2025), US growing at 7.9% CAGR",
+        "cost_structure": {
+          "labor_pct": 65,
+          "facilities_pct": 15,
+          "materials_technology_pct": 10,
+          "admin_overhead_pct": 10,
+          "notes": "Labor is overwhelmingly dominant. University admin costs $3,771/FTE student (2021) and rising. Teachers represent largest single expense in K-12 (80% of operating budgets)."
+        },
+        "ai_adoption": "growing_rapidly_from_low_institutional_base",
+        "ai_adoption_detail": {
+          "student_usage": "92% of students use AI (2025, up from 66% in 2024)",
+          "teacher_usage": "83% of K-12 teachers use generative AI, 60% daily",
+          "institutional_adoption": "86% of educational organizations have embraced generative AI — HIGHEST of any industry",
+          "institutional_governance": "Only 10% have established AI guidelines (UNESCO)",
+          "public_comfort": "55% of Americans uncomfortable with AI in education (F5 psychology)",
+          "generational_divide": "Gen Z 67% excited vs Boomers 29% excited about AI"
+        },
+        "key_patterns": ["P-001 (Baumol Cure)", "P-005 (workforce pipeline collapse)"]
+      },
+
+      "transformation_direction": {
+        "what_changes": [
+          "1. BAUMOL CURE: Education costs have risen faster than CPI for 40+ years. Tuition +2%/yr above inflation minimum (Baumol). AI compresses the 65% labor cost component. A $50-80/hr human tutor becomes $2-5/hr AI equivalent. University admin ($3,771/student) automatable by 60%+.",
+          "2. DEMOGRAPHIC CLIFF: 18-year-olds decline 13% from 2026-2041. College enrollment rate already fell 70%->62%. 16+ colleges closing per year. Up to 80 more could close by 2029 (Fed Philadelphia). This ACCELERATES AI adoption out of survival necessity.",
+          "3. CREDENTIAL DISRUPTION: 39% of skills obsolete by 2030 (WEF). 1.85M unique credentials in US (Credential Engine). 53% of employers removed degree requirements (+30% from 2024). Traditional 4-year degree signal eroding.",
+          "4. TEACHER SHORTAGE PERMANENT: 411K positions vacant or uncertified. 44% of teachers report burnout. 42 states face shortages. 14%+ annual teacher attrition. AI teaching assistants become structural necessity, not luxury.",
+          "5. CORPORATE RESKILLING EXPLOSION: 91% of companies plan to increase AI L&D spending in 2026. Every Baumol cure in other sectors (financial services, professional services, admin) creates displaced workers who need retraining."
+        ],
+        "timeline": {
+          "2025_2027": "Adoption explosion: individual usage (92% students, 83% teachers) far ahead of institutional policy (10% with guidelines). AI tutoring scaling (Khanmigo 40K->1.4M users). Corporate AI training budgets surge.",
+          "2028_2030": "Institutional restructuring: colleges close at accelerating rate (demographic cliff peak begins). University admin AI deployed at scale. Alternative credentials become employer standard. Corporate reskilling becomes continuous, not episodic.",
+          "2031_2035": "Structural reconfiguration: surviving universities are AI-augmented with 40-60% lower admin costs. K-12 has AI tutoring as standard infrastructure. Professional certification systems redesigned around AI assessment. Human teachers focus on mentorship/social-emotional (Baumol Premium)."
+        },
+        "barbell_classification": {
+          "routine_cognitive_pct": 45,
+          "routine_cognitive_tasks": [
+            "Grading and assessment (standardized tests, homework)",
+            "Lesson plan generation and curriculum alignment",
+            "Administrative processing (admissions, financial aid, scheduling)",
+            "Content delivery (lectures on established material)",
+            "Progress tracking and reporting",
+            "Tutoring on structured subjects (math, test prep, language)"
+          ],
+          "tacit_manual_pct": 5,
+          "tacit_manual_tasks": [
+            "Lab supervision and hands-on training",
+            "Physical education and athletics coaching",
+            "Early childhood physical care and development"
+          ],
+          "tacit_cognitive_pct": 50,
+          "tacit_cognitive_tasks": [
+            "Mentorship and social-emotional development (RISES in value)",
+            "Research design and creative inquiry",
+            "Classroom management and behavioral intervention",
+            "Motivating disengaged students",
+            "Special education individualized support",
+            "Career counseling and life guidance",
+            "Collaborative learning facilitation"
+          ],
+          "net_effect": "Middle collapses 45%: routine cognitive teaching/admin fully AI-substitutable. But tacit cognitive 50% RISES in value — the human teacher as mentor/motivator/relationship-builder becomes a Baumol Premium role. Education barbells harder than any other sector because the tacit-cognitive component (mentorship) is literally the core value proposition for parents."
+        },
+        "second_order_effects": [
+          "CREDENTIALING: If AI can assess competency continuously, the 4-year degree as signal becomes economically irrational. Credential verification becomes a standalone market.",
+          "PROFESSIONAL LICENSING: CPA (-33% pipeline), nursing (78K->200K unfilled), teaching (42 states shortage) — AI prep + AI-augmented practice changes licensing economics.",
+          "LABOR MARKETS: Every Baumol cure elsewhere (financial services, admin, professional services) creates displaced workers who need retraining. Education sector is downstream beneficiary of OTHER sectors' disruption.",
+          "GEOGRAPHIC REDISTRIBUTION: Online/AI education reduces geographic constraints. Rural access improves. Urban tutoring centers decline.",
+          "PARENTAL PSYCHOLOGY: 55% discomfort is THE binding constraint. This creates the highest fear friction of any sector. Models that ignore this fail. Models that solve for it have enormous moats."
+        ]
+      },
+
+      "economic_force_calculation": {
+        "current_sector_revenue": "$1.8T (all US education + training segments)",
+        "ai_cost_compression_target": "45% of sector costs are routine-cognitive and compressible. At 65% labor share, this means ~29% of total sector costs are AI-substitutable = $522B in compressible costs",
+        "jevons_expansion": "At 5-10x lower cost for tutoring + test prep + corporate training, demand expands 2-3x. Currently 59% of workers who need training don't get it (WEF). At AI-native pricing, most of them do.",
+        "net_economic_force": "$522B compressible costs + Jevons expansion of $200-400B in new demand = $700B-$900B total economic force",
+        "notes": "This is the second-largest Baumol cure opportunity after healthcare. But F5 psychology (55% discomfort) means the force releases SLOWLY and through specific channels (corporate training first, K-12 last)."
+      },
+
+      "fear_friction_index": {
+        "sector_naics": "61",
+        "sector_name": "Educational Services",
+        "economic_readiness": 8,
+        "psychological_readiness": 3,
+        "gap": 5,
+        "classification": "highest_friction_sector",
+        "detail": "Education has the LARGEST gap between economic readiness and psychological readiness of any sector we've measured. Financial services gap = 1. Healthcare gap = 3. Education gap = 5. Parents trust AI with their money (73% finserv adoption) but not their children (55% uncomfortable). This gap is THE defining feature of education AI strategy. Every model must account for it.",
+        "resolution_path": "Invisible AI pathway (like healthcare P-032): teacher-facing tools first (83% already using), then parent-visible tools with teacher endorsement, then student-facing. Exposure effect erodes fear over 2-4 years. Corporate training has MUCH lower friction (adults choosing for themselves).",
+        "fear_driven_demand_created": "AI safety in education, AI governance for schools, human-verified AI output — $5-10B fear economy sub-market"
+      }
+    }
+  },
+
+  "model_cards": [
+    {
+      "card_id": "MC-EDU-CORP-01",
+      "model_name": "Enterprise AI Reskilling Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "6114",
+      "sector_name": "Business Schools and Computer/Management Training",
+      "one_line": "AI-native corporate reskilling platform for workers displaced by Baumol cures across financial services, admin, and professional services.",
+      "macro_source": "Cross-sector Baumol displacement + corporate reskilling crisis (91% of companies increasing AI L&D spend)",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "39% of skills obsolete by 2030 (WEF Future of Jobs 2025)",
+            "59% of workforce won't receive training they need (WEF)",
+            "91% of companies plan to increase AI L&D spending in 2026",
+            "Every Baumol cure in NAICS 52/54/56 creates displaced workers needing retraining",
+            "CPA pipeline -33%, admin staffing employment -7.6% YoY — these workers need somewhere to go",
+            "Corporate training market $353B (2025) growing to $740B by 2035"
+          ],
+          "supply_gap": "Current corporate LMS platforms (Cornerstone, Workday Learning, LinkedIn Learning) are pre-AI content libraries. They deliver courses, not personalized reskilling pathways. Adaptive quizzing (Workday's 2024 feature) is primitive vs what frontier AI enables. No platform connects reskilling to actual job placement in AI-augmented roles.",
+          "inevitability_argument": "The engine has confirmed active Schumpeterian destruction in financial services (P-026), administrative services (P-027), and professional services (P-001). These three sectors employ 15M+ workers. As routine cognitive work automates, these workers must reskill or exit the labor force. Companies will pay for reskilling because (a) they need AI-augmented workers and (b) they need to manage the transition for retention/morale. This is not discretionary — it is structural necessity driven by the same forces destroying incumbent business models.",
+          "pattern_refs": ["P-001", "P-026", "P-027"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "AI inference at $0.40/M tokens enables personalized learning paths that adapt in real-time. A human corporate trainer costs $500-2,000/day. AI can deliver equivalent personalized instruction at $5-20/learner/month. AI also enables continuous competency assessment, simulation-based training, and real-time skill gap analysis across entire organizations."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 7,
+            "mechanism": "Silver Tsunami (52.3% of businesses owned by 55+) creates succession gaps. Younger workers need to learn skills that were previously transferred through mentorship over decades. AI accelerates this knowledge transfer. Additionally, -13% employment decline in entry-level AI-exposed occupations means young workers must reskill into different roles."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Corporate L&D budgets expanding as companies face the train-or-lose-talent imperative. 91% increasing AI L&D spend. Government workforce development funds ($3B+ annually) available for approved programs. VC rotation toward enterprise SaaS with clear ROI metrics aligns with this model."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 7, "notes": "Dependent on frontier LLM APIs (OpenAI, Anthropic, Google) for personalization engine. Multi-model strategy mitigates. Open-source models (DeepSeek R1, Llama) provide fallback. No hardware dependency."},
+          "regulatory_contagion": {"score": 6, "notes": "EU AI Act applies to education AI. US has no federal regulation yet. State-level rules emerging. Corporate training has LESS regulatory friction than K-12 or higher ed — adults choosing for themselves."},
+          "competitive_import": {"score": 5, "notes": "LinkedIn Learning (Microsoft), Coursera Enterprise, Workday Learning are large incumbents. But all are pre-AI content libraries. True AI-native reskilling platform does not exist at scale yet."},
+          "leading_indicator_transfer": {"score": 8, "notes": "Financial services cascade (P-026) and staffing destruction (P-027) are leading indicators. As these sectors automate, displaced workers create demand. Every confirmed sector transformation is a demand driver."},
+          "resource_talent_flow": {"score": 7, "notes": "Instructional designers and L&D professionals available. AI/ML engineers in high demand but manageable for a SaaS platform. Content partnerships with professional associations (AICPA, ABA) provide defensibility."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Corporate reskilling is a NECESSITY, not discretionary. Companies cannot stop reskilling workers even in a downturn because the underlying automation forcing functions (AI cost compression) continue regardless of macro conditions. Counter-cyclical: recessions ACCELERATE automation, creating MORE displaced workers who need retraining.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$8M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 78,
+          "cost_advantage_ratio": "10-15x vs in-person corporate training ($500-2000/day trainer → $15-50/learner/month AI)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$15,000-$50,000/year per enterprise contract (50-500 employees), $30-80/seat/month individual",
+        "cost_per_unit_ai": "$3-8/learner/month (API costs + infrastructure + content maintenance)",
+        "cost_per_unit_incumbent": "$500-2,000/day for in-person trainer, $50-150/seat/month for legacy LMS + content",
+        "break_even_volume": "200 enterprise contracts at $25K ACV = $5M ARR (covers $3M team + $1M infrastructure + $1M GTM)",
+        "jevons_multiplier": "3-5x. Currently 59% of workers who need training don't get it. At $30/seat/month vs $150/seat/month, most of them do. TAM expands from addressable corporate training ($100B) to total needed reskilling ($300B+).",
+        "economic_force_tam": "$100B addressable (corporate AI training), $300B+ with Jevons expansion"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "Corporate trainer: $1,200/day average. For a 10-person team, 5-day training = $60,000. Per-learner cost: $6,000 for a single training event.",
+        "ai_augmented_cost": "AI reskilling platform: $50/seat/month. Same 10-person team, 6-month reskilling program = $3,000 total. Per-learner cost: $300 for continuous, personalized training.",
+        "cost_ratio": "20x cost reduction for equivalent or better outcomes (personalized pace, 24/7 availability, continuous assessment)",
+        "baumol_stored_energy": "Corporate training costs have grown at CPI+3% for 20 years. At $353B market and 3% above-CPI annual growth, approximately $90B in stored Baumol energy is available for AI compression."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "Low friction. Adults making choices for themselves in a professional context. Main friction is IT procurement cycles and change management, not fear of AI.",
+        "resolution_path": "Pilot programs (free 30-day team trial), ROI dashboards showing skill acquisition rates, integration with existing HRIS/LMS platforms. Companies already spending on training — this replaces existing spend, not new budget line.",
+        "fear_driven_demand_created": "AI readiness assessments, organizational change management for AI transitions — could be add-on revenue streams"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Corporate training market growing ($353B, 7.7% CAGR) — Confirmed by multiple sources",
+          "91% of companies increasing AI L&D spend — Confirmed (Disprz/industry surveys 2026)",
+          "LLM inference costs declining 50x/yr — Confirmed (state.json F1 metrics)",
+          "Sector transformations in NAICS 52/54/56 displacing workers — Confirmed (P-026, P-027, P-001)"
+        ],
+        "likely": [
+          "AI-native reskilling delivers equal or better outcomes than human trainers for structured content",
+          "Enterprise procurement will shift from legacy LMS to AI-native within 3-5 years",
+          "Government workforce development funds will increasingly flow to AI-based training programs"
+        ],
+        "uncertain": [
+          "Whether displaced workers actually reskill or exit labor force entirely",
+          "Whether large incumbents (LinkedIn Learning, Coursera) can retrofit AI-native capabilities fast enough to block new entrants",
+          "Regulatory requirements for corporate AI training (emerging, unclear)"
+        ],
+        "unlikely": [
+          "Corporate training budgets contract despite active automation — counter to all evidence",
+          "In-person training maintains cost advantage against AI — physically impossible given cost curves"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 15,
+        "total_funding": "$2B+ across Coursera, LinkedIn Learning, Degreed, Pluralsight, etc. — but these are pre-AI platforms retrofitting, not AI-native",
+        "layer": "platform",
+        "moat_sources": [
+          "Proprietary skills taxonomy mapped to AI-augmented job roles (not legacy O*NET)",
+          "Enterprise data: skill gap analytics across client organizations compound over time",
+          "Professional association partnerships (AICPA, ABA, etc.) for credential validation",
+          "Integration with HRIS platforms (Workday, SAP SuccessFactors) creates switching costs"
+        ]
+      },
+
+      "falsification_criteria": [
+        "Corporate AI L&D spending declines for 2+ consecutive quarters",
+        "LinkedIn Learning successfully ships AI-native personalized reskilling that eliminates the gap with new entrants",
+        "Workers displaced by automation exit the labor force rather than reskilling (labor force participation drops >2%)",
+        "Government prohibits AI-delivered professional training without human instructor supervision"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-TUTOR-01",
+      "model_name": "AI-Native K-12 Tutoring Platform",
+      "architecture": "full_service_replacement",
+      "sector_naics": "611710",
+      "sector_name": "Educational Support Services",
+      "one_line": "Personalized AI tutoring at $20/mo vs $50-80/hr human tutors, targeting 50M+ US K-12 students with parent-trust architecture.",
+      "macro_source": "Education Baumol Cure + Teacher Shortage (42 states) + Jevons Expansion",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "US private tutoring market $4.3B online (2024), $70.4B global, growing 9-11% CAGR",
+            "Teacher shortage: 411K positions vacant/uncertified across 42 states",
+            "Human tutoring at $50-80/hr is unaffordable for 80%+ of families",
+            "Only 20% of US students currently receive any tutoring — 80% unserved market",
+            "Post-COVID learning loss: students 4-5 months behind in math (NWEA)",
+            "Khanmigo proved concept: 40K to 1.4M users in 18 months"
+          ],
+          "supply_gap": "Human tutoring is a $70B+ market where supply cannot scale (teacher shortage) and price cannot fall (Baumol). AI tutoring at $20/month makes personalized instruction accessible to all 50M K-12 students, not just the affluent 20%. Khanmigo is free/nonprofit but limited by Khan Academy's nonprofit model and OpenAI API costs. No commercial AI tutor has achieved scale with parent trust.",
+          "inevitability_argument": "The math is inescapable: a human tutor at $60/hr for 2 hours/week costs $480/month. AI tutoring at $20/month delivers more hours and more personalization. When 80% of families cannot access tutoring and 411K teaching positions sit vacant, AI tutoring is not a luxury — it is the only way to deliver personalized learning at scale. The 13% decline in 18-year-olds (2026-2041) means there will be fewer teachers AND fewer students, making AI augmentation structurally necessary for the schools that remain.",
+          "pattern_refs": ["P-001", "P-005"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "LLM inference at $0.40/M tokens enables Socratic tutoring at near-zero marginal cost. Multimodal AI (vision + text) can now grade handwritten math, read diagrams, and provide visual explanations. Adaptive learning algorithms personalize pace and difficulty. Cost curve: $0.40/M tokens means ~$0.01 per 30-minute tutoring session in API costs."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 7,
+            "mechanism": "411K teacher positions vacant or filled by uncertified staff. 13% decline in 18-year-olds from 2026-2041. Fewer teachers + fewer students = smaller school budgets = more need for AI supplementation. Rural areas disproportionately affected — AI tutoring is location-independent."
+          },
+          {
+            "force_id": "F5_psychology",
+            "contribution_score": -3,
+            "mechanism": "NEGATIVE FORCE: 55% of Americans uncomfortable with AI in education. This is the HIGHEST fear friction of any sector. Parents are protective of children. But 92% of students already use AI and 83% of teachers use it — the adoption is bottom-up, not top-down. The fear friction creates a moat: whoever solves parent trust first captures the market. This is a design challenge, not a technology challenge."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 7, "notes": "Dependent on LLM APIs. Multi-model architecture (GPT, Claude, Gemini, open-source) mitigates single-provider risk. Content curriculum alignment is proprietary value-add."},
+          "regulatory_contagion": {"score": 4, "notes": "COPPA compliance required for under-13 users. FERPA for school partnerships. State education department approval may be needed for integration. EU AI Act classifies education AI as 'high risk.' US state-level AI-in-schools bills emerging. Regulatory burden is a MOAT for first movers."},
+          "competitive_import": {"score": 4, "notes": "Khanmigo (free, nonprofit) is the benchmark. IXL, Photomath, Duolingo approach from different angles. But no commercial AI tutor has solved the parent-trust problem and achieved mass adoption simultaneously."},
+          "leading_indicator_transfer": {"score": 6, "notes": "Khanmigo's growth (40K->1.4M in 18 months) is a leading indicator. But this was free and school-distributed. Commercial consumer adoption at scale is unproven."},
+          "resource_talent_flow": {"score": 6, "notes": "Curriculum designers, child psychologists, UX designers for children — specialized talent needed. AI/ML engineers available. Former teachers as curriculum advisors."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Consumer subscription ($20/month) is discretionary for families. In a recession, tutoring budgets are early cuts. However, school district contracts (B2G) are more resilient. Model should target both channels: DTC for growth, B2G for stability.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$15M",
+          "time_to_revenue_months": 9,
+          "gross_margin_pct": 72,
+          "cost_advantage_ratio": "30-50x vs human tutoring ($60/hr → ~$1.50/hr-equivalent AI)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$20/month DTC consumer, $8-15/student/month school district contracts (volume), $200/year blended average",
+        "cost_per_unit_ai": "$0.50-2.00/student/month (API costs at $0.40/M tokens, ~$0.01 per 30-min session, 20 sessions/month = $0.20 API + infrastructure + content + support)",
+        "cost_per_unit_incumbent": "$240-640/month (human tutor $60-80/hr × 4-8 hrs/month)",
+        "break_even_volume": "100K subscribers at $15 avg/month = $18M ARR (covers $8M team + $3M infrastructure + $5M CAC + $2M content)",
+        "jevons_multiplier": "4-5x. Only 20% of K-12 students currently access tutoring. At $20/month vs $480/month, 80-100% could access it. TAM expands from $4.3B US online tutoring to $12-20B addressable.",
+        "economic_force_tam": "$12-20B US addressable with Jevons expansion, $50B+ global"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "Human tutor: $60/hr average. 2 hrs/week × 40 weeks = $4,800/year per student. Only affordable for top 20% of household incomes.",
+        "ai_augmented_cost": "AI tutor: $20/month = $240/year. Unlimited sessions, personalized pace, available 24/7. Affordable for 80%+ of households.",
+        "cost_ratio": "20x cost reduction ($4,800 → $240/year)",
+        "baumol_stored_energy": "Private tutoring costs have risen ~6% annually for 15 years. The gap between what families WANT to spend on tutoring and what they CAN afford is the stored Baumol energy. At $70B+ global market growing 9%+, the stored energy is $30-50B in unmet demand."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 3,
+        "gap": 6,
+        "primary_friction": "HIGHEST FRICTION IN ANY SECTOR. Parents are protective of children. 55% uncomfortable with AI in education. Concerns: AI giving wrong answers, replacing human connection, data privacy for minors, screen time, loss of social skills. This is NOT a marginal concern — it is the defining constraint.",
+        "resolution_path": "PARENT-TRUST ARCHITECTURE: (1) Human teacher review of AI outputs before student sees them (optional premium tier), (2) Parent dashboard showing every interaction, (3) AI tutor designed as 'study buddy' not 'teacher replacement', (4) COPPA-compliant data practices with zero data selling, (5) Gradual trust building: start with homework help (low stakes) → test prep (medium) → core instruction supplement (high). Parallel: school district channel where teachers control the AI, building parent trust through institutional endorsement.",
+        "fear_driven_demand_created": "AI tutoring safety tools, parent monitoring dashboards, 'human-verified AI' premium tier — could be $2-5B sub-market"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "AI can deliver personalized tutoring at <$0.01/session API cost — Confirmed (inference cost data)",
+          "Teacher shortage is structural (411K positions, 42 states) — Confirmed (BLS, multiple sources)",
+          "Students already using AI (92%) — Confirmed (Programs.com 2025)",
+          "Khanmigo proved product-market fit (40K→1.4M users) — Confirmed"
+        ],
+        "likely": [
+          "Parents will accept AI tutoring when positioned as supplement (homework help), not replacement",
+          "School districts will adopt AI tutoring tools to address teacher shortage — 380+ districts already using Khanmigo",
+          "AI tutoring outcomes will be demonstrated as comparable to human tutoring for structured subjects"
+        ],
+        "uncertain": [
+          "Whether parents will PAY $20/month when Khanmigo is free and ChatGPT is available",
+          "Whether regulatory frameworks (COPPA, FERPA, state education laws) will enable or restrict commercial AI tutoring",
+          "Whether AI tutoring creates measurable learning outcome improvements (efficacy studies ongoing)"
+        ],
+        "unlikely": [
+          "Parents remain >50% uncomfortable for more than 3-4 years given 92% student usage — exposure effect will erode",
+          "Human tutoring costs decline to compete with AI — structurally impossible given teacher shortage"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 10,
+        "total_funding": "$500M+ across Khanmigo (nonprofit), Photomath (Google), IXL, Brainly, Numerade. But NO scaled commercial AI-native tutor with parent trust as core architecture.",
+        "layer": "full_service",
+        "moat_sources": [
+          "Parent trust architecture (COPPA compliance, interaction transparency, human-review option) — hardest to replicate",
+          "Curriculum alignment with state standards (50-state coverage) — time-intensive to build",
+          "School district contracts with multi-year terms — switching costs",
+          "Student learning data (adaptive model improves with usage) — data compounding"
+        ]
+      },
+
+      "falsification_criteria": [
+        "Khanmigo (free) captures >50% of addressable market, eliminating willingness-to-pay for commercial alternatives",
+        "Parent discomfort with AI in education remains >50% through 2028 despite 92% student usage",
+        "Regulatory action (federal or 10+ states) prohibits AI tutoring for K-12 without human teacher supervision",
+        "Large-scale efficacy studies show AI tutoring produces worse outcomes than no tutoring"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-CRED-01",
+      "model_name": "AI-Era Credential Verification & Skills Marketplace",
+      "architecture": "marketplace_network",
+      "sector_naics": "6114",
+      "sector_name": "Business and Secretarial Schools / Vocational Training",
+      "one_line": "Blockchain-anchored skills verification marketplace connecting AI-certified workers with employers who've dropped degree requirements.",
+      "macro_source": "Credential disruption (53% employers dropping degree requirements) + skills obsolescence (39% by 2030)",
+      "forces": ["F1_technology", "F4_capital", "F2_demographics"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "53% of employers removed degree requirements in 2025 (+30% from 2024)",
+            "1.85M unique credentials in US — ecosystem is fragmented and unverifiable",
+            "39% of skills obsolete by 2030 (WEF) — credentials must update faster than 4-year cycles",
+            "Skills-based hiring increases talent pipeline 8.2x for AI roles",
+            "90% of employers prefer candidates with micro-credentials",
+            "Only 1 in 700 hires are actually skills-based despite 85% of companies claiming it — execution gap"
+          ],
+          "supply_gap": "1.85M credentials from 134,000 providers with NO unified verification system. Employers want skills-based hiring but have no efficient way to verify skills. LinkedIn endorsements are meaningless. Degree verification is binary (yes/no) and slow. No platform connects AI-verified competency assessment with employer demand signals in real-time.",
+          "inevitability_argument": "When 39% of skills become obsolete in 5 years but degrees take 4 years to earn, the signaling system is structurally broken. The mismatch between credential pace (4-year cycles) and skill obsolescence pace (18-month cycles) must be resolved. Additionally, 53% of employers have ALREADY dropped degree requirements but lack tools to replace degree signaling — this creates immediate, quantifiable demand for alternative verification.",
+          "pattern_refs": ["P-001"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 8,
+            "mechanism": "AI enables continuous competency assessment (not one-time exams). Skills verification can be automated and standardized. Blockchain/verifiable credentials provide tamper-proof records. AI matching algorithms connect verified skills to job requirements with higher accuracy than degree proxies."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Capital rotating toward enterprise efficiency tools. Companies spending on hiring tech ($30B+ HR tech market). Reducing bad hires ($15K+ average cost per bad hire) creates clear ROI. VC interest in HR/workforce tech sustained."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 6,
+            "mechanism": "13% decline in 18-year-olds entering workforce means employers must broaden talent pools beyond traditional degree holders. International workers, career changers, and reskilled workers all need credential portability."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 7, "notes": "Requires integration with training providers, employers, and verification APIs. Network effects create dependency on ecosystem adoption."},
+          "regulatory_contagion": {"score": 6, "notes": "Professional licensing boards (state-level) may resist alternative credentials. Some industries (healthcare, law, engineering) have mandatory credential requirements that can't be bypassed."},
+          "competitive_import": {"score": 5, "notes": "Credly (Pearson), Credential Engine, and various blockchain credential startups exist. LinkedIn serves as de facto skills marketplace. But none have achieved the network effect of a true two-sided marketplace."},
+          "leading_indicator_transfer": {"score": 7, "notes": "53% of employers dropping degree requirements is the leading indicator. Google, Apple, IBM, and other majors publicly adopting skills-based hiring signals direction."},
+          "resource_talent_flow": {"score": 6, "notes": "Needs marketplace operations talent, assessment design expertise, enterprise sales. Available but competitive."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2029",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Hiring slowdowns reduce transaction volume on marketplace. But structural shift toward skills-based hiring continues regardless of cycle. Counter-argument: recessions accelerate degree-dropping as employers seek cheaper talent pools.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$12M",
+          "time_to_revenue_months": 12,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "5-10x vs traditional recruitment + verification ($5K per hire → $500-1,000 per verified placement)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "Employers: $500-2,000/successful hire (placement fee) or $5-20K/year platform subscription. Workers: free or $10-30/month for premium skills assessment. Training providers: $50-200/credential listing.",
+        "cost_per_unit_ai": "$5-15 per skills assessment (AI proctoring + competency evaluation + verification)",
+        "cost_per_unit_incumbent": "$2,000-5,000 per hire through traditional recruitment + background check + degree verification",
+        "break_even_volume": "5,000 placements/month at $800 avg fee = $48M ARR (covers $20M team + $10M infrastructure + $15M GTM + $3M assessment development)",
+        "jevons_multiplier": "2-3x. When skills verification is instant and cheap, more hiring happens, more career transitions happen, more micro-credentials get created. TAM expands from $30B recruitment tech to $60-80B skills economy.",
+        "economic_force_tam": "$30B addressable recruitment tech, $60-80B with Jevons expansion into continuous skills marketplace"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "Traditional hiring: $4,700 average cost per hire (SHRM). Degree verification: $50-200. Skills assessment: $500-2,000 (multi-round interviews). Total: $5,000-7,000/hire. Time: 44 days average.",
+        "ai_augmented_cost": "AI skills verification + matching: $200-500/placement. AI-administered competency assessment: $10-50. Total: $250-550/placement. Time: 5-10 days.",
+        "cost_ratio": "10-15x cost reduction per hire, 5-8x time reduction",
+        "baumol_stored_energy": "Hiring costs have grown at CPI+2% for 20 years as the process added more steps (more interview rounds, more background checks, more compliance). ~$150B in annual US hiring costs that are partially compressible."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 5,
+        "gap": 2,
+        "primary_friction": "Moderate friction. Employers trust data but distrust new credential systems. 'Is this micro-credential actually worth anything?' Chicken-and-egg problem: credentials aren't valuable until employers accept them, employers won't accept until credentials prove predictive.",
+        "resolution_path": "Start with high-volume, standardized skills (coding, data analysis, cloud computing) where competency is objectively measurable. Partner with employers for co-created assessments. Publish outcome data (job performance correlation). Build from tech sector (highest acceptance) outward.",
+        "fear_driven_demand_created": "Credential fraud detection, AI-generated credential verification — existing demand signal"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "53% of employers dropping degree requirements — Confirmed (Interview Guys 2025 report)",
+          "1.85M unique credentials in US, fragmented ecosystem — Confirmed (Credential Engine 2025)",
+          "90% of employers prefer micro-credential candidates — Confirmed (Coursera 2025)"
+        ],
+        "likely": [
+          "Skills-based hiring continues accelerating (30% increase in one year suggests momentum)",
+          "AI competency assessment can be standardized for technical/quantitative skills",
+          "Network effects will create winner-take-most dynamics in this marketplace"
+        ],
+        "uncertain": [
+          "Whether the 1-in-700 execution gap (85% claim skills-based but only 0.14% actually practice it) can be closed",
+          "Whether professional licensing boards will accept AI-verified credentials",
+          "Whether a new entrant can overcome LinkedIn's incumbent position as the de facto skills marketplace"
+        ],
+        "unlikely": [
+          "Degree requirements return to pre-2020 levels — structural shift is too advanced",
+          "The 39% skills obsolescence prediction is drastically wrong — consensus across multiple research bodies"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 8,
+        "total_funding": "$300M+ across Credly, Degreed, Credential Engine, Hiration, various blockchain credential startups",
+        "layer": "marketplace_network",
+        "moat_sources": [
+          "Two-sided marketplace network effects (more employers → more workers → more employers)",
+          "Proprietary skills taxonomy with AI-verified competency levels (not self-reported)",
+          "Employer outcome data (which credentials predict job performance) compounds over time",
+          "Professional association partnerships for credential legitimacy"
+        ]
+      },
+
+      "falsification_criteria": [
+        "Skills-based hiring adoption reverses (employers re-require degrees)",
+        "LinkedIn successfully builds AI-verified skills assessment into its platform, capturing the marketplace position",
+        "Professional licensing boards in >5 major industries formally reject non-traditional credentials",
+        "Employers find that skills-based hires perform no better than degree-holders, eliminating the value proposition"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-TEACH-01",
+      "model_name": "AI Teaching Assistant Platform (K-12)",
+      "architecture": "vertical_saas",
+      "sector_naics": "611110",
+      "sector_name": "Elementary and Secondary Schools",
+      "one_line": "AI co-pilot for K-12 teachers: automates grading, generates lesson plans, personalizes instruction — saves 10 hrs/week per teacher.",
+      "macro_source": "Teacher shortage (411K positions) + burnout (44% report burnout) + Baumol cost disease in K-12",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "411,549 teaching positions vacant or staffed by uncertified teachers",
+            "44% of K-12 teachers report frequent burnout",
+            "14%+ annual teacher attrition rate",
+            "Teachers spend 10+ hrs/week on lesson planning and grading alone",
+            "83% of teachers already using generative AI — demand is proven",
+            "74% of school districts offering AI training for teachers by Fall 2025"
+          ],
+          "supply_gap": "Teachers are drowning in administrative work (grading, lesson planning, progress reports, parent communications). 10+ hours/week of non-teaching tasks. AI can automate 60-80% of this, redirecting teacher time to the high-value tacit-cognitive work (mentorship, motivation, individual student support) that no AI can replace. Existing tools (Google Classroom, Canvas) are workflow tools, not AI co-pilots.",
+          "inevitability_argument": "With 411K teaching positions vacant and 44% burnout rate, the system is already failing. You cannot hire teachers that don't exist. You cannot reduce teacher workload with current tools. AI teaching assistants are the only scalable intervention that simultaneously addresses both the quantity gap (unfilled positions) and the quality gap (burnout reducing effectiveness). 83% of teachers are already self-adopting AI — the question is not IF but WHAT and WHO provides the institutional solution.",
+          "pattern_refs": ["P-001", "P-005"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "AI automates grading (standardized + rubric-based), generates aligned lesson plans (state standards + differentiated levels), creates personalized practice materials, drafts parent communications, and tracks student progress. Multimodal AI grades handwritten work. Each saves 1-3 hours/week = 10+ hours total."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 8,
+            "mechanism": "42 states face teacher shortages. Pipeline is broken (-14% annual attrition, declining education school enrollment). The shortage is STRUCTURAL, not cyclical. AI teaching assistants don't replace teachers — they make each teacher effective for more students, partially compensating for the shortage."
+          },
+          {
+            "force_id": "F5_psychology",
+            "contribution_score": 4,
+            "mechanism": "POSITIVE psychology for this model: teachers are the BUYERS and 83% already use AI. This follows the healthcare invisible pathway (P-032): the professional uses the tool, the parent/patient doesn't directly interact with AI. Teacher endorsement creates trust cascade to parents and administrators."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 7, "notes": "LLM API costs declining. Content alignment with state standards requires ongoing maintenance (50 states × grade levels × subjects). Student data hosting requires FERPA-compliant infrastructure."},
+          "regulatory_contagion": {"score": 5, "notes": "FERPA compliance mandatory. State education department approval needed for district adoption. COPPA for student-facing features. Several states drafting AI-in-schools legislation. Regulatory complexity is a MOAT — incumbents must navigate it, preventing easy entry."},
+          "competitive_import": {"score": 5, "notes": "Magic School AI, Brisk Teaching, Diffit, and others emerging. Google (Classroom + Gemini) and Microsoft (Copilot for Education) have platform advantages. But no one has achieved dominant position yet."},
+          "leading_indicator_transfer": {"score": 8, "notes": "83% teacher usage is the strongest leading indicator. 74% of districts offering AI training. Khanmigo's 380+ district partners validate institutional willingness."},
+          "resource_talent_flow": {"score": 7, "notes": "Former teachers as product advisors/designers are available and motivated (many left teaching due to burnout — they want to fix the system). Ed-tech engineers available from prior wave of ed-tech investment."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2025-2027",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "K-12 education budgets are government-funded and relatively recession-resistant. Teacher shortage is structural — doesn't improve in a downturn (gets worse as states cut education budgets). ESSER funds expiring but Title I/II funding ongoing.",
+          "time_sensitivity": "very_high"
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$8M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "Saves district $15-25K/year per teacher in productivity (10 hrs/week × $30/hr equivalent × 40 weeks = $12,000). Platform costs $3-8/teacher/month = $36-96/year. ROI: 150-300x.",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5-12/teacher/month individual; $3-8/teacher/month district contracts (volume pricing); $2,000-10,000/school/year",
+        "cost_per_unit_ai": "$0.50-1.50/teacher/month (API costs + infrastructure). Teachers generate ~100 grading/lesson planning requests per month = ~50K tokens input + 50K tokens output = ~$0.05 in API costs. Infrastructure and support dominate.",
+        "cost_per_unit_incumbent": "No direct incumbent cost — currently teachers absorb the work as unpaid overtime. Implicit cost: $12,000/year per teacher in lost productivity. District cost of replacing a burned-out teacher: $15,000-25,000 in recruitment/training.",
+        "break_even_volume": "50,000 teachers at $6/month average = $3.6M ARR (covers $2M team + $0.5M infrastructure + $1M GTM)",
+        "jevons_multiplier": "2-3x. When administrative burden drops 50%, teaching becomes more attractive as a profession. Retention improves. Potentially attracts career-changers. More teachers = more students served = more platform usage.",
+        "economic_force_tam": "$2-5B US K-12 teacher productivity tools, $8-15B global"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "Teacher: $65,000/year average salary. Spends 25% of time (10 hrs/week) on administrative tasks = $16,250/year in administrative labor per teacher. 3.2M K-12 teachers = $52B in aggregate administrative labor.",
+        "ai_augmented_cost": "AI teaching assistant at $72/year per teacher automates 60-80% of administrative tasks = saves $10,000-13,000/year per teacher in productivity.",
+        "cost_ratio": "180x ROI ($72 investment → $10,000+ productivity gain)",
+        "baumol_stored_energy": "K-12 spending per pupil has risen 3% above CPI annually for 30 years. Teacher salary growth has been below CPI (causing the shortage). The stored energy is in the WORKLOAD — teachers absorb unfunded mandates as unpaid overtime, creating burnout. AI releases this stored labor-time energy."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "LOW friction for this model because the TEACHER is the user, not the student. 83% already using AI. Teachers welcome tools that reduce grading/planning burden. The psychological barrier is administrators and school boards, not teachers. Some parents may object to AI-graded assignments — transparency and teacher oversight address this.",
+        "resolution_path": "INVISIBLE AI PATHWAY (mirror of healthcare P-032): AI assists the teacher, teacher delivers to the student. Parents see better instruction, faster feedback, more personalized attention — they may not even know AI is involved. Teacher endorsement creates trust. Start with clearly non-controversial use cases (lesson plan generation, differentiated materials) before moving to grading and assessment.",
+        "fear_driven_demand_created": "AI safety/bias auditing for educational AI, teacher AI training programs — $1-3B sub-market"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "83% of teachers using AI — Confirmed (DemandSage 2026, EdWeek)",
+          "411K teaching positions vacant/uncertified — Confirmed (BLS, AASPA)",
+          "Teachers spend 10+ hrs/week on non-teaching tasks — Confirmed (EdTech Magazine, multiple)",
+          "74% of districts offering AI training — Confirmed (Fall 2025 surveys)"
+        ],
+        "likely": [
+          "School districts will budget for AI teacher tools as ESSER funds expire and AI proves ROI",
+          "AI-graded assignments will be accepted when teacher reviews/approves the grades",
+          "Teacher retention improves measurably when workload drops — proven in pilot studies"
+        ],
+        "uncertain": [
+          "Whether school district procurement cycles (6-18 months) allow fast enough growth",
+          "Whether Google (Classroom + Gemini) bundles AI teacher tools for free, eliminating paid market",
+          "Whether state legislatures restrict AI grading or lesson planning in public schools"
+        ],
+        "unlikely": [
+          "Teacher shortage resolves without AI — pipeline demographics make this impossible for 5+ years",
+          "Teachers reject AI tools despite 83% already using them — behavioral evidence contradicts"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 12,
+        "total_funding": "$200M+ across Magic School AI, Brisk Teaching, Diffit, SchoolAI, Gradescope (Turnitin). Plus Google and Microsoft approaching from platform side.",
+        "layer": "tool",
+        "moat_sources": [
+          "Curriculum alignment depth (50 states × Common Core × state-specific standards)",
+          "District procurement relationships and FERPA-compliant infrastructure",
+          "Teacher workflow integration (LMS plugins: Canvas, Schoology, Google Classroom)",
+          "Usage data: which lesson plans and grading rubrics produce best student outcomes — data compounding"
+        ]
+      },
+
+      "falsification_criteria": [
+        "Google bundles AI teacher tools free with Google Classroom, eliminating the paid market",
+        "Teacher unions negotiate contracts that prohibit AI grading or lesson planning",
+        "Large-scale studies show AI-generated lesson plans produce worse student outcomes",
+        "Teacher shortage resolves (attrition drops below 8%, vacancies filled) eliminating urgency"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-CERT-01",
+      "model_name": "AI Professional Certification Prep Engine",
+      "architecture": "full_service_replacement",
+      "sector_naics": "611691",
+      "sector_name": "Exam Preparation and Tutoring",
+      "one_line": "AI-powered certification prep for CPA, nursing (NCLEX), bar exam, and other professional licenses at 80% lower cost than traditional prep courses.",
+      "macro_source": "Professional pipeline collapse (CPA -33%, nursing 78K→200K gap) + test prep Baumol cure",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "CPA pipeline collapsed -33% — fewer candidates but same exam requirements",
+            "Nursing shortage: 78K unfilled positions growing to 200K projected",
+            "Teaching certification: 42 states face shortages",
+            "Test prep market $72B (2025), growing 7.9% CAGR",
+            "Traditional prep courses cost $1,500-4,000 (Kaplan bar review: $2,499-3,999, Becker CPA: $2,499-4,699)",
+            "Pass rates declining for many exams — UBE bar exam first-time pass rate 66% (2024)"
+          ],
+          "supply_gap": "Professional certification prep is a $72B market dominated by legacy providers (Kaplan, Becker, UWorld, Barbri) charging $1,500-5,000 for courses built around pre-AI content delivery (video lectures + practice questions). AI enables adaptive learning that identifies exact knowledge gaps and focuses practice there, dramatically improving efficiency. No provider has rebuilt from scratch with AI-native architecture.",
+          "inevitability_argument": "The professional pipeline crisis is acute: CPA candidates -33%, nursing vacancies doubling, teacher shortages in 42 states. The bottleneck is partly exam pass rates — more people need to pass these exams, faster. Traditional prep at $2,000-5,000 per course creates financial barriers for the exact populations that need to enter these professions. AI prep at $200-500 removes the cost barrier while improving personalization (study plans adapted to individual weakness patterns). The combination of pipeline crisis + cost barrier + AI capability makes this structurally necessary.",
+          "pattern_refs": ["P-001", "P-005"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 9,
+            "mechanism": "AI models can now generate novel practice questions calibrated to specific difficulty levels, explain answers with Socratic dialogue, identify knowledge gap patterns from wrong answers, and create personalized study schedules. Cost per practice session: ~$0.01. Traditional prep relies on fixed question banks (10,000-20,000 questions) — AI generates unlimited questions dynamically."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 8,
+            "mechanism": "CPA pipeline -33% (F2 demographic). Nursing shortage growing. Teaching pipeline collapsing. These shortages create urgency: more people MUST pass these exams. Career changers entering these professions later in life need faster, more flexible prep (not 6-month in-person courses)."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 6,
+            "mechanism": "Employer-sponsored exam prep is growing as companies compete for CPA, nursing, and licensed professionals. Firms paying $2,000-5,000 per candidate for traditional prep would welcome $300-500 AI prep with equal or better pass rates. ROI is clear and measurable (pass rate improvement)."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 8, "notes": "Requires deep domain expertise in each certification exam. Content must be reviewed by licensed professionals. Exam boards (AICPA, NCSBN, NCBE) control exam content and could change format. Multi-model LLM strategy."},
+          "regulatory_contagion": {"score": 5, "notes": "Exam prep is lightly regulated. But exam boards could restrict AI-generated practice content if they believe it compromises exam integrity. Some state licensing boards may require approved prep programs."},
+          "competitive_import": {"score": 5, "notes": "Kaplan, Becker, Barbri, UWorld are entrenched but pre-AI. AdaptiBar, Archer Review are smaller AI-augmented entrants. Incumbents have brand trust with test-takers but limited AI capability."},
+          "leading_indicator_transfer": {"score": 7, "notes": "946K+ students using Archer Nursing for NCLEX. UWorld and Kaplan adding AI features. Market is moving toward AI — question is who builds the AI-native platform."},
+          "resource_talent_flow": {"score": 7, "notes": "Licensed professionals (CPAs, lawyers, nurses) who also understand AI needed for content quality. Content + AI talent intersection is scarce but findable."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Professional certification is recession-resistant — people pursue credentials MORE during downturns for career security. Counter-cyclical demand. Employer-sponsored prep may dip but individual spending increases.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$6M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 85,
+          "cost_advantage_ratio": "8-15x vs traditional prep ($3,000 Kaplan → $200-400 AI-native)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$200-500/exam per individual, $150-300/candidate for employer bulk. Premium tier with human tutor add-on: $800-1,500.",
+        "cost_per_unit_ai": "$15-30/candidate (API costs for ~200 practice sessions + personalized study plan + explanations. ~500K tokens per candidate at $0.40/M = $0.20 API + infrastructure + content maintenance.)",
+        "cost_per_unit_incumbent": "$2,000-5,000/candidate (Becker CPA $2,499-4,699, Kaplan bar $2,499-3,999, UWorld NCLEX $379)",
+        "break_even_volume": "20,000 candidates/year at $350 avg = $7M revenue (covers $3M team + $1M infrastructure + $2M content development + $1M GTM)",
+        "jevons_multiplier": "2-3x. At $300 vs $3,000, more people attempt professional certifications. Career changers who couldn't justify $3,000+ now enter the pipeline. This HELPS the pipeline crisis.",
+        "economic_force_tam": "$10B professional certification prep (subset of $72B test prep), $25B+ with Jevons expansion"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "Becker CPA Review: $2,499-$4,699. Kaplan Bar Review: $2,499-$3,999. Barbri: $3,000+. Average professional cert prep: $3,000. This has risen 3-5% annually for 15 years.",
+        "ai_augmented_cost": "AI-native cert prep: $300-500 per exam. Unlimited AI-generated practice questions, personalized study plans, Socratic explanations, 24/7 availability.",
+        "cost_ratio": "8-10x cost reduction",
+        "baumol_stored_energy": "Test prep prices have risen consistently above CPI (the content doesn't improve — the same bar exam topics for 50 years). At $72B market growing 8%/yr, approximately $20B in stored Baumol energy."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "Low friction. Adults preparing for professional exams are pragmatic — they want to PASS. If AI prep produces equal or better pass rates at 80% lower cost, adoption is fast. Minor concern: 'Will AI prep properly prepare me for real-world practice?' — but prep courses have always been about passing the test, not real-world readiness.",
+        "resolution_path": "Publish pass rate data (the ultimate trust signal). Offer money-back guarantee if you don't pass. Start with exams where practice questions are most standardized (NCLEX, CPA) before moving to essay-heavy exams (bar exam, medical boards). Partner with professional associations.",
+        "fear_driven_demand_created": null
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "CPA pipeline -33% — Confirmed (AICPA data, state.json F2)",
+          "Nursing shortage 78K→200K — Confirmed (BLS, state.json F2)",
+          "Test prep market $72B growing — Confirmed (Business Research Company 2025)",
+          "Traditional prep costs $2,000-5,000 — Confirmed (public pricing from Becker, Kaplan, Barbri)"
+        ],
+        "likely": [
+          "AI-generated practice questions are equivalent quality to human-written for standardized exams",
+          "Personalized AI study plans improve pass rates vs one-size-fits-all traditional courses",
+          "Cost reduction from $3,000 to $300 expands the candidate pipeline for professional certifications"
+        ],
+        "uncertain": [
+          "Whether licensing boards will validate or restrict AI-based prep programs",
+          "Whether pass rate data will demonstrate AI prep equivalence within 2 years (need cohort data)",
+          "Whether incumbents (Becker, Kaplan) can retrofit AI fast enough to maintain market position"
+        ],
+        "unlikely": [
+          "Professional certification demand declines — pipeline crises make this counter-evidence",
+          "Traditional prep prices decrease to compete — Baumol prevents this (instructor costs are rising)"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 5,
+        "total_funding": "$100M+ (Archer Review, AdaptiBar, various smaller AI test prep startups). Kaplan/Becker/Barbri are legacy incumbents with $1B+ combined revenue but pre-AI architecture.",
+        "layer": "full_service",
+        "moat_sources": [
+          "Pass rate data as trust signal (takes 12-24 months to accumulate)",
+          "Exam-specific AI models fine-tuned on professional certification content",
+          "Professional association partnerships and endorsements",
+          "Student performance data enabling increasingly accurate difficulty calibration"
+        ]
+      },
+
+      "falsification_criteria": [
+        "AI-generated practice questions produce demonstrably lower pass rates than traditional prep",
+        "Licensing boards prohibit or restrict AI-based exam preparation programs",
+        "Becker or Kaplan ships AI-native product within 12 months that matches cost structure",
+        "Professional pipeline crisis resolves (CPA candidate numbers recover, nursing shortage narrows)"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-MATCH-01",
+      "model_name": "AI Skills Assessment + Job Matching Platform",
+      "architecture": "platform_infrastructure",
+      "sector_naics": "611430",
+      "sector_name": "Professional and Management Development Training",
+      "one_line": "Continuous AI skills assessment engine that maps worker competencies to AI-augmented job requirements, connecting reskilled workers to employers.",
+      "macro_source": "Skills obsolescence crisis (39% by 2030) + Baumol displacement across multiple sectors",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "39% of core skills obsolete by 2030 (WEF Future of Jobs 2025)",
+            "-13% employment decline for entry-level workers aged 22-25 in AI-exposed occupations",
+            "Skills-based hiring increasing talent pipeline 8.2x for AI roles",
+            "85% of companies claim skills-based hiring but only 1 in 700 hires actually are — massive execution gap",
+            "Staffing industry destruction (RHI -53%, MAN -44%) leaves gap in matching function",
+            "$2.34T invested annually in US education and workforce development (Credential Engine)"
+          ],
+          "supply_gap": "The staffing industry is being destroyed (P-027: RHI -53%, MAN -44%). These firms historically performed the matching function between worker skills and employer needs. As they collapse, the matching function must be replaced. Current replacement (LinkedIn, Indeed) uses keyword matching, not competency assessment. No platform combines AI skills assessment + real-time matching + reskilling pathway recommendations in a single system.",
+          "inevitability_argument": "The staffing intermediation layer is collapsing (confirmed P-027). The skills obsolescence rate (39% by 2030) means static resumes become meaningless — skills must be continuously assessed and updated. Employers need real-time competency data, not 4-year-old degree credentials. Workers need clear pathways: 'You currently have skills A, B, C. Job X requires A, B, D. Here's how to get skill D in 3 months.' This platform is the replacement for the staffing intermediation layer — it MUST exist.",
+          "pattern_refs": ["P-027", "P-001"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 8,
+            "mechanism": "AI enables continuous skills assessment (not one-time testing), dynamic job-skill matching (not keyword filtering), and personalized reskilling pathway generation. Competency can be assessed through AI-proctored challenges, portfolio analysis, and work product evaluation."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 7,
+            "mechanism": "-13% entry-level employment in AI-exposed occupations. Career transitions becoming multi-directional (not just up the ladder). Silver Tsunami creates knowledge transfer gaps. Workers need clarity on where their skills fit in the AI-augmented economy."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Staffing industry collapse (P-027) releases $192B in wages from intermediation. Capital seeking to replace this function. HR tech market growing 10%+ CAGR. Government workforce development grants ($3B+/yr) for approved matching platforms."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 7, "notes": "Requires integration with employers (job requirement data), training providers (reskilling options), and assessment tools. Network effects drive value."},
+          "regulatory_contagion": {"score": 6, "notes": "Employment discrimination laws (EEOC) apply to AI hiring tools. Several cities/states (NYC, Illinois, Colorado) have AI hiring bias audit requirements. This is a MOAT — regulated matching tools have higher barriers to entry."},
+          "competitive_import": {"score": 5, "notes": "LinkedIn, Indeed, ZipRecruiter are incumbents in matching. Eightfold AI, Gloat, Phenom are AI-native challengers. But none combine assessment + matching + reskilling pathways."},
+          "leading_indicator_transfer": {"score": 8, "notes": "Staffing industry destruction (P-027) is the primary leading indicator. Every staffing dollar lost is a matching function that needs replacement."},
+          "resource_talent_flow": {"score": 6, "notes": "Displaced staffing industry professionals (50,000+ job losses) available as domain experts. AI/ML talent competitive but manageable. Industrial/organizational psychologists for assessment design."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Hiring volume drops in recessions. But counter-argument: in recessions, workers need skills assessment and reskilling MORE, and companies need to match remaining positions to the best-skilled candidates more efficiently. Mixed resilience.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$15M",
+          "time_to_revenue_months": 9,
+          "gross_margin_pct": 72,
+          "cost_advantage_ratio": "5-10x vs traditional staffing (25% of first-year salary → $500-2,000 per match)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "Employer: $500-2,000/successful match (vs $15,000-30,000 staffing agency fee for $60-120K roles). Worker: free assessment, $30-100/month for premium reskilling pathways. Enterprise: $50-200K/year for workforce intelligence dashboard.",
+        "cost_per_unit_ai": "$10-25/assessment (AI-proctored competency evaluation + matching algorithm + pathway generation)",
+        "cost_per_unit_incumbent": "$15,000-30,000/placement (traditional staffing: 20-25% of first-year salary for $60-120K positions)",
+        "break_even_volume": "3,000 matches/month at $1,000 avg = $36M ARR",
+        "jevons_multiplier": "3-4x. When matching costs drop from $20,000 to $1,000, more hiring happens, more career transitions happen, more part-time/project work gets matched. TAM expands from $150B staffing to $300B+ continuous skills matching.",
+        "economic_force_tam": "$150B staffing/matching market, $300B+ with Jevons expansion"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "Staffing agency placement: 20-25% of first-year salary. For a $80K role = $16,000-20,000. Internal HR team time per hire: 36-44 days, $4,700 cost (SHRM). Total matching cost: $20,000-25,000.",
+        "ai_augmented_cost": "AI assessment ($25) + matching ($50) + reskilling pathway ($200) = $275 per placement. Even with sales/support overhead: $500-1,000 total.",
+        "cost_ratio": "20-40x cost reduction per match",
+        "baumol_stored_energy": "Staffing industry has risen above CPI for 25 years (premium for scarce recruiters + relationship networks). $192B in wages at risk (NAICS 56). Much of this stored energy converts to AI-matching value."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "primary_friction": "Moderate friction. Workers fear AI will unfairly assess them. Employers worry about bias/discrimination liability. NYC Local 144 and similar laws require bias audits for AI hiring tools. But this friction creates a MOAT for compliant platforms.",
+        "resolution_path": "Transparency: show workers exactly how they were assessed and what skills they need. Bias auditing: third-party audits (required in NYC anyway). Start with skills that are objectively measurable (coding, data analysis, technical certifications) before subjective competencies (leadership, communication). Publish aggregate outcome data.",
+        "fear_driven_demand_created": "AI hiring bias auditing, compliance tools — $3-5B sub-market"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "Staffing industry destruction (RHI -53%, MAN -44%) — Confirmed (P-027, stock prices)",
+          "39% skills obsolescence by 2030 — Confirmed (WEF Future of Jobs 2025)",
+          "85% companies claim skills-based hiring — Confirmed (Interview Guys 2025)",
+          "Only 0.14% of hires are actually skills-based — Confirmed (Interview Guys 2025)"
+        ],
+        "likely": [
+          "AI skills assessment can match or exceed human recruiter accuracy for technical roles",
+          "Employers will adopt AI matching as staffing agencies fail",
+          "Government workforce grants increasingly flow to AI-enabled matching platforms"
+        ],
+        "uncertain": [
+          "Whether the staffing intermediation function moves to AI matching or to employer in-house teams",
+          "Whether regulatory requirements (AI hiring bias laws) are enablers (moat) or blockers (cost)",
+          "Whether workers engage with continuous skills assessment or ignore it like they ignore LinkedIn skills endorsements"
+        ],
+        "unlikely": [
+          "Staffing industry recovers — structural destruction confirmed, not cyclical",
+          "Skills-based hiring reverses — 53% dropping degree requirements is past the tipping point"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 10,
+        "total_funding": "$1.5B+ across Eightfold AI, Gloat, Phenom, HiredScore (Workday acquired). LinkedIn's massive platform position.",
+        "layer": "platform",
+        "moat_sources": [
+          "Two-sided network effects (more employers + more workers = better matching)",
+          "Assessment data compounding (AI gets better at predicting job fit over time)",
+          "Regulatory compliance moat (AI hiring bias audits create barriers to entry)",
+          "Reskilling pathway integration (not just matching but CREATING qualified candidates)"
+        ]
+      },
+
+      "falsification_criteria": [
+        "Staffing industry stabilizes (RHI/MAN stock recovers >30%)",
+        "LinkedIn builds comprehensive AI skills assessment into its platform, capturing the matching function",
+        "AI hiring bias regulations become so restrictive that AI matching is economically unviable",
+        "Workers resist continuous skills assessment (engagement rates <10%)"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-UNIV-01",
+      "model_name": "University Back-Office AI Operations Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "611310",
+      "sector_name": "Colleges, Universities, and Professional Schools",
+      "one_line": "AI-native administrative operations for universities: admissions processing, financial aid optimization, scheduling, and enrollment management at 50% lower admin cost.",
+      "macro_source": "Higher education demographic cliff (13% decline in 18-year-olds) + administrative cost bloat ($3,771/student)",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "13% decline in 18-year-olds from 2026-2041 (demographic cliff peak begins NOW)",
+            "16 colleges closed in 2025, 80+ could close by 2029 (Fed Philadelphia model)",
+            "Administrative costs $3,771/FTE student and rising 6.3% (2016-2021)",
+            "College enrollment rate fell from 70% to 62% in one decade",
+            "Instructional spending FELL 4.7% per student while admin spending ROSE",
+            "1.26M employees in NAICS 611310 — huge labor pool affected",
+            "Ellucian and Workday Higher Ed are pre-AI ERPs with legacy architecture"
+          ],
+          "supply_gap": "Universities spend $3,771/student on administration (rising 6.3% per period). This includes admissions processing, financial aid optimization, course scheduling, compliance reporting, and enrollment management. Current systems (Ellucian Banner, Workday Student) are enterprise ERPs designed for data management, not AI-optimized decision-making. No platform automates the JUDGMENT layer of university administration: which students to admit with what financial aid packages to maximize yield, retention, and revenue.",
+          "inevitability_argument": "The demographic cliff makes university cost reduction EXISTENTIAL, not optional. When 18-year-olds decline 13% and enrollment rates are already falling, universities face a choice: cut costs dramatically or close. 16 closed in 2025. Administrative cost ($3,771/student, rising) is the most compressible category — it's routine-cognitive work that AI can automate. Universities that don't adopt AI administration will be among the 80+ projected closures. This is survival-driven demand.",
+          "pattern_refs": ["P-001"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 8,
+            "mechanism": "AI can automate 60%+ of university administrative tasks: application review and preliminary scoring, financial aid package optimization (complex multi-variable), course scheduling (constraint satisfaction), enrollment yield prediction, retention risk identification, compliance report generation. Each currently requires teams of 5-50 people per institution."
+          },
+          {
+            "force_id": "F2_demographics",
+            "contribution_score": 9,
+            "mechanism": "13% decline in 18-year-olds from 2026-2041 is the primary driver. This is THE existential threat to higher education. It creates survival-driven adoption: universities MUST cut costs to survive on fewer students and lower tuition revenue. The demographic cliff has been forecasted for years but begins materializing NOW (class of 2026)."
+          },
+          {
+            "force_id": "F4_capital",
+            "contribution_score": 7,
+            "mechanism": "Universities face $29B+ in deferred maintenance and infrastructure costs. Endowments concentrated in top 50 institutions (median endowment is $100M, insufficient for transformation). Cost-cutting is the primary capital strategy for 90% of institutions. AI admin tools with clear ROI sell into a DESPERATE buyer."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 7, "notes": "Requires integration with legacy university systems (Banner, Workday Student, PeopleSoft). API quality varies. Student data requires FERPA compliance."},
+          "regulatory_contagion": {"score": 4, "notes": "FERPA mandatory. Accreditation bodies may have opinions on AI in admissions. Title IV financial aid has complex federal rules. DOE oversight of financial aid decisions. Regulatory complexity is a MOAT."},
+          "competitive_import": {"score": 6, "notes": "Ellucian (dominant ERP, 2,700+ institutions), Workday Student, and Oracle/PeopleSoft are legacy incumbents. EAB, Civitas Learning offer analytics layers. Incumbents have distribution but limited AI capability."},
+          "leading_indicator_transfer": {"score": 8, "notes": "16 closures in 2025, 80+ projected by 2029 — urgency is quantified. The class of 2026 is the demographic cliff trigger."},
+          "resource_talent_flow": {"score": 6, "notes": "Higher ed administrators available as domain experts. Many leaving institutions pre-emptively. AI engineers needed for optimization algorithms. Integration engineers for legacy system connections."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "University operations continue regardless of economic cycle (students are enrolled, financial aid must be disbursed, classes must be scheduled). The demographic cliff creates INCREASING urgency over time. Counter-cyclical: recessions push more adults into higher education (enrollment rises in downturns).",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$12M",
+          "time_to_revenue_months": 9,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "3-5x. Reduces admin cost from $3,771/student to $1,500-2,200/student. For a 5,000-student institution: $9.4M→$5.5M in admin costs = $3.9M annual savings.",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$50,000-$250,000/year per institution (based on enrollment size). 2,000-student institution: $50K. 10,000-student: $150K. 30,000-student: $250K.",
+        "cost_per_unit_ai": "$15,000-50,000/year per institution (API costs + infrastructure + integration maintenance + support)",
+        "cost_per_unit_incumbent": "$3,771/student × enrollment in administrative costs. For 5,000-student school: $18.9M admin budget. AI tools replace 20-40% = $3.8-7.5M in addressable savings.",
+        "break_even_volume": "100 institutions at $120K avg ACV = $12M ARR (covers $5M team + $3M infrastructure + $2M GTM + $2M integration/support)",
+        "jevons_multiplier": "1.5x. Lower admin costs allow more institutions to survive the demographic cliff. Surviving institutions can invest saved funds in student recruitment, expanding enrollment. Modest expansion.",
+        "economic_force_tam": "$15B US higher education administration (4,000 institutions × $3.8M avg admin), $6-9B addressable by AI"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "University admin: $3,771/FTE student (2021, rising 6.3%). For all US higher education (~18M students): $68B total admin costs. Admin has grown while instruction has SHRUNK (-4.7% per student).",
+        "ai_augmented_cost": "AI-augmented admin: $1,500-2,200/student (automate 40-60% of routine admin tasks). Total addressable reduction: $28-41B across all institutions.",
+        "cost_ratio": "2-2.5x cost reduction in admin per student",
+        "baumol_stored_energy": "University admin costs have grown 6.3% per period while adding minimal value. This is classic Baumol + Bowen's Revenue Theory (spend to budget). $68B in admin with ~$28B compressible = 40% stored Baumol energy."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "primary_friction": "Moderate friction. University administrators fear job loss (they ARE the routine-cognitive workers being replaced). Faculty governance creates slow decision-making. IT departments protective of existing systems. But institutional survival pressure (demographic cliff) overrides.",
+        "resolution_path": "Position as 'augment administrators, don't replace them' (even though 20-40% reduction is the goal). Start with non-controversial wins: scheduling optimization, compliance reporting, enrollment yield prediction. Demonstrate ROI within one enrollment cycle. Target CFOs and Presidents (survival-focused) not IT departments (status-quo focused).",
+        "fear_driven_demand_created": "AI governance for higher education, bias auditing for AI admissions — $1-2B sub-market"
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "13% decline in 18-year-olds 2026-2041 — Confirmed (WICHE, NPR, census data)",
+          "16 closures in 2025, 80+ projected by 2029 — Confirmed (College Fix, Fed Philadelphia)",
+          "Admin costs $3,771/student, rising 6.3% — Confirmed (US News, NCES)",
+          "Enrollment rate fell 70%→62% — Confirmed (NPR 2025)"
+        ],
+        "likely": [
+          "AI can automate 40-60% of university administrative tasks (admissions pre-screening, financial aid optimization, scheduling)",
+          "Financially distressed institutions will adopt cost-cutting AI tools faster than healthy ones",
+          "Accreditation bodies will not prohibit AI administrative tools"
+        ],
+        "uncertain": [
+          "Whether university governance structures (shared governance, faculty senates) allow fast enough adoption",
+          "Whether Ellucian/Workday can add AI capabilities to their existing platforms fast enough to block new entrants",
+          "Whether state legislatures restrict AI use in public university admissions decisions"
+        ],
+        "unlikely": [
+          "Demographic cliff reverses — fertility rates cannot change birth cohorts already born",
+          "University admin costs decrease without AI intervention — Baumol + Bowen's Rule prevent it"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 5,
+        "total_funding": "$100M+ (EAB, Civitas Learning/Anthology, various analytics startups). Ellucian ($3.5B valuation) is dominant ERP but limited AI. The gap between demand (survival urgency) and supply (AI-native solutions) is WIDE.",
+        "layer": "platform",
+        "moat_sources": [
+          "Deep integration with legacy university ERPs (Banner, PeopleSoft, Workday Student) — technically complex",
+          "FERPA-compliant data infrastructure — regulatory moat",
+          "Multi-year institutional contracts with high switching costs",
+          "Institutional outcome data (which interventions improve retention, yield, financial sustainability) compounds over time"
+        ]
+      },
+
+      "falsification_criteria": [
+        "Ellucian ships AI-native administrative tools that eliminate the gap for new entrants",
+        "University governance structures prevent AI adoption at >80% of institutions for 3+ years",
+        "Federal regulation prohibits AI in financial aid or admissions decisions",
+        "Demographic cliff is offset by international student surge or adult learner growth, removing survival pressure"
+      ]
+    },
+
+    {
+      "card_id": "MC-EDU-FEAR-01",
+      "model_name": "Education AI Safety & Governance Platform",
+      "architecture": "regulatory_moat_builder",
+      "sector_naics": "611710",
+      "sector_name": "Educational Support Services",
+      "one_line": "Compliance and safety infrastructure for AI in education: content filtering, bias auditing, COPPA/FERPA compliance, and parent transparency tools.",
+      "macro_source": "Fear Economy (55% uncomfortable with AI in education) + Regulatory Complexity (emerging state/federal rules)",
+      "forces": ["F5_psychology", "F1_technology", "F3_geopolitics"],
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": [
+            "55% of Americans uncomfortable with AI in education — creates $5-10B fear-economy demand",
+            "Only 10% of educational institutions have AI guidelines (UNESCO)",
+            "86% of educational organizations using AI but minimal governance — massive governance gap",
+            "EU AI Act classifies education AI as 'high risk' requiring compliance infrastructure",
+            "Multiple US states drafting AI-in-schools legislation (Arizona, California, etc.)",
+            "COPPA + FERPA + state education laws create complex compliance matrix"
+          ],
+          "supply_gap": "86% of educational institutions use AI but only 10% have guidelines. This 76-percentage-point governance gap is the largest in any sector. As AI adoption accelerates (92% students, 83% teachers), the governance infrastructure is nonexistent. School districts need: AI content safety filters (preventing harmful outputs to minors), bias auditing (ensuring AI doesn't discriminate), COPPA/FERPA compliance tools, parent transparency dashboards, and teacher AI usage policies. No comprehensive platform exists.",
+          "inevitability_argument": "The governance gap (86% using AI, 10% with guidelines) MUST close. It will close either through institutional self-governance or through regulatory mandate. Either way, schools need compliance infrastructure. The EU AI Act already classifies education AI as high-risk, requiring conformity assessment and documentation. US state-level legislation is emerging. Every AI tool deployed in a school (and there are thousands) needs safety/compliance verification. This is the picks-and-shovels play for the education AI gold rush.",
+          "pattern_refs": ["P-001"]
+        },
+        "force_alignment_detail": [
+          {
+            "force_id": "F5_psychology",
+            "contribution_score": 9,
+            "mechanism": "FEAR AS DEMAND CREATOR. 55% uncomfortable with AI in education. This fear creates demand for safety, governance, and transparency tools. Parents want oversight. Administrators want liability protection. Teachers want usage guidelines. The fear itself is the market-creating force — $86B fear economy (state.json F5 metrics). Education is the highest-fear sector."
+          },
+          {
+            "force_id": "F1_technology",
+            "contribution_score": 7,
+            "mechanism": "AI safety/governance requires AI: content filtering models, bias detection algorithms, automated compliance checking, usage monitoring and analytics. The technology both creates the problem and provides the solution."
+          },
+          {
+            "force_id": "F3_geopolitics",
+            "contribution_score": 6,
+            "mechanism": "EU AI Act (high-risk classification for education) creates compliance demand for any global education company. US-EU regulatory divergence means different compliance frameworks. Multi-jurisdictional compliance is complex and valuable."
+          }
+        ],
+        "external_context_assessment": {
+          "supply_chain_dependency": {"score": 8, "notes": "Minimal external dependencies. AI safety models can be built on open-source + proprietary fine-tuning. Does not depend on any single LLM provider."},
+          "regulatory_contagion": {"score": 9, "notes": "Regulatory complexity is the ENTIRE value proposition. More regulation = more demand. EU AI Act, state AI-in-schools bills, COPPA updates, FERPA guidance — every new rule creates more demand for compliance tools. This is the most regulation-positive model in the education portfolio."},
+          "competitive_import": {"score": 7, "notes": "General AI governance players (Credo AI, Holistic AI, Arthur AI) exist but are not education-specific. Education requires COPPA + FERPA + state education law + age-appropriate content filtering — a specialized compliance stack."},
+          "leading_indicator_transfer": {"score": 8, "notes": "Healthcare AI governance as leading indicator (P-032). Healthcare moved from zero governance to FDA clearance requirements — education will follow similar path but through state education departments."},
+          "resource_talent_flow": {"score": 7, "notes": "Education policy experts + AI safety researchers. COPPA/FERPA lawyers. Former state education department officials as advisors."}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "frenzy",
+          "crash_resilience": "very_high",
+          "crash_resilience_reason": "Compliance spending is non-discretionary. Schools cannot turn off AI safety tools in a recession. Regulatory requirements continue regardless of economic cycle. Fear-driven demand is counter-cyclical (uncertainty increases fear).",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$8M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 82,
+          "cost_advantage_ratio": "N/A — this is a new category, not replacing an incumbent cost structure. Comparison: hiring a COPPA/FERPA compliance officer ($120-180K/yr) vs platform at $5-15K/yr/school.",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5,000-$20,000/year per school district (volume-based). $2,000-$8,000/year per individual school. $50,000-$200,000/year per EdTech company (compliance certification).",
+        "cost_per_unit_ai": "$500-2,000/year per customer (AI content filtering, bias auditing algorithms, monitoring infrastructure)",
+        "cost_per_unit_incumbent": "$120,000-$180,000/year for a compliance officer + $50,000-$100,000/year for legal counsel = $170,000-$280,000/year for in-house compliance. Most schools can't afford this.",
+        "break_even_volume": "500 school district contracts at $10K avg = $5M ARR + 50 EdTech company contracts at $100K avg = $5M ARR. Total $10M ARR target.",
+        "jevons_multiplier": "2x. When compliance is affordable ($10K vs $200K), more schools formalize AI governance. More EdTech companies get certified. Jevons expansion is moderate.",
+        "economic_force_tam": "$5-10B education AI governance (subset of $86B fear economy), $15-20B including EdTech compliance certification"
+      },
+
+      "baumol_cure_math": {
+        "current_cost": "No established compliance cost for most schools (they have NO governance). Schools that attempt it: $170-280K/year for compliance staff + legal. Most simply accept the risk.",
+        "ai_augmented_cost": "Platform: $5,000-20,000/year per district. Makes AI governance accessible to ALL 13,000 school districts, not just affluent ones.",
+        "cost_ratio": "15-30x cost reduction vs in-house compliance. But the real comparison is: $10K/year for governance vs $0/year for no governance (and the liability risk that creates).",
+        "baumol_stored_energy": "N/A — this is a new category created by AI adoption, not a Baumol cure of an existing cost. The 'stored energy' is the 76-point governance gap (86% adoption, 10% governance) that must close."
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 8,
+        "gap": -1,
+        "primary_friction": "NEGATIVE GAP — psychology is AHEAD of economics. People WANT AI safety in education even before they understand the cost. This is the ideal fear-economy dynamic: the fear creates the demand. School boards, parents, and administrators are actively seeking governance solutions.",
+        "resolution_path": "No resolution needed — fear IS the market. Build credibility through partnerships with education associations (NEA, AASA), state education departments, and parent advocacy groups. Certification badge ('AI Safety Certified School') creates visible trust signal.",
+        "fear_driven_demand_created": "$5-10B education AI governance market. This IS a fear economy model."
+      },
+
+      "what_must_be_true": {
+        "confirmed": [
+          "55% uncomfortable with AI in education — Confirmed (F5 psychology metrics)",
+          "86% using AI, 10% with guidelines — Confirmed (UNESCO 2025)",
+          "EU AI Act classifies education as high-risk — Confirmed (regulatory text)",
+          "Multiple states drafting AI-in-schools legislation — Confirmed (news tracking)"
+        ],
+        "likely": [
+          "Federal or state AI-in-education regulation passes within 2-3 years",
+          "School districts will budget for AI governance as a line item (like cybersecurity was 10 years ago)",
+          "EdTech companies will need compliance certification to sell to schools"
+        ],
+        "uncertain": [
+          "Whether regulation will be prescriptive (specific tools required) or principle-based (outcomes required)",
+          "Whether schools will pay for governance or demand it from EdTech vendors (shifting cost to vendors)",
+          "Whether a standard for education AI safety emerges or remains fragmented across states"
+        ],
+        "unlikely": [
+          "AI in education remains unregulated for >3 years — political pressure from parents is too strong",
+          "Schools achieve AI governance without external tools — complexity exceeds internal capabilities"
+        ]
+      },
+
+      "competitive_density": {
+        "status": "zero_to_low",
+        "funded_entrants": 3,
+        "total_funding": "$50M total across general AI governance (Credo AI, Holistic AI). Education-specific AI governance is nearly EMPTY — classic Schumpeterian gap (P-022 pattern).",
+        "layer": "platform",
+        "moat_sources": [
+          "Education-specific compliance expertise (COPPA + FERPA + state ed law + age-appropriate content) — no general AI governance player has this",
+          "School district relationships and state education department partnerships",
+          "Certification standard: if you become the de facto 'AI Safety Certified' badge, enormous lock-in",
+          "Multi-state regulatory tracking (50 states + federal + EU) — complex and valuable"
+        ]
+      },
+
+      "falsification_criteria": [
+        "No AI-in-education regulation passes in any US state by 2028",
+        "General AI governance platforms (Credo AI, Holistic AI) add education-specific modules that are good enough",
+        "Schools decide AI governance is the EdTech vendor's responsibility, not the school's — eliminating school-side demand",
+        "Public fear of AI in education drops below 30% (exposure effect faster than expected) — reducing urgency"
+      ]
+    }
+  ],
+
+  "cross_model_analysis": {
+    "portfolio_strategy": "The 7 education models form a FULL STACK: (1) Corporate reskilling captures the highest-urgency, lowest-friction market (adults, enterprise buyers, proven ROI). (2) AI teaching assistant captures the invisible-AI pathway (teacher-facing, not student-facing, 83% already adopted). (3) AI tutoring captures the Baumol cure opportunity (30-50x cost reduction) but faces highest fear friction. (4) Professional cert prep captures the pipeline crisis (CPA -33%, nursing shortage). (5) Skills matching replaces the collapsing staffing intermediation layer. (6) University admin captures survival-driven demand (demographic cliff). (7) AI safety/governance is the picks-and-shovels play for the entire education AI wave.",
+
+    "entry_sequence_recommendation": [
+      "FIRST: MC-EDU-CORP-01 (Enterprise Reskilling) — highest urgency, lowest friction, proven enterprise SaaS GTM",
+      "FIRST: MC-EDU-TEACH-01 (AI Teaching Assistant) — 83% already using AI, invisible pathway, B2G motion",
+      "SECOND: MC-EDU-CERT-01 (Cert Prep) — counter-cyclical, clear ROI (pass rates), measurable outcomes",
+      "SECOND: MC-EDU-FEAR-01 (AI Safety/Governance) — zero competition, fear-economy demand, picks-and-shovels",
+      "THIRD: MC-EDU-UNIV-01 (University Admin) — urgent (demographic cliff) but slow procurement cycles",
+      "THIRD: MC-EDU-MATCH-01 (Skills Matching) — large TAM but network effect chicken-and-egg challenge",
+      "FOURTH: MC-EDU-TUTOR-01 (K-12 Tutoring) — largest Baumol cure but highest fear friction (gap = 6)"
+    ],
+
+    "total_addressable_force": {
+      "combined_tam": "$700B-$900B economic force across all 7 models",
+      "addressable_tam": "$200-350B near-term addressable (next 5 years)",
+      "notes": "Education is the SECOND-LARGEST Baumol cure sector after healthcare. But F5 psychology (55% discomfort, gap = 5) makes it the SLOWEST to unlock. The entry sequence matters enormously: corporate → teacher-facing → institution-facing → student-facing → parent-facing."
+    },
+
+    "key_insight": "Education's fear friction gap (5 points) is the defining strategic variable. Financial services (gap 1) moves fast. Healthcare (gap 3) moves through the invisible pathway. Education (gap 5) requires the MOST careful trust architecture. The winning strategy is to enter through low-friction channels (corporate training, teacher tools) and ride the trust cascade down to high-friction channels (student-facing tutoring) over 3-5 years."
+  },
+
+  "supersedes_models": [
+    "Existing thin education models in v3-4 inventory (ranks 31, 167, 196, 197, 209, 212) — this deep dive provides the full sector context and detailed model cards they lacked"
+  ],
+
+  "data_sources": [
+    {"source": "Coherent Market Insights (Jan 2026)", "data": "EdTech market $165B in 2026, $375B by 2033"},
+    {"source": "Fortune Business Insights (2026)", "data": "EdTech market $214.5B in 2026"},
+    {"source": "DemandSage (2026)", "data": "92% student AI usage, 83% teacher AI usage, 86% institutional AI adoption"},
+    {"source": "Programs.com (2025)", "data": "92% of students use AI"},
+    {"source": "UNESCO (2025)", "data": "Only 10% of institutions have AI guidelines"},
+    {"source": "WEF Future of Jobs 2025", "data": "39% skills obsolete by 2030, 59% won't get training"},
+    {"source": "Training Orchestra / EdStellar (2026)", "data": "Corporate training market $353B, 91% increasing AI L&D spend"},
+    {"source": "Mordor Intelligence (2026)", "data": "LMS market $30.5B in 2026"},
+    {"source": "Grand View Research (2024)", "data": "Corporate LMS $9.57B, 19.4% CAGR to 2030"},
+    {"source": "Coursera Micro-Credentials Report (2025)", "data": "90% employers prefer micro-credential candidates"},
+    {"source": "Interview Guys Research (2025)", "data": "85% claim skills-based, 1 in 700 actually are; 53% dropped degree requirements"},
+    {"source": "Credential Engine (2025)", "data": "1.85M unique credentials, 134K providers, $2.34T annual investment"},
+    {"source": "NPR / WICHE (2025)", "data": "13% decline in 18-year-olds 2026-2041, enrollment rate 70%→62%"},
+    {"source": "College Fix / Inside Higher Ed (2025)", "data": "16 closures in 2025, 80+ projected by 2029"},
+    {"source": "Fed Philadelphia (2025)", "data": "Closure prediction model: up to 80 additional colleges with 15% enrollment decline"},
+    {"source": "US News / NCES (2021 data)", "data": "Admin costs $3,771/FTE student, rising 6.3%"},
+    {"source": "Khanmigo / Khan Academy (2025)", "data": "40K→1.4M users, 380+ district partners"},
+    {"source": "Business Research Company (2025)", "data": "Test prep market $72B, 5.4% CAGR"},
+    {"source": "AASPA / BLS (2025)", "data": "411K teaching positions vacant/uncertified, 44% burnout"},
+    {"source": "Fortune Business Insights (2025)", "data": "Private tutoring $70.4B global, 9.3% CAGR"},
+    {"source": "Grand View Research (2024)", "data": "US online tutoring $4.3B, 11.1% CAGR"},
+    {"source": "BLS NAICS 61", "data": "Educational Services ~3.9M workers"},
+    {"source": "Engine state.json", "data": "F1-F6 force velocities, sector transformations, fear friction index, running patterns"}
+  ]
+}

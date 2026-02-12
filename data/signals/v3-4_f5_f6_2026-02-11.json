@@ -1,0 +1,516 @@
+{
+  "cycle": "v3-4",
+  "date": "2026-02-11",
+  "agent": "Agent A (Scanner)",
+  "mode": "F5 Psychology/Fear + F6 Energy/Resources signals — fresh scan replacing v3-2 baselines",
+  "total_signals": 15,
+
+  "force_updates": {
+    "F5_psychology": {
+      "velocity": "shifting",
+      "velocity_change": "MAJOR UPDATE: 46% adoption plateau SHATTERED. Enterprise adoption jumped to 78% (McKinsey) / 95% (Bain). But trust remained flat — US still 32% (Edelman 2026). Adoption decoupled from trust. Fear is no longer blocking adoption — it is creating parallel demand. Worker displacement fear doubled (28% -> 40%). Human premium emerging as consumer category. State AI regulation exploding (1,208 bills, 145 enacted). Gen Z flipped from excited to anxious.",
+      "key_metrics_updated": {
+        "ai_adoption_enterprise": "BROKEN PLATEAU: 78% of organizations using AI in at least one function (McKinsey 2025), up from 46% plateau. 95% of US companies using generative AI (Bain). But 80%+ seeing no enterprise-level EBIT impact — adoption without ROI.",
+        "ai_trust_us": "UNCHANGED: 32% trust in US (Edelman 2026), 36% UK, 39% Germany. China 87%, Brazil 67%. Trust did NOT follow adoption upward — these metrics have DECOUPLED.",
+        "healthcare_trust_gap": "PERSISTENT: 34-point gap still reported. 1,200+ FDA AI devices approved but transparency score 3.3/17. Nearly half of radiologists say patients would not trust AI-only reports. Shadow AI in healthcare growing.",
+        "fear_economy_markets": "AI governance: $309M (2025) -> $419M (2026) -> $4.8B (2034), 37% CAGR. 18% of AI governance customers now purchasing third-party model-failure insurance policies. Insurance carriers linking premium discounts to certified governance frameworks.",
+        "worker_displacement": "ESCALATING: 55,000 AI-attributed layoffs in 2025 (12x two years prior). But only 4.5% of total layoffs — companies using AI as cover per Oxford Economics and Deutsche Bank. Employee concerns jumped 28% -> 40% (Mercer 2026). Entry-level hiring frozen for Gen Z.",
+        "human_premium": "EMERGING AS MARKET: Brands racing to certify human-made content. CTV/YouTube human video premiums up to 50%. Blockchain firm Veriff building human-content stamps with biometric proofs for Meta/Google integration by Q2 2026. YouTube mulling human-only subscription feeds.",
+        "generational_divide": "FLIPPED: Gen Z now 41% anxious, only 36% excited (was 67% excited). 79% using AI but 53% of adult Gen Z feel anxious about it. 79% believe AI makes people lazier. Paradox: most capable generation is most worried.",
+        "ai_regulation_explosion": "1,208 AI bills introduced across all 50 states in 2025, 145 enacted. California TFAIA and Texas RAIGA effective Jan 1, 2026. Trump EO Dec 2025 attempted federal preemption. 280 bipartisan state lawmakers signed letter resisting preemption.",
+        "sector_resistance_map": "UPDATED: Education 55% uncomfortable (unchanged), Legal 82% ethical concerns (unchanged), Healthcare 34-pt gap (unchanged). Financial services 73% adopted = minimal resistance (confirmed control group)."
+      },
+      "confidence": "high"
+    },
+    "F6_energy": {
+      "velocity": "accelerating",
+      "velocity_change": "ACCELERATION CONFIRMED: Data center demand now projected at 75.8 GW (2026), up from 4% baseline. Grid queue still massive but FERC Order 2023 + DOE directive beginning to clear. Nuclear renaissance entering construction phase (TMI refurbishment, Kairos Hermes reactor building). Solar/wind will be 99.2% of net new US capacity in 2026. Copper deficit widening — structural constraint on buildout. Critical minerals weaponized by China (rare earth + lithium export controls). Water conflicts materializing.",
+      "key_metrics_updated": {
+        "data_center_grid_share": "UPGRADED: Projected 75.8 GW IT demand in 2026, rising to 134.4 GW by 2030. US data center share rising from 4% to 7.8% of regional consumption by 2030. AI servers specifically: 93 TWh (2025) -> 432 TWh (2030), nearly 5x.",
+        "grid_interconnection_queue": "UPDATED: 2,300 GW total (down from 2,600 GW as some projects dropped), but PJM wait times now 8+ years (up from 5+). FERC Order 2023 shifting to cluster studies and first-ready-first-served. DOE directed FERC to accelerate large load interconnection by April 2026.",
+        "nuclear_renaissance": "CONSTRUCTION PHASE: TMI (835 MW) in active refurbishment, $1B DOE loan closed Nov 2025, NRC Restart Panel formed, projected 2027 reactivation. Kairos Hermes demo reactor construction started May 2025 in Tennessee. Google 500 MW SMR fleet by 2030. NRC under 18-month review mandate.",
+        "solar_wind_lcoe": "UPDATED: US utility solar $38-78/MWh (Lazard 2025), onshore wind $37-86/MWh. Best global solar $37/MWh (Middle East). 99.2% of net new US capacity in 2026 will be solar, wind, and storage (EIA).",
+        "battery_storage": "SURGING: 13.4 GW added in 2025 (+49.4%), another 21.5 GW planned in next 12 months (+53%). Utility-scale 4-hour storage falling below $100/MWh by 2026.",
+        "critical_minerals": "WEAPONIZED: China controls refining of 19/20 strategic minerals (avg 70% share). April 2025: export controls on 7 heavy rare earths. October 2025: controls on lithium-ion battery supply chain. EU selected 60 Strategic Projects. Western alternatives 5-10 years from scale.",
+        "water_stress": "CONFLICTS MATERIALIZING: 160+ AI data centers in water-scarce US locations. 30% of projects under construction in regions where scarcity will intensify. Arizona: data centers vs agriculture competition active. Phoenix: 177M gallons/day for ~60 data centers. Regulators requiring dry/hybrid cooling.",
+        "copper_deficit": "WIDENING: Copper above $11,000/tonne (up from $8,500 two years ago). Deficit estimates 150K-500K tonnes for 2025-2026 (varies by analyst). AI data centers consume 27-33 tonnes copper per MW installed. By 2030, AI copper demand could reach 500K tonnes/year (~2% global production)."
+      },
+      "confidence": "high"
+    }
+  },
+
+  "signals": [
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-01",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "adoption_resistance",
+      "structural_force": "Enterprise AI adoption decoupled from public trust — 78% organizational adoption vs 32% US public trust creates a 46-point adoption-trust gap that generates fear-economy demand",
+      "headline": "AI adoption plateau shattered (46% -> 78%) but US trust frozen at 32% — adoption and trust have decoupled",
+      "detail": "McKinsey's 2025 State of AI survey shows 78% of organizations using AI in at least one function, up from the 46% plateau that held for 12 months. Bain reports 95% of US companies using generative AI. Yet the 2026 Edelman Trust Barometer shows US public trust in AI unchanged at 32% — the lowest of any major economy (China 87%, Brazil 67%, Germany 39%, UK 36%). This decoupling is structurally significant: enterprises are adopting despite public distrust, creating a two-speed economy where corporate AI usage races ahead while consumer-facing AI adoption remains psychology-constrained. The gap IS the market — it creates demand for governance, compliance, trust infrastructure, and human-premium services.",
+      "sector_transformation_evidence": {
+        "sector_naics": "ALL",
+        "transformation_direction": "Enterprise adoption accelerating behind the scenes while consumer-facing deployment remains trust-gated. B2B AI adoption > B2C. Creates structural advantage for businesses that bridge the trust gap.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["Compliance/governance infrastructure becomes mandatory for consumer-facing AI", "Trust certification market emerges", "B2B AI companies outperform B2C through 2028", "Hands-on experience identified as fastest trust builder — exposure programs become business"]
+      },
+      "geographic_scope": ["US", "EU", "Global"],
+      "geographic_variation": "Trust-adoption gap is uniquely wide in US (46pt), UK (44pt), Germany (41pt). China and Brazil have trust EXCEEDING measured adoption — they will adopt faster. US enterprises deploying AI in back-office first to avoid consumer trust friction.",
+      "psychology_assessment": {
+        "fear_friction": "high",
+        "adoption_resistance": "medium",
+        "trust_barrier": "established",
+        "fear_driven_demand": "Governance ($419M -> $4.8B), compliance certification, trust infrastructure, AI audit services"
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["78% organizations using AI (McKinsey 2025)", "95% US companies using generative AI (Bain)", "32% US public trust (Edelman 2026)", "87% China trust", "80%+ see no enterprise EBIT impact from GenAI"],
+      "theoretical_lens": "T25 Fear Economics + T14 Prospect Theory — adoption driven by corporate FOMO (fear of missing out) while public fear of loss dominates individual sentiment. The gap between organizational deployment and public trust is a measurable Prospect Theory effect: companies weight potential gains, individuals weight potential losses.",
+      "confidence": "high",
+      "evidence_refs": ["McKinsey State of AI Global Survey 2025", "Bain & Company AI Adoption Survey", "2026 Edelman Trust Barometer"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-02",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "fear_friction",
+      "structural_force": "Worker displacement fear doubled in 18 months (28% -> 40%) despite AI layoffs being only 4.5% of total — anticipatory fear vastly exceeds actual displacement, creating political and regulatory demand",
+      "headline": "Employee AI job-loss fear jumped 28% to 40% (Mercer 2026) while actual AI layoffs remain 4.5% of total — 'AI redundancy washing' confirmed",
+      "detail": "Mercer's Global Talent Trends 2026 report shows employee concern about AI job loss jumped from 28% (2024) to 40% (2026). However, Challenger Gray & Christmas data shows only 55,000 US layoffs attributed to AI in 2025 — just 4.5% of total job cuts. Oxford Economics and Deutsche Bank analysts call this 'AI redundancy washing': companies citing AI to mask over-hiring corrections and poor business decisions. HBR (Jan 2026) titled: 'Companies Are Laying Off Workers Because of AI's Potential — Not Its Performance.' The real displacement is entry-level: companies are eliminating junior roles rather than replacing experienced workers, creating a generational employment crisis.",
+      "sector_transformation_evidence": {
+        "sector_naics": "ALL",
+        "transformation_direction": "Fear-driven policy response outpacing actual displacement. Unions, state legislatures, and workers responding to perceived threat that is 10x the reality. Creates regulatory and political friction independent of technology capability.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["State-level AI employment protection legislation", "Union demands for AI impact bargaining", "Entry-level hiring freeze becoming structural (not cyclical)", "Reskilling/upskilling market expansion", "AI transition support services as new category"]
+      },
+      "geographic_scope": ["US", "EU", "Global"],
+      "geographic_variation": "US: anticipatory fear exceeds reality 10:1. EU: stronger union response, AI Act employment provisions. China: government managing narrative — less public fear, more state-directed transition.",
+      "psychology_assessment": {
+        "fear_friction": "high",
+        "adoption_resistance": "medium",
+        "trust_barrier": "established",
+        "fear_driven_demand": "Reskilling platforms, AI transition consulting, workforce impact assessment tools, union negotiation support, employee AI anxiety management"
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["40% employee concern about AI job loss (Mercer 2026, up from 28% in 2024)", "55,000 AI-attributed layoffs in 2025 (Challenger)", "4.5% of total layoffs attributed to AI", "12x increase in AI-cited layoffs vs 2 years prior", "276,000+ tech workers in AI-driven layoffs 2024-2025"],
+      "theoretical_lens": "T14 Prospect Theory / T25 Fear Economics — workers exhibit classic loss aversion: the potential loss of employment is weighted ~2.5x more than potential productivity gains from AI. The 10:1 fear-to-reality ratio IS a Prospect Theory prediction. This fear creates real economic effects: reduced mobility, defensive skill-hoarding, political demand for regulation.",
+      "confidence": "high",
+      "evidence_refs": ["Mercer Global Talent Trends 2026", "Challenger Gray & Christmas layoff data", "HBR Jan 2026", "Oxford Economics analysis", "Deutsche Bank research note"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-03",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "trust_premium",
+      "structural_force": "Human premium crystallizing as consumer market category — brands racing to certify human-made content as AI saturation drives premium pricing for verified human work",
+      "headline": "Human-made content commanding 50% premiums in advertising; blockchain verification infrastructure targeting Meta/Google integration by Q2 2026",
+      "detail": "The 'human premium' has moved from sentiment to market infrastructure. Adweek's 2026 trends forecast shows CTV and YouTube prioritizing human-created video, with premiums of up to 50%. Blockchain firm Veriff announced human-content stamps using biometric proofs, targeting integration with Meta and Google by Q2 2026. YouTube is reportedly considering subscription tiers for human-only content feeds. The pattern mirrors organic food certification: what was once undifferentiated becomes stratified by production method. 79% of Gen Z believe AI makes people lazier (Wharton survey), creating demand-side pull for human-verified content even from the most AI-native generation.",
+      "sector_transformation_evidence": {
+        "sector_naics": "71, 51, 54",
+        "transformation_direction": "Content creation bifurcating into AI-generated (cheap, abundant) and human-verified (premium, scarce). Verification infrastructure becoming the tollbooth. Authentication-as-a-service emerging.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["Authentication/verification infrastructure market", "Human-premium labor marketplaces", "AI-free certification bodies (like organic certification)", "Content provenance tracking becomes standard", "Two-tier creative economy: AI commodity vs human premium"]
+      },
+      "geographic_scope": ["US", "EU", "Global"],
+      "geographic_variation": "Strongest in US/EU where AI trust is lowest (32-39%). Less relevant in China/Brazil (high-trust, rapid adoption). Music industry was early signal (96% willing to pay more for human-created). Now spreading to advertising, writing, art, professional services.",
+      "psychology_assessment": {
+        "fear_friction": "low",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "This IS the fear-driven demand: consumers paying more because they fear AI-generated content is inferior, inauthentic, or manipulative. The premium is a quantified measure of fear."
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["CTV/YouTube human video premiums up to 50% (Adweek)", "Veriff biometric human-content stamps targeting Meta/Google by Q2 2026", "YouTube considering human-only subscription feeds", "79% Gen Z say AI makes people lazier (Wharton)", "96% music professionals willing to pay more for human-created (prior cycle)"],
+      "theoretical_lens": "T3 Baumol Premium — this is the premium side of the Baumol equation. As AI makes content production cheap, the relative value of verifiably human content rises. Like live performances vs recorded music. The scarcer human attention and creativity become relative to AI output, the higher the premium. Also T6 Jevons: cheap AI content expands total content market, but human-premium is a NEW market segment that didn't exist before.",
+      "confidence": "high",
+      "evidence_refs": ["Adweek 2026 Trends Forecast", "Veriff blockchain authentication announcement", "Wharton/Walton Family Foundation Gen Z survey Oct 2025", "Human Certified Organization", "WebProNews Jan 2026"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-04",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "fear_friction",
+      "structural_force": "Gen Z AI attitude flip: most AI-capable generation now most anxious (41% anxious, 36% excited), creating paradox where workforce entrants most needed for AI integration are psychologically resistant",
+      "headline": "Gen Z flipped from 67% excited to 36% excited / 41% anxious about AI in 18 months — entry-level employment crisis is the driver",
+      "detail": "Multiple 2025-2026 surveys reveal a dramatic reversal in Gen Z AI sentiment. The generation that was 67% excited about AI is now only 36% excited and 41% anxious (Gallup/Walton Foundation). Adult Gen Z (18-28) are particularly anxious at 53% vs school-aged Gen Z at 21%. The driver is clear: entry-level jobs are disappearing. Nearly 1 in 5 Gen Zers is 'very concerned' AI will eliminate their career path (Fortune). Yet 79% of Gen Z are using AI tools and 1 in 6 use AI at work even when explicitly prohibited. The paradox: the generation most capable of working with AI is being shut out of the workforce by companies eliminating entry-level positions.",
+      "sector_transformation_evidence": {
+        "sector_naics": "ALL",
+        "transformation_direction": "Entry-level workforce hollowing out. Companies eliminating junior roles (AI handles routine tasks) while still needing experienced workers. This breaks the traditional career pipeline.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["Apprenticeship/alternative credentialing demand surge", "AI-assisted career acceleration tools (compress 5 years experience into 2)", "Political mobilization of Gen Z around AI employment", "Employers discovering mid-career hiring crisis when entry-level pipeline dries up", "New 'AI-native' career paths that bypass traditional entry-level"]
+      },
+      "geographic_scope": ["US", "Global"],
+      "geographic_variation": "US most acute — entry-level hiring freeze combined with high student debt. EU has stronger labor protections buffering impact. India's Gen Z is optimistic (large market, rapid growth). China's Gen Z facing similar anxiety but in context of broader youth unemployment crisis.",
+      "psychology_assessment": {
+        "fear_friction": "high",
+        "adoption_resistance": "low",
+        "trust_barrier": "emerging",
+        "fear_driven_demand": "Career transition tools, AI-augmented upskilling, entry-level alternative pathways, AI career coaching, workforce anxiety management platforms"
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["41% Gen Z anxious about AI (Gallup 2025)", "36% Gen Z excited (down from 67%)", "53% adult Gen Z anxious vs 21% school-age", "79% Gen Z using AI tools", "1 in 6 using AI at work when prohibited (Wharton)", "Nearly 1 in 5 'very concerned' about career path (Fortune)"],
+      "theoretical_lens": "T14 Prospect Theory — Gen Z loss aversion activated by tangible career threat. When AI was abstract, excitement dominated. Now that entry-level jobs are disappearing, fear of loss dominates. The 67% -> 36% excitement collapse is a textbook illustration of how concrete losses overwhelm abstract gains in human psychology.",
+      "confidence": "high",
+      "evidence_refs": ["Gallup/Walton Family Foundation Gen Z AI Survey 2025", "Inside Higher Ed April 2025", "Fortune Sept 2025", "HBR Jan 2026", "Wharton survey Oct 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-05",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "fear_friction",
+      "structural_force": "Healthcare AI trust gap persists at 34 points despite 1,200+ FDA clearances — trust infrastructure fundamentally broken (transparency score 3.3/17) while shadow AI proliferates",
+      "headline": "1,200+ FDA-approved AI devices, but transparency score 3.3/17 and patients would reject AI-only reports — trust barrier structural, not informational",
+      "detail": "The healthcare AI trust gap remains the single largest measured trust gap in any sector. Despite cumulative FDA AI device approvals exceeding 1,200 (with 295 in 2025 alone, mostly radiology), the average AI Characteristics Transparency Reporting score is 3.3 out of 17. Nearly half of cleared devices reported no clinical study. Nearly half of radiologists say patients would not trust an AI-only report. Meanwhile, 'shadow AI' — physicians using generative AI tools outside institutional oversight — is growing rapidly. The trust barrier is not informational (more approvals don't build trust) but structural: the approval pathway itself (510(k) substantial equivalence) doesn't require the level of evidence patients need to trust the technology.",
+      "sector_transformation_evidence": {
+        "sector_naics": "62",
+        "transformation_direction": "Healthcare AI adoption continuing via physician-invisible pathway (back-office, clinical decision support behind the physician). Patient-facing AI remains trust-gated. Shadow AI creating compliance risk.",
+        "timeline_estimate": "2027-2030",
+        "second_order_effects": ["Healthcare AI compliance/audit market growth", "Shadow AI incident creates regulatory backlash", "Clinical AI transparency standards mandated", "Patient trust infrastructure (consent, explainability) becomes required", "Healthcare splits into AI-augmented (lower cost) and human-premium (higher cost) tiers"]
+      },
+      "geographic_scope": ["US", "Global"],
+      "geographic_variation": "US: 1,200+ FDA clearances but low transparency. EU: AI Act creating separate healthcare AI requirements. China: government-directed adoption with less patient choice. Japan: aging demographics creating necessity override of trust barriers.",
+      "psychology_assessment": {
+        "fear_friction": "high",
+        "adoption_resistance": "high",
+        "trust_barrier": "established",
+        "fear_driven_demand": "Healthcare AI compliance platforms, clinical AI transparency tools, patient consent/explainability infrastructure, healthcare AI audit services, physician AI liability management"
+      },
+      "time_horizon": "2027",
+      "raw_data_points": ["1,200+ cumulative FDA AI device approvals", "295 approvals in 2025", "75-80% in radiology", "Transparency score 3.3/17", "Nearly half report no clinical study", "Nearly half of radiologists say patients wouldn't trust AI-only reports"],
+      "theoretical_lens": "T25 Fear Economics + T14 Prospect Theory — healthcare trust gap is the purest example of fear economics. The approval volume (1,200+) should build trust in a rational model, but it hasn't, because trust is driven by perceived risk of personal harm (prospect theory loss aversion) not by statistical safety evidence. The gap between 'safe' and 'trusted' is the market opportunity.",
+      "confidence": "high",
+      "evidence_refs": ["FDA AI/ML Device Tracker (IntuitionLabs)", "Nature Digital Medicine transparency study 2025", "AHA letter to FDA Dec 2025", "Bessemer State of Health AI 2026"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-06",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "fear_friction",
+      "structural_force": "AI governance market crystallizing: 18% of governance customers purchasing model-failure insurance, carriers linking premiums to governance certification — compliance-insurance-governance loop forming",
+      "headline": "AI governance market growing at 37% CAGR ($309M -> $4.8B by 2034); insurance carriers now linking premiums to governance certification",
+      "detail": "The AI governance market has moved from aspirational to operational. Valued at $309M in 2025 and projected to reach $4.8B by 2034 at 37% CAGR, the market is being turbocharged by a new dynamic: 18% of AI governance customers are purchasing third-party model-failure insurance policies, and insurance carriers are now linking premium discounts to certified governance frameworks. This creates a self-reinforcing loop: governance -> insurance discount -> more governance adoption -> larger governance market -> more insurance products. The EU AI Act (enforcement beginning Aug 2025) is the primary regulatory driver, but US state-level legislation (1,208 bills, 145 enacted in 2025) is creating domestic demand independent of federal policy.",
+      "sector_transformation_evidence": {
+        "sector_naics": "52, 54",
+        "transformation_direction": "Governance-insurance-compliance ecosystem forming around AI deployment. Similar to how cybersecurity compliance (SOC2, ISO27001) became mandatory infrastructure. AI governance will become table stakes for enterprise AI deployment.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["AI governance as mandatory infrastructure (like cybersecurity compliance)", "Model-failure insurance as new insurance category ($10B+ market by 2030)", "Governance certification bodies (like ISO) for AI", "AI audit profession emergence", "Governance requirements create moat for compliant AI vendors"]
+      },
+      "geographic_scope": ["US", "EU", "Global"],
+      "geographic_variation": "EU leading due to AI Act mandate. US: state-by-state patchwork creating complexity premium for multi-state compliance. China: state-directed governance, less market opportunity. UK: post-Brexit creating separate AI governance framework.",
+      "psychology_assessment": {
+        "fear_friction": "low",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "This IS fear-driven demand. AI governance exists because enterprises fear regulatory penalty, model failure, and liability. The governance-insurance loop monetizes corporate fear of AI deployment risk."
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["$309M market (2025) -> $4.8B (2034), 37% CAGR", "18% of AI governance customers buying model-failure insurance", "Insurance carriers linking premiums to governance certification", "EU AI Act enforcement from Aug 2025", "1,208 AI bills in US states, 145 enacted in 2025"],
+      "theoretical_lens": "T25 Fear Economics — governance market is pure fear-economy output. Enterprises don't buy governance because AI works better with it; they buy it because they fear the consequences of operating without it. The insurance linkage transforms fear from friction into infrastructure spend.",
+      "confidence": "high",
+      "evidence_refs": ["MarketsAndMarkets AI Governance Report", "Precedence Research AI Governance Market", "SNS Insider AI Governance Market 2035", "IAPP US State AI Governance Tracker"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-07",
+      "force_category": "F5_psychology",
+      "source_category": "10",
+      "signal_type": "policy_change",
+      "structural_force": "State AI regulation explosion (1,208 bills, 145 enacted) collides with federal preemption attempt — creating maximum regulatory uncertainty and compliance demand",
+      "headline": "1,208 AI bills across 50 states in 2025 (145 enacted); Trump EO attempted federal preemption; 280 bipartisan lawmakers resist — maximum complexity",
+      "detail": "The US AI regulatory landscape reached peak complexity in 2025-2026. States introduced 1,208 AI-related bills, enacting 145 into law. California's TFAIA and Texas's RAIGA took effect January 1, 2026, covering transparency, anti-discrimination, and governance requirements. On December 11, 2025, President Trump signed an executive order proposing federal preemption of state AI laws, but 280 state lawmakers from both parties signed a letter resisting preemption. The result is maximum regulatory uncertainty: companies must comply with existing state laws while federal preemption is litigated. This creates enormous demand for multi-state AI compliance infrastructure. 2026 legislation expected to address agentic AI, algorithmic pricing, chatbots, and health AI.",
+      "sector_transformation_evidence": {
+        "sector_naics": "54, 52",
+        "transformation_direction": "Multi-state AI compliance becomes mandatory for any company deploying AI across state lines. Compliance complexity creates market for specialized tools, services, and legal expertise. Similar to how tax compliance across states created entire industry.",
+        "timeline_estimate": "2026-2027",
+        "second_order_effects": ["Multi-state AI compliance platform market (analogous to multi-state tax compliance)", "AI liability insurance expansion", "Small companies frozen by compliance cost = advantage for compliant incumbents", "Regulatory arbitrage by state (Texas/Florida vs California/New York)", "AI governance lawyers as fastest-growing legal specialty"]
+      },
+      "geographic_scope": ["US"],
+      "geographic_variation": "US uniquely has state-by-state patchwork. EU has unified AI Act but multi-country implementation variation. China has unified state direction. The US state patchwork creates the highest compliance cost and the largest compliance services market.",
+      "psychology_assessment": {
+        "fear_friction": "high",
+        "adoption_resistance": "medium",
+        "trust_barrier": "emerging",
+        "fear_driven_demand": "Multi-state AI compliance tools, AI regulatory monitoring services, AI legal advisory, liability insurance"
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["1,208 AI bills introduced across 50 states in 2025", "145 bills enacted into law", "38 states passed AI legislation", "California TFAIA + Texas RAIGA effective Jan 1, 2026", "Trump preemption EO Dec 11, 2025", "280 bipartisan state lawmakers resisting preemption"],
+      "theoretical_lens": "T25 Fear Economics — state AI legislation is largely fear-driven response to constituent concerns about AI harm. The regulatory explosion is a political manifestation of the 40% worker displacement fear. Federal-state conflict creates compliance market regardless of which level prevails.",
+      "confidence": "high",
+      "evidence_refs": ["Future of Privacy Forum State AI Report 2025", "King & Spalding Jan 2026 analysis", "Stateline Dec 2025 reporting", "White House EO Dec 2025", "IAPP State AI Governance Tracker", "Wiley 2026 State AI Bills analysis"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F5-08",
+      "force_category": "F5_psychology",
+      "source_category": "5",
+      "signal_type": "adoption_resistance",
+      "structural_force": "Adoption-ROI gap: 80%+ of enterprises see no EBIT impact from GenAI despite 78% adoption rate — disillusionment phase creates window for value-demonstrating AI tools",
+      "headline": "McKinsey: 80%+ of organizations not seeing enterprise-level EBIT impact from GenAI despite record adoption — disillusionment phase confirmed",
+      "detail": "McKinsey's 2025 survey reveals that while 78% of organizations now use AI and 88% report 'regular AI use,' more than 80% are not seeing tangible enterprise-level EBIT impact from generative AI. This adoption-ROI gap represents a classic Gartner Hype Cycle trough of disillusionment: companies adopted because of competitive fear (FOMO), but most haven't figured out how to generate measurable returns. This creates a window for tools that demonstrably improve unit economics — not just AI that exists, but AI that provably works. The next 12-18 months will separate AI vendors that deliver measurable ROI from those that sold excitement.",
+      "sector_transformation_evidence": {
+        "sector_naics": "ALL",
+        "transformation_direction": "AI market shifting from 'adoption' to 'value realization' phase. Vendors without measurable ROI will face budget cuts. Winners will be those with provable unit-economic improvements.",
+        "timeline_estimate": "2026-2027",
+        "second_order_effects": ["AI vendor consolidation (40-60% of GenAI startups fail to demonstrate ROI by 2027)", "ROI measurement tools become mandatory for AI procurement", "Shift from horizontal AI platforms to vertical AI solutions with measurable outcomes", "CFOs taking over AI budgets from CTOs", "AI consulting boom focused on value extraction, not implementation"]
+      },
+      "geographic_scope": ["US", "EU", "Global"],
+      "geographic_variation": "Universal phenomenon. US enterprises adopted fastest and are first to hit disillusionment. EU enterprises (slower adoption due to AI Act) may skip disillusionment by adopting proven use cases. China state-directed adoption less subject to ROI scrutiny.",
+      "psychology_assessment": {
+        "fear_friction": "medium",
+        "adoption_resistance": "medium",
+        "trust_barrier": "emerging",
+        "fear_driven_demand": "AI ROI measurement platforms, AI value audit services, AI portfolio rationalization consulting"
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["78% using AI (McKinsey)", "88% regular AI use (McKinsey)", "80%+ see no enterprise EBIT impact", "95% US companies using GenAI (Bain)", "Gartner: 40% enterprise apps will feature AI agents by 2026, up from <5% in 2025"],
+      "theoretical_lens": "T5 Perez Installation -> Deployment — this is the Installation-to-Deployment transition. Mass adoption occurred during Installation phase (excitement-driven). Now the market demands Deployment-phase value. The 80% ROI gap means most current AI deployments are Installation artifacts that must be rebuilt for Deployment value.",
+      "confidence": "high",
+      "evidence_refs": ["McKinsey State of AI Global Survey 2025", "Bain AI Adoption Survey", "Gartner AI predictions Aug 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-01",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "force_velocity",
+      "structural_force": "Data center electricity demand inflection: 75.8 GW projected 2026, AI servers specifically 5x by 2030, first sustained US electricity growth in 20 years",
+      "headline": "US data center demand projected 75.8 GW (2026) rising to 134.4 GW (2030); AI servers driving 93 -> 432 TWh; first sustained US electricity growth in two decades",
+      "detail": "Multiple sources confirm data center energy demand has passed a critical inflection. Gartner projects 16% electricity demand growth for data centers in 2025 with doubling by 2030. The US share will rise from 4% to 7.8% of regional consumption. AI-optimized servers specifically drive a near 5x increase: 93 TWh (2025) to 432 TWh (2030). The EIA projects 2% annual US electricity growth through 2026, marking the first sustained increase in nearly 20 years. Of 166 GW total forecast peak load growth, roughly 90 GW is linked to data centers. This is not a gradual trend — it is a step function in US electricity demand driven entirely by AI compute.",
+      "sector_transformation_evidence": {
+        "sector_naics": "22, 23, 31-33",
+        "transformation_direction": "Energy sector restructuring around data center demand. Utilities shifting from flat/declining demand planning to growth mode for first time in 20 years. Grid infrastructure investment surge.",
+        "timeline_estimate": "2026-2030",
+        "second_order_effects": ["Utility capital spending surge (first growth capex in 20 years)", "Geographic winners: states with grid capacity and permissive interconnection", "Energy price increases for all consumers due to data center demand", "Agricultural ratepayers facing higher costs", "Grid modernization forced by bidirectional flows and load variability"]
+      },
+      "geographic_scope": ["US", "Global"],
+      "geographic_variation": "US is epicenter (Northern Virginia, Texas, Oregon, Arizona leading). Global data center electricity: 448 TWh (2025) -> 980 TWh (2030). Geographic winners = states with available grid capacity, water, and permissive policy. Texas, Southeast emerging. Northern Virginia approaching saturation.",
+      "psychology_assessment": {
+        "fear_friction": "low",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "Not psychology-driven — this is pure physics. But creates political fear in communities competing for water and electricity."
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["75.8 GW data center IT demand projected 2026", "134.4 GW by 2030", "AI servers: 93 TWh (2025) -> 432 TWh (2030)", "US share: 4% -> 7.8% by 2030", "2% annual US electricity growth (first in 20 years)", "90 GW of 166 GW forecast load growth = data centers"],
+      "theoretical_lens": "T6 Jevons Expansion — as AI inference costs fall, compute usage expands massively, driving energy demand that more than offsets efficiency gains. The Jevons paradox is playing out in real-time: cheaper compute = more compute = more energy, not less. Also: energy is THE binding constraint on AI scaling — the Jevons expansion of AI is physically limited by electricity generation.",
+      "confidence": "high",
+      "evidence_refs": ["DOE Data Center Energy Report", "Gartner Nov 2025 data center electricity forecast", "EIA Annual Energy Outlook 2025", "BloombergNEF US data center projections", "Grid Strategies National Load Growth Report 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-02",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "force_velocity",
+      "structural_force": "Grid interconnection queue remains massive (2,300 GW) with PJM wait times reaching 8+ years, but FERC Order 2023 and DOE directive forcing accelerated reform — THE bottleneck is being attacked",
+      "headline": "Grid interconnection: 2,300 GW queued, PJM wait 8+ years, but FERC cluster reforms + DOE April 2026 deadline for large-load acceleration rules",
+      "detail": "The grid interconnection queue has shifted from 2,600 GW to 2,300 GW as some projects dropped out, but the core bottleneck remains severe. In PJM (the largest US grid operator), the timeline from application to commercial operation has risen from under 2 years (2008) to over 8 years (2025). However, policy is now attacking the bottleneck: FERC Order 2023 mandates cluster studies and 'first-ready, first-served' prioritization. FERC ordered PJM-specific reforms in July 2025. Most critically, the DOE issued an October 2025 directive instructing FERC to create rules to 'rapidly accelerate the interconnection of large loads' by April 30, 2026. PJM expects reforms to reduce wait times to 1-2 years. The question is whether policy reform can outpace the demand acceleration.",
+      "sector_transformation_evidence": {
+        "sector_naics": "22",
+        "transformation_direction": "Grid interconnection moving from 'first come, first served' to 'first ready, first served.' This dramatically advantages well-capitalized, shovel-ready projects. Small/community projects disadvantaged. Data center loads getting expedited treatment.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["Grid consulting/engineering services surge", "Interconnection queue position becomes valuable asset", "Behind-the-meter generation preference (bypass queue)", "Microgrids gain advantage (no queue needed)", "Large load customers (data centers) get preferential treatment, pricing political backlash"]
+      },
+      "geographic_scope": ["US"],
+      "geographic_variation": "PJM (Mid-Atlantic) worst at 8+ years. ERCOT (Texas) faster due to lighter regulation. MISO and SPP face similar backlogs. CAISO (California) complicated by environmental review. Geographic winners = ISOs with faster queue processing.",
+      "psychology_assessment": {
+        "fear_friction": "low",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "N/A — infrastructure bottleneck, not psychology."
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["2,300 GW in interconnection queue", "PJM wait time: <2 years (2008) -> 8+ years (2025)", "FERC Order 2023: cluster studies + first-ready-first-served", "DOE directive: FERC must create large-load acceleration rules by April 30, 2026", "PJM expects 1-2 year wait times post-reform", "10,300 projects actively seeking interconnection"],
+      "theoretical_lens": "The grid queue is the physical-world constraint on Jevons expansion. AI compute wants to expand 5x by 2030 but the physical grid cannot accommodate it at current queue speeds. The policy response (DOE directive, FERC reform) is government recognition that grid bottleneck is a national security and competitiveness issue. T5 Perez: grid upgrade is classic Deployment-phase infrastructure investment.",
+      "confidence": "high",
+      "evidence_refs": ["Lawrence Berkeley National Lab Queued Up report", "FERC Order No. 2023 explainer", "DOE letter to FERC Oct 2025", "RMI PJM analysis", "Grid Strategies National Load Growth Report"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-03",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "technology_milestone",
+      "structural_force": "Nuclear renaissance entering physical construction: TMI refurbishment with $1B DOE loan, Kairos Hermes demo reactor building, NRC under 18-month review mandate — first new nuclear since Vogtle",
+      "headline": "TMI refurbishment active ($1B DOE loan, 835 MW, 2027 target); Kairos Hermes construction started; Google 500 MW SMR fleet by 2030; NRC 18-month mandate",
+      "detail": "The nuclear renaissance has crossed from announcement to construction. Three Mile Island's Unit 1 (rebranded Crane Clean Energy Center) is in active refurbishment, backed by a $1B DOE loan closed November 2025, with a dedicated NRC Restart Panel overseeing the process toward 2027 reactivation. All 835 MW will serve Microsoft's AI data centers exclusively. Kairos Power commenced construction of the Hermes low-power demonstration reactor in Tennessee in May 2025, with Google committed to a 500 MW fleet of SMRs by 2030. The NRC is under an 18-month mandate to review new reactor applications. This is the first significant new nuclear construction activity since Vogtle Units 3&4. Total committed nuclear for AI exceeds 10 GW.",
+      "sector_transformation_evidence": {
+        "sector_naics": "22, 31-33",
+        "transformation_direction": "Nuclear energy supply chain reactivation after 30-year dormancy. Manufacturing demand for reactor components, specialized materials, nuclear-grade equipment. Workforce demand for nuclear engineers and technicians.",
+        "timeline_estimate": "2027-2032",
+        "second_order_effects": ["Nuclear supply chain resurrection creating manufacturing jobs", "Nuclear engineering workforce shortage (30 years of underinvestment)", "Dedicated corporate PPAs for nuclear = new energy procurement model", "SMR standardization reduces nuclear construction cost curve", "Nuclear becoming 'tech infrastructure' not 'utility infrastructure' — changes regulatory perception"]
+      },
+      "geographic_scope": ["US", "Global"],
+      "geographic_variation": "US leading restart (TMI, Palisades). France maintaining fleet. UK new builds (Hinkley Point C). China building 6-8 reactors/year. Japan restarting post-Fukushima. South Korea expanding. The hyperscaler-nuclear nexus is uniquely American: no other country has private tech companies directly financing nuclear power for AI.",
+      "psychology_assessment": {
+        "fear_friction": "medium",
+        "adoption_resistance": "medium",
+        "trust_barrier": "established",
+        "fear_driven_demand": "Nuclear still carries psychology burden from Fukushima/Chernobyl. But the AI-energy framing is shifting perception: nuclear as 'tech infrastructure' is more acceptable than nuclear as 'power plant.' Still, local opposition to new sites remains significant."
+      },
+      "time_horizon": "2027",
+      "raw_data_points": ["TMI/Crane: 835 MW, $1B DOE loan, NRC Restart Panel, 2027 target", "Kairos Hermes: construction started May 2025, Tennessee", "Google: 500 MW SMR fleet by 2030", "NRC: 18-month application review mandate", "10 GW+ total nuclear committed for AI"],
+      "theoretical_lens": "T5 Perez Deployment Phase — nuclear restart is a Deployment-phase infrastructure investment. The Installation phase was all about software/AI models. The Deployment phase requires physical infrastructure: energy, grid, cooling, materials. Nuclear is the highest-commitment signal that the AI industry is investing in Deployment-phase infrastructure.",
+      "confidence": "high",
+      "evidence_refs": ["DOE Loan Programs Office announcement Nov 2025", "Constellation Energy TMI restart reports", "Kairos Power Hermes construction announcements", "Global Construction Review Jan 2026 nuclear renaissance report"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-04",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "force_velocity",
+      "structural_force": "Solar/wind/storage will be 99.2% of net new US capacity in 2026 — renewable dominance is now absolute, but intermittency means grid-scale storage is the binding constraint",
+      "headline": "EIA: 99.2% of net new US generating capacity in 2026 = solar, wind, and batteries; utility-scale 4-hour storage falling below $100/MWh",
+      "detail": "The EIA projects that solar, wind, and battery storage will account for 99.2% of net new US generating capacity in 2026. Battery storage added 13.4 GW in 2025 (49.4% growth), with another 21.5 GW planned in the next 12 months (53% growth). Utility-scale four-hour battery storage costs are falling below $100/MWh by 2026. US utility-scale solar LCOE has tightened to $38-78/MWh (Lazard 2025), onshore wind to $37-86/MWh. The renewable cost advantage is now decisive and irreversible. The remaining constraint is not generation cost but grid-scale storage and transmission to match intermittent supply with 24/7 data center demand.",
+      "sector_transformation_evidence": {
+        "sector_naics": "22",
+        "transformation_direction": "Energy generation fully transitioning to renewables + storage. Remaining fossil plants becoming peakers/backup. Grid-scale storage emerging as the critical infrastructure gap.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["Grid-scale storage becomes largest energy infrastructure investment category", "Natural gas plants transition to peaker/backup role", "Renewable intermittency creates arbitrage opportunities", "Virtual power plant (VPP) market accelerates", "Behind-the-meter storage + solar for data center self-sufficiency"]
+      },
+      "geographic_scope": ["US", "Global"],
+      "geographic_variation": "US: 99.2% new capacity renewable (EIA). Global best solar: $37/MWh (Middle East/Africa). Battery costs universal. Geographic advantage shifts to high solar/wind resource areas. Australia, Middle East, Southern Europe become energy-cost leaders.",
+      "psychology_assessment": {
+        "fear_friction": "low",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "N/A — economics now dominant over psychology for renewable adoption."
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["99.2% of net new US capacity = solar/wind/storage (EIA 2026)", "13.4 GW battery added 2025 (+49.4%)", "21.5 GW planned next 12 months (+53%)", "4-hour storage below $100/MWh by 2026", "Solar LCOE $38-78/MWh, wind $37-86/MWh (Lazard 2025)"],
+      "theoretical_lens": "This is the endgame of the renewable cost curve (T6 Jevons: cheaper energy = more energy use, but renewables are winning the marginal cost war). Storage is now the binding constraint, not generation. The Jevons expansion of AI compute is creating demand for storage that exceeds current battery manufacturing capacity.",
+      "confidence": "high",
+      "evidence_refs": ["EIA Electricity Monthly Jan 2026", "Lazard LCOE+ June 2025", "Wood Mackenzie renewable LCOE report 2025", "Electrek Jan 2026 EIA analysis"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-05",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "force_velocity",
+      "structural_force": "China weaponizing critical mineral supply chains — export controls on rare earths (April 2025) and lithium battery supply chain (October 2025) — Western alternatives 5-10 years from scale",
+      "headline": "China controls refining of 19/20 strategic minerals (avg 70%); imposed export controls on rare earths + lithium battery chains in 2025; Western alternatives need 5-10 years",
+      "detail": "China's critical mineral dominance intensified in 2025. The IEA Global Critical Minerals Outlook 2025 confirms China is the leading refiner of 19 out of 20 strategic minerals with an average 70% market share — and 90% for rare earth processing. China escalated in 2025: April export controls on 7 heavy rare earth elements and all related compounds, followed by October controls on lithium-ion battery supply chains covering cells, cathode precursors, anode materials, and equipment. By 2035, China is projected to supply 60%+ of refined lithium/cobalt and ~80% of battery-grade graphite and rare earths. Western responses are underway (EU 60 Strategic Projects, US executive actions, cobalt-free/sodium-ion research) but are 5-10 years from displacing Chinese supply at scale.",
+      "sector_transformation_evidence": {
+        "sector_naics": "21, 31-33",
+        "transformation_direction": "Critical mineral supply chains becoming geopolitical weapons. Western economies forced to build parallel processing capacity. Battery chemistry diversification accelerating (LFP, sodium-ion, solid-state).",
+        "timeline_estimate": "2027-2032",
+        "second_order_effects": ["Western mineral processing investment surge (but 5-10 year build time)", "Battery chemistry diversification away from cobalt/nickel", "Recycling/urban mining market acceleration", "Supply chain transparency/tracing requirements", "Price volatility for minerals with concentrated supply", "Strategic mineral stockpiling by governments"]
+      },
+      "geographic_scope": ["Global", "China", "US", "EU"],
+      "geographic_variation": "China: dominant supplier weaponizing position. US: executive actions to accelerate domestic production. EU: 60 Strategic Projects with partner countries. Australia, Canada, DRC: primary supply diversification targets. Japan/Korea: most vulnerable to Chinese export controls (highest import dependency).",
+      "psychology_assessment": {
+        "fear_friction": "medium",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "Strategic stockpiling demand, supply chain diversification consulting, mineral processing technology licensing, recycling infrastructure"
+      },
+      "time_horizon": "2027",
+      "raw_data_points": ["China: 70% average refining share across 19/20 strategic minerals", "90% rare earth processing", "60% lithium and cobalt processing", "April 2025: controls on 7 heavy rare earths", "October 2025: controls on lithium-ion battery supply chain", "EU: 60 Strategic Projects (47 internal, 13 external)", "2035 projection: China 60%+ refined lithium/cobalt, 80% graphite/rare earths"],
+      "theoretical_lens": "T7 Critical Mineral Chokepoint (Geopolitical) — China's mineral dominance is the physical-world equivalent of TSMC's semiconductor dominance. The export controls are a direct geopolitical weapon. Unlike chips (where alternatives exist), mineral processing requires massive capital investment and 5-10 year construction timelines. This creates a multi-decade structural constraint on Western energy transition and AI infrastructure buildout.",
+      "confidence": "high",
+      "evidence_refs": ["IEA Global Critical Minerals Outlook 2025", "IEA Commentary on China Export Controls", "Wood Mackenzie China mineral export controls analysis", "ODI Critical Minerals Geopolitics 2026"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-06",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "second_order_cascade",
+      "structural_force": "Data center water conflicts materializing — 160+ new AI data centers in water-scarce US locations, Arizona agriculture vs data center competition active, regulators mandating dry cooling",
+      "headline": "160+ AI data centers built in water-scarce areas; Phoenix 177M gal/day for ~60 centers; Arizona farm vs data center competition active; regulators mandating dry/hybrid cooling",
+      "detail": "The data center water stress signal has moved from projection to conflict. Over 160 new AI data centers have been built in water-scarce US regions in the past 3 years, with 30% of projects under construction in areas where water scarcity will intensify. In Phoenix, approximately 60 data centers consume 177 million gallons per day — competing directly with agricultural water allocations. Farmers are criticizing large investor-owned utilities for profiting from data center investments at agricultural expense. Larger data centers consume up to 5 million gallons per day (equivalent to a town of 10,000-50,000 people). The industry response is accelerating advanced cooling (direct-to-chip liquid cooling, immersion cooling) which can reduce cooling power 50-60%, but local regulators are now mandating dry or hybrid cooling methods and recycled water use.",
+      "sector_transformation_evidence": {
+        "sector_naics": "22, 11",
+        "transformation_direction": "Water allocation conflicts between data centers and agriculture. Cooling technology innovation accelerating out of necessity. Geographic site selection increasingly water-constrained.",
+        "timeline_estimate": "2026-2028",
+        "second_order_effects": ["Advanced cooling technology market acceleration", "Data center site selection shifts to water-abundant regions", "Water rights becoming data center real estate premium factor", "Agricultural ratepayer advocacy and regulation", "Water recycling/circular infrastructure demand", "Desert data centers require fundamentally different architecture"]
+      },
+      "geographic_scope": ["US"],
+      "geographic_variation": "Arizona and Southwest US: most acute (arid climate + data center boom + agriculture competition). Pacific Northwest: water-abundant but hydroelectric competition. Midwest: emerging as alternative (water + grid capacity). International: Middle East faces extreme water constraint for AI campus ambitions.",
+      "psychology_assessment": {
+        "fear_friction": "medium",
+        "adoption_resistance": "low",
+        "trust_barrier": "emerging",
+        "fear_driven_demand": "Community opposition to data centers, water-impact assessment services, cooling technology retrofits, agricultural water advocacy"
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["160+ AI data centers in water-scarce US locations", "30% of projects under construction in areas where scarcity will intensify", "Phoenix: 177M gal/day for ~60 data centers", "Large DCs: up to 5M gal/day each", "Advanced cooling reduces power 50-60%", "7 hyperscalers facing community opposition (Nov 2025)"],
+      "theoretical_lens": "Second-order cascade from F6 energy demand. The Jevons expansion of AI compute doesn't just consume electricity — it consumes water. Water is a non-substitutable resource, unlike electricity (which can come from multiple generation sources). This makes water a harder constraint than energy for data center siting in arid regions.",
+      "confidence": "high",
+      "evidence_refs": ["Stanford 'And the West' data center water investigation", "University of Tulsa water stress study", "Agri-Pulse agricultural ratepayer report", "MSCI water scarcity analysis", "Environmental Law Institute AI cooling analysis", "EESI data center water report"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C4-F6-07",
+      "force_category": "F6_energy",
+      "source_category": "8",
+      "signal_type": "force_velocity",
+      "structural_force": "Copper supply deficit widening ($11,000/tonne, up 30% in 2 years) as AI data centers consume 27-33 tonnes per MW — copper becoming systemic risk for AI infrastructure buildout",
+      "headline": "Copper above $11,000/tonne (+30% in 2 years); deficit estimates 150K-500K tonnes; AI data centers consume 27-33 tonnes copper/MW; 500K tonnes/year AI demand by 2030",
+      "detail": "Copper prices have risen above $11,000 per tonne, up approximately 30% from $8,500 two years ago. Deficit estimates for 2025-2026 range widely: Wood Mackenzie forecasts 304K tonnes, UBS 230K-400K tonnes, ICSG 150K tonnes (Goldman dissents with a 500K surplus for 2025). AI data centers are a significant new demand driver: each 100 MW site consumes 2,700-3,300 tonnes of copper. By 2030, AI-related copper demand could reach 500,000 tonnes annually (~2% of global production). Supply is constrained by permitting delays in Chile and Peru, labor disputes, and environmental challenges. JPMorgan expects prices to remain elevated through 2026 as mine disruptions coincide with rising industrial demand.",
+      "sector_transformation_evidence": {
+        "sector_naics": "21, 31-33, 22",
+        "transformation_direction": "Copper becoming a binding physical constraint on AI and energy infrastructure buildout. Material substitution research accelerating. Recycling economics improving at $11K/tonne.",
+        "timeline_estimate": "2026-2030",
+        "second_order_effects": ["Copper recycling/urban mining becomes highly profitable at $11K+/tonne", "Aluminum substitution in some electrical applications", "Mining project approvals accelerated by national security framing", "Copper theft increases (already rising at higher prices)", "AI infrastructure cost estimates must include copper price escalation", "Data center design optimization to minimize copper usage"]
+      },
+      "geographic_scope": ["Global"],
+      "geographic_variation": "Chile/Peru: 40% of global copper supply, facing labor and environmental constraints. DRC: cobalt/copper co-production. US: limited domestic production, import-dependent. China: largest consumer and refiner. Copper is uniquely hard to substitute in electrical applications — no geographic workaround.",
+      "psychology_assessment": {
+        "fear_friction": "low",
+        "adoption_resistance": "low",
+        "trust_barrier": "none",
+        "fear_driven_demand": "N/A — physical constraint, not psychology."
+      },
+      "time_horizon": "2026",
+      "raw_data_points": ["Copper: $11,000+/tonne (up from $8,500 two years ago)", "Deficit estimates: 150K-500K tonnes (2025-2026)", "AI data centers: 27-33 tonnes copper per MW installed", "AI copper demand by 2030: 500K tonnes/year (~2% global production)", "Mine supply constrained: Chile/Peru permitting, labor disputes"],
+      "theoretical_lens": "Physical resource constraint on Jevons expansion. AI compute wants to expand 5x (energy) but the copper needed for electrical infrastructure has inelastic supply with 5-10 year mine development timelines. This is the 'atoms constrain bits' thesis: the physical world limits the digital world's expansion rate. Similar to critical minerals (F6-05) but copper is even more fundamental — every electrical connection requires it.",
+      "confidence": "high",
+      "evidence_refs": ["Tom's Hardware copper shortage analysis", "Crux Investor copper 2026 analysis", "Goldman Sachs copper forecast", "JPMorgan copper outlook", "SDxCentral AI copper systemic risk report", "Mining.com copper 2026 forecast"]
+    }
+  ],
+
+  "cross_force_observations": [
+    {
+      "observation": "F5-F6 CONVERGENCE: Fear and Energy are no longer independent forces — they are interacting. Data center water conflicts (F6-06) generate community fear and political opposition (F5 territory). Nuclear psychology (Three Mile Island's very name carries fear baggage) affects energy infrastructure timelines. The adoption-trust decoupling (F5-01) means enterprises will build the energy-hungry AI infrastructure regardless of public sentiment, intensifying the resource conflicts.",
+      "implication": "Business models at the F5-F6 intersection are underexplored: community engagement for infrastructure siting, water-impact mitigation consulting, nuclear communication/trust-building, energy-justice advocacy tools."
+    },
+    {
+      "observation": "FEAR ECONOMY CRYSTALLIZATION: F5 signals collectively show fear is no longer friction — it is a market. AI governance ($4.8B by 2034), AI insurance (18% of governance customers), human-premium verification (50% ad premiums), multi-state compliance (1,208 bills), worker transition services (40% fear). The combined 'fear economy' addressable market likely exceeds $100B by 2030.",
+      "implication": "The FEAR_ECONOMY category in the model ratings system (currently 7 models) is massively underpopulated relative to market size. This scan suggests 50+ additional fear-economy business models should be constructed."
+    },
+    {
+      "observation": "PHYSICAL CONSTRAINTS TIGHTENING: F6 signals collectively show the physical world is pushing back on digital expansion. Grid queue (8+ years), copper deficit ($11K/tonne), water conflicts (160+ data centers in scarce areas), critical minerals (China weaponizing). These are not temporary — they are structural constraints with 5-10 year resolution timelines. The AI compute expansion timeline is constrained by whichever physical resource is scarcest.",
+      "implication": "All AI-dependent business models should be stress-tested against physical resource constraints. Models assuming unlimited compute scaling are underestimating infrastructure risk. The 'atoms constrain bits' thesis should become a standard evaluation lens."
+    },
+    {
+      "observation": "GEN Z PARADOX: The generation most capable of AI integration (79% using AI, highest digital fluency) is simultaneously the most psychologically damaged by it (41% anxious, entry-level hiring frozen, career paths disrupted). This is not a temporary adjustment — it is a structural break in the traditional education -> entry-level -> career pipeline. The 67% -> 36% excitement collapse happened in 18 months.",
+      "implication": "Career infrastructure models (AI-assisted apprenticeships, compressed experience pathways, Gen Z AI career platforms) are high-priority constructions. The traditional entry-level pipeline is breaking and something must replace it."
+    }
+  ],
+
+  "state_update_recommendations": {
+    "F5_psychology": {
+      "velocity": "shifting",
+      "velocity_change_from": "decelerating",
+      "velocity_change_to": "shifting",
+      "rationale": "Changed from 'decelerating' to 'shifting' because: (1) adoption plateau shattered (46% -> 78%), so adoption is NOT decelerating; (2) but trust remains frozen (32% US); (3) fear is not blocking — it is creating parallel markets; (4) the dynamic is more complex than simple deceleration. 'Shifting' captures the decoupling of adoption from trust and the emergence of fear as market-creator.",
+      "key_metrics_to_update": {
+        "ai_adoption_plateau": "BROKEN: 78% (McKinsey), 95% GenAI (Bain). Previous 46% plateau was survey methodology artifact or lagging indicator.",
+        "ai_trust_us": "32% (Edelman 2026) — UNCHANGED despite adoption surge. Decoupled.",
+        "fear_economy_tam": "UPGRADE from $86B to $100B+. Add AI insurance subcategory (18% governance cross-buy), add multi-state compliance market, add human-premium verification market.",
+        "worker_displacement_fear": "NEW METRIC: 40% (Mercer 2026), up from 28%. Track quarterly.",
+        "generational_divide": "FLIP: Gen Z now 36% excited / 41% anxious (was 67% / not measured). Track as leading indicator.",
+        "human_premium": "NEW METRIC: 50% ad premium for human content. Track quarterly.",
+        "state_ai_regulation": "NEW METRIC: 1,208 bills / 145 enacted (2025). Track per legislative session."
+      }
+    },
+    "F6_energy": {
+      "velocity": "accelerating",
+      "velocity_change_from": "accelerating",
+      "velocity_change_to": "accelerating",
+      "rationale": "Acceleration confirmed and intensifying. Data center demand projections upgraded. Nuclear entering construction. Grid queue being attacked by policy. New constraints identified (copper, water, critical minerals). Changed from 'accelerating' to 'accelerating' (no change) but with higher confidence and more specific constraint identification.",
+      "key_metrics_to_update": {
+        "data_center_grid_share": "UPGRADE: 4% -> 7.8% by 2030. Projected 75.8 GW 2026, 134.4 GW 2030.",
+        "grid_bottleneck": "UPDATE: 2,300 GW (down from 2,600 GW), PJM 8+ years (up from 5+). But FERC reforms + DOE directive = resolution pathway. Track DOE April 2026 deadline.",
+        "nuclear_renaissance": "UPGRADE: TMI in active refurbishment ($1B DOE loan), Kairos Hermes construction started. NRC 18-month mandate. 10 GW+ committed.",
+        "battery_storage": "ADD: 13.4 GW added 2025, 21.5 GW planned. 4-hour below $100/MWh by 2026.",
+        "copper_constraint": "NEW METRIC: $11K/tonne, 27-33 tonnes/MW for data centers. Deficit 150K-500K tonnes.",
+        "critical_minerals_weaponized": "NEW METRIC: China export controls on rare earths (Apr 2025) and lithium battery chain (Oct 2025).",
+        "water_stress": "UPGRADE: 160+ data centers in scarce areas. 30% under construction in worsening-scarcity regions. Phoenix conflicts active."
+      }
+    }
+  }
+}
