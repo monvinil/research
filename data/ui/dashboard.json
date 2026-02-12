@@ -1,27 +1,27 @@
 {
-  "engine_version": "v3.8",
+  "engine_version": "v3.9",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "current_cycle": "v3-8",
-  "last_updated": "2026-02-12T22:00:00Z",
+  "current_cycle": "v3-9",
+  "last_updated": "2026-02-12T23:30:00Z",
   "projection_horizon": "2026-2031",
   "data_sources_used": 44,
   "total_signals_scanned": 397,
-  "total_models_rated": 413,
+  "total_models_rated": 435,
   "total_models_unscored": 0,
   "enumerated_stubs": 2823,
-  "new_models_this_cycle": 24,
+  "new_models_this_cycle": 22,
   "evidence_base": {
     "v2_cycles": 9,
     "v2_models_original": 522,
-    "v3_models_rated": 413,
+    "v3_models_rated": 435,
     "v3_models_unscored": 0,
     "v3_enumerated_stubs": 2823,
     "v2_patterns": 28,
-    "v3_patterns": 20,
+    "v3_patterns": 21,
     "naics_sectors_mapped": 293,
-    "v3_sectors_with_transformations": 15,
+    "v3_sectors_with_transformations": 16,
     "v3_geographies_profiled": 8,
-    "v3_sector_deep_dives": 10,
+    "v3_sector_deep_dives": 12,
     "v3_cascade_models": 3,
     "v3_sector_screener_candidates": 10,
     "connectors_available": 17,
@@ -1395,6 +1395,26 @@
       "type": "close_the_loop",
       "models_constructed": 413,
       "note": "'Close the Loop' cycle: delivered on framework's identified gaps. Healthcare deep dive (12 cards, QCEW sub-sector) + Retail Trade first coverage (12 cards, 15.5M workers). 53 signals + 9 counter-signals (first ever). P-040 Inverse Baumol cross-sector test (confirmed emerging). First Master Economy Map Synthesis produced. Total 389→413. New #1: Retail Media Network Platform (86.5). 3 Retail STRUCTURAL_WINNERs in top 11. Counter-signals reveal FS cascade may be slow burn and IT decline may be compositional. BLS final 2025 revision: 584K→181K (recessionary). DOGE -212K federal workers. Gartner Trough of Disillusionment for GenAI."
+    },
+    {
+      "cycle": "v3-9",
+      "date": "2026-02-12",
+      "theme": "Opportunity First",
+      "new_models": 22,
+      "total_models": 435,
+      "deep_dives": [
+        "Manufacturing (NAICS 31-33)",
+        "Micro-Firm AI Economy (Emerging Category)"
+      ],
+      "signals": 44,
+      "cla_refinements": 38,
+      "key_findings": [
+        "Manufacturing is most actionable sector: 12 new cards, first physical economy deep dive, ADDITIVE transformation",
+        "Micro-firm AI economy defined: 33.9M addressable entities, 10 model cards, AI OS as emerging category",
+        "4 of top 5 actionable models now from opportunity-first sectors (micro-firm + manufacturing)",
+        "CLA refinement exposed systematic heuristic overscoring of wholesale, education, and capital-market A&M models",
+        "P-041 Manufacturing Modernization Bimodality: 78-point implementation gap, top 1% vs bottom 72%"
+      ]
     }
   ],
   "dual_ranking": true,
@@ -1802,224 +1822,184 @@
   ],
   "top_20_actionable": [
     {
-      "actionable_score": 84.17,
-      "transformation_rank": 13,
-      "opportunity_rank": 2,
+      "geo_mean": 84.17,
+      "t_rank": 18,
+      "o_rank": 2,
       "id": "V3-EMRG-001",
       "name": "Micro-Firm AI Operating System",
-      "composite": 80.5,
-      "opportunity_composite": 88.0,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_category": "WIDE_OPEN"
+      "t_comp": 80.5,
+      "o_comp": 88.0
     },
     {
-      "actionable_score": 81.74,
-      "transformation_rank": 3,
-      "opportunity_rank": 14,
+      "geo_mean": 81.74,
+      "t_rank": 4,
+      "o_rank": 17,
       "id": "V3-FEAR-001",
-      "name": "AI Governance and Compliance Operating System",
-      "composite": 83.0,
-      "opportunity_composite": 80.5,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "AI Governance and Compliance OS",
+      "t_comp": 83.0,
+      "o_comp": 80.5
     },
     {
-      "actionable_score": 78.25,
-      "transformation_rank": 19,
-      "opportunity_rank": 19,
+      "geo_mean": 81.64,
+      "t_rank": 41,
+      "o_rank": 3,
+      "id": "MC-V39-MICRO-002",
+      "name": "Solopreneur AI Assistant",
+      "t_comp": 77.5,
+      "o_comp": 86.0
+    },
+    {
+      "geo_mean": 79.57,
+      "t_rank": 47,
+      "o_rank": 9,
+      "id": "MC-V39-MICRO-001",
+      "name": "Micro-Firm AI OS — SMB Growth Tier",
+      "t_comp": 76.75,
+      "o_comp": 82.5
+    },
+    {
+      "geo_mean": 78.25,
+      "t_rank": 25,
+      "o_rank": 23,
       "id": "C7-AM-MFG-01",
-      "name": "Acquire + Modernize CNC Shop (Single Site)",
-      "composite": 79.0,
-      "opportunity_composite": 77.5,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize CNC Shop",
+      "t_comp": 79.0,
+      "o_comp": 77.5
     },
     {
-      "actionable_score": 77.12,
-      "transformation_rank": 110,
-      "opportunity_rank": 6,
+      "geo_mean": 77.74,
+      "t_rank": 51,
+      "o_rank": 20,
+      "id": "MC-V39-MFG-001",
+      "name": "Acquire + Modernize Food Manufacturing Plant",
+      "t_comp": 76.5,
+      "o_comp": 79.0
+    },
+    {
+      "geo_mean": 77.12,
+      "t_rank": 126,
+      "o_rank": 7,
       "id": "PC8-AM-AUTO-01",
-      "name": "Acquire + Modernize Independent Auto Repair Shop",
-      "composite": 71.65,
-      "opportunity_composite": 83.0,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize Auto Repair",
+      "t_comp": 71.7,
+      "o_comp": 83.0
     },
     {
-      "actionable_score": 76.99,
-      "transformation_rank": 45,
-      "opportunity_rank": 18,
+      "geo_mean": 76.99,
+      "t_rank": 56,
+      "o_rank": 22,
       "id": "MC-V37-5415-004",
-      "name": "IT Services Micro-Firm Rollup Platform",
-      "composite": 76.0,
-      "opportunity_composite": 78.0,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "IT Services Micro-Firm Rollup",
+      "t_comp": 76.0,
+      "o_comp": 78.0
     },
     {
-      "actionable_score": 76.7,
-      "transformation_rank": 196,
-      "opportunity_rank": 1,
+      "geo_mean": 76.7,
+      "t_rank": 218,
+      "o_rank": 1,
       "id": "PC8-AM-CONSTRUCTSPECIAL-01",
-      "name": "Acquire + Modernize Specialty Trade Construction",
-      "composite": 66.85,
-      "opportunity_composite": 88.0,
-      "category": "TIMING_ARBITRAGE",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize Specialty Trade",
+      "t_comp": 66.8,
+      "o_comp": 88.0
     },
     {
-      "actionable_score": 76.26,
-      "transformation_rank": 5,
-      "opportunity_rank": 63,
+      "geo_mean": 76.63,
+      "t_rank": 105,
+      "o_rank": 11,
+      "id": "MC-V39-MICRO-005",
+      "name": "AI Legal Agent for Micro-Firms",
+      "t_comp": 72.5,
+      "o_comp": 81.0
+    },
+    {
+      "geo_mean": 76.26,
+      "t_rank": 6,
+      "o_rank": 38,
       "id": "MC-INFO-002",
-      "name": "AI Code Quality and Security Audit Platform",
-      "composite": 82.5,
-      "opportunity_composite": 70.5,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_category": "ACCESSIBLE"
+      "name": "AI Code Quality and Security Audit",
+      "t_comp": 82.5,
+      "o_comp": 70.5
     },
     {
-      "actionable_score": 76.25,
-      "transformation_rank": 163,
-      "opportunity_rank": 3,
+      "geo_mean": 76.25,
+      "t_rank": 183,
+      "o_rank": 4,
       "id": "C7-AM-METALFAB-01",
-      "name": "Acquire + Modernize Structural Steel Fab Shop",
-      "composite": 68.0,
-      "opportunity_composite": 85.5,
-      "category": "TIMING_ARBITRAGE",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize Steel Fab",
+      "t_comp": 68.0,
+      "o_comp": 85.5
     },
     {
-      "actionable_score": 76.25,
-      "transformation_rank": 164,
-      "opportunity_rank": 4,
+      "geo_mean": 76.25,
+      "t_rank": 184,
+      "o_rank": 5,
       "id": "C7-AM-PLASTICS-01",
-      "name": "Acquire + Modernize Plastics Injection Molding Shop",
-      "composite": 68.0,
-      "opportunity_composite": 85.5,
-      "category": "TIMING_ARBITRAGE",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize Plastics Injection Molding",
+      "t_comp": 68.0,
+      "o_comp": 85.5
     },
     {
-      "actionable_score": 76.07,
-      "transformation_rank": 28,
-      "opportunity_rank": 35,
+      "geo_mean": 76.23,
+      "t_rank": 36,
+      "o_rank": 28,
+      "id": "MC-V39-MFG-003",
+      "name": "Acquire + Modernize Auto Parts (EV)",
+      "t_comp": 78.0,
+      "o_comp": 74.5
+    },
+    {
+      "geo_mean": 76.07,
+      "t_rank": 34,
+      "o_rank": 29,
       "id": "PC8-FSR-WHOLESALE-01",
       "name": "Full-Service AI Wholesale Brokerage",
-      "composite": 78.2,
-      "opportunity_composite": 74.0,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_category": "ACCESSIBLE"
+      "t_comp": 78.2,
+      "o_comp": 74.0
     },
     {
-      "actionable_score": 75.94,
-      "transformation_rank": 180,
-      "opportunity_rank": 5,
+      "geo_mean": 75.94,
+      "t_rank": 202,
+      "o_rank": 6,
       "id": "PC8-EXT-BIZBUY-PLUMBING-01",
-      "name": "Acquire + Modernize Plumbing/HVAC Company",
-      "composite": 67.45,
-      "opportunity_composite": 85.5,
-      "category": "TIMING_ARBITRAGE",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize Plumbing/HVAC",
+      "t_comp": 67.5,
+      "o_comp": 85.5
     },
     {
-      "actionable_score": 75.87,
-      "transformation_rank": 37,
-      "opportunity_rank": 24,
+      "geo_mean": 75.87,
+      "t_rank": 45,
+      "o_rank": 26,
       "id": "C7-AM-FOOD-01",
-      "name": "Acquire + Modernize Specialty Food Producer",
-      "composite": 76.75,
-      "opportunity_composite": 75.0,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Acquire + Modernize Specialty Food",
+      "t_comp": 76.8,
+      "o_comp": 75.0
     },
     {
-      "actionable_score": 75.87,
-      "transformation_rank": 38,
-      "opportunity_rank": 27,
+      "geo_mean": 75.87,
+      "t_rank": 46,
+      "o_rank": 27,
       "id": "C7-RC-MFG-01",
-      "name": "Multi-Shop CNC/Metal Fab Rollup Platform",
-      "composite": 76.75,
-      "opportunity_composite": 75.0,
-      "category": "STRUCTURAL_WINNER",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "Multi-Shop CNC/Metal Fab Rollup",
+      "t_comp": 76.8,
+      "o_comp": 75.0
     },
     {
-      "actionable_score": 75.31,
-      "transformation_rank": 101,
-      "opportunity_rank": 17,
+      "geo_mean": 75.87,
+      "t_rank": 17,
+      "o_rank": 35,
+      "id": "MC-V39-MICRO-004",
+      "name": "AI Accountant for Micro-Firms",
+      "t_comp": 80.5,
+      "o_comp": 71.5
+    },
+    {
+      "geo_mean": 75.31,
+      "t_rank": 117,
+      "o_rank": 21,
       "id": "PC8-FSR-PHARMA-01",
-      "name": "AI-Native Pharmaceutical Distribution Intelligence",
-      "composite": 72.25,
-      "opportunity_composite": 78.5,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "WIDE_OPEN"
-    },
-    {
-      "actionable_score": 75.25,
-      "transformation_rank": 48,
-      "opportunity_rank": 30,
-      "id": "MC-V37-5415-003",
-      "name": "AI-First Managed Services Platform (MSP 2.0)",
-      "composite": 75.5,
-      "opportunity_composite": 75.0,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "WIDE_OPEN"
-    },
-    {
-      "actionable_score": 75.22,
-      "transformation_rank": 79,
-      "opportunity_rank": 20,
-      "id": "MC-V37-55-005",
-      "name": "Silver Tsunami Executive Succession + AI Augmentation Platform",
-      "composite": 73.0,
-      "opportunity_composite": 77.5,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "WIDE_OPEN"
-    },
-    {
-      "actionable_score": 74.99,
-      "transformation_rank": 43,
-      "opportunity_rank": 32,
-      "id": "MC-INFO-005",
-      "name": "Telecom AI Operations Platform (AIOps for Network Infrastructure)",
-      "composite": 76.0,
-      "opportunity_composite": 74.0,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "ACCESSIBLE"
-    },
-    {
-      "actionable_score": 74.75,
-      "transformation_rank": 17,
-      "opportunity_rank": 64,
-      "id": "MC-INFO-003",
-      "name": "Content Authentication and Provenance Platform",
-      "composite": 79.25,
-      "opportunity_composite": 70.5,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "ACCESSIBLE"
-    },
-    {
-      "actionable_score": 74.39,
-      "transformation_rank": 25,
-      "opportunity_rank": 65,
-      "id": "MC-V37-55-002",
-      "name": "AI-Augmented PE Portfolio Operations Platform",
-      "composite": 78.5,
-      "opportunity_composite": 70.5,
-      "category": "FORCE_RIDER",
-      "opportunity_category": "ACCESSIBLE"
-    },
-    {
-      "actionable_score": 74.26,
-      "transformation_rank": 197,
-      "opportunity_rank": 8,
-      "id": "PC8-EXT-BIZBUY-PEST-01",
-      "name": "Acquire + Modernize Pest Control Company",
-      "composite": 66.85,
-      "opportunity_composite": 82.5,
-      "category": "TIMING_ARBITRAGE",
-      "opportunity_category": "WIDE_OPEN"
+      "name": "AI-Native Pharma Distribution",
+      "t_comp": 72.2,
+      "o_comp": 78.5
     }
   ],
   "top_20_by_composite": [
@@ -2483,5 +2463,117 @@
         "DV": 5
       }
     }
-  ]
+  ],
+  "top_models_by_composite": [
+    {
+      "rank": 1,
+      "id": "MC-V38-44-003",
+      "name": "Retail Media Network Platform",
+      "composite": 86.5,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 435,
+      "opp_composite": 31.0,
+      "opp_category": "FORTIFIED"
+    },
+    {
+      "rank": 2,
+      "id": "MC-V38-44-002",
+      "name": "Warehouse Fulfillment Robotics Platform",
+      "composite": 84.0,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 428,
+      "opp_composite": 41.0,
+      "opp_category": "FORTIFIED"
+    },
+    {
+      "rank": 3,
+      "id": "MC-V39-MFG-011",
+      "name": "Defense Manufacturing Compliance Platform (CMMC)",
+      "composite": 83.0,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 140,
+      "opp_composite": 66.0,
+      "opp_category": "ACCESSIBLE"
+    },
+    {
+      "rank": 4,
+      "id": "V3-FEAR-001",
+      "name": "AI Governance and Compliance Operating System",
+      "composite": 83.0,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 17,
+      "opp_composite": 80.5,
+      "opp_category": "WIDE_OPEN"
+    },
+    {
+      "rank": 5,
+      "id": "MC-DEF-011",
+      "name": "CMMC Compliance Automation Platform",
+      "composite": 82.5,
+      "category": "FORCE_RIDER",
+      "opportunity_rank": 153,
+      "opp_composite": 65.0,
+      "opp_category": "ACCESSIBLE"
+    },
+    {
+      "rank": 6,
+      "id": "MC-INFO-002",
+      "name": "AI Code Quality and Security Audit Platform",
+      "composite": 82.5,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 38,
+      "opp_composite": 70.5,
+      "opp_category": "ACCESSIBLE"
+    },
+    {
+      "rank": 7,
+      "id": "MC-V39-MFG-009",
+      "name": "Semiconductor Test & Packaging Services Platform",
+      "composite": 82.5,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 190,
+      "opp_composite": 63.0,
+      "opp_category": "ACCESSIBLE"
+    },
+    {
+      "rank": 8,
+      "id": "MC-INFO-001",
+      "name": "AI-Native Data Center Operations Platform",
+      "composite": 82.0,
+      "category": "FORCE_RIDER",
+      "opportunity_rank": 353,
+      "opp_composite": 52.5,
+      "opp_category": "CONTESTED"
+    },
+    {
+      "rank": 9,
+      "id": "V3-DEF-001",
+      "name": "Autonomous Drone Swarm Command Platform",
+      "composite": 82.0,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 429,
+      "opp_composite": 39.0,
+      "opp_category": "FORTIFIED"
+    },
+    {
+      "rank": 10,
+      "id": "V3-DEF-003",
+      "name": "Cybersecurity AI for Defense Networks",
+      "composite": 81.75,
+      "category": "STRUCTURAL_WINNER",
+      "opportunity_rank": 338,
+      "opp_composite": 54.5,
+      "opp_category": "CONTESTED"
+    }
+  ],
+  "category_distribution": {
+    "STRUCTURAL_WINNER": 15,
+    "FORCE_RIDER": 147,
+    "TIMING_ARBITRAGE": 18,
+    "CAPITAL_MOAT": 4,
+    "FEAR_ECONOMY": 16,
+    "EMERGING_CATEGORY": 6,
+    "CONDITIONAL": 157,
+    "PARKED": 72
+  }
 }

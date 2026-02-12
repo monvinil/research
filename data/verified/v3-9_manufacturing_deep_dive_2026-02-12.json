@@ -1,0 +1,909 @@
+{
+  "cycle": "v3-9-manufacturing",
+  "date": "2026-02-12",
+  "agent": "Agent B (Business Model Constructor)",
+  "type": "sector_deep_dive",
+  "sector": "Manufacturing (NAICS 31-33)",
+  "pattern_refs": ["P-002", "P-006", "P-016", "P-018", "P-019", "P-025", "P-029"],
+
+  "sector_context": {
+    "sector_naics": "31-33",
+    "sector_name": "Manufacturing",
+    "force_drivers": ["F1_technology", "F2_demographics", "F3_geopolitics", "F4_capital", "F6_energy"],
+
+    "current_state_2026": {
+      "headline": "Manufacturing (NAICS 31-33) is the US economy's most UNDERVALUED transformation target: 12.87M workers across 392K establishments generating $1.06T in annual wages, yet it has the highest average opportunity score (68.9) of any sector with 20+ models and has never received a deep dive. The sector sits at the convergence of FOUR structural forces: (1) Silver Tsunami -- owner age 57 average in machine shops, 52.3% of employer businesses owned by 55+, 58% no succession plan; (2) Cobot revolution -- $25-60K per unit, 6-18mo ROI, 42% of SME manufacturers now integrating cobots; (3) Reshoring/nearshoring -- 240K jobs reshored in 2025, $630B+ invested in 140 projects since 2020 (CHIPS Act + tariffs); (4) AI quality control -- 45% of manufacturers cite QC as #1 AI use case, defect detection accuracy 95-100%. Unlike information or financial services sectors where AI disrupts HIGH-wage cognitive work (Baumol cure), manufacturing's transformation is ADDITIVE -- AI and cobots augment a workforce that cannot be replaced because it does not exist (499K trades shortage, machinist median age 57). This is not disruption, it is FORCED MODERNIZATION of physical production through demographic necessity.",
+
+      "employment": "12,868,061 (QCEW 2023, private sector) -- stable at +0.9% YoY. BLS CES shows 12.69-12.70M through Dec 2025. ISM forecasts 2026 employment growth as CHIPS Act and reshoring investments mature.",
+      "establishments": "392,201 (QCEW 2023, +3.0% YoY) -- establishment growth outpacing employment growth signals FRAGMENTATION through new small shops, not large facility expansion. Average 32.8 workers/establishment but extreme variance: machine shops avg 15.9 vs aerospace avg 126.",
+      "avg_annual_pay": "$82,575 (QCEW 2023, +3.9% YoY)",
+      "total_annual_wages": "$1,062,577,261,693 ($1.06T)",
+      "wage_growth": "+3.9% YoY (above CPI 3.4% for 2023 -- mild Baumol pressure, not extreme)",
+      "emp_growth": "+0.9% (stable, not declining like information sector)",
+      "baumol_score": 1.14,
+      "baumol_interpretation": "Manufacturing wages at 1.14x economy average ($82.6K vs $72.4K economy avg). This is MODERATE -- not the extreme 2.0-3.7x seen in information, IT services, or securities. The transformation driver is NOT Baumol cure (wage compression through AI) but rather DEMOGRAPHIC VACANCY FILLING and PRODUCTIVITY MULTIPLICATION. Manufacturing needs cobots because workers literally do not exist, not because they are overpaid.",
+      "ai_adoption_level": "early_to_growing -- 95% of decision-makers have invested or plan to invest in AI/ML within 5 years, but only 10% have extensively digitized operations. 45% cite quality control as top use case. 78-point implementation gap (98% exploring, 20% ready).",
+      "fragmentation_proxy": 0.030,
+      "labor_share_of_costs": 22,
+
+      "key_patterns": ["P-002", "P-006", "P-016", "P-029"],
+
+      "sub_sector_breakdown": [
+        {
+          "naics": "311",
+          "title": "Food Manufacturing",
+          "employment": 1734185,
+          "establishments": 40712,
+          "avg_pay": 59314,
+          "baumol": 0.82,
+          "emp_growth_pct": 2.6,
+          "wage_growth_pct": 2.5,
+          "avg_workers_per_establishment": 42.6,
+          "share_of_parent": "13.5%",
+          "vulnerability": "MODERATE-HIGH -- labor-intensive with persistent shortages. Robot orders in food/consumer goods surged 85.6% in 2025. 48% of capital spending by large food manufacturers in 2025 flowed to automation. Cold chain and food safety create regulatory compliance burden that AI addresses.",
+          "transformation_thesis": "Food manufacturing is the largest sub-sector by establishment count and second-largest by employment. Below-economy wages ($59K, Baumol 0.82) mean this is NOT a Baumol cure target -- workers are underpaid, not overpaid. Transformation is LABOR REPLACEMENT driven: persistent shortages + food safety automation + cold chain optimization. AI quality control reports 15-30% better defect detection; predictive maintenance reduces unplanned downtime 20-40%."
+        },
+        {
+          "naics": "332",
+          "title": "Fabricated Metal Product Manufacturing",
+          "employment": 1440356,
+          "establishments": 60761,
+          "avg_pay": 70086,
+          "baumol": 0.97,
+          "emp_growth_pct": 1.1,
+          "wage_growth_pct": 4.7,
+          "avg_workers_per_establishment": 23.7,
+          "share_of_parent": "11.2%",
+          "vulnerability": "HIGH ACQUIRE+MODERNIZE TARGET -- most fragmented manufacturing sub-sector (60.7K establishments), low average size (23.7 workers), wages near economy average. Includes machine shops (3327), forging/stamping (3321-3325), and metal coating/heat treating (3328).",
+          "transformation_thesis": "Fabricated metal is the #1 acquire+modernize opportunity in manufacturing. 60,761 establishments with average 23.7 workers = classic long-tail fragmentation. Wage growth at +4.7% (highest of any major manufacturing sub-sector) signals Baumol pressure building. Owner demographics align with Silver Tsunami: machine shop owner age averages 57. Cobots deploy immediately in welding, grinding, deburring, machine tending -- the core of fab metal work."
+        },
+        {
+          "naics": "3327",
+          "title": "Machine Shops; Turned Product; and Screw, Nut, and Bolt Manufacturing",
+          "employment": 338702,
+          "establishments": 21372,
+          "avg_pay": 66806,
+          "baumol": 0.92,
+          "emp_growth_pct": 0.7,
+          "wage_growth_pct": 3.9,
+          "avg_workers_per_establishment": 15.9,
+          "share_of_parent": "2.6%",
+          "vulnerability": "HIGHEST ACQUIRE+MODERNIZE CONCENTRATION -- 21,372 machine shops with average 15.9 workers. Industry revenue $48B (2025). Owner average age 57. These are the 'acquire a retiring-owner shop at 3-4x EBITDA' targets that dominate the actionable top 20.",
+          "transformation_thesis": "Machine shops are the canonical Silver Tsunami + cobot deployment opportunity. 21K+ shops, almost all privately held, owner-operated, with no succession plan. Cobot ROI at 6-18 months on welding, grinding, machine tending. AI scheduling and quoting can double throughput at a shop running manual processes. This sub-sector IS the acquire+modernize thesis."
+        },
+        {
+          "naics": "336",
+          "title": "Transportation Equipment Manufacturing",
+          "employment": 1768920,
+          "establishments": 18024,
+          "avg_pay": 88582,
+          "baumol": 1.22,
+          "emp_growth_pct": 3.5,
+          "wage_growth_pct": 5.1,
+          "avg_workers_per_establishment": 98.1,
+          "share_of_parent": "13.7%",
+          "vulnerability": "MODERATE -- larger establishments, unionized workforce, OEM-dominated. But tier 2/3 suppliers (3363: auto parts) are fragmented and exposed. Aerospace (3364) booming at +7.5% employment growth from defense + reshoring.",
+          "transformation_thesis": "Transportation equipment is bifurcating: OEMs (Ford, GM, Boeing) invest billions in automation and EV transition, while their fragmented supplier base (6,343 auto parts establishments) faces consolidation pressure. Aerospace sub-sector (3364) is the standout: 536K workers at $119K avg pay, +7.5% employment growth driven by CHIPS Act, defense spending ($13.4B AI/autonomy line), and commercial aviation recovery."
+        },
+        {
+          "naics": "3363",
+          "title": "Motor Vehicle Parts Manufacturing",
+          "employment": 559578,
+          "establishments": 6343,
+          "avg_pay": 69898,
+          "baumol": 0.97,
+          "emp_growth_pct": 1.5,
+          "wage_growth_pct": 4.4,
+          "avg_workers_per_establishment": 88.2,
+          "share_of_parent": "4.3%",
+          "vulnerability": "HIGH -- EV transition eliminating 30% of ICE drivetrain parts. Tier 2/3 suppliers face existential pressure: either retool for EV components or consolidate. Reshoring creates new demand but requires different capabilities (battery housing, power electronics, thermal management).",
+          "transformation_thesis": "Auto parts is a forced transformation: EV transition eliminates ICE-specific components while creating demand for battery enclosures, power electronics, thermal management. Suppliers that cannot retool face acquisition or closure. CHIPS Act semiconductor demand creates parallel opportunity in precision machining for chip packaging."
+        },
+        {
+          "naics": "334",
+          "title": "Computer and Electronic Product Manufacturing",
+          "employment": 1093590,
+          "establishments": 25346,
+          "avg_pay": 152577,
+          "baumol": 2.11,
+          "emp_growth_pct": 0.7,
+          "wage_growth_pct": 4.0,
+          "avg_workers_per_establishment": 43.1,
+          "share_of_parent": "8.5%",
+          "vulnerability": "MODERATE -- highest wages in manufacturing (2.11x Baumol). CHIPS Act driving massive investment (TSMC $65B Arizona, Intel $32B Ohio). But most employment growth is construction/fab build, not long-term manufacturing headcount. Semiconductor equipment (3344) and instruments (3345) are growth areas.",
+          "transformation_thesis": "Electronics manufacturing has the highest Baumol score (2.11) in manufacturing, meaning most stored disruption energy. But unlike professional services, these wages reflect genuine skill scarcity (semiconductor engineers, cleanroom technicians). CHIPS Act creates 145,000 new jobs (33K manufacturing, 102K construction) but faces skilled worker shortages -- TSMC Arizona delayed due to labor issues. AI adoption already high in semiconductor fabs (automated process control, yield optimization)."
+        },
+        {
+          "naics": "3341",
+          "title": "Computer and Peripheral Equipment Manufacturing (Semiconductors)",
+          "employment": 161796,
+          "establishments": 2387,
+          "avg_pay": 272801,
+          "baumol": 3.77,
+          "emp_growth_pct": 0.7,
+          "wage_growth_pct": 4.8,
+          "avg_workers_per_establishment": 67.8,
+          "share_of_parent": "1.3%",
+          "vulnerability": "LOW for displacement, HIGH for expansion constraints -- 3.77 Baumol but reflects genuine scarcity of semiconductor engineers. CHIPS Act pouring $32.5B into 31 companies. Constraint is talent, not technology.",
+          "transformation_thesis": "Semiconductor manufacturing is the CHIPS Act epicenter. $630B+ invested since 2020, 500K jobs created/planned across 28 states. But TSMC Arizona and Intel Ohio both delayed due to labor shortages. This sub-sector's constraint is human capital: you cannot hire semiconductor process engineers who do not exist. AI-assisted process control and yield optimization are already deployed in leading fabs."
+        },
+        {
+          "naics": "333",
+          "title": "Machinery Manufacturing",
+          "employment": 1125164,
+          "establishments": 33773,
+          "avg_pay": 84040,
+          "baumol": 1.16,
+          "emp_growth_pct": 1.9,
+          "wage_growth_pct": 3.9,
+          "avg_workers_per_establishment": 33.3,
+          "share_of_parent": "8.7%",
+          "vulnerability": "MODERATE -- includes industrial machinery, HVAC, metalworking machinery, engines/turbines. Mid-size establishments (33.3 avg workers). Reshoring and nearshoring driving demand for domestic machinery production.",
+          "transformation_thesis": "Machinery manufacturing is the sector that MAKES the cobots and automation equipment transforming other sectors. Meta-opportunity: as manufacturing modernizes, demand for industrial robots, CNC machines, and automation equipment grows. Companies building AI-enhanced machinery (predictive maintenance built in, self-optimizing cutting parameters) capture the modernization wave."
+        },
+        {
+          "naics": "3261",
+          "title": "Plastics Product Manufacturing",
+          "employment": 599626,
+          "establishments": 12048,
+          "avg_pay": 65996,
+          "baumol": 0.91,
+          "emp_growth_pct": -2.1,
+          "wage_growth_pct": 4.1,
+          "avg_workers_per_establishment": 49.8,
+          "share_of_parent": "4.7%",
+          "vulnerability": "HIGH -- employment DECLINING (-2.1%) while wages rise (+4.1%) = classic Baumol signature. 12K establishments with moderate fragmentation. Sustainability pressure (plastic bans, recycled content mandates) forcing process changes. Injection molding highly automatable.",
+          "transformation_thesis": "Plastics manufacturing shows the clearest Baumol signal in manufacturing: employment declining while wages accelerate. This is stored disruption energy. Injection molding is one of the most automatable manufacturing processes (repetitive, high-volume, quality-critical). AI vision systems for defect detection deploy immediately. Sustainability mandates (recycled content, bioplastics) require process redesign that favors AI-optimized production."
+        },
+        {
+          "naics": "3364",
+          "title": "Aerospace Product and Parts Manufacturing",
+          "employment": 536766,
+          "establishments": 4259,
+          "avg_pay": 119482,
+          "baumol": 1.65,
+          "emp_growth_pct": 7.5,
+          "wage_growth_pct": 5.0,
+          "avg_workers_per_establishment": 126.0,
+          "share_of_parent": "4.2%",
+          "vulnerability": "LOW for disruption, HIGH for growth -- fastest-growing manufacturing sub-sector (+7.5% employment). Defense spending ($13.4B AI/autonomy), ReArm Europe EUR 800B, commercial aviation recovery all driving demand. Large establishments (126 avg workers) with high barriers to entry (ITAR, AS9100, NADCAP).",
+          "transformation_thesis": "Aerospace is the manufacturing sector LEAST exposed to disruption and MOST exposed to growth. Defense supercycle (P-030), CHIPS Act fab tooling demand, and commercial aviation recovery create multi-year demand tailwind. High barriers (ITAR clearance, AS9100 certification, NADCAP) protect incumbents. AI deployed in non-destructive testing, supply chain optimization, and digital twin-based manufacturing."
+        }
+      ],
+
+      "industry_structure": {
+        "total_establishments": 392201,
+        "avg_workers_per_firm": 32.8,
+        "fragmentation_varies": "Manufacturing fragmentation is BIMODAL: machine shops/fab metal are extremely fragmented (15-24 avg workers, 60K+ establishments) while aerospace/auto OEMs are concentrated (98-126 avg workers, few large players). The acquire+modernize opportunity concentrates in the fragmented tail.",
+        "size_distribution_estimate": {
+          "micro_1to9": "~120,000 establishments (31% of all, <5% of employment)",
+          "small_10to49": "~160,000 establishments (41% of all, ~25% of employment)",
+          "mid_50to249": "~85,000 establishments (22% of all, ~35% of employment)",
+          "large_250to999": "~22,000 establishments (5.6% of all, ~20% of employment)",
+          "mega_1000plus": "~5,000 establishments (1.3% of all, ~15% of employment)"
+        },
+        "key_insight": "Manufacturing's long tail of 280,000+ micro and small establishments (72% of all firms, <30% of employment) is the acquire+modernize and rollup target universe. These are the shops with retiring owners, no ERP, no cobots, manual quoting, paper-based scheduling. The top 5,000 establishments (1.3% of firms) are already automated and AI-sophisticated (Boeing, GM, Intel). The transformation gap between the top 1% and the bottom 72% is the widest of any major sector.",
+        "global_manufacturing_context": {
+          "us_share_global_manufacturing": "16.6% of global manufacturing value-added (2nd behind China at 28.7%)",
+          "reshoring_investment": "$630B+ invested in 140 projects since 2020 (Semiconductor Industry Association)",
+          "reshoring_jobs_2025": "240,000 jobs reshored in 2025",
+          "chips_act_total": "$32.5B in grants to 31 companies, $380B private investment expected",
+          "nearshoring_to_mexico": "Mexico became #1 US trading partner in 2023, manufacturing FDI surging",
+          "china_decoupling": "47.5% avg US tariff on Chinese goods, 100% coverage. Tariff truce through Nov 2026"
+        }
+      },
+
+      "silver_tsunami_manufacturing": {
+        "owner_demographics": "52.3% of ALL employer businesses owned by 55+ (Census Bureau). Manufacturing concentration is HIGHER: machine shop owner average age 57, HVAC/plumbing contractor average age 55+. National Association of Manufacturers surveys consistently show 25%+ of manufacturing workforce over 55.",
+        "succession_gap": "58% have no succession plan nationally. In manufacturing, the gap is WORSE because the business value is tied to the owner's customer relationships, tribal knowledge of machine capabilities, and decades of trade skills that cannot be transferred in a 90-day transition.",
+        "scale": "$5.1T in small business value changing hands this decade. Manufacturing share estimated at $500B-$800B based on 7% of employer businesses being manufacturing with higher average revenue per firm.",
+        "acquisition_multiples": "Machine shops typically sell at 3-5x EBITDA (SDE for smaller shops). Retiring owners without succession plans accept 2.5-3.5x. PE platform acquisitions of machine shops at 4-6x EBITDA for platforms, 3-4x for add-ons.",
+        "key_risk": "The risk is NOT overpaying -- it is SHOPS CLOSING WITHOUT SALE. 70% of small businesses listed never successfully sell. In manufacturing, this means permanent loss of production capacity, customer relationships, and skilled worker employment."
+      },
+
+      "cobot_economics": {
+        "unit_cost": "$25,000-$60,000 per cobot (Universal Robots UR5e ~$35K, UR10e ~$50K, Fanuc CRX ~$30K-55K)",
+        "roi_timeline": "6-18 months payback depending on application (welding: 6-8mo, machine tending: 8-12mo, assembly: 12-18mo)",
+        "market_size_2025": "$1.9-3.06B globally (varies by source definition)",
+        "market_size_2030": "$3.38-4.88B globally, 19-21% CAGR",
+        "adoption_rate_sme": "42% of SME manufacturers integrating cobots in 2025 (up from <20% in 2020)",
+        "top_applications": "Material handling (32%), Assembly (21%), Machine tending (17%), Packaging/palletizing (14%), Quality inspection (10%)",
+        "deployment_constraint": "NOT cost or technology -- it is INTEGRATION EXPERTISE. Small shops lack systems integrator skills. The cobot sits in the box because nobody can program it. This is the opportunity for acquire+modernize: the acquirer brings the integration capability.",
+        "labor_economics": "A cobot replacing one shift of a $55K/yr machinist pays for itself in <12 months. But the better model is cobot AUGMENTING a skilled machinist to handle 2-3 machines instead of 1, addressing the labor shortage without displacement."
+      },
+
+      "ai_in_manufacturing": {
+        "adoption_snapshot": "95% of manufacturing decision-makers plan AI investment within 5 years. Quality control is #1 use case at 45%. Only 10% extensively digitized. 78-point gap between exploration and readiness.",
+        "quality_control": {
+          "market_size_2025": "$3.71B (AI defect detection globally)",
+          "market_size_2034": "$6.63B at 11.9% CAGR",
+          "accuracy": "95-100% in controlled environments. 15-30% better defect detection vs manual inspection",
+          "deployment": "Edge AI becoming dominant for vision-based QC by 2026. Camera + edge compute + ML model = $5-15K per inspection station",
+          "automotive_qc_market": "$528M (2025) growing to $3.2B (2035) at 19.7% CAGR"
+        },
+        "predictive_maintenance": {
+          "adoption": "Plants with predictive maintenance reduce unplanned downtime 20-40%",
+          "technology": "Vibration sensors + ML models on spindles, bearings, motors. $2-5K per monitored asset",
+          "roi": "Avoiding a single unplanned downtime event ($10-50K+ per hour in lost production) pays for months of monitoring"
+        },
+        "ai_scheduling_quoting": {
+          "opportunity": "Most shops with <50 employees use spreadsheets or whiteboards for scheduling. AI scheduling can improve machine utilization 15-30%. AI quoting (analyzing historical job data, material costs, machine time) reduces quote turnaround from days to hours.",
+          "key_players": "ProShop ERP, JobBOSS2, IQMS (DELMIAWorks), MachineMetrics, Plex (Rockwell)",
+          "market_gap": "Cloud MES/ERP for SMB manufacturing is underpenetrated: 70% of ERP market is cloud but manufacturing SMBs lag at ~35-40% cloud adoption"
+        }
+      }
+    },
+
+    "baumol_analysis": {
+      "methodology": "Baumol score = avg_annual_pay / economy_avg_annual_pay ($72,360 for 2023 QCEW). Scores >1.0 indicate above-economy wages with stored disruption energy. For manufacturing, the Baumol dynamic is DIFFERENT from professional services: above-average wages reflect skill scarcity, not rent-seeking. Cobot/AI deployment does not 'cure' Baumol by compressing wages -- it MULTIPLIES worker productivity, addressing demographic shortage.",
+
+      "sub_sector_baumol_ranking": [
+        {"naics": "3341", "name": "Semiconductors", "baumol": 3.77, "avg_pay": 272801, "wage_growth": 4.8, "emp_growth": 0.7, "stored_energy": "EXTREME but reflects genuine scarcity. CHIPS Act pouring in capital but cannot create semiconductor engineers. Baumol cure unlikely -- wages will RISE further as demand exceeds supply."},
+        {"naics": "334", "name": "Computer/Electronic Mfg", "baumol": 2.11, "avg_pay": 152577, "wage_growth": 4.0, "emp_growth": 0.7, "stored_energy": "HIGH. Includes semiconductor equipment and instruments. R&D-intensive, AI augments but does not replace."},
+        {"naics": "3364", "name": "Aerospace", "baumol": 1.65, "avg_pay": 119482, "wage_growth": 5.0, "emp_growth": 7.5, "stored_energy": "MODERATE but EXPANDING not compressing. Employment growing 7.5% driven by defense + reshoring. Baumol energy is being ADDED not released."},
+        {"naics": "3345", "name": "Instruments", "baumol": 1.69, "avg_pay": 122028, "wage_growth": 3.2, "emp_growth": -0.3, "stored_energy": "MODERATE. Classic Baumol signature: employment flat/declining while wages above economy avg. AI-assisted calibration and testing are entering instruments manufacturing."},
+        {"naics": "336", "name": "Transportation Equipment", "baumol": 1.22, "avg_pay": 88582, "wage_growth": 5.1, "emp_growth": 3.5, "stored_energy": "MODERATE. EV transition creating wage pressure as new skills (battery, power electronics) command premium over legacy ICE skills."},
+        {"naics": "333", "name": "Machinery", "baumol": 1.16, "avg_pay": 84040, "wage_growth": 3.9, "emp_growth": 1.9, "stored_energy": "LOW-MODERATE. Wages slightly above economy avg. Meta-opportunity: this sector MAKES the automation equipment."},
+        {"naics": "31-33", "name": "Manufacturing Overall", "baumol": 1.14, "avg_pay": 82575, "wage_growth": 3.9, "emp_growth": 0.9, "stored_energy": "LOW-MODERATE. Aggregate masks extreme variance between semiconductors (3.77) and food (0.82)."},
+        {"naics": "332", "name": "Fabricated Metal", "baumol": 0.97, "avg_pay": 70086, "wage_growth": 4.7, "emp_growth": 1.1, "stored_energy": "BUILDING. Near-economy wages but FASTEST wage growth (+4.7%) of major sub-sectors. Baumol energy accumulating as labor shortage drives wages up. This is WHERE the pressure will release first in manufacturing."},
+        {"naics": "3327", "name": "Machine Shops", "baumol": 0.92, "avg_pay": 66806, "wage_growth": 3.9, "emp_growth": 0.7, "stored_energy": "BUILDING. Below-economy wages but rising. The stored energy here is not wage Baumol -- it is DEMOGRAPHIC: owner retirement creates forced transaction pressure. The energy release mechanism is succession, not wage compression."},
+        {"naics": "3261", "name": "Plastics Products", "baumol": 0.91, "avg_pay": 65996, "wage_growth": 4.1, "emp_growth": -2.1, "stored_energy": "RELEASING. Employment declining (-2.1%) while wages rise (+4.1%) = classic Baumol release. Injection molding automation is compressing headcount while remaining workers command higher wages."},
+        {"naics": "3363", "name": "Motor Vehicle Parts", "baumol": 0.97, "avg_pay": 69898, "wage_growth": 4.4, "emp_growth": 1.5, "stored_energy": "BUILDING. EV transition forcing retooling. Suppliers that cannot adapt face acquisition or closure."},
+        {"naics": "311", "name": "Food Manufacturing", "baumol": 0.82, "avg_pay": 59314, "wage_growth": 2.5, "emp_growth": 2.6, "stored_energy": "LOW. Below-economy wages, below-CPI wage growth. No Baumol energy to release. Transformation driver is LABOR SHORTAGE not wage pressure. Robot orders surged 85.6%."}
+      ],
+
+      "key_baumol_insight": "Manufacturing's Baumol dynamics are INVERTED compared to professional services. In financial services (Baumol 3.71) or IT services (2.05), AI releases stored wage energy by automating high-cost cognitive work. In manufacturing, the sub-sectors with highest Baumol (semiconductors 3.77, electronics 2.11) are LEAST likely to experience wage compression because their wages reflect genuine skill scarcity that AI cannot address. The sub-sectors with LOWEST Baumol (food 0.82, plastics 0.91, machine shops 0.92) have the MOST transformation potential because the driver is labor shortage, not wage arbitrage. The exception is fabricated metal (0.97 Baumol but 4.7% wage growth) where Baumol energy is actively BUILDING -- wages are being forced up by demographic shortage, creating a classic stored-energy position that cobot deployment will eventually release."
+    },
+
+    "transformation_projections_2026_2031": {
+      "methodology": "Year-by-year projections based on: QCEW 2023 baseline data, BLS CES 2025 actuals, CHIPS Act investment timelines, cobot adoption curves (42% SME in 2025, projected 70% by 2030), reshoring investment maturity (P-029: 2-5 year lag), Silver Tsunami acceleration (12M businesses changing hands this decade). Confidence: MEDIUM for 2026-2027 (near-term visible), LOW-MEDIUM for 2028-2031 (dependent on tariff policy continuity, CHIPS Act funding stability, and cobot cost trajectory).",
+
+      "2026": {
+        "headline": "Foundation Year: CHIPS Act fabs begin production, reshoring investments mature, cobot adoption crosses 50% awareness",
+        "employment_projection": "12.7-12.9M (stable). Net: reshoring gains (+50-80K) offset by automation in food/plastics (-20-40K). CHIPS Act construction employment peaks.",
+        "key_developments": [
+          "TSMC Arizona Fab 1 begins mass production (advanced nodes). 6,000 direct jobs + 30K ecosystem jobs.",
+          "Cobot market hits $2.2-2.5B in North America. Universal Robots sells 100,000th unit globally.",
+          "Machine shop M&A activity accelerates: 500-800 shops change hands as first wave of 57-year-old owners reaches 59-60.",
+          "AI quality control deploys at 25% of large manufacturers (250+ employees), <5% of SMBs.",
+          "Food manufacturing robot orders continue 80%+ growth, driven by labor shortages and food safety requirements.",
+          "Auto parts suppliers begin EV component retooling at scale. 200+ Tier 2/3 suppliers announce EV-specific product lines.",
+          "Defense manufacturing demand remains strong: $13.4B AI/autonomy line item pulls orders to precision machining, electronics assembly.",
+          "Manufacturing ERP cloud migration accelerates: SMB cloud ERP adoption reaches 40-45% (from ~35% in 2024)."
+        ],
+        "cobot_installed_base_estimate": "75,000-90,000 units in US manufacturing (cumulative)",
+        "ai_qc_adoption": "25% of large manufacturers, <5% of SMBs",
+        "reshoring_jobs_cumulative": "~1.5M since 2010 (240K added in 2025)",
+        "confidence": "high"
+      },
+
+      "2027": {
+        "headline": "Acceleration Year: Cobot price drops below $20K for basic units, AI MES/ERP becomes default for new shop setups",
+        "employment_projection": "12.6-12.9M. Flat to slight decline as automation gains offset reshoring additions. Compositional shift: fewer operators, more technicians.",
+        "key_developments": [
+          "Cobot prices drop 15-25% as Chinese manufacturers (Dobot, AUBO, JAKA) enter US market aggressively. Basic pick-and-place cobots available for <$20K.",
+          "First wave of CHIPS Act semiconductor fabs reach volume production. Intel Ohio fab operational. 30K+ new semiconductor manufacturing jobs.",
+          "Machine shop consolidation wave: PE platforms acquire 100-200 shops per year. First manufacturing-focused rollup reaches $500M revenue.",
+          "AI scheduling/quoting becomes standard feature in cloud MES platforms. 60%+ of new MES deployments include AI modules.",
+          "Plastics manufacturing employment continues decline (-2-3%/yr) as injection molding automation reaches tipping point.",
+          "Nearshoring to Mexico accelerates: Mexico manufacturing FDI grows 15-20%. US-Mexico manufacturing integration deepens.",
+          "Predictive maintenance deployed at 40% of large manufacturers, 10% of SMBs.",
+          "Food manufacturing automation reaches 55% of large plants; labor shortage remains binding constraint for smaller operations."
+        ],
+        "cobot_installed_base_estimate": "120,000-150,000 units in US manufacturing",
+        "ai_qc_adoption": "40% of large manufacturers, 10-15% of SMBs",
+        "confidence": "medium-high"
+      },
+
+      "2028": {
+        "headline": "Consolidation Year: PE rollup activity peaks, AI-native manufacturing becomes competitive moat",
+        "employment_projection": "12.4-12.8M. Net decline begins as automation deployment outpaces reshoring additions. But QUALITY of jobs improves: technician wages rise 8-12%.",
+        "key_developments": [
+          "PE-backed manufacturing platforms operate 10-20 multi-site networks of formerly independent shops. Industry 'platformization' visible.",
+          "Silver Tsunami peak: largest wave of boomer-owner retirements (owners who were 55 in 2020 are now 63). 1,500-2,500 manufacturing businesses per year seek exit.",
+          "Cobot density in fabricated metal reaches 1 cobot per 8-10 workers (from 1:25 in 2025). Welding cobots become default for new shop setups.",
+          "AI-optimized manufacturing execution becomes competitive moat: shops with AI scheduling outperform by 20-30% on delivery times.",
+          "TSMC Arizona Fab 2 begins volume production. US semiconductor manufacturing employment reaches 200K+ (from 162K in 2023).",
+          "EV transition forces 500+ auto parts suppliers to retool or exit. Consolidation wave in Tier 2/3.",
+          "Reshoring reaches diminishing returns for labor-intensive manufacturing as automation alternatives prove cheaper than domestic manual labor.",
+          "First humanoid robot deployments in US manufacturing (warehouse, material handling). Still <1,000 units. China far ahead at 100K+ units deployed."
+        ],
+        "cobot_installed_base_estimate": "200,000-250,000 units in US manufacturing",
+        "ai_qc_adoption": "55% of large manufacturers, 25% of SMBs",
+        "confidence": "medium"
+      },
+
+      "2029": {
+        "headline": "Maturity Year: AI-first manufacturing becomes standard for new entrants, legacy shops face existential pressure",
+        "employment_projection": "12.2-12.6M. Compositional shift accelerates: 30% of manufacturing workforce is now 'technician/programmer' vs 'operator' (from 20% in 2025).",
+        "key_developments": [
+          "Manufacturing labor composition permanently shifted: CNC programmer/robot technician roles grow 15-20% while manual operator roles decline 5-8%.",
+          "Machine shop rollup platforms reach 5-10 companies with $1B+ revenue, operating 50-200 sites each.",
+          "Cobot-to-worker ratio in fabricated metal approaches 1:5. Cobots are the default tool, not the exception.",
+          "AI quality control reaches 70% of manufacturers with 50+ employees. Cost of AI QC system drops below $3K per inspection station.",
+          "Food manufacturing automation reaches 70% of medium+ plants. Remaining manual-intensive operations are artisanal/specialty.",
+          "Semiconductor manufacturing employment peaks as CHIPS Act fabs fully operational. 250K+ workers in US chip manufacturing.",
+          "Defense manufacturing operates at near-capacity: precision machining, electronics assembly, composite fabrication all constrained by skilled labor.",
+          "Plastics manufacturing employment at 550K (from 600K in 2023) -- Baumol release substantially complete. Remaining workforce is higher-skilled, higher-paid."
+        ],
+        "cobot_installed_base_estimate": "300,000-400,000 units in US manufacturing",
+        "ai_qc_adoption": "70% of large manufacturers, 40% of SMBs",
+        "confidence": "medium-low"
+      },
+
+      "2030_2031": {
+        "headline": "New Normal: Manufacturing employment stabilizes at higher-productivity, higher-wage equilibrium. The 'factory of the future' is present tense.",
+        "employment_projection": "12.0-12.5M by 2031. Stable at this new equilibrium. Per-worker output up 25-40% from 2025 baseline. Average manufacturing wage reaches $95-105K (from $82.6K in 2023).",
+        "key_developments": [
+          "Manufacturing productivity per worker up 25-40% from 2025 driven by cobot deployment, AI scheduling, predictive maintenance, and AI quality control.",
+          "Machine shop count declines from 21K to 15-17K through consolidation, but surviving shops are 2-3x more productive.",
+          "PE-backed manufacturing platforms are publicly traded or reaching scale for IPO. First manufacturing rollup IPO since 2019.",
+          "Humanoid robots begin meaningful deployment in repetitive manufacturing tasks (5-10K units in US). China at 500K+.",
+          "Reshoring largely complete for strategic industries (semiconductors, defense, critical minerals). Labor-intensive manufacturing remains offshore.",
+          "Manufacturing becomes the model for AI-augmented physical work: cobots + AI scheduling + predictive maintenance as standard stack.",
+          "Silver Tsunami largely complete for machine shops and small manufacturing: 40-50% of 2020 shop owners have exited.",
+          "New manufacturing workforce is younger, higher-skilled, and higher-paid. Average age drops from 45 to 40 as technician pipeline matures.",
+          "US semiconductor manufacturing at 300K+ workers, tripled from 2020 baseline. 5 major new fabs fully operational."
+        ],
+        "cobot_installed_base_estimate": "500,000-700,000 units in US manufacturing",
+        "ai_qc_adoption": "85% of large manufacturers, 55-65% of SMBs",
+        "confidence": "low-medium"
+      },
+
+      "falsification_criteria": [
+        "If US-China tariff truce collapses before Nov 2026 AND tariffs rise above 60%, reshoring timeline accelerates but near-term disruption invalidates 2026-2027 employment stability projection.",
+        "If CHIPS Act funding is substantially reduced or redirected by new administration, semiconductor manufacturing employment projections (200K+ by 2028) are invalidated.",
+        "If cobot costs do NOT fall below $20K for basic units by 2027, SMB adoption rate stays below 30% and the 70% by 2030 projection fails.",
+        "If China humanoid robot deployment reaches 1M+ units by 2028, US manufacturing competitiveness thesis requires revision even with reshoring.",
+        "If manufacturing wage growth exceeds 6% annually for 3+ consecutive years, labor cost pressures may trigger faster automation than projected OR faster offshoring despite tariffs.",
+        "If PE manufacturing rollup exits show negative returns (platform failures), consolidation wave stalls and fragmented structure persists beyond 2030."
+      ]
+    },
+
+    "geographic_variation": {
+      "us_manufacturing_belt": {
+        "states": "OH, MI, IN, WI, IL, PA",
+        "dynamics": "Legacy manufacturing infrastructure + skilled workforce aging out. Machine shop density highest here. Silver Tsunami impact most acute. Reshoring investment concentrated (Intel OH, multiple auto EV plants MI/IN).",
+        "transformation_path": "Acquire+modernize opportunity concentrated in Rust Belt machine shops. PE platforms building multi-state networks."
+      },
+      "us_sunbelt": {
+        "states": "TX, AZ, GA, NC, SC, TN",
+        "dynamics": "CHIPS Act investment concentrated (TSMC AZ, Samsung TX, SK Hynix IN). Right-to-work states attracting new manufacturing. Lower labor costs + lower unionization = faster cobot adoption.",
+        "transformation_path": "Greenfield manufacturing: new fabs, new EV plants, new defense facilities. Less acquire+modernize, more build-new."
+      },
+      "mexico_nearshoring": {
+        "dynamics": "Mexico became #1 US trading partner 2023. Manufacturing FDI surging. China+1 strategy driving electronics and auto parts to Nuevo Leon, Jalisco, Queretaro.",
+        "transformation_path": "US-Mexico integrated manufacturing: design in US, volume production in Mexico. Creates demand for cross-border MES/ERP platforms."
+      },
+      "china": {
+        "dynamics": "90% of global humanoid robot market. 28.7% of global manufacturing value-added. Birth collapse (7.92M, -17% YoY) creating DEMOGRAPHIC IMPERATIVE for automation even stronger than US.",
+        "transformation_path": "China will automate manufacturing faster than any country due to demographic necessity. US reshoring is partly a response to China becoming too automated and competitive, not too cheap."
+      }
+    }
+  },
+
+  "model_cards": [
+    {
+      "id": "MC-V39-MFG-001",
+      "name": "Acquire + Modernize Food Manufacturing Plant",
+      "architecture": "acquire_and_modernize",
+      "sector_naics": "3111",
+      "sector_name": "Food Manufacturing - Animal Food & Grain Milling",
+      "one_liner": "Acquire retiring-owner food manufacturing plant at 3-5x EBITDA, deploy cobots for palletizing + AI quality inspection, address chronic labor shortage",
+      "forces": ["F1_technology", "F2_demographics"],
+      "macro_source": "Silver Tsunami (owner age 55+, 58% no succession) + food manufacturing labor shortage (robot orders +85.6% in 2025) + food safety automation mandate",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 8, "FA": 8, "EC": 7, "TG": 8, "CE": 7
+      },
+      "composite": 76.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 9, "MA": 9, "VD": 6, "DV": 7,
+        "opportunity_composite": 78.5,
+        "market_concentration": "Extremely fragmented: 40,712 establishments (QCEW 2023), largest players (Tyson, JBS, Cargill) are PROCESSORS not the small/mid plants targeted. 80%+ of establishments are independently owned with <100 employees.",
+        "key_incumbents": ["Tyson Foods (processor)", "JBS USA (processor)", "Cargill (processor)", "Local/regional independent operators (targets)"],
+        "entry_barriers": ["FDA/USDA food safety compliance", "HACCP plan requirements", "Cold chain infrastructure capital", "Specialized food-grade equipment"],
+        "disruption_vectors": ["Cobot palletizing ($30-50K units, 6mo ROI in food plants)", "AI vision QC for contamination/defect detection", "Predictive maintenance on processing lines", "AI-optimized production scheduling for perishable inputs"],
+        "rationale": "Food manufacturing is the second-largest manufacturing sub-sector by establishment count (40.7K) with the lowest wages (Baumol 0.82) and most severe labor shortages (85.6% surge in robot orders). No single player dominates the small/mid plant segment. Retiring owners accept 3-5x EBITDA. Entry barriers (food safety compliance) are LEARNABLE -- they slow entry but do not prevent it. Once FDA/USDA compliance is systematized, it becomes a competitive advantage for a multi-plant operator vs independent owners who manage compliance manually."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 40,712 food manufacturing establishments, 1,734,185 workers, $59,314 avg pay (Baumol 0.82). Robot orders in food/consumer goods surged 85.6% (2025). 48% of capital spending by large food manufacturers went to automation (2025). AI QC delivers 15-30% better defect detection. 68% of food manufacturers report rising labor costs YoY. Predictive maintenance reduces unplanned downtime 20-40%. Food automation market: $12.64B (2025) to $20.35B (2031).",
+      "falsification_criteria": [
+        "If food manufacturing labor supply stabilizes (immigration reform, wage increases sufficient to attract workers), the labor-shortage-driven automation thesis weakens",
+        "If FDA/USDA increases regulatory burden on AI-based food safety systems (requiring human override, banning automated inspection for certain products), deployment slows",
+        "If food manufacturing M&A multiples rise above 6x EBITDA due to PE competition, unit economics of acquire+modernize break down"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-002",
+      "name": "Acquire + Modernize Plastics Injection Molding Shop",
+      "architecture": "acquire_and_modernize",
+      "sector_naics": "3261",
+      "sector_name": "Plastics Product Manufacturing",
+      "one_liner": "Acquire retiring-owner injection molding shops, deploy AI process optimization + robotic part handling, capitalize on sustainability-driven retooling",
+      "forces": ["F1_technology", "F2_demographics", "F6_energy"],
+      "macro_source": "Silver Tsunami + plastics Baumol release (employment -2.1%, wages +4.1%) + sustainability mandates forcing process redesign (recycled content, bioplastics)",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 7, "FA": 8, "EC": 7, "TG": 7, "CE": 7
+      },
+      "composite": 72.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 8, "MA": 8, "VD": 7, "DV": 7,
+        "opportunity_composite": 75.5,
+        "market_concentration": "Fragmented: 12,048 establishments (QCEW 2023). Large players (Berry Global, Amcor, Sealed Air) focus on packaging. Custom injection molding shops (1,000-5,000 employees) are the fragmented target universe.",
+        "key_incumbents": ["Berry Global (packaging)", "Amcor (packaging)", "Sealed Air (packaging)", "Proto Labs (rapid prototyping)", "Nypro (Jabil) (contract manufacturing)"],
+        "entry_barriers": ["Injection molding machine capital ($100K-$2M per machine)", "Mold tooling expertise", "Material science knowledge (resins, additives)", "Customer qualification cycles (automotive, medical)"],
+        "disruption_vectors": ["AI process parameter optimization (cycle time, temperature, pressure)", "Vision-based defect detection for molded parts", "Cobot part removal and secondary operations", "Sustainability retooling (recycled content processing, bioplastic formulation)"],
+        "rationale": "Plastics shows the clearest Baumol release in manufacturing: employment declining 2.1% while wages rise 4.1%. This means the sector is ALREADY automating -- an acquirer accelerates what is happening organically. Injection molding is one of the most automatable manufacturing processes: repetitive cycles, measurable quality parameters, high-volume output. AI process optimization can reduce cycle times 10-20% and scrap rates 25-40%. Sustainability mandates create a retooling wave that favors well-capitalized acquirers over independent operators struggling to reformulate for recycled content."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 12,048 establishments, 599,626 workers at $65,996 avg pay. Employment declining -2.1% while wages rise +4.1% (classic Baumol release). Injection molding is >60% of plastics manufacturing. AI process optimization reduces cycle times 10-20%, scrap 25-40%. Sustainability mandates: California, EU, and 15+ states require recycled content minimums by 2025-2030. Bioplastics market growing 16% CAGR. Retiring owner demographics align with broader manufacturing Silver Tsunami.",
+      "falsification_criteria": [
+        "If plastics demand declines secularly (plastic bans expand beyond single-use), overall market shrinkage reduces acquisition targets' revenue stability",
+        "If injection molding automation reaches commodity status (any shop can deploy AI process optimization cheaply), competitive advantage from modernization disappears",
+        "If sustainability mandates are relaxed or rolled back under current administration, the retooling catalyst weakens"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-003",
+      "name": "Acquire + Modernize Auto Parts Supplier (EV Transition)",
+      "architecture": "acquire_and_modernize",
+      "sector_naics": "3363",
+      "sector_name": "Motor Vehicle Parts Manufacturing",
+      "one_liner": "Acquire Tier 2/3 auto parts suppliers and retool for EV components (battery enclosures, thermal management, power electronics housings)",
+      "forces": ["F1_technology", "F2_demographics", "F3_geopolitics", "F6_energy"],
+      "macro_source": "EV transition eliminating 30% of ICE drivetrain parts + Silver Tsunami in supplier base + reshoring of critical EV supply chain + tariff pressure on Chinese components",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 8, "FA": 9, "EC": 8, "TG": 7, "CE": 6
+      },
+      "composite": 77.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 7, "MA": 7, "VD": 8, "DV": 8,
+        "opportunity_composite": 74.5,
+        "market_concentration": "Tier 2/3 is fragmented: 6,343 establishments (QCEW 2023). Tier 1 is concentrated (Denso, Bosch, Magna, Aisin). EV component supply chains are being built from scratch -- no incumbent dominance in battery thermal management or power electronics housings at Tier 2/3 level.",
+        "key_incumbents": ["Magna International (Tier 1)", "Denso (Tier 1)", "BorgWarner (EV pivot)", "Dana Inc (EV drivetrain)", "Modine Manufacturing (thermal management)"],
+        "entry_barriers": ["OEM qualification (6-18 month cycles)", "IATF 16949 quality certification", "Capital for retooling ($5-20M per product line)", "Engineering capability for EV-specific designs"],
+        "disruption_vectors": ["EV transition eliminates ICE-specific parts (exhaust, transmission, fuel system)", "Battery enclosure precision machining (aluminum, steel)", "Thermal management systems (cooling plates, heat exchangers)", "Power electronics housings and EMI shielding", "Lightweight materials (aluminum, composites) replacing steel"],
+        "rationale": "The EV transition creates a once-in-a-generation restructuring of the auto parts supply chain. 30% of ICE drivetrain parts have no EV equivalent. Tier 2/3 suppliers that cannot retool face acquisition or closure. Simultaneously, EV components require NEW capabilities (precision aluminum machining for battery enclosures, thermal management expertise) that retiring ICE-focused shop owners lack. An acquirer buying distressed ICE suppliers and retooling for EV creates a new Tier 2/3 platform. Reshoring adds tailwind: tariffs on Chinese EV components (47.5%) create domestic demand."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 6,343 auto parts establishments, 559,578 workers at $69,898 avg pay. EV sales 9-10% of US market (2025), projected 35-50% by 2030. 30% of ICE drivetrain parts eliminated in EV (exhaust, transmission, fuel system, emission controls). Battery enclosure market $3.5B (2025) growing to $12B+ (2030). US tariff on Chinese EV components: 47.5-100%. Reshoring Initiative: 240K manufacturing jobs reshored in 2025. BorgWarner, Dana Inc pivoting entirely to EV components, creating space at Tier 2/3 as Tier 1s consolidate.",
+      "falsification_criteria": [
+        "If EV adoption stalls below 25% US market share by 2028 (due to charging infrastructure gaps, consumer resistance, or policy reversal), the retooling thesis loses urgency",
+        "If OEMs vertically integrate EV component manufacturing (Tesla model: in-house battery, motor, inverter), Tier 2/3 supplier opportunity shrinks",
+        "If Chinese EV component tariffs are reduced or circumvented (through USMCA pass-through from Mexico), domestic reshoring thesis weakens"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-004",
+      "name": "Manufacturing AI Quality Control Platform (Vertical SaaS)",
+      "architecture": "vertical_saas",
+      "sector_naics": "334",
+      "sector_name": "Manufacturing - Cross-Sector QC/Inspection",
+      "one_liner": "Edge AI vision platform for manufacturing quality inspection -- camera + ML model + dashboard, deploys in <1 week, replaces manual QC at 10x throughput",
+      "forces": ["F1_technology"],
+      "macro_source": "AI defect detection market $3.7B growing to $6.6B (11.9% CAGR). 45% of manufacturers cite QC as #1 AI use case. 95-100% accuracy vs 80-85% manual. Edge AI cost <$15K per station.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 8, "FA": 9, "EC": 8, "TG": 8, "CE": 7
+      },
+      "composite": 80.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 6, "MA": 5, "VD": 8, "DV": 7,
+        "opportunity_composite": 64.0,
+        "market_concentration": "CONTESTED: Multiple well-funded players -- Cognex ($5.5B market cap, dominant in machine vision), Keyence ($140B market cap, inspection/measurement), Landing AI (Andrew Ng), Instrumental (electronics QC). But SMB manufacturing segment remains underserved -- incumbents focus on large enterprise deployments.",
+        "key_incumbents": ["Cognex (machine vision hardware+software)", "Keyence (measurement/inspection)", "Landing AI (AI-first visual inspection)", "Instrumental (electronics)", "Sight Machine (manufacturing analytics)", "Augury (predictive maintenance/QC crossover)"],
+        "entry_barriers": ["Domain expertise per manufacturing vertical (food QC differs from metal QC)", "Camera/lighting hardware integration complexity", "Edge compute reliability requirements (zero downtime)", "Customer ROI proof required before deployment", "Data labeling for defect training datasets"],
+        "disruption_vectors": ["Foundation models reduce training data requirements 10x (few-shot defect detection)", "Edge AI hardware costs declining 20%/yr (NVIDIA Jetson, Intel Movidius)", "Cloud-to-edge migration enables SMB self-service deployment", "Generative AI for synthetic defect data generation (solve data scarcity)"],
+        "rationale": "AI QC is the #1 cited AI use case in manufacturing (45%) and the most accessible entry point. Market is growing 11.9% CAGR. However, competition is REAL: Cognex and Keyence are massive incumbents, and Landing AI has deep ML expertise. The opportunity for a new entrant is in the SMB segment (<250 employees) where Cognex/Keyence solutions are too expensive ($50-200K) and Landing AI focuses on enterprise. A platform priced at $5-15K per station with self-service deployment could capture the underserved long tail of 280K+ small manufacturers. MO is 6 (not 8) because of real incumbents."
+      },
+
+      "deep_dive_evidence": "AI defect detection market: $3.71B (2025) to $6.63B (2034) at 11.9% CAGR. Quality control is #1 AI use case at 45% of manufacturers (Rockwell Automation 2024). Accuracy 95-100% in controlled environments, 15-30% improvement over manual inspection. Automotive QC AI market alone: $528M (2025) to $3.2B (2035). Edge AI becoming dominant for vision-based QC by 2026. Only 10% of manufacturers extensively digitized -- massive greenfield. 392K manufacturing establishments, 280K+ with <50 employees are underserved by enterprise-focused incumbents.",
+      "falsification_criteria": [
+        "If Cognex or Keyence launches a low-cost SMB-focused AI QC product (<$10K), the underserved segment thesis collapses",
+        "If foundation models enable commodity defect detection (any camera + generic ML = instant QC), vertical expertise loses value",
+        "If manufacturers prefer to build in-house QC systems using open-source tools (OpenCV + custom models), SaaS recurring revenue model fails"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-005",
+      "name": "Cloud MES/ERP for SMB Manufacturing",
+      "architecture": "vertical_saas",
+      "sector_naics": "333",
+      "sector_name": "Manufacturing - Cross-Sector Operations Software",
+      "one_liner": "AI-native cloud MES+ERP for machine shops and small manufacturers -- scheduling, quoting, inventory, quality, all integrated, <$500/mo",
+      "forces": ["F1_technology", "F2_demographics"],
+      "macro_source": "70% of ERP market is cloud but manufacturing SMBs lag at 35-40%. 280K+ small manufacturers run on spreadsheets/whiteboards. Silver Tsunami creates transition events where new owners need modern systems.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 7, "FA": 8, "EC": 7, "TG": 7, "CE": 8
+      },
+      "composite": 74.0,
+
+      "competitive_landscape_assessment": {
+        "MO": 5, "MA": 5, "VD": 8, "DV": 7,
+        "opportunity_composite": 61.5,
+        "market_concentration": "CONTESTED: Established players include Epicor (large manufacturing ERP), Plex/Rockwell (cloud MES), JobBOSS2 (small shops), ProShop ERP (machine shops), MachineMetrics (machine monitoring). But AI-native, truly SMB-priced (<$500/mo) solutions are rare. Most 'cloud' solutions are still priced at $2-5K/mo for shop-floor deployments.",
+        "key_incumbents": ["Epicor (mid-market manufacturing ERP)", "Plex/Rockwell (cloud MES)", "JobBOSS2 (small job shops)", "ProShop ERP (machine shops)", "MachineMetrics (machine monitoring)", "IQMS/DELMIAWorks (injection molding ERP)", "Autodesk Fusion (design-to-make)"],
+        "entry_barriers": ["Manufacturing domain complexity (job shop vs process vs discrete)", "Integration with CNC controllers, PLCs, machine tools", "ERP switching costs (6-12 month implementation)", "Resistance to change in small shop culture", "Need for on-site implementation/training"],
+        "disruption_vectors": ["AI scheduling optimization (15-30% utilization improvement)", "AI quoting (reduce quote turnaround from days to hours)", "Machine connectivity APIs (MTConnect, OPC-UA) reducing integration friction", "Mobile-first interfaces for shop floor operators", "Generative AI for work instruction creation"],
+        "rationale": "Manufacturing SMB software is a large market ($72.35B SMB software overall, manufacturing share ~$8-12B) with real incumbents. MO is only 5 because players like JobBOSS2 and ProShop already serve small shops effectively. However, AI-NATIVE scheduling and quoting are not yet commodity features in these platforms. The opportunity is to build AI-first (not AI-added-on) manufacturing operations software that makes a 10-person shop operate like a 50-person shop. Silver Tsunami creates natural adoption events: when PE acquires a retiring owner's shop, they install modern ERP immediately."
+      },
+
+      "deep_dive_evidence": "ERP market: $72.6B (2025) to $225.4B (2035) at 12% CAGR. 70% cloud but manufacturing SMBs at 35-40%. Vertical SaaS market $94.86B growing at 16.3% CAGR. SMB software market $72.35B growing to $107.86B by 2031. Manufacturing lead-time cuts of 84% reported with ERP implementation (case studies). AI scheduling improves machine utilization 15-30%. 392K manufacturing establishments, majority on legacy or no systems. Manufacturing ERP cloud migration accelerating.",
+      "falsification_criteria": [
+        "If Autodesk Fusion or Siemens NX expand downmarket with affordable AI-native manufacturing ERP, enterprise players squeeze SMB-focused startups",
+        "If manufacturing SMBs continue preferring spreadsheets/manual processes (cultural resistance > convenience), TAM is smaller than projected",
+        "If PE acquirers standardize on one ERP platform across all acquisitions (e.g., all PE shops use Epicor), independent SMB ERP market shrinks"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-006",
+      "name": "Multi-Sector Fabricated Metal Rollup Platform",
+      "architecture": "rollup_consolidation",
+      "sector_naics": "332",
+      "sector_name": "Fabricated Metal Product Manufacturing",
+      "one_liner": "PE-backed platform acquiring 20-50 fabricated metal shops (welding, sheet metal, stamping) across the Rust Belt, deploying unified ops stack + cobots",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "macro_source": "Most fragmented manufacturing sub-sector: 60,761 establishments, avg 23.7 workers. Highest wage growth (+4.7%) signals Baumol pressure building. PE dry powder seeking manufacturing roll-ups.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 8, "FA": 8, "EC": 7, "TG": 8, "CE": 7
+      },
+      "composite": 76.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 8, "MA": 8, "VD": 7, "DV": 6,
+        "opportunity_composite": 73.5,
+        "market_concentration": "Extremely fragmented: 60,761 establishments = most fragmented manufacturing sub-sector. No single player controls >1% of market. Largest players (Precision Castparts/Berkshire, Arconic, Worthington Industries) focus on specialty/aerospace castings, not general fab metal. Target universe is 50,000+ independent shops.",
+        "key_incumbents": ["Precision Castparts/Berkshire (specialty castings)", "Arconic (aerospace/auto aluminum)", "Worthington Industries (steel processing)", "No dominant player in general fab metal"],
+        "entry_barriers": ["Capital for acquisitions ($1-5M per shop at 3-5x EBITDA)", "Integration complexity across diverse fab metal processes", "Geographic dispersion of targets", "Skilled labor retention during ownership transitions", "Customer relationship continuity"],
+        "disruption_vectors": ["Cobot welding ($35-55K, 6-8mo ROI)", "Cobot grinding/deburring", "AI scheduling across multi-site network", "Centralized quoting engine leveraging data from all sites", "Cross-selling capabilities across product types"],
+        "rationale": "Fabricated metal has the highest fragmentation (60.7K establishments) and highest wage growth (+4.7%) of any major manufacturing sub-sector. The rollup thesis is: acquire 20-50 shops at 3-4x EBITDA, deploy standardized cobot+AI operations stack, operate as unified platform at 6-8x EBITDA multiple. PE is already executing this playbook -- platform deals rose 14.4% YoY in 2025. The barrier is execution (integration across diverse processes), not market access (wide open)."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 60,761 establishments, 1,440,356 workers, $70,086 avg pay. Most fragmented manufacturing sub-sector. Wage growth +4.7% (highest in manufacturing). PE platform deals up 14.4% YoY. Manufacturing M&A activity accelerating (19% value growth in 2025). Cobot welding ROI 6-8 months. Machine shops sell at 3-5x EBITDA. Global industrials M&A values rose 19% in 2025. PE confidence at 86%.",
+      "falsification_criteria": [
+        "If fabricated metal demand declines due to construction slowdown or manufacturing recession, rollup targets' revenue instability makes acquisitions risky",
+        "If skilled labor attrition during ownership transitions exceeds 25%, integration economics fail (key workers leave when new owner arrives)",
+        "If competing PE platforms bid up acquisition multiples above 5x EBITDA for add-ons, the arbitrage between entry and exit multiples disappears"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-007",
+      "name": "Food Manufacturing Consolidation Platform",
+      "architecture": "rollup_consolidation",
+      "sector_naics": "311",
+      "sector_name": "Food Manufacturing",
+      "one_liner": "Roll up 10-30 regional food manufacturing plants (bakeries, snack producers, specialty foods), deploy shared cold chain + AI quality + centralized compliance",
+      "forces": ["F2_demographics", "F4_capital", "F1_technology"],
+      "macro_source": "40,712 food manufacturing establishments, most independently owned. Labor shortage (robot orders +85.6%) + food safety compliance burden favor scale operators. Regional specialty food demand growing 8-12% annually.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 7, "FA": 7, "EC": 7, "TG": 7, "CE": 6
+      },
+      "composite": 69.0,
+
+      "competitive_landscape_assessment": {
+        "MO": 8, "MA": 7, "VD": 7, "DV": 6,
+        "opportunity_composite": 70.5,
+        "market_concentration": "Bifurcated: top players (Tyson, JBS, Nestle, General Mills) dominate commodity processing, but specialty/regional food manufacturing is extremely fragmented. 30,000+ establishments with <100 employees. Craft/artisanal food growing 8-12% CAGR creates premium pricing for acquired brands.",
+        "key_incumbents": ["Tyson Foods (meat)", "JBS USA (meat)", "General Mills (packaged goods)", "Nestle (diversified)", "TreeHouse Foods (private label)", "Regional independent operators (targets)"],
+        "entry_barriers": ["FDA/USDA regulatory compliance", "Food safety insurance requirements", "Cold chain logistics infrastructure", "Brand/distribution relationships", "Perishable inventory management complexity"],
+        "disruption_vectors": ["Shared compliance infrastructure across multiple plants", "Centralized cold chain optimization", "AI quality control for contamination detection", "Predictive maintenance on processing lines", "Cross-plant production scheduling (shift production to available capacity)"],
+        "rationale": "Food manufacturing rollup targets the 30K+ independently owned plants that are too small for Tyson/JBS/Nestle attention but too complex for solo operators to modernize. Shared compliance (FDA/USDA, HACCP) is the key value driver: a 10-plant platform can amortize compliance cost across all sites. Regional food brands command premium pricing (craft/artisanal 8-12% CAGR growth). Labor shortage is the forcing function: plants that cannot automate cannot staff, and closure means permanent loss of regional food production capacity."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 40,712 food manufacturing establishments, 1,734,185 workers, $59,314 avg pay (lowest in manufacturing). Robot orders in food/consumer goods +85.6%. 48% of large food manufacturer capital spending went to automation in 2025. Food automation market $12.64B (2025) to $20.35B (2031). Craft/specialty food market growing 8-12% CAGR. 68% of food manufacturers report rising labor costs. FDA FSMA compliance costs $10-50K/yr per small plant -- amortizable across platform.",
+      "falsification_criteria": [
+        "If food safety incidents at multi-plant platforms create concentrated regulatory risk (one incident shuts multiple plants), the diversification thesis reverses",
+        "If regional food brand premiums erode (consumers trade down to private label during economic pressure), acquired brand values decline",
+        "If agricultural input cost volatility exceeds 20% annually, margin instability makes food manufacturing rollups unattractive to PE"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-008",
+      "name": "Cobot Integration Services for SMB Manufacturing",
+      "architecture": "automation",
+      "sector_naics": "3327",
+      "sector_name": "Manufacturing - Cross-Sector Cobot Deployment",
+      "one_liner": "Design, deploy, and maintain cobot work cells for SMB manufacturers -- welding, machine tending, palletizing -- at $50-100K turnkey including training",
+      "forces": ["F1_technology", "F2_demographics"],
+      "macro_source": "42% of SME manufacturers integrating cobots but #1 constraint is integration expertise. 280K+ small manufacturers need cobots but cannot program/deploy them. Market gap: cobot vendors sell hardware, shops need turnkey solutions.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 8, "FA": 9, "EC": 7, "TG": 9, "CE": 7
+      },
+      "composite": 80.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 7, "MA": 6, "VD": 7, "DV": 7,
+        "opportunity_composite": 67.5,
+        "market_concentration": "Growing but not consolidated: Universal Robots Authorized Integrators (150+ in US), Fanuc partners, KUKA partners, plus independent integrators. But most integration firms focus on large enterprise ($500K+ projects). The sub-$100K turnkey market for SMB is underserved.",
+        "key_incumbents": ["Universal Robots (hardware + partner network)", "Fanuc (hardware + large integrators)", "KUKA/ABB (enterprise robotics)", "Veo Robotics (safety systems)", "Ready Robotics (programming simplification)", "Regional automation integrators"],
+        "entry_barriers": ["Robotics engineering expertise", "Application-specific knowledge (welding, machining, palletizing)", "Universal Robots / Fanuc partner certification", "Liability and safety compliance", "Recurring service/maintenance capability"],
+        "disruption_vectors": ["No-code/low-code cobot programming (reduces integration cost 50%)", "Standardized work cell designs (welding cell, machine tending cell) reduce per-deployment engineering", "Cobot-as-a-Service financing (eliminates upfront capital barrier for shops)", "AI-assisted programming (teach cobots by demonstration, not coding)"],
+        "rationale": "The cobot market is $1.9-3B globally but the CONSTRAINT is not hardware availability -- it is deployment capability. Cobots sit in boxes because small shops lack the robotics expertise to program, integrate, and maintain them. A cobot integration services company targeting SMB manufacturers ($50-100K turnkey) addresses this gap directly. MO is 7 (not 9) because UR and Fanuc have partner networks, but those partners mostly serve larger customers. The SMB segment (<50 employees, <$10M revenue) is underserved. Recurring maintenance/support revenue creates stickiness."
+      },
+
+      "deep_dive_evidence": "Cobot market $1.9-3.06B (2025), growing 19-21% CAGR to $3.38-4.88B by 2030. 42% of SME manufacturers integrating cobots (2025). Material handling 32% of installations, assembly 21%, machine tending 17%. Deployment constraint is NOT cost (cobots at $25-60K) but INTEGRATION EXPERTISE. 280K+ small manufacturers need cobots but cannot program them. Cobot ROI: 6-18 months depending on application. No-code programming platforms reducing deployment time from weeks to days.",
+      "falsification_criteria": [
+        "If Universal Robots or Fanuc launches a 'self-deploying' cobot that requires no integration expertise (plug-and-produce), the integrator service model becomes obsolete",
+        "If cobot programming AI advances to the point where a shop owner can train a cobot by showing it once, integration services lose value",
+        "If the 42% SME adoption rate plateaus (remaining 58% genuinely resistant or inappropriate for cobots), growth ceiling is lower than projected"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-009",
+      "name": "Semiconductor Test & Packaging Services Platform",
+      "architecture": "physical_production_ai",
+      "sector_naics": "3344",
+      "sector_name": "Semiconductor and Other Electronic Component Manufacturing",
+      "one_liner": "AI-optimized semiconductor test and advanced packaging facility serving CHIPS Act fabs -- the capacity bottleneck behind the fab buildout",
+      "forces": ["F1_technology", "F3_geopolitics", "F4_capital"],
+      "macro_source": "CHIPS Act: $630B+ invested, 500K jobs, 140 projects. But fabs produce wafers -- test & packaging (OSAT) is the bottleneck. 85%+ of global OSAT capacity is in Asia. Reshoring test/packaging is the next CHIPS Act wave.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 9, "FA": 9, "EC": 9, "TG": 7, "CE": 6
+      },
+      "composite": 82.0,
+
+      "competitive_landscape_assessment": {
+        "MO": 5, "MA": 4, "VD": 9, "DV": 8,
+        "opportunity_composite": 63.5,
+        "market_concentration": "CONCENTRATED globally: ASE Group (Taiwan, 30% share), Amkor Technology (US HQ but mostly Asia fabs), JCET (China), STATS ChipPAC (Singapore). US domestic OSAT capacity is MINIMAL. CHIPS Act explicitly targets this gap. Capital requirements are HIGH ($500M-2B per facility).",
+        "key_incumbents": ["ASE Group (Taiwan, #1 global OSAT)", "Amkor Technology (#2, some US capacity)", "JCET (China)", "Advantest (test equipment)", "Teradyne (test equipment)", "Applied Materials (packaging equipment)"],
+        "entry_barriers": ["Capital intensity ($500M-2B per facility)", "Cleanroom infrastructure", "Advanced packaging technology expertise (chiplet, 3D packaging)", "Customer qualification with fabs (12-24 months)", "Equipment lead times (ASML, Applied Materials)"],
+        "disruption_vectors": ["CHIPS Act funding specifically for OSAT", "AI-optimized test sequencing (reduce test time 20-40%)", "Advanced packaging (chiplet, 2.5D/3D) requires new US capacity", "NVIDIA GPU demand creating CoWoS packaging bottleneck", "National security argument for domestic test/packaging"],
+        "rationale": "This is the structural bottleneck behind the CHIPS Act buildout. TSMC Arizona and Intel Ohio fabs will produce wafers, but 85%+ of test and packaging capacity is in Asia. AI-optimized test (reducing test time and cost per die) plus advanced packaging (chiplets, 2.5D/3D integration) are the highest-value portions of the semiconductor supply chain after design and fabrication. Capital barriers are HIGH (MO=5) and incumbents are entrenched (MA=4), but the STRUCTURAL NECESSITY is extreme: you cannot have a domestic semiconductor supply chain without domestic OSAT. CHIPS Act Round 2 funding will target this."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 3344 (semiconductor equipment/components) has 6,907 establishments, 395,312 workers at $143,228 avg pay. CHIPS Act: $32.5B in grants, $380B+ private investment. 500K jobs across 140 projects. TSMC Arizona ($65B), Intel Ohio ($32B). BUT: 85%+ of global OSAT in Asia. NVIDIA CoWoS packaging bottleneck drives $500B+ orders. Advanced packaging market $44B (2025) growing to $85B+ (2030). Amkor is only major US-based OSAT, primarily operating in Asia. National security case for domestic OSAT is strong.",
+      "falsification_criteria": [
+        "If CHIPS Act Round 2 funding does NOT include OSAT incentives, the capital barrier ($500M-2B) makes greenfield entry uneconomic",
+        "If ASE Group or Amkor builds significant US capacity (pre-empting new entrants), market openness shrinks further",
+        "If advanced packaging technology shifts away from chiplets (monolithic designs improve sufficiently), the packaging value proposition weakens"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-010",
+      "name": "Reshoring-Ready Contract Manufacturing Platform",
+      "architecture": "physical_production_ai",
+      "sector_naics": "332",
+      "sector_name": "Fabricated Metal + Cross-Sector Contract Manufacturing",
+      "one_liner": "AI-optimized contract manufacturing for companies reshoring from China -- multi-capability (CNC, sheet metal, welding, assembly) with 2-week quote-to-part",
+      "forces": ["F1_technology", "F3_geopolitics", "F4_capital"],
+      "macro_source": "240K jobs reshored in 2025. 47.5% US tariff on Chinese goods. $630B+ reshoring investment since 2020. But companies reshoring face 2-5 year lag finding US suppliers (P-029). A ready-made multi-capability platform collapses that timeline.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 8, "FA": 9, "EC": 8, "TG": 8, "CE": 6
+      },
+      "composite": 79.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 6, "MA": 6, "VD": 8, "DV": 8,
+        "opportunity_composite": 69.0,
+        "market_concentration": "Fragmented for traditional contract manufacturing, but digital platforms emerging: Xometry ($1.7B market cap, AI quoting), Fictiv (digital manufacturing), Proto Labs ($1.5B market cap, rapid prototyping). However, these platforms primarily INTERMEDIATE between buyers and shops, not OPERATE integrated production. A vertically integrated reshoring platform is different.",
+        "key_incumbents": ["Xometry (AI marketplace for custom manufacturing)", "Proto Labs (rapid prototyping/low-volume)", "Fictiv (digital manufacturing network)", "Jabil (large-scale contract manufacturing)", "Flex (large-scale EMS)", "Regional contract manufacturers"],
+        "entry_barriers": ["Multi-capability production infrastructure", "Quality certifications (ISO 9001, AS9100, ITAR for defense)", "Working capital for materials and WIP", "Customer acquisition cost for reshoring companies", "Engineering support for design-for-manufacturing"],
+        "disruption_vectors": ["AI quoting + scheduling across capabilities", "Tariff-driven urgency (47.5% China tariffs)", "CHIPS Act and defense demand pull", "Reshoring Initiative support and awareness", "2-week quote-to-part vs China's 4-8 week ocean freight"],
+        "rationale": "Reshoring creates demand for US manufacturing capacity that does not yet exist at the needed scale. The 2-5 year investment-to-production lag (P-029) means companies reshoring from China cannot find suppliers quickly. A platform that aggregates multi-capability manufacturing (CNC, sheet metal, welding, assembly, finishing) with AI quoting and scheduling serves as the 'instant factory' for reshoring. Differs from Xometry/Proto Labs in being VERTICALLY INTEGRATED (owning production) vs marketplace (intermediating). MO is 6 because Xometry and Proto Labs exist, but they do not serve high-volume reshoring needs."
+      },
+
+      "deep_dive_evidence": "Reshoring Initiative: 240K jobs reshored in 2025, 1.5M total since 2010. 47.5% avg US tariff on Chinese goods. P-029 confirmed: 2-5 year investment-to-production lag. $630B+ invested in 140 reshoring projects since 2020. 2026 manufacturing revenues projected +4.4%. Xometry revenue $540M+ (2025) growing 20%+ but primarily marketplace model. Contract manufacturing market $500B+ globally. US share growing from 12% to projected 18% by 2030 (reshoring).",
+      "falsification_criteria": [
+        "If US-China tariff truce leads to permanent tariff reduction below 25%, reshoring urgency diminishes and China-based production remains cost-competitive",
+        "If Xometry or Proto Labs pivots to vertically integrated production (owning facilities), the platform advantage evaporates",
+        "If reshoring demand is concentrated in semiconductor/defense sectors only (not broad-based manufacturing), general contract manufacturing platform misses the target"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-011",
+      "name": "Defense Manufacturing Compliance Platform (CMMC + ITAR + AS9100)",
+      "architecture": "vertical_saas",
+      "sector_naics": "3364",
+      "sector_name": "Aerospace Product and Parts Manufacturing",
+      "one_liner": "Unified compliance platform for defense manufacturers: CMMC 2.0 + ITAR + AS9100 + NADCAP in one system, targeting 220K+ DIB companies",
+      "forces": ["F1_technology", "F3_geopolitics"],
+      "macro_source": "CMMC 2.0 enforcement begins 2026, 220K+ DIB companies must certify. Defense spending $961.6B + EUR 800B ReArm Europe. Compliance stack is THE moat in defense manufacturing. MC-DEF-011 (CMMC) scored 82.5 -- extending to manufacturing-specific compliance.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 9, "FA": 8, "EC": 9, "TG": 8, "CE": 7
+      },
+      "composite": 82.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 6, "MA": 5, "VD": 9, "DV": 7,
+        "opportunity_composite": 66.0,
+        "market_concentration": "Emerging but contested: general CMMC compliance tools exist (Summit 7, Prevaion, CyberAB ecosystem), but defense MANUFACTURING-specific compliance (AS9100 + NADCAP + ITAR + CMMC integrated) has no dominant player. Siemens and Dassault offer PLM with some compliance features but not purpose-built for SMB defense manufacturers.",
+        "key_incumbents": ["Summit 7 (CMMC cloud)", "Prevaion (CMMC assessment)", "Siemens Teamcenter (PLM with compliance)", "Dassault 3DEXPERIENCE (PLM)", "ITAR-specific tools (various)", "AS9100 audit firms (QMS consultants)"],
+        "entry_barriers": ["Deep regulatory expertise across multiple frameworks", "FedRAMP/CMMC Level 2+ certification of the platform itself", "Trust/security clearance requirements", "Long sales cycles in defense (12-24 months)", "Integration with existing manufacturing systems (ERP, MES, PLM)"],
+        "disruption_vectors": ["AI-automated compliance documentation", "Continuous monitoring vs point-in-time audits", "Cross-framework mapping (CMMC controls map to AS9100, ITAR, NADCAP)", "Automated SBIR/STTR proposal generation using compliance data", "Supply chain compliance verification (flow-down to sub-tier suppliers)"],
+        "rationale": "Defense manufacturing compliance is a moat with multiple reinforcing layers: CMMC 2.0 (cybersecurity, 220K companies must certify), ITAR (export control, criminal penalties), AS9100 (quality management), NADCAP (special process certification). No existing platform integrates ALL of these for SMB defense manufacturers (4,259 aerospace establishments, thousands more in supporting NAICS codes). The opportunity is a unified platform that reduces compliance cost from $50-200K/yr (consultants + manual processes) to $10-30K/yr (automated + continuous). MO is 6 because general CMMC tools exist, but manufacturing-integrated compliance is greenfield."
+      },
+
+      "deep_dive_evidence": "QCEW 2023: 3364 aerospace has 4,259 establishments, 536,766 workers at $119,482 avg pay (+7.5% employment growth). CMMC 2.0 enforcement begins 2026. 220K+ DIB companies must certify. Defense spending: $961.6B DoD + EUR 800B ReArm Europe. $13.4B AI/autonomy line. MC-DEF-011 (CMMC Compliance Automation) scored 82.5 (top 5 all-time). Counter-UAS $7.5B budget. Defense tech exits $54.4B > investment $49.1B (Deployment phase). ITAR violations carry criminal penalties up to $1M per violation and 20 years imprisonment.",
+      "falsification_criteria": [
+        "If CMMC enforcement is delayed beyond 2027 (as has happened with prior iterations), compliance urgency dissipates",
+        "If Siemens or Dassault launches affordable integrated compliance module within their PLM platforms, purpose-built startups face enterprise displacement",
+        "If DIB consolidation reduces the number of small defense manufacturers (220K shrinks to <100K), addressable market halves"
+      ]
+    },
+    {
+      "id": "MC-V39-MFG-012",
+      "name": "Predictive Maintenance AI for Legacy Manufacturing Equipment",
+      "architecture": "automation",
+      "sector_naics": "333",
+      "sector_name": "Manufacturing - Cross-Sector Equipment Monitoring",
+      "one_liner": "Retrofit IoT sensors + ML models onto legacy CNC machines, presses, and processing lines -- predict failures 2-4 weeks ahead, avoid $10-50K/hr downtime",
+      "forces": ["F1_technology"],
+      "macro_source": "Predictive maintenance reduces unplanned downtime 20-40%. 392K manufacturing establishments with aging equipment (average CNC machine age 12-15 years). Retrofit approach serves the 280K+ shops that cannot afford new equipment.",
+      "source_batch": "v39_deep_dive_manufacturing",
+
+      "scores": {
+        "SN": 7, "FA": 8, "EC": 7, "TG": 8, "CE": 8
+      },
+      "composite": 75.5,
+
+      "competitive_landscape_assessment": {
+        "MO": 6, "MA": 5, "VD": 7, "DV": 7,
+        "opportunity_composite": 62.5,
+        "market_concentration": "Growing market with several players: Augury ($350M+ raised, vibration-based), Uptake (industrial AI analytics), Senseye/Siemens (predictive maintenance), MachineMetrics (machine monitoring), Rockwell Automation (industrial IoT). But SMB-focused, affordable (<$5K/machine) retrofit solutions are limited.",
+        "key_incumbents": ["Augury (vibration-based predictive maintenance)", "Senseye/Siemens (enterprise PdM)", "Uptake (industrial AI)", "MachineMetrics (machine monitoring/OEE)", "Rockwell Automation (PTC/ThingWorx IoT)", "SKF (bearing monitoring)"],
+        "entry_barriers": ["Sensor hardware reliability in harsh manufacturing environments", "ML model training requires failure data (chicken-and-egg problem)", "Integration with diverse legacy equipment (50+ CNC controller types)", "Proving ROI before deployment (shops skeptical of monitoring cost)", "Edge compute reliability requirements"],
+        "disruption_vectors": ["Wireless vibration/temperature sensors dropping below $50/unit", "Transfer learning reducing per-machine training requirements", "MTConnect/OPC-UA standardization enabling plug-and-play monitoring", "Insurance companies offering premium discounts for PdM-equipped shops", "Equipment OEMs bundling monitoring into service contracts"],
+        "rationale": "Predictive maintenance is proven technology with clear ROI (avoiding one unplanned downtime event at $10-50K/hr pays for months of monitoring). The market challenge is DISTRIBUTION, not technology: reaching 280K+ small manufacturers who run 12-15 year old CNC machines, presses, and processing equipment. Incumbents (Augury, Senseye) focus on enterprise deployments ($100K+ contracts). A retrofit solution at <$5K per machine with self-install wireless sensors could capture the SMB long tail. MO is 6 because incumbents exist, but the price point and distribution model for SMB is underserved."
+      },
+
+      "deep_dive_evidence": "Predictive maintenance reduces unplanned downtime 20-40% (industry consensus). Manufacturing equipment average age 12-15 years for CNC machines in SMB shops. Unplanned downtime costs $10-50K+ per hour in lost production. Industrial IoT market $110B+ (2025). Vibration sensor costs below $100/unit. 40% of large manufacturers deployed PdM (2026 projection), but <10% of SMBs. 392K manufacturing establishments, 280K+ with <50 employees running legacy equipment. MachineMetrics raised $50M+ for machine monitoring. Augury raised $350M+.",
+      "falsification_criteria": [
+        "If CNC machine OEMs (Haas, Mazak, DMG Mori) bundle predictive maintenance into new machine purchases, retrofit market is limited to legacy installed base only",
+        "If wireless sensor reliability in manufacturing environments proves insufficient (vibration, coolant, metal chips degrade sensors), retrofit approach fails",
+        "If SMB manufacturers reject subscription-based monitoring ($100-300/month/machine), preferring to run-to-failure, adoption stalls at <15%"
+      ]
+    }
+  ],
+
+  "model_card_summary": {
+    "total_new_cards": 12,
+    "architecture_distribution": {
+      "acquire_and_modernize": 3,
+      "rollup_consolidation": 2,
+      "vertical_saas": 3,
+      "physical_production_ai": 2,
+      "automation": 2
+    },
+    "sub_sector_coverage": {
+      "food_manufacturing_311": 2,
+      "fabricated_metal_332": 1,
+      "machine_shops_3327": 1,
+      "machinery_333": 2,
+      "computer_electronic_334": 1,
+      "plastics_3261": 1,
+      "auto_parts_3363": 1,
+      "aerospace_3364": 1,
+      "cross_sector": 2
+    },
+    "reshoring_models": ["MC-V39-MFG-003 (EV auto parts reshoring)", "MC-V39-MFG-009 (semiconductor OSAT reshoring)", "MC-V39-MFG-010 (contract manufacturing for reshoring)"],
+    "composite_stats": {
+      "max": 82.5,
+      "min": 69.0,
+      "mean": 77.2,
+      "median": 76.5
+    },
+    "opportunity_composite_stats": {
+      "max": 78.5,
+      "min": 61.5,
+      "mean": 68.8,
+      "median": 67.8
+    },
+    "category_assignments": {
+      "STRUCTURAL_WINNER": ["MC-V39-MFG-004 (AI QC Platform, 80.5)", "MC-V39-MFG-008 (Cobot Integration, 80.5)", "MC-V39-MFG-009 (Semiconductor OSAT, 82.0)", "MC-V39-MFG-011 (Defense Compliance, 82.5)"],
+      "FORCE_RIDER": ["MC-V39-MFG-001 (Food A+M, 76.5)", "MC-V39-MFG-003 (Auto Parts EV, 77.5)", "MC-V39-MFG-006 (Fab Metal Rollup, 76.5)", "MC-V39-MFG-010 (Reshoring Platform, 79.5)", "MC-V39-MFG-012 (Predictive Maintenance, 75.5)"],
+      "TIMING_ARBITRAGE": ["MC-V39-MFG-002 (Plastics A+M, 72.5)", "MC-V39-MFG-005 (Cloud MES/ERP, 74.0)"],
+      "CONDITIONAL": ["MC-V39-MFG-007 (Food Rollup, 69.0)"]
+    },
+    "top_5_by_composite": [
+      {"rank": 1, "id": "MC-V39-MFG-011", "name": "Defense Manufacturing Compliance Platform", "composite": 82.5, "opportunity": 66.0},
+      {"rank": 2, "id": "MC-V39-MFG-009", "name": "Semiconductor Test & Packaging Services", "composite": 82.0, "opportunity": 63.5},
+      {"rank": 3, "id": "MC-V39-MFG-004", "name": "Manufacturing AI QC Platform", "composite": 80.5, "opportunity": 64.0},
+      {"rank": 4, "id": "MC-V39-MFG-008", "name": "Cobot Integration Services", "composite": 80.5, "opportunity": 67.5},
+      {"rank": 5, "id": "MC-V39-MFG-010", "name": "Reshoring Contract Manufacturing", "composite": 79.5, "opportunity": 69.0}
+    ],
+    "top_5_by_opportunity": [
+      {"rank": 1, "id": "MC-V39-MFG-001", "name": "Food Manufacturing A+M", "opportunity": 78.5, "composite": 76.5},
+      {"rank": 2, "id": "MC-V39-MFG-002", "name": "Plastics Injection Molding A+M", "opportunity": 75.5, "composite": 72.5},
+      {"rank": 3, "id": "MC-V39-MFG-006", "name": "Fab Metal Rollup Platform", "opportunity": 73.5, "composite": 76.5},
+      {"rank": 4, "id": "MC-V39-MFG-003", "name": "Auto Parts EV Transition A+M", "opportunity": 74.5, "composite": 77.5},
+      {"rank": 5, "id": "MC-V39-MFG-007", "name": "Food Manufacturing Rollup", "opportunity": 70.5, "composite": 69.0}
+    ],
+    "key_insight": "Manufacturing model cards show the OPPOSITE pattern from information/financial services: the highest-OPPORTUNITY models (food A+M 78.5, plastics A+M 75.5) are acquire+modernize plays targeting fragmented physical businesses with no moats, while the highest-COMPOSITE models (defense compliance 82.5, semiconductor OSAT 82.0) have high structural necessity but lower opportunity due to capital barriers and incumbents. This confirms P-016 (Physical Architecture Dominance): physical sector models have higher average opportunity scores because physical businesses have weaker moats than digital businesses."
+  },
+
+  "cross_references": {
+    "existing_manufacturing_cards_not_duplicated": [
+      "C7-AM-MFG-01: Acquire + Modernize CNC Shop (Single Site) -- already covers single CNC shop acquisition. New cards focus on food, plastics, auto parts sub-sectors and multi-site rollup.",
+      "Multi-Shop CNC/Metal Fab Rollup Platform -- similar to MC-V39-MFG-006 but existing card focuses on CNC-specific, new card broadens to all fabricated metal.",
+      "AI-Native Medical Device Contract Manufacturer -- medical device is NAICS 3391, distinct from this deep dive's focus on 311, 332, 333, 334, 336.",
+      "AI-Optimized Liquid Cooling Systems Manufacturer -- niche product play, distinct from platform/services models in this deep dive."
+    ],
+    "complementary_cards_from_other_sectors": [
+      "MC-DEF-011 (CMMC Compliance, 82.5) -- defense compliance extends naturally to defense manufacturers via MC-V39-MFG-011",
+      "V3-EMRG-001 (Micro-Firm AI OS, 84.17 geo_mean) -- micro-firm OS thesis applies directly to 120K+ micro manufacturing establishments",
+      "MC-V37-5415-004 (IT Services Rollup) -- rollup playbook validated in IT services transfers to manufacturing rollup (MC-V39-MFG-006)"
+    ],
+    "patterns_reinforced": [
+      "P-002 (Silver Tsunami) -- manufacturing deep dive confirms 52.3% owner 55+, 58% no succession, average machine shop owner age 57. Manufacturing-specific evidence: businesses closing without sale = permanent production capacity loss.",
+      "P-006 (Robotics x AI) -- cobot economics confirmed: $25-60K, 6-18mo ROI, 42% SME adoption. Market growing 19-21% CAGR. Integration expertise is the bottleneck, not hardware.",
+      "P-016 (Physical Architecture Dominance) -- manufacturing models confirm physical sectors have higher opportunity scores. Fragmented physical businesses with retiring owners have weakest moats in economy.",
+      "P-029 (Reshoring Reality Gap) -- confirmed: 2-5 year lag. 240K jobs reshored in 2025 but TSMC Arizona and Intel Ohio both delayed by labor shortages. The gap creates opportunity for ready-made contract manufacturing platforms."
+    ],
+    "new_pattern_emerging": {
+      "pattern_id": "P-041_candidate",
+      "description": "Manufacturing Modernization Bimodality: Top 1% of establishments (Boeing, Intel, Tesla) are AI-sophisticated, bottom 72% (280K+ shops) run on spreadsheets and manual processes. The gap between the top and bottom of manufacturing is wider than in any other sector. This bimodality creates the acquire+modernize thesis: buying from the bottom and operating at the capability of the top.",
+      "strength": "strong",
+      "evidence": "10% extensively digitized vs 95% planning AI investment. Cloud ERP at 35-40% in manufacturing SMBs vs 70% overall. Average CNC machine age 12-15 years. 21K machine shops on paper scheduling. Meanwhile TSMC fabs run lights-out automated.",
+      "falsification": "If the bottom 72% rapidly self-modernize (adopting cloud ERP, cobots, AI QC without acquisition), the gap closes organically and the acquire+modernize thesis weakens."
+    }
+  },
+
+  "data_sources": [
+    "BLS QCEW 2022-2023 annual averages (private sector, national) -- primary employment, establishment, wage data",
+    "BLS Current Employment Statistics (CES) Dec 2025 -- 12.69-12.70M manufacturing employment",
+    "Semiconductor Industry Association -- $630B invested in 140 projects, 500K jobs since 2020",
+    "Reshoring Initiative -- 240K jobs reshored in 2025, 1.5M since 2010",
+    "MarketsAndMarkets Collaborative Robot Market Report 2025 -- $1.9B (2025) to $3.38B (2030)",
+    "Rockwell Automation State of Smart Manufacturing Report 2024 -- 45% QC as #1 AI use case",
+    "IntelMarketResearch AI Defect Detection Market 2025 -- $3.71B growing to $6.63B (2034)",
+    "GlobeNewsWire Food Automation Industry Report 2026 -- $12.64B to $20.35B (2031)",
+    "Fortune Business Insights ERP Software Market -- $72.6B (2025) to $225.4B (2035)",
+    "PwC Industrial Manufacturing Deals Outlook 2026 -- 19% M&A value growth, 14.4% platform deals increase",
+    "Deloitte 2026 Manufacturing Industry Outlook -- 4.4% revenue increase, 3% capex increase projected",
+    "US Census Bureau Current Population Survey -- 52.3% employer businesses owned by 55+",
+    "Manufacturing Dive 2025 Trends -- employment stability, reshoring acceleration",
+    "ElectroIQ Collaborative Robots Statistics 2025 -- 42% SME adoption, application breakdown",
+    "Mordor Intelligence Food Processing Automation Market -- $27.95B (2025) to $40.12B (2030)"
+  ],
+
+  "analyst_notes": {
+    "key_thesis": "Manufacturing is the economy's most actionable transformation sector because it combines ALL favorable conditions: (1) extreme fragmentation in key sub-sectors (60K+ fab metal shops, 21K+ machine shops), (2) acute demographic pressure (owner age 57 avg, 58% no succession plan), (3) proven cobot/AI technology with 6-18 month ROI, (4) reshoring/tariff tailwind creating new demand, (5) low psychological friction (gap=1, workers accept cobots as tools not threats), and (6) the transformation is ADDITIVE (cobots augment scarce workers) not SUBTRACTIVE (AI replacing existing workers). This is why 10 of the top-20 most actionable models across the entire engine are acquire+modernize in manufacturing/trades.",
+
+    "what_surprised_us": [
+      "Manufacturing Baumol dynamics are INVERTED: lowest-wage sub-sectors (food 0.82, plastics 0.91) have MOST transformation potential, while highest-wage (semiconductors 3.77) are LEAST likely to see wage compression. This is the opposite of every professional services sector deep dive.",
+      "The implementation gap (10% digitized vs 95% planning AI) is wider than any other sector. Not because technology is unavailable -- because the 280K+ small shops have no technical staff to deploy it. The constraint is INTEGRATION, not innovation.",
+      "Fabricated metal's +4.7% wage growth is the highest in manufacturing and indicates Baumol energy BUILDING, not yet releasing. This sub-sector may be at the pre-disruption stage that financial services was 3 years ago.",
+      "Aerospace employment growth (+7.5%) is the fastest of any manufacturing sub-sector, driven by a triple tailwind: defense spending, CHIPS Act tooling demand, and commercial aviation recovery. This is ADDITIVE automation: more workers AND more robots."
+    ],
+
+    "risk_factors": [
+      "Tariff policy reversal: if US-China tariffs are reduced below 25%, reshoring economics weaken and 3 of 12 model cards (MFG-003, MFG-009, MFG-010) lose their primary driver",
+      "PE manufacturing rollup execution risk: integrating diverse manufacturing processes across sites is harder than integrating IT services or financial advisory practices. Rollup failures are possible.",
+      "Labor pipeline: if the skilled trades pipeline does not rebuild (CTE enrollment, apprenticeships), even cobot-augmented shops face labor constraints. Cobots augment workers, they do not fully replace them.",
+      "China competitive pressure: China's 90% humanoid robot market share and demographic imperative (7.92M births, -17%) mean China will automate manufacturing faster than the US, potentially restoring competitive advantage even with tariffs."
+    ],
+
+    "confidence_assessment": {
+      "sector_context": "HIGH -- QCEW data is authoritative, BLS CES corroborates, reshoring/CHIPS Act investment data is publicly verifiable",
+      "baumol_analysis": "HIGH -- mathematical derivation from QCEW wage data, interpretation consistent with framework",
+      "transformation_projections": "MEDIUM -- 2026-2027 high confidence (near-term visible), 2028-2031 medium-low (dependent on policy continuity, technology cost curves, macro conditions)",
+      "model_cards": "MEDIUM-HIGH -- all 12 grounded in specific sub-sector data, CLA scores calibrated against existing manufacturing cards (C7-AM-MFG-01: 78.25 geo_mean)"
+    }
+  }
+}

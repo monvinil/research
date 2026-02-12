@@ -1,0 +1,334 @@
+{
+  "cycle": "v3-9",
+  "date": "2026-02-12",
+  "description": "CLA refinement for mid-tier opportunity models (O-rank 20-60). Manual overrides replacing heuristic scores based on web-researched competitive landscape analysis. Each model scored on 4 CLA axes: MO (Market Openness, 30%), MA (Moat Architecture fragility, 25%), VD (Value Chain Depth, 20%), DV (Disruption Vectors, 25%). Composite = (MO*30 + MA*25 + VD*20 + DV*25) / 10.",
+  "methodology": "For each model: (1) identified current heuristic CLA scores, (2) researched actual competitive landscape via web search (incumbents, market concentration, moats, disruption vectors), (3) assigned manual scores with research-backed rationale. Scores reflect Feb 2026 market conditions.",
+  "overrides_count": 38,
+  "overrides": {
+    "MC-V37-55-005": {
+      "MO": 7,
+      "MA": 7,
+      "VD": 5,
+      "DV": 7,
+      "composite": 66.0,
+      "rationale": "Heuristic scored 9/8/4/9=77.5, inflated by acquire_and_modernize archetype + fragmentation keywords. Reality: executive succession planning market has established players (SAP, Oracle, Workday, Cornerstone OnDemand, TalentGuard) with ~30% CR4. Market is competitive not greenfield. AI augmentation layer is new but large HCM platforms are integrating AI features rapidly. Silver Tsunami creates real demand but this is a B2B enterprise sale to corporate boards, not a fragmented consumer market. Lowering MO from 9 to 7 (competitive but viable entry), MA from 8 to 7 (HCM platforms have moderate switching costs), raising VD from 4 to 5 (assessment, matching, transition management, AI augmentation layers), lowering DV from 9 to 7 (demographic forcing function real but HCM platforms adapting)."
+    },
+    "PC8-FSR-INDMACH-01": {
+      "MO": 6,
+      "MA": 6,
+      "VD": 5,
+      "DV": 6,
+      "composite": 58.0,
+      "rationale": "Heuristic scored 9/8/4/8=76.0 via full_service_replacement + wholesale sector bonus. Reality: industrial machinery distribution has meaningful incumbents — Caterpillar, Komatsu, Deere dealer networks are deeply entrenched with 67% of market flowing through indirect channels. Wholesaler relationships and service capabilities create real switching costs. Market is competitive not fragmented for this segment. AI-native distribution is genuinely new but requires massive capital for inventory + service infrastructure. Lowering MO from 9 to 6 (established dealer networks dominate), MA from 8 to 6 (manufacturer relationships + service infrastructure = real moats), raising VD from 4 to 5 (distribution, service, parts, digital ordering, predictive maintenance layers), lowering DV from 8 to 6 (IoT/AI diagnostic tools open entry but dealer lock-in is structural)."
+    },
+    "C7-AM-BAKERY-01": {
+      "MO": 9,
+      "MA": 9,
+      "VD": 3,
+      "DV": 7,
+      "composite": 72.5,
+      "rationale": "Heuristic scored 9/9/4/7=75.0. Mostly accurate but VD slightly inflated. Wholesale bakery market is genuinely extremely fragmented with retiring owners. No moats — local brand and recipes. But value chain depth is shallow: you buy a bakery, add cobots/AI QC, and operate it. Only 2-3 real layers (production, quality/compliance, distribution). Lowering VD from 4 to 3 to reflect limited defensible stack positions. FSMA 204 compliance moat is real but narrow."
+    },
+    "C7-AM-CONFECTION-01": {
+      "MO": 9,
+      "MA": 9,
+      "VD": 3,
+      "DV": 7,
+      "composite": 72.5,
+      "rationale": "Nearly identical dynamics to C7-AM-BAKERY-01. Specialty confectionery is fragmented, retiring owners, no moats. Value chain is shallow — production, QC, distribution. Same VD correction from 4 to 3. Chocolate/candy production has slightly more process complexity than baking but fundamentally similar acquire-and-modernize play."
+    },
+    "C7-AM-MEATPROCESS-01": {
+      "MO": 8,
+      "MA": 8,
+      "VD": 3,
+      "DV": 6,
+      "composite": 64.5,
+      "rationale": "Heuristic scored 9/9/4/7=75.0. Meat processing has more regulatory complexity than bakery/confectionery — USDA FSIS inspection requirements, HACCP plans, wastewater permits are meaningful barriers. Not as wide open as heuristic suggests. Large processors (Tyson, JBS, Cargill) dominate at scale but specialty/artisan is fragmented. Lowering MO from 9 to 8 (USDA inspection requirements add friction), MA from 9 to 8 (some brand/distribution moats in specialty), VD from 4 to 3 (shallow stack same as food A&M), DV from 7 to 6 (less disruption from AI than software sectors — this is physical production)."
+    },
+    "C7-AW-STAFF-01": {
+      "MO": 7,
+      "MA": 7,
+      "VD": 3,
+      "DV": 7,
+      "composite": 62.0,
+      "rationale": "Heuristic scored 8/10/3/7=75.0 via distress_operator archetype. Reality: staffing market shows top-50 firms controlling ~30% market share. Q1 2025 saw 25% YoY increase in deal volume. PE-distressed staffing agencies are available but buyers are sophisticated — PE add-on deals dominate (5 of 8 PE deals in Q2 2025 were add-ons). This is a competitive M&A market, not a greenfield. Lowering MO from 8 to 7 (competitive buyer market for quality assets), MA from 10 to 7 (staffing relationships and client contracts create moderate moats), VD stays at 3 (execute the deal, modernize ops, grow — limited layers). DV stays at 7 (AI automation of recruiting, margin pressure on legacy operators real)."
+    },
+    "MC-V37-53-001": {
+      "MO": 6,
+      "MA": 7,
+      "VD": 4,
+      "DV": 7,
+      "composite": 60.0,
+      "rationale": "Heuristic scored 9/8/4/8=75.0. Reality: CRE distressed debt market is competitive. Over 430 closed-end debt funds raised $137B+ since 2020 for debt strategies. Blackstone, Starwood, KKR, Cerberus are major players. The $936B maturity wall creates massive opportunity but sophisticated capital is already positioned. This is NOT a fragmented market — it's an institutional capital market with high-sophistication players. Lowering MO from 9 to 6 (heavily competed by institutional capital), MA from 8 to 7 (relationships with lenders/servicers create moderate moats), VD stays at 4 (direct lending, workout advisory, asset management, data platform), DV from 8 to 7 (maturity wall is real forcing function but everyone sees it)."
+    },
+    "MC-V37-53-008": {
+      "MO": 5,
+      "MA": 6,
+      "VD": 4,
+      "DV": 7,
+      "composite": 54.5,
+      "rationale": "Heuristic scored 8/9/3/9=75.0, heavily inflated by arbitrage_window archetype. Reality: CRE-to-data-center conversion is dominated by major players — Blackstone, KKR, Digital Realty, Equinix. Hyperscalers (Amazon, Google, Meta, Microsoft) deploying $511B in 2026. Power access is the binding constraint, not real estate availability. Individual CRE-to-DC conversions require $100M+ capital, specialized engineering, utility interconnection. This is NOT accessible to small entrants. Lowering MO from 8 to 5 (capital-intensive, dominated by institutional players), MA from 9 to 6 (power purchase agreements + utility relationships create real moats), VD from 3 to 4 (site selection, power procurement, building conversion, tenant management), DV from 9 to 7 (demand is enormous but capital requirements exclude small players)."
+    },
+    "MC-V37-5415-003": {
+      "MO": 8,
+      "MA": 7,
+      "VD": 5,
+      "DV": 7,
+      "composite": 68.5,
+      "rationale": "Heuristic scored 9/8/4/8=75.0 via acquire_and_modernize. MSP market is genuinely fragmented ($356B market, top 5 don't dominate). ConnectWise, Kaseya/Datto, N-able provide tools but don't own the MSPs. Acquire-and-modernize pathway is viable — buy legacy MSPs at 4-6x EBITDA, deploy AI-native NOC/SOC. But ConnectWise Pro (2025 launch) and Kaseya's consolidation push are creating platform lock-in. Lowering MO from 9 to 8 (platform vendors consolidating), MA from 8 to 7 (client contracts and technology stack create switching costs), raising VD from 4 to 5 (monitoring, security, helpdesk, cloud management, compliance — rich layer stack), DV from 8 to 7 (AI automation is real but incumbents adapting fast)."
+    },
+    "PC8-AM-ELECREPAIR-01": {
+      "MO": 9,
+      "MA": 9,
+      "VD": 3,
+      "DV": 5,
+      "composite": 66.5,
+      "rationale": "Heuristic scored 9/8/4/7=75.0. Electronic equipment repair market has 35,361 businesses in US, genuinely extremely fragmented. No moats. But: industry revenue declining at 1.4% CAGR (consumers replace rather than repair). Market is wide open but shrinking. VD is low (acquire shop, add diagnostic AI, operate — 2-3 layers at most). DV is lower than heuristic suggests — AI diagnostics help but don't fundamentally transform repair economics. Keeping MO at 9 (truly fragmented), raising MA to 9 (zero moats), lowering VD from 4 to 3 (shallow stack), lowering DV from 7 to 5 (shrinking market, limited disruption paths beyond AI diagnostics)."
+    },
+    "MC-INFO-005": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 6,
+      "DV": 7,
+      "composite": 56.5,
+      "rationale": "Heuristic scored 8/8/5/8=74.0, inflated by vertical_saas + information sector bonus. Reality: telecom AIOps market already has significant players — IBM, BMC Software, Broadcom, Splunk, ServiceNow, Amdocs, Cisco, Dynatrace. Market growing rapidly (46.6% CAGR) but competitive. Amdocs/Google Cloud partnership demonstrates hyperscaler involvement. Telecom operators are conservative enterprise buyers with long procurement cycles. Lowering MO from 8 to 5 (multiple established AIOps vendors already competing), MA from 8 to 5 (vendor relationships + certified integrations create real moats), VD stays at 6 (network monitoring, anomaly detection, capacity planning, NOC automation — rich stack), DV from 8 to 7 (5G complexity and AI-native tooling create genuine openings but incumbents are investing heavily)."
+    },
+    "MC-INFO-010": {
+      "MO": 4,
+      "MA": 4,
+      "VD": 6,
+      "DV": 8,
+      "composite": 53.5,
+      "rationale": "Heuristic scored 8/8/6/8=74.0. Reality: AI video production dominated by well-funded startups — Runway ($3B+ valuation, $308M Series D), Pika Labs, Kling (Kuaishou), plus Google Veo, OpenAI Sora. This is NOT fragmented; it's a heavily venture-backed competitive market with network effects (training data, user communities). Hyperscaler involvement (Google, OpenAI) makes this very difficult for new entrants. Stack is rich (generation, editing, effects, post-production) but top players are rapidly expanding across layers. Lowering MO from 8 to 4 (VC-backed leaders + hyperscalers dominating), MA from 8 to 4 (data moats + compute requirements + brand create barriers), VD stays at 6 (multiple layers but leaders expanding fast), DV stays at 8 (technology moving extremely fast, no stable equilibrium yet)."
+    },
+    "MC-V37-53-003": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 6,
+      "DV": 7,
+      "composite": 56.5,
+      "rationale": "Heuristic scored 8/7/5/9=74.0. Reality: property management software market has strong incumbents — Yardi, AppFolio (AI-powered Realm-X launched 2025), MRI Software, RealPage, Buildium. AppFolio is already #1 with AI-native features. Yardi dominates enterprise. This is not a fragmented market — it's an oligopoly with strong switching costs (tenant data, accounting history, integration with banking). Lowering MO from 8 to 5 (Yardi+AppFolio+MRI dominate), MA from 7 to 5 (deep data lock-in + tenant/owner relationships), VD stays at 6 (leasing, maintenance, accounting, communications, analytics layers), DV from 9 to 7 (AI is a disruption vector but AppFolio is already executing on it aggressively)."
+    },
+    "PC8-AB-SURVEYING-01": {
+      "MO": 8,
+      "MA": 7,
+      "VD": 5,
+      "DV": 6,
+      "composite": 65.5,
+      "rationale": "Heuristic scored 8/6/5/6=73.5. Land surveying is genuinely fragmented with many small practices. Drone+LiDAR+AI integration is transforming the field. However: Trimble, Faro, Leica Geosystem dominate hardware/software stack, creating equipment vendor lock-in. Professional licensure requirements in all 50 states limit pure-tech entry. Keeping MO at 8 (fragmented practices), raising MA from 6 to 7 (surveyor licenses + client relationships are weak moats easily disrupted by tech), VD stays at 5 (field capture, processing, analysis, deliverable generation, compliance — moderate depth), DV stays at 6 (drone/AI disruption real but licensure limits pure tech plays)."
+    },
+    "PC8-FSR-LANDSCAPE-01": {
+      "MO": 8,
+      "MA": 8,
+      "VD": 4,
+      "DV": 6,
+      "composite": 66.0,
+      "rationale": "Heuristic scored 8/7/6/7=73.5. Landscaping genuinely fragmented — top 5 companies hold only 8.6% market share. $186B US market. PE rollup activity increasing (Wind Point/ExperiGreen 2025). But: service operations are labor-intensive with thin margins. Only 17% of landscaping companies use AI. Value chain is shallower than heuristic suggests for a 'full service replacement' model. Keeping MO at 8 (extremely fragmented), raising MA from 7 to 8 (essentially no moats — local brand only), lowering VD from 6 to 4 (crew scheduling, route optimization, client management, billing — moderate layers but largely commoditized), lowering DV from 7 to 6 (AI route optimization and robotic mowing are real but adoption is very slow in this industry)."
+    },
+    "PC8-FSR-MKTCONSULT-01": {
+      "MO": 8,
+      "MA": 7,
+      "VD": 5,
+      "DV": 7,
+      "composite": 68.0,
+      "rationale": "Heuristic scored 8/7/5/7=73.5. Marketing agency market is genuinely fragmented with strong AI disruption. $27B+ AI-in-marketing market growing 27.7% CAGR. 88% of marketers use AI daily but only 26% generate tangible value — execution gap = opportunity. Fortune 500 companies building in-house teams, pressuring traditional agencies. Multi-agency fragmentation per brand is standard. Keeping MO at 8 (highly fragmented), MA from 7 stays (brand relationships + campaign history create moderate switching costs), VD stays at 5 (strategy, content creation, media buying, analytics, automation), DV stays at 7 (AI fundamentally restructuring marketing agency economics). Scores largely correct, keeping close to heuristic."
+    },
+    "PC8-FSR-CHEMDIST-01": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 5,
+      "DV": 5,
+      "composite": 50.0,
+      "rationale": "Heuristic scored 7/7/6/7=73.0 via full_service_replacement + wholesale sector bonus. Reality: chemical distribution market is NOT fragmented at the relevant scale. Brenntag and IMCD alone represent ~40% of North American market. Univar Solutions, Brenntag, IMCD have deep supplier relationships, regulatory compliance infrastructure (REACH, TSCA), and logistics networks that create strong moats. Safety/compliance requirements (hazmat transport, storage permits) are real barriers. Lowering MO from 7 to 5 (top players dominate), MA from 7 to 5 (regulatory compliance + supplier relationships = real moats), VD from 6 to 5 (sourcing, logistics, compliance, safety intelligence — moderate depth), DV from 7 to 5 (AI safety intelligence is a differentiator but doesn't break incumbent moats)."
+    },
+    "PC8-FSR-ELECDIST-01": {
+      "MO": 4,
+      "MA": 4,
+      "VD": 5,
+      "DV": 5,
+      "composite": 44.5,
+      "rationale": "Heuristic scored 7/7/6/7=73.0 via full_service_replacement + wholesale sector bonus. Reality: electrical distribution is concentrated — top 10 distributors hold ~52% of $145B market. WESCO, Sonepar, Graybar, CED, Rexel alone hold 43%. Active acquisition activity (Sonepar made 7 major acquisitions). Manufacturer-distributor relationships + territory agreements create strong moats. This is NOT a fragmented market accessible to new entrants. Lowering MO from 7 to 4 (highly concentrated, top-heavy), MA from 7 to 4 (manufacturer relationships + branch networks = hard moats), lowering VD from 6 to 5 (distribution, technical support, project quotation, inventory management), lowering DV from 7 to 5 (digital ordering is incremental, not disruptive to incumbent scale)."
+    },
+    "PC8-FSR-MEDSUPPLY-01": {
+      "MO": 4,
+      "MA": 4,
+      "VD": 5,
+      "DV": 5,
+      "composite": 44.5,
+      "rationale": "Heuristic scored 7/7/6/7=73.0 via full_service_replacement + wholesale sector bonus. Reality: medical equipment distribution extremely concentrated. McKesson ($309B), AmerisourceBergen/Cencora ($262B), Cardinal Health ($227B) dominate pharmaceutical distribution at 92%. Medical device distribution has 10,000+ establishments but top 5 (Cardinal, McKesson, Medline, Owens & Minor, Henry Schein) control significant share. GPO (group purchasing organization) relationships create additional lock-in. Lowering MO from 7 to 4 (Big 3 dominate, GPO contracts lock in), MA from 7 to 4 (GPO relationships + logistics infrastructure = hard moats), VD from 6 to 5 (distribution, inventory management, compliance, lifecycle tracking), DV from 7 to 5 (AI adds value but doesn't break GPO/scale moats)."
+    },
+    "PC8-FSR-PETROL-01": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 4,
+      "DV": 4,
+      "composite": 45.5,
+      "rationale": "Heuristic scored 7/7/5/7=73.0 via full_service_replacement + wholesale sector bonus. Reality: petroleum distribution has 2,000+ wholesalers but ExxonMobil, Chevron, Shell hold ~40% combined market share. Valero, Marathon Petroleum, Phillips 66 are major US players. Capital-intensive (storage terminals, fleet, environmental compliance). Industry revenue growing only 0.3% CAGR — mature/declining. Energy transition reduces long-term TAM. Lowering MO from 7 to 5 (majors dominate, capital-intensive), MA from 7 to 5 (terminal infrastructure + supply contracts = real moats), VD from 5 to 4 (logistics, compliance, pricing — limited differentiation), DV from 7 to 4 (AI helps optimize routes/pricing but doesn't disrupt scale economics, plus energy transition headwind)."
+    },
+    "PC8-SC-MEDDEVICE-01": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 6,
+      "DV": 6,
+      "composite": 54.5,
+      "rationale": "Heuristic scored 7/7/6/7=73.0. Reality: medical device lifecycle management has existing players (Arena/PTC supply chain intelligence, Siemens acquiring Dotmatics for $5.1B in 2025). FDA pathway creates both barrier and moat. Over 1,250 AI-enabled medical devices now FDA-authorized. Large engineering firms (Accenture, Cognizant) serve this space. Lowering MO from 7 to 5 (established players + FDA complexity), MA from 7 to 5 (FDA clearance + hospital procurement relationships = moderate moats), VD stays at 6 (design, testing, regulatory, manufacturing, distribution, post-market surveillance — rich stack), DV from 7 to 6 (FDA deregulation Jan 2026 creates some openings but established companies benefit too)."
+    },
+    "V3-FEAR-007": {
+      "MO": 7,
+      "MA": 7,
+      "VD": 6,
+      "DV": 7,
+      "composite": 67.5,
+      "rationale": "Heuristic scored 7/7/5/7=73.0 via fear_economy_capture. Reality: AI watermarking/provenance market is nascent but C2PA coalition (200+ members) led by Adobe, Microsoft, Google is setting standards. Google SynthID provides free watermarking. EU AI Act mandates visible disclosures after Aug 2026. No single dominant commercial platform but hyperscalers embedding capabilities natively. Market is between nascent (good for entrants) and being captured by big tech (bad for entrants). Keeping MO at 7 (nascent commercial market, but C2PA creates standard), keeping MA at 7 (no established moats yet but Google/Adobe positioning), raising VD from 5 to 6 (capture, embedding, detection, verification, registry, marketplace layers), keeping DV at 7 (regulatory mandates + deepfake escalation create forcing functions)."
+    },
+    "MC-V37-53-009": {
+      "MO": 6,
+      "MA": 6,
+      "VD": 4,
+      "DV": 6,
+      "composite": 56.0,
+      "rationale": "Heuristic scored 9/7/4/8=72.5 via rollup_consolidation + real estate sector bonus + retiring keywords. Reality: small real estate brokerage rollup faces accelerating consolidation by Compass (acquiring Anywhere Real Estate for $10B combined entity, 340K agents). eXp Realty growing via virtual model. Top 10 brokerages now control 25.7%+ of volume. 27 of top 100 brokerages from 2018 already acquired. The rollup window is narrowing as large players consolidate aggressively. Lowering MO from 9 to 6 (Compass-Anywhere merger squeezing small brokerages), MA from 7 to 6 (agent relationships are moderate moats but agents switch), VD stays at 4 (acquisition, technology integration, agent retention — limited layers), DV from 8 to 6 (Silver Tsunami is real but Compass is the primary beneficiary)."
+    },
+    "MC-V37-62-007": {
+      "MO": 6,
+      "MA": 6,
+      "VD": 5,
+      "DV": 7,
+      "composite": 60.0,
+      "rationale": "Heuristic scored 8/8/3/9=72.5 via distress_operator + FEAR_ECONOMY bonus. Reality: PE healthcare turnaround is competitive — disclosed deal value exceeded $191B in 2025. 44% of healthcare M&A involved distressed parties. Major players (KKR, Cerberus, Apollo) actively pursuing healthcare turnarounds. Specialized operators (US Physical Therapy, Kindred) exist. Not greenfield. Lowering MO from 8 to 6 (sophisticated PE buyers competing), MA from 8 to 6 (healthcare licenses + payor contracts create moderate moats), raising VD from 3 to 5 (clinical operations, revenue cycle, compliance, staffing, technology — richer stack than pure distress play), DV from 9 to 7 (distress cycle creates openings but institutional capital already positioned)."
+    },
+    "PC8-RC-HEAVYCIVIL-01": {
+      "MO": 7,
+      "MA": 7,
+      "VD": 4,
+      "DV": 7,
+      "composite": 63.5,
+      "rationale": "Heuristic scored 8/9/4/7=72.0 via rollup_consolidation + construction sector bonus + TIMING_ARBITRAGE. Heavy civil construction genuinely fragmented with many small/mid firms. IIJA peak spend in 2026 ($209.1B transportation construction). PE consolidation active. But: bonding capacity requirements limit acquisitions, equipment fleet capital is significant, and the IIJA is expiring Sept 2026 (reauthorization uncertain). Lowering MO from 8 to 7 (fragmented but bonding/capital barriers), MA from 9 to 7 (bonding capacity + equipment + government relationships = moderate moats), VD stays at 4 (acquisition, fleet management, project bidding, AI project management), DV stays at 7 (IIJA spending peak + labor shortage driving AI adoption, but reauthorization risk)."
+    },
+    "PC8-RC-LANDSCAPE-01": {
+      "MO": 8,
+      "MA": 8,
+      "VD": 4,
+      "DV": 6,
+      "composite": 66.0,
+      "rationale": "Heuristic scored 8/9/4/7=72.0 via rollup_consolidation + construction sector bonus. Landscaping rollup is viable — top 5 hold only 8.6% market share. PE firms (Wind Point, Verde Equity) actively rolling up. $186B market. But: labor-intensive with thin margins, seasonal revenue, and only 17% AI adoption. Value chain is shallow for a rollup model. Keeping MO at 8 (extremely fragmented), MA from 9 to 8 (almost no moats — local brand, maybe a few commercial contracts), VD stays at 4 (acquire, centralize back-office, optimize routes, grow — limited layers), DV from 7 to 6 (AI and robotic mowing are real but industry adoption is very slow)."
+    },
+    "C7-RMB-CONSTRUCTION-01": {
+      "MO": 6,
+      "MA": 6,
+      "VD": 6,
+      "DV": 6,
+      "composite": 60.0,
+      "rationale": "Heuristic scored 8/8/5/6=71.5 via regulatory_moat_builder + construction sector bonus. Reality: construction management software market is moderately fragmented with enterprise incumbents — Procore, Oracle, Autodesk, Trimble, Bentley. Market growing to $17.7B by 2031 at 8.88% CAGR. Permitting specifically: PermitFlow and other startups exist but AEC software giants expanding into this space. AI permitting/compliance is genuinely new but big players can integrate quickly. Lowering MO from 8 to 6 (Procore + Autodesk + Oracle competing), MA from 8 to 6 (vendor lock-in from CDE integrations is real), VD stays at 6 (permitting, plan review, compliance tracking, code checking, inspection scheduling — moderate depth), DV stays at 6 (AI code checking + regulatory complexity create openings but incumbents adapting)."
+    },
+    "C7-RMB-VET-01": {
+      "MO": 6,
+      "MA": 6,
+      "VD": 5,
+      "DV": 6,
+      "composite": 58.0,
+      "rationale": "Heuristic scored 8/7/5/6=71.5 via regulatory_moat_builder. Reality: veterinary software market has established players — IDEXX ($1.43B market, 13.2% CAGR), Covetrus/Henry Schein, Shepherd Vet Software, Digitail. IDEXX Neo and Shepherd already offer AI-powered features. Market is not as fragmented as heuristic assumes. Vet practice consolidation (Mars Veterinary, NVA) reduces addressable market for independent practice tools. Lowering MO from 8 to 6 (IDEXX + Covetrus + consolidators dominate), MA from 7 to 6 (practice management data lock-in + distributor bundling = moderate moats), VD stays at 5 (scheduling, records, compliance, billing, inventory — moderate layers), DV stays at 6 (AI features genuinely new but established vendors integrating rapidly)."
+    },
+    "MC-EDU-CORP-01": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 5,
+      "DV": 7,
+      "composite": 55.0,
+      "rationale": "Heuristic scored 8/8/5/6=71.5 via academy_platform + education sector bonus. Reality: enterprise AI reskilling market has strong incumbents — Coursera for Business, Udemy Business, Pluralsight (Skillsoft), Degreed, LinkedIn Learning. 72% of managers report skills gap concerns but platform market is competitive. Enterprise LMS market is mature. AI-specific training content is new but existing platforms adding it rapidly. Lowering MO from 8 to 5 (Coursera, Udemy, LinkedIn Learning, Pluralsight well-established), MA from 8 to 5 (enterprise contracts + content libraries + learner data = moderate moats), VD stays at 5 (content creation, delivery, assessment, credentialing, analytics), DV from 6 to 7 (AI skills gap is massive and growing, creating genuine urgency that benefits new specialized entrants — but existing platforms capture most demand)."
+    },
+    "MC-EDU-FEAR-01": {
+      "MO": 7,
+      "MA": 8,
+      "VD": 5,
+      "DV": 7,
+      "composite": 67.5,
+      "rationale": "Heuristic scored 8/8/5/8=71.5 via academy_platform + education sector bonus + FEAR_ECONOMY. Education AI safety/governance is genuinely nascent — only 26 US states have issued guidance, 53 bills proposed in 2025. 18% of principals report school/district AI guidance. No dominant commercial platform exists. TeachAI toolkit is free/nonprofit. Regulatory fragmentation across 50 states creates complexity that demands specialized tools (similar to healthcare AI governance). Keeping MO at 7 (nascent, no dominant player), raising MA to 8 (no incumbent moats to break), VD stays at 5 (policy management, content filtering, teacher training, student monitoring, compliance reporting), DV from 8 to 7 (regulatory momentum is real but K-12 budgets are tight and adoption slow)."
+    },
+    "MC-EDU-TEACH-01": {
+      "MO": 5,
+      "MA": 4,
+      "VD": 5,
+      "DV": 6,
+      "composite": 50.0,
+      "rationale": "Heuristic scored 8/8/5/6=71.5 via academy_platform + education sector bonus. Reality: AI teaching assistant market already has strong players — Khan Academy Khanmigo (1.4M users, 380+ district partners), MagicSchool AI (6M+ educator users, exceeding total US K-12 teachers). Google Socratic. $5.88B market growing 31.2% CAGR. Khanmigo has first-mover advantage with massive distribution. MagicSchool AI has already achieved saturation-level adoption. Lowering MO from 8 to 5 (Khanmigo + MagicSchool already dominant), MA from 8 to 4 (Khanmigo's district partnerships + free tier + Khan Academy brand = strong moat), VD stays at 5 (tutoring, lesson planning, assessment generation, grading, differentiation), DV from 6 stays (open-source LLMs could enable alternatives but Khan/MagicSchool distribution is hard to beat)."
+    },
+    "MC-EDU-UNIV-01": {
+      "MO": 4,
+      "MA": 4,
+      "VD": 5,
+      "DV": 6,
+      "composite": 47.0,
+      "rationale": "Heuristic scored 8/8/5/6=71.5 via academy_platform + education sector bonus. Reality: university back-office operations dominated by Ellucian (Banner 24% SIS market share + Colleague), Workday Student (rising), Oracle PeopleSoft, Anthology. These are deeply integrated enterprise systems with 10-20 year switching cycles. Higher ed IT is extremely conservative. AI layer on top of existing systems is the most viable entry but Ellucian and Workday already integrating AI. Lowering MO from 8 to 4 (Ellucian + Workday + Oracle dominate, ultra-long sales cycles), MA from 8 to 4 (decades of student data lock-in + integration depth = very strong moats), VD stays at 5 (admissions, registration, finance, HR, analytics — moderate layers), DV stays at 6 (enrollment cliff creates urgency + AI adds value but incumbents are the primary beneficiaries)."
+    },
+    "MC-V35-5411-001": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 5,
+      "DV": 7,
+      "composite": 55.0,
+      "rationale": "Heuristic scored 8/7/5/7=71.5 via vertical_saas + professional services sector bonus. Reality: legal AI market already competitive — Harvey ($200M+ raised, unicorn), CoCounsel/Casetext (77.2% document summarization score), Lexis+ AI, plus 80+ AI legal assistants listed on Legaltech Hub. 95% of legal professionals believe AI will become central to workflows. Market is crowded with well-funded competitors. Small/mid-size law firm segment specifically underserved but Harvey and CoCounsel expanding down-market. Lowering MO from 8 to 5 (Harvey, CoCounsel, Lexis+ AI, and 80+ competitors), MA from 7 to 5 (data relationships + firm workflow integration create moderate moats), VD stays at 5 (document drafting, research, review, filing, client communication), DV stays at 7 (AI fundamentally restructuring legal economics, massive productivity gains)."
+    },
+    "MC-V35-5413-001": {
+      "MO": 5,
+      "MA": 4,
+      "VD": 6,
+      "DV": 6,
+      "composite": 52.0,
+      "rationale": "Heuristic scored 8/7/5/7=71.5. AEC design and permitting market has strong incumbents — Autodesk, Trimble, Bentley Systems, Procore, Oracle. CAD software market $30.17B in 2026. Autodesk/Revit + Bentley tools create deep vendor lock-in through CDE (Common Data Environment) integration. 11% of firms already using AI in architectural design (growing 20% YoY). PermitFlow is a startup in permitting but Autodesk ecosystem is hard to displace. Lowering MO from 8 to 5 (Autodesk + Trimble + Bentley dominate), MA from 7 to 4 (CDE integration lock-in = strong moats), VD stays at 6 (design, analysis, compliance checking, permitting, project management — rich stack), DV from 7 to 6 (AI tools adding value but Autodesk integrating AI natively)."
+    },
+    "MC-V35-5417-001": {
+      "MO": 5,
+      "MA": 5,
+      "VD": 6,
+      "DV": 7,
+      "composite": 56.5,
+      "rationale": "Heuristic scored 8/7/5/7=71.5 via vertical_saas + professional services sector bonus. Reality: ELN market expanding from $1.88B (2025) to $3.6B (2029) at 17.6% CAGR. Benchling (200K+ users, freemium model), Siemens/Dotmatics ($5.1B acquisition Apr 2025), Thermo Fisher, PerkinElmer, Agilent are major players. Market is competitive with deep-pocketed incumbents. Lowering MO from 8 to 5 (Benchling + Siemens/Dotmatics + Thermo Fisher competing), MA from 7 to 5 (lab data lock-in + instrument integration = moderate moats), VD from 5 to 6 (experiment design, data capture, analysis, collaboration, compliance, IP management — rich stack), DV stays at 7 (AI experiment optimization genuinely new capability, reproducibility crisis creates demand)."
+    },
+    "V3-EMRG-004": {
+      "MO": 8,
+      "MA": 9,
+      "VD": 4,
+      "DV": 6,
+      "composite": 68.5,
+      "rationale": "Heuristic scored 8/8/5/6=71.5 via emerging_category bonus. Second-order cascade intelligence is genuinely an emerging category — no dominant player provides 'when accounting transforms, what happens to commercial real estate and then to business software' analytical services. Consulting firms (McKinsey, BCG) do this manually at $500K+/engagement. AI could automate much of this. Very few direct competitors for the specific value proposition. Keeping MO at 8 (nascent category), raising MA to 9 (no incumbent moats — consulting firms don't own this as a product), lowering VD from 5 to 4 (data collection, modeling, scenario analysis, reporting — moderate but limited defensible positions), DV from 6 stays (AI enables this at scale but unclear if market will pay for standalone product vs. embedded in consulting)."
+    },
+    "V3-FEAR-005": {
+      "MO": 8,
+      "MA": 8,
+      "VD": 4,
+      "DV": 6,
+      "composite": 66.0,
+      "rationale": "Heuristic scored 8/8/5/7=71.5 via fear_economy_capture + FEAR_ECONOMY category. Trust-bridging human-AI handoff service is a nascent category. No dominant platform for managing the psychological/trust dimension of AI deployment. Change management consulting firms (Prosci, Kotter) offer methodologies but not AI-specific technology. Market is real (46% AI adoption plateau driven by fear) but monetization path unclear. Keeping MO at 8 (nascent), keeping MA at 8 (no real incumbent moats), lowering VD from 5 to 4 (assessment, training, monitoring, support — but thin), lowering DV from 7 to 6 (fear friction is real but may be solved by AI tools themselves improving, not by a separate handoff service)."
+    },
+    "MC-INFO-008": {
+      "MO": 4,
+      "MA": 3,
+      "VD": 5,
+      "DV": 6,
+      "composite": 44.0,
+      "rationale": "Heuristic scored 7/8/6/7=71.0. Reality: streaming content intelligence is dominated by Netflix's own AI systems (80% of viewing driven by AI recommendations). Streamers (Netflix, Disney+, Amazon Prime) build in-house analytics — they don't buy external content intelligence platforms. Third-party analytics exist (Parrot Analytics, Antenna, JustWatch) but market is small and niche. This is fundamentally a market where the biggest buyers (streamers) build internally. Lowering MO from 7 to 4 (streamers build in-house, third-party market is small), MA from 8 to 3 (Netflix/Disney/Amazon have proprietary data moats on viewing behavior that no external platform can match), VD stays at 5 (content valuation, audience analysis, programming strategy, ad optimization — moderate layers), DV from 7 to 6 (AI enables better analytics but first-party data advantage of streamers is structural)."
+    }
+  },
+  "analysis_summary": {
+    "total_overrides": 38,
+    "direction_of_changes": {
+      "scores_lowered": 31,
+      "scores_raised": 3,
+      "scores_roughly_maintained": 4
+    },
+    "key_findings": [
+      "Heuristic systematically overscores distribution/wholesale models (NAICS 42): the wholesale sector bonus (+1 MO, +1 MA, +1 DV) combined with full_service_replacement architecture defaults creates OPP scores 15-25 points too high for concentrated distribution sectors like electrical (52% top-10 share), medical equipment (92% Big 3 pharma), chemical (40% top-2 NA), and petroleum (40% top-3)",
+      "Heuristic overscores education models: academy_platform defaults (7/7/5/6) + education sector bonus (+1/+1) yields 8/8/5/6 for all education models regardless of competitive reality. K-12 AI teaching (Khanmigo 1.4M users, MagicSchool 6M) and university back-office (Ellucian 24% SIS share) are very different competitive landscapes but get identical heuristic scores",
+      "acquire_and_modernize archetype inflates opportunity scores for capital-market plays: CRE distressed debt (430+ funds, $137B+ raised) and CRE-to-DC conversion (Blackstone/KKR dominated, $100M+ per project) are institutional capital markets, not fragmented SMB acquisition targets, but get the same archetype defaults as machine shop rollups",
+      "FEAR_ECONOMY and EMERGING_CATEGORY bonuses are largely accurate: nascent markets like AI governance, education AI safety, watermarking/provenance, cascade intelligence, and trust-bridging services genuinely have few incumbents. Heuristic bonuses are directionally correct for these categories",
+      "Technology sector models (information/software) need significant correction when well-funded VC-backed competitors exist: AI video production (Runway $3B+), telecom AIOps (IBM, Amdocs), and property management (AppFolio Realm-X) are NOT fragmented markets despite being 'information sector'"
+    ],
+    "recommended_heuristic_fixes": [
+      "Add sub-sector concentration check for NAICS 42 (wholesale): check if specific 4-digit NAICS has CR4 > 40%, if so, apply -3 MO, -3 MA penalty instead of sector bonus",
+      "Differentiate acquire_and_modernize by target market sophistication: 'acquire SMB with retiring owner' vs 'compete for institutional-quality assets' should have different base scores",
+      "Add competitive density override for education sector: check model one_liner for named dominant competitors before applying education bonus",
+      "Cap distress_operator MO at 7 when sector involves PE-quality buyers (healthcare, real estate, staffing at scale)"
+    ]
+  }
+}
