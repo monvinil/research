@@ -2526,7 +2526,95 @@
         "PRIORITY 6: MENA geographic profile overhaul (Gulf AI pivot makes current profile obsolete)",
         "PRIORITY 7: Wholesale Trade zero-density refresh (P-022 staleness penalty)"
       ]
+    },
+    {
+      "cycle": "v3-3",
+      "date": "2026-02-11",
+      "engine_version": "3.3",
+      "theme": "MODEL MIGRATION + MACRO EXPANSION — Models as central output, economy map as grading context",
+      "description": "PIVOT BACK: v3-2 drifted toward economy map as primary output. v3-3 corrects course — business models are the CENTRAL output, macro research is CONTEXT for better grading. Migrated all 522 v2 models through 5-axis rating (235 individually, 287 algorithmically estimated). Constructed 45 NEW models from macro gaps (defense, education, fear, energy, geopolitics, emerging). Merged with 15 v3-2 models for 295 individually rated + 287 estimated = 582 total.",
+      "methodology": {
+        "migration_approach": "5 parallel batches: (1) Top 40 deep analysis with agent, (2) 41-112 compact rating with agent, (3) 123 expansion models with Python rating engine, (4) 287 summary models with algorithmic estimation, (5) 45 new macro-derived models with agent",
+        "rating_system": "5-axis: SN (Structural Necessity, 25%), FA (Force Alignment, 25%), GG (Geographic Grade, 20%), TG (Timing Grade, 15%), CE (Capital Efficiency, 15%). Composite = (SN*25 + FA*25 + GG*20 + TG*15 + CE*15) / 10",
+        "v2_to_v3_force_mapping": "baumol_cure→F1+F2, silver_tsunami→F2, robotics_ai→F1, ai_inference_collapse→F1, jevons_expansion→F1, coasean_shrinkage→F1+F4, regulatory_fragmentation→F3+F5, pe_minsky_vulnerability→F4, sba_504→F4",
+        "new_model_sources": "defense (10), education (7), fear economy (7), energy (8), geographic (7), emerging (6)"
+      },
+      "outputs": {
+        "primary": "data/verified/v3-3_unified_models_2026-02-11.json — 295 individually rated models, unified ranked",
+        "batch_files": [
+          "data/verified/v3-3_rated_top40_2026-02-11.json — 40 deep-rated top v2 models",
+          "data/verified/v3-3_rated_41to112_2026-02-11.json — 72 compact-rated v2 models",
+          "data/verified/v3-3_rated_expansion_2026-02-11.json — 123 programmatically rated expansion models",
+          "data/verified/v3-3_rated_summary287_2026-02-11.json — 287 algorithmically estimated (distribution only)",
+          "data/verified/v3-3_new_models_2026-02-11.json — 45 new macro-derived models"
+        ],
+        "scripts": [
+          "scripts/rate_expansion.py — Python 5-axis rating engine for expansion batch",
+          "scripts/master_synthesis.py — Merge all batches into unified ranked output"
+        ]
+      },
+      "key_stats": {
+        "total_individually_rated": 295,
+        "total_with_algorithmic": 582,
+        "composite_range": "29.2 - 83.5",
+        "composite_mean": 61.9,
+        "composite_median": 62.5,
+        "category_distribution": {
+          "STRUCTURAL_WINNER": 27,
+          "FORCE_RIDER": 40,
+          "TIMING_ARBITRAGE": 14,
+          "GEOGRAPHIC_PLAY": 11,
+          "CAPITAL_MOAT": 8,
+          "FEAR_ECONOMY": 8,
+          "EMERGING_CATEGORY": 6,
+          "CONDITIONAL": 79,
+          "PARKED": 102
+        },
+        "source_batch_counts": {
+          "top_40_deep": 40,
+          "mid_41to112": 72,
+          "expansion_123": 123,
+          "new_macro_45": 45,
+          "v3-2_cycle": 15
+        },
+        "force_coverage": {
+          "F1_Technology": 267,
+          "F2_Demographics": 164,
+          "F3_Geopolitics": 59,
+          "F4_Capital": 63,
+          "F5_Psychology": 43,
+          "F6_Energy": 10
+        }
+      },
+      "top_10": [
+        {"rank": 1, "id": "MC-52-001", "name": "AI-Native Accounting Practice Platform", "composite": 83.5, "category": "STRUCTURAL_WINNER"},
+        {"rank": 2, "id": "V3-EMRG-001", "name": "Micro-Firm AI Operating System", "composite": 82.0, "category": "STRUCTURAL_WINNER"},
+        {"rank": 3, "id": "MC-54-001", "name": "AI-Augmented Professional Micro-Firm OS", "composite": 81.5, "category": "STRUCTURAL_WINNER"},
+        {"rank": 4, "id": "V3-FEAR-001", "name": "AI Governance and Compliance OS", "composite": 81.0, "category": "STRUCTURAL_WINNER"},
+        {"rank": 5, "id": "C7-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "composite": 79.0, "category": "STRUCTURAL_WINNER"},
+        {"rank": 6, "id": "MC-62-001", "name": "AI-Augmented Specialist Diagnostic Network", "composite": 78.75, "category": "STRUCTURAL_WINNER"},
+        {"rank": 7, "id": "V3-DEF-001", "name": "Defense AI Integration Platform", "composite": 78.5, "category": "STRUCTURAL_WINNER"},
+        {"rank": 8, "id": "V3-ENERGY-001", "name": "Grid-Edge AI Optimization Platform", "composite": 78.0, "category": "STRUCTURAL_WINNER"},
+        {"rank": 9, "id": "MC-56-001", "name": "AI-Augmented Admin Services Consolidation", "composite": 77.75, "category": "STRUCTURAL_WINNER"},
+        {"rank": 10, "id": "V3-EMRG-002", "name": "AI-Native Credential and Skills Verification", "composite": 77.5, "category": "STRUCTURAL_WINNER"}
+      ],
+      "key_findings": {
+        "finding_1": "Physical and acquisition architectures dominate v3 ratings just as they did in v2. acquire_and_modernize and rollup_consolidation models score highest on crash resilience (CE) and timing (TG). The Perez crash filter validates v2 intuition.",
+        "finding_2": "45 NEW models discovered from macro gaps that bottom-up NAICS screening missed. Defense AI ($2.72T global), fear economy governance, grid-edge energy, and micro-firm OS are entirely new categories not in v2 inventory.",
+        "finding_3": "27 STRUCTURAL_WINNERS (SN>=8, FA>=8) — these are must-exist businesses driven by multiple converging forces. v3-2 found 7/15; v3-3 migration reveals 27/295 — same ~9% rate at scale, validating the rating calibration.",
+        "finding_4": "F1 Technology is the dominant force (267/295 models), but F2 Demographics (164) is the KEY differentiator — models with BOTH F1+F2 score 8-15 points higher on composite than F1-only models. Silver Tsunami is the structural enabler.",
+        "finding_5": "287 algorithmically estimated models show clear architecture-dependent quality: acquire_and_modernize (52 models, composite est 48-65) vs vertical_saas (28 models, composite est 33-53). Architecture choice matters more than sector choice at lower tiers."
+      },
+      "next_cycle_direction": [
+        "PRIORITY 1: Individually rate top upgrade candidates from 287 batch (15 acquire_and_modernize in manufacturing, 8 regulatory_moat for EU AI Act)",
+        "PRIORITY 2: Dashboard UI overhaul — models as landing page, filter/sort by axis/category/architecture",
+        "PRIORITY 3: Evidence chain implementation — trace every model rating to data sources",
+        "PRIORITY 4: Self-optimization loop — confidence map, staleness index, auto-generated cycle directives",
+        "PRIORITY 5: Second-order cascade modeling — how Financial Services acceleration impacts adjacent sectors",
+        "PRIORITY 6: Geographic deep-dives for GEOGRAPHIC_PLAY models (11 models with high GG variance)",
+        "PRIORITY 7: Timing window monitoring — 14 TIMING_ARBITRAGE models need entry window tracking"
+      ]
     }
   ],
-  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data. Cycle 6 is the ARCHITECTURE-BASED DECOMPOSITION cycle: 8 structural forces x 10 business architectures = 187 models. New 5-axis structural durability scoring replaces tactical accessibility scoring. KEY FINDING: physical architectures (acquire-and-modernize, rollup) dominate at 84 avg; vertical SaaS scores LOWEST at 67 avg. Cycle 7 is the NAICS-SYSTEMATIC EXPANSION + STRESS TEST cycle: 187 -> 387 models via NAICS QCEW screening of 293 4-digit industries, stress-tested scoring with 3 weight vectors (7/10 robust), mapped 80-cell force x architecture matrix (16 impossible, 12 unexplored filled). KEY FINDINGS: physical > digital is partially weight-dependent (physical more durable, digital data compounding more force), NAICS bottom-up screening discovers 8 new high-value sectors, PE distress extends to veterinary/dental/staffing/printing. Cycle 8 is the MULTI-SOURCE CROSS-REFERENCING cycle: 7 data source types, 70+ connector methods activated, top 20 cross-referenced against 3-7 independent sources. KEY FINDINGS: financial cascade CONFIRMED (7 sources), staffing destruction STRONGEST signal (RHI -53%, MAN -44%), physical production confirmed by ETF flows, zero-density validated, auto repair competitive. v3-2 is the ECONOMY MAP UPDATE cycle: 84 signals scanned, 30 graded, 5 sector briefs, 15 model cards rated (5-axis), 4 geographic reports (US/China/EU/India), 5 new patterns (P-028 through P-032). KEY: Financial Services UPGRADED to acceleration (first v3 phase transition). F5/F6 fully characterized. 7/15 models are STRUCTURAL_WINNERS. Fear economy validated ($86B by 2030)."
+  "notes": "v2 engine. Previous 11 cycles ran v1 (prosecutorial filtering). v2 uses construct-first landscape mapping. Cycle numbering restarts at 1. Cycle 2 expanded scope to include physical production/manufacturing/robotics. Cycle 3 was the first CORRECTION cycle: real data replaces estimates, counter-signals treated equally, scores moved both up and down. Cycle 4 is the QUANTITATIVE DEEPENING cycle: O*NET + BLS data replaces qualitative automation estimates with government data, stress tests on top 3 with real competitive intelligence, 3 under-explored sectors assessed with verdicts. Cycle 5 is the BUSINESS MODEL DECOMPOSITION cycle: 11 sectors decomposed into 102 specific models at YC-application granularity, each scored independently with web-searched competitor data. Cycle 6 is the ARCHITECTURE-BASED DECOMPOSITION cycle: 8 structural forces x 10 business architectures = 187 models. New 5-axis structural durability scoring replaces tactical accessibility scoring. KEY FINDING: physical architectures (acquire-and-modernize, rollup) dominate at 84 avg; vertical SaaS scores LOWEST at 67 avg. Cycle 7 is the NAICS-SYSTEMATIC EXPANSION + STRESS TEST cycle: 187 -> 387 models via NAICS QCEW screening of 293 4-digit industries, stress-tested scoring with 3 weight vectors (7/10 robust), mapped 80-cell force x architecture matrix (16 impossible, 12 unexplored filled). KEY FINDINGS: physical > digital is partially weight-dependent (physical more durable, digital data compounding more force), NAICS bottom-up screening discovers 8 new high-value sectors, PE distress extends to veterinary/dental/staffing/printing. Cycle 8 is the MULTI-SOURCE CROSS-REFERENCING cycle: 7 data source types, 70+ connector methods activated, top 20 cross-referenced against 3-7 independent sources. KEY FINDINGS: financial cascade CONFIRMED (7 sources), staffing destruction STRONGEST signal (RHI -53%, MAN -44%), physical production confirmed by ETF flows, zero-density validated, auto repair competitive. v3-2 is the ECONOMY MAP UPDATE cycle: 84 signals scanned, 30 graded, 5 sector briefs, 15 model cards rated (5-axis), 4 geographic reports (US/China/EU/India), 5 new patterns (P-028 through P-032). KEY: Financial Services UPGRADED to acceleration (first v3 phase transition). F5/F6 fully characterized. 7/15 models are STRUCTURAL_WINNERS. Fear economy validated ($86B by 2030). v3-3 is the MODEL MIGRATION + MACRO EXPANSION cycle: 522 v2 models migrated through 5-axis rating + 45 new macro-derived models. 295 individually rated + 287 algorithmically estimated = 582 total. PIVOT: Models restored as central output, economy map demoted to grading context. KEY: 27 STRUCTURAL_WINNERS at 9% rate validates calibration. F1+F2 combination is the scoring differentiator. Physical architectures still dominate."
 }

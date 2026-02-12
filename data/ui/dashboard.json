@@ -1,15 +1,20 @@
 {
-  "engine_version": "v3.0",
-  "engine_mode": "economy_mapping",
-  "current_cycle": "v3-2",
-  "last_updated": "2026-02-11T12:00:00Z",
+  "engine_version": "v3.3",
+  "engine_mode": "model_grading_with_economy_context",
+  "current_cycle": "v3-3",
+  "last_updated": "2026-02-11T18:00:00Z",
   "projection_horizon": "2026-2031",
   "data_sources_used": 42,
   "total_signals_scanned": 242,
-  "total_models_constructed": 537,
+  "total_models_individually_rated": 295,
+  "total_models_with_algorithmic": 582,
+  "new_models_this_cycle": 45,
   "evidence_base": {
     "v2_cycles": 8,
-    "v2_models": 522,
+    "v2_models_migrated": 235,
+    "v2_models_algorithmic": 287,
+    "v3_new_models": 45,
+    "v3_2_models": 15,
     "v2_patterns": 28,
     "naics_sectors_mapped": 293
   },
@@ -455,29 +460,57 @@
   },
 
   "rating_system": {
-    "version": "v1.0",
-    "total_models_rated": 15,
+    "version": "v3.3",
+    "total_models_individually_rated": 295,
+    "total_with_algorithmic_estimation": 582,
     "category_distribution": {
-      "STRUCTURAL_WINNER": 7,
-      "FORCE_RIDER": 1,
-      "GEOGRAPHIC_PLAY": 2,
-      "TIMING_ARBITRAGE": 2,
-      "CAPITAL_MOAT": 1,
-      "FEAR_ECONOMY": 1,
-      "CONDITIONAL": 1,
-      "PARKED": 0
+      "STRUCTURAL_WINNER": 27,
+      "FORCE_RIDER": 40,
+      "TIMING_ARBITRAGE": 14,
+      "GEOGRAPHIC_PLAY": 11,
+      "CAPITAL_MOAT": 8,
+      "FEAR_ECONOMY": 8,
+      "EMERGING_CATEGORY": 6,
+      "CONDITIONAL": 79,
+      "PARKED": 102
     },
-    "top_10_by_composite": [
-      {"card_id": "MC-52-001", "name": "AI-Native Accounting Practice Platform", "composite": 83.5, "category": "STRUCTURAL_WINNER", "sector": "Financial Services"},
-      {"card_id": "MC-54-001", "name": "Professional Micro-Firm OS", "composite": 81.5, "category": "STRUCTURAL_WINNER", "sector": "Professional Services"},
-      {"card_id": "MC-62-001", "name": "Physician-Invisible Clinical AI Platform", "composite": 77.75, "category": "STRUCTURAL_WINNER", "sector": "Healthcare"},
-      {"card_id": "MC-56-001", "name": "AI Workforce Orchestration Platform", "composite": 76.25, "category": "STRUCTURAL_WINNER", "sector": "Administrative Services"},
-      {"card_id": "MC-31-001", "name": "Silver Tsunami Manufacturer Acquire-Modernize", "composite": 74.75, "category": "STRUCTURAL_WINNER", "sector": "Manufacturing"},
-      {"card_id": "MC-52-003", "name": "AI Financial Compliance & Governance", "composite": 73.5, "category": "FEAR_ECONOMY", "sector": "Financial Services"},
-      {"card_id": "MC-62-002", "name": "Healthcare Admin AI Automation Suite", "composite": 72.0, "category": "STRUCTURAL_WINNER", "sector": "Healthcare"},
-      {"card_id": "MC-31-002", "name": "Manufacturing AI Integration Services", "composite": 71.5, "category": "STRUCTURAL_WINNER", "sector": "Manufacturing"},
-      {"card_id": "MC-54-002", "name": "AI-Augmented Legal Services for SMBs", "composite": 70.0, "category": "STRUCTURAL_WINNER", "sector": "Professional Services"},
-      {"card_id": "MC-56-002", "name": "Distressed Staffing Firm AI Acquirer", "composite": 69.5, "category": "TIMING_ARBITRAGE", "sector": "Administrative Services"}
+    "composite_stats": {
+      "max": 83.5,
+      "min": 29.2,
+      "mean": 61.9,
+      "above_70": 50,
+      "60_to_70": 142,
+      "below_60": 103
+    },
+    "top_20_by_composite": [
+      {"rank": 1, "id": "MC-52-001", "name": "AI-Native Accounting Practice Platform", "composite": 83.5, "category": "STRUCTURAL_WINNER", "source": "v3-2"},
+      {"rank": 2, "id": "V3-EMRG-001", "name": "Micro-Firm AI Operating System", "composite": 82.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 3, "id": "MC-54-001", "name": "Professional Micro-Firm Operating System", "composite": 81.5, "category": "STRUCTURAL_WINNER", "source": "v3-2"},
+      {"rank": 4, "id": "V3-FEAR-001", "name": "AI Governance and Compliance OS", "composite": 81.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 5, "id": "C7-AM-MFG-01", "name": "Acquire + Modernize CNC Shop", "composite": 79.0, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
+      {"rank": 6, "id": "C7-RC-MFG-01", "name": "Multi-Shop CNC/Metal Fab Rollup", "composite": 77.8, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
+      {"rank": 7, "id": "V3-DEF-001", "name": "Autonomous Drone Swarm Command", "composite": 77.5, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 8, "id": "PC8-FSR-WHOLESALE-01", "name": "AI Wholesale Brokerage", "composite": 77.2, "category": "STRUCTURAL_WINNER", "source": "expansion"},
+      {"rank": 9, "id": "V3-ENERGY-001", "name": "Grid Interconnection Platform", "composite": 77.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 10, "id": "MC-62-001", "name": "Physician-Invisible Clinical AI", "composite": 76.8, "category": "STRUCTURAL_WINNER", "source": "v3-2"},
+      {"rank": 11, "id": "V3-EDU-004", "name": "Corporate AI Reskilling-as-a-Service", "composite": 76.5, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 12, "id": "MC-56-001", "name": "AI Workforce Orchestration Platform", "composite": 76.2, "category": "STRUCTURAL_WINNER", "source": "v3-2"},
+      {"rank": 13, "id": "V3-DEF-002", "name": "Defense AI/ML Intelligence Fusion", "composite": 76.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 14, "id": "V3-DEF-003", "name": "Cybersecurity AI for Defense Networks", "composite": 76.0, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 15, "id": "C7-DC-FIN-01", "name": "AI Financial Intelligence Platform", "composite": 75.8, "category": "STRUCTURAL_WINNER", "source": "v2_top40"},
+      {"rank": 16, "id": "V3-EDU-001", "name": "AI Adaptive Tutoring Engine (K-12)", "composite": 74.5, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 17, "id": "V3-GEO-004", "name": "EU AI Act Compliance-as-a-Service", "composite": 74.5, "category": "TIMING_ARBITRAGE", "source": "new_macro"},
+      {"rank": 18, "id": "V3-EMRG-006", "name": "Physical-Digital Convergence Consulting", "composite": 74.5, "category": "STRUCTURAL_WINNER", "source": "new_macro"},
+      {"rank": 19, "id": "C7-RMB-HC-01", "name": "Healthcare AI Multi-State Compliance", "composite": 74.2, "category": "FEAR_ECONOMY", "source": "v2_top40"},
+      {"rank": 20, "id": "MC-52-003", "name": "AI Financial Compliance & Governance", "composite": 74.0, "category": "FEAR_ECONOMY", "source": "v3-2"}
+    ],
+    "new_sectors_this_cycle": [
+      {"sector": "Defense AI", "models": 10, "top_composite": 77.5, "note": "v2 had ZERO defense models — $2.72T global spend"},
+      {"sector": "Education", "models": 7, "top_composite": 76.5, "note": "55% discomfort, Baumol stored energy, reskilling chasm"},
+      {"sector": "Fear Economy", "models": 7, "top_composite": 81.0, "note": "$86B fear-driven market by 2030"},
+      {"sector": "Energy Infrastructure", "models": 8, "top_composite": 77.0, "note": "Grid bottleneck = binding constraint on AI scaling"},
+      {"sector": "Geographic-Specific", "models": 7, "top_composite": 74.5, "note": "Gulf AI pivot, India dividend, EU AI Act, Japan aging"},
+      {"sector": "Emerging Categories", "models": 6, "top_composite": 82.0, "note": "Micro-firm OS, human premium, cascade services"}
     ]
   },
 
@@ -489,13 +522,20 @@
     {"naics": "56", "name": "Administrative Services", "phase": "acceleration", "employment_2026": 3.57, "employment_2031": 1.8, "change_pct": -49.6, "top_model": "MC-56-001"}
   ],
 
-  "v2_landscape_preserved": {
-    "note": "v2 business models preserved as evidence base for sector transformation projections",
-    "top_3_models": [
-      {"name": "AI Financial Intelligence Platform", "score": 90, "sector": "SMB Accounting/Finance"},
-      {"name": "Multi-Shop CNC/Metal Fab Rollup", "score": 89, "sector": "Manufacturing"},
-      {"name": "Full-Service AI Finance for SMBs", "score": 88, "sector": "SMB Accounting/Finance"}
-    ],
+  "model_inventory": {
+    "note": "Central output of the engine: business models rated through 5-axis system with economy map as grading context",
+    "unified_file": "data/verified/v3-3_unified_models_2026-02-11.json",
+    "individually_rated": 295,
+    "algorithmically_estimated": 287,
+    "total": 582,
+    "sources": {
+      "v2_top40_deep": {"count": 40, "file": "data/verified/v3-3_rated_top40_2026-02-11.json"},
+      "v2_41to112": {"count": 72, "file": "data/verified/v3-3_rated_41to112_2026-02-11.json"},
+      "v2_expansion": {"count": 123, "file": "data/verified/v3-3_rated_expansion_2026-02-11.json"},
+      "new_macro": {"count": 45, "file": "data/verified/v3-3_new_models_2026-02-11.json"},
+      "v32_cycle": {"count": 15, "file": "data/verified/v3-2_rated_models_2026-02-11.json"},
+      "algorithmic_287": {"count": 287, "file": "data/verified/v3-3_rated_summary287_2026-02-11.json"}
+    },
     "confirmed_cascades": [
       "Financial services: BLS -49K, financials ETF last (+0.5%), delinquency 1.78%",
       "Staffing: RHI -53%, MAN -44%, KELYA -25% in 1yr",
@@ -514,6 +554,7 @@
     {"cycle": "v2-pre8", "type": "expansion", "models_constructed": 522, "note": "4-dimension expansion."},
     {"cycle": "v2-8", "type": "validation", "models_constructed": 522, "note": "Multi-source cross-referencing. 7 data types."},
     {"cycle": "v3-1", "type": "economy_map", "models_constructed": 522, "note": "PIVOT: Economy mapping. 6 forces, 8 regions, fear friction, demographics, geopolitics."},
-    {"cycle": "v3-2", "type": "institutional_grade", "models_constructed": 537, "note": "First institutional-grade cycle: 5-axis rating, 15 model cards, 5 sector briefs, 4 geographic reports, 84 signals graded."}
+    {"cycle": "v3-2", "type": "institutional_grade", "models_constructed": 537, "note": "First institutional-grade cycle: 5-axis rating, 15 model cards, 5 sector briefs, 4 geographic reports, 84 signals graded."},
+    {"cycle": "v3-3", "type": "model_migration_expansion", "models_constructed": 582, "note": "PIVOT BACK: Models as central output. 235 v2 models individually migrated through 5-axis rating, 287 algorithmically estimated, 45 NEW models from macro gaps (defense, education, fear, energy, geo, emerging). Economy map is grading context, not standalone output."}
   ]
 }

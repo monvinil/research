@@ -1,0 +1,216 @@
+{
+  "batch": "algorithmic_estimation_101_to_387",
+  "methodology": "Algorithmic mapping from v2 scores (35-62) to 5-axis ratings using sector phase, force velocity, and architecture type as modifiers. These 287 models lack individual IDs — only 7 notable low-ranked models have IDs. The rest are characterized by distribution only.",
+  "source": "data/verified/cycle7_2026-02-10.json → models_101_to_387",
+  "v2_score_range": {"min": 35, "max": 62},
+  "total_models": 287,
+
+  "mapping_rules": {
+    "base_composite": "v2_score × 0.95 (slight penalty for lower-ranked models lacking deep validation)",
+    "architecture_modifier": {
+      "acquire_and_modernize": "+3 (physical assets, crash resilience, timing advantage)",
+      "physical_production_ai": "+3 (physical assets, cash flow)",
+      "rollup_consolidation": "+2 (physical assets, but execution risk)",
+      "regulatory_moat_builder": "+2 (moat from regulation, durable)",
+      "full_service_replacement": "+1 (revenue-generating but competitive)",
+      "data_compounding": "+1 (moat builds over time)",
+      "marketplace_network": "0 (network effects but capital intensive)",
+      "arbitrage_window": "0 (timing-dependent)",
+      "platform_infrastructure": "-1 (crowded, capital intensive)",
+      "vertical_saas": "-2 (most crowded layer, funded incumbents)"
+    },
+    "force_velocity_modifier": {
+      "baumol_cure_in_acceleration_sector": "+2",
+      "silver_tsunami_in_manufacturing": "+2",
+      "robotics_ai_in_early_disruption": "+1",
+      "regulatory_fragmentation_with_eu_ai_act": "+2",
+      "pe_minsky_with_refinancing_wall": "+1"
+    }
+  },
+
+  "estimated_distribution": {
+    "total": 287,
+    "STRUCTURAL_WINNER": 0,
+    "FORCE_RIDER": 5,
+    "GEOGRAPHIC_PLAY": 3,
+    "TIMING_ARBITRAGE": 8,
+    "CAPITAL_MOAT": 12,
+    "FEAR_ECONOMY": 4,
+    "EMERGING_CATEGORY": 2,
+    "CONDITIONAL": 98,
+    "PARKED": 155
+  },
+
+  "composite_distribution": {
+    "above_70": 0,
+    "60_to_70": 30,
+    "50_to_60": 102,
+    "40_to_50": 97,
+    "below_40": 58
+  },
+
+  "by_architecture_estimated": [
+    {
+      "architecture": "acquire_and_modernize",
+      "count": 52,
+      "v2_score_est": "45-62",
+      "composite_est": "48-65",
+      "typical_category": "CONDITIONAL (top), PARKED (bottom)",
+      "v3_context": "Physical assets + Silver Tsunami timing + SBA 504 = highest upward mobility in this batch. Best acquire_and_modernize models could reach TIMING_ARBITRAGE with updated sector data."
+    },
+    {
+      "architecture": "full_service_replacement",
+      "count": 48,
+      "v2_score_est": "42-60",
+      "composite_est": "44-62",
+      "typical_category": "CONDITIONAL (top), PARKED (bottom)",
+      "v3_context": "Revenue-generating from day 1, but competitive. Fear friction matters — FSR models in high-fear sectors (healthcare, legal) get psychology penalty."
+    },
+    {
+      "architecture": "platform_infrastructure",
+      "count": 38,
+      "v2_score_est": "40-58",
+      "composite_est": "39-57",
+      "typical_category": "Mostly PARKED",
+      "v3_context": "Platform plays at this score range face crowded competition and capital requirements. Perez crash vulnerability is high. Most should be PARKED."
+    },
+    {
+      "architecture": "vertical_saas",
+      "count": 28,
+      "v2_score_est": "35-55",
+      "composite_est": "33-53",
+      "typical_category": "PARKED",
+      "v3_context": "The 7 notable low-ranked models are ALL vertical SaaS — facing funded incumbents (Gusto $746M, Abridge $250M, Tractable $115M). This architecture is the most crowded."
+    },
+    {
+      "architecture": "marketplace_network",
+      "count": 22,
+      "v2_score_est": "42-58",
+      "composite_est": "40-58",
+      "typical_category": "Mostly PARKED, few CONDITIONAL",
+      "v3_context": "Network effects are valuable but require capital. At this score range, the network effects are weak or the market is too small."
+    },
+    {
+      "architecture": "regulatory_moat_builder",
+      "count": 24,
+      "v2_score_est": "45-62",
+      "composite_est": "49-68",
+      "typical_category": "CONDITIONAL (most), few FEAR_ECONOMY",
+      "v3_context": "EU AI Act creates new regulatory moats. Models serving compliance needs get +2 from F3 acceleration. Some could upgrade to FEAR_ECONOMY category."
+    },
+    {
+      "architecture": "data_compounding",
+      "count": 20,
+      "v2_score_est": "40-58",
+      "composite_est": "41-60",
+      "typical_category": "CONDITIONAL (top), PARKED (bottom)",
+      "v3_context": "Data moats build over time but require capital runway. At this score range, the data advantage isn't strong enough or the market is too small."
+    },
+    {
+      "architecture": "physical_production_ai",
+      "count": 22,
+      "v2_score_est": "45-60",
+      "composite_est": "48-65",
+      "typical_category": "CONDITIONAL",
+      "v3_context": "Physical production + AI = high crash resilience. Capital rotation from digital to physical (ETF data: Industrials +15.1%, Materials +20.1%) validates these. Some could reach CAPITAL_MOAT."
+    },
+    {
+      "architecture": "rollup_consolidation",
+      "count": 18,
+      "v2_score_est": "45-60",
+      "composite_est": "47-64",
+      "typical_category": "CONDITIONAL (most), few TIMING_ARBITRAGE",
+      "v3_context": "Rollup models benefit from PE refinancing wall (distressed targets) and Silver Tsunami. Those targeting manufacturing/trades get timing boost."
+    },
+    {
+      "architecture": "arbitrage_window",
+      "count": 15,
+      "v2_score_est": "40-55",
+      "composite_est": "40-55",
+      "typical_category": "CONDITIONAL or PARKED",
+      "v3_context": "Time-sensitive models. Those targeting the PE refinancing wall ($936B-$1.8T maturing 2026-2028) get timing upgrade. Others may have missed their window."
+    }
+  ],
+
+  "notable_low_ranked_with_ids": [
+    {
+      "id": "C7-VS-THERAPYNOTES-01",
+      "name": "Vertical SaaS Therapist Notes",
+      "v2_score": 45,
+      "scores": {"SN": 5.0, "FA": 4.5, "GG": 4.0, "TG": 4.5, "CE": 5.0},
+      "composite": 45.75,
+      "category": "PARKED",
+      "reason": "Blueprint 50K clinicians dominance. Crowded vertical SaaS."
+    },
+    {
+      "id": "C7-VS-PAYROLL-01",
+      "name": "Vertical SaaS Payroll+Bookkeeping",
+      "v2_score": 38,
+      "scores": {"SN": 4.0, "FA": 4.0, "GG": 4.5, "TG": 3.5, "CE": 4.0},
+      "composite": 40.25,
+      "category": "PARKED",
+      "reason": "Gusto $746M, Rippling $1.3B. Saturated market."
+    },
+    {
+      "id": "C7-VS-CLINDOC-01",
+      "name": "Vertical SaaS Clinical Documentation",
+      "v2_score": 40,
+      "scores": {"SN": 5.0, "FA": 4.5, "GG": 4.0, "TG": 4.0, "CE": 4.5},
+      "composite": 44.25,
+      "category": "PARKED",
+      "reason": "Abridge $250M dominance. Winner-take-most."
+    },
+    {
+      "id": "C7-VS-REALESTATE-01",
+      "name": "Vertical SaaS Real Estate AI",
+      "v2_score": 30,
+      "scores": {"SN": 3.0, "FA": 3.5, "GG": 4.0, "TG": 3.0, "CE": 3.5},
+      "composite": 34.0,
+      "category": "PARKED",
+      "reason": "$10.5B funded, 7 unicorns. Most crowded vertical in real estate."
+    },
+    {
+      "id": "C7-VS-AUTOCLAIMS-01",
+      "name": "Vertical SaaS Auto Claims Photo",
+      "v2_score": 38,
+      "scores": {"SN": 4.0, "FA": 3.5, "GG": 4.0, "TG": 3.5, "CE": 4.0},
+      "composite": 38.25,
+      "category": "PARKED",
+      "reason": "Tractable $115M, CCC public. Incumbent dominance."
+    },
+    {
+      "id": "C7-VS-CONSUMERMH-01",
+      "name": "Consumer Mental Health App",
+      "v2_score": 35,
+      "scores": {"SN": 4.0, "FA": 3.5, "GG": 5.0, "TG": 3.0, "CE": 3.0},
+      "composite": 38.0,
+      "category": "PARKED",
+      "reason": "Saturated: Calm, Headspace, BetterHelp. Consumer app economics."
+    },
+    {
+      "id": "C7-PI-GOVAI-01",
+      "name": "Platform Government AI",
+      "v2_score": 42,
+      "scores": {"SN": 5.5, "FA": 5.0, "GG": 4.5, "TG": 3.5, "CE": 3.0},
+      "composite": 44.75,
+      "category": "PARKED",
+      "reason": "12-24mo procurement cycles. Tyler Tech $1.8B. Government sales overhead kills capital efficiency."
+    }
+  ],
+
+  "upgrade_candidates": {
+    "description": "Models from the 287 batch most likely to upgrade if individually re-assessed with v3 context",
+    "acquire_and_modernize_in_manufacturing": {
+      "estimated_count": 15,
+      "reason": "Silver Tsunami + SBA 504 + cobot maturity + PE refinancing wall creating distressed targets. These could reach TIMING_ARBITRAGE (composite 60-70)."
+    },
+    "regulatory_moat_builder_for_eu": {
+      "estimated_count": 8,
+      "reason": "EU AI Act (Aug 2026) creates entirely new compliance markets. Models serving cross-border AI compliance get F3+F5 boost."
+    },
+    "physical_production_in_nearshoring": {
+      "estimated_count": 6,
+      "reason": "Capital rotation to physical + reshoring wave. ETF data confirms: Industrials +15.1%, Materials +20.1%."
+    }
+  }
+}

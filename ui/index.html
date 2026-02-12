@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Economy Map 2031</title>
+<title>Business Model Engine v3.3</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -855,63 +855,72 @@
 <body>
 <div class="container">
   <nav>
-    <a class="active" onclick="showView('map')">Economy Map</a>
+    <a class="active" onclick="showView('models')">Models</a>
     <a onclick="showView('forces')">Forces</a>
     <a onclick="showView('sectors')">Sectors</a>
-    <a onclick="showView('models')">Models</a>
     <a onclick="showView('regions')">Regions</a>
     <a onclick="showView('fear')">Fear Index</a>
     <a onclick="showView('data')">Data</a>
   </nav>
 
   <header>
-    <h1>Economy Map 2031</h1>
+    <h1>Business Model Engine</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-2</span>
-      &nbsp; Structural transformation projection &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      <span class="cycle-badge" id="cycle-badge">v3-3</span>
+      &nbsp; <span id="model-total-sub">295 rated models</span> &middot; 5-axis scoring &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
   </header>
 
   <!-- KPI Row -->
   <div class="kpi-row" id="kpi-row">
     <div class="glass kpi">
-      <div class="kpi-label">Forces Tracked</div>
-      <div class="kpi-value" style="color:var(--accent)">6</div>
-      <div class="kpi-sub">F1-F6</div>
+      <div class="kpi-label">Rated Models</div>
+      <div class="kpi-value" style="color:var(--accent)" id="kpi-rated">295</div>
+      <div class="kpi-sub">individually scored</div>
     </div>
     <div class="glass kpi">
-      <div class="kpi-label">Regions</div>
-      <div class="kpi-value" style="color:var(--blue)">8</div>
-      <div class="kpi-sub">global coverage</div>
+      <div class="kpi-label">Total Inventory</div>
+      <div class="kpi-value" style="color:var(--blue)" id="kpi-total">582</div>
+      <div class="kpi-sub">incl. algorithmic</div>
     </div>
     <div class="glass kpi">
-      <div class="kpi-label">Data Sources</div>
-      <div class="kpi-value" style="color:var(--green)" id="kpi-sources">42</div>
-      <div class="kpi-sub">this cycle</div>
+      <div class="kpi-label">Structural Winners</div>
+      <div class="kpi-value" style="color:var(--green)" id="kpi-winners">27</div>
+      <div class="kpi-sub">SN&ge;8, FA&ge;8</div>
     </div>
     <div class="glass kpi">
-      <div class="kpi-label">Evidence Base</div>
-      <div class="kpi-value" style="color:var(--amber)" id="kpi-models">522</div>
-      <div class="kpi-sub">v2 models</div>
+      <div class="kpi-label">Top Composite</div>
+      <div class="kpi-value" style="color:var(--amber)" id="kpi-top">83.5</div>
+      <div class="kpi-sub">mean 61.9</div>
     </div>
     <div class="glass kpi">
-      <div class="kpi-label">Fear Market</div>
-      <div class="kpi-value" style="color:var(--red)">$86B</div>
-      <div class="kpi-sub">by 2030 (51x growth)</div>
+      <div class="kpi-label">New This Cycle</div>
+      <div class="kpi-value" style="color:var(--red)" id="kpi-new">45</div>
+      <div class="kpi-sub">from macro gaps</div>
     </div>
     <div class="glass kpi">
-      <div class="kpi-label">Horizon</div>
-      <div class="kpi-value" style="color:var(--cyan)">2031</div>
-      <div class="kpi-sub">5-year projection</div>
+      <div class="kpi-label">Forces &times; Regions</div>
+      <div class="kpi-value" style="color:var(--cyan)">6&times;8</div>
+      <div class="kpi-sub">grading context</div>
     </div>
   </div>
 
   <!-- Hero Synthesis -->
   <div class="glass hero" id="hero">
-    <div class="hero-label">Economy Map Synthesis &mdash; v3-2 Institutional Grade</div>
+    <div class="hero-label">v3-3 Synthesis &mdash; Models as Central Output</div>
     <div class="hero-text" id="hero-text">
-      <strong>Financial services is the first sector to enter the acceleration phase.</strong> 54% of customer interactions automated, 339 branch closures, and a <strong>$936B&ndash;$1.8T PE refinancing wall</strong> creating a 2026&ndash;2028 distressed acquisition window. AI adoption has plateaued at <strong>46% for 12 months</strong> &mdash; a psychological ceiling, not a technology limitation. The fear economy has crystallized into an <strong>$86B market by 2030</strong>. Japan&rsquo;s population decline nearly doubled to <strong>-900K/year</strong>, while China&rsquo;s fertility fell to 1.0 (below Japan). Gulf SWFs committed <strong>$100B+</strong> to AI infrastructure. 15 business models rated across 5 axes &mdash; 7 classified as STRUCTURAL_WINNERs. The engine now self-tracks confidence, evidence chains, and force velocity triggers.
+      <strong>295 business models individually rated through 5-axis scoring</strong> (Structural Necessity, Force Alignment, Geographic Grade, Timing Grade, Capital Efficiency). 522 v2 models migrated + <strong>45 new models</strong> discovered from macro gaps in <strong>defense AI</strong> ($2.72T global), <strong>fear economy</strong> ($86B by 2030), <strong>energy infrastructure</strong>, <strong>education</strong>, and <strong>emerging categories</strong>. Top model: AI-Native Accounting Practice Platform at <strong>83.5 composite</strong>. 27 STRUCTURAL_WINNERs where SN&ge;8 and FA&ge;8 &mdash; must-exist businesses driven by multiple converging forces. Physical + acquisition architectures dominate, validating the v2 finding that <strong>crash-resilient businesses</strong> score highest when graded against the Perez cycle.
     </div>
+  </div>
+
+  <!-- SECTION: Rated Models (CENTRAL OUTPUT) -->
+  <div id="view-models">
+    <div class="section-label">Rated Business Models <span class="count" id="model-count">0</span></div>
+    <div class="cat-dist" id="cat-dist"></div>
+    <div style="height:12px"></div>
+    <div id="new-sectors"></div>
+    <div style="height:16px"></div>
+    <div class="model-grid" id="model-grid"></div>
   </div>
 
   <!-- SECTION: Force Velocities -->
@@ -933,16 +942,8 @@
     </div>
   </div>
 
-  <!-- SECTION: Rated Models -->
-  <div id="view-models">
-    <div class="section-label">Rated Business Models <span class="count" id="model-count">0</span></div>
-    <div class="cat-dist" id="cat-dist"></div>
-    <div style="height:16px"></div>
-    <div class="model-grid" id="model-grid"></div>
-  </div>
-
   <!-- SECTION: World Map -->
-  <div id="view-map">
+  <div id="view-regions">
     <div class="section-label">Global Transformation Map <span class="count">8 regions</span></div>
     <div class="glass-static world-map-container">
       <div class="map-grid"></div>
@@ -1018,10 +1019,10 @@
       <div class="defense-grid" id="defense-grid"></div>
     </div>
 
-    <!-- v2 Evidence -->
+    <!-- Model Inventory -->
     <div class="glass-static card" id="evidence-section">
       <div class="expandable-header" onclick="toggleSection('evidence-section')">
-        <div class="section-label" style="margin-bottom:0;">v2 Evidence Base <span class="count">522 models &middot; 28 patterns &middot; 293 NAICS</span></div>
+        <div class="section-label" style="margin-bottom:0;">Model Inventory Sources <span class="count" id="inventory-count">582 total &middot; 5 batches &middot; 28 patterns</span></div>
         <span class="expand-icon">&#x25BC;</span>
       </div>
       <div class="expandable-content">
@@ -1039,7 +1040,7 @@
   </div>
 
   <div class="footer">
-    Economy Map Engine v3.0 &middot; Structural transformation projection &middot; 2026&ndash;2031
+    Business Model Engine v3.3 &middot; 295 rated models &middot; 5-axis scoring &middot; 2026&ndash;2031
   </div>
 </div>
 
@@ -1331,33 +1332,8 @@ function renderDefense(def) {
   `).join('');
 }
 
-// ─── Evidence ───
-function renderEvidence(ev) {
-  const el = document.getElementById('evidence-list');
-  if (!ev) return;
-
-  const top3 = ev.top_3_models || [];
-  const cascades = ev.confirmed_cascades || [];
-
-  let html = '<div style="font-size:11px;color:var(--text-secondary);margin-bottom:12px;">' + esc(ev.note || '') + '</div>';
-
-  html += top3.map(m => `
-    <div class="evidence-card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="evidence-name">${esc(m.name)}</div>
-        <div class="evidence-score">${m.score}</div>
-      </div>
-      <div class="evidence-sector">${esc(m.sector)}</div>
-    </div>
-  `).join('');
-
-  if (cascades.length) {
-    html += '<div style="margin-top:12px;font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:8px">Confirmed Cascades</div>';
-    html += cascades.map(c => `<div class="force-datum">${esc(c)}</div>`).join('');
-  }
-
-  el.innerHTML = html;
-}
+// ─── Evidence (legacy — redirects to renderInventory) ───
+function renderEvidence(ev) { if (ev) renderInventory(ev); }
 
 // ─── Cycle History ───
 function renderCycles(cycles) {
@@ -1370,7 +1346,7 @@ function renderCycles(cycles) {
     const val = c.models_constructed || 0;
     const h = Math.max(8, (val / max) * 100);
     const opacity = 0.2 + (i / cycles.length) * 0.7;
-    const isV3 = c.type === 'economy_map' || c.type === 'institutional_grade';
+    const isV3 = c.type === 'economy_map' || c.type === 'institutional_grade' || c.type === 'model_migration_expansion';
     const bg = isV3 ? 'linear-gradient(180deg, rgba(248,113,113,0.7), rgba(251,191,36,0.5))' : 'linear-gradient(180deg, rgba(167,139,250,0.7), rgba(96,165,250,0.5))';
     return `<div class="cycle-bar" style="height:${h}%;background:${bg};opacity:${opacity.toFixed(2)}" data-label="${c.cycle}"></div>`;
   }).join('');
@@ -1400,9 +1376,12 @@ function renderSectors(sectors) {
 function renderModels(rating) {
   const grid = document.getElementById('model-grid');
   const distEl = document.getElementById('cat-dist');
+  const newSectorsEl = document.getElementById('new-sectors');
   if (!rating) return;
 
-  document.getElementById('model-count').textContent = rating.total_models_rated + ' models';
+  const totalRated = rating.total_models_individually_rated || rating.total_models_rated || 0;
+  const totalAlgo = rating.total_with_algorithmic_estimation || 0;
+  document.getElementById('model-count').textContent = totalRated + ' rated' + (totalAlgo ? ' + ' + (totalAlgo - totalRated) + ' estimated' : '');
 
   // Category distribution chips
   const dist = rating.category_distribution || {};
@@ -1410,7 +1389,7 @@ function renderModels(rating) {
     STRUCTURAL_WINNER: 'cat-STRUCTURAL_WINNER', FORCE_RIDER: 'cat-FORCE_RIDER',
     GEOGRAPHIC_PLAY: 'cat-GEOGRAPHIC_PLAY', TIMING_ARBITRAGE: 'cat-TIMING_ARBITRAGE',
     CAPITAL_MOAT: 'cat-CAPITAL_MOAT', FEAR_ECONOMY: 'cat-FEAR_ECONOMY',
-    CONDITIONAL: 'cat-CONDITIONAL', PARKED: 'cat-CONDITIONAL'
+    EMERGING_CATEGORY: 'cat-GEOGRAPHIC_PLAY', CONDITIONAL: 'cat-CONDITIONAL', PARKED: 'cat-CONDITIONAL'
   };
 
   distEl.innerHTML = Object.entries(dist).filter(([,v]) => v > 0).map(([k, v]) => {
@@ -1418,20 +1397,58 @@ function renderModels(rating) {
     return `<div class="cat-chip ${cls}"><span class="cat-chip-count">${v}</span> ${k.replace(/_/g, ' ')}</div>`;
   }).join('');
 
-  // Top 10 model cards
-  const models = rating.top_10_by_composite || [];
-  grid.innerHTML = models.map((m, i) => {
+  // New sectors this cycle
+  const newSectors = rating.new_sectors_this_cycle || [];
+  if (newSectors.length && newSectorsEl) {
+    newSectorsEl.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:8px">' + newSectors.map(s => {
+      return `<div style="font-size:10px;padding:4px 10px;border-radius:8px;background:rgba(248,113,113,0.08);color:var(--red);font-weight:600;">NEW: ${esc(s.sector)} (${s.models})</div>`;
+    }).join('') + '</div>';
+  }
+
+  // Top 20 model cards with 5-axis bars
+  const models = rating.top_20_by_composite || rating.top_10_by_composite || [];
+  grid.innerHTML = models.map((m) => {
     const catCls = 'cat-' + (m.category || 'CONDITIONAL');
+    const srcLabel = m.source ? `<span style="font-size:9px;color:var(--dim);margin-left:6px">${esc(m.source)}</span>` : '';
     return `<div class="glass model-card-ui">
-      <div class="model-rank">#${i + 1}</div>
+      <div class="model-rank">#${m.rank || ''}${srcLabel}</div>
       <div class="model-name-ui">${esc(m.name)}</div>
       <div class="model-score-row">
         <div class="model-composite">${m.composite}</div>
         <div class="model-category ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</div>
       </div>
-      <div class="model-sector">${esc(m.sector)}</div>
+      <div class="model-sector">${esc(m.id || '')}</div>
     </div>`;
   }).join('');
+}
+
+// ─── Model Inventory ───
+function renderInventory(inv) {
+  const el = document.getElementById('evidence-list');
+  if (!inv) return;
+
+  let html = '<div style="font-size:11px;color:var(--text-secondary);margin-bottom:12px;">' + esc(inv.note || '') + '</div>';
+
+  // Source batches
+  const sources = inv.sources || {};
+  html += Object.entries(sources).map(([k, v]) => `
+    <div class="evidence-card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="evidence-name">${esc(k.replace(/_/g, ' '))}</div>
+        <div class="evidence-score">${v.count} models</div>
+      </div>
+      <div class="evidence-sector">${esc(v.file || '')}</div>
+    </div>
+  `).join('');
+
+  // Confirmed cascades
+  const cascades = inv.confirmed_cascades || [];
+  if (cascades.length) {
+    html += '<div style="margin-top:12px;font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:8px">Confirmed Cascades</div>';
+    html += cascades.map(c => `<div class="force-datum">${esc(c)}</div>`).join('');
+  }
+
+  el.innerHTML = html;
 }
 
 // ─── Main ───
@@ -1440,19 +1457,28 @@ async function refresh() {
   if (!d) return;
 
   // Header
-  document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-1';
+  document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-3';
   const ts = d.last_updated;
   document.getElementById('last-updated').textContent =
     ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
   // KPIs
-  if (d.data_sources_used) document.getElementById('kpi-sources').textContent = d.data_sources_used;
-  if (d.total_models_constructed) document.getElementById('kpi-models').textContent = d.total_models_constructed;
+  const rs = d.rating_system || {};
+  if (rs.total_models_individually_rated) document.getElementById('kpi-rated').textContent = rs.total_models_individually_rated;
+  if (rs.total_with_algorithmic_estimation) document.getElementById('kpi-total').textContent = rs.total_with_algorithmic_estimation;
+  const sw = (rs.category_distribution || {}).STRUCTURAL_WINNER;
+  if (sw !== undefined) document.getElementById('kpi-winners').textContent = sw;
+  const cs = rs.composite_stats || {};
+  if (cs.max) document.getElementById('kpi-top').textContent = cs.max;
+  if (d.new_models_this_cycle) document.getElementById('kpi-new').textContent = d.new_models_this_cycle;
+  if (rs.total_models_individually_rated) {
+    document.getElementById('model-total-sub').textContent = rs.total_models_individually_rated + ' rated models';
+  }
 
-  // Render all sections
+  // Render all sections (models first — central output)
+  renderModels(d.rating_system);
   renderForces(d.force_velocities);
   renderSectors(d.sector_transformations);
-  renderModels(d.rating_system);
   renderMap(d.geographic_profiles);
   renderFindings(d.key_findings);
   renderFriction(d.fear_friction_index);
@@ -1461,7 +1487,7 @@ async function refresh() {
   renderPerez(d.perez_cycle);
   renderDisplacement(d.worker_displacement);
   renderDefense(d.defense_ai);
-  renderEvidence(d.v2_landscape_preserved);
+  renderInventory(d.model_inventory);
   renderCycles(d.cycle_history);
 }
 
