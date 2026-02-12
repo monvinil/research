@@ -72,7 +72,7 @@
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 32px 24px;
     padding-top: max(32px, env(safe-area-inset-top));
@@ -176,6 +176,8 @@
     font-weight: 600;
   }
   .card { padding: 24px; margin-bottom: 16px; }
+  .view-section { display: none; }
+  .view-section.active { display: block; }
 
   /* KPI Row */
   .kpi-row {
@@ -241,24 +243,241 @@
   }
   .hero-text strong { color: var(--text); }
 
-  /* Force Velocity */
-  .force-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+  /* What's New Banner */
+  .whats-new {
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    background: rgba(248,113,113,0.04);
+    border-color: rgba(248,113,113,0.1);
+  }
+  .whats-new-title {
+    font-size: 12px; font-weight: 700; color: var(--red);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .whats-new-items {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .wn-tag {
+    font-size: 10.5px; font-weight: 600; padding: 4px 12px;
+    border-radius: 8px; display: inline-flex; align-items: center; gap: 4px;
+  }
+  .wn-force { background: rgba(52,211,153,0.08); color: var(--green); }
+  .wn-pattern { background: rgba(167,139,250,0.08); color: var(--accent); }
+  .wn-model { background: rgba(248,113,113,0.08); color: var(--red); }
+  .wn-sector { background: rgba(96,165,250,0.08); color: var(--blue); }
+
+  /* Search and Filter Bar */
+  .controls-bar {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
     margin-bottom: 16px;
   }
+  .search-box {
+    flex: 1; min-width: 200px; max-width: 400px;
+    padding: 8px 14px; border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--text); font-size: 12.5px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color var(--transition);
+  }
+  .search-box::placeholder { color: var(--dim); }
+  .search-box:focus { border-color: var(--accent); }
+  .sort-select {
+    padding: 8px 12px; border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--text); font-size: 12px;
+    font-family: inherit;
+    cursor: pointer; outline: none;
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='%238e8ea0'%3E%3Cpath d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 28px;
+  }
+  .filter-chips {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .filter-chip {
+    font-size: 10px; font-weight: 600; padding: 4px 10px;
+    border-radius: 10px; cursor: pointer;
+    border: 1px solid transparent;
+    transition: all var(--transition);
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .filter-chip:hover { opacity: 0.85; }
+  .filter-chip.active { border-color: currentColor; }
+  .toggle-btn {
+    font-size: 10.5px; font-weight: 600; padding: 6px 14px;
+    border-radius: 8px; cursor: pointer;
+    border: 1px solid var(--glass-border);
+    background: var(--glass); color: var(--dim);
+    font-family: inherit;
+    transition: all var(--transition);
+  }
+  .toggle-btn.active {
+    background: rgba(248,113,113,0.1);
+    border-color: rgba(248,113,113,0.2);
+    color: var(--red);
+  }
+  .view-toggle {
+    display: flex; gap: 2px; background: var(--glass);
+    border: 1px solid var(--glass-border); border-radius: 7px; padding: 2px;
+  }
+  .view-toggle button {
+    font-size: 11px; font-weight: 500; padding: 5px 12px;
+    border-radius: 5px; cursor: pointer;
+    border: none; background: transparent; color: var(--dim);
+    font-family: inherit; transition: all var(--transition);
+  }
+  .view-toggle button.active { background: rgba(255,255,255,0.06); color: var(--text); }
+
+  /* Model Table */
+  .model-table { width: 100%; border-collapse: collapse; }
+  .model-table th {
+    text-align: left; font-size: 9.5px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.8px; color: var(--dim); padding: 10px 10px;
+    border-bottom: 1px solid var(--glass-border);
+    cursor: pointer; white-space: nowrap; user-select: none;
+  }
+  .model-table th:hover { color: var(--text-secondary); }
+  .model-table th.sorted { color: var(--accent); }
+  .model-table td {
+    padding: 10px 10px; font-size: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    vertical-align: middle;
+  }
+  .model-table tr { cursor: pointer; transition: background var(--transition); }
+  .model-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+  .model-table .rank-cell { font-weight: 600; color: var(--dim); width: 40px; font-variant-numeric: tabular-nums; }
+  .model-table .name-cell { font-weight: 600; color: var(--text); max-width: 280px; }
+  .model-table .composite-cell { font-weight: 800; font-variant-numeric: tabular-nums; font-size: 14px; }
+  .new-badge {
+    display: inline-block; font-size: 8px; font-weight: 800;
+    padding: 1px 5px; border-radius: 4px; margin-left: 6px;
+    background: rgba(248,113,113,0.15); color: var(--red);
+    letter-spacing: 0.5px; vertical-align: middle;
+  }
+
+  /* Axis mini-bars */
+  .axis-bars { display: flex; gap: 3px; align-items: center; }
+  .axis-bar {
+    display: flex; flex-direction: column; align-items: center; gap: 1px;
+    width: 28px;
+  }
+  .axis-bar-label { font-size: 7px; color: var(--dim); font-weight: 600; letter-spacing: 0.3px; }
+  .axis-bar-track {
+    width: 100%; height: 4px; border-radius: 2px;
+    background: rgba(255,255,255,0.05); overflow: hidden;
+  }
+  .axis-bar-fill { height: 100%; border-radius: 2px; transition: width 0.6s ease; }
+  .axis-bar-val { font-size: 8px; color: var(--text-secondary); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* Category badge */
+  .cat-badge {
+    font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 2px 7px; border-radius: 6px; white-space: nowrap;
+  }
+  .cat-STRUCTURAL_WINNER { background: rgba(52,211,153,0.12); color: var(--green); }
+  .cat-FORCE_RIDER { background: rgba(96,165,250,0.12); color: var(--blue); }
+  .cat-GEOGRAPHIC_PLAY { background: rgba(34,211,238,0.12); color: var(--cyan); }
+  .cat-TIMING_ARBITRAGE { background: rgba(251,191,36,0.12); color: var(--amber); }
+  .cat-CAPITAL_MOAT { background: rgba(167,139,250,0.12); color: var(--accent); }
+  .cat-FEAR_ECONOMY { background: rgba(248,113,113,0.12); color: var(--red); }
+  .cat-EMERGING_CATEGORY { background: rgba(34,211,238,0.12); color: var(--cyan); }
+  .cat-CONDITIONAL { background: rgba(255,255,255,0.06); color: var(--text-secondary); }
+  .cat-PARKED { background: rgba(255,255,255,0.04); color: var(--dim); }
+
+  /* Expanded model detail */
+  .model-detail {
+    display: none;
+    padding: 20px 24px;
+    margin: 0 0 12px 0;
+    animation: fadeIn 0.25s ease;
+  }
+  .model-detail.visible { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  .detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+  .detail-name { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; }
+  .detail-id { font-size: 11px; color: var(--dim); margin-top: 2px; }
+  .detail-composite { font-size: 36px; font-weight: 900; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; }
+  .detail-axes {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 600px) { .detail-axes { grid-template-columns: repeat(3, 1fr); } }
+  .detail-axis {
+    text-align: center; padding: 12px 8px;
+    background: rgba(255,255,255,0.02); border-radius: var(--radius-xs);
+  }
+  .da-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .da-value { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+  .da-bar { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.06); margin-top: 6px; overflow: hidden; }
+  .da-bar-fill { height: 100%; border-radius: 2px; }
+  .detail-meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 11.5px; color: var(--text-secondary); margin-bottom: 12px; }
+  .detail-meta span { display: flex; align-items: center; gap: 4px; }
+  .detail-meta .meta-label { color: var(--dim); font-weight: 600; }
+  .detail-cats { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .detail-oneliner {
+    font-size: 12.5px; color: var(--text-secondary); line-height: 1.7;
+    padding: 12px; background: rgba(167,139,250,0.03); border-radius: var(--radius-xs);
+    border-left: 3px solid var(--accent);
+  }
+
+  /* Card Grid View */
+  .model-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  @media (max-width: 768px) { .model-card-grid { grid-template-columns: 1fr; } }
+  .model-card-item {
+    padding: 16px; cursor: pointer;
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .model-card-item:hover { border-color: var(--glass-border-hover); background: var(--surface-hover); }
+  .mci-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .mci-rank { font-size: 10px; color: var(--dim); font-weight: 600; }
+  .mci-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+  .mci-score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .mci-composite { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .mci-scores { display: flex; gap: 6px; flex-wrap: wrap; }
+  .mci-axis { font-size: 10px; font-weight: 600; color: var(--text-secondary); }
+  .mci-axis-label { color: var(--dim); font-size: 8px; }
+
+  /* Pagination */
+  .pagination {
+    display: flex; justify-content: center; align-items: center;
+    gap: 8px; margin-top: 20px; padding: 12px 0;
+  }
+  .page-btn {
+    font-size: 11px; font-weight: 600; padding: 6px 12px;
+    border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--glass-border);
+    background: var(--glass); color: var(--text-secondary);
+    font-family: inherit;
+    transition: all var(--transition);
+  }
+  .page-btn:hover { border-color: var(--glass-border-hover); color: var(--text); }
+  .page-btn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  .page-btn:disabled { opacity: 0.3; cursor: default; }
+  .page-info { font-size: 11px; color: var(--dim); }
+
+  /* Category Distribution */
+  .cat-dist { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .cat-chip {
+    font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 10px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .cat-chip-count { font-weight: 800; }
+
+  /* Force Velocity */
+  .force-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
   @media (max-width: 768px) { .force-grid { grid-template-columns: 1fr; } }
   .force-card { padding: 20px; cursor: pointer; }
   .force-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
   .force-name { font-size: 13px; font-weight: 700; color: var(--text); }
   .force-velocity {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 2px 8px;
-    border-radius: 10px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 2px 8px; border-radius: 10px;
   }
   .vel-accelerating { background: rgba(52,211,153,0.12); color: var(--green); }
   .vel-steady { background: rgba(96,165,250,0.12); color: var(--blue); }
@@ -266,8 +485,16 @@
   .vel-intensifying { background: rgba(248,113,113,0.12); color: var(--red); }
   .vel-constraining { background: rgba(244,114,182,0.12); color: var(--pink); }
   .vel-decelerating { background: rgba(248,113,113,0.12); color: var(--red); }
+  .force-metric { font-size: 11.5px; color: var(--text-secondary); margin-bottom: 8px; font-weight: 500; }
+  .force-bar { height: 3px; border-radius: 2px; background: rgba(255,255,255,0.05); overflow: hidden; margin-bottom: 8px; }
+  .force-bar-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+  .force-data { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--glass-border); }
+  .force-card.expanded .force-data { display: block; }
+  .force-datum { font-size: 11px; color: var(--text-secondary); padding: 3px 0; line-height: 1.5; }
+  .force-datum::before { content: '\2022'; color: var(--dim); margin-right: 6px; }
+  .force-projection { font-size: 11px; color: var(--accent); margin-top: 8px; font-style: italic; }
 
-  /* Sector Transformation Table */
+  /* Sector Table */
   .sector-table { width: 100%; border-collapse: collapse; }
   .sector-table th {
     text-align: left; font-size: 10px; font-weight: 600; text-transform: uppercase;
@@ -286,126 +513,33 @@
   .sector-change-neg { color: var(--red); }
   .sector-change-pos { color: var(--green); }
 
-  /* Rated Models */
-  .model-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  @media (max-width: 768px) { .model-grid { grid-template-columns: 1fr; } }
-  .model-card-ui { padding: 16px; cursor: default; }
-  .model-rank { font-size: 11px; color: var(--dim); font-weight: 600; margin-bottom: 4px; }
-  .model-name-ui { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-  .model-score-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-  .model-composite { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .model-category {
-    font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
-    padding: 2px 8px; border-radius: 10px;
-  }
-  .cat-STRUCTURAL_WINNER { background: rgba(52,211,153,0.12); color: var(--green); }
-  .cat-FORCE_RIDER { background: rgba(96,165,250,0.12); color: var(--blue); }
-  .cat-GEOGRAPHIC_PLAY { background: rgba(34,211,238,0.12); color: var(--cyan); }
-  .cat-TIMING_ARBITRAGE { background: rgba(251,191,36,0.12); color: var(--amber); }
-  .cat-CAPITAL_MOAT { background: rgba(167,139,250,0.12); color: var(--accent); }
-  .cat-FEAR_ECONOMY { background: rgba(248,113,113,0.12); color: var(--red); }
-  .cat-CONDITIONAL { background: rgba(255,255,255,0.06); color: var(--text-secondary); }
-  .model-sector { font-size: 11px; color: var(--text-secondary); }
-
-  /* Category Distribution */
-  .cat-dist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .cat-chip {
-    font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 10px;
-    display: flex; align-items: center; gap: 5px;
-  }
-  .cat-chip-count { font-weight: 800; }
-  .force-metric {
-    font-size: 11.5px;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-  .force-bar {
-    height: 3px;
-    border-radius: 2px;
-    background: rgba(255,255,255,0.05);
-    overflow: hidden;
-    margin-bottom: 8px;
-  }
-  .force-bar-fill {
-    height: 100%;
-    border-radius: 2px;
-    transition: width 1s ease;
-  }
-  .force-data {
-    display: none;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--glass-border);
-  }
-  .force-card.expanded .force-data { display: block; }
-  .force-datum {
-    font-size: 11px;
-    color: var(--text-secondary);
-    padding: 3px 0;
-    line-height: 1.5;
-  }
-  .force-datum::before {
-    content: '\2022';
-    color: var(--dim);
-    margin-right: 6px;
-  }
-  .force-projection {
-    font-size: 11px;
-    color: var(--accent);
-    margin-top: 8px;
-    font-style: italic;
-  }
-
   /* World Map */
   .world-map-container {
-    position: relative;
-    padding: 32px 24px;
-    margin-bottom: 16px;
-    min-height: 420px;
-    overflow: hidden;
+    position: relative; padding: 32px 24px; margin-bottom: 16px;
+    min-height: 420px; overflow: hidden;
   }
   .map-grid {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
-    background-size: 40px 40px;
-    pointer-events: none;
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
+    background-size: 40px 40px; pointer-events: none;
   }
   .map-regions {
-    position: relative;
-    display: grid;
+    position: relative; display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 60px);
-    gap: 4px;
-    z-index: 1;
+    gap: 4px; z-index: 1;
   }
   .region-node {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 6px;
-    border-radius: var(--radius-sm);
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.04);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 8px 6px; border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer; transition: all 0.3s ease; position: relative; z-index: 2;
   }
   .region-node:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(167,139,250,0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    z-index: 10;
+    background: rgba(255,255,255,0.06); border-color: rgba(167,139,250,0.2);
+    transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); z-index: 10;
   }
-  .region-node.active {
-    background: rgba(167,139,250,0.08);
-    border-color: rgba(167,139,250,0.2);
-  }
+  .region-node.active { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.2); }
   .region-emoji { font-size: 20px; margin-bottom: 2px; }
   .region-name { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); }
   .region-vel { font-size: 8px; font-weight: 600; margin-top: 2px; }
@@ -413,454 +547,147 @@
   .rv-moderate { color: var(--amber); }
   .rv-nascent { color: var(--dim); }
   .rv-accelerating { color: var(--cyan); }
-
-  /* Region Detail */
   .region-detail {
-    display: none;
-    padding: 20px;
-    margin-bottom: 16px;
+    display: none; padding: 20px; margin-bottom: 16px;
     animation: fadeIn 0.3s ease;
   }
   .region-detail.visible { display: block; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  .region-detail-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
+  .region-detail-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
   .region-detail-emoji { font-size: 32px; }
   .region-detail-name { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
   .region-detail-vel { font-size: 11px; font-weight: 500; color: var(--text-secondary); }
-  .region-metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-  .region-metric {
-    padding: 12px;
-    background: rgba(255,255,255,0.02);
-    border-radius: var(--radius-xs);
-    border: 1px solid rgba(255,255,255,0.04);
-  }
-  .rm-label {
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--dim);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
+  .region-metrics { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .region-metric { padding: 12px; background: rgba(255,255,255,0.02); border-radius: var(--radius-xs); border: 1px solid rgba(255,255,255,0.04); }
+  .rm-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--dim); font-weight: 600; margin-bottom: 4px; }
   .rm-value { font-size: 14px; font-weight: 700; color: var(--text); }
   .region-forces { margin-bottom: 12px; }
-  .region-force-item {
-    font-size: 11.5px;
-    color: var(--text-secondary);
-    padding: 3px 0;
-  }
-  .region-force-item::before {
-    content: '\25B8';
-    color: var(--accent);
-    margin-right: 6px;
-  }
+  .region-force-item { font-size: 11.5px; color: var(--text-secondary); padding: 3px 0; }
+  .region-force-item::before { content: '\25B8'; color: var(--accent); margin-right: 6px; }
   .region-outlook {
-    font-size: 12px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    padding: 12px;
-    background: rgba(167,139,250,0.04);
-    border-radius: var(--radius-xs);
+    font-size: 12px; color: var(--text-secondary); line-height: 1.7;
+    padding: 12px; background: rgba(167,139,250,0.04); border-radius: var(--radius-xs);
     border-left: 3px solid var(--accent);
   }
 
   /* Fear Friction */
-  .friction-grid {
-    display: grid;
-    gap: 8px;
-  }
-  .friction-row {
-    display: grid;
-    grid-template-columns: 140px 1fr 60px;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-  }
-  .friction-sector {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text);
-  }
-  .friction-bars {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
-  .friction-bar-track {
-    flex: 1;
-    height: 20px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.03);
-    position: relative;
-    overflow: hidden;
-  }
-  .friction-bar-econ {
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, rgba(52,211,153,0.4), rgba(52,211,153,0.15));
-    transition: width 1s ease;
-  }
-  .friction-bar-psych {
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, rgba(248,113,113,0.5), rgba(248,113,113,0.15));
-    transition: width 1s ease;
-    z-index: 1;
-  }
-  .friction-gap {
-    font-size: 16px;
-    font-weight: 800;
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
+  .friction-grid { display: grid; gap: 8px; }
+  .friction-row { display: grid; grid-template-columns: 140px 1fr 60px; align-items: center; gap: 12px; padding: 8px 0; }
+  .friction-sector { font-size: 12px; font-weight: 600; color: var(--text); }
+  .friction-bar-track { flex: 1; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.03); position: relative; overflow: hidden; }
+  .friction-bar-econ { position: absolute; top: 0; left: 0; height: 100%; border-radius: 4px; background: linear-gradient(90deg, rgba(52,211,153,0.4), rgba(52,211,153,0.15)); transition: width 1s ease; }
+  .friction-bar-psych { position: absolute; top: 0; left: 0; height: 100%; border-radius: 4px; background: linear-gradient(90deg, rgba(248,113,113,0.5), rgba(248,113,113,0.15)); transition: width 1s ease; z-index: 1; }
+  .friction-gap { font-size: 16px; font-weight: 800; text-align: right; font-variant-numeric: tabular-nums; }
   .gap-high { color: var(--red); }
   .gap-medium { color: var(--amber); }
   .gap-low { color: var(--green); }
-  .friction-legend {
-    display: flex;
-    gap: 20px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--glass-border);
-  }
-  .friction-legend-item {
-    font-size: 10px;
-    color: var(--dim);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .friction-legend-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-  }
+  .friction-legend { display: flex; gap: 20px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--glass-border); }
+  .friction-legend-item { font-size: 10px; color: var(--dim); display: flex; align-items: center; gap: 6px; }
+  .friction-legend-dot { width: 8px; height: 8px; border-radius: 2px; }
 
-  /* Key Findings */
-  .findings-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  @media (max-width: 768px) { .findings-grid { grid-template-columns: 1fr; } }
-  .finding {
-    padding: 18px;
-    cursor: pointer;
-  }
-  .finding-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 6px;
-  }
-  .finding-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.4;
-  }
-  .finding-confidence {
-    font-size: 9px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 8px;
-    flex-shrink: 0;
-  }
-  .conf-high { background: rgba(52,211,153,0.1); color: var(--green); }
-  .conf-medium { background: rgba(251,191,36,0.1); color: var(--amber); }
-  .finding-magnitude {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-  .finding-detail {
-    font-size: 11.5px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    display: none;
-  }
-  .finding.expanded .finding-detail { display: block; margin-top: 8px; }
-
-  /* Sentiment Trajectory */
-  .trajectory-grid {
-    display: grid;
-    gap: 6px;
-  }
-  .trajectory-row {
-    display: grid;
-    grid-template-columns: 180px 100px 1fr 100px;
-    align-items: center;
-    gap: 12px;
-    padding: 6px 0;
-    font-size: 12px;
-  }
-  @media (max-width: 768px) {
-    .trajectory-row { grid-template-columns: 1fr 1fr; gap: 4px; font-size: 11px; }
-  }
-  .traj-metric { font-weight: 600; color: var(--text); }
-  .traj-baseline { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-  .traj-arrow {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    color: var(--dim);
-  }
-  .traj-arrow-icon { font-size: 14px; }
-  .traj-2031 { font-weight: 700; color: var(--accent); text-align: right; }
-
-  /* Fear Markets Table */
-  .markets-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .markets-table th {
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--dim);
-    font-weight: 600;
-    text-align: left;
-    padding: 8px 10px;
-    border-bottom: 1px solid var(--glass-border);
-  }
-  .markets-table td {
-    font-size: 12px;
-    padding: 8px 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.02);
-    color: var(--text-secondary);
-  }
-  .markets-table tr:hover td { color: var(--text); background: rgba(255,255,255,0.01); }
-  .cagr-value {
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-  }
+  /* Markets Table */
+  .markets-table { width: 100%; border-collapse: collapse; }
+  .markets-table th { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--dim); font-weight: 600; text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--glass-border); }
+  .markets-table td { font-size: 12px; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.02); color: var(--text-secondary); }
+  .cagr-value { font-weight: 700; font-variant-numeric: tabular-nums; }
   .cagr-hot { color: var(--red); }
   .cagr-warm { color: var(--amber); }
   .cagr-cool { color: var(--green); }
 
+  /* Key Findings */
+  .findings-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  @media (max-width: 768px) { .findings-grid { grid-template-columns: 1fr; } }
+  .finding { padding: 18px; cursor: pointer; }
+  .finding-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .finding-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; }
+  .finding-confidence { font-size: 9px; font-weight: 600; text-transform: uppercase; padding: 2px 6px; border-radius: 8px; flex-shrink: 0; }
+  .conf-high { background: rgba(52,211,153,0.1); color: var(--green); }
+  .conf-medium { background: rgba(251,191,36,0.1); color: var(--amber); }
+  .finding-magnitude { font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+  .finding-detail { font-size: 11.5px; color: var(--text-secondary); line-height: 1.6; display: none; }
+  .finding.expanded .finding-detail { display: block; margin-top: 8px; }
+
+  /* Sentiment Trajectory */
+  .trajectory-row { display: grid; grid-template-columns: 180px 100px 1fr 100px; align-items: center; gap: 12px; padding: 6px 0; font-size: 12px; }
+  @media (max-width: 768px) { .trajectory-row { grid-template-columns: 1fr 1fr; gap: 4px; font-size: 11px; } }
+  .traj-metric { font-weight: 600; color: var(--text); }
+  .traj-baseline { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .traj-arrow { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--dim); }
+  .traj-2031 { font-weight: 700; color: var(--accent); text-align: right; }
+
   /* Perez Cycle */
-  .perez-timeline {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    padding: 20px 0;
-    position: relative;
-  }
-  .perez-phase {
-    flex: 1;
-    text-align: center;
-    padding: 16px 8px;
-    position: relative;
-    border-bottom: 3px solid rgba(255,255,255,0.05);
-  }
-  .perez-phase.current {
-    border-bottom-color: var(--accent);
-    background: rgba(167,139,250,0.04);
-    border-radius: var(--radius-xs) var(--radius-xs) 0 0;
-  }
-  .perez-phase.past {
-    border-bottom-color: rgba(52,211,153,0.3);
-  }
-  .perez-phase-name {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
+  .perez-timeline { display: flex; align-items: center; gap: 0; padding: 20px 0; position: relative; }
+  .perez-phase { flex: 1; text-align: center; padding: 16px 8px; position: relative; border-bottom: 3px solid rgba(255,255,255,0.05); }
+  .perez-phase.current { border-bottom-color: var(--accent); background: rgba(167,139,250,0.04); border-radius: var(--radius-xs) var(--radius-xs) 0 0; }
+  .perez-phase.past { border-bottom-color: rgba(52,211,153,0.3); }
+  .perez-phase-name { font-size: 11px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
   .perez-phase.current .perez-phase-name { color: var(--accent); }
-  .perez-phase-years {
-    font-size: 9px;
-    color: var(--dim);
-    font-weight: 500;
-  }
+  .perez-phase-years { font-size: 9px; color: var(--dim); font-weight: 500; }
   .perez-marker {
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 2px solid var(--bg);
-    box-shadow: 0 0 12px rgba(167,139,250,0.4);
+    position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+    width: 12px; height: 12px; border-radius: 50%; background: var(--accent);
+    border: 2px solid var(--bg); box-shadow: 0 0 12px rgba(167,139,250,0.4);
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 12px rgba(167,139,250,0.4); }
-    50% { box-shadow: 0 0 24px rgba(167,139,250,0.6); }
-  }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 12px rgba(167,139,250,0.4); } 50% { box-shadow: 0 0 24px rgba(167,139,250,0.6); } }
 
   /* Displacement */
-  .displacement-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 16px;
-  }
+  .displacement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
   @media (max-width: 768px) { .displacement-grid { grid-template-columns: 1fr; } }
   .disp-stat { padding: 18px; text-align: center; }
-  .disp-value {
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 4px;
-    font-variant-numeric: tabular-nums;
-  }
-  .disp-label {
-    font-size: 10px;
-    color: var(--text-secondary);
-    font-weight: 500;
-  }
-  .disp-sub {
-    font-size: 9px;
-    color: var(--dim);
-    margin-top: 4px;
-  }
+  .disp-value { font-size: 28px; font-weight: 900; line-height: 1; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+  .disp-label { font-size: 10px; color: var(--text-secondary); font-weight: 500; }
+  .disp-sub { font-size: 9px; color: var(--dim); margin-top: 4px; }
+
+  /* Defense */
+  .defense-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .defense-stat { padding: 14px; text-align: center; background: rgba(255,255,255,0.02); border-radius: var(--radius-xs); }
+  .defense-value { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+  .defense-label { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; }
 
   /* Cycle History */
-  .cycle-chart {
-    display: flex;
-    align-items: flex-end;
-    gap: 6px;
-    height: 100px;
-    padding-top: 10px;
-  }
+  .cycle-chart { display: flex; align-items: flex-end; gap: 6px; height: 100px; padding-top: 10px; }
   .cycle-bar {
-    flex: 1;
-    min-width: 12px;
-    border-radius: 4px 4px 0 0;
-    transition: height 1s ease, opacity 0.3s;
-    position: relative;
-    cursor: default;
+    flex: 1; min-width: 12px; border-radius: 4px 4px 0 0;
+    transition: height 1s ease, opacity 0.3s; position: relative; cursor: default;
   }
   .cycle-bar:hover { opacity: 1 !important; }
   .cycle-bar::after {
-    content: attr(data-label);
-    position: absolute;
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 8px;
-    color: var(--dim);
-    white-space: nowrap;
-    letter-spacing: 0.3px;
+    content: attr(data-label); position: absolute; bottom: -18px; left: 50%;
+    transform: translateX(-50%); font-size: 8px; color: var(--dim); white-space: nowrap; letter-spacing: 0.3px;
   }
 
-  /* Grid layouts */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
-
-  /* Expandable */
-  .expandable-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding-bottom: 4px;
-  }
-  .expand-icon {
-    font-size: 10px;
-    color: var(--dim);
-    transition: transform var(--transition);
-  }
+  /* Expandable / Evidence */
+  .expandable-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding-bottom: 4px; }
+  .expand-icon { font-size: 10px; color: var(--dim); transition: transform var(--transition); }
   .expandable-content { display: none; }
   .expanded .expandable-content { display: block; }
   .expanded .expand-icon { transform: rotate(180deg); }
+  .evidence-card { padding: 12px 14px; background: rgba(255,255,255,0.02); border-radius: var(--radius-xs); border: 1px solid rgba(255,255,255,0.04); margin-bottom: 8px; }
+  .evidence-name { font-size: 12px; font-weight: 600; color: var(--text); }
+  .evidence-score { font-size: 11px; font-weight: 700; color: var(--green); }
+  .evidence-sector { font-size: 10px; color: var(--dim); }
 
-  /* Two-col layout for findings and friction */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
+  /* Two-col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
 
-  /* Defense stats */
-  .defense-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  .defense-stat {
-    padding: 14px;
-    text-align: center;
-    background: rgba(255,255,255,0.02);
-    border-radius: var(--radius-xs);
-  }
-  .defense-value {
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
-  .defense-label {
-    font-size: 9px;
-    color: var(--dim);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  /* Results info */
+  .results-info { font-size: 11px; color: var(--dim); margin-bottom: 12px; }
 
-  /* v2 evidence */
-  .evidence-card {
-    padding: 12px 14px;
-    background: rgba(255,255,255,0.02);
-    border-radius: var(--radius-xs);
-    border: 1px solid rgba(255,255,255,0.04);
-    margin-bottom: 8px;
-  }
-  .evidence-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text);
-  }
-  .evidence-score {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--green);
-  }
-  .evidence-sector {
-    font-size: 10px;
-    color: var(--dim);
-  }
-
-  /* Footer */
   .footer {
-    text-align: center;
-    padding: 32px 0 16px;
-    color: var(--dim);
-    font-size: 11px;
+    text-align: center; padding: 32px 0 16px; color: var(--dim); font-size: 11px;
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <nav>
-    <a class="active" onclick="showView('models')">Models</a>
-    <a onclick="showView('forces')">Forces</a>
-    <a onclick="showView('sectors')">Sectors</a>
-    <a onclick="showView('regions')">Regions</a>
-    <a onclick="showView('fear')">Fear Index</a>
-    <a onclick="showView('data')">Data</a>
+  <nav id="main-nav">
+    <a class="active" data-view="models">Models</a>
+    <a data-view="forces">Forces</a>
+    <a data-view="sectors">Sectors</a>
+    <a data-view="regions">Regions</a>
+    <a data-view="fear">Fear Index</a>
+    <a data-view="data">Data</a>
   </nav>
 
   <header>
@@ -871,79 +698,81 @@
     </div>
   </header>
 
-  <!-- KPI Row -->
+  <!-- KPI Row (always visible) -->
   <div class="kpi-row" id="kpi-row">
-    <div class="glass kpi">
-      <div class="kpi-label">Rated Models</div>
-      <div class="kpi-value" style="color:var(--accent)" id="kpi-rated">325</div>
-      <div class="kpi-sub">individually scored</div>
-    </div>
-    <div class="glass kpi">
-      <div class="kpi-label">Total Inventory</div>
-      <div class="kpi-value" style="color:var(--blue)" id="kpi-total">3147</div>
-      <div class="kpi-sub">325 rated + 2,822 stubs</div>
-    </div>
-    <div class="glass kpi">
-      <div class="kpi-label">Structural Winners</div>
-      <div class="kpi-value" style="color:var(--green)" id="kpi-winners">8</div>
-      <div class="kpi-sub">composite &ge;80, SN&ge;9</div>
-    </div>
-    <div class="glass kpi">
-      <div class="kpi-label">Top Composite</div>
-      <div class="kpi-value" style="color:var(--amber)" id="kpi-top">84.0</div>
-      <div class="kpi-sub">mean 64.2</div>
-    </div>
-    <div class="glass kpi">
-      <div class="kpi-label">New This Cycle</div>
-      <div class="kpi-value" style="color:var(--red)" id="kpi-new">32</div>
-      <div class="kpi-sub">from deep dives (v3-6)</div>
-    </div>
-    <div class="glass kpi">
-      <div class="kpi-label">Forces &times; Regions</div>
-      <div class="kpi-value" style="color:var(--cyan)">6&times;8</div>
-      <div class="kpi-sub">grading context</div>
-    </div>
+    <div class="glass kpi"><div class="kpi-label">Rated Models</div><div class="kpi-value" style="color:var(--accent)" id="kpi-rated">--</div><div class="kpi-sub">individually scored</div></div>
+    <div class="glass kpi"><div class="kpi-label">Total Inventory</div><div class="kpi-value" style="color:var(--blue)" id="kpi-total">--</div><div class="kpi-sub" id="kpi-total-sub">rated + stubs</div></div>
+    <div class="glass kpi"><div class="kpi-label">Structural Winners</div><div class="kpi-value" style="color:var(--green)" id="kpi-winners">--</div><div class="kpi-sub">composite &ge;80, SN&ge;9</div></div>
+    <div class="glass kpi"><div class="kpi-label">Top Composite</div><div class="kpi-value" style="color:var(--amber)" id="kpi-top">--</div><div class="kpi-sub" id="kpi-mean-sub">mean --</div></div>
+    <div class="glass kpi"><div class="kpi-label">New This Cycle</div><div class="kpi-value" style="color:var(--red)" id="kpi-new">--</div><div class="kpi-sub">from deep dives</div></div>
+    <div class="glass kpi"><div class="kpi-label">Forces &times; Regions</div><div class="kpi-value" style="color:var(--cyan)">6&times;8</div><div class="kpi-sub">grading context</div></div>
   </div>
 
-  <!-- Hero Synthesis -->
-  <div class="glass hero" id="hero">
-    <div class="hero-label" id="hero-label">v3-6 Synthesis &mdash; Signal Refresh + Pattern Discovery + Sector Screening</div>
-    <div class="hero-text" id="hero-text">
-      <strong>325 models rated</strong> through 5-axis scoring (SN, FA, EC, TG, CE) + <strong>32 new model cards</strong> scored this cycle from <strong>43 graded signals</strong> across all 6 force dimensions. <strong>3 new structural patterns</strong> confirmed: <strong>P-036 Anticipatory Displacement</strong> (firms cut roles before AI can do them), <strong>P-037 Entry-Level Extinction</strong> (junior hiring pipelines collapsing), <strong>P-038 AI Infrastructure Chain Constraint</strong> (power/cooling bottlenecks throttling deployment). Defense sector <strong>upgraded to acceleration phase</strong> on NATO spending + autonomous systems momentum. <strong>F2 Demographics</strong> and <strong>F5 Psychology</strong> velocity upgrades driven by workforce aging acceleration and trust-erosion signals. Sector screener identifies <strong>next 10 deep-dive candidates</strong> for v3-7. Top composite <strong>84.0</strong>, mean <strong>64.2</strong>. 8 STRUCTURAL_WINNERs with hard-enforced thresholds (composite &ge;80, SN&ge;9).
+  <!-- ═══ VIEW: MODELS ═══ -->
+  <div id="view-models" class="view-section active">
+    <!-- What's New -->
+    <div class="glass whats-new" id="whats-new"></div>
+
+    <!-- Controls -->
+    <div class="controls-bar">
+      <input type="text" class="search-box" id="model-search" placeholder="Search name, ID, NAICS, architecture...">
+      <select class="sort-select" id="model-sort">
+        <option value="rank">Rank</option>
+        <option value="composite-desc">Composite (high)</option>
+        <option value="composite-asc">Composite (low)</option>
+        <option value="sn">SN (Structural)</option>
+        <option value="fa">FA (Force Alignment)</option>
+        <option value="ec">EC (Econ Capture)</option>
+        <option value="tg">TG (Timing)</option>
+        <option value="ce">CE (Competitive)</option>
+        <option value="name">Name A-Z</option>
+      </select>
+      <button class="toggle-btn" id="new-only-btn" onclick="toggleNewOnly()">NEW only</button>
+      <div class="view-toggle">
+        <button class="active" data-mode="table" onclick="setViewMode('table', this)">Table</button>
+        <button data-mode="cards" onclick="setViewMode('cards', this)">Cards</button>
+      </div>
     </div>
+
+    <!-- Category Filters -->
+    <div class="filter-chips" id="cat-filters"></div>
+    <div style="height:8px"></div>
+
+    <!-- Results info -->
+    <div class="results-info" id="results-info"></div>
+
+    <!-- Model List (table or cards) -->
+    <div id="model-list-container"></div>
+
+    <!-- Expanded Detail -->
+    <div class="glass-static model-detail" id="model-detail-panel"></div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
   </div>
 
-  <!-- SECTION: Rated Models (CENTRAL OUTPUT) -->
-  <div id="view-models">
-    <div class="section-label">Rated Business Models <span class="count" id="model-count">0</span></div>
-    <div class="cat-dist" id="cat-dist"></div>
-    <div style="height:12px"></div>
-    <div id="new-sectors"></div>
-    <div style="height:16px"></div>
-    <div class="model-grid" id="model-grid"></div>
-  </div>
-
-  <!-- SECTION: Force Velocities -->
-  <div id="view-forces">
+  <!-- ═══ VIEW: FORCES ═══ -->
+  <div id="view-forces" class="view-section">
     <div class="section-label">Force Velocities <span class="count">F1-F6</span></div>
     <div class="force-grid" id="force-grid"></div>
+    <!-- Key Findings -->
+    <div class="section-label">Key Findings <span class="count" id="findings-count">0</span></div>
+    <div class="findings-grid" id="findings-grid"></div>
   </div>
 
-  <!-- SECTION: Sector Transformations -->
-  <div id="view-sectors">
+  <!-- ═══ VIEW: SECTORS ═══ -->
+  <div id="view-sectors" class="view-section">
     <div class="section-label">Sector Transformations <span class="count">employment projections 2026&rarr;2031</span></div>
     <div class="glass-static card">
       <table class="sector-table" id="sector-table">
-        <thead>
-          <tr><th>Sector</th><th>Phase</th><th>2026</th><th>2031</th><th>Change</th><th>Top Model</th></tr>
-        </thead>
+        <thead><tr><th>Sector</th><th>Phase</th><th>2026</th><th>2031</th><th>Change</th><th>Top Model</th></tr></thead>
         <tbody id="sector-body"></tbody>
       </table>
     </div>
   </div>
 
-  <!-- SECTION: World Map -->
-  <div id="view-regions">
+  <!-- ═══ VIEW: REGIONS ═══ -->
+  <div id="view-regions" class="view-section">
     <div class="section-label">Global Transformation Map <span class="count">8 regions</span></div>
     <div class="glass-static world-map-container">
       <div class="map-grid"></div>
@@ -952,86 +781,51 @@
     <div class="glass-static region-detail" id="region-detail"></div>
   </div>
 
-  <!-- SECTION: Key Findings -->
-  <div id="view-findings">
-    <div class="section-label">Key Findings <span class="count" id="findings-count">0</span></div>
-    <div class="findings-grid" id="findings-grid"></div>
-  </div>
-
-  <!-- SECTION: Fear Friction + Displacement -->
-  <div id="view-fear">
+  <!-- ═══ VIEW: FEAR ═══ -->
+  <div id="view-fear" class="view-section">
     <div class="two-col">
       <div class="glass-static card">
         <div class="section-label">Fear Friction Index <span class="count">economic vs psychological readiness</span></div>
         <div class="friction-grid" id="friction-grid"></div>
         <div class="friction-legend">
-          <div class="friction-legend-item">
-            <div class="friction-legend-dot" style="background:rgba(52,211,153,0.4)"></div>
-            Economic readiness (1-10)
-          </div>
-          <div class="friction-legend-item">
-            <div class="friction-legend-dot" style="background:rgba(248,113,113,0.5)"></div>
-            Psychological readiness (1-10)
-          </div>
-          <div class="friction-legend-item">
-            Gap = friction
-          </div>
+          <div class="friction-legend-item"><div class="friction-legend-dot" style="background:rgba(52,211,153,0.4)"></div>Economic readiness (1-10)</div>
+          <div class="friction-legend-item"><div class="friction-legend-dot" style="background:rgba(248,113,113,0.5)"></div>Psychological readiness (1-10)</div>
+          <div class="friction-legend-item">Gap = friction</div>
         </div>
       </div>
-
       <div class="glass-static card">
         <div class="section-label">Fear-Driven Markets <span class="count">new categories</span></div>
-        <table class="markets-table" id="markets-table">
-          <thead>
-            <tr><th>Category</th><th>2025</th><th>Projected</th><th>CAGR</th></tr>
-          </thead>
-          <tbody id="markets-body"></tbody>
-        </table>
+        <table class="markets-table"><thead><tr><th>Category</th><th>2025</th><th>Projected</th><th>CAGR</th></tr></thead><tbody id="markets-body"></tbody></table>
       </div>
     </div>
-
-    <!-- Worker Displacement -->
     <div class="section-label">Worker Displacement Signals</div>
     <div class="displacement-grid" id="displacement-grid"></div>
   </div>
 
-  <!-- SECTION: Sentiment + Perez -->
-  <div id="view-data">
+  <!-- ═══ VIEW: DATA ═══ -->
+  <div id="view-data" class="view-section">
     <div class="two-col">
       <div class="glass-static card">
         <div class="section-label">Sentiment Trajectory <span class="count">2026 &rarr; 2031</span></div>
         <div class="trajectory-grid" id="trajectory-grid"></div>
       </div>
-
       <div class="glass-static card">
         <div class="section-label">Perez Cycle Position</div>
         <div class="perez-timeline" id="perez-timeline"></div>
-        <div style="margin-top:16px">
-          <div class="section-label" style="font-size:10px; margin-bottom:8px;">Turning Point Signals</div>
-          <div id="perez-signals"></div>
-        </div>
+        <div style="margin-top:16px"><div class="section-label" style="font-size:10px;margin-bottom:8px;">Turning Point Signals</div><div id="perez-signals"></div></div>
       </div>
     </div>
-
-    <!-- Defense AI -->
     <div class="glass-static card">
-      <div class="section-label">Defense & Sovereign AI Spending</div>
+      <div class="section-label">Defense &amp; Sovereign AI Spending</div>
       <div class="defense-grid" id="defense-grid"></div>
     </div>
-
-    <!-- Model Inventory -->
     <div class="glass-static card" id="evidence-section">
       <div class="expandable-header" onclick="toggleSection('evidence-section')">
-        <div class="section-label" style="margin-bottom:0;">Model Inventory Sources <span class="count" id="inventory-count">3,147 total &middot; 7 batches &middot; 18 patterns</span></div>
+        <div class="section-label" style="margin-bottom:0;">Model Inventory Sources <span class="count" id="inventory-count"></span></div>
         <span class="expand-icon">&#x25BC;</span>
       </div>
-      <div class="expandable-content">
-        <div style="height:12px"></div>
-        <div id="evidence-list"></div>
-      </div>
+      <div class="expandable-content"><div style="height:12px"></div><div id="evidence-list"></div></div>
     </div>
-
-    <!-- Cycle History -->
     <div class="glass-static card">
       <div class="section-label">Engine Evolution <span class="count" id="cycle-count">0</span></div>
       <div class="cycle-chart" id="cycle-chart"></div>
@@ -1039,19 +833,23 @@
     </div>
   </div>
 
-  <div class="footer">
-    Business Model Engine v3.6 &middot; 325 rated models &middot; 5-axis scoring (SN/FA/EC/TG/CE) &middot; 2026&ndash;2031
-  </div>
+  <div class="footer">Business Model Engine v3.6 &middot; 5-axis scoring (SN/FA/EC/TG/CE) &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
 const BASE = '../data/ui';
+let allModels = [];
+let filteredModels = [];
+let currentPage = 1;
+const PAGE_SIZE = 50;
+let viewMode = 'table';
+let newOnlyActive = false;
+let activeCatFilter = null;
+let expandedModelId = null;
 
 async function load(path) {
-  try {
-    const r = await fetch(path + '?t=' + Date.now());
-    return r.ok ? await r.json() : null;
-  } catch { return null; }
+  try { const r = await fetch(path + '?t=' + Date.now()); return r.ok ? await r.json() : null; }
+  catch { return null; }
 }
 
 function esc(s) {
@@ -1061,23 +859,280 @@ function esc(s) {
   return d.innerHTML;
 }
 
-function toggleSection(id) {
-  document.getElementById(id).classList.toggle('expanded');
+function toggleSection(id) { document.getElementById(id).classList.toggle('expanded'); }
+
+// ─── NAV ───
+document.querySelectorAll('#main-nav a').forEach(a => {
+  a.addEventListener('click', function() {
+    document.querySelectorAll('#main-nav a').forEach(x => x.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
+    const target = document.getElementById('view-' + this.dataset.view);
+    if (target) target.classList.add('active');
+  });
+});
+
+// ─── AXIS COLORS ───
+const axisColor = {
+  SN: 'var(--green)', FA: 'var(--blue)', EC: 'var(--amber)', TG: 'var(--cyan)', CE: 'var(--accent)'
+};
+
+// ─── MODEL CONTROLS ───
+document.getElementById('model-search').addEventListener('input', () => { currentPage = 1; applyFilters(); });
+document.getElementById('model-sort').addEventListener('change', () => { currentPage = 1; applyFilters(); });
+
+function toggleNewOnly() {
+  newOnlyActive = !newOnlyActive;
+  document.getElementById('new-only-btn').classList.toggle('active', newOnlyActive);
+  currentPage = 1;
+  applyFilters();
 }
 
-function showView(view) {
-  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-  event.target.classList.add('active');
-  // All views always visible — nav just scrolls to section
-  const el = document.getElementById('view-' + view);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function setViewMode(mode, btn) {
+  viewMode = mode;
+  document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderModelList();
 }
 
-// ─── Force Velocities ───
+function setCatFilter(cat) {
+  if (activeCatFilter === cat) { activeCatFilter = null; }
+  else { activeCatFilter = cat; }
+  document.querySelectorAll('.filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeCatFilter);
+  });
+  currentPage = 1;
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById('model-search').value.toLowerCase().trim();
+  const sort = document.getElementById('model-sort').value;
+
+  filteredModels = allModels.filter(m => {
+    if (newOnlyActive && !m.new_in_v36) return false;
+    if (activeCatFilter && m.category !== activeCatFilter) return false;
+    if (q) {
+      const hay = [m.name, m.id, m.sector_naics, m.architecture, m.category, m.one_liner || ''].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  // Sort
+  const sortFns = {
+    'rank': (a, b) => a.rank - b.rank,
+    'composite-desc': (a, b) => b.composite - a.composite,
+    'composite-asc': (a, b) => a.composite - b.composite,
+    'sn': (a, b) => (b.scores.SN || 0) - (a.scores.SN || 0),
+    'fa': (a, b) => (b.scores.FA || 0) - (a.scores.FA || 0),
+    'ec': (a, b) => (b.scores.EC || 0) - (a.scores.EC || 0),
+    'tg': (a, b) => (b.scores.TG || 0) - (a.scores.TG || 0),
+    'ce': (a, b) => (b.scores.CE || 0) - (a.scores.CE || 0),
+    'name': (a, b) => a.name.localeCompare(b.name),
+  };
+  if (sortFns[sort]) filteredModels.sort(sortFns[sort]);
+
+  renderModelList();
+}
+
+function renderModelList() {
+  const total = filteredModels.length;
+  const pages = Math.ceil(total / PAGE_SIZE);
+  if (currentPage > pages) currentPage = pages || 1;
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const pageModels = filteredModels.slice(start, start + PAGE_SIZE);
+
+  document.getElementById('results-info').textContent =
+    total + ' model' + (total !== 1 ? 's' : '') + (newOnlyActive ? ' (new only)' : '') + (activeCatFilter ? ' \u2014 ' + activeCatFilter.replace(/_/g, ' ') : '');
+
+  const container = document.getElementById('model-list-container');
+
+  if (viewMode === 'table') {
+    container.innerHTML = `<div class="glass-static" style="overflow-x:auto"><table class="model-table">
+      <thead><tr>
+        <th class="sorted" data-sort="rank">#</th>
+        <th data-sort="name">Name</th>
+        <th data-sort="composite-desc">Score</th>
+        <th>Axes</th>
+        <th data-sort="category">Category</th>
+        <th>NAICS</th>
+      </tr></thead>
+      <tbody>${pageModels.map(m => modelTableRow(m)).join('')}</tbody>
+    </table></div>`;
+  } else {
+    container.innerHTML = `<div class="model-card-grid">${pageModels.map(m => modelCardHtml(m)).join('')}</div>`;
+  }
+
+  renderPagination(pages);
+}
+
+function modelTableRow(m) {
+  const catCls = 'cat-' + (m.category || 'CONDITIONAL');
+  const newBadge = m.new_in_v36 ? '<span class="new-badge">NEW</span>' : '';
+  const axes = ['SN','FA','EC','TG','CE'].map(a => {
+    const v = m.scores[a] || 0;
+    const pct = (v / 10) * 100;
+    return `<div class="axis-bar">
+      <div class="axis-bar-label">${a}</div>
+      <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${pct}%;background:${axisColor[a]}"></div></div>
+      <div class="axis-bar-val">${v.toFixed(1)}</div>
+    </div>`;
+  }).join('');
+
+  const compColor = m.composite >= 80 ? 'var(--green)' : m.composite >= 70 ? 'var(--blue)' : m.composite >= 60 ? 'var(--text)' : 'var(--dim)';
+
+  return `<tr onclick="toggleModelDetail('${esc(m.id)}')">
+    <td class="rank-cell">${m.rank}</td>
+    <td class="name-cell">${esc(m.name)}${newBadge}</td>
+    <td class="composite-cell" style="color:${compColor}">${m.composite.toFixed(1)}</td>
+    <td><div class="axis-bars">${axes}</div></td>
+    <td><span class="cat-badge ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</span></td>
+    <td style="font-size:11px;color:var(--dim)">${esc(m.sector_naics)}</td>
+  </tr>`;
+}
+
+function modelCardHtml(m) {
+  const catCls = 'cat-' + (m.category || 'CONDITIONAL');
+  const newBadge = m.new_in_v36 ? '<span class="new-badge">NEW</span>' : '';
+  const axisHtml = ['SN','FA','EC','TG','CE'].map(a => {
+    const v = m.scores[a] || 0;
+    return `<span class="mci-axis"><span class="mci-axis-label">${a}</span> ${v.toFixed(1)}</span>`;
+  }).join('');
+
+  return `<div class="glass model-card-item" onclick="toggleModelDetail('${esc(m.id)}')">
+    <div class="mci-top">
+      <span class="mci-rank">#${m.rank}</span>
+      <span class="cat-badge ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</span>
+    </div>
+    <div class="mci-name">${esc(m.name)}${newBadge}</div>
+    <div class="mci-score-row">
+      <span class="mci-composite">${m.composite.toFixed(1)}</span>
+      <div class="mci-scores">${axisHtml}</div>
+    </div>
+  </div>`;
+}
+
+function toggleModelDetail(id) {
+  const panel = document.getElementById('model-detail-panel');
+  if (expandedModelId === id) {
+    panel.classList.remove('visible');
+    expandedModelId = null;
+    return;
+  }
+  expandedModelId = id;
+  const m = allModels.find(x => x.id === id);
+  if (!m) return;
+
+  const axes = ['SN','FA','EC','TG','CE'];
+  const axisNames = { SN: 'Structural Necessity', FA: 'Force Alignment', EC: 'Economic Capture', TG: 'Timing & Geography', CE: 'Competitive Edge' };
+  const axisWeights = { SN: '25%', FA: '25%', EC: '20%', TG: '15%', CE: '15%' };
+  const newBadge = m.new_in_v36 ? ' <span class="new-badge" style="font-size:10px;padding:2px 8px">NEW IN v3-6</span>' : '';
+
+  const axesHtml = axes.map(a => {
+    const v = m.scores[a] || 0;
+    const pct = (v / 10) * 100;
+    return `<div class="detail-axis">
+      <div class="da-label" style="color:${axisColor[a]}">${a} (${axisWeights[a]})</div>
+      <div class="da-value" style="color:${axisColor[a]}">${v.toFixed(1)}</div>
+      <div class="da-bar"><div class="da-bar-fill" style="width:${pct}%;background:${axisColor[a]}"></div></div>
+      <div style="font-size:8px;color:var(--dim);margin-top:3px">${axisNames[a]}</div>
+    </div>`;
+  }).join('');
+
+  const cats = (m.categories || [m.category]).map(c => `<span class="cat-badge cat-${c}">${esc(c.replace(/_/g, ' '))}</span>`).join('');
+
+  panel.innerHTML = `
+    <div class="detail-header">
+      <div>
+        <div class="detail-name">${esc(m.name)}${newBadge}</div>
+        <div class="detail-id">${esc(m.id)} &middot; Rank #${m.rank}</div>
+      </div>
+      <div class="detail-composite">${m.composite.toFixed(1)}</div>
+    </div>
+    <div class="detail-axes">${axesHtml}</div>
+    <div class="detail-cats">${cats}</div>
+    <div class="detail-meta">
+      <span><span class="meta-label">NAICS:</span> ${esc(m.sector_naics)}</span>
+      <span><span class="meta-label">Architecture:</span> ${esc(m.architecture)}</span>
+      <span><span class="meta-label">Source:</span> ${esc(m.source_batch)}</span>
+    </div>
+    ${m.one_liner ? `<div class="detail-oneliner">${esc(m.one_liner)}</div>` : ''}
+  `;
+  panel.classList.add('visible');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function renderPagination(totalPages) {
+  const el = document.getElementById('pagination');
+  if (totalPages <= 1) { el.innerHTML = ''; return; }
+
+  let html = `<button class="page-btn" onclick="goPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>&laquo;</button>`;
+  for (let i = 1; i <= totalPages; i++) {
+    if (totalPages > 7 && i > 2 && i < totalPages - 1 && Math.abs(i - currentPage) > 1) {
+      if (i === 3 || i === totalPages - 2) html += '<span class="page-info">...</span>';
+      continue;
+    }
+    html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  html += `<button class="page-btn" onclick="goPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>&raquo;</button>`;
+  html += `<span class="page-info">${filteredModels.length} models</span>`;
+  el.innerHTML = html;
+}
+
+function goPage(p) {
+  const pages = Math.ceil(filteredModels.length / PAGE_SIZE);
+  if (p < 1 || p > pages) return;
+  currentPage = p;
+  renderModelList();
+  document.getElementById('model-list-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ─── WHAT'S NEW BANNER ───
+function renderWhatsNew(d) {
+  const el = document.getElementById('whats-new');
+  const items = [];
+
+  // Force velocity changes
+  const fv = d.force_velocities || {};
+  Object.values(fv).forEach(f => {
+    if (f.velocity === 'accelerating') items.push({ text: f.name + ' \u2191 ' + f.velocity, cls: 'wn-force' });
+    if (f.velocity === 'intensifying') items.push({ text: f.name + ' \u2191 ' + f.velocity, cls: 'wn-force' });
+  });
+
+  // New patterns
+  const rp = d.running_patterns || {};
+  (rp.new_this_cycle || []).forEach(p => { items.push({ text: p, cls: 'wn-pattern' }); });
+
+  // New models
+  const nm = d.new_models_this_cycle || 0;
+  if (nm > 0) items.push({ text: nm + ' new model cards scored', cls: 'wn-model' });
+
+  // Deep dives
+  const dives = (d.evidence_base || {}).v3_sector_deep_dives || 0;
+  if (dives) items.push({ text: dives + ' sector deep dives', cls: 'wn-sector' });
+
+  if (!items.length) { el.style.display = 'none'; return; }
+
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-6'}</div>
+    <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
+}
+
+// ─── CATEGORY FILTERS ───
+function renderCatFilters(summary) {
+  const el = document.getElementById('cat-filters');
+  const dist = summary.primary_category_distribution || {};
+  const order = ['STRUCTURAL_WINNER','FORCE_RIDER','TIMING_ARBITRAGE','CAPITAL_MOAT','FEAR_ECONOMY','EMERGING_CATEGORY','CONDITIONAL','PARKED'];
+  el.innerHTML = order.filter(k => dist[k] > 0).map(k => {
+    const cls = 'cat-' + k;
+    return `<span class="filter-chip cat-badge ${cls}" data-cat="${k}" onclick="setCatFilter('${k}')">${dist[k]} ${k.replace(/_/g, ' ')}</span>`;
+  }).join('');
+}
+
+// ─── FORCES ───
 function renderForces(forces) {
   const el = document.getElementById('force-grid');
   if (!forces) return;
-
   const colors = {
     accelerating: { bar: 'var(--green)', cls: 'vel-accelerating', pct: 85 },
     steady: { bar: 'var(--blue)', cls: 'vel-steady', pct: 60 },
@@ -1086,39 +1141,26 @@ function renderForces(forces) {
     constraining: { bar: 'var(--pink)', cls: 'vel-constraining', pct: 75 },
     decelerating: { bar: 'var(--red)', cls: 'vel-decelerating', pct: 45 }
   };
-
   const ids = ['F1_technology','F2_demographics','F3_geopolitics','F4_capital','F5_psychology','F6_energy'];
-
   el.innerHTML = ids.map(id => {
     const f = forces[id];
     if (!f) return '';
     const c = colors[f.velocity] || colors.steady;
     const dataItems = (f.key_data || []).map(d => `<div class="force-datum">${esc(d)}</div>`).join('');
     const proj = f['2031_projection'] || '';
-
     return `<div class="glass force-card" onclick="this.classList.toggle('expanded')">
-      <div class="force-header">
-        <div class="force-name">${esc(f.name)}</div>
-        <div class="force-velocity ${c.cls}">${esc(f.velocity)}</div>
-      </div>
+      <div class="force-header"><div class="force-name">${esc(f.name)}</div><div class="force-velocity ${c.cls}">${esc(f.velocity)}</div></div>
       <div class="force-metric">${esc(f.key_metric)}</div>
-      <div class="force-bar">
-        <div class="force-bar-fill" style="width:${c.pct}%;background:${c.bar}"></div>
-      </div>
-      <div class="force-data">
-        ${dataItems}
-        ${proj ? `<div class="force-projection">2031: ${esc(proj)}</div>` : ''}
-      </div>
+      <div class="force-bar"><div class="force-bar-fill" style="width:${c.pct}%;background:${c.bar}"></div></div>
+      <div class="force-data">${dataItems}${proj ? `<div class="force-projection">2031: ${esc(proj)}</div>` : ''}</div>
     </div>`;
   }).join('');
 }
 
-// ─── World Map ───
+// ─── MAP ───
 function renderMap(profiles) {
   const el = document.getElementById('map-regions');
   if (!profiles) return;
-
-  // Position regions on a grid that roughly represents their geographic position
   const layout = [
     { key: 'us', col: '2 / 5', row: '2 / 4' },
     { key: 'latam', col: '3 / 5', row: '4 / 6' },
@@ -1129,218 +1171,140 @@ function renderMap(profiles) {
     { key: 'china', col: '9 / 11', row: '1 / 3' },
     { key: 'japan', col: '11 / 13', row: '1 / 3' },
   ];
-
-  const velClass = v => {
-    if (v.includes('fast')) return 'rv-fast';
-    if (v.includes('accelerating')) return 'rv-accelerating';
-    if (v.includes('moderate')) return 'rv-moderate';
-    return 'rv-nascent';
-  };
-
+  const velClass = v => { if (v.includes('fast')) return 'rv-fast'; if (v.includes('accelerating')) return 'rv-accelerating'; if (v.includes('moderate')) return 'rv-moderate'; return 'rv-nascent'; };
   el.innerHTML = layout.map(l => {
     const p = profiles[l.key];
     if (!p) return '';
     const shortVel = (p.transformation_velocity || '').split(' ')[0];
     return `<div class="region-node" style="grid-column:${l.col};grid-row:${l.row}" onclick="showRegionDetail('${l.key}', this)" data-key="${l.key}">
-      <div class="region-emoji">${p.emoji || ''}</div>
-      <div class="region-name">${esc(p.name)}</div>
+      <div class="region-emoji">${p.emoji || ''}</div><div class="region-name">${esc(p.name)}</div>
       <div class="region-vel ${velClass(p.transformation_velocity || '')}">${esc(shortVel)}</div>
     </div>`;
   }).join('');
-
   window._profiles = profiles;
 }
 
 function showRegionDetail(key, nodeEl) {
   const p = window._profiles[key];
   if (!p) return;
-
   document.querySelectorAll('.region-node').forEach(n => n.classList.remove('active'));
   if (nodeEl) nodeEl.classList.add('active');
-
   const el = document.getElementById('region-detail');
   const metrics = p.key_metrics || {};
-  const metricsHtml = Object.entries(metrics).map(([k, v]) => {
-    const label = k.replace(/_/g, ' ');
-    return `<div class="region-metric">
-      <div class="rm-label">${esc(label)}</div>
-      <div class="rm-value">${esc(v)}</div>
-    </div>`;
-  }).join('');
-
+  const metricsHtml = Object.entries(metrics).map(([k, v]) => `<div class="region-metric"><div class="rm-label">${esc(k.replace(/_/g, ' '))}</div><div class="rm-value">${esc(v)}</div></div>`).join('');
   const forces = (p.top_forces || []).map(f => `<div class="region-force-item">${esc(f)}</div>`).join('');
   const outlook = p['2031_outlook'] || '';
-
-  el.innerHTML = `
-    <div class="region-detail-header">
-      <div class="region-detail-emoji">${p.emoji || ''}</div>
-      <div>
-        <div class="region-detail-name">${esc(p.name)}</div>
-        <div class="region-detail-vel">${esc(p.transformation_velocity || '')}</div>
-      </div>
-    </div>
-    <div class="region-metrics">${metricsHtml}</div>
-    <div class="region-forces" style="margin-bottom:12px">${forces}</div>
-    ${outlook ? `<div class="region-outlook"><strong>2031:</strong> ${esc(outlook)}</div>` : ''}
-  `;
+  el.innerHTML = `<div class="region-detail-header"><div class="region-detail-emoji">${p.emoji || ''}</div><div><div class="region-detail-name">${esc(p.name)}</div><div class="region-detail-vel">${esc(p.transformation_velocity || '')}</div></div></div>
+    <div class="region-metrics">${metricsHtml}</div><div class="region-forces" style="margin-bottom:12px">${forces}</div>
+    ${outlook ? `<div class="region-outlook"><strong>2031:</strong> ${esc(outlook)}</div>` : ''}`;
   el.classList.add('visible');
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ─── Key Findings ───
+// ─── FINDINGS ───
 function renderFindings(findings) {
   const el = document.getElementById('findings-grid');
   if (!findings || !findings.length) return;
   document.getElementById('findings-count').textContent = findings.length;
-
   el.innerHTML = findings.map(f => {
     const confCls = f.confidence === 'high' ? 'conf-high' : 'conf-medium';
-    return `<div class="glass finding" onclick="this.classList.toggle('expanded')">
-      <div class="finding-header">
-        <div class="finding-title">${esc(f.title)}</div>
-        <div class="finding-confidence ${confCls}">${esc(f.confidence)}</div>
-      </div>
-      <div class="finding-magnitude">${esc(f.magnitude)}</div>
-      <div class="finding-detail">${esc(f.detail)}</div>
-    </div>`;
+    return `<div class="glass finding" onclick="this.classList.toggle('expanded')"><div class="finding-header"><div class="finding-title">${esc(f.title)}</div><div class="finding-confidence ${confCls}">${esc(f.confidence)}</div></div><div class="finding-magnitude">${esc(f.magnitude)}</div><div class="finding-detail">${esc(f.detail)}</div></div>`;
   }).join('');
 }
 
-// ─── Fear Friction ───
+// ─── FRICTION ───
 function renderFriction(friction) {
   const el = document.getElementById('friction-grid');
   if (!friction || !friction.length) return;
-
   el.innerHTML = friction.map(f => {
     const gapCls = f.fear_friction_gap >= 5 ? 'gap-high' : f.fear_friction_gap >= 3 ? 'gap-medium' : 'gap-low';
-    return `<div class="friction-row">
-      <div class="friction-sector">${esc(f.sector)}</div>
-      <div class="friction-bars">
-        <div class="friction-bar-track">
-          <div class="friction-bar-econ" style="width:${f.economic_readiness * 10}%"></div>
-          <div class="friction-bar-psych" style="width:${f.psychological_readiness * 10}%"></div>
-        </div>
-      </div>
-      <div class="friction-gap ${gapCls}">${f.fear_friction_gap}</div>
-    </div>`;
+    return `<div class="friction-row"><div class="friction-sector">${esc(f.sector)}</div><div class="friction-bars"><div class="friction-bar-track"><div class="friction-bar-econ" style="width:${f.economic_readiness * 10}%"></div><div class="friction-bar-psych" style="width:${f.psychological_readiness * 10}%"></div></div></div><div class="friction-gap ${gapCls}">${f.fear_friction_gap}</div></div>`;
   }).join('');
 }
 
-// ─── Fear Markets ───
+// ─── MARKETS ───
 function renderMarkets(markets) {
   const el = document.getElementById('markets-body');
   if (!markets || !markets.length) return;
-
   el.innerHTML = markets.map(m => {
     const cagr = parseFloat(m.cagr) || 0;
     const cagrCls = cagr >= 35 ? 'cagr-hot' : cagr >= 20 ? 'cagr-warm' : 'cagr-cool';
-    return `<tr>
-      <td>${esc(m.category)}</td>
-      <td>${esc(m.size_2025)}</td>
-      <td>${esc(m.projected)}</td>
-      <td><span class="cagr-value ${cagrCls}">${esc(m.cagr)}</span></td>
-    </tr>`;
+    return `<tr><td>${esc(m.category)}</td><td>${esc(m.size_2025)}</td><td>${esc(m.projected)}</td><td><span class="cagr-value ${cagrCls}">${esc(m.cagr)}</span></td></tr>`;
   }).join('');
 }
 
-// ─── Sentiment Trajectory ───
+// ─── TRAJECTORY ───
 function renderTrajectory(items) {
   const el = document.getElementById('trajectory-grid');
   if (!items || !items.length) return;
-
-  el.innerHTML = items.map(t => {
-    return `<div class="trajectory-row">
-      <div class="traj-metric">${esc(t.metric)}</div>
-      <div class="traj-baseline">${esc(t.baseline)}</div>
-      <div class="traj-arrow"><span class="traj-arrow-icon">&rarr;</span> ${esc(t.direction)}</div>
-      <div class="traj-2031">${esc(t.est_2031)}</div>
-    </div>`;
-  }).join('');
+  el.innerHTML = items.map(t => `<div class="trajectory-row"><div class="traj-metric">${esc(t.metric)}</div><div class="traj-baseline">${esc(t.baseline)}</div><div class="traj-arrow"><span>&rarr;</span> ${esc(t.direction)}</div><div class="traj-2031">${esc(t.est_2031)}</div></div>`).join('');
 }
 
-// ─── Perez Cycle ───
+// ─── PEREZ ───
 function renderPerez(perez) {
   const el = document.getElementById('perez-timeline');
   const sigEl = document.getElementById('perez-signals');
   if (!perez) return;
-
-  const phases = [
-    { name: 'Irruption', years: '2020-22', cls: 'past' },
-    { name: 'Frenzy', years: '2022-26', cls: 'current' },
-    { name: 'Turning Point', years: '2026-28?', cls: '' },
-    { name: 'Synergy', years: '2028-35?', cls: '' },
-    { name: 'Maturity', years: '2035+', cls: '' }
-  ];
-
+  const phases = [{name:'Irruption',years:'2020-22',cls:'past'},{name:'Frenzy',years:'2022-26',cls:'current'},{name:'Turning Point',years:'2026-28?',cls:''},{name:'Synergy',years:'2028-35?',cls:''},{name:'Maturity',years:'2035+',cls:''}];
   el.innerHTML = phases.map(p => {
     const marker = p.cls === 'current' ? '<div class="perez-marker"></div>' : '';
-    return `<div class="perez-phase ${p.cls}">
-      <div class="perez-phase-name">${p.name}</div>
-      <div class="perez-phase-years">${p.years}</div>
-      ${marker}
-    </div>`;
+    return `<div class="perez-phase ${p.cls}"><div class="perez-phase-name">${p.name}</div><div class="perez-phase-years">${p.years}</div>${marker}</div>`;
   }).join('');
-
   const signals = perez.turning_point_signals || [];
   sigEl.innerHTML = signals.map(s => `<div class="force-datum">${esc(s)}</div>`).join('');
 }
 
-// ─── Worker Displacement ───
+// ─── DISPLACEMENT ───
 function renderDisplacement(wd) {
   const el = document.getElementById('displacement-grid');
   if (!wd) return;
-
   const wef = wd.wef_2030 || {};
   el.innerHTML = `
-    <div class="glass-static disp-stat">
-      <div class="disp-value" style="color:var(--green)">+${((wef.jobs_created||0)/1e6).toFixed(0)}M</div>
-      <div class="disp-label">Jobs Created by 2030</div>
-      <div class="disp-sub">WEF Future of Jobs 2025</div>
-    </div>
-    <div class="glass-static disp-stat">
-      <div class="disp-value" style="color:var(--red)">&minus;${((wef.jobs_displaced||0)/1e6).toFixed(0)}M</div>
-      <div class="disp-label">Jobs Displaced by 2030</div>
-      <div class="disp-sub">22% of all jobs disrupted</div>
-    </div>
-    <div class="glass-static disp-stat">
-      <div class="disp-value" style="color:var(--accent)">+${((wef.net_growth||0)/1e6).toFixed(0)}M</div>
-      <div class="disp-label">Net Job Growth</div>
-      <div class="disp-sub">but 59% won't get training</div>
-    </div>
-  `;
+    <div class="glass-static disp-stat"><div class="disp-value" style="color:var(--green)">+${((wef.jobs_created||0)/1e6).toFixed(0)}M</div><div class="disp-label">Jobs Created by 2030</div><div class="disp-sub">WEF Future of Jobs 2025</div></div>
+    <div class="glass-static disp-stat"><div class="disp-value" style="color:var(--red)">&minus;${((wef.jobs_displaced||0)/1e6).toFixed(0)}M</div><div class="disp-label">Jobs Displaced by 2030</div><div class="disp-sub">22% of all jobs disrupted</div></div>
+    <div class="glass-static disp-stat"><div class="disp-value" style="color:var(--accent)">+${((wef.net_growth||0)/1e6).toFixed(0)}M</div><div class="disp-label">Net Job Growth</div><div class="disp-sub">but 59% won't get training</div></div>`;
 }
 
-// ─── Defense ───
+// ─── DEFENSE ───
 function renderDefense(def) {
   const el = document.getElementById('defense-grid');
   if (!def) return;
-
-  const stats = [
-    { value: def.global_defense_2026, label: 'Global Defense 2026' },
-    { value: def.us_dod_ai_autonomy, label: 'US DoD AI Budget' },
-    { value: def.us_dod_total, label: 'US DoD Total' },
-    { value: def.nato_target, label: 'NATO Target' },
-    { value: def.european_defense, label: 'European Defense' },
-    { value: def.china_defense, label: 'China Defense' }
-  ];
-
-  el.innerHTML = stats.map(s => `
-    <div class="defense-stat">
-      <div class="defense-value">${esc(s.value)}</div>
-      <div class="defense-label">${esc(s.label)}</div>
-    </div>
-  `).join('');
+  const stats = [{value:def.global_defense_2026,label:'Global Defense 2026'},{value:def.us_dod_ai_autonomy,label:'US DoD AI Budget'},{value:def.us_dod_total,label:'US DoD Total'},{value:def.nato_target,label:'NATO Target'},{value:def.european_defense,label:'European Defense'},{value:def.china_defense,label:'China Defense'}];
+  el.innerHTML = stats.map(s => `<div class="defense-stat"><div class="defense-value">${esc(s.value)}</div><div class="defense-label">${esc(s.label)}</div></div>`).join('');
 }
 
-// ─── Evidence (legacy — redirects to renderInventory) ───
-function renderEvidence(ev) { if (ev) renderInventory(ev); }
+// ─── SECTORS ───
+function renderSectors(sectors) {
+  const el = document.getElementById('sector-body');
+  if (!sectors || !sectors.length) return;
+  el.innerHTML = sectors.map(s => {
+    const phaseCls = 'phase-' + (s.phase || '').replace(/\s+/g, '_');
+    const changeCls = s.change_pct < 0 ? 'sector-change-neg' : 'sector-change-pos';
+    const sign = s.change_pct > 0 ? '+' : '';
+    return `<tr><td><strong>${esc(s.name)}</strong><br><span style="font-size:10px;color:var(--dim)">NAICS ${esc(s.naics)}</span></td><td><span class="sector-phase ${phaseCls}">${esc(s.phase)}</span></td><td>${s.employment_2026}M</td><td>${s.employment_2031}M</td><td><span class="sector-change ${changeCls}">${sign}${s.change_pct}%</span></td><td style="font-size:11px;color:var(--text-secondary)">${esc(s.top_model)}</td></tr>`;
+  }).join('');
+}
 
-// ─── Cycle History ───
+// ─── INVENTORY ───
+function renderInventory(inv) {
+  const el = document.getElementById('evidence-list');
+  if (!inv) return;
+  let html = '<div style="font-size:11px;color:var(--text-secondary);margin-bottom:12px;">' + esc(inv.note || '') + '</div>';
+  const sources = inv.sources || {};
+  html += Object.entries(sources).map(([k, v]) => `<div class="evidence-card"><div style="display:flex;justify-content:space-between;align-items:center"><div class="evidence-name">${esc(k.replace(/_/g, ' '))}</div><div class="evidence-score">${v.count} models</div></div><div class="evidence-sector">${esc(v.file || '')}</div></div>`).join('');
+  const cascades = inv.confirmed_cascades || [];
+  if (cascades.length) {
+    html += '<div style="margin-top:12px;font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:8px">Confirmed Cascades</div>';
+    html += cascades.map(c => `<div class="force-datum">${esc(c)}</div>`).join('');
+  }
+  el.innerHTML = html;
+}
+
+// ─── CYCLES ───
 function renderCycles(cycles) {
   const el = document.getElementById('cycle-chart');
   if (!cycles || !cycles.length) return;
   document.getElementById('cycle-count').textContent = cycles.length + ' cycles';
-
   const max = Math.max(...cycles.map(c => c.models_constructed || 0), 1);
   el.innerHTML = cycles.map((c, i) => {
     const val = c.models_constructed || 0;
@@ -1352,153 +1316,62 @@ function renderCycles(cycles) {
   }).join('');
 }
 
-// ─── Sector Transformations ───
-function renderSectors(sectors) {
-  const el = document.getElementById('sector-body');
-  if (!sectors || !sectors.length) return;
-
-  el.innerHTML = sectors.map(s => {
-    const phaseCls = 'phase-' + (s.phase || '').replace(/\s+/g, '_');
-    const changeCls = s.change_pct < 0 ? 'sector-change-neg' : 'sector-change-pos';
-    const sign = s.change_pct > 0 ? '+' : '';
-    return `<tr>
-      <td><strong>${esc(s.name)}</strong><br><span style="font-size:10px;color:var(--dim)">NAICS ${esc(s.naics)}</span></td>
-      <td><span class="sector-phase ${phaseCls}">${esc(s.phase)}</span></td>
-      <td>${s.employment_2026}M</td>
-      <td>${s.employment_2031}M</td>
-      <td><span class="sector-change ${changeCls}">${sign}${s.change_pct}%</span></td>
-      <td style="font-size:11px;color:var(--text-secondary)">${esc(s.top_model)}</td>
-    </tr>`;
-  }).join('');
-}
-
-// ─── Rated Models ───
-function renderModels(rating) {
-  const grid = document.getElementById('model-grid');
-  const distEl = document.getElementById('cat-dist');
-  const newSectorsEl = document.getElementById('new-sectors');
-  if (!rating) return;
-
-  const totalRated = rating.total_models_rated || rating.total_models_individually_rated || 0;
-  const enumStubs = rating.enumerated_stubs || 0;
-  document.getElementById('model-count').textContent = totalRated + ' rated' + (enumStubs ? ' + ' + enumStubs + ' enumerated' : '');
-
-  // Category distribution chips
-  const dist = rating.category_distribution || {};
-  const catColors = {
-    STRUCTURAL_WINNER: 'cat-STRUCTURAL_WINNER', FORCE_RIDER: 'cat-FORCE_RIDER',
-    TIMING_ARBITRAGE: 'cat-TIMING_ARBITRAGE',
-    CAPITAL_MOAT: 'cat-CAPITAL_MOAT', FEAR_ECONOMY: 'cat-FEAR_ECONOMY',
-    EMERGING_CATEGORY: 'cat-EMERGING_CATEGORY', CONDITIONAL: 'cat-CONDITIONAL', PARKED: 'cat-CONDITIONAL'
-  };
-
-  distEl.innerHTML = Object.entries(dist).filter(([,v]) => v > 0).map(([k, v]) => {
-    const cls = catColors[k] || 'cat-CONDITIONAL';
-    return `<div class="cat-chip ${cls}"><span class="cat-chip-count">${v}</span> ${k.replace(/_/g, ' ')}</div>`;
-  }).join('');
-
-  // New sectors this cycle
-  const newSectors = rating.new_sectors_this_cycle || [];
-  if (newSectors.length && newSectorsEl) {
-    newSectorsEl.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:8px">' + newSectors.map(s => {
-      return `<div style="font-size:10px;padding:4px 10px;border-radius:8px;background:rgba(248,113,113,0.08);color:var(--red);font-weight:600;">NEW: ${esc(s.sector)} (${s.models})</div>`;
-    }).join('') + '</div>';
-  }
-
-  // Top 20 model cards with 5-axis bars
-  const models = rating.top_20_by_composite || rating.top_10_by_composite || [];
-  grid.innerHTML = models.map((m) => {
-    const catCls = 'cat-' + (m.category || 'CONDITIONAL');
-    const srcLabel = m.source ? `<span style="font-size:9px;color:var(--dim);margin-left:6px">${esc(m.source)}</span>` : '';
-    return `<div class="glass model-card-ui">
-      <div class="model-rank">#${m.rank || ''}${srcLabel}</div>
-      <div class="model-name-ui">${esc(m.name)}</div>
-      <div class="model-score-row">
-        <div class="model-composite">${m.composite}</div>
-        <div class="model-category ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</div>
-      </div>
-      <div class="model-sector">${esc(m.id || '')}</div>
-    </div>`;
-  }).join('');
-}
-
-// ─── Model Inventory ───
-function renderInventory(inv) {
-  const el = document.getElementById('evidence-list');
-  if (!inv) return;
-
-  let html = '<div style="font-size:11px;color:var(--text-secondary);margin-bottom:12px;">' + esc(inv.note || '') + '</div>';
-
-  // Source batches
-  const sources = inv.sources || {};
-  html += Object.entries(sources).map(([k, v]) => `
-    <div class="evidence-card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="evidence-name">${esc(k.replace(/_/g, ' '))}</div>
-        <div class="evidence-score">${v.count} models</div>
-      </div>
-      <div class="evidence-sector">${esc(v.file || '')}</div>
-    </div>
-  `).join('');
-
-  // Confirmed cascades
-  const cascades = inv.confirmed_cascades || [];
-  if (cascades.length) {
-    html += '<div style="margin-top:12px;font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:8px">Confirmed Cascades</div>';
-    html += cascades.map(c => `<div class="force-datum">${esc(c)}</div>`).join('');
-  }
-
-  el.innerHTML = html;
-}
-
-// ─── Main ───
+// ─── MAIN ───
 async function refresh() {
-  const d = await load(BASE + '/dashboard.json');
-  if (!d) return;
+  const [d, m] = await Promise.all([
+    load(BASE + '/dashboard.json'),
+    load(BASE + '/models.json')
+  ]);
 
-  // Header
-  document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-6';
-  if (d.cycle_history && d.cycle_history.length) {
-    const last = d.cycle_history[d.cycle_history.length - 1];
-    document.getElementById('hero-label').textContent = last.cycle + ' Synthesis \u2014 ' + (last.type || '').replace(/_/g, ' ');
+  if (d) {
+    // Header
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-6';
+    const ts = d.last_updated;
+    document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
+
+    // KPIs
+    const rs = d.rating_system || {};
+    const ratedCount = rs.total_models_rated || rs.total_models_individually_rated || d.total_models_rated || 0;
+    if (ratedCount) document.getElementById('kpi-rated').textContent = ratedCount;
+    const enumCount = rs.enumerated_stubs || d.enumerated_stubs || 0;
+    if (ratedCount || enumCount) {
+      document.getElementById('kpi-total').textContent = ratedCount + enumCount;
+      document.getElementById('kpi-total-sub').textContent = ratedCount + ' rated + ' + enumCount.toLocaleString() + ' stubs';
+    }
+    const sw = (rs.category_distribution || {}).STRUCTURAL_WINNER;
+    if (sw !== undefined) document.getElementById('kpi-winners').textContent = sw;
+    const cs = rs.composite_stats || {};
+    if (cs.max) { document.getElementById('kpi-top').textContent = cs.max; }
+    if (cs.mean) { document.getElementById('kpi-mean-sub').textContent = 'mean ' + cs.mean; }
+    if (d.new_models_this_cycle) document.getElementById('kpi-new').textContent = d.new_models_this_cycle;
+    if (ratedCount) document.getElementById('model-total-sub').textContent = ratedCount + ' rated models';
+
+    // Render sections
+    renderWhatsNew(d);
+    renderForces(d.force_velocities);
+    renderSectors(d.sector_transformations);
+    renderMap(d.geographic_profiles);
+    renderFindings(d.key_findings);
+    renderFriction(d.fear_friction_index);
+    renderMarkets(d.fear_driven_markets);
+    renderTrajectory(d.sentiment_trajectory);
+    renderPerez(d.perez_cycle);
+    renderDisplacement(d.worker_displacement);
+    renderDefense(d.defense_ai);
+    renderInventory(d.model_inventory);
+    renderCycles(d.cycle_history);
   }
-  const ts = d.last_updated;
-  document.getElementById('last-updated').textContent =
-    ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
-  // KPIs
-  const rs = d.rating_system || {};
-  const ratedCount = rs.total_models_rated || rs.total_models_individually_rated || 0;
-  if (ratedCount) document.getElementById('kpi-rated').textContent = ratedCount;
-  const enumCount = rs.enumerated_stubs || rs.total_with_algorithmic_estimation || 0;
-  if (enumCount) document.getElementById('kpi-total').textContent = ratedCount + enumCount;
-  const sw = (rs.category_distribution || {}).STRUCTURAL_WINNER;
-  if (sw !== undefined) document.getElementById('kpi-winners').textContent = sw;
-  const cs = rs.composite_stats || {};
-  if (cs.max) document.getElementById('kpi-top').textContent = cs.max;
-  if (d.new_models_this_cycle) document.getElementById('kpi-new').textContent = d.new_models_this_cycle;
-  if (ratedCount) {
-    document.getElementById('model-total-sub').textContent = ratedCount + ' rated models';
+  // Models
+  if (m && m.models) {
+    allModels = m.models;
+    renderCatFilters(m.summary || {});
+    applyFilters();
   }
-
-  // Render all sections (models first — central output)
-  renderModels(d.rating_system);
-  renderForces(d.force_velocities);
-  renderSectors(d.sector_transformations);
-  renderMap(d.geographic_profiles);
-  renderFindings(d.key_findings);
-  renderFriction(d.fear_friction_index);
-  renderMarkets(d.fear_driven_markets);
-  renderTrajectory(d.sentiment_trajectory);
-  renderPerez(d.perez_cycle);
-  renderDisplacement(d.worker_displacement);
-  renderDefense(d.defense_ai);
-  renderInventory(d.model_inventory);
-  renderCycles(d.cycle_history);
 }
 
 refresh();
-setInterval(refresh, 15000);
+setInterval(refresh, 30000);
 </script>
 </body>
 </html>
