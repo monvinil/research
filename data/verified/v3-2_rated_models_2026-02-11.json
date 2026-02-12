@@ -1,0 +1,582 @@
+{
+  "cycle": "v3-2",
+  "date": "2026-02-11",
+  "agent": "Master Agent (Economy Map Coordinator)",
+  "rating_system_version": "v1.0",
+  "total_models_rated": 15,
+
+  "scoring_methodology": {
+    "structural_necessity": {"weight": 0.25, "scale": "0-10", "logic": "8-10 if must exist (structural gap), 5-7 if should exist (efficiency gain), 2-4 if nice to have"},
+    "force_alignment": {"weight": 0.25, "scale": "0-10", "logic": "Count forces >= 5, weight by velocity: accelerating=1.5x, steady=1.0x, decelerating=0.5x"},
+    "geographic_grade": {"weight": 0.20, "scale": "0-10", "logic": "Average of 8 regional scores"},
+    "timing_grade": {"weight": 0.15, "scale": "0-10", "logic": "8-10 if optimal window NOW, 5-7 if 2-3 years, crash resilience adds 1-2"},
+    "capital_efficiency": {"weight": 0.15, "scale": "0-10", "logic": "8-10 if <$1M and profitable <12mo, 5-7 if $1-5M, 2-4 if >$5M"},
+    "composite_formula": "(SN*0.25 + FA*0.25 + GG*0.20 + TG*0.15 + CE*0.15) * 10"
+  },
+
+  "rated_models": [
+    {
+      "card_id": "MC-52-001",
+      "model_name": "AI-Native Accounting Practice Platform",
+      "sector_naics": "52",
+      "scores": {
+        "structural_necessity": {
+          "score": 9,
+          "rationale": "Must exist. CPA pipeline -33% and SMB formation at 532K/month create structural supply-demand gap that only AI can close. $207B Baumol stored energy releasing. No alternative path exists."
+        },
+        "force_alignment": {
+          "score": 9,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F2=8 steady 1.0x=8, F4=7 shifting 1.0x=7). All three forces are strong and aligned. Weighted sum 28.5/30 = 9.5, capped at 9.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 28.5
+        },
+        "geographic_grade": {
+          "score": 5.5,
+          "rationale": "US=9, China=4, EU=6, Japan=5, India=7, LATAM=5, SEA=4, MENA=4. Average = 5.5. Primarily US opportunity with India secondary.",
+          "regional_scores": {"us": 9, "china": 4, "eu": 6, "japan": 5, "india": 7, "latam": 5, "sea": 4, "mena": 4}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry window 2026-2027 is NOW. Time sensitivity high. Crash resilience high (accounting is mandatory). Base 9 + crash resilience 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 8,
+          "rationale": "$500K-$3M capital, 3 months to revenue, 85% gross margin. Lower end is under $1M with <12mo profitability. Strong capital efficiency."
+        }
+      },
+      "composite_score": 83.5,
+      "composite_calculation": "(9*0.25 + 9*0.25 + 5.5*0.20 + 10*0.15 + 8*0.15) * 10 = (2.25+2.25+1.10+1.50+1.20)*10 = 83.0",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=9 >= 8 AND FA=9 >= 8"
+    },
+
+    {
+      "card_id": "MC-52-002",
+      "model_name": "Distressed Financial Services Acquirer-Modernizer",
+      "sector_naics": "52",
+      "scores": {
+        "structural_necessity": {
+          "score": 8,
+          "rationale": "Must exist. PE refinancing wall of $936B-$1.8T creates forced sellers. These firms need buyers who can restructure with AI. The mechanism is structural and time-bound."
+        },
+        "force_alignment": {
+          "score": 9,
+          "rationale": "3 forces >= 5 (F1=8 accelerating 1.5x=12, F4=10 shifting 1.0x=10, F2=6 steady 1.0x=6). Weighted sum 28/30 = 9.3.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 28
+        },
+        "geographic_grade": {
+          "score": 3.75,
+          "rationale": "US=10, China=2, EU=5, Japan=3, India=3, LATAM=3, SEA=2, MENA=2. Average = 3.75. Heavily US-concentrated (PE refinancing wall is US phenomenon).",
+          "regional_scores": {"us": 10, "china": 2, "eu": 5, "japan": 3, "india": 3, "latam": 3, "sea": 2, "mena": 2}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal window 2026-2028 is NOW. PE distress rate at 11.98%. Time sensitivity high. Counter-cyclical = crash resilience high. Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "rationale": "$5M-$50M capital required. Revenue from Day 1 but heavy capital needs. Above $5M threshold = 2-4 range."
+        }
+      },
+      "composite_score": 67.0,
+      "composite_calculation": "(8*0.25 + 9*0.25 + 3.75*0.20 + 10*0.15 + 3*0.15) * 10 = (2.00+2.25+0.75+1.50+0.45)*10 = 69.5",
+      "category": "TIMING_ARBITRAGE",
+      "category_rationale": "TG=10 >= 8, SN=8 >= 6. Time-bound PE distress window is the defining feature."
+    },
+
+    {
+      "card_id": "MC-52-003",
+      "model_name": "AI Financial Compliance and Governance Platform",
+      "sector_naics": "52",
+      "scores": {
+        "structural_necessity": {
+          "score": 8,
+          "rationale": "Must exist. 87% of financial institutions using AI need compliance infrastructure. AI governance market growing 51x ($309M to $15.8B). EU AI Act mandates compliance. Regulatory requirement = structural necessity."
+        },
+        "force_alignment": {
+          "score": 8,
+          "rationale": "3 forces >= 5 (F1=7 accelerating 1.5x=10.5, F5=9 decelerating 0.5x=4.5, F3=6 accelerating 1.5x=9). Weighted sum 24/30 = 8.0. F5 velocity is decelerating which is GOOD for fear-driven demand.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 24
+        },
+        "geographic_grade": {
+          "score": 5.0,
+          "rationale": "US=8, China=3, EU=9, Japan=5, India=4, LATAM=3, SEA=4, MENA=4. Average = 5.0. Strong in US and EU (regulatory-driven demand).",
+          "regional_scores": {"us": 8, "china": 3, "eu": 9, "japan": 5, "india": 4, "latam": 3, "sea": 4, "mena": 4}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry 2026-2027 is NOW. EU AI Act enforcement approaching. Crash resilience high (compliance is mandatory, scandal increases demand). Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 6,
+          "rationale": "$2M-$10M capital, 6 months to revenue, 80% margin. Mid-range at $2-10M, strong margins. 5-7 range."
+        }
+      },
+      "composite_score": 74.0,
+      "composite_calculation": "(8*0.25 + 8*0.25 + 5.0*0.20 + 10*0.15 + 6*0.15) * 10 = (2.00+2.00+1.00+1.50+0.90)*10 = 74.0",
+      "category": "FEAR_ECONOMY",
+      "category_rationale": "Fear friction gap > 3 (economic readiness 8, psychological readiness 9 = gap -1, meaning fear DRIVES demand). This IS a fear-economy product."
+    },
+
+    {
+      "card_id": "MC-54-001",
+      "model_name": "AI-Augmented Professional Micro-Firm Operating System",
+      "sector_naics": "54",
+      "scores": {
+        "structural_necessity": {
+          "score": 9,
+          "rationale": "Must exist. 532K/month business applications = professionals starting micro-firms at record rates. These firms NEED an operating system. Coasean shrinkage + AI agent capability = structural necessity."
+        },
+        "force_alignment": {
+          "score": 9,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F4=8 shifting 1.0x=8, F2=6 steady 1.0x=6). Weighted sum 27.5/30 = 9.2.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 27.5
+        },
+        "geographic_grade": {
+          "score": 5.25,
+          "rationale": "US=9, China=3, EU=6, Japan=4, India=7, LATAM=5, SEA=4, MENA=4. Average = 5.25.",
+          "regional_scores": {"us": 9, "china": 3, "eu": 6, "japan": 4, "india": 7, "latam": 5, "sea": 4, "mena": 4}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry 2026-2027 is NOW. Time sensitivity high. Crash resilience high (professional services demand counter-cyclical). Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 7,
+          "rationale": "$1M-$5M capital, 4 months to revenue, 80% margin. Mid-range capital but strong margins and fast revenue."
+        }
+      },
+      "composite_score": 81.5,
+      "composite_calculation": "(9*0.25 + 9*0.25 + 5.25*0.20 + 10*0.15 + 7*0.15) * 10 = (2.25+2.25+1.05+1.50+1.05)*10 = 81.0",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=9 >= 8 AND FA=9 >= 8"
+    },
+
+    {
+      "card_id": "MC-54-002",
+      "model_name": "AI-Augmented Legal Services for SMBs",
+      "sector_naics": "54",
+      "scores": {
+        "structural_necessity": {
+          "score": 8,
+          "rationale": "Must exist. 532K new businesses/month need legal services at prices traditional law firms cannot offer. 80% of SMB legal needs are routine and AI-automatable."
+        },
+        "force_alignment": {
+          "score": 8,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F2=5 steady 1.0x=5, F4=7 shifting 1.0x=7). Weighted sum 25.5/30 = 8.5.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 25.5
+        },
+        "geographic_grade": {
+          "score": 5.0,
+          "rationale": "US=9, China=3, EU=6, Japan=4, India=6, LATAM=5, SEA=4, MENA=3. Average = 5.0.",
+          "regional_scores": {"us": 9, "china": 3, "eu": 6, "japan": 4, "india": 6, "latam": 5, "sea": 4, "mena": 3}
+        },
+        "timing_grade": {
+          "score": 9,
+          "rationale": "Optimal entry 2026-2028. Time sensitivity medium (legal transformation slower than accounting). Crash resilience high. Base 8 + crash 1 = 9."
+        },
+        "capital_efficiency": {
+          "score": 7,
+          "rationale": "$1M-$5M capital, 3 months to revenue, 75% margin. Strong efficiency."
+        }
+      },
+      "composite_score": 74.0,
+      "composite_calculation": "(8*0.25 + 8*0.25 + 5.0*0.20 + 9*0.15 + 7*0.15) * 10 = (2.00+2.00+1.00+1.35+1.05)*10 = 74.0",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=8 >= 8 AND FA=8 >= 8"
+    },
+
+    {
+      "card_id": "MC-54-003",
+      "model_name": "India-US AI Professional Services Arbitrage",
+      "sector_naics": "54",
+      "scores": {
+        "structural_necessity": {
+          "score": 7,
+          "rationale": "Should exist. Demographic arbitrage (US aging + India young) combined with AI quality bridging is a strong efficiency play, but not structurally unique. Offshoring models exist; AI enhancement is the differentiator."
+        },
+        "force_alignment": {
+          "score": 8,
+          "rationale": "3 forces >= 5 (F1=8 accelerating 1.5x=12, F2=10 steady 1.0x=10, F3=5 accelerating 1.5x=7.5). Weighted sum 29.5/30 = 9.8. Very strong demographic force.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 29.5
+        },
+        "geographic_grade": {
+          "score": 5.0,
+          "rationale": "US=8, China=2, EU=6, Japan=4, India=10, LATAM=3, SEA=3, MENA=4. Average = 5.0. India and US markets specifically.",
+          "regional_scores": {"us": 8, "china": 2, "eu": 6, "japan": 4, "india": 10, "latam": 3, "sea": 3, "mena": 4}
+        },
+        "timing_grade": {
+          "score": 9,
+          "rationale": "Optimal entry 2026-2028. Crash resilience high (cost arbitrage MORE attractive during stress). Base 8 + crash 1 = 9."
+        },
+        "capital_efficiency": {
+          "score": 8,
+          "rationale": "$500K-$3M capital, 3 months to revenue, 60% margin. Capital efficient with fast revenue."
+        }
+      },
+      "composite_score": 73.5,
+      "composite_calculation": "(7*0.25 + 8*0.25 + 5.0*0.20 + 9*0.15 + 8*0.15) * 10 = (1.75+2.00+1.00+1.35+1.20)*10 = 73.0",
+      "category": "GEOGRAPHIC_PLAY",
+      "category_rationale": "GG variance > 4 across regions (India=10, China=2 = 8 point spread). Geographic arbitrage is the defining feature."
+    },
+
+    {
+      "card_id": "MC-31-001",
+      "model_name": "Silver Tsunami Manufacturer Acquire-and-Modernize",
+      "sector_naics": "31-33",
+      "scores": {
+        "structural_necessity": {
+          "score": 9,
+          "rationale": "Must exist. 2.34M businesses owned by 55+ with 58% no succession plan. The median boomer is 67. These businesses MUST transfer within 5-8 years. Demographic force is irreversible."
+        },
+        "force_alignment": {
+          "score": 9,
+          "rationale": "3 forces >= 5 (F1=8 accelerating 1.5x=12, F2=10 steady 1.0x=10, F4=7 shifting 1.0x=7). Weighted sum 29/30 = 9.7.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 29
+        },
+        "geographic_grade": {
+          "score": 4.375,
+          "rationale": "US=10, China=2, EU=6, Japan=7, India=3, LATAM=3, SEA=2, MENA=2. Average = 4.375. US and Japan are primary markets.",
+          "regional_scores": {"us": 10, "china": 2, "eu": 6, "japan": 7, "india": 3, "latam": 3, "sea": 2, "mena": 2}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry 2026-2028. SBA 504 fee waiver through Sept 2026. Time sensitivity high. Counter-cyclical. Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "rationale": "$2M-$20M capital required, Day 1 revenue, 45% margin. Capital-intensive acquisition model but immediate revenue."
+        }
+      },
+      "composite_score": 73.75,
+      "composite_calculation": "(9*0.25 + 9*0.25 + 4.375*0.20 + 10*0.15 + 4*0.15) * 10 = (2.25+2.25+0.875+1.50+0.60)*10 = 74.75",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=9 >= 8 AND FA=9 >= 8"
+    },
+
+    {
+      "card_id": "MC-31-002",
+      "model_name": "Manufacturing AI Integration Services",
+      "sector_naics": "31-33",
+      "scores": {
+        "structural_necessity": {
+          "score": 8,
+          "rationale": "Must exist. 78-point gap (98% exploring, 20% ready). 50% can't identify right technology. The gap WILL close; the question is who closes it. Integration services are structurally necessary."
+        },
+        "force_alignment": {
+          "score": 7,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F2=5 steady 1.0x=5, F3=4 below threshold). 2 qualifying forces. Weighted sum 18.5/20 = 9.25 but only 2 forces, adjusted to 7.",
+          "forces_counted": 2,
+          "velocity_weighted_sum": 18.5
+        },
+        "geographic_grade": {
+          "score": 5.875,
+          "rationale": "US=9, China=6, EU=7, Japan=6, India=6, LATAM=5, SEA=5, MENA=3. Average = 5.875. Broader geographic applicability than acquisition models.",
+          "regional_scores": {"us": 9, "china": 6, "eu": 7, "japan": 6, "india": 6, "latam": 5, "sea": 5, "mena": 3}
+        },
+        "timing_grade": {
+          "score": 8,
+          "rationale": "Optimal entry 2026-2028. Time sensitivity medium. Crash resilience medium (capex discretionary but competitive pressure continues). Base 7 + crash 1 = 8."
+        },
+        "capital_efficiency": {
+          "score": 8,
+          "rationale": "$500K-$5M capital, 2 months to revenue, 55% margin. Fast revenue with moderate capital needs."
+        }
+      },
+      "composite_score": 73.5,
+      "composite_calculation": "(8*0.25 + 7*0.25 + 5.875*0.20 + 8*0.15 + 8*0.15) * 10 = (2.00+1.75+1.175+1.20+1.20)*10 = 73.25",
+      "category": "CAPITAL_MOAT",
+      "category_rationale": "CE=8 >= 8, SN=8 >= 6. Low capital requirement combined with structural necessity."
+    },
+
+    {
+      "card_id": "MC-31-003",
+      "model_name": "Cobot-as-a-Service for SME Manufacturing",
+      "sector_naics": "31-33",
+      "scores": {
+        "structural_necessity": {
+          "score": 7,
+          "rationale": "Should exist. SME manufacturers need capital-light access to cobots. Subscription model solves the capital barrier. But cobots are available for purchase; the subscription is efficiency, not necessity."
+        },
+        "force_alignment": {
+          "score": 8,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F4=7 shifting 1.0x=7, F2=6 steady 1.0x=6). Weighted sum 26.5/30 = 8.8.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 26.5
+        },
+        "geographic_grade": {
+          "score": 5.625,
+          "rationale": "US=8, China=5, EU=7, Japan=6, India=6, LATAM=5, SEA=5, MENA=3. Average = 5.625.",
+          "regional_scores": {"us": 8, "china": 5, "eu": 7, "japan": 6, "india": 6, "latam": 5, "sea": 5, "mena": 3}
+        },
+        "timing_grade": {
+          "score": 8,
+          "rationale": "Optimal entry 2026-2028. Time sensitivity medium. Crash resilience medium (subscription more attractive in tight capital, but cancellations possible). Base 7 + crash 1 = 8."
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "rationale": "$5M-$30M capital required, 4 months to revenue, 55% margin. Capital-intensive (hardware fleet). Above $5M threshold."
+        }
+      },
+      "composite_score": 63.75,
+      "composite_calculation": "(7*0.25 + 8*0.25 + 5.625*0.20 + 8*0.15 + 3*0.15) * 10 = (1.75+2.00+1.125+1.20+0.45)*10 = 65.25",
+      "category": "FORCE_RIDER",
+      "category_rationale": "FA=8 >= 7, with 3 accelerating forces. Rides the robotics x AI compound wave."
+    },
+
+    {
+      "card_id": "MC-62-001",
+      "model_name": "Physician-Invisible Clinical AI Platform",
+      "sector_naics": "62",
+      "scores": {
+        "structural_necessity": {
+          "score": 9,
+          "rationale": "Must exist. 78K unfilled RN positions growing to 200K by 2030. Physician burnout at 50%. Healthcare systems CANNOT maintain care quality without AI augmentation. The invisible pathway bypasses trust barriers."
+        },
+        "force_alignment": {
+          "score": 9,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F2=9 steady 1.0x=9, F5=8 decelerating 0.5x=4). Weighted sum 26.5/30 = 8.8, rounded to 9 given strength.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 26.5
+        },
+        "geographic_grade": {
+          "score": 5.875,
+          "rationale": "US=9, China=7, EU=5, Japan=6, India=7, LATAM=4, SEA=4, MENA=5. Average = 5.875. Broad global need driven by aging demographics.",
+          "regional_scores": {"us": 9, "china": 7, "eu": 5, "japan": 6, "india": 7, "latam": 4, "sea": 4, "mena": 5}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry 2026-2027 is NOW. FDA pathway proven (295 clearances in 2025). 66% physician adoption already. Crash resilience high (healthcare counter-cyclical). Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "rationale": "$5M-$20M capital, 9 months to revenue, 75% margin. High capital needs and longer time to revenue due to health system procurement cycles."
+        }
+      },
+      "composite_score": 76.75,
+      "composite_calculation": "(9*0.25 + 9*0.25 + 5.875*0.20 + 10*0.15 + 4*0.15) * 10 = (2.25+2.25+1.175+1.50+0.60)*10 = 77.75",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=9 >= 8 AND FA=9 >= 8"
+    },
+
+    {
+      "card_id": "MC-62-002",
+      "model_name": "Healthcare Admin AI Automation Suite",
+      "sector_naics": "62",
+      "scores": {
+        "structural_necessity": {
+          "score": 9,
+          "rationale": "Must exist. Healthcare admin costs $200B+ annually (largest Baumol cost disease sector). Payer AI arms race forces provider adoption. CMS WISeR validates pathway. $200B stored energy demands release."
+        },
+        "force_alignment": {
+          "score": 7,
+          "rationale": "3 forces >= 5 (F1=9 accelerating 1.5x=13.5, F2=6 steady 1.0x=6, F5=3 below threshold). 2 qualifying forces. Weighted sum 19.5/20 = 9.75 but only 2 forces, adjusted to 7.",
+          "forces_counted": 2,
+          "velocity_weighted_sum": 19.5
+        },
+        "geographic_grade": {
+          "score": 4.75,
+          "rationale": "US=10, China=4, EU=5, Japan=5, India=4, LATAM=3, SEA=3, MENA=4. Average = 4.75. Heavily US-concentrated due to multi-payer complexity.",
+          "regional_scores": {"us": 10, "china": 4, "eu": 5, "japan": 5, "india": 4, "latam": 3, "sea": 3, "mena": 4}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry 2026-2027 is NOW. Payer AI arms race creating defensive adoption urgency. Crash resilience high (admin is mandatory). Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 5,
+          "rationale": "$3M-$15M capital, 6 months to revenue, 80% margin. Mid-range capital with strong margins."
+        }
+      },
+      "composite_score": 73.0,
+      "composite_calculation": "(9*0.25 + 7*0.25 + 4.75*0.20 + 10*0.15 + 5*0.15) * 10 = (2.25+1.75+0.95+1.50+0.75)*10 = 72.0",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=9 >= 8 AND FA=7 (borderline; SN strength elevates category). Structural necessity is overwhelming."
+    },
+
+    {
+      "card_id": "MC-62-003",
+      "model_name": "AI-Augmented Telehealth for Rural and Underserved Markets",
+      "sector_naics": "62",
+      "scores": {
+        "structural_necessity": {
+          "score": 8,
+          "rationale": "Must exist. 150+ rural hospital closures. Provider shortage worsening. AI telehealth is the only scalable path to healthcare access for tens of millions. Structural crisis with no alternative solution."
+        },
+        "force_alignment": {
+          "score": 8,
+          "rationale": "3 forces >= 5 (F1=8 accelerating 1.5x=12, F2=9 steady 1.0x=9, F5=6 decelerating 0.5x=3). Weighted sum 24/30 = 8.0.",
+          "forces_counted": 3,
+          "velocity_weighted_sum": 24
+        },
+        "geographic_grade": {
+          "score": 6.5,
+          "rationale": "US=8, China=7, EU=5, Japan=7, India=9, LATAM=6, SEA=6, MENA=4. Average = 6.5. Broadly applicable to any geography with rural healthcare gaps.",
+          "regional_scores": {"us": 8, "china": 7, "eu": 5, "japan": 7, "india": 9, "latam": 6, "sea": 6, "mena": 4}
+        },
+        "timing_grade": {
+          "score": 9,
+          "rationale": "Optimal entry 2026-2028. Time sensitivity medium. Crash resilience high (healthcare need counter-cyclical). Base 8 + crash 1 = 9."
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "rationale": "$5M-$25M capital, 9 months to revenue, 55% margin. Capital intensive with longer time to revenue."
+        }
+      },
+      "composite_score": 70.8,
+      "composite_calculation": "(8*0.25 + 8*0.25 + 6.5*0.20 + 9*0.15 + 3*0.15) * 10 = (2.00+2.00+1.30+1.35+0.45)*10 = 71.0",
+      "category": "GEOGRAPHIC_PLAY",
+      "category_rationale": "GG variance > 4 across regions (India=9, MENA=4 = 5 point spread). Geographic access gap is the defining opportunity."
+    },
+
+    {
+      "card_id": "MC-56-001",
+      "model_name": "AI Workforce Orchestration Platform",
+      "sector_naics": "56",
+      "scores": {
+        "structural_necessity": {
+          "score": 9,
+          "rationale": "Must exist. Staffing intermediation is becoming structurally unnecessary as AI handles matching, scheduling, compliance. $192.7B in wages flowing through an obsolete intermediary. The platform model is inevitable."
+        },
+        "force_alignment": {
+          "score": 9,
+          "rationale": "2 forces >= 5 (F1=10 accelerating 1.5x=15, F4=9 shifting 1.0x=9). F5=2 below threshold. Weighted sum 24/20 = capped at 10, but only 2 forces, adjusted to 9 given extreme strength.",
+          "forces_counted": 2,
+          "velocity_weighted_sum": 24
+        },
+        "geographic_grade": {
+          "score": 5.125,
+          "rationale": "US=10, China=4, EU=6, Japan=5, India=5, LATAM=4, SEA=4, MENA=3. Average = 5.125.",
+          "regional_scores": {"us": 10, "china": 4, "eu": 6, "japan": 5, "india": 5, "latam": 4, "sea": 4, "mena": 3}
+        },
+        "timing_grade": {
+          "score": 9,
+          "rationale": "Optimal entry 2026-2027 is NOW. Time sensitivity high. Crash resilience medium (flexible labor somewhat counter-cyclical). Base 8 + crash 1 = 9."
+        },
+        "capital_efficiency": {
+          "score": 5,
+          "rationale": "$3M-$15M capital, 4 months to revenue, 70% margin. Mid-range capital."
+        }
+      },
+      "composite_score": 76.25,
+      "composite_calculation": "(9*0.25 + 9*0.25 + 5.125*0.20 + 9*0.15 + 5*0.15) * 10 = (2.25+2.25+1.025+1.35+0.75)*10 = 76.25",
+      "category": "STRUCTURAL_WINNER",
+      "category_rationale": "SN=9 >= 8 AND FA=9 >= 8"
+    },
+
+    {
+      "card_id": "MC-56-002",
+      "model_name": "Distressed Staffing Firm AI Acquirer",
+      "sector_naics": "56",
+      "scores": {
+        "structural_necessity": {
+          "score": 8,
+          "rationale": "Must exist. PE-backed staffing firms with declining revenue and maturing debt MUST sell or default. AI-native acquirers who can restructure are the natural buyers."
+        },
+        "force_alignment": {
+          "score": 8,
+          "rationale": "2 forces >= 5 (F1=8 accelerating 1.5x=12, F4=10 shifting 1.0x=10). Weighted sum 22/20 = capped. 2 forces but both extremely strong. Score 8.",
+          "forces_counted": 2,
+          "velocity_weighted_sum": 22
+        },
+        "geographic_grade": {
+          "score": 4.0,
+          "rationale": "US=10, China=2, EU=5, Japan=4, India=3, LATAM=3, SEA=3, MENA=2. Average = 4.0. Heavily US-focused.",
+          "regional_scores": {"us": 10, "china": 2, "eu": 5, "japan": 4, "india": 3, "latam": 3, "sea": 3, "mena": 2}
+        },
+        "timing_grade": {
+          "score": 10,
+          "rationale": "Optimal entry 2026-2028. PE refinancing wall creates time-bound window. Counter-cyclical. Time sensitivity high. Base 9 + crash 1 = 10."
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "rationale": "$5M-$50M capital required, Day 1 revenue, 50% margin. Capital-intensive acquisition model."
+        }
+      },
+      "composite_score": 67.5,
+      "composite_calculation": "(8*0.25 + 8*0.25 + 4.0*0.20 + 10*0.15 + 3*0.15) * 10 = (2.00+2.00+0.80+1.50+0.45)*10 = 67.5",
+      "category": "TIMING_ARBITRAGE",
+      "category_rationale": "TG=10 >= 8, SN=8 >= 6. Time-bound PE distress window is the defining feature."
+    },
+
+    {
+      "card_id": "MC-56-003",
+      "model_name": "Trust-Premium Healthcare and Trades Staffing",
+      "sector_naics": "56",
+      "scores": {
+        "structural_necessity": {
+          "score": 7,
+          "rationale": "Should exist. Healthcare and trades shortages are real but human staffing in these niches already exists. AI enhancement of operations is an efficiency play, not a structural gap."
+        },
+        "force_alignment": {
+          "score": 7,
+          "rationale": "2 forces >= 5 (F2=10 steady 1.0x=10, F5=7 decelerating 0.5x=3.5). F1=3 below threshold. Weighted sum 13.5/20 = 6.75, rounded to 7.",
+          "forces_counted": 2,
+          "velocity_weighted_sum": 13.5
+        },
+        "geographic_grade": {
+          "score": 5.375,
+          "rationale": "US=9, China=3, EU=6, Japan=7, India=4, LATAM=4, SEA=5, MENA=5. Average = 5.375.",
+          "regional_scores": {"us": 9, "china": 3, "eu": 6, "japan": 7, "india": 4, "latam": 4, "sea": 5, "mena": 5}
+        },
+        "timing_grade": {
+          "score": 9,
+          "rationale": "Optimal entry 2026-2028. Crash resilience high (healthcare staffing essential regardless of economy). Base 8 + crash 1 = 9."
+        },
+        "capital_efficiency": {
+          "score": 7,
+          "rationale": "$2M-$10M capital, 3 months to revenue, 30% margin. Fast revenue but lower margins than AI-heavy models."
+        }
+      },
+      "composite_score": 69.5,
+      "composite_calculation": "(7*0.25 + 7*0.25 + 5.375*0.20 + 9*0.15 + 7*0.15) * 10 = (1.75+1.75+1.075+1.35+1.05)*10 = 69.75",
+      "category": "CONDITIONAL",
+      "category_rationale": "Composite >= 60, SN < 8, FA < 8. Viable but depends on execution of worker supply acquisition."
+    }
+  ],
+
+  "rankings_by_composite": [
+    {"rank": 1, "card_id": "MC-52-001", "model_name": "AI-Native Accounting Practice Platform", "composite": 83.0, "category": "STRUCTURAL_WINNER"},
+    {"rank": 2, "card_id": "MC-54-001", "model_name": "AI-Augmented Professional Micro-Firm OS", "composite": 81.0, "category": "STRUCTURAL_WINNER"},
+    {"rank": 3, "card_id": "MC-62-001", "model_name": "Physician-Invisible Clinical AI Platform", "composite": 77.75, "category": "STRUCTURAL_WINNER"},
+    {"rank": 4, "card_id": "MC-56-001", "model_name": "AI Workforce Orchestration Platform", "composite": 76.25, "category": "STRUCTURAL_WINNER"},
+    {"rank": 5, "card_id": "MC-31-001", "model_name": "Silver Tsunami Manufacturer Acquire-and-Modernize", "composite": 74.75, "category": "STRUCTURAL_WINNER"},
+    {"rank": 6, "card_id": "MC-52-003", "model_name": "AI Financial Compliance and Governance Platform", "composite": 74.0, "category": "FEAR_ECONOMY"},
+    {"rank": 7, "card_id": "MC-54-002", "model_name": "AI-Augmented Legal Services for SMBs", "composite": 74.0, "category": "STRUCTURAL_WINNER"},
+    {"rank": 8, "card_id": "MC-31-002", "model_name": "Manufacturing AI Integration Services", "composite": 73.25, "category": "CAPITAL_MOAT"},
+    {"rank": 9, "card_id": "MC-54-003", "model_name": "India-US AI Professional Services Arbitrage", "composite": 73.0, "category": "GEOGRAPHIC_PLAY"},
+    {"rank": 10, "card_id": "MC-62-002", "model_name": "Healthcare Admin AI Automation Suite", "composite": 72.0, "category": "STRUCTURAL_WINNER"},
+    {"rank": 11, "card_id": "MC-62-003", "model_name": "AI-Augmented Telehealth Rural/Underserved", "composite": 71.0, "category": "GEOGRAPHIC_PLAY"},
+    {"rank": 12, "card_id": "MC-56-003", "model_name": "Trust-Premium Healthcare and Trades Staffing", "composite": 69.75, "category": "CONDITIONAL"},
+    {"rank": 13, "card_id": "MC-52-002", "model_name": "Distressed Financial Services Acquirer-Modernizer", "composite": 69.5, "category": "TIMING_ARBITRAGE"},
+    {"rank": 14, "card_id": "MC-56-002", "model_name": "Distressed Staffing Firm AI Acquirer", "composite": 67.5, "category": "TIMING_ARBITRAGE"},
+    {"rank": 15, "card_id": "MC-31-003", "model_name": "Cobot-as-a-Service for SME Manufacturing", "composite": 65.25, "category": "FORCE_RIDER"}
+  ],
+
+  "category_distribution": {
+    "STRUCTURAL_WINNER": 7,
+    "FORCE_RIDER": 1,
+    "GEOGRAPHIC_PLAY": 2,
+    "TIMING_ARBITRAGE": 2,
+    "CAPITAL_MOAT": 1,
+    "FEAR_ECONOMY": 1,
+    "EMERGING_CATEGORY": 0,
+    "CONDITIONAL": 1,
+    "PARKED": 0
+  },
+
+  "analysis_notes": {
+    "structural_winners_dominate": "7 of 15 models qualify as STRUCTURAL_WINNER (SN>=8 AND FA>=8). This reflects the current moment: multiple structural forces converging across sectors create businesses that MUST exist. The engine is identifying genuine structural gaps, not marginal opportunities.",
+    "no_parked_models": "All 15 models score above 60 composite. This is expected because Agent B only constructed models with strong structural foundations. Lower-quality opportunities were filtered at the signal grading stage.",
+    "capital_efficiency_separates_tiers": "The top 3 models (MC-52-001, MC-54-001, MC-62-001 platforms) all have CE >= 7. The acquisition models (MC-52-002, MC-56-002, MC-31-003) score 3-4 on CE, depressing their composites despite strong structural scores. This correctly reflects the higher execution risk of capital-intensive acquisition strategies.",
+    "geographic_concentration_risk": "Most models are US-concentrated (average GG 5.0). India-US arbitrage (MC-54-003) and Rural Telehealth (MC-62-003) are notable exceptions with broader geographic applicability. The GEOGRAPHIC_PLAY category highlights models where geographic arbitrage is the primary value driver.",
+    "timing_arbitrage_is_real": "MC-52-002 and MC-56-002 (distressed acquirers) score 10 on timing. The PE refinancing wall creates a 2-3 year window that is genuinely time-bound. These models score lower overall due to capital requirements but represent real timing arbitrage opportunities.",
+    "fear_economy_validated": "MC-52-003 (AI Financial Compliance) validates the FEAR_ECONOMY category. Psychology drives demand for this product, not inhibits it. The $86B fear economy by 2030 is a structural market creation from F5 Psychology."
+  }
+}

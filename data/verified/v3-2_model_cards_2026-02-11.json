@@ -1,0 +1,1251 @@
+{
+  "cycle": "v3-2",
+  "date": "2026-02-11",
+  "agent": "Agent B (Sector Transformation Analyst)",
+  "model_cards": [
+    {
+      "card_id": "MC-52-001",
+      "model_name": "AI-Native Accounting Practice Platform",
+      "model_type": "platform",
+      "sector_naics": "52",
+      "sector_name": "Financial Services",
+      "one_line": "Platform enabling 1-3 person CPA firms to serve 500+ clients via AI agents handling 90% of routine accounting work",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["CPA candidate pipeline down 33% creating structural human supply shortage", "Baumol stored energy ($207B) releasing as clients demand lower fees", "$207B in automatable wages at 4%/yr above CPI", "532K/month business applications creating explosion of SMB clients needing accounting"],
+          "supply_gap": "CPA pipeline collapse means there will not be enough human accountants to serve growing SMB demand. AI is the only scalable solution.",
+          "inevitability_argument": "The intersection of pipeline collapse (supply shrinking) and business formation (demand growing) makes AI-augmented accounting structurally necessary. No alternative path closes the gap.",
+          "pattern_refs": ["P-001", "P-026", "P-027"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI inference at $0.05/client/month makes automated accounting economically trivial. AI agents handle end-to-end workflows: data ingestion, categorization, reconciliation, tax preparation, financial statement generation."},
+          {"force_id": "F2_demographics", "contribution_score": 8, "mechanism": "CPA candidates -33%, graduates -17%. The profession cannot replace retiring accountants with humans. AI augmentation is the only path to maintaining service delivery."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "PE-backed accounting roll-ups face refinancing wall + AI disruption simultaneously. Distressed firms become acquisition targets or client sources for AI-native platforms."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 9, "notes": "974K professional services establishments, $207B automatable wages, 73% AI adoption in finance, CPA shortage acute"},
+          "china": {"score": 4, "notes": "Different accounting standards (CAS), state-dominated audit market, less Baumol pressure"},
+          "eu": {"score": 6, "notes": "IFRS creates standardization opportunity, AI Act friction, strong accounting bodies"},
+          "japan": {"score": 5, "notes": "Accounting profession small relative to GDP, aging CPA demographic similar to US"},
+          "india": {"score": 7, "notes": "India as source of AI-augmented accounting services for US/EU markets at lower cost"},
+          "latam": {"score": 5, "notes": "Growing SMB base needs accounting, multiple tax jurisdictions"},
+          "sea": {"score": 4, "notes": "Variable accounting standards and market maturity"},
+          "mena": {"score": 4, "notes": "Gulf focus on IFRS compliance, small professional services market"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Accounting is a regulatory requirement. Businesses must file taxes and maintain books regardless of economic conditions. AI-native delivery at lower cost is MORE attractive during downturns, not less.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$500K-$3M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 85,
+          "cost_advantage_ratio": "10-15x vs incumbent staffed accounting firm",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$200-500/client/month (SMB accounting subscription)",
+        "cost_per_unit_ai": "$5-15/client/month (AI inference + platform overhead)",
+        "cost_per_unit_incumbent": "$150-400/client/month (human labor + overhead at traditional firms)",
+        "break_even_volume": "200-400 clients (achievable in 6-12 months with referral-based growth)",
+        "jevons_multiplier": "3-5x — businesses that couldn't afford accounting at $300/month will use AI accounting at $50-100/month, expanding addressable market",
+        "economic_force_tam": "$207B automatable professional services wages; accounting portion ~$60B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "Trust in AI-generated financial statements and tax returns. Clients need confidence that AI output meets professional standards.",
+        "resolution_path": "CPA license holder reviews and signs all AI-generated work product. This is the 'human-in-the-loop' model that maintains professional liability while leveraging AI for 90% of the work.",
+        "fear_driven_demand_created": "AI audit trail software — every AI accounting action must be traceable for regulatory compliance"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["AI can process routine accounting transactions accurately (demonstrated at multiple firms)", "CPA pipeline collapse is structural, not cyclical (33% decline over 8 years)", "SMB business formation sustained at 532K/month (confirmed through 2026)"],
+        "likely": ["AI agent capability continues improving for multi-step accounting workflows", "Regulatory bodies (AICPA, state boards) permit AI-augmented practice", "Client willingness to use AI accounting at lower cost"],
+        "uncertain": ["Speed of client migration from incumbent firms to AI-native platforms", "Regulatory response to AI in tax preparation specifically", "Whether PE-backed accounting firms can transform fast enough to compete"],
+        "unlikely": ["CPA pipeline recovers to pre-2016 levels within 3 years", "AI accounting quality proves unreliable at scale (contrary to evidence)"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 8,
+        "total_funding": "$150M (across AI accounting startups)",
+        "layer": "platform",
+        "moat_sources": ["CPA license requirements create regulatory moat", "Client data flywheel — more clients = better AI models", "Professional trust relationships (client retention)", "Multi-state tax compliance complexity"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-001", "A-2026-02-11-V3C2-004", "A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-106", "A-2026-02-11-V3C2-104", "A-2026-02-11-V3C2-015", "A-2026-02-11-V3C2-035"],
+      "falsification_criteria": ["If AI accounting quality fails regulatory scrutiny (IRS audits flag AI-prepared returns at higher rates)", "If AICPA prohibits or heavily restricts AI in accounting practice", "If CPA pipeline recovers (>10% candidate increase)", "If clients refuse to migrate from human accountants regardless of cost savings"]
+    },
+
+    {
+      "card_id": "MC-52-002",
+      "model_name": "Distressed Financial Services Acquirer-Modernizer",
+      "model_type": "acquisition_modernization",
+      "sector_naics": "52",
+      "sector_name": "Financial Services",
+      "one_line": "Acquire PE-distressed accounting/insurance firms at 3-5x EBITDA, restructure with AI, achieve 60%+ margin improvement",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["PE refinancing wall: $936B-$1.8T maturing 2026-2028", "PE distress rate 11.98% (+148% from baseline)", "Staffing stocks crashed 25-53% confirming sector stress", "Business loan delinquency 1.78% and rising from 1.19%"],
+          "supply_gap": "PE-backed financial services firms need refinancing but face AI-driven revenue erosion simultaneously. No traditional buyer wants declining-revenue firms at current valuations. AI-native buyers can see the restructuring value.",
+          "inevitability_argument": "The refinancing wall MUST be resolved. Firms either refinance (at higher rates with declining revenue), sell (to someone), or default. AI-native acquirers who can restructure operations are the natural buyers at distressed prices.",
+          "pattern_refs": ["P-026", "P-027", "P-001"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "AI restructuring of acquired firms: automate back-office (30-70% cost reduction), upgrade client-facing tools, implement AI fraud detection and compliance."},
+          {"force_id": "F4_capital", "contribution_score": 10, "mechanism": "PE refinancing wall IS the opportunity. $936B-$1.8T maturing creates forced sellers. PE distress rate at 11.98% means 1 in 8 PE portfolio companies in distress. Capital rotation to physical/industrial means PE is not re-investing in financial services."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Acquired firms' aging workforce retires naturally, reducing restructuring friction. Silver Tsunami accelerates personnel transition."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 10, "notes": "PE refinancing wall is primarily a US phenomenon. $936B-$1.8T maturing, concentrated in financial services and business services."},
+          "china": {"score": 2, "notes": "Different capital structure, limited PE roll-up activity in financial services"},
+          "eu": {"score": 5, "notes": "Some PE-backed financial services in UK, less in continental Europe"},
+          "japan": {"score": 3, "notes": "Limited PE activity in financial services"},
+          "india": {"score": 3, "notes": "Growing PE activity but different market dynamics"},
+          "latam": {"score": 3, "notes": "Limited PE-backed financial services for acquisition"},
+          "sea": {"score": 2, "notes": "Minimal PE distress opportunity"},
+          "mena": {"score": 2, "notes": "SWF-backed rather than PE-backed; different dynamics"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Distressed acquisition model is COUNTER-CYCLICAL. Economic downturns create more distressed sellers at lower multiples. Revenue from accounting/insurance clients is recession-resistant (compliance is mandatory).",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$50M",
+          "time_to_revenue_months": 0,
+          "gross_margin_pct": 70,
+          "cost_advantage_ratio": "3-5x post-restructuring (AI operations vs legacy staffing model)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$2-10M annual revenue per acquired firm (depending on size)",
+        "cost_per_unit_ai": "40-50% of revenue after AI restructuring (vs 80-90% pre-restructuring)",
+        "cost_per_unit_incumbent": "80-90% of revenue under legacy staffing model",
+        "break_even_volume": "First acquisition (revenue from Day 1, margin improvement within 6-12 months)",
+        "jevons_multiplier": "2-3x — lower operating costs enable service to previously unserved small clients, expanding client base",
+        "economic_force_tam": "$936B-$1.8T PE refinancing wall; financial services portion estimated at $200-400B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 10,
+        "psychological_readiness": 7,
+        "gap": 3,
+        "primary_friction": "PE sellers may resist distressed pricing; client retention during ownership transition; employee anxiety during restructuring.",
+        "resolution_path": "Structure deals with earnouts tied to revenue retention. Communicate AI augmentation (not replacement) narrative to retained employees. Maintain client relationships through transition team.",
+        "fear_driven_demand_created": null
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["PE refinancing wall is real ($936B-$1.8T maturing 2026-2028)", "PE distress rate elevated (11.98%)", "AI can restructure financial services operations (demonstrated by AI-native firms)"],
+        "likely": ["Distressed PE portfolio companies will be available at 3-5x EBITDA", "Revenue retention during ownership transition exceeds 70%", "AI restructuring achieves 30-50% cost reduction within 12 months"],
+        "uncertain": ["Exact timing of distress wave (could accelerate or be delayed by amend-and-extend)", "Availability of acquisition financing in a tight credit market", "Scale of opportunity — depends on how many PE firms can't refinance"],
+        "unlikely": ["PE firms successfully refinance ALL maturing debt without distress", "AI restructuring fails to improve margins (contrary to all evidence)"]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 3,
+        "total_funding": "$75M (AI-native acquirers targeting financial services)",
+        "layer": "full_service",
+        "moat_sources": ["Acquisition experience and deal flow", "AI restructuring playbook (replicable across acquisitions)", "Client relationship retention capability", "Capital access for acquisitions", "Regulatory licenses and compliance infrastructure"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-010", "A-2026-02-11-V3C2-012", "A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-027"],
+      "falsification_criteria": ["If PE firms successfully amend-and-extend most maturing debt, distress catalyst delays", "If acquisition financing becomes unavailable (credit tightening), deal execution fails", "If client attrition during ownership transition exceeds 50%, economics fail", "If AI restructuring proves more complex than projected (regulatory barriers), margin improvement disappoints"]
+    },
+
+    {
+      "card_id": "MC-52-003",
+      "model_name": "AI Financial Compliance and Governance Platform",
+      "model_type": "platform",
+      "sector_naics": "52",
+      "sector_name": "Financial Services",
+      "one_line": "Automated regulatory compliance for AI-driven financial decisions: audit trails, bias detection, explainability for SOX/GDPR/AI Act",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["87% of financial institutions using AI fraud detection — all need compliance infrastructure", "AI governance market $309M -> $15.8B by 2030 (51x growth)", "EU AI Act high-risk classification for financial AI", "54% of bank interactions automated — all need audit trails"],
+          "supply_gap": "Financial AI is deploying faster than compliance infrastructure. Regulators will require explainability, bias monitoring, and audit trails for AI financial decisions. No dominant compliance platform exists yet.",
+          "inevitability_argument": "As AI makes more financial decisions (lending, fraud detection, underwriting, trading), regulators MUST require audit trails and explainability. This is as inevitable as SOX compliance was after Enron.",
+          "pattern_refs": ["P-026"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 7, "mechanism": "AI financial decisions at scale create the NEED for compliance infrastructure. Every AI lending decision, fraud flag, and automated customer interaction must be auditable."},
+          {"force_id": "F5_psychology", "contribution_score": 9, "mechanism": "Fear of AI bias, errors, and opacity in financial decisions drives demand. AI governance market growing 51x from $309M to $15.8B by 2030. This is a fear-driven market."},
+          {"force_id": "F3_geopolitics", "contribution_score": 6, "mechanism": "EU AI Act mandates compliance for high-risk AI in financial services. US regulators (OCC, SEC, CFPB) expected to follow. Cross-border financial AI creates multi-jurisdictional compliance need."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 8, "notes": "SOX, Dodd-Frank, CFPB create existing compliance frameworks that AI governance must integrate with"},
+          "china": {"score": 3, "notes": "State-directed compliance, different framework"},
+          "eu": {"score": 9, "notes": "AI Act creates MANDATORY compliance for financial AI; GDPR already requires data governance; largest compliance-driven market"},
+          "japan": {"score": 5, "notes": "FSA regulations require AI explainability in financial services"},
+          "india": {"score": 4, "notes": "Growing regulatory framework but less mature"},
+          "latam": {"score": 3, "notes": "Emerging regulatory frameworks"},
+          "sea": {"score": 4, "notes": "Singapore MAS leads in AI governance for finance"},
+          "mena": {"score": 4, "notes": "ADGM and DIFC creating AI governance frameworks for financial centers"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Compliance is mandatory regardless of economic conditions. A market crash or AI scandal would INCREASE demand for governance tools, not decrease it.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$10M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "5-10x vs manual compliance processes (internal audit teams)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$50K-$500K/year per financial institution (based on size and regulatory requirements)",
+        "cost_per_unit_ai": "$5K-$50K/year (AI infrastructure + compliance engine)",
+        "cost_per_unit_incumbent": "$200K-$2M/year (internal compliance teams + external auditors)",
+        "break_even_volume": "30-50 institutional clients",
+        "jevons_multiplier": "2-3x — as more financial decisions become AI-driven, compliance surface area expands proportionally",
+        "economic_force_tam": "AI governance market: $309M (2025) -> $15.8B (2030); financial services portion ~40% = $6.3B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 9,
+        "gap": -1,
+        "primary_friction": "None — this IS the fear-driven demand product. Psychological readiness exceeds economic readiness because institutions are more afraid of regulatory penalties than they are of spending on compliance.",
+        "resolution_path": "Not applicable — fear friction DRIVES adoption of this product, not inhibits it.",
+        "fear_driven_demand_created": "This model card IS the fear-driven demand. It exists because of fear of AI governance failures."
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["87% of financial institutions using AI (need compliance)", "AI governance market growing rapidly (51x to $15.8B)", "EU AI Act creating mandatory compliance requirements"],
+        "likely": ["US regulators will require AI explainability in financial decisions", "Cross-border compliance complexity increases", "AI financial decisions continue expanding in scope and volume"],
+        "uncertain": ["Exact timing and scope of US AI financial regulation", "Whether compliance burden falls on AI vendors or financial institutions (determines buyer)", "Speed of EU AI Act high-risk enforcement (may delay to 2027)"],
+        "unlikely": ["Regulators decide AI financial decisions need NO governance (contrary to all signals)", "Financial institutions build compliance infrastructure entirely in-house"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 12,
+        "total_funding": "$300M (across AI governance/compliance startups)",
+        "layer": "platform",
+        "moat_sources": ["Regulatory expertise (deep domain knowledge of financial regulations)", "Compliance data flywheel (more institutions = better anomaly detection)", "Integration with existing GRC (Governance, Risk, Compliance) systems", "Regulatory relationships and trust"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-205", "A-2026-02-11-V3C2-202", "A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-018", "A-2026-02-11-V3C2-005"],
+      "falsification_criteria": ["If regulators take a hands-off approach to AI in finance (no new compliance requirements)", "If large GRC incumbents (OneTrust, ServiceNow) successfully extend to AI governance, leaving no room for startups", "If EU AI Act enforcement delays indefinitely, reducing regulatory urgency", "If financial institutions prove capable of building AI governance in-house at lower cost"]
+    },
+
+    {
+      "card_id": "MC-54-001",
+      "model_name": "AI-Augmented Professional Micro-Firm Operating System",
+      "model_type": "platform",
+      "sector_naics": "54",
+      "sector_name": "Professional Services",
+      "one_line": "Operating system for 1-3 person professional firms: AI agents handle research, drafting, analysis while human handles judgment and client trust",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["532K/month business applications — professionals starting AI-augmented micro-firms at record rates", "Baumol stored energy ($207B) releasing as clients seek lower-cost professional services", "CPA/legal pipeline collapse creating supply-side pressure", "AI agents enabling 1-3 person firms to operate at 50+ person scale"],
+          "supply_gap": "Professionals leaving large firms to start solo practices need an integrated platform to manage AI agents across workflows. No dominant platform exists for AI-augmented professional practice.",
+          "inevitability_argument": "The combination of Coasean shrinkage (smaller optimal firm size) and AI agent capability means the solo/micro professional firm is the emerging dominant structure. These firms need infrastructure — an OS — to operate.",
+          "pattern_refs": ["P-001", "P-009", "P-023"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI agents automating multi-step professional workflows (research, drafting, analysis, formatting, review). Open-source models at near-frontier capability enable micro-firms to access enterprise-grade AI."},
+          {"force_id": "F4_capital", "contribution_score": 8, "mechanism": "532K/month business applications = massive addressable market of new micro-firms forming right now. Coasean shrinkage is the demand driver."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Pipeline collapse (CPA -33%, legal enrollment declining) means fewer professionals in large firms, more going solo with AI augmentation."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 9, "notes": "974K professional services establishments, highest Baumol pressure, strongest micro-firm formation trend"},
+          "china": {"score": 3, "notes": "Different professional services market structure"},
+          "eu": {"score": 6, "notes": "Strong professional services market, AI Act friction for certain applications"},
+          "japan": {"score": 4, "notes": "Cultural barriers to solo practice in some professions"},
+          "india": {"score": 7, "notes": "Large professional services workforce, growing adoption, export opportunity"},
+          "latam": {"score": 5, "notes": "Growing professional services market, micro-firm model attractive"},
+          "sea": {"score": 4, "notes": "Variable professional services development"},
+          "mena": {"score": 4, "notes": "Growing professional services, especially in Gulf financial centers"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Professional services demand is somewhat counter-cyclical (more legal work in downturns, more restructuring work, mandatory compliance). Lower-cost AI-augmented firms are MORE attractive during economic stress.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$1M-$5M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "5-8x operating cost advantage for micro-firm vs traditional firm overhead structure",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$200-1,000/month per professional user (SaaS subscription)",
+        "cost_per_unit_ai": "$20-100/month (AI inference + platform infrastructure)",
+        "cost_per_unit_incumbent": "N/A — incumbents use 10+ disconnected tools costing $500-2,000/month",
+        "break_even_volume": "1,000-3,000 professional subscribers",
+        "jevons_multiplier": "3-5x — micro-firms serve clients who couldn't afford large firm fees, expanding addressable market",
+        "economic_force_tam": "$207B automatable professional wages; platform captures 2-5% as SaaS fees = $4-10B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "Professional identity — solo practitioners worry about AI replacing their judgment, not augmenting it. Also liability concerns about AI-assisted work product.",
+        "resolution_path": "Position as 'AI that handles the work you don't want to do' (research, drafting, admin) so the professional can focus on judgment and client relationships. Include malpractice-compliant audit trails.",
+        "fear_driven_demand_created": "Professional AI liability insurance; AI work product verification tools"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["532K/month business applications indicate micro-firm formation at record rates", "AI agents can handle multi-step professional workflows", "Baumol stored energy creates client demand for lower-cost services"],
+        "likely": ["Solo/micro-firm becomes dominant practice structure within 5 years for many professional services", "Professional associations adapt rather than block AI adoption", "Platform economics favor consolidation around 2-3 dominant professional firm OS providers"],
+        "uncertain": ["Speed of professional migration from large firms to micro-firms", "Regulatory adaptation timeline for AI in licensed professions", "Whether professionals prefer vertical (accounting-only, legal-only) or horizontal platforms"],
+        "unlikely": ["Large professional services firms successfully prevent talent exodus through compensation", "AI quality proves insufficient for professional-grade work product"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 15,
+        "total_funding": "$250M (across AI legal, AI accounting, AI consulting tools)",
+        "layer": "platform",
+        "moat_sources": ["Workflow data flywheel (more usage = better AI models)", "Professional credential integration (CPA, bar, PE license verification)", "Client management and billing integration", "Profession-specific compliance and liability frameworks"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-014", "A-2026-02-11-V3C2-106", "A-2026-02-11-V3C2-104", "A-2026-02-11-V3C2-003"],
+      "falsification_criteria": ["If micro-firm formation stalls (business applications decline significantly)", "If professional associations successfully block AI in practice", "If AI work product quality fails to meet professional standards at scale", "If professionals prefer vertical tools over horizontal OS platforms"]
+    },
+
+    {
+      "card_id": "MC-54-002",
+      "model_name": "AI-Augmented Legal Services for SMBs",
+      "model_type": "direct",
+      "sector_naics": "54",
+      "sector_name": "Professional Services",
+      "one_line": "AI-native legal services firm delivering contract review, compliance, and corporate governance at 60-70% lower cost than traditional law firms",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["532K/month new businesses need legal services but can't afford $300-600/hr attorneys", "80% of legal needs for SMBs are routine (contracts, compliance, incorporation, IP filing)", "Baumol wages in legal: associate salaries $200K+ creating massive stored energy"],
+          "supply_gap": "SMBs have massive unmet legal demand. Legal services are priced for large enterprises. AI can deliver routine legal work at SMB-affordable prices.",
+          "inevitability_argument": "532K new businesses per month times $5K-20K average annual legal spend = $30-120B in annual demand from new businesses alone. Traditional law firms cannot serve this market at current pricing.",
+          "pattern_refs": ["P-001", "P-023"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI handles contract drafting, review, compliance checking, IP filing, corporate governance — 80%+ of routine legal work. Human attorney reviews and provides judgment-layer oversight."},
+          {"force_id": "F2_demographics", "contribution_score": 5, "mechanism": "Legal profession pipeline not collapsing like accounting, but Baumol wages ($200K+ associates) create stored energy for disruption."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "New business formation at 532K/month creates massive addressable market. These firms need legal services from Day 1."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 9, "notes": "Massive SMB formation, high legal costs, permissive AI adoption environment"},
+          "china": {"score": 3, "notes": "Different legal system, limited applicability"},
+          "eu": {"score": 6, "notes": "GDPR compliance creates specific legal AI demand; 82% ethical concerns slow adoption"},
+          "japan": {"score": 4, "notes": "Smaller legal market, cultural barriers"},
+          "india": {"score": 6, "notes": "Large legal market, AI-augmented Indian legal services for global clients"},
+          "latam": {"score": 5, "notes": "Growing legal services need, civil law system differences"},
+          "sea": {"score": 4, "notes": "Variable legal systems and market maturity"},
+          "mena": {"score": 3, "notes": "Sharia law considerations create specialized legal AI need"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Legal services demand increases during economic stress (restructuring, bankruptcy, contract disputes). Lower-cost AI-native services are MORE attractive during downturns.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$1M-$5M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "5-10x for routine legal work vs traditional law firm billing",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$500-5,000/month per SMB client (subscription or project-based)",
+        "cost_per_unit_ai": "$50-500/month (AI processing + attorney oversight allocation)",
+        "cost_per_unit_incumbent": "$2,000-20,000/month (law firm at $300-600/hr for equivalent work)",
+        "break_even_volume": "100-300 SMB clients",
+        "jevons_multiplier": "3-5x — SMBs that managed legal needs informally (or not at all) will use affordable AI legal services, expanding market",
+        "economic_force_tam": "US SMB legal services market: ~$100B; addressable by AI-native: ~$40-60B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 4,
+        "gap": 4,
+        "primary_friction": "82% of legal professionals cite ethical concerns about AI in legal practice. UPL (unauthorized practice of law) concerns limit non-attorney AI delivery. Client trust in AI legal work is lower than AI accounting.",
+        "resolution_path": "Licensed attorney oversight of all AI-generated legal work. Position as 'AI-assisted law firm' not 'AI replacing lawyers.' State bar associations gradually adapting ethics opinions.",
+        "fear_driven_demand_created": "Legal AI ethics consulting; AI legal malpractice insurance; legal AI compliance certification"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["SMB legal demand far exceeds affordable supply", "AI can draft routine contracts and compliance documents at professional quality", "New business formation sustained at 532K/month"],
+        "likely": ["State bar associations will permit AI-augmented legal practice with attorney oversight", "Client willingness to use lower-cost AI legal services for routine matters", "Large law firms do not effectively compete at SMB price points"],
+        "uncertain": ["Speed of state bar regulatory adaptation (varies by jurisdiction)", "Whether AI legal quality proves reliable for complex edge cases", "Client acquisition cost for new legal services firm without brand recognition"],
+        "unlikely": ["State bars block AI in legal practice entirely", "SMBs prefer paying 5-10x more for traditional law firm services"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 20,
+        "total_funding": "$400M (across AI legal startups including LegalZoom evolution, Clio, Harvey)",
+        "layer": "full_service",
+        "moat_sources": ["Attorney licensure requirements (UPL protection)", "Client legal data (confidentiality creates switching costs)", "Jurisdiction-specific legal knowledge", "Trust relationships (legal services are high-trust)"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-014", "A-2026-02-11-V3C2-207", "A-2026-02-11-V3C2-106"],
+      "falsification_criteria": ["If state bars prohibit AI in legal practice (UPL enforcement against AI-assisted firms)", "If AI legal work product quality fails at scale (malpractice events)", "If SMBs prove unwilling to use AI legal services regardless of cost advantage", "If large law firms successfully downmarket with AI, capturing SMB segment"]
+    },
+
+    {
+      "card_id": "MC-54-003",
+      "model_name": "India-US AI Professional Services Arbitrage",
+      "model_type": "hybrid",
+      "sector_naics": "54",
+      "sector_name": "Professional Services",
+      "one_line": "AI-augmented Indian professional teams delivering US accounting, tax, and consulting services at 50-70% lower cost",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["India: 1B working-age population at median age 28", "CPA pipeline collapse in US creates structural supply gap", "India CA and professional talent abundant and cost-competitive", "AI augmentation enables Indian teams to deliver US-standard work at lower cost"],
+          "supply_gap": "US has shrinking supply of professionals (CPA -33%) and rising demand (532K/month new businesses). India has abundant professionals at 30-50% lower cost. AI bridges the quality and timezone gaps.",
+          "inevitability_argument": "The demographic arbitrage (aging US with shortages + young India with surplus) combined with AI capability (bridging quality/standard gaps) creates an inevitable services flow. AI makes the Indian professional indistinguishable from the US professional in work output quality.",
+          "pattern_refs": ["P-001", "P-002"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "AI standardizes work output quality regardless of location. Indian CA/professional uses AI tools to produce US GAAP-compliant work product indistinguishable from US-produced output."},
+          {"force_id": "F2_demographics", "contribution_score": 10, "mechanism": "India: 1B working-age, median age 28, abundant professional talent. US: CPA -33%, aging professionals. The demographic asymmetry IS the opportunity."},
+          {"force_id": "F3_geopolitics", "contribution_score": 5, "mechanism": "India manufacturing FDI +18% improves bilateral economic ties. H-1B visa constraints create pressure for remote service delivery models. India-US trade relationship deepening."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 8, "notes": "Primary demand market — CPA shortage, high professional costs, receptive to offshoring with AI quality assurance"},
+          "china": {"score": 2, "notes": "Not relevant for China market"},
+          "eu": {"score": 6, "notes": "EU professional services also face aging, GDPR compliance adds complexity"},
+          "japan": {"score": 4, "notes": "Language barrier significant; Japan opening to Indian immigration"},
+          "india": {"score": 10, "notes": "Source market — India CA/professional talent supply is abundant and growing"},
+          "latam": {"score": 3, "notes": "Not primary market for this model"},
+          "sea": {"score": 3, "notes": "Singapore possible secondary market"},
+          "mena": {"score": 4, "notes": "8M+ Indian workers in Gulf; existing professional services connections"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Cost arbitrage is MORE attractive during economic stress. Firms under margin pressure will shift to lower-cost India-US model faster during downturns.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$500K-$3M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 60,
+          "cost_advantage_ratio": "2-3x vs US-only delivery (Indian professional cost 30-50% of US equivalent)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$100-300/month per SMB client (discounted vs US-only pricing)",
+        "cost_per_unit_ai": "$30-80/month (AI infrastructure + Indian professional allocation at India rates)",
+        "cost_per_unit_incumbent": "$150-400/month (US-based accounting firm)",
+        "break_even_volume": "300-500 SMB clients",
+        "jevons_multiplier": "2-4x — lower cost enables service to micro-businesses and startups that can't afford US-priced accounting",
+        "economic_force_tam": "US SMB accounting: ~$60B; India-deliverable portion: ~$20-30B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "primary_friction": "Client resistance to offshored professional services (data privacy concerns, quality perceptions, timezone challenges). Anti-outsourcing political sentiment.",
+        "resolution_path": "AI quality assurance layer ensures all output meets US standards before client delivery. US-licensed CPA signs off on all work. Brand as 'AI-powered US accounting firm' not 'Indian outsourcing firm.' Data processing complies with US privacy requirements.",
+        "fear_driven_demand_created": "Cross-border professional services compliance tools; AI quality assurance for offshored work"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["India has abundant professional talent at lower cost", "CPA pipeline collapse in US is structural", "AI can standardize work output quality across geographies"],
+        "likely": ["US clients will accept India-US hybrid model when AI assures quality", "Regulatory frameworks permit remote professional services delivery", "Cost savings of 50-70% are sufficient to overcome offshoring resistance"],
+        "uncertain": ["Political risk of anti-offshoring regulation", "Quality consistency at scale for complex professional work", "Client acquisition — overcoming 'offshoring stigma'"],
+        "unlikely": ["US CPA pipeline fully recovers (eliminating supply gap)", "Regulatory prohibition on offshore professional services delivery", "India professional talent cost rises to US parity (decades away)"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 10,
+        "total_funding": "$200M (across India-US professional services firms with AI enhancement)",
+        "layer": "full_service",
+        "moat_sources": ["India talent pipeline (relationships with CA institutes, universities)", "AI quality assurance systems", "US regulatory compliance infrastructure (CPA licenses, state registrations)", "Client data and relationship management across timezones"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-105", "A-2026-02-11-V3C2-104", "A-2026-02-11-V3C2-106", "A-2026-02-11-V3C2-008"],
+      "falsification_criteria": ["If US enacts legislation restricting offshore professional services delivery", "If AI quality assurance proves insufficient to maintain US professional standards", "If India professional talent costs rise significantly (reducing arbitrage)", "If client resistance to offshored services proves insurmountable despite cost advantages"]
+    },
+
+    {
+      "card_id": "MC-31-001",
+      "model_name": "Silver Tsunami Manufacturer Acquire-and-Modernize",
+      "model_type": "acquisition_modernization",
+      "sector_naics": "31-33",
+      "sector_name": "Manufacturing",
+      "one_line": "Acquire retiring-owner manufacturers at 3-5x EBITDA, install AI/robotics, achieve 20-30% COGS reduction within 18 months",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["2.34M businesses owned by 55+ with 58% no succession plan", "Silver Tsunami peak: median boomer age 67 in 2026", "Manufacturing sub-sectors: printing 28K, plastics 12K, furniture 12.7K retiring owners", "SBA 504 fee waiver through Sept 2026 aids acquisition financing"],
+          "supply_gap": "Retiring manufacturer owners need buyers. Supply of businesses for sale will far exceed demand from traditional buyers. AI-native operators who can modernize are the value-creating acquirers.",
+          "inevitability_argument": "The median boomer is 67. These owners WILL retire within 5-8 years. With 58% having no succession plan, businesses either sell, close, or find non-traditional buyers. The wave is demographic and irreversible.",
+          "pattern_refs": ["P-002", "P-006", "P-016"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "Cobots at $25-60K with 6-18 month ROI. AI vision, predictive maintenance, production scheduling. Manufacturing AI market growing from $34B to $155B (35.3% CAGR). Technology exists to modernize legacy factories rapidly."},
+          {"force_id": "F2_demographics", "contribution_score": 10, "mechanism": "52.3% of employer businesses owned by 55+. 2.34M businesses. 58% no succession plan. This IS the demographic force. Manufacturing is disproportionately affected due to physical business assets and location-specific operations."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "SBA 504 fee waiver through Sept 2026. Capital rotating to industrials. Acquisition multiples compressed by supply surplus (more sellers than buyers). PE distress creates additional acquisition targets."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 10, "notes": "2.34M boomer-owned businesses, 250K+ SME manufacturers, SBA financing available, Midwest/Southeast manufacturing belt concentration"},
+          "china": {"score": 2, "notes": "Different ownership structure, state-directed industry transitions"},
+          "eu": {"score": 6, "notes": "Germany/Italy aging creates similar dynamic but different regulatory environment"},
+          "japan": {"score": 7, "notes": "Japan population declining 900K/yr, manufacturer succession crisis advanced; Japan robot density highest globally"},
+          "india": {"score": 3, "notes": "Young demographics mean no succession crisis; India as growth market not acquisition market"},
+          "latam": {"score": 3, "notes": "Different ownership and manufacturing structure"},
+          "sea": {"score": 2, "notes": "Younger demographics, different market structure"},
+          "mena": {"score": 2, "notes": "Limited manufacturing base to acquire"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Distressed acquisition model is counter-cyclical. Economic downturns create more forced sellers at lower multiples. Manufacturing assets (machines, real estate) have floor values. Revenue from existing customers provides baseline cash flow.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$20M",
+          "time_to_revenue_months": 0,
+          "gross_margin_pct": 45,
+          "cost_advantage_ratio": "1.5-2x post-modernization (20-30% COGS reduction vs pre-acquisition baseline)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$2-15M annual revenue per acquired manufacturer (typical SME)",
+        "cost_per_unit_ai": "60-70% of revenue post-modernization (COGS + AI/robotics operating costs)",
+        "cost_per_unit_incumbent": "80-90% of revenue under legacy operations (high labor, no AI optimization)",
+        "break_even_volume": "First acquisition (revenue from Day 1, COGS improvement within 6-18 months of cobot installation)",
+        "jevons_multiplier": "1.5-2x — lower production costs enable domestic manufacturing to compete with offshore, expanding addressable production volume",
+        "economic_force_tam": "2.34M boomer-owned businesses across all sectors; manufacturing portion ~300K-400K businesses"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 7,
+        "gap": 1,
+        "primary_friction": "Retiring owners may resist selling to non-family or non-industry buyers. Workforce anxiety about new ownership and automation. Community concerns about factory changes.",
+        "resolution_path": "Position as continuation of legacy with modernization. Retain key employees with upskilling pathways (machine operator -> cobot supervisor). Communicate investment, not liquidation. Seller earnouts aligned with successful transition.",
+        "fear_driven_demand_created": "Manufacturing transition consulting; workforce retraining programs; SME succession planning services"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Silver Tsunami demographics are irreversible (52.3% owned by 55+)", "Cobot ROI of 6-18 months demonstrated at hundreds of installations", "SBA 504 fee waiver available through Sept 2026"],
+        "likely": ["Acquisition multiples remain favorable (3-5x EBITDA for retiring-owner businesses)", "AI/robotics modernization achieves 20-30% COGS reduction within 18 months", "Existing customer relationships transfer with acquisition (revenue retention 80%+)"],
+        "uncertain": ["Scale of each individual acquisition opportunity (deal flow volume)", "Workforce retention during transition (key employee flight risk)", "Time to operational modernization (factory-specific challenges)"],
+        "unlikely": ["Silver Tsunami businesses find enough traditional succession buyers (demographics don't support this)", "AI/robotics modernization fails to improve COGS (contrary to extensive evidence)"]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 5,
+        "total_funding": "$150M (across manufacturing acquisition platforms and search funds targeting Silver Tsunami)",
+        "layer": "full_service",
+        "moat_sources": ["Operational expertise (knowing how to run factories)", "AI/robotics integration capability", "Acquisition deal flow (relationships with business brokers, SBA lenders)", "Sub-sector specialization (printing, plastics, furniture, metal fabrication)", "Location in manufacturing belt (proximity to targets)"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-005", "A-2026-02-11-V3C2-009", "A-2026-02-11-V3C2-101", "A-2026-02-11-V3C2-019", "A-2026-02-11-V3C2-020"],
+      "falsification_criteria": ["If Silver Tsunami businesses find succession buyers at high multiples (reducing acquisition opportunity)", "If cobot/AI installation proves too complex for rapid modernization of legacy factories", "If customer retention during ownership transition falls below 60%", "If SBA financing becomes unavailable or acquisition capital dries up"]
+    },
+
+    {
+      "card_id": "MC-31-002",
+      "model_name": "Manufacturing AI Integration Services",
+      "model_type": "direct",
+      "sector_naics": "31-33",
+      "sector_name": "Manufacturing",
+      "one_line": "Close the 78-point manufacturing AI gap: assess, design, install, and manage AI/robotics systems for SME manufacturers",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["98% exploring AI, only 20% production-ready = 78-point gap", "50% of manufacturers can't identify the right technology", "39% lack internal expertise", "Manufacturing AI market: $34B -> $155B (35.3% CAGR)"],
+          "supply_gap": "Manufacturers want AI but cannot implement it themselves. 50% can't even identify the right technology. There is a massive gap between desire and capability that can only be filled by specialized integrators.",
+          "inevitability_argument": "The 78-point gap will close — the question is who closes it. Manufacturers will either hire integrators, build internal teams, or fall behind competitors. The 50% who 'can't identify right technology' prove they cannot do it alone.",
+          "pattern_refs": ["P-006", "P-016"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "The 78-point gap EXISTS because of rapid technology advancement. Cobots, AI vision, predictive maintenance, digital twins — the technology landscape moves too fast for manufacturers to evaluate and implement alone."},
+          {"force_id": "F2_demographics", "contribution_score": 5, "mechanism": "Aging manufacturing workforce lacks AI/digital skills. Integration services bridge the capability gap between retiring analog-skilled workers and new AI-dependent operations."},
+          {"force_id": "F3_geopolitics", "contribution_score": 4, "mechanism": "Reshoring/nearshoring creates demand for new factory buildout that includes AI from Day 1. Defense manufacturing expansion needs AI-integrated production lines."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 9, "notes": "250K+ SME manufacturers, 78-point gap, $34B market, SBA financing for technology upgrades"},
+          "china": {"score": 6, "notes": "470 robots per 10K workers but state-directed integration services; massive scale opportunity"},
+          "eu": {"score": 7, "notes": "Germany Industry 4.0 creates structured demand; Southern EU manufacturing underpenetrated"},
+          "japan": {"score": 6, "notes": "Highest robot density but mature market; opportunity in AI overlay on existing robotics"},
+          "india": {"score": 6, "notes": "PLI schemes driving new manufacturing investment that needs AI integration; $19B FDI"},
+          "latam": {"score": 5, "notes": "Mexico nearshoring FDI $40.9B needs integration services for new facilities"},
+          "sea": {"score": 5, "notes": "Vietnam, Indonesia manufacturing growth needs AI integration"},
+          "mena": {"score": 3, "notes": "Limited manufacturing base"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Manufacturing AI investment may slow during economic downturns (capex is discretionary). However, competitive pressure from AI-adopting rivals creates a 'can't afford NOT to invest' dynamic. Counter-cyclical: firms with excess capacity during downturns have more time for AI integration projects.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$500K-$5M",
+          "time_to_revenue_months": 2,
+          "gross_margin_pct": 55,
+          "cost_advantage_ratio": "2-3x vs generic IT consulting firms (manufacturing domain expertise premium)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$100K-$1M per integration project (assessment, design, implementation, training)",
+        "cost_per_unit_ai": "$40K-$450K (engineers, equipment, subcontractors, travel)",
+        "cost_per_unit_incumbent": "$150K-$1.5M (generic IT/consulting firms without manufacturing specialization, higher failure rate)",
+        "break_even_volume": "10-20 integration projects annually",
+        "jevons_multiplier": "1.5-2x — successful integration leads to expansion projects (additional production lines, additional AI capabilities) within same client",
+        "economic_force_tam": "Manufacturing AI market: $34.18B (2025) -> $155.04B (2030); integration services portion ~30% = $10-46B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "primary_friction": "Manufacturing managers worry about production disruption during AI installation. Budget overruns (32% of manufacturers). Workforce resistance to automation.",
+        "resolution_path": "Phased implementation with minimal production disruption. Fixed-price or capped-cost engagements. Workforce upskilling included in every engagement. Reference customers with demonstrated ROI.",
+        "fear_driven_demand_created": "Manufacturing AI assessment tools; ROI calculators for automation investments; workforce transition planning services"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["78-point gap exists (98% exploring, 20% ready)", "50% can't identify right technology", "Manufacturing AI market growing 35.3% CAGR"],
+        "likely": ["Manufacturers continue increasing AI investment (73% plan to in next 3 years)", "Integration services remain necessary (AI complexity exceeds internal capability for most SMEs)", "Cobot and AI costs continue declining, improving project ROI"],
+        "uncertain": ["Degree to which large IT firms (Accenture, Deloitte) capture this market", "Whether manufacturing AI platforms become simple enough for self-service (reducing need for integrators)", "Client willingness to pay premium for manufacturing-specialized integrators vs generic IT firms"],
+        "unlikely": ["AI becomes so simple that manufacturers don't need integration help (contrary to all evidence)", "Manufacturing AI investment reverses course (92% call it essential)"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 8,
+        "total_funding": "$100M (across manufacturing AI integration startups)",
+        "layer": "full_service",
+        "moat_sources": ["Manufacturing domain expertise (tacit knowledge of production processes)", "Sub-sector specialization (food manufacturing differs from aerospace)", "Reference customer portfolio (proven ROI at comparable manufacturers)", "Partnerships with cobot/AI vendors", "Geographic presence in manufacturing regions"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-009", "A-2026-02-11-V3C2-020", "A-2026-02-11-V3C2-031", "A-2026-02-11-V3C2-036", "A-2026-02-11-V3C2-005"],
+      "falsification_criteria": ["If manufacturing AI platforms become self-service (eliminating need for integrators)", "If large consulting firms (Accenture, Deloitte) dominate the manufacturing AI integration market", "If manufacturers delay AI investment due to economic downturn (>50% pause plans)", "If integration project failure rate is high (>30%), damaging the integrator market"]
+    },
+
+    {
+      "card_id": "MC-31-003",
+      "model_name": "Cobot-as-a-Service for SME Manufacturing",
+      "model_type": "platform",
+      "sector_naics": "31-33",
+      "sector_name": "Manufacturing",
+      "one_line": "Subscription cobot service eliminating capital risk: $2-5K/month per cobot with AI integration, maintenance, and upgrades included",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["73K cobots shipped (+31% YoY) but concentrated in large enterprises", "250K+ SME manufacturers with <500 employees are underserved", "32% of manufacturers face budget overruns on automation projects", "46% of manufacturers targeting robotics investment in next 24 months"],
+          "supply_gap": "SME manufacturers want cobots but face capital constraints ($25-60K per unit) and integration complexity. Subscription model eliminates both barriers.",
+          "inevitability_argument": "The cobot market is growing 17.4% CAGR. Large enterprises are adopting rapidly. SMEs need a capital-light pathway to access the same technology. The as-a-service model is the proven mechanism for technology democratization (cf. SaaS, cloud computing).",
+          "pattern_refs": ["P-006", "P-016"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "Cobots at $25-60K with 6-18 month ROI. AI vision and control improving rapidly. 73K shipped (+31% YoY). Subscription model makes this accessible to SMEs who can't justify $25-60K capital outlay."},
+          {"force_id": "F4_capital", "contribution_score": 7, "mechanism": "Capital rotation to industrials/physical economy. VC investing in robotics at record levels ($2.26B Q1 2026). Subscription model de-risks the purchase decision for SMEs."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Silver Tsunami retirements mean fewer manufacturing workers. Cobots replace the workers who are leaving. Subscription model makes this accessible to small manufacturers losing workers to retirement."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 8, "notes": "250K+ SME manufacturers, strong subscription/SaaS culture, SBA financing could complement"},
+          "china": {"score": 5, "notes": "Massive manufacturing base but different purchasing culture; state subsidies reduce capital barrier directly"},
+          "eu": {"score": 7, "notes": "Germany SME manufacturing (Mittelstand) = ideal market; EU grant programs for automation"},
+          "japan": {"score": 6, "notes": "Mature robotics market but subscription model could reach smaller firms"},
+          "india": {"score": 6, "notes": "Growing manufacturing base with capital constraints; subscription model ideal for Indian SMEs"},
+          "latam": {"score": 5, "notes": "Mexico nearshoring manufacturers need automation but face capital constraints"},
+          "sea": {"score": 5, "notes": "Vietnam, Indonesia, Thailand manufacturing growth; subscription removes capital barrier"},
+          "mena": {"score": 3, "notes": "Limited manufacturing SME base"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Subscription model is MORE attractive during capital-constrained periods (preserves cash). However, manufacturers may cancel subscriptions during severe downturns. Net: more resilient than capital-purchase model.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$30M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 55,
+          "cost_advantage_ratio": "1.5-2x vs outright cobot purchase (when including integration, maintenance, and upgrade costs)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$2,000-5,000/month per cobot subscription (includes hardware, software, maintenance, AI updates)",
+        "cost_per_unit_ai": "$800-2,000/month (amortized hardware + AI compute + field service)",
+        "cost_per_unit_incumbent": "$25,000-60,000 upfront purchase + $5,000-15,000/year maintenance + unknown integration costs",
+        "break_even_volume": "200-500 active cobot subscriptions",
+        "jevons_multiplier": "2-3x — subscription model makes cobots accessible to manufacturers who couldn't justify capital purchase, expanding total cobot deployment",
+        "economic_force_tam": "Global cobot market growing 17.4% CAGR; US SME addressable: ~$5B by 2030"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 6,
+        "gap": 1,
+        "primary_friction": "Manufacturers worry about cobot reliability, integration complexity, and production disruption. Capital risk is reduced by subscription but operational risk remains.",
+        "resolution_path": "Free trial / pilot period. Guaranteed uptime SLAs. Rapid replacement of malfunctioning units. Full integration support included in subscription. Reference customers in same manufacturing sub-sector.",
+        "fear_driven_demand_created": null
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Cobots at $25-60K with 6-18 month ROI (well documented)", "73K shipped with 31% YoY growth", "SME manufacturers want automation but face capital constraints (32% budget overruns)"],
+        "likely": ["Subscription model for industrial equipment gains market acceptance (follows SaaS pattern)", "Cobot costs continue declining, improving unit economics for subscription provider", "AI integration improves cobot capability and reduces maintenance needs"],
+        "uncertain": ["Customer acquisition cost for industrial subscription model (longer sales cycle than SaaS)", "Unit economics at scale (hardware logistics, field service, replacement inventory)", "Whether OEMs (Universal Robots, ABB, Fanuc) launch their own subscription models"],
+        "unlikely": ["Manufacturers reject subscription model entirely (contrary to broader business trend)", "Cobot technology fails to deliver ROI (contrary to extensive documentation)"]
+      },
+
+      "competitive_density": {
+        "status": "low",
+        "funded_entrants": 4,
+        "total_funding": "$80M (across robotics-as-a-service startups)",
+        "layer": "platform",
+        "moat_sources": ["Fleet management software and data (performance optimization across all deployed cobots)", "Field service and maintenance infrastructure", "Volume purchasing from cobot OEMs", "Customer data flywheel (application optimization)", "Standardized deployment playbooks by manufacturing sub-sector"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-005", "A-2026-02-11-V3C2-009", "A-2026-02-11-V3C2-019", "A-2026-02-11-V3C2-031"],
+      "falsification_criteria": ["If cobot OEMs launch competitive subscription models with superior economics", "If SME manufacturers prove unwilling to adopt subscription model for production equipment", "If cobot reliability in SME environments is lower than projected (increasing service costs)", "If manufacturing downturn leads to mass subscription cancellations (churn >30%/year)"]
+    },
+
+    {
+      "card_id": "MC-62-001",
+      "model_name": "Physician-Invisible Clinical AI Platform",
+      "model_type": "platform",
+      "sector_naics": "62",
+      "sector_name": "Healthcare",
+      "one_line": "AI clinical decision support that operates within physician EHR workflow: documentation, coding, prediction, alerts -- invisible to patients",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["66% of physicians already using AI tools (up from 38%)", "71% of hospitals running predictive AI", "78K unfilled RN positions creating workflow burden on physicians", "40% readmission reduction proven at Mayo Clinic"],
+          "supply_gap": "Physicians are overwhelmed with documentation, coding, and administrative burden (estimated 50% of physician time). AI can handle this invisibly, extending physician capacity by 30-50%.",
+          "inevitability_argument": "With 78K nursing vacancies growing to 200K by 2030, healthcare systems CANNOT maintain care quality without AI augmentation. Physician burnout (50% report symptoms) demands workflow relief. The invisible-AI pathway bypasses the patient trust barrier.",
+          "pattern_refs": ["P-001", "P-032"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "1,250+ FDA-cleared AI devices. 295 clearances in 2025. 510(k) pathway proven (96% of approvals, median 142 days). AI documentation, coding, prediction technology is production-ready."},
+          {"force_id": "F2_demographics", "contribution_score": 9, "mechanism": "78K unfilled RN positions growing to 200K. Aging population (65+ growing 3%/yr) increasing demand. Pipeline collapse means human supply cannot grow fast enough. AI augmentation is the only scalable path."},
+          {"force_id": "F5_psychology", "contribution_score": 8, "mechanism": "Physician-invisible AI BYPASSES the 34-point patient trust gap. Patients never interact with AI directly. Physicians (7/10 trust) adopt willingly. This is the structural insight for healthcare AI adoption."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 9, "notes": "66% physician adoption, FDA pathway proven, 22M workers, $2.3T revenue, CMS WISeR pushing adoption"},
+          "china": {"score": 7, "notes": "WeChat Health ecosystem, lower trust barrier, state-directed adoption in public hospitals"},
+          "eu": {"score": 5, "notes": "AI Act high-risk classification creates compliance burden; GDPR constrains health data use"},
+          "japan": {"score": 6, "notes": "Acute demographic need, government pushing telemedicine, cultural preference for human doctors in patient-facing roles (but invisible AI fits)"},
+          "india": {"score": 7, "notes": "Massive need (1.4B population, specialist shortage), low-cost AI diagnostics market emerging"},
+          "latam": {"score": 4, "notes": "Variable healthcare infrastructure, telemedicine growing"},
+          "sea": {"score": 4, "notes": "Singapore leads, variable elsewhere"},
+          "mena": {"score": 5, "notes": "Gulf building AI-native healthcare infrastructure"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Healthcare spending is largely counter-cyclical (aging demand continues regardless of economy). AI that reduces costs is MORE attractive during budget pressure.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$20M",
+          "time_to_revenue_months": 9,
+          "gross_margin_pct": 75,
+          "cost_advantage_ratio": "3-5x vs additional clinical staff for equivalent workflow capacity",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5K-50K/year per hospital or clinic (based on size and modules deployed)",
+        "cost_per_unit_ai": "$1K-10K/year (AI compute + EHR integration maintenance)",
+        "cost_per_unit_incumbent": "$50K-500K/year equivalent (additional clinical staff, scribes, coders)",
+        "break_even_volume": "50-200 hospital/clinic clients",
+        "jevons_multiplier": "2-3x — AI-augmented physicians handle 30-50% more patients, expanding effective healthcare capacity",
+        "economic_force_tam": "Healthcare AI market: $5.2B (2025) -> $119.3B (2035); physician-tool portion ~30% = $1.5B-$36B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 7,
+        "gap": 1,
+        "primary_friction": "Physician workflow disruption during implementation. EHR integration complexity. Malpractice liability concerns for AI-assisted decisions.",
+        "resolution_path": "Seamless EHR integration (Epic, Cerner APIs). AI operates as physician tool, not autonomous agent. All AI recommendations presented as suggestions, not directives. FDA clearance provides regulatory safe harbor.",
+        "fear_driven_demand_created": "Clinical AI audit trail software; physician AI liability insurance; EHR-AI integration consulting"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["66% physician adoption demonstrates willingness", "FDA has cleared 1,250+ AI devices (regulatory pathway proven)", "Mayo Clinic 40% readmission reduction (clinical value demonstrated)"],
+        "likely": ["EHR vendors continue opening APIs for AI integration", "CMS payment models increasingly reward AI-driven quality metrics", "Nursing shortage continues, sustaining demand for AI workflow augmentation"],
+        "uncertain": ["Speed of health system purchasing decisions (notoriously slow)", "Malpractice liability framework evolution for AI-assisted clinical decisions", "EHR interoperability challenges across fragmented US healthcare system"],
+        "unlikely": ["Physicians reject AI workflow tools after having adopted them (66% already using)", "FDA reverses course on AI device approvals", "Nursing shortage resolves (contradicts all demographic projections)"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 25,
+        "total_funding": "$1.5B (across clinical AI startups)",
+        "layer": "platform",
+        "moat_sources": ["EHR integration depth (Epic, Cerner compatibility)", "FDA clearance portfolio", "Clinical validation data (outcomes evidence)", "Health system relationship network", "Specialty-specific AI models (radiology, cardiology, etc.)"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-008", "A-2026-02-11-V3C2-021", "A-2026-02-11-V3C2-022", "A-2026-02-11-V3C2-023", "A-2026-02-11-V3C2-032", "A-2026-02-11-V3C2-028"],
+      "falsification_criteria": ["If major clinical AI error causes patient harm and regulatory backlash", "If EHR vendors (Epic, Cerner) build competitive AI features natively", "If health system purchasing freezes due to budget constraints", "If physicians experience 'AI fatigue' and reduce adoption"]
+    },
+
+    {
+      "card_id": "MC-62-002",
+      "model_name": "Healthcare Admin AI Automation Suite",
+      "model_type": "platform",
+      "sector_naics": "62",
+      "sector_name": "Healthcare",
+      "one_line": "End-to-end AI automation of healthcare back-office: billing, coding, prior auth, scheduling, claims -- targeting $200B admin cost base",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["Healthcare administrative costs $200B+ annually (Baumol stored energy)", "Revenue cycle management is fragmented and labor-intensive", "Prior authorization wastes an estimated $35B/year in physician and admin time", "CMS WISeR model validating AI in healthcare operations"],
+          "supply_gap": "Healthcare admin is the largest Baumol cost disease sector. Administrative costs have grown 2-3x CPI for decades. AI is the first viable cure, and the stored energy is massive ($200B+).",
+          "inevitability_argument": "Healthcare payers are already using AI for claims (61% of physicians say AI increases denials). Providers MUST adopt admin AI defensively. This is an AI arms race between payers and providers that guarantees adoption.",
+          "pattern_refs": ["P-001"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 9, "mechanism": "AI handles billing, coding, scheduling, prior auth, claims processing end-to-end. RPA transitioning to AI agents with 99.9% accuracy target and 25% lower costs than traditional RPA."},
+          {"force_id": "F2_demographics", "contribution_score": 6, "mechanism": "Aging population increases healthcare volume, which increases admin volume. More patients = more billing, more claims, more scheduling. AI scales without proportional admin headcount increase."},
+          {"force_id": "F5_psychology", "contribution_score": 3, "mechanism": "LOW fear friction for admin AI. Patients never interact with billing AI. Admin staff face displacement but no trust barrier from patients or providers. This is the easiest healthcare AI pathway."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 10, "notes": "Largest healthcare admin cost base globally. $200B+ addressable. Complex multi-payer system creates more admin burden than single-payer systems. CMS driving adoption."},
+          "china": {"score": 4, "notes": "State-run healthcare has different admin structure"},
+          "eu": {"score": 5, "notes": "Single-payer systems have less admin overhead but still significant"},
+          "japan": {"score": 5, "notes": "Aging population driving admin volume growth; universal healthcare limits admin complexity"},
+          "india": {"score": 4, "notes": "Growing private healthcare creates admin need; public sector less relevant"},
+          "latam": {"score": 3, "notes": "Smaller healthcare admin market"},
+          "sea": {"score": 3, "notes": "Variable healthcare systems"},
+          "mena": {"score": 4, "notes": "Gulf building new healthcare systems with AI from inception"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Healthcare admin is mandatory regardless of economy. Cost reduction is MORE attractive during budget pressure. Prior auth automation directly improves revenue capture.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$15M",
+          "time_to_revenue_months": 6,
+          "gross_margin_pct": 80,
+          "cost_advantage_ratio": "5-10x vs manual admin staff for equivalent processing volume",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$50K-500K/year per health system (based on volume)",
+        "cost_per_unit_ai": "$10K-100K/year (AI compute + integration + compliance)",
+        "cost_per_unit_incumbent": "$500K-5M/year (admin staff, outsourced billing companies, manual prior auth)",
+        "break_even_volume": "30-100 health system clients",
+        "jevons_multiplier": "1.5-2x — faster claims processing and reduced denials directly increase revenue capture for providers",
+        "economic_force_tam": "US healthcare admin costs: $200B+; AI-addressable portion: ~$80-120B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "primary_friction": "Health system IT departments are notoriously slow to adopt. Integration with legacy systems (billing, EHR, claims) is complex. HIPAA compliance requirements add friction.",
+        "resolution_path": "Cloud-based deployment with HIPAA compliance built in. Pre-built integrations with major billing systems. Guaranteed ROI (cost savings measurable within 90 days). Revenue upside from reduced claim denials.",
+        "fear_driven_demand_created": "Healthcare billing AI compliance tools; HIPAA-compliant AI infrastructure; claims AI audit services"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Healthcare admin costs $200B+ annually (well documented)", "AI can process claims, billing, and coding accurately (demonstrated)", "CMS WISeR model validating AI in healthcare ops"],
+        "likely": ["Health systems will adopt admin AI when presented with clear ROI", "Payer-provider AI arms race drives defensive adoption", "Prior authorization reform creates demand for automated solutions"],
+        "uncertain": ["Speed of health system IT adoption (historically very slow)", "Integration complexity with legacy billing systems", "Whether large RCM companies (Optum, R1 RCM) capture market with built-in AI"],
+        "unlikely": ["Healthcare admin costs decrease without AI intervention", "Health systems prefer manual processes despite 5-10x cost disadvantage"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 18,
+        "total_funding": "$800M (across healthcare admin AI and RCM AI startups)",
+        "layer": "platform",
+        "moat_sources": ["Health system integration depth", "HIPAA compliance infrastructure", "Payer rule knowledge base (continuously updated)", "Claims denial pattern recognition (data flywheel)", "Specialty-specific billing complexity knowledge"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-008", "A-2026-02-11-V3C2-022", "A-2026-02-11-V3C2-028", "A-2026-02-11-V3C2-106"],
+      "falsification_criteria": ["If large RCM incumbents (Optum, R1 RCM) successfully build competitive AI, leaving no room for startups", "If HIPAA enforcement creates prohibitive compliance burden for AI handling protected health information", "If health system IT departments prove unable to integrate AI admin tools", "If prior authorization reform eliminates the pain point (reducing demand for automation)"]
+    },
+
+    {
+      "card_id": "MC-62-003",
+      "model_name": "AI-Augmented Telehealth for Rural and Underserved Markets",
+      "model_type": "direct",
+      "sector_naics": "62",
+      "sector_name": "Healthcare",
+      "one_line": "AI telehealth platform combining remote physician oversight with AI diagnostics to serve healthcare deserts at 70% lower cost per visit",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["78K unfilled RN positions, 200K projected by 2030", "Rural hospital closures (150+ since 2010)", "Aging population in rural areas (higher median age than metros)", "Telehealth AI market: $5.2B -> $119.3B (2025-2035, 36.85% CAGR)"],
+          "supply_gap": "Rural and underserved areas cannot attract physicians or nurses. These communities face healthcare deserts. AI telehealth is the only scalable solution to provide healthcare access where human providers will not go.",
+          "inevitability_argument": "Rural healthcare is in structural crisis. 150+ hospital closures. Provider shortage worsening. Aging rural populations need MORE healthcare, not less. AI telehealth is not optional — it is the only path to healthcare access for tens of millions of Americans.",
+          "pattern_refs": ["P-001", "P-032"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "Edge AI (114M AI PCs, on-device inference) enables telehealth in low-connectivity environments. AI diagnostics for common conditions approaching physician-level accuracy. Remote monitoring sensors enable continuous care."},
+          {"force_id": "F2_demographics", "contribution_score": 9, "mechanism": "Rural areas have older populations and acute provider shortages. 65+ population growing 3%/yr. Nursing shortage is worst in rural areas. AI telehealth extends provider reach to underserved demographics."},
+          {"force_id": "F5_psychology", "contribution_score": 6, "mechanism": "Rural patients have mixed trust profile: less tech-savvy (lower AI trust) but desperate for access (overrides trust concerns). Physician oversight in telehealth model maintains human trust anchor."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 8, "notes": "Rural healthcare deserts, 150+ hospital closures, aging rural populations, CMS telehealth reimbursement expanding"},
+          "china": {"score": 7, "notes": "800M rural population with limited specialist access; AI telehealth addresses massive need"},
+          "eu": {"score": 5, "notes": "Rural healthcare gaps in Southern and Eastern Europe; universal coverage mitigates but doesn't eliminate"},
+          "japan": {"score": 7, "notes": "Aging rural population, government pushing telemedicine, geographic isolation on islands"},
+          "india": {"score": 9, "notes": "1.4B population with massive rural-urban healthcare gap; AI telehealth potentially transformative"},
+          "latam": {"score": 6, "notes": "Geographic access challenges, growing telemedicine infrastructure"},
+          "sea": {"score": 6, "notes": "Island populations (Philippines, Indonesia) need remote healthcare access"},
+          "mena": {"score": 4, "notes": "Less rural healthcare crisis in Gulf; more relevant in broader MENA (Egypt, Iraq)"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Healthcare need is counter-cyclical. Rural healthcare crisis worsens regardless of economy. CMS reimbursement provides stable revenue floor.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$25M",
+          "time_to_revenue_months": 9,
+          "gross_margin_pct": 55,
+          "cost_advantage_ratio": "3-5x vs staffing a rural clinic with full physician and nursing staff",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$50-150/telehealth visit (CMS reimbursement + patient copay)",
+        "cost_per_unit_ai": "$10-30/visit (AI infrastructure + physician oversight allocation)",
+        "cost_per_unit_incumbent": "$150-300/visit (in-person visit with physician at rural clinic, if available)",
+        "break_even_volume": "5,000-15,000 visits per month",
+        "jevons_multiplier": "3-5x — lower cost and easier access means people who didn't seek care (due to distance, cost, wait times) will now use telehealth, expanding total visit volume",
+        "economic_force_tam": "Telehealth AI market: $5.2B -> $119.3B (2025-2035); rural/underserved portion: ~20% = $1B-$24B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 4,
+        "gap": 3,
+        "primary_friction": "Patient trust in AI diagnostics (34-point trust gap). Rural populations tend to be older (more AI-resistant) and less tech-savvy. Broadband access limitations in some rural areas.",
+        "resolution_path": "Physician-supervised model (human always available, AI assists). Edge AI for low-bandwidth environments. Community health worker as in-person trust anchor. Start with admin and triage (low trust barrier) and expand to clinical as trust builds.",
+        "fear_driven_demand_created": "Rural telehealth trust-building programs; community health worker AI training; broadband expansion advocacy"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Rural healthcare crisis is real and worsening (150+ hospital closures)", "Telehealth AI market growing 36.85% CAGR", "CMS expanding telehealth reimbursement"],
+        "likely": ["AI diagnostic accuracy continues improving for common conditions", "Rural broadband access improves (federal investment programs)", "State telehealth regulations continue liberalizing"],
+        "uncertain": ["Rural patient adoption rate (technology literacy barrier)", "CMS reimbursement parity between telehealth and in-person (may change)", "Physician willingness to provide remote oversight at scale"],
+        "unlikely": ["Rural healthcare crisis resolves without AI telehealth (no structural path)", "CMS completely reverses telehealth reimbursement expansion"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 12,
+        "total_funding": "$500M (across rural/underserved telehealth startups)",
+        "layer": "full_service",
+        "moat_sources": ["CMS reimbursement optimization expertise", "Rural community trust relationships", "Edge AI capability for low-bandwidth environments", "State licensing and telehealth regulatory compliance across multiple states", "Chronic disease management AI models trained on rural population data"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-022", "A-2026-02-11-V3C2-023", "A-2026-02-11-V3C2-041", "A-2026-02-11-V3C2-007", "A-2026-02-11-V3C2-104"],
+      "falsification_criteria": ["If CMS reduces or eliminates telehealth reimbursement parity", "If AI diagnostic accuracy proves insufficient for safe remote care", "If rural broadband access does not improve sufficiently", "If patients refuse AI-assisted telehealth even when no in-person alternative exists"]
+    },
+
+    {
+      "card_id": "MC-56-001",
+      "model_name": "AI Workforce Orchestration Platform",
+      "model_type": "platform",
+      "sector_naics": "56",
+      "sector_name": "Administrative Services",
+      "one_line": "AI platform that replaces traditional staffing intermediation: matches, schedules, manages, and pays flexible workers without human recruiters",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["Staffing industry $192.7B in wages = massive addressable market", "RHI -53%, MAN -44%, KELYA -25% = market pricing destruction", "AI agents can match, schedule, and manage workers end-to-end", "532K/month business applications creating demand for flexible labor without staffing markup"],
+          "supply_gap": "Enterprise clients want flexible labor without the 30-60% staffing agency markup. AI can provide the matching, scheduling, compliance, and payment functions at near-zero marginal cost, eliminating the intermediary.",
+          "inevitability_argument": "Staffing firms exist because worker-to-task matching, scheduling, compliance, and payment were complex enough to require human intermediaries. AI eliminates that complexity. The intermediary becomes structurally unnecessary.",
+          "pattern_refs": ["P-027"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 10, "mechanism": "AI agents replace the ENTIRE staffing firm function: candidate matching (AI), scheduling (AI), compliance/background checks (AI), timesheet processing (AI), payroll (AI). This is complete substitution, not augmentation."},
+          {"force_id": "F4_capital", "contribution_score": 9, "mechanism": "Staffing stocks crashed 25-53% = market has priced in destruction. PE-backed staffing roll-ups face refinancing wall + revenue collapse simultaneously. 532K/month business applications show workers bypassing staffing firms entirely."},
+          {"force_id": "F5_psychology", "contribution_score": 2, "mechanism": "Minimal fear friction. Enterprise clients WANT to eliminate staffing markup. Workers are indifferent to whether a human or AI coordinates their placement. No trust barrier to removing the intermediary."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 10, "notes": "3.57M employees, $192.7B wages, active destruction confirmed, largest addressable market"},
+          "china": {"score": 4, "notes": "Different labor market structure, state employment services"},
+          "eu": {"score": 6, "notes": "Randstad, Adecco face transformation; EU labor protections slow but don't prevent"},
+          "japan": {"score": 5, "notes": "Haken (staffing) culture embedded but demographic pressure forces change"},
+          "india": {"score": 5, "notes": "Large informal staffing market; formal sector growing; IT staffing exposed"},
+          "latam": {"score": 4, "notes": "Smaller formal staffing market"},
+          "sea": {"score": 4, "notes": "Philippines BPO staffing particularly exposed"},
+          "mena": {"score": 3, "notes": "Kafala system creates unique staffing dynamics"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2027",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "medium",
+          "crash_resilience_reason": "Flexible labor demand is somewhat counter-cyclical (companies use temps before committing to full-time hires during uncertainty). AI platform is cheaper than staffing agency, which is MORE attractive during budget pressure.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$3M-$15M",
+          "time_to_revenue_months": 4,
+          "gross_margin_pct": 70,
+          "cost_advantage_ratio": "5-10x vs traditional staffing agency markup (AI platform fee vs 30-60% human markup)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "3-8% of worker wages (platform fee) vs 30-60% staffing agency markup",
+        "cost_per_unit_ai": "1-3% of worker wages (AI compute + platform operations)",
+        "cost_per_unit_incumbent": "30-60% of worker wages (staffing agency markup covering human recruiters, account managers, admin staff)",
+        "break_even_volume": "5,000-15,000 active workers on platform",
+        "jevons_multiplier": "2-3x — lower intermediation cost means more tasks are sourced flexibly (tasks that weren't worth the staffing agency markup become viable on AI platform)",
+        "economic_force_tam": "US staffing industry: $192.7B wages; platform fee capture at 5% = $9.6B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 10,
+        "psychological_readiness": 8,
+        "gap": 2,
+        "primary_friction": "Enterprise procurement inertia (existing staffing contracts and relationships). Worker concerns about AI-managed employment (scheduling, performance monitoring). EEOC compliance for AI hiring decisions.",
+        "resolution_path": "Start with worker categories where staffing markup is highest (and thus savings are most compelling). Ensure worker experience is equal or better than staffing firm (faster payment, more transparent scheduling). Build EEOC-compliant matching algorithms from Day 1.",
+        "fear_driven_demand_created": "AI hiring compliance platforms; worker-facing AI transparency tools; EEOC-compliant AI matching certification"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Staffing industry in active destruction (stocks -25% to -53%)", "AI can match, schedule, and manage workers end-to-end", "Enterprise clients seeking to reduce staffing costs"],
+        "likely": ["Enterprise adoption of AI workforce platforms accelerates as staffing firm service quality declines (talent exodus from declining firms)", "Worker acceptance of AI-managed flexible work (already common in gig economy)", "Regulatory framework permits AI in hiring and workforce management with compliance safeguards"],
+        "uncertain": ["Speed of enterprise migration from staffing contracts to AI platforms", "Whether incumbent staffing firms (Randstad, ManpowerGroup) can transform into AI platforms themselves", "Regulatory landscape for AI in hiring (EEOC, state laws)"],
+        "unlikely": ["Enterprise clients prefer paying 30-60% staffing markup over 3-8% platform fee", "Staffing industry reverses decline and returns to growth", "Regulation prohibits AI in workforce matching"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 15,
+        "total_funding": "$500M (across AI staffing platforms, gig economy platforms evolving to enterprise)",
+        "layer": "platform",
+        "moat_sources": ["Worker supply network (two-sided marketplace effect)", "Enterprise integration depth (HR systems, payment systems)", "EEOC-compliant AI matching (regulatory moat)", "Performance data flywheel (better matching with more data)", "Industry-specific compliance knowledge (healthcare staffing, financial staffing)"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-014", "A-2026-02-11-V3C2-016"],
+      "falsification_criteria": ["If incumbent staffing firms successfully transform into AI platforms (retaining market position)", "If regulation restricts AI in hiring/workforce management (EEOC, state laws)", "If enterprise clients prove unable to manage flexible workforce without human intermediary", "If worker rejection of AI-managed employment creates supply-side constraint"]
+    },
+
+    {
+      "card_id": "MC-56-002",
+      "model_name": "Distressed Staffing Firm AI Acquirer",
+      "model_type": "acquisition_modernization",
+      "sector_naics": "56",
+      "sector_name": "Administrative Services",
+      "one_line": "Acquire distressed staffing firms for revenue and relationships, convert to AI workforce platform model, retain clients at 50% lower cost",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["Staffing stocks crashed 25-53%", "PE-backed staffing roll-ups face refinancing wall", "Staffing firm valuations declining as revenue erodes", "Client relationships and contracts have value even as business model fails"],
+          "supply_gap": "Distressed staffing firms have valuable assets (client relationships, worker databases, compliance infrastructure) trapped in a failing business model. AI-native acquirers can extract this value.",
+          "inevitability_argument": "PE-backed staffing firms with $936B-$1.8T maturing debt and declining revenue MUST sell or default. The client relationships and worker networks from these firms need to go somewhere. AI-native acquirers can buy these assets at distressed prices and convert them to the platform model.",
+          "pattern_refs": ["P-027", "P-026"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 8, "mechanism": "AI restructuring of acquired staffing operations: automate matching, scheduling, compliance. Reduce headcount 60-80% while maintaining or improving service quality."},
+          {"force_id": "F4_capital", "contribution_score": 10, "mechanism": "PE refinancing wall + staffing stock crashes create forced sellers. Distressed valuations at 1-3x EBITDA (vs historical 6-8x). Client relationships and worker databases acquired at fraction of build cost."},
+          {"force_id": "F5_psychology", "contribution_score": 2, "mechanism": "Client relief when AI acquirer reduces staffing costs by 50%. Workers indifferent to platform operator identity as long as work continues. Low psychological friction for acquisition."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 10, "notes": "PE distress rate 11.98%, staffing stocks crashed, largest concentration of distressed staffing assets"},
+          "china": {"score": 2, "notes": "Different market structure"},
+          "eu": {"score": 5, "notes": "Adecco, Randstad face pressure but EU labor law complicates acquisitions"},
+          "japan": {"score": 4, "notes": "Some staffing firm distress as demographic decline reduces temp worker supply"},
+          "india": {"score": 3, "notes": "Growing market, less distress"},
+          "latam": {"score": 3, "notes": "Smaller market"},
+          "sea": {"score": 3, "notes": "Variable"},
+          "mena": {"score": 2, "notes": "Different structure"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "turning_point",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Distressed acquisition model is inherently counter-cyclical. Economic stress creates MORE distressed sellers at lower prices. Post-acquisition AI transformation reduces operating costs.",
+          "time_sensitivity": "high"
+        },
+        "capital_assessment": {
+          "capital_required": "$5M-$50M",
+          "time_to_revenue_months": 0,
+          "gross_margin_pct": 50,
+          "cost_advantage_ratio": "3-5x post-restructuring (AI operations vs legacy recruiter-heavy model)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "$5-50M annual revenue per acquired staffing firm (depending on size)",
+        "cost_per_unit_ai": "40-50% of revenue post-AI restructuring",
+        "cost_per_unit_incumbent": "85-95% of revenue (high human labor costs in staffing operations)",
+        "break_even_volume": "First acquisition (Day 1 revenue; margin improvement within 6 months)",
+        "jevons_multiplier": "1.5-2x — lower operating costs enable service to smaller enterprise clients that couldn't justify staffing agency fees",
+        "economic_force_tam": "Distressed staffing firm assets: estimated $5-15B in acquirable revenue over 2026-2028 window"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 10,
+        "psychological_readiness": 7,
+        "gap": 3,
+        "primary_friction": "Client concern about service continuity during ownership transition. Worker anxiety about automation of recruiter roles. Seller resistance to distressed pricing.",
+        "resolution_path": "Guaranteed service continuity commitments. Retained key account managers during transition (human face of AI platform). Structured deals with earnouts for client retention metrics.",
+        "fear_driven_demand_created": null
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Staffing firm stocks crashed 25-53% (distress confirmed)", "PE refinancing wall real ($936B-$1.8T maturing)", "AI can automate staffing operations (demonstrated)"],
+        "likely": ["Distressed staffing firms become available at 1-3x EBITDA", "Client relationships transfer with acquisition (80%+ retention)", "AI restructuring achieves 50%+ cost reduction within 12 months"],
+        "uncertain": ["Deal flow timing (exact pace of PE forced sales)", "Acquisition financing availability in tight credit market", "Integration challenges across multiple acquired firms"],
+        "unlikely": ["PE-backed staffing firms all successfully refinance and transform", "Staffing industry reverses decline"]
+      },
+
+      "competitive_density": {
+        "status": "zero",
+        "funded_entrants": 1,
+        "total_funding": "$25M (AI-native staffing acquirers)",
+        "layer": "full_service",
+        "moat_sources": ["Acquisition deal flow and execution capability", "AI transformation playbook (replicable across acquisitions)", "Client relationship management during transition", "Capital access for acquisitions", "Compliance infrastructure (staffing is heavily regulated in many states)"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-012", "A-2026-02-11-V3C2-014"],
+      "falsification_criteria": ["If PE firms successfully refinance staffing portfolio companies", "If client attrition during ownership transition exceeds 50%", "If acquisition financing proves unavailable", "If staffing firm revenue stabilizes (contradicting destruction thesis)"]
+    },
+
+    {
+      "card_id": "MC-56-003",
+      "model_name": "Trust-Premium Healthcare and Trades Staffing",
+      "model_type": "direct",
+      "sector_naics": "56",
+      "sector_name": "Administrative Services",
+      "one_line": "Human-premium staffing for healthcare and skilled trades where AI cannot substitute: 20% price premium justified by trust and physicality barriers",
+
+      "rating_inputs": {
+        "structural_necessity_evidence": {
+          "demand_drivers": ["78K unfilled RN positions growing to 200K by 2030", "499K new construction workers needed", "Trucking driver shortage 80K", "23% of consumers willing to pay 15-20% premium for verified human services"],
+          "supply_gap": "While AI destroys the routine-cognitive staffing market, healthcare and trades staffing faces GROWING demand because these roles require physical presence and trust that AI cannot provide. The supply gap is deepening as workers leave these professions.",
+          "inevitability_argument": "Healthcare and trades will have INCREASING staffing needs as the population ages and infrastructure investment grows. AI cannot perform bedside nursing or install HVAC systems. Human staffing in these niches becomes MORE valuable as AI handles everything else.",
+          "pattern_refs": ["P-027", "P-005"]
+        },
+        "force_alignment_detail": [
+          {"force_id": "F1_technology", "contribution_score": 3, "mechanism": "AI handles the administrative OPERATIONS of healthcare/trades staffing (matching, scheduling, compliance) but CANNOT replace the workers themselves. Technology reduces staffing firm operations costs while worker value remains."},
+          {"force_id": "F2_demographics", "contribution_score": 10, "mechanism": "78K nursing vacancies, 499K construction workers needed, average trucker age 57. These shortages are demographic and structural. AI staffing for routine-cognitive work collapses; human staffing for physical/trust work grows."},
+          {"force_id": "F5_psychology", "contribution_score": 7, "mechanism": "34-point trust gap in healthcare. Physical presence requirement in trades. These psychological and physical barriers create a moat around human-premium staffing niches that AI cannot breach."}
+        ],
+        "geographic_assessment": {
+          "us": {"score": 9, "notes": "Largest healthcare and trades staffing markets, acute shortages, growing demand"},
+          "china": {"score": 3, "notes": "Different healthcare and construction labor markets"},
+          "eu": {"score": 6, "notes": "Healthcare staffing demand growing across aging EU; construction varies"},
+          "japan": {"score": 7, "notes": "Extreme aging creating acute healthcare and elder care staffing needs"},
+          "india": {"score": 4, "notes": "India as SOURCE of healthcare workers, not primary demand market"},
+          "latam": {"score": 4, "notes": "Growing healthcare infrastructure needs staffing"},
+          "sea": {"score": 5, "notes": "Philippines nursing diaspora; construction labor demand"},
+          "mena": {"score": 5, "notes": "Gulf healthcare and construction staffing demand significant"}
+        },
+        "timing_assessment": {
+          "optimal_entry_window": "2026-2028",
+          "perez_phase_target": "synergy",
+          "crash_resilience": "high",
+          "crash_resilience_reason": "Healthcare staffing is essential regardless of economy. Construction staffing is procyclical but infrastructure investment (CHIPS Act, energy) provides floor. These are the LAST staffing niches to face disruption.",
+          "time_sensitivity": "medium"
+        },
+        "capital_assessment": {
+          "capital_required": "$2M-$10M",
+          "time_to_revenue_months": 3,
+          "gross_margin_pct": 30,
+          "cost_advantage_ratio": "1.5-2x margin vs traditional staffing (AI handles admin, humans handle placement relationships)",
+          "survives_18mo_funding_freeze": true
+        }
+      },
+
+      "unit_economics": {
+        "revenue_per_unit": "35-65% markup on worker wages (premium pricing vs collapsing commodity staffing)",
+        "cost_per_unit_ai": "Worker wages + 5-10% AI admin cost (vs 15-25% human admin cost at traditional firms)",
+        "cost_per_unit_incumbent": "Worker wages + 15-25% human admin cost (traditional staffing firm overhead)",
+        "break_even_volume": "200-500 active placements",
+        "jevons_multiplier": "1.5x — premium staffing enables healthcare and construction projects that couldn't start due to labor shortages",
+        "economic_force_tam": "US healthcare staffing: ~$30B; US trades staffing: ~$15B; total addressable: ~$45B"
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 7,
+        "gap": 0,
+        "primary_friction": "Worker supply is the constraint, not demand. Finding healthcare and trades workers is the challenge. Premium pricing helps attract workers but supply is structurally limited.",
+        "resolution_path": "Immigration pathway facilitation (H-1B for healthcare, H-2B for trades). Training program partnerships. Premium wages that attract workers from other sectors. Relocation assistance.",
+        "fear_driven_demand_created": "Healthcare worker immigration services; trades training and certification programs; worker retention and wellness programs"
+      },
+
+      "what_must_be_true": {
+        "confirmed": ["Healthcare and trades shortages are real and structural", "AI cannot substitute for bedside nursing or skilled trades work", "Routine-cognitive staffing is being destroyed by AI"],
+        "likely": ["Healthcare and trades staffing markup can increase as supply tightens", "AI admin tools reduce staffing firm operating costs by 50%+", "Premium positioning attracts higher-quality workers"],
+        "uncertain": ["Worker supply — can the firm attract enough healthcare/trades workers?", "Immigration policy direction (more open = more supply = better economics)", "Whether healthcare systems and construction firms accept premium pricing"],
+        "unlikely": ["AI replaces bedside nursing or skilled trades work within 5 years", "Healthcare and trades shortages resolve naturally"]
+      },
+
+      "competitive_density": {
+        "status": "emerging",
+        "funded_entrants": 6,
+        "total_funding": "$200M (across healthcare and trades staffing technology companies)",
+        "layer": "full_service",
+        "moat_sources": ["Worker supply relationships (the scarce resource)", "Healthcare compliance infrastructure (JCAHO, state licensing)", "Trades certification verification", "Immigration processing capability", "Geographic specialization in shortage markets"]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-104", "A-2026-02-11-V3C2-206", "A-2026-02-11-V3C2-201"],
+      "falsification_criteria": ["If AI proves capable of substituting for physical healthcare/trades work sooner than expected", "If immigration reform dramatically increases worker supply (reducing premium)", "If healthcare systems and construction firms refuse premium pricing (insource instead)", "If worker supply shortage proves temporary rather than structural"]
+    }
+  ]
+}

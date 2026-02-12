@@ -1,0 +1,676 @@
+{
+  "cycle": "v3-2",
+  "date": "2026-02-11",
+  "agent": "Agent A (Scanner)",
+  "mode": "F3 Geopolitics + Sector Transformation deep research",
+  "total_signals": 42,
+  "methodology": "Multi-source web research across 8 topic areas: US-China AI Decoupling, EU AI Act, Nearshoring/Reshoring, MENA/Gulf AI, Defense/Sovereign AI, Financial Services Cascade, Manufacturing/Robotics, Healthcare AI. All data points sourced from named publications with dates.",
+
+  "force_updates": {
+    "F3_geopolitics": {
+      "velocity": "accelerating",
+      "velocity_change": "confirmed_accelerating",
+      "key_metrics_updated": {
+        "us_china_chip_controls": "Jan 2026: BIS shifted H200/MI325X from presumption-of-denial to case-by-case review with 25% tariff. 42 PRC entities added to Entity List (Mar 2025), 23 more (Sep 2025). Parallel ecosystems confirmed.",
+        "deepseek_impact": "Chinese LLM global market share surged 3% to 13% in 2 months. DeepSeek R1 trained for ~$6M claimed parity with OpenAI o1. $500B+ Nvidia market cap wiped in one day.",
+        "huawei_ascend_progress": "Ascend 910C: 600K units planned for 2026 (2x 2025). Ascend 950 PR with in-house HBM launching Q1 2026. 3-year roadmap: 950->960->970 through 2028. Still stuck at 7nm node.",
+        "china_ai_adoption": "515M generative AI users (Jun 2025), doubled in 6 months. 83% enterprise adoption vs 65% US. Free-access model driving mass adoption. China R&D spending surpassed US for first time ($785.9B in 2024).",
+        "eu_ai_act": "High-risk rules enforcement Aug 2, 2026. EU proposing delay to 2027 under industry/US pressure. Fines up to 35M EUR / 7% global turnover. 30+ founders signed open letter against. No major companies have left EU yet.",
+        "reshoring_index": "Kearney 2025 Index fell 311 points. US manufacturing output grew just 1%. Mexico nearshoring capacity tapped out. Manufacturers reverting to Asian sourcing despite rhetoric.",
+        "mexico_fdi": "Record $40.9B FDI in first 9 months of 2025 (+14.5% YoY). 37% to manufacturing. 20+ new foreign companies established operations. US remains top source (30%).",
+        "india_manufacturing": "Manufacturing FDI rose 18% YoY to $19.04B in FY2024-25. Gross FDI $64.7B (Apr-Nov 2025). PLI schemes attracted 2T INR investment, 18.7T INR production. GDP growth 6.5-7.4%.",
+        "chips_act_progress": "Intel Fab 52 in HVM at 1.8nm (Intel 18A). TSMC Arizona Fab 1 in volume production (4nm/5nm). Samsung Taylor TX >90% complete, 2nm production early 2026. TSMC Fab 2 targeting 3nm by early 2027. TSMC broke ground on Fab 3 (1.6nm).",
+        "saudi_ai_pivot": "NEOM construction suspended. Humain launched (PIF-backed) with $77B planned data center investment. 18K chips in 2026, 400K by 2030. $23B in deals with US tech giants.",
+        "uae_ai_investment": "MGX exploring $25B third-party capital for AI infrastructure. $500B Stargate Project equity funder. 26 sq km AI campus in Abu Dhabi (5GW data center capacity). Microsoft investing $15.2B in UAE (2023-2029).",
+        "global_defense_spending": "$2,718B in 2024 (SIPRI), +9.4% real terms, steepest rise since Cold War end. 10th consecutive year of increase. Europe +83% over 2015-2024.",
+        "us_dod_ai_budget": "$13.4B dedicated AI/autonomy line in FY2026 (first dedicated line). $1.01T total defense budget (+13% over FY2025). $9.4B for unmanned aerial vehicles alone.",
+        "nato_ai_strategy": "5% GDP defense commitment by 2035 (3.5% minimum). All allies expected to meet 2% in 2025. Average 2.76% in 2025. Rapid Adoption Action Plan: 24-month max tech integration."
+      },
+      "confidence": "high"
+    }
+  },
+
+  "signals": [
+    {
+      "signal_id": "A-2026-02-11-V3C2-001",
+      "source_category": "geopolitics",
+      "signal_type": "regime_shift",
+      "structural_force": "US-China AI chip decoupling: BIS shifted from presumption-of-denial to case-by-case review with 25% tariff on H200/MI325X exports to China (Jan 2026)",
+      "headline": "US chip export policy pivots: H200 exports to China now allowed with 25% tariff + case-by-case review",
+      "detail": "On January 13, 2026, BIS published a final rule allowing sale of H200 and MI325X to China under case-by-case review (previously presumption of denial). Chips must have TPP < 21,000 and DRAM bandwidth < 6,500 GB/s. Exporters must certify: sufficient US supply, no foundry capacity diversion, security procedures, and third-party performance testing. A 25% tariff was simultaneously imposed under Section 232. This represents a significant softening of the chip embargo while monetizing the export flow. 42 PRC entities were added to Entity List in March 2025, 23 more in September 2025. Samsung/SK Hynix PRC VEU status removed effective Dec 31, 2025.",
+      "sources": ["Federal Register 2026-00789 (Jan 15, 2026)", "BIS Press Release", "Morgan Lewis analysis", "Mayer Brown analysis", "Willkie analysis"],
+      "raw_data_points": ["TPP threshold: <21,000", "DRAM bandwidth threshold: <6,500 GB/s", "25% tariff imposed", "42 PRC entities added to Entity List (Mar 2025)", "23 more (Sep 2025)", "Samsung/SK Hynix VEU removed Dec 31, 2025"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Parallel AI ecosystem formation confirmed. US is monetizing rather than blocking chip flow. China gets H200-class chips but at premium. Creates market for China-domestic AI chips as cost-competitive alternative."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-002",
+      "source_category": "geopolitics",
+      "signal_type": "market_disruption",
+      "structural_force": "DeepSeek R1 shattered two core assumptions of US AI strategy: that chip controls would maintain durable US lead, and that AI requires massive compute spending",
+      "headline": "DeepSeek R1 trained for ~$6M claimed o1 parity; Chinese LLM global market share surged 3% to 13% in 2 months",
+      "detail": "DeepSeek R1 released January 2025, trained on downgraded Nvidia chips for claimed $6M, achieved performance 'on par' with OpenAI o1. Impact: $500B+ wiped from Nvidia market cap in one day. Chinese LLM global market share surged from 3% to 13% in 2 months, mostly carried by DeepSeek. Gains most pronounced in developing countries and countries with close political/economic ties to China. China doubling down on open-source AI strategy to influence global AI infrastructure. PIIE analysis: 'The AI boom shrugged off the DeepSeek shock' suggesting market resilience but strategic assumptions were permanently altered.",
+      "sources": ["PIIE (2026)", "CSIS analysis", "Rest of World", "Foreign Policy", "RAND report", "MIT Technology Review"],
+      "raw_data_points": ["$6M claimed training cost", "$500B+ Nvidia market cap loss (1 day)", "Chinese LLM share: 3% -> 13% in 2 months", "Gains strongest in developing countries", "China open-source strategy accelerating"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "DeepSeek validates that efficiency innovation can overcome compute restrictions. Open-source Chinese models create alternative AI stack for global south. Implications for every geographic profile in engine: developing world may adopt Chinese AI infrastructure."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-003",
+      "source_category": "geopolitics",
+      "signal_type": "production_capacity_shift",
+      "structural_force": "Huawei Ascend roadmap: 600K units of 910C in 2026 (2x), Ascend 950 with in-house HBM in Q1 2026, but still stuck at 7nm",
+      "headline": "Huawei plans to double Ascend AI chip output to 1.6M dies in 2026; launches in-house HBM memory",
+      "detail": "Huawei will increase Ascend production to 1.6M dies in 2026, including 600K Ascend 910C units (roughly 2x 2025 output). The Ascend 950 PR launches Q1 2026 with in-house HBM (first Chinese company to do so), featuring 128GB memory and 1.6 TB/s bandwidth. Roadmap: 950 DT in late 2026, 960 in late 2027, 970 in late 2028. Critical limitation: node development remains stuck at 7nm. BIS assessed in May 2025 that Huawei developed Ascend chips 'in violation of US controls.' Despite limitations, this represents genuine semiconductor independence progress, particularly the in-house HBM milestone.",
+      "sources": ["Bloomberg (Sep 2025)", "Fortune Asia (Sep 2025)", "South China Morning Post", "Tom's Hardware", "DigiTimes"],
+      "raw_data_points": ["1.6M total dies planned 2026", "600K Ascend 910C units (2x 2025)", "950 PR: 128GB memory, 1.6 TB/s bandwidth", "950 DT: 144GB memory, 4 TB/s bandwidth", "In-house HBM milestone Q1 2026", "Stuck at 7nm node"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "China AI compute capacity expanding despite US controls. In-house HBM is a critical self-sufficiency milestone. Performance gap with Nvidia remains (7nm vs sub-2nm) but narrowing on volume and software ecosystem. Affects all China-specific geographic modeling."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-004",
+      "source_category": "geopolitics",
+      "signal_type": "adoption_divergence",
+      "structural_force": "China AI adoption outpacing US on consumer scale (515M vs 195M users) via free-access model; US leads enterprise adoption (85% vs 83%)",
+      "headline": "China generative AI users doubled to 515M in 6 months; 36.5% national penetration; free-access model vs $20/mo US premium",
+      "detail": "China's generative AI user base doubled from 257M to 515M in just 6 months (Dec 2024 to Jun 2025), achieving 36.5% national penetration rate. Free-access model with zero subscription costs vs US premium tiers ($20/mo). Enterprise adoption: Chinese organizations 83% 'using GenAI' vs 65% US (SAS/Coleman Parkes). However, Microsoft data shows 15.4% of China working-age population uses AI vs 26.3% US. China R&D spending surpassed US for first time: $785.9B in 2024. The discrepancy in adoption metrics reflects different measurement methodologies but the trend is clear: China is achieving mass consumer AI adoption through aggressive free-access strategy.",
+      "sources": ["Microsoft Global AI Adoption 2025", "CNNIC (Jun 2025)", "SAS/Coleman Parkes Research", "All About AI 2026 report", "Second Talent analysis"],
+      "raw_data_points": ["515M Chinese GenAI users (Jun 2025)", "257M -> 515M in 6 months", "36.5% national penetration", "83% Chinese enterprise adoption vs 65% US", "China R&D: $785.9B in 2024 (surpassed US)", "$0 vs $20/mo consumer cost difference"],
+      "confidence": "medium",
+      "time_horizon": "H1",
+      "engine_implications": "China's free-access model creates different economic dynamics than US subscription model. Mass adoption without monetization pressure enables different business model innovation. Affects MENA, SEA, LATAM geographic profiles as these regions may adopt Chinese AI stack due to cost advantage."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-005",
+      "source_category": "geopolitics",
+      "signal_type": "regulatory_regime",
+      "structural_force": "EU AI Act high-risk enforcement approaching Aug 2, 2026 but EU proposing delays to 2027 under intense industry pressure",
+      "headline": "EU AI Act: prohibited practices in force since Feb 2025; high-risk enforcement Aug 2026 but delay proposed to 2027",
+      "detail": "Implementation timeline: Prohibited AI practices banned Feb 2, 2025. GPAI model rules applied Aug 2, 2025. High-risk AI system rules (Annex III: hiring, healthcare, credit scoring) enforcement starts Aug 2, 2026. Full scope Aug 2, 2027. BUT: EU Commission has proposed delaying high-risk enforcement to 2027 under pressure from Big Tech (Meta, Alphabet) and Trump administration. 30+ European founders signed open letter arguing Act 'risks creating fragmented, unpredictable regulatory environment.' Fines: up to 35M EUR or 7% of global turnover for prohibited practices; 15M EUR or 3% for other violations. No major company has definitively left the EU market. Each member state must establish at least one regulatory sandbox by Aug 2, 2026.",
+      "sources": ["EU AI Act official timeline", "European Parliament", "Euronews", "Fortune", "SIG January 2026 update", "DLA Piper", "Orrick analysis"],
+      "raw_data_points": ["Feb 2, 2025: prohibited practices banned", "Aug 2, 2025: GPAI rules applied", "Aug 2, 2026: high-risk enforcement (may delay to 2027)", "Fines: up to 35M EUR / 7% turnover", "30+ founders signed opposition letter", "Delay proposed Nov 2025", "No major company exits confirmed"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "EU AI Act is creating regulatory uncertainty rather than clear framework. Proposed delay signals potential hollowing of enforcement. For engine: EU geographic profile should shift from 'restrictive' to 'uncertain_restrictive' — the regulatory stance may soften significantly. EU compliance-tech business models may have shorter runway than assumed if enforcement weakens."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-006",
+      "source_category": "geopolitics",
+      "signal_type": "trade_pattern_reversal",
+      "structural_force": "Kearney Reshoring Index fell 311 points in 2025 — US manufacturing output grew just 1% despite capital investment; manufacturers reverting to Asian sourcing",
+      "headline": "Reshoring reality check: Kearney Index -311 points, US manufacturing output +1%, Mexico capacity tapped out",
+      "detail": "Kearney's 12th annual Reshoring Index fell 311 points after two positive years, turning negative again. CEO reshoring commitment rose 15% YoY, and geopolitical motivation rose 50%, but actual output tells different story: US manufacturing expanded just 1% despite years of capital investment (half the consumption growth rate). Mexico and Canada nearshoring partners underperformed: Mexico capacity 'tapped out,' Canada exports contracted YoY. Manufacturers reverted to distant Asian low-cost countries. This signals a longer-than-expected lag between investment announcements and operational capacity coming online.",
+      "sources": ["Kearney 2025 Reshoring Index", "PR Newswire", "SupplyChainBrain", "Manufacturing Dive"],
+      "raw_data_points": ["Index fell 311 points", "CEO reshoring plans +15% YoY", "Geopolitical motivation +50%", "US manufacturing output +1%", "Mexico capacity 'tapped out'", "Canada exports contracted YoY", "Reversion to Asian sourcing"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "Reshoring rhetoric exceeds reality by wide margin. Physical infrastructure cannot be stood up at the speed of policy announcements. Mexico nearshoring bottleneck creates opportunity for India, Vietnam, other alternatives. For engine manufacturing models: location assumptions need to account for multi-year build-out lags."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-007",
+      "source_category": "geopolitics",
+      "signal_type": "capital_flow",
+      "structural_force": "Mexico FDI hit record $40.9B in first 9 months of 2025 (+14.5% YoY) despite nearshoring capacity constraints",
+      "headline": "Mexico FDI record: $40.9B through Q3 2025, 37% to manufacturing, 20+ new foreign companies",
+      "detail": "Mexico FDI increased 14.5% in first 9 months of 2025 to $40.9B (new historical record). Projected $43B for full 2025, $40-45B for 2026. 37% went to manufacturing, 25% to financial services, 5% to construction. Transport equipment accounts for nearly half of manufacturing FDI, with aerospace, semiconductors, and chemicals growing. 20+ new foreign companies established operations in 2025. US remains top source (30%), followed by Spain, Netherlands, Japan, Canada. This creates a tension: record capital inflow despite Kearney Index showing Mexico capacity tapped out — suggests infrastructure is being built but takes years to come online.",
+      "sources": ["Mexico Business News", "Mexico News Daily", "American Industries Group", "US State Department 2025 Investment Climate"],
+      "raw_data_points": ["$40.9B FDI through Q3 2025", "+14.5% YoY", "37% to manufacturing", "Transport equipment: ~50% of manufacturing FDI", "20+ new foreign companies", "US: 30% of inflows", "Projected $43B full 2025"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Mexico nearshoring is real in capital terms but physically constrained. The gap between capital commitment and operational capacity creates a consulting/services opportunity. Manufacturing models targeting Mexico need to account for 2-3 year build-out lag."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-008",
+      "source_category": "geopolitics",
+      "signal_type": "production_capacity_shift",
+      "structural_force": "India manufacturing FDI +18% YoY to $19B in FY2024-25; PLI schemes attracted 2T INR investment; GDP growth 6.5-7.4%",
+      "headline": "India manufacturing acceleration: $19B FDI (+18%), 7.7-9.1% manufacturing GVA growth, $64.7B gross FDI",
+      "detail": "India manufacturing FDI rose 18% YoY to $19.04B in FY2024-25 (vs $16.12B prior year). Gross FDI $64.7B (Apr-Nov 2025). Manufacturing GVA grew 7.72% in Q1 FY26 and 9.13% in Q2. PLI schemes across 14 sectors attracted over 2T INR actual investment, 18.7T INR production/sales, 1.26M jobs (as of Sep 2025). IIP manufacturing grew 5.40% in Jul 2025. India manufacturing market estimated at $1.62T in 2025, projected $2.30T by 2030 (7.26% CAGR). Real GDP growth estimated 6.5-7.4% for FY2025-26.",
+      "sources": ["India Briefing", "IBEF", "PIB (Press Information Bureau)", "Fibre2Fashion", "World Bank data", "Mordor Intelligence"],
+      "raw_data_points": ["Manufacturing FDI: $19.04B (+18% YoY)", "Gross FDI: $64.7B (Apr-Nov 2025)", "Manufacturing GVA: +7.72% Q1, +9.13% Q2 FY26", "PLI: 2T INR investment, 18.7T INR production, 1.26M jobs", "Market: $1.62T (2025) -> $2.30T (2030)", "GDP: 6.5-7.4% growth"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "India emerging as genuine manufacturing alternative to China/Mexico. PLI schemes creating structured incentive for specific sectors. For engine: India geographic profile should upgrade manufacturing transformation velocity. India may be the primary beneficiary of Mexico capacity constraints."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-009",
+      "source_category": "geopolitics",
+      "signal_type": "production_capacity_shift",
+      "structural_force": "CHIPS Act fabs entering production: Intel 18A (1.8nm) in HVM, TSMC Arizona at 4nm/5nm volume, Samsung Taylor >90% complete",
+      "headline": "US semiconductor production era begins: Intel 1.8nm in production, TSMC Arizona at volume, Samsung 2nm fab 90% complete",
+      "detail": "Intel Fab 52 (Ocotillo, AZ) in high-volume manufacturing using Intel 18A (1.8nm), first US facility below 2nm using High-NA EUV. Intel Ohio delayed to 2030. TSMC Arizona Fab 1 at steady-state volume (4nm/5nm) for Apple, Nvidia. TSMC Fab 2 targeting 3nm by early 2027. TSMC broke ground on Fab 3 (A16/1.6nm, end of decade). Samsung Taylor, TX at >90% complete, 2nm production expected early 2026. Government subsidies: Intel $7.86B, TSMC $6.6B, Samsung $4.75B. Total CHIPS Act implementation reaching 'fever pitch' in early 2026.",
+      "sources": ["Financial Content/Tokenring (Jan 2026)", "IEEE Spectrum", "CNBC", "Manufacturing Dive", "CFR analysis"],
+      "raw_data_points": ["Intel Fab 52: 1.8nm HVM (first US sub-2nm)", "Intel Ohio: delayed to 2030", "TSMC Fab 1: 4nm/5nm volume production", "TSMC Fab 2: 3nm by early 2027", "TSMC Fab 3: 1.6nm, end of decade", "Samsung Taylor: >90% complete, 2nm early 2026", "Subsidies: Intel $7.86B, TSMC $6.6B, Samsung $4.75B"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "US semiconductor manufacturing becoming real, not just announced. This reduces Taiwan concentration risk for leading-edge chips. However, Intel Ohio delay shows how long physical buildout takes (echoes Kearney reshoring reality check). For engine: CHIPS Act is producing results but unevenly."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-010",
+      "source_category": "geopolitics",
+      "signal_type": "sovereign_investment_pivot",
+      "structural_force": "Saudi Arabia pivoting from NEOM megaproject to AI: Humain launched with $77B planned data center investment, NEOM construction suspended",
+      "headline": "Saudi strategic pivot: NEOM suspended, Humain AI company launched with $77B data center plan, 400K chips by 2030",
+      "detail": "Saudi Arabia's PIF suspended NEOM's 170km linear city project. No NEOM mention in 2026 pre-budget statement (featured for 3 prior years). Instead, Crown Prince launched Humain (PIF-backed) in May 2025 with $77B planned data center investment. Plans: 18,000 chips in 2026, scaling to 400,000 by 2030. Humain signed $23B in deals with US tech giants. DataVolt signed $5B agreement for 1.5GW AI factory at NEOM's Oxagon zone (2028). Aramco taking minority stake in Humain. Goal: become world's third-largest AI market after US and China. Strategy represents 'phase two of Vision 2030: profitability and consolidation.'",
+      "sources": ["CNN Business (Nov 2025)", "CNBC (Aug 2025)", "Energy Connects", "AI CERTs", "CPG Click"],
+      "raw_data_points": ["NEOM construction suspended", "No NEOM in 2026 pre-budget statement", "Humain: $77B planned investment", "18K chips 2026, 400K by 2030", "$23B in US tech deals", "DataVolt: $5B AI factory at Oxagon (1.5GW)", "Goal: 3rd largest AI market globally"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "Massive sovereign wealth redirecting from physical megaprojects to AI infrastructure. This validates AI infrastructure as the new 'construction project' for SWFs. Creates compute capacity in MENA that could serve Europe/Africa. For engine MENA profile: upgrade AI readiness from 'partial' to 'accelerating.'"
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-011",
+      "source_category": "geopolitics",
+      "signal_type": "sovereign_investment_pivot",
+      "structural_force": "UAE/Abu Dhabi SWFs pivoting aggressively to AI: MGX exploring $25B, part of $500B Stargate Project, Microsoft investing $15.2B",
+      "headline": "Abu Dhabi AI pivot: MGX exploring $25B fund, Stargate Project equity funder, 26 sq km AI campus planned",
+      "detail": "Abu Dhabi's Mubadala deployed 'tens of billions' in 2024, most active SWF globally. MGX (backed by Mubadala + ADQ) exploring $25B in third-party capital for AI infrastructure. MGX is one of four initial equity funders of $500B Stargate Project (US AI infrastructure). UAE and US agreed to build world's largest AI campus outside US: 26 sq km in Abu Dhabi, 5GW data center capacity, initial 200MW cluster live by 2026. Microsoft investing $15.2B in UAE (2023-2029), with $7.9B from 2026-2029 ($5.5B+ in AI/cloud infrastructure). ADQ fastest-growing SWF, assets more than doubled in 4 years.",
+      "sources": ["Bloomberg", "CNBC (Jan 2025)", "CSIS analysis", "Microsoft blog", "Bloomberg Newsletter (Dec 2025)"],
+      "raw_data_points": ["MGX: $25B third-party capital exploration", "Stargate Project: $500B (MGX as equity funder)", "AI campus: 26 sq km, 5GW capacity", "Initial 200MW cluster by 2026", "Microsoft: $15.2B in UAE (2023-2029)", "$7.9B from 2026-2029", "Mubadala: most active SWF globally in 2024"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "Gulf SWFs are the world's largest single-entity AI infrastructure investors outside of US tech companies. The Gulf-US AI axis is forming as a counterweight to China's AI infrastructure push. For engine: MENA is becoming a critical AI infrastructure node, not just a consumer. Creates compute availability that could reshape global AI access patterns."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-012",
+      "source_category": "geopolitics",
+      "signal_type": "spending_surge",
+      "structural_force": "Global defense spending hit $2,718B in 2024 (+9.4%), steepest rise since Cold War; NATO targeting 5% GDP by 2035",
+      "headline": "Global defense spending: $2.72T in 2024, +9.4% real, steepest rise since Cold War end; NATO raises target to 5% GDP",
+      "detail": "SIPRI: World military expenditure reached $2,718B in 2024, +9.4% real terms from 2023 (steepest YoY rise since Cold War end). 10th consecutive year of increases, highest level ever recorded. Europe: +83% over 2015-2024 (biggest regional increase). Central/Western Europe: $472B in 2024 (+14% YoY, +59% over decade). NATO summit at The Hague (2025): new commitment of 5% GDP by 2035 (up from 2% target). All allies expected to meet 2% in 2025 (vs 3 in 2014). Average NATO defense spending: 2.76% of GDP. Poland leads at 4.48%, Lithuania 4%, Latvia 3.73%. NATO organizational budget: EUR 4.6B (2025), up to EUR 5.3B (2026). Top spenders (2025): US $860B, China $245B, Russia $157B, UK $80.5B, Germany $72.6B, Saudi Arabia $72.5B.",
+      "sources": ["SIPRI (Apr 2025)", "SIPRI Fact Sheet", "NATO official", "National Defense Magazine", "Atlantic Council NATO tracker"],
+      "raw_data_points": ["$2,718B global (2024)", "+9.4% real terms", "Europe: +83% since 2015", "NATO 5% GDP target by 2035", "All allies meeting 2% in 2025", "Average 2.76% GDP", "Poland: 4.48%", "US: $860B", "Projected >$2.6T in 2026"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Defense spending supercycle confirmed. European rearmament is the fastest-growing defense market segment globally (+83% in a decade). NATO 5% target represents massive additional spending commitment. Creates demand for defense AI, autonomous systems, and defense-industrial base expansion. For engine: defense/security is a high-growth sector that intersects with AI (NAICS 92, 336)."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-013",
+      "source_category": "geopolitics",
+      "signal_type": "spending_surge",
+      "structural_force": "US DoD creates first dedicated AI budget line: $13.4B for AI/autonomy in FY2026, $9.4B for unmanned aerial alone",
+      "headline": "Pentagon FY2026: $1.01T total (+13%), $13.4B dedicated AI/autonomy line, $66B IT budget, $14.2B for AI/autonomous research",
+      "detail": "FY2026 marks first year DoD has dedicated budget line for autonomy and AI: $13.4B total. Breakdown: unmanned aerial vehicles $9.4B, maritime autonomous systems $1.7B, underwater capabilities $734M, autonomous ground vehicles $210M, cross-domain integration remainder. Total defense budget: $1.01T (+13% over FY2025). Total IT budget: $66B (+$1.8B). The Replicator program received $1B in 2025 to fast-track thousands of expendable autonomous drones/surface vessels. FY2025 context: $25.2B for programs incorporating AI/autonomous (3% of $850B budget). Pentagon AI strategy document released Jan 12, 2026 titled 'Artificial Intelligence Strategy for the Department of War.'",
+      "sources": ["MeriTalk", "CDO Magazine", "Defense One", "DefenseScoop", "Washington Technology", "DoD PDF (Jan 2026)"],
+      "raw_data_points": ["$1.01T total FY2026 (+13%)", "$13.4B AI/autonomy dedicated line (first ever)", "$9.4B unmanned aerial", "$1.7B maritime autonomous", "$66B IT budget", "Replicator: $1B for autonomous drones", "$14.2B AI/autonomous research"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "DoD AI spending creating massive demand signal for defense AI/autonomy companies. $13.4B dedicated line is a structural commitment, not a one-time allocation. Unmanned aerial ($9.4B) is the largest single AI application budget in any government worldwide. For engine: defense AI is a distinct sector transformation opportunity."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-014",
+      "source_category": "geopolitics",
+      "signal_type": "governance_development",
+      "structural_force": "UN General Assembly passed historic resolution (156 nations) calling for LAWS treaty by 2026; US and Russia rejected",
+      "headline": "Autonomous weapons: UN resolution for treaty by 2026 passed 156 nations; US/Russia rejected; 'pre-proliferation window' closing",
+      "detail": "November 2025: UN General Assembly First Committee passed historic resolution calling for legally enforceable lethal autonomous weapons systems (LAWS) agreement by 2026, with 156 nations supporting. US and Russia rejected, indicating leading military powers unwilling to constrain AI weapons integration. UN Secretary-General called for legally binding treaty prohibiting LAWS operating without human oversight, 2026 target. NATO endorsed Rapid Adoption Action Plan at The Hague (2025): 24-month maximum for tech integration into armed forces. NATO Data and AI Review Board developing 'Responsible AI' certification standard. France and UK are European frontrunners in AI-enhanced autonomous weapons development. Analysts describe current period as 'pre-proliferation window' — final moment before autonomous weapons become as common as small arms.",
+      "sources": ["TRENDS Research & Advisory", "NATO official", "Belfer Center (Harvard)", "CIGI analysis", "Defence Horizon Journal"],
+      "raw_data_points": ["156 nations supported UN LAWS resolution (Nov 2025)", "US and Russia rejected", "NATO Rapid Adoption: 24-month max integration", "NATO Responsible AI certification in development", "Pre-proliferation window description", "France/UK: European frontrunners in autonomous weapons"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "Autonomous weapons regulation failure means unconstrained military AI development. The 'pre-proliferation window' creates urgency for defense AI companies. NATO's 24-month adoption mandate is extremely aggressive. For engine: defense AI is entering acceleration phase similar to Financial Services cascade but driven by geopolitical rather than economic forces."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-015",
+      "source_category": "sector_transformation",
+      "signal_type": "employment_shift",
+      "structural_force": "Accounting/auditing unemployment at 2.0% despite 61% of hiring managers reporting skill shortages; AI displacing junior roles first",
+      "headline": "Financial services paradox: 819K finance/accounting jobs posted in 2025, 2.0% unemployment, but AI displacing entry-level roles",
+      "detail": "Accounting/auditing unemployment at 2.0% in 2025 (BLS). 819,300 finance and accounting jobs posted in 2025, with 231,000+ in general accounting positions. BUT: 61% of hiring managers say finding skilled professionals is 'much more challenging' than a year ago. This paradox reflects AI automating junior/routine roles while creating shortage of experienced professionals who can validate AI outputs. Timeline: 2023-2025 task automation and hiring freezes; 2026-2028 career transitions and displacement peaks; 2029-2035 new equilibrium with fewer but more leveraged roles. AI already capable of most staff accountant jobs: tax prep, audit reconciliations, bank reconciliations, financial statement production. Accounting/auditing explicitly identified as high-risk for AI displacement alongside programmers, legal assistants, and customer service.",
+      "sources": ["BLS data (2025)", "Robert Half 2026 report", "Accounting Today", "NC State Poole School", "UNC Kenan-Flagler", "Brookings"],
+      "raw_data_points": ["2.0% unemployment (accountants/auditors)", "819,300 jobs posted in 2025", "61% of hiring managers: 'much more challenging'", "Timeline: 2026-2028 = displacement peak", "AI can do most staff accountant work now", "6-7% of US workforce potentially displaced"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Financial Services Cascade (P-026) CONFIRMED and deepening. The paradox of low unemployment + high hiring difficulty + AI capability = classic pre-Schumpeterian pattern. Firms are still hiring humans for roles AI can do, but the hiring freeze is starting. 2026-2028 displacement peak aligns with engine projections. Strengthens all NAICS 52/54 business models."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-016",
+      "source_category": "sector_transformation",
+      "signal_type": "technology_adoption",
+      "structural_force": "Banking AI adoption at 88% among top performers; fraud detection at 87% of institutions; 54% of US bank interactions fully automated",
+      "headline": "Fintech AI adoption: 88% of top performers, $30B market in 2025, 87% using AI fraud detection, 54% customer interactions automated",
+      "detail": "AI in fintech market reached $30B in 2025, with 88% adoption among top performers. 75% of financial services firms utilize AI. AI fraud detection: 87% of global financial institutions using, intercepting 92% of fraudulent activities before transaction approval. 54% of all customer interactions in US banks fully automated through AI. Chatbots handle 70% of Tier 1 queries at top North American FIs. AI-driven fraud detection: 40% reduction in losses. AI powers 60% of digital lending decisions. Market projection: $17.64B (2025) growing to $97.70B by 2034. For 2026: the shift moves from 'early use cases' to 'advanced AI' and agentic automation.",
+      "sources": ["BDO 2026 Predictions", "CoinLaw AI in Banking Statistics", "McKinsey Banking Trends", "FinTech Magazine", "Wezom analysis"],
+      "raw_data_points": ["$30B fintech AI market (2025)", "88% adoption among top performers", "87% using AI fraud detection", "92% fraud interception rate", "54% of US bank interactions automated", "70% Tier 1 queries handled by chatbots", "60% of digital lending AI-driven", "40% fraud loss reduction"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Financial services AI adoption is the most advanced of any sector. 54% of customer interactions already automated is a leading indicator. The remaining 46% represents the next wave. For engine: Financial Services cascade is moving from 'early disruption' toward 'acceleration' phase. Back-office automation is nearly complete; front-office is next."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-017",
+      "source_category": "sector_transformation",
+      "signal_type": "physical_infrastructure_decline",
+      "structural_force": "US bank branches: 320+ marked for closure in Q1 2025 alone; 15,000 net closures since 2012 peak of 83,000",
+      "headline": "Bank branch closures accelerating: 339 net closures in 2025, 15K net since 2012 peak, Chase closing 66 in late 2025",
+      "detail": "Over 320 US bank branches marked for closure in first 13 weeks of 2025. Through Dec 15, 339 net branch closures in 2025. US Bank and Wells Fargo led, combining 180 net closures. Aug-Dec 2025: 311 branches closed (Chase 66, TD Bank 51, Citizens 18, BofA 15). California and New York hardest hit. Rust Belt region experienced noticeable exodus. TD Bank closing 51 branches by end of January 2026 across 13 states + DC. Historical context: peak of ~83,000 branches in 2012, now ~15,000 fewer. Digital banking driving the shift.",
+      "sources": ["Newsweek", "US News", "FDIC BankFind Suite", "FastCompany", "Men's Journal"],
+      "raw_data_points": ["320+ closures announced Q1 2025", "339 net closures through Dec 2025", "US Bank + Wells Fargo: 180 combined", "Aug-Dec 2025: 311 closures", "Peak: 83,000 branches (2012)", "Now: ~68,000", "TD Bank: 51 closing by Jan 2026"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Branch closures are a lagging indicator of digital transformation but they signal physical infrastructure rationalization. ~15,000 branches closed since 2012 = ~18% of total. Rate appears to be accelerating. For engine: creates secondary effects in commercial real estate (leases), local employment, and community banking models. Second-order cascading effect from Financial Services transformation."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-018",
+      "source_category": "sector_transformation",
+      "signal_type": "technology_adoption",
+      "structural_force": "RPA in banking growing from $8.62B (2025) to $18.9B (2033); AI agents replacing traditional RPA with 99.9% accuracy and 25% lower costs",
+      "headline": "Financial back-office automation: $8.62B RPA market, 30-70% cost reduction, shifting from RPA to AI agents in 2026",
+      "detail": "RPA in banking/financial services: $8.62B market in 2025, projected $18.9B by 2033. Narrower segment at $1.12B in 2025. Key applications: KYC verification, loan processing, fraud monitoring, invoice processing, reconciliation, regulatory reporting. Cost reductions of 30-70% for manual tasks. Critical 2026 shift: moving from traditional RPA (rule-based bots) to intelligent process automation (IPA) integrating NLP, OCR, ML. AI agents expected to achieve 99.9% accuracy, 25% lower costs, real-time compliance. 2026 focus: end-to-end automation connecting front/middle/back office into single flow. Hyper-automation and cognitive RPA enabling real-time intelligent decisions.",
+      "sources": ["AutomationEdge", "Skan.ai", "FinancialIT", "PhacetLabs", "UiPath", "SynapseIndia"],
+      "raw_data_points": ["$8.62B RPA banking market (2025)", "Projected $18.9B by 2033", "30-70% cost reduction", "99.9% accuracy target (AI agents)", "25% cost reduction over RPA", "2026: end-to-end automation", "Shift from RPA to AI agents"],
+      "confidence": "medium",
+      "time_horizon": "H1-H2",
+      "engine_implications": "The RPA-to-AI-agent transition is a second wave of financial back-office disruption. First wave (RPA) automated routine tasks; second wave (AI agents) automates judgment-adjacent tasks. This deepens the Financial Services cascade and extends it to middle-office roles that RPA couldn't reach. For engine: strengthens all NAICS 52 business models and creates new category of AI-agent-as-service for financial operations."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-019",
+      "source_category": "sector_transformation",
+      "signal_type": "production_capacity_shift",
+      "structural_force": "Global robot installations expected to reach 575K units in 2025 (+6%), surpass 700K by 2028; robot density doubled in 7 years",
+      "headline": "Industrial robotics: 575K installations projected 2025, density doubled to 162 per 10K workers, Asia 74% of deployments",
+      "detail": "IFR World Robotics 2025: Global installations expected to grow 6% to 575,000 units in 2025. 700,000+ mark projected by 2028. Global robot density: 162 per 10,000 employees (2023), doubled from 74 in 7 years. Regional density: Asia 204, Europe 148, Americas 131. Asia: 74% of new deployments, Europe 16%, Americas 9%. Top countries by density: South Korea 1,012 per 10K (later IFR report: Japan 1,562 per 10K), Singapore 770, China 470 (surpassed Germany and Japan for first time in 2023). China achieved this despite 37M manufacturing workforce. Cobot market growing 17.4% annually (2021-2028). Mobile cobots: 15,778 units projected 2026, 26,828 by 2028.",
+      "sources": ["IFR World Robotics 2025", "IFR Press Releases", "The Robot Report", "Robotnik", "Market.us"],
+      "raw_data_points": ["575K installations projected 2025 (+6%)", "700K+ by 2028", "Density: 162 per 10K (doubled in 7 years)", "Asia: 74% of deployments", "South Korea: 1,012 per 10K", "China: 470 per 10K (surpassed Germany/Japan)", "Cobot CAGR: 17.4%", "Mobile cobots: 15,778 units (2026)"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "Robot density doubling validates engine Pattern P-006 (Robotics x AI Compound). China surpassing Germany/Japan in robot density despite massive workforce shows state-driven automation priority. Asia's 74% deployment share means most manufacturing robotics innovation/deployment experience is in Asia. For engine manufacturing models: the automation cost curve is confirmed declining. China's robot density acceleration affects nearshoring calculus."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-020",
+      "source_category": "sector_transformation",
+      "signal_type": "technology_adoption",
+      "structural_force": "98% of manufacturers exploring AI but only 20% prepared at scale; 46% targeting robotics investment; physical AI doubling in 2 years",
+      "headline": "Manufacturing AI adoption gap: 98% exploring, 20% ready, 92% call it essential; physical AI to double from 9% to 22% by 2028",
+      "detail": "98% of manufacturers exploring or considering AI-driven automation, but only 20% feel fully prepared for scale. 92% agree automation essential for competitiveness, yet only 37% have significant automation in place. Investment plans: 73% plan to increase in next 3 years; 46% targeting robotics/automation specifically. Resource allocation (next 24 months): new equipment 61%, employee training 55%, robotics/automation 46%, AI 45%. Physical AI adoption: 9% today, 22% in 2 years (>2x increase). By 2026: 40%+ of manufacturers with production scheduling will upgrade with AI-driven capabilities. Challenges: 50% struggle to identify right technology, 39% lack internal expertise, 32% face budget overruns. Global AI in manufacturing: $34.18B (2025), projected $155.04B by 2030 (35.3% CAGR).",
+      "sources": ["RoboticsTomorrow (Dec 2025)", "Deloitte 2026 Manufacturing Outlook", "IDC", "PR Newswire (Jan 2026)", "Manufacturing Dive", "BizTech Magazine", "Vention 2025 survey"],
+      "raw_data_points": ["98% exploring AI automation", "20% fully prepared", "92% call automation essential", "37% have significant automation", "73% plan increased investment", "46% targeting robotics", "Physical AI: 9% -> 22% in 2 years", "AI in manufacturing: $34.18B (2025), $155.04B (2030)", "35.3% CAGR"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "The 98% exploring / 20% prepared gap is the central manufacturing opportunity. This gap = demand for AI implementation services, systems integration, and managed automation. 50% can't identify right technology = massive consulting/advisory opportunity. Physical AI doubling from 9% to 22% validates engine manufacturing trajectory. $34B->$155B (4.5x in 5 years) is the total addressable market expansion for manufacturing AI."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-021",
+      "source_category": "sector_transformation",
+      "signal_type": "regulatory_milestone",
+      "structural_force": "FDA AI/ML medical device approvals: 295 clearances in 2025 alone, cumulative 1,250+, 96% via 510(k) pathway",
+      "headline": "FDA AI device approvals accelerating: 295 in 2025, 1,250+ cumulative, 80% in radiology, median clearance 142 days",
+      "detail": "FDA-authorized AI/ML medical devices: 1,250+ by mid-2025, up from 950 in August 2024. 2025 breakthrough year: 295 clearances. Median clearance time: 142 days (average 150 days), with 25% cleared under 90 days. Distribution: Radiology 75-80%, Cardiology ~10%, remainder across neurology, hematology, other specialties. 96%+ approved via 510(k) pathway (substantial equivalence). FDA issued draft guidance for AI-enabled device software functions (Jan 2025) with Total Product Life Cycle (TPLC) approach. Finalization expected late 2025 or early 2026. This regulatory framework clarity is removing barriers to AI medical device commercialization.",
+      "sources": ["IntuitionLabs FDA tracker", "FDA official list", "Innolitics 2025 Year in Review", "MedTech Spectrum", "AHA Letter to FDA (Dec 2025)", "Complizen.ai"],
+      "raw_data_points": ["1,250+ AI/ML devices authorized (mid-2025)", "295 clearances in 2025", "Up from 950 in Aug 2024", "Median clearance: 142 days", "75-80% in radiology", "96%+ via 510(k) pathway", "FDA TPLC draft guidance (Jan 2025)"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "FDA approval acceleration is a leading indicator of healthcare AI transformation. 295 in one year vs 950 cumulative to Aug 2024 = massive acceleration. Radiology dominance (75-80%) means other specialties are still underserved = opportunity. 510(k) pathway dominance means regulatory barriers are lower than assumed for AI medical devices. For engine: Healthcare AI transformation (NAICS 62) should have phase confidence upgraded."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-022",
+      "source_category": "sector_transformation",
+      "signal_type": "technology_adoption",
+      "structural_force": "US healthcare AI adoption jumped from 3% to 22% in 2 years; 66% of physicians used AI in 2024 (up from 38%); 71% of hospitals running predictive AI",
+      "headline": "Healthcare AI adoption: 3%->22% in 2 years, 66% of physicians using AI, 71% hospitals running predictive AI, 40% readmission reduction at Mayo",
+      "detail": "US healthcare AI adoption jumped from 3% to 22% in just 2 years. Health systems (27%) ahead of outpatient providers (18%) and payers (14%). 66% of US physicians used AI in practice in 2024 (up from 38% in 2023, a 78% jump). Usage concentrated in documentation, coding support, discharge instructions, translation. 71% of hospitals running at least one EHR-integrated predictive AI tool in 2024 (up from 66% in 2023). Clinical results: Mayo Clinic achieved 40% reduction in hospital readmissions; Cleveland Clinic 94% accuracy in virtual triage; Johns Hopkins proved AI-driven chronic disease management. AI in telehealth market: $5.20B (2025), projected $119.34B by 2035 (36.85% CAGR). Over 90% of healthcare leaders plan to prioritize AI for clinical decision-making within 12-24 months.",
+      "sources": ["IntuitionLabs Hospital Adoption 2025", "Netguru telehealth report", "Chief Healthcare Executive", "SNS Insider", "PMC/NIH adoption survey"],
+      "raw_data_points": ["3% -> 22% adoption in 2 years", "66% physician usage (up from 38%)", "71% hospitals with predictive AI", "Mayo: 40% readmission reduction", "Cleveland Clinic: 94% virtual triage accuracy", "Telehealth AI: $5.2B -> $119.3B (2025-2035)", "90%+ leaders plan AI clinical decision-making"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "Healthcare AI adoption is much faster than expected based on trust barriers. 3%->22% in 2 years is an extraordinary acceleration. Physician adoption (66%) is leading institutional adoption (22%), suggesting bottom-up adoption pattern. For engine: Healthcare transformation (NAICS 62) should be upgraded from 'medium' to 'high' confidence in 'early_disruption' phase. The trust barrier is being overcome faster than our F5 Psychology dimension assumed."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-023",
+      "source_category": "sector_transformation",
+      "signal_type": "trust_barrier",
+      "structural_force": "Patient trust gap: 79% of providers optimistic about AI but only 59% of patients; trust highest when doctors explicitly state they don't use AI",
+      "headline": "Patient AI trust gap: 59% patient optimism vs 79% provider; 52% worry about losing human touch; trust highest with no-AI disclosure",
+      "detail": "79% of healthcare professionals optimistic about AI outcomes, only 59% of patients share optimism (20-point trust gap). Key finding: patient trust and intention to seek help were HIGHEST when doctor explicitly stated no AI use at all. More than half (52%) worry about losing human touch. Trust depends on AI's role: patients welcome AI for admin (appointments, check-in) but comfort drops for clinical applications. Patients prefer receiving AI information from doctors, healthcare systems, and nurses regardless of AI knowledge level. Critical counterbalance: familiarity with AI tools increases comfort and trust (exposure effect). This suggests: current trust barrier will naturally erode as exposure increases, but there's a window where explicit AI use may reduce healthcare seeking behavior.",
+      "sources": ["JMIR (2025)", "Philips Future Health Index 2025", "WEF (Aug 2025)", "Medical Economics", "Nature npj Health Systems"],
+      "raw_data_points": ["79% provider optimism vs 59% patient", "Trust highest with explicit no-AI", "52% worry about losing human touch", "Comfort drops for clinical AI", "Familiarity increases trust", "20-point provider-patient trust gap"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "This is critical F5 Psychology data for healthcare. The trust gap is real but has a natural resolution mechanism (exposure). Business model implication: healthcare AI that is physician-augmenting (invisible to patient) will adopt faster than patient-facing AI. For engine F5 dimension: healthcare fear friction is HIGH for patient-facing, LOW for physician-tool applications. This distinction matters for business model construction."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-024",
+      "source_category": "geopolitics",
+      "signal_type": "regime_shift",
+      "structural_force": "CHIPS Act production milestones: first US sub-2nm fab operational, but Intel Ohio delayed to 2030 showing physical buildout reality",
+      "headline": "CHIPS Act mixed results: Intel 1.8nm in production (ahead), Intel Ohio delayed to 2030 (behind), TSMC 3 fabs progressing",
+      "detail": "Success: Intel Fab 52 is the first US facility below 2nm, using High-NA EUV lithography, already in HVM. TSMC has 3 Arizona fabs at various stages. Samsung Taylor almost complete. Failure: Intel Ohio 'Silicon Heartland' delayed to 2030 due to capital constraints and labor issues. This echoes the Kearney Reshoring Index pattern: announcements outpace physical reality. Total CHIPS Act subsidies deployed: $19.21B ($7.86B Intel, $6.6B TSMC, $4.75B Samsung). The program is producing results but the pace is uneven and slower than announced timelines for major greenfield projects.",
+      "sources": ["Financial Content (Jan 2026)", "IEEE Spectrum", "CNBC (Dec 2025)", "Manufacturing Dive", "CFR", "Stimson Center"],
+      "raw_data_points": ["Intel Fab 52: 1.8nm HVM (success)", "Intel Ohio: delayed to 2030 (failure)", "TSMC: 3 fabs progressing", "Samsung Taylor: >90% complete", "Total subsidies: $19.21B deployed", "Pattern: announcements >> physical reality"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "CHIPS Act validates both optimistic and pessimistic reshoring narratives simultaneously. Leading-edge US production is real (Intel 18A), but greenfield megaprojects face multi-year delays. For engine: semiconductor supply chain diversification is happening but slower than policy rhetoric. Taiwan concentration risk is being partially addressed."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-025",
+      "source_category": "geopolitics",
+      "signal_type": "bifurcation_signal",
+      "structural_force": "Two parallel AI ecosystems forming: US (proprietary/subscription) vs China (open-source/free-access) with divergent adoption models",
+      "headline": "Global AI bifurcation: US subscription model ($20/mo) vs China free-access model driving divergent adoption patterns",
+      "detail": "The research reveals two distinct AI ecosystem models forming globally. US model: proprietary frontier models, $20/mo subscription tiers, enterprise-focused, 195M users. China model: open-source models, free-access consumer tier, 515M users, mass adoption priority. DeepSeek's open-source strategy is explicitly designed to influence global AI infrastructure. Chinese LLM gains most pronounced in developing countries and countries with close political/economic ties to China. US maintains lead in frontier capability and enterprise adoption (85%+). China leads in consumer scale and cost accessibility. Gulf states (Saudi/UAE) are positioning as a third node, providing compute infrastructure that could serve either ecosystem. This bifurcation will shape which AI stack different regions of the world adopt.",
+      "sources": ["RAND report", "CSIS analysis", "Atlantic Council (2026)", "Microsoft Global AI Adoption", "CNNIC data"],
+      "raw_data_points": ["US: 195M users, $20/mo model", "China: 515M users, free-access model", "Chinese gains in developing world", "Gulf states: third infrastructure node", "US enterprise advantage: 85%+", "China consumer advantage: 36.5% penetration"],
+      "confidence": "high",
+      "time_horizon": "H1-H3",
+      "engine_implications": "This is potentially the most significant structural finding for the engine's geographic dimension. A bifurcated global AI ecosystem means: (1) businesses built on US AI stack may not translate to developing world markets and vice versa; (2) AI compliance/interoperability between ecosystems becomes a business category; (3) Gulf compute infrastructure could be the bridge between ecosystems. All geographic profiles need updating to account for which AI ecosystem they're likely to adopt."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-026",
+      "source_category": "geopolitics",
+      "signal_type": "sovereign_investment_pivot",
+      "structural_force": "Gulf SWFs are the world's largest single-entity AI investors outside US tech: MGX $25B, Humain $77B, Stargate $500B participation",
+      "headline": "MENA SWF AI pivot: combined $100B+ in AI infrastructure commitments; Saudi and UAE competing for third AI superpower status",
+      "detail": "Combined Gulf AI infrastructure commitments exceed $100B. Saudi: Humain $77B planned, $23B in deals signed, 18K chips (2026), 400K (2030). UAE: MGX $25B exploration, Stargate $500B co-funder, 26 sq km AI campus (5GW), Microsoft $15.2B. Both nations are competing for 'third AI superpower' status. Key strategic dynamic: NEOM suspended while AI investment surges — this represents a fundamental reallocation of sovereign wealth from physical megaprojects to digital infrastructure. The speed of reallocation (months, not years) suggests these SWFs can be the fastest-moving AI infrastructure investors globally. Energy wealth being converted to AI infrastructure positions these nations as critical global compute providers.",
+      "sources": ["Bloomberg", "CNN Business", "CNBC", "CSIS", "Microsoft", "Multiple Gulf media"],
+      "raw_data_points": ["Humain: $77B planned", "MGX: $25B exploration", "Stargate: $500B (MGX equity funder)", "Abu Dhabi AI campus: 26 sq km, 5GW", "Microsoft UAE: $15.2B", "NEOM suspended", "Combined: $100B+ AI commitments"],
+      "confidence": "high",
+      "time_horizon": "H1-H3",
+      "engine_implications": "MENA geographic profile requires major update. These are not secondary AI markets — they are becoming primary AI infrastructure providers. The oil-to-AI wealth conversion is one of the largest capital reallocations in economic history. For engine: new business model category — 'AI infrastructure service companies serving Gulf SWF demand.' Also creates compute availability that could democratize AI access for Africa, South Asia."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-027",
+      "source_category": "sector_transformation",
+      "signal_type": "cascade_acceleration",
+      "structural_force": "Financial Services transformation advancing from early_disruption to acceleration: 54% customer interactions automated, 87% AI fraud detection, 339 branch closures in 2025",
+      "headline": "Financial Services cascade accelerating: automation metrics all above 50%, physical footprint shrinking, back-office transitioning to AI agents",
+      "detail": "Multiple converging signals indicate Financial Services (NAICS 52) is transitioning from 'early_disruption' to 'acceleration' phase. Evidence: (1) 54% of all US bank customer interactions fully automated; (2) 87% of global FIs using AI fraud detection with 92% interception rate; (3) 60% of digital lending AI-driven; (4) 339 net branch closures in 2025 (15K since 2012 peak); (5) 819K finance/accounting jobs posted but 61% of hiring managers can't find talent = skill mismatch deepening; (6) RPA market $8.62B transitioning to AI agents with 30-70% cost reduction; (7) Staffing canary stocks (RHI -53%, MAN -44%) remain depressed. Combined assessment: the cascade is no longer 'early' — it's in the acceleration phase with front-office automation as the next wave.",
+      "sources": ["Multiple sources compiled from signals 015-018"],
+      "raw_data_points": ["54% interactions automated", "87% AI fraud detection", "92% fraud interception", "60% digital lending AI-driven", "339 branch closures (2025)", "15K closures since 2012", "819K jobs posted, 61% can't fill", "RPA: $8.62B market, 30-70% cost reduction", "Staffing canary: RHI -53%"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "RECOMMEND: Update sector_transformations for NAICS 52 Financial Services from 'early_disruption' to 'acceleration'. This is the engine's first sector to reach acceleration phase. The implications cascade: commercial real estate (branch closures), employment (skill mismatch deepening), and adjacent sectors (insurance, real estate services). P-026 Financial Services Cascade should be upgraded to 'very_strong_confirmed_accelerating.'"
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-028",
+      "source_category": "sector_transformation",
+      "signal_type": "adoption_acceleration",
+      "structural_force": "Healthcare AI adoption faster than expected: 3%->22% in 2 years, 66% physician usage, 295 FDA approvals in 2025",
+      "headline": "Healthcare transformation upgrading: adoption velocity exceeding trust barrier predictions; physician-tool AI pathway validated",
+      "detail": "Healthcare AI adoption is materially faster than engine's prior assessment. 3%->22% adoption in 2 years is extraordinary. 66% physician usage (up 78% YoY). 295 FDA clearances in 2025 (vs cumulative 950 through Aug 2024). 71% hospitals running predictive AI. HOWEVER: patient trust gap remains (59% vs 79% provider optimism, trust highest with no-AI disclosure). The resolution: physician-augmenting AI (invisible to patient) is adopting rapidly while patient-facing AI faces trust barriers. This dual-track adoption pattern suggests healthcare transformation is proceeding faster through the 'back door' (clinical tools, documentation, coding) than the 'front door' (patient-facing diagnostics, telehealth AI).",
+      "sources": ["Multiple sources compiled from signals 021-023"],
+      "raw_data_points": ["3% -> 22% adoption in 2 years", "66% physician usage (+78% YoY)", "295 FDA clearances (2025)", "71% hospitals with predictive AI", "59% patient optimism (20pt gap)", "40% readmission reduction (Mayo)", "Telehealth AI: $5.2B -> $119.3B (2025-2035)"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "RECOMMEND: Update Healthcare (NAICS 62) phase_confidence from 'medium' to 'high'. The trust barrier is being circumvented by physician-tool AI adoption pathway. For F5 Psychology: healthcare fear friction is context-dependent — high for patient-facing, low for physician-tool. Business model construction should prioritize physician-augmenting tools over patient-facing AI."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-029",
+      "source_category": "geopolitics",
+      "signal_type": "spending_supercycle",
+      "structural_force": "European defense spending +83% over decade, NATO 5% GDP target = hundreds of billions in new defense procurement",
+      "headline": "European rearmament supercycle: +83% in 10 years, $472B in 2024 (+14% YoY), 5% GDP target implies 2-3x current spending for most allies",
+      "detail": "European defense spending is the fastest-growing defense market globally: +83% over 2015-2024. Central/Western Europe: $472B in 2024 (+14% YoY, +59% over decade). NATO's new 5% GDP target by 2035 (up from 2%, currently averaging 2.76%) implies most European nations need to roughly double defense spending. Poland already at 4.48% (leader). For context: if all NATO European members hit 5%, that's approximately $1.2-1.5T in European defense spending alone (currently ~$472B). This is a structural, multi-decade spending commitment driven by the Ukraine conflict, China threat perception, and US pressure for burden-sharing.",
+      "sources": ["SIPRI", "NATO official", "Atlantic Council", "CSIS"],
+      "raw_data_points": ["Europe: +83% over 2015-2024", "$472B European defense spending (2024)", "+14% YoY", "+59% over decade", "5% GDP target by 2035", "Current average: 2.76%", "5% target implies ~$1.2-1.5T European defense spending"],
+      "confidence": "high",
+      "time_horizon": "H2-H3",
+      "engine_implications": "European rearmament is potentially the largest structural spending commitment outside of AI infrastructure buildout. The 5% GDP target represents hundreds of billions in incremental spending over the next decade. This creates massive demand for defense technology, autonomous systems, AI-driven defense, cybersecurity, and defense industrial base expansion. For engine: consider adding 'European Defense Transformation' as a sector transformation entry."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-030",
+      "source_category": "geopolitics",
+      "signal_type": "pattern_update",
+      "structural_force": "Reshoring rhetoric vs reality gap widening: record FDI commitments ($40.9B Mexico, $64.7B India) but US manufacturing output only +1%",
+      "headline": "Nearshoring paradox: record capital commitments but US output only +1% and manufacturers reverting to Asian sourcing",
+      "detail": "The data reveals a significant gap between reshoring/nearshoring capital commitments and actual production reality. Capital side: Mexico FDI record $40.9B (+14.5%), India manufacturing FDI $19B (+18%), CHIPS Act $19.21B deployed. Production side: US manufacturing output +1% (half of consumption growth), Kearney Index -311 points, Mexico capacity 'tapped out,' manufacturers reverting to Asian sourcing. This suggests: (1) manufacturing capacity takes 2-5 years from investment to production; (2) the current wave of reshoring is in 'capital deployment' phase, not 'production' phase; (3) Asian sourcing remains necessary during the transition. India is emerging as the beneficiary of Mexico's capacity constraints.",
+      "sources": ["Kearney", "Mexico Business News", "IBEF", "Multiple CHIPS Act sources"],
+      "raw_data_points": ["Mexico FDI: $40.9B (+14.5%)", "India manufacturing FDI: $19B (+18%)", "US manufacturing output: +1%", "Kearney Index: -311 points", "Mexico: 'tapped out'", "Manufacturers reverting to Asian sourcing", "2-5 year investment-to-production lag"],
+      "confidence": "high",
+      "time_horizon": "H1-H3",
+      "engine_implications": "The reshoring investment-to-production lag creates multiple business model opportunities: (1) transition management consulting; (2) temporary Asian sourcing optimization; (3) India manufacturing facilitation services; (4) Mexico infrastructure expansion. For engine: nearshoring models should account for 2-5 year lag between capital commitment and operational output."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-031",
+      "source_category": "sector_transformation",
+      "signal_type": "adoption_gap",
+      "structural_force": "Manufacturing AI adoption gap: 98% exploring, 20% ready, 50% can't identify right technology = massive implementation services opportunity",
+      "headline": "Manufacturing AI implementation gap: 98%/20% explore/ready ratio, 50% can't identify technology, $34B->$155B market (2025-2030)",
+      "detail": "The gap between manufacturing AI interest and readiness is the widest of any sector. 98% exploring vs 20% prepared at scale. Key barriers: 50% struggle to identify right technology, 39% lack internal expertise, 32% face budget overruns. This 78-point gap (98% interested minus 20% ready) represents the largest addressable market for AI implementation services in manufacturing. Meanwhile, physical AI adoption is set to more than double (9%->22%) in 2 years. The market is growing from $34.18B to $155.04B by 2030 (35.3% CAGR). 73% plan to increase investment in next 3 years with 46% specifically targeting robotics.",
+      "sources": ["RoboticsTomorrow", "Deloitte 2026", "IDC", "Vention 2025 survey", "PR Newswire"],
+      "raw_data_points": ["98% exploring, 20% ready (78-point gap)", "50% can't identify right technology", "39% lack expertise", "32% budget overruns", "Physical AI: 9% -> 22% in 2 years", "$34.18B -> $155.04B (2025-2030)", "73% plan increased investment"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "The 78-point explore-ready gap in manufacturing is the single largest implementation opportunity identified in this research cycle. Manufacturing needs: AI identification/evaluation, implementation services, training, managed automation. This validates and strengthens all engine manufacturing models (NAICS 31-33). The $34B->$155B market expansion (4.5x) provides the economic force."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-032",
+      "source_category": "sector_transformation",
+      "signal_type": "f5_psychology_data",
+      "structural_force": "Healthcare patient trust: AI-transparent disclosure REDUCES trust; physician-tool pathway bypasses trust barrier; exposure increases acceptance",
+      "headline": "F5 Psychology healthcare signal: AI disclosure reduces patient trust, creating incentive for 'invisible AI' adoption pathway",
+      "detail": "Key F5 Psychology finding for healthcare: patients trust doctors MOST when they explicitly state they don't use AI. This creates a perverse incentive structure: the most trusted healthcare AI is invisible AI. 52% worry about losing human touch. But familiarity with AI tools increases trust, suggesting the barrier is temporary. Provider-patient trust gap: 79% vs 59% optimism. Patients welcome admin AI (appointments, check-in) but comfort drops for clinical. The resolution pattern: AI enters healthcare through back-door (documentation, coding, prediction, physician decision support) where patients never see it, then gradually becomes more visible as exposure normalizes acceptance.",
+      "sources": ["JMIR (2025)", "Philips FHI 2025", "WEF", "Medical Economics", "Nature npj Health Systems"],
+      "raw_data_points": ["Trust highest with no-AI disclosure", "52% worry about human touch loss", "79% provider vs 59% patient optimism", "Admin AI: comfortable", "Clinical AI: uncomfortable", "Familiarity increases trust"],
+      "confidence": "high",
+      "time_horizon": "H1-H3",
+      "engine_implications": "First concrete F5 Psychology data for a major sector. Key insight: fear friction in healthcare is CONTEXT-DEPENDENT, not uniform. Fear friction map: Admin AI (LOW), Physician-tool AI (LOW-MEDIUM), Physician-patient AI (HIGH), Patient-facing AI (VERY HIGH). Business model filter: prioritize physician-invisible AI over patient-facing AI for near-term. Exposure effect suggests trust barriers erode over 2-4 years."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-033",
+      "source_category": "geopolitics",
+      "signal_type": "strategic_realignment",
+      "structural_force": "Pentagon rebranded to 'Department of War' in Jan 2026 AI strategy document; signals shift toward warfighting AI emphasis",
+      "headline": "DoD renamed to 'Department of War' in official AI strategy (Jan 12, 2026); defense AI framed as warfighting capability not support tool",
+      "detail": "The DoD released 'Artificial Intelligence Strategy for the Department of War' on January 12, 2026. The use of 'Department of War' (vs 'Department of Defense') signals a rhetorical and strategic shift toward offensive AI capabilities. Combined with $13.4B dedicated AI/autonomy budget, $9.4B for unmanned aerial, $1B Replicator program, and rejection of UN LAWS treaty — the US is positioning military AI as a warfighting capability rather than a support tool. This aligns with NATO's 24-month Rapid Adoption Action Plan and the 5% GDP target.",
+      "sources": ["DoD PDF (Jan 12, 2026)", "MeriTalk", "Defense One", "CDO Magazine"],
+      "raw_data_points": ["'Department of War' naming in official document", "Jan 12, 2026 publication date", "$13.4B AI/autonomy budget", "Replicator: $1B program", "UN LAWS treaty rejected"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "Rhetorical shift indicates defense AI will be treated as core military capability, not IT modernization. This changes procurement dynamics: faster acquisition cycles, more direct engagement with AI companies, less bureaucratic friction. For engine: defense AI startups have materially better market conditions than 12 months ago."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-034",
+      "source_category": "geopolitics",
+      "signal_type": "adoption_divergence",
+      "structural_force": "EU AI Act regulatory uncertainty creating innovation friction: proposed delays, industry pushback, but no confirmed company exits",
+      "headline": "EU AI Act: implementation wobbling but not collapsing; delay proposal + industry pressure = regulatory uncertainty zone",
+      "detail": "The EU AI Act situation is more nuanced than binary 'restrictive' framing. Prohibited practices are in force (Feb 2025). GPAI rules applied (Aug 2025). High-risk enforcement approaching (Aug 2026) but delay proposed to 2027. Industry pushback is intense (30+ founders, Big Tech lobbying, Trump administration pressure). The European Commission is showing willingness to compromise. However: no major company has definitively exited the EU. Fines remain substantial (up to 7% global turnover). The net effect is regulatory uncertainty rather than regulatory certainty — companies don't know exactly what they'll need to comply with or when. This uncertainty itself is a form of innovation friction.",
+      "sources": ["EU AI Act timeline", "Fortune", "Euronews", "Corporate Europe Observatory", "SIG analysis"],
+      "raw_data_points": ["Prohibited practices: in force", "GPAI rules: applied", "High-risk: Aug 2026 (may delay to 2027)", "30+ founders opposing", "No company exits confirmed", "Fines: up to 7% global turnover", "Delay proposed Nov 2025"],
+      "confidence": "medium",
+      "time_horizon": "H1-H2",
+      "engine_implications": "EU AI Act creates 'uncertainty friction' more than 'regulatory friction.' For engine geographic profiles: EU stance should be 'uncertain_restrictive' rather than simply 'restrictive.' Compliance-tech business models face risk of scope reduction if enforcement weakens. But AI safety/compliance expertise developed for EU could have global value as other regions develop frameworks."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-035",
+      "source_category": "sector_transformation",
+      "signal_type": "workforce_transition",
+      "structural_force": "Financial accounting displacement timeline: 2023-2025 task automation, 2026-2028 displacement peak, 2029-2035 new equilibrium",
+      "headline": "Accounting profession transformation timeline: entering displacement peak phase (2026-2028); AI can do most staff accountant work now",
+      "detail": "Industry analysts map a three-phase transition: Phase 1 (2023-2025): Task automation and hiring freezes — currently completing. Phase 2 (2026-2028): Career transitions and displacement peaks — now entering. Phase 3 (2029-2035): New equilibrium with fewer but more leveraged roles. AI is currently capable of performing most staff accountant jobs (tax preparation, audit reconciliation, bank reconciliation, financial statement production). First to be affected: bookkeepers, payroll clerks, entry-level accounting. Remaining roles shift to: advisory services, strategic planning, advanced analytics, risk management. The paradox: 2.0% unemployment and 819K jobs posted, but AI can do most junior work — this is the classic pre-displacement pattern where hiring continues until the tipping point.",
+      "sources": ["Accounting Today", "Robert Half 2026", "Kenan-Flagler UNC", "NC State Poole School", "Mondial Software"],
+      "raw_data_points": ["Phase 1 (2023-2025): automation + hiring freezes", "Phase 2 (2026-2028): displacement peak", "Phase 3 (2029-2035): new equilibrium", "AI can do most staff accountant work", "First affected: bookkeepers, payroll, entry-level", "Remaining: advisory, strategy, analytics"],
+      "confidence": "medium",
+      "time_horizon": "H1-H2",
+      "engine_implications": "We are at the transition point between Phase 1 and Phase 2. This is the Schumpeterian gap period the engine identifies as the optimal entry window. Business models that help firms navigate Phase 2 (2026-2028) have the best timing. Models that provide the advisory/strategic capabilities that surviving accountants need are well-positioned for Phase 3."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-036",
+      "source_category": "sector_transformation",
+      "signal_type": "market_size_update",
+      "structural_force": "AI in manufacturing market: $34.18B (2025) growing to $155.04B by 2030 at 35.3% CAGR — 4.5x expansion in 5 years",
+      "headline": "Manufacturing AI TAM: $34.18B -> $155.04B (2025-2030), 35.3% CAGR, largest sector growth rate after defense",
+      "detail": "Global AI in manufacturing market: $34.18B (2025), projected $155.04B by 2030, representing 35.3% CAGR. This 4.5x expansion over 5 years makes manufacturing AI one of the fastest-growing AI application markets. Breakdown by application: production scheduling (40%+ to upgrade with AI by 2026), quality inspection, predictive maintenance, supply chain optimization, design automation. Investment priorities (next 24 months): new equipment 61%, employee training 55%, robotics/automation 46%, AI 45%. The simultaneous investment in both equipment and AI/robotics suggests convergence: next-generation manufacturing equipment will have AI built in.",
+      "sources": ["IDC", "Deloitte 2026 Manufacturing Outlook", "Tech-Stack.com", "Multiple market research firms"],
+      "raw_data_points": ["$34.18B (2025)", "$155.04B (2030)", "35.3% CAGR", "4.5x expansion in 5 years", "Equipment investment: 61%", "Training: 55%", "Robotics/automation: 46%", "AI: 45%"],
+      "confidence": "medium",
+      "time_horizon": "H1-H3",
+      "engine_implications": "This TAM data provides economic force quantification for all manufacturing AI models. $155B by 2030 is the total addressable market. The 46% robotics + 45% AI investment overlap confirms the Robotics x AI compound effect (P-006). Engine manufacturing models should cite this TAM as their market backdrop."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-037",
+      "source_category": "geopolitics",
+      "signal_type": "infrastructure_milestone",
+      "structural_force": "China surpassed Germany and Japan in robot density (470 per 10K workers) despite 37M manufacturing workforce — state-driven automation",
+      "headline": "China robot density: 470 per 10K workers (surpassed Germany/Japan in 2023); South Korea leads at 1,012 per 10K",
+      "detail": "IFR data shows China reached 470 robots per 10,000 manufacturing employees in 2023, surpassing Germany and Japan for the first time. This is remarkable given China's 37M manufacturing workforce — achieving high density at that scale requires massive investment. South Korea remains the global leader at 1,012 per 10K (later report suggests Japan at 1,562). Singapore second at 770. Global average: 162 per 10K (doubled from 74 in 7 years). Asia accounts for 74% of all new robot deployments globally. The density growth rate (+5% annually since 2018) suggests China could approach South Korean levels within a decade if investment continues.",
+      "sources": ["IFR World Robotics 2024", "IFR Press Releases", "BusinessWire", "The Robot Report"],
+      "raw_data_points": ["China: 470 per 10K (surpassed Germany/Japan)", "South Korea: 1,012 per 10K", "Singapore: 770 per 10K", "Global average: 162 per 10K", "Doubled in 7 years", "Asia: 74% of deployments", "+5% annual density growth"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "China's robot density surpassing Germany/Japan has major implications for the nearshoring/reshoring narrative. If China is automating faster than reshoring destinations, the cost advantage of Chinese manufacturing may actually increase rather than decrease. For engine: China geographic profile should note that automation is offsetting labor cost increases, making 'China+1' strategies more about geopolitical risk than cost."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-038",
+      "source_category": "geopolitics",
+      "signal_type": "defense_demand_signal",
+      "structural_force": "DoD FY2026 AI budget: $9.4B for unmanned aerial alone — single largest government AI application budget globally",
+      "headline": "Unmanned aerial vehicles: $9.4B FY2026 DoD budget, Replicator program deploying thousands of expendable autonomous drones",
+      "detail": "Within the $13.4B DoD AI/autonomy budget, unmanned aerial vehicles received $9.4B — the single largest government AI application budget in any country. The Replicator program ($1B in 2025) is deploying thousands of expendable autonomous drones and surface vessels. Maritime autonomous systems: $1.7B. Underwater: $734M. Ground autonomous: $210M. The aerial dominance in spending reflects lessons from Ukraine where autonomous drones have proven decisive. This spending creates a supply chain demand signal for: AI inference chips for edge computing, autonomous navigation software, drone manufacturing, counterdrone systems, and the entire military autonomous ecosystem.",
+      "sources": ["CDO Magazine", "Defense One", "MeriTalk", "Washington Technology"],
+      "raw_data_points": ["$9.4B unmanned aerial (FY2026)", "$1.7B maritime autonomous", "$734M underwater", "$210M ground autonomous", "Replicator: $1B, thousands of drones", "Lessons from Ukraine conflict"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "The $9.4B unmanned aerial budget is a massive, addressable market for defense AI startups. Combined with European rearmament (+83%) and NATO 24-month adoption mandate, the defense autonomous systems market is entering a growth phase comparable to the consumer AI boom. For engine: consider defense AI as a distinct sector transformation, not just a subcategory of geopolitics."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-039",
+      "source_category": "sector_transformation",
+      "signal_type": "radiology_concentration",
+      "structural_force": "FDA AI device approvals: 75-80% concentrated in radiology; cardiology ~10%; other specialties underserved = expansion opportunity",
+      "headline": "Healthcare AI device distribution: radiology 75-80%, cardiology 10%, all other specialties share remaining 10-15%",
+      "detail": "Of the 1,250+ FDA-authorized AI medical devices, radiology accounts for 75-80% of listings. Cardiology represents approximately 10%. The remaining 10-15% is distributed across neurology, hematology, and other specialties. This extreme concentration means: (1) radiology AI is approaching saturation; (2) cardiology is the next frontier; (3) most medical specialties have barely been touched by AI devices. The 510(k) pathway (96%+ of approvals) suggests regulatory barriers for these underserved specialties are manageable. The median 142-day clearance time makes market entry feasible. Opportunity: applying proven radiology AI approaches to underserved specialties.",
+      "sources": ["IntuitionLabs", "Innolitics", "FDA database analysis", "MedTech Spectrum"],
+      "raw_data_points": ["Radiology: 75-80% of all AI devices", "Cardiology: ~10%", "Other specialties: 10-15%", "1,250+ total devices", "510(k): 96%+ of approvals", "Median clearance: 142 days"],
+      "confidence": "high",
+      "time_horizon": "H1-H2",
+      "engine_implications": "The specialty concentration in AI medical devices creates a clear market map. Radiology is increasingly competitive. Cardiology is the emerging frontier. All other specialties represent greenfield opportunity. Business model construction should target underserved specialties where radiology-proven approaches can be transferred."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-040",
+      "source_category": "geopolitics",
+      "signal_type": "trade_tension",
+      "structural_force": "25% tariff on AI chip exports to China under Section 232 — US monetizing chip access rather than blocking it",
+      "headline": "US semiconductor trade policy shift: from blocking to taxing; 25% tariff on H200-class exports creates price premium for China AI compute",
+      "detail": "The January 2026 policy shift represents a fundamental change: the US is now monetizing rather than blocking AI chip access for China. H200/MI325X exports allowed under case-by-case review with 25% tariff. This creates: (1) revenue stream for US government from China's AI buildout; (2) price premium that makes Huawei Ascend chips more cost-competitive domestically; (3) supply that addresses China's immediate compute needs while maintaining strategic oversight. The policy was announced one day before the tariff (BIS rule Jan 13, tariff announced Jan 14), suggesting coordinated approach. The tariff threshold aligns with TPP <21,000 and DRAM <6,500 GB/s, essentially allowing current-gen inference chips while blocking next-gen training chips.",
+      "sources": ["Federal Register", "BIS", "Willkie analysis", "Baker McKenzie analysis", "CFR commentary"],
+      "raw_data_points": ["25% tariff on H200-class chips", "Case-by-case review (vs presumption of denial)", "TPP threshold: <21,000", "DRAM threshold: <6,500 GB/s", "BIS rule: Jan 13, 2026", "Tariff: Jan 14, 2026", "Section 232 authority"],
+      "confidence": "high",
+      "time_horizon": "H1",
+      "engine_implications": "The shift from 'block' to 'tax' has several implications: (1) China gets access to H200-class chips but at 25% premium, making domestic alternatives (Huawei Ascend) more competitive on price; (2) Creates revenue stream that may make further restrictions politically harder; (3) Validates that complete decoupling is impractical. For engine: the AI ecosystem bifurcation may be more about cost structure than access — China has both US and domestic chips but pays premium for US chips."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-041",
+      "source_category": "sector_transformation",
+      "signal_type": "telehealth_market",
+      "structural_force": "AI in telehealth: $5.20B (2025) to $119.34B (2035), 36.85% CAGR; Mayo Clinic 40% readmission reduction validates clinical AI ROI",
+      "headline": "Telehealth AI: 23x market expansion projected (2025-2035); clinical validation at top hospitals confirms AI-driven outcome improvement",
+      "detail": "AI in telehealth and telemedicine market: $5.20B (2025), projected $119.34B by 2035 (36.85% CAGR). North America dominates with 37.50% share. Clinical validation data from top institutions: Mayo Clinic 40% reduction in hospital readmissions, Cleveland Clinic 94% accuracy in virtual triage, Johns Hopkins proven AI chronic disease management for diabetes and heart failure. 90%+ of healthcare leaders plan to prioritize AI for clinical decision-making within 12-24 months. This market represents the intersection of F1 (technology), F2 (demographics — aging population driving demand), and F5 (psychology — trust barriers requiring navigation).",
+      "sources": ["SNS Insider/GlobeNewsWire (Feb 2026)", "Chief Healthcare Executive", "Netguru", "Precedence Research"],
+      "raw_data_points": ["$5.20B (2025) -> $119.34B (2035)", "36.85% CAGR", "North America: 37.50% share", "Mayo: 40% readmission reduction", "Cleveland Clinic: 94% triage accuracy", "90%+ leaders prioritizing AI (12-24mo)"],
+      "confidence": "medium",
+      "time_horizon": "H1-H3",
+      "engine_implications": "The 23x telehealth AI market expansion represents one of the largest addressable markets in the engine landscape. The clinical validation data (Mayo, Cleveland Clinic, Johns Hopkins) provides concrete ROI evidence for healthcare AI adoption. This strengthens all Healthcare (NAICS 62) business models. The 36.85% CAGR exceeds manufacturing AI (35.3% CAGR), making healthcare AI the fastest-growing sector transformation by market size."
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-042",
+      "source_category": "geopolitics",
+      "signal_type": "compute_geography",
+      "structural_force": "AI compute infrastructure geography reshaping: US (incumbent), Gulf (fastest-growing), China (domestic), EU (lagging), creating new 'compute geopolitics'",
+      "headline": "Global AI compute infrastructure: US dominates, Gulf surging ($100B+), China building domestic, EU falling behind = compute geopolitics emerging",
+      "detail": "A new dimension of geopolitics is emerging: compute geography. US: largest installed base + CHIPS Act expansion (Intel, TSMC, Samsung fabs). Gulf: fastest-growing node with $100B+ combined commitments (Saudi Humain $77B, UAE MGX $25B, Abu Dhabi 5GW campus). Microsoft alone investing $15.2B in UAE. China: building domestic compute (Huawei Ascend 1.6M dies in 2026) while importing US chips at 25% premium. EU: no comparable compute infrastructure investment, focused on regulation not capacity. The Gulf is emerging as a potential 'neutral compute zone' that could serve customers from both US and Chinese AI ecosystems. This compute geography will shape which regions can participate in AI-intensive economic activities and at what cost.",
+      "sources": ["Multiple sources compiled across all geopolitical signals"],
+      "raw_data_points": ["US: CHIPS Act $19.21B deployed, multiple fabs", "Gulf: $100B+ AI infrastructure", "China: 1.6M Huawei dies (2026) + H200 imports at 25%", "EU: regulatory focus, no compute investment at scale", "Gulf as potential 'neutral compute zone'"],
+      "confidence": "medium",
+      "time_horizon": "H2-H3",
+      "engine_implications": "Compute geography is becoming as important as trade geography for economic transformation. Regions with abundant compute (US, Gulf) will transform faster than compute-poor regions (EU, Africa, parts of LATAM/SEA). This creates a new dimension for geographic grading in the engine: compute access/cost should be a factor in geographic_grade alongside regulatory stance and demographic pressure. The Gulf's emergence as a compute node could reshape AI access for the entire Eastern Hemisphere."
+    }
+  ],
+
+  "synthesis": {
+    "f3_geopolitics_velocity_assessment": "ACCELERATING — confirmed by multiple dimensions: US-China bifurcation crystallizing into two-ecosystem model, EU regulatory regime wobbling, reshoring rhetoric exceeding reality, Gulf SWFs executing massive AI pivot, defense spending in supercycle, NATO committing to 5% GDP. F3 is now as fast-moving as F1 (technology) and F4 (capital).",
+
+    "key_structural_findings": [
+      "TWO-ECOSYSTEM BIFURCATION: US (proprietary/subscription) vs China (open-source/free-access) AI models creating divergent adoption patterns globally. Gulf emerging as third compute infrastructure node. This is the defining geopolitical structure for AI transformation.",
+      "RESHORING REALITY CHECK: Kearney Index -311 despite record capital commitments. Physical buildout takes 2-5 years. Mexico tapped out. India emerging as primary alternative. CHIPS Act producing uneven results (Intel 1.8nm success, Intel Ohio delayed to 2030).",
+      "DEFENSE SPENDING SUPERCYCLE: $2.72T global (2024), +9.4% (steepest since Cold War). European rearmament +83% in decade. NATO 5% GDP target implies $1.2-1.5T European defense. DoD $13.4B dedicated AI/autonomy line (first ever). Pre-proliferation window for autonomous weapons.",
+      "GULF AI PIVOT: Combined $100B+ in AI infrastructure commitments. Saudi: NEOM suspended, Humain $77B AI investment. UAE: MGX $25B, Stargate co-funder, Microsoft $15.2B. Oil wealth converting to AI infrastructure at unprecedented speed.",
+      "EU REGULATORY UNCERTAINTY: AI Act implementation wobbling under industry/US pressure. Delay proposed to 2027. No company exits but 'uncertainty friction' creating innovation drag. Stance shifting from 'restrictive' to 'uncertain_restrictive.'"
+    ],
+
+    "sector_transformation_findings": [
+      "FINANCIAL SERVICES CASCADE ACCELERATING: All automation metrics above 50%. 54% customer interactions automated. 87% AI fraud detection. 339 branch closures (2025). RPA transitioning to AI agents. RECOMMEND upgrading from 'early_disruption' to 'acceleration.'",
+      "HEALTHCARE AI FASTER THAN EXPECTED: 3%->22% adoption in 2 years. 66% physician usage. 295 FDA clearances in 2025. Trust barrier being circumvented via physician-tool pathway (invisible to patient). RECOMMEND upgrading phase_confidence to 'high.'",
+      "MANUFACTURING AI GAP IS THE OPPORTUNITY: 98% exploring / 20% ready = 78-point implementation gap. $34B->$155B market. Physical AI doubling. Robot density doubled globally in 7 years. China surpassed Germany/Japan in density.",
+      "ACCOUNTING ENTERING DISPLACEMENT PEAK: Phase 2 (2026-2028) of three-phase transition beginning. AI can do most junior work. Low unemployment masking coming displacement. This is the Schumpeterian gap entry window."
+    ],
+
+    "recommended_state_updates": {
+      "F3_geopolitics": {
+        "velocity": "accelerating",
+        "confidence": "high",
+        "last_update_cycle": "v3-2"
+      },
+      "sector_52_financial_services": {
+        "transformation_phase": "acceleration",
+        "phase_confidence": "high",
+        "recommendation": "Upgrade from early_disruption to acceleration based on 54% interaction automation + 87% AI fraud detection + ongoing branch closures"
+      },
+      "sector_62_healthcare": {
+        "transformation_phase": "early_disruption",
+        "phase_confidence": "high",
+        "recommendation": "Upgrade confidence from medium to high based on 3%->22% adoption, 66% physician usage, 295 FDA clearances"
+      },
+      "geographic_MENA": {
+        "ai_readiness_frontier_access": "accelerating",
+        "recommendation": "Upgrade from 'partial' to 'accelerating' based on $100B+ AI infrastructure commitments"
+      },
+      "geographic_EU": {
+        "regulatory_stance": "uncertain_restrictive",
+        "recommendation": "Update from 'restrictive' to 'uncertain_restrictive' based on proposed delays and industry pressure"
+      },
+      "geographic_India": {
+        "manufacturing_velocity": "accelerating",
+        "recommendation": "Upgrade manufacturing transformation velocity based on 18% FDI growth and PLI scheme results"
+      }
+    },
+
+    "new_patterns_identified": [
+      {
+        "pattern_id": "P-028",
+        "description": "Global AI Ecosystem Bifurcation: US proprietary/subscription vs China open-source/free-access models creating divergent global adoption patterns",
+        "strength": "strong",
+        "status": "emerging"
+      },
+      {
+        "pattern_id": "P-029",
+        "description": "Reshoring Reality Gap: Record capital commitments (Mexico $40.9B, India $19B, CHIPS $19.2B) but US manufacturing output only +1%, 2-5 year lag to production",
+        "strength": "strong",
+        "status": "confirmed"
+      },
+      {
+        "pattern_id": "P-030",
+        "description": "Defense AI Supercycle: $2.72T global defense + NATO 5% GDP + DoD $13.4B AI line + European rearmament +83% = structural multi-decade spending commitment",
+        "strength": "strong",
+        "status": "confirmed"
+      },
+      {
+        "pattern_id": "P-031",
+        "description": "Gulf Oil-to-AI Conversion: $100B+ SWF AI infrastructure commitments, NEOM suspended for AI pivot, fastest-moving compute investors globally",
+        "strength": "strong",
+        "status": "confirmed"
+      },
+      {
+        "pattern_id": "P-032",
+        "description": "Healthcare Invisible AI Pathway: Trust barrier circumvented via physician-tool adoption (invisible to patient); 3%->22% in 2 years through back-door adoption",
+        "strength": "strong",
+        "status": "confirmed"
+      }
+    ],
+
+    "key_unknowns_resolved": [
+      "China AI ecosystem: NOW ANSWERED — parallel ecosystem is real, competitive, and expanding globally through open-source/free-access strategy. Not 'catching up' but 'different model.'",
+      "F5 Psychology (healthcare): PARTIAL ANSWER — patient trust is context-dependent (admin=low friction, physician-tool=low-medium, patient-facing=high). Exposure reduces barriers over 2-4 years."
+    ],
+
+    "remaining_unknowns": [
+      "EU AI Act final enforcement posture — will proposed delays actually happen?",
+      "Gulf AI infrastructure operational capability — commitments are clear but execution timeline uncertain",
+      "India manufacturing capacity — can it scale fast enough to absorb Mexico overflow?",
+      "Defense AI procurement — how accessible is the $13.4B DoD AI budget to startups vs primes?",
+      "Second-order effects of Financial Services acceleration on commercial real estate and local economies"
+    ]
+  }
+}

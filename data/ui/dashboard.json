@@ -1,12 +1,12 @@
 {
   "engine_version": "v3.0",
   "engine_mode": "economy_mapping",
-  "current_cycle": "v3-1",
-  "last_updated": "2026-02-11T06:00:00Z",
+  "current_cycle": "v3-2",
+  "last_updated": "2026-02-11T12:00:00Z",
   "projection_horizon": "2026-2031",
   "data_sources_used": 42,
-  "total_signals_scanned": 158,
-  "total_models_constructed": 522,
+  "total_signals_scanned": 242,
+  "total_models_constructed": 537,
   "evidence_base": {
     "v2_cycles": 8,
     "v2_models": 522,
@@ -26,7 +26,10 @@
         "Enterprise AI revenue: $37B in 2025 (3x YoY)",
         "Application spend ($19B) now exceeds infrastructure spend ($18B)",
         "85% of AI startups expected out of business within 3 years",
-        "Perez cycle: late Installation, approaching Turning Point"
+        "Perez cycle: late Installation, approaching Turning Point",
+        "AI coding: 25-40% of Google code AI-generated",
+        "Manufacturing AI gap: 98% exploring, 20% ready (78-point gap)",
+        "FDA AI/ML devices: 1,250+ cumulative, 295 in 2025"
       ],
       "2031_projection": "Early Deployment phase — AI shifts from infrastructure build to systematic economic integration"
     },
@@ -37,12 +40,13 @@
       "direction": "diverging",
       "key_metric": "3 demographic regimes forming",
       "key_data": [
-        "Japan: -500K population/yr, 397 robots per 10K workers (world #1)",
-        "China: fertility 1.12 (among world's lowest), population halves to 633M by 2100",
+        "Japan: -900K population/yr, 397 robots per 10K workers (world #1)",
+        "China: fertility ~1.0 (below Japan 1.20), population halves to 633M by 2100",
         "US: native-born working-age population shrinking, immigration = 100% of growth",
         "EU: losing ~1M workers/yr, 22 of 27 countries declining",
-        "India: median age 29.8, adding 183M working-age people by 2050",
-        "Africa: 830M youth aged 15-35 by 2050"
+        "India: 1.44B population, median age 28, adding 183M working-age people by 2050",
+        "Africa: 830M youth aged 15-35 by 2050",
+        "Pipeline collapse: CPA -33%, nursing 78K->200K, teaching 42 states, trucking age 57"
       ],
       "2031_projection": "World splits into shrinking (Japan/China/EU), peak dividend (India/SEA), and pre-dividend (Africa) labor regimes"
     },
@@ -56,9 +60,11 @@
         "US chip export controls: 4th major revision, 120+ Chinese entities restricted",
         "China: 35% semiconductor equipment self-sufficiency, 15% global AI model share",
         "EU AI Act: high-risk obligations effective Aug 2026, penalties up to 7% global turnover",
-        "Global defense spending tops $2.6T; US DoD $13.4B for AI/autonomy",
-        "NATO target raised to 5% GDP by 2035",
-        "Gulf SWFs: $66B deployed in AI/digital"
+        "DeepSeek R1: 3%->13% global LLM share in 2 months, approaching frontier performance",
+        "Gulf AI pivot: Saudi Humain $77B + UAE MGX $25B — third AI capital center forming",
+        "Global defense spending $2.72T (+9.4%); NATO target raised to 5% GDP by 2035",
+        "CHIPS Act fabs in production: Intel 1.8nm HVM, TSMC Arizona volume, Samsung Taylor 90%+",
+        "Kearney Reshoring Index -311: intention vs execution gap persists"
       ],
       "2031_projection": "Three distinct AI regulatory/technology blocs — US-led, China-led, EU-regulated — with India and MENA as swing players"
     },
@@ -69,10 +75,13 @@
       "direction": "rotating",
       "key_metric": "$500B+ AI spend vs 56% seeing no benefit",
       "key_data": [
+        "Fed funds rate: 3.50-3.75% (Jan 2026)",
         "68% of CEOs increasing AI spend despite 56% reporting zero financial benefit",
         "Only 12% of companies achieved both cost and revenue gains from AI",
-        "PE refinancing wall: $1.2T debt maturing 2027-2029",
+        "PE refinancing wall: $936B-$1.8T debt maturing 2026-2028, distress rate 11.98% (+148%)",
+        "VC AI share: 35-40% of ~$500B global VC",
         "Physical production ETFs: Industrials +15.1%, Materials +20.1%",
+        "CRE vacancy: Office 20.1% (record), $929B CRE debt maturing",
         "Kearney Reshoring Index fell 311 points — intention vs execution gap",
         "95% of manufacturers plan new automation within 3 years"
       ],
@@ -80,33 +89,37 @@
     },
     "F5_psychology": {
       "name": "Psychology & Fear",
-      "velocity": "intensifying",
+      "velocity": "decelerating",
       "confidence": "medium",
       "direction": "bifurcating",
-      "key_metric": "Fear-driven market: $40B+ → $300-500B by 2031",
+      "key_metric": "Fear-driven market: $86B by 2030",
       "key_data": [
-        "50% of Americans more concerned than excited about AI (up from 37% in 2021)",
+        "AI adoption plateau: 46% for 12 months (flat) — psychological ceiling, not technology ceiling",
         "US AI trust: 32% (lowest major economy) vs China: 87%",
-        "Employee job-loss fear: 28% → 40% in 2 years",
+        "Healthcare trust gap: 34 points (providers 7/10 vs patients 3.6/10)",
+        "Fear economy TAM: ~$86B by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B)",
         "Only 2% of executives made layoffs from actual AI implementation — rest anticipatory",
         "86% of consumers say human interaction important in brand experience",
+        "Generational divide: Gen Z 67% excited vs Boomers 29% excited / 51% worried",
         "96% of music professionals open to paying more for human-created content"
       ],
       "2031_projection": "Fear normalizes but creates permanent parallel economy — human premium, verification, trust-bridging services"
     },
     "F6_energy": {
       "name": "Energy & Resources",
-      "velocity": "constraining",
+      "velocity": "accelerating",
       "confidence": "medium",
       "direction": "tightening",
-      "key_metric": "AI data centers: 4.4% US electricity by 2030",
+      "key_metric": "Data centers: 4%+ of US electricity today",
       "key_data": [
-        "US data center electricity: 4.4% of total by 2030 (up from ~2%)",
-        "Hyperscaler power deals: Microsoft (Three Mile Island restart), Amazon (nuclear), Google (Kairos SMR)",
-        "Solar LCOE: $24-96/MWh (cheapest new electricity in history)",
+        "US data center electricity: 4%+ of total today, projected 6-12% by 2030",
+        "Grid bottleneck: 2,600 GW in interconnection queue, 5+ year wait — THE binding constraint on AI scaling",
+        "Nuclear renaissance: 10GW+ committed for AI (TMI restart, Kairos SMR, Talen)",
+        "Solar LCOE: $0.02-0.03/kWh best locations (all-time low)",
         "Global battery storage: 120 GWh installed (2025), doubling annually",
         "China controls 60-90% of rare earth processing",
-        "Copper structural deficit: $9,500/ton, new mines take 15-20 years"
+        "Copper structural deficit: $9,500/ton, new mines take 15-20 years",
+        "Renewable investment: $1.1T globally — first time exceeding fossil fuel investment"
       ],
       "2031_projection": "Energy becomes THE gatekeeper of AI deployment — winners defined by power access, nuclear restarts, and mineral supply chains"
     }
@@ -115,7 +128,7 @@
   "geographic_profiles": {
     "us": {
       "name": "United States",
-      "emoji": "🇺🇸",
+      "emoji": "\ud83c\uddfa\ud83c\uddf8",
       "transformation_velocity": "fast",
       "key_metrics": {
         "ai_trust": "32%",
@@ -130,12 +143,12 @@
     },
     "china": {
       "name": "China",
-      "emoji": "🇨🇳",
+      "emoji": "\ud83c\udde8\ud83c\uddf3",
       "transformation_velocity": "fast (state-directed)",
       "key_metrics": {
         "ai_trust": "87%",
         "population_trend": "declining (-4.3M total)",
-        "fertility_rate": "1.12",
+        "fertility_rate": "1.0",
         "semi_self_sufficiency": "35%",
         "robot_density": "392 per 10K workers",
         "defense_spending": "$293-450B"
@@ -145,7 +158,7 @@
     },
     "eu": {
       "name": "European Union",
-      "emoji": "🇪🇺",
+      "emoji": "\ud83c\uddea\ud83c\uddfa",
       "transformation_velocity": "moderate (regulation-gated)",
       "key_metrics": {
         "ai_act_status": "High-risk rules Aug 2026",
@@ -160,10 +173,10 @@
     },
     "japan": {
       "name": "Japan",
-      "emoji": "🇯🇵",
+      "emoji": "\ud83c\uddef\ud83c\uddf5",
       "transformation_velocity": "fast (demographic-driven)",
       "key_metrics": {
-        "population_change": "-500K/yr",
+        "population_change": "-900K/yr",
         "robot_density": "397 per 10K (world #1)",
         "births_2025": "record low",
         "working_age_2031": "~68M (from 73.7M)",
@@ -175,7 +188,7 @@
     },
     "india": {
       "name": "India",
-      "emoji": "🇮🇳",
+      "emoji": "\ud83c\uddee\ud83c\uddf3",
       "transformation_velocity": "accelerating (leapfrog potential)",
       "key_metrics": {
         "median_age": "29.8 years",
@@ -190,12 +203,12 @@
     },
     "latam": {
       "name": "Latin America",
-      "emoji": "🌎",
+      "emoji": "\ud83c\udf0e",
       "transformation_velocity": "moderate (nearshoring boost)",
       "key_metrics": {
         "population": "663M",
         "urbanization": "82%",
-        "mexico_fdi": "$34.3B",
+        "mexico_fdi": "$40.9B",
         "ai_market_2033": "$30.2B",
         "brazil_ai_position": "Regional leader",
         "nearshoring_status": "Accelerating"
@@ -205,10 +218,10 @@
     },
     "mena": {
       "name": "Middle East & North Africa",
-      "emoji": "🏜️",
+      "emoji": "\ud83c\udfdc\ufe0f",
       "transformation_velocity": "fast (capital-driven)",
       "key_metrics": {
-        "swf_ai_investment": "$66B deployed",
+        "swf_ai_investment": "$100B+",
         "tech_spending_2026": "$169B",
         "saudi_tech_plan": "$100B (Alat)",
         "mubadala_ai": "$12.9B",
@@ -220,7 +233,7 @@
     },
     "africa": {
       "name": "Africa",
-      "emoji": "🌍",
+      "emoji": "\ud83c\udf0d",
       "transformation_velocity": "nascent (infrastructure-constrained)",
       "key_metrics": {
         "population": "1.5B",
@@ -242,7 +255,7 @@
       "psychological_readiness": 3,
       "fear_friction_gap": 4,
       "resistance_level": "High",
-      "primary_drivers": "Patient trust, opacity, liability, clinical vs admin split",
+      "primary_drivers": "34-point trust gap: providers 7/10 vs patients 3.6/10. Patient trust, opacity, liability, clinical vs admin split",
       "2031_projection": "Admin/back-office AI normalized, clinical AI still contested"
     },
     {
@@ -266,10 +279,10 @@
     {
       "sector": "Financial Services",
       "economic_readiness": 9,
-      "psychological_readiness": 6,
-      "fear_friction_gap": 3,
-      "resistance_level": "Moderate",
-      "primary_drivers": "Regulatory caution, governance gaps, explainability",
+      "psychological_readiness": 7,
+      "fear_friction_gap": 2,
+      "resistance_level": "Low",
+      "primary_drivers": "73% adoption rate — LOWEST fear friction, control group. Regulatory caution, governance gaps, explainability",
       "2031_projection": "Heavy AI back-office, human-in-loop client-facing"
     },
     {
@@ -314,8 +327,8 @@
     {
       "id": "KF-01",
       "title": "Fear Is a Market, Not Just Sentiment",
-      "magnitude": "$40B → $300-500B",
-      "detail": "Fear-driven markets (safety, compliance, governance, ethics, insurance, verification) total ~$40B today growing at 20-45% CAGR. AI Ethics Consulting alone at 45.9% CAGR. By 2031 these could exceed $300-500B. Fear of AI is itself a massive economic force creating entirely new industry categories.",
+      "magnitude": "$86B by 2030",
+      "detail": "Fear-driven markets (safety, compliance, governance, ethics, insurance, verification) total ~$86B by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B). AI Ethics Consulting alone at 45.9% CAGR. Fear of AI is itself a massive economic force creating entirely new industry categories.",
       "confidence": "high"
     },
     {
@@ -329,7 +342,7 @@
       "id": "KF-03",
       "title": "Three Demographic Regimes Diverge",
       "magnitude": "Shapes all sector transformations",
-      "detail": "Shrinking labor force (Japan -500K/yr, China fertility 1.12, EU -1M/yr, US native-born declining) creates automation pull. Peak dividend (India median age 29.8, adding 183M workers) creates skills opportunity. Pre-dividend (Africa 830M youth by 2050) creates future market. Same technology, completely different adoption paths.",
+      "detail": "Shrinking labor force (Japan -900K/yr, China fertility ~1.0, EU -1M/yr, US native-born declining) creates automation pull. Peak dividend (India 1.44B population, median age 28, adding 183M workers) creates skills opportunity. Pre-dividend (Africa 830M youth by 2050) creates future market. Same technology, completely different adoption paths.",
       "confidence": "high"
     },
     {
@@ -349,8 +362,8 @@
     {
       "id": "KF-06",
       "title": "Energy Is the Gatekeeper",
-      "magnitude": "Data centers: 2% → 4.4% of US electricity",
-      "detail": "AI compute demand outpacing energy supply. Hyperscalers restarting nuclear (Three Mile Island), building SMRs, signing dedicated renewable PPAs. Winners defined by power access. Creates new Ricardian rent around power-advantaged locations. Water stress emerging as secondary constraint.",
+      "magnitude": "Data centers: 4%+ of US electricity today",
+      "detail": "AI compute demand outpacing energy supply. Data centers already consuming 4%+ of US electricity, projected 6-12% by 2030. Grid bottleneck: 2,600 GW in interconnection queue with 5+ year wait. Hyperscalers restarting nuclear (Three Mile Island), building SMRs. Nuclear renaissance: 10GW+ committed. Solar at all-time low LCOE ($0.02-0.03/kWh). Winners defined by power access. Creates new Ricardian rent around power-advantaged locations.",
       "confidence": "high"
     },
     {
@@ -366,6 +379,20 @@
       "magnitude": "39% skills obsolete, 59% won't get training",
       "detail": "170M new jobs created but 92M displaced by 2030 (WEF). 39% of current skills will be obsolete. 59% of workers won't receive adequate training. Entry-level workers aged 22-25 already seeing 13% employment decline in AI-exposed occupations. Alternative credentials surging: certificates +28%.",
       "confidence": "high"
+    },
+    {
+      "id": "KF-09",
+      "title": "Financial Services Enters Acceleration Phase",
+      "magnitude": "First sector to cross phase threshold",
+      "detail": "Financial services is the first sector to enter the acceleration phase of AI transformation. 54% of customer interactions already automated, 87% AI fraud detection at 92% interception rate. 73% adoption rate with lowest fear friction of any sector — the control group showing what adoption looks like without psychological barriers. 339 branch closures. CPA pipeline -33%. PE refinancing wall ($936B-$1.8T) creates distressed acquisition catalyst.",
+      "confidence": "high"
+    },
+    {
+      "id": "KF-10",
+      "title": "AI Adoption Plateau at 46%",
+      "magnitude": "Stalled for 12 months despite capability improvements",
+      "detail": "AI adoption has plateaued at 46% for 12 months — an unprecedented S-curve flattening. This is a psychological ceiling, not a technology ceiling. Capability improvements have not translated into adoption increases. The gap between what AI can do and what organizations will adopt is widening. Financial services (73% adoption) proves the technology works; psychology determines the speed. Breaking this plateau requires trust-building, not better models.",
+      "confidence": "medium"
     }
   ],
 
@@ -410,7 +437,7 @@
   ],
 
   "defense_ai": {
-    "global_defense_2026": "$2.6T",
+    "global_defense_2026": "$2.72T",
     "us_dod_ai_autonomy": "$13.4B",
     "us_dod_total": "$1.01T",
     "nato_target": "5% GDP by 2035",
@@ -420,12 +447,47 @@
 
   "perez_cycle": {
     "current_phase": "Late Installation / Early Turning Point",
-    "ai_vc_share": "50% of all global VC",
+    "ai_vc_share": "35-40% of global VC",
     "startup_failure_rate": "85% within 3 years",
     "app_vs_infra": "Applications ($19B) > Infrastructure ($18B)",
     "enterprise_ai_revenue": "$37B (3x YoY)",
     "turning_point_signals": ["Application spend exceeding infrastructure", "High failure rates", "CEO ROI disappointment", "Rhetoric shifting to efficiency"]
   },
+
+  "rating_system": {
+    "version": "v1.0",
+    "total_models_rated": 15,
+    "category_distribution": {
+      "STRUCTURAL_WINNER": 7,
+      "FORCE_RIDER": 1,
+      "GEOGRAPHIC_PLAY": 2,
+      "TIMING_ARBITRAGE": 2,
+      "CAPITAL_MOAT": 1,
+      "FEAR_ECONOMY": 1,
+      "CONDITIONAL": 1,
+      "PARKED": 0
+    },
+    "top_10_by_composite": [
+      {"card_id": "MC-52-001", "name": "AI-Native Accounting Practice Platform", "composite": 83.5, "category": "STRUCTURAL_WINNER", "sector": "Financial Services"},
+      {"card_id": "MC-54-001", "name": "Professional Micro-Firm OS", "composite": 81.5, "category": "STRUCTURAL_WINNER", "sector": "Professional Services"},
+      {"card_id": "MC-62-001", "name": "Physician-Invisible Clinical AI Platform", "composite": 77.75, "category": "STRUCTURAL_WINNER", "sector": "Healthcare"},
+      {"card_id": "MC-56-001", "name": "AI Workforce Orchestration Platform", "composite": 76.25, "category": "STRUCTURAL_WINNER", "sector": "Administrative Services"},
+      {"card_id": "MC-31-001", "name": "Silver Tsunami Manufacturer Acquire-Modernize", "composite": 74.75, "category": "STRUCTURAL_WINNER", "sector": "Manufacturing"},
+      {"card_id": "MC-52-003", "name": "AI Financial Compliance & Governance", "composite": 73.5, "category": "FEAR_ECONOMY", "sector": "Financial Services"},
+      {"card_id": "MC-62-002", "name": "Healthcare Admin AI Automation Suite", "composite": 72.0, "category": "STRUCTURAL_WINNER", "sector": "Healthcare"},
+      {"card_id": "MC-31-002", "name": "Manufacturing AI Integration Services", "composite": 71.5, "category": "STRUCTURAL_WINNER", "sector": "Manufacturing"},
+      {"card_id": "MC-54-002", "name": "AI-Augmented Legal Services for SMBs", "composite": 70.0, "category": "STRUCTURAL_WINNER", "sector": "Professional Services"},
+      {"card_id": "MC-56-002", "name": "Distressed Staffing Firm AI Acquirer", "composite": 69.5, "category": "TIMING_ARBITRAGE", "sector": "Administrative Services"}
+    ]
+  },
+
+  "sector_transformations": [
+    {"naics": "52", "name": "Financial Services", "phase": "acceleration", "employment_2026": 6.7, "employment_2031": 4.8, "change_pct": -28.4, "top_model": "MC-52-001"},
+    {"naics": "54", "name": "Professional Services", "phase": "early_disruption", "employment_2026": 10.2, "employment_2031": 7.8, "change_pct": -23.5, "top_model": "MC-54-001"},
+    {"naics": "31-33", "name": "Manufacturing", "phase": "early_disruption", "employment_2026": 12.5, "employment_2031": 10.8, "change_pct": -13.6, "top_model": "MC-31-001"},
+    {"naics": "62", "name": "Healthcare", "phase": "early_disruption", "employment_2026": 22.0, "employment_2031": 21.0, "change_pct": -4.5, "top_model": "MC-62-001"},
+    {"naics": "56", "name": "Administrative Services", "phase": "acceleration", "employment_2026": 3.57, "employment_2031": 1.8, "change_pct": -49.6, "top_model": "MC-56-001"}
+  ],
 
   "v2_landscape_preserved": {
     "note": "v2 business models preserved as evidence base for sector transformation projections",
@@ -451,6 +513,7 @@
     {"cycle": "v2-7", "type": "expansion", "models_constructed": 387, "note": "NAICS systematic + stress test."},
     {"cycle": "v2-pre8", "type": "expansion", "models_constructed": 522, "note": "4-dimension expansion."},
     {"cycle": "v2-8", "type": "validation", "models_constructed": 522, "note": "Multi-source cross-referencing. 7 data types."},
-    {"cycle": "v3-1", "type": "economy_map", "models_constructed": 522, "note": "PIVOT: Economy mapping. 6 forces, 8 regions, fear friction, demographics, geopolitics."}
+    {"cycle": "v3-1", "type": "economy_map", "models_constructed": 522, "note": "PIVOT: Economy mapping. 6 forces, 8 regions, fear friction, demographics, geopolitics."},
+    {"cycle": "v3-2", "type": "institutional_grade", "models_constructed": 537, "note": "First institutional-grade cycle: 5-axis rating, 15 model cards, 5 sector briefs, 4 geographic reports, 84 signals graded."}
   ]
 }

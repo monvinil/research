@@ -1,0 +1,664 @@
+{
+  "cycle": "v3-2",
+  "date": "2026-02-11",
+  "agent": "Agent A (Scanner)",
+  "mode": "F1 Technology + F4 Capital + F6 Energy signals",
+  "total_signals": 25,
+  "force_updates": {
+    "F1_technology": {
+      "velocity": "accelerating",
+      "velocity_change": "steepening — inference cost curve, agent capability, and robotics funding all exceeding prior projections",
+      "key_metrics_updated": {
+        "inference_cost": "$0.40/M tokens GPT-4 equivalent, 50x/yr decline. Sub-$0.10 by mid-2026 at current trajectory.",
+        "hyperscaler_capex": "$600-700B in 2026 (Microsoft $80B, Google $75B, Amazon $100B, Meta $60-65B). 2x the 2024 total.",
+        "frontier_training": "GPT-5 $500M+ training run. Cost ceiling rising even as inference floor drops.",
+        "open_source_gap": "DeepSeek R1 trained for ~$6M claimed o1 parity. Open-source reaching frontier within 6-12 months.",
+        "ai_coding": "25-40% of new Google code AI-generated. GitHub Copilot 41% acceptance. Software labor cost curve bending.",
+        "cobots": "73K shipped 2025 (+31% YoY), 55% factory adoption rate. $2.26B Q1 2026 funding.",
+        "ai_agents": "2026 designated 'year of the agent'. Autonomous multi-step task completion reaching production.",
+        "manufacturing_gap": "94% utilizing AI, only 20% production-ready = 74-point implementation gap.",
+        "ai_pcs": "114M units 2025 (+88% YoY), 60% of PCs by 2027. Edge inference becoming ubiquitous.",
+        "healthcare_ai_fda": "1,000+ FDA-cleared AI/ML devices, 80% radiology. Regulatory pathway proven."
+      },
+      "confidence": "high"
+    },
+    "F4_capital": {
+      "velocity": "shifting",
+      "velocity_change": "rotation confirmed and deepening — physical/industrial capital allocation accelerating, financial stress indicators rising",
+      "key_metrics_updated": {
+        "fed_funds": "3.50-3.75% (Jan 2026), 4 cuts completed in 2025. Rate normalization underway.",
+        "vc_ai_share": "AI captures 35-40% of ~$500B global VC. Concentration unprecedented.",
+        "pe_refinancing_wall": "$936B-$1.8T leveraged loans/HY bonds maturing 2026-2028. Distress catalyst approaching.",
+        "business_loan_delinquency": "1.78% and rising from 1.19% in 2022. Slow-burn stress indicator.",
+        "cre_vacancy": "Office vacancy 20.1% (record), $929B CRE debt maturing 2024-2026.",
+        "business_applications": "532K/month sustained. Coasean shrinkage = smaller optimal firm size.",
+        "staffing_canary": "RHI -53%, MAN -44%, KELYA -25%. Strongest real-time labor market signal.",
+        "sp500_concentration": "Magnificent 7 = 33% of S&P 500. Forward P/E 22.3x vs 18.7x 10yr avg.",
+        "swf_activity": "SoftBank Vision $100B+, Saudi PIF Humain $77B, Mubadala most active SWF."
+      },
+      "confidence": "high"
+    },
+    "F6_energy": {
+      "velocity": "accelerating",
+      "velocity_change": "upgraded from unknown to accelerating — AI energy demand creating structural supply-demand imbalance with 5-year resolution timeline",
+      "key_metrics_updated": {
+        "data_center_grid_share": "4%+ of US electricity (2026), projected 6-12% by 2030.",
+        "nuclear_renaissance": "10GW+ new nuclear committed for AI. Microsoft Three Mile Island restart, Google Kairos SMR, Amazon Talen nuclear.",
+        "solar_lcoe": "$0.02-0.03/kWh best locations. All-time low.",
+        "grid_bottleneck": "5+ year interconnection queues, 2,600 GW waiting. THE binding constraint on AI scaling.",
+        "critical_minerals": "Lithium prices crashed 80% from 2022 peak. Supply surplus through 2027.",
+        "battery_costs": "$115/kWh (2024), projected $80/kWh by 2027.",
+        "water_stress": "Data centers consuming 1.7B gallons/day for cooling globally.",
+        "renewable_investment": "$1.1T globally in 2025. First time exceeding fossil fuel investment."
+      },
+      "confidence": "high"
+    }
+  },
+  "signals": [
+    {
+      "signal_id": "A-2026-02-11-V3C2-001",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "force_velocity",
+      "structural_force": "AI inference cost collapse creating near-zero marginal cost for cognitive labor across all sectors",
+      "headline": "GPT-4 equivalent inference at $0.40/M tokens with 50x annual decline rate — approaching utility pricing",
+      "detail": "AI inference costs are declining at 50x per year, a rate 10x faster than Moore's Law. GPT-4 equivalent capability now costs $0.40/M tokens, meaning a full accounting client's monthly AI processing costs approximately $0.05. At this trajectory, inference costs reach sub-$0.10/M tokens by mid-2026, making AI economically viable for nearly every routine cognitive task in the economy. This is the single most powerful structural force in the current transformation — it turns every Baumol cost disease sector into a Baumol cure candidate simultaneously.",
+      "geographic_scope": ["Global"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "GPT-4 equivalent at $0.40/M tokens",
+        "50x/yr decline rate",
+        "Hyperscaler capex $600-700B in 2026 ensuring supply overshoot",
+        "$0.05/month inference per accounting client at current pricing"
+      ],
+      "theoretical_lens": "T6 Jevons Paradox — 50x cost reduction will not reduce total AI spending but massively expand the addressable task universe. Every 10x cost drop unlocks a new tier of applications that were previously uneconomical, expanding total cognitive labor TAM 3-5x.",
+      "confidence": "high",
+      "evidence_refs": ["hyperscaler pricing APIs", "v2-3 unit economics modeling", "Goldman AI capex research"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-002",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "technology_milestone",
+      "structural_force": "Hyperscaler capex arms race creating massive AI infrastructure overshoot that guarantees continued cost collapse",
+      "headline": "$600-700B hyperscaler AI capex in 2026 — 2x 2024 levels — ensures supply-side cost pressure for 3+ years",
+      "detail": "Microsoft ($80B), Google ($75B), Amazon ($100B), and Meta ($60-65B) are investing $600-700B in AI infrastructure in 2026 alone, roughly 2x the 2024 total. This capex arms race creates a structural supply overshoot: even if demand grows rapidly, the infrastructure being built will push inference costs down through utilization pressure. Simultaneously, frontier model training costs are rising (GPT-5 $500M+, Gemini 2 $191M), creating a widening gap between the cost to BUILD frontier models and the cost to RUN them — concentrating frontier training among 3-5 players while democratizing inference access.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "Microsoft $80B AI capex 2026",
+        "Google $75B AI capex 2026",
+        "Amazon $100B AI capex 2026",
+        "Meta $60-65B AI capex 2026",
+        "GPT-5 training cost $500M+",
+        "Gemini 2 training cost $191M",
+        "Total 2026 hyperscaler capex ~$600-700B"
+      ],
+      "theoretical_lens": "T5 Perez Installation Phase — Classic installation period overshoot. Hyperscalers are building far more capacity than current demand justifies, following the historical pattern of canals, railways, and telecom. The overshoot GUARANTEES cheap infrastructure for the deployment phase, which benefits application-layer builders.",
+      "confidence": "high",
+      "evidence_refs": ["Microsoft FY2026 capex guidance", "Google Q4 2025 earnings", "Amazon 2026 investor letter", "Meta Q4 2025 earnings"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-003",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "firm_structure_shift",
+      "structural_force": "Open-source AI closing the frontier gap — DeepSeek R1 at $6M training cost claims o1 parity, collapsing proprietary moats",
+      "headline": "DeepSeek R1 trained for ~$6M claims OpenAI o1 parity — open-source frontier gap narrowing to 6-12 months",
+      "detail": "DeepSeek R1, trained for approximately $6M (vs hundreds of millions for proprietary frontier models), claims performance parity with OpenAI's o1 reasoning model. This collapses the assumption that frontier AI requires billion-dollar budgets. The structural implication: any business model predicated on exclusive access to frontier AI capability has a 6-12 month window before open-source alternatives emerge. This ACCELERATES Coasean shrinkage because small firms can access near-frontier capability without enterprise contracts, and it ACCELERATES the Baumol cure because cost barriers to AI adoption in professional services effectively disappear.",
+      "geographic_scope": ["Global", "China", "US"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "DeepSeek R1 training cost ~$6M",
+        "Claimed o1 performance parity",
+        "Nvidia lost $500B+ market cap on DeepSeek announcement",
+        "Open-source models now within 6-12 months of frontier"
+      ],
+      "theoretical_lens": "T10 Coase/Williamson — Open-source AI is the ultimate transaction cost reducer. When frontier capability costs $6M instead of $500M, the minimum efficient scale for AI-native firms drops dramatically. This accelerates the shift toward smaller, AI-native firms and away from large enterprises that justified their size through proprietary technology access.",
+      "confidence": "high",
+      "evidence_refs": ["DeepSeek R1 technical report", "benchmark comparisons o1 vs R1", "Nvidia market cap impact analysis"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-004",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "sector_transformation",
+      "structural_force": "AI code generation reaching critical mass — 25-40% of production code at major firms, restructuring software labor economics",
+      "headline": "25-40% of new code at Google is AI-generated, GitHub Copilot at 41% acceptance rate — software labor cost curve bending",
+      "detail": "AI code generation has crossed from experimental to production: 25-40% of new code at Google is AI-generated, and GitHub Copilot achieves 41% code acceptance rates. This is not a tool improvement — it is a structural shift in software labor economics. A 30-40% productivity increase means that the same output requires 60-70% of the labor hours, compressing software development costs by $200B+ globally. For sectors dependent on custom software (fintech, healthtech, logistics), this removes one of the primary cost barriers. For the software industry itself (NAICS 5112, 5415), this triggers a Baumol cure where 4%/yr wage growth above CPI becomes unsustainable as AI-augmented developers produce 2-3x the output.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "25-40% of new Google code is AI-generated",
+        "GitHub Copilot 41% code acceptance rate",
+        "2026 designated 'year of the agent' — autonomous multi-step coding",
+        "US software developer median salary $130K+, $500B+ global software labor market"
+      ],
+      "theoretical_lens": "T3 Baumol Cure — Software development has been a textbook Baumol cost disease sector: wages rising above CPI year after year because productivity couldn't keep pace with manufacturing. AI code generation is the cure, enabling 2-3x productivity improvement. The stored energy of above-CPI wage growth is now being released as cost compression.",
+      "confidence": "high",
+      "evidence_refs": ["Google internal AI code metrics (CEO earnings call)", "GitHub Copilot usage statistics", "Stack Overflow Developer Survey 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-005",
+      "force_category": "F1_technology",
+      "source_category": "8",
+      "signal_type": "sector_transformation",
+      "structural_force": "Robotics x AI compound effect validated — 73K cobots shipped with 31% YoY growth + $2.26B Q1 2026 funding creates manufacturing COGS compression wave",
+      "headline": "73K cobots shipped in 2025 (+31% YoY), 55% factory adoption, $2.26B Q1 2026 robotics funding — physical production cost curve bending",
+      "detail": "The robotics x AI compound effect (P-006) is accelerating beyond prior projections. 73K cobots shipped in 2025 represents 31% YoY growth, with 55% of factories now adopting some form of collaborative robotics. The $2.26B in Q1 2026 robotics funding alone approaches the full-year 2024 total. Combined with AI vision and control systems, cobots at $25-60K with 6-18 month ROI are creating a COGS compression wave across manufacturing. The 94% utilization vs 20% production-ready gap (74 points) represents a massive implementation opportunity — manufacturers WANT this technology but lack the integration capability.",
+      "geographic_scope": ["US", "Global", "Japan", "China"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "73K cobots shipped 2025 (+31% YoY)",
+        "55% factory adoption rate",
+        "$2.26B robotics funding Q1 2026",
+        "94% manufacturers utilizing AI, only 20% production-ready",
+        "74-point implementation gap",
+        "Cobot price range $25-60K, ROI 6-18 months"
+      ],
+      "theoretical_lens": "T1 Schumpeterian Creative Destruction — The 74-point gap between AI utilization (94%) and production readiness (20%) is the Schumpeterian gap period. Manufacturers that bridge this gap first gain 15-30% COGS advantages over competitors who cannot. This creates a window for integrators and acquirers who can operationalize the technology.",
+      "confidence": "high",
+      "evidence_refs": ["IFR World Robotics 2025 report", "cobot vendor pricing data", "Deloitte manufacturing AI survey 2026", "PitchBook robotics funding Q1 2026"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-006",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "technology_milestone",
+      "structural_force": "AI agents reaching production capability — autonomous multi-step task completion creating new firm structures",
+      "headline": "2026 as 'year of the agent' — autonomous AI completing multi-step workflows, enabling 1-3 person firms to operate at 50+ person scale",
+      "detail": "AI agents capable of autonomous multi-step task completion are moving from research to production in 2026. This is qualitatively different from copilot-style tools: agents can research, draft, execute, verify, and iterate without human intervention at each step. The structural implication is a further compression of optimal firm size. A 1-3 person firm with AI agents can now execute workflows (customer research, proposal generation, contract drafting, financial modeling, compliance checking) that previously required teams of 10-50. This deepens the Coasean shrinkage pattern (P-010, 532K new business applications/month) and threatens the staffing industry (P-027) even more directly than copilot tools.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "2026 designated 'year of the agent' by major AI labs",
+        "Multimodal agents: GPT-4o, Gemini 2, Claude 3.5 combining vision+audio+code",
+        "532K new business applications/month (Coasean shrinkage confirmation)",
+        "Staffing canary: RHI -53%, MAN -44%, KELYA -25%"
+      ],
+      "theoretical_lens": "T10 Coase/Williamson — AI agents are the most powerful transaction cost reducer since the internet. They eliminate the need for internal employees to execute multi-step cognitive workflows, further shrinking the optimal firm size. The 532K/month business application rate is the leading indicator: entrepreneurs are starting firms that would have been unviable without AI agent capability.",
+      "confidence": "medium",
+      "evidence_refs": ["OpenAI agent product announcements", "Anthropic Claude agent capabilities", "Google Gemini 2 agent features", "Census Bureau business applications data"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-007",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "sector_transformation",
+      "structural_force": "Edge AI creating ubiquitous on-device inference — 114M AI PCs shipped in 2025 (+88% YoY), 60% penetration by 2027",
+      "headline": "114M AI PCs shipped in 2025 (+88% YoY), Apple Intelligence on-device, Qualcomm NPU — edge inference becoming default compute paradigm",
+      "detail": "The shift to on-device AI inference is accelerating faster than cloud AI adoption did. 114M AI PCs shipped in 2025 (+88% YoY) with 60% PC penetration projected by 2027. Apple Intelligence runs on-device, Qualcomm Snapdragon X Elite NPUs enable local model execution. The structural implication: AI capabilities that required cloud connectivity and API costs become embedded in the device layer, further compressing the marginal cost of AI usage toward zero. This enables AI adoption in environments with connectivity constraints, data sensitivity requirements, or latency demands — expanding the addressable universe to manufacturing floors, field service, rural healthcare, and offline professional work.",
+      "geographic_scope": ["Global"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "114M AI PCs shipped 2025 (+88% YoY)",
+        "60% of PCs projected AI-capable by 2027",
+        "Apple Intelligence on-device inference",
+        "Qualcomm Snapdragon X Elite NPU"
+      ],
+      "theoretical_lens": "T6 Jevons Paradox — Edge AI does not reduce cloud AI demand; it expands the total AI usage universe. On-device inference enables AI in contexts where cloud latency/connectivity/privacy prevented adoption. The total compute consumed for AI tasks will increase even as per-task costs approach zero.",
+      "confidence": "high",
+      "evidence_refs": ["Canalys AI PC shipment data 2025", "Apple Intelligence technical documentation", "Qualcomm Snapdragon X Elite specifications"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-008",
+      "force_category": "F1_technology",
+      "source_category": "8",
+      "signal_type": "sector_transformation",
+      "structural_force": "Healthcare AI reaching regulatory critical mass — 1,000+ FDA clearances creating proven pathway that eliminates regulatory uncertainty as adoption barrier",
+      "headline": "FDA cleared 1,000+ AI/ML medical devices (80% radiology) — regulatory pathway proven, shifting constraint from 'can we?' to 'how fast?'",
+      "detail": "The FDA has now cleared over 1,000 AI/ML-enabled medical devices, with 80% in radiology. This represents a structural shift: the regulatory pathway for healthcare AI is no longer uncertain. The constraint has moved from regulatory approval (which is solved) to implementation and trust. Combined with the provider-side AI arms race (P-012) triggered by CMS WISeR, and 61% of physicians reporting AI increases claim denials, the healthcare AI sector is entering a phase where adoption is driven by competitive necessity rather than optional efficiency. The 74-point gap in manufacturing (94% utilizing, 20% production-ready) has a parallel in healthcare where regulatory clearance far outpaces clinical deployment.",
+      "geographic_scope": ["US"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "1,000+ FDA-cleared AI/ML devices",
+        "80% of clearances in radiology",
+        "AMA: 61% of physicians say AI increases claim denials",
+        "CMS WISeR model selected 6 vendors",
+        "Provider-side AI demand growing as defensive response to payer AI"
+      ],
+      "theoretical_lens": "T3 Baumol Cure — Healthcare admin costs have grown at 2-3x CPI for decades, accumulating massive stored disruption energy. FDA clearance of 1,000+ devices proves the regulatory pathway works. The Baumol cure in healthcare will release stored energy across the $200B+ administrative cost base, but the pathway is provider-side defense against payer-side AI, not direct-to-consumer.",
+      "confidence": "high",
+      "evidence_refs": ["FDA AI/ML-enabled medical device database", "AMA physician AI survey 2025", "CMS WISeR vendor selection announcement"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-009",
+      "force_category": "F1_technology",
+      "source_category": "3",
+      "signal_type": "force_velocity",
+      "structural_force": "Manufacturing AI implementation gap (94% utilizing, 20% production-ready) creating $500B+ services and integration opportunity",
+      "headline": "94% of manufacturers utilizing AI but only 20% production-ready — 74-point implementation gap is the defining structural bottleneck in physical-economy AI",
+      "detail": "The gap between AI awareness/experimentation (94%) and production deployment (20%) in manufacturing represents the single largest implementation bottleneck in the AI economy. This 74-point gap is structural, not temporary: manufacturers lack the integration skills, data infrastructure, and operational process redesign capability to move from pilot to production. This gap creates a massive services opportunity for integrators, and it explains why the robotics x AI compound effect (P-006) has not yet produced the COGS compression wave that the technology alone would suggest. The firms that close this gap for manufacturers — through acquisition, consulting, or managed services — capture the value of the compound effect.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "94% of manufacturers utilizing AI in some form",
+        "20% production-ready",
+        "74-point implementation gap",
+        "73K cobots shipped but most in large enterprises, not SMEs",
+        "SME manufacturing = 250K+ establishments with <500 employees"
+      ],
+      "theoretical_lens": "T21 Polanyi Paradox — Manufacturing AI implementation requires tacit knowledge that cannot be easily codified: understanding specific production processes, material handling quirks, quality control nuances. The 74-point gap exists because AI deployment in manufacturing requires combining explicit AI capability with tacit production knowledge. This is why integrator/acquirer models (buy the factory + add the AI) outperform pure-SaaS approaches.",
+      "confidence": "high",
+      "evidence_refs": ["Deloitte manufacturing AI survey 2026", "NAM/IndustryWeek survey 2025", "IFR cobot deployment statistics"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-010",
+      "force_category": "F4_capital",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "structural_force": "Fed rate normalization (3.50-3.75%) creating differential cost-of-capital advantages for AI-native firms vs leveraged incumbents",
+      "headline": "Fed funds at 3.50-3.75% after 4 cuts in 2025 — rate regime favors capital-light AI-native firms over debt-laden PE roll-ups",
+      "detail": "The Fed has cut rates to 3.50-3.75% through 4 reductions in 2025, but this is still 350bps above the 2020-2021 zero-rate regime that fueled PE roll-up strategies. The structural implication: firms built during zero-rate conditions with debt/EBITDA >4x face structural disadvantage against AI-native competitors that require minimal capital. A 2-person AI-native accounting firm with $0.05/month inference cost per client has a fundamentally different cost-of-capital structure than a PE-backed accounting roll-up with $50M in debt at 8%+ rates. The rate normalization ACCELERATES the Schumpeterian replacement of leveraged incumbents by capital-light challengers.",
+      "geographic_scope": ["US"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "Fed funds 3.50-3.75% (Jan 2026)",
+        "4 rate cuts completed in 2025",
+        "PE roll-ups typically 4-6x debt/EBITDA",
+        "AI-native firms need minimal debt capital",
+        "Business loan delinquency 1.78% rising from 1.19% (2022)"
+      ],
+      "theoretical_lens": "T4 Minsky Moment — PE-backed firms that loaded leverage during the zero-rate era are in a Minsky position: their debt was justified by pre-AI revenue assumptions, and both higher rates AND AI-native competition erode the fundamentals simultaneously. The refinancing wall ($936B-$1.8T maturing 2026-2028) is the catalyst that forces resolution.",
+      "confidence": "high",
+      "evidence_refs": ["Federal Reserve FOMC statements 2025-2026", "PE distress rate tracking", "SBA lending rate data"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-011",
+      "force_category": "F4_capital",
+      "source_category": "4",
+      "signal_type": "capital_flow",
+      "structural_force": "VC capital concentrating into AI at unprecedented levels — 35-40% of $500B global VC, creating both opportunity and bubble risk",
+      "headline": "AI captures 35-40% of ~$500B global VC investment — concentration exceeds dot-com peak proportionally",
+      "detail": "AI now captures 35-40% of approximately $500B in global VC investment, a concentration level that proportionally exceeds the dot-com era's telecom/internet allocation. This creates a structural dynamic with two simultaneous effects: (1) massive capital availability for AI-native businesses across all sectors, reducing the capital constraint for entrepreneurs, and (2) bubble dynamics in AI tool/infrastructure layer where capital exceeds viable deployment opportunities. The Perez framework predicts this: installation-phase overinvestment creates the infrastructure overshoot that enables deployment-phase value creation. The structural play is deployment-layer businesses (using AI infrastructure others built) rather than infrastructure-layer businesses (competing for VC to build more infrastructure).",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "~$500B global VC investment annually",
+        "AI captures 35-40% of total",
+        "PE deal volume $2.1T in 2025, improving from 2023-2024",
+        "S&P 500 forward P/E 22.3x vs 10yr avg 18.7x",
+        "Magnificent 7 = 33% of S&P 500 market cap"
+      ],
+      "theoretical_lens": "T5 Perez Installation-to-Deployment — We are in the late installation phase where capital pours into infrastructure. The concentration of 35-40% of VC into AI mirrors railway mania, telecom boom, and early internet. History shows: installation overinvestment creates cheap infrastructure for deployment-phase builders. The optimal position is deployment layer, not infrastructure layer.",
+      "confidence": "high",
+      "evidence_refs": ["PitchBook Global VC Report 2025", "CB Insights AI funding tracker", "Perez 'Technological Revolutions and Financial Capital'"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-012",
+      "force_category": "F4_capital",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "structural_force": "PE refinancing wall ($936B-$1.8T maturing 2026-2028) approaching — distress catalyst for Schumpeterian replacement wave",
+      "headline": "$936B-$1.8T in leveraged loans and high-yield bonds maturing 2026-2028 — PE portfolio companies face simultaneous refinancing pressure and AI disruption",
+      "detail": "The PE refinancing wall represents $936B to $1.8T in leveraged loans and high-yield bonds maturing between 2026 and 2028. PE portfolio companies must refinance at rates 200-400bps higher than their original terms while simultaneously facing AI-driven revenue pressure in sectors like staffing, accounting, legal services, and insurance. This is a Minsky moment for leveraged services businesses: the debt was underwritten on pre-AI revenue assumptions, and both higher rates and AI competition compress the debt-service coverage ratio. The result is forced sales, restructurings, and bankruptcies that create acquisition opportunities at distressed valuations for AI-native competitors. PE distress rate already at 11.98% (+148% from baseline).",
+      "geographic_scope": ["US"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "$936B-$1.8T in leveraged loans/HY bonds maturing 2026-2028",
+        "Business loan delinquency 1.78% rising from 1.19%",
+        "PE distress rate 11.98% (+148% from baseline)",
+        "Staffing stocks RHI -53%, MAN -44%, KELYA -25%",
+        "Rate regime 350bps above zero-rate era"
+      ],
+      "theoretical_lens": "T4 Minsky Moment — The refinancing wall is the Minsky catalyst. Ponzi/speculative units (PE roll-ups with debt/EBITDA >4x and declining revenue) cannot refinance. The forced liquidation creates a buyer's market for AI-native acquirers who can purchase revenue streams at distressed multiples and restructure them with AI. This is NOT a risk signal — it is the mechanism through which Schumpeterian replacement occurs.",
+      "confidence": "high",
+      "evidence_refs": ["Moody's leveraged finance maturity wall report", "S&P LCD default rate tracker", "PE distress analysis reports"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-013",
+      "force_category": "F4_capital",
+      "source_category": "1",
+      "signal_type": "sector_transformation",
+      "structural_force": "Commercial real estate structural vacancy (20.1% office) creating second-order cascade from remote work + AI headcount reduction",
+      "headline": "Office vacancy at record 20.1%, $929B CRE debt maturing 2024-2026 — second-order cascade from AI-driven headcount reduction amplifying remote work shift",
+      "detail": "Office vacancy has hit a record 20.1% with $929B in CRE debt maturing 2024-2026. This is a second-order cascade: the primary force (AI reducing routine-cognitive headcount in financial services, professional services, staffing) reduces office space demand, which compounds the remote/hybrid work shift. The CRE debt maturity wall mirrors the PE refinancing wall — properties financed at pre-COVID occupancy assumptions must refinance at current vacancy rates, triggering distressed sales and writedowns. The cascade flows: AI headcount reduction -> office vacancy -> CRE debt distress -> bank exposure -> regional bank stress -> credit tightening for small businesses. This second-order chain creates both risk (credit tightening) and opportunity (adaptive reuse, CRE acquisition at distressed prices).",
+      "geographic_scope": ["US"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "Office vacancy 20.1% (record)",
+        "$929B CRE debt maturing 2024-2026",
+        "AI-driven headcount reduction in financial services (accounting employment -49K YoY)",
+        "Remote/hybrid work now structural (50%+ of knowledge workers)",
+        "Regional banks hold ~70% of CRE loans"
+      ],
+      "theoretical_lens": "T1 Schumpeterian Creative Destruction — This is the second-order cascade chain. The primary Schumpeterian destruction (AI replacing routine cognitive labor) triggers a secondary destruction in commercial real estate. The cascade from cognitive labor -> office space -> CRE finance -> banking is a classic Schumpeterian chain reaction where the destruction of one sector creates the conditions for creative destruction in adjacent sectors.",
+      "confidence": "high",
+      "evidence_refs": ["CBRE office vacancy data Q4 2025", "Trepp CRE debt maturity tracker", "Federal Reserve Financial Stability Report"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-014",
+      "force_category": "F4_capital",
+      "source_category": "2",
+      "signal_type": "firm_structure_shift",
+      "structural_force": "Coasean shrinkage confirmed at 532K new business applications/month — optimal firm size decreasing across the economy",
+      "headline": "532K new business applications per month sustained — Coasean shrinkage creates structural shift toward micro-firms across all cognitive-labor sectors",
+      "detail": "The sustained rate of 532K new business applications per month is the strongest real-time indicator of Coasean shrinkage: AI reduces the transaction costs that justified large firms, making smaller firms structurally optimal. This is not a business cycle phenomenon (applications remained elevated through rate hikes) — it is a structural shift in the cost of coordination. AI agents, inference at near-zero marginal cost, and open-source models mean a 1-3 person firm can now execute operations that previously required 50+ employees. The staffing canary (RHI -53%, MAN -44%, KELYA -25%) confirms this from the demand side: large firms are not replacing departing routine-cognitive workers because AI handles the work, and the workers are starting their own micro-firms.",
+      "geographic_scope": ["US"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "532K new business applications per month",
+        "Sustained through 2022-2026 rate cycle",
+        "Staffing stocks RHI -53%, MAN -44%, KELYA -25%",
+        "AI inference at $0.40/M tokens enabling micro-firm operations",
+        "DeepSeek R1 at $6M training = open-source frontier access for all firm sizes"
+      ],
+      "theoretical_lens": "T10 Coase/Williamson — Coase's theory of the firm predicts that firms exist because internal coordination is cheaper than market transactions. AI dramatically reduces the cost of market transactions (finding, contracting, monitoring), making the optimal firm size smaller. The 532K/month application rate is the empirical confirmation of this theoretical prediction.",
+      "confidence": "high",
+      "evidence_refs": ["Census Bureau Business Applications data", "staffing industry stock performance", "Coase 'The Nature of the Firm' (1937)"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-015",
+      "force_category": "F4_capital",
+      "source_category": "4",
+      "signal_type": "capital_flow",
+      "structural_force": "Sovereign wealth funds pivoting to AI infrastructure — SoftBank $100B+, Saudi PIF Humain $77B, UAE MGX $25B — non-market capital creating artificial cost advantages",
+      "headline": "SWFs committing $200B+ to AI infrastructure — SoftBank Vision $100B+, Saudi Humain $77B, UAE MGX $25B — sovereign capital reshaping competitive dynamics",
+      "detail": "Sovereign wealth funds are committing unprecedented capital to AI infrastructure: SoftBank's Vision Fund $100B+, Saudi PIF's Humain with $77B in planned data center investment, and UAE's MGX exploring $25B in third-party capital for AI infrastructure plus anchoring the $500B Stargate Project. This sovereign capital operates with different return requirements than private capital — SWFs accept lower returns for strategic positioning, economic diversification, and geopolitical influence. The structural implication: AI infrastructure in the Gulf, Japan, and select partners will be built with below-market cost of capital, creating artificial cost advantages for businesses that locate compute in these jurisdictions. This is Dutch Disease in reverse — oil wealth creating AI compute abundance.",
+      "geographic_scope": ["Global", "MENA", "Japan", "US"],
+      "time_horizon": "2029",
+      "raw_data_points": [
+        "SoftBank Vision Fund $100B+",
+        "Saudi PIF Humain $77B planned data center investment",
+        "UAE MGX $25B third-party capital",
+        "UAE $500B Stargate Project equity funding",
+        "26 sq km AI campus Abu Dhabi (5GW capacity)",
+        "Mubadala most active SWF globally"
+      ],
+      "theoretical_lens": "T11 Dutch Disease (Inverse) — Oil-wealthy nations are converting resource wealth into AI compute infrastructure at below-market capital costs. This creates a geographic arbitrage: compute-intensive AI applications may be cheaper to run on Gulf-financed infrastructure than on commercially-financed US infrastructure. The strategic implication is a new geography of AI compute that doesn't follow market-efficiency logic.",
+      "confidence": "medium",
+      "evidence_refs": ["SoftBank investor presentations", "Saudi Humain launch announcement", "MGX capital raising reports", "Stargate Project announcement"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-016",
+      "force_category": "F4_capital",
+      "source_category": "2",
+      "signal_type": "force_velocity",
+      "structural_force": "Staffing industry in active Schumpeterian destruction — stock crashes (-25% to -53%) confirming real-time labor market restructuring",
+      "headline": "RHI -53%, MAN -44%, KELYA -25% — staffing industry stocks signal the fastest sector transformation, preceding broader labor market restructuring",
+      "detail": "The staffing industry stock collapses (Robert Half -53%, ManpowerGroup -44%, Kelly Services -25%) remain the strongest real-time market signal of AI-driven labor market restructuring. These are not cyclical downturns — they represent market pricing of structural demand destruction. The staffing industry (NAICS 5613, 3.57M employees, $192.7B wages) is the canary: it intermediates exactly the routine-cognitive labor that AI replaces. As enterprises adopt AI for tasks previously contracted through staffing firms, the intermediation layer itself becomes redundant. This precedes and predicts similar structural declines in adjacent sectors (accounting, basic legal, insurance processing, healthcare admin) where routine cognitive labor is similarly intermediated.",
+      "geographic_scope": ["US"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "RHI -53% (Robert Half International)",
+        "MAN -44% (ManpowerGroup)",
+        "KELYA -25% (Kelly Services)",
+        "NAICS 5613: 3.57M employees, $192.7B wages",
+        "Accounting employment -49K YoY",
+        "Administrative services transformation phase: acceleration"
+      ],
+      "theoretical_lens": "T1 Schumpeterian Creative Destruction — The staffing industry is the first complete Schumpeterian cascade visible in real-time. Stock price collapses precede revenue collapses which precede employment collapses. This sequence (price -> revenue -> employment) is the Schumpeterian prediction: financial markets anticipate destruction before it fully manifests in the real economy.",
+      "confidence": "high",
+      "evidence_refs": ["RHI, MAN, KELYA stock price data", "BLS NAICS 5613 employment data", "v2-8 staffing canary analysis"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-017",
+      "force_category": "F4_capital",
+      "source_category": "4",
+      "signal_type": "capital_flow",
+      "structural_force": "IPO market recovering with AI companies going public — $15B+ in 2025 creates liquidity pathway and valuation benchmarks for AI-native businesses",
+      "headline": "IPO market recovering, AI companies raised $15B+ in 2025 public offerings — exit pathway reopening for deployment-layer AI companies",
+      "detail": "The IPO market is recovering after the 2022-2024 freeze, with AI companies raising $15B+ through public offerings in 2025. This creates three structural effects: (1) liquidity pathway for early-stage AI investors, encouraging continued VC investment, (2) public market valuation benchmarks that validate AI-native business model economics, and (3) acquisition currency for public AI companies to consolidate smaller players. Combined with the Perez framework position (late Installation / early Turning Point), the IPO recovery signals the market's willingness to value deployment-layer AI businesses separately from infrastructure-layer speculation. SPAC activity also recovering, providing alternative public paths.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "AI IPOs raised $15B+ in 2025",
+        "IPO market recovering from 2022-2024 freeze",
+        "SPAC activity resuming",
+        "S&P 500 forward P/E 22.3x",
+        "Perez cycle: late Installation / early Turning Point"
+      ],
+      "theoretical_lens": "T5 Perez Turning Point — The IPO recovery in AI companies is a classic Turning Point indicator: financial capital that flowed to infrastructure during Installation begins flowing to deployment-layer businesses. Public markets validating AI-native business models creates the signaling mechanism that redirects capital from infrastructure building to application deployment.",
+      "confidence": "medium",
+      "evidence_refs": ["Renaissance Capital IPO tracker", "S&P Capital IQ AI IPO analysis", "SPAC Research database"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-018",
+      "force_category": "F6_energy",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "structural_force": "AI data center electricity demand reaching structural grid constraint — 4%+ of US electricity with 6-12% projected by 2030",
+      "headline": "Data centers consuming 4%+ of US electricity (2026), projected 6-12% by 2030 — AI compute demand approaching grid infrastructure limits",
+      "detail": "Data centers now consume more than 4% of US electricity generation, projected to reach 6-12% by 2030. This is the most consequential supply-side constraint on AI transformation: the rate at which AI can be deployed is bounded by electricity generation and grid capacity, not by AI capability or demand. The 2,600 GW sitting in interconnection queues with 5+ year wait times means that even with unlimited capital, new generation capacity cannot be connected fast enough to meet demand growth. This creates a structural scarcity premium for located compute — data centers with secured power agreements command pricing power, and regions with available grid capacity gain competitive advantage for AI-intensive industries.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2030",
+      "raw_data_points": [
+        "Data centers consuming 4%+ of US electricity (2026)",
+        "Projected 6-12% of US electricity by 2030",
+        "2,600 GW of generation + storage waiting in interconnection queues",
+        "5+ year average interconnection wait time",
+        "Hyperscaler capex $600-700B in 2026 includes massive data center buildout"
+      ],
+      "theoretical_lens": "T6 Jevons Paradox (Supply Constraint) — AI efficiency improvements do not reduce total energy demand; they expand the universe of AI applications, each consuming more total energy. The Jevons paradox applied to AI compute means that every improvement in inference efficiency leads to MORE total electricity consumption, not less. The grid becomes the binding constraint on AI transformation velocity.",
+      "confidence": "high",
+      "evidence_refs": ["EIA electricity generation data", "FERC interconnection queue database", "IEA data center energy report 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-019",
+      "force_category": "F6_energy",
+      "source_category": "4",
+      "signal_type": "capital_flow",
+      "structural_force": "Nuclear renaissance driven by AI demand — 10GW+ committed, hyperscaler PPAs restarting decommissioned plants and funding SMR development",
+      "headline": "10GW+ new nuclear committed for AI — Microsoft restarts Three Mile Island, Google funds Kairos SMR, Amazon partners with Talen — nuclear as AI's baseload solution",
+      "detail": "The nuclear renaissance is being driven entirely by AI data center demand. Microsoft's restart of Three Mile Island, Google's investment in Kairos small modular reactors, and Amazon's partnership with Talen Nuclear represent 10GW+ of committed new nuclear capacity specifically for AI compute. This is structurally significant because nuclear provides the 24/7 baseload power that data centers require — solar and wind alone cannot provide this without massive storage. The first SMRs are expected 2028-2030, meaning there is a 3-5 year gap where AI compute demand grows faster than nuclear supply can respond. This gap creates premium pricing for existing nuclear-adjacent data center capacity and grid locations with available baseload power.",
+      "geographic_scope": ["US"],
+      "time_horizon": "2030",
+      "raw_data_points": [
+        "10GW+ new nuclear committed for AI",
+        "Microsoft Three Mile Island restart",
+        "Google Kairos SMR investment",
+        "Amazon Talen Nuclear partnership",
+        "First SMRs expected 2028-2030",
+        "Data centers need 24/7 baseload power"
+      ],
+      "theoretical_lens": "T5 Perez Installation Phase — The nuclear renaissance is Installation-phase infrastructure building. Just as the railway era required massive iron and coal infrastructure, the AI era requires massive electricity infrastructure. Nuclear PPAs from hyperscalers are the modern equivalent of railway companies securing coal contracts — building the energy foundation for the deployment phase.",
+      "confidence": "medium",
+      "evidence_refs": ["Microsoft Three Mile Island PPA announcement", "Google Kairos Power agreement", "Amazon Talen Energy deal", "NRC SMR licensing pipeline"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-020",
+      "force_category": "F6_energy",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "structural_force": "Grid interconnection bottleneck as THE binding constraint on AI scaling — 2,600 GW waiting in 5+ year queues",
+      "headline": "2,600 GW of generation and storage waiting in interconnection queues with 5+ year average wait — grid bottleneck constrains AI transformation timeline more than any other factor",
+      "detail": "The single most underappreciated constraint on AI transformation is the grid interconnection queue: 2,600 GW of generation and storage capacity (more than 2x the entire current US installed base) is waiting to connect to the grid, with average wait times exceeding 5 years. This means that even with solar at $0.02-0.03/kWh (all-time low LCOE) and battery storage declining to $80/kWh by 2027, the physical infrastructure to deliver electricity to data centers cannot be built fast enough. The grid bottleneck creates geographic winners (regions with available capacity: Texas ERCOT, parts of the Southeast, some Midwest) and losers (Northern Virginia, where existing data center concentration has already strained the grid). This bottleneck will persist through 2030 and potentially beyond.",
+      "geographic_scope": ["US"],
+      "time_horizon": "2030",
+      "raw_data_points": [
+        "2,600 GW in interconnection queues",
+        "5+ year average wait time",
+        "Current US installed generating capacity ~1,200 GW",
+        "Solar LCOE $0.02-0.03/kWh (best locations)",
+        "Battery costs $115/kWh (2024), projected $80/kWh by 2027",
+        "FERC Order 2023 attempting to accelerate queue processing"
+      ],
+      "theoretical_lens": "T9 Ricardian Rent — Grid access is becoming a Ricardian factor of production. Just as Ricardo showed that productive land commands rent because of its scarcity, grid capacity commands a premium because of interconnection constraints. Locations with available grid access become high-rent economic positions, and businesses that secure grid capacity early capture Ricardian surplus.",
+      "confidence": "high",
+      "evidence_refs": ["FERC interconnection queue data 2025", "Lawrence Berkeley National Lab queued capacity report", "ERCOT generation interconnection studies"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-021",
+      "force_category": "F6_energy",
+      "source_category": "1",
+      "signal_type": "technology_milestone",
+      "structural_force": "Solar reaching $0.02-0.03/kWh LCOE — energy becoming effectively free in optimal locations, restructuring industrial geography",
+      "headline": "Solar LCOE at $0.02-0.03/kWh in best locations — energy-intensive industries face geographic restructuring toward solar-abundant regions",
+      "detail": "Solar has reached $0.02-0.03/kWh LCOE in optimal locations, making it the cheapest energy source in human history. Combined with battery costs declining to $80/kWh by 2027, solar+storage approaches cost-effectiveness for 24/7 power in some locations. The structural implication extends far beyond electricity: industries where energy is a significant cost component (aluminum smelting, data centers, crypto mining, chemical manufacturing, desalination) face geographic restructuring toward solar-abundant regions. Renewable investment hit $1.1T globally in 2025, exceeding fossil fuel investment for the first time — confirming this as a structural shift, not a subsidy-driven anomaly. For AI compute specifically, solar-abundant regions with available grid capacity become the optimal locations for new data center construction.",
+      "geographic_scope": ["Global", "MENA", "US"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "Solar LCOE $0.02-0.03/kWh in best locations",
+        "Battery costs $115/kWh (2024), projected $80/kWh by 2027",
+        "Renewable investment $1.1T globally in 2025",
+        "First time renewable investment exceeds fossil fuel investment",
+        "US producing 13.2M barrels/day (net exporter since 2020)"
+      ],
+      "theoretical_lens": "T9 Ricardian Comparative Advantage + T6 Jevons — Solar creates Ricardian comparative advantage for sun-rich locations. Jevons applies: cheaper energy does not reduce total energy consumption but expands the universe of economically viable energy-intensive activities. New categories of production become viable (desalination-based agriculture, energy-intensive AI training, direct air capture) that were previously uneconomical.",
+      "confidence": "high",
+      "evidence_refs": ["IRENA Renewable Power Generation Costs 2025", "BloombergNEF New Energy Outlook", "Lazard LCOE Analysis 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-022",
+      "force_category": "F6_energy",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "structural_force": "Critical minerals supply surplus through 2027 — lithium 80% crash removes near-term battery cost constraint, shifts bottleneck to manufacturing capacity",
+      "headline": "Lithium prices crashed 80% from 2022 peak with supply surplus through 2027 — battery and EV cost curves accelerating, constraint shifts to manufacturing capacity",
+      "detail": "Lithium prices have crashed 80% from their 2022 peak, creating a supply surplus projected through 2027. This removes the critical mineral cost constraint that was expected to slow battery deployment and EV adoption. Battery costs at $115/kWh (2024) projected to reach $80/kWh by 2027, and the lithium surplus ensures the raw material input cost will not reverse this trajectory. The structural implication: energy storage becomes cheap enough to pair with solar for near-24/7 power at costs competitive with natural gas in many locations. For the AI energy constraint (Signal 018), battery storage partially addresses the intermittency problem for solar-powered data centers. The binding constraint shifts from mineral supply to manufacturing capacity for batteries and grid infrastructure for deployment.",
+      "geographic_scope": ["Global", "China", "US"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "Lithium prices crashed 80% from 2022 peak",
+        "Supply surplus projected through 2027",
+        "Battery costs $115/kWh (2024), projected $80/kWh by 2027",
+        "China controls 60%+ of lithium processing",
+        "US Inflation Reduction Act driving domestic battery manufacturing"
+      ],
+      "theoretical_lens": "T6 Jevons Paradox — Cheaper batteries do not reduce total lithium demand; they expand the universe of applications where battery storage is economically viable (grid storage, EV fleet conversion, industrial backup power, off-grid AI compute). The demand expansion from Jevons will eventually absorb the surplus, but the 2025-2027 window creates a cost advantage for early deployers of battery-dependent systems.",
+      "confidence": "high",
+      "evidence_refs": ["Benchmark Minerals lithium price index", "BloombergNEF battery price survey", "IEA Critical Minerals Market Review 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-023",
+      "force_category": "F6_energy",
+      "source_category": "1",
+      "signal_type": "sector_transformation",
+      "structural_force": "Data center water consumption creating resource competition — 1.7B gallons/day globally for cooling, emerging as social license constraint",
+      "headline": "Data centers consuming 1.7B gallons/day for cooling globally — water stress emerging as social and regulatory constraint on AI infrastructure siting",
+      "detail": "Global data center cooling consumes 1.7 billion gallons of water per day, creating resource competition with agriculture, municipal supply, and environmental flows. This is emerging as a social license constraint: communities are increasingly opposing data center construction due to water consumption concerns, particularly in water-stressed regions. The structural implication is twofold: (1) data center siting decisions must now factor water availability alongside electricity and fiber, creating a three-dimensional constraint on location, and (2) liquid cooling, immersion cooling, and dry cooling technologies become premium capabilities that reduce the water constraint. For the AI transformation timeline, water stress adds another binding constraint beyond electricity that limits the pace of data center buildout in water-scarce regions.",
+      "geographic_scope": ["Global", "US"],
+      "time_horizon": "2028",
+      "raw_data_points": [
+        "1.7B gallons/day global data center water consumption",
+        "Water stress indices rising in key data center markets",
+        "Community opposition to data center construction increasing",
+        "Liquid/immersion cooling adoption growing as alternative",
+        "Microsoft pledged water positive by 2030"
+      ],
+      "theoretical_lens": "T9 Ricardian Rent + T14 Prospect Theory — Water-rich locations gain Ricardian advantage for data center siting. Prospect Theory explains community opposition: the LOSS of water resources is psychologically weighted more heavily than the GAIN of economic activity from data centers. This fear friction creates regulatory barriers that constrain AI infrastructure expansion even when economically optimal.",
+      "confidence": "medium",
+      "evidence_refs": ["USGS water use data", "data center industry water consumption reports", "community opposition news coverage", "Microsoft sustainability report 2025"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-024",
+      "force_category": "F6_energy",
+      "source_category": "4",
+      "signal_type": "capital_flow",
+      "structural_force": "Renewable investment exceeding fossil fuel investment for first time ($1.1T vs ~$1T) — structural tipping point in global energy capital allocation",
+      "headline": "$1.1T in global renewable investment in 2025 exceeds fossil fuel investment for first time — capital allocation confirms structural energy transition",
+      "detail": "Global renewable energy investment reached $1.1T in 2025, exceeding fossil fuel investment for the first time in history. This crossing point is structurally significant: it means the marginal dollar of energy investment globally is now going to renewables rather than fossil fuels. Combined with the US position as a net energy exporter (13.2M barrels/day), the energy transition is occurring FROM a position of energy abundance, not scarcity — making it economically driven rather than crisis-driven. The structural implication for AI: the energy foundation being built for the next decade will be predominantly renewable, meaning AI compute costs will increasingly be determined by solar/wind/battery cost curves rather than natural gas/coal cost curves. This further accelerates the cost decline for energy-intensive AI applications.",
+      "geographic_scope": ["Global"],
+      "time_horizon": "2029",
+      "raw_data_points": [
+        "Renewable investment $1.1T globally in 2025",
+        "First time exceeding fossil fuel investment",
+        "US net energy exporter since 2020",
+        "US producing 13.2M barrels/day",
+        "Solar LCOE $0.02-0.03/kWh lowest in history"
+      ],
+      "theoretical_lens": "T5 Perez Paradigm Shift — The renewable investment crossover is the financial confirmation of a Perez paradigm shift. Just as financial capital ultimately validated the railway, electricity, and automobile paradigms, the capital allocation shift to renewables >$1T confirms the energy transition as structural rather than policy-driven. The old energy paradigm's installed base will be maintained but not expanded, while all marginal investment flows to the new paradigm.",
+      "confidence": "high",
+      "evidence_refs": ["BNEF Global Energy Transition Investment 2025", "IEA World Energy Investment 2025", "EIA US energy production data"]
+    },
+    {
+      "signal_id": "A-2026-02-11-V3C2-025",
+      "force_category": "F4_capital",
+      "source_category": "1",
+      "signal_type": "force_velocity",
+      "structural_force": "S&P 500 concentration risk (Magnificent 7 = 33%) creating Minsky-style fragility where AI narrative correction cascades through passive investment flows",
+      "headline": "Magnificent 7 at 33% of S&P 500 market cap, forward P/E 22.3x vs 18.7x average — concentration creates systemic fragility linked to AI narrative",
+      "detail": "The Magnificent 7 (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) now represent 33% of S&P 500 market cap, with the index trading at 22.3x forward P/E versus a 10-year average of 18.7x. This concentration creates a structural fragility: passive investment flows (which dominate US equity markets) mechanically increase allocation to these 7 stocks, and any correction in AI narrative or earnings disappointment triggers outflows that cascade through the entire market. The Perez framework identifies this as classic late-Installation speculation where financial markets overvalue infrastructure builders. A correction is historically normal at the Installation-to-Deployment transition and actually BENEFICIAL for deployment-layer businesses: it reduces talent costs, lowers cloud compute pricing (as hyperscalers face revenue pressure), and creates acquisition opportunities.",
+      "geographic_scope": ["US", "Global"],
+      "time_horizon": "2027",
+      "raw_data_points": [
+        "Magnificent 7 = 33% of S&P 500 market cap",
+        "S&P 500 forward P/E 22.3x vs 10yr avg 18.7x",
+        "Passive investment now >50% of US equity market",
+        "Nvidia lost $500B+ market cap on DeepSeek R1 announcement",
+        "Perez cycle position: late Installation / early Turning Point"
+      ],
+      "theoretical_lens": "T4 Minsky + T5 Perez — This is where Minsky and Perez converge. Minsky's fragility (speculative units dominating financial markets) meets Perez's Installation-to-Deployment transition (which historically involves a financial crash). The $500B Nvidia wipeout on DeepSeek is a preview: a single open-source model release can cascade through concentrated passive flows. The structural position for builders is DEPLOYMENT LAYER — not dependent on infrastructure stock prices but benefiting from the cheap infrastructure the crash creates.",
+      "confidence": "medium",
+      "evidence_refs": ["S&P 500 index composition data", "Perez 'Technological Revolutions and Financial Capital'", "Nvidia DeepSeek market impact analysis"]
+    }
+  ],
+  "cross_signal_analysis": {
+    "converging_forces": [
+      {
+        "convergence": "AI cost collapse + Energy constraint = Geographic restructuring",
+        "signals": ["001", "002", "018", "020", "021"],
+        "analysis": "AI inference costs are collapsing (50x/yr) but deployment is constrained by electricity grid capacity (2,600 GW in queue). This creates geographic winners: regions with available grid capacity AND solar abundance AND water availability become premium AI deployment locations. Texas ERCOT, parts of the US Southeast, and Gulf states with sovereign capital are structurally advantaged."
+      },
+      {
+        "convergence": "PE refinancing wall + AI disruption + Staffing destruction = Acquisition window 2026-2028",
+        "signals": ["010", "012", "014", "016"],
+        "analysis": "Three forces converge on 2026-2028: $936B-$1.8T in PE debt maturing, AI-driven revenue erosion in cognitive-labor sectors, and confirmed staffing industry destruction. The intersection creates a 2-3 year acquisition window where leveraged services businesses become available at distressed multiples for AI-native acquirers. This window has a definite opening (refinancing wall starts) and closing (surviving businesses adapt or fail)."
+      },
+      {
+        "convergence": "Coasean shrinkage + AI agents + Open-source frontier = Micro-firm economy",
+        "signals": ["003", "006", "014"],
+        "analysis": "Open-source models at frontier capability ($6M training cost), AI agents automating multi-step workflows, and sustained 532K/month business formation collectively signal the emergence of a micro-firm economy where 1-3 person businesses operate at enterprise scale. The staffing industry destruction is the first casualty of this structural shift."
+      },
+      {
+        "convergence": "Manufacturing implementation gap + Robotics funding surge + Silver Tsunami = Physical-economy transformation wave",
+        "signals": ["005", "009"],
+        "analysis": "The 74-point gap between AI utilization (94%) and production readiness (20%) in manufacturing, combined with $2.26B Q1 2026 robotics funding and the Silver Tsunami (52.3% of manufacturers owned by 55+), creates a compound transformation wave in physical production. The integrator/acquirer who bridges the implementation gap for retiring-owner manufacturers captures the robotics x AI compound effect."
+      },
+      {
+        "convergence": "Nuclear renaissance + SWF capital + Grid bottleneck = 5-year energy infrastructure build",
+        "signals": ["015", "019", "020", "024"],
+        "analysis": "10GW+ nuclear committed, $200B+ in SWF AI infrastructure capital, and 2,600 GW in grid queues collectively define a 5-year energy infrastructure buildout (2026-2030). The gap between AI compute demand growth and energy supply response creates structural scarcity pricing for located compute during this period. Businesses that secure energy access now gain Ricardian advantage."
+      }
+    ],
+    "key_timing_observations": [
+      "2026-2027: Inference costs reach sub-$0.10/M tokens. AI agents reach production. Manufacturing implementation gap begins closing. PE refinancing wall starts materializing.",
+      "2027-2028: PE distress peaks. CRE cascade deepens. Robotics x AI compound effect reaches SME manufacturing. Edge AI becomes default compute paradigm.",
+      "2028-2030: First SMRs come online. Grid bottleneck partially resolves. Nuclear renaissance provides AI baseload. Solar+battery reaches 24/7 viability in optimal locations.",
+      "2030+: Data centers at 6-12% of US electricity. Energy transition structurally complete in new investment. Micro-firm economy fully established."
+    ],
+    "counter_signals": [
+      {
+        "counter_to": "AI inference cost collapse",
+        "counter_signal": "Frontier model training costs are RISING ($500M+ for GPT-5). If capability improvements slow, the inference cost decline may not translate to capability-per-dollar improvements. The cost curve matters less if quality plateaus.",
+        "assessment": "Low probability through 2027. Multiple architecture approaches (transformers, MoE, test-time compute) continue improving capability. Open-source competition ensures capability diffusion even if any single lab slows."
+      },
+      {
+        "counter_to": "PE refinancing wall distress",
+        "counter_signal": "PE firms are sophisticated and many have already refinanced or extended maturities. The wall may be less steep than projected if amend-and-extend activity continues.",
+        "assessment": "Medium probability. Amend-and-extend postpones but does not prevent the reckoning. Each extension at higher rates compresses margins further. The AI revenue erosion continues regardless of financing terms."
+      },
+      {
+        "counter_to": "Grid bottleneck constraining AI",
+        "counter_signal": "Hyperscalers are building private grid infrastructure (behind-the-meter generation, nuclear PPAs, dedicated solar farms). The public grid constraint may not bind for the largest AI deployments.",
+        "assessment": "Medium probability for hyperscalers. Private grid infrastructure helps the top 5 players but does not solve the constraint for the 99% of businesses that depend on public grid. The grid bottleneck remains binding for SME adoption of energy-intensive AI."
+      }
+    ]
+  },
+  "force_velocity_updates": {
+    "F1_technology": {
+      "prior_velocity": "accelerating",
+      "updated_velocity": "accelerating (steepening)",
+      "evidence": "9 signals confirm acceleration across inference costs, coding productivity, robotics, agents, edge AI, and healthcare. No deceleration signals detected. The 74-point manufacturing implementation gap is the key bottleneck — not technology but deployment.",
+      "trigger_check": {
+        "inference_cost_below_0.10": "Not yet triggered but on trajectory for mid-2026 at 50x/yr decline rate. When triggered: recalculate all F1 models."
+      }
+    },
+    "F4_capital": {
+      "prior_velocity": "shifting",
+      "updated_velocity": "shifting (accelerating rotation)",
+      "evidence": "8 signals confirm capital rotation to physical/deployment layer, PE distress building, Coasean shrinkage sustained, SWF capital entering at scale. Staffing destruction confirmed as leading indicator. S&P concentration creates systemic fragility.",
+      "trigger_check": {
+        "pe_refinancing_wall_above_300B": "Approaching trigger. $936B-$1.8T maturing 2026-2028 means annual maturity likely exceeds $300B. When confirmed: recalculate all PE cascade models."
+      }
+    },
+    "F6_energy": {
+      "prior_velocity": "unknown",
+      "updated_velocity": "accelerating",
+      "evidence": "7 signals establish F6 as a fully characterized force dimension. Grid bottleneck is THE binding constraint on AI scaling. Nuclear renaissance underway. Solar at all-time low LCOE. Lithium surplus removes battery cost constraint. Water stress emerging as secondary constraint. Renewable investment exceeds fossil fuel investment — structural tipping point confirmed.",
+      "trigger_check": {
+        "data_center_pct_grid_above_5": "Not yet triggered (currently 4%+). Projected 2027. When triggered: recalculate all compute-dependent models."
+      }
+    }
+  }
+}

@@ -265,6 +265,55 @@
   .vel-shifting { background: rgba(251,191,36,0.12); color: var(--amber); }
   .vel-intensifying { background: rgba(248,113,113,0.12); color: var(--red); }
   .vel-constraining { background: rgba(244,114,182,0.12); color: var(--pink); }
+  .vel-decelerating { background: rgba(248,113,113,0.12); color: var(--red); }
+
+  /* Sector Transformation Table */
+  .sector-table { width: 100%; border-collapse: collapse; }
+  .sector-table th {
+    text-align: left; font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--dim); padding: 8px 12px; border-bottom: 1px solid var(--glass-border);
+  }
+  .sector-table td { padding: 12px; font-size: 12.5px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .sector-table tr:last-child td { border-bottom: none; }
+  .sector-phase {
+    display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 10px; text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .phase-acceleration { background: rgba(248,113,113,0.12); color: var(--red); }
+  .phase-early_disruption { background: rgba(251,191,36,0.12); color: var(--amber); }
+  .phase-pre_disruption { background: rgba(96,165,250,0.12); color: var(--blue); }
+  .sector-change { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .sector-change-neg { color: var(--red); }
+  .sector-change-pos { color: var(--green); }
+
+  /* Rated Models */
+  .model-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  @media (max-width: 768px) { .model-grid { grid-template-columns: 1fr; } }
+  .model-card-ui { padding: 16px; cursor: default; }
+  .model-rank { font-size: 11px; color: var(--dim); font-weight: 600; margin-bottom: 4px; }
+  .model-name-ui { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .model-score-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .model-composite { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .model-category {
+    font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+    padding: 2px 8px; border-radius: 10px;
+  }
+  .cat-STRUCTURAL_WINNER { background: rgba(52,211,153,0.12); color: var(--green); }
+  .cat-FORCE_RIDER { background: rgba(96,165,250,0.12); color: var(--blue); }
+  .cat-GEOGRAPHIC_PLAY { background: rgba(34,211,238,0.12); color: var(--cyan); }
+  .cat-TIMING_ARBITRAGE { background: rgba(251,191,36,0.12); color: var(--amber); }
+  .cat-CAPITAL_MOAT { background: rgba(167,139,250,0.12); color: var(--accent); }
+  .cat-FEAR_ECONOMY { background: rgba(248,113,113,0.12); color: var(--red); }
+  .cat-CONDITIONAL { background: rgba(255,255,255,0.06); color: var(--text-secondary); }
+  .model-sector { font-size: 11px; color: var(--text-secondary); }
+
+  /* Category Distribution */
+  .cat-dist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .cat-chip {
+    font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 10px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .cat-chip-count { font-weight: 800; }
   .force-metric {
     font-size: 11.5px;
     color: var(--text-secondary);
@@ -808,6 +857,8 @@
   <nav>
     <a class="active" onclick="showView('map')">Economy Map</a>
     <a onclick="showView('forces')">Forces</a>
+    <a onclick="showView('sectors')">Sectors</a>
+    <a onclick="showView('models')">Models</a>
     <a onclick="showView('regions')">Regions</a>
     <a onclick="showView('fear')">Fear Index</a>
     <a onclick="showView('data')">Data</a>
@@ -816,7 +867,7 @@
   <header>
     <h1>Economy Map 2031</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-1</span>
+      <span class="cycle-badge" id="cycle-badge">v3-2</span>
       &nbsp; Structural transformation projection &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
   </header>
@@ -845,8 +896,8 @@
     </div>
     <div class="glass kpi">
       <div class="kpi-label">Fear Market</div>
-      <div class="kpi-value" style="color:var(--red)">$40B</div>
-      <div class="kpi-sub">growing 20-45% CAGR</div>
+      <div class="kpi-value" style="color:var(--red)">$86B</div>
+      <div class="kpi-sub">by 2030 (51x growth)</div>
     </div>
     <div class="glass kpi">
       <div class="kpi-label">Horizon</div>
@@ -857,9 +908,9 @@
 
   <!-- Hero Synthesis -->
   <div class="glass hero" id="hero">
-    <div class="hero-label">Economy Map Synthesis</div>
+    <div class="hero-label">Economy Map Synthesis &mdash; v3-2 Institutional Grade</div>
     <div class="hero-text" id="hero-text">
-      <strong>The economy is bifurcating along three axes simultaneously.</strong> Demographically: shrinking labor (Japan/China/EU) vs growing labor (India/Africa). Psychologically: 32% US AI trust vs 87% China. Technologically: application spend now exceeds infrastructure for the first time (Perez Turning Point signal). The fear of AI has itself become a <strong>$40B+ market</strong> growing at 20-45% CAGR, on track to reach $300-500B by 2031. Meanwhile, 98% of AI layoffs are anticipatory &mdash; based on potential, not performance. The structural forces mapped over 9 prior cycles are accelerating: financial services cascade <strong>confirmed</strong> (7 sources), staffing industry in active Schumpeterian destruction (RHI -53%), and 95% of manufacturers plan automation by 2028. We are in late Installation phase of the AI Perez cycle, with the Turning Point correction approaching 2026-2028 &mdash; the highest-risk, highest-opportunity window.
+      <strong>Financial services is the first sector to enter the acceleration phase.</strong> 54% of customer interactions automated, 339 branch closures, and a <strong>$936B&ndash;$1.8T PE refinancing wall</strong> creating a 2026&ndash;2028 distressed acquisition window. AI adoption has plateaued at <strong>46% for 12 months</strong> &mdash; a psychological ceiling, not a technology limitation. The fear economy has crystallized into an <strong>$86B market by 2030</strong>. Japan&rsquo;s population decline nearly doubled to <strong>-900K/year</strong>, while China&rsquo;s fertility fell to 1.0 (below Japan). Gulf SWFs committed <strong>$100B+</strong> to AI infrastructure. 15 business models rated across 5 axes &mdash; 7 classified as STRUCTURAL_WINNERs. The engine now self-tracks confidence, evidence chains, and force velocity triggers.
     </div>
   </div>
 
@@ -867,6 +918,27 @@
   <div id="view-forces">
     <div class="section-label">Force Velocities <span class="count">F1-F6</span></div>
     <div class="force-grid" id="force-grid"></div>
+  </div>
+
+  <!-- SECTION: Sector Transformations -->
+  <div id="view-sectors">
+    <div class="section-label">Sector Transformations <span class="count">employment projections 2026&rarr;2031</span></div>
+    <div class="glass-static card">
+      <table class="sector-table" id="sector-table">
+        <thead>
+          <tr><th>Sector</th><th>Phase</th><th>2026</th><th>2031</th><th>Change</th><th>Top Model</th></tr>
+        </thead>
+        <tbody id="sector-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION: Rated Models -->
+  <div id="view-models">
+    <div class="section-label">Rated Business Models <span class="count" id="model-count">0</span></div>
+    <div class="cat-dist" id="cat-dist"></div>
+    <div style="height:16px"></div>
+    <div class="model-grid" id="model-grid"></div>
   </div>
 
   <!-- SECTION: World Map -->
@@ -1010,7 +1082,8 @@ function renderForces(forces) {
     steady: { bar: 'var(--blue)', cls: 'vel-steady', pct: 60 },
     shifting: { bar: 'var(--amber)', cls: 'vel-shifting', pct: 70 },
     intensifying: { bar: 'var(--red)', cls: 'vel-intensifying', pct: 80 },
-    constraining: { bar: 'var(--pink)', cls: 'vel-constraining', pct: 75 }
+    constraining: { bar: 'var(--pink)', cls: 'vel-constraining', pct: 75 },
+    decelerating: { bar: 'var(--red)', cls: 'vel-decelerating', pct: 45 }
   };
 
   const ids = ['F1_technology','F2_demographics','F3_geopolitics','F4_capital','F5_psychology','F6_energy'];
@@ -1297,9 +1370,67 @@ function renderCycles(cycles) {
     const val = c.models_constructed || 0;
     const h = Math.max(8, (val / max) * 100);
     const opacity = 0.2 + (i / cycles.length) * 0.7;
-    const isV3 = c.type === 'economy_map';
+    const isV3 = c.type === 'economy_map' || c.type === 'institutional_grade';
     const bg = isV3 ? 'linear-gradient(180deg, rgba(248,113,113,0.7), rgba(251,191,36,0.5))' : 'linear-gradient(180deg, rgba(167,139,250,0.7), rgba(96,165,250,0.5))';
     return `<div class="cycle-bar" style="height:${h}%;background:${bg};opacity:${opacity.toFixed(2)}" data-label="${c.cycle}"></div>`;
+  }).join('');
+}
+
+// ─── Sector Transformations ───
+function renderSectors(sectors) {
+  const el = document.getElementById('sector-body');
+  if (!sectors || !sectors.length) return;
+
+  el.innerHTML = sectors.map(s => {
+    const phaseCls = 'phase-' + (s.phase || '').replace(/\s+/g, '_');
+    const changeCls = s.change_pct < 0 ? 'sector-change-neg' : 'sector-change-pos';
+    const sign = s.change_pct > 0 ? '+' : '';
+    return `<tr>
+      <td><strong>${esc(s.name)}</strong><br><span style="font-size:10px;color:var(--dim)">NAICS ${esc(s.naics)}</span></td>
+      <td><span class="sector-phase ${phaseCls}">${esc(s.phase)}</span></td>
+      <td>${s.employment_2026}M</td>
+      <td>${s.employment_2031}M</td>
+      <td><span class="sector-change ${changeCls}">${sign}${s.change_pct}%</span></td>
+      <td style="font-size:11px;color:var(--text-secondary)">${esc(s.top_model)}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─── Rated Models ───
+function renderModels(rating) {
+  const grid = document.getElementById('model-grid');
+  const distEl = document.getElementById('cat-dist');
+  if (!rating) return;
+
+  document.getElementById('model-count').textContent = rating.total_models_rated + ' models';
+
+  // Category distribution chips
+  const dist = rating.category_distribution || {};
+  const catColors = {
+    STRUCTURAL_WINNER: 'cat-STRUCTURAL_WINNER', FORCE_RIDER: 'cat-FORCE_RIDER',
+    GEOGRAPHIC_PLAY: 'cat-GEOGRAPHIC_PLAY', TIMING_ARBITRAGE: 'cat-TIMING_ARBITRAGE',
+    CAPITAL_MOAT: 'cat-CAPITAL_MOAT', FEAR_ECONOMY: 'cat-FEAR_ECONOMY',
+    CONDITIONAL: 'cat-CONDITIONAL', PARKED: 'cat-CONDITIONAL'
+  };
+
+  distEl.innerHTML = Object.entries(dist).filter(([,v]) => v > 0).map(([k, v]) => {
+    const cls = catColors[k] || 'cat-CONDITIONAL';
+    return `<div class="cat-chip ${cls}"><span class="cat-chip-count">${v}</span> ${k.replace(/_/g, ' ')}</div>`;
+  }).join('');
+
+  // Top 10 model cards
+  const models = rating.top_10_by_composite || [];
+  grid.innerHTML = models.map((m, i) => {
+    const catCls = 'cat-' + (m.category || 'CONDITIONAL');
+    return `<div class="glass model-card-ui">
+      <div class="model-rank">#${i + 1}</div>
+      <div class="model-name-ui">${esc(m.name)}</div>
+      <div class="model-score-row">
+        <div class="model-composite">${m.composite}</div>
+        <div class="model-category ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</div>
+      </div>
+      <div class="model-sector">${esc(m.sector)}</div>
+    </div>`;
   }).join('');
 }
 
@@ -1320,6 +1451,8 @@ async function refresh() {
 
   // Render all sections
   renderForces(d.force_velocities);
+  renderSectors(d.sector_transformations);
+  renderModels(d.rating_system);
   renderMap(d.geographic_profiles);
   renderFindings(d.key_findings);
   renderFriction(d.fear_friction_index);

@@ -1,0 +1,682 @@
+{
+  "cycle": "v3-2",
+  "date": "2026-02-11",
+  "agent": "Agent B (Sector Transformation Analyst)",
+  "sector_briefs": [
+    {
+      "brief_id": "SB-52",
+      "sector_naics": "52",
+      "sector_name": "Financial Services",
+      "transformation_phase": "acceleration",
+      "phase_confidence": "high",
+
+      "current_state_2026": {
+        "employment_millions": 6.7,
+        "revenue_billions": 658,
+        "establishments": 264000,
+        "avg_firm_size": 25,
+        "cost_structure": {"labor_pct": 55, "materials_pct": 5, "overhead_pct": 25, "compliance_pct": 15},
+        "ai_adoption": "mature"
+      },
+
+      "projected_state_2031": {
+        "employment_millions": 4.8,
+        "employment_change_pct": -28.4,
+        "revenue_billions": 780,
+        "dominant_business_model": "AI-native financial platforms with minimal human headcount; advisory-layer humans for high-trust relationships; automated back-office and mid-office",
+        "new_roles_created": ["AI compliance auditor", "Financial AI product manager", "Trust-layer relationship advisor", "AI-human handoff orchestrator", "Financial data pipeline engineer"],
+        "roles_eliminated": ["Staff accountant", "Bookkeeper", "Payroll clerk", "Loan processor", "Bank teller", "Entry-level auditor", "Insurance claims adjuster (routine)", "Tax preparer (individual)", "Data entry clerk", "Branch operations manager"]
+      },
+
+      "transformation_path": [
+        {
+          "year_range": "2026-2027",
+          "phase_name": "Acceleration deepens",
+          "what_happens": "AI agents replace RPA bots for back-office operations (KYC, reconciliation, regulatory reporting). 54% customer interaction automation climbs to 65%+. PE refinancing wall ($936B-$1.8T maturing) triggers first wave of distressed financial services businesses. Accounting displacement enters Phase 2 peak. Branch closures accelerate past 400/year. AI fraud detection reaches 95%+ interception rate.",
+          "employment_effect": "-3% to -5% (300K-350K positions not refilled through attrition + targeted layoffs at PE-backed firms facing refinancing pressure)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2027-2028",
+          "phase_name": "Front-office automation wave",
+          "what_happens": "AI agents move from back-office to client-facing roles: automated financial planning, AI-driven lending decisions expand from 60% to 80%, robo-advisory reaches mass market. PE distress peaks — forced sales of leveraged accounting/insurance firms at 3-5x EBITDA. CPA pipeline collapse (candidates -33%) creates acute shortage of human accountants, accelerating AI substitution. Branch network shrinks to 55K (from 68K). Insurance underwriting substantially automated.",
+          "employment_effect": "-5% to -8% (cumulative -350K to -550K from 2026 baseline as hiring freezes compound and PE restructurings eliminate positions)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2028-2029",
+          "phase_name": "Restructuring and bifurcation",
+          "what_happens": "Market bifurcates: AI-native financial firms (2-10 person teams serving thousands of clients) vs. trust-premium firms (human advisors at 20%+ premium for high-net-worth). PE refinancing wall largely resolved through distressed acquisitions by AI-native operators. New regulatory frameworks emerge for AI-driven financial decisions. Baumol Premium crystallizes: remaining human financial advisors earn 30-50% more than 2026 levels.",
+          "employment_effect": "-5% to -7% (cumulative -700K to -900K; losses concentrated in mid-tier firms unable to go fully AI-native or fully trust-premium)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2029-2030",
+          "phase_name": "New equilibrium forming",
+          "what_happens": "AI-native financial services becomes the default delivery model for mass market. Human financial professionals concentrated in advisory, complex compliance, relationship management. New job categories stabilize: AI compliance auditor, financial AI orchestrator. Branch count below 50K and stabilizing around community banking / trust-premium nodes. Insurance industry substantially restructured around AI underwriting + human claims for complex/disputed cases.",
+          "employment_effect": "-3% to -4% (rate of decline slowing as new equilibrium roles absorb some displaced workers)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2030-2031",
+          "phase_name": "New equilibrium",
+          "what_happens": "Financial services sector stabilizes at ~4.8M workers (down from 6.7M). Revenue has grown to ~$780B as AI expands addressable market (Jevons effect: cheaper financial services = more people using them). Sector is split into three tiers: AI-automated mass market, AI-augmented professional tier, human-premium advisory tier. Regulatory framework fully adapted to AI-driven finance.",
+          "employment_effect": "Stabilizing. Net new role creation begins to offset automated role elimination. Sector employment floor reached.",
+          "confidence": "low"
+        }
+      ],
+
+      "force_impact_breakdown": [
+        {"force_id": "F1_technology", "impact_score": 9, "mechanism": "AI inference cost collapse ($0.40/M tokens, 50x/yr decline) makes AI processing of every financial transaction, document, and client interaction economically viable. AI agents replace RPA for end-to-end automation. 54% of customer interactions already automated. 87% AI fraud detection at 92% interception rate."},
+        {"force_id": "F2_demographics", "impact_score": 7, "mechanism": "CPA candidate pipeline down 33%, accounting graduates -17%. Creates supply-side pressure that accelerates AI adoption by necessity. Remaining professionals shift to advisory roles at Baumol Premium wages."},
+        {"force_id": "F3_geopolitics", "impact_score": 4, "mechanism": "EU AI Act creates compliance friction for cross-border financial AI. US-China bifurcation affects global banking platforms. MENA SWF investments create new financial centers."},
+        {"force_id": "F4_capital", "impact_score": 9, "mechanism": "PE refinancing wall ($936B-$1.8T maturing 2026-2028) forces distressed sales of leveraged financial services firms. Staffing canary (RHI -53%) confirms active destruction. 532K/month business applications show Coasean shrinkage toward micro-firms."},
+        {"force_id": "F5_psychology", "impact_score": 2, "mechanism": "Financial services has 73% AI adoption and LOWEST fear friction of any sector. Long history of algorithmic decision-making (credit scoring since 1950s). Psychology is NOT a barrier in this sector — it is the control group showing what adoption looks like without fear friction."},
+        {"force_id": "F6_energy", "impact_score": 2, "mechanism": "Minimal direct energy constraint on financial services AI. Cloud-based inference is energy-efficient per transaction. Grid constraints affect data center capacity but financial services compute requirements are modest relative to training workloads."}
+      ],
+
+      "barbell_classification": {
+        "routine_cognitive_pct": 55,
+        "routine_cognitive_tasks": ["Tax preparation (individual)", "Bookkeeping and reconciliation", "Loan application processing", "Insurance claims (routine)", "KYC verification", "Regulatory reporting", "Invoice processing", "Payroll processing", "Data entry and verification", "Tier-1 customer service queries"],
+        "tacit_manual_pct": 5,
+        "tacit_manual_tasks": ["Cash handling at branches", "Physical document management", "In-person fraud investigation"],
+        "tacit_cognitive_pct": 40,
+        "tacit_cognitive_tasks": ["Complex tax strategy", "M&A advisory", "Wealth management relationships", "Commercial lending judgment", "Complex insurance underwriting", "Regulatory interpretation", "Fraud pattern recognition (novel)", "Client relationship management", "Risk assessment for novel instruments", "Cross-border compliance navigation"]
+      },
+
+      "second_order_effects": {
+        "upstream": ["Accounting education enrollment collapse", "Financial certification programs (CPA, CFA) restructuring", "Legal services for financial regulation adapting to AI"],
+        "downstream": ["Commercial real estate vacancy from branch closures (15K since 2012)", "Regional bank stress from CRE exposure", "Local employment impact in bank-dense metros", "Insurance distribution channel restructuring"],
+        "adjacent": ["Professional services (NAICS 54) transformation accelerated as financial AI tools cross over", "Administrative services (NAICS 56) staffing destruction deepens", "Real estate services adapt to AI-driven mortgage processing"],
+        "labor_migration": ["Staff accountants -> AI compliance auditors (retraining required)", "Bank tellers -> retail/service sector (wage loss)", "Loan processors -> financial AI product managers (selective, requires tech skills)", "Insurance adjusters -> complex claims specialists (role compression, not elimination)", "Displaced mid-career professionals -> entrepreneurship (532K/month business applications)"]
+      },
+
+      "geographic_variation": {
+        "us": {"dynamics": "Fastest transformation. 73% adoption, lowest fear friction. PE refinancing wall is a US-specific catalyst. Branch closures concentrated in California and New York. Rural bank deserts emerging.", "velocity": "fast"},
+        "china": {"dynamics": "State-directed fintech transformation already advanced. Free-access AI model (WeChat Pay, Alipay) enables mass adoption. Digital lending and AI underwriting widespread. Different regulatory framework allows faster deployment.", "velocity": "fast"},
+        "eu": {"dynamics": "AI Act creates compliance friction. Strong banking unions in France and Germany slow adoption. PSD2 open banking framework enables fintech but AI Act constrains it. Germany and Italy face demographic pressure to automate. UK (post-Brexit) moves faster than EU-27.", "velocity": "moderate"},
+        "japan": {"dynamics": "Megabank consolidation already completed (3 groups dominate). Aging population creates demand for simplified financial services. Cultural preference for human interaction in banking slows some adoption. Robot density in manufacturing doesn't translate to financial services innovation.", "velocity": "moderate"},
+        "india": {"dynamics": "UPI infrastructure creates world's leading digital payments ecosystem. Fintech AI adoption high in urban centers. 1.4B population creates massive addressable market for AI-driven financial inclusion. Rural banking still heavily human-dependent.", "velocity": "fast"},
+        "latam": {"dynamics": "Underbanked population (40%+) creates fintech opportunity. Brazil leads with Pix and Nubank model. Mexico nearshoring FDI creates demand for sophisticated financial services. Regulatory frameworks improving but uneven.", "velocity": "moderate"},
+        "sea": {"dynamics": "Singapore leads at 75% AI adoption (government push). Variable across region: Singapore/Vietnam ahead, Philippines/Myanmar behind. Mobile-first banking enables AI leapfrogging of branch infrastructure.", "velocity": "moderate"},
+        "mena": {"dynamics": "Gulf SWFs investing $100B+ in AI infrastructure. Saudi/UAE financial sectors heavily state-influenced, enabling top-down AI adoption. Islamic finance creates unique AI compliance requirements. Young demographics (median age 28) favor digital-first.", "velocity": "fast"}
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 8,
+        "gap": 1,
+        "fear_drivers": [
+          {"driver": "Job displacement anxiety among financial professionals", "type": "employment", "severity": "medium", "resolution_trigger": "As Baumol Premium becomes visible (remaining humans earn more), anxiety shifts from 'replacement' to 'retraining'"},
+          {"driver": "Regulatory uncertainty around AI-driven financial decisions", "type": "regulatory", "severity": "low", "resolution_trigger": "OCC and SEC issue comprehensive AI guidance (expected 2027)"},
+          {"driver": "Cybersecurity concerns with AI-driven financial systems", "type": "security", "severity": "medium", "resolution_trigger": "AI fraud detection proving 92% interception rate creates confidence in AI security"}
+        ],
+        "fear_driven_demand": ["Financial AI governance/compliance tools ($15.8B market by 2030)", "AI audit trail software", "Explainable AI for lending decisions (regulatory requirement)", "Cybersecurity AI for financial institutions ($60.6B by 2028)"]
+      },
+
+      "confidence_assessment": {
+        "direction": "high",
+        "timing": "high",
+        "magnitude": "medium",
+        "key_assumptions": [
+          "AI inference costs continue declining at 50x/yr through 2027",
+          "PE refinancing wall materializes as projected ($936B-$1.8T, 2026-2028)",
+          "CPA pipeline collapse does not reverse (generational, not cyclical)",
+          "Regulatory frameworks adapt to permit AI-driven financial decisions",
+          "Consumer acceptance of AI-driven finance continues (73% adoption baseline)"
+        ],
+        "falsification_criteria": [
+          "If AI inference costs plateau rather than decline, the economic force weakens",
+          "If PE firms successfully amend-and-extend most maturing debt, the distress catalyst delays by 2-3 years",
+          "If major AI financial fraud event triggers regulatory crackdown, adoption timeline extends",
+          "If CPA pipeline recovers (>10% increase in candidates), human labor supply reduces AI urgency",
+          "If consumer backlash against AI finance materializes (trust drops below 50%), front-office automation slows"
+        ]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-001", "A-2026-02-11-V3C2-010", "A-2026-02-11-V3C2-012", "A-2026-02-11-V3C2-014", "A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-106", "A-2026-02-11-V3C2-202", "A-2026-02-11-V3C2-015", "A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-017", "A-2026-02-11-V3C2-018", "A-2026-02-11-V3C2-027", "A-2026-02-11-V3C2-035", "P-001", "P-026", "P-027"],
+      "business_models_arising": ["MC-52-001", "MC-52-002", "MC-52-003"]
+    },
+
+    {
+      "brief_id": "SB-54",
+      "sector_naics": "54",
+      "sector_name": "Professional Services",
+      "transformation_phase": "early_disruption",
+      "phase_confidence": "high",
+
+      "current_state_2026": {
+        "employment_millions": 10.2,
+        "revenue_billions": 1070,
+        "establishments": 974000,
+        "avg_firm_size": 10,
+        "cost_structure": {"labor_pct": 65, "materials_pct": 3, "overhead_pct": 22, "compliance_pct": 10},
+        "ai_adoption": "growing"
+      },
+
+      "projected_state_2031": {
+        "employment_millions": 7.8,
+        "employment_change_pct": -23.5,
+        "revenue_billions": 1350,
+        "dominant_business_model": "AI-augmented micro-firms (1-5 people) handling workloads of 20-50 person legacy firms; Baumol Premium advisory layer earning 40%+ more; platform models connecting AI-augmented professionals to clients",
+        "new_roles_created": ["AI-augmented practice lead", "Professional services AI orchestrator", "Trust verification specialist", "AI output auditor", "Micro-firm operating system designer", "Cross-disciplinary AI integration specialist"],
+        "roles_eliminated": ["Junior associate (legal)", "Staff accountant", "Junior consultant (research/analysis)", "Paralegal (routine)", "Tax preparer", "Bookkeeper", "Technical writer (routine)", "Market research analyst (data-focused)", "Junior architect (drafting)", "Entry-level engineer (calculation/modeling)"]
+      },
+
+      "transformation_path": [
+        {
+          "year_range": "2026-2027",
+          "phase_name": "Micro-firm emergence",
+          "what_happens": "AI agents enable 1-3 person firms to compete with 50+ person legacy firms. 532K/month business applications reflect professionals leaving large firms to start AI-augmented practices. AI coding reaches 40%+ of new code at leading firms. Baumol stored energy ($207B) begins releasing as firms discover AI handles work previously requiring junior staff. CPA candidate pipeline collapse (-33%) creates talent shortage that further accelerates AI adoption.",
+          "employment_effect": "-2% to -4% (200K-400K positions not refilled; concentrated in entry-level and routine roles across legal, accounting, consulting, architecture, engineering)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2027-2028",
+          "phase_name": "Baumol cure release",
+          "what_happens": "The $207B stored energy releases: clients demand 30-50% fee reductions as AI-augmented competitors demonstrate they can deliver equivalent work product at lower cost. Large professional services firms (Big 4 accounting, Am Law 100) restructure, reducing leverage ratios from 8:1 to 4:1 (partners to junior staff). Mid-tier firms face existential crisis: too large for micro-firm cost structure, too small for brand-premium pricing. AI agents handle multi-step workflows end-to-end (research, drafting, analysis, formatting, review preparation).",
+          "employment_effect": "-5% to -7% (cumulative 500K-700K; mid-tier firms downsizing most aggressively)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2028-2029",
+          "phase_name": "Market restructuring",
+          "what_happens": "Professional services market restructures into three tiers: (1) AI-native micro-firms serving SMB clients at 50-70% lower fees, (2) AI-augmented mid-tier firms with reduced headcount serving mid-market, (3) Trust-premium human-led firms serving Fortune 500 and high-net-worth at 20%+ premium. Professional certifications (CPA, bar, PE) adapt to incorporate AI competency requirements. 'Verified human' label emerges for premium advisory work (23% of consumers willing to pay 15-20% premium).",
+          "employment_effect": "-4% to -6% (cumulative 900K-1.2M; new role creation begins offsetting losses)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2029-2030",
+          "phase_name": "New practice models stabilize",
+          "what_happens": "AI-augmented professional practice becomes the norm. Solo practitioners with AI handle caseloads of entire small firms. Big 4 / Am Law 100 have completed restructuring — headcount down 30-40% but revenue per professional up 50%+. Professional schools begin teaching AI-augmented practice. New specializations emerge at the intersection of AI and professional judgment.",
+          "employment_effect": "-2% to -3% (decline slowing as sector reaches new equilibrium)",
+          "confidence": "low"
+        },
+        {
+          "year_range": "2030-2031",
+          "phase_name": "New equilibrium",
+          "what_happens": "Sector employment stabilizes at ~7.8M (down from 10.2M). Revenue has grown to ~$1.35T as Jevons effect expands addressable market (cheaper professional services = more businesses using them). Remaining professionals earn Baumol Premium — 30-50% higher real wages than 2026. Sector has reorganized around AI-augmented delivery model.",
+          "employment_effect": "Stabilizing. Baumol Premium professionals command premium wages; new role creation in AI orchestration and trust verification absorbs some displaced workers.",
+          "confidence": "low"
+        }
+      ],
+
+      "force_impact_breakdown": [
+        {"force_id": "F1_technology", "impact_score": 9, "mechanism": "AI inference cost collapse makes AI processing of professional work product (legal research, financial analysis, engineering calculations, architectural drafting) economically trivial. AI coding at 25-40% of Google code. AI agents complete multi-step professional workflows. Open-source models ($6M training) democratize access."},
+        {"force_id": "F2_demographics", "impact_score": 8, "mechanism": "CPA candidates -33%, accounting graduates -17%. Professional pipeline collapse across multiple disciplines means human supply is shrinking even as AI capability grows. Baumol wages (+4%/yr vs CPI 2.5%) create $207B stored energy. Silver Tsunami affects professional firm ownership too."},
+        {"force_id": "F3_geopolitics", "impact_score": 3, "mechanism": "EU AI Act creates compliance requirements for AI in professional services. India as global services exporter (AI-augmented Indian professionals competing at 30-50% lower cost). US-China bifurcation minimal impact on domestic professional services."},
+        {"force_id": "F4_capital", "impact_score": 7, "mechanism": "Coasean shrinkage (532K/month business applications) directly reflects professionals starting AI-augmented micro-firms. PE refinancing wall affects PE-backed professional services roll-ups. Staffing destruction (RHI -53%) shows human intermediation being eliminated."},
+        {"force_id": "F5_psychology", "impact_score": 5, "mechanism": "Professional associations (ABA, AICPA, AMA equivalent) create institutional resistance. 82% of legal professionals cite ethical concerns. But economic pressure from clients seeking lower costs overwhelms institutional preferences. Generational divide: younger professionals adopt AI tools faster."},
+        {"force_id": "F6_energy", "impact_score": 1, "mechanism": "Negligible direct energy constraint on professional services AI adoption. Cloud inference costs are the relevant metric, not energy infrastructure."}
+      ],
+
+      "barbell_classification": {
+        "routine_cognitive_pct": 50,
+        "routine_cognitive_tasks": ["Legal research and citation", "Financial statement preparation", "Tax return preparation", "Architectural drafting (standard)", "Engineering calculations (standard)", "Market research data compilation", "Contract review (standard terms)", "Compliance documentation", "Patent prosecution (routine)", "Technical writing (procedures/manuals)"],
+        "tacit_manual_pct": 5,
+        "tacit_manual_tasks": ["Site visits (architecture/engineering)", "Physical evidence handling (legal)", "In-person client meetings"],
+        "tacit_cognitive_pct": 45,
+        "tacit_cognitive_tasks": ["Trial strategy and courtroom performance", "Complex tax planning and structuring", "M&A deal negotiation", "Architectural design vision", "Engineering novel problem-solving", "Management consulting (organizational change)", "Client relationship management", "Expert witness testimony", "Cross-disciplinary integration", "Strategic advisory for executive teams"]
+      },
+
+      "second_order_effects": {
+        "upstream": ["Professional education institutions face enrollment crisis", "Law school, accounting programs, MBA programs restructure curricula", "Professional certification bodies (ABA, AICPA) adapt requirements"],
+        "downstream": ["SMB businesses gain access to professional services previously too expensive", "Legal services democratization (AI legal tools for individuals)", "Accounting services reach micro-businesses that previously went unserved"],
+        "adjacent": ["Financial services acceleration compounds as accounting/legal AI feeds financial AI", "Administrative services destruction deepens as professional services adopt AI", "Education sector transforms to teach AI-augmented professional skills"],
+        "labor_migration": ["Junior associates -> AI-augmented solo practice (best outcome)", "Staff accountants -> AI compliance/audit roles (retraining)", "Paralegals -> legal AI tool specialists", "Junior consultants -> data/AI analyst roles", "Those unable to retrain -> gig economy, service sector (wage loss)"]
+      },
+
+      "geographic_variation": {
+        "us": {"dynamics": "Largest professional services sector globally. Baumol stored energy highest ($207B). 974K establishments = highly fragmented. Micro-firm emergence fastest due to AI agent capability and permissive regulatory environment. India outsourcing competition adds pressure.", "velocity": "fast"},
+        "china": {"dynamics": "State-owned enterprise dominance limits market dynamics in professional services. Private professional services growing but smaller relative to GDP. State direction may mandate AI adoption in audit/accounting. Less organic Baumol pressure.", "velocity": "moderate"},
+        "eu": {"dynamics": "AI Act creates compliance friction for AI in professional services. Strong professional bodies (Law Societies, Chartered Accountants) create institutional resistance. Germany and Italy face demographic pressure. UK post-Brexit moves faster. Eastern EU professional services underdeveloped.", "velocity": "slow"},
+        "japan": {"dynamics": "Professional services sector smaller relative to GDP than US/EU. Accounting profession highly regulated. Aging demographic creates shortage pressure similar to US but cultural resistance to solo practice stronger. Big Four Japanese affiliates will follow global restructuring.", "velocity": "slow"},
+        "india": {"dynamics": "India is the NET EXPORTER of professional services talent. AI-augmented Indian professionals can serve US/EU markets at 30-50% lower cost. Domestic professional services market growing rapidly with GDP. CA (Chartered Accountant) and legal profession adapting to AI.", "velocity": "fast"},
+        "latam": {"dynamics": "Professional services sector concentrated in Brazil, Mexico, Argentina. AI adoption following US patterns with 2-3 year lag. Micro-firm model particularly attractive in markets with high professional fees and young demographics.", "velocity": "moderate"},
+        "sea": {"dynamics": "Singapore professional services hub leads in adoption. Variable across region. Philippines BPO sector faces major disruption from professional services AI. Vietnam and Thailand professional sectors growing.", "velocity": "moderate"},
+        "mena": {"dynamics": "Gulf professional services driven by construction/real estate (NEOM) and financial regulation. Saudi/UAE firms adopting AI for compliance with Vision 2030 requirements. Young demographics favor digital-first professional services.", "velocity": "moderate"}
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "fear_drivers": [
+          {"driver": "Professional identity threatened by AI capability", "type": "identity", "severity": "high", "resolution_trigger": "As Baumol Premium materializes, remaining professionals see AI as leverage, not replacement"},
+          {"driver": "Ethical concerns in legal and medical professional AI", "type": "ethical", "severity": "high", "resolution_trigger": "Professional bodies issue AI ethics frameworks and updated practice standards (2027-2028)"},
+          {"driver": "Client trust in AI-generated professional work product", "type": "trust", "severity": "medium", "resolution_trigger": "Track record of AI-augmented work product quality builds over 2-3 years"},
+          {"driver": "Liability concerns for AI-assisted professional decisions", "type": "legal", "severity": "high", "resolution_trigger": "Professional liability insurance adapts to cover AI-augmented practice; case law develops"}
+        ],
+        "fear_driven_demand": ["Professional AI ethics consulting ($5-10B by 2030)", "AI practice management platforms", "Professional AI liability insurance products", "AI work product verification and audit trails", "Certified AI professional practice designations"]
+      },
+
+      "confidence_assessment": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium",
+        "key_assumptions": [
+          "AI agent capability continues improving for multi-step professional workflows",
+          "Baumol stored energy ($207B) releases through client demand for lower fees, not through regulation",
+          "Professional associations adapt rather than block AI adoption",
+          "Open-source AI models continue closing gap with proprietary models",
+          "Coasean shrinkage trend (532K/month applications) continues"
+        ],
+        "falsification_criteria": [
+          "If professional associations successfully block AI in practice (e.g., ABA prohibits AI in legal work), timeline extends 3-5 years",
+          "If AI work product quality fails to meet professional standards (malpractice cases), adoption slows",
+          "If client demand for lower fees does not materialize (clients prefer paying more for human), Baumol stored energy does not release",
+          "If professional pipeline collapse reverses (major enrollment increases), AI urgency diminishes",
+          "If liability frameworks penalize AI-augmented practice (courts rule against AI-assisted professionals), adoption freezes"
+        ]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-001", "A-2026-02-11-V3C2-003", "A-2026-02-11-V3C2-004", "A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-014", "A-2026-02-11-V3C2-104", "A-2026-02-11-V3C2-106", "A-2026-02-11-V3C2-206", "A-2026-02-11-V3C2-207", "A-2026-02-11-V3C2-035", "P-001", "P-009", "P-013", "P-023"],
+      "business_models_arising": ["MC-54-001", "MC-54-002", "MC-54-003"]
+    },
+
+    {
+      "brief_id": "SB-31",
+      "sector_naics": "31-33",
+      "sector_name": "Manufacturing",
+      "transformation_phase": "early_disruption",
+      "phase_confidence": "high",
+
+      "current_state_2026": {
+        "employment_millions": 12.5,
+        "revenue_billions": 2300,
+        "establishments": 250000,
+        "avg_firm_size": 50,
+        "cost_structure": {"labor_pct": 25, "materials_pct": 45, "overhead_pct": 20, "compliance_pct": 10},
+        "ai_adoption": "early"
+      },
+
+      "projected_state_2031": {
+        "employment_millions": 10.8,
+        "employment_change_pct": -13.6,
+        "revenue_billions": 2800,
+        "dominant_business_model": "AI-integrated smart factories with cobot-augmented production lines; acquired-and-modernized former Silver Tsunami businesses operating at 20-30% lower COGS; vertical AI platforms for sub-sector-specific manufacturing optimization",
+        "new_roles_created": ["Manufacturing AI integration engineer", "Cobot system orchestrator", "Predictive maintenance analyst", "Digital twin specialist", "Manufacturing data pipeline manager", "Acquisition-modernization operator"],
+        "roles_eliminated": ["Manual quality inspector", "Manual material handler", "Routine machine operator (single-function)", "Production scheduler (manual)", "Inventory clerk", "Shipping/receiving clerk (routine)", "Basic welding (standardized)", "Assembly line worker (repetitive)"]
+      },
+
+      "transformation_path": [
+        {
+          "year_range": "2026-2027",
+          "phase_name": "Implementation gap closing begins",
+          "what_happens": "The 78-point gap (98% exploring, 20% ready) begins closing as AI integration services mature. 73K cobots shipped annually (+31% YoY), $2.26B Q1 2026 robotics funding accelerates cobot deployment. Physical AI adoption doubles from 9% to 18%+. Silver Tsunami wave intensifies — peak boomer retirement (median age 67) creates surge of businesses for sale. First wave of acquire-and-modernize operators enters market, buying retiring-owner businesses at 3-5x EBITDA and installing AI/robotics.",
+          "employment_effect": "-1% to -2% (125K-250K positions; mostly attrition from Silver Tsunami retirements not replaced 1:1, offset by new integration/operator roles)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2027-2028",
+          "phase_name": "Cobot-AI compound acceleration",
+          "what_happens": "Robotics x AI compound effect (P-006) reaches SME manufacturing. Cobot prices decline to $20-40K range with improved AI capabilities. 40%+ of manufacturers upgrade production scheduling with AI. Predictive maintenance becomes standard (reducing unplanned downtime 30-40%). Silver Tsunami acquisition wave peaks — 2.34M businesses owned by 55+ with 58% no succession plan. Global robot installations surpass 700K/year. India manufacturing FDI continues growing as China alternative.",
+          "employment_effect": "-2% to -3% (cumulative 350K-500K; Silver Tsunami retirements accelerate, new roles partially offset losses)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2028-2029",
+          "phase_name": "COGS compression wave",
+          "what_happens": "Manufacturers who adopted AI/robotics in 2026-2027 realize 15-30% COGS advantages. This creates competitive pressure forcing remaining manufacturers to adopt or exit. Digital twins become standard for process optimization. Reshoring investment from 2025-2026 begins producing operational output (2-5 year lag). India and Vietnam manufacturing capacity comes online at scale. First nuclear SMRs provide baseload power for energy-intensive manufacturing.",
+          "employment_effect": "-2% to -3% (cumulative 600K-800K; competitive pressure forces laggard adoption which displaces more workers)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2029-2030",
+          "phase_name": "Smart factory standard",
+          "what_happens": "AI-integrated manufacturing becomes the default operating model for new and modernized factories. The 78-point implementation gap narrows to 30-point. Fully autonomous production lines emerging for standardized products. Human roles shift to exception handling, complex assembly, maintenance orchestration, and quality judgment. Manufacturing employment stabilizes as Jevons effect expands production (cheaper production = more domestic manufacturing viable).",
+          "employment_effect": "-1% to -2% (rate of decline slowing; Jevons expansion of domestic manufacturing partially offsets automation losses)",
+          "confidence": "low"
+        },
+        {
+          "year_range": "2030-2031",
+          "phase_name": "New manufacturing equilibrium",
+          "what_happens": "Manufacturing sector stabilizes at ~10.8M workers. Revenue grows to ~$2.8T as reshoring/nearshoring comes online and AI-driven cost reduction expands domestic production viability. Average firm is AI-integrated with 30-50% fewer workers but 30-50% higher output per worker. New manufacturing jobs cluster in high-skill roles (AI/robotics integration, complex assembly, maintenance, quality judgment).",
+          "employment_effect": "Stabilizing. Jevons expansion of domestic manufacturing creates new employment that begins to offset ongoing automation.",
+          "confidence": "low"
+        }
+      ],
+
+      "force_impact_breakdown": [
+        {"force_id": "F1_technology", "impact_score": 9, "mechanism": "73K cobots shipped annually (+31%), $2.26B Q1 2026 robotics funding. 94% utilizing AI but only 20% production-ready = 74-point implementation gap is THE opportunity. AI vision and control systems making cobots at $25-60K with 6-18 month ROI. Manufacturing AI market: $34B -> $155B (35.3% CAGR)."},
+        {"force_id": "F2_demographics", "impact_score": 9, "mechanism": "Silver Tsunami: 52.3% of employer businesses owned by 55+, 2.34M businesses, 58% no succession plan. Manufacturing is disproportionately affected across 12+ sub-sectors. Japan population decline (-900K/yr) shows what aging manufacturing economies do: automate by necessity."},
+        {"force_id": "F3_geopolitics", "impact_score": 7, "mechanism": "Reshoring rhetoric vs reality (Kearney -311). CHIPS Act producing results but unevenly. Mexico FDI record $40.9B. India manufacturing FDI +18%. China robot density surpassed Germany/Japan (470/10K). Defense spending supercycle creating manufacturing demand."},
+        {"force_id": "F4_capital", "impact_score": 6, "mechanism": "Capital rotating to industrials (+15.1%). VC moving from pure-digital to hard-tech and robotics. SBA 504 fee waiver through Sept 2026 aids acquisition financing. PE refinancing wall creates distressed manufacturing assets for acquisition."},
+        {"force_id": "F5_psychology", "impact_score": 3, "mechanism": "Manufacturing AI gap is NOT psychology-driven — it is integration complexity. 94% utilization shows willingness. The barrier is 50% can't identify right technology, 39% lack expertise, 32% face budget overruns. Low fear friction relative to services sectors."},
+        {"force_id": "F6_energy", "impact_score": 5, "mechanism": "Energy costs directly affect manufacturing COGS. Solar at $0.02-0.03/kWh creates geographic restructuring opportunity. Grid bottleneck (2,600 GW in queue) constrains energy-intensive manufacturing expansion. Nuclear renaissance provides future baseload for manufacturing clusters."}
+      ],
+
+      "barbell_classification": {
+        "routine_cognitive_pct": 20,
+        "routine_cognitive_tasks": ["Production scheduling", "Inventory management", "Quality inspection (standard)", "Shipping/receiving documentation", "Compliance reporting"],
+        "tacit_manual_pct": 50,
+        "tacit_manual_tasks": ["Complex assembly", "Precision welding", "Machine setup and changeover", "Material handling (non-standard)", "Maintenance and repair", "Custom fabrication", "Tool and die work", "Surface finishing", "Equipment calibration", "Prototype production"],
+        "tacit_cognitive_pct": 30,
+        "tacit_cognitive_tasks": ["Process engineering and optimization", "Quality problem root-cause analysis", "Production line design", "New product introduction", "Supply chain negotiation", "Regulatory compliance strategy", "Customer technical support", "Material science application"]
+      },
+
+      "second_order_effects": {
+        "upstream": ["Manufacturing equipment industry transforms (AI-embedded equipment becomes default)", "Material suppliers adapt to AI-driven demand forecasting", "Vocational education pivots to AI/robotics maintenance training"],
+        "downstream": ["Consumer goods pricing pressure from COGS compression", "Logistics/warehousing transforms alongside manufacturing", "Retail supply chains adapt to faster, AI-optimized manufacturing"],
+        "adjacent": ["Wholesale trade (NAICS 42) transforms as AI intermediation replaces human brokers", "Transportation (NAICS 48-49) adapts to AI-driven manufacturing schedules", "Construction sector benefits from manufacturing cost reductions in materials"],
+        "labor_migration": ["Machine operators -> cobot operators/supervisors (upskilling pathway)", "Quality inspectors -> AI quality system managers", "Production schedulers -> manufacturing data analysts", "Displaced workers -> logistics, construction, maintenance trades (which face their own shortages)", "Silver Tsunami retirees -> exit (by definition, not migration)"]
+      },
+
+      "geographic_variation": {
+        "us": {"dynamics": "Silver Tsunami peak creating acquisition window. 250K+ SME manufacturers. SBA 504 fee waiver through Sept 2026. Implementation gap is the central opportunity. Midwest and Southeast manufacturing belts most affected.", "velocity": "moderate"},
+        "china": {"dynamics": "World's largest manufacturing economy with 37M workers. Robot density 470/10K (surpassed Germany/Japan). State-directed automation priority. TFR ~1.0 creating demographic pressure. Huawei Ascend chips powering domestic manufacturing AI. Automation offsetting wage increases.", "velocity": "fast"},
+        "eu": {"dynamics": "Germany Industry 4.0 leads but EU AI Act creates friction. Italy manufacturing faces acute aging (median 48.4). Eastern EU manufacturing growing but lower automation. European rearmament (+83%) creates defense manufacturing demand.", "velocity": "moderate"},
+        "japan": {"dynamics": "World's highest robot density. Population declining 900K/yr forces automation-of-necessity. Japan is the leading indicator for manufacturing transformation in aging economies. Elder care robotics expertise transferable.", "velocity": "fast"},
+        "india": {"dynamics": "Manufacturing FDI +18% YoY to $19B. PLI schemes across 14 sectors. 1B working-age population = labor abundant. India as China+1 manufacturing destination. $1.62T market growing to $2.30T by 2030.", "velocity": "moderate"},
+        "latam": {"dynamics": "Mexico FDI record $40.9B, 37% to manufacturing. But capacity 'tapped out'. Brazil manufacturing growing with Mercosur trade. Nearshoring investment-to-production lag 2-5 years.", "velocity": "moderate"},
+        "sea": {"dynamics": "Vietnam and Indonesia benefiting from China+1 strategy. Singapore leads in advanced manufacturing. Electronics and automotive manufacturing concentrated. Variable automation levels across countries.", "velocity": "moderate"},
+        "mena": {"dynamics": "Limited manufacturing base but Saudi Vision 2030 targets diversification. UAE industrial zones growing. Defense manufacturing demand from regional spending increases. Energy cost advantage for energy-intensive manufacturing.", "velocity": "slow"}
+      },
+
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 7,
+        "gap": 1,
+        "fear_drivers": [
+          {"driver": "Integration complexity (50% can't identify right technology)", "type": "capability", "severity": "high", "resolution_trigger": "Mature AI integration services market with proven playbooks for specific manufacturing sub-sectors"},
+          {"driver": "Workforce disruption concerns in manufacturing communities", "type": "employment", "severity": "medium", "resolution_trigger": "Visible upskilling pathways (machine operator -> cobot supervisor) with maintained or higher wages"},
+          {"driver": "Capital investment risk for SMEs", "type": "financial", "severity": "medium", "resolution_trigger": "Cobot ROI data (6-18 months) becomes widely understood; SBA financing available"}
+        ],
+        "fear_driven_demand": ["Manufacturing AI consulting and systems integration", "Workforce retraining programs", "Cobot-as-a-Service (reducing capital risk)", "Manufacturing AI cybersecurity", "Supply chain AI verification"]
+      },
+
+      "confidence_assessment": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium",
+        "key_assumptions": [
+          "Cobot costs continue declining (target $20-40K range by 2028)",
+          "Silver Tsunami retirement wave materializes as projected (peak 2027-2032)",
+          "Manufacturing AI integration services market matures sufficiently to close 78-point gap",
+          "Reshoring/nearshoring investment translates to operational capacity within 2-5 years",
+          "Grid and energy infrastructure supports manufacturing expansion"
+        ],
+        "falsification_criteria": [
+          "If cobot costs plateau or increase, the ROI calculation changes and adoption slows",
+          "If Silver Tsunami businesses find succession solutions (non-AI-native buyers), acquisition-modernization model weakens",
+          "If manufacturing AI integration proves too complex for scalable services delivery, the 78-point gap persists",
+          "If energy grid constraints prevent manufacturing expansion, the Jevons effect does not materialize",
+          "If reshoring fades entirely (manufacturers permanently revert to Asian sourcing), domestic opportunity shrinks"
+        ]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-005", "A-2026-02-11-V3C2-009", "A-2026-02-11-V3C2-101", "A-2026-02-11-V3C2-102", "A-2026-02-11-V3C2-103", "A-2026-02-11-V3C2-019", "A-2026-02-11-V3C2-020", "A-2026-02-11-V3C2-031", "A-2026-02-11-V3C2-036", "A-2026-02-11-V3C2-037", "A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-030", "P-002", "P-006", "P-016", "P-029"],
+      "business_models_arising": ["MC-31-001", "MC-31-002", "MC-31-003"]
+    },
+
+    {
+      "brief_id": "SB-62",
+      "sector_naics": "62",
+      "sector_name": "Healthcare",
+      "transformation_phase": "early_disruption",
+      "phase_confidence": "high",
+
+      "current_state_2026": {
+        "employment_millions": 22.0,
+        "revenue_billions": 2300,
+        "establishments": 191000,
+        "avg_firm_size": 115,
+        "cost_structure": {"labor_pct": 55, "materials_pct": 15, "overhead_pct": 15, "compliance_pct": 15},
+        "ai_adoption": "growing"
+      },
+
+      "projected_state_2031": {
+        "employment_millions": 21.0,
+        "employment_change_pct": -4.5,
+        "revenue_billions": 3100,
+        "dominant_business_model": "AI-augmented clinical practice with invisible-to-patient physician tools; automated back-office (billing, coding, scheduling); telehealth AI platforms for routine care; human-premium model for complex/trust-requiring care",
+        "new_roles_created": ["Clinical AI specialist", "Healthcare AI compliance officer", "AI-patient trust coordinator", "Telehealth AI operator", "Clinical data pipeline manager", "AI-augmented nursing specialist", "Healthcare AI bias auditor"],
+        "roles_eliminated": ["Medical coder (routine)", "Medical transcriptionist", "Insurance claims processor (routine)", "Scheduling coordinator", "Medical records clerk", "Radiology image screener (routine)", "Basic triage nurse (phone)", "Prior authorization clerk", "Medical billing specialist (routine)"]
+      },
+
+      "transformation_path": [
+        {
+          "year_range": "2026-2027",
+          "phase_name": "Invisible AI adoption accelerates",
+          "what_happens": "Healthcare AI continues back-door adoption through physician tools. Adoption grows from 22% to 35%+ through documentation AI, clinical decision support, and coding assistance. 66% of physicians using AI tools rises toward 80%. FDA clearances exceed 350/year (up from 295 in 2025). CMS WISeR model drives provider-side AI adoption as defense against payer AI. 78K RN vacancies grow toward 100K, creating further pressure for AI augmentation. Trust gap (34 points) persists for patient-facing AI but irrelevant for physician-tool pathway.",
+          "employment_effect": "+0.5% to -1% (net near-zero; healthcare's demographic demand growth partially offsets admin role automation; nursing shortage creates demand for more workers even as admin roles shrink)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2027-2028",
+          "phase_name": "Administrative AI automation wave",
+          "what_happens": "Healthcare administrative costs ($200B+ annually) face systematic AI compression. Billing, coding, prior authorization, scheduling, and claims processing substantially automated. Revenue cycle management firms restructure. Insurance back-office follows financial services pattern. Telehealth AI market reaches $15-20B. Mayo Clinic 40% readmission reduction data drives system-wide adoption of predictive AI. Nursing shortage reaches 130K+ unfilled positions — AI nurse augmentation tools become essential.",
+          "employment_effect": "-1% to -2% (200K-400K admin positions eliminated; partially offset by clinical role expansion and new AI roles; net employment change modest due to demographic demand growth)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2028-2029",
+          "phase_name": "Clinical AI integration",
+          "what_happens": "AI moves from physician-invisible to physician-visible: clinical decision support systems become standard of care. AI in non-radiology specialties (cardiology, neurology, pathology) expands rapidly. Patient trust begins improving as exposure normalizes AI (familiarity effect). Telehealth AI handles routine consultations with physician oversight. Rural healthcare access improves through AI-augmented telemedicine. 200K unfilled RN positions make AI augmentation an operational necessity.",
+          "employment_effect": "-1% to -2% (cumulative 500K-700K admin reduction; clinical employment flat or growing due to demographic demand; nursing AI augmentation extends effective workforce capacity)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2029-2030",
+          "phase_name": "Trust barrier erosion",
+          "what_happens": "Patient trust gap narrows from 34 to 15-20 points as AI healthcare experiences accumulate. AI-first primary care models emerge for routine conditions. Complex and trust-requiring care remains human-led at premium pricing. Hospital systems restructure: 30-40% fewer admin staff, same or more clinical staff, AI everywhere in clinical workflow. Healthcare AI market exceeds $80B. Elder care AI demand surges as 65+ population grows 3%/yr.",
+          "employment_effect": "-1% (nearly at equilibrium; admin losses fully offset by clinical growth in aging population)",
+          "confidence": "low"
+        },
+        {
+          "year_range": "2030-2031",
+          "phase_name": "New healthcare delivery equilibrium",
+          "what_happens": "Healthcare settles into dual-track model: AI-augmented standard care (majority of volume) and human-premium care (complex, trust-requiring). Total employment stabilizes at ~21M (modest decline from 22M despite massive admin automation, because aging demographics drive clinical demand growth). Revenue grows to ~$3.1T. Nursing shortage partially addressed by AI augmentation extending effective capacity.",
+          "employment_effect": "Stabilizing. Demographic demand growth for clinical care offsets admin automation. Sector is the LEAST net-job-destructive of the five priority sectors.",
+          "confidence": "low"
+        }
+      ],
+
+      "force_impact_breakdown": [
+        {"force_id": "F1_technology", "impact_score": 8, "mechanism": "1,250+ FDA-cleared AI devices (295 in 2025 alone). 3%->22% adoption in 2 years. 66% physician usage. AI telehealth: $5.2B -> $119.3B (2025-2035). Physician-tool pathway bypasses patient trust barrier. Radiology AI approaching saturation; cardiology and other specialties next."},
+        {"force_id": "F2_demographics", "impact_score": 9, "mechanism": "Aging population (65+ growing 3%/yr) guarantees demand growth. 78K unfilled RN positions projected to 200K by 2030. Pipeline collapse creates structural labor shortage that AI must fill. Japan (900K/yr decline) shows the extreme aging healthcare demand case."},
+        {"force_id": "F3_geopolitics", "impact_score": 3, "mechanism": "EU AI Act high-risk classification for healthcare AI creates compliance friction. India as source of healthcare professionals (immigration). China healthcare AI adoption advanced through different pathway (WeChat Health). Cross-border telemedicine creates regulatory complexity."},
+        {"force_id": "F4_capital", "impact_score": 5, "mechanism": "VC flowing to healthcare AI. CMS WISeR model creating government-backed demand signal. PE-backed healthcare companies face refinancing pressure but sector demographics provide revenue stability. Hospital M&A continuing."},
+        {"force_id": "F5_psychology", "impact_score": 8, "mechanism": "34-point trust gap (providers 7/10 vs patients 3.6/10) is the largest measured in any sector. Trust highest with explicit no-AI disclosure. But physician-tool pathway BYPASSES patient-facing trust barrier. Familiarity effect resolves trust gap over 2-4 years. Context-dependent: admin AI (low friction) vs clinical AI (high friction) vs patient-facing AI (very high friction)."},
+        {"force_id": "F6_energy", "impact_score": 1, "mechanism": "Minimal direct energy constraint on healthcare AI adoption. Healthcare IT infrastructure is a small fraction of overall energy demand."}
+      ],
+
+      "barbell_classification": {
+        "routine_cognitive_pct": 30,
+        "routine_cognitive_tasks": ["Medical coding", "Medical billing", "Prior authorization processing", "Appointment scheduling", "Medical records management", "Insurance claims processing", "Prescription refill processing", "Basic triage (phone/online)", "Lab result routing", "Discharge documentation"],
+        "tacit_manual_pct": 35,
+        "tacit_manual_tasks": ["Surgical procedures", "Physical therapy", "Nursing bedside care", "Emergency response", "Patient physical examination", "Medical device operation", "Specimen collection", "Patient transport and positioning", "Wound care", "Rehabilitation exercises"],
+        "tacit_cognitive_pct": 35,
+        "tacit_cognitive_tasks": ["Differential diagnosis (complex cases)", "Treatment planning", "Surgical decision-making", "Patient counseling and education", "End-of-life care decisions", "Psychiatric evaluation", "Complex case management", "Clinical research design", "Medical ethics consultation", "Interdisciplinary care coordination"]
+      },
+
+      "second_order_effects": {
+        "upstream": ["Medical education transforms to incorporate AI competency", "Pharmaceutical clinical trials incorporate AI-driven patient selection", "Medical device industry integrates AI into all new products"],
+        "downstream": ["Health insurance restructures as AI reduces admin costs and improves risk prediction", "Patient experience changes fundamentally (faster diagnosis, more accessible care)", "Pharmacy automation accelerates"],
+        "adjacent": ["Administrative services (NAICS 56) loses healthcare staffing contracts as AI reduces demand", "Professional services firms pivoting to healthcare AI consulting", "Real estate: hospital campus planning changes as telehealth reduces in-person volume"],
+        "labor_migration": ["Medical coders -> healthcare AI system administrators", "Billing specialists -> revenue cycle AI managers", "Phone triage nurses -> telehealth AI oversight roles", "Scheduling staff -> patient experience coordinators", "Medical transcriptionists -> clinical documentation AI specialists (already largely completed)"]
+      },
+
+      "geographic_variation": {
+        "us": {"dynamics": "22M workers, $2.3T revenue. 3%->22% adoption in 2 years. FDA pathway proven. CMS driving adoption via WISeR. 78K RN vacancies. Trust gap (34 points) defines patient-facing adoption ceiling. Back-office transformation proceeding rapidly.", "velocity": "moderate"},
+        "china": {"dynamics": "WeChat Health and AI-first telemedicine widely accepted. Lower trust gap than US. State direction pushes AI adoption in public hospitals. Rural healthcare AI has massive addressable need (800M rural population). AI radiology deployed at scale.", "velocity": "fast"},
+        "eu": {"dynamics": "AI Act classifies healthcare AI as high-risk. Strong privacy requirements (GDPR) constrain health data use. Italy/Germany demographic pressure to automate is acute. Nordic countries lead in digital health. UK post-Brexit regulatory flexibility.", "velocity": "slow"},
+        "japan": {"dynamics": "Most acute demographic need — population declining 900K/yr, median age 49. Elder care robotics advanced. Cultural preference for human doctors creates trust barrier. Government pushing telemedicine expansion. Japan is the extreme aging-healthcare case.", "velocity": "moderate"},
+        "india": {"dynamics": "NET EXPORTER of healthcare professionals. Domestic healthcare AI growing from low base. Massive addressable need (1.4B population, limited specialist access). Telemedicine AI particularly valuable for rural access. Low-cost AI diagnostics market emerging.", "velocity": "moderate"},
+        "latam": {"dynamics": "Variable healthcare infrastructure. Brazil leads in digital health. Mexico healthcare system under stress. Telemedicine AI valuable for geographic access challenges. Limited AI R&D but adoption of US/global tools.", "velocity": "slow"},
+        "sea": {"dynamics": "Singapore leads healthcare innovation. Thailand medical tourism could integrate AI. Variable infrastructure across countries. Philippines nursing diaspora creates unique dynamics.", "velocity": "slow"},
+        "mena": {"dynamics": "Gulf states building AI-driven healthcare infrastructure (greenfield advantage). Saudi Vision 2030 includes major healthcare transformation. UAE as medical tourism AI hub. Young demographics reduce geriatric demand pressure relative to other regions.", "velocity": "moderate"}
+      },
+
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 4,
+        "gap": 3,
+        "fear_drivers": [
+          {"driver": "Patient trust gap (34 points)", "type": "trust", "severity": "high", "resolution_trigger": "Familiarity effect over 2-4 years; FDA clearances as trust proxy; physician endorsement of AI tools"},
+          {"driver": "Fear of losing human touch in care (52% of patients worried)", "type": "identity", "severity": "high", "resolution_trigger": "Dual-track model (AI standard + human premium) preserves choice; visible improvement in care access and outcomes"},
+          {"driver": "Malpractice liability for AI-assisted decisions", "type": "legal", "severity": "high", "resolution_trigger": "Case law develops; professional liability insurance adapts; FDA TPLC framework provides regulatory safe harbor"},
+          {"driver": "Healthcare data privacy concerns", "type": "privacy", "severity": "medium", "resolution_trigger": "HIPAA compliance frameworks for AI established; federated learning reduces data exposure"}
+        ],
+        "fear_driven_demand": ["Healthcare AI governance and compliance tools", "AI clinical decision audit trails", "Patient consent management for AI-assisted care", "Healthcare AI bias monitoring", "FDA regulatory consulting for AI medical devices", "Healthcare cybersecurity AI"]
+      },
+
+      "confidence_assessment": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium",
+        "key_assumptions": [
+          "Physician-tool AI adoption pathway continues bypassing patient trust barrier",
+          "FDA clearance rate maintains or increases (295+/year)",
+          "Nursing shortage worsens as projected (200K by 2030), sustaining AI augmentation demand",
+          "Healthcare admin costs remain high enough to justify AI investment",
+          "Aging demographics continue driving healthcare demand growth"
+        ],
+        "falsification_criteria": [
+          "If major AI medical error event triggers regulatory freeze, adoption halts across the sector",
+          "If patient trust gap widens rather than narrows (backlash against invisible AI), physician-tool pathway faces constraints",
+          "If nursing pipeline recovers significantly, AI augmentation urgency diminishes",
+          "If healthcare AI proves unable to handle complexity of real clinical workflows (quality fails), adoption stalls",
+          "If malpractice litigation targets AI-augmented practices successfully, physicians resist AI adoption"
+        ]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-008", "A-2026-02-11-V3C2-104", "A-2026-02-11-V3C2-201", "A-2026-02-11-V3C2-207", "A-2026-02-11-V3C2-021", "A-2026-02-11-V3C2-022", "A-2026-02-11-V3C2-023", "A-2026-02-11-V3C2-028", "A-2026-02-11-V3C2-032", "A-2026-02-11-V3C2-039", "A-2026-02-11-V3C2-041", "P-001", "P-003", "P-005", "P-032"],
+      "business_models_arising": ["MC-62-001", "MC-62-002", "MC-62-003"]
+    },
+
+    {
+      "brief_id": "SB-56",
+      "sector_naics": "56",
+      "sector_name": "Administrative and Support Services",
+      "transformation_phase": "acceleration",
+      "phase_confidence": "high",
+
+      "current_state_2026": {
+        "employment_millions": 3.57,
+        "revenue_billions": 192.7,
+        "establishments": 85000,
+        "avg_firm_size": 42,
+        "cost_structure": {"labor_pct": 72, "materials_pct": 3, "overhead_pct": 18, "compliance_pct": 7},
+        "ai_adoption": "growing"
+      },
+
+      "projected_state_2031": {
+        "employment_millions": 1.8,
+        "employment_change_pct": -49.6,
+        "revenue_billions": 130,
+        "dominant_business_model": "AI agent platforms replacing human staffing intermediation; niche human-premium staffing for trust-requiring roles; AI-native workforce management platforms; gig-to-permanent conversion services",
+        "new_roles_created": ["AI workforce orchestrator", "Human-AI task allocation specialist", "Workforce transition consultant", "AI staffing compliance officer", "Trust-verified placement specialist"],
+        "roles_eliminated": ["Staffing recruiter (routine placement)", "Temporary worker coordinator", "Background check processor", "Timesheet administrator", "Payroll processor (staffing)", "Customer service representative (staffing)", "Account manager (commodity staffing)", "Data entry temp", "Administrative assistant (contracted)"]
+      },
+
+      "transformation_path": [
+        {
+          "year_range": "2026-2027",
+          "phase_name": "Destruction accelerates",
+          "what_happens": "Staffing industry destruction deepens from current acceleration phase. AI agents directly replace the intermediation function that staffing firms provide — matching workers to tasks, scheduling, compliance. Enterprise clients adopt AI workflow tools that eliminate need for contracted temporary staff for routine cognitive tasks. RHI (-53%), MAN (-44%), KELYA (-25%) stock declines translate into revenue declines. Employment in NAICS 5613 continues -7.6% annual trajectory. First major staffing firm bankruptcies or radical restructurings.",
+          "employment_effect": "-8% to -12% (285K-430K positions; this is the fastest-declining sector)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2027-2028",
+          "phase_name": "Business model collapse",
+          "what_happens": "Traditional staffing business model (human intermediation for temporary labor placement) becomes economically non-viable for routine cognitive work. Remaining viable niches: healthcare staffing (trust barrier), skilled trades staffing (tacit manual), executive placement (tacit cognitive). Large staffing firms either pivot to AI workforce platforms or exit. PE-backed staffing roll-ups face refinancing wall + revenue collapse simultaneously — Minsky moment for the subsector.",
+          "employment_effect": "-12% to -15% (cumulative 700K-950K from 2026 baseline; massive displacement)",
+          "confidence": "high"
+        },
+        {
+          "year_range": "2028-2029",
+          "phase_name": "Restructuring into niche + platform",
+          "what_happens": "Surviving staffing firms operate in two modes: (1) AI workforce platforms that manage human-AI task allocation for enterprises (platform model), (2) niche human-premium staffing for healthcare, trades, executive roles where trust/physicality barriers remain. The administrative support services that survive are those with strong tacit-manual or tacit-cognitive components. Revenue per remaining worker increases significantly as AI handles administrative overhead.",
+          "employment_effect": "-8% to -10% (cumulative 1.1M-1.4M; rate slowing as the routine-cognitive segment is largely automated)",
+          "confidence": "medium"
+        },
+        {
+          "year_range": "2029-2030",
+          "phase_name": "New workforce intermediation",
+          "what_happens": "AI workforce platforms become the dominant model for flexible labor. These platforms combine AI task allocation with human workers for tasks requiring physical presence or trust. The staffing industry has effectively been replaced by a platform industry. Remaining human staffing is niche and premium-priced.",
+          "employment_effect": "-5% to -8% (decline continuing but slowing as the sector reaches its floor)",
+          "confidence": "low"
+        },
+        {
+          "year_range": "2030-2031",
+          "phase_name": "New equilibrium (vastly smaller)",
+          "what_happens": "Administrative services sector stabilizes at ~1.8M workers (down from 3.57M — a roughly 50% decline). Revenue contracts to ~$130B as AI handles work that previously required human intermediation. The surviving sector is split between AI workforce platforms (high revenue per employee) and niche human staffing (healthcare, trades, executive). This is the first sector to complete the Schumpeterian destruction-to-new-equilibrium cycle.",
+          "employment_effect": "Stabilizing at approximately half the 2026 level. This sector serves as the leading indicator for what other routine-cognitive sectors will experience.",
+          "confidence": "low"
+        }
+      ],
+
+      "force_impact_breakdown": [
+        {"force_id": "F1_technology", "impact_score": 10, "mechanism": "AI agents directly replace the core function of staffing firms — matching workers to tasks, scheduling, compliance checking, and performance monitoring. This is not augmentation; it is substitution. AI handles the entire intermediation workflow end-to-end at near-zero marginal cost."},
+        {"force_id": "F2_demographics", "impact_score": 4, "mechanism": "The staffing industry is not directly affected by Silver Tsunami (it is a young-worker-heavy sector). However, the shrinking labor supply reduces the pool of workers staffing firms can place, further weakening the business model."},
+        {"force_id": "F3_geopolitics", "impact_score": 2, "mechanism": "Minimal direct geopolitical impact on domestic staffing. Cross-border staffing (H-1B, J-1) has regulatory complexity but this is a small share of the market."},
+        {"force_id": "F4_capital", "impact_score": 9, "mechanism": "Staffing stocks crashed 25-53% — market has PRICED IN the destruction. PE-backed staffing roll-ups face refinancing wall + revenue collapse simultaneously. 532K/month business applications show workers leaving staffed positions to start their own firms (Coasean shrinkage). The capital market signal is unambiguous."},
+        {"force_id": "F5_psychology", "impact_score": 3, "mechanism": "Low fear friction for eliminating staffing intermediation. The fear is concentrated among staffing firm employees, not among the clients or placed workers. Clients WANT to eliminate the staffing cost markup (typically 30-60% above worker wages). No trust barrier to removing the intermediary."},
+        {"force_id": "F6_energy", "impact_score": 0, "mechanism": "No energy constraint on administrative services AI adoption."}
+      ],
+
+      "barbell_classification": {
+        "routine_cognitive_pct": 75,
+        "routine_cognitive_tasks": ["Candidate matching and placement", "Schedule coordination", "Timesheet processing", "Background checks", "Compliance documentation", "Invoicing and billing", "Performance tracking", "Onboarding paperwork", "Payroll processing for temps", "Account management (commodity)", "Customer service inquiry handling"],
+        "tacit_manual_pct": 10,
+        "tacit_manual_tasks": ["In-person facility management", "Physical security services", "Janitorial and cleaning services"],
+        "tacit_cognitive_pct": 15,
+        "tacit_cognitive_tasks": ["Executive search and assessment", "Complex workforce planning", "Client relationship management (strategic accounts)", "Regulatory compliance strategy", "Workforce transition consulting"]
+      },
+
+      "second_order_effects": {
+        "upstream": ["Staffing software industry pivots to AI workforce platforms", "Background check industry automates", "Professional staffing certifications become obsolete"],
+        "downstream": ["Enterprise HR departments restructure (no longer managing staffing vendor relationships)", "Temporary worker benefits and insurance markets contract", "Office space demand from staffing agencies collapses"],
+        "adjacent": ["Professional services (NAICS 54) sees staffing consulting revenue disappear", "Financial services loses staffing-related lending and insurance", "Technology sector absorbs staffing's AI platform function"],
+        "labor_migration": ["Staffing recruiters -> HR tech/AI platform sales (best case)", "Account managers -> enterprise workforce AI consultants", "Most displaced staffing workers -> other service sector roles at similar or lower wages", "Some transition to the human-premium staffing niches (healthcare, trades, executive)"]
+      },
+
+      "geographic_variation": {
+        "us": {"dynamics": "3.57M workers, $192.7B wages. ACTIVE destruction confirmed by stock prices (RHI -53%). Employment -7.6% YoY. Fastest-transforming sector in US economy. Concentrated in major employment centers (NYC, Chicago, LA, Houston).", "velocity": "fast"},
+        "china": {"dynamics": "Different labor market structure. State employment services coexist with private staffing. AI replacing some intermediation but government role limits private sector destruction.", "velocity": "moderate"},
+        "eu": {"dynamics": "Strong labor protections slow staffing destruction. Adecco (Swiss), Randstad (Dutch) are global leaders — face transformation pressure. EU temp worker protections create regulatory moats that slow but don't prevent AI intermediation.", "velocity": "slow"},
+        "japan": {"dynamics": "Staffing industry (haken) is culturally embedded. Demographic decline means fewer workers to staff, compounding AI replacement of intermediation. Cultural change required to move away from staffing agency model.", "velocity": "moderate"},
+        "india": {"dynamics": "Large informal staffing market alongside formal. IT staffing companies face AI disruption (TCS, Infosys use staffing-like models). India staffing more labor-intensive, creating greater displacement potential but slower AI adoption.", "velocity": "moderate"},
+        "latam": {"dynamics": "Growing but smaller staffing industry. Less formal staffing, more informal labor markets. AI disruption follows US patterns with significant lag.", "velocity": "slow"},
+        "sea": {"dynamics": "Manufacturing staffing in Vietnam, Philippines growing. BPO staffing in Philippines heavily exposed to AI disruption. Singapore staffing sophisticated but small market.", "velocity": "moderate"},
+        "mena": {"dynamics": "Kafala (sponsorship) system in Gulf creates unique staffing dynamics. Staffing intermediation deeply embedded in labor migration structure. AI replacement of administrative staffing slower due to institutional structure. Youth unemployment creates different staffing dynamics.", "velocity": "slow"}
+      },
+
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "fear_drivers": [
+          {"driver": "Job loss anxiety among 3.57M staffing industry workers", "type": "employment", "severity": "high", "resolution_trigger": "Workforce transition programs; alternative employment in growing sectors (healthcare, trades, infrastructure)"},
+          {"driver": "Client concern about AI reliability for workforce management", "type": "trust", "severity": "low", "resolution_trigger": "AI workforce platforms demonstrate reliability metrics exceeding human intermediation"},
+          {"driver": "Regulatory uncertainty about AI in hiring/placement decisions", "type": "regulatory", "severity": "medium", "resolution_trigger": "EEOC and state regulators issue guidelines on AI in hiring (expected 2027)"}
+        ],
+        "fear_driven_demand": ["AI workforce compliance platforms", "Bias-free AI hiring verification", "Workforce transition consulting services", "Human-AI hybrid staffing for trust-required placements"]
+      },
+
+      "confidence_assessment": {
+        "direction": "high",
+        "timing": "high",
+        "magnitude": "high",
+        "key_assumptions": [
+          "AI agents continue replacing human intermediation in workforce allocation",
+          "Enterprise clients continue shifting from staffing to AI-direct models",
+          "PE-backed staffing firms cannot refinance under revenue pressure",
+          "No regulatory intervention to protect staffing intermediation model"
+        ],
+        "falsification_criteria": [
+          "If AI agent quality proves insufficient for reliable workforce matching, human intermediation retains value",
+          "If regulatory intervention protects staffing firms (licensing requirements, AI hiring restrictions), destruction slows",
+          "If enterprises find AI-direct workforce management too complex, they revert to staffing firms",
+          "If PE firms successfully refinance and invest in AI transformation, staffing incumbents survive",
+          "If economic downturn increases demand for temporary labor (counter-cyclical effect), staffing revenue temporarily stabilizes"
+        ]
+      },
+
+      "evidence_refs": ["A-2026-02-11-V3C2-006", "A-2026-02-11-V3C2-014", "A-2026-02-11-V3C2-016", "A-2026-02-11-V3C2-012", "A-2026-02-11-V3C2-204", "P-027"],
+      "business_models_arising": ["MC-56-001", "MC-56-002", "MC-56-003"]
+    }
+  ]
+}
