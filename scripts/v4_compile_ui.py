@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-v4 UI Compilation: Generate narrative-first UI JSON files.
+v4.1 UI Compilation: Generate model-first UI JSON files with narrative context.
 
 Reads:
   - data/v4/narratives.json (scored narratives with model links)
@@ -116,7 +116,7 @@ def build_slim_model(m):
 
 def main():
     print("=" * 70)
-    print("v4 UI COMPILATION: Generating narrative-first UI data")
+    print("v4.1 UI COMPILATION: Generating model-first UI data")
     print("=" * 70)
     print()
 
@@ -153,7 +153,7 @@ def main():
     ui_narratives = [build_slim_narrative(n) for n in narratives]
 
     narratives_output = {
-        "engine_version": "v4.0",
+        "engine_version": "v4.1",
         "cycle": "v4-0",
         "date": "2026-02-12",
         "total_narratives": len(ui_narratives),
@@ -185,14 +185,24 @@ def main():
     print("Building UI models...")
     ui_models = [build_slim_model(m) for m in models]
 
+    # Model summary for UI filters
+    model_cat_dist = Counter(m.get("primary_category", m.get("category", "")) for m in models if m.get("primary_category") or m.get("category"))
+    model_opp_dist = Counter(m.get("cla", {}).get("category", "") for m in models if m.get("cla", {}).get("category"))
+    model_vcr_dist = Counter(m.get("vcr", {}).get("category", "") for m in models if m.get("vcr", {}).get("category"))
+
     models_output = {
-        "engine_version": "v4.0",
+        "engine_version": "v4.1",
         "cycle": "v4-0",
         "date": "2026-02-12",
         "total": len(ui_models),
         "dual_ranking": True,
         "triple_ranking": True,
         "narrative_linked": True,
+        "summary": {
+            "category_distribution": dict(sorted(model_cat_dist.items())),
+            "opp_category_distribution": dict(sorted(model_opp_dist.items())),
+            "vcr_category_distribution": dict(sorted(model_vcr_dist.items())),
+        },
         "models": ui_models,
     }
 
@@ -236,7 +246,7 @@ def main():
             })
 
     dashboard = {
-        "engine_version": "v4.0",
+        "engine_version": "v4.1",
         "current_cycle": "v4-0",
         "last_updated": "2026-02-12",
         "architecture": "transformation_narrative",
@@ -271,6 +281,68 @@ def main():
         "models_unlinked": models_data.get("unlinked_count", 0),
     }
 
+    # Model-centric stats for UI KPIs
+    t_composites = [m.get("composite", 0) for m in models if m.get("composite")]
+    vcr_composites = [m.get("vcr", {}).get("composite", 0) for m in models if m.get("vcr", {}).get("composite")]
+    vcr_rois = [m.get("vcr", {}).get("roi_estimate", {}).get("seed_roi_multiple", 0) for m in models
+                if isinstance(m.get("vcr", {}).get("roi_estimate"), dict) and m.get("vcr", {}).get("roi_estimate", {}).get("seed_roi_multiple")]
+    cla_composites = [m.get("cla", {}).get("composite", 0) for m in models if m.get("cla", {}).get("composite")]
+
+    # T-Score stats
+    if t_composites:
+        dashboard["t_score_stats"] = {
+            "mean": round(statistics.mean(t_composites), 1),
+            "median": round(statistics.median(t_composites), 1),
+            "stdev": round(statistics.stdev(t_composites), 1) if len(t_composites) > 1 else 0,
+            "min": round(min(t_composites), 1),
+            "max": round(max(t_composites), 1),
+        }
+
+    # VCR stats
+    if vcr_composites:
+        vcr_cat_dist = Counter()
+        for m in models:
+            cat = m.get("vcr", {}).get("category")
+            if cat:
+                vcr_cat_dist[cat] += 1
+        dashboard["vcr_stats"] = {
+            "mean": round(statistics.mean(vcr_composites), 1),
+            "median": round(statistics.median(vcr_composites), 1),
+            "stdev": round(statistics.stdev(vcr_composites), 1) if len(vcr_composites) > 1 else 0,
+            "min": round(min(vcr_composites), 1),
+            "max": round(max(vcr_composites), 1),
+        }
+        dashboard["vcr_category_distribution"] = dict(sorted(vcr_cat_dist.items()))
+
+    # VCR ROI stats
+    if vcr_rois:
+        sorted_rois = sorted(vcr_rois)
+        dashboard["vcr_roi_stats"] = {
+            "mean": round(statistics.mean(vcr_rois), 1),
+            "median": round(statistics.median(vcr_rois), 1),
+            "max": round(max(vcr_rois), 1),
+            "above_10x": sum(1 for r in vcr_rois if r >= 10),
+            "above_50x": sum(1 for r in vcr_rois if r >= 50),
+        }
+
+    # Category distribution (T-score categories)
+    cat_dist = Counter()
+    for m in models:
+        cat = m.get("primary_category", m.get("category", ""))
+        if cat:
+            cat_dist[cat] += 1
+    if cat_dist:
+        dashboard["model_category_distribution"] = dict(sorted(cat_dist.items()))
+
+    # Opportunity category distribution
+    opp_cat_dist = Counter()
+    for m in models:
+        opp = m.get("cla", {}).get("category")
+        if opp:
+            opp_cat_dist[opp] += 1
+    if opp_cat_dist:
+        dashboard["opp_category_distribution"] = dict(sorted(opp_cat_dist.items()))
+
     with open(UI_DIR / "dashboard.json", "w") as f:
         json.dump(dashboard, f, indent=2, ensure_ascii=False)
     print(f"  Written: {UI_DIR / 'dashboard.json'}")
@@ -278,12 +350,12 @@ def main():
     # Summary
     print()
     print("=" * 70)
-    print("v4 UI COMPILATION COMPLETE")
+    print("v4.1 UI COMPILATION COMPLETE")
     print("=" * 70)
     print()
+    print(f"  Models: {len(ui_models)} (primary output)")
     print(f"  Narratives: {len(ui_narratives)} ({tns_cat_dist})")
-    print(f"  Models: {len(ui_models)} ({models_data.get('linked_count', 0)} linked)")
-    print(f"  Dashboard: v4.0")
+    print(f"  Linked: {models_data.get('linked_count', 0)} models have narrative context")
     print()
     print("  Top 5 Transformation Narratives:")
     for n in narratives[:5]:
