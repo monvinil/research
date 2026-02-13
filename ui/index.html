@@ -335,6 +335,20 @@
   .pattern-id { font-size: 10px; color: var(--dim); font-weight: 600; margin-bottom: 4px; }
   .pattern-evidence { font-size: 10.5px; color: var(--text-secondary); margin-top: 6px; }
 
+  /* Glossary */
+  .glossary-section { margin-bottom: 24px; }
+  .glossary-section h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--glass-border); }
+  .glossary-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .glossary-table th { text-align: left; font-size: 10px; font-weight: 700; color: var(--dim); text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 10px; border-bottom: 1px solid var(--glass-border); }
+  .glossary-table td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.02); vertical-align: top; }
+  .glossary-table tr:hover { background: rgba(255,255,255,0.015); }
+  .glossary-abbr { font-weight: 700; color: var(--accent); white-space: nowrap; min-width: 40px; }
+  .glossary-full { color: var(--text); font-weight: 600; }
+  .glossary-desc { color: var(--text-secondary); line-height: 1.6; }
+  .glossary-formula { font-family: monospace; font-size: 11px; color: var(--cyan); background: rgba(34,211,238,0.04); padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+  .glossary-badge { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.3px; display: inline-block; }
+  .glossary-intro { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; padding: 16px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius); }
+
   /* Scatter plot */
   .scatter-dot { position: absolute; border-radius: 50%; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; opacity: 0.7; }
   .scatter-dot:hover { transform: scale(2); opacity: 1; z-index: 10; }
@@ -806,6 +820,7 @@ document.addEventListener('DOMContentLoaded',function(){
     <a data-view="regions">Regions</a>
     <a data-view="fear">Fear Index</a>
     <a data-view="data">Data</a>
+    <a data-view="glossary">Glossary</a>
   </nav>
 
   <header>
@@ -814,16 +829,17 @@ document.addEventListener('DOMContentLoaded',function(){
       <span class="cycle-badge" id="cycle-badge">v3-12</span>
       &nbsp; <span id="model-total-sub">604 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
+    <div style="font-size:11px;color:var(--dim);margin-top:4px;line-height:1.5;max-width:820px">Projects what the economy becomes (2026&ndash;2031). Each model is a venture-scale opportunity scored on 3 independent axes: Transformation (will it happen?), Opportunity (can an entrant play?), and VC ROI (is it investable?). See <a href="#" onclick="event.preventDefault();document.querySelector('[data-view=glossary]').click()" style="color:var(--accent);text-decoration:underline">Glossary</a> for full definitions.</div>
   </header>
 
   <!-- KPI Row (always visible) -->
   <div class="kpi-row" id="kpi-row">
-    <div class="glass kpi"><div class="kpi-label">Rated Models</div><div class="kpi-value" style="color:var(--accent)" id="kpi-rated">--</div><div class="kpi-sub">individually scored</div></div>
-    <div class="glass kpi"><div class="kpi-label">Structural Winners</div><div class="kpi-value" style="color:var(--green)" id="kpi-winners">--</div><div class="kpi-sub">composite &ge;80, SN&ge;9</div></div>
-    <div class="glass kpi"><div class="kpi-label">Top Composite</div><div class="kpi-value" style="color:var(--amber)" id="kpi-top">--</div><div class="kpi-sub" id="kpi-mean-sub">mean --</div></div>
-    <div class="glass kpi"><div class="kpi-label">New This Cycle</div><div class="kpi-value" style="color:var(--red)" id="kpi-new">--</div><div class="kpi-sub">from deep dives</div></div>
-    <div class="glass kpi"><div class="kpi-label">Sub-Models</div><div class="kpi-value" style="color:var(--cyan)" id="kpi-sub-models">--</div><div class="kpi-sub">granularity layers</div></div>
-    <div class="glass kpi"><div class="kpi-label">Decomposed</div><div class="kpi-value" style="color:var(--pink)" id="kpi-decomposed">--</div><div class="kpi-sub">parent models</div></div>
+    <div class="glass kpi" title="Total models individually scored across 3 ranking dimensions"><div class="kpi-label">Rated Models</div><div class="kpi-value" style="color:var(--accent)" id="kpi-rated">--</div><div class="kpi-sub">T + O + VCR scored</div></div>
+    <div class="glass kpi" title="Models with SN≥8 AND FA≥8 — structurally inevitable AND force-aligned"><div class="kpi-label">Structural Winners</div><div class="kpi-value" style="color:var(--green)" id="kpi-winners">--</div><div class="kpi-sub">SN&ge;8 &amp; FA&ge;8</div></div>
+    <div class="glass kpi" title="Highest T-Score (Transformation composite) across all models"><div class="kpi-label">Top T-Score</div><div class="kpi-value" style="color:var(--amber)" id="kpi-top">--</div><div class="kpi-sub" id="kpi-mean-sub">mean --</div></div>
+    <div class="glass kpi" title="Models added in the current engine cycle"><div class="kpi-label">New This Cycle</div><div class="kpi-value" style="color:var(--red)" id="kpi-new">--</div><div class="kpi-sub">from deep dives</div></div>
+    <div class="glass kpi" title="Value chain layer decompositions — when a parent sector is FORTIFIED, it is broken into sub-layers that may be ACCESSIBLE"><div class="kpi-label">Sub-Models</div><div class="kpi-value" style="color:var(--cyan)" id="kpi-sub-models">--</div><div class="kpi-sub">value chain layers</div></div>
+    <div class="glass kpi" title="Parent models that have been decomposed into sub-layers via value chain analysis"><div class="kpi-label">Decomposed</div><div class="kpi-value" style="color:var(--pink)" id="kpi-decomposed">--</div><div class="kpi-sub">parent models split</div></div>
   </div>
 
   <!-- ═══ VIEW: MODELS ═══ -->
@@ -841,7 +857,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <option value="opp-rank">Opportunity Rank</option>
         <option value="opp-desc">Opportunity (high)</option>
         <option value="opp-asc">Opportunity (low)</option>
-        <option value="actionable">Actionable (geo mean)</option>
+        <option value="actionable">Triple Actionable (T&times;O&times;VCR)</option>
         <option value="sn">SN (Structural)</option>
         <option value="fa">FA (Force Alignment)</option>
         <option value="ec">EC (Econ Capture)</option>
@@ -860,14 +876,18 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
 
     <!-- Transformation Category Filters -->
+    <div style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px" title="Filter by T-Score pattern category (multi-label tags based on axis thresholds)">Transformation Category</div>
     <div class="filter-chips" id="cat-filters"></div>
     <div style="height:6px"></div>
     <!-- Opportunity Category Filters -->
+    <div style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px" title="Filter by CLA composite threshold (WIDE_OPEN ≥75 → LOCKED <30)">Opportunity Category (CLA)</div>
     <div class="filter-chips" id="opp-cat-filters"></div>
     <div style="height:6px"></div>
     <!-- Confidence + Force Filters -->
+    <div style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px" title="Filter by evidence quality tier — HIGH=deep dive, MODERATE=systematic, LOW=directional">Confidence Tier</div>
     <div class="filter-chips" id="confidence-filters"></div>
     <div style="height:6px"></div>
+    <div style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px" title="Filter by driving macro force (F1=Technology, F2=Demographics, F3=Geopolitics, F4=Capital, F5=Psychology, F6=Energy)">Driving Force</div>
     <div class="filter-chips" id="force-filters"></div>
     <div style="height:8px"></div>
 
@@ -887,12 +907,12 @@ document.addEventListener('DOMContentLoaded',function(){
   <!-- ═══ VIEW: VC ROI ═══ -->
   <div id="view-vcroi" class="view-section">
     <div class="kpi-row" id="vcr-kpi-row">
-      <div class="glass kpi"><div class="kpi-label">Fund Returners</div><div class="kpi-value" style="color:var(--green)" id="vcr-kpi-fund">--</div><div class="kpi-sub">VCR &ge;75</div></div>
-      <div class="glass kpi"><div class="kpi-label">Avg ROI Multiple</div><div class="kpi-value" style="color:var(--accent)" id="vcr-kpi-avg-roi">--</div><div class="kpi-sub">on $10M seed</div></div>
-      <div class="glass kpi"><div class="kpi-label">Median ROI</div><div class="kpi-value" style="color:var(--blue)" id="vcr-kpi-med-roi">--</div><div class="kpi-sub" id="vcr-kpi-med-sub">median multiple</div></div>
-      <div class="glass kpi"><div class="kpi-label">Above 10x</div><div class="kpi-value" style="color:var(--amber)" id="vcr-kpi-10x">--</div><div class="kpi-sub">models</div></div>
-      <div class="glass kpi"><div class="kpi-label">Above 50x</div><div class="kpi-value" style="color:var(--red)" id="vcr-kpi-50x">--</div><div class="kpi-sub">models</div></div>
-      <div class="glass kpi"><div class="kpi-label">Top VCR</div><div class="kpi-value" style="color:var(--green)" id="vcr-kpi-top">--</div><div class="kpi-sub" id="vcr-kpi-top-sub">score</div></div>
+      <div class="glass kpi" title="Models with VCR composite ≥75 — potential to return an entire fund"><div class="kpi-label">Fund Returners</div><div class="kpi-value" style="color:var(--green)" id="vcr-kpi-fund">--</div><div class="kpi-sub">VCR &ge;75</div></div>
+      <div class="glass kpi" title="Average estimated return multiple on a hypothetical $10M seed investment"><div class="kpi-label">Avg ROI Multiple</div><div class="kpi-value" style="color:var(--accent)" id="vcr-kpi-avg-roi">--</div><div class="kpi-sub">on $10M seed</div></div>
+      <div class="glass kpi" title="Median ROI multiple — more robust than average (less skewed by outliers)"><div class="kpi-label">Median ROI</div><div class="kpi-value" style="color:var(--blue)" id="vcr-kpi-med-roi">--</div><div class="kpi-sub" id="vcr-kpi-med-sub">median multiple</div></div>
+      <div class="glass kpi" title="Models estimated to return at least 10x on a $10M seed"><div class="kpi-label">Above 10x</div><div class="kpi-value" style="color:var(--amber)" id="vcr-kpi-10x">--</div><div class="kpi-sub">models &ge;10x ROI</div></div>
+      <div class="glass kpi" title="Models estimated to return at least 50x on a $10M seed — exceptional outcomes"><div class="kpi-label">Above 50x</div><div class="kpi-value" style="color:var(--red)" id="vcr-kpi-50x">--</div><div class="kpi-sub">models &ge;50x ROI</div></div>
+      <div class="glass kpi" title="Highest VCR composite score across all models"><div class="kpi-label">Top VCR</div><div class="kpi-value" style="color:var(--green)" id="vcr-kpi-top">--</div><div class="kpi-sub" id="vcr-kpi-top-sub">composite score</div></div>
     </div>
 
     <div class="controls-bar">
@@ -931,24 +951,24 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <!-- T vs OPP Scatter Plot -->
     <div class="glass-static card" style="margin-top:16px">
-      <div class="section-label">Transformation vs Opportunity <span class="count">each dot = 1 model, size = VCR</span></div>
+      <div class="section-label">Transformation vs Opportunity <span class="count">each dot = 1 model &middot; dot size = VCR score &middot; color = confidence tier &middot; click to expand</span></div>
       <div id="scatter-plot" style="position:relative;width:100%;height:400px;overflow:hidden"></div>
     </div>
   </div>
 
   <!-- ═══ VIEW: FORCES ═══ -->
   <div id="view-forces" class="view-section">
-    <div class="section-label">Force Velocities <span class="count">F1-F6</span></div>
+    <div class="section-label">Force Velocities <span class="count">6 macro forces driving sector transformations &mdash; velocity = rate of change</span></div>
     <div class="force-grid" id="force-grid"></div>
 
     <!-- Force-Model Distribution -->
-    <div class="section-label">Force-Model Distribution <span class="count" id="force-dist-count"></span></div>
+    <div class="section-label">Force-Model Distribution <span class="count" id="force-dist-count">how many models each force drives</span></div>
     <div class="glass-static card" style="margin-bottom:16px">
       <div id="force-model-distribution"></div>
     </div>
 
     <!-- Running Patterns -->
-    <div class="section-label">Running Patterns <span class="count" id="patterns-count">0</span></div>
+    <div class="section-label">Running Patterns <span class="count" id="patterns-count">confirmed cross-sector patterns observed across multiple cycles</span></div>
     <div class="patterns-grid" id="patterns-grid"></div>
 
     <!-- Key Findings -->
@@ -981,7 +1001,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div id="view-fear" class="view-section">
     <div class="two-col">
       <div class="glass-static card">
-        <div class="section-label">Fear Friction Index <span class="count">economic vs psychological readiness</span></div>
+        <div class="section-label">Fear Friction Index <span class="count">gap between economic readiness (tech exists) and psychological readiness (people accept it)</span></div>
         <div class="friction-grid" id="friction-grid"></div>
         <div class="friction-legend">
           <div class="friction-legend-item"><div class="friction-legend-dot" style="background:rgba(52,211,153,0.4)"></div>Economic readiness (1-10)</div>
@@ -1026,6 +1046,207 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="section-label">Engine Evolution <span class="count" id="cycle-count">0</span></div>
       <div class="cycle-chart" id="cycle-chart"></div>
       <div style="height:24px"></div>
+    </div>
+  </div>
+
+  <!-- ═══ VIEW: GLOSSARY ═══ -->
+  <div id="view-glossary" class="view-section">
+    <div class="glossary-intro">
+      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031 by tracking 6 macro forces, scoring 604 business models across 3 independent dimensions, and mapping transformation paths across sectors and geographies. Each model represents a specific venture-scale opportunity within a transforming sector. Models are scored on three axes that answer different questions &mdash; all scores are 1&ndash;10 per axis, composited to 0&ndash;100.
+    </div>
+
+    <!-- Triple Ranking System -->
+    <div class="glass-static card glossary-section">
+      <h3>Triple Ranking System</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Every model is independently ranked on three dimensions. These are never merged into a single number &mdash; a model can score high on transformation likelihood but low on investability, or vice versa.</p>
+      <table class="glossary-table">
+        <thead><tr><th>Dimension</th><th>Question It Answers</th><th>Composite Formula</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="glossary-full">T-Score (Transformation)</td>
+            <td class="glossary-desc">Will this transformation actually happen? Measures structural necessity, force alignment, economic viability, timing, and competitive dynamics.</td>
+            <td><span class="glossary-formula">(SN&times;25 + FA&times;25 + EC&times;20 + TG&times;15 + CE&times;15) / 10</span></td>
+          </tr>
+          <tr>
+            <td class="glossary-full">O-Score (Opportunity / CLA)</td>
+            <td class="glossary-desc">Can a new entrant actually play this? Measures whether the market is open to startups vs locked by incumbents. CLA = Competitive Landscape Assessment.</td>
+            <td><span class="glossary-formula">(MO&times;30 + MA&times;25 + VD&times;20 + DV&times;25) / 10</span></td>
+          </tr>
+          <tr>
+            <td class="glossary-full">VCR Score (VC ROI)</td>
+            <td class="glossary-desc">Is this a good seed-stage investment? Estimates return potential on a $10M seed round, considering market size, capture rate, unit economics, revenue velocity, and moat trajectory.</td>
+            <td><span class="glossary-formula">(MKT&times;25 + CAP&times;25 + ECO&times;20 + VEL&times;15 + MOA&times;15) / 10</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- T-Score Axes -->
+    <div class="glass-static card glossary-section">
+      <h3>Transformation Axes (T-Score)</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Each axis is scored 1&ndash;10. These measure whether a sector transformation is real, not whether it's a good business.</p>
+      <table class="glossary-table">
+        <thead><tr><th style="width:50px">Axis</th><th style="width:160px">Full Name</th><th>Weight</th><th>What It Measures</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-abbr" style="color:var(--green)">SN</td><td class="glossary-full">Structural Necessity</td><td>25%</td><td class="glossary-desc">Is this transformation structurally inevitable? Would it happen even without AI? Driven by labor shortages, demographic shifts, regulatory mandates, physical constraints.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--blue)">FA</td><td class="glossary-full">Force Alignment</td><td>25%</td><td class="glossary-desc">How many of the 6 macro forces (F1&ndash;F6) accelerate this transformation? Multi-force convergence = higher inevitability. A model driven by technology + demographics + energy scores higher than one driven by technology alone.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--amber)">EC</td><td class="glossary-full">Economic Capture</td><td>20%</td><td class="glossary-desc">How much economic value shifts when this transformation occurs? Measures the size and speed of value migration &mdash; revenue pools that move from incumbents to new entrants.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--cyan)">TG</td><td class="glossary-full">Timing &amp; Geography</td><td>15%</td><td class="glossary-desc">Is the timing right (2026&ndash;2028 window)? Are geographic conditions favorable? Higher = happening now in favorable jurisdictions. Lower = distant or geographically constrained.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--accent)">CE</td><td class="glossary-full">Competitive Edge</td><td>15%</td><td class="glossary-desc">Can a new entrant build durable competitive advantage? Measures data moats, network effects, switching costs, regulatory capture. NOT about current competition &mdash; about future defensibility.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CLA Axes -->
+    <div class="glass-static card glossary-section">
+      <h3>Opportunity Axes (CLA &mdash; Competitive Landscape Assessment)</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Independent from T-score. A transformation may be certain (high T) but the market may be locked by incumbents (low O). Or vice versa &mdash; wide open market for a transformation that may not happen.</p>
+      <table class="glossary-table">
+        <thead><tr><th style="width:50px">Axis</th><th style="width:160px">Full Name</th><th>Weight</th><th>What It Measures</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-abbr" style="color:var(--green)">MO</td><td class="glossary-full">Market Openness</td><td>30%</td><td class="glossary-desc">How fragmented is the market? Are incumbents weak, distracted, or absent? High MO = many small players, no dominant platform, greenfield opportunity. Low MO = concentrated market with strong incumbents.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--amber)">MA</td><td class="glossary-full">Moat Accessibility</td><td>25%</td><td class="glossary-desc">How fragile are existing moats? Can a new entrant break through incumbent defenses? High MA = incumbent moats are eroding (regulations changing, technology shifting). Low MA = deep moats (capital requirements, regulatory capture, network effects).</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--cyan)">VD</td><td class="glossary-full">Value Chain Depth</td><td>20%</td><td class="glossary-desc">How many independent value chain layers exist? More layers = more entry points for startups. Healthcare (12+ layers) scores higher than simple SaaS (3 layers). Each layer is a potential wedge.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--accent)">DV</td><td class="glossary-full">Demand Visibility</td><td>25%</td><td class="glossary-desc">How visible and proven is customer demand? High DV = customers actively seeking solutions, budget allocated, pain point acknowledged. Low DV = latent demand, requires market education.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VCR Axes -->
+    <div class="glass-static card glossary-section">
+      <h3>VC ROI Axes (VCR &mdash; Venture Capital Return)</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Models the return on a hypothetical $10M seed investment. Independent of both T and O &mdash; a transformation may be certain and open, but still a poor VC bet (e.g., thin margins, slow revenue velocity).</p>
+      <table class="glossary-table">
+        <thead><tr><th style="width:50px">Axis</th><th style="width:160px">Full Name</th><th>Weight</th><th>What It Measures</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-abbr" style="color:var(--green)">MKT</td><td class="glossary-full">Market Magnitude</td><td>25%</td><td class="glossary-desc">Total addressable market size. Uses log-scale scoring with sector-specific addressable percentages (4-digit NAICS = 1% of sector TAM, 2-digit = 0.15%). Larger TAM = larger potential exit.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--blue)">CAP</td><td class="glossary-full">Capture Feasibility</td><td>25%</td><td class="glossary-desc">Can a startup realistically capture meaningful market share? Considers competitive density, market fragmentation, go-to-market difficulty. High = fragmented market easy to penetrate. Low = concentrated market with strong defenders.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--amber)">ECO</td><td class="glossary-full">Unit Economics</td><td>20%</td><td class="glossary-desc">Quality of the business model's economics: gross margins, customer retention, LTV/CAC ratio, revenue per employee scalability. SaaS models score high. Hardware and capital-intensive models score low.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--cyan)">VEL</td><td class="glossary-full">Revenue Velocity</td><td>15%</td><td class="glossary-desc">How fast can a startup go from $0 to $5M ARR? Measures sales cycle length, deal size, customer acquisition speed. SMB SaaS = fast velocity. Enterprise hardware = very slow velocity.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--accent)">MOA</td><td class="glossary-full">Moat Trajectory</td><td>15%</td><td class="glossary-desc">Will competitive advantage grow or erode over time? Data flywheels, network effects, and regulatory capture create growing moats. Commodity services and time-limited arbitrage have eroding moats.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Category Labels -->
+    <div class="two-col">
+      <div class="glass-static card glossary-section">
+        <h3>Transformation Categories</h3>
+        <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Multi-label tags assigned based on T-score axis patterns. A model can have multiple categories.</p>
+        <table class="glossary-table">
+          <thead><tr><th>Category</th><th>Criteria</th></tr></thead>
+          <tbody>
+            <tr><td><span class="glossary-badge cat-badge cat-STRUCTURAL_WINNER">Structural Winner</span></td><td class="glossary-desc">SN &ge; 8 AND FA &ge; 8. The transformation is structurally inevitable AND force-aligned. Highest conviction.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge cat-FORCE_RIDER">Force Rider</span></td><td class="glossary-desc">FA &ge; 7 (but not Structural Winner). Riding strong macro forces but less structurally locked-in.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge cat-TIMING_ARBITRAGE">Timing Arbitrage</span></td><td class="glossary-desc">TG &ge; 8 AND SN &ge; 6. The window is open NOW. Time-sensitive opportunity.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge cat-CAPITAL_MOAT">Capital Moat</span></td><td class="glossary-desc">CE &ge; 8 AND SN &ge; 6. Strong competitive defensibility with structural backing.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge cat-FEAR_ECONOMY">Fear Economy</span></td><td class="glossary-desc">Tagged with F5 (Psychology/Fear). Opportunity driven by fear, trust gaps, or institutional anxiety.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge cat-CONDITIONAL">Conditional</span></td><td class="glossary-desc">T-composite &ge; 60 but doesn't match any specific pattern. Viable but not distinctive.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge cat-PARKED">Parked</span></td><td class="glossary-desc">T-composite &lt; 60 or otherwise low conviction. Not abandoned &mdash; may re-score higher with new evidence.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-static card glossary-section">
+        <h3>Opportunity &amp; VCR Categories</h3>
+        <table class="glossary-table">
+          <thead><tr><th colspan="2">Opportunity (CLA composite thresholds)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="glossary-badge cat-badge opp-WIDE_OPEN">Wide Open</span></td><td class="glossary-desc">&ge; 75. No significant incumbent barriers. Land grab.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge opp-ACCESSIBLE">Accessible</span></td><td class="glossary-desc">&ge; 60. Manageable competition. Good startup entry point.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge opp-CONTESTED">Contested</span></td><td class="glossary-desc">&ge; 45. Meaningful competition. Requires differentiation.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge opp-FORTIFIED">Fortified</span></td><td class="glossary-desc">&ge; 30. Strong incumbent moats. Hard entry.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge opp-LOCKED">Locked</span></td><td class="glossary-desc">&lt; 30. Market effectively closed to new entrants.</td></tr>
+          </tbody>
+        </table>
+        <div style="height:16px"></div>
+        <table class="glossary-table">
+          <thead><tr><th colspan="2">VCR (VC ROI composite thresholds)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="glossary-badge cat-badge vcr-FUND_RETURNER">Fund Returner</span></td><td class="glossary-desc">&ge; 75. Potential to return an entire fund. Top-tier VC bet.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge vcr-STRONG_MULTIPLE">Strong Multiple</span></td><td class="glossary-desc">&ge; 60. Solid 10&ndash;50x return potential. Good investment.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge vcr-VIABLE_RETURN">Viable Return</span></td><td class="glossary-desc">&ge; 45. Modest returns. May work for specific thesis.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge vcr-MARGINAL">Marginal</span></td><td class="glossary-desc">&ge; 30. Unlikely to meet typical VC return thresholds.</td></tr>
+            <tr><td><span class="glossary-badge cat-badge vcr-VC_POOR">VC Poor</span></td><td class="glossary-desc">&lt; 30. Not a VC-fundable model (may be viable as bootstrapped/PE).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Forces -->
+    <div class="glass-static card glossary-section">
+      <h3>The 6 Macro Forces (F1&ndash;F6)</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Every sector transformation is driven by one or more macro forces. Force convergence (multiple forces hitting the same sector) dramatically increases transformation probability and speed. Each model is tagged with its driving forces.</p>
+      <table class="glossary-table">
+        <thead><tr><th style="width:50px">Code</th><th style="width:140px">Force</th><th>Description</th><th style="width:100px">Example</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-abbr">F1</td><td class="glossary-full">Technology</td><td class="glossary-desc">AI capability improvements, inference cost declines, foundation model advances, robotics, computer vision. The primary accelerant.</td><td style="font-size:11px;color:var(--dim)">GPT-5, cost/token</td></tr>
+          <tr><td class="glossary-abbr">F2</td><td class="glossary-full">Demographics</td><td class="glossary-desc">Aging workforce, labor shortages, retirement waves, immigration policy, skill gaps. Creates STRUCTURAL necessity for automation.</td><td style="font-size:11px;color:var(--dim)">Silver tsunami, H-2A</td></tr>
+          <tr><td class="glossary-abbr">F3</td><td class="glossary-full">Geopolitics</td><td class="glossary-desc">Trade policy, reshoring mandates, defense spending, sanctions, sovereignty concerns. Shapes WHERE transformation happens.</td><td style="font-size:11px;color:var(--dim)">Tariffs, CHIPS Act</td></tr>
+          <tr><td class="glossary-abbr">F4</td><td class="glossary-full">Capital</td><td class="glossary-desc">Interest rates, VC funding, PE consolidation, credit conditions, valuation dynamics. Determines WHAT gets funded and when.</td><td style="font-size:11px;color:var(--dim)">Rate cuts, PE rollups</td></tr>
+          <tr><td class="glossary-abbr">F5</td><td class="glossary-full">Psychology</td><td class="glossary-desc">Fear of AI displacement, institutional trust erosion, deepfake anxiety, privacy concerns, change resistance. Creates both demand (safety products) and friction (adoption delays).</td><td style="font-size:11px;color:var(--dim)">AI anxiety, deepfakes</td></tr>
+          <tr><td class="glossary-abbr">F6</td><td class="glossary-full">Energy</td><td class="glossary-desc">Grid constraints, data center power demand, renewable transition, battery costs, carbon policy. Physical constraint on AI scaling.</td><td style="font-size:11px;color:var(--dim)">Grid capacity, solar</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Architecture Types -->
+    <div class="glass-static card glossary-section">
+      <h3>Architecture Types</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Each model uses one of 15 canonical business architectures. Architecture strongly predicts unit economics (ECO) and moat trajectory (MOA). Normalized from 54+ original variants.</p>
+      <table class="glossary-table">
+        <thead><tr><th>Architecture</th><th>What It Means</th><th style="width:80px">Economics</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-full">vertical_saas</td><td class="glossary-desc">Specialized SaaS for a specific industry vertical. Embedding AI into core workflows &mdash; scheduling, billing, compliance, decision support.</td><td style="font-size:11px;color:var(--green)">High margins</td></tr>
+          <tr><td class="glossary-full">full_service_replacement</td><td class="glossary-desc">End-to-end AI platform replacing traditional operations entirely. From client intake through delivery. Maximum disruption, maximum execution risk.</td><td style="font-size:11px;color:var(--amber)">Mixed</td></tr>
+          <tr><td class="glossary-full">platform_infrastructure</td><td class="glossary-desc">Infrastructure layer &mdash; APIs, data pipelines, integration middleware. Enables others to build. Lower margin per customer but massive scale potential.</td><td style="font-size:11px;color:var(--amber)">Scale-dependent</td></tr>
+          <tr><td class="glossary-full">data_compounding</td><td class="glossary-desc">Data flywheel: product improves with every transaction. Proprietary datasets that compound over time. Strongest moat trajectory of any architecture.</td><td style="font-size:11px;color:var(--green)">Improving</td></tr>
+          <tr><td class="glossary-full">acquire_and_modernize</td><td class="glossary-desc">Buy fragmented businesses at 3&ndash;5x EBITDA, modernize with AI, scale via roll-up. Capital-intensive but proven playbook.</td><td style="font-size:11px;color:var(--red)">Capital heavy</td></tr>
+          <tr><td class="glossary-full">marketplace_network</td><td class="glossary-desc">Two-sided marketplace with AI-driven matching, pricing, quality assurance. Cold start problem but strong network effects once established.</td><td style="font-size:11px;color:var(--amber)">Network-dependent</td></tr>
+          <tr><td class="glossary-full">rollup_consolidation</td><td class="glossary-desc">Consolidate fragmented operators under shared AI infrastructure and back-office. Similar to acquire_and_modernize but more operators, less tech.</td><td style="font-size:11px;color:var(--red)">Capital heavy</td></tr>
+          <tr><td class="glossary-full">ai_copilot</td><td class="glossary-desc">Augments professional judgment with AI. Real-time analysis, recommendations, automated documentation. Human stays in the loop.</td><td style="font-size:11px;color:var(--green)">High margins</td></tr>
+          <tr><td class="glossary-full">regulatory_moat_builder</td><td class="glossary-desc">Turns regulatory complexity into competitive advantage. Compliance monitoring, audit trails, automated reporting. Moat grows with regulation.</td><td style="font-size:11px;color:var(--amber)">Moderate</td></tr>
+          <tr><td class="glossary-full">hardware_ai</td><td class="glossary-desc">Purpose-built hardware + software. Specialized sensors, edge compute, AI models optimized for physical environments. Slow to deploy, hard to displace.</td><td style="font-size:11px;color:var(--red)">High capex</td></tr>
+          <tr><td class="glossary-full">robotics_automation</td><td class="glossary-desc">Autonomous robotics &mdash; mobile manipulation, computer vision, fleet coordination. Replacing manual labor at scale. Very slow deployment velocity.</td><td style="font-size:11px;color:var(--red)">Very high capex</td></tr>
+          <tr><td class="glossary-full">arbitrage_window</td><td class="glossary-desc">Time-limited opportunity exploiting the gap between AI capability arrival and incumbent adoption. Narrow entry window &mdash; high urgency, weak long-term moat.</td><td style="font-size:11px;color:var(--green)">Fast returns</td></tr>
+          <tr><td class="glossary-full">compliance_automation</td><td class="glossary-desc">Automated compliance engine &mdash; continuous monitoring, audit trail generation, regulatory filing across jurisdictions.</td><td style="font-size:11px;color:var(--amber)">Moderate</td></tr>
+          <tr><td class="glossary-full">service_platform</td><td class="glossary-desc">Managed service blending human expertise with AI augmentation. Delivers outcomes at scale. Lower margins than pure SaaS.</td><td style="font-size:11px;color:var(--amber)">Moderate</td></tr>
+          <tr><td class="glossary-full">physical_production_ai</td><td class="glossary-desc">AI-augmented physical production &mdash; computer vision, predictive maintenance, automated quality control on existing manufacturing lines.</td><td style="font-size:11px;color:var(--red)">High capex</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Confidence + Other -->
+    <div class="two-col">
+      <div class="glass-static card glossary-section">
+        <h3>Confidence Tiers</h3>
+        <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">How much evidence backs each model's scores. Based on source provenance, evidence depth, and analytical rigor.</p>
+        <table class="glossary-table">
+          <thead><tr><th>Tier</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><span class="glossary-badge confidence-badge conf-HIGH">HIGH</span></td><td class="glossary-desc">Deep-dive analysis with sector context, competitive landscape research, named competitors, TAM estimates, and unit economics evidence. Multiple data sources.</td></tr>
+            <tr><td><span class="glossary-badge confidence-badge conf-MODERATE">MODERATE</span></td><td class="glossary-desc">Systematic coverage with structured evidence but not field-verified. Generated from sector patterns and architectural analysis.</td></tr>
+            <tr><td><span class="glossary-badge confidence-badge conf-LOW">LOW</span></td><td class="glossary-desc">Early-stage models with limited evidence. Often from initial scanning cycles. Scores are directional, not precise. Priority targets for further research.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-static card glossary-section">
+        <h3>Key Concepts</h3>
+        <table class="glossary-table">
+          <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+          <tbody>
+            <tr><td class="glossary-full">NAICS</td><td class="glossary-desc">North American Industry Classification System. 2&ndash;6 digit codes identifying economic sectors (e.g., 62 = Healthcare, 5415 = Computer Systems Design). Used to map models to sectors.</td></tr>
+            <tr><td class="glossary-full">Triple Actionable</td><td class="glossary-desc">Geometric mean of T &times; O &times; VCR composites. Identifies models that score well on ALL three dimensions &mdash; transformations that are likely, accessible, and investable.</td></tr>
+            <tr><td class="glossary-full">Baumol Cost Disease</td><td class="glossary-desc">Sectors where wages rise without productivity gains (healthcare, education, government). AI disruption potential is HIGHEST in high-Baumol sectors. The engine's key finding: Inverse Baumol sectors (construction, agriculture) are the real AI opportunity.</td></tr>
+            <tr><td class="glossary-full">Fear Friction Gap</td><td class="glossary-desc">Difference between economic readiness (technology exists) and psychological readiness (people will accept it). Large gap = transformation delayed. Gap is structural data, not noise.</td></tr>
+            <tr><td class="glossary-full">Falsification Criteria</td><td class="glossary-desc">Specific, testable conditions that would invalidate a model's projections. Every model lists 2&ndash;4 criteria. If any trigger, the model should be re-scored or retired. Intellectual honesty mechanism.</td></tr>
+            <tr><td class="glossary-full">Polanyi Paradox</td><td class="glossary-desc">Tacit knowledge that humans can't articulate (e.g., riding a bike). Sectors with high tacit knowledge are harder to automate. The engine scores automation exposure using O*NET task data.</td></tr>
+            <tr><td class="glossary-full">Decomposition</td><td class="glossary-desc">When a parent model scores FORTIFIED/LOCKED, its value chain is decomposed into layers. Individual layers often score differently &mdash; physical layers stay FORTIFIED while software layers are ACCESSIBLE.</td></tr>
+            <tr><td class="glossary-full">Perez Cycle</td><td class="glossary-desc">Carlota Perez's technological revolution framework. AI is currently in the &ldquo;Frenzy&rdquo; phase (2022&ndash;26), approaching a &ldquo;Turning Point&rdquo; (2026&ndash;28). After the turning point: broad deployment (&ldquo;Synergy&rdquo;) begins.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -1210,15 +1431,15 @@ function renderVcrTable() {
 
   container.innerHTML = '<div class="glass-static" style="overflow-x:auto"><table class="model-table">' +
     '<thead><tr>' +
-    '<th>VCR#</th>' +
+    '<th title="VC ROI rank">VCR#</th>' +
     '<th>Name</th>' +
-    '<th>VCR</th>' +
-    '<th>ROI</th>' +
-    '<th>T-Score</th>' +
-    '<th>O-Score</th>' +
-    '<th>VCR Cat</th>' +
-    '<th>Arch</th>' +
-    '<th>VCR Axes</th>' +
+    '<th title="VC ROI composite score (0-100)">VCR</th>' +
+    '<th title="Estimated return on $10M seed investment">ROI</th>' +
+    '<th title="Transformation Score">T-Score</th>' +
+    '<th title="Opportunity Score">O-Score</th>' +
+    '<th title="VCR category (FUND_RETURNER ≥75, STRONG_MULTIPLE ≥60, VIABLE_RETURN ≥45)">VCR Cat</th>' +
+    '<th title="Business architecture type">Arch</th>' +
+    '<th title="MKT=Market Size, CAP=Capture, ECO=Economics, VEL=Velocity, MOA=Moat">VCR Axes</th>' +
     '</tr></thead>' +
     '<tbody>' + pageModels.map(m => {
       const vcrComp = m.vcr_composite || 0;
@@ -1373,15 +1594,15 @@ function renderModelList() {
   if (viewMode === 'table') {
     container.innerHTML = `<div class="glass-static" style="overflow-x:auto"><table class="model-table">
       <thead><tr>
-        <th class="sorted" data-sort="rank">#</th>
+        <th class="sorted" data-sort="rank" title="Transformation rank (by T-Score)">#</th>
         <th data-sort="name">Name</th>
-        <th data-sort="composite-desc">T-Score</th>
-        <th data-sort="opp-desc">O-Score</th>
-        <th data-sort="roi-desc">ROI</th>
-        <th data-sort="category">T-Category</th>
-        <th>O-Category</th>
-        <th>Axes</th>
-        <th>NAICS</th>
+        <th data-sort="composite-desc" title="Transformation Score — will this happen? (0-100)">T-Score</th>
+        <th data-sort="opp-desc" title="Opportunity Score — can an entrant play? (0-100)">O-Score</th>
+        <th data-sort="roi-desc" title="Estimated return multiple on $10M seed">ROI</th>
+        <th data-sort="category" title="Pattern category from T-axis thresholds">T-Category</th>
+        <th title="Opportunity category from CLA composite thresholds">O-Category</th>
+        <th title="T-Score axes: SN=Structural Necessity, FA=Force Alignment, EC=Economic Capture, TG=Timing, CE=Competitive Edge">Axes</th>
+        <th title="North American Industry Classification System sector code">NAICS</th>
       </tr></thead>
       <tbody>${pageModels.map(m => modelTableRow(m)).join('')}</tbody>
     </table></div>`;
@@ -1484,7 +1705,7 @@ function toggleModelDetail(id) {
 
   // CLA axes
   const claAxes = ['MO','MA','VD','DV'];
-  const claNames = { MO: 'Market Openness', MA: 'Market Accessibility', VD: 'Value Chain Depth', DV: 'Defensibility Vulnerability' };
+  const claNames = { MO: 'Market Openness', MA: 'Moat Accessibility', VD: 'Value Chain Depth', DV: 'Demand Visibility' };
   const claScores = m.cla_scores || {};
   const claHtml = claAxes.map(a => {
     const v = claScores[a] || 0;
@@ -1556,13 +1777,16 @@ function toggleModelDetail(id) {
     </div>
     ${subInfoHtml}
     ${decompInfoHtml}
-    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Transformation Axes (SN/FA/EC/TG/CE)</div>
+    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Transformation Axes &mdash; <span style="font-weight:400;text-transform:none;letter-spacing:0">Will this transformation happen?</span></div>
+    <div style="font-size:9px;color:var(--dim);margin-bottom:6px;font-weight:400">SN=Structural Necessity, FA=Force Alignment, EC=Economic Capture, TG=Timing, CE=Competitive Edge</div>
     <div class="detail-axes">${axesHtml}</div>
-    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Opportunity Axes (CLA)</div>
+    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Opportunity Axes (CLA) &mdash; <span style="font-weight:400;text-transform:none;letter-spacing:0">Can a new entrant play?</span></div>
+    <div style="font-size:9px;color:var(--dim);margin-bottom:6px;font-weight:400">MO=Market Openness, MA=Moat Accessibility, VD=Value Chain Depth, DV=Demand Visibility</div>
     <div class="detail-cla-axes">${claHtml}</div>
-    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">VC ROI Axes (VCR)</div>
+    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">VC ROI Axes (VCR) &mdash; <span style="font-weight:400;text-transform:none;letter-spacing:0">Is this a good seed investment?</span></div>
+    <div style="font-size:9px;color:var(--dim);margin-bottom:6px;font-weight:400">MKT=Market Size, CAP=Capture Feasibility, ECO=Unit Economics, VEL=Revenue Velocity, MOA=Moat Trajectory</div>
     <div class="detail-cla-axes" style="grid-template-columns:repeat(5,1fr)">${vcrHtml}</div>
-    ${m.vcr_roi_multiple ? `<div style="font-size:13px;color:var(--text-secondary);padding:8px 12px;background:rgba(52,211,153,0.04);border-radius:var(--radius-xs);border-left:3px solid var(--green);margin-bottom:12px">Seed ROI Estimate: <strong class="roi-value ${roiClass(m.vcr_roi_multiple)}" style="font-size:16px">${m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) : m.vcr_roi_multiple.toFixed(1)}x</strong> on $10M &middot; Exit: <strong>$${(m.vcr_exit_val_M || 0).toLocaleString()}M</strong></div>` : ''}
+    ${m.vcr_roi_multiple ? `<div style="font-size:13px;color:var(--text-secondary);padding:8px 12px;background:rgba(52,211,153,0.04);border-radius:var(--radius-xs);border-left:3px solid var(--green);margin-bottom:12px">Seed ROI Estimate: <strong class="roi-value ${roiClass(m.vcr_roi_multiple)}" style="font-size:16px">${m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) : m.vcr_roi_multiple.toFixed(1)}x</strong> on $10M seed &middot; Est. Exit: <strong>$${(m.vcr_exit_val_M || 0).toLocaleString()}M</strong> <span style="font-size:10px;color:var(--dim)">(MKT&rarr;TAM &times; CAP&rarr;share &times; revenue multiple)</span></div>` : ''}
     <div class="detail-cats">${cats} ${oppCatBadge}</div>
     <div class="detail-meta">
       <span><span class="meta-label">NAICS:</span> ${esc(m.sector_naics)}${m.sector_name ? ' (' + esc(m.sector_name) + ')' : ''}</span>
@@ -1571,11 +1795,11 @@ function toggleModelDetail(id) {
       ${m.confidence_tier ? `<span><span class="meta-label">Confidence:</span> <span class="confidence-badge conf-${m.confidence_tier}">${m.confidence_tier}</span></span>` : ''}
     </div>
     ${m.one_liner ? `<div class="detail-oneliner">${esc(m.one_liner)}</div>` : ''}
-    ${(m.forces && m.forces.length) ? `<div style="margin:8px 0"><span class="meta-label" style="font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px">Forces: </span>${m.forces.map(f => '<span style="font-size:10px;font-weight:600;color:var(--accent);margin-right:6px">' + esc(f.replace(/_/g, ' ')) + '</span>').join('')}</div>` : ''}
-    ${m.cla_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;margin-top:8px">Opportunity Rationale</div><div class="detail-rationale">${esc(m.cla_rationale)}</div>` : ''}
-    ${m.vcr_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">VCR Rationale</div><div class="detail-rationale">${esc(m.vcr_rationale)}</div>` : ''}
-    ${m.deep_dive_evidence ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Evidence</div><div class="detail-rationale">${esc(m.deep_dive_evidence)}</div>` : ''}
-    ${(m.falsification_criteria && m.falsification_criteria.length) ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Falsification Criteria</div><ul class="falsification-list">${m.falsification_criteria.map(c => '<li class="falsification-item">' + esc(c) + '</li>').join('')}</ul>` : ''}
+    ${(m.forces && m.forces.length) ? `<div style="margin:8px 0"><span class="meta-label" style="font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px">Driving Forces </span><span style="font-size:9px;color:var(--dim);text-transform:none;letter-spacing:0">(macro forces accelerating this transformation)</span><br>${m.forces.map(f => '<span style="font-size:10px;font-weight:600;color:var(--accent);margin-right:6px">' + esc(f.replace(/_/g, ' ')) + '</span>').join('')}</div>` : ''}
+    ${m.cla_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;margin-top:8px">Opportunity Rationale <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; why this O-score</span></div><div class="detail-rationale">${esc(m.cla_rationale)}</div>` : ''}
+    ${m.vcr_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">VCR Rationale <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; investment thesis basis</span></div><div class="detail-rationale">${esc(m.vcr_rationale)}</div>` : ''}
+    ${m.deep_dive_evidence ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Evidence <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; supporting data from deep dive</span></div><div class="detail-rationale">${esc(m.deep_dive_evidence)}</div>` : ''}
+    ${(m.falsification_criteria && m.falsification_criteria.length) ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Falsification Criteria <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; conditions that would invalidate this model</span></div><ul class="falsification-list">${m.falsification_criteria.map(c => '<li class="falsification-item">' + esc(c) + '</li>').join('')}</ul>` : ''}
   `;
   panel.classList.add('visible');
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
