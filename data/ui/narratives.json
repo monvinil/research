@@ -2,7 +2,7 @@
   "engine_version": "v4.1",
   "cycle": "v4-0",
   "date": "2026-02-12",
-  "total_narratives": 15,
+  "total_narratives": 16,
   "tns_system": {
     "axes": {
       "EM": {
@@ -59,6 +59,10 @@
         {
           "naics": "31-33",
           "role": "primary"
+        },
+        {
+          "naics": "11",
+          "role": "secondary"
         }
       ],
       "forces": [
@@ -73,31 +77,102 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Manufacturing. First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "12.87M workers, 392K establishments. Cobot deployments accelerating ($25-60K units, 6-18mo ROI). Robot orders +85.6% in food mfg. Top 1% AI-sophisticated, bottom 72% on spreadsheets (Bimodality Pattern P-041). CHIPS Act driving $52B semiconductor reshoring. Average age of manufacturing owner 58+.",
+          "indicators": [
+            "BLS QCEW manufacturing employment (baseline: 12.87M)",
+            "Census establishment count (baseline: 392K)",
+            "Robot orders via RIA quarterly data (baseline: +85.6% food mfg)",
+            "Cobot unit pricing (baseline: $25-60K per unit)",
+            "CHIPS Act facility construction starts"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "Cobot cost below $20K for basic units. First autonomous production lines in food/beverage. Reshoring factory completions: TSMC Arizona, Samsung Texas, Intel Ohio. PE refinancing wall begins ($400B+ mfg-related debt maturing). Retirement wave accelerating: 50K+ establishments seeking succession.",
+          "indicators": [
+            "Cobot unit pricing trajectory (target: <$20K basic)",
+            "Autonomous production line deployments (food/beverage sector)",
+            "TSMC/Samsung/Intel factory completion milestones",
+            "PE debt maturity wall ($400B+ manufacturing-related)",
+            "Census business dynamics: establishment exits in NAICS 31-33"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "AI-native manufacturing OS platforms reach scale (MES replacement). Predictive maintenance standard in top-quartile plants. Autonomous quality inspection >90% accuracy. Reshoring employment measurable in BLS data. Small manufacturer acquisition pricing drops 15-25%.",
+          "indicators": [
+            "Manufacturing OS / MES replacement adoption rates",
+            "Predictive maintenance penetration in top-quartile plants",
+            "Autonomous QC inspection accuracy benchmarks",
+            "BLS reshoring employment delta vs 2026 baseline",
+            "Small manufacturer M&A multiples (baseline: current EV/EBITDA)"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "Bimodality resolves: bottom-quartile manufacturers either modernize or exit. Cobot-human ratio crosses 1:5 in food manufacturing. Supply chain AI optimization reduces inventory costs 20-30%. PE-backed roll-ups face debt wall distress, creating acquisition opportunities.",
+          "indicators": [
+            "Census establishment count delta (expect -5% to -10%)",
+            "Cobot-to-human ratio in NAICS 311 (food mfg)",
+            "Inventory-to-sales ratio for manufacturing sector",
+            "PE-backed manufacturing platform default/restructuring rate",
+            "Bimodality index: % of plants with AI vs spreadsheet-only"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "New manufacturing equilibrium: AI-augmented workforce standard. Firm count decreases 10-15% but output/worker up 25-35%. Reshored capacity represents 15-20% of semiconductor, 10% of pharma production. Micro-factory model viable for custom/local production.",
+          "indicators": [
+            "Manufacturing output per worker (target: +25-35% vs 2026)",
+            "Establishment count (target: -10% to -15% vs 2026 baseline 392K)",
+            "Domestic semiconductor production share (target: 15-20%)",
+            "Domestic pharma API production share (target: ~10%)",
+            "Micro-factory establishment count (new Census category expected)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "CHIPS Act + Silver Tsunami + reshoring = fastest transformation. $52B semiconductor, $35B EV battery investment. 392K establishments, extreme fragmentation."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1 year",
+          "notes": "World's largest manufacturing base. Government-directed AI adoption. Robot density already highest globally. Risk: US-China decoupling fragments supply chains."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "-2 years",
+          "notes": "Most advanced robotics adoption per capita. Demographic pressure most acute (population declining). Society 5.0 framework. Leading in cobot-human integration."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "AI Act regulatory overhead slows adoption. Strong in automotive/chemicals. Germany's Industrie 4.0 mature but mid-tier adoption lagging. Energy costs post-Ukraine driving efficiency investment."
+        },
+        "India": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Demographic dividend (young workforce) reduces automation urgency. PLI scheme driving manufacturing investment. Electronics assembly growing. Leapfrog potential in greenfield facilities."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Nearshoring wave (Mexico, Brazil). New factories built AI-native from start. Weak incumbent base = less resistance. Automotive corridor Monterrey-Guadalajara."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Manufacturing migration from China. Vietnam, Thailand, Indonesia receiving FDI. Mix of greenfield (AI-native) and legacy. Electronics assembly focus."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Saudi Vision 2030 manufacturing push. Limited existing base. Greenfield advantage. Energy-intensive manufacturing leverages cheap energy."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V312-TRN-001",
@@ -107,6 +182,7 @@
           "MC-V312-TRN-006",
           "V318-TMP-001",
           "MC-V314-CT-001",
+          "V3-DEF-010",
           "MC-V313-71-004",
           "MC-V313-71-009",
           "MC-V38-44-002-L2",
@@ -265,6 +341,7 @@
           "MC-V35-5416-001",
           "MC-V37-55-003",
           "MC-UTL-009",
+          "C7-PI-AGRICULTURE-01",
           "MC-V39-MICRO-004",
           "C7-MN-FOOD-01",
           "MC-UTL-004-L6",
@@ -274,6 +351,7 @@
           "MC-V37-53-007",
           "C7-PA-BEVERAGE-01",
           "MC-V313-21-010",
+          "PC8-EXT-AIBENE-FARMOPS-01",
           "MC-V38-62-017",
           "MC-V38-62-012",
           "MC-V312-ACC-013",
@@ -283,7 +361,8 @@
           "MC-UTL-004-L2",
           "C7-PA-AUTOPARTS-01",
           "MC-V35-3364-001",
-          "MC-V313-21-005"
+          "MC-V313-21-005",
+          "C7-NR-09"
         ],
         "whats_needed": [
           "V318-CP-001",
@@ -367,10 +446,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 184,
+        "what_works": 188,
         "whats_needed": 60,
         "what_dies": 16,
-        "total": 260
+        "total": 264
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -387,7 +466,14 @@
         "classification": "low_friction",
         "notes": "v3-9 deep dive confirms: LOW friction. Manufacturing transformation is ADDITIVE not substitutional — cobots augment workers who don't exist (499K shortage). Owner reluctance is about RETIREMENT not AI fear. Worker friction near zero (cobots do dangerous/repetitive tasks). 78-point implementation gap is capability not psychology."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Cobot costs plateau above $30K — ROI window doesn't open for small manufacturers",
+        "AI inference costs stop declining (>$1/M tokens stable for 12+ months) — automation economics stall",
+        "Reshoring reverses: CHIPS Act facilities delayed 3+ years or relocated offshore",
+        "Manufacturing employment INCREASES by >5% without wage pressure — labor shortage thesis invalidated",
+        "Bottom-72% manufacturers successfully adopt cloud ERP without AI — bimodality resolves via incremental not disruptive path",
+        "PE-backed manufacturing platforms successfully refinance at <6% rates — no distressed asset cascade"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -433,35 +519,108 @@
         "F5_psychology"
       ],
       "transformation_phase": "acceleration",
-      "summary": "v3-6: Office CMBS 12.34% (all-time record, above 2008). CRE cascade chain validated. 3 new FS model cards scored (5239-001: 78.75, 5223-001: 78.5, 5239-002: 71.25). Mortgage servicing most extreme labor signal: 13.8% wage growth AND -10.7% employment simultaneously. RIA sector (523940) has 496K workers at $270K avg and extreme fragmentation — identified by sector screener as next FS deep-dive target.",
+      "summary": "Financial services cascade ACTIVE — accounting employment -49K YoY, staffing stocks -53%, 7 data sources confirm. Professional services wages +4%/yr vs CPI 2.5%. PE debt wall $200B+ due 2027-2029. Tax prep automation >60% simple returns. Big 4 headcount flat despite revenue growth. CPA pipeline crisis (exam candidates -33% since 2016). Geographic variation: US baseline (cascade active), India high velocity (UPI leapfrog), Japan slow (+2yr, institutional resistance). Barbell endpoint: routine rol",
       "year_by_year": {
         "2026": {
           "phase": "acceleration",
-          "description": "Rapid transformation in Financial Services. Multiple disruption vectors active simultaneously.",
-          "indicators": []
+          "description": "Cascade ACTIVE: accounting employment -49K YoY, staffing stocks -53%. 7 independent data sources confirm. Baumol score highest in economy (wages +4%/yr vs CPI 2.5%). AI coding assistants 84% developer adoption. Tax prep automation >60% of simple returns. Big 4 headcount flat despite revenue growth. PE-backed accounting roll-ups debt/EBITDA averaging 5.2x.",
+          "indicators": [
+            "BLS: Accounting employment -49K YoY",
+            "Staffing sector stocks -53% from peak",
+            "Baumol score: wages +4%/yr vs CPI 2.5%",
+            "AI coding assistant adoption: 84% of developers",
+            "Tax prep automation: >60% of simple returns",
+            "Big 4 headcount flat despite revenue growth",
+            "PE-backed accounting roll-ups: debt/EBITDA 5.2x"
+          ]
         },
         "2027": {
           "phase": "restructuring",
-          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
-          "indicators": []
+          "description": "First PE-backed accounting firm failures (debt wall $200B+ financial services). AI handles 80% of bookkeeping, 50% of audit prep. Regional bank back-office staff cuts 15-25%. Insurance underwriting automation reaches mid-market. Compliance-as-code platforms handle 70% of routine regulatory filing.",
+          "indicators": [
+            "PE debt wall: $200B+ financial services refinancing due",
+            "AI bookkeeping automation: 80% of routine entries",
+            "AI audit prep: 50% of standard procedures",
+            "Regional bank back-office cuts: 15-25%",
+            "Insurance underwriting automation: mid-market penetration",
+            "Compliance-as-code: 70% of routine regulatory filing"
+          ]
         },
         "2028": {
           "phase": "restructuring",
-          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
-          "indicators": []
+          "description": "Tax preparation industry consolidates: 40% of independent tax preparers exit (Silver Tsunami + AI competition). AI-native financial advisory platforms reach $50B+ AUM. Audit transformation: continuous monitoring replaces annual audit cycle for mid-market. Banking branch workforce down 20% from 2025.",
+          "indicators": [
+            "Independent tax preparer exits: 40% (Silver Tsunami + AI)",
+            "AI-native advisory platforms: $50B+ AUM",
+            "Continuous audit monitoring: mid-market adoption",
+            "Banking branch workforce: -20% from 2025 baseline"
+          ]
         },
         "2029": {
           "phase": "new_equilibrium",
-          "description": "New sector structure forming. Survivors adapting to new reality.",
-          "indicators": []
+          "description": "Professional services cascade fully propagates: legal, consulting affected by same Baumol cure dynamics. CPA firm count down 25% from peak. AI-augmented accountant productivity 4-5x, creating premium for judgment-heavy work. Insurance claims processing 90%+ automated.",
+          "indicators": [
+            "Professional services cascade: legal + consulting affected",
+            "CPA firm count: -25% from peak",
+            "AI-augmented accountant productivity: 4-5x baseline",
+            "Insurance claims processing: 90%+ automated",
+            "Premium for judgment-heavy work emerging"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "Transformation largely complete. Sector operating under new economics.",
-          "indicators": []
+          "description": "New equilibrium: financial services employment down 30-40% in routine roles, up 15-20% in judgment/advisory. Barbell economy fully visible — AI handles routine cognitive, humans handle trust/judgment. Average financial services firm 40% smaller by headcount, 20% higher revenue/employee.",
+          "indicators": [
+            "Routine role employment: -30-40% from 2025",
+            "Judgment/advisory employment: +15-20% from 2025",
+            "Barbell economy fully visible in sector structure",
+            "Average firm headcount: -40%",
+            "Revenue per employee: +20%"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Cascade already active. 49K accounting job losses confirmed. PE refinancing wall 2027-2029. Largest professional services market globally. CPA pipeline crisis (exam candidates -33% since 2016)."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Rapid fintech adoption (Ant Group, WeChat Pay). State banks slower to automate. Unique regulatory environment. Shadow banking cleanup creates different transformation path."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Conservative banking culture. Aging workforce creates urgency but institutional resistance high. Megabanks slowly adopting. Regional banks face existential demographic pressure."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "DORA regulation drives compliance automation demand. Open Banking/PSD2 creating platform dynamics. UK (post-Brexit) moving faster than continental EU. GDPR constrains AI data usage."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "+1 year",
+          "notes": "UPI digital payments infrastructure world-leading. Leapfrogging legacy systems. Young workforce + digital-native banking. PhonePe, Razorpay, Zerodha disrupting incumbents. Back-office outsourcing jobs at risk."
+        },
+        "LATAM": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Nubank model proving digital-first banking at scale. Brazil, Mexico leading. Low banking penetration = greenfield opportunity. Remittance disruption."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "GrabFin, GoTo Financial expanding. Underbanked population large. Mobile-first financial services. Singapore as regional fintech hub."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Islamic finance creates unique AI compliance needs. Saudi PIF investing heavily in fintech. UAE as regional hub. Large unbanked population."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V312-TRN-001",
@@ -821,7 +980,14 @@
         "classification": "low_friction",
         "notes": null
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Accounting employment reverses: BLS shows +30K jobs for 2 consecutive quarters — cascade thesis invalidated",
+        "AI audit accuracy fails regulatory scrutiny — PCAOB or SEC blocks automated audit procedures",
+        "PE-backed financial services firms successfully refinance at favorable rates — no debt wall cascade",
+        "CPA exam candidate pipeline recovers (+20% YoY) — labor supply thesis weakened",
+        "Incumbent Big 4 successfully deploy AI internally and INCREASE margins without headcount cuts — disruption absorbed",
+        "AI hallucination rates in financial reporting remain >5% — trust barrier prevents automation of judgment-heavy work"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -854,6 +1020,10 @@
         {
           "naics": "44-45",
           "role": "primary"
+        },
+        {
+          "naics": "72",
+          "role": "secondary"
         }
       ],
       "forces": [
@@ -867,31 +1037,99 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Retail Trade. First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "E-commerce 22% of retail sales and rising. 1.05M retail establishments, 15.6M workers. Autonomous checkout expanding beyond grocery. Inventory AI reducing stockouts 20-30%. Last-mile delivery costs falling with route optimization. Dollar stores and off-price still growing (counter-trend to premium). Restaurant automation: ghost kitchens, kiosk ordering standard in QSR.",
+          "indicators": [
+            "Census e-commerce share of retail sales (baseline: 22%)",
+            "BLS QCEW retail employment (baseline: 15.6M)",
+            "Census retail establishment count (baseline: 1.05M)",
+            "Autonomous checkout transaction share in grocery (baseline: <5%)",
+            "Last-mile delivery cost per package (benchmark: $8-12)"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "Computer vision checkout reaches 10% of grocery transactions. AI-driven dynamic pricing standard in mid-market retail. First fully autonomous convenience stores at scale. Restaurant labor crisis peaks (average age 45+ for owners, 50%+ turnover for staff). AI-native restaurant OS platforms emerging.",
+          "indicators": [
+            "Computer vision checkout penetration in grocery (target: 10%)",
+            "Restaurant industry staff turnover rate (baseline: 50%+)",
+            "Autonomous convenience store count in US (watch for >500)",
+            "Dynamic pricing adoption in mid-market retail (%)",
+            "AI-native restaurant OS platform funding and deployment metrics"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "Retail employment inflection: -5% YoY in cashier/stock roles. Personalization AI drives 15-20% revenue lift for adopters. Warehouse automation reaches cost parity with manual for mid-size operations. Restaurant sector bifurcates: automated efficiency vs premium human experience.",
+          "indicators": [
+            "BLS cashier/stocker employment YoY change (target: -5%)",
+            "Personalization AI revenue lift for adopters (target: 15-20%)",
+            "Warehouse automation cost per unit vs manual labor parity",
+            "Restaurant sector revenue split: automated vs premium human service"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "Mall anchor closures accelerate second wave. Experiential retail grows while commodity retail automates. Grocery delivery profitability inflection via autonomous vehicles. Restaurant consolidation: 15% of independent restaurants acquired by AI-enabled operators.",
+          "indicators": [
+            "Mall anchor store closure rate (watch for acceleration)",
+            "Autonomous grocery delivery route profitability",
+            "Independent restaurant acquisition rate by AI-enabled operators (target: 15%)",
+            "Experiential retail revenue growth vs commodity retail"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "Retail workforce restructured: fewer cashiers/stockers, more experience curators and logistics coordinators. Restaurant industry: automated back-of-house standard, front-of-house premium for human service. E-commerce 30%+ of retail.",
+          "indicators": [
+            "E-commerce share of retail (target: 30%+)",
+            "BLS occupational mix shift: cashier vs experience curator roles",
+            "Restaurant back-of-house automation penetration rate",
+            "Retail sector total employment vs 2026 baseline"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest retail market. Amazon effect driving transformation. 1.05M establishments, extreme fragmentation in restaurants (600K+). Lowest Baumol score in restaurants (0.396)."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1 year",
+          "notes": "Already ahead: Alibaba New Retail, JD.com autonomous logistics. Luckin Coffee model. Social commerce dominant. Live-streaming commerce $500B+."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Convenience store automation advanced (7-Eleven AI). Restaurant robots deployed. Cultural premium on human service limits full automation. Aging workforce drives urgency."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Aldi/Lidl efficiency model. GDPR limits personalization AI. Strong labor protections slow workforce restructuring. UK further ahead than continental EU."
+        },
+        "India": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Reliance JioMart, Flipkart driving digital retail. Kirana store network (12M+) = massive fragmentation. Quick commerce (Zepto, Blinkit) leapfrogging. Food delivery dominant (Swiggy, Zomato)."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "MercadoLibre dominant. Informal retail large. Rappi delivery platform. Low automation penetration but greenfield opportunity in modern retail."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Shopee, Lazada dominating e-commerce. Social commerce growing. Young demographics favor digital. Grab food delivery dominant."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Noon.com, Amazon.ae growing. Mall culture strong. Food delivery (Talabat, Careem) growing fast. Labor-rich economy reduces automation urgency."
+        }
+      },
       "outputs": {
         "what_works": [
           "PC8-AB-PHARMRETAIL-01",
@@ -907,7 +1145,9 @@
           "MC-V38-44-004",
           "PC8-FSR-CARDEALER-01",
           "PC8-FSR-GROCERY-01",
+          "PC8-FSR-HOTEL-01",
           "MC-V38-44-005",
+          "PC8-DC-HOTEL-01",
           "MC-V38-44-012",
           "MC-V38-44-006",
           "MC-V38-44-007",
@@ -923,10 +1163,10 @@
         "what_dies": []
       },
       "model_counts": {
-        "what_works": 18,
+        "what_works": 20,
         "whats_needed": 5,
         "what_dies": 0,
-        "total": 23
+        "total": 25
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -943,7 +1183,13 @@
         "classification": "low_friction",
         "notes": "NEW (v3-8). Consumer-side friction LOW (87% use self-checkout, cashierless accepted). Worker-side friction MODERATE but powerless (fragmented, non-unionized, high turnover masks displacement). Political friction HIGH (displacement concentrates on young, female, minority workers). Gap of 1 understates political sensitivity."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "E-commerce share plateaus at 22-24% for 3+ years — physical retail more resilient than projected",
+        "Autonomous checkout technology reliability stays below 95% — customer friction prevents scaling",
+        "Restaurant labor crisis resolves via immigration reform providing 500K+ food service workers",
+        "Amazon/Walmart AI retail dominance prevents new entrant viability — opportunity thesis for startups fails",
+        "Consumer preference for human interaction in retail INCREASES measurably — automation backlash"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -990,31 +1236,102 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Healthcare. First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "19.6M healthcare workers, $4.3T US healthcare spending (18% GDP). AI diagnostic tools FDA-approved in radiology, dermatology, pathology. Nurse shortage critical: 200K+ unfilled positions. Administrative costs 30% of healthcare spending. AI medical scribes reducing clinician documentation time 40-60%. Mental health crisis driving telehealth demand.",
+          "indicators": [
+            "BLS QCEW healthcare employment (baseline: 19.6M)",
+            "CMS national health expenditure (baseline: $4.3T, 18% GDP)",
+            "FDA AI/ML medical device clearances (baseline: 500+)",
+            "BLS nursing vacancy rate (baseline: 200K+ unfilled)",
+            "Administrative cost share of healthcare spending (baseline: 30%)",
+            "AI medical scribe adoption rate in health systems"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "AI clinical decision support standard in top-quartile health systems. Administrative AI handles 50% of prior authorization, coding, billing. Nursing home automation begins (monitoring, medication management). Drug discovery AI produces first fully AI-designed Phase 3 candidates. RPM (remote patient monitoring) devices reach 50M+ US users.",
+          "indicators": [
+            "AI clinical decision support penetration in top-quartile systems",
+            "Prior authorization automation rate (target: 50%)",
+            "RPM device installed base in US (target: 50M+)",
+            "AI-designed drug candidates entering Phase 3 trials",
+            "Nursing home automation deployment metrics (monitoring, med mgmt)"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "Healthcare employment bifurcation visible: administrative roles -10%, clinical roles flat, AI-augmented specialists +15% productivity. Hospital-at-home models reach 5% of acute care. AI pathology reads standard for screening. Pharma manufacturing AI reduces production costs 20-30%.",
+          "indicators": [
+            "BLS healthcare administrative employment YoY (target: -10%)",
+            "AI-augmented specialist productivity gain (target: +15%)",
+            "Hospital-at-home share of acute care (target: 5%)",
+            "AI pathology screening adoption rate",
+            "Pharma manufacturing cost reduction from AI (target: 20-30%)"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "Rural healthcare transformation: AI-enabled community health models replace closing rural hospitals. Mental health AI reaches clinical validation for CBT delivery. Insurance underwriting fully algorithmic for standard policies. Healthcare consolidation: 15% of independent practices acquired.",
+          "indicators": [
+            "Rural hospital closure rate vs AI-enabled community health openings",
+            "Mental health AI clinical validation studies for CBT",
+            "Insurance underwriting automation rate for standard policies",
+            "Independent practice acquisition rate (target: 15%)"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "Healthcare spending growth rate declines from 5.4% to 3-4%/yr as AI compression takes effect. Administrative staff down 25-30%. Clinical productivity up 30-40%. Barbell: AI handles routine diagnosis/admin, humans handle surgical/empathetic/complex care. New equilibrium: fewer workers, higher pay, better outcomes.",
+          "indicators": [
+            "CMS national health expenditure growth rate (target: 3-4%/yr, down from 5.4%)",
+            "Healthcare administrative staffing vs 2026 baseline (target: -25-30%)",
+            "Clinical productivity per provider vs 2026 baseline (target: +30-40%)",
+            "Healthcare worker average compensation trend",
+            "Patient outcome metrics (mortality, readmission) vs 2026 baseline"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "$4.3T market, 18% GDP. Highest administrative waste globally. FDA AI device approvals accelerating (500+ cleared). Nurse shortage most acute. Highest per-capita spending creates strongest Baumol cure incentive."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "0 years",
+          "notes": "Parallel AI healthcare ecosystem. Massive patient data advantage (1.4B population). AI diagnostics deployed at scale in tier-1 hospitals. TCM + AI integration unique. Rural healthcare challenge similar to US."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "-1 year",
+          "notes": "Most aging population globally. Robotics in elder care advanced. Nursing robot deployment leading. Universal healthcare system enables centralized AI deployment. Caregiver shortage most acute."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "GDPR constrains health data AI. National health systems enable scale deployment but slower procurement. UK NHS AI adoption leading in EU. EU AI Act medical device classification adds compliance burden."
+        },
+        "India": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "1.4B population, 1 doctor per 1,500 people. AI diagnostics can leapfrog (rural health centers). Ayushman Bharat scheme digitizing records. Apollo/Practo telemedicine scaling. Pharma manufacturing hub."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Fragmented health systems. Brazil SUS universal but underfunded. Private healthcare concentrated. Telemedicine adoption accelerated by COVID. Low AI readiness."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Medical tourism hub (Thailand, Singapore). Emerging digital health ecosystems. Low physician density. Mobile health platforms growing."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "UAE/Saudi investing heavily in health AI. Cleveland Clinic Abu Dhabi model. Large expat populations in Gulf. Saudi health transformation under Vision 2030."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V313-71-001",
@@ -1194,7 +1511,14 @@
         "classification": "high_friction_context_dependent",
         "notes": "v3-8 deep dive: 34-pt provider-patient trust gap confirmed. 71% hospitals deployed predictive AI but via invisible pathway (admin, not clinical). FDA deregulation widens gap: economic readiness up but patients unaware. Healthcare AI creating NEW roles (data analysts, AI trainers) — friction may prolong transition rather than prevent it"
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "FDA blocks or severely restricts AI diagnostic tools — regulatory barrier prevents clinical deployment at scale",
+        "AI medical scribes produce liability-creating errors in >2% of encounters — trust barrier blocks adoption",
+        "Nurse shortage resolves via compensation increases (+25%) and immigration — demographic supply thesis weakened",
+        "Healthcare spending growth ACCELERATES above 6%/yr — Baumol cure fails, cost disease worsens",
+        "Patient resistance to AI diagnosis exceeds 60% in surveys for 3+ years — psychological barrier dominates",
+        "Drug discovery AI fails to produce successful Phase 3 candidates by 2028 — technology thesis for pharma weakened"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -1240,31 +1564,102 @@
       "year_by_year": {
         "2026": {
           "phase": "acceleration",
-          "description": "Rapid transformation in Real Estate and Rental and Leasing. Multiple disruption vectors active simultaneously.",
-          "indicators": []
+          "description": "Commercial real estate vacancy rates at 20-year highs (office 18%+). Residential affordability crisis: median home price 5.5x median income. PropTech platforms managing $500B+ AUM. AI property valuation reaching institutional accuracy. Remote work stabilized at 28% of workdays, permanently reducing office demand.",
+          "indicators": [
+            "CBRE/JLL office vacancy rate tracking (baseline: 18%+)",
+            "NAR median home price-to-income ratio (baseline: 5.5x)",
+            "PropTech AUM via PitchBook (baseline: $500B+)",
+            "Kastle Systems office occupancy data (proxy for remote work share)",
+            "AI property valuation accuracy vs appraiser benchmarks"
+          ]
         },
         "2027": {
-          "phase": "restructuring",
-          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Office-to-residential conversion projects accelerate in top 20 metros. AI-driven property management reducing operating costs 15-20%. First AI-underwritten commercial mortgages at scale. REIT sector bifurcation: data centers/logistics up, office/retail down.",
+          "indicators": [
+            "Office-to-residential conversion permits in top 20 metros",
+            "AI property management cost reduction benchmarks (target: 15-20%)",
+            "AI-underwritten commercial mortgage volume",
+            "REIT sector total returns: data center vs office sub-indices",
+            "CoStar commercial property price index by segment"
+          ]
         },
         "2028": {
           "phase": "restructuring",
-          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
-          "indicators": []
+          "description": "Commercial real estate debt maturity crisis ($900B maturing). Distressed office assets available at 40-60% of 2019 valuations. AI lease analysis and optimization standard. Smart building platforms reach $10B market.",
+          "indicators": [
+            "CRE debt maturities via Trepp/MSCI ($900B baseline)",
+            "Distressed office transaction prices vs 2019 peak",
+            "AI lease analysis adoption rate among commercial landlords",
+            "Smart building platform market size (target: $10B)",
+            "CMBS delinquency rates by property type"
+          ]
         },
         "2029": {
-          "phase": "new_equilibrium",
-          "description": "New sector structure forming. Survivors adapting to new reality.",
-          "indicators": []
+          "phase": "restructuring",
+          "description": "CRE restructuring complete for early-cycle assets. Mixed-use development model dominant in new construction. AI-native property management firms manage 10%+ of rental units. Climate risk AI pricing affects coastal/flood zone valuations.",
+          "indicators": [
+            "Mixed-use share of new construction permits",
+            "AI-native property management market share (target: 10%+ of rental units)",
+            "Climate risk discount in coastal/flood zone property valuations",
+            "CRE loan workout completion rates for 2024-2026 vintage",
+            "FEMA flood zone property price differential vs pre-AI-pricing"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "Transformation largely complete. Sector operating under new economics.",
-          "indicators": []
+          "description": "New CRE equilibrium: 25% less office space, 15% more mixed-use. Residential: AI-managed portfolios standard for institutional investors. Property management workforce restructured: fewer property managers, more technology operators.",
+          "indicators": [
+            "Total US office space vs 2024 baseline (target: -25%)",
+            "Mixed-use share of commercial real estate (target: +15%)",
+            "AI-managed residential portfolio share among institutional investors",
+            "BLS property management employment vs 2024 baseline",
+            "Technology operator roles in real estate job postings"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest CRE market. Office vacancy crisis centered in NYC, SF, Chicago. Sunbelt migration driving residential demand. $900B debt maturity wall."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Evergrande aftermath. Government-managed restructuring. Ghost cities and oversupply. Different crisis dynamics than US."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Declining population reducing demand. Tokyo still premium. Rural depopulation accelerating. Government incentives for rural relocation."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Energy efficiency regulations driving renovation. London CRE under pressure. Paris, Berlin more stable. Green building requirements."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "+1 year",
+          "notes": "Urbanization driving 10M+ housing unit demand/yr. REITs emerging. Smart city projects. Mumbai, Delhi NCR hotspots."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Informal housing dominant. Brazil Minha Casa program. Mexico nearshoring driving industrial real estate."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Singapore hub. Vietnam, Indonesia urbanizing rapidly. Data center real estate booming."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Saudi NEOM, Egypt New Capital. Dubai continued expansion. Mega-project driven."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V314-53-001",
@@ -1320,7 +1715,12 @@
         "classification": "moderate_friction",
         "notes": "NEW (v3-7). NAR settlement already disrupting commission model. Agent resistance to AI intermediation high but fragmentation (4.9 workers/establishment) means no collective bargaining power."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Office vacancy rates reverse below 12% by 2028 — remote work thesis failed",
+        "CRE debt successfully refinanced at <7% rates — no distressed asset cascade",
+        "AI property management accuracy below 80% on maintenance prediction — technology thesis weakens",
+        "Residential affordability improves without policy intervention — crisis thesis weakened"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -1353,6 +1753,10 @@
         {
           "naics": "54",
           "role": "primary"
+        },
+        {
+          "naics": "71",
+          "role": "secondary"
         }
       ],
       "forces": [
@@ -1365,31 +1769,102 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Professional Services. First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "9.6M professional services workers, $2.1T revenue. Baumol score 1.8x (high stored disruption energy). AI coding tools 84% developer adoption, experienced devs reporting 19% slower with AI (skill ceiling). Legal AI doc review reducing associate hours 30-40%. Consulting firms deploying AI for data analysis, proposal generation. Management consulting margins under pressure from AI-enabled boutiques.",
+          "indicators": [
+            "BLS QCEW professional services employment (baseline: 9.6M)",
+            "Census professional services revenue (baseline: $2.1T)",
+            "GitHub/Stack Overflow developer AI tool adoption surveys (baseline: 84%)",
+            "Legal AI doc review market size and adoption rate",
+            "Management consulting revenue per employee trajectory"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "First AI-native law firms handling routine corporate work at 60% cost reduction. Engineering design AI reaching structural analysis capability. Accounting automation cascading from TN-001 into broader professional services. Consulting firm layoffs at analyst/associate level begin.",
+          "indicators": [
+            "AI-native law firm count and revenue (target: routine corporate work at 60% cost reduction)",
+            "Engineering design AI structural analysis pass rates vs human engineers",
+            "Accounting automation spillover: professional services firms adopting AI-first workflows",
+            "Consulting firm analyst/associate hiring rates vs 2024 baseline",
+            "AmLaw 100 revenue per lawyer trajectory"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "Professional services employment inflection: routine analyst/associate roles -15%. AI-augmented senior professionals 3-4x more productive. Boutique AI-native firms capture 10% market share in legal, consulting. Architecture AI handling 80% of code-compliant residential design.",
+          "indicators": [
+            "BLS analyst/associate employment in professional services (target: -15%)",
+            "AI-augmented professional productivity benchmarks (target: 3-4x)",
+            "AI-native boutique firm market share in legal and consulting (target: 10%)",
+            "Architecture AI code-compliant residential design share (target: 80%)",
+            "Professional services firm size distribution shift"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "Barbell economy visible: premium human judgment commands 2x premium, routine cognitive work commoditized. Professional licensing reform begins (do you need a CPA for AI-prepared returns?). Micro-firm professional services model proves viable at scale.",
+          "indicators": [
+            "Billing rate spread: senior advisory vs routine work (target: 2x+ premium)",
+            "State licensing reform proposals for AI-assisted professional practice",
+            "Solo practitioner / micro-firm professional services revenue growth",
+            "CPA exam enrollment trends as proxy for pipeline disruption",
+            "AI-prepared tax return accuracy vs CPA-prepared benchmarks"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "Professional services restructured: 30% fewer workers, 25% higher revenue/worker. Firms 40% smaller on average. Solo practitioners with AI match mid-size firm capability. Human premium clear in litigation, M&A advisory, complex consulting.",
+          "indicators": [
+            "BLS professional services employment vs 2024 baseline (target: -30%)",
+            "Revenue per worker vs 2024 baseline (target: +25%)",
+            "Average professional services firm size vs 2024 (target: -40%)",
+            "Solo practitioner win rates in competitive engagements vs mid-size firms",
+            "Human premium billing rates in litigation, M&A, complex consulting"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest professional services market. Litigation culture creates unique legal AI dynamics. CPA pipeline crisis. 84% dev AI adoption."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Different professional services structure. State-directed firms. Rapid legal AI adoption for contract review. Engineering AI advanced."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Lifetime employment culture slows workforce restructuring. Aging professionals create succession crisis. Conservative adoption."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "UK leading (London professional services hub). GDPR constrains AI data use. Strong labor protections. Different licensing frameworks."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "+1 year",
+          "notes": "IT outsourcing capital. Massive professional workforce. Infosys, TCS, Wipro facing AI disruption of their core model. Legal process outsourcing hub."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Small professional services sectors. Brazil leading. Informal economy limits."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Singapore as professional services hub. Growing but small. Philippines BPO under AI pressure."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Dubai/Abu Dhabi professional services hub. Growing with sovereign wealth investment."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V312-TRN-001",
@@ -1427,6 +1902,7 @@
           "MC-V312-TRN-014",
           "V318-OB-004",
           "MC-V312-ACC-002",
+          "PC8-FSR-TALENT-01",
           "MC-UTL-002",
           "MC-V313-42-012",
           "MC-V313-42-007",
@@ -1468,6 +1944,7 @@
           "MC-UTL-002-L4",
           "MC-V312-ACC-008",
           "MC-V314-LV-002",
+          "PC8-FSR-INDARTIST-01",
           "MC-V38-44-012",
           "MC-V312-ADM-001",
           "MC-V37-62-004",
@@ -1512,6 +1989,7 @@
           "V3-GEO-004",
           "MC-V314-54-001",
           "MC-56-002",
+          "PC8-FSR-SPORTSTCH-01",
           "C7-AW-ACC-01",
           "MC-V312-ACC-013",
           "V3-EMRG-006",
@@ -1600,10 +2078,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 124,
+        "what_works": 127,
         "whats_needed": 45,
         "what_dies": 32,
-        "total": 201
+        "total": 204
       },
       "cascade_dependencies": {
         "upstream_of": [
@@ -1622,7 +2100,13 @@
         "classification": "moderate_friction",
         "notes": "Legal sub-sector at 82% ethical concern is highest of any professional field"
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "AI coding tool productivity gains reverse or plateau below 15% — developer augmentation thesis weakened",
+        "Professional licensing bodies successfully block AI from core practice areas for 3+ years",
+        "AI-native boutique firms fail to capture >5% market share by 2028 — incumbent advantage dominates",
+        "Baumol score decreases (wage growth slows to CPI) — stored disruption energy dissipates naturally",
+        "AI hallucination rates remain >3% in legal/accounting work — trust barrier prevents adoption"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -1652,6 +2136,10 @@
         {
           "naics": "5415",
           "role": "primary"
+        },
+        {
+          "naics": "51",
+          "role": "secondary"
         }
       ],
       "forces": [
@@ -1665,31 +2153,103 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Computer Systems Design and Related Services (IT Services). First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "2.46M IT workers, $366.8B payroll, Baumol 2.05x. 84% of developers using AI coding daily. Experienced devs 19% SLOWER with AI (the skill ceiling paradox). Cloud spending $600B+ globally. Cybersecurity spending $180B+. AI infrastructure buildout consuming 40% of cloud growth. Content verification and deepfake detection emerging as new markets.",
+          "indicators": [
+            "BLS QCEW IT services employment (baseline: 2.46M)",
+            "IT services payroll (baseline: $366.8B)",
+            "Developer AI tool adoption rate (baseline: 84%)",
+            "Global cloud infrastructure spending (baseline: $600B+)",
+            "Cybersecurity market size (baseline: $180B+)",
+            "AI infrastructure share of cloud spending growth (baseline: 40%)"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "AI handles 60% of Tier 1 support tickets autonomously. Junior developer hiring -25% as AI coding scales. Cloud-native AI platforms reach enterprise maturity. Cybersecurity AI reduces false positive rates 80%. Telecom network automation reaches 50% of routine operations.",
+          "indicators": [
+            "AI autonomous resolution rate for Tier 1 support tickets (target: 60%)",
+            "Junior developer hiring volume vs 2024 baseline (target: -25%)",
+            "Cloud-native AI platform enterprise adoption rates",
+            "Cybersecurity AI false positive reduction rate (target: 80%)",
+            "Telecom network automation share of routine operations (target: 50%)"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "IT services restructuring visible: managed services models transforming from headcount-based to outcome-based. AI-native media production studios viable at 10% of traditional cost. Autonomous software testing standard. Publishing industry consolidation accelerates.",
+          "indicators": [
+            "Managed services contract structure shift (headcount-based vs outcome-based %)",
+            "AI-native media production cost benchmarks vs traditional studios",
+            "Autonomous software testing adoption rate in enterprise CI/CD pipelines",
+            "Publishing industry M&A volume and revenue consolidation",
+            "IT outsourcing contract values: per-seat vs per-outcome pricing"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "IT outsourcing model fundamentally changed: India/Philippines BPO workforce -20% in routine IT support. DevOps automation reduces ops teams by 40%. Content authenticity infrastructure becomes standard (watermarking, provenance). Regional telecom automation mature.",
+          "indicators": [
+            "India/Philippines IT BPO employment in routine support (target: -20%)",
+            "DevOps team size vs 2024 baseline (target: -40%)",
+            "Content authenticity standard adoption (C2PA/watermarking) in major platforms",
+            "Telecom OPEX reduction from automation benchmarks",
+            "NASSCOM IT services headcount and revenue per employee"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "IT services employment restructured: fewer administrators and support staff, more architects and AI system managers. New equilibrium: smaller IT departments, higher per-worker value. AI infrastructure management standard. Human premium in security architecture, system design, client advisory.",
+          "indicators": [
+            "IT administrator/support employment vs 2024 baseline",
+            "Architect/AI system manager job postings growth",
+            "Average IT department size vs 2024 baseline",
+            "Revenue per IT worker trajectory",
+            "Security architect and system design billing rate premiums"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest IT market. Silicon Valley leading AI infrastructure. 84% developer AI adoption. Cloud hyperscalers headquartered. Cybersecurity capital."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1 year",
+          "notes": "Parallel AI ecosystem (Baidu, Alibaba Cloud, Huawei). 5G infrastructure ahead. ByteDance/TikTok driving content tech. Government surveillance AI advanced."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Enterprise IT modernization lagging (legacy COBOL). NEC, Fujitsu transitioning. Digital Agency pushing modernization. IT worker shortage acute."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "GDPR shapes AI deployment. SAP ecosystem dominant in enterprise. AI Act compliance creating new IT service needs. Strong in industrial IoT."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "0 years",
+          "notes": "IT services heartland (TCS, Infosys, Wipro). 5M+ IT workers. BPO model directly threatened. GCCs (Global Capability Centers) growing as alternative."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Nearshore IT services growing (Mexico, Colombia, Argentina). Talent arbitrage. Smaller but growing startup ecosystems."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Vietnam emerging as IT outsourcing destination. Singapore tech hub. Growing cloud adoption."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "UAE tech hub aspirations. Limited IT services sector. Cloud adoption growing from low base."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V313-71-001",
@@ -1709,22 +2269,35 @@
           "MC-V37-62-005",
           "C7-FSR-FIN-01",
           "MC-V313-11-009",
+          "V3-FEAR-006",
           "MC-DEF-011",
           "MC-V314-62-001",
           "PC8-SC-CYBERSEC-01",
           "C7-FSR-LATAM-01",
           "MC-54-001",
           "MC-V314-SB-001",
+          "V3-FEAR-007",
           "MC-V35-5415-001",
           "MC-INFO-002",
           "MC-54-003",
           "MC-V37-5415-001",
+          "PC8-FSR-MOTIONPIC-01",
           "MC-54-002",
+          "V3-FEAR-002",
+          "PC8-FSR-PERIODORIG-01",
           "MC-INFO-008",
+          "PC8-FSR-TELECOM-01",
           "C7-FSR-DESIGN-01",
+          "V3-GEO-007",
           "C7-AW-ACC-01",
           "V3-EMRG-006",
-          "MC-INFO-010"
+          "MC-INFO-010",
+          "V3-GEO-001",
+          "PC8-AW-MEDIA-01",
+          "PC8-EXT-DEADBIZ-LOCALCONTENT-01",
+          "PC8-EXT-DEADBIZ-PHOTOLAB-01",
+          "C7-NR-11",
+          "C7-NR-12"
         ],
         "whats_needed": [
           "V318-AGT-001",
@@ -1769,10 +2342,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 33,
+        "what_works": 46,
         "whats_needed": 24,
         "what_dies": 13,
-        "total": 70
+        "total": 83
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -1789,7 +2362,13 @@
         "classification": "low_friction",
         "notes": "NEW (v3-7). Workers ARE the AI builders/adopters. Low friction but self-disruption paradox: the sector building AI is most disrupted by it. 84% daily AI coding usage."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "AI coding productivity reverses for senior developers — skill ceiling paradox confirmed as dominant",
+        "AI Tier 1 support accuracy stays below 70% — human support remains essential for routine queries",
+        "India IT outsourcing revenues INCREASE by >15%/yr despite AI — outsourcing model proves resilient",
+        "Cybersecurity AI false positive rates don't improve — human analysts remain essential",
+        "Content authenticity solutions fail to reach adoption >20% — deepfake/provenance market doesn't materialize"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -1834,31 +2413,103 @@
       "year_by_year": {
         "2026": {
           "phase": "pre_disruption",
-          "description": "Early signals of structural change in Construction. Cost curves shifting, technology proving feasible.",
-          "indicators": []
+          "description": "7.9M construction workers, 920K establishments. Most under-digitized major sector (negative productivity growth over 20 years). 650K unfilled positions. Average contractor age 57+. Modular construction growing 15%/yr. Construction tech funding $3B+ annually. BIM adoption reaching 60% for large projects.",
+          "indicators": [
+            "BLS QCEW construction employment (baseline: 7.9M)",
+            "Census construction establishments (baseline: 920K)",
+            "Construction productivity index vs 20-year trend (baseline: negative)",
+            "JOLTS construction job openings (baseline: 650K unfilled)",
+            "Modular construction market growth rate (baseline: 15%/yr)",
+            "BIM adoption rate on large commercial projects (baseline: 60%)"
+          ]
         },
         "2027": {
           "phase": "early_adoption",
-          "description": "First movers adopt new approaches. Incumbent awareness growing.",
-          "indicators": []
+          "description": "3D-printed structures reach code compliance in 10+ states. Autonomous heavy equipment deployed on highway/infrastructure projects. Drone site surveys standard (80% of large commercial projects). Labor shortage worsens: retirement wave accelerates, apprenticeship pipeline insufficient.",
+          "indicators": [
+            "3D-printed structure code compliance by state count (target: 10+)",
+            "Autonomous heavy equipment deployments on infrastructure projects",
+            "Drone site survey adoption on large commercial projects (target: 80%)",
+            "Construction apprenticeship enrollment vs retirement outflow",
+            "Average contractor age tracking via Census/trade associations"
+          ]
         },
         "2028": {
           "phase": "early_disruption",
-          "description": "Adoption accelerates among forward-looking firms. Evidence of business model viability.",
-          "indicators": []
+          "description": "Modular construction reaches 10% of new residential starts. AI project management reducing cost overruns by 20-30%. Robotic bricklaying and drywall finishing commercially viable. Infrastructure bill projects peak employment demand, worsening labor competition.",
+          "indicators": [
+            "Modular/prefab share of new residential housing starts (target: 10%)",
+            "AI project management cost overrun reduction benchmarks (target: 20-30%)",
+            "Robotic bricklaying and drywall commercial deployment count",
+            "IIJA infrastructure project employment demand vs labor supply",
+            "Construction cost index trajectory"
+          ]
         },
         "2029": {
           "phase": "acceleration",
-          "description": "Mainstream adoption begins. Incumbent response intensifies.",
-          "indicators": []
+          "description": "Construction productivity finally inflects positive after 20-year decline. Small contractor acquisition wave (Silver Tsunami + modernization). Prefab factories operational in 30+ metros. Climate adaptation construction becomes major category.",
+          "indicators": [
+            "BLS construction productivity index (target: positive inflection)",
+            "Small contractor M&A volume and valuation multiples",
+            "Prefab/modular factory count by metro (target: 30+ metros)",
+            "Climate adaptation construction spending as share of total",
+            "Census business dynamics: construction establishment exits vs entries"
+          ]
         },
         "2030_2031": {
           "phase": "restructuring",
-          "description": "Sector structure visibly changing. Employment and firm composition shifting.",
-          "indicators": []
+          "description": "Construction industry restructured: fewer workers, higher productivity. Modular/prefab 20%+ of residential. AI-managed projects standard for commercial. Human premium in skilled trades (electricians, plumbers) with AI augmentation. Average project delivery time -20%.",
+          "indicators": [
+            "Construction employment vs 2024 baseline",
+            "Modular/prefab share of residential construction (target: 20%+)",
+            "AI-managed commercial project share",
+            "Skilled trades wage premium (electricians, plumbers) trajectory",
+            "Average project delivery time vs 2024 baseline (target: -20%)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest construction market. Most under-digitized. 650K unfilled positions. Infrastructure bill driving demand. Silver Tsunami acute in contractors."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Massive construction capacity but real estate slowdown. Advanced in prefab/modular. High-speed rail expertise. Infrastructure export."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "-1 year",
+          "notes": "Labor shortage most acute. Leading in construction robotics (Shimizu, Obayashi). Disaster resilience driving innovation. Declining new construction volume."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Green renovation wave (Renovation Wave initiative). Energy efficiency requirements. Strong labor protections. Passive house standard driving precision."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "+2 years",
+          "notes": "Massive housing deficit (30M+ units). Infrastructure buildout accelerating. Low-cost labor reduces automation urgency but quality/speed needs drive tech."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Informal construction dominant. Brazil housing deficit. Limited construction tech adoption."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Rapid urbanization. Infrastructure buildout phase. Limited construction tech penetration."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "NEOM, Egyptian New Capital, Dubai mega-projects. Advanced construction methods at scale in prestige projects."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V312-CON-011",
@@ -1959,7 +2610,13 @@
         "classification": "psychology_positive",
         "notes": null
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Construction productivity remains negative for 3+ more years — digital transformation thesis fails",
+        "Modular/prefab share stays below 5% of new residential by 2029 — adoption barriers stronger than projected",
+        "Labor shortage resolves via immigration providing 300K+ construction workers — demographic thesis weakened",
+        "3D printing and construction robotics fail code compliance in major markets — technology path blocked",
+        "Small contractor acquisition multiples stay above 5x EBITDA — Silver Tsunami discount doesn't materialize"
+      ],
       "confidence": {
         "direction": "medium",
         "timing": "medium",
@@ -2001,31 +2658,102 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Educational Services. First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "4.2M education workers, $800B+ US spending. AI tutoring platforms reaching 10M+ users. Brookings 50-country study confirms AI education potential. Ohio mandates, Michigan chatbot liability creating regulatory patchwork. Corporate training AI adoption fastest segment (fear friction gap=2). University enrollment declining 3rd consecutive year.",
+          "indicators": [
+            "BLS QCEW education employment (baseline: 4.2M)",
+            "US education spending (baseline: $800B+)",
+            "AI tutoring platform monthly active users (baseline: 10M+)",
+            "State-level AI education regulation count",
+            "NCES university enrollment trends (baseline: declining 3rd year)"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "AI-personalized curriculum reaches 20% of K-12 districts (pilot programs). Corporate L&D budgets shift 30% to AI-powered platforms. University admin automation reduces back-office costs 15%. First accredited AI-native degree programs launch. Teacher AI assistants standard in early-adopter districts.",
+          "indicators": [
+            "K-12 districts with AI-personalized curriculum (target: 20%)",
+            "Corporate L&D spend share on AI platforms (target: 30%)",
+            "University back-office cost reduction from AI (target: 15%)",
+            "Accredited AI-native degree program count",
+            "Teacher AI assistant adoption rate in early-adopter districts"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "Education employment inflection: administrative roles -10%, teaching roles flat. Bootcamp/micro-credential market exceeds $50B. AI grading and assessment handling 60% of routine evaluation. Student-facing AI tutors reach clinical validation for STEM subjects. University business model under stress: enrollment -15% from peak.",
+          "indicators": [
+            "BLS education admin employment delta (target: -10%)",
+            "Bootcamp/micro-credential market size (target: $50B+)",
+            "AI grading share of routine evaluation (target: 60%)",
+            "RCTs validating AI STEM tutoring efficacy",
+            "University enrollment decline from peak (target: -15%)"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "Higher education restructuring: 10% of small private colleges close or merge. AI-enabled competency-based education model scales. Corporate university alternatives capture 20% of professional development. Teacher role transforms: less lecturing, more mentoring/facilitating.",
+          "indicators": [
+            "Small private college closure/merger rate (target: 10%)",
+            "Competency-based education enrollment share",
+            "Corporate alternatives share of professional development (target: 20%)",
+            "Teacher role surveys: lecturing vs mentoring time allocation",
+            "NCES institutional count delta vs 2026 baseline"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "Education system restructured: AI handles content delivery and assessment, humans handle mentoring, motivation, and social development. University model bifurcates: research universities thrive, teaching-only institutions under existential pressure. Lifelong learning AI platforms standard for workforce.",
+          "indicators": [
+            "AI share of content delivery and assessment in K-12",
+            "Research vs teaching university revenue divergence",
+            "Lifelong learning platform penetration in workforce",
+            "Education employment composition: admin vs teaching vs mentoring",
+            "Student debt burden trajectory (leading indicator of structural shift)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest education market. Regulatory patchwork by state. University enrollment declining. Student debt crisis driving alternatives. Corporate L&D market $360B+."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1yr",
+          "notes": "Government-directed AI education integration. Gaokao exam system creates unique AI tutoring demand. Private tutoring crackdown redirected to AI. 280M+ students."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Declining student population. Juku (cram school) culture adapting to AI. Teacher shortage in rural areas. Society 5.0 education goals."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Bologna Process standardization. Strong public university systems. GDPR limits student data AI. Nordic countries leading in EdTech adoption."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "+1yr",
+          "notes": "1.5M schools, 300M+ students. Byju's/Unacademy ecosystem. Massive scale opportunity. Rural education access via AI. NEP 2020 reform enabling."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "Education access gaps large. Brazil, Mexico leading in EdTech. Language-specific content needed."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+2yr",
+          "notes": "Young demographics. Ruangguru (Indonesia) model. English language AI education demand high."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+2yr",
+          "notes": "Arabic-language AI education emerging. Gulf states investing in education transformation. Large youth populations."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V313-92-002",
@@ -2107,7 +2835,13 @@
         "classification": "highest_friction_sector",
         "notes": "CONFIRMED by Brookings 50-country study. Ohio mandates, Michigan chatbot liability. Entry sequence: corporate (gap 2) → teacher-facing (gap 2) → university admin (gap 3) → student-facing (gap 6)."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "AI tutoring outcomes no better than traditional methods in 3+ RCTs — effectiveness thesis invalidated",
+        "State/federal regulation bans AI grading for K-12 — deployment blocked at scale",
+        "University enrollment reverses and grows 5%+ — decline thesis weakened",
+        "Teacher unions successfully block AI classroom tools in 10+ states — institutional resistance dominates",
+        "Corporate L&D spending on AI platforms grows <10%/yr — adoption slower than projected"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -2137,6 +2871,10 @@
         {
           "naics": "928110",
           "role": "primary"
+        },
+        {
+          "naics": "92",
+          "role": "secondary"
         }
       ],
       "forces": [
@@ -2148,34 +2886,106 @@
       "summary": "UPGRADED early_disruption→acceleration (v3-6). 8 defense cards scored (avg 74.8, highest batch). MC-DEF-011 CMMC at 82.5 is strongest new card. Defense tech exits $54.4B (3x YoY) > investment ($49.1B) = first AI sector in Deployment phase. ReArm Europe EUR 800B. AUKUS autonomous warfare interoperability proven. Counter-UAS $7.5B budget. Nvidia/Groq $20B validates defense-AI hardware convergence.",
       "year_by_year": {
         "2026": {
-          "phase": "acceleration",
-          "description": "Rapid transformation in Defense AI / National Security Technology. Multiple disruption vectors active simultaneously.",
-          "indicators": []
+          "phase": "early_disruption",
+          "description": "US defense AI spending $15B+ annually. Replicator initiative producing 1000+ autonomous drones. Ukraine conflict proving AI in ISR, targeting, logistics. China military AI budget estimated $10B+. NATO allies increasing defense spending to 2%+ GDP. AUKUS driving submarine and AI tech sharing.",
+          "indicators": [
+            "US defense AI budget allocation (baseline: $15B+)",
+            "Replicator initiative autonomous drone production count (baseline: 1000+)",
+            "Ukraine AI deployment case studies (ISR, targeting, logistics)",
+            "NATO member defense spending as % GDP (target: 2%+)",
+            "AUKUS technology sharing milestones"
+          ]
         },
         "2027": {
-          "phase": "restructuring",
-          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Autonomous systems reach 10% of deployed ISR assets. AI-enabled predictive maintenance standard across major weapons platforms. Defense AI procurement reforms (faster acquisition cycles). First AI-native defense primes emerge as competitors to legacy contractors. Space-based AI surveillance operational.",
+          "indicators": [
+            "Autonomous ISR asset share (target: 10%)",
+            "AI predictive maintenance adoption across major weapons platforms",
+            "Defense acquisition cycle time benchmarks",
+            "AI-native defense company contract wins vs legacy primes",
+            "Space-based AI surveillance system deployments"
+          ]
         },
         "2028": {
-          "phase": "restructuring",
-          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Human-AI teaming doctrine established for major US/allied forces. Autonomous logistics convoys deployed. AI cyber defense handles 80% of routine threat detection. Defense industrial base modernization measurable: shipyard/arsenal capacity expanding. Critical mineral supply chains partially reshored.",
+          "indicators": [
+            "Human-AI teaming doctrine publication by DoD/allied forces",
+            "Autonomous logistics convoy deployment count",
+            "AI cyber defense share of routine threat detection (target: 80%)",
+            "Shipyard/arsenal capacity metrics vs 2026 baseline",
+            "Critical mineral domestic production share"
+          ]
         },
         "2029": {
-          "phase": "new_equilibrium",
-          "description": "New sector structure forming. Survivors adapting to new reality.",
-          "indicators": []
+          "phase": "restructuring",
+          "description": "AI changes military force structure: smaller human units augmented by autonomous systems. Defense AI export controls tighten as capabilities advance. Second-generation autonomous weapons systems in testing. Defense tech investment from VC reaches $30B+ cumulative.",
+          "indicators": [
+            "Military force structure changes: unit size vs autonomous augmentation",
+            "Defense AI export control policy updates",
+            "Second-gen autonomous weapons test milestones",
+            "Cumulative VC investment in defense tech (target: $30B+)",
+            "Defense workforce composition: human vs autonomous system operators"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "Transformation largely complete. Sector operating under new economics.",
-          "indicators": []
+          "description": "Military transformation visible: 20% fewer personnel, 3x more autonomous systems. AI-enabled logistics reduces sustainment costs 25%. Defense AI ecosystem matured: specialized defense AI companies at scale. Dual-use technology transfer accelerating between defense and commercial.",
+          "indicators": [
+            "Military personnel count delta (target: -20%)",
+            "Autonomous system deployment ratio vs 2026 baseline (target: 3x)",
+            "Sustainment cost reduction from AI logistics (target: 25%)",
+            "Defense AI company revenue and scale metrics",
+            "Dual-use technology transfer volume (defense to commercial)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest defense budget ($886B). Replicator, JADC2 programs. Defense VC ecosystem (Anduril, Shield AI, Palantir). Silicon Valley-Pentagon bridge. ITAR constraints."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1yr",
+          "notes": "Military-civil fusion strategy. AI weapons development prioritized. Autonomous swarm technology advanced. PLA modernization accelerating. Unique civil-military integration model."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+2yr",
+          "notes": "Post-Ukraine defense spending surge. Fragmented procurement. FCAS, Tempest fighter programs. European Defence Fund. France, UK leading."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Defense spending doubling to 2% GDP. Counterstrike capability development. AI-enabled maritime surveillance priority. US-Japan tech alliance deepening."
+        },
+        "India": {
+          "velocity": "medium",
+          "timeline_shift": "+2yr",
+          "notes": "Defense modernization push. Indigenous defense AI (DRDO). $75B defense budget. Make in India defense manufacturing. Border security AI priority."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+4yr",
+          "notes": "Minimal defense AI investment. Brazil largest military in region. Security applications over military."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "South China Sea driving maritime AI demand. Singapore defense tech advanced. ASEAN security cooperation limited."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "UAE leading in defense AI adoption. Saudi defense spending high. Israel defense AI most advanced in region. Abraham Accords enabling defense tech sharing."
+        }
+      },
       "outputs": {
         "what_works": [
+          "V3-DEF-004",
           "MC-V312-TRN-006",
           "MC-V313-71-009",
           "MC-V313-11-006",
@@ -2190,6 +3000,7 @@
           "MC-UTL-004-L5",
           "MC-V35-2111-001",
           "MC-V39-MFG-011",
+          "PC8-SC-GOVTECH-01",
           "MC-UTL-004-L1",
           "MC-INFO-007",
           "MC-UTL-002-L6",
@@ -2200,7 +3011,8 @@
           "MC-V313-92-001",
           "MC-UTL-004-L6",
           "MC-V313-21-010",
-          "MC-V38-62-012"
+          "MC-V38-62-012",
+          "C7-NR-08"
         ],
         "whats_needed": [
           "MC-V313-71-003",
@@ -2224,10 +3036,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 25,
+        "what_works": 28,
         "whats_needed": 15,
         "what_dies": 1,
-        "total": 41
+        "total": 44
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -2242,7 +3054,13 @@
         "classification": "zero_friction_inverted",
         "notes": "UPGRADED to gap=0 (from 1). Defense tech exits > investment = market validated. Fear runs OPPOSITE: fear of NOT adopting AI while adversaries do."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Autonomous weapons face global treaty ban ratified by US, China, and EU — deployment thesis blocked",
+        "AI-enabled targeting produces catastrophic friendly fire incident — trust and deployment reversed",
+        "Defense budget cuts >10% in real terms for US — spending thesis weakened",
+        "Defense AI procurement remains locked in traditional 7+ year cycles — acquisition reform fails",
+        "China achieves AI military parity without US detecting — surprise scenario"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -2283,32 +3101,103 @@
       "summary": "v3-7 deep dive: 1.07M workers, $287B payroll, Baumol 3.71x (highest of any deep-dived sector). KEY DIVERGENCE: wages DECLINING (-2.4%) while employment GROWS (+4.1%) = structural shift from high-comp traders/analysts to lower-cost AI-augmented ops. Portfolio management (523940): 496K workers, 85K establishments avg 5.8 workers = classic rollup territory. RIA M&A record 345 deals ($1.22T transacted). 38% of advisors plan to retire within decade. Entry-level analyst hiring declining 24pp. Firms au",
       "year_by_year": {
         "2026": {
-          "phase": "acceleration",
-          "description": "Rapid transformation in Securities, Commodity Contracts, and Financial Investments. Multiple disruption vectors active simultaneously.",
-          "indicators": []
+          "phase": "early_disruption",
+          "description": "$55T US securities market. Algorithmic trading already 70%+ of equity volume. AI-powered quant funds outperforming discretionary. Wealth management robo-advisors managing $2T+ AUM. Crypto/DeFi regulatory framework emerging. Private credit market $1.5T+ as bank disintermediation continues.",
+          "indicators": [
+            "US securities market capitalization (baseline: $55T)",
+            "Algorithmic trading share of equity volume (baseline: 70%+)",
+            "Robo-advisory AUM (baseline: $2T+)",
+            "Private credit market size (baseline: $1.5T+)",
+            "SEC crypto/DeFi regulatory framework milestones"
+          ]
         },
         "2027": {
-          "phase": "restructuring",
-          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "AI-native hedge funds capture significant alpha in alternative data. Robo-advisory reaches mass affluent segment ($500K-$5M). Tokenized securities reach $500B market cap. AI compliance monitoring standard for broker-dealers. Private credit AI underwriting reduces costs 30%.",
+          "indicators": [
+            "AI-native hedge fund alpha vs traditional quant (benchmark)",
+            "Robo-advisory penetration in mass affluent segment",
+            "Tokenized securities market cap (target: $500B)",
+            "AI compliance tool adoption among broker-dealers",
+            "Private credit AI underwriting cost reduction (target: 30%)"
+          ]
         },
         "2028": {
-          "phase": "restructuring",
-          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Traditional sell-side research under existential pressure: AI-generated research 80% of routine coverage. IPO process partially automated. AI risk models outperform VaR in stress scenarios. Wealth management firm count -15% as robo-advisors scale.",
+          "indicators": [
+            "AI-generated research share of routine coverage (target: 80%)",
+            "IPO process automation milestones",
+            "AI risk model performance vs VaR in stress tests",
+            "Wealth management firm count delta (target: -15%)",
+            "Sell-side research headcount trends"
+          ]
         },
         "2029": {
-          "phase": "new_equilibrium",
-          "description": "New sector structure forming. Survivors adapting to new reality.",
-          "indicators": []
+          "phase": "restructuring",
+          "description": "Securities employment restructuring: trading floors 50% smaller, research departments 40% smaller. AI-driven market making dominant. Tokenized real-world assets reach $2T+. Family office model enabled by AI at $10M+ threshold (was $100M+). Private equity AI due diligence standard.",
+          "indicators": [
+            "Trading floor headcount delta (target: -50%)",
+            "Research department headcount delta (target: -40%)",
+            "Tokenized real-world assets market cap (target: $2T+)",
+            "Minimum threshold for AI-enabled family office services (target: $10M)",
+            "PE firms using AI due diligence as standard practice (%)"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "Transformation largely complete. Sector operating under new economics.",
-          "indicators": []
+          "description": "Securities industry equilibrium: AI handles execution, analysis, compliance. Human premium in relationship management, complex structuring, and judgment-heavy advisory. Average securities firm 30% smaller by headcount, higher revenue/employee. Democratized access to institutional-quality investment tools.",
+          "indicators": [
+            "Securities industry headcount delta vs 2026 baseline (target: -30%)",
+            "Revenue per employee trajectory in securities firms",
+            "Institutional-quality tool accessibility for retail investors",
+            "Human advisory premium: fee differential for human vs AI advisory",
+            "Securities firm count and concentration metrics"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "World's largest capital market. NYSE/NASDAQ. Regulatory innovation (SEC). FinTech hub (NYC). Largest wealth management market."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Shanghai/Shenzhen exchanges growing. Government-controlled market dynamics. Ant Group/digital yuan implications. Capital controls limit."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2yr",
+          "notes": "Tokyo Stock Exchange AI trading growing. Conservative investment culture. Aging investor base. Corporate governance reforms."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "MiFID II driving transparency. London still dominant (post-Brexit). Euronext growing. PSD2 Open Banking implications."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "+1yr",
+          "notes": "NSE/BSE growing rapidly. Zerodha model (tech-first brokerage). Young investor demographics. UPI enabling micro-investing."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "B3 (Brazil) leading. Small capital markets. Nubank brokerage. Growing retail investor base."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "Singapore as financial hub. Small but growing capital markets. Crypto adoption high in Philippines."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Dubai/Abu Dhabi financial centers. Saudi Tadawul IPOs. Islamic finance creates unique AI compliance needs."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V314-CT-001",
@@ -2363,7 +3252,13 @@
         "classification": "low_friction",
         "notes": "NEW (v3-7). Wall Street culture embraces automation that increases alpha. Entry-level resistance irrelevant (firms automate regardless). RIA rollup consolidation accelerates adoption."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "AI quant funds underperform discretionary managers for 3+ years — alpha generation thesis fails",
+        "SEC or major regulator bans AI-generated research reports — deployment blocked",
+        "Robo-advisory AUM growth stalls below $3T — mass adoption thesis fails",
+        "Tokenized securities face regulatory block in US, EU — tokenization thesis delayed",
+        "AI risk models fail during market stress event — trust barrier reinforced"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -2393,6 +3288,14 @@
         {
           "naics": "56",
           "role": "primary"
+        },
+        {
+          "naics": "81",
+          "role": "secondary"
+        },
+        {
+          "naics": "48-49",
+          "role": "secondary"
         }
       ],
       "forces": [
@@ -2403,46 +3306,130 @@
       "summary": "v3-6: Staffing canary continues — sector screener confirms structural collapse. UPS cut 30K (Amazon split). Entry-level hiring collapse (-67% junior devs) further undermines staffing model viability.",
       "year_by_year": {
         "2026": {
-          "phase": "acceleration",
-          "description": "Rapid transformation in Administrative Services. Multiple disruption vectors active simultaneously.",
-          "indicators": []
+          "phase": "early_disruption",
+          "description": "9.1M admin/support workers, $540B revenue. Staffing industry disrupted (stocks -53%). AI handling 40% of routine admin tasks (scheduling, data entry, correspondence). Janitorial/security services increasingly automated. Transportation/logistics fragmented: 500K+ trucking establishments, 90% with <6 trucks. Auto repair: 162K establishments, average owner age 58+.",
+          "indicators": [
+            "BLS QCEW admin/support employment (baseline: 9.1M)",
+            "Admin services revenue (baseline: $540B)",
+            "Staffing industry stock index performance (baseline: -53%)",
+            "Trucking establishment count (baseline: 500K+)",
+            "Auto repair establishment count and owner age demographics (baseline: 162K, avg 58+)"
+          ]
         },
         "2027": {
-          "phase": "restructuring",
-          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Staffing agency model transforming: AI matching replaces 50% of recruiter function. Call center employment -20% as AI voice agents scale. Fleet management AI reaches mid-market trucking. Auto repair diagnostics AI reaches 80% accuracy for common issues. Facility management automation standard in commercial buildings.",
+          "indicators": [
+            "Staffing agency recruiter headcount delta",
+            "Call center employment delta (target: -20%)",
+            "AI voice agent resolution rate (benchmark)",
+            "Auto repair diagnostic AI accuracy (target: 80%)",
+            "Fleet management AI adoption in mid-market trucking (%)"
+          ]
         },
         "2028": {
-          "phase": "restructuring",
-          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Administrative services employment inflection: -10% in routine clerical roles. AI-managed temp staffing platforms handling 30% of placements. Autonomous towing dispatch operational in 20+ metros. Beauty salon tech platforms managing scheduling, inventory, marketing. Warehouse automation cost parity for mid-size facilities.",
+          "indicators": [
+            "Routine clerical role employment delta (target: -10%)",
+            "AI temp staffing platform placement share (target: 30%)",
+            "Autonomous towing dispatch metro count (target: 20+)",
+            "Beauty salon tech platform adoption rates",
+            "Warehouse automation cost parity metrics for mid-size facilities"
+          ]
         },
         "2029": {
-          "phase": "new_equilibrium",
-          "description": "New sector structure forming. Survivors adapting to new reality.",
-          "indicators": []
+          "phase": "restructuring",
+          "description": "Small business service sector consolidation: auto repair chains (AI-diagnosed), beauty salon platforms, commercial equipment repair networks. Last-mile courier automation begins. Freight optimization AI reduces empty miles 25%. Business associations/charities automate back-office 60%+.",
+          "indicators": [
+            "Auto repair chain market share vs independents",
+            "Freight empty mile reduction (target: 25%)",
+            "Last-mile courier automation deployment count",
+            "Business association back-office automation rate (target: 60%+)",
+            "Small business service consolidation M&A activity"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "Transformation largely complete. Sector operating under new economics.",
-          "indicators": []
+          "description": "Admin services restructured: fewer workers in routine roles, more in human-judgment positions. Service sector micro-firms viable with AI (1-person auto shop, solo beauty operator with AI). Transportation efficiency up 30%. Warehouse employment down 25% with robotic automation.",
+          "indicators": [
+            "Admin services employment composition: routine vs human-judgment roles",
+            "Micro-firm viability metrics in service sector (solo operator revenue)",
+            "Transportation efficiency gain vs 2026 baseline (target: 30%)",
+            "Warehouse employment delta (target: -25%)",
+            "Service sector revenue per worker trajectory"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest admin services market. Staffing industry $150B+. 500K+ trucking establishments. 162K auto repair shops. Extreme fragmentation across all sub-sectors."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Different service structure. Ride-hailing dominant (DiDi). Manufacturing logistics advanced. Government-organized labor markets."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "0yr",
+          "notes": "Labor shortage most acute in services. Temp staffing market large (¥6T+). Convenience store services diversifying. Aging workforce driving automation."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1yr",
+          "notes": "Strong labor protections slow restructuring. UK staffing market large. Gig economy regulation (Platform Work Directive) shapes dynamics."
+        },
+        "India": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "Massive informal service sector. Ola, Porter disrupting logistics. Low wages reduce automation ROI. Urban services platforms growing (Urban Company)."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "Informal economy dominant in services. Rappi, 99 in logistics. Low automation penetration."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3yr",
+          "notes": "Grab, GoTo providing platform services. Young demographics. Low-cost labor limits automation urgency."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+2yr",
+          "notes": "Migrant labor dominant in services. GCC countries investing in automation to reduce labor dependency. Unique demographic dynamics."
+        }
+      },
       "outputs": {
         "what_works": [
+          "PC8-AM-AUTO-01",
           "MC-V312-ADM-007",
+          "PC8-AM-COMMER-01",
           "PC8-FSR-LANDSCAPE-01",
           "MC-V312-ADM-004",
+          "PC8-AM-ELECREPAIR-01",
+          "PC8-FSR-PRIVHH-01",
+          "PC8-AM-BEAUT-01",
           "C7-DC-STAFFING-01",
+          "PC8-AM-AUTOBODY-01",
           "PC8-EXT-BIZBUY-PEST-01",
+          "PC8-FSR-BIZASSOC-01",
           "MC-V312-ADM-003",
+          "PC8-FSR-LOCALTRUCK-01",
           "PC8-EXT-BIZBUY-CLEANING-01",
           "MC-V312-ADM-002",
+          "PC8-RC-AUTO-01",
+          "PC8-FSR-AIRLINE-01",
+          "PC8-DC-FREIGHT-01",
           "MC-V312-ADM-005",
           "PC8-RC-LANDSCAPE-01",
           "MC-V312-ADM-008",
+          "PC8-FSR-COMMEQREP-01",
           "V3-GEO-002",
+          "PC8-FSR-CHARITY-01",
           "MC-V312-ADM-011",
           "V3-GEO-006",
           "PC8-AB-STAFFAUGMENT-01",
@@ -2454,13 +3441,21 @@
           "MC-V37-62-004",
           "MC-56-001",
           "C7-FSR-STAFF-01",
+          "PC8-FSR-COURIER-01",
           "MC-V39-MICRO-009",
+          "PC8-MN-TOWING-01",
+          "PC8-EXT-FAILSTUDY-CONVOY-01",
           "MC-V314-54-001",
-          "MC-56-002"
+          "MC-56-002",
+          "PC8-DC-COMMEQREP-01",
+          "PC8-DC-AUTO-01"
         ],
         "whats_needed": [
+          "C7-PI-TRUCKING-01",
           "MC-V312-ADM-006",
           "MC-V312-ADM-012",
+          "PC8-PI-WAREHOUSE-01",
+          "PC8-PI-BEAUT-01",
           "PC8-PI-LANDSCAPE-01"
         ],
         "what_dies": [
@@ -2472,10 +3467,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 26,
-        "whats_needed": 3,
+        "what_works": 44,
+        "whats_needed": 6,
         "what_dies": 5,
-        "total": 34
+        "total": 55
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -2492,7 +3487,13 @@
         "classification": "moderate_friction",
         "notes": null
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Staffing industry revenue recovers and grows 10%+/yr — disruption thesis was temporary",
+        "AI voice agents achieve <60% resolution rate — call center automation stalls",
+        "Auto repair diagnostic AI accuracy stays below 70% — human expertise remains essential",
+        "Trucking consolidation reverses: independent operators increase share — fragmentation thesis wrong",
+        "Administrative worker wages stagnate (no Baumol pressure) — stored disruption energy dissipates"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -2531,32 +3532,103 @@
       "summary": "v3-9 DEEP DIVE (first emerging category dive): 33.9M addressable entities (30.4M nonemployers + 3.5M micro-employers). Coasean firm shrinkage confirmed: nonemployers +84% since 1997, 478K/month new business applications, avg firm size declining. Micro-firm taxonomy: Tier 1 (solo+AI, ~$500K-2M rev), Tier 2 (2-3 humans+AI, ~$2M-10M), Tier 3 (4-5 humans+AI, ~$5M-25M). Revenue per employee at AI-native companies 6x traditional SaaS ($3.48M vs $570K). Infrastructure stack 52% solved by point solution",
       "year_by_year": {
         "2026": {
-          "phase": "pre_disruption",
-          "description": "Early signals of structural change in Micro-Firm AI Economy (Emerging Category). Cost curves shifting, technology proving feasible.",
-          "indicators": []
+          "phase": "early_disruption",
+          "description": "532K new business applications/mo (Census). Coasean firm shrinkage accelerating: optimal firm size decreasing as AI reduces transaction costs. Solo operators matching 10-person firm output in content, design, code. AI tools revenue $50B+ annually. Freelancer platforms (Upwork, Fiverr) seeing per-project revenue increase as solo capabilities expand. Rising delinquency alongside record formation = selection pressure.",
+          "indicators": [
+            "Monthly new business applications via Census (baseline: 532K/mo)",
+            "Solo operator output equivalence vs traditional firms (baseline: matching 10-person firm in content/design/code)",
+            "AI tools annual revenue (baseline: $50B+)",
+            "Freelancer platform per-project revenue trends (Upwork, Fiverr)",
+            "New business delinquency rates alongside formation rates (selection pressure signal)"
+          ]
         },
         "2027": {
-          "phase": "early_adoption",
-          "description": "First movers adopt new approaches. Incumbent awareness growing.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "First AI-native businesses reaching $1M revenue with 1-2 employees. Vertical AI tools (legal, accounting, design) enable micro-firm professional services. Insurance and benefits platforms for micro-firms emerge. AI business formation tools automate 80% of incorporation, compliance, tax. Micro-firm SaaS market reaches $10B+.",
+          "indicators": [
+            "AI-native businesses reaching $1M revenue with 1-2 employees (first cohort)",
+            "Vertical AI tool adoption in legal, accounting, design professions",
+            "Micro-firm insurance and benefits platform launches",
+            "AI-automated business formation rate (target: 80% of incorporation/compliance/tax)",
+            "Micro-firm SaaS market size (target: $10B+)"
+          ]
         },
         "2028": {
-          "phase": "early_disruption",
-          "description": "Adoption accelerates among forward-looking firms. Evidence of business model viability.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Micro-firm model proven across 20+ sectors. Average solo operator revenue 3x 2024 levels with AI augmentation. Micro-firm OS platforms (all-in-one operations) capture 5%+ of small business software market. First micro-firm franchise models appear. Traditional professional services firms lose 10% of clients to micro-firm competitors.",
+          "indicators": [
+            "Number of sectors with proven micro-firm model (target: 20+)",
+            "Average solo operator revenue vs 2024 baseline (target: 3x with AI augmentation)",
+            "Micro-firm OS platform market share of small business software (target: 5%+)",
+            "Micro-firm franchise model emergence and count",
+            "Traditional professional services client loss to micro-firm competitors (target: 10%)"
+          ]
         },
         "2029": {
-          "phase": "acceleration",
-          "description": "Mainstream adoption begins. Incumbent response intensifies.",
-          "indicators": []
+          "phase": "restructuring",
+          "description": "Micro-firm economy recognized as structural category (potential NAICS revision discussions). 1M+ micro-firms operating with AI as core capability. Micro-firm collective models (shared infrastructure, joint bidding) challenge mid-size firm economics. Bank lending adapts to micro-firm credit models.",
+          "indicators": [
+            "NAICS revision discussions regarding micro-firm economy as structural category",
+            "AI-core micro-firm count (target: 1M+)",
+            "Micro-firm collective models adoption (shared infrastructure, joint bidding)",
+            "Bank lending product adaptation for micro-firm credit models",
+            "Micro-firm share of new business formation by sector"
+          ]
         },
         "2030_2031": {
-          "phase": "restructuring",
-          "description": "Sector structure visibly changing. Employment and firm composition shifting.",
-          "indicators": []
+          "phase": "new_equilibrium",
+          "description": "Micro-firm economy established: 15-20% of professional services delivered by 1-5 person firms with AI. Average micro-firm revenue/worker 2-3x traditional small business. New insurance, lending, benefits infrastructure for micro-firm economy. Traditional firm structures persist for complex coordination but shrink as share of total.",
+          "indicators": [
+            "Micro-firm share of professional services delivery (target: 15-20% by 1-5 person firms with AI)",
+            "Micro-firm revenue per worker vs traditional small business (target: 2-3x)",
+            "Micro-firm infrastructure ecosystem maturity (insurance, lending, benefits)",
+            "Traditional firm structure share of total business activity trend",
+            "AI capability per micro-firm worker (composite productivity index)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "532K new apps/mo. Gig economy infrastructure mature. Strongest Coasean shrinkage signal. Tax/legal framework needs adaptation."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Different micro-firm culture (WeChat-based businesses). Government policy supports small business but controls platform economics."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Salaryman culture resistant. Freelance Worker Protection Act (2024). Small but growing solo consultant class."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Freelance regulations vary by country. Netherlands, Germany leading. Platform Work Directive affects gig economy dynamics."
+        },
+        "India": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Massive freelancer population (Upwork's largest source). Low-cost AI tools high impact. Digital India infrastructure enables. IT freelancing already established."
+        },
+        "LATAM": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Large informal economy already micro-firm. Formalization via digital platforms. MercadoLibre ecosystem enabling e-commerce micro-firms."
+        },
+        "SEA": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Shopee/Lazada sellers, Grab drivers. Large platform-dependent micro-firm population. Digital services exports growing."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Growing freelance culture in UAE, Saudi. Government diversification policies supportive. Small but emerging."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V37-5415-004",
@@ -2599,7 +3671,13 @@
         "classification": "moderate_friction",
         "notes": "NEW (v3-9). Economic readiness high (AI agents demonstrably capable, costs viable). Psychological barriers: Bench shutdown cautionary tale, trust for financial/legal AI guidance unproven at scale, solo practitioners habituated to manual processes. Gap narrows rapidly as Gen Z/Millennial founders adopt."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "New business application rate drops below 400K/mo for 6+ months — Coasean shrinkage thesis reversed",
+        "Solo AI-augmented operators fail to match 5-person firm quality in professional services — capability thesis fails",
+        "Micro-firm failure rates exceed 80% in year 1 (vs 20% baseline) — model unsustainable",
+        "Large firms successfully deploy AI to increase optimal firm size — Coasean direction reverses",
+        "Regulatory burden (licensing, compliance) prevents micro-firm viability in professional services"
+      ],
       "confidence": {
         "direction": "medium",
         "timing": "medium",
@@ -2612,12 +3690,195 @@
       ]
     },
     {
+      "narrative_id": "TN-015",
+      "name": "Energy & Resources Transformation",
+      "slug": "energy-resources",
+      "tns_composite": 69.75,
+      "tns_category": "MAJOR",
+      "tns_rank": 14,
+      "tns_scores": {
+        "EM": 8.0,
+        "FC": 7.5,
+        "ES": 6.0,
+        "TC": 5.5,
+        "IR": 7.0
+      },
+      "sectors": [
+        {
+          "naics": "22",
+          "role": "primary"
+        },
+        {
+          "naics": "21",
+          "role": "secondary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F3_geopolitics",
+        "F6_energy"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "Energy sector transformation driven by AI + electrification + geopolitical energy security. Grid modernization, distributed energy, critical mineral supply chains, and autonomous field operations. $1.3T US utility sector + $200B oilfield services. Grid operators face surging AI data center demand (projected 2x by 2028) while integrating distributed renewables. Critical minerals (lithium, cobalt, rare earths) supply chain concentration creates geopolitical vulnerability and reshoring pressure. Be",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "US utility sector $1.3T. Data center energy demand growing 25%+ YoY. Renewable energy 30%+ of US generation. Grid interconnection queue backlog 2,000+ GW. Virtual power plant deployments accelerating. Critical minerals: lithium demand 3x by 2030, 80% refined in China. Oil services $200B+ market, margins compressed by transition uncertainty.",
+          "indicators": [
+            "US utility sector revenue (baseline: $1.3T)",
+            "Data center energy demand YoY growth (baseline: 25%+)",
+            "Renewable share of US electricity generation (baseline: 30%+)",
+            "Grid interconnection queue backlog (baseline: 2,000+ GW)",
+            "Critical minerals lithium demand trajectory (baseline: 3x by 2030, 80% refined in China)"
+          ]
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "First grid-scale AI energy management systems operational. Behind-the-meter storage + solar reaches grid parity for commercial buildings. Critical minerals reshoring: first US lithium processing facility operational. Oilfield autonomous operations in routine drilling. Data center power purchase agreements driving new renewable capacity.",
+          "indicators": [
+            "Grid-scale AI energy management system deployments (first operational systems)",
+            "Behind-the-meter storage + solar cost parity vs commercial grid rates",
+            "US lithium processing facility milestones (first operational facility)",
+            "Oilfield autonomous drilling operation adoption by majors",
+            "Data center renewable PPA volume and new capacity driven"
+          ]
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Virtual power plants manage 5%+ of peak load. Grid modernization investment $50B+ annually. AI-optimized grid reduces outages 20-30%. Critical minerals: Australian, Canadian alternatives to Chinese processing operational. Energy storage costs below $100/kWh at scale. Small modular reactor designs approved.",
+          "indicators": [
+            "Virtual power plant share of peak load management (target: 5%+)",
+            "Annual grid modernization investment (target: $50B+)",
+            "AI-optimized grid outage reduction rate (target: 20-30%)",
+            "Energy storage cost per kWh at scale (target: below $100/kWh)",
+            "Small modular reactor design approval status (NRC pipeline)"
+          ]
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Energy transition inflection: renewable + storage cheaper than gas peakers in most US markets. Autonomous oilfield operations standard for majors. Grid-as-platform model emerging: utilities become orchestration layer. Water stress from data centers forces cooling innovation. Critical minerals supply chains diversified (50% non-China).",
+          "indicators": [
+            "Renewable + storage vs gas peaker cost comparison across US markets",
+            "Autonomous oilfield operations adoption rate among major producers",
+            "Utility grid-as-platform / orchestration business model adoption",
+            "Data center water stress and cooling innovation deployments",
+            "Critical minerals non-China supply share (target: 50%)"
+          ]
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New energy equilibrium: distributed + renewable + AI-managed grid standard for new construction. Utility business model shifted from volumetric to platform/service. Oilfield services restructured: fewer workers, more autonomous operations. Critical minerals domestic supply 30%+ of US demand. Data center energy innovation (advanced cooling, co-located generation) standard.",
+          "indicators": [
+            "Distributed + renewable + AI-managed grid penetration in new construction",
+            "Utility revenue model mix shift from volumetric to platform/service",
+            "Oilfield services workforce size and autonomous operations share",
+            "Critical minerals domestic supply share of US demand (target: 30%+)",
+            "Data center co-located generation and advanced cooling adoption rate"
+          ]
+        }
+      },
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest energy market. Grid modernization urgency (aging infrastructure). Data center energy crisis. IRA driving $369B clean energy investment."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1 year",
+          "notes": "Dominates critical minerals processing (80%). Largest renewable installer. State Grid world's largest utility. Advanced in grid AI. Dual role as supplier and competitor."
+        },
+        "Japan": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Post-Fukushima energy transformation. Advanced in grid technology. Limited domestic resources. Hydrogen strategy unique. Nuclear restart debate."
+        },
+        "EU": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Energy crisis post-Ukraine accelerated transition. REPowerEU plan. Offshore wind leader. Grid interconnection advanced. Carbon pricing driving transformation."
+        },
+        "India": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Solar installation growing fastest globally. Coal still 55% of generation. Grid modernization massive challenge. PM-KUSUM solar irrigation program."
+        },
+        "LATAM": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Brazil hydropower dominant. Chile/Argentina lithium triangle. Mexico energy reform uncertain. Nearshoring increasing energy demand."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Coal dependent. Growing renewable interest. Indonesia nickel processing. Rapid industrialization increasing demand."
+        },
+        "MENA": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "OPEC nations diversifying. Saudi NEOM hydrogen project. UAE nuclear + solar. Qatar LNG expansion. Energy transition creates existential question."
+        }
+      },
+      "outputs": {
+        "what_works": [
+          "V3-ENERGY-006",
+          "PC8-FSR-GASUTIL-01",
+          "V3-ENERGY-002",
+          "V3-ENERGY-008",
+          "PC8-SC-OILFIELD-01",
+          "PC8-FSR-POWERUTIL-01"
+        ],
+        "whats_needed": [
+          "PC8-SC-ENERGYSVC-01"
+        ],
+        "what_dies": []
+      },
+      "model_counts": {
+        "what_works": 6,
+        "whats_needed": 1,
+        "what_dies": 0,
+        "total": 7
+      },
+      "cascade_dependencies": {
+        "depends_on": [
+          "TN-003"
+        ],
+        "upstream_of": [
+          "TN-006"
+        ]
+      },
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 5,
+        "gap": 2,
+        "classification": "moderate_friction",
+        "notes": "Grid modernization faces regulatory inertia and NIMBY resistance. Utilities are conservative by nature (rate-regulated monopolies). Critical minerals face geopolitical fear. Data center energy demand creates tension with climate goals."
+      },
+      "falsification_criteria": [
+        "Data center energy demand growth drops below 10%/yr — AI energy crisis thesis weakened",
+        "Critical minerals supply remains 80%+ China-dependent through 2030 — reshoring fails",
+        "Grid modernization investment stays below $20B/yr — utility transformation stalls",
+        "Virtual power plants fail to reach 3% of peak load management — distributed energy thesis fails",
+        "Oil prices spike above $120/barrel sustained — oilfield automation urgency decreases as margins expand"
+      ],
+      "confidence": {
+        "direction": "H",
+        "timing": "M",
+        "magnitude": "M"
+      },
+      "collision_ids": [
+        "FC-026",
+        "FC-027",
+        "FC-028"
+      ]
+    },
+    {
       "narrative_id": "TN-011",
       "name": "Management of Companies and Enterprises Transformation",
       "slug": "management-of-companies-and-enterprises",
       "tns_composite": 69.6,
       "tns_category": "MAJOR",
-      "tns_rank": 14,
+      "tns_rank": 15,
       "tns_scores": {
         "EM": 6.0,
         "FC": 8.7,
@@ -2642,31 +3903,102 @@
       "year_by_year": {
         "2026": {
           "phase": "early_disruption",
-          "description": "Disruption underway in Management of Companies and Enterprises. First entrants proving viability. Incumbents beginning to respond.",
-          "indicators": []
+          "description": "2.4M workers in management of companies. Corporate HQ functions under AI automation pressure. Strategic planning AI tools emerging. Board-level AI literacy becoming requirement. M&A due diligence partially AI-automated. Private equity operating model evolving: AI-first value creation playbooks.",
+          "indicators": [
+            "BLS QCEW employment in NAICS 55 Management of Companies (baseline: 2.4M)",
+            "Fortune 500 board members with AI expertise or literacy credentials",
+            "Enterprise strategic planning AI tool adoption rate (Gartner survey)",
+            "PE deal volume with AI-first value creation playbooks (PitchBook data)",
+            "M&A due diligence cycle time reduction via AI automation (days saved)"
+          ]
         },
         "2027": {
           "phase": "acceleration",
-          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
-          "indicators": []
+          "description": "AI handles 50% of routine corporate reporting and analysis. Middle management layers compressed in early-adopter firms. PE portfolio company transformation via AI becomes standard value creation lever. Corporate strategy AI tools reach enterprise maturity. C-suite composition begins to include Chief AI Officers at 20% of Fortune 500.",
+          "indicators": [
+            "Share of corporate reporting/analysis automated by AI (target: 50% at early adopters)",
+            "Middle management headcount change at Fortune 500 early adopters (BLS proxy: NAICS 55 employment)",
+            "Fortune 500 companies with Chief AI Officer role (target: 20%)",
+            "Enterprise AI strategy tool market revenue (Gartner/IDC estimates)",
+            "PE portfolio companies with active AI transformation programs (PitchBook)"
+          ]
         },
         "2028": {
           "phase": "acceleration",
-          "description": "Mainstream disruption. Significant employment and revenue shifts.",
-          "indicators": []
+          "description": "Corporate HQ headcount -10% at early-adopter Fortune 500 companies. AI-enabled scenario planning outperforms traditional consulting. PE firms require AI transformation plan in every deal thesis. Board diversity requirements expand to include AI expertise.",
+          "indicators": [
+            "Fortune 500 corporate HQ headcount change (target: -10% at early adopters)",
+            "AI scenario planning accuracy vs traditional consulting benchmarks",
+            "PE deal theses requiring AI transformation plan (% of new deals)",
+            "Board composition: % of Fortune 500 boards with AI expertise requirement",
+            "Management consulting revenue mix shift: AI analytics vs human advisory"
+          ]
         },
         "2029": {
           "phase": "restructuring",
-          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
-          "indicators": []
+          "description": "Management layer compression visible in employment data. Span of control increases: 1 manager per 15-20 reports (was 7-10). AI-augmented executives manage larger, flatter organizations. PE portfolio consolidation accelerates as AI enables integration of smaller acquisitions.",
+          "indicators": [
+            "BLS QCEW NAICS 55 employment trajectory (management layer compression signal)",
+            "Average manager span of control at large firms (target: 15-20 reports, was 7-10)",
+            "AI-augmented executive decision-making tool penetration (enterprise survey)",
+            "PE portfolio consolidation rate: acquisitions integrated via AI per fund",
+            "Organizational layer count at Fortune 500 (flattening trend measurement)"
+          ]
         },
         "2030_2031": {
           "phase": "new_equilibrium",
-          "description": "New sector structure stabilized. Dominant business models established.",
-          "indicators": []
+          "description": "Corporate management restructured: fewer layers, broader spans, AI-augmented decision-making standard. HQ functions 25-30% smaller. Management consulting relationship shifts: AI handles analysis, human consultants handle change management and stakeholder dynamics. PE operational excellence increasingly AI-driven.",
+          "indicators": [
+            "BLS QCEW NAICS 55 employment (target: -25-30% from 2026 baseline at early adopters)",
+            "Average corporate HQ size vs 2026 baseline (headcount per $B revenue)",
+            "Management consulting industry revenue composition: AI vs change management",
+            "PE operational value creation attributed to AI (% of EBITDA improvement)",
+            "Manager-to-individual-contributor ratio across Fortune 500 (structural flattening)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Most corporate HQs. Fortune 500 headquarters concentrated. PE industry dominant ($4.7T AUM). Management consulting market $300B+."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "State-owned enterprises slower to restructure. Private sector (Alibaba, Tencent) leading. Different corporate governance model."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Lifetime employment culture limits management restructuring. Keiretsu structure. Very slow to flatten hierarchies."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Codetermination laws (Germany) protect employee representation. UK more dynamic. Corporate governance stricter (shareholder rights)."
+        },
+        "India": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Family-owned conglomerates transforming. IT services companies leading adoption. Infosys, Reliance leading."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Family-owned business structures dominant. Corporate governance maturing. Brazil leading."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Conglomerate structures. Singapore as regional HQ hub. Family businesses transitioning."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Sovereign wealth managed. Government-linked enterprises dominant. Dubai, Riyadh growing as corporate hubs."
+        }
+      },
       "outputs": {
         "what_works": [
           "MC-V37-55-005",
@@ -2698,7 +4030,12 @@
         "classification": "moderate_friction",
         "notes": "NEW (v3-7). Middle management resistance to AI that replaces coordination function. 60% anticipatory displacement but executives view AI as cost reduction tool, not threat to own role."
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Middle management employment increases at Fortune 500 — compression thesis wrong",
+        "AI strategic planning tools produce worse outcomes than human-only in 5+ case studies",
+        "PE AI value creation playbooks fail to produce measurable EBITDA improvement in >50% of deployments",
+        "C-suite resistance to AI augmentation remains dominant (>70% of CEOs reject AI decision support)"
+      ],
       "confidence": {
         "direction": "high",
         "timing": "medium",
@@ -2719,7 +4056,7 @@
       "slug": "wholesale-trade",
       "tns_composite": 60.1,
       "tns_category": "MODERATE",
-      "tns_rank": 15,
+      "tns_rank": 16,
       "tns_scores": {
         "EM": 8.0,
         "FC": 4.5,
@@ -2740,32 +4077,103 @@
       "summary": "Zero-density Schumpeterian gap persists. US-China tariff truce at risk could disrupt trade flows.",
       "year_by_year": {
         "2026": {
-          "phase": "pre_disruption",
-          "description": "Early signals of structural change in Wholesale Trade. Cost curves shifting, technology proving feasible.",
-          "indicators": []
+          "phase": "early_disruption",
+          "description": "5.9M wholesale workers, 410K establishments. Zero-density Schumpeterian gap persists: zero AI startups despite strong forces (Pattern P-022). US-China tariff truce fragile, risk of renewed trade disruption. Wholesale margins thin (2-5%) creating strong cost automation incentive. Average wholesale establishment owner age 60+. Supply chain digitization growing but adoption uneven.",
+          "indicators": [
+            "BLS QCEW wholesale trade employment NAICS 42 (baseline: 5.9M)",
+            "Census wholesale establishment count (baseline: 410K)",
+            "AI startup count in wholesale/distribution (Crunchbase, baseline: ~0 per P-022)",
+            "Average wholesale gross margin (baseline: 2-5%)",
+            "Average wholesale establishment owner age (Census ABS, baseline: 60+)"
+          ]
         },
         "2027": {
-          "phase": "early_adoption",
-          "description": "First movers adopt new approaches. Incumbent awareness growing.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "First AI-native wholesale distributors emerge in commodity sectors (building materials, electrical). Inventory optimization AI reduces working capital 15-20%. Trade policy uncertainty drives wholesale hedging technology demand. EDI/paper-based ordering begins shift to AI-managed procurement. Silver Tsunami creates first wave of wholesale business successions.",
+          "indicators": [
+            "AI-native wholesale distributor launches in commodity sectors (building materials, electrical)",
+            "Inventory optimization AI adoption: working capital reduction (target: 15-20%)",
+            "EDI-to-AI procurement platform migration rate (% of wholesale transactions)",
+            "Wholesale business succession/transfer volume (Silver Tsunami first wave)",
+            "Trade policy hedging technology market size (tariff risk management tools)"
+          ]
         },
         "2028": {
-          "phase": "early_disruption",
-          "description": "Adoption accelerates among forward-looking firms. Evidence of business model viability.",
-          "indicators": []
+          "phase": "acceleration",
+          "description": "Wholesale employment -5% in order processing and logistics roles. AI-managed B2B marketplaces gain traction in fragmented verticals. Supply chain AI handles 40% of routine supplier negotiation. Wholesale consolidation accelerates: PE-backed roll-ups target Silver Tsunami exits. First sector-specific wholesale AI platforms reach $100M+ revenue.",
+          "indicators": [
+            "BLS QCEW wholesale employment change in order processing/logistics roles (target: -5%)",
+            "B2B marketplace GMV in fragmented wholesale verticals",
+            "AI-managed supplier negotiation penetration (target: 40% of routine negotiations)",
+            "PE-backed wholesale roll-up deal volume (PitchBook, Silver Tsunami exits)",
+            "First wholesale AI platform revenue milestones (target: $100M+)"
+          ]
         },
         "2029": {
-          "phase": "acceleration",
-          "description": "Mainstream adoption begins. Incumbent response intensifies.",
-          "indicators": []
+          "phase": "restructuring",
+          "description": "Schumpeterian gap partially closes: 10+ funded AI-native wholesale startups. Wholesale firm count -10% (retirement exits + consolidation). AI-enabled just-in-time inventory becomes standard. B2B commerce AI platforms replace traditional sales relationships for commodity products.",
+          "indicators": [
+            "Funded AI-native wholesale startups (Crunchbase, target: 10+ closing Schumpeterian gap)",
+            "Census wholesale establishment count change (target: -10% from baseline)",
+            "AI just-in-time inventory adoption rate across wholesale sectors",
+            "B2B AI commerce platform share of commodity product wholesale transactions",
+            "Wholesale sector average days inventory outstanding (DIO reduction trend)"
+          ]
         },
         "2030_2031": {
-          "phase": "restructuring",
-          "description": "Sector structure visibly changing. Employment and firm composition shifting.",
-          "indicators": []
+          "phase": "new_equilibrium",
+          "description": "Wholesale restructured: fewer but larger distributors with AI-managed operations. Human premium in relationship-heavy specialty distribution. Average wholesale firm 20% fewer employees, 15% higher margins. Traditional wholesale sales role transformed: from order-taking to consultative/technical.",
+          "indicators": [
+            "BLS QCEW wholesale employment per establishment (target: -20% from 2026 baseline)",
+            "Average wholesale firm gross margin (target: +15% improvement from baseline)",
+            "Wholesale establishment count concentration ratio (fewer, larger firms)",
+            "Human-premium specialty distribution revenue share vs AI-managed commodity distribution",
+            "Wholesale sales role composition: order-taking vs consultative/technical (BLS OES data)"
+          ]
         }
       },
-      "geographic_variation": {},
+      "geographic_variation": {
+        "US": {
+          "velocity": "medium",
+          "timeline_shift": "baseline",
+          "notes": "410K establishments. Extreme fragmentation. Silver Tsunami acute. Trade policy uncertainty. Zero-density gap = massive opportunity if unlocked."
+        },
+        "China": {
+          "velocity": "high",
+          "timeline_shift": "-1 year",
+          "notes": "Alibaba B2B already dominant. 1688.com wholesale platform mature. Different distribution structure. Cross-border wholesale advanced."
+        },
+        "Japan": {
+          "velocity": "low",
+          "timeline_shift": "+2 years",
+          "notes": "Sogo shosha (trading companies) dominant. Complex distribution layers. Keiretsu relationships limit disruption. Aging workforce."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Varied by country. Metro AG, Bunzl models. EU single market enables cross-border. Less fragmented than US in some verticals."
+        },
+        "India": {
+          "velocity": "medium",
+          "timeline_shift": "+2 years",
+          "notes": "Massive wholesale market (kiranas served by distributors). JioMart, Udaan disrupting. Cash-heavy economy digitizing. Complex distribution chains."
+        },
+        "LATAM": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Informal distribution networks. Brazil ATACAREJO (cash & carry) model. Limited digitization."
+        },
+        "SEA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Traditional distribution dominant. Emerging B2B platforms. Fragmented markets."
+        },
+        "MENA": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "Trading hub in Dubai/Jebel Ali. Traditional import/export structures. Limited AI adoption."
+        }
+      },
       "outputs": {
         "what_works": [
           "PC8-FSR-MEDSUPPLY-01",
@@ -2826,7 +4234,13 @@
         "classification": "neutral",
         "notes": null
       },
-      "falsification_criteria": [],
+      "falsification_criteria": [
+        "Schumpeterian gap PERSISTS through 2029 with zero funded AI wholesale startups — opportunity thesis was wrong",
+        "Wholesale margins expand above 8% without AI — cost pressure thesis weakened",
+        "Silver Tsunami wholesale exits absorbed by family succession (>70%) — acquisition opportunity limited",
+        "B2B marketplace adoption stays below 5% of wholesale transactions — digital disruption fails",
+        "Trade policy stabilizes (no tariff changes for 3+ years) — geopolitical force weakens wholesale transformation"
+      ],
       "confidence": {
         "direction": "medium",
         "timing": "medium",

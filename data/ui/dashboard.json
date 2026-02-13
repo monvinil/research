@@ -3,20 +3,20 @@
   "current_cycle": "v4-0",
   "last_updated": "2026-02-12",
   "architecture": "transformation_narrative",
-  "total_narratives": 15,
+  "total_narratives": 16,
   "total_models": 650,
   "total_collisions": 66,
   "total_cascades": 3,
   "total_geographies": 8,
   "tns_stats": {
-    "mean": 76.8,
+    "mean": 76.4,
     "stdev": 7.7,
     "min": 60.1,
     "max": 89.0
   },
   "tns_category_distribution": {
     "DEFINING": 4,
-    "MAJOR": 10,
+    "MAJOR": 11,
     "MODERATE": 1
   },
   "force_summary": {
@@ -52,7 +52,8 @@
       "tns_composite": 89.0,
       "tns_category": "DEFINING",
       "sectors": [
-        "31-33"
+        "31-33",
+        "11"
       ],
       "forces": [
         "F1_technology",
@@ -62,7 +63,7 @@
         "F6_energy"
       ],
       "phase": "early_disruption",
-      "model_count": 260
+      "model_count": 264
     },
     {
       "narrative_id": "TN-001",
@@ -87,7 +88,8 @@
       "tns_composite": 85.6,
       "tns_category": "DEFINING",
       "sectors": [
-        "44-45"
+        "44-45",
+        "72"
       ],
       "forces": [
         "F1_technology",
@@ -96,7 +98,7 @@
         "F4_capital"
       ],
       "phase": "early_disruption",
-      "model_count": 23
+      "model_count": 25
     },
     {
       "narrative_id": "TN-004",
@@ -138,7 +140,8 @@
       "tns_composite": 78.35,
       "tns_category": "MAJOR",
       "sectors": [
-        "54"
+        "54",
+        "71"
       ],
       "forces": [
         "F1_technology",
@@ -146,7 +149,7 @@
         "F2_demographics"
       ],
       "phase": "early_disruption",
-      "model_count": 201
+      "model_count": 204
     },
     {
       "narrative_id": "TN-010",
@@ -154,7 +157,8 @@
       "tns_composite": 76.1,
       "tns_category": "MAJOR",
       "sectors": [
-        "5415"
+        "5415",
+        "51"
       ],
       "forces": [
         "F1_technology",
@@ -163,7 +167,7 @@
         "F5_psychology"
       ],
       "phase": "early_disruption",
-      "model_count": 70
+      "model_count": 83
     },
     {
       "narrative_id": "TN-006",
@@ -203,7 +207,8 @@
       "tns_composite": 74.5,
       "tns_category": "MAJOR",
       "sectors": [
-        "928110"
+        "928110",
+        "92"
       ],
       "forces": [
         "F1_technology",
@@ -211,7 +216,7 @@
         "F4_capital"
       ],
       "phase": "acceleration",
-      "model_count": 41
+      "model_count": 44
     }
   ],
   "cascade_graph": {
@@ -295,6 +300,12 @@
         "category": "MAJOR"
       },
       {
+        "id": "TN-015",
+        "name": "Energy & Resources Transformation",
+        "tns": 69.75,
+        "category": "MAJOR"
+      },
+      {
         "id": "TN-011",
         "name": "Management of Companies and Enterprises Transformation",
         "tns": 69.6,
@@ -342,11 +353,16 @@
         "from": "TN-002",
         "to": "TN-005",
         "type": "upstream_of"
+      },
+      {
+        "from": "TN-015",
+        "to": "TN-006",
+        "type": "upstream_of"
       }
     ]
   },
-  "models_linked": 597,
-  "models_unlinked": 53,
+  "models_linked": 650,
+  "models_unlinked": 0,
   "t_score_stats": {
     "mean": 63.9,
     "median": 64.2,
