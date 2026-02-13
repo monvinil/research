@@ -123,6 +123,39 @@ ARCH_CAP_VEL_DECOUPLE = {
     "regulatory_moat_builder": (-1, -1), # Hard to capture, slow regulatory sales
 }
 
+# ── VCR ECO/MOA Decoupling ──
+# Problem: r=0.693, MOA only 19 unique values (architecture template dominates)
+# ECO = unit economics quality (margins, LTV/CAC, scalability)
+# MOA = moat trajectory (will competitive advantage grow or erode?)
+# Fix: add sector + architecture differential adjustments in OPPOSITE directions
+SECTOR_ECO_MOA_DIFF = {
+    # (ECO_adj, MOA_adj) — OPPOSITE directions where conceptually justified
+    "21": (0, 1),     # Mining: neutral economics, but high switching costs for embedded systems
+    "23": (0, -1),    # Construction: neutral economics, weak moats (project-based)
+    "31": (-1, 1),    # Manufacturing: heavy capex hurts economics, but physical deployment = lock-in
+    "32": (-1, 1),
+    "33": (-1, 1),
+    "44": (1, -1),    # Retail: SaaS can have good economics, but consumer moats are weak
+    "45": (1, -1),
+    "48": (-1, 1),    # Transportation: fleet costs hurt economics, but integration lock-in = moat
+    "51": (1, -1),    # Information: digital margins great, but moats erode quickly (tech shifts)
+    "54": (1, -1),    # Professional Services: good margins, weak lock-in
+    "62": (-1, 1),    # Healthcare: billing complexity hurts economics, but regulatory moat strong
+    "72": (1, -1),    # Accommodation/Food: good per-location unit economics, but weak moat
+    "92": (-1, 2),    # Government: procurement kills economics, but once in = massive lock-in
+}
+ARCH_ECO_MOA_DIFF = {
+    # Architecture types where economics and moat should diverge
+    "acquire_and_modernize": (-1, 1),   # Integration costs hurt ECO, but acquired assets = moat
+    "rollup_consolidation": (-1, 1),    # Same — consolidation costs vs asset moat
+    "arbitrage_window": (1, -2),        # Quick returns but NO lasting moat (by definition)
+    "regulatory_moat_builder": (-1, 1), # Compliance is expensive but moat grows
+    "marketplace_network": (0, 1),      # Network effects create strong moat
+    "service_platform": (0, -1),        # Services are hard to differentiate
+    "hardware_ai": (-1, 1),             # Hardware costs hurt ECO, physical deployment = moat
+    "physical_production_ai": (-1, 1),  # Same
+}
+
 # ── Batch Normalization ──
 # Correction factors based on mean T-composite deviation from overall mean (67.30)
 # Only apply to non-manual-override models
@@ -257,6 +290,55 @@ def apply_vcr_corrections(model):
     return changed
 
 
+def apply_eco_moa_corrections(model):
+    """Apply VCR ECO/MOA decoupling via sector + architecture differentiation."""
+    if is_manual_vcr(model):
+        return False
+
+    vcr = model.get("vcr", {})
+    scores = vcr.get("scores", {})
+    if not scores:
+        return False
+
+    old_eco, old_moa = scores["ECO"], scores["MOA"]
+    naics = (model.get("sector_naics") or "")[:2]
+    arch = model.get("architecture", "")
+
+    eco_adj, moa_adj = SECTOR_ECO_MOA_DIFF.get(naics, (0, 0))
+    arch_eco_adj, arch_moa_adj = ARCH_ECO_MOA_DIFF.get(arch, (0, 0))
+
+    new_eco = clamp(old_eco + eco_adj + arch_eco_adj)
+    new_moa = clamp(old_moa + moa_adj + arch_moa_adj)
+
+    changed = (new_eco != old_eco or new_moa != old_moa)
+    if changed:
+        scores["ECO"] = new_eco
+        scores["MOA"] = new_moa
+        # Recompute VCR composite
+        vcr["composite"] = round(
+            (scores["MKT"] * 25 + scores["CAP"] * 25 + new_eco * 20 +
+             scores["VEL"] * 15 + new_moa * 15) / 10, 2)
+        # Reclassify
+        comp = vcr["composite"]
+        if comp >= 75: vcr["category"] = "FUND_RETURNER"
+        elif comp >= 60: vcr["category"] = "STRONG_MULTIPLE"
+        elif comp >= 45: vcr["category"] = "VIABLE_RETURN"
+        elif comp >= 30: vcr["category"] = "MARGINAL"
+        else: vcr["category"] = "VC_POOR"
+
+        # Update ROI estimate
+        roi = vcr.get("roi_estimate", {})
+        if roi:
+            old_comp = (scores["MKT"] * 25 + scores["CAP"] * 25 + old_eco * 20 +
+                        scores["VEL"] * 15 + old_moa * 15) / 10
+            if old_comp > 0:
+                ratio = vcr["composite"] / old_comp
+                roi["seed_roi_multiple"] = round(roi["seed_roi_multiple"] * ratio, 1)
+                roi["exit_val_M"] = round(roi["exit_val_M"] * ratio, 1)
+
+    return changed
+
+
 def apply_batch_corrections(model):
     """Apply batch normalization to inflated deep-dive batches."""
     batch = model.get("source_batch", "")
@@ -307,6 +389,7 @@ def main():
     # Track changes
     cla_changed = 0
     vcr_changed = 0
+    eco_moa_changed = 0
     batch_changed = 0
     cla_category_shifts = Counter()
     vcr_category_shifts = Counter()
@@ -325,6 +408,8 @@ def main():
             "vd": m.get("cla", {}).get("scores", {}).get("VD"),
             "cap": m.get("vcr", {}).get("scores", {}).get("CAP"),
             "vel": m.get("vcr", {}).get("scores", {}).get("VEL"),
+            "eco": m.get("vcr", {}).get("scores", {}).get("ECO"),
+            "moa": m.get("vcr", {}).get("scores", {}).get("MOA"),
         }
 
     # Apply corrections
@@ -345,12 +430,16 @@ def main():
             if old_cat != new_cat:
                 vcr_category_shifts[f"{old_cat} → {new_cat}"] += 1
 
+        if apply_eco_moa_corrections(m):
+            eco_moa_changed += 1
+
         if apply_batch_corrections(m):
             batch_changed += 1
 
     # ── Analysis ──
     print(f"\nCLA corrections: {cla_changed} models changed")
-    print(f"VCR corrections: {vcr_changed} models changed")
+    print(f"VCR CAP/VEL corrections: {vcr_changed} models changed")
+    print(f"VCR ECO/MOA corrections: {eco_moa_changed} models changed")
     print(f"Batch normalization: {batch_changed} models changed")
 
     # CLA impact
@@ -411,6 +500,8 @@ def main():
     vd_scores = [m["cla"]["scores"]["VD"] for m in models]
     cap_scores = [m["vcr"]["scores"]["CAP"] for m in models]
     vel_scores = [m["vcr"]["scores"]["VEL"] for m in models]
+    eco_scores = [m["vcr"]["scores"]["ECO"] for m in models]
+    moa_scores = [m["vcr"]["scores"]["MOA"] for m in models]
 
     def pearson_r(x, y):
         n = len(x)
@@ -422,14 +513,18 @@ def main():
 
     r_mo_ma = pearson_r(mo_scores, ma_scores)
     r_cap_vel = pearson_r(cap_scores, vel_scores)
+    r_eco_moa = pearson_r(eco_scores, moa_scores)
 
     vd_unique = len(set(vd_scores))
     vd_mode_pct = max(Counter(vd_scores).values()) / len(vd_scores) * 100
+    moa_unique = len(set(moa_scores))
 
     print(f"  MO ↔ MA correlation:  {r_mo_ma:.3f}  (was 0.774)")
     print(f"  CAP ↔ VEL correlation: {r_cap_vel:.3f}  (was 0.783)")
+    print(f"  ECO ↔ MOA correlation: {r_eco_moa:.3f}  (was 0.693)")
     print(f"  VD unique values: {vd_unique}  (was 8)")
     print(f"  VD mode%: {vd_mode_pct:.1f}%  (was 38.8%)")
+    print(f"  MOA unique values: {moa_unique}  (was 19)")
 
     # Overall distribution check
     t_comps = [m["composite"] for m in models]
