@@ -1,7 +1,7 @@
 {
   "cycle": "v5-0",
-  "timestamp": "2026-02-13T08:56:44",
-  "source_tensions": 36,
+  "timestamp": "2026-02-13T09:37:08",
+  "source_tensions": 27,
   "requirements": [
     {
       "requirement_id": "REQ-TN-008-ACCESS",
@@ -66,36 +66,6 @@
       "models_affected_count": 44,
       "score_impact_if_validated": "TN-008 models: MO += 1-2, avg O rises by ~5-8 points",
       "score_impact_if_falsified": "TN-008 TNS ES -= 1.0, models confirmed FORTIFIED/LOCKED"
-    },
-    {
-      "requirement_id": "REQ-TN-015-ACCESS",
-      "tension_source": "narrative_opportunity_divergence",
-      "tension_id": "TENS-TN-015-OPP-DIV",
-      "priority": "high",
-      "question": "Is Energy & Resources Transformation accessible to new entrants or structurally locked by incumbents/regulation?",
-      "validation_data": [
-        "Startup funding in Energy & Resources sectors (2024-2026) from Crunchbase/PitchBook",
-        "New establishment formation rate in NAICS 22, 21 (Census Business Dynamics)",
-        "Regulatory permitting/licensing timeline for new entrants in this sector",
-        "HHI (market concentration) for key sub-sectors"
-      ],
-      "threshold_validate": "3+ startups funded >$10M in 24mo AND establishment formation rate positive AND HHI < 2500",
-      "threshold_falsify": "0-1 startups funded AND establishment formation declining AND HHI > 5000",
-      "models_affected": [
-        "V3-ENERGY-006",
-        "V41-INFRA-ENERGY-001",
-        "PC8-FSR-GASUTIL-01",
-        "V3-ENERGY-002",
-        "V3-ENERGY-008",
-        "PC8-SC-OILFIELD-01",
-        "V41-INFRA-ENERGY-002",
-        "PC8-FSR-POWERUTIL-01",
-        "PC8-SC-ENERGYSVC-01",
-        "V41-DIES-ENERGY-001"
-      ],
-      "models_affected_count": 10,
-      "score_impact_if_validated": "TN-015 models: MO += 1-2, avg O rises by ~5-8 points",
-      "score_impact_if_falsified": "TN-015 TNS ES -= 1.0, models confirmed FORTIFIED/LOCKED"
     },
     {
       "requirement_id": "REQ-TN-007-VALID",
@@ -202,7 +172,7 @@
       "tension_source": "t_o_extreme_divergence",
       "tension_id": "TENS-TO-BATCH-T-HIGH",
       "priority": "high",
-      "question": "16 models have T >> O (transformation certain but market closed). Top gaps: Retail Media Network Platform (+49), Defense AI/ML Intelligence Fusion Platform (+40), Defense Logistics Optimizer (+40), Intelligent Commercial Earth Observation Analytics Platform (+36), Autonomous Drone Swarm Command Platform (+36). Should these be decomposed into accessible sub-layers?",
+      "question": "16 models have T >> O (transformation certain but market closed). Top gaps: Retail Media Network Platform (+49), Defense AI/ML Intelligence Fusion Platform (+40), Defense Logistics Optimizer (+40), Intelligent Commercial Earth Observation Analytics Platform (+37), Autonomous Drone Swarm Command Platform (+36). Should these be decomposed into accessible sub-layers?",
       "validation_data": [
         "Value chain analysis of top-gap models: which layers are accessible?",
         "Successful startup examples in adjacent/sub-layer markets",
@@ -226,7 +196,7 @@
       "tension_source": "t_o_extreme_divergence",
       "tension_id": "TENS-TO-BATCH-O-HIGH",
       "priority": "medium",
-      "question": "3 models have O >> T (market open but transformation uncertain). Top gaps: General Writing Tool (-37), Automated Code Generation Tool (-37), Open-Source Education Assessment Platform (-34). What external evidence would validate these transformations?",
+      "question": "1 models have O >> T (market open but transformation uncertain). Top gaps: Open-Source Education Assessment Platform (-33). What external evidence would validate these transformations?",
       "validation_data": [
         "Technology readiness evidence for transformation thesis",
         "Market adoption data (pilot programs, early customers)",
@@ -235,11 +205,9 @@
       "threshold_validate": "Technology proven in production AND 3+ startups funded \u2192 T-score should rise",
       "threshold_falsify": "Technology still experimental AND no startup activity \u2192 O-score may be inflated",
       "models_affected": [
-        "C7-NR-11",
-        "C7-NR-12",
         "V318-OCE-008"
       ],
-      "models_affected_count": 3,
+      "models_affected_count": 1,
       "score_impact_if_validated": "Models T-score components (SN, FA) increase by 1-2 points",
       "score_impact_if_falsified": "Models flagged as 'premature opportunity' \u2014 O maintained but confidence lowered"
     },
@@ -248,7 +216,7 @@
       "tension_source": "force_vcr_inversion",
       "tension_id": "TENS-FVCR-F4_capital",
       "priority": "medium",
-      "question": "Force F4_capital has 274 models with 11.3% fund-returner rate (vs 7.2% baseline). Is VCR scoring biased toward F4_capital's typical market structures, or does this force genuinely produce better investments?",
+      "question": "Force F4_capital has 278 models with 11.2% fund-returner rate (vs 7.1% baseline). Is VCR scoring biased toward F4_capital's typical market structures, or does this force genuinely produce better investments?",
       "validation_data": [
         "Actual VC funding data for F4_capital-driven startups (2024-2026)",
         "Exit multiples for F4_capital-focused companies vs overall market",
@@ -278,7 +246,7 @@
         "MC-V312-TRN-003",
         "MC-V313-42-001"
       ],
-      "models_affected_count": 274,
+      "models_affected_count": 278,
       "score_impact_if_validated": "No change \u2014 VCR reflects reality",
       "score_impact_if_falsified": "Recalibrate VCR heuristic for F4_capital market structures (\u00b11-2 on CAP/VEL)"
     },
@@ -287,7 +255,7 @@
       "tension_source": "force_vcr_inversion",
       "tension_id": "TENS-FVCR-F2_demographics",
       "priority": "medium",
-      "question": "Force F2_demographics has 342 models but only 4.4% fund-returner rate (vs 7.2% baseline). Are F2_demographics-driven models systematically underscored on VCR, or is investability genuinely lower?",
+      "question": "Force F2_demographics has 343 models but only 4.4% fund-returner rate (vs 7.1% baseline). Are F2_demographics-driven models systematically underscored on VCR, or is investability genuinely lower?",
       "validation_data": [
         "Actual VC funding data for F2_demographics-driven startups (2024-2026)",
         "Exit multiples for F2_demographics-focused companies vs overall market",
@@ -317,60 +285,16 @@
         "MC-V39-MFG-002",
         "C7-RC-MFG-01"
       ],
-      "models_affected_count": 342,
+      "models_affected_count": 343,
       "score_impact_if_validated": "No change \u2014 VCR reflects reality",
       "score_impact_if_falsified": "Recalibrate VCR heuristic for F2_demographics market structures (\u00b11-2 on CAP/VEL)"
-    },
-    {
-      "requirement_id": "REQ-ROLE-TN-010",
-      "tension_source": "role_score_paradox",
-      "tension_id": "TENS-ROLE-TN-010",
-      "priority": "low",
-      "question": "In Computer Systems Design and Related Services (IT Services) Transformation, what_needed models avg T=65.4 vs what_works T=62.0. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
-      "validation_data": [
-        "Check SN/FA scoring derivation for what_needed models in TN-010",
-        "Compare sector-level SN with model-level SN (inheritance test)",
-        "Infrastructure deployment timelines vs business model timelines"
-      ],
-      "threshold_validate": "Infrastructure SN/FA scores based on independent evidence \u2192 paradox is real structural finding",
-      "threshold_falsify": "SN/FA inherited from parent sector \u2192 scoring artifact, adjust what_needed SN downward",
-      "models_affected": [
-        "V318-AGT-001",
-        "V318-AGT-003",
-        "V41-INFRA-IT-001",
-        "V3-DEF-003",
-        "MC-V313-71-007",
-        "V318-OCE-002",
-        "MC-V312-ACC-007",
-        "MC-V313-11-012",
-        "MC-V314-CT-002",
-        "MC-V38-62-011",
-        "V3-EMRG-001",
-        "MC-V312-ACC-012",
-        "V3-EMRG-002",
-        "MC-V38-62-016",
-        "MC-V37-5415-005",
-        "C7-RMB-VET-01",
-        "MC-V37-5415-007",
-        "MC-V37-5415-008",
-        "MC-V37-5415-009",
-        "MC-V39-MICRO-001",
-        "MC-V312-ACC-010",
-        "C7-PI-FIN-01",
-        "MC-V37-5415-002",
-        "PC8-EXT-YCINSPIRED-AIAGENT-01",
-        "MC-V314-QC-002"
-      ],
-      "models_affected_count": 25,
-      "score_impact_if_validated": "No change \u2014 infrastructure genuinely scores higher on structural necessity",
-      "score_impact_if_falsified": "what_needed models in TN-010: SN -= 0.5-1.0 (damped)"
     },
     {
       "requirement_id": "REQ-ROLE-TN-008",
       "tension_source": "role_score_paradox",
       "tension_id": "TENS-ROLE-TN-008",
       "priority": "low",
-      "question": "In Defense AI / National Security Technology Transformation, what_needed models avg T=69.6 vs what_works T=66.8. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "question": "In Defense AI / National Security Technology Transformation, what_needed models avg T=69.6 vs what_works T=66.9. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
       "validation_data": [
         "Check SN/FA scoring derivation for what_needed models in TN-008",
         "Compare sector-level SN with model-level SN (inheritance test)",
@@ -404,7 +328,7 @@
       "tension_source": "role_score_paradox",
       "tension_id": "TENS-ROLE-TN-009",
       "priority": "low",
-      "question": "In Educational Services Transformation, what_needed models avg T=65.7 vs what_works T=62.9. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "question": "In Educational Services Transformation, what_needed models avg T=65.8 vs what_works T=63.1. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
       "validation_data": [
         "Check SN/FA scoring derivation for what_needed models in TN-009",
         "Compare sector-level SN with model-level SN (inheritance test)",
@@ -456,31 +380,48 @@
       "score_impact_if_falsified": "what_needed models in TN-011: SN -= 0.5-1.0 (damped)"
     },
     {
-      "requirement_id": "REQ-COLL-FC-036",
-      "tension_source": "collision_coherence",
-      "tension_id": "TENS-COLL-FC-036",
+      "requirement_id": "REQ-ROLE-TN-010",
+      "tension_source": "role_score_paradox",
+      "tension_id": "TENS-ROLE-TN-010",
       "priority": "low",
-      "question": "Collision 'Technology + Demographics in Computer Systems Design and Related Services (IT Services)' has 84 models with T-score stdev=9.1 (range 31.2\u201379.2). If shared force dynamics should produce coherent trajectories, what explains the divergence?",
+      "question": "In Computer Systems Design and Related Services (IT Services) Transformation, what_needed models avg T=65.5 vs what_works T=63.4. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
       "validation_data": [
-        "Check if low-T models are what_dies (expected to be lower)",
-        "Check if divergence correlates with architecture type",
-        "Verify force velocity is uniformly applicable across all linked models"
+        "Check SN/FA scoring derivation for what_needed models in TN-010",
+        "Compare sector-level SN with model-level SN (inheritance test)",
+        "Infrastructure deployment timelines vs business model timelines"
       ],
-      "threshold_validate": "Divergence explained by role (what_dies vs what_works) or architecture differences \u2192 coherent",
-      "threshold_falsify": "Same-role, same-architecture models diverge \u2192 scoring inconsistency, investigate",
+      "threshold_validate": "Infrastructure SN/FA scores based on independent evidence \u2192 paradox is real structural finding",
+      "threshold_falsify": "SN/FA inherited from parent sector \u2192 scoring artifact, adjust what_needed SN downward",
       "models_affected": [
-        "C7-NR-11",
-        "C7-NR-12",
-        "V3-BCI-003",
-        "PC8-EXT-DEADBIZ-PHOTOLAB-01",
-        "PC8-EXT-DEADBIZ-LOCALCONTENT-01",
         "V318-AGT-001",
-        "MC-V313-71-001",
-        "V318-AGT-003"
+        "V318-AGT-003",
+        "V41-INFRA-IT-001",
+        "V3-DEF-003",
+        "MC-V313-71-007",
+        "V318-OCE-002",
+        "MC-V312-ACC-007",
+        "MC-V313-11-012",
+        "MC-V314-CT-002",
+        "MC-V38-62-011",
+        "V3-EMRG-001",
+        "MC-V312-ACC-012",
+        "V3-EMRG-002",
+        "MC-V38-62-016",
+        "MC-V37-5415-005",
+        "C7-RMB-VET-01",
+        "MC-V37-5415-007",
+        "MC-V37-5415-008",
+        "MC-V37-5415-009",
+        "MC-V39-MICRO-001",
+        "MC-V312-ACC-010",
+        "C7-PI-FIN-01",
+        "MC-V37-5415-002",
+        "PC8-EXT-YCINSPIRED-AIAGENT-01",
+        "MC-V314-QC-002"
       ],
-      "models_affected_count": 84,
-      "score_impact_if_validated": "No change \u2014 divergence is structurally explained",
-      "score_impact_if_falsified": "Outlier models flagged for manual T-score review"
+      "models_affected_count": 25,
+      "score_impact_if_validated": "No change \u2014 infrastructure genuinely scores higher on structural necessity",
+      "score_impact_if_falsified": "what_needed models in TN-010: SN -= 0.5-1.0 (damped)"
     },
     {
       "requirement_id": "REQ-SELF-TNS-O-DISCONNECT",
@@ -502,20 +443,19 @@
     }
   ],
   "summary": {
-    "total_requirements": 15,
+    "total_requirements": 13,
     "by_priority": {
-      "high": 4,
+      "high": 3,
       "medium": 6,
-      "low": 5
+      "low": 4
     },
     "by_source": {
-      "collision_coherence": 1,
-      "self_fulfillment_check": 1,
-      "force_vcr_inversion": 2,
       "t_o_extreme_divergence": 2,
-      "narrative_opportunity_divergence": 3,
-      "architecture_cross_sector_gap": 2,
-      "role_score_paradox": 4
+      "force_vcr_inversion": 2,
+      "role_score_paradox": 4,
+      "narrative_opportunity_divergence": 2,
+      "self_fulfillment_check": 1,
+      "architecture_cross_sector_gap": 2
     }
   }
 }

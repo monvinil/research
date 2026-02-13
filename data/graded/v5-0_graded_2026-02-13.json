@@ -1,0 +1,146 @@
+{
+  "cycle": "v5-0",
+  "grading_date": "2026-02-13",
+  "agent": "Agent C — v5 Signal Grader",
+  "signals_graded": 16,
+  "score_adjustments": [
+    {
+      "model_id": "C7-NR-11",
+      "model_name": "General Writing Tool",
+      "adjustment_type": "t_score_increase",
+      "requirement_id": "REQ-TO-OPEN-UNCERTAIN",
+      "evidence": "AI writing tools: $7.37B market (2025), 85% developer adoption, 46% of code AI-generated. Current SN=2.3 and FA=2.0 are contradicted by massive market validation.",
+      "changes": {
+        "SN": {"old": 2.3, "new": 6.0, "rationale": "Structural necessity confirmed: AI writing tools now embedded in enterprise workflows across Fortune 100"},
+        "FA": {"old": 2.0, "new": 6.5, "rationale": "F1 technology force alignment strong: multiple frontier models, rapid improvement cycle"},
+        "TG": {"old": 2.0, "new": 6.0, "rationale": "Already happening (not future): 85% developer adoption, mainstream enterprise deployment"}
+      },
+      "t_composite_old": 31.2,
+      "t_composite_new": 56.5,
+      "confidence": "high"
+    },
+    {
+      "model_id": "C7-NR-12",
+      "model_name": "Automated Code Generation Tool",
+      "adjustment_type": "t_score_increase",
+      "requirement_id": "REQ-TO-OPEN-UNCERTAIN",
+      "evidence": "GitHub Copilot: 20M users, 50K orgs, 42% market share. Code gen market $7.37B (up from $4.91B). Pull request time -75%. 90% Fortune 100 adopted. GPT-5.3-Codex self-referential development.",
+      "changes": {
+        "SN": {"old": 2.3, "new": 7.5, "rationale": "Strongest structural necessity signal in the engine: $7.37B market, 85% adoption, code generation is the defining use case for AI"},
+        "FA": {"old": 2.0, "new": 8.0, "rationale": "Maximum F1 alignment: multiple competing frontier models, self-improving capability cycle"},
+        "TG": {"old": 2.0, "new": 7.5, "rationale": "Transformation already mainstream: 46% of code AI-generated, PR time reduced 75%"}
+      },
+      "t_composite_old": 31.2,
+      "t_composite_new": 65.0,
+      "confidence": "high"
+    },
+    {
+      "model_id": "V3-ENERGY-006",
+      "model_name": "Critical Minerals Supply Chain Platform",
+      "adjustment_type": "cla_score_increase",
+      "requirement_id": "REQ-TN-015-ACCESS",
+      "evidence": "Energy tech VC $11.6B, battery storage +128% YoY, AI-energy integration opening software layers in traditionally locked sectors.",
+      "changes": {
+        "MO": {"old": 4, "new": 5, "rationale": "Energy sector accessibility validated by VC activity and new modality (battery/nuclear) entry points"}
+      },
+      "o_composite_old": 49.0,
+      "o_composite_new": 52.0,
+      "confidence": "medium"
+    },
+    {
+      "model_id": "V41-INFRA-ENERGY-001",
+      "model_name": "Grid Edge Intelligence Platform",
+      "adjustment_type": "cla_score_increase",
+      "requirement_id": "REQ-TN-015-ACCESS",
+      "evidence": "Grid-scale batteries record deployments 2025. AI managing 22% of clean energy investments. Grid edge is software-accessible.",
+      "changes": {
+        "MO": {"old": 6, "new": 7, "rationale": "Grid edge specifically is software-accessible; battery storage deployments create greenfield monitoring/intelligence opportunities"}
+      },
+      "o_composite_old": 63.0,
+      "o_composite_new": 66.0,
+      "confidence": "medium"
+    },
+    {
+      "model_id": "V3-ENERGY-002",
+      "model_name": "AI-Optimized Distributed Energy Platform",
+      "adjustment_type": "cla_score_increase",
+      "requirement_id": "REQ-TN-015-ACCESS",
+      "evidence": "Same evidence as V3-ENERGY-006. Distributed energy specifically benefits from AI cost reduction + battery storage explosion.",
+      "changes": {
+        "MO": {"old": 5, "new": 6, "rationale": "Distributed energy software layer accessible via declining hardware costs and battery storage growth"}
+      },
+      "confidence": "medium"
+    },
+    {
+      "model_id": "V3-ENERGY-008",
+      "model_name": "Industrial Energy Optimization Platform",
+      "adjustment_type": "cla_score_increase",
+      "requirement_id": "REQ-TN-015-ACCESS",
+      "evidence": "Industrial energy optimization is a software play; energy VC confirms sector accessible.",
+      "changes": {
+        "MO": {"old": 5, "new": 6, "rationale": "Software-layer access confirmed by energy tech VC trends"}
+      },
+      "confidence": "medium"
+    },
+    {
+      "model_id": "V318-AGT-001",
+      "model_name": "Vertical AI Agent Deployment Platform",
+      "adjustment_type": "t_score_increase",
+      "requirement_id": "REQ-ROLE-TN-010",
+      "evidence": "Agentic AI emerging as dominant paradigm. Enterprise adoption crossing tipping point. Infrastructure genuinely more necessary (validated).",
+      "changes": {
+        "CE": {"old": 7.5, "new": 8.0, "rationale": "Certainty of evidence increased: agentic AI confirmed as distinct category with growing enterprise adoption"}
+      },
+      "confidence": "medium"
+    },
+    {
+      "model_id": "V318-AGT-003",
+      "model_name": "Multi-Agent Workflow Orchestrator",
+      "adjustment_type": "t_score_increase",
+      "requirement_id": "REQ-ROLE-TN-010",
+      "evidence": "Same agentic AI evidence. Multi-agent orchestration is the infrastructure layer needed for autonomous execution.",
+      "changes": {
+        "CE": {"old": 7.5, "new": 8.0, "rationale": "Evidence certainty increased by emergence of multiple production agentic systems"}
+      },
+      "confidence": "medium"
+    }
+  ],
+  "no_change_validations": [
+    {"requirement_id": "REQ-FVCR-F4_capital", "verdict": "VALIDATED — VCR scoring accurate for F4_capital"},
+    {"requirement_id": "REQ-FVCR-F2_demographics", "verdict": "VALIDATED — VCR scoring accurate for F2_demographics"},
+    {"requirement_id": "REQ-ARCH-FULL_SERVICE_RE-GAP", "verdict": "VALIDATED — structural gap is real (HHI difference)"},
+    {"requirement_id": "REQ-ARCH-ROLLUP_CONSOLID-GAP", "verdict": "VALIDATED — structural gap is real (retail concentrated, micro-firm fragmented)"},
+    {"requirement_id": "REQ-SELF-TNS-O-DISCONNECT", "verdict": "VALIDATED — independence is by design"},
+    {"requirement_id": "REQ-COLL-FC-036", "verdict": "VALIDATED — divergence explained by role differentiation"}
+  ],
+  "new_model_recommendations": [
+    {
+      "candidate_id": "MC-V50-RMN-001",
+      "name": "Retail Media Network Technology Enabler",
+      "rationale": "200+ RMNs need tech stack; platform level locked (Amazon/Walmart 84%) but tech enablement is ACCESSIBLE. Decomposition of MC-V38-44-003.",
+      "parent_model": "MC-V38-44-003",
+      "priority": "high"
+    },
+    {
+      "candidate_id": "MC-V50-ROBO-001",
+      "name": "Industrial Robotics Integration Platform",
+      "rationale": "Physical AI funding $13.8B (+77% YoY), capital rotating from digital to physical AI. Middleware for deploying robotics in manufacturing/logistics.",
+      "parent_model": null,
+      "priority": "high"
+    },
+    {
+      "candidate_id": "MC-V50-AGENT-001",
+      "name": "Enterprise Autonomous AI Agent Platform",
+      "rationale": "Agentic AI distinct from copilot/chat. Autonomous multi-step execution. Enterprise adoption accelerating. Extends but distinct from V318-AGT-001.",
+      "parent_model": null,
+      "priority": "medium"
+    },
+    {
+      "candidate_id": "MC-V50-DEF-001",
+      "name": "Defense AI Software Platform",
+      "rationale": "Defense VC $7.7B proves software layer accessible. Carve-out from locked defense platform models. Vertical SaaS for defense mission planning, analytics, training.",
+      "parent_model": "V3-DEF-002",
+      "priority": "medium"
+    }
+  ]
+}
