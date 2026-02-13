@@ -449,3 +449,13 @@ The economy map is useful when it can answer:
 4. **"What new economic categories emerge?"** — Things that don't exist today but will be significant in 2031
 5. **"Where does fear/psychology delay or distort the transformation?"** — The gap between economic readiness and actual adoption
 6. **"What's the confidence level and what could invalidate this projection?"** — Honest uncertainty acknowledgment with specific falsification criteria
+
+---
+
+## Stated Limitations
+
+### Stated Limitation: Transformation ≠ Welfare
+
+This engine predicts the *likelihood and speed of economic transformation*, not whether that transformation improves human welfare. Validated in Experiment 2 (v3-17): when the 5 T-axes were applied to 35 countries and compared against ground truth (HDI, World Happiness Report, Legatum Prosperity Index), transformation scores correlated with *disruption pressure* — not with prosperity, happiness, or institutional quality. Countries with the highest engine scores (India, Philippines, Vietnam) are under the most transformation pressure but have lower welfare outcomes than stable countries (Norway, Switzerland, Finland) that score low because their economies face less disruption.
+
+**Implication**: A high T-score means "this sector/model is being transformed" — not "this transformation is beneficial." The engine has no "already good" axis. Users should interpret high scores as *probability of change*, not *quality of outcome*.

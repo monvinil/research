@@ -1,0 +1,532 @@
+{
+  "version": "v3-17",
+  "generated": "2026-02-13",
+  "method": "RPS = composite_potential*0.40 + evidence_gap*0.35 + coverage_impact*0.25",
+  "method_detail": {
+    "composite_potential": "MODERATE: (10-EQ)*3, LOW: (10-EQ)*2, HIGH: (10-EQ)*1; all * max(t_composite/100, 0.5)",
+    "evidence_gap": "10 - evidence_quality",
+    "coverage_impact": "models in same 2-digit NAICS: 1->1, 5+->5, 10+->8, 20+->10"
+  },
+  "stats": {
+    "total_models_scored": 608,
+    "tier_distribution": {
+      "MODERATE": {
+        "count": 121,
+        "mean_rps": 9.65,
+        "in_top_50": 37
+      },
+      "LOW": {
+        "count": 212,
+        "mean_rps": 9.32,
+        "in_top_50": 13
+      },
+      "HIGH": {
+        "count": 275,
+        "mean_rps": 4.55,
+        "in_top_50": 0
+      }
+    }
+  },
+  "priorities": [
+    {
+      "rank": 1,
+      "id": "C7-AM-METALFAB-01",
+      "name": "Acquire + Modernize Structural Steel Fab Shop",
+      "evidence_quality": 1,
+      "confidence_tier": "MODERATE",
+      "t_composite": 68.0,
+      "sector_naics": "31-33",
+      "rps_score": 12.994
+    },
+    {
+      "rank": 2,
+      "id": "C7-RC-PLASTICS-01",
+      "name": "Multi-Shop Plastics Injection Molding Rollup",
+      "evidence_quality": 1,
+      "confidence_tier": "MODERATE",
+      "t_composite": 65.5,
+      "sector_naics": "31-33",
+      "rps_score": 12.724
+    },
+    {
+      "rank": 3,
+      "id": "C7-AM-FOOD-01",
+      "name": "Acquire + Modernize Specialty Food Producer",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 76.25,
+      "sector_naics": "31-33",
+      "rps_score": 12.62
+    },
+    {
+      "rank": 4,
+      "id": "C7-AM-MFG-01",
+      "name": "Acquire + Modernize CNC Shop (Single Site)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 76.0,
+      "sector_naics": "31-33",
+      "rps_score": 12.596
+    },
+    {
+      "rank": 5,
+      "id": "C7-RMB-DENTAL-01",
+      "name": "Dental Compliance Platform",
+      "evidence_quality": 1,
+      "confidence_tier": "MODERATE",
+      "t_composite": 63.0,
+      "sector_naics": "62",
+      "rps_score": 12.454
+    },
+    {
+      "rank": 6,
+      "id": "C7-RC-MFG-01",
+      "name": "Multi-Shop CNC/Metal Fab Rollup Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 73.75,
+      "sector_naics": "31-33",
+      "rps_score": 12.38
+    },
+    {
+      "rank": 7,
+      "id": "C7-RMB-INS-01",
+      "name": "Insurance Compliance + Bias Auditing Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 73.5,
+      "sector_naics": "52",
+      "rps_score": 12.356
+    },
+    {
+      "rank": 8,
+      "id": "C7-RC-FOOD-01",
+      "name": "Multi-Facility Specialty Food Production Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 72.5,
+      "sector_naics": "31-33",
+      "rps_score": 12.26
+    },
+    {
+      "rank": 9,
+      "id": "C7-RMB-HC-01",
+      "name": "Healthcare Multi-State Compliance Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 72.5,
+      "sector_naics": "62",
+      "rps_score": 12.26
+    },
+    {
+      "rank": 10,
+      "id": "C7-FSR-HC-01",
+      "name": "Full-Service Prior Auth + Denial Management for Independent Practices",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 70.5,
+      "sector_naics": "62",
+      "rps_score": 12.068
+    },
+    {
+      "rank": 11,
+      "id": "C7-DC-FIN-01",
+      "name": "Automated Financial Intelligence Platform (Data Compounding)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 70.0,
+      "sector_naics": "54",
+      "rps_score": 12.02
+    },
+    {
+      "rank": 12,
+      "id": "C7-PA-HVAC-01",
+      "name": "Autonomous HVAC/Cooling Equipment for Data Centers",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 70.0,
+      "sector_naics": "31-33",
+      "rps_score": 12.02
+    },
+    {
+      "rank": 13,
+      "id": "C7-DC-HC-01",
+      "name": "Clinical Denial Intelligence Platform (Data Compounding)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 69.0,
+      "sector_naics": "62",
+      "rps_score": 11.924
+    },
+    {
+      "rank": 14,
+      "id": "C7-AM-PLASTICS-01",
+      "name": "Acquire + Modernize Plastics Injection Molding Shop",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 68.0,
+      "sector_naics": "31-33",
+      "rps_score": 11.828
+    },
+    {
+      "rank": 15,
+      "id": "C7-AM-PRINT-01",
+      "name": "Acquire + Modernize Commercial Print Shop",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 68.0,
+      "sector_naics": "31-33",
+      "rps_score": 11.828
+    },
+    {
+      "rank": 16,
+      "id": "C7-FSR-INS-01",
+      "name": "Full-Service TPA (Third-Party Administrator)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 67.5,
+      "sector_naics": "52",
+      "rps_score": 11.78
+    },
+    {
+      "rank": 17,
+      "id": "C7-AM-FURNITURE-01",
+      "name": "Acquire + Modernize Cabinet/Furniture Shop",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 67.25,
+      "sector_naics": "31-33",
+      "rps_score": 11.756
+    },
+    {
+      "rank": 18,
+      "id": "C7-RC-DENTAL-01",
+      "name": "Autonomous Dental Practice Rollup (Counter-PE)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 66.5,
+      "sector_naics": "62",
+      "rps_score": 11.684
+    },
+    {
+      "rank": 19,
+      "id": "C7-PI-TRADES-01",
+      "name": "Automated Operations Platform for Building Equipment Contractors",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 66.25,
+      "sector_naics": "23",
+      "rps_score": 11.66
+    },
+    {
+      "rank": 20,
+      "id": "C7-RC-PRINT-01",
+      "name": "Multi-Shop Commercial Print Rollup Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 66.25,
+      "sector_naics": "31-33",
+      "rps_score": 11.66
+    },
+    {
+      "rank": 21,
+      "id": "C7-FSR-FIN-01",
+      "name": "Full-Service Finance Function for SMBs",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 65.75,
+      "sector_naics": "54",
+      "rps_score": 11.612
+    },
+    {
+      "rank": 22,
+      "id": "MC-52-001",
+      "name": "Autonomous Accounting Practice Platform",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 69.75,
+      "sector_naics": "52",
+      "rps_score": 11.58
+    },
+    {
+      "rank": 23,
+      "id": "C7-FSR-HOMEHEALTH-01",
+      "name": "Full-Service Home Health Operations Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 65.25,
+      "sector_naics": "62",
+      "rps_score": 11.564
+    },
+    {
+      "rank": 24,
+      "id": "C7-FSR-ALLIEDHEALTH-01",
+      "name": "Full-Service Practice Operations for Allied Health",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 64.5,
+      "sector_naics": "62",
+      "rps_score": 11.492
+    },
+    {
+      "rank": 25,
+      "id": "C7-FSR-LATAM-01",
+      "name": "Full-Service Cross-Border Compliance (US-LATAM)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 64.5,
+      "sector_naics": "54",
+      "rps_score": 11.492
+    },
+    {
+      "rank": 26,
+      "id": "C7-PI-MFG-01",
+      "name": "Manufacturing Deployment Stack",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 64.5,
+      "sector_naics": "31-33",
+      "rps_score": 11.492
+    },
+    {
+      "rank": 27,
+      "id": "C7-FSR-CHILDCARE-01",
+      "name": "Full-Service Operations for Child Care Centers",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 62.75,
+      "sector_naics": "62",
+      "rps_score": 11.324
+    },
+    {
+      "rank": 28,
+      "id": "C7-RMB-MH-01",
+      "name": "Mental Health Compliance Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 62.5,
+      "sector_naics": "62",
+      "rps_score": 11.3
+    },
+    {
+      "rank": 29,
+      "id": "C7-RMB-VET-01",
+      "name": "Veterinary Compliance + Operations Platform",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 62.5,
+      "sector_naics": "54",
+      "rps_score": 11.3
+    },
+    {
+      "rank": 30,
+      "id": "C7-PI-HOMEHEALTH-01",
+      "name": "Home Health/Elder Care Platform Infrastructure",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 62.25,
+      "sector_naics": "62",
+      "rps_score": 11.276
+    },
+    {
+      "rank": 31,
+      "id": "C7-PI-TRUCKING-01",
+      "name": "Automated Dispatch + Operations Platform for Freight Carriers",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 67.25,
+      "sector_naics": "48",
+      "rps_score": 11.256
+    },
+    {
+      "rank": 32,
+      "id": "C7-FSR-LENDING-01",
+      "name": "Autonomous Mortgage/Consumer Lending Operations",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 61.5,
+      "sector_naics": "52",
+      "rps_score": 11.204
+    },
+    {
+      "rank": 33,
+      "id": "C7-FSR-STAFF-01",
+      "name": "Autonomous Staffing Platform (Employment Services Disruption)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 61.25,
+      "sector_naics": "56",
+      "rps_score": 11.18
+    },
+    {
+      "rank": 34,
+      "id": "MC-31-002",
+      "name": "Manufacturing Integration Services",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 64.51,
+      "sector_naics": "31-33",
+      "rps_score": 11.161
+    },
+    {
+      "rank": 35,
+      "id": "MC-62-001",
+      "name": "Physician-Invisible Clinical Platform",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 64.26,
+      "sector_naics": "62",
+      "rps_score": 11.141
+    },
+    {
+      "rank": 36,
+      "id": "MC-54-001",
+      "name": "AI-Augmented Professional Micro-Firm Operating System",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 64.25,
+      "sector_naics": "54",
+      "rps_score": 11.14
+    },
+    {
+      "rank": 37,
+      "id": "C7-DC-TRADES-01",
+      "name": "Trades Intelligence Platform (Data Compounding from HVAC/Plumbing/Electrical)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 60.75,
+      "sector_naics": "23",
+      "rps_score": 11.132
+    },
+    {
+      "rank": 38,
+      "id": "C7-MN-FIN-01",
+      "name": "AI-Matched Business Acquisition Marketplace",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 60.25,
+      "sector_naics": "53",
+      "rps_score": 11.084
+    },
+    {
+      "rank": 39,
+      "id": "MC-31-001",
+      "name": "Silver Tsunami Manufacturer Acquire-and-Modernize",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 63.51,
+      "sector_naics": "31-33",
+      "rps_score": 11.081
+    },
+    {
+      "rank": 40,
+      "id": "MC-52-003",
+      "name": "Automated Financial Compliance and Governance Platform",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 63.25,
+      "sector_naics": "52",
+      "rps_score": 11.06
+    },
+    {
+      "rank": 41,
+      "id": "MC-56-001",
+      "name": "Automated Workforce Orchestration Platform",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 61.74,
+      "sector_naics": "56",
+      "rps_score": 10.939
+    },
+    {
+      "rank": 42,
+      "id": "MC-54-003",
+      "name": "India-US Professional Services Arbitrage",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 61.25,
+      "sector_naics": "54",
+      "rps_score": 10.9
+    },
+    {
+      "rank": 43,
+      "id": "MC-56-003",
+      "name": "Trust-Premium Healthcare and Trades Staffing",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 61.01,
+      "sector_naics": "56",
+      "rps_score": 10.881
+    },
+    {
+      "rank": 44,
+      "id": "C7-PI-FIN-01",
+      "name": "Finance-as-a-Service API for Micro-Firms",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 58.0,
+      "sector_naics": "54",
+      "rps_score": 10.868
+    },
+    {
+      "rank": 45,
+      "id": "C7-FSR-DESIGN-01",
+      "name": "AI-First Design Agency (Full Service Replacement)",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 57.5,
+      "sector_naics": "54",
+      "rps_score": 10.82
+    },
+    {
+      "rank": 46,
+      "id": "MC-62-003",
+      "name": "AI-Augmented Telehealth for Rural and Underserved Markets",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 60.0,
+      "sector_naics": "62",
+      "rps_score": 10.8
+    },
+    {
+      "rank": 47,
+      "id": "MC-54-002",
+      "name": "AI-Augmented Legal Services for SMBs",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 59.75,
+      "sector_naics": "54",
+      "rps_score": 10.78
+    },
+    {
+      "rank": 48,
+      "id": "MC-31-003",
+      "name": "Cobot-as-a-Service for SME Manufacturing",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 59.49,
+      "sector_naics": "31-33",
+      "rps_score": 10.759
+    },
+    {
+      "rank": 49,
+      "id": "C7-AW-ACC-01",
+      "name": "Acquire PE-Distressed Accounting Practice",
+      "evidence_quality": 2,
+      "confidence_tier": "MODERATE",
+      "t_composite": 56.75,
+      "sector_naics": "54",
+      "rps_score": 10.748
+    },
+    {
+      "rank": 50,
+      "id": "MC-52-002",
+      "name": "Distressed Financial Services Acquirer-Modernizer",
+      "evidence_quality": 0,
+      "confidence_tier": "LOW",
+      "t_composite": 58.75,
+      "sector_naics": "52",
+      "rps_score": 10.7
+    }
+  ]
+}

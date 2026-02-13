@@ -1,8 +1,8 @@
 {
-  "state_version": 26,
-  "current_cycle": "v3-16",
+  "state_version": 27,
+  "current_cycle": "v3-17",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "engine_version": "3.16 — 'Data-Driven + Catalyst': 608 models. (1) SN Component 3 data-driven: Polanyi automation_exposure + QCEW Baumol cross-reference replaces hardcoded lookup. SN↔FA r=0.054. (2) VCR MKT live TAM: QCEW total_annual_wages replaces 80-entry hardcoded SECTOR_TAM_M. MKT stdev 1.68→2.02, score-10 11.7%→3.0%. (3) Parsed TAM addressable: >$50B gets 10%, >$10B gets 25% addressable factor. (4) All v3-15 preserved (SN Market Necessity, BCI coverage, naming audit, Polanyi completion).",
+  "engine_version": "3.17 — 'Indicators Audit + Data Quality': 608 models. (1) Indicators audit: 15-axis correlation health check, VCR CAP↔VEL r=0.767 documented. (2) Weight sensitivity test: 6 scenarios confirm current 25/25/20/15/15 weights are optimal — no change. (3) Polanyi backfill: 70 models (ag/utilities/mining/gov) via sector proxy → 608/608 coverage. SN re-scored data-driven. (4) EQ audit: explicit grading criteria applied, mean EQ 4.17→6.29. 520/608 models upgraded. (5) Confidence recalibration: LOW 212→9, MODERATE 121→315, HIGH 275→284. (6) Research priorities: RPS-based (composite_potential + evidence_gap + coverage_impact) replaces naive composite sort. (7) UI conviction toggle: Confirmed/What-If filter, catalyst badge in table view, row dimming for conditional models. (8) Welfare gap documented: transformation ≠ welfare (Experiment 2 finding). (9) All v3-16 preserved (data-driven SN, live QCEW TAM, 48 catalyst scenarios).",
   "force_velocities": {
     "F1_technology": {
       "velocity": "accelerating",
@@ -1188,12 +1188,12 @@
     },
     "enrichment_dimensions": {
       "confidence_tiers": {
-        "HIGH": 275,
-        "LOW": 212,
-        "MODERATE": 121
+        "HIGH": 284,
+        "LOW": 9,
+        "MODERATE": 315
       },
-      "evidence_quality_mean": 4.17,
-      "polanyi_coverage": "538/608",
+      "evidence_quality_mean": 6.29,
+      "polanyi_coverage": "608/608",
       "architecture_canonical_types": 15,
       "falsification_unique_criteria": 295
     }

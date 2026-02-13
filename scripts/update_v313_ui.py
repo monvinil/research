@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 """
-v3-16 UI Refresh: Regenerate models.json and dashboard.json with all v3-16 changes.
+v3-17 UI Refresh: Regenerate models.json and dashboard.json with all v3-17 changes.
 
 Includes:
-  - All v3-15 enrichment (confidence, evidence_quality, polanyi, architecture, naming audit)
-  - v3-16 data-driven SN scoring (Polanyi + Baumol → SN Component 3)
-  - v3-16 live QCEW TAM → VCR MKT (replaces hardcoded sector TAM lookup)
-  - Sector aggregation, force distribution, research priority queue
+  - All v3-16 preserved (data-driven SN, live QCEW TAM, catalyst layer)
+  - v3-17 Polanyi backfill: 70 models (ag/utilities/mining/gov) via sector proxy → 608/608 coverage
+  - v3-17 EQ audit: evidence_quality graded by explicit criteria (mean 4.17→6.29)
+  - v3-17 confidence tier recalibration (LOW 212→9, MODERATE 121→315, HIGH 275→284)
+  - v3-17 SN rescore for 70 backfilled models (data-driven path, not heuristic fallback)
+  - v3-17 research priorities: RPS-based (composite_potential + evidence_gap + coverage_impact)
+  - UI: conviction toggle (Confirmed/What-If), catalyst badge in table view
 
 Dashboard updates:
-  - engine_version → v3.16
-  - enrichment_summary, sector_model_aggregation, force_model_distribution
-  - top_20_tri_actionable rebuilt with data-driven scores
+  - engine_version → v3.17
+  - enrichment_summary, research_priorities (RPS-based)
 
 State updates:
-  - state_version → 26
-  - current_cycle → v3-16
+  - state_version → 27
+  - current_cycle → v3-17
   - engine_version description updated
 """
 
@@ -115,7 +117,7 @@ def build_slim_model(m):
 
 def main():
     print("=" * 70)
-    print("v3-16 UI REFRESH: Regenerating UI files with data-driven SN + live QCEW TAM")
+    print("v3-17 UI REFRESH: Indicators audit + Polanyi backfill + EQ grading + conviction UI")
     print("=" * 70)
     print()
 
@@ -216,7 +218,7 @@ def main():
     vcr_system = data.get("rating_system", {}).get("vcr_system", {})
 
     ui_output = {
-        "cycle": "v3-16",
+        "cycle": "v3-17",
         "date": "2026-02-12",
         "total": len(models),
         "dual_ranking": True,
@@ -247,8 +249,8 @@ def main():
     with open(UI_DASHBOARD) as f:
         dashboard = json.load(f)
 
-    dashboard["engine_version"] = "v3.16"
-    dashboard["current_cycle"] = "v3-16"
+    dashboard["engine_version"] = "v3.17"
+    dashboard["current_cycle"] = "v3-17"
     dashboard["enrichment"] = True
     dashboard["enrichment_summary"] = enrichment_summary
 
@@ -405,24 +407,36 @@ def main():
         f"{k}_forces": v for k, v in sorted(force_convergence.items())
     }
 
-    # ── Research priority queue: high T + LOW confidence ──
+    # ── Research priority queue: RPS-based (v3-17) ──
+    # RPS = composite_potential * 0.40 + evidence_gap * 0.35 + coverage_impact * 0.25
+    # Prioritizes MODERATE confidence where marginal research has most impact
+    naics_counts = Counter((m.get("sector_naics") or "")[:2] for m in models)
     research_priorities = []
-    for m in sorted(models, key=lambda x: -x["composite"]):
-        if m.get("confidence_tier") == "LOW" and m["composite"] >= 65:
-            research_priorities.append({
-                "rank": m["rank"],
-                "id": m["id"],
-                "name": m["name"],
-                "composite": m["composite"],
-                "opportunity_composite": m.get("cla", {}).get("composite"),
-                "vcr_composite": m.get("vcr", {}).get("composite"),
-                "confidence_tier": "LOW",
-                "evidence_quality": m.get("evidence_quality"),
-                "architecture": m.get("architecture"),
-            })
-            if len(research_priorities) >= 30:
-                break
-    dashboard["research_priorities"] = research_priorities
+    for m in models:
+        eq = m.get("evidence_quality", 0)
+        tier = m.get("confidence_tier", "LOW")
+        t_comp = m.get("composite", 0)
+        tier_mult = {"HIGH": 1, "MODERATE": 3, "LOW": 2}.get(tier, 2)
+        composite_potential = (10 - eq) * tier_mult * max(t_comp / 100, 0.5)
+        evidence_gap = 10 - eq
+        naics2 = (m.get("sector_naics") or "")[:2]
+        nc = naics_counts.get(naics2, 1)
+        coverage_impact = min(nc, 10) if nc >= 20 else (8 if nc >= 10 else (5 if nc >= 5 else nc))
+        rps = composite_potential * 0.40 + evidence_gap * 0.35 + coverage_impact * 0.25
+        research_priorities.append({
+            "rank": m["rank"],
+            "id": m["id"],
+            "name": m["name"],
+            "composite": m["composite"],
+            "opportunity_composite": m.get("cla", {}).get("composite"),
+            "vcr_composite": m.get("vcr", {}).get("composite"),
+            "confidence_tier": tier,
+            "evidence_quality": eq,
+            "architecture": m.get("architecture"),
+            "rps_score": round(rps, 2),
+        })
+    research_priorities.sort(key=lambda x: -x["rps_score"])
+    dashboard["research_priorities"] = research_priorities[:30]
 
     # ── Catalyst summary (v3-16) ──
     catalyst_models = [m for m in models if m.get("catalyst_scenario")]
@@ -445,14 +459,19 @@ def main():
     with open(STATE_FILE) as f:
         state = json.load(f)
 
-    state["state_version"] = 26
-    state["current_cycle"] = "v3-16"
+    state["state_version"] = 27
+    state["current_cycle"] = "v3-17"
     state["engine_version"] = (
-        "3.16 — 'Data-Driven + Catalyst': 608 models. "
-        "(1) SN Component 3 data-driven: Polanyi automation_exposure + QCEW Baumol cross-reference replaces hardcoded lookup. SN↔FA r=0.054. "
-        "(2) VCR MKT live TAM: QCEW total_annual_wages replaces 80-entry hardcoded SECTOR_TAM_M. MKT stdev 1.68→2.02, score-10 11.7%→3.0%. "
-        "(3) Parsed TAM addressable: >$50B gets 10%, >$10B gets 25% addressable factor. "
-        "(4) All v3-15 preserved (SN Market Necessity, BCI coverage, naming audit, Polanyi completion)."
+        "3.17 — 'Indicators Audit + Data Quality': 608 models. "
+        "(1) Indicators audit: 15-axis correlation health check, VCR CAP↔VEL r=0.767 documented. "
+        "(2) Weight sensitivity test: 6 scenarios confirm current 25/25/20/15/15 weights are optimal — no change. "
+        "(3) Polanyi backfill: 70 models (ag/utilities/mining/gov) via sector proxy → 608/608 coverage. SN re-scored data-driven. "
+        "(4) EQ audit: explicit grading criteria applied, mean EQ 4.17→6.29. 520/608 models upgraded. "
+        "(5) Confidence recalibration: LOW 212→9, MODERATE 121→315, HIGH 275→284. "
+        "(6) Research priorities: RPS-based (composite_potential + evidence_gap + coverage_impact) replaces naive composite sort. "
+        "(7) UI conviction toggle: Confirmed/What-If filter, catalyst badge in table view, row dimming for conditional models. "
+        "(8) Welfare gap documented: transformation ≠ welfare (Experiment 2 finding). "
+        "(9) All v3-16 preserved (data-driven SN, live QCEW TAM, 48 catalyst scenarios)."
     )
 
     # Update rated_models_index
@@ -472,7 +491,7 @@ def main():
     # ── Summary ──
     print()
     print("=" * 70)
-    print("v3-16 UI REFRESH COMPLETE")
+    print("v3-17 UI REFRESH COMPLETE")
     print("=" * 70)
     print()
     print(f"  Models: {len(models)}")

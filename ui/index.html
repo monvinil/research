@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.15</title>
+<title>Research Engine v3.17</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -379,6 +379,25 @@
     font-family: inherit; transition: all var(--transition);
   }
   .view-toggle button.active { background: rgba(255,255,255,0.06); color: var(--text); }
+
+  /* Conviction Toggle */
+  .conviction-toggle {
+    display: flex; gap: 2px; background: var(--glass);
+    border: 1px solid var(--glass-border); border-radius: 7px; padding: 2px;
+  }
+  .conviction-toggle button {
+    font-size: 10px; font-weight: 600; padding: 5px 10px;
+    border-radius: 5px; cursor: pointer;
+    border: none; background: transparent; color: var(--dim);
+    font-family: inherit; transition: all var(--transition);
+  }
+  .conviction-toggle button.active { background: rgba(255,255,255,0.06); color: var(--text); }
+  .conviction-toggle button[data-conviction="confirmed"].active { color: var(--green); }
+  .conviction-toggle button[data-conviction="what-if"].active { color: #f59e0b; }
+
+  /* Conditional/Parked row dimming */
+  .model-table tr.row-conditional { opacity: 0.65; }
+  .model-table tr.row-conditional:hover { opacity: 0.85; }
 
   /* Model Table */
   .model-table { width: 100%; border-collapse: collapse; }
@@ -871,6 +890,11 @@ document.addEventListener('DOMContentLoaded',function(){
         <option value="roi-desc">ROI Multiple (high)</option>
       </select>
       <button class="toggle-btn" id="new-only-btn" onclick="toggleNewOnly()">NEW only</button>
+      <div class="conviction-toggle" title="Filter by conviction level: Confirmed = high-conviction categories, What-If = conditional/parked/catalyst">
+        <button class="active" data-conviction="all" onclick="setConvictionFilter('all', this)">All</button>
+        <button data-conviction="confirmed" onclick="setConvictionFilter('confirmed', this)">Confirmed</button>
+        <button data-conviction="what-if" onclick="setConvictionFilter('what-if', this)">What-If</button>
+      </div>
       <div class="view-toggle">
         <button class="active" data-mode="table" onclick="setViewMode('table', this)">Table</button>
         <button data-mode="cards" onclick="setViewMode('cards', this)">Cards</button>
@@ -1308,6 +1332,9 @@ let activeOppFilter = null;
 let activeVcrFilter = null;
 let activeConfFilter = null;
 let activeForceFilter = null;
+let activeConvictionFilter = 'all';
+const CONFIRMED_CATS = new Set(['STRUCTURAL_WINNER','FORCE_RIDER','TIMING_ARBITRAGE','CAPITAL_MOAT','FEAR_ECONOMY','EMERGING_CATEGORY']);
+const WHATIF_CATS = new Set(['CONDITIONAL','PARKED']);
 let vcrFilteredModels = [];
 let vcrCurrentPage = 1;
 let expandedModelId = null;
@@ -1412,6 +1439,14 @@ function setForceFilter(force) {
   document.querySelectorAll('#force-filters .filter-chip').forEach(c => {
     c.classList.toggle('active', c.dataset.cat === activeForceFilter);
   });
+  currentPage = 1;
+  applyFilters();
+}
+
+function setConvictionFilter(level, btn) {
+  activeConvictionFilter = level;
+  document.querySelectorAll('.conviction-toggle button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
   currentPage = 1;
   applyFilters();
 }
@@ -1579,6 +1614,8 @@ function applyFilters() {
     if (activeCatFilter && m.category !== activeCatFilter) return false;
     if (activeOppFilter && m.opportunity_category !== activeOppFilter) return false;
     if (activeConfFilter && m.confidence_tier !== activeConfFilter) return false;
+    if (activeConvictionFilter === 'confirmed' && !CONFIRMED_CATS.has(m.category)) return false;
+    if (activeConvictionFilter === 'what-if' && !WHATIF_CATS.has(m.category) && !m.catalyst_scenario) return false;
     if (activeForceFilter) {
       const forces = m.forces || [];
       if (!forces.some(f => f.startsWith(activeForceFilter))) return false;
@@ -1625,10 +1662,15 @@ function renderModelList() {
   const start = (currentPage - 1) * PAGE_SIZE;
   const pageModels = filteredModels.slice(start, start + PAGE_SIZE);
 
+  const confirmedCount = filteredModels.filter(m => CONFIRMED_CATS.has(m.category)).length;
+  const whatIfCount = total - confirmedCount;
   let infoText = total + ' model' + (total !== 1 ? 's' : '');
+  if (activeConvictionFilter === 'all' && total > 0) infoText += ' \u2014 ' + confirmedCount + ' confirmed, ' + whatIfCount + ' what-if';
   if (newOnlyActive) infoText += ' (new only)';
   if (activeCatFilter) infoText += ' \u2014 ' + activeCatFilter.replace(/_/g, ' ');
   if (activeOppFilter) infoText += ' \u2014 opp: ' + activeOppFilter.replace(/_/g, ' ');
+  if (activeConvictionFilter === 'confirmed') infoText += ' (high conviction only)';
+  if (activeConvictionFilter === 'what-if') infoText += ' (conditional / speculative)';
   document.getElementById('results-info').textContent = infoText;
 
   const container = document.getElementById('model-list-container');
@@ -1660,7 +1702,9 @@ function modelTableRow(m) {
   const oppCatCls = 'opp-' + (m.opportunity_category || 'CONTESTED');
   const newBadge = m.new_in_v36 ? '<span class="new-badge">NEW</span>' : '';
   const subBadge = m.parent_id ? '<span class="sub-badge">SUB</span>' : '';
+  const catBadge = m.catalyst_scenario ? `<span style="font-size:8px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,0.15);color:#f59e0b;font-weight:700;margin-left:4px" title="Catalyst: ${esc(m.catalyst_scenario.cluster_name || '')} — ${m.catalyst_scenario.asymmetry_ratio.toFixed(2)}x upside if triggers fire">CAT ${m.catalyst_scenario.asymmetry_ratio.toFixed(1)}x</span>` : '';
   const decompIndicator = m.decomposed ? '<span class="decomposed-indicator">(' + (m.sub_model_count || '?') + ' layers)</span>' : '';
+  const isConditional = WHATIF_CATS.has(m.category);
   const axes = ['SN','FA','EC','TG','CE'].map(a => {
     const v = m.scores[a] || 0;
     const pct = (v / 10) * 100;
@@ -1675,9 +1719,9 @@ function modelTableRow(m) {
   const oppComp = m.opportunity_composite || 0;
   const oppColor = oppComp >= 75 ? 'var(--green)' : oppComp >= 60 ? 'var(--blue)' : oppComp >= 45 ? 'var(--amber)' : 'var(--red)';
 
-  return `<tr onclick="toggleModelDetail('${esc(m.id)}')">
+  return `<tr onclick="toggleModelDetail('${esc(m.id)}')"${isConditional ? ' class="row-conditional"' : ''}>
     <td class="rank-cell">${m.rank}</td>
-    <td class="name-cell">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}${m.confidence_tier ? ' <span class="confidence-badge conf-' + m.confidence_tier + '" style="font-size:8px;padding:1px 4px;vertical-align:middle">' + m.confidence_tier[0] + '</span>' : ''}</td>
+    <td class="name-cell">${esc(m.name)}${newBadge}${subBadge}${catBadge}${decompIndicator}${m.confidence_tier ? ' <span class="confidence-badge conf-' + m.confidence_tier + '" style="font-size:8px;padding:1px 4px;vertical-align:middle">' + m.confidence_tier[0] + '</span>' : ''}</td>
     <td class="composite-cell" style="color:${compColor}">${m.composite.toFixed(1)}</td>
     <td class="opp-cell" style="color:${oppColor}">${oppComp.toFixed(1)}</td>
     <td class="opp-cell roi-value ${roiClass(m.vcr_roi_multiple || 0)}" style="font-size:12px">${m.vcr_roi_multiple ? (m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) + 'x' : m.vcr_roi_multiple.toFixed(1) + 'x') : '--'}</td>
