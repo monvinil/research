@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.17</title>
+<title>Research Engine v3.18</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -800,7 +800,7 @@
 <div id="auth-gate" style="display:flex;align-items:center;justify-content:center;min-height:100dvh;position:relative;z-index:10">
   <div class="glass" style="padding:48px 40px;text-align:center;max-width:340px;width:90%;border:1px solid var(--glass-border)">
     <div style="font-size:22px;font-weight:700;margin-bottom:6px;background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Research Engine</div>
-    <div style="color:var(--text-secondary);font-size:12px;margin-bottom:28px">v3.12 &middot; 508 models &middot; triple ranking</div>
+    <div style="color:var(--text-secondary);font-size:12px;margin-bottom:28px">v3.18 &middot; 650 models &middot; triple ranking</div>
     <input id="auth-input" type="password" placeholder="Access code" autofocus
       style="width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--glass-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:14px;outline:none;margin-bottom:12px;transition:border-color var(--transition)"
       onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--glass-border)'">
@@ -845,10 +845,10 @@ document.addEventListener('DOMContentLoaded',function(){
   </nav>
 
   <header>
-    <h1>Research Engine v3.16</h1>
+    <h1>Research Engine v3.18</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-12</span>
-      &nbsp; <span id="model-total-sub">608 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      <span class="cycle-badge" id="cycle-badge">v3-18</span>
+      &nbsp; <span id="model-total-sub">650 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
     <div style="font-size:11px;color:var(--dim);margin-top:4px;line-height:1.5;max-width:820px">Projects what the economy becomes (2026&ndash;2031). Each model is a venture-scale opportunity scored on 3 independent axes: Transformation (will it happen?), Opportunity (can an entrant play?), and VC ROI (is it investable?). See <a href="#" onclick="event.preventDefault();document.querySelector('[data-view=glossary]').click()" style="color:var(--accent);text-decoration:underline">Glossary</a> for full definitions.</div>
   </header>
@@ -915,6 +915,9 @@ document.addEventListener('DOMContentLoaded',function(){
     <div style="height:6px"></div>
     <div style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px" title="Filter by driving macro force (F1=Technology, F2=Demographics, F3=Geopolitics, F4=Capital, F5=Psychology, F6=Energy)">Driving Force</div>
     <div class="filter-chips" id="force-filters"></div>
+    <div style="height:6px"></div>
+    <div style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px" title="Filter FORCE_RIDER models by structural sub-type">Force Rider Sub-Type</div>
+    <div class="filter-chips" id="fr-subtype-filters"></div>
     <div style="height:8px"></div>
 
     <!-- Results info -->
@@ -1118,7 +1121,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <!-- ═══ VIEW: GLOSSARY ═══ -->
   <div id="view-glossary" class="view-section">
     <div class="glossary-intro">
-      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031 by tracking 6 macro forces, scoring 608 business models across 3 independent dimensions, and mapping transformation paths across sectors and geographies. Each model represents a specific venture-scale opportunity within a transforming sector. Models are scored on three axes that answer different questions &mdash; all scores are 1&ndash;10 per axis, composited to 0&ndash;100.
+      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031 by tracking 6 macro forces, scoring 650 business models across 3 independent dimensions, and mapping transformation paths across sectors and geographies. Each model represents a specific venture-scale opportunity within a transforming sector. Models are scored on three axes that answer different questions &mdash; all scores are 1&ndash;10 per axis, composited to 0&ndash;100.
     </div>
 
     <!-- Triple Ranking System -->
@@ -1259,7 +1262,7 @@ document.addEventListener('DOMContentLoaded',function(){
     <!-- Architecture Types -->
     <div class="glass-static card glossary-section">
       <h3>Architecture Types</h3>
-      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Each model uses one of 15 canonical business architectures. Architecture strongly predicts unit economics (ECO) and moat trajectory (MOA). Normalized from 54+ original variants.</p>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Each model uses one of 18 canonical business architectures. Architecture strongly predicts unit economics (ECO) and moat trajectory (MOA). Normalized from 54+ original variants into 18 canonical types.</p>
       <table class="glossary-table">
         <thead><tr><th>Architecture</th><th>What It Means</th><th style="width:80px">Economics</th></tr></thead>
         <tbody>
@@ -1278,6 +1281,9 @@ document.addEventListener('DOMContentLoaded',function(){
           <tr><td class="glossary-full">compliance_automation</td><td class="glossary-desc">Automated compliance engine &mdash; continuous monitoring, audit trail generation, regulatory filing across jurisdictions.</td><td style="font-size:11px;color:var(--amber)">Moderate</td></tr>
           <tr><td class="glossary-full">service_platform</td><td class="glossary-desc">Managed service blending human expertise with AI augmentation. Delivers outcomes at scale. Lower margins than pure SaaS.</td><td style="font-size:11px;color:var(--amber)">Moderate</td></tr>
           <tr><td class="glossary-full">physical_production_ai</td><td class="glossary-desc">AI-augmented physical production &mdash; computer vision, predictive maintenance, automated quality control on existing manufacturing lines.</td><td style="font-size:11px;color:var(--red)">High capex</td></tr>
+          <tr><td class="glossary-full">open_core_ecosystem</td><td class="glossary-desc">Free/open-source product core with capture at hosting, enterprise, and integration layers. Precedent: Red Hat ($34B), Databricks ($43B), MongoDB, Hugging Face.</td><td style="font-size:11px;color:var(--amber)">Mixed (free+enterprise)</td></tr>
+          <tr><td class="glossary-full">outcome_based</td><td class="glossary-desc">Revenue from measurable outcomes, not product pricing. Zero upfront, percentage of results. Performance marketing, legal contingency, AI cost-savings contracts.</td><td style="font-size:11px;color:var(--amber)">Variable but aligned</td></tr>
+          <tr><td class="glossary-full">coordination_protocol</td><td class="glossary-desc">Thin-margin infrastructure enabling permissionless coordination. Protocol, not platform. Precedent: Stripe (2.9% of internet commerce), HTTP/USB as standards.</td><td style="font-size:11px;color:var(--red)">Thin margin, massive vol</td></tr>
         </tbody>
       </table>
     </div>
@@ -1316,7 +1322,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
   </div>
 
-  <div class="footer">Research Engine v3.15 &middot; 608 models &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v3.18 &middot; 650 models &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -1332,6 +1338,7 @@ let activeOppFilter = null;
 let activeVcrFilter = null;
 let activeConfFilter = null;
 let activeForceFilter = null;
+let activeFrSubtypeFilter = null;
 let activeConvictionFilter = 'all';
 const CONFIRMED_CATS = new Set(['STRUCTURAL_WINNER','FORCE_RIDER','TIMING_ARBITRAGE','CAPITAL_MOAT','FEAR_ECONOMY','EMERGING_CATEGORY']);
 const WHATIF_CATS = new Set(['CONDITIONAL','PARKED']);
@@ -1438,6 +1445,16 @@ function setForceFilter(force) {
   else { activeForceFilter = force; }
   document.querySelectorAll('#force-filters .filter-chip').forEach(c => {
     c.classList.toggle('active', c.dataset.cat === activeForceFilter);
+  });
+  currentPage = 1;
+  applyFilters();
+}
+
+function setFrSubtypeFilter(subtype) {
+  if (activeFrSubtypeFilter === subtype) { activeFrSubtypeFilter = null; }
+  else { activeFrSubtypeFilter = subtype; }
+  document.querySelectorAll('#fr-subtype-filters .filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeFrSubtypeFilter);
   });
   currentPage = 1;
   applyFilters();
@@ -1620,6 +1637,7 @@ function applyFilters() {
       const forces = m.forces || [];
       if (!forces.some(f => f.startsWith(activeForceFilter))) return false;
     }
+    if (activeFrSubtypeFilter && m.force_rider_subtype !== activeFrSubtypeFilter) return false;
     if (q) {
       const hay = [m.name, m.id, m.sector_naics, m.architecture, m.category, m.opportunity_category || '', m.one_liner || '', m.layer_name || '', m.sector_name || ''].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
@@ -1954,7 +1972,7 @@ function renderWhatsNew(d) {
 
   if (!items.length) { el.style.display = 'none'; return; }
 
-  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-12'}</div>
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-18'}</div>
     <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
 }
 
@@ -2008,6 +2026,24 @@ function renderForceFilters(models) {
   el.innerHTML = '<span style="font-size:10px;color:var(--dim);font-weight:600;padding:4px 0;text-transform:uppercase;letter-spacing:0.5px">Forces:</span> ' +
     order.filter(k => counts[k] > 0).map(k => {
     return '<span class="filter-chip force-filter-chip" data-cat="' + k + '" onclick="setForceFilter(\'' + k + '\')">' + counts[k] + ' ' + k + ' ' + forceNames[k] + '</span>';
+  }).join('');
+}
+
+// ─── FORCE_RIDER SUBTYPE FILTERS (v3-18) ───
+function renderFrSubtypeFilters(models) {
+  const el = document.getElementById('fr-subtype-filters');
+  const counts = {};
+  models.forEach(m => {
+    const sub = m.force_rider_subtype;
+    if (sub) counts[sub] = (counts[sub] || 0) + 1;
+  });
+  const order = ['FR_STRUCTURAL','FR_PLATFORM','FR_VERTICAL','FR_SERVICE','FR_CONSOLIDATION','FR_COMPLIANCE','FR_GENERAL'];
+  const labels = {
+    FR_STRUCTURAL: 'Structural', FR_PLATFORM: 'Platform', FR_VERTICAL: 'Vertical SaaS',
+    FR_SERVICE: 'Service', FR_CONSOLIDATION: 'Consolidation', FR_COMPLIANCE: 'Compliance', FR_GENERAL: 'General'
+  };
+  el.innerHTML = order.filter(k => counts[k] > 0).map(k => {
+    return '<span class="filter-chip cat-badge cat-FORCE_RIDER" data-cat="' + k + '" onclick="setFrSubtypeFilter(\'' + k + '\')" title="' + k + '">' + counts[k] + ' ' + (labels[k] || k) + '</span>';
   }).join('');
 }
 
@@ -2516,7 +2552,7 @@ async function refresh() {
 
   if (d) {
     // Header
-    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-12';
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-18';
     const ts = d.last_updated;
     document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
@@ -2588,6 +2624,7 @@ async function refresh() {
     renderVcrCatFilters(m.summary || {});
     renderConfidenceFilters(allModels);
     renderForceFilters(allModels);
+    renderFrSubtypeFilters(allModels);
     renderScatterPlot(allModels);
     renderTimeline(allModels);
     renderCatalystWatch(allModels);

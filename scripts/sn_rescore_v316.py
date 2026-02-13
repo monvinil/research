@@ -53,6 +53,10 @@ ARCH_SUBSTITUTABILITY = {
     "ai_copilot": 9,
     "compliance_automation": 6,
     "arbitrage_window": 9,
+    # v3-18 new architectures
+    "open_core_ecosystem": 4,       # ecosystem hard to replicate
+    "outcome_based": 5,             # pricing innovation, not tech
+    "coordination_protocol": 3,     # very hard to replicate a standard
 }
 
 # ── Component 3 baseline: Incumbent Adaptation Risk (fallback only) ──

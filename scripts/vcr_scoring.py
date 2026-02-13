@@ -241,6 +241,10 @@ BUYER_TYPE = {
     "ai_copilot": "consumer_smb",
     "workflow_automation": "smb_mid",
     "compliance_automation": "mid_enterprise",
+    # v3-18 new architectures
+    "open_core_ecosystem": "multi",           # free for all, enterprise upsell
+    "outcome_based": "smb_mid",              # outcome works best with measurable SMBs
+    "coordination_protocol": "multi",         # protocol serves all participants
     "predictive_analytics": "mid_enterprise",
     "embedded_fintech": "multi",
     "insurtech": "mid_enterprise",
@@ -437,6 +441,10 @@ ARCH_ECO = {
     "physical_production_ai": 4,
     "automation": 4,
     "service": 4,
+    # v3-18 new architectures
+    "open_core_ecosystem": 5,       # thin on free, thick on enterprise
+    "outcome_based": 6,             # variable but aligned margins
+    "coordination_protocol": 4,     # thin margin, massive volume
 }
 
 ARCH_VEL = {
@@ -479,6 +487,10 @@ ARCH_VEL = {
     "physical_production_ai": 4,
     "automation": 4,
     "service": 4,
+    # v3-18 new architectures
+    "open_core_ecosystem": 7,       # fast adoption (free), slow monetization
+    "outcome_based": 5,             # must prove outcome first
+    "coordination_protocol": 4,     # standards are slow
 }
 
 ARCH_MOA = {
@@ -521,6 +533,10 @@ ARCH_MOA = {
     "advisory": 3,
     "service": 3,
     "arbitrage_window": 3,
+    # v3-18 new architectures
+    "open_core_ecosystem": 8,       # ecosystem lock-in
+    "outcome_based": 7,             # alignment moat
+    "coordination_protocol": 6,     # standard moat, thin capture
 }
 
 # Architecture -> base MKT (can be overridden by TAM parsing)
@@ -564,6 +580,10 @@ ARCH_MKT = {
     "distress_operator": 4,
     "arbitrage_window": 4,
     "geographic_arbitrage": 4,
+    # v3-18 new architectures
+    "open_core_ecosystem": 7,       # ecosystem TAM, not product TAM
+    "outcome_based": 6,             # outcome-defined TAM
+    "coordination_protocol": 8,     # protocol TAM = all participants
 }
 
 # Architecture -> base CAP
@@ -607,6 +627,10 @@ ARCH_CAP = {
     "physical_production_ai": 4,
     "project_developer": 4,
     "project_development": 4,
+    # v3-18 new architectures
+    "open_core_ecosystem": 8,       # free adoption removes barrier
+    "outcome_based": 9,             # zero acquisition friction
+    "coordination_protocol": 7,     # enable participants, not capture
 }
 
 # Revenue multiples at exit by architecture (low, high)
@@ -650,6 +674,10 @@ ARCH_MULTIPLES = {
     "managed_service": (3, 6),
     "service": (3, 5),
     "hybrid_service": (3, 6),
+    # v3-18 new architectures
+    "open_core_ecosystem": (10, 20),    # ecosystem multiples (Red Hat, Databricks precedent)
+    "outcome_based": (4, 10),           # variable margins, moderate multiples
+    "coordination_protocol": (8, 18),   # protocol multiples (Stripe precedent)
 }
 
 

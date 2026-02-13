@@ -1,0 +1,190 @@
+# v3-18 Regrade Changelog
+
+
+Total models: 608
+Composites changed: 163
+T-composite stdev: 7.2 → 7.1
+r(SN,FA): 0.063
+r(T,CLA): 0.039
+r(T,VCR): -0.057
+Max rank change: 85 (MC-V35-3341-002)
+
+
+## Correction 1: SN Skepticism Discount (70 models)
+
+- **PC8-SC-GOVTECH-01** (Automated Operations for State/Local Government Se): SN 8.3→7.7 (EQ=4, polanyi=proxy/none)
+- **PC8-SC-OILFIELD-01** (Automated Operations for Oilfield Services): SN 7.9→7.4 (EQ=4, polanyi=proxy/none)
+- **MC-UTL-010** (Data Center Cooling Technology and Water Managemen): SN 7.9→7.4 (EQ=4, polanyi=proxy/none)
+- **MC-UTL-004-L1** (DC-Proximate Solar+Storage Project Development): SN 7.9→7.4 (EQ=4, polanyi=proxy/none)
+- **PC8-EXT-AIBENE-FARMOPS-01** (Smart Small Farm Operations): SN 7.9→7.4 (EQ=3, polanyi=proxy/none)
+- **C7-NR-08** (Platform Government AI): SN 7.9→7.4 (EQ=4, polanyi=proxy/none)
+- **V3-ENERGY-006** (Critical Minerals Supply Chain Platform): SN 7.7→7.3 (EQ=4, polanyi=proxy/none)
+- **PC8-FSR-GASUTIL-01** (Automated Pipeline/Gas Distribution Operations): SN 7.5→7.1 (EQ=4, polanyi=proxy/none)
+- **MC-UTL-004** (Solar + Storage Development for Data Center Campus): SN 7.7→7.3 (EQ=4, polanyi=proxy/none)
+- **MC-UTL-006** (Data Center Power Infrastructure Developer (Behind): SN 7.7→7.3 (EQ=4, polanyi=proxy/none)
+- **C7-AM-GLASS-01** (Acquire + Modernize Glass Products Manufacturer): SN 9.1→8.7 (EQ=5, polanyi=real)
+- **C7-AM-PAPERCONVERT-01** (Acquire + Modernize Paper/Packaging Converter): SN 9.3→8.9 (EQ=5, polanyi=real)
+- **C7-AM-SAWMILL-01** (Acquire + Modernize Wood Products Facility): SN 9.3→8.9 (EQ=5, polanyi=real)
+- **V3-ENERGY-002** (Behind-the-Meter Power for Data Centers): SN 7.7→7.3 (EQ=4, polanyi=proxy/none)
+- **MC-UTL-004-L3** (DC Campus Battery Storage System & Management): SN 7.7→7.3 (EQ=4, polanyi=proxy/none)
+- **PC8-SC-ENERGYSVC-01** (Automated Energy Services for Electrification Tran): SN 7.7→7.3 (EQ=2, polanyi=proxy/none)
+- **C7-PI-AGRICULTURE-01** (Precision Agriculture Platform (Davis CA)): SN 7.5→7.1 (EQ=2, polanyi=proxy/none)
+- **PC8-FSR-POWERUTIL-01** (Automated Grid Operations for Electric Utilities): SN 7.7→7.3 (EQ=3, polanyi=proxy/none)
+- **PC8-DC-FREIGHT-01** (Freight Arrangement Intelligence (Data Compounding): SN 9.2→8.8 (EQ=5, polanyi=real)
+- **PC8-FSR-COURIER-01** (Autonomous Local Courier/Delivery Operations): SN 9.2→8.8 (EQ=5, polanyi=real)
+
+## Correction 2: Flat Profile Differentiation (34 models)
+
+- **MC-V313-71-004** (Creator Economy Business Operations Platform): range 1.0→2.0 (full_service_replacement)
+- **MC-V312-TRN-003** (Digital Freight Brokerage & Load Matching): range 1.0→1.8 (marketplace_network)
+- **MC-V39-MFG-001** (Acquire + Modernize Food Manufacturing Plant): range 0.2→1.5 (acquire_and_modernize)
+- **MC-V37-523-006** (Automated Commodity Intelligence and Trading Syste): range 1.0→2.0 (data_compounding)
+- **MC-V39-MFG-006** (Multi-Sector Fabricated Metal Rollup Platform): range 0.1→1.0 (rollup_consolidation)
+- **C7-DC-HC-01** (Clinical Denial Intelligence Platform (Data Compou): range 1.0→1.8 (data_compounding)
+- **MC-V312-CON-012** (Construction Equipment Fleet Intelligence Platform): range 1.0→2.3 (hardware_ai)
+- **MC-V312-ADM-007** (Smart Building Facilities Management OS): range 1.0→2.0 (hardware_ai)
+- **MC-V312-ADM-004** (Automated Waste Stream Intelligence & Sorting Opti): range 1.0→2.4 (data_compounding)
+- **C7-RC-DENTAL-01** (Autonomous Dental Practice Rollup (Counter-PE)): range 1.0→2.0 (rollup_consolidation)
+- **C7-DC-STAFFING-01** (Workforce Intelligence Platform): range 1.0→2.4 (data_compounding)
+- **MC-V312-ACC-007** (Direct Restaurant Ordering & Delivery Infrastructu): range 1.0→1.4 (platform_infrastructure)
+- **C7-AM-COATING-01** (Acquire + Modernize Surface Treatment Facility): range 1.0→2.0 (acquire_and_modernize)
+- **C7-AM-AUTOPARTS-01** (Acquire + Modernize Tier 2/3 Auto Parts Supplier): range 1.0→2.0 (acquire_and_modernize)
+- **MC-V35-3341-002** (Cobot-Integrated Electronics Assembly Line Moderni): range 1.0→1.9 (physical_production_ai)
+- **PC8-AB-MORTGAGE-01** (AI-Supercharged Mortgage Brokerage): range 0.9→1.4 (full_service_replacement)
+- **C7-FSR-NURSING-01** (Automated Operations for Skilled Nursing Facilitie): range 1.0→2.0 (full_service_replacement)
+- **PC8-AB-PHYSTHERAPY-01** (AI-Supercharged Physical Therapy Practice): range 0.8→1.5 (full_service_replacement)
+- **PC8-EXT-AIBENE-DENTIST-01** (Smart Dental Practice Operations): range 0.6→1.6 (full_service_replacement)
+- **PC8-FSR-HOSPMGMT-01** (Automated Hospital Operations Intelligence): range 0.6→1.6 (full_service_replacement)
+- **C7-DC-CONSTRUCTION-01** (Construction Project Intelligence Platform): range 1.0→2.4 (data_compounding)
+- **C7-FSR-ASSISTEDLIVING-01** (Automated Operations for Assisted Living Facilitie): range 1.0→1.5 (full_service_replacement)
+- **PC8-AB-STAFFAUGMENT-01** (Autonomous Professional Staffing Agency): range 0.9→1.4 (full_service_replacement)
+- **PC8-FSR-REALEST-01** (Full-Service Real Estate Appraisal): range 0.7→1.6 (full_service_replacement)
+- **C7-PI-REALESTATE-01** (Automated Transaction Coordination Platform for Br): range 1.0→1.0 (platform_infrastructure)
+- **MC-EDU-MATCH-01** (Automated Skills Assessment + Job Matching Platfor): range 0.9→1.0 (platform_infrastructure)
+- **PC8-EXT-AIBENE-REALESTATE-01** (AI-Augmented Real Estate Brokerage): range 1.0→1.5 (full_service_replacement)
+- **C7-FSR-LENDING-01** (Autonomous Mortgage/Consumer Lending Operations): range 1.0→1.5 (full_service_replacement)
+- **MC-V314-LV-002** (Longevity Biomarker Analytics Platform): range 0.6→2.1 (data_compounding)
+- **PC8-FSR-LEASING-01** (Autonomous Commercial Leasing Operations): range 0.6→1.5 (full_service_replacement)
+- **PC8-SC-ACADOPS-01** (Automated Administrative Operations for Higher Edu): range 0.8→1.4 (full_service_replacement)
+- **V3-EDU-007** (Trades and Technical Skills Simulator): range 0.9→1.0 (platform_infrastructure)
+- **C7-DC-TRADES-01** (Trades Intelligence Platform (Data Compounding fro): range 1.0→1.9 (data_compounding)
+- **MC-V39-MICRO-007** (Micro-Firm Banking Platform): range 1.0→1.0 (platform_infrastructure)
+
+## Correction 3: FA Validation Gate (4 models)
+
+- **V3-DEF-001** (Autonomous Drone Swarm Command Platform): FA 8.2→7.5 (forces=2, polanyi=real, 4digit=yes)
+- **MC-UTL-003** (Grid-Scale Battery Storage Development and Managem): FA 8.5→7.5 (forces=3, polanyi=no, 4digit=yes)
+- **MC-UTL-001** (Intelligent Grid Optimization and Dispatch Platfor): FA 8.5→7.5 (forces=2, polanyi=no, 4digit=yes)
+- **V3-EMRG-001** (Micro-Firm Operating System): FA 8.2→7.5 (forces=3, polanyi=real, 4digit=no)
+
+## Correction 4: FEAR_ECONOMY Trust Reclassification (15 models)
+
+- **MC-EDU-FEAR-01** (Education AI Safety & Governance Platform): MOA 8→8.5 → trust_compounder=true
+- **MC-DEF-014** (Defense AI Training Simulation Platform (Synthetic): MOA 8→8.5 → trust_compounder=true
+- **MC-V37-55-007** (AI-Era Leadership Development Platform): MOA 9→9.5 → trust_compounder=true
+- **MC-V37-53-006** (Intelligent Commercial Appraisal and Valuation Pla): MOA 8→8.5 → trust_compounder=true
+- **MC-V314-54-002** (Knowledge Worker Wage Insurance Platform): MOA 10→10 → trust_compounder=true
+- **MC-EDU-MATCH-01** (Automated Skills Assessment + Job Matching Platfor): MOA 8→8.5 → trust_compounder=true
+- **MC-EDU-TEACH-01** (Automated Teaching Assistant Platform (K-12)): MOA 7→7.5 → trust_compounder=true
+- **MC-V37-53-004** (Office-to-Residential Conversion Platform): MOA 7→7.5 → trust_compounder=true
+- **MC-V312-ACC-010** (Ghost Kitchen & Virtual Brand Operating Platform): MOA 7→7.5 → trust_compounder=true
+- **MC-V313-71-005** (Museum & Cultural Institution Digital Experience P): MOA 7→7.5 → trust_compounder=true
+- **MC-V313-71-011** (Performing Arts Company Management Platform): MOA 7→7.5 → trust_compounder=true
+- **MC-EDU-CRED-01** (AI-Era Credential Verification & Skills Marketplac): MOA 7→7.5 → trust_compounder=true
+- **MC-EDU-UNIV-01** (University Back-Office Operations Platform): MOA 7→7.5 → trust_compounder=true
+- **MC-INFO-010** (Automated Video Production and Post-Production Pla): MOA 8→8.5 → trust_compounder=true
+- **MC-V39-MICRO-008** (Autonomous Micro-Firm Insurance): MOA 8.5→9.0 → trust_compounder=true
+
+## Correction 5: PARKED Revalidation (68 models)
+
+- **MC-UTL-008** (Grid Interconnection Queue Navigation and Expediti): PARKED→CONDITIONAL (SN=4.2, forces=['F6_energy', 'F1_technology'], TG 8.0→8.5)
+- **PC8-FSR-POWERUTIL-01** (Automated Grid Operations for Electric Utilities): PARKED→CONDITIONAL (SN=7.3, forces=['F1'], TG 6.1→6.6)
+- **PC8-AB-SURVEYING-01** (AI-Supercharged Land Surveying Practice): PARKED→CONDITIONAL (SN=4.4, forces=['F1', 'F2'], TG 6.8→7.3)
+- **MC-54-002** (AI-Augmented Legal Services for SMBs): PARKED→CONDITIONAL (SN=4.9, forces=['F1_technology', 'F2_demographics', 'F4_capital'], TG 6.5→7.0)
+- **MC-V314-SB-003** (Precision Fermentation Food Ingredients): PARKED→CONDITIONAL (SN=6.9, forces=['F1_technology', 'F2_demographics', 'F6_energy'], TG 5→5.5)
+- **V3-FEAR-002** (Human-Created Content Authenticity Platform): PARKED→CONDITIONAL (SN=4.5, forces=['F5', 'F1'], TG 6.5→7.0)
+- **PC8-FSR-RESEARCHSVC-01** (Autonomous Contract Research/R&D Services): PARKED→CONDITIONAL (SN=4.7, forces=['F1', 'F2'], TG 6.4→6.9)
+- **C7-FSR-DENTALOPS-01** (Full-Service Operations for Independent Dental Pra): PARKED→CONDITIONAL (SN=6.2, forces=['F1', 'F2'], TG 6.0→6.5)
+- **MC-V39-MICRO-009** (Micro-Firm Talent Marketplace and Project Network): PARKED→CONDITIONAL (SN=4.4, forces=['F1_technology', 'F4_capital', 'F2_demographics'], TG 5.0→5.5)
+- **PC8-FSR-MKTCONSULT-01** (Full-Service Marketing Agency): PARKED→CONDITIONAL (SN=4.4, forces=['F1', 'F2'], TG 6.4→6.9)
+- **PC8-FSR-PERIODORIG-01** (Autonomous Publishing Operations): PARKED→CONDITIONAL (SN=5.2, forces=['F1', 'F2'], TG 6.3→6.8)
+- **PC8-PI-WAREHOUSE-01** (Automated Warehouse Operations Platform): PARKED→CONDITIONAL (SN=8.7, forces=['F1'], TG 5.0→5.5)
+- **MC-31-003** (Cobot-as-a-Service for SME Manufacturing): PARKED→CONDITIONAL (SN=6.9, forces=['F1_technology', 'F2_demographics', 'F3_geopolitics'], TG 5.5→6.0)
+- **MC-V35-5416-001** (Consulting Engagement Knowledge Compounding Engine): PARKED→CONDITIONAL (SN=5.5, forces=['F1_technology', 'F2_demographics', 'F4_capital'], TG 5.5→6.0)
+- **MC-V37-55-003** (Automated Strategy and Consulting Engine): PARKED→CONDITIONAL (SN=5.1, forces=['F1_technology', 'F2_demographics', 'F4_capital'], TG 6.5→7.0)
+- **PC8-FSR-ADVAGENCY-01** (Full-Service Advertising Operations): PARKED→CONDITIONAL (SN=4.6, forces=['F1', 'F2'], TG 6.3→6.8)
+- **PC8-FSR-TELECOM-01** (Automated Network Operations for Regional Telecoms): PARKED→CONDITIONAL (SN=5.2, forces=['F1', 'F2'], TG 6.0→6.5)
+- **C7-FSR-OUTPATIENT-01** (Automated Operations for Multi-Site Outpatient Cen): PARKED→CONDITIONAL (SN=5.9, forces=['F1', 'F2'], TG 6.0→6.5)
+- **C7-MN-HEALTHCARE-01** (Independent Practice Services Marketplace): PARKED→CONDITIONAL (SN=4.9, forces=['F1', 'F2', 'F4'], TG 5.5→6.0)
+- **C7-PI-LENDING-01** (Automated Lending Infrastructure Platform): PARKED→CONDITIONAL (SN=5.9, forces=['F1', 'F2'], TG 5.0→5.5)
+- **MC-UTL-009** (Natural Gas Distribution Operations Platform): PARKED→CONDITIONAL (SN=4.6, forces=['F1_technology', 'F6_energy'], TG 6.0→6.5)
+- **C7-FSR-ADTECH-01** (AI-First Advertising Operations Service): PARKED→CONDITIONAL (SN=4.6, forces=['F1', 'F2'], TG 5.5→6.0)
+- **C7-FSR-WHOLESALE-01** (AI-First Wholesale Brokerage Service): PARKED→CONDITIONAL (SN=5.8, forces=['F1', 'F4'], TG 6.0→6.5)
+- **C7-MN-FOOD-01** (Specialty Food Producer Marketplace): PARKED→CONDITIONAL (SN=5.6, forces=['F1', 'F4'], TG 5.5→6.0)
+- **C7-FSR-ACCOUNTING-RESTAURANT-01** (Automated Bookkeeping for Restaurants (Bench Reviv): PARKED→CONDITIONAL (SN=4.6, forces=['F1', 'F2'], TG 6.5→7.0)
+- **PC8-EXT-FAILSTUDY-CONVOY-01** (Specialized Freight Intelligence (Post-Convoy Less): PARKED→CONDITIONAL (SN=8.8, forces=['F1'], TG 4.8→5.3)
+- **PC8-MN-TOWING-01** (AI-Dispatched Motor Vehicle Towing Network): PARKED→CONDITIONAL (SN=7.1, forces=['F1', 'F4'], TG 4.3→4.8)
+- **C7-FSR-ENGINEERING-01** (AI-First Engineering Analysis Service): PARKED→CONDITIONAL (SN=4.6, forces=['F1', 'F2'], TG 5.5→6.0)
+- **C7-PI-FIN-01** (Finance-as-a-Service API for Micro-Firms): PARKED→CONDITIONAL (SN=4.2, forces=['F1', 'F4'], TG 5.5→6.0)
+- **PC8-EXT-AIBENE-FARMOPS-01** (Smart Small Farm Operations): PARKED→CONDITIONAL (SN=7.4, forces=['F1'], TG 6.3→6.8)
+- **PC8-FSR-SEMICON-01** (AI-Augmented Semiconductor Manufacturing Operation): PARKED→CONDITIONAL (SN=6.5, forces=['F1'], TG 7.1→7.6)
+- **C7-DC-LEGAL-01** (Legal Intelligence Platform (Data Compounding)): PARKED→CONDITIONAL (SN=5.3, forces=['F1', 'F2'], TG 5.5→6.0)
+- **C7-DC-VETERINARY-01** (Veterinary Clinical Intelligence Platform): PARKED→CONDITIONAL (SN=5.7, forces=['F1', 'F2'], TG 5.5→6.0)
+- **C7-FSR-DESIGN-01** (AI-First Design Agency (Full Service Replacement)): PARKED→CONDITIONAL (SN=4.6, forces=['F1'], TG 5.0→5.5)
+- **MC-V39-MICRO-007** (Micro-Firm Banking Platform): PARKED→CONDITIONAL (SN=5.5, forces=['F1_technology', 'F4_capital'], TG 6.0→6.5)
+- **C7-PA-BEVERAGE-01** (Autonomous Craft Beverage Contract Production): PARKED→CONDITIONAL (SN=6.7, forces=['F1'], TG 6.0→6.5)
+- **MC-V313-42-004** (Pharmaceutical Distribution Compliance Automation): PARKED→CONDITIONAL (SN=4.4, forces=['F1_technology', 'F3_geopolitics'], TG 6→6.5)
+- **V3-GEO-003** (Japan Care Economy Platform): PARKED→CONDITIONAL (SN=5.6, forces=['F2', 'F1'], TG 6.5→7.0)
+- **PC8-EXT-YCINSPIRED-AIAGENT-01** (AI Agent Operations Platform for Service Businesse): PARKED→CONDITIONAL (SN=4.5, forces=['F1', 'F4'], TG 5.4→5.9)
+- **PC8-FSR-SPORTSTCH-01** (Automated Analytics for Sports Teams/Organizations): PARKED→CONDITIONAL (SN=7.6, forces=['F1'], TG 5.9→6.4)
+- **MC-56-002** (Distressed Staffing Firm Acquirer): PARKED→CONDITIONAL (SN=6.5, forces=['F1_technology', 'F2_demographics', 'F4_capital'], TG 7.5→8.0)
+- **MC-V312-ACC-013** (Catering & Event Operations Intelligence): PARKED→CONDITIONAL (SN=4.2, forces=['F1_technology', 'F2_demographics', 'F4_capital'], TG 6.0→6.5)
+- **C7-MN-TRADES-01** (AI-Matched Contractor Marketplace): PARKED→CONDITIONAL (SN=4.6, forces=['F4', 'F2'], TG 6.0→6.5)
+- **PC8-DC-COMMEQREP-01** (Equipment Reliability Intelligence (Data Compoundi): PARKED→CONDITIONAL (SN=7.6, forces=['F1'], TG 4.9→5.4)
+- **PC8-DC-AUTO-01** (Auto Repair Intelligence Platform (Data Compoundin): PARKED→CONDITIONAL (SN=7.6, forces=['F1'], TG 4.9→5.4)
+- **PC8-PI-AUTORETAIL-01** (Automated Platform for Furniture/Home Furnishings ): PARKED→CONDITIONAL (SN=7.0, forces=['F1'], TG 5.1→5.6)
+- **C7-PA-AUTOPARTS-01** (Autonomous Auto Parts Production Facility): PARKED→CONDITIONAL (SN=6.1, forces=['F1'], TG 5.5→6.0)
+- **PC8-SC-CONSTRUCTMAT-01** (Automated Construction Materials Distribution): PARKED→CONDITIONAL (SN=5.8, forces=['F1'], TG 7.6→8.1)
+- **C7-NR-08** (Platform Government AI): PARKED→CONDITIONAL (SN=7.4, forces=['F1', 'F3'], TG 3.5→4.0)
+- **C7-PA-AGEQUIPMENT-01** (Smart Agricultural Equipment Manufacturing): PARKED→CONDITIONAL (SN=6.4, forces=['F1'], TG 5.0→5.5)
+- **PC8-MN-WHOLESALE-01** (AI-Matched B2B Wholesale Marketplace): PARKED→CONDITIONAL (SN=4.8, forces=['F1', 'F4'], TG 5.6→6.1)
+- **PC8-PI-ELDERCARE-01** (Automated Operations Platform for Home/Elder Care ): PARKED→CONDITIONAL (SN=5.8, forces=['F1'], TG 5.3→5.8)
+- **PC8-SC-COMPEQUIP-01** (Automated IT Equipment Lifecycle Management): PARKED→CONDITIONAL (SN=5.8, forces=['F1'], TG 7.1→7.6)
+- **PC8-PI-BEAUT-01** (Automated Operations Platform for Beauty/Salon Ind): PARKED→CONDITIONAL (SN=6.6, forces=['F1'], TG 4.9→5.4)
+- **PC8-SC-AUTOPARTS-01** (Automated Parts Intelligence for Auto Repair Moder): PARKED→CONDITIONAL (SN=6.7, forces=['F1'], TG 6.0→6.5)
+- **PC8-SC-FOODDIST-01** (Automated Food Distribution Intelligence for Moder): PARKED→CONDITIONAL (SN=6.7, forces=['F1'], TG 6.0→6.5)
+- **PC8-PI-LANDSCAPE-01** (Automated Operations Platform for Landscaping Comp): PARKED→CONDITIONAL (SN=5.9, forces=['F1'], TG 5.5→6.0)
+- **PC8-SC-MFGSUPPLY-01** (Automated Supply Chain Platform for Modernized Man): PARKED→CONDITIONAL (SN=5.4, forces=['F1'], TG 6.2→6.7)
+- **PC8-AB-INSPSERV-01** (AI-Augmented Home/Building Inspection Service): PARKED→CONDITIONAL (SN=4.9, forces=['F1'], TG 6.3→6.8)
+- **V3-BCI-004** (BCI Signal Processing Infrastructure): PARKED→CONDITIONAL (SN=5.3, forces=['F1_technology'], TG 5.0→5.5)
+- **PC8-PI-PROPMGMT-01** (Automated Operations Platform for Property Manager): PARKED→CONDITIONAL (SN=5.7, forces=['F1'], TG 4.9→5.4)
+- **MC-V314-QC-002** (Quantum Simulation-as-a-Service for Drug Discovery): PARKED→CONDITIONAL (SN=4.5, forces=['F1_technology', 'F4_capital'], TG 4→4.5)
+- **PC8-PI-SELFSTORE-01** (Automated Operations Platform for Self-Storage): PARKED→CONDITIONAL (SN=5.4, forces=['F1'], TG 4.8→5.3)
+- **V3-BCI-001** (Medical Brain-Computer Interface Platform): PARKED→CONDITIONAL (SN=6.2, forces=['F1_technology', 'F2_demographics'], TG 3.0→3.5)
+- **MC-V314-SP-003** (In-Space Manufacturing Platform): PARKED→CONDITIONAL (SN=6.6, forces=['F1_technology', 'F4_capital'], TG 3→3.5)
+- **C7-NR-10** (Automated Crypto/DeFi Analytics): PARKED→CONDITIONAL (SN=7.0, forces=['F1'], TG 3.0→3.5)
+- **V3-BCI-002** (Consumer Neurotechnology Accessibility Platform): PARKED→CONDITIONAL (SN=5.3, forces=['F1_technology', 'F2_demographics'], TG 4.0→4.5)
+- **C7-NR-09** (Vertical SaaS AG Irrigation): PARKED→CONDITIONAL (SN=5.0, forces=['F1'], TG 4.0→4.5)
+
+## Biggest Rank Changes (Top 20)
+
+- **MC-V35-3341-002** (Cobot-Integrated Electronics Assembly Line Moderni): #253→#168 (↑85)
+- **MC-UTL-001** (Intelligent Grid Optimization and Dispatch Platfor): #120→#203 (↓83)
+- **C7-PI-REALESTATE-01** (Automated Transaction Coordination Platform for Br): #392→#314 (↑78)
+- **MC-EDU-MATCH-01** (Automated Skills Assessment + Job Matching Platfor): #394→#316 (↑78)
+- **MC-V312-ACC-007** (Direct Restaurant Ordering & Delivery Infrastructu): #223→#149 (↑74)
+- **C7-DC-CONSTRUCTION-01** (Construction Project Intelligence Platform): #364→#293 (↑71)
+- **C7-AM-AUTOPARTS-01** (Acquire + Modernize Tier 2/3 Auto Parts Supplier): #244→#174 (↑70)
+- **C7-AM-COATING-01** (Acquire + Modernize Surface Treatment Facility): #232→#164 (↑68)
+- **MC-UTL-003** (Grid-Scale Battery Storage Development and Managem): #81→#148 (↓67)
+- **MC-V39-MICRO-007** (Micro-Firm Banking Platform): #513→#446 (↑67)
+- **MC-V314-LV-002** (Longevity Biomarker Analytics Platform): #405→#339 (↑66)
+- **V3-EDU-007** (Trades and Technical Skills Simulator): #422→#356 (↑66)
+- **MC-V312-ADM-007** (Smart Building Facilities Management OS): #184→#120 (↑64)
+- **MC-V312-ADM-004** (Automated Waste Stream Intelligence & Sorting Opti): #201→#137 (↑64)
+- **C7-DC-STAFFING-01** (Workforce Intelligence Platform): #220→#157 (↑63)
+- **V3-EMRG-001** (Micro-Firm Operating System): #162→#222 (↓60)
+- **C7-DC-TRADES-01** (Trades Intelligence Platform (Data Compounding fro): #423→#373 (↑50)
+- **MC-V312-CON-012** (Construction Equipment Fleet Intelligence Platform): #157→#108 (↑49)
+- **MC-UTL-010** (Data Center Cooling Technology and Water Managemen): #164→#211 (↓47)
+- **C7-RC-DENTAL-01** (Autonomous Dental Practice Rollup (Counter-PE)): #211→#165 (↑46)

@@ -1,8 +1,8 @@
 {
-  "state_version": 27,
-  "current_cycle": "v3-17",
+  "state_version": 28,
+  "current_cycle": "v3-18",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "engine_version": "3.17 — 'Indicators Audit + Data Quality': 608 models. (1) Indicators audit: 15-axis correlation health check, VCR CAP↔VEL r=0.767 documented. (2) Weight sensitivity test: 6 scenarios confirm current 25/25/20/15/15 weights are optimal — no change. (3) Polanyi backfill: 70 models (ag/utilities/mining/gov) via sector proxy → 608/608 coverage. SN re-scored data-driven. (4) EQ audit: explicit grading criteria applied, mean EQ 4.17→6.29. 520/608 models upgraded. (5) Confidence recalibration: LOW 212→9, MODERATE 121→315, HIGH 275→284. (6) Research priorities: RPS-based (composite_potential + evidence_gap + coverage_impact) replaces naive composite sort. (7) UI conviction toggle: Confirmed/What-If filter, catalyst badge in table view, row dimming for conditional models. (8) Welfare gap documented: transformation ≠ welfare (Experiment 2 finding). (9) All v3-16 preserved (data-driven SN, live QCEW TAM, 48 catalyst scenarios).",
+  "engine_version": "3.18 — 'Structured Review + Gap Fill': 650 models, 18 architectures. (1) Systematic regrading: 5 corrections across 608 models — SN skepticism discount (70 models), flat profile differentiation (34), FA validation gate (4), trust reclassification (15), PARKED revalidation (68→CONDITIONAL). (2) Gap fill: 42 new models across 3 clusters — 19 architecture gap (open_core_ecosystem, outcome_based, coordination_protocol), 12 sector gap (wholesale/arts/utilities), 11 emerging patterns (agent-as-a-service, human-premium, temporal extraction). (3) 3 new architecture types with full scoring support (CLA, VCR, SN substitutability). (4) FORCE_RIDER sub-categorization: 327 models → 7 sub-types (FR_STRUCTURAL, FR_PLATFORM, FR_VERTICAL, FR_SERVICE, FR_CONSOLIDATION, FR_COMPLIANCE, FR_GENERAL). (5) All v3-17 preserved (Polanyi 608/608, EQ grading, confidence tiers, conviction UI, catalysts).",
   "force_velocities": {
     "F1_technology": {
       "velocity": "accelerating",
@@ -1190,11 +1190,11 @@
       "confidence_tiers": {
         "HIGH": 284,
         "LOW": 9,
-        "MODERATE": 315
+        "MODERATE": 357
       },
-      "evidence_quality_mean": 6.29,
-      "polanyi_coverage": "608/608",
-      "architecture_canonical_types": 15,
+      "evidence_quality_mean": 6.18,
+      "polanyi_coverage": "608/650",
+      "architecture_canonical_types": 18,
       "falsification_unique_criteria": 295
     }
   },

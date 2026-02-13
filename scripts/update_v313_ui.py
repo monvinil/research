@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
 """
-v3-17 UI Refresh: Regenerate models.json and dashboard.json with all v3-17 changes.
+v3-18 UI Refresh: Regenerate models.json and dashboard.json with all v3-18 changes.
 
 Includes:
-  - All v3-16 preserved (data-driven SN, live QCEW TAM, catalyst layer)
-  - v3-17 Polanyi backfill: 70 models (ag/utilities/mining/gov) via sector proxy → 608/608 coverage
-  - v3-17 EQ audit: evidence_quality graded by explicit criteria (mean 4.17→6.29)
-  - v3-17 confidence tier recalibration (LOW 212→9, MODERATE 121→315, HIGH 275→284)
-  - v3-17 SN rescore for 70 backfilled models (data-driven path, not heuristic fallback)
-  - v3-17 research priorities: RPS-based (composite_potential + evidence_gap + coverage_impact)
-  - UI: conviction toggle (Confirmed/What-If), catalyst badge in table view
+  - All v3-17 preserved (Polanyi backfill, EQ audit, confidence recalibration, conviction UI)
+  - v3-18 Systematic regrading: 5 corrections across 608 models (SN skepticism discount,
+    flat profile differentiation, FA validation gate, trust reclassification, PARKED revalidation)
+  - v3-18 Gap fill: 42 new models across 3 clusters (architecture gaps, sector gaps, emerging patterns)
+  - v3-18 New architectures: open_core_ecosystem, outcome_based, coordination_protocol
+  - v3-18 FORCE_RIDER sub-categorization: 7 sub-types (FR_STRUCTURAL, FR_PLATFORM, etc.)
 
 Dashboard updates:
-  - engine_version → v3.17
+  - engine_version → v3.18
   - enrichment_summary, research_priorities (RPS-based)
 
 State updates:
-  - state_version → 27
-  - current_cycle → v3-17
+  - state_version → 28
+  - current_cycle → v3-18
   - engine_version description updated
 """
 
@@ -76,6 +75,11 @@ def build_slim_model(m):
         "deep_dive_evidence": m.get("deep_dive_evidence") if isinstance(m.get("deep_dive_evidence"), str) else None,
     }
 
+    # v3-18 FORCE_RIDER sub-type
+    fr_sub = m.get("force_rider_subtype")
+    if fr_sub:
+        slim["force_rider_subtype"] = fr_sub
+
     # Polanyi — only include key metrics, not full SOC lists
     pol = m.get("polanyi")
     if pol:
@@ -117,7 +121,7 @@ def build_slim_model(m):
 
 def main():
     print("=" * 70)
-    print("v3-17 UI REFRESH: Indicators audit + Polanyi backfill + EQ grading + conviction UI")
+    print("v3-18 UI REFRESH: Structured Review + Gap Fill")
     print("=" * 70)
     print()
 
@@ -164,6 +168,12 @@ def main():
         all_criteria.extend(m.get("falsification_criteria", []))
     unique_criteria = len(set(all_criteria))
 
+    # FORCE_RIDER sub-types (v3-18)
+    fr_subtype_dist = Counter(
+        m.get("force_rider_subtype", "none")
+        for m in models if m.get("force_rider_subtype")
+    )
+
     enrichment_summary = {
         "confidence_tier_distribution": dict(sorted(tier_dist.items())),
         "evidence_quality_stats": eq_stats,
@@ -174,6 +184,7 @@ def main():
         "falsification_criteria_coverage": f"{fals_count}/{len(models)}",
         "falsification_unique_criteria": unique_criteria,
         "falsification_total_criteria": total_criteria,
+        "force_rider_subtype_distribution": dict(sorted(fr_subtype_dist.items(), key=lambda x: -x[1])),
     }
 
     print(f"  Confidence: {dict(tier_dist)}")
@@ -218,7 +229,7 @@ def main():
     vcr_system = data.get("rating_system", {}).get("vcr_system", {})
 
     ui_output = {
-        "cycle": "v3-17",
+        "cycle": "v3-18",
         "date": "2026-02-12",
         "total": len(models),
         "dual_ranking": True,
@@ -249,10 +260,15 @@ def main():
     with open(UI_DASHBOARD) as f:
         dashboard = json.load(f)
 
-    dashboard["engine_version"] = "v3.17"
-    dashboard["current_cycle"] = "v3-17"
+    dashboard["engine_version"] = "v3.18"
+    dashboard["current_cycle"] = "v3-18"
+    dashboard["total_models_rated"] = len(models)
     dashboard["enrichment"] = True
     dashboard["enrichment_summary"] = enrichment_summary
+
+    # Update evidence base model count
+    if "evidence_base" in dashboard:
+        dashboard["evidence_base"]["v3_models_rated"] = len(models)
 
     # Update stats (top-level in dashboard, not nested under "summary")
     dashboard["vcr_stats"] = vcr_stats
@@ -459,19 +475,20 @@ def main():
     with open(STATE_FILE) as f:
         state = json.load(f)
 
-    state["state_version"] = 27
-    state["current_cycle"] = "v3-17"
+    state["state_version"] = 28
+    state["current_cycle"] = "v3-18"
     state["engine_version"] = (
-        "3.17 — 'Indicators Audit + Data Quality': 608 models. "
-        "(1) Indicators audit: 15-axis correlation health check, VCR CAP↔VEL r=0.767 documented. "
-        "(2) Weight sensitivity test: 6 scenarios confirm current 25/25/20/15/15 weights are optimal — no change. "
-        "(3) Polanyi backfill: 70 models (ag/utilities/mining/gov) via sector proxy → 608/608 coverage. SN re-scored data-driven. "
-        "(4) EQ audit: explicit grading criteria applied, mean EQ 4.17→6.29. 520/608 models upgraded. "
-        "(5) Confidence recalibration: LOW 212→9, MODERATE 121→315, HIGH 275→284. "
-        "(6) Research priorities: RPS-based (composite_potential + evidence_gap + coverage_impact) replaces naive composite sort. "
-        "(7) UI conviction toggle: Confirmed/What-If filter, catalyst badge in table view, row dimming for conditional models. "
-        "(8) Welfare gap documented: transformation ≠ welfare (Experiment 2 finding). "
-        "(9) All v3-16 preserved (data-driven SN, live QCEW TAM, 48 catalyst scenarios)."
+        "3.18 — 'Structured Review + Gap Fill': 650 models, 18 architectures. "
+        "(1) Systematic regrading: 5 corrections across 608 models — SN skepticism discount (70 models), "
+        "flat profile differentiation (34), FA validation gate (4), trust reclassification (15), "
+        "PARKED revalidation (68→CONDITIONAL). "
+        "(2) Gap fill: 42 new models across 3 clusters — 19 architecture gap (open_core_ecosystem, "
+        "outcome_based, coordination_protocol), 12 sector gap (wholesale/arts/utilities), "
+        "11 emerging patterns (agent-as-a-service, human-premium, temporal extraction). "
+        "(3) 3 new architecture types with full scoring support (CLA, VCR, SN substitutability). "
+        "(4) FORCE_RIDER sub-categorization: 327 models → 7 sub-types "
+        "(FR_STRUCTURAL, FR_PLATFORM, FR_VERTICAL, FR_SERVICE, FR_CONSOLIDATION, FR_COMPLIANCE, FR_GENERAL). "
+        "(5) All v3-17 preserved (Polanyi 608/608, EQ grading, confidence tiers, conviction UI, catalysts)."
     )
 
     # Update rated_models_index
@@ -491,7 +508,7 @@ def main():
     # ── Summary ──
     print()
     print("=" * 70)
-    print("v3-17 UI REFRESH COMPLETE")
+    print("v3-18 UI REFRESH COMPLETE")
     print("=" * 70)
     print()
     print(f"  Models: {len(models)}")

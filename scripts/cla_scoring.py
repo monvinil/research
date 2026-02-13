@@ -43,7 +43,7 @@ from pathlib import Path
 BASE = Path("/Users/mv/Documents/research/data/verified")
 UI_DIR = Path("/Users/mv/Documents/research/data/ui")
 
-NORMALIZED_FILE = BASE / "v3-8_normalized_2026-02-12.json"
+NORMALIZED_FILE = BASE / "v3-12_normalized_2026-02-12.json"
 UI_MODELS = UI_DIR / "models.json"
 UI_DASHBOARD = UI_DIR / "dashboard.json"
 
@@ -488,6 +488,10 @@ ARCH_DEFAULTS = {
     "fear_economy_capture":       (7, 8, 5, 7),
     "product":                    (5, 5, 4, 5),
     "geographic_arbitrage":       (7, 7, 4, 6),
+    # v3-18 new architectures (Experiment 1 inversions)
+    "open_core_ecosystem":        (8, 7, 9, 8),   # free product → wide open, deep value chain
+    "outcome_based":              (7, 6, 7, 8),   # outcome alignment opens markets
+    "coordination_protocol":      (6, 8, 6, 7),   # standard-setting barrier, once set = wide moat
 }
 
 # NAICS 2-digit sector adjustments: (MO_adj, MA_adj, VD_adj, DV_adj)
@@ -789,16 +793,14 @@ def main():
         "dual_ranking": True,
         "summary": {
             "total_models": len(models),
-            "existing_models": data["summary"]["existing_models"],
-            "new_v38_cards": data["summary"]["new_v38_cards"],
-            "composite_stats": data["summary"]["composite_stats"],
-            "composite_distribution": data["summary"]["composite_distribution"],
-            "primary_category_distribution": data["summary"]["primary_category_distribution"],
-            "all_category_distribution": data["summary"]["all_category_distribution"],
+            "existing_models": data["summary"].get("existing_models", 0),
+            "composite_stats": data["summary"].get("composite_stats", {}),
+            "composite_distribution": data["summary"].get("composite_distribution", {}),
+            "primary_category_distribution": data["summary"].get("primary_category_distribution", {}),
             "opportunity_stats": opp_stats,
             "opportunity_distribution": opp_comp_dist,
             "opportunity_category_distribution": dict(sorted(opp_cat_dist.items())),
-            "source_batch_counts": data["summary"]["source_batch_counts"],
+            "source_batch_counts": data["summary"].get("source_batch_counts", {}),
         },
         "cla_system": CLA_SYSTEM,
         "models": ui_models,
