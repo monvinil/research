@@ -1,8 +1,8 @@
 {
-  "state_version": 22,
-  "current_cycle": "v3-12",
+  "state_version": 23,
+  "current_cycle": "v3-13",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "engine_version": "3.12 -- 'Coverage Expansion' cycle: Fundamentalized VCR scoring (v2.0 — reduced CLA/T cross-references from 30% to ~15%, added independent buyer-type scoring, sector TAM lookups, market fragmentation analysis). Coverage gap closed: 4 new sector deep dives (Accommodation/Food NAICS 72, Transportation NAICS 48-49, Construction NAICS 23, Admin/Support NAICS 56) adding 54 models covering ~40M previously uncovered workers. 508 models total (454→508). Triple ranking (Transformation + Opportunity + VCR) fully operational. 83 Fund Returners, 360 Strong Multiple. Top triple actionable: Micro-Firm AI OS (82.75), AI-Native Restaurant OS (78.07), AI Code Quality (77.65). Construction deep dive reveals most under-digitized major sector (negative productivity growth, 650K unfilled positions). Restaurant sector lowest Baumol score (0.396) — automation driven by labor scarcity not wage arbitrage.",
+  "engine_version": "3.13 — 'Enrichment' cycle: Added 5 data quality dimensions to all 508 models. (1) Confidence tiers (HIGH/MODERATE/LOW) based on source provenance and evidence depth. (2) Evidence quality scores (0-10) measuring analytical rigor per model. (3) Falsification criteria — 2-4 testable projection-invalidation conditions per model (63 unique criteria). (4) Polanyi automation exposure — O*NET-derived task automation metrics (466/508 models). (5) Architecture normalization — 15 canonical types from 54+ variants, zero blanks remaining. No scoring changes — Transformation, Opportunity, and VCR axes unchanged from v3-12.",
   "force_velocities": {
     "F1_technology": {
       "velocity": "accelerating",
@@ -859,10 +859,28 @@
     "total_models_rated": 508,
     "vcr_system": {
       "version": "1.0",
-      "axes": ["MKT", "CAP", "ECO", "VEL", "MOA"],
-      "weights": [0.25, 0.25, 0.20, 0.15, 0.15],
+      "axes": [
+        "MKT",
+        "CAP",
+        "ECO",
+        "VEL",
+        "MOA"
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.2,
+        0.15,
+        0.15
+      ],
       "composite_formula": "(MKT*25 + CAP*25 + ECO*20 + VEL*15 + MOA*15) / 10",
-      "categories": ["FUND_RETURNER", "STRONG_MULTIPLE", "VIABLE_RETURN", "MARGINAL", "VC_POOR"],
+      "categories": [
+        "FUND_RETURNER",
+        "STRONG_MULTIPLE",
+        "VIABLE_RETURN",
+        "MARGINAL",
+        "VC_POOR"
+      ],
       "seed_valuation_M": 10,
       "description": "Third independent ranking: VC ROI attractiveness at $10M seed. Measures market magnitude, capture feasibility, unit economics, revenue velocity, and moat trajectory."
     }
@@ -1079,7 +1097,7 @@
       "opportunity_stats": {
         "max": 88.0,
         "min": 31.0,
-        "mean": 60.80,
+        "mean": 60.8,
         "median": 62.0
       },
       "opportunity_category_distribution": {
@@ -1167,6 +1185,17 @@
       ],
       "cla_refinements": 38,
       "note": "22 new model cards from 2 deep dives (12 manufacturing + 10 micro-firm) + 38 CLA manual overrides for mid-tier models (413→435)"
+    },
+    "enrichment_dimensions": {
+      "confidence_tiers": {
+        "HIGH": 215,
+        "LOW": 208,
+        "MODERATE": 85
+      },
+      "evidence_quality_mean": 3.79,
+      "polanyi_coverage": "466/508",
+      "architecture_canonical_types": 15,
+      "falsification_unique_criteria": 63
     }
   },
   "force_velocity_triggers": {

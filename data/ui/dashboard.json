@@ -1,7 +1,7 @@
 {
-  "engine_version": "v3.12",
+  "engine_version": "v3.13",
   "engine_mode": "economy_map_with_cascade_modeling",
-  "current_cycle": "v3-12",
+  "current_cycle": "v3-13",
   "last_updated": "2026-02-12T23:59:00Z",
   "projection_horizon": "2026-2031",
   "data_sources_used": 44,
@@ -31,7 +31,14 @@
     "v3_sub_models": 19,
     "v3_confirmed_uniform_fortified": 3,
     "v3_coverage_expansion_models": 54,
-    "granularity_framework_version": "1.0"
+    "granularity_framework_version": "1.0",
+    "enrichment_dimensions": [
+      "confidence_tiers",
+      "evidence_quality",
+      "falsification_criteria",
+      "polanyi_automation",
+      "architecture_normalization"
+    ]
   },
   "force_velocities": {
     "F1_technology": {
@@ -2883,7 +2890,7 @@
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 298.7,
       "exit_val_M": 2987.0,
-      "architecture": "platform",
+      "architecture": "platform_infrastructure",
       "vcr_scores": {
         "MKT": 8,
         "CAP": 8,
@@ -3009,7 +3016,7 @@
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 500,
       "exit_val_M": 5461.0,
-      "architecture": "saas",
+      "architecture": "vertical_saas",
       "vcr_scores": {
         "MKT": 10,
         "CAP": 7.1,
@@ -3030,7 +3037,7 @@
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 500,
       "exit_val_M": 8192.0,
-      "architecture": "saas",
+      "architecture": "vertical_saas",
       "vcr_scores": {
         "MKT": 10,
         "CAP": 7.5,
@@ -3051,7 +3058,7 @@
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 416.7,
       "exit_val_M": 4167.0,
-      "architecture": "saas",
+      "architecture": "vertical_saas",
       "vcr_scores": {
         "MKT": 10,
         "CAP": 6.2,
@@ -3114,7 +3121,7 @@
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 500,
       "exit_val_M": 7789.0,
-      "architecture": "saas",
+      "architecture": "vertical_saas",
       "vcr_scores": {
         "MKT": 10,
         "CAP": 7.5,
@@ -3135,7 +3142,7 @@
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 500,
       "exit_val_M": 5316.0,
-      "architecture": "saas",
+      "architecture": "vertical_saas",
       "vcr_scores": {
         "MKT": 10,
         "CAP": 7.3,
@@ -3177,7 +3184,9 @@
       "composite": 80.5,
       "opportunity_composite": 88.0,
       "vcr_composite": 80.0,
-      "seed_roi_multiple": 298.7
+      "seed_roi_multiple": 298.7,
+      "architecture": "platform_infrastructure",
+      "confidence_tier": "MODERATE"
     },
     {
       "tri_score": 77.65,
@@ -3189,7 +3198,9 @@
       "composite": 82.5,
       "opportunity_composite": 70.5,
       "vcr_composite": 80.5,
-      "seed_roi_multiple": 212.8
+      "seed_roi_multiple": 212.8,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 77.62,
@@ -3201,7 +3212,9 @@
       "composite": 83.0,
       "opportunity_composite": 80.5,
       "vcr_composite": 70.0,
-      "seed_roi_multiple": 85.3
+      "seed_roi_multiple": 85.3,
+      "architecture": "platform_infrastructure",
+      "confidence_tier": "MODERATE"
     },
     {
       "tri_score": 76.85,
@@ -3213,7 +3226,9 @@
       "composite": 81.0,
       "opportunity_composite": 68.0,
       "vcr_composite": 82.4,
-      "seed_roi_multiple": 227.5
+      "seed_roi_multiple": 227.5,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 76.7,
@@ -3225,7 +3240,9 @@
       "composite": 77.5,
       "opportunity_composite": 86.0,
       "vcr_composite": 67.7,
-      "seed_roi_multiple": 16.0
+      "seed_roi_multiple": 16.0,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 76.08,
@@ -3237,7 +3254,9 @@
       "composite": 80.5,
       "opportunity_composite": 71.5,
       "vcr_composite": 76.5,
-      "seed_roi_multiple": 99.9
+      "seed_roi_multiple": 99.9,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 75.96,
@@ -3249,7 +3268,9 @@
       "composite": 78.5,
       "opportunity_composite": 70.5,
       "vcr_composite": 79.2,
-      "seed_roi_multiple": 500
+      "seed_roi_multiple": 500,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 75.96,
@@ -3261,7 +3282,9 @@
       "composite": 84.5,
       "opportunity_composite": 66.5,
       "vcr_composite": 78.0,
-      "seed_roi_multiple": 106.4
+      "seed_roi_multiple": 106.4,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 75.45,
@@ -3273,7 +3296,9 @@
       "composite": 75.5,
       "opportunity_composite": 72.0,
       "vcr_composite": 79.0,
-      "seed_roi_multiple": 213.1
+      "seed_roi_multiple": 213.1,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 75.31,
@@ -3285,7 +3310,9 @@
       "composite": 80.5,
       "opportunity_composite": 70.5,
       "vcr_composite": 75.25,
-      "seed_roi_multiple": 425.6
+      "seed_roi_multiple": 425.6,
+      "architecture": "marketplace_network",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 75.06,
@@ -3297,7 +3324,9 @@
       "composite": 72.5,
       "opportunity_composite": 81.0,
       "vcr_composite": 72.0,
-      "seed_roi_multiple": 39.9
+      "seed_roi_multiple": 39.9,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 75.03,
@@ -3309,7 +3338,9 @@
       "composite": 73.5,
       "opportunity_composite": 67.5,
       "vcr_composite": 85.15,
-      "seed_roi_multiple": 500
+      "seed_roi_multiple": 500,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 74.51,
@@ -3321,7 +3352,9 @@
       "composite": 83.5,
       "opportunity_composite": 66.5,
       "vcr_composite": 74.5,
-      "seed_roi_multiple": 30.1
+      "seed_roi_multiple": 30.1,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 74.34,
@@ -3333,7 +3366,9 @@
       "composite": 78.75,
       "opportunity_composite": 69.0,
       "vcr_composite": 75.6,
-      "seed_roi_multiple": 47.2
+      "seed_roi_multiple": 47.2,
+      "architecture": "data_compounding",
+      "confidence_tier": "MODERATE"
     },
     {
       "tri_score": 73.93,
@@ -3345,7 +3380,9 @@
       "composite": 82.0,
       "opportunity_composite": 67.5,
       "vcr_composite": 73.0,
-      "seed_roi_multiple": 28.0
+      "seed_roi_multiple": 28.0,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 73.82,
@@ -3357,7 +3394,9 @@
       "composite": 69.5,
       "opportunity_composite": 70.5,
       "vcr_composite": 82.1,
-      "seed_roi_multiple": 236.0
+      "seed_roi_multiple": 236.0,
+      "architecture": "data_compounding",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 73.45,
@@ -3369,7 +3408,9 @@
       "composite": 76.5,
       "opportunity_composite": 74.0,
       "vcr_composite": 70.0,
-      "seed_roi_multiple": 405.0
+      "seed_roi_multiple": 405.0,
+      "architecture": "ai_copilot",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 73.25,
@@ -3381,7 +3422,9 @@
       "composite": 81.0,
       "opportunity_composite": 64.0,
       "vcr_composite": 75.8,
-      "seed_roi_multiple": 149.0
+      "seed_roi_multiple": 149.0,
+      "architecture": "vertical_saas",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 73.15,
@@ -3393,7 +3436,9 @@
       "composite": 79.25,
       "opportunity_composite": 70.5,
       "vcr_composite": 70.05,
-      "seed_roi_multiple": 47.5
+      "seed_roi_multiple": 47.5,
+      "architecture": "platform_infrastructure",
+      "confidence_tier": "HIGH"
     },
     {
       "tri_score": 73.13,
@@ -3405,7 +3450,9 @@
       "composite": 74.5,
       "opportunity_composite": 72.5,
       "vcr_composite": 72.4,
-      "seed_roi_multiple": 423.7
+      "seed_roi_multiple": 423.7,
+      "architecture": "marketplace_network",
+      "confidence_tier": "HIGH"
     }
   ],
   "vcr_architecture_breakdown": [
@@ -3417,81 +3464,32 @@
       "avg_roi_multiple": 359.2
     },
     {
-      "architecture": "embedded_fintech",
-      "count": 2,
-      "avg_eco": 4.8,
-      "avg_moa": 5.4,
-      "avg_roi_multiple": 307.9
+      "architecture": "hardware_ai",
+      "count": 9,
+      "avg_eco": 5.0,
+      "avg_moa": 6.3,
+      "avg_roi_multiple": 130.8
     },
     {
-      "architecture": "workflow_automation",
-      "count": 3,
-      "avg_eco": 4.5,
-      "avg_moa": 4.8,
-      "avg_roi_multiple": 297.9
-    },
-    {
-      "architecture": "marketplace",
-      "count": 6,
-      "avg_eco": 5.7,
-      "avg_moa": 7.3,
-      "avg_roi_multiple": 240.6
-    },
-    {
-      "architecture": "iot_platform",
-      "count": 3,
-      "avg_eco": 4.8,
-      "avg_moa": 5.2,
-      "avg_roi_multiple": 226.6
-    },
-    {
-      "architecture": "saas",
-      "count": 16,
+      "architecture": "vertical_saas",
+      "count": 91,
       "avg_eco": 7.7,
-      "avg_moa": 6.9,
-      "avg_roi_multiple": 205.4
+      "avg_moa": 7.2,
+      "avg_roi_multiple": 126.1
     },
     {
-      "architecture": "supply_chain_optimization",
-      "count": 3,
-      "avg_eco": 4.6,
-      "avg_moa": 4.8,
-      "avg_roi_multiple": 200.2
+      "architecture": "platform_infrastructure",
+      "count": 84,
+      "avg_eco": 6.7,
+      "avg_moa": 8.3,
+      "avg_roi_multiple": 105.8
     },
     {
-      "architecture": "platform",
-      "count": 36,
-      "avg_eco": 6.8,
-      "avg_moa": 8.4,
-      "avg_roi_multiple": 184.2
-    },
-    {
-      "architecture": "logistics_optimization",
-      "count": 3,
-      "avg_eco": 4.6,
-      "avg_moa": 5.3,
-      "avg_roi_multiple": 171.5
-    },
-    {
-      "architecture": "predictive_analytics",
-      "count": 4,
-      "avg_eco": 4.5,
-      "avg_moa": 4.9,
-      "avg_roi_multiple": 158.1
-    },
-    {
-      "architecture": "digital_twin",
-      "count": 2,
-      "avg_eco": 4.5,
-      "avg_moa": 5.8,
-      "avg_roi_multiple": 152.2
-    },
-    {
-      "architecture": "autonomous_systems",
-      "count": 3,
-      "avg_eco": 4.5,
-      "avg_moa": 5.8,
-      "avg_roi_multiple": 123.3
+      "architecture": "data_compounding",
+      "count": 35,
+      "avg_eco": 8.7,
+      "avg_moa": 8.6,
+      "avg_roi_multiple": 104.6
     },
     {
       "architecture": "compliance_automation",
@@ -3501,102 +3499,46 @@
       "avg_roi_multiple": 98.6
     },
     {
-      "architecture": "data_compounding",
-      "count": 31,
-      "avg_eco": 9.2,
-      "avg_moa": 9.1,
-      "avg_roi_multiple": 97.7
-    },
-    {
-      "architecture": "vertical_saas",
-      "count": 56,
-      "avg_eco": 8.6,
-      "avg_moa": 7.7,
-      "avg_roi_multiple": 94.7
-    },
-    {
-      "architecture": "advisory",
-      "count": 2,
-      "avg_eco": 5.3,
-      "avg_moa": 3.5,
-      "avg_roi_multiple": 91.5
-    },
-    {
       "architecture": "robotics_automation",
-      "count": 5,
+      "count": 8,
       "avg_eco": 4.6,
-      "avg_moa": 5.3,
-      "avg_roi_multiple": 80.3
-    },
-    {
-      "architecture": "hardware_plus_saas",
-      "count": 3,
-      "avg_eco": 6.0,
-      "avg_moa": 7.3,
-      "avg_roi_multiple": 62.0
-    },
-    {
-      "architecture": "automation",
-      "count": 4,
-      "avg_eco": 3.8,
-      "avg_moa": 6.8,
-      "avg_roi_multiple": 52.3
-    },
-    {
-      "architecture": "managed_service",
-      "count": 2,
-      "avg_eco": 5.2,
-      "avg_moa": 4.5,
-      "avg_roi_multiple": 39.8
-    },
-    {
-      "architecture": "platform_infrastructure",
-      "count": 38,
-      "avg_eco": 6.9,
-      "avg_moa": 8.5,
-      "avg_roi_multiple": 38.8
-    },
-    {
-      "architecture": "platform_saas",
-      "count": 3,
-      "avg_eco": 8.3,
-      "avg_moa": 8.7,
-      "avg_roi_multiple": 35.0
-    },
-    {
-      "architecture": "regulatory_moat_builder",
-      "count": 16,
-      "avg_eco": 7.1,
-      "avg_moa": 8.8,
-      "avg_roi_multiple": 30.4
-    },
-    {
-      "architecture": "arbitrage_window",
-      "count": 11,
-      "avg_eco": 5.9,
-      "avg_moa": 3.3,
-      "avg_roi_multiple": 30.4
+      "avg_moa": 5.5,
+      "avg_roi_multiple": 96.4
     },
     {
       "architecture": "marketplace_network",
-      "count": 16,
+      "count": 28,
       "avg_eco": 5.8,
-      "avg_moa": 7.0,
-      "avg_roi_multiple": 27.2
+      "avg_moa": 7.1,
+      "avg_roi_multiple": 74.0
+    },
+    {
+      "architecture": "regulatory_moat_builder",
+      "count": 17,
+      "avg_eco": 7.1,
+      "avg_moa": 8.6,
+      "avg_roi_multiple": 29.7
     },
     {
       "architecture": "service_platform",
-      "count": 8,
-      "avg_eco": 6.2,
-      "avg_moa": 6.4,
-      "avg_roi_multiple": 26.9
+      "count": 20,
+      "avg_eco": 5.6,
+      "avg_moa": 5.2,
+      "avg_roi_multiple": 29.6
     },
     {
-      "architecture": "full_service_replacement",
-      "count": 108,
-      "avg_eco": 5.2,
+      "architecture": "arbitrage_window",
+      "count": 12,
+      "avg_eco": 5.8,
+      "avg_moa": 3.4,
+      "avg_roi_multiple": 28.1
+    },
+    {
+      "architecture": "acquire_and_modernize",
+      "count": 32,
+      "avg_eco": 4.5,
       "avg_moa": 5.2,
-      "avg_roi_multiple": 23.8
+      "avg_roi_multiple": 22.5
     },
     {
       "architecture": "physical_production_ai",
@@ -3606,60 +3548,68 @@
       "avg_roi_multiple": 22.1
     },
     {
-      "architecture": "acquire_and_modernize",
-      "count": 31,
-      "avg_eco": 4.5,
-      "avg_moa": 5.1,
-      "avg_roi_multiple": 19.5
+      "architecture": "full_service_replacement",
+      "count": 127,
+      "avg_eco": 5.1,
+      "avg_moa": 5.2,
+      "avg_roi_multiple": 21.3
     },
     {
       "architecture": "rollup_consolidation",
-      "count": 22,
-      "avg_eco": 3.8,
-      "avg_moa": 5.4,
-      "avg_roi_multiple": 18.6
-    },
-    {
-      "architecture": "network_platform",
-      "count": 2,
-      "avg_eco": 6.5,
-      "avg_moa": 6.0,
-      "avg_roi_multiple": 17.4
-    },
-    {
-      "architecture": "marketplace_platform",
-      "count": 4,
-      "avg_eco": 5.7,
-      "avg_moa": 6.5,
-      "avg_roi_multiple": 14.0
-    },
-    {
-      "architecture": "product_platform",
-      "count": 4,
-      "avg_eco": 5.6,
-      "avg_moa": 7.8,
-      "avg_roi_multiple": 13.6
-    },
-    {
-      "architecture": "",
-      "count": 15,
-      "avg_eco": 4.7,
-      "avg_moa": 5.2,
-      "avg_roi_multiple": 8.6
-    },
-    {
-      "architecture": "service",
-      "count": 4,
-      "avg_eco": 4.2,
-      "avg_moa": 3.2,
-      "avg_roi_multiple": 4.5
-    },
-    {
-      "architecture": "project_developer",
-      "count": 3,
-      "avg_eco": 4.2,
-      "avg_moa": 6.0,
-      "avg_roi_multiple": 2.2
+      "count": 24,
+      "avg_eco": 3.9,
+      "avg_moa": 5.5,
+      "avg_roi_multiple": 18.7
     }
-  ]
+  ],
+  "enrichment": true,
+  "enrichment_summary": {
+    "confidence_tier_distribution": {
+      "HIGH": 215,
+      "LOW": 208,
+      "MODERATE": 85
+    },
+    "evidence_quality_stats": {
+      "mean": 3.79,
+      "median": 2.0,
+      "max": 9,
+      "min": 0
+    },
+    "polanyi_stats": {
+      "models_with_polanyi": 466,
+      "models_without": 42,
+      "automation_exposure_mean": 0.328,
+      "automation_exposure_median": 0.325,
+      "automation_exposure_range": [
+        0.28,
+        0.39
+      ]
+    },
+    "polanyi_dominant_category_distribution": {
+      "nonroutine_cognitive_analytical": 3,
+      "nonroutine_cognitive_interpersonal": 256,
+      "routine_cognitive": 207
+    },
+    "architecture_distribution": {
+      "full_service_replacement": 127,
+      "vertical_saas": 91,
+      "platform_infrastructure": 84,
+      "data_compounding": 35,
+      "acquire_and_modernize": 32,
+      "marketplace_network": 28,
+      "rollup_consolidation": 24,
+      "service_platform": 20,
+      "regulatory_moat_builder": 17,
+      "arbitrage_window": 12,
+      "physical_production_ai": 11,
+      "hardware_ai": 9,
+      "robotics_automation": 8,
+      "ai_copilot": 5,
+      "compliance_automation": 5
+    },
+    "architecture_canonical_types": 15,
+    "falsification_criteria_coverage": "508/508",
+    "falsification_unique_criteria": 63,
+    "falsification_total_criteria": 1934
+  }
 }

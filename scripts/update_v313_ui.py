@@ -1,0 +1,375 @@
+#!/usr/bin/env python3
+"""
+v3-13 UI Refresh: Regenerate models.json and dashboard.json with enrichment fields.
+
+New fields added to slim models:
+  - confidence_tier (HIGH/MODERATE/LOW)
+  - evidence_quality (0-10)
+  - polanyi.automation_exposure, polanyi.dominant_category (if available)
+  - architecture (now normalized to 15 canonical types)
+
+Dashboard updates:
+  - engine_version → v3.13
+  - enrichment_summary with confidence/polanyi/architecture stats
+  - top_20_tri_actionable rebuilt with canonical architectures
+
+State updates:
+  - state_version → 23
+  - current_cycle → v3-13
+  - engine_version description updated
+"""
+
+import json
+import statistics
+from collections import Counter
+from pathlib import Path
+
+BASE = Path("/Users/mv/Documents/research/data/verified")
+UI_DIR = Path("/Users/mv/Documents/research/data/ui")
+STATE_FILE = Path("/Users/mv/Documents/research/data/context/state.json")
+
+NORMALIZED_FILE = BASE / "v3-12_normalized_2026-02-12.json"
+UI_MODELS = UI_DIR / "models.json"
+UI_DASHBOARD = UI_DIR / "dashboard.json"
+
+
+def build_slim_model(m):
+    """Build UI-facing slim model with triple ranking + v3-13 enrichment."""
+    cla = m.get("cla", {})
+    vcr = m.get("vcr", {})
+    roi = vcr.get("roi_estimate", {})
+
+    slim = {
+        "rank": m["rank"],
+        "opportunity_rank": m.get("opportunity_rank"),
+        "vcr_rank": m.get("vcr_rank"),
+        "id": m["id"],
+        "name": m["name"],
+        "composite": m["composite"],
+        "opportunity_composite": cla.get("composite"),
+        "vcr_composite": vcr.get("composite"),
+        "vcr_roi_multiple": roi.get("seed_roi_multiple"),
+        "vcr_exit_val_M": roi.get("exit_val_M"),
+        "category": m.get("primary_category", m["category"][0] if isinstance(m.get("category"), list) and m["category"] else "PARKED"),
+        "opportunity_category": cla.get("category"),
+        "vcr_category": vcr.get("category"),
+        "categories": m["category"] if isinstance(m.get("category"), list) else [m.get("category", "PARKED")],
+        "scores": m["scores"],
+        "cla_scores": cla.get("scores"),
+        "vcr_scores": vcr.get("scores"),
+        "sector_naics": m.get("sector_naics"),
+        "architecture": m.get("architecture"),
+        "source_batch": m.get("source_batch"),
+        "new_in_v36": m.get("new_in_v36", False),
+        "one_liner": m.get("one_liner"),
+        # v3-13 enrichment fields
+        "confidence_tier": m.get("confidence_tier"),
+        "evidence_quality": m.get("evidence_quality"),
+    }
+
+    # Polanyi — only include key metrics, not full SOC lists
+    pol = m.get("polanyi")
+    if pol:
+        slim["polanyi"] = {
+            "automation_exposure": pol.get("automation_exposure"),
+            "dominant_category": pol.get("dominant_category"),
+        }
+
+    # Decomposition fields
+    if m.get("decomposed"):
+        slim["decomposed"] = True
+        slim["sub_model_count"] = m.get("sub_model_count")
+        slim["sub_model_opp_range"] = m.get("sub_model_opp_range")
+    if m.get("parent_id"):
+        slim["parent_id"] = m["parent_id"]
+        slim["layer"] = m.get("layer")
+        slim["layer_name"] = m.get("layer_name")
+        slim["granularity_type"] = m.get("granularity_type")
+
+    return slim
+
+
+def main():
+    print("=" * 70)
+    print("v3-13 UI REFRESH: Regenerating UI files with enrichment data")
+    print("=" * 70)
+    print()
+
+    # Load normalized file
+    print("Loading normalized inventory...")
+    with open(NORMALIZED_FILE) as f:
+        data = json.load(f)
+    models = data["models"]
+    print(f"  Loaded {len(models)} models")
+
+    # ── Compute enrichment statistics ──
+    print("Computing enrichment statistics...")
+
+    # Confidence tiers
+    tier_dist = Counter(m.get("confidence_tier", "UNKNOWN") for m in models)
+    eq_scores = [m.get("evidence_quality", 0) for m in models]
+    eq_stats = {
+        "mean": round(statistics.mean(eq_scores), 2),
+        "median": round(statistics.median(eq_scores), 1),
+        "max": max(eq_scores),
+        "min": min(eq_scores),
+    }
+
+    # Polanyi
+    pol_models = [m for m in models if m.get("polanyi")]
+    ae_scores = [m["polanyi"]["automation_exposure"] for m in pol_models]
+    pol_stats = {
+        "models_with_polanyi": len(pol_models),
+        "models_without": len(models) - len(pol_models),
+        "automation_exposure_mean": round(statistics.mean(ae_scores), 3) if ae_scores else None,
+        "automation_exposure_median": round(statistics.median(ae_scores), 3) if ae_scores else None,
+        "automation_exposure_range": [round(min(ae_scores), 3), round(max(ae_scores), 3)] if ae_scores else None,
+    }
+    dom_cat_dist = Counter(m["polanyi"]["dominant_category"] for m in pol_models)
+
+    # Architecture
+    arch_dist = Counter(m.get("architecture", "MISSING") for m in models)
+
+    # Falsification criteria
+    fals_count = sum(1 for m in models if m.get("falsification_criteria"))
+    total_criteria = sum(len(m.get("falsification_criteria", [])) for m in models)
+    all_criteria = []
+    for m in models:
+        all_criteria.extend(m.get("falsification_criteria", []))
+    unique_criteria = len(set(all_criteria))
+
+    enrichment_summary = {
+        "confidence_tier_distribution": dict(sorted(tier_dist.items())),
+        "evidence_quality_stats": eq_stats,
+        "polanyi_stats": pol_stats,
+        "polanyi_dominant_category_distribution": dict(sorted(dom_cat_dist.items())),
+        "architecture_distribution": dict(sorted(arch_dist.items(), key=lambda x: -x[1])),
+        "architecture_canonical_types": len(arch_dist),
+        "falsification_criteria_coverage": f"{fals_count}/{len(models)}",
+        "falsification_unique_criteria": unique_criteria,
+        "falsification_total_criteria": total_criteria,
+    }
+
+    print(f"  Confidence: {dict(tier_dist)}")
+    print(f"  Evidence quality: mean={eq_stats['mean']}, median={eq_stats['median']}")
+    print(f"  Polanyi: {len(pol_models)}/{len(models)} models")
+    print(f"  Architecture types: {len(arch_dist)}")
+    print(f"  Falsification: {fals_count}/{len(models)} models, {unique_criteria} unique criteria")
+    print()
+
+    # ── Rebuild VCR stats (unchanged from v3-12 but needed for UI) ──
+    vcr_composites = [m["vcr"]["composite"] for m in models]
+    vcr_stats = {
+        "max": max(vcr_composites),
+        "min": min(vcr_composites),
+        "mean": round(statistics.mean(vcr_composites), 2),
+        "median": round(statistics.median(vcr_composites), 2),
+    }
+    vcr_cat_dist = Counter(m["vcr"]["category"] for m in models)
+    vcr_comp_dist = {
+        "above_75": sum(1 for c in vcr_composites if c >= 75),
+        "60_to_75": sum(1 for c in vcr_composites if 60 <= c < 75),
+        "45_to_60": sum(1 for c in vcr_composites if 45 <= c < 60),
+        "30_to_45": sum(1 for c in vcr_composites if 30 <= c < 45),
+        "below_30": sum(1 for c in vcr_composites if c < 30),
+    }
+    roi_multiples = [m["vcr"]["roi_estimate"]["seed_roi_multiple"] for m in models]
+    roi_stats = {
+        "max": max(roi_multiples),
+        "min": min(roi_multiples),
+        "mean": round(statistics.mean(roi_multiples), 1),
+        "median": round(statistics.median(roi_multiples), 1),
+        "above_10x": sum(1 for r in roi_multiples if r >= 10),
+        "above_20x": sum(1 for r in roi_multiples if r >= 20),
+        "above_50x": sum(1 for r in roi_multiples if r >= 50),
+    }
+
+    # ── Write UI models.json ──
+    print("Writing UI models.json...")
+    ui_models = [build_slim_model(m) for m in models]
+
+    # Load VCR system definition from normalized data
+    vcr_system = data.get("rating_system", {}).get("vcr_system", {})
+
+    ui_output = {
+        "cycle": "v3-13",
+        "date": "2026-02-12",
+        "total": len(models),
+        "dual_ranking": True,
+        "triple_ranking": True,
+        "granularity_layer": True,
+        "enrichment": True,
+        "vcr_system": vcr_system,
+        "summary": {
+            "total_models": len(models),
+            "composite_stats": data["summary"].get("composite_stats", {}),
+            "primary_category_distribution": data["summary"].get("primary_category_distribution", {}),
+            "opportunity_stats": data["summary"].get("opportunity_stats", {}),
+            "opportunity_category_distribution": data["summary"].get("opportunity_category_distribution", {}),
+            "vcr_stats": vcr_stats,
+            "vcr_distribution": vcr_comp_dist,
+            "vcr_category_distribution": dict(sorted(vcr_cat_dist.items())),
+            "vcr_roi_stats": roi_stats,
+        },
+        "enrichment_summary": enrichment_summary,
+        "models": ui_models,
+    }
+    with open(UI_MODELS, "w") as f:
+        json.dump(ui_output, f, indent=2, ensure_ascii=False)
+    print(f"  Written: {UI_MODELS} ({len(ui_models)} models)")
+
+    # ── Update dashboard.json ──
+    print("Updating dashboard.json...")
+    with open(UI_DASHBOARD) as f:
+        dashboard = json.load(f)
+
+    dashboard["engine_version"] = "v3.13"
+    dashboard["current_cycle"] = "v3-13"
+    dashboard["enrichment"] = True
+    dashboard["enrichment_summary"] = enrichment_summary
+
+    # Update stats (top-level in dashboard, not nested under "summary")
+    dashboard["vcr_stats"] = vcr_stats
+    dashboard["vcr_roi_stats"] = roi_stats
+    dashboard["vcr_category_distribution"] = dict(sorted(vcr_cat_dist.items()))
+
+    # Rebuild top 20 triple actionable with canonical architectures
+    models_by_vcr = sorted(models, key=lambda m: (-m["vcr"]["composite"], m["id"]))
+    tri_ranked = sorted(models,
+        key=lambda m: -(
+            m["composite"] *
+            m.get("cla", {}).get("composite", 1) *
+            m.get("vcr", {}).get("composite", 1)
+        ) ** (1/3))
+    top20_tri = []
+    for m in tri_ranked[:20]:
+        tri_score = round((
+            m["composite"] *
+            m.get("cla", {}).get("composite", 1) *
+            m.get("vcr", {}).get("composite", 1)
+        ) ** (1/3), 2)
+        top20_tri.append({
+            "tri_score": tri_score,
+            "transformation_rank": m["rank"],
+            "opportunity_rank": m.get("opportunity_rank"),
+            "vcr_rank": m.get("vcr_rank"),
+            "id": m["id"],
+            "name": m["name"],
+            "composite": m["composite"],
+            "opportunity_composite": m.get("cla", {}).get("composite"),
+            "vcr_composite": m.get("vcr", {}).get("composite"),
+            "seed_roi_multiple": m.get("vcr", {}).get("roi_estimate", {}).get("seed_roi_multiple"),
+            "architecture": m.get("architecture"),
+            "confidence_tier": m.get("confidence_tier"),
+        })
+    dashboard["top_20_tri_actionable"] = top20_tri
+
+    # Rebuild top 20 by VCR ROI
+    top20_vcr = []
+    for m in models_by_vcr[:20]:
+        roi = m["vcr"]["roi_estimate"]
+        top20_vcr.append({
+            "vcr_rank": m["vcr_rank"],
+            "transformation_rank": m["rank"],
+            "opportunity_rank": m.get("opportunity_rank"),
+            "id": m["id"],
+            "name": m["name"],
+            "composite": m["composite"],
+            "opportunity_composite": m.get("cla", {}).get("composite"),
+            "vcr_composite": m["vcr"]["composite"],
+            "vcr_category": m["vcr"]["category"],
+            "seed_roi_multiple": roi["seed_roi_multiple"],
+            "exit_val_M": roi["exit_val_M"],
+            "architecture": m.get("architecture"),
+            "vcr_scores": m["vcr"]["scores"],
+        })
+    dashboard["top_20_by_vcr_roi"] = top20_vcr
+
+    # Rebuild architecture breakdown with canonical types
+    arch_data = {}
+    for m in models:
+        a = m.get("architecture", "unknown")
+        if a not in arch_data:
+            arch_data[a] = {"count": 0, "eco_sum": 0, "moa_sum": 0, "roi_sum": 0}
+        arch_data[a]["count"] += 1
+        arch_data[a]["eco_sum"] += m["vcr"]["scores"]["ECO"]
+        arch_data[a]["moa_sum"] += m["vcr"]["scores"]["MOA"]
+        arch_data[a]["roi_sum"] += m["vcr"]["roi_estimate"]["seed_roi_multiple"]
+    arch_breakdown = []
+    for a, d in sorted(arch_data.items(), key=lambda x: -x[1]["roi_sum"]/x[1]["count"]):
+        if d["count"] >= 2:
+            arch_breakdown.append({
+                "architecture": a,
+                "count": d["count"],
+                "avg_eco": round(d["eco_sum"] / d["count"], 1),
+                "avg_moa": round(d["moa_sum"] / d["count"], 1),
+                "avg_roi_multiple": round(d["roi_sum"] / d["count"], 1),
+            })
+    dashboard["vcr_architecture_breakdown"] = arch_breakdown
+
+    # Update evidence base
+    dashboard["evidence_base"]["enrichment_dimensions"] = [
+        "confidence_tiers", "evidence_quality", "falsification_criteria",
+        "polanyi_automation", "architecture_normalization"
+    ]
+
+    with open(UI_DASHBOARD, "w") as f:
+        json.dump(dashboard, f, indent=2, ensure_ascii=False)
+    print(f"  Written: {UI_DASHBOARD}")
+
+    # ── Update state.json ──
+    print("Updating state.json...")
+    with open(STATE_FILE) as f:
+        state = json.load(f)
+
+    state["state_version"] = 23
+    state["current_cycle"] = "v3-13"
+    state["engine_version"] = (
+        "3.13 — 'Enrichment' cycle: Added 5 data quality dimensions to all 508 models. "
+        "(1) Confidence tiers (HIGH/MODERATE/LOW) based on source provenance and evidence depth. "
+        "(2) Evidence quality scores (0-10) measuring analytical rigor per model. "
+        "(3) Falsification criteria — 2-4 testable projection-invalidation conditions per model (63 unique criteria). "
+        "(4) Polanyi automation exposure — O*NET-derived task automation metrics (466/508 models). "
+        "(5) Architecture normalization — 15 canonical types from 54+ variants, zero blanks remaining. "
+        "No scoring changes — Transformation, Opportunity, and VCR axes unchanged from v3-12."
+    )
+
+    # Update rated_models_index
+    rmi = state.get("rated_models_index", {})
+    rmi["enrichment_dimensions"] = {
+        "confidence_tiers": dict(sorted(tier_dist.items())),
+        "evidence_quality_mean": eq_stats["mean"],
+        "polanyi_coverage": f"{len(pol_models)}/{len(models)}",
+        "architecture_canonical_types": len(arch_dist),
+        "falsification_unique_criteria": unique_criteria,
+    }
+
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+    print(f"  Written: {STATE_FILE}")
+
+    # ── Summary ──
+    print()
+    print("=" * 70)
+    print("v3-13 UI REFRESH COMPLETE")
+    print("=" * 70)
+    print()
+    print(f"  Models: {len(models)}")
+    print(f"  Confidence tiers: HIGH={tier_dist.get('HIGH',0)}, MODERATE={tier_dist.get('MODERATE',0)}, LOW={tier_dist.get('LOW',0)}")
+    print(f"  Evidence quality: mean={eq_stats['mean']}, median={eq_stats['median']}")
+    print(f"  Polanyi coverage: {len(pol_models)}/{len(models)}")
+    print(f"  Architecture types: {len(arch_dist)} canonical")
+    print(f"  Falsification: {unique_criteria} unique criteria across {fals_count} models")
+    print()
+    print("  Files updated:")
+    print(f"    {UI_MODELS}")
+    print(f"    {UI_DASHBOARD}")
+    print(f"    {STATE_FILE}")
+    print()
+    print("  Top 5 Triple Actionable (with confidence):")
+    for m in top20_tri[:5]:
+        print(f"    {m['tri_score']:>6.2f}  [{m['confidence_tier']}]  {m['name']}  ({m['architecture']})")
+
+
+if __name__ == "__main__":
+    main()
