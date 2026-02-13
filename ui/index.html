@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.11</title>
+<title>Research Engine v3.12</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -744,10 +744,10 @@
   </nav>
 
   <header>
-    <h1>Research Engine v3.11</h1>
+    <h1>Research Engine v3.12</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-11</span>
-      &nbsp; <span id="model-total-sub">454 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      <span class="cycle-badge" id="cycle-badge">v3-12</span>
+      &nbsp; <span id="model-total-sub">508 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
   </header>
 
@@ -942,7 +942,7 @@
     </div>
   </div>
 
-  <div class="footer">Research Engine v3.11 &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v3.12 &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -1522,7 +1522,7 @@ function renderWhatsNew(d) {
 
   if (!items.length) { el.style.display = 'none'; return; }
 
-  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-11'}</div>
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-12'}</div>
     <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
 }
 
@@ -1743,7 +1743,7 @@ async function refresh() {
 
   if (d) {
     // Header
-    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-11';
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-12';
     const ts = d.last_updated;
     document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
