@@ -215,13 +215,112 @@ def main():
     tns_composites = [n["tns"]["composite"] for n in narratives]
     tns_cat_dist = Counter(n["tns"]["category"] for n in narratives)
 
-    force_velocities = state.get("force_velocities", {})
+    # Force velocities — full format for UI renderForces()
+    force_names = {
+        "F1_technology": "Technology & AI",
+        "F2_demographics": "Demographics & Labor",
+        "F3_geopolitics": "Geopolitics & Trade",
+        "F4_capital": "Capital & Financial",
+        "F5_psychology": "Psychology & Sentiment",
+        "F6_energy": "Energy & Resources",
+    }
+    raw_forces = state.get("force_velocities", {})
     force_summary = {}
-    for fid, fv in force_velocities.items():
+    force_velocities_ui = {}
+    for fid, fv in raw_forces.items():
         force_summary[fid] = {
             "velocity": fv.get("velocity", "steady"),
             "confidence": fv.get("confidence", "medium"),
         }
+        # Full force data for renderForces()
+        km = fv.get("key_metrics", {})
+        key_data = []
+        for k, v in list(km.items())[:5]:
+            val = str(v)
+            if len(val) > 120:
+                val = val[:117] + "..."
+            key_data.append(f"{k.replace('_', ' ').title()}: {val}")
+        force_velocities_ui[fid] = {
+            "name": force_names.get(fid, fid),
+            "velocity": fv.get("velocity", "steady"),
+            "confidence": fv.get("confidence", "medium"),
+            "key_metric": fv.get("direction", "")[:200] if fv.get("direction") else "",
+            "key_data": key_data,
+            "2031_projection": "",
+        }
+
+    # Geographic profiles for renderMap()
+    geo_emojis = {"US": "🇺🇸", "Japan": "🇯🇵", "China": "🇨🇳", "EU": "🇪🇺",
+                  "India": "🇮🇳", "LATAM": "🌎", "SEA": "🌏", "MENA": "🏜️"}
+    geo_key_map = {"US": "us", "Japan": "japan", "China": "china", "EU": "eu",
+                   "India": "india", "LATAM": "latam", "SEA": "sea", "MENA": "mena"}
+    geo_profiles = {}
+    for g in geo_data.get("geographies", []):
+        rid = g.get("region_id", "")
+        key = geo_key_map.get(rid, rid.lower())
+        tv = g.get("transformation_velocity", {})
+        demo = g.get("demographic_profile", {})
+        ai = g.get("ai_readiness", {})
+        fastest = tv.get("fastest_sectors", [])
+        vel_label = ai.get("adoption_rate", "moderate")
+        if vel_label in ("leading", "accelerating"):
+            vel_label = "fast — " + vel_label
+        elif vel_label == "lagging":
+            vel_label = "moderate — " + vel_label
+        geo_profiles[key] = {
+            "name": g.get("name", rid),
+            "emoji": geo_emojis.get(rid, "🌐"),
+            "transformation_velocity": vel_label,
+            "key_metrics": {
+                "median_age": str(demo.get("median_age", "?")),
+                "population": demo.get("population_trend", "?"),
+                "ai_access": ai.get("frontier_access", "?"),
+                "regulation": ai.get("regulatory_stance", "?")[:60],
+            },
+            "top_forces": fastest[:3],
+            "2031_outlook": demo.get("key_pressure", "")[:200],
+        }
+
+    # Fear friction index from narrative data
+    fear_friction_index = []
+    for n in narratives:
+        ff = n.get("fear_friction", {})
+        if ff and ff.get("economic_readiness"):
+            econ = ff.get("economic_readiness", 5)
+            psych = ff.get("psychological_readiness", 5)
+            fear_friction_index.append({
+                "sector": n["name"].replace(" Transformation", ""),
+                "economic_readiness": econ,
+                "psychological_readiness": psych,
+                "fear_friction_gap": round(econ - psych, 1) if isinstance(econ, (int, float)) and isinstance(psych, (int, float)) else 0,
+            })
+    fear_friction_index.sort(key=lambda x: x.get("fear_friction_gap", 0), reverse=True)
+
+    # Sector transformations from narratives
+    sector_transformations = []
+    for n in narratives:
+        outputs = n.get("outputs", {})
+        ww = len(outputs.get("what_works", []))
+        wn = len(outputs.get("whats_needed", []))
+        wd = len(outputs.get("what_dies", []))
+        sectors = n.get("sectors", [])
+        naics = sectors[0]["naics"] if sectors else ""
+        sector_transformations.append({
+            "name": n["name"].replace(" Transformation", ""),
+            "naics": str(naics),
+            "phase": n.get("transformation_phase", "early_disruption"),
+            "employment_2026": "",
+            "employment_2031": "",
+            "change_pct": 0,
+            "top_model": f"{ww} works, {wn} needed, {wd} dies",
+        })
+
+    # Force-model distribution
+    force_model_dist = Counter()
+    for m in models:
+        for f in (m.get("forces_v3") or []):
+            key = f[:2]  # F1, F2, etc.
+            force_model_dist[key] += 1
 
     # Cascade graph for UI
     cascade_graph = {
@@ -263,6 +362,11 @@ def main():
         },
         "tns_category_distribution": dict(sorted(tns_cat_dist.items())),
         "force_summary": force_summary,
+        "force_velocities": force_velocities_ui,
+        "geographic_profiles": geo_profiles,
+        "fear_friction_index": fear_friction_index,
+        "sector_transformations": sector_transformations,
+        "force_model_distribution": dict(force_model_dist),
         "top_narratives": [
             {
                 "narrative_id": n["narrative_id"],

@@ -2140,45 +2140,36 @@ function renderWhatsNew(d) {
   const el = document.getElementById('whats-new');
   const items = [];
 
-  // Force velocity changes
+  // Force velocity changes (v4 format)
   const fv = d.force_velocities || {};
   Object.values(fv).forEach(f => {
     if (f.velocity === 'accelerating') items.push({ text: f.name + ' \u2191 ' + f.velocity, cls: 'wn-force' });
     if (f.velocity === 'intensifying') items.push({ text: f.name + ' \u2191 ' + f.velocity, cls: 'wn-force' });
   });
 
-  // New patterns
-  const rp = d.running_patterns || {};
-  (rp.new_this_cycle || []).forEach(p => { items.push({ text: p, cls: 'wn-pattern' }); });
+  // v4 narrative context
+  const totalNarr = d.total_narratives || 0;
+  const tnsCat = d.tns_category_distribution || {};
+  if (tnsCat.DEFINING) items.push({ text: tnsCat.DEFINING + ' DEFINING narratives', cls: 'wn-pattern' });
 
-  // Granularity framework
-  const eb = d.evidence_base || {};
-  if (eb.granularity_framework_version) {
-    items.push({ text: 'Granularity Framework v' + eb.granularity_framework_version, cls: 'wn-pattern' });
-  }
+  // v4 collision count
+  const totalColl = d.total_collisions || 0;
+  if (totalColl) items.push({ text: totalColl + ' force collisions mapped', cls: 'wn-pattern' });
 
-  // New models
-  const nm = d.new_models_this_cycle || 0;
-  if (nm > 0) items.push({ text: nm + ' new model cards scored', cls: 'wn-model' });
-
-  // Sub-models from decomposition
-  const subCount = eb.v3_sub_models || 0;
-  if (subCount > 0) items.push({ text: subCount + ' sub-models from granularity decomposition', cls: 'wn-model' });
-
-  // Deep dives
-  const dives = eb.v3_sector_deep_dives || 0;
-  if (dives) items.push({ text: dives + ' sector deep dives', cls: 'wn-sector' });
+  // Models linked
+  const linked = d.models_linked || 0;
+  if (linked) items.push({ text: linked + '/' + (d.total_models || 0) + ' models linked to narratives', cls: 'wn-model' });
 
   if (!items.length) { el.style.display = 'none'; return; }
 
-  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-18'}</div>
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v4-0'}</div>
     <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
 }
 
 // ─── CATEGORY FILTERS ───
 function renderCatFilters(summary) {
   const el = document.getElementById('cat-filters');
-  const dist = summary.primary_category_distribution || {};
+  const dist = summary.category_distribution || summary.primary_category_distribution || {};
   const order = ['STRUCTURAL_WINNER','FORCE_RIDER','TIMING_ARBITRAGE','CAPITAL_MOAT','FEAR_ECONOMY','EMERGING_CATEGORY','CONDITIONAL','PARKED'];
   el.innerHTML = order.filter(k => dist[k] > 0).map(k => {
     const cls = 'cat-' + k;
@@ -2188,7 +2179,7 @@ function renderCatFilters(summary) {
 
 function renderOppCatFilters(summary) {
   const el = document.getElementById('opp-cat-filters');
-  const dist = summary.opportunity_category_distribution || {};
+  const dist = summary.opp_category_distribution || summary.opportunity_category_distribution || {};
   const order = ['WIDE_OPEN','ACCESSIBLE','CONTESTED','FORTIFIED','LOCKED'];
   el.innerHTML = order.filter(k => dist[k] > 0).map(k => {
     const cls = 'opp-' + k;
@@ -2374,7 +2365,7 @@ function renderMap(profiles) {
     { key: 'us', col: '2 / 5', row: '2 / 4' },
     { key: 'latam', col: '3 / 5', row: '4 / 6' },
     { key: 'eu', col: '5 / 8', row: '1 / 3' },
-    { key: 'africa', col: '6 / 8', row: '3 / 5' },
+    { key: 'sea', col: '6 / 8', row: '3 / 5' },
     { key: 'mena', col: '8 / 10', row: '2 / 4' },
     { key: 'india', col: '9 / 11', row: '3 / 5' },
     { key: 'china', col: '9 / 11', row: '1 / 3' },
@@ -2488,9 +2479,13 @@ function renderSectors(sectors) {
   if (!sectors || !sectors.length) return;
   el.innerHTML = sectors.map(s => {
     const phaseCls = 'phase-' + (s.phase || '').replace(/\s+/g, '_');
-    const changeCls = s.change_pct < 0 ? 'sector-change-neg' : 'sector-change-pos';
-    const sign = s.change_pct > 0 ? '+' : '';
-    return `<tr><td><strong>${esc(s.name)}</strong><br><span style="font-size:10px;color:var(--dim)">NAICS ${esc(s.naics)}</span></td><td><span class="sector-phase ${phaseCls}">${esc(s.phase)}</span></td><td>${s.employment_2026}M</td><td>${s.employment_2031}M</td><td><span class="sector-change ${changeCls}">${sign}${s.change_pct}%</span></td><td style="font-size:11px;color:var(--text-secondary)">${esc(s.top_model)}</td></tr>`;
+    const emp26 = s.employment_2026 ? s.employment_2026 + 'M' : '--';
+    const emp31 = s.employment_2031 ? s.employment_2031 + 'M' : '--';
+    const changePct = s.change_pct || 0;
+    const changeCls = changePct < 0 ? 'sector-change-neg' : 'sector-change-pos';
+    const sign = changePct > 0 ? '+' : '';
+    const changeStr = changePct ? `${sign}${changePct}%` : '--';
+    return `<tr><td><strong>${esc(s.name)}</strong><br><span style="font-size:10px;color:var(--dim)">NAICS ${esc(s.naics)}</span></td><td><span class="sector-phase ${phaseCls}">${esc(s.phase)}</span></td><td>${emp26}</td><td>${emp31}</td><td><span class="sector-change ${changeCls}">${changeStr}</span></td><td style="font-size:11px;color:var(--text-secondary)">${esc(s.top_model)}</td></tr>`;
   }).join('');
 }
 
@@ -3000,10 +2995,7 @@ async function refresh() {
     // Render cascades view
     renderCascades(d);
 
-    // Subtitle
-    if (ratedCount) document.getElementById('model-total-sub').textContent = ratedCount + ' rated models';
-
-    // Render sections
+    // Render sections with v4 data
     renderWhatsNew(d);
     renderForces(d.force_velocities);
     renderSectors(d.sector_transformations);
