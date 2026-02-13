@@ -34,8 +34,8 @@ NAICS_TO_SOC = {
     '81': ['37-2011.00', '39-9011.00'],  # Other services: janitors, childcare
     '55': ['11-1021.00', '13-1111.00'],  # Management: ops managers, mgmt analysts
     '53': ['11-1021.00', '41-3021.00'],  # Real estate: ops managers, insurance sales
-    '71': ['27-1024.00'],  # Arts/entertainment: graphic designers
-    '42': ['43-4051.00', '53-3032.00'],  # Wholesale: customer service, truck drivers
+    '71': ['27-1024.00', '13-1111.00', '43-4051.00', '41-3021.00'],  # Arts/entertainment: designers + mgmt analysts + customer svc + sales
+    '42': ['43-4051.00', '53-3032.00', '11-1021.00', '13-1111.00', '13-2011.00'],  # Wholesale: customer svc + truck drivers + ops mgrs + analysts + accountants
     # Sectors with no good SOC match — will get null polanyi
     '22': [],  # Utilities
     '92': [],  # Government

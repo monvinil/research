@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-v3-14 UI Refresh: Regenerate models.json and dashboard.json with all v3-14 changes.
+v3-15 UI Refresh: Regenerate models.json and dashboard.json with all v3-15 changes.
 
 Includes:
   - v3-13 enrichment fields (confidence_tier, evidence_quality, polanyi, architecture)
-  - v3-14 score corrections (MO/MA, CAP/VEL axis decoupling, batch normalization)
-  - v3-14 coverage expansion (544 models: +16 frontier, +11 cascades, +6 structural, +3 counter-trend)
+  - v3-14 score corrections (MO/MA, CAP/VEL, ECO/MOA axis decoupling, batch normalization)
+  - v3-15 SN axis redefinition (Market Necessity), BCI coverage, AI naming audit, Polanyi completion
   - Legacy backfill (force tags + one-liners for all models)
   - Sector aggregation, force distribution, research priority queue
 
 Dashboard updates:
-  - engine_version → v3.14
+  - engine_version → v3.15
   - enrichment_summary, sector_model_aggregation, force_model_distribution
   - top_20_tri_actionable rebuilt with corrected scores
 
 State updates:
-  - state_version → 24
-  - current_cycle → v3-14
+  - state_version → 25
+  - current_cycle → v3-15
   - engine_version description updated
 """
 
@@ -35,7 +35,7 @@ UI_DASHBOARD = UI_DIR / "dashboard.json"
 
 
 def build_slim_model(m):
-    """Build UI-facing slim model with triple ranking + v3-14 enrichment."""
+    """Build UI-facing slim model with triple ranking + v3-15 enrichment."""
     cla = m.get("cla", {})
     vcr = m.get("vcr", {})
     roi = vcr.get("roi_estimate", {})
@@ -99,7 +99,7 @@ def build_slim_model(m):
 
 def main():
     print("=" * 70)
-    print("v3-14 UI REFRESH: Regenerating UI files with enrichment + score corrections + coverage")
+    print("v3-15 UI REFRESH: Regenerating UI files with SN redefinition + BCI + naming audit + Polanyi")
     print("=" * 70)
     print()
 
@@ -200,7 +200,7 @@ def main():
     vcr_system = data.get("rating_system", {}).get("vcr_system", {})
 
     ui_output = {
-        "cycle": "v3-14",
+        "cycle": "v3-15",
         "date": "2026-02-12",
         "total": len(models),
         "dual_ranking": True,
@@ -231,8 +231,8 @@ def main():
     with open(UI_DASHBOARD) as f:
         dashboard = json.load(f)
 
-    dashboard["engine_version"] = "v3.14"
-    dashboard["current_cycle"] = "v3-14"
+    dashboard["engine_version"] = "v3.15"
+    dashboard["current_cycle"] = "v3-15"
     dashboard["enrichment"] = True
     dashboard["enrichment_summary"] = enrichment_summary
 
@@ -417,15 +417,15 @@ def main():
     with open(STATE_FILE) as f:
         state = json.load(f)
 
-    state["state_version"] = 24
-    state["current_cycle"] = "v3-14"
+    state["state_version"] = 25
+    state["current_cycle"] = "v3-15"
     state["engine_version"] = (
-        "3.14 — 'Score Integrity + Coverage': 544 models. "
-        "(1) Score corrections: MO↔MA r=0.774→0.481, CAP↔VEL r=0.783→0.097 via sector/architecture decoupling. "
-        "(2) Batch normalization applied to deep-dive batches (T-mean 67.3→65.8). "
-        "(3) Coverage expansion: +36 models (quantum, synbio, climate, longevity, space, materials, cascades, counter-trend, geographic). "
-        "(4) Legacy backfill: force tags + one-liners for all 544 models. "
-        "(5) v3-13 enrichment: confidence tiers, evidence quality, falsification criteria, Polanyi automation, architecture normalization."
+        "3.15 — 'Market Necessity': 608 models. "
+        "(1) SN axis redefined: 'structural forces' → 'market necessity' (can alternatives fill this gap?). SN↔FA r=0.692→0.040. "
+        "(2) BCI coverage: 4 frontier models (medical, consumer, cognitive, infrastructure). "
+        "(3) AI naming audit: 63%→18.6% AI-in-name (286 renames, 13 kept). "
+        "(4) Polanyi completion: 466→538/608 (88.5%). NAICS 42/71 bridges extended. "
+        "(5) All v3-14 corrections preserved (MO/MA, CAP/VEL, ECO/MOA, batch normalization)."
     )
 
     # Update rated_models_index
@@ -445,7 +445,7 @@ def main():
     # ── Summary ──
     print()
     print("=" * 70)
-    print("v3-14 UI REFRESH COMPLETE")
+    print("v3-15 UI REFRESH COMPLETE")
     print("=" * 70)
     print()
     print(f"  Models: {len(models)}")

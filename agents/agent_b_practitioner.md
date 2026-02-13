@@ -60,10 +60,11 @@ For each business model, produce a **Model Card**:
   "forces": ["F1_technology", "F2_demographics"],
 
   "rating_inputs": {
-    "structural_necessity_evidence": {
-      "demand_drivers": ["what structural forces create demand"],
-      "supply_gap": "what gap exists that this fills",
-      "inevitability_argument": "why this MUST exist",
+    "market_necessity_evidence": {
+      "architecture_uniqueness": "why this architecture is hard to substitute",
+      "competitive_landscape": "how many alternatives target this same sector",
+      "incumbent_adaptation_barrier": "why incumbents CAN'T easily serve this need",
+      "market_concentration_gap": "what gap exists that concentrated markets can't fill",
       "pattern_refs": ["P-NNN"]
     },
     "force_alignment_detail": [

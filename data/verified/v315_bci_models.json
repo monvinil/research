@@ -1,0 +1,83 @@
+{
+  "batch": "v3-15_bci_frontier",
+  "date": "2026-02-12",
+  "description": "Brain-Computer Interface frontier models — emerging technology with LOW confidence",
+  "model_cards": [
+    {
+      "id": "V3-BCI-001",
+      "name": "Medical Brain-Computer Interface Platform",
+      "one_liner": "FDA-pathway neural interface platform for paralysis rehabilitation, locked-in syndrome communication, and prosthetic control — hardware+software+clinical trials vertically integrated.",
+      "scores": {"SN": 7.5, "FA": 4.5, "EC": 4.0, "TG": 3.0, "CE": 7.0},
+      "sector_naics": "3345",
+      "sector_name": "Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",
+      "architecture": "hardware_ai",
+      "forces_v3": ["F1_technology", "F2_demographics"],
+      "deep_dive_evidence": "Neuralink N1 implant received FDA Breakthrough Device Designation (2023). BrainGate clinical trials show 95% cursor control accuracy for paralyzed patients. Total spinal cord injury population ~300K in US. Aging population increases stroke-related paralysis cases. BCI market projected $3.7B by 2030 (Grand View Research).",
+      "falsification_criteria": [
+        "FDA rejects or significantly delays BCI device approval pathways beyond 2029",
+        "Non-invasive BCI alternatives achieve comparable signal resolution to implanted electrodes",
+        "Major adverse event in clinical trial triggers industry-wide regulatory freeze"
+      ],
+      "confidence_tier": "LOW",
+      "evidence_quality": 4,
+      "source_batch": "v315_bci_frontier"
+    },
+    {
+      "id": "V3-BCI-002",
+      "name": "Consumer Neurotechnology Accessibility Platform",
+      "one_liner": "Non-invasive EEG-based interface platform enabling motor-impaired users to control devices, communicate, and navigate digital environments — mass-market accessibility infrastructure.",
+      "scores": {"SN": 6.0, "FA": 4.0, "EC": 5.0, "TG": 4.0, "CE": 5.0},
+      "sector_naics": "3345",
+      "sector_name": "Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",
+      "architecture": "platform_infrastructure",
+      "forces_v3": ["F1_technology", "F2_demographics"],
+      "deep_dive_evidence": "Non-invasive EEG headsets declining in cost (Emotiv EPOC X at $849, OpenBCI at $399). ADA compliance requirements expanding to digital interfaces. WHO estimates 1.3B people globally with significant disabilities. Consumer EEG accuracy improving but still limited vs invasive (70% vs 95% classification). Kernel Flow and NextMind (acquired by Snap) demonstrate consumer interest.",
+      "falsification_criteria": [
+        "Non-invasive EEG classification accuracy plateaus below 85% for consumer-grade hardware",
+        "Major tech platforms (Apple, Google) build accessibility BCI features natively into devices",
+        "Consumer adoption rate remains below 0.1% of disability population after 3 years"
+      ],
+      "confidence_tier": "LOW",
+      "evidence_quality": 3,
+      "source_batch": "v315_bci_frontier"
+    },
+    {
+      "id": "V3-BCI-003",
+      "name": "Cognitive Augmentation Workspace",
+      "one_liner": "Neural-sensing productivity platform that monitors cognitive states (focus, fatigue, stress) via non-invasive wearables and optimizes work environment, task scheduling, and team coordination in real-time.",
+      "scores": {"SN": 3.5, "FA": 3.5, "EC": 6.0, "TG": 3.0, "CE": 4.0},
+      "sector_naics": "5415",
+      "sector_name": "Computer Systems Design and Related Services",
+      "architecture": "ai_copilot",
+      "forces_v3": ["F1_technology", "F5_psychology"],
+      "deep_dive_evidence": "Kernel Flow demonstrated high-density non-invasive neural imaging ($50K device). Muse, Neurosity (Crown headband) targeting consumer focus tracking. Workplace productivity software market $47B. Major adoption barriers: privacy concerns (brain data), accuracy of non-invasive sensing, employee acceptance. No evidence of enterprise adoption beyond wellness programs.",
+      "falsification_criteria": [
+        "Employee resistance to workplace neural monitoring prevents enterprise adoption for 5+ years",
+        "Non-invasive cognitive state classification fails to exceed 75% accuracy in real-world office conditions",
+        "Privacy regulation (GDPR, state laws) explicitly bans or severely restricts workplace neural data collection"
+      ],
+      "confidence_tier": "LOW",
+      "evidence_quality": 2,
+      "source_batch": "v315_bci_frontier"
+    },
+    {
+      "id": "V3-BCI-004",
+      "name": "BCI Signal Processing Infrastructure",
+      "one_liner": "Cloud infrastructure for neural signal processing — real-time decoding, noise reduction, and intent classification APIs that BCI device manufacturers build on instead of developing in-house.",
+      "scores": {"SN": 5.0, "FA": 3.0, "EC": 6.5, "TG": 5.0, "CE": 7.0},
+      "sector_naics": "5415",
+      "sector_name": "Computer Systems Design and Related Services",
+      "architecture": "data_compounding",
+      "forces_v3": ["F1_technology"],
+      "deep_dive_evidence": "BCI signal processing is the bottleneck — every BCI company builds proprietary decoders. Neural data is high-dimensional (256+ channels, 1kHz+ sampling). Cloud processing enables model sharing and transfer learning across patients. Open-source frameworks (MNE-Python, BCI2000) demonstrate demand for shared infrastructure. Data moat: neural signal patterns compound across users.",
+      "falsification_criteria": [
+        "BCI device manufacturers insist on on-device processing for latency and privacy, making cloud APIs irrelevant",
+        "Open-source neural decoding models achieve parity with proprietary infrastructure within 2 years",
+        "Total BCI device market remains below $1B through 2030, insufficient to support infrastructure layer"
+      ],
+      "confidence_tier": "LOW",
+      "evidence_quality": 3,
+      "source_batch": "v315_bci_frontier"
+    }
+  ]
+}

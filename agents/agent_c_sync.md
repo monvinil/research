@@ -42,14 +42,19 @@ After Agent B produces model cards, compute the **5-axis rating** for each busin
 ```
 FIVE-AXIS RATING SYSTEM
 
-AXIS 1: STRUCTURAL NECESSITY (SN) [0-10] weight: 25%
-├── Does this business MUST-EXIST given structural forces?
-├── 9-10: Structural forces guarantee demand (labor gap × cost collapse × demographic need)
-├── 7-8:  Strong structural pull from 2+ forces
-├── 5-6:  Moderate structural pull, viable but not inevitable
-├── 3-4:  Weak structural pull, could exist but not compelled
-├── 1-2:  No structural driver, purely entrepreneurial
-└── Data inputs: force_velocities, sector phase, pattern strength, O*NET Polanyi classification
+AXIS 1: MARKET NECESSITY (SN) [0-10] weight: 25%
+├── Does this model address a gap that alternatives can't fill?
+├── 9-10: Unique architecture in a sector with no incumbent adaptation path
+├── 7-8:  Low-substitutability architecture with sparse competitive density
+├── 5-6:  Moderate necessity — some alternatives exist but imperfect fit
+├── 3-4:  Multiple substitutes available, incumbents could adapt
+├── 1-2:  Fully substitutable, incumbents already adapting
+├── Scoring inputs (4 components):
+│   ├── Architecture uniqueness (40%): inverse of how easily another arch serves same need
+│   ├── Competitive density (25%): fewer models in same 2-digit NAICS = more necessary
+│   ├── Incumbent adaptation inversion (20%): if incumbents CAN'T adapt → more necessary
+│   └── Market concentration necessity (15%): concentrated markets → fewer viable solutions
+└── IMPORTANT: SN measures market-necessity, NOT force-strength (that is FA's job)
 
 AXIS 2: FORCE ALIGNMENT (FA) [0-10] weight: 25%
 ├── How many of F1-F6 forces drive this, weighted by velocity?

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.14</title>
+<title>Research Engine v3.15</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -819,15 +819,16 @@ document.addEventListener('DOMContentLoaded',function(){
     <a data-view="sectors">Sectors</a>
     <a data-view="regions">Regions</a>
     <a data-view="fear">Fear Index</a>
+    <a data-view="timeline">Timeline</a>
     <a data-view="data">Data</a>
     <a data-view="glossary">Glossary</a>
   </nav>
 
   <header>
-    <h1>Research Engine v3.14</h1>
+    <h1>Research Engine v3.15</h1>
     <div class="subtitle">
       <span class="cycle-badge" id="cycle-badge">v3-12</span>
-      &nbsp; <span id="model-total-sub">604 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      &nbsp; <span id="model-total-sub">608 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
     <div style="font-size:11px;color:var(--dim);margin-top:4px;line-height:1.5;max-width:820px">Projects what the economy becomes (2026&ndash;2031). Each model is a venture-scale opportunity scored on 3 independent axes: Transformation (will it happen?), Opportunity (can an entrant play?), and VC ROI (is it investable?). See <a href="#" onclick="event.preventDefault();document.querySelector('[data-view=glossary]').click()" style="color:var(--accent);text-decoration:underline">Glossary</a> for full definitions.</div>
   </header>
@@ -1018,6 +1019,35 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="displacement-grid" id="displacement-grid"></div>
   </div>
 
+  <!-- ═══ VIEW: TIMELINE ═══ -->
+  <div id="view-timeline" class="view-section">
+    <div class="section-label">Timing Wave Analysis <span class="count">entry cohorts mapped to Perez cycle phases (2026&ndash;2031)</span></div>
+    <div class="kpi-row" id="timeline-kpis"></div>
+    <div class="glass-static card" style="margin-bottom:16px">
+      <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Entry Cohorts by TG Score</div>
+      <div id="timeline-wave"></div>
+    </div>
+    <div class="glass-static card" style="margin-bottom:16px">
+      <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Perez Cycle Overlay</div>
+      <div style="font-size:11px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px">Carlota Perez technological revolution framework applied to AI. Current position: late Installation / early Turning Point (2026). After the turning point, broad deployment (Synergy) begins.</div>
+      <div id="perez-wave" style="display:flex;gap:2px;height:40px;border-radius:var(--radius-xs);overflow:hidden">
+        <div style="flex:2;background:rgba(248,113,113,0.15);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--red)">INSTALLATION<br>2020&ndash;2026</div>
+        <div style="flex:1;background:rgba(251,191,36,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--amber)">TURNING POINT<br>2026&ndash;2028</div>
+        <div style="flex:3;background:rgba(52,211,153,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--green)">DEPLOYMENT / SYNERGY<br>2028&ndash;2035</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="glass-static card">
+        <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Ready Now (TG 8&ndash;9) &mdash; 2026 entry</div>
+        <div id="cohort-now" style="font-size:11px;color:var(--text-secondary);line-height:1.8"></div>
+      </div>
+      <div class="glass-static card">
+        <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Building Phase (TG 6&ndash;7) &mdash; 2027&ndash;28 entry</div>
+        <div id="cohort-build" style="font-size:11px;color:var(--text-secondary);line-height:1.8"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ VIEW: DATA ═══ -->
   <div id="view-data" class="view-section">
     <div class="two-col">
@@ -1047,12 +1077,16 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="cycle-chart" id="cycle-chart"></div>
       <div style="height:24px"></div>
     </div>
+    <div class="glass-static card" style="margin-top:16px">
+      <div class="section-label">Research Priority Queue <span class="count" id="rpq-count">high T-rank + low confidence &mdash; prioritized for deeper research</span></div>
+      <div id="research-priority-queue" style="font-size:11px"></div>
+    </div>
   </div>
 
   <!-- ═══ VIEW: GLOSSARY ═══ -->
   <div id="view-glossary" class="view-section">
     <div class="glossary-intro">
-      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031 by tracking 6 macro forces, scoring 604 business models across 3 independent dimensions, and mapping transformation paths across sectors and geographies. Each model represents a specific venture-scale opportunity within a transforming sector. Models are scored on three axes that answer different questions &mdash; all scores are 1&ndash;10 per axis, composited to 0&ndash;100.
+      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031 by tracking 6 macro forces, scoring 608 business models across 3 independent dimensions, and mapping transformation paths across sectors and geographies. Each model represents a specific venture-scale opportunity within a transforming sector. Models are scored on three axes that answer different questions &mdash; all scores are 1&ndash;10 per axis, composited to 0&ndash;100.
     </div>
 
     <!-- Triple Ranking System -->
@@ -1250,7 +1284,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
   </div>
 
-  <div class="footer">Research Engine v3.14 &middot; 604 models &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v3.15 &middot; 608 models &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -2202,6 +2236,123 @@ function renderCycles(cycles) {
   }).join('');
 }
 
+// ─── TIMELINE ───
+function renderTimeline(models) {
+  if (!models || !models.length) return;
+  const cohorts = {
+    'TG 8-9': { label: '2026 Entry', color: 'var(--green)', models: [] },
+    'TG 6-7': { label: '2027-28', color: 'var(--blue)', models: [] },
+    'TG 3-5': { label: '2029-31', color: 'var(--amber)', models: [] },
+    'TG 1-2': { label: 'Long Horizon', color: 'var(--dim)', models: [] },
+  };
+  models.forEach(m => {
+    const tg = (m.scores || {}).TG || 5;
+    if (tg >= 8) cohorts['TG 8-9'].models.push(m);
+    else if (tg >= 6) cohorts['TG 6-7'].models.push(m);
+    else if (tg >= 3) cohorts['TG 3-5'].models.push(m);
+    else cohorts['TG 1-2'].models.push(m);
+  });
+
+  // KPIs
+  const kpiEl = document.getElementById('timeline-kpis');
+  const kpiData = [
+    { label: 'Ready Now', sub: 'TG 8-9 • 2026 entry', value: cohorts['TG 8-9'].models.length, color: 'var(--green)' },
+    { label: 'Building', sub: 'TG 6-7 • 2027-28', value: cohorts['TG 6-7'].models.length, color: 'var(--blue)' },
+    { label: 'Emerging', sub: 'TG 3-5 • 2029-31', value: cohorts['TG 3-5'].models.length, color: 'var(--amber)' },
+    { label: 'Long Horizon', sub: 'TG 1-2', value: cohorts['TG 1-2'].models.length, color: 'var(--dim)' },
+  ];
+  kpiEl.innerHTML = kpiData.map(k =>
+    `<div class="glass kpi"><div class="kpi-label">${k.label}</div><div class="kpi-value" style="color:${k.color}">${k.value}</div><div class="kpi-sub">${k.sub}</div></div>`
+  ).join('');
+
+  // Wave bar chart
+  const waveEl = document.getElementById('timeline-wave');
+  const maxCount = Math.max(...Object.values(cohorts).map(c => c.models.length), 1);
+  const confCount = (arr, tier) => arr.filter(m => m.confidence_tier === tier).length;
+  waveEl.innerHTML = '<div style="display:flex;gap:8px;align-items:flex-end;height:140px">' +
+    Object.entries(cohorts).map(([key, c]) => {
+      const h = Math.max(12, (c.models.length / maxCount) * 130);
+      const high = confCount(c.models, 'HIGH');
+      const mod = confCount(c.models, 'MODERATE');
+      const low = confCount(c.models, 'LOW');
+      const total = c.models.length;
+      const hPct = total ? (high / total * 100) : 0;
+      const mPct = total ? (mod / total * 100) : 0;
+      return `<div style="flex:1;text-align:center">
+        <div style="font-size:18px;font-weight:700;color:${c.color};margin-bottom:4px">${total}</div>
+        <div style="height:${h}px;border-radius:var(--radius-xs);overflow:hidden;display:flex;flex-direction:column" title="${key}: ${high} HIGH, ${mod} MODERATE, ${low} LOW">
+          <div style="flex:${hPct || 0.01};background:rgba(52,211,153,0.35)"></div>
+          <div style="flex:${mPct || 0.01};background:rgba(251,191,36,0.25)"></div>
+          <div style="flex:${100 - hPct - mPct || 0.01};background:rgba(248,113,113,0.2)"></div>
+        </div>
+        <div style="font-size:9px;color:var(--dim);margin-top:6px;font-weight:600">${c.label}</div>
+      </div>`;
+    }).join('') +
+    '</div>' +
+    '<div style="display:flex;gap:12px;justify-content:center;margin-top:10px;font-size:9px;color:var(--text-secondary)">' +
+    '<span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(52,211,153,0.5);margin-right:3px"></span>HIGH</span>' +
+    '<span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(251,191,36,0.4);margin-right:3px"></span>MODERATE</span>' +
+    '<span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(248,113,113,0.35);margin-right:3px"></span>LOW</span>' +
+    '</div>';
+
+  // Cohort detail lists
+  function renderCohortList(elId, arr) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const sorted = arr.slice().sort((a, b) => (b.composite || 0) - (a.composite || 0));
+    const show = sorted.slice(0, 15);
+    el.innerHTML = show.map(m => {
+      const confCls = 'conf-' + (m.confidence_tier || 'LOW');
+      return `<div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.03)">
+        <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.name)}</span>
+        <span style="display:flex;gap:6px;align-items:center;flex-shrink:0;margin-left:8px">
+          <span style="color:var(--amber);font-weight:600;font-size:10px">T${(m.composite||0).toFixed(0)}</span>
+          <span class="confidence-badge ${confCls}" style="font-size:7px;padding:1px 4px">${(m.confidence_tier||'LOW')[0]}</span>
+        </span>
+      </div>`;
+    }).join('');
+    if (sorted.length > 15) {
+      el.innerHTML += `<div style="color:var(--dim);font-size:10px;margin-top:6px">+ ${sorted.length - 15} more</div>`;
+    }
+  }
+  renderCohortList('cohort-now', cohorts['TG 8-9'].models);
+  renderCohortList('cohort-build', cohorts['TG 6-7'].models);
+}
+
+// ─── RESEARCH PRIORITY QUEUE ───
+function renderResearchPriorities(dashboard) {
+  const el = document.getElementById('research-priority-queue');
+  const rpq = (dashboard || {}).research_priorities;
+  if (!rpq || !rpq.length) { el.innerHTML = '<div style="color:var(--dim)">No research priorities available</div>'; return; }
+  const countEl = document.getElementById('rpq-count');
+  if (countEl) countEl.textContent = rpq.length + ' models — high T-rank + low confidence — prioritized for deeper research';
+
+  el.innerHTML = '<table style="width:100%;border-collapse:collapse">' +
+    '<thead><tr style="font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:0.5px;text-align:left">' +
+    '<th style="padding:4px 6px;font-weight:600">#</th>' +
+    '<th style="padding:4px 6px;font-weight:600">Name</th>' +
+    '<th style="padding:4px 6px;font-weight:600">T</th>' +
+    '<th style="padding:4px 6px;font-weight:600">O</th>' +
+    '<th style="padding:4px 6px;font-weight:600">VCR</th>' +
+    '<th style="padding:4px 6px;font-weight:600">Conf</th>' +
+    '<th style="padding:4px 6px;font-weight:600">Evid</th>' +
+    '</tr></thead><tbody>' +
+    rpq.map(r => {
+      const confCls = 'conf-' + (r.confidence_tier || 'LOW');
+      const evStars = '●'.repeat(r.evidence_quality || 1) + '○'.repeat(Math.max(0, 5 - (r.evidence_quality || 1)));
+      return `<tr style="border-bottom:1px solid rgba(255,255,255,0.03)">
+        <td style="padding:5px 6px;color:var(--dim);font-size:10px">${r.rank}</td>
+        <td style="padding:5px 6px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(r.name)}</td>
+        <td style="padding:5px 6px;color:var(--amber);font-weight:600">${(r.composite||0).toFixed(1)}</td>
+        <td style="padding:5px 6px;color:var(--green)">${(r.opportunity_composite||0).toFixed(1)}</td>
+        <td style="padding:5px 6px;color:var(--blue)">${(r.vcr_composite||0).toFixed(1)}</td>
+        <td style="padding:5px 6px"><span class="confidence-badge ${confCls}" style="font-size:7px;padding:1px 4px">${(r.confidence_tier||'LOW')}</span></td>
+        <td style="padding:5px 6px;font-size:9px;color:var(--text-secondary);letter-spacing:-0.5px">${evStars}</td>
+      </tr>`;
+    }).join('') +
+    '</tbody></table>';
+}
+
 // ─── MAIN ───
 async function refresh() {
   const [d, m] = await Promise.all([
@@ -2261,6 +2412,7 @@ async function refresh() {
     renderVcrTriList(d);
     renderPatterns(d);
     renderForceDistribution(d);
+    renderResearchPriorities(d);
 
     // VCR KPIs
     const vcrStats = d.vcr_stats || {};
@@ -2283,6 +2435,7 @@ async function refresh() {
     renderConfidenceFilters(allModels);
     renderForceFilters(allModels);
     renderScatterPlot(allModels);
+    renderTimeline(allModels);
     applyFilters();
     applyVcrFilters();
   }
