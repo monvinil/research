@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 """
-v3-13 UI Refresh: Regenerate models.json and dashboard.json with enrichment fields.
+v3-14 UI Refresh: Regenerate models.json and dashboard.json with all v3-14 changes.
 
-New fields added to slim models:
-  - confidence_tier (HIGH/MODERATE/LOW)
-  - evidence_quality (0-10)
-  - polanyi.automation_exposure, polanyi.dominant_category (if available)
-  - architecture (now normalized to 15 canonical types)
+Includes:
+  - v3-13 enrichment fields (confidence_tier, evidence_quality, polanyi, architecture)
+  - v3-14 score corrections (MO/MA, CAP/VEL axis decoupling, batch normalization)
+  - v3-14 coverage expansion (544 models: +16 frontier, +11 cascades, +6 structural, +3 counter-trend)
+  - Legacy backfill (force tags + one-liners for all models)
+  - Sector aggregation, force distribution, research priority queue
 
 Dashboard updates:
-  - engine_version → v3.13
-  - enrichment_summary with confidence/polanyi/architecture stats
-  - top_20_tri_actionable rebuilt with canonical architectures
+  - engine_version → v3.14
+  - enrichment_summary, sector_model_aggregation, force_model_distribution
+  - top_20_tri_actionable rebuilt with corrected scores
 
 State updates:
-  - state_version → 23
-  - current_cycle → v3-13
+  - state_version → 24
+  - current_cycle → v3-14
   - engine_version description updated
 """
 
@@ -34,7 +35,7 @@ UI_DASHBOARD = UI_DIR / "dashboard.json"
 
 
 def build_slim_model(m):
-    """Build UI-facing slim model with triple ranking + v3-13 enrichment."""
+    """Build UI-facing slim model with triple ranking + v3-14 enrichment."""
     cla = m.get("cla", {})
     vcr = m.get("vcr", {})
     roi = vcr.get("roi_estimate", {})
@@ -98,7 +99,7 @@ def build_slim_model(m):
 
 def main():
     print("=" * 70)
-    print("v3-13 UI REFRESH: Regenerating UI files with enrichment data")
+    print("v3-14 UI REFRESH: Regenerating UI files with enrichment + score corrections + coverage")
     print("=" * 70)
     print()
 
@@ -199,7 +200,7 @@ def main():
     vcr_system = data.get("rating_system", {}).get("vcr_system", {})
 
     ui_output = {
-        "cycle": "v3-13",
+        "cycle": "v3-14",
         "date": "2026-02-12",
         "total": len(models),
         "dual_ranking": True,
@@ -230,8 +231,8 @@ def main():
     with open(UI_DASHBOARD) as f:
         dashboard = json.load(f)
 
-    dashboard["engine_version"] = "v3.13"
-    dashboard["current_cycle"] = "v3-13"
+    dashboard["engine_version"] = "v3.14"
+    dashboard["current_cycle"] = "v3-14"
     dashboard["enrichment"] = True
     dashboard["enrichment_summary"] = enrichment_summary
 
@@ -416,16 +417,15 @@ def main():
     with open(STATE_FILE) as f:
         state = json.load(f)
 
-    state["state_version"] = 23
-    state["current_cycle"] = "v3-13"
+    state["state_version"] = 24
+    state["current_cycle"] = "v3-14"
     state["engine_version"] = (
-        "3.13 — 'Enrichment' cycle: Added 5 data quality dimensions to all 508 models. "
-        "(1) Confidence tiers (HIGH/MODERATE/LOW) based on source provenance and evidence depth. "
-        "(2) Evidence quality scores (0-10) measuring analytical rigor per model. "
-        "(3) Falsification criteria — 2-4 testable projection-invalidation conditions per model (63 unique criteria). "
-        "(4) Polanyi automation exposure — O*NET-derived task automation metrics (466/508 models). "
-        "(5) Architecture normalization — 15 canonical types from 54+ variants, zero blanks remaining. "
-        "No scoring changes — Transformation, Opportunity, and VCR axes unchanged from v3-12."
+        "3.14 — 'Score Integrity + Coverage': 544 models. "
+        "(1) Score corrections: MO↔MA r=0.774→0.481, CAP↔VEL r=0.783→0.097 via sector/architecture decoupling. "
+        "(2) Batch normalization applied to deep-dive batches (T-mean 67.3→65.8). "
+        "(3) Coverage expansion: +36 models (quantum, synbio, climate, longevity, space, materials, cascades, counter-trend, geographic). "
+        "(4) Legacy backfill: force tags + one-liners for all 544 models. "
+        "(5) v3-13 enrichment: confidence tiers, evidence quality, falsification criteria, Polanyi automation, architecture normalization."
     )
 
     # Update rated_models_index
@@ -445,7 +445,7 @@ def main():
     # ── Summary ──
     print()
     print("=" * 70)
-    print("v3-13 UI REFRESH COMPLETE")
+    print("v3-14 UI REFRESH COMPLETE")
     print("=" * 70)
     print()
     print(f"  Models: {len(models)}")
