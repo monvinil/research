@@ -1,0 +1,2838 @@
+{
+  "engine_version": "v4.0",
+  "cycle": "v4-0",
+  "date": "2026-02-12",
+  "total_narratives": 15,
+  "tns_system": {
+    "axes": {
+      "EM": {
+        "name": "Economic Magnitude",
+        "weight": 25,
+        "question": "How large is the GDP/employment impact?"
+      },
+      "FC": {
+        "name": "Force Convergence",
+        "weight": 25,
+        "question": "How many forces drive this, how aligned?"
+      },
+      "ES": {
+        "name": "Evidence Strength",
+        "weight": 20,
+        "question": "How much hard data confirms direction?"
+      },
+      "TC": {
+        "name": "Timing Confidence",
+        "weight": 15,
+        "question": "How confident are we in the timeline?"
+      },
+      "IR": {
+        "name": "Irreversibility",
+        "weight": 15,
+        "question": "Once started, can this be reversed?"
+      }
+    },
+    "composite_formula": "(EM*25 + FC*25 + ES*20 + TC*15 + IR*15) / 10",
+    "categories": {
+      "DEFINING": ">=80: Economy-reshaping, high confidence",
+      "MAJOR": ">=65: Significant with strong evidence",
+      "MODERATE": ">=50: Clear direction, moderate evidence",
+      "EMERGING": ">=35: Early signals, plausible",
+      "SPECULATIVE": "<35: Hypothesis stage"
+    }
+  },
+  "narratives": [
+    {
+      "narrative_id": "TN-003",
+      "name": "Manufacturing Transformation",
+      "slug": "manufacturing",
+      "tns_composite": 89.0,
+      "tns_category": "DEFINING",
+      "tns_rank": 1,
+      "tns_scores": {
+        "EM": 9.0,
+        "FC": 9.3,
+        "ES": 10.0,
+        "TC": 6.5,
+        "IR": 9.0
+      },
+      "sectors": [
+        {
+          "naics": "31-33",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F3_geopolitics",
+        "F4_capital",
+        "F6_energy"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-9 DEEP DIVE (first ever): 12.87M workers, 392K establishments, $82,575 avg pay, $1.06T total wages. Baumol 1.14x (moderate — transformation is ADDITIVE not substitutional). 6 sub-sectors analyzed: Food (311: 1.73M emp, Baumol 0.82, robot orders +85.6%), Fabricated Metal (332: 1.44M emp, most fragmented at 60.7K establishments), Machinery (333: 1.18M emp, CNC/digital twin frontier), Computer/Electronic (334: 1.06M emp, CHIPS Act driven), Transportation Equipment (336: 1.88M emp, EV transition ",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Manufacturing. First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V312-TRN-001",
+          "MC-V312-CON-011",
+          "MC-V312-TRN-005",
+          "MC-V312-TRN-002",
+          "MC-V312-TRN-006",
+          "V318-TMP-001",
+          "MC-V314-CT-001",
+          "MC-V313-71-004",
+          "MC-V313-71-009",
+          "MC-V38-44-002-L2",
+          "C7-AM-FOOD-01",
+          "MC-V313-11-001",
+          "C7-AM-MFG-01",
+          "PC8-FSR-PHARMMFG-01",
+          "MC-V312-TRN-003",
+          "MC-V313-42-001",
+          "PC8-FSR-PETROLREF-01",
+          "MC-V313-11-006",
+          "MC-V313-92-004",
+          "MC-V314-AM-002",
+          "MC-V39-MFG-002",
+          "V318-OB-001",
+          "MC-V312-CON-002",
+          "V318-TMP-002",
+          "C7-RC-MFG-01",
+          "MC-V37-523-001",
+          "MC-V38-44-002-L3",
+          "V3-DEF-006",
+          "MC-V39-MFG-001",
+          "V3-DEF-007-L4",
+          "V318-WHL-004",
+          "MC-V39-MFG-009",
+          "C7-RC-FOOD-01",
+          "MC-V37-523-006",
+          "MC-V39-MFG-003",
+          "MC-V313-42-002",
+          "MC-V313-21-008",
+          "MC-V37-53-005",
+          "C7-AM-MEATPROCESS-01",
+          "MC-UTL-004",
+          "MC-V313-11-005",
+          "MC-V37-523-003",
+          "MC-V312-TRN-008",
+          "MC-V312-TRN-009",
+          "MC-V39-MFG-006",
+          "MC-V313-42-013",
+          "MC-V39-MFG-010",
+          "MC-INFO-006",
+          "V318-TMP-003",
+          "C7-PA-COSMETICS-01",
+          "MC-V312-TRN-010",
+          "C7-PA-HVAC-01",
+          "MC-V35-5259-001",
+          "V318-OB-003",
+          "V318-OB-006",
+          "MC-52-001",
+          "MC-V312-CON-012",
+          "MC-V312-CON-005",
+          "MC-V312-TRN-014",
+          "MC-V313-21-001",
+          "MC-DEF-013",
+          "MC-UTL-006",
+          "MC-V312-ACC-002",
+          "MC-V312-ADM-007",
+          "C7-PA-MEDDEVICE-01",
+          "C7-AM-GLASS-01",
+          "MC-UTL-002",
+          "MC-V312-ADM-004",
+          "C7-AM-PAPERCONVERT-01",
+          "C7-AM-SAWMILL-01",
+          "C7-AM-METALFAB-01",
+          "C7-AM-PLASTICS-01",
+          "C7-AM-PRINT-01",
+          "MC-V314-48-001",
+          "MC-V35-5239-002",
+          "C7-AM-COATING-01",
+          "MC-V313-42-007",
+          "MC-V35-3341-002",
+          "C7-AM-AUTOPARTS-01",
+          "C7-AM-BAKERY-01",
+          "MC-V313-71-006",
+          "C7-AM-FURNITURE-01",
+          "MC-V312-ADM-003",
+          "MC-V314-SB-002",
+          "MC-V37-523-007",
+          "MC-UTL-001",
+          "MC-V313-11-002",
+          "MC-V314-SP-001",
+          "MC-UTL-010",
+          "MC-V313-11-008",
+          "MC-V314-QC-001",
+          "C7-AM-CONFECTION-01",
+          "MC-UTL-004-L3",
+          "MC-V39-MFG-004",
+          "C7-RC-PRINT-01",
+          "MC-INFO-001",
+          "MC-UTL-004-L5",
+          "MC-V312-ACC-004",
+          "MC-V39-MFG-007",
+          "V318-UTL-002",
+          "MC-V313-11-010",
+          "MC-V35-2111-001",
+          "MC-V39-MFG-011",
+          "C7-RC-PLASTICS-01",
+          "MC-V313-11-003",
+          "MC-V37-55-008",
+          "MC-UTL-004-L1",
+          "MC-V313-11-011",
+          "MC-31-002",
+          "MC-V312-ACC-003",
+          "MC-V312-ADM-008",
+          "MC-V35-4862-001",
+          "MC-V37-53-006",
+          "MC-V39-MFG-008",
+          "C7-RC-BAKERY-01",
+          "MC-INFO-007",
+          "MC-UTL-002-L6",
+          "MC-UTL-007",
+          "MC-V314-SB-001",
+          "C7-RC-METALFAB-01",
+          "MC-UTL-002-L2",
+          "MC-V313-21-002",
+          "MC-V313-21-007",
+          "MC-V314-CT-003",
+          "MC-31-001",
+          "C7-MN-MFG-01",
+          "C7-RC-FURNITURE-01",
+          "MC-UTL-002-L3",
+          "MC-UTL-005",
+          "V3-DEF-002-L3",
+          "C7-AM-FOUNDRY-01",
+          "MC-52-003",
+          "MC-UTL-002-L4",
+          "MC-V312-ACC-008",
+          "MC-V312-ADM-011",
+          "C7-AM-TEXTILES-01",
+          "C7-RC-COATING-01",
+          "MC-V39-MFG-012",
+          "MC-V35-5223-001",
+          "MC-DEF-012-L4",
+          "C7-RC-BEVERAGE-01",
+          "C7-RC-AUTOPARTS-01",
+          "MC-V312-CON-007",
+          "MC-V39-MFG-005",
+          "MC-INFO-005",
+          "MC-V312-CON-006",
+          "MC-DEF-017",
+          "MC-V313-42-003",
+          "V318-ART-004",
+          "MC-56-003",
+          "MC-UTL-002-L5",
+          "MC-UTL-008",
+          "MC-DEF-016",
+          "MC-INFO-009",
+          "C7-MN-PRINT-01",
+          "MC-V313-71-008",
+          "MC-V314-SB-003",
+          "MC-V38-62-019",
+          "MC-31-003",
+          "C7-PA-PRINTING-01",
+          "MC-V313-42-005",
+          "MC-V313-92-001",
+          "MC-V35-5416-001",
+          "MC-V37-55-003",
+          "MC-UTL-009",
+          "MC-V39-MICRO-004",
+          "C7-MN-FOOD-01",
+          "MC-UTL-004-L6",
+          "MC-52-002",
+          "MC-DEF-018",
+          "PC8-FSR-SEMICON-01",
+          "MC-V37-53-007",
+          "C7-PA-BEVERAGE-01",
+          "MC-V313-21-010",
+          "MC-V38-62-017",
+          "MC-V38-62-012",
+          "MC-V312-ACC-013",
+          "MC-V35-3341-001",
+          "MC-V35-3344-001",
+          "V318-UTL-003",
+          "MC-UTL-004-L2",
+          "C7-PA-AUTOPARTS-01",
+          "MC-V35-3364-001",
+          "MC-V313-21-005"
+        ],
+        "whats_needed": [
+          "V318-CP-001",
+          "MC-V313-71-003",
+          "V318-OCE-004",
+          "V318-OCE-003",
+          "V318-OCE-001",
+          "V3-DEF-001",
+          "MC-V37-55-006",
+          "V3-DEF-007",
+          "MC-V314-GEO-001",
+          "V318-UTL-001",
+          "MC-V313-92-008",
+          "MC-V313-92-009",
+          "V318-SYN-002",
+          "MC-V314-GEO-003",
+          "MC-V37-523-002",
+          "V318-CP-005",
+          "MC-V313-92-011",
+          "MC-V314-SP-002",
+          "MC-V314-GEO-002",
+          "MC-DEF-012",
+          "MC-V314-AM-001",
+          "MC-V35-5239-001",
+          "V318-CP-004",
+          "MC-V312-TRN-007",
+          "MC-V313-11-004",
+          "MC-V313-21-006",
+          "MC-V314-GEO-004",
+          "MC-V313-71-010",
+          "MC-V313-92-005",
+          "MC-V37-523-008",
+          "MC-UTL-003",
+          "MC-V313-11-007",
+          "MC-V37-62-002",
+          "MC-V37-523-004",
+          "V3-DEF-009",
+          "MC-EDU-FEAR-01",
+          "MC-V38-44-008",
+          "V318-ART-003",
+          "V318-OCE-006",
+          "MC-V312-CON-014",
+          "MC-INFO-003",
+          "MC-V312-ACC-009",
+          "MC-V314-CT-002",
+          "MC-V37-523-005",
+          "MC-V312-CON-009",
+          "PC8-PI-GRANTMFG-01",
+          "MC-DEF-014",
+          "MC-V313-42-006",
+          "MC-V314-QC-003",
+          "C7-PI-MFG-01",
+          "MC-V313-21-009",
+          "MC-V312-ADM-006",
+          "MC-V37-5415-008",
+          "MC-V313-42-009",
+          "V318-WHL-005",
+          "MC-V37-523-009",
+          "MC-V39-MICRO-007",
+          "V318-CP-002",
+          "MC-V313-42-004",
+          "V3-BCI-002"
+        ],
+        "what_dies": [
+          "MC-DEF-015",
+          "V3-ENERGY-004",
+          "MC-V35-5417-001",
+          "MC-V312-ADM-010",
+          "MC-V35-5417-002",
+          "MC-V35-5413-001",
+          "C7-PA-AGEQUIPMENT-01",
+          "MC-V313-42-008",
+          "MC-V313-42-014",
+          "MC-V314-CTR-002",
+          "MC-V35-5411-001",
+          "MC-V37-53-008",
+          "V3-BCI-001",
+          "MC-V313-42-010",
+          "MC-V314-SP-003",
+          "MC-V37-62-008"
+        ]
+      },
+      "model_counts": {
+        "what_works": 184,
+        "whats_needed": 60,
+        "what_dies": 16,
+        "total": 260
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-001"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 7,
+        "gap": 1,
+        "classification": "low_friction",
+        "notes": "v3-9 deep dive confirms: LOW friction. Manufacturing transformation is ADDITIVE not substitutional — cobots augment workers who don't exist (499K shortage). Owner reluctance is about RETIREMENT not AI fear. Worker friction near zero (cobots do dangerous/repetitive tasks). 78-point implementation gap is capability not psychology."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-010",
+        "FC-011",
+        "FC-012",
+        "FC-013",
+        "FC-014",
+        "FC-015",
+        "FC-016",
+        "FC-017",
+        "FC-018",
+        "FC-019"
+      ]
+    },
+    {
+      "narrative_id": "TN-001",
+      "name": "Financial Services Transformation",
+      "slug": "financial-services",
+      "tns_composite": 88.0,
+      "tns_category": "DEFINING",
+      "tns_rank": 2,
+      "tns_scores": {
+        "EM": 8.0,
+        "FC": 8.7,
+        "ES": 10.0,
+        "TC": 8.5,
+        "IR": 9.0
+      },
+      "sectors": [
+        {
+          "naics": "52",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F4_capital",
+        "F2_demographics",
+        "F5_psychology"
+      ],
+      "transformation_phase": "acceleration",
+      "summary": "v3-6: Office CMBS 12.34% (all-time record, above 2008). CRE cascade chain validated. 3 new FS model cards scored (5239-001: 78.75, 5223-001: 78.5, 5239-002: 71.25). Mortgage servicing most extreme labor signal: 13.8% wage growth AND -10.7% employment simultaneously. RIA sector (523940) has 496K workers at $270K avg and extreme fragmentation — identified by sector screener as next FS deep-dive target.",
+      "year_by_year": {
+        "2026": {
+          "phase": "acceleration",
+          "description": "Rapid transformation in Financial Services. Multiple disruption vectors active simultaneously.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "restructuring",
+          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "restructuring",
+          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure forming. Survivors adapting to new reality.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "Transformation largely complete. Sector operating under new economics.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V312-TRN-001",
+          "MC-V312-CON-011",
+          "MC-V312-TRN-005",
+          "MC-V312-TRN-002",
+          "MC-V314-CT-001",
+          "MC-V313-71-001",
+          "MC-V313-71-004",
+          "MC-V312-CON-003",
+          "MC-V313-71-009",
+          "MC-V38-44-002",
+          "MC-V38-44-002-L2",
+          "MC-V313-11-001",
+          "V318-AGT-002",
+          "MC-V312-TRN-003",
+          "MC-V313-42-001",
+          "MC-V313-11-006",
+          "MC-V313-92-004",
+          "MC-V314-AM-002",
+          "MC-V39-MFG-002",
+          "V318-OB-001",
+          "MC-V312-CON-002",
+          "MC-V37-55-005",
+          "MC-V37-523-001",
+          "MC-V38-44-002-L3",
+          "MC-V312-TRN-013",
+          "MC-V39-MFG-001",
+          "V3-DEF-007-L4",
+          "V318-WHL-004",
+          "MC-V313-92-002",
+          "MC-V314-53-001",
+          "MC-V39-MFG-009",
+          "MC-V312-ACC-006",
+          "MC-V37-523-006",
+          "MC-V39-MFG-003",
+          "V318-SYN-001",
+          "C7-DC-INSURANCE-01",
+          "MC-V313-21-008",
+          "MC-V37-53-005",
+          "MC-UTL-004",
+          "MC-V313-11-005",
+          "MC-V314-53-002",
+          "MC-V37-523-003",
+          "MC-V38-44-002-L6",
+          "MC-V312-TRN-008",
+          "MC-V312-TRN-011",
+          "MC-V37-62-003",
+          "MC-V38-44-001",
+          "MC-V39-MFG-006",
+          "MC-V313-42-013",
+          "MC-V37-53-001",
+          "MC-V39-MFG-010",
+          "MC-INFO-006",
+          "MC-V312-ACC-001",
+          "MC-V312-TRN-010",
+          "MC-V37-55-002",
+          "MC-V313-71-002",
+          "MC-V35-5259-001",
+          "MC-V38-44-003-L3",
+          "V318-OB-006",
+          "PC8-AB-INSAGENCY-01",
+          "MC-52-001",
+          "MC-V312-CON-004",
+          "MC-V312-CON-012",
+          "MC-V312-CON-005",
+          "MC-V312-TRN-014",
+          "MC-V313-21-001",
+          "V318-OB-004",
+          "MC-DEF-013",
+          "MC-V312-ACC-002",
+          "MC-V312-ADM-007",
+          "MC-V313-92-006",
+          "MC-V312-TRN-004",
+          "MC-V37-62-007",
+          "MC-UTL-002",
+          "MC-V312-CON-013",
+          "MC-V313-42-012",
+          "MC-V314-CTR-003",
+          "MC-V37-62-001",
+          "MC-V314-48-001",
+          "MC-V35-5239-002",
+          "MC-V313-42-007",
+          "MC-V35-3341-002",
+          "MC-V37-5415-003",
+          "MC-V38-44-010",
+          "C7-FSR-INS-01",
+          "MC-V313-71-006",
+          "MC-V312-ACC-005",
+          "MC-V312-ADM-003",
+          "MC-V313-21-003",
+          "MC-V313-71-012",
+          "MC-V37-523-007",
+          "MC-V312-TRN-012",
+          "MC-V37-5415-004",
+          "MC-EDU-CERT-01",
+          "MC-V313-11-002",
+          "MC-V313-92-010",
+          "MC-V37-62-005",
+          "MC-V313-11-008",
+          "MC-V313-42-011",
+          "MC-V38-44-009",
+          "MC-V312-ADM-002",
+          "MC-V314-QC-001",
+          "PC8-FSR-PORTFOLIO-01",
+          "MC-INFO-001",
+          "MC-V312-ACC-004",
+          "MC-V313-11-009",
+          "MC-V313-92-007",
+          "MC-V39-MFG-007",
+          "V318-UTL-002",
+          "MC-V313-11-010",
+          "PC8-AB-MORTGAGE-01",
+          "MC-DEF-011",
+          "MC-V312-ADM-005",
+          "MC-V313-11-003",
+          "MC-V314-62-001",
+          "MC-V314-LV-001",
+          "MC-V37-55-007",
+          "MC-V37-55-008",
+          "MC-V312-CON-001",
+          "MC-V313-11-011",
+          "V318-OB-002",
+          "MC-31-002",
+          "MC-V312-ACC-003",
+          "MC-V35-4862-001",
+          "MC-V37-53-006",
+          "MC-V37-53-009",
+          "MC-V39-MFG-008",
+          "V318-WHL-002",
+          "MC-62-001",
+          "MC-54-001",
+          "MC-INFO-007",
+          "MC-UTL-002-L2",
+          "MC-V313-21-002",
+          "MC-V35-5415-001",
+          "MC-V38-44-005",
+          "MC-INFO-002",
+          "MC-V313-21-007",
+          "MC-V314-54-002",
+          "MC-V314-CT-003",
+          "MC-31-001",
+          "MC-V37-53-003",
+          "V3-DEF-002-L3",
+          "MC-52-003",
+          "MC-UTL-002-L4",
+          "MC-V312-ACC-008",
+          "MC-V312-ADM-011",
+          "MC-V314-LV-002",
+          "MC-V37-53-002",
+          "PC8-DC-FININT-01",
+          "MC-EDU-CORP-01",
+          "MC-V314-61-002",
+          "MC-V38-44-012",
+          "C7-FSR-BANKING-01",
+          "C7-FSR-LENDING-01",
+          "MC-V314-72-001",
+          "MC-V35-5223-001",
+          "MC-DEF-012-L4",
+          "MC-V312-ADM-001",
+          "MC-V37-62-004",
+          "MC-V312-ACC-011",
+          "MC-V312-CON-007",
+          "MC-V39-MFG-005",
+          "MC-56-001",
+          "MC-INFO-005",
+          "MC-V314-CTR-001",
+          "MC-54-003",
+          "MC-DEF-017",
+          "MC-V37-5415-001",
+          "MC-V38-44-006",
+          "V318-ART-004",
+          "V318-OB-005",
+          "MC-56-003",
+          "MC-UTL-002-L5",
+          "MC-V313-92-012",
+          "MC-DEF-016",
+          "MC-EDU-TEACH-01",
+          "MC-INFO-009",
+          "MC-54-002",
+          "MC-V313-71-008",
+          "MC-V314-SB-003",
+          "MC-V313-92-003",
+          "MC-V37-55-004",
+          "MC-V39-MICRO-009",
+          "MC-31-003",
+          "C7-FSR-CREDITOPS-01",
+          "MC-62-003",
+          "MC-INFO-008",
+          "MC-V313-92-001",
+          "MC-V35-5416-001",
+          "MC-V37-55-003",
+          "MC-V39-MICRO-004",
+          "MC-V313-71-005",
+          "MC-V313-71-011",
+          "MC-V314-53-003",
+          "MC-UTL-004-L6",
+          "MC-V312-CON-010",
+          "MC-V39-MICRO-010",
+          "MC-52-002",
+          "MC-DEF-018",
+          "MC-V38-62-009",
+          "MC-62-002",
+          "MC-V38-44-007",
+          "MC-EDU-CRED-01",
+          "MC-V314-72-002",
+          "MC-V37-53-007",
+          "MC-V314-54-001",
+          "MC-V38-62-017",
+          "MC-56-002",
+          "V318-HPV-001",
+          "MC-V312-ACC-013",
+          "MC-V35-3341-001",
+          "MC-EDU-TUTOR-01",
+          "MC-EDU-UNIV-01",
+          "MC-V35-3344-001",
+          "MC-INFO-010",
+          "MC-UTL-004-L2",
+          "MC-V314-48-002",
+          "MC-V35-3364-001",
+          "V318-ART-002",
+          "MC-V313-21-005"
+        ],
+        "whats_needed": [
+          "V318-CP-001",
+          "MC-V313-71-003",
+          "V318-OCE-004",
+          "MC-V38-44-003",
+          "V318-AGT-001",
+          "V318-OCE-003",
+          "V318-AGT-003",
+          "MC-V38-44-003-L5",
+          "V318-ART-001",
+          "V318-OCE-001",
+          "MC-V37-55-006",
+          "MC-V38-44-003-L4",
+          "C7-RMB-INS-01",
+          "MC-V314-61-001",
+          "MC-V37-55-001",
+          "MC-V314-GEO-001",
+          "MC-V313-92-008",
+          "V318-SYN-002",
+          "MC-V37-523-002",
+          "V318-CP-005",
+          "MC-V313-71-007",
+          "MC-V313-92-011",
+          "MC-V314-SP-002",
+          "MC-DEF-012",
+          "MC-V314-AM-001",
+          "MC-V35-5239-001",
+          "V318-CP-004",
+          "MC-V313-11-004",
+          "MC-V313-71-010",
+          "MC-V313-92-005",
+          "MC-V37-523-008",
+          "C7-RMB-FINANCE-01",
+          "MC-V312-TRN-015",
+          "MC-UTL-003",
+          "MC-V312-ACC-007",
+          "MC-V313-11-007",
+          "MC-V37-62-002",
+          "PC8-SC-INSINFRA-01",
+          "MC-V313-11-012",
+          "MC-V37-523-004",
+          "V318-OCE-007",
+          "MC-EDU-FEAR-01",
+          "V318-ART-003",
+          "V318-OCE-006",
+          "MC-V312-CON-008",
+          "MC-INFO-003",
+          "MC-V37-523-005",
+          "MC-V38-62-011",
+          "MC-V312-CON-009",
+          "MC-V313-21-004",
+          "MC-V312-ACC-012",
+          "MC-DEF-014",
+          "MC-V314-QC-003",
+          "MC-V314-62-002",
+          "V318-OCE-005",
+          "MC-V313-21-009",
+          "MC-EDU-MATCH-01",
+          "MC-V312-ADM-006",
+          "MC-V37-62-006",
+          "MC-V38-62-016",
+          "PC8-SC-BANKINFRA-01",
+          "MC-V37-5415-005",
+          "MC-V37-5415-007",
+          "MC-V312-ADM-012",
+          "V3-FEAR-004",
+          "MC-V37-53-004",
+          "MC-V37-5415-009",
+          "MC-V39-MICRO-001",
+          "MC-V37-523-009",
+          "MC-V39-MICRO-007",
+          "C7-PI-LENDING-01",
+          "MC-V312-ACC-010",
+          "MC-V38-62-013",
+          "V318-CP-003",
+          "MC-V37-5415-002",
+          "MC-V38-62-020",
+          "V318-OCE-008",
+          "MC-V314-QC-002",
+          "V3-BCI-002"
+        ],
+        "what_dies": [
+          "MC-DEF-015",
+          "MC-V39-MICRO-002",
+          "MC-V39-MICRO-003",
+          "MC-V35-5417-001",
+          "MC-V312-ADM-010",
+          "MC-V35-5417-002",
+          "MC-V38-62-015",
+          "MC-V35-5413-001",
+          "MC-V313-42-014",
+          "MC-INFO-004",
+          "MC-V312-ADM-009",
+          "MC-V35-5411-001",
+          "MC-V37-53-008",
+          "MC-V38-62-010",
+          "MC-V38-62-018",
+          "MC-V37-5415-006",
+          "MC-V39-MICRO-005",
+          "MC-V39-MICRO-008",
+          "V318-HPV-002",
+          "MC-V37-5415-010",
+          "MC-V38-62-014",
+          "V3-BCI-001",
+          "MC-V314-SP-003",
+          "V318-HPV-003",
+          "MC-V37-62-008",
+          "C7-NR-10",
+          "C7-NR-05",
+          "V3-BCI-003"
+        ]
+      },
+      "model_counts": {
+        "what_works": 220,
+        "whats_needed": 79,
+        "what_dies": 28,
+        "total": 327
+      },
+      "cascade_dependencies": {
+        "upstream_of": [
+          "TN-012",
+          "TN-014",
+          "TN-013",
+          "TN-003"
+        ],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 8,
+        "gap": 1,
+        "classification": "low_friction",
+        "notes": null
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-001",
+        "FC-002",
+        "FC-003",
+        "FC-004",
+        "FC-005",
+        "FC-006"
+      ]
+    },
+    {
+      "narrative_id": "TN-014",
+      "name": "Retail Trade Transformation",
+      "slug": "retail-trade",
+      "tns_composite": 85.6,
+      "tns_category": "DEFINING",
+      "tns_rank": 3,
+      "tns_scores": {
+        "EM": 9.0,
+        "FC": 8.7,
+        "ES": 9.8,
+        "TC": 6.5,
+        "IR": 8.0
+      },
+      "sectors": [
+        {
+          "naics": "44-45",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F5_psychology",
+        "F4_capital"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-8 DEEP DIVE (first ever): 15.53M workers = largest private employer, 1.07M establishments, Baumol 0.57 (LOW stored energy but MASSIVE absolute scale). Near-zero employment growth (+0.3%) while establishments grow (+1.3%) = fragmentation. Bifurcating: e-commerce 16-18% of sales growing vs physical retail 800+ closures in 2026. Retail media networks $69B new profit layer. Self-checkout 87% consumer adoption, cashierless 13.7% CAGR. Warehouse automation $181B by 2031. 3 STRUCTURAL_WINNERs in top",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Retail Trade. First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "PC8-AB-PHARMRETAIL-01",
+          "MC-V38-44-002",
+          "MC-V38-44-002-L2",
+          "MC-V38-44-002-L3",
+          "MC-V38-44-002-L6",
+          "MC-V38-44-001",
+          "MC-V38-44-003-L3",
+          "MC-V314-48-001",
+          "MC-V38-44-010",
+          "MC-V38-44-009",
+          "MC-V38-44-004",
+          "PC8-FSR-CARDEALER-01",
+          "PC8-FSR-GROCERY-01",
+          "MC-V38-44-005",
+          "MC-V38-44-012",
+          "MC-V38-44-006",
+          "MC-V38-44-007",
+          "MC-V38-44-011"
+        ],
+        "whats_needed": [
+          "MC-V38-44-003",
+          "MC-V38-44-003-L5",
+          "MC-V38-44-003-L4",
+          "MC-V38-44-008",
+          "PC8-PI-AUTORETAIL-01"
+        ],
+        "what_dies": []
+      },
+      "model_counts": {
+        "what_works": 18,
+        "whats_needed": 5,
+        "what_dies": 0,
+        "total": 23
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-001"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 6,
+        "gap": 1,
+        "classification": "low_friction",
+        "notes": "NEW (v3-8). Consumer-side friction LOW (87% use self-checkout, cashierless accepted). Worker-side friction MODERATE but powerless (fragmented, non-unionized, high turnover masks displacement). Political friction HIGH (displacement concentrates on young, female, minority workers). Gap of 1 understates political sensitivity."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-057",
+        "FC-058",
+        "FC-059",
+        "FC-060",
+        "FC-061",
+        "FC-062",
+        "FC-063"
+      ]
+    },
+    {
+      "narrative_id": "TN-004",
+      "name": "Healthcare Transformation",
+      "slug": "healthcare",
+      "tns_composite": 85.5,
+      "tns_category": "DEFINING",
+      "tns_rank": 4,
+      "tns_scores": {
+        "EM": 10.0,
+        "FC": 8.7,
+        "ES": 10.0,
+        "TC": 6.5,
+        "IR": 6.0
+      },
+      "sectors": [
+        {
+          "naics": "62",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F5_psychology",
+        "F4_capital"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-8 DEEP DIVE: 21.3M workers, 1.9M establishments, +4.5% employment growth. Healthcare monoculture (P-039) confirmed — 63% of Jan 2026 jobs. QCEW sub-sector data: Hospitals (622) 5.27M emp +3.7%, Ambulatory (621) 8.44M emp +4.1%, Nursing/Residential (623) 3.15M emp +5.5%, Social Assistance (624) 4.41M emp +5.6%. Nursing 8% national deficit, 250K RN gap by 2030. FDA AI deregulation + invisible pathway (admin→clinical). 34-pt provider-patient trust gap. PE record $190B+ deal value. Counter-signal",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Healthcare. First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V313-71-001",
+          "MC-V312-CON-003",
+          "MC-V312-TRN-013",
+          "MC-V313-92-002",
+          "MC-V314-53-001",
+          "MC-V312-ACC-006",
+          "MC-V38-44-002-L6",
+          "MC-V312-TRN-011",
+          "MC-V37-62-003",
+          "C7-DC-HC-01",
+          "MC-V37-53-001",
+          "C7-FSR-HC-01",
+          "MC-V312-ACC-001",
+          "MC-V313-71-002",
+          "MC-V38-44-003-L3",
+          "V318-OB-004",
+          "MC-V313-92-006",
+          "MC-V312-TRN-004",
+          "MC-V37-62-007",
+          "MC-V312-CON-013",
+          "MC-V314-CTR-003",
+          "MC-V37-62-001",
+          "C7-RC-DENTAL-01",
+          "MC-V38-44-010",
+          "MC-V312-ACC-005",
+          "MC-V313-21-003",
+          "MC-V313-71-012",
+          "MC-V312-TRN-012",
+          "MC-EDU-CERT-01",
+          "MC-V313-92-010",
+          "MC-V37-62-005",
+          "MC-V313-11-008",
+          "MC-V313-42-011",
+          "MC-V38-44-009",
+          "MC-V314-QC-001",
+          "MC-V313-11-009",
+          "MC-V313-92-007",
+          "PC8-FSR-SOCIALSERV-01",
+          "C7-FSR-HOMEHEALTH-01",
+          "PC8-RC-ELDERCARE-01",
+          "MC-V314-62-001",
+          "MC-V314-LV-001",
+          "MC-V37-55-007",
+          "MC-V312-CON-001",
+          "C7-FSR-ALLIEDHEALTH-01",
+          "C7-FSR-NURSING-01",
+          "MC-V37-53-009",
+          "PC8-AB-PHYSTHERAPY-01",
+          "MC-62-001",
+          "MC-UTL-002-L2",
+          "PC8-EXT-AIBENE-DENTIST-01",
+          "PC8-FSR-HOSPMGMT-01",
+          "MC-INFO-002",
+          "MC-V314-54-002",
+          "C7-FSR-ASSISTEDLIVING-01",
+          "MC-V37-53-003",
+          "MC-V314-LV-002",
+          "MC-V37-53-002",
+          "PC8-FSR-MEDLAB-01",
+          "MC-EDU-CORP-01",
+          "MC-V314-61-002",
+          "PC8-DC-ELDERCARE-01",
+          "C7-FSR-CHILDCARE-01",
+          "C7-MN-ELDERCARE-01",
+          "PC8-DC-HOSPMGMT-01",
+          "MC-V314-72-001",
+          "MC-DEF-012-L4",
+          "MC-V312-ACC-011",
+          "MC-V38-44-006",
+          "V318-OB-005",
+          "MC-56-003",
+          "MC-V313-92-012",
+          "MC-EDU-TEACH-01",
+          "MC-V38-62-019",
+          "C7-FSR-DENTALOPS-01",
+          "MC-V313-92-003",
+          "MC-V37-55-004",
+          "MC-62-003",
+          "MC-INFO-008",
+          "C7-FSR-OUTPATIENT-01",
+          "C7-MN-HEALTHCARE-01",
+          "MC-V313-71-005",
+          "MC-V313-71-011",
+          "MC-V314-53-003",
+          "MC-V312-CON-010",
+          "MC-V39-MICRO-010",
+          "MC-V38-62-009",
+          "MC-62-002",
+          "MC-EDU-CRED-01",
+          "MC-V314-72-002",
+          "MC-V38-62-017",
+          "MC-V38-62-012",
+          "V318-HPV-001",
+          "MC-EDU-TUTOR-01",
+          "MC-EDU-UNIV-01",
+          "MC-INFO-010",
+          "MC-V314-48-002",
+          "V318-ART-002"
+        ],
+        "whats_needed": [
+          "MC-V38-44-003-L5",
+          "V318-ART-001",
+          "MC-V38-44-003-L4",
+          "MC-V314-61-001",
+          "C7-RMB-HC-01",
+          "V318-SYN-002",
+          "MC-V313-71-007",
+          "MC-V314-GEO-002",
+          "MC-V312-TRN-015",
+          "MC-V312-ACC-007",
+          "MC-V313-11-007",
+          "MC-V37-62-002",
+          "MC-V313-11-012",
+          "C7-PI-NURSING-01",
+          "V318-ART-003",
+          "MC-INFO-003",
+          "MC-V38-62-011",
+          "MC-V313-21-004",
+          "MC-V312-ACC-012",
+          "PC8-RMB-ELDERCARE-01",
+          "MC-V314-QC-003",
+          "C7-PI-ELDERCARE-01",
+          "MC-V314-62-002",
+          "V318-OCE-005",
+          "MC-EDU-MATCH-01",
+          "C7-PI-DENTAL-01",
+          "MC-V37-62-006",
+          "MC-V38-62-016",
+          "C7-RMB-DENTAL-01",
+          "C7-RMB-MH-01",
+          "C7-PI-HOMEHEALTH-01",
+          "C7-RMB-CHILDCARE-01",
+          "MC-V37-53-004",
+          "MC-V312-ACC-010",
+          "MC-V38-62-013",
+          "V318-CP-003",
+          "MC-V38-62-020",
+          "V3-GEO-003",
+          "PC8-PI-ELDERCARE-01",
+          "V318-OCE-008"
+        ],
+        "what_dies": [
+          "MC-V38-62-015",
+          "V3-EDU-006",
+          "MC-INFO-004",
+          "MC-V38-62-010",
+          "MC-V38-62-018",
+          "MC-V39-MICRO-005",
+          "MC-V39-MICRO-008",
+          "V318-HPV-002",
+          "MC-V38-62-014",
+          "V318-HPV-003",
+          "MC-V37-62-008",
+          "C7-NR-01",
+          "C7-NR-04",
+          "C7-NR-03"
+        ]
+      },
+      "model_counts": {
+        "what_works": 98,
+        "whats_needed": 40,
+        "what_dies": 14,
+        "total": 152
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 4,
+        "gap": 4,
+        "classification": "high_friction_context_dependent",
+        "notes": "v3-8 deep dive: 34-pt provider-patient trust gap confirmed. 71% hospitals deployed predictive AI but via invisible pathway (admin, not clinical). FDA deregulation widens gap: economic readiness up but patients unaware. Healthcare AI creating NEW roles (data analysts, AI trainers) — friction may prolong transition rather than prevent it"
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-020",
+        "FC-021",
+        "FC-022",
+        "FC-023",
+        "FC-024",
+        "FC-025"
+      ]
+    },
+    {
+      "narrative_id": "TN-012",
+      "name": "Real Estate and Rental and Leasing Transformation",
+      "slug": "real-estate-and-rental-and-leasing",
+      "tns_composite": 78.5,
+      "tns_category": "MAJOR",
+      "tns_rank": 5,
+      "tns_scores": {
+        "EM": 6.0,
+        "FC": 8.7,
+        "ES": 8.5,
+        "TC": 8.5,
+        "IR": 8.0
+      },
+      "sectors": [
+        {
+          "naics": "53",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F4_capital",
+        "F1_technology",
+        "F2_demographics",
+        "F5_psychology"
+      ],
+      "transformation_phase": "acceleration",
+      "summary": "v3-7 deep dive: 2.39M workers, most fragmented major sector (488K establishments, avg 4.9 workers). PRIMARY SECOND-ORDER CASCADE RECEPTOR: FS meltdown (CMBS 12.34%), remote work, AI workforce reduction all converge simultaneously. $936B debt maturity wall in 2026, office values 35-50% below 2020 peaks. NAR settlement + AI agents = existential pressure on 453K brokers (138K offices avg 3.3 workers). Baumol 1.03x = NOT a wage cure target, but STRUCTURAL fragmentation + cascade exposure.",
+      "year_by_year": {
+        "2026": {
+          "phase": "acceleration",
+          "description": "Rapid transformation in Real Estate and Rental and Leasing. Multiple disruption vectors active simultaneously.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "restructuring",
+          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "restructuring",
+          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure forming. Survivors adapting to new reality.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "Transformation largely complete. Sector operating under new economics.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V314-53-001",
+          "MC-V37-53-005",
+          "MC-V314-53-002",
+          "MC-V37-53-001",
+          "PC8-FSR-PROPMGMT-01",
+          "MC-V37-53-006",
+          "MC-V37-53-009",
+          "MC-V37-53-003",
+          "MC-V37-53-002",
+          "PC8-FSR-REALEST-01",
+          "PC8-EXT-AIBENE-REALESTATE-01",
+          "PC8-FSR-LEASING-01",
+          "PC8-DC-PROPMGMT-01",
+          "PC8-SC-REALESTATE-01",
+          "C7-MN-FIN-01",
+          "MC-V37-55-004",
+          "MC-V314-53-003",
+          "MC-V314-72-002",
+          "MC-V37-53-007"
+        ],
+        "whats_needed": [
+          "C7-PI-REALESTATE-01",
+          "PC8-RMB-PROPMGMT-01",
+          "MC-V37-53-004",
+          "PC8-PI-PROPMGMT-01",
+          "PC8-PI-SELFSTORE-01"
+        ],
+        "what_dies": [
+          "MC-V37-53-008",
+          "C7-NR-07"
+        ]
+      },
+      "model_counts": {
+        "what_works": 19,
+        "whats_needed": 5,
+        "what_dies": 2,
+        "total": 26
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-001"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 4,
+        "gap": 3,
+        "classification": "moderate_friction",
+        "notes": "NEW (v3-7). NAR settlement already disrupting commission model. Agent resistance to AI intermediation high but fragmentation (4.9 workers/establishment) means no collective bargaining power."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-048",
+        "FC-049",
+        "FC-050",
+        "FC-051",
+        "FC-052",
+        "FC-053"
+      ]
+    },
+    {
+      "narrative_id": "TN-002",
+      "name": "Professional Services Transformation",
+      "slug": "professional-services",
+      "tns_composite": 78.35,
+      "tns_category": "MAJOR",
+      "tns_rank": 6,
+      "tns_scores": {
+        "EM": 9.0,
+        "FC": 7.2,
+        "ES": 8.8,
+        "TC": 6.5,
+        "IR": 7.0
+      },
+      "sectors": [
+        {
+          "naics": "54",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F4_capital",
+        "F2_demographics"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-6: 5 new model cards scored across sub-sectors (5415-001: 70.75, 5417-001: 69.5, 5417-002: 64.75, 5413-001: 68.5, 5416-001: 63.75). Legal services (5411) has highest fear friction of any professional sector at 82% ethical concern. IT services (5415) is self-disrupting: 2.46M workers, AI coding 19% SLOWER for experienced devs. Sector screener identifies 5415 as standalone deep-dive candidate.",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Professional Services. First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V312-TRN-001",
+          "MC-V312-TRN-005",
+          "MC-V312-TRN-002",
+          "V318-TMP-001",
+          "MC-V313-71-004",
+          "MC-V38-44-002",
+          "MC-V313-11-001",
+          "V318-AGT-002",
+          "MC-V312-TRN-003",
+          "MC-V313-42-001",
+          "MC-V313-92-004",
+          "MC-V314-AM-002",
+          "MC-V39-MFG-002",
+          "V318-OB-001",
+          "V318-TMP-002",
+          "MC-V37-55-005",
+          "MC-V39-MFG-001",
+          "V318-WHL-004",
+          "MC-V313-21-008",
+          "MC-UTL-004",
+          "MC-V314-53-002",
+          "MC-V312-TRN-008",
+          "MC-V38-44-001",
+          "MC-V39-MFG-006",
+          "MC-V313-42-013",
+          "MC-INFO-006",
+          "MC-V312-TRN-010",
+          "MC-V37-55-002",
+          "C7-DC-FIN-01",
+          "V318-OB-006",
+          "PC8-FSR-ENVIRON-01",
+          "MC-V312-CON-004",
+          "MC-V312-TRN-014",
+          "V318-OB-004",
+          "MC-V312-ACC-002",
+          "MC-UTL-002",
+          "MC-V313-42-012",
+          "MC-V313-42-007",
+          "MC-V37-5415-003",
+          "MC-V313-71-006",
+          "MC-V37-5415-004",
+          "MC-V313-11-002",
+          "MC-V314-SP-001",
+          "PC8-AB-ACCPRACTICE-01",
+          "MC-V312-ADM-002",
+          "C7-FSR-FIN-01",
+          "MC-INFO-001",
+          "MC-V312-ACC-004",
+          "MC-V39-MFG-007",
+          "PC8-FSR-PUBREL-01",
+          "V318-UTL-002",
+          "MC-V313-11-010",
+          "MC-DEF-011",
+          "MC-V312-ADM-005",
+          "MC-V313-11-003",
+          "MC-V314-LV-001",
+          "PC8-AB-LAWPRACTICE-01",
+          "PC8-SC-CYBERSEC-01",
+          "MC-V313-11-011",
+          "V318-OB-002",
+          "C7-FSR-LATAM-01",
+          "MC-V312-ACC-003",
+          "MC-V35-4862-001",
+          "MC-V39-MFG-008",
+          "V318-WHL-002",
+          "MC-54-001",
+          "MC-V314-SB-001",
+          "MC-V313-21-002",
+          "MC-V35-5415-001",
+          "MC-V38-44-005",
+          "MC-V313-21-007",
+          "MC-V314-CT-003",
+          "V3-DEF-002-L3",
+          "MC-UTL-002-L4",
+          "MC-V312-ACC-008",
+          "MC-V314-LV-002",
+          "MC-V38-44-012",
+          "MC-V312-ADM-001",
+          "MC-V37-62-004",
+          "PC8-EXT-FAILSTUDY-BENCH-02",
+          "MC-V39-MFG-005",
+          "MC-56-001",
+          "MC-INFO-005",
+          "MC-V314-CTR-001",
+          "MC-54-003",
+          "MC-DEF-017",
+          "MC-V37-5415-001",
+          "V318-ART-004",
+          "V318-OB-005",
+          "PC8-SC-LEGALOPS-01",
+          "MC-INFO-009",
+          "PC8-FSR-VETSERVICE-01",
+          "PC8-AB-SURVEYING-01",
+          "C7-FSR-CONSULTING-01",
+          "MC-54-002",
+          "MC-V313-71-008",
+          "MC-V314-SB-003",
+          "PC8-FSR-RESEARCHSVC-01",
+          "PC8-SC-ENGINFRA-01",
+          "MC-V39-MICRO-009",
+          "PC8-FSR-MKTCONSULT-01",
+          "PC8-AB-VETPRACTICE-01",
+          "PC8-AB-ARCHFIRM-01",
+          "PC8-AB-ENGFIRM-01",
+          "MC-V35-5416-001",
+          "MC-V37-55-003",
+          "PC8-AB-TAXPREP-01",
+          "PC8-FSR-ADVAGENCY-01",
+          "C7-FSR-ADTECH-01",
+          "MC-V39-MICRO-004",
+          "C7-FSR-ACCOUNTING-RESTAURANT-01",
+          "C7-FSR-ENGINEERING-01",
+          "MC-DEF-018",
+          "C7-DC-LEGAL-01",
+          "C7-DC-VETERINARY-01",
+          "MC-V38-44-007",
+          "C7-FSR-DESIGN-01",
+          "V3-GEO-004",
+          "MC-V314-54-001",
+          "MC-56-002",
+          "C7-AW-ACC-01",
+          "MC-V312-ACC-013",
+          "V3-EMRG-006",
+          "MC-V313-21-005"
+        ],
+        "whats_needed": [
+          "V318-CP-001",
+          "V318-OCE-004",
+          "MC-V38-44-003",
+          "V318-AGT-001",
+          "V318-OCE-003",
+          "V318-AGT-003",
+          "V318-OCE-001",
+          "V3-DEF-003",
+          "MC-V37-55-001",
+          "V3-DEF-002",
+          "V318-CP-005",
+          "V3-FEAR-001",
+          "MC-V313-92-011",
+          "MC-V314-AM-001",
+          "V318-CP-004",
+          "MC-V313-11-004",
+          "V318-OCE-002",
+          "MC-UTL-003",
+          "V318-OCE-007",
+          "V3-GEO-005",
+          "V318-OCE-006",
+          "MC-V312-CON-008",
+          "MC-V314-CT-002",
+          "V3-DEF-005",
+          "V3-EMRG-001",
+          "PC8-EXT-YCINSPIRED-AICOMPLI-01",
+          "C7-PI-COMPLIANCE-01",
+          "V318-OCE-005",
+          "V3-EMRG-002",
+          "MC-V37-5415-005",
+          "C7-RMB-VET-01",
+          "MC-V37-5415-007",
+          "V3-ENERGY-005",
+          "MC-V37-5415-008",
+          "MC-V312-ADM-012",
+          "MC-V37-5415-009",
+          "MC-V39-MICRO-001",
+          "MC-V39-MICRO-007",
+          "MC-V38-62-013",
+          "V318-CP-003",
+          "C7-PI-FIN-01",
+          "MC-V37-5415-002",
+          "PC8-EXT-YCINSPIRED-AIAGENT-01",
+          "MC-V314-QC-002",
+          "V3-BCI-002"
+        ],
+        "what_dies": [
+          "V3-EMRG-005",
+          "MC-DEF-015",
+          "V3-FEAR-003",
+          "MC-V39-MICRO-002",
+          "MC-V39-MICRO-003",
+          "MC-V35-5417-001",
+          "MC-V35-5417-002",
+          "MC-V38-62-015",
+          "C7-MN-MICRO-01",
+          "MC-V35-5413-001",
+          "MC-V313-42-014",
+          "MC-V312-ADM-009",
+          "MC-V35-5411-001",
+          "MC-V38-62-010",
+          "MC-V38-62-018",
+          "MC-V37-5415-006",
+          "MC-V39-MICRO-006",
+          "V3-EMRG-003",
+          "MC-V39-MICRO-005",
+          "MC-V37-5415-010",
+          "MC-V38-62-014",
+          "PC8-AB-INSPSERV-01",
+          "V3-BCI-004",
+          "V3-ENERGY-003",
+          "V3-BCI-001",
+          "MC-V314-SP-003",
+          "V3-EMRG-004",
+          "V318-HPV-003",
+          "C7-AW-VET-01",
+          "C7-NR-06",
+          "C7-NR-02",
+          "V3-BCI-003"
+        ]
+      },
+      "model_counts": {
+        "what_works": 124,
+        "whats_needed": 45,
+        "what_dies": 32,
+        "total": 201
+      },
+      "cascade_dependencies": {
+        "upstream_of": [
+          "TN-009",
+          "TN-010",
+          "TN-005"
+        ],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "classification": "moderate_friction",
+        "notes": "Legal sub-sector at 82% ethical concern is highest of any professional field"
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-007",
+        "FC-008",
+        "FC-009"
+      ]
+    },
+    {
+      "narrative_id": "TN-010",
+      "name": "Computer Systems Design and Related Services (IT Services) Transformation",
+      "slug": "computer-systems-design-and-related-services-it-services",
+      "tns_composite": 76.1,
+      "tns_category": "MAJOR",
+      "tns_rank": 7,
+      "tns_scores": {
+        "EM": 6.0,
+        "FC": 8.7,
+        "ES": 8.8,
+        "TC": 6.5,
+        "IR": 8.0
+      },
+      "sectors": [
+        {
+          "naics": "5415",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F4_capital",
+        "F5_psychology"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-7 deep dive: 2.46M workers, $366.8B payroll, Baumol 2.05x. Custom programming (541511) = 1.11M workers at $164K, highest direct AI substitution potential. 84% of developers using AI coding daily. BUT experienced devs 19% SLOWER on complex tasks. Employment flat (-0.4%) while wages +5% = classic Baumol squeeze onset. Extreme fragmentation (405K establishments, avg 6.1 workers). AI consulting growing 26-36% CAGR to $116B by 2035 even as traditional IT services compress.",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Computer Systems Design and Related Services (IT Services). First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V313-71-001",
+          "V318-AGT-002",
+          "MC-V312-TRN-013",
+          "MC-V312-ACC-006",
+          "MC-V312-TRN-011",
+          "MC-V37-62-003",
+          "C7-DC-FIN-01",
+          "MC-V313-92-006",
+          "MC-V312-TRN-004",
+          "MC-V37-62-007",
+          "MC-V37-62-001",
+          "MC-V37-5415-003",
+          "MC-V37-5415-004",
+          "MC-V314-SP-001",
+          "MC-V37-62-005",
+          "C7-FSR-FIN-01",
+          "MC-V313-11-009",
+          "MC-DEF-011",
+          "MC-V314-62-001",
+          "PC8-SC-CYBERSEC-01",
+          "C7-FSR-LATAM-01",
+          "MC-54-001",
+          "MC-V314-SB-001",
+          "MC-V35-5415-001",
+          "MC-INFO-002",
+          "MC-54-003",
+          "MC-V37-5415-001",
+          "MC-54-002",
+          "MC-INFO-008",
+          "C7-FSR-DESIGN-01",
+          "C7-AW-ACC-01",
+          "V3-EMRG-006",
+          "MC-INFO-010"
+        ],
+        "whats_needed": [
+          "V318-AGT-001",
+          "V318-AGT-003",
+          "V3-DEF-003",
+          "MC-V313-71-007",
+          "V318-OCE-002",
+          "MC-V312-ACC-007",
+          "MC-V313-11-012",
+          "MC-V314-CT-002",
+          "MC-V38-62-011",
+          "V3-EMRG-001",
+          "MC-V312-ACC-012",
+          "V3-EMRG-002",
+          "MC-V38-62-016",
+          "MC-V37-5415-005",
+          "C7-RMB-VET-01",
+          "MC-V37-5415-007",
+          "MC-V37-5415-008",
+          "MC-V37-5415-009",
+          "MC-V39-MICRO-001",
+          "MC-V312-ACC-010",
+          "C7-PI-FIN-01",
+          "MC-V37-5415-002",
+          "PC8-EXT-YCINSPIRED-AIAGENT-01",
+          "MC-V314-QC-002"
+        ],
+        "what_dies": [
+          "V3-EMRG-005",
+          "MC-V39-MICRO-002",
+          "MC-V39-MICRO-003",
+          "C7-MN-MICRO-01",
+          "MC-INFO-004",
+          "MC-V37-5415-006",
+          "V3-EMRG-003",
+          "MC-V39-MICRO-008",
+          "MC-V37-5415-010",
+          "V3-BCI-004",
+          "V3-EMRG-004",
+          "C7-AW-VET-01",
+          "V3-BCI-003"
+        ]
+      },
+      "model_counts": {
+        "what_works": 33,
+        "whats_needed": 24,
+        "what_dies": 13,
+        "total": 70
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-002"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 8,
+        "gap": 1,
+        "classification": "low_friction",
+        "notes": "NEW (v3-7). Workers ARE the AI builders/adopters. Low friction but self-disruption paradox: the sector building AI is most disrupted by it. 84% daily AI coding usage."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-036",
+        "FC-037",
+        "FC-038",
+        "FC-039",
+        "FC-040",
+        "FC-041"
+      ]
+    },
+    {
+      "narrative_id": "TN-006",
+      "name": "Construction Transformation",
+      "slug": "construction",
+      "tns_composite": 75.35,
+      "tns_category": "MAJOR",
+      "tns_rank": 8,
+      "tns_scores": {
+        "EM": 9.0,
+        "FC": 7.5,
+        "ES": 7.3,
+        "TC": 4.5,
+        "IR": 8.5
+      },
+      "sectors": [
+        {
+          "naics": "23",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F3_geopolitics"
+      ],
+      "transformation_phase": "pre_disruption",
+      "summary": "Jan 2026 BLS: construction +33K. Data center construction driving demand. 70 GW solar deployment rush before Jul 2026 credit expiration. AEC design card (5413-001) scored 68.5.",
+      "year_by_year": {
+        "2026": {
+          "phase": "pre_disruption",
+          "description": "Early signals of structural change in Construction. Cost curves shifting, technology proving feasible.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "early_adoption",
+          "description": "First movers adopt new approaches. Incumbent awareness growing.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "early_disruption",
+          "description": "Adoption accelerates among forward-looking firms. Evidence of business model viability.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "acceleration",
+          "description": "Mainstream adoption begins. Incumbent response intensifies.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "restructuring",
+          "description": "Sector structure visibly changing. Employment and firm composition shifting.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V312-CON-011",
+          "MC-V312-TRN-006",
+          "V318-TMP-001",
+          "MC-V312-CON-003",
+          "MC-V312-CON-002",
+          "V318-TMP-002",
+          "V3-DEF-007-L4",
+          "MC-V39-MFG-003",
+          "MC-V313-11-005",
+          "MC-V312-TRN-009",
+          "MC-V312-CON-004",
+          "MC-V312-CON-012",
+          "MC-V312-CON-005",
+          "MC-DEF-013",
+          "MC-V312-ADM-004",
+          "MC-V312-CON-013",
+          "MC-V35-3341-002",
+          "MC-V314-SB-002",
+          "PC8-EXT-BIZBUY-PLUMBING-01",
+          "PC8-RC-HEAVYCIVIL-01",
+          "PC8-AM-CONSTRUCTSPECIAL-01",
+          "MC-UTL-004-L3",
+          "MC-UTL-004-L5",
+          "MC-V35-2111-001",
+          "MC-V39-MFG-011",
+          "MC-UTL-004-L1",
+          "MC-V312-CON-001",
+          "MC-31-002",
+          "MC-V312-ADM-008",
+          "C7-DC-CONSTRUCTION-01",
+          "C7-RC-ELECTRICAL-01",
+          "MC-UTL-002-L6",
+          "MC-31-001",
+          "MC-UTL-002-L3",
+          "PC8-FSR-CONSTRUCT-01",
+          "PC8-AB-CONSTRUCTMGMT-01",
+          "C7-DC-TRADES-01",
+          "C7-RC-HVAC-01",
+          "MC-V312-CON-007",
+          "MC-V312-CON-006",
+          "MC-V313-42-003",
+          "C7-FSR-TRADESCHOOL-01",
+          "MC-UTL-002-L5",
+          "MC-DEF-016",
+          "MC-31-003",
+          "MC-V313-42-005",
+          "MC-V312-CON-010",
+          "MC-V313-21-010",
+          "MC-V35-3341-001",
+          "MC-V35-3344-001",
+          "C7-MN-TRADES-01",
+          "MC-UTL-004-L2",
+          "MC-V35-3364-001"
+        ],
+        "whats_needed": [
+          "MC-V314-GEO-001",
+          "MC-V313-92-009",
+          "MC-V314-GEO-003",
+          "MC-V314-GEO-002",
+          "MC-V312-TRN-007",
+          "MC-V314-GEO-004",
+          "MC-V312-CON-008",
+          "MC-V312-CON-014",
+          "MC-V312-ACC-009",
+          "C7-PI-TRADES-01",
+          "MC-V312-CON-009",
+          "MC-V313-42-006",
+          "C7-RMB-CONSTRUCTION-01",
+          "V3-ENERGY-007",
+          "V318-WHL-005",
+          "V318-CP-002",
+          "MC-V313-42-004"
+        ],
+        "what_dies": [
+          "V3-ENERGY-001",
+          "MC-V313-42-008",
+          "MC-V313-42-010"
+        ]
+      },
+      "model_counts": {
+        "what_works": 53,
+        "whats_needed": 17,
+        "what_dies": 3,
+        "total": 73
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 4,
+        "psychological_readiness": 5,
+        "gap": -1,
+        "classification": "psychology_positive",
+        "notes": null
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "medium",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-027",
+        "FC-028",
+        "FC-029"
+      ]
+    },
+    {
+      "narrative_id": "TN-009",
+      "name": "Educational Services Transformation",
+      "slug": "educational-services",
+      "tns_composite": 75.0,
+      "tns_category": "MAJOR",
+      "tns_rank": 9,
+      "tns_scores": {
+        "EM": 7.0,
+        "FC": 7.5,
+        "ES": 10.0,
+        "TC": 6.5,
+        "IR": 6.0
+      },
+      "sectors": [
+        {
+          "naics": "61",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F5_psychology"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-6: 8 education cards scored (avg 68.9, lowest batch due to fear friction). Brookings 50-country study confirms AI risks outweigh benefits for children. Ohio mandates AI frameworks by Jul 2026. Michigan chatbot liability for minors. Fear economy card (EDU-FEAR-01: 72.25) confirms fear creates market. College cliff NOW: 400 schools could close this decade, $18B endowment redistribution, 5 states = 75% of decline.",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Educational Services. First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V313-92-002",
+          "MC-V312-ACC-001",
+          "MC-V313-71-002",
+          "MC-V312-ACC-005",
+          "MC-V313-21-003",
+          "MC-V313-71-012",
+          "MC-V312-TRN-012",
+          "MC-EDU-CERT-01",
+          "MC-V313-92-010",
+          "MC-V313-92-007",
+          "MC-V37-55-007",
+          "MC-62-001",
+          "MC-V314-54-002",
+          "MC-EDU-CORP-01",
+          "V3-EDU-004",
+          "MC-V314-72-001",
+          "PC8-FSR-EDUTECH-01",
+          "PC8-SC-ACADOPS-01",
+          "PC8-SC-PROFTRAIN-01",
+          "MC-V312-ACC-011",
+          "PC8-FSR-EDUSUPPORT-01",
+          "MC-V313-92-012",
+          "MC-EDU-TEACH-01",
+          "MC-V313-92-003",
+          "MC-62-003",
+          "MC-V313-71-005",
+          "MC-V313-71-011",
+          "MC-V39-MICRO-010",
+          "MC-V38-62-009",
+          "MC-62-002",
+          "MC-EDU-CRED-01",
+          "V3-EDU-005",
+          "MC-EDU-TUTOR-01",
+          "MC-EDU-UNIV-01",
+          "MC-V314-48-002",
+          "V318-ART-002"
+        ],
+        "whats_needed": [
+          "V318-ART-001",
+          "MC-V314-61-001",
+          "MC-V312-TRN-015",
+          "V3-EDU-001",
+          "MC-EDU-FEAR-01",
+          "MC-V313-21-004",
+          "MC-DEF-014",
+          "V3-EDU-002",
+          "MC-V314-62-002",
+          "MC-EDU-MATCH-01",
+          "MC-V37-62-006",
+          "V3-EDU-007",
+          "V3-EDU-003",
+          "MC-V38-62-020",
+          "V318-OCE-008"
+        ],
+        "what_dies": [
+          "V318-HPV-002"
+        ]
+      },
+      "model_counts": {
+        "what_works": 36,
+        "whats_needed": 15,
+        "what_dies": 1,
+        "total": 52
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-002"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 3,
+        "gap": 5,
+        "classification": "highest_friction_sector",
+        "notes": "CONFIRMED by Brookings 50-country study. Ohio mandates, Michigan chatbot liability. Entry sequence: corporate (gap 2) → teacher-facing (gap 2) → university admin (gap 3) → student-facing (gap 6)."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-033",
+        "FC-034",
+        "FC-035"
+      ]
+    },
+    {
+      "narrative_id": "TN-008",
+      "name": "Defense AI / National Security Technology Transformation",
+      "slug": "defense-ai---national-security-technology",
+      "tns_composite": 74.5,
+      "tns_category": "MAJOR",
+      "tns_rank": 10,
+      "tns_scores": {
+        "EM": 5.0,
+        "FC": 7.2,
+        "ES": 10.0,
+        "TC": 8.5,
+        "IR": 7.5
+      },
+      "sectors": [
+        {
+          "naics": "928110",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F3_geopolitics",
+        "F4_capital"
+      ],
+      "transformation_phase": "acceleration",
+      "summary": "UPGRADED early_disruption→acceleration (v3-6). 8 defense cards scored (avg 74.8, highest batch). MC-DEF-011 CMMC at 82.5 is strongest new card. Defense tech exits $54.4B (3x YoY) > investment ($49.1B) = first AI sector in Deployment phase. ReArm Europe EUR 800B. AUKUS autonomous warfare interoperability proven. Counter-UAS $7.5B budget. Nvidia/Groq $20B validates defense-AI hardware convergence.",
+      "year_by_year": {
+        "2026": {
+          "phase": "acceleration",
+          "description": "Rapid transformation in Defense AI / National Security Technology. Multiple disruption vectors active simultaneously.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "restructuring",
+          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "restructuring",
+          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure forming. Survivors adapting to new reality.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "Transformation largely complete. Sector operating under new economics.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V312-TRN-006",
+          "MC-V313-71-009",
+          "MC-V313-11-006",
+          "MC-V39-MFG-009",
+          "MC-V313-42-002",
+          "MC-V312-TRN-009",
+          "MC-V39-MFG-010",
+          "MC-V35-5259-001",
+          "MC-V313-21-001",
+          "MC-V314-SB-002",
+          "MC-UTL-004-L3",
+          "MC-UTL-004-L5",
+          "MC-V35-2111-001",
+          "MC-V39-MFG-011",
+          "MC-UTL-004-L1",
+          "MC-INFO-007",
+          "MC-UTL-002-L6",
+          "MC-UTL-002-L3",
+          "MC-V35-5223-001",
+          "MC-V312-CON-006",
+          "MC-V38-62-019",
+          "MC-V313-92-001",
+          "MC-UTL-004-L6",
+          "MC-V313-21-010",
+          "MC-V38-62-012"
+        ],
+        "whats_needed": [
+          "MC-V313-71-003",
+          "MC-V313-92-008",
+          "MC-V313-92-009",
+          "MC-V314-GEO-003",
+          "MC-V314-SP-002",
+          "MC-DEF-012",
+          "MC-V312-TRN-007",
+          "MC-V313-21-006",
+          "MC-V314-GEO-004",
+          "MC-V313-71-010",
+          "MC-V313-92-005",
+          "MC-V312-CON-014",
+          "MC-V312-ACC-009",
+          "MC-V313-21-009",
+          "MC-V313-42-009"
+        ],
+        "what_dies": [
+          "MC-V314-CTR-002"
+        ]
+      },
+      "model_counts": {
+        "what_works": 25,
+        "whats_needed": 15,
+        "what_dies": 1,
+        "total": 41
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 9,
+        "gap": 0,
+        "classification": "zero_friction_inverted",
+        "notes": "UPGRADED to gap=0 (from 1). Defense tech exits > investment = market validated. Fear runs OPPOSITE: fear of NOT adopting AI while adversaries do."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-030",
+        "FC-031",
+        "FC-032"
+      ]
+    },
+    {
+      "narrative_id": "TN-013",
+      "name": "Securities, Commodity Contracts, and Financial Investments Transformation",
+      "slug": "securities,-commodity-contracts,-and-financial-investments",
+      "tns_composite": 72.85,
+      "tns_category": "MAJOR",
+      "tns_rank": 11,
+      "tns_scores": {
+        "EM": 5.0,
+        "FC": 7.2,
+        "ES": 8.8,
+        "TC": 8.5,
+        "IR": 8.0
+      },
+      "sectors": [
+        {
+          "naics": "523",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F4_capital",
+        "F2_demographics"
+      ],
+      "transformation_phase": "acceleration",
+      "summary": "v3-7 deep dive: 1.07M workers, $287B payroll, Baumol 3.71x (highest of any deep-dived sector). KEY DIVERGENCE: wages DECLINING (-2.4%) while employment GROWS (+4.1%) = structural shift from high-comp traders/analysts to lower-cost AI-augmented ops. Portfolio management (523940): 496K workers, 85K establishments avg 5.8 workers = classic rollup territory. RIA M&A record 345 deals ($1.22T transacted). 38% of advisors plan to retire within decade. Entry-level analyst hiring declining 24pp. Firms au",
+      "year_by_year": {
+        "2026": {
+          "phase": "acceleration",
+          "description": "Rapid transformation in Securities, Commodity Contracts, and Financial Investments. Multiple disruption vectors active simultaneously.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "restructuring",
+          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "restructuring",
+          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure forming. Survivors adapting to new reality.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "Transformation largely complete. Sector operating under new economics.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V314-CT-001",
+          "MC-V37-523-001",
+          "MC-V37-523-006",
+          "MC-V37-523-003",
+          "MC-52-001",
+          "MC-V314-CTR-003",
+          "MC-V35-5239-002",
+          "C7-FSR-INS-01",
+          "MC-V37-523-007",
+          "PC8-FSR-PORTFOLIO-01",
+          "MC-52-003",
+          "PC8-DC-FININT-01",
+          "C7-FSR-LENDING-01",
+          "MC-V314-CTR-001",
+          "MC-52-002",
+          "V318-HPV-001"
+        ],
+        "whats_needed": [
+          "C7-RMB-INS-01",
+          "MC-V37-523-002",
+          "MC-V35-5239-001",
+          "MC-V37-523-008",
+          "MC-V37-523-004",
+          "V318-OCE-007",
+          "MC-V37-523-005",
+          "MC-V37-523-009"
+        ],
+        "what_dies": [
+          "C7-NR-10"
+        ]
+      },
+      "model_counts": {
+        "what_works": 16,
+        "whats_needed": 8,
+        "what_dies": 1,
+        "total": 25
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-001"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "classification": "low_friction",
+        "notes": "NEW (v3-7). Wall Street culture embraces automation that increases alpha. Entry-level resistance irrelevant (firms automate regardless). RIA rollup consolidation accelerates adoption."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-054",
+        "FC-055",
+        "FC-056"
+      ]
+    },
+    {
+      "narrative_id": "TN-005",
+      "name": "Administrative Services Transformation",
+      "slug": "administrative-services",
+      "tns_composite": 72.1,
+      "tns_category": "MAJOR",
+      "tns_rank": 12,
+      "tns_scores": {
+        "EM": 9.0,
+        "FC": 5.6,
+        "ES": 7.3,
+        "TC": 8.5,
+        "IR": 5.5
+      },
+      "sectors": [
+        {
+          "naics": "56",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F4_capital"
+      ],
+      "transformation_phase": "acceleration",
+      "summary": "v3-6: Staffing canary continues — sector screener confirms structural collapse. UPS cut 30K (Amazon split). Entry-level hiring collapse (-67% junior devs) further undermines staffing model viability.",
+      "year_by_year": {
+        "2026": {
+          "phase": "acceleration",
+          "description": "Rapid transformation in Administrative Services. Multiple disruption vectors active simultaneously.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "restructuring",
+          "description": "Sector consolidation accelerating. Cascading exits among laggards.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "restructuring",
+          "description": "Employment restructuring. New roles emerging, legacy roles declining.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure forming. Survivors adapting to new reality.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "Transformation largely complete. Sector operating under new economics.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V312-ADM-007",
+          "PC8-FSR-LANDSCAPE-01",
+          "MC-V312-ADM-004",
+          "C7-DC-STAFFING-01",
+          "PC8-EXT-BIZBUY-PEST-01",
+          "MC-V312-ADM-003",
+          "PC8-EXT-BIZBUY-CLEANING-01",
+          "MC-V312-ADM-002",
+          "MC-V312-ADM-005",
+          "PC8-RC-LANDSCAPE-01",
+          "MC-V312-ADM-008",
+          "V3-GEO-002",
+          "MC-V312-ADM-011",
+          "V3-GEO-006",
+          "PC8-AB-STAFFAUGMENT-01",
+          "PC8-EXT-YCINSPIRED-AIRECRUIT-01",
+          "MC-V314-61-002",
+          "PC8-SC-STAFFTRANS-01",
+          "C7-FSR-OFFICEADMIN-01",
+          "MC-V312-ADM-001",
+          "MC-V37-62-004",
+          "MC-56-001",
+          "C7-FSR-STAFF-01",
+          "MC-V39-MICRO-009",
+          "MC-V314-54-001",
+          "MC-56-002"
+        ],
+        "whats_needed": [
+          "MC-V312-ADM-006",
+          "MC-V312-ADM-012",
+          "PC8-PI-LANDSCAPE-01"
+        ],
+        "what_dies": [
+          "MC-V312-ADM-010",
+          "MC-V312-ADM-009",
+          "V3-FEAR-005",
+          "C7-AW-STAFF-01",
+          "PC8-EXT-DEADBIZ-TRAVELAGENT-01"
+        ]
+      },
+      "model_counts": {
+        "what_works": 26,
+        "whats_needed": 3,
+        "what_dies": 5,
+        "total": 34
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [
+          "TN-002"
+        ],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 9,
+        "psychological_readiness": 7,
+        "gap": 2,
+        "classification": "moderate_friction",
+        "notes": null
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-026"
+      ]
+    },
+    {
+      "narrative_id": "TN-016",
+      "name": "Micro-Firm AI Economy (Emerging Category) Transformation",
+      "slug": "micro-firm-ai-economy-emerging-category",
+      "tns_composite": 71.5,
+      "tns_category": "MAJOR",
+      "tns_rank": 13,
+      "tns_scores": {
+        "EM": 10.0,
+        "FC": 7.2,
+        "ES": 6.0,
+        "TC": 4.5,
+        "IR": 6.5
+      },
+      "sectors": [
+        {
+          "naics": "N/A-MICRO",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F4_capital"
+      ],
+      "transformation_phase": "pre_disruption",
+      "summary": "v3-9 DEEP DIVE (first emerging category dive): 33.9M addressable entities (30.4M nonemployers + 3.5M micro-employers). Coasean firm shrinkage confirmed: nonemployers +84% since 1997, 478K/month new business applications, avg firm size declining. Micro-firm taxonomy: Tier 1 (solo+AI, ~$500K-2M rev), Tier 2 (2-3 humans+AI, ~$2M-10M), Tier 3 (4-5 humans+AI, ~$5M-25M). Revenue per employee at AI-native companies 6x traditional SaaS ($3.48M vs $570K). Infrastructure stack 52% solved by point solution",
+      "year_by_year": {
+        "2026": {
+          "phase": "pre_disruption",
+          "description": "Early signals of structural change in Micro-Firm AI Economy (Emerging Category). Cost curves shifting, technology proving feasible.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "early_adoption",
+          "description": "First movers adopt new approaches. Incumbent awareness growing.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "early_disruption",
+          "description": "Adoption accelerates among forward-looking firms. Evidence of business model viability.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "acceleration",
+          "description": "Mainstream adoption begins. Incumbent response intensifies.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "restructuring",
+          "description": "Sector structure visibly changing. Employment and firm composition shifting.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V37-5415-004",
+          "MC-54-001",
+          "MC-V39-MICRO-009",
+          "MC-V39-MICRO-004",
+          "MC-V39-MICRO-010"
+        ],
+        "whats_needed": [
+          "V3-EMRG-001",
+          "MC-V39-MICRO-001",
+          "MC-V39-MICRO-007",
+          "C7-PI-FIN-01"
+        ],
+        "what_dies": [
+          "MC-V39-MICRO-002",
+          "MC-V39-MICRO-003",
+          "C7-MN-MICRO-01",
+          "MC-V39-MICRO-006",
+          "MC-V39-MICRO-005",
+          "MC-V39-MICRO-008"
+        ]
+      },
+      "model_counts": {
+        "what_works": 5,
+        "whats_needed": 4,
+        "what_dies": 6,
+        "total": 15
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 6,
+        "gap": 2,
+        "classification": "moderate_friction",
+        "notes": "NEW (v3-9). Economic readiness high (AI agents demonstrably capable, costs viable). Psychological barriers: Bench shutdown cautionary tale, trust for financial/legal AI guidance unproven at scale, solo practitioners habituated to manual processes. Gap narrows rapidly as Gen Z/Millennial founders adopt."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "medium",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-064",
+        "FC-065",
+        "FC-066"
+      ]
+    },
+    {
+      "narrative_id": "TN-011",
+      "name": "Management of Companies and Enterprises Transformation",
+      "slug": "management-of-companies-and-enterprises",
+      "tns_composite": 69.6,
+      "tns_category": "MAJOR",
+      "tns_rank": 14,
+      "tns_scores": {
+        "EM": 6.0,
+        "FC": 8.7,
+        "ES": 6.3,
+        "TC": 6.5,
+        "IR": 7.0
+      },
+      "sectors": [
+        {
+          "naics": "55",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F4_capital",
+        "F2_demographics",
+        "F5_psychology"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v3-7 deep dive: 2.55M workers, $375B payroll, Baumol 2.02x. This is the COMMAND AND CONTROL layer — corporate HQ, holding companies, regional offices. 55% routine-cognitive (reporting, budgets, status aggregation). Gartner: 20% of orgs eliminating >50% of middle management by 2026. McKinsey cutting 10% workforce. Coasean coordination cost collapse: when AI collapses coordination cost, this sector's rationale weakens. Employment projected to decline from 2.55M to 2.0-2.2M by 2031.",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "Disruption underway in Management of Companies and Enterprises. First entrants proving viability. Incumbents beginning to respond.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "acceleration",
+          "description": "Adoption curves steepening. Nash equilibrium breaking for early incumbent defectors.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "Mainstream disruption. Significant employment and revenue shifts.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "restructuring",
+          "description": "Sector consolidation. Weak incumbents exiting. New firm structures emerging.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "new_equilibrium",
+          "description": "New sector structure stabilized. Dominant business models established.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "MC-V37-55-005",
+          "MC-V37-55-002",
+          "MC-V37-55-008"
+        ],
+        "whats_needed": [
+          "MC-V37-55-006",
+          "MC-V37-55-001"
+        ],
+        "what_dies": []
+      },
+      "model_counts": {
+        "what_works": 3,
+        "whats_needed": 2,
+        "what_dies": 0,
+        "total": 5
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 8,
+        "psychological_readiness": 5,
+        "gap": 3,
+        "classification": "moderate_friction",
+        "notes": "NEW (v3-7). Middle management resistance to AI that replaces coordination function. 60% anticipatory displacement but executives view AI as cost reduction tool, not threat to own role."
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-042",
+        "FC-043",
+        "FC-044",
+        "FC-045",
+        "FC-046",
+        "FC-047"
+      ]
+    },
+    {
+      "narrative_id": "TN-007",
+      "name": "Wholesale Trade Transformation",
+      "slug": "wholesale-trade",
+      "tns_composite": 60.1,
+      "tns_category": "MODERATE",
+      "tns_rank": 15,
+      "tns_scores": {
+        "EM": 8.0,
+        "FC": 4.5,
+        "ES": 7.3,
+        "TC": 4.5,
+        "IR": 5.0
+      },
+      "sectors": [
+        {
+          "naics": "42",
+          "role": "primary"
+        }
+      ],
+      "forces": [
+        "F1_technology"
+      ],
+      "transformation_phase": "pre_disruption",
+      "summary": "Zero-density Schumpeterian gap persists. US-China tariff truce at risk could disrupt trade flows.",
+      "year_by_year": {
+        "2026": {
+          "phase": "pre_disruption",
+          "description": "Early signals of structural change in Wholesale Trade. Cost curves shifting, technology proving feasible.",
+          "indicators": []
+        },
+        "2027": {
+          "phase": "early_adoption",
+          "description": "First movers adopt new approaches. Incumbent awareness growing.",
+          "indicators": []
+        },
+        "2028": {
+          "phase": "early_disruption",
+          "description": "Adoption accelerates among forward-looking firms. Evidence of business model viability.",
+          "indicators": []
+        },
+        "2029": {
+          "phase": "acceleration",
+          "description": "Mainstream adoption begins. Incumbent response intensifies.",
+          "indicators": []
+        },
+        "2030_2031": {
+          "phase": "restructuring",
+          "description": "Sector structure visibly changing. Employment and firm composition shifting.",
+          "indicators": []
+        }
+      },
+      "geographic_variation": {},
+      "outputs": {
+        "what_works": [
+          "PC8-FSR-MEDSUPPLY-01",
+          "PC8-FSR-CHEMDIST-01",
+          "MC-V313-42-002",
+          "PC8-FSR-PHARMA-01",
+          "V3-DEF-008",
+          "PC8-SC-MEDDEVICE-01",
+          "MC-V313-42-012",
+          "PC8-FSR-WHOLESALE-01",
+          "MC-V313-42-011",
+          "PC8-FSR-ELECDIST-01",
+          "V318-OB-002",
+          "PC8-FSR-INDMACH-01",
+          "V318-WHL-002",
+          "PC8-FSR-PETROL-01",
+          "PC8-DC-WHOLESALE-01",
+          "MC-V313-42-003",
+          "V318-WHL-003",
+          "MC-V313-42-005",
+          "C7-FSR-WHOLESALE-01",
+          "PC8-SC-CONSTRUCTMAT-01"
+        ],
+        "whats_needed": [
+          "V318-WHL-001",
+          "MC-V313-42-006",
+          "MC-V313-42-009",
+          "V318-WHL-005",
+          "V318-CP-002",
+          "MC-V313-42-004",
+          "PC8-SC-MFGSUPPLY-01"
+        ],
+        "what_dies": [
+          "MC-V313-42-008",
+          "PC8-MN-WHOLESALE-01",
+          "PC8-SC-COMPEQUIP-01",
+          "PC8-SC-AUTOPARTS-01",
+          "PC8-SC-FOODDIST-01",
+          "MC-V313-42-010"
+        ]
+      },
+      "model_counts": {
+        "what_works": 20,
+        "whats_needed": 7,
+        "what_dies": 6,
+        "total": 33
+      },
+      "cascade_dependencies": {
+        "upstream_of": [],
+        "downstream_of": [],
+        "amplified_by": [],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 5,
+        "psychological_readiness": 5,
+        "gap": 0,
+        "classification": "neutral",
+        "notes": null
+      },
+      "falsification_criteria": [],
+      "confidence": {
+        "direction": "medium",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": []
+    }
+  ]
+}

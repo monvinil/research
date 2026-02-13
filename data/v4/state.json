@@ -1,0 +1,157 @@
+{
+  "state_version": 1,
+  "engine_version": "4.0",
+  "current_cycle": "v4-0",
+  "engine_mode": "transformation_narrative",
+  "description": "v4.0 'Economy Map': Transformation-narrative-first architecture. 15 narratives, 66 force collisions, 3 cascade chains, 8 geographies. Migrated from v3-18 (650 models preserved with CLA/VCR scoring).",
+  "force_velocities": {
+    "F1_technology": {
+      "velocity": "accelerating",
+      "key_metrics": {
+        "inference_cost": "$0.40/M tokens (GPT-4 equivalent), 50x/yr decline confirmed",
+        "cobot_cost": "$25-60K, ROI 6-18mo",
+        "robotics_funding": "$13.8B 2025 total (+77% YoY), $2.26B Q1 2026",
+        "humanoid_robots": "China 90% global market — Unitree 5,500 shipped, AgiBot 5,168 shipped, exceeding Tesla target. Tesla Optimus Gen 3 mass production launched Jan 21 but 'no useful work' yet (Musk Jan 28)",
+        "open_source_gap": "DeepSeek V4 expected ~Feb 17 with Engram memory, targeting Opus 4.5 SWE-bench parity. Open-proprietary lag approaching real-time",
+        "ai_coding": "25-40% of Google code AI-generated BUT experienced devs 19% SLOWER on complex tasks (perception-reality gap). Gains concentrated in narrow workflows (20-30%)",
+        "fda_ai_devices": "1,250+ cumulative. FDA DEREGULATED AI clinical decision support Jan 6, 2026 — AI single-recommendation CDS exempt from device regulation",
+        "enterprise_adoption": "78% (McKinsey), 95% GenAI (Bain). $37B GenAI spending 2025 (3.2x YoY). But EBIT impact still rare. Shift to disciplined deployment (fewer licenses, higher spend/license)",
+        "ai_agents": "OpenAI Frontier enterprise agent platform launched Feb 5. Claude Opus 4.6 agent teams (multi-agent parallel decomposition). Frontier capability unlocked.",
+        "nvidia_backlog": "3.6M Blackwell units, $500B orders through 2026, GPU cabinets 28K→60K+. CoWoS/HBM multi-year shortage",
+        "anticipatory_displacement": "HBR: 60% of orgs reduced headcount anticipating AI, only 2% tied to actual AI implementation. Companies acting on potential, not performance",
+        "maven_ai": "DoD Maven targeting 100% machine-generated intel by mid-2026",
+        "chinese_ai_spring": "5 Chinese labs launched frontier models simultaneously (Feb 2026): GLM-5 (Zhipu), MiniMax M2.2, Doubao 2.0 (ByteDance), Qwen 3.5 (Alibaba), Kimi K2.5 (Moonshot). China AI ecosystem is self-sustaining — export controls cannot create single point of failure",
+        "triple_frontier_launch": "Claude Opus 4.6 + GPT-5.3-Codex + Gemini 3 all launched Feb 5 — unprecedented simultaneous frontier release. Multi-agent orchestration now shipped product from all 3 labs",
+        "enterprise_agent_adoption": "5% → 40% agent-mode deployment in 12 months (McKinsey Feb 2026)",
+        "moltbook_breach": "Moltbook data breach = first frontier-model prompt injection exploit in production. AI security infrastructure demand confirmed."
+      },
+      "direction": "v3-9: Physical constraints now binding AI scaling (15 GW data center leased but 0 online, 2,600 GW interconnection queue). Robotics funding surged 77% YoY to $13.8B. Enterprise AI shifted from pilot to agent-mode (5% → 40%). Manufacturing deep dive confirms 78-point implementation gap (98% exploring, 20% ready). Micro-firm AI OS category emerging — AI agent teams replacing 10-15 human roles.",
+      "last_update_cycle": "v3-9",
+      "confidence": "high"
+    },
+    "F2_demographics": {
+      "velocity": "accelerating",
+      "key_metrics": {
+        "us_silver_tsunami": "52.3% of employer businesses owned by 55+, 2.34M businesses. $68T total boomer wealth transfer by 2030 including $5.1T in small business value. 12M businesses changing hands this decade.",
+        "succession_gap": "58% have no succession plan, 70% never successfully sell",
+        "japan_population": "Declining ~919K/yr, sub-670K births 2025 (new record low). $22.3B annual family spending from FY2026",
+        "china_births": "7.92M in 2025 (-17% YoY), comparable to 1738 levels. Women 20-34 declining from 105M to 58M by 2050 — irreversible",
+        "us_labor_market": "Jan 2026 BLS: +130K jobs (healthcare +82K dominates). BUT 898K DOWNWARD REVISION to 2025 employment. JOLTS plunged to 6.54M (0.87 jobs/worker — reversal from 2+ in 2022). Market restructuring, not collapsing.",
+        "college_enrollment_cliff": "15% decline projected 2025-2029, up to 80 additional closures, 400 total possible this decade. 5 states = 75% of decline (IL, CA, NY, PA, MI). $18B endowment redistribution",
+        "h1b_impact": "$100K fee crystallizing: startups 10-20% of revenue, IT services $500M+. Wage-weighted lottery effective Feb 27, 2026. 2 major lawsuits filed",
+        "entry_level_collapse": "67% drop in junior developer hiring 2024-2026. 35% all entry-level decline (Revelio Labs). 37% managers prefer AI over Gen Z hire. Only 7% of 2024 hires were recent grads",
+        "trades_shortage": "499K new workers needed in building trades (2026)",
+        "pipeline_collapse": "CPA -33%, nursing 78K->200K, teaching 42 states (411K vacant), trucking age 57",
+        "india_dividend": "1.44B population, 1B working-age, median 28. Zero-tax-through-2047 for AI. $70-100B hyperscaler commitments",
+        "healthcare_monoculture": "Jan 2026: healthcare = 95% of net job creation (137K of 143K). Trailing 3-month: 54.1% of all private jobs. US becoming healthcare employment monoculture",
+        "bls_revision_shock": "898K downward revision (largest since 2009). Combined with prior 818K = 1.7M jobs overstated. 2024 economy materially weaker than reported",
+        "h1b_binary_event": "Wage-weighted lottery effective Feb 27. 55% self-selection expected. Indian IT services body-shop model structurally disadvantaged",
+        "negative_net_migration": "CBO: net migration -295K to +10K (2025-2034 window). Combined with BLS 898K revision = labor market far weaker than believed.",
+        "construction_wage_inflation": "6-8% trade wage inflation, especially HVAC/electrical/plumbing. 499K new workers needed.",
+        "silver_tsunami_value": "$10T total intergenerational asset transfer. Manufacturing deep dive: machinist median age 57, machine shop avg 15.9 workers."
+      },
+      "direction": "v3-9: Three simultaneous demographic shocks confirmed: (1) negative net migration (-295K to -10K), (2) BLS 1.7M cumulative overstatement, (3) Silver Tsunami $10T total transfer. Manufacturing most affected: machinist median age 57, 392K establishments with extreme fragmentation (avg 32.8 workers). Construction 6-8% wage inflation. 'Job hugging' phenomenon (64% staying put) reduces labor mobility.",
+      "last_update_cycle": "v3-9",
+      "confidence": "high"
+    },
+    "F3_geopolitics": {
+      "velocity": "accelerating",
+      "key_metrics": {
+        "us_china_tariffs": "47.5% avg US tariff on China (100% coverage). Nov 2025 truce through Nov 10, 2026 at risk — Iran 25% tariff threatens destabilization",
+        "eu_ai_act": "Digital Omnibus delays high-risk Annex III from Aug 2026 to Dec 2027 (16mo). Conditional on standards readiness. Creates regulatory uncertainty window",
+        "rearm_europe": "EUR 800B ReArm Europe/Readiness 2030 — 1.5% GDP fiscal escape clause (EUR 650B), EUR 150B SAFE loans. Drones and air defense prioritized",
+        "india_ai": "Zero taxes on cloud/AI revenues through 2047. $70-100B from Google/Amazon/Microsoft. AI Impact Summit Feb 16-20 (first Global South). 9.2 GW data center target by 2030",
+        "aukus": "Pillar II autonomous warfare trials expanding 2026. AI models proven interoperable across US/UK/Australia platforms",
+        "china_chips": "3 new AI chip fabs by late 2026, 80% domestic demand capture target. 25% US 'security tariff' on chip exports. Busan 1-year suspension",
+        "gulf_ai": "$200B+ combined Saudi/UAE. HUMAIN deploying 18,000 GB300s. UAE Stargate 1GW cluster (G42/OpenAI/Oracle/Nvidia/SoftBank). Positioning as neutral compute hub in US-China bifurcation",
+        "defense_spending": "$2,750B global defense (9.4%+ YoY). NATO 5% GDP target. DoD $961.6B base + $150B reconciliation. $13.4B AI/autonomy line",
+        "us_ai_regulation": "Trump EO creates AI Litigation Task Force vs 280 bipartisan state lawmakers. Federal preemption uncertain — EO cannot overturn state law. March 11 Commerce/FTC deadlines imminent",
+        "cmmc_enforcement": "CMMC 2.0 enforcement begins, 220K+ DIB companies must certify",
+        "counter_uas": "$7.5B C-UAS budget, 25.8% CAGR",
+        "doge_federal_cuts": "DOGE: federal workforce -322K (lowest since 1966). DC/VA/MD regional restructuring accelerating.",
+        "critical_minerals": "Critical Minerals Ministerial: 54 nations, FORGE alliance, $10B Project Vault, 30-day stockpile commitment",
+        "aukus_itar": "AUKUS ITAR exemption reduces defense tech export friction for AU/UK"
+      },
+      "direction": "v3-9: DOGE federal cuts (-322K, lowest since 1966) creating regional economic restructuring. Critical Minerals Ministerial (54 nations, $10B Project Vault) formalizes resource geopolitics. India AI Summit executing. US-China tariffs at 47.5%. AUKUS ITAR exemption opens defense tech export corridor.",
+      "last_update_cycle": "v3-9",
+      "confidence": "high"
+    },
+    "F4_capital": {
+      "velocity": "shifting",
+      "key_metrics": {
+        "fed_funds": "3.50-3.75% (Jan 2026 hold). 2 FOMC dissents favoring cut. Futures: at most 2 cuts in 2026, ZERO in 2027. Higher-for-longer structural",
+        "cre_cmbs": "Office CMBS delinquency 12.3% (near all-time record). Corporate bankruptcy 14-year high (694).",
+        "ai_mega_rounds": "Anthropic $20B at $350B (doubled in 5mo). OpenAI $100B at $830B. xAI $20B at $230B. Humans& $480M seed at $4.48B. Total Jan-Feb 2026 frontier raises >$140B",
+        "defense_tech": "$17.9B equity funding 2025 (2.45x YoY). Exits record $54.4B (3x YoY). Nvidia/Groq $20B. 41% more active defense investors. Exits > investment = Deployment phase signal",
+        "pe_distress": "Bankruptcies trending up early 2026. Most exposed: retail, dining, RE, energy, healthcare, education. PE dry powder positioning for aggressive middle-market M&A. Private credit as dominant distress liquidity source",
+        "sp500_concentration": "Top 10 = 40% of index weight (all-time record). Forward P/E 22x (matches 2021 peak). But Mag 7 earnings share declining to 31% — broadening",
+        "vc_2026": "10-25% funding increase expected. AI + robotics + defense gaining share. Climate, crypto, undifferentiated AI losing. Secondaries becoming mainstream liquidity",
+        "hy_spread": "2.87% (tight but diverging from fundamentals)",
+        "pe_refinancing_wall": "$930B maturing in 2026, $1.5-1.8T total 2026-2028, distress rate 11.98% (+148%)",
+        "business_applications": "532K/mo (Coasean shrinkage confirmed)",
+        "defense_tech_doubled": "Defense tech $49B (doubled YoY). IPO pipeline: Anthropic $350B, OpenAI, SpaceX $1.5T"
+      },
+      "direction": "v3-9: Capital BIFURCATING: AI/defense accelerating ($49B defense tech, doubled YoY) while CRE/office in crisis (CMBS 12.3%, bankruptcy 14-year high at 694). Fed hold at 3.5-3.75%. IPO pipeline forming (Anthropic $350B, SpaceX $1.5T). Manufacturing PE dry powder targeting Silver Tsunami acquisitions at 3-5x EBITDA.",
+      "last_update_cycle": "v3-9",
+      "confidence": "high"
+    },
+    "F5_psychology": {
+      "velocity": "accelerating",
+      "key_metrics": {
+        "worker_fear": "ESCALATED: 60% expect AI to cut more jobs than it adds (from 40% in v3-4). 51% worried about own job. 1 in 5 knows someone who lost job to AI — fear transitioning from abstract to experiential",
+        "ai_washing_layoffs": "108,435 Jan 2026 job cuts (+118% YoY). HBR: 60% orgs cut headcount anticipating AI, only 2% tied to actual implementation. 'Forever layoffs' amid profits",
+        "entry_level_extinction": "67% junior dev hiring collapse. 37% managers prefer AI over Gen Z. 35% all entry-level decline. Pipeline destruction with decade-lag leadership consequences",
+        "k_shaped_sentiment": "Michigan 57.3 (6-mo high). 7-point gap: wealthy (stock-driven) vs hourly workers. Spending strong despite low confidence — behavioral decoupling",
+        "deepfake_trust_collapse": "Europol: 90% of online content may be synthetic by 2026. 8M deepfakes 2025 (16x from 2023). 'Liar's Dividend' — authentic content dismissed as fake",
+        "enterprise_roi": "$37B GenAI spent 2025 (3.2x). 66% productivity gains. But enterprise-wide EBIT rare. Fewer licenses, higher spend — disciplined deployment",
+        "education_fear": "Brookings: AI risks outweigh benefits for children (50-country study). Ohio mandates AI frameworks by Jul 2026. Michigan proposes chatbot liability for minors. Alpha School parents report child anxiety",
+        "state_regulation_wave": "2026 bills target NEW categories: agentic AI, algorithmic pricing, chatbot liability for minors. Colorado AI Act effective 2026. Liability shifting from governance to outcomes",
+        "generational_divide": "Gen Z 67% excited vs Boomers 29% excited / 51% worried. Boomer confidence dropped 35%",
+        "fear_economy_tam": "~$86B by 2030 (governance $15.8B + safety $9.8B + cybersecurity $60.6B)",
+        "usage_confidence_gap": "ManpowerGroup: AI usage +13% but confidence -18%. Gartner: GenAI enters Trough of Disillusionment.",
+        "deepfake_fraud": "$12.5B deepfake fraud losses in 2025. 1,200 state AI bills across 38 states.",
+        "job_hugging": "'Job hugging' phenomenon: 64% of workers staying put despite dissatisfaction. Voluntary turnover collapsing."
+      },
+      "direction": "v3-9: Fear friction WIDENING: AI usage up but confidence down simultaneously (ManpowerGroup +13%/-18%). 78% deploy AI but only 23% measure ROI (adoption-measurement gap). GenAI in Gartner Trough. Deepfake fraud $12.5B. 1,200 state AI bills. 'Job hugging' (64%) reduces labor mobility. Enterprise ROI skepticism growing.",
+      "last_update_cycle": "v3-9",
+      "confidence": "high"
+    },
+    "F6_energy": {
+      "velocity": "accelerating",
+      "key_metrics": {
+        "data_center_electricity": "IEA: doubling to 945 TWh global by 2030. US: 133% growth to 426 TWh. AI servers growing 30%/yr (4x other sectors). Occupancy 95%+ peak late 2026",
+        "grid_bottleneck": "2,600 GW in queue, 5+ year wait — THE binding constraint on AI scaling",
+        "pjm_capacity": "$16.4B auction (3rd consecutive record). Price at $333/MW-day CAP. Data centers 63% of price increase. 8+ year queue wait",
+        "zero_water_cooling": "Microsoft piloting zero-water-evaporation cooling in Phoenix and Wisconsin (2026). Trades water for energy — resource substitution",
+        "copper": "Conflicting: ICSG 150K deficit vs Red Cloud 126K surplus (tariff demand destruction). Citi $13-15K/tonne. Long-term: 766K deficit by 2030. DC demand 330-500K tonnes/yr by 2030",
+        "renewable_policy": "One Big Beautiful Bill terminates residential solar credit Dec 2025. Wind/solar phase-out for construction after Jul 2026. Solar LCOE still competitive ($38-78/MWh) but 15-30% more expensive without credits",
+        "nuclear_renaissance": "10GW+ committed for AI (TMI restart, Kairos SMR, Talen). QCEW: nuclear employment (38K workers) at Baumol 2.22",
+        "solar_growth": "Solar electric (221114) employment +51.6% YoY — fastest-growing sub-sector in entire QCEW dataset",
+        "water_stress": "1.7B gallons/day for data center cooling globally. Microsoft zero-water pilot is first hyperscaler response",
+        "data_center_gap": "15 GW data center leased but NONE online. Supply-demand gap widening.",
+        "meta_nuclear": "Meta 6.6 GW nuclear deal (largest single-company commitment in US history)",
+        "smr_progress": "Holtec SMR-300 NRC application filed (first post-NuScale). 2,600 GW interconnection queue.",
+        "copper_record": "Copper $13,387/tonne (record). CA water stress: 116B liters for data centers by 2028.",
+        "obbba_deadline": "OBBBA renewable credit deadline Jul 5, 2026 — creates construction rush then cliff"
+      },
+      "direction": "v3-9: Physical constraints now BINDING AI scaling. 15 GW leased, 0 online. Meta 6.6 GW nuclear (largest ever). Holtec SMR-300 application. Copper at $13,387/tonne record. 2,600 GW interconnection queue. OBBBA renewable deadline Jul 5, 2026 creates rush-then-cliff dynamic. Water stress intensifying (CA 116B liters by 2028).",
+      "last_update_cycle": "v3-9",
+      "confidence": "high"
+    }
+  },
+  "migration_source": {
+    "v3_state_version": 28,
+    "v3_cycle": "v3-18",
+    "v3_models_count": 650,
+    "migration_date": "2026-02-12"
+  },
+  "entity_counts": {
+    "collisions": 66,
+    "narratives": 15,
+    "cascades": 3,
+    "geographies": 8,
+    "models": 650,
+    "models_linked": 597,
+    "models_unlinked": 53
+  }
+}

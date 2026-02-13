@@ -1,0 +1,301 @@
+#!/usr/bin/env python3
+"""
+v4 UI Compilation: Generate narrative-first UI JSON files.
+
+Reads:
+  - data/v4/narratives.json (scored narratives with model links)
+  - data/v4/models.json (650 models with narrative_ids)
+  - data/v4/collisions.json
+  - data/v4/cascades.json
+  - data/v4/geographies.json
+  - data/v4/state.json
+
+Writes:
+  - data/ui/dashboard.json (updated for v4)
+  - data/ui/narratives.json (slim narrative data for UI)
+  - data/ui/models.json (updated with narrative_ids)
+"""
+
+import json
+import statistics
+from collections import Counter
+from pathlib import Path
+
+BASE = Path("/Users/mv/Documents/research")
+V4_DIR = BASE / "data/v4"
+UI_DIR = BASE / "data/ui"
+
+
+def build_slim_narrative(n):
+    """Build slim narrative for UI display."""
+    tns = n.get("tns", {})
+    outputs = n.get("outputs", {})
+
+    return {
+        "narrative_id": n["narrative_id"],
+        "name": n["name"],
+        "slug": n.get("slug", ""),
+        "tns_composite": tns.get("composite", 0),
+        "tns_category": tns.get("category", "SPECULATIVE"),
+        "tns_rank": tns.get("rank", 999),
+        "tns_scores": {
+            "EM": tns.get("economic_magnitude", 0),
+            "FC": tns.get("force_convergence", 0),
+            "ES": tns.get("evidence_strength", 0),
+            "TC": tns.get("timing_confidence", 0),
+            "IR": tns.get("irreversibility", 0),
+        },
+        "sectors": n.get("sectors", []),
+        "forces": n.get("forces_acting", []),
+        "transformation_phase": n.get("transformation_phase", ""),
+        "summary": n.get("summary", "")[:500],
+        "year_by_year": n.get("year_by_year", {}),
+        "geographic_variation": n.get("geographic_variation", {}),
+        "outputs": {
+            "what_works": outputs.get("what_works", []),
+            "whats_needed": outputs.get("whats_needed", []),
+            "what_dies": outputs.get("what_dies", []),
+        },
+        "model_counts": {
+            "what_works": len(outputs.get("what_works", [])),
+            "whats_needed": len(outputs.get("whats_needed", [])),
+            "what_dies": len(outputs.get("what_dies", [])),
+            "total": sum(len(outputs.get(b, [])) for b in ["what_works", "whats_needed", "what_dies"]),
+        },
+        "cascade_dependencies": n.get("cascade_dependencies", {}),
+        "fear_friction": n.get("fear_friction", {}),
+        "falsification_criteria": n.get("falsification_criteria", []),
+        "confidence": n.get("confidence", {}),
+        "collision_ids": n.get("collision_ids", []),
+    }
+
+
+def build_slim_model(m):
+    """Build slim model for UI display (preserves v3 format + narrative fields)."""
+    cla = m.get("cla", {})
+    vcr = m.get("vcr", {})
+
+    slim = {
+        "rank": m.get("rank"),
+        "opportunity_rank": m.get("opportunity_rank"),
+        "vcr_rank": m.get("vcr_rank"),
+        "id": m["id"],
+        "name": m["name"],
+        "composite": m.get("composite", 0),
+        "opportunity_composite": cla.get("composite"),
+        "vcr_composite": vcr.get("composite"),
+        "vcr_roi_multiple": vcr.get("roi_estimate", {}).get("seed_roi_multiple") if isinstance(vcr.get("roi_estimate"), dict) else None,
+        "category": m.get("primary_category", m.get("category", "")),
+        "opportunity_category": cla.get("category"),
+        "vcr_category": vcr.get("category"),
+        "scores": m.get("scores", {}),
+        "cla_scores": cla.get("scores"),
+        "vcr_scores": vcr.get("scores"),
+        "sector_naics": m.get("sector_naics"),
+        "architecture": m.get("architecture"),
+        "one_liner": m.get("one_liner"),
+        "sector_name": m.get("sector_name"),
+        "confidence_tier": m.get("confidence_tier"),
+        "evidence_quality": m.get("evidence_quality"),
+        "forces": m.get("forces_v3"),
+        # v4 fields
+        "narrative_ids": m.get("narrative_ids", []),
+        "narrative_role": m.get("narrative_role", "unlinked"),
+    }
+
+    # Polanyi
+    pol = m.get("polanyi")
+    if pol:
+        slim["polanyi"] = {
+            "automation_exposure": pol.get("automation_exposure"),
+            "dominant_category": pol.get("dominant_category"),
+        }
+
+    return slim
+
+
+def main():
+    print("=" * 70)
+    print("v4 UI COMPILATION: Generating narrative-first UI data")
+    print("=" * 70)
+    print()
+
+    # Load all v4 data
+    print("Loading v4 data...")
+
+    with open(V4_DIR / "narratives.json") as f:
+        narr_data = json.load(f)
+    narratives = narr_data["narratives"]
+
+    with open(V4_DIR / "models.json") as f:
+        models_data = json.load(f)
+    models = models_data["models"]
+
+    with open(V4_DIR / "collisions.json") as f:
+        coll_data = json.load(f)
+
+    with open(V4_DIR / "cascades.json") as f:
+        casc_data = json.load(f)
+
+    with open(V4_DIR / "geographies.json") as f:
+        geo_data = json.load(f)
+
+    with open(V4_DIR / "state.json") as f:
+        state = json.load(f)
+
+    print(f"  {len(narratives)} narratives, {len(models)} models")
+    print(f"  {len(coll_data['collisions'])} collisions, {len(casc_data['cascades'])} cascades")
+    print(f"  {len(geo_data['geographies'])} geographies")
+    print()
+
+    # Build UI narratives
+    print("Building UI narratives...")
+    ui_narratives = [build_slim_narrative(n) for n in narratives]
+
+    narratives_output = {
+        "engine_version": "v4.0",
+        "cycle": "v4-0",
+        "date": "2026-02-12",
+        "total_narratives": len(ui_narratives),
+        "tns_system": {
+            "axes": {
+                "EM": {"name": "Economic Magnitude", "weight": 25, "question": "How large is the GDP/employment impact?"},
+                "FC": {"name": "Force Convergence", "weight": 25, "question": "How many forces drive this, how aligned?"},
+                "ES": {"name": "Evidence Strength", "weight": 20, "question": "How much hard data confirms direction?"},
+                "TC": {"name": "Timing Confidence", "weight": 15, "question": "How confident are we in the timeline?"},
+                "IR": {"name": "Irreversibility", "weight": 15, "question": "Once started, can this be reversed?"},
+            },
+            "composite_formula": "(EM*25 + FC*25 + ES*20 + TC*15 + IR*15) / 10",
+            "categories": {
+                "DEFINING": ">=80: Economy-reshaping, high confidence",
+                "MAJOR": ">=65: Significant with strong evidence",
+                "MODERATE": ">=50: Clear direction, moderate evidence",
+                "EMERGING": ">=35: Early signals, plausible",
+                "SPECULATIVE": "<35: Hypothesis stage",
+            },
+        },
+        "narratives": ui_narratives,
+    }
+
+    with open(UI_DIR / "narratives.json", "w") as f:
+        json.dump(narratives_output, f, indent=2, ensure_ascii=False)
+    print(f"  Written: {UI_DIR / 'narratives.json'} ({len(ui_narratives)} narratives)")
+
+    # Build UI models
+    print("Building UI models...")
+    ui_models = [build_slim_model(m) for m in models]
+
+    models_output = {
+        "engine_version": "v4.0",
+        "cycle": "v4-0",
+        "date": "2026-02-12",
+        "total": len(ui_models),
+        "dual_ranking": True,
+        "triple_ranking": True,
+        "narrative_linked": True,
+        "models": ui_models,
+    }
+
+    with open(UI_DIR / "models.json", "w") as f:
+        json.dump(models_output, f, indent=2, ensure_ascii=False)
+    print(f"  Written: {UI_DIR / 'models.json'} ({len(ui_models)} models)")
+
+    # Build dashboard
+    print("Building dashboard...")
+    tns_composites = [n["tns"]["composite"] for n in narratives]
+    tns_cat_dist = Counter(n["tns"]["category"] for n in narratives)
+
+    force_velocities = state.get("force_velocities", {})
+    force_summary = {}
+    for fid, fv in force_velocities.items():
+        force_summary[fid] = {
+            "velocity": fv.get("velocity", "steady"),
+            "confidence": fv.get("confidence", "medium"),
+        }
+
+    # Cascade graph for UI
+    cascade_graph = {
+        "nodes": [
+            {
+                "id": n["narrative_id"],
+                "name": n["name"],
+                "tns": n["tns"]["composite"],
+                "category": n["tns"]["category"],
+            }
+            for n in narratives
+        ],
+        "edges": [],
+    }
+    for n in narratives:
+        deps = n.get("cascade_dependencies", {})
+        for target in deps.get("upstream_of", []):
+            cascade_graph["edges"].append({
+                "from": n["narrative_id"],
+                "to": target,
+                "type": "upstream_of",
+            })
+
+    dashboard = {
+        "engine_version": "v4.0",
+        "current_cycle": "v4-0",
+        "last_updated": "2026-02-12",
+        "architecture": "transformation_narrative",
+        "total_narratives": len(narratives),
+        "total_models": len(models),
+        "total_collisions": len(coll_data["collisions"]),
+        "total_cascades": len(casc_data["cascades"]),
+        "total_geographies": len(geo_data["geographies"]),
+        "tns_stats": {
+            "mean": round(statistics.mean(tns_composites), 1),
+            "stdev": round(statistics.stdev(tns_composites), 1),
+            "min": round(min(tns_composites), 1),
+            "max": round(max(tns_composites), 1),
+        },
+        "tns_category_distribution": dict(sorted(tns_cat_dist.items())),
+        "force_summary": force_summary,
+        "top_narratives": [
+            {
+                "narrative_id": n["narrative_id"],
+                "name": n["name"],
+                "tns_composite": n["tns"]["composite"],
+                "tns_category": n["tns"]["category"],
+                "sectors": [s["naics"] for s in n.get("sectors", [])],
+                "forces": n.get("forces_acting", []),
+                "phase": n.get("transformation_phase", ""),
+                "model_count": sum(len(n["outputs"].get(b, [])) for b in ["what_works", "whats_needed", "what_dies"]),
+            }
+            for n in narratives[:10]
+        ],
+        "cascade_graph": cascade_graph,
+        "models_linked": models_data.get("linked_count", 0),
+        "models_unlinked": models_data.get("unlinked_count", 0),
+    }
+
+    with open(UI_DIR / "dashboard.json", "w") as f:
+        json.dump(dashboard, f, indent=2, ensure_ascii=False)
+    print(f"  Written: {UI_DIR / 'dashboard.json'}")
+
+    # Summary
+    print()
+    print("=" * 70)
+    print("v4 UI COMPILATION COMPLETE")
+    print("=" * 70)
+    print()
+    print(f"  Narratives: {len(ui_narratives)} ({tns_cat_dist})")
+    print(f"  Models: {len(ui_models)} ({models_data.get('linked_count', 0)} linked)")
+    print(f"  Dashboard: v4.0")
+    print()
+    print("  Top 5 Transformation Narratives:")
+    for n in narratives[:5]:
+        tns = n["tns"]
+        total = sum(len(n["outputs"].get(b, [])) for b in ["what_works", "whats_needed", "what_dies"])
+        print(f"    #{tns['rank']}  {tns['composite']:5.1f}  [{tns['category']}]  {n['name'][:50]}  ({total} models)")
+    print()
+    print("  Files:")
+    print(f"    {UI_DIR / 'narratives.json'}")
+    print(f"    {UI_DIR / 'models.json'}")
+    print(f"    {UI_DIR / 'dashboard.json'}")
+
+
+if __name__ == "__main__":
+    main()

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.18</title>
+<title>Research Engine v4.0</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -178,6 +178,59 @@
   .card { padding: 24px; margin-bottom: 16px; }
   .view-section { display: none; }
   .view-section.active { display: block; }
+
+  /* Narrative Table */
+  .narr-table { width: 100%; border-collapse: collapse; }
+  .narr-table th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--dim); border-bottom: 1px solid var(--glass-border); white-space: nowrap; cursor: pointer; }
+  .narr-table td { padding: 10px 10px; border-bottom: 1px solid rgba(255,255,255,0.02); font-size: 12.5px; vertical-align: middle; }
+  .narr-table tr { cursor: pointer; transition: background var(--transition); }
+  .narr-table tr:hover { background: var(--surface-hover); }
+  .tns-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tns-DEFINING { background: rgba(52,211,153,0.12); color: var(--green); }
+  .tns-MAJOR { background: rgba(96,165,250,0.12); color: var(--blue); }
+  .tns-MODERATE { background: rgba(251,191,36,0.12); color: var(--amber); }
+  .tns-EMERGING { background: rgba(167,139,250,0.12); color: var(--accent); }
+  .tns-SPECULATIVE { background: rgba(255,255,255,0.05); color: var(--dim); }
+  .narr-axes { display: flex; flex-direction: column; gap: 2px; }
+  .narr-axis-bar { display: flex; align-items: center; gap: 4px; }
+  .narr-axis-bar .axis-bar-label { width: 18px; font-size: 8px; color: var(--dim); text-align: right; }
+  .narr-axis-bar .axis-bar-track { flex: 1; height: 4px; background: rgba(255,255,255,0.04); border-radius: 2px; min-width: 40px; }
+  .narr-axis-bar .axis-bar-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
+  .narr-axis-bar .axis-bar-val { font-size: 9px; color: var(--text-secondary); width: 22px; text-align: right; }
+  .narr-model-count { display: flex; gap: 6px; font-size: 10px; }
+  .narr-model-count span { padding: 1px 6px; border-radius: 3px; }
+  .nmc-works { background: rgba(52,211,153,0.1); color: var(--green); }
+  .nmc-needed { background: rgba(96,165,250,0.1); color: var(--blue); }
+  .nmc-dies { background: rgba(248,113,113,0.1); color: var(--red); }
+  .narr-phase { font-size: 10px; padding: 2px 6px; border-radius: 3px; background: rgba(255,255,255,0.04); color: var(--text-secondary); white-space: nowrap; }
+
+  /* Narrative Detail Expand */
+  .narr-detail { display: none; padding: 20px; background: rgba(255,255,255,0.015); border-top: 1px solid var(--glass-border); }
+  .narr-detail.expanded { display: block; }
+  .narr-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+  @media (max-width: 768px) { .narr-detail-grid { grid-template-columns: 1fr; } }
+  .narr-detail-section { padding: 12px; background: var(--surface); border-radius: var(--radius-sm); }
+  .narr-detail-section h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--dim); margin-bottom: 8px; }
+  .narr-timeline { display: flex; flex-direction: column; gap: 6px; }
+  .narr-timeline-year { display: flex; gap: 8px; font-size: 11px; }
+  .narr-timeline-year .year { font-weight: 600; color: var(--accent); min-width: 55px; }
+  .narr-timeline-year .phase-tag { font-size: 9px; padding: 1px 5px; border-radius: 3px; background: rgba(167,139,250,0.1); color: var(--accent); }
+  .narr-timeline-year .desc { color: var(--text-secondary); font-size: 11px; }
+  .narr-model-list { display: flex; flex-direction: column; gap: 3px; max-height: 200px; overflow-y: auto; }
+  .narr-model-item { font-size: 11px; padding: 4px 8px; border-radius: 4px; background: rgba(255,255,255,0.02); cursor: pointer; }
+  .narr-model-item:hover { background: rgba(255,255,255,0.06); }
+
+  /* Cascade view */
+  .cascade-card { padding: 16px; margin-bottom: 12px; }
+  .cascade-links { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+  .cascade-link { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; padding: 6px 8px; border-radius: 4px; background: rgba(255,255,255,0.02); }
+  .cascade-link-pos { font-weight: 700; color: var(--accent); min-width: 20px; }
+  .cascade-link-name { color: var(--text); }
+  .cascade-link-status { font-size: 10px; color: var(--text-secondary); }
+  .cascade-narr-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px; }
+  .cascade-narr-tag { font-size: 9px; padding: 2px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); cursor: pointer; }
+  .cascade-edge { display: flex; align-items: center; gap: 6px; font-size: 11px; padding: 4px 0; }
+  .cascade-edge-arrow { color: var(--accent); font-weight: 700; }
 
   /* KPI Row */
   .kpi-row {
@@ -832,7 +885,9 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 <div class="container" id="main-app" style="display:none">
   <nav id="main-nav">
-    <a class="active" data-view="models">Models</a>
+    <a class="active" data-view="narratives">Narratives</a>
+    <a data-view="models">Models</a>
+    <a data-view="cascades">Cascades</a>
     <a data-view="vcroi">VC ROI</a>
     <a data-view="forces">Forces</a>
     <a data-view="sectors">Sectors</a>
@@ -845,26 +900,52 @@ document.addEventListener('DOMContentLoaded',function(){
   </nav>
 
   <header>
-    <h1>Research Engine v3.18</h1>
+    <h1>Research Engine v4.0</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-18</span>
-      &nbsp; <span id="model-total-sub">650 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      <span class="cycle-badge" id="cycle-badge">v4-0</span>
+      &nbsp; <span id="narr-total-sub">15 narratives</span> &middot; <span id="model-total-sub">650 models</span> &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
-    <div style="font-size:11px;color:var(--dim);margin-top:4px;line-height:1.5;max-width:820px">Projects what the economy becomes (2026&ndash;2031). Each model is a venture-scale opportunity scored on 3 independent axes: Transformation (will it happen?), Opportunity (can an entrant play?), and VC ROI (is it investable?). See <a href="#" onclick="event.preventDefault();document.querySelector('[data-view=glossary]').click()" style="color:var(--accent);text-decoration:underline">Glossary</a> for full definitions.</div>
+    <div style="font-size:11px;color:var(--dim);margin-top:4px;line-height:1.5;max-width:820px">Projects what the economy becomes (2026&ndash;2031). <strong>Transformation Narratives</strong> are the primary unit &mdash; force-driven stories of how sectors restructure. 650 business models serve as evidence, scored on 3 independent axes: Transformation, Opportunity, and VC ROI. See <a href="#" onclick="event.preventDefault();document.querySelector('[data-view=glossary]').click()" style="color:var(--accent);text-decoration:underline">Glossary</a> for full definitions.</div>
   </header>
 
   <!-- KPI Row (always visible) -->
   <div class="kpi-row" id="kpi-row">
-    <div class="glass kpi" title="Total models individually scored across 3 ranking dimensions"><div class="kpi-label">Rated Models</div><div class="kpi-value" style="color:var(--accent)" id="kpi-rated">--</div><div class="kpi-sub">T + O + VCR scored</div></div>
-    <div class="glass kpi" title="Models with SN≥8 AND FA≥8 — structurally inevitable AND force-aligned"><div class="kpi-label">Structural Winners</div><div class="kpi-value" style="color:var(--green)" id="kpi-winners">--</div><div class="kpi-sub">SN&ge;8 &amp; FA&ge;8</div></div>
-    <div class="glass kpi" title="Highest T-Score (Transformation composite) across all models"><div class="kpi-label">Top T-Score</div><div class="kpi-value" style="color:var(--amber)" id="kpi-top">--</div><div class="kpi-sub" id="kpi-mean-sub">mean --</div></div>
-    <div class="glass kpi" title="Models added in the current engine cycle"><div class="kpi-label">New This Cycle</div><div class="kpi-value" style="color:var(--red)" id="kpi-new">--</div><div class="kpi-sub">from deep dives</div></div>
-    <div class="glass kpi" title="Value chain layer decompositions — when a parent sector is FORTIFIED, it is broken into sub-layers that may be ACCESSIBLE"><div class="kpi-label">Sub-Models</div><div class="kpi-value" style="color:var(--cyan)" id="kpi-sub-models">--</div><div class="kpi-sub">value chain layers</div></div>
-    <div class="glass kpi" title="Parent models that have been decomposed into sub-layers via value chain analysis"><div class="kpi-label">Decomposed</div><div class="kpi-value" style="color:var(--pink)" id="kpi-decomposed">--</div><div class="kpi-sub">parent models split</div></div>
+    <div class="glass kpi" title="Transformation narratives — force-driven stories of how sectors restructure"><div class="kpi-label">Narratives</div><div class="kpi-value" style="color:var(--accent)" id="kpi-narratives">--</div><div class="kpi-sub" id="kpi-narr-cat-sub">scored by TNS</div></div>
+    <div class="glass kpi" title="DEFINING narratives: economy-reshaping, high confidence (TNS >= 80)"><div class="kpi-label">Defining</div><div class="kpi-value" style="color:var(--green)" id="kpi-defining">--</div><div class="kpi-sub">TNS &ge; 80</div></div>
+    <div class="glass kpi" title="Highest TNS composite across all narratives"><div class="kpi-label">Top TNS</div><div class="kpi-value" style="color:var(--amber)" id="kpi-top-tns">--</div><div class="kpi-sub" id="kpi-tns-mean-sub">mean --</div></div>
+    <div class="glass kpi" title="Business models scored on T + O + VCR axes"><div class="kpi-label">Models</div><div class="kpi-value" style="color:var(--blue)" id="kpi-rated">--</div><div class="kpi-sub" id="kpi-linked-sub">-- linked to narratives</div></div>
+    <div class="glass kpi" title="Cascade chains — narrative-to-narrative transmission paths"><div class="kpi-label">Cascades</div><div class="kpi-value" style="color:var(--cyan)" id="kpi-cascades">--</div><div class="kpi-sub">transmission chains</div></div>
+    <div class="glass kpi" title="Force collisions — where 2+ macro forces intersect"><div class="kpi-label">Collisions</div><div class="kpi-value" style="color:var(--pink)" id="kpi-collisions">--</div><div class="kpi-sub">force intersections</div></div>
+  </div>
+
+  <!-- ═══ VIEW: NARRATIVES ═══ -->
+  <div id="view-narratives" class="view-section active">
+    <div class="controls-bar">
+      <input type="text" class="search-box" id="narr-search" placeholder="Search narrative name, sector, force...">
+      <select class="sort-select" id="narr-sort">
+        <option value="rank">TNS Rank</option>
+        <option value="tns-desc">TNS Score (high)</option>
+        <option value="models-desc">Model Count (high)</option>
+        <option value="name">Name A-Z</option>
+      </select>
+    </div>
+    <div id="narr-cat-filters" class="filter-bar" style="margin-bottom:16px;display:flex;gap:6px;flex-wrap:wrap"></div>
+    <div id="narr-results-info" style="font-size:11px;color:var(--dim);margin-bottom:12px"></div>
+    <div id="narr-list-container"></div>
+    <div id="narr-detail-panel" class="detail-panel"></div>
+  </div>
+
+  <!-- ═══ VIEW: CASCADES ═══ -->
+  <div id="view-cascades" class="view-section">
+    <div style="margin-bottom:16px">
+      <div style="font-size:12px;color:var(--text-secondary);line-height:1.6;max-width:700px">Cascade chains show how one narrative's transformation transmits to another. Arrows indicate direction of economic transmission.</div>
+    </div>
+    <div id="cascade-graph-container"></div>
+    <div id="cascade-list-container"></div>
   </div>
 
   <!-- ═══ VIEW: MODELS ═══ -->
-  <div id="view-models" class="view-section active">
+  <div id="view-models" class="view-section">
     <!-- What's New -->
     <div class="glass whats-new" id="whats-new"></div>
 
@@ -1121,12 +1202,45 @@ document.addEventListener('DOMContentLoaded',function(){
   <!-- ═══ VIEW: GLOSSARY ═══ -->
   <div id="view-glossary" class="view-section">
     <div class="glossary-intro">
-      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031 by tracking 6 macro forces, scoring 650 business models across 3 independent dimensions, and mapping transformation paths across sectors and geographies. Each model represents a specific venture-scale opportunity within a transforming sector. Models are scored on three axes that answer different questions &mdash; all scores are 1&ndash;10 per axis, composited to 0&ndash;100.
+      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031. <strong>v4</strong> uses <strong>Transformation Narratives</strong> as the primary unit of analysis &mdash; force-driven stories of how sectors restructure. 650 business models serve as evidence within narratives, scored on 3 independent axes. Forces drive collisions, collisions drive narratives, narratives contain models.
     </div>
 
-    <!-- Triple Ranking System -->
+    <!-- TNS System (v4) -->
     <div class="glass-static card glossary-section">
-      <h3>Triple Ranking System</h3>
+      <h3>Transformation Narrative Score (TNS) &mdash; v4 Primary Ranking</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Each transformation narrative is scored on 5 axes measuring how important and inevitable the transformation is. This replaces the T-score as the primary ranking unit. Categories: DEFINING (&ge;80), MAJOR (&ge;65), MODERATE (&ge;50), EMERGING (&ge;35), SPECULATIVE (&lt;35).</p>
+      <table class="glossary-table">
+        <thead><tr><th style="width:50px">Axis</th><th style="width:180px">Full Name</th><th>Weight</th><th>What It Measures</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-abbr" style="color:var(--green)">EM</td><td class="glossary-full">Economic Magnitude</td><td>25%</td><td class="glossary-desc">How large is the GDP/employment impact? Sector share of the total economy.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--blue)">FC</td><td class="glossary-full">Force Convergence</td><td>25%</td><td class="glossary-desc">How many of the 6 macro forces drive this transformation, and how aligned are they?</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--amber)">ES</td><td class="glossary-full">Evidence Strength</td><td>20%</td><td class="glossary-desc">How much hard data (models, signals, deep dives) confirms the direction?</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--cyan)">TC</td><td class="glossary-full">Timing Confidence</td><td>15%</td><td class="glossary-desc">How confident are we in the timeline? Based on transformation phase.</td></tr>
+          <tr><td class="glossary-abbr" style="color:var(--accent)">IR</td><td class="glossary-full">Irreversibility</td><td>15%</td><td class="glossary-desc">Once started, can this transformation be reversed? Demographic lock-in, sunk capital.</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--dim);margin-top:8px">Composite: (EM&times;25 + FC&times;25 + ES&times;20 + TC&times;15 + IR&times;15) / 10 &rarr; 0&ndash;100</p>
+    </div>
+
+    <!-- v4 Architecture -->
+    <div class="glass-static card glossary-section">
+      <h3>v4 Data Architecture</h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">v4 structures data as a DAG (directed acyclic graph):</p>
+      <table class="glossary-table">
+        <thead><tr><th>Entity</th><th>Description</th><th>Count</th></tr></thead>
+        <tbody>
+          <tr><td class="glossary-full">Force Velocities</td><td class="glossary-desc">6 macro forces (Technology, Demographics, Geopolitics, Capital, Psychology, Energy) with velocity tracking</td><td>6</td></tr>
+          <tr><td class="glossary-full">Force Collisions</td><td class="glossary-desc">Where 2+ forces intersect to create transformation pressure. Types: amplifying, opposing, sequential, conditional</td><td>66</td></tr>
+          <tr><td class="glossary-full">Transformation Narratives</td><td class="glossary-desc">The primary ranking unit. Force-driven stories with year-by-year projections, geographic variation, and three model buckets (what works, what's needed, what dies)</td><td>15</td></tr>
+          <tr><td class="glossary-full">Business Models</td><td class="glossary-desc">Individual venture-scale opportunities within narratives. Scored on T + CLA + VCR axes</td><td>650</td></tr>
+          <tr><td class="glossary-full">Cascade Chains</td><td class="glossary-desc">Narrative-to-narrative dependencies showing economic transmission paths</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Triple Ranking System (Model-level) -->
+    <div class="glass-static card glossary-section">
+      <h3>Model-Level Triple Ranking</h3>
       <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">Every model is independently ranked on three dimensions. These are never merged into a single number &mdash; a model can score high on transformation likelihood but low on investability, or vice versa.</p>
       <table class="glossary-table">
         <thead><tr><th>Dimension</th><th>Question It Answers</th><th>Composite Formula</th></tr></thead>
@@ -1322,7 +1436,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
   </div>
 
-  <div class="footer">Research Engine v3.18 &middot; 650 models &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v4.0 &middot; narrative-first economy map &middot; TNS + T + CLA + VCR scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -1345,6 +1459,11 @@ const WHATIF_CATS = new Set(['CONDITIONAL','PARKED']);
 let vcrFilteredModels = [];
 let vcrCurrentPage = 1;
 let expandedModelId = null;
+let allNarratives = [];
+let filteredNarratives = [];
+let narrativeData = null;
+let expandedNarrId = null;
+let activeNarrCatFilter = null;
 
 async function load(path) {
   try { const r = await fetch(path + '?t=' + Date.now()); return r.ok ? await r.json() : null; }
@@ -2543,43 +2662,269 @@ function renderCatalystWatch(models) {
   }).join('');
 }
 
+// ─── NARRATIVE CONTROLS ───
+document.getElementById('narr-search').addEventListener('input', () => applyNarrFilters());
+document.getElementById('narr-sort').addEventListener('change', () => applyNarrFilters());
+
+const tnsAxisColor = {
+  EM: 'var(--green)', FC: 'var(--blue)', ES: 'var(--amber)', TC: 'var(--cyan)', IR: 'var(--accent)'
+};
+
+function setNarrCatFilter(cat) {
+  activeNarrCatFilter = activeNarrCatFilter === cat ? null : cat;
+  document.querySelectorAll('#narr-cat-filters .filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeNarrCatFilter);
+  });
+  applyNarrFilters();
+}
+
+function applyNarrFilters() {
+  const q = document.getElementById('narr-search').value.toLowerCase().trim();
+  const sort = document.getElementById('narr-sort').value;
+
+  filteredNarratives = allNarratives.filter(n => {
+    if (activeNarrCatFilter && n.tns_category !== activeNarrCatFilter) return false;
+    if (!q) return true;
+    const haystack = [n.name, n.narrative_id, ...(n.sectors||[]).map(s=>s.naics||s), ...(n.forces||[])].join(' ').toLowerCase();
+    return haystack.includes(q);
+  });
+
+  filteredNarratives.sort((a, b) => {
+    switch(sort) {
+      case 'tns-desc': return b.tns_composite - a.tns_composite;
+      case 'models-desc': return (b.model_counts?.total||0) - (a.model_counts?.total||0);
+      case 'name': return (a.name||'').localeCompare(b.name||'');
+      default: return (a.tns_rank||999) - (b.tns_rank||999);
+    }
+  });
+
+  document.getElementById('narr-results-info').textContent = filteredNarratives.length + ' narrative' + (filteredNarratives.length !== 1 ? 's' : '');
+  renderNarrativeList();
+}
+
+function renderNarrCatFilters() {
+  const cats = {};
+  allNarratives.forEach(n => { cats[n.tns_category] = (cats[n.tns_category]||0) + 1; });
+  const order = ['DEFINING','MAJOR','MODERATE','EMERGING','SPECULATIVE'];
+  document.getElementById('narr-cat-filters').innerHTML = order
+    .filter(c => cats[c])
+    .map(c => `<span class="filter-chip tns-${c}" data-cat="${c}" onclick="setNarrCatFilter('${c}')" style="cursor:pointer;padding:3px 10px;border-radius:5px;font-size:10px;font-weight:600">${c} <span style="opacity:0.6">${cats[c]}</span></span>`)
+    .join('');
+}
+
+function renderNarrativeList() {
+  const container = document.getElementById('narr-list-container');
+  const tnsAxes = ['EM','FC','ES','TC','IR'];
+
+  const rows = filteredNarratives.map(n => {
+    const scores = n.tns_scores || {};
+    const axisHtml = tnsAxes.map(a => {
+      const v = scores[a] || 0;
+      const pct = (v / 10) * 100;
+      return `<div class="narr-axis-bar">
+        <div class="axis-bar-label">${a}</div>
+        <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${pct}%;background:${tnsAxisColor[a]}"></div></div>
+        <div class="axis-bar-val">${v.toFixed(1)}</div>
+      </div>`;
+    }).join('');
+
+    const mc = n.model_counts || {};
+    const sectorText = (n.sectors||[]).map(s => typeof s === 'string' ? s : (s.naics||'')).join(', ');
+
+    return `<tr onclick="toggleNarrDetail('${esc(n.narrative_id)}')">
+      <td class="rank-cell">${n.tns_rank || '--'}</td>
+      <td class="name-cell" style="max-width:280px">${esc(n.name)}</td>
+      <td style="font-weight:700;color:${n.tns_composite >= 80 ? 'var(--green)' : n.tns_composite >= 65 ? 'var(--blue)' : 'var(--text)'}">${(n.tns_composite||0).toFixed(1)}</td>
+      <td><span class="tns-badge tns-${n.tns_category||'SPECULATIVE'}">${n.tns_category||'--'}</span></td>
+      <td><div class="narr-axes">${axisHtml}</div></td>
+      <td><span class="narr-phase">${esc((n.transformation_phase||'').replace(/_/g, ' '))}</span></td>
+      <td><div class="narr-model-count">
+        ${mc.what_works ? '<span class="nmc-works">' + mc.what_works + ' works</span>' : ''}
+        ${mc.whats_needed ? '<span class="nmc-needed">' + mc.whats_needed + ' needed</span>' : ''}
+        ${mc.what_dies ? '<span class="nmc-dies">' + mc.what_dies + ' dies</span>' : ''}
+      </div></td>
+      <td style="font-size:10px;color:var(--dim)">${esc(sectorText)}</td>
+    </tr>
+    <tr id="narr-detail-${esc(n.narrative_id)}" style="display:none"><td colspan="8">
+      <div class="narr-detail expanded">${renderNarrDetailContent(n)}</div>
+    </td></tr>`;
+  }).join('');
+
+  container.innerHTML = `<div class="glass-static" style="overflow-x:auto"><table class="narr-table">
+    <thead><tr>
+      <th>#</th><th>Narrative</th><th>TNS</th><th>Category</th><th>Axes</th><th>Phase</th><th>Models</th><th>Sectors</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
+}
+
+function toggleNarrDetail(nid) {
+  const row = document.getElementById('narr-detail-' + nid);
+  if (!row) return;
+  if (expandedNarrId === nid) {
+    row.style.display = 'none';
+    expandedNarrId = null;
+  } else {
+    if (expandedNarrId) {
+      const prev = document.getElementById('narr-detail-' + expandedNarrId);
+      if (prev) prev.style.display = 'none';
+    }
+    row.style.display = '';
+    expandedNarrId = nid;
+  }
+}
+
+function renderNarrDetailContent(n) {
+  const yby = n.year_by_year || {};
+  const years = Object.keys(yby).sort();
+  const timelineHtml = years.map(y => {
+    const d = yby[y];
+    return `<div class="narr-timeline-year">
+      <span class="year">${esc(y)}</span>
+      <span class="phase-tag">${esc((d.phase||'').replace(/_/g,' '))}</span>
+      <span class="desc">${esc((d.description||'').substring(0, 200))}</span>
+    </div>`;
+  }).join('');
+
+  const geo = n.geographic_variation || {};
+  const geoHtml = Object.entries(geo).map(([r, d]) =>
+    `<div style="font-size:11px;display:flex;gap:8px"><span style="color:var(--accent);min-width:40px;font-weight:600">${esc(r)}</span><span style="color:var(--text-secondary)">${esc(d.velocity||'--')} (shift: ${d.timeline_shift||0}yr)</span></div>`
+  ).join('');
+
+  const outputs = n.outputs || {};
+  const modelListHtml = (bucket, label, cls) => {
+    const ids = outputs[bucket] || [];
+    if (!ids.length) return '';
+    return `<div style="margin-bottom:8px"><div style="font-size:9px;text-transform:uppercase;color:var(--dim);margin-bottom:4px;letter-spacing:0.5px">${label} (${ids.length})</div>
+      <div class="narr-model-list">${ids.slice(0, 10).map(id => {
+        const m = allModels.find(x => x.id === id);
+        const name = m ? m.name : id;
+        const comp = m ? m.composite.toFixed(1) : '--';
+        return `<div class="narr-model-item ${cls}" onclick="event.stopPropagation();document.querySelector('[data-view=models]').click();document.getElementById('model-search').value='${esc(id)}';document.getElementById('model-search').dispatchEvent(new Event('input'))">${esc(name)} <span style="color:var(--dim);font-size:10px">T:${comp}</span></div>`;
+      }).join('')}${ids.length > 10 ? '<div style="font-size:10px;color:var(--dim);padding:2px 8px">+' + (ids.length - 10) + ' more</div>' : ''}</div></div>`;
+  };
+
+  const summaryHtml = n.summary ? `<div style="font-size:11px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;max-width:700px">${esc(n.summary.substring(0, 500))}</div>` : '';
+
+  const fearHtml = n.fear_friction ? `<div style="font-size:11px;margin-top:4px"><span style="color:var(--dim)">Fear friction gap:</span> <span style="color:${(n.fear_friction.gap||0) >= 3 ? 'var(--red)' : (n.fear_friction.gap||0) >= 1 ? 'var(--amber)' : 'var(--green)'};font-weight:600">${n.fear_friction.gap||0}</span> <span style="color:var(--dim)">(econ: ${n.fear_friction.economic_readiness||'--'}, psych: ${n.fear_friction.psychological_readiness||'--'})</span></div>` : '';
+
+  return `${summaryHtml}${fearHtml}
+    <div class="narr-detail-grid">
+      <div class="narr-detail-section"><h4>Year-by-Year Timeline</h4><div class="narr-timeline">${timelineHtml || '<span style="color:var(--dim);font-size:11px">No timeline data</span>'}</div></div>
+      <div class="narr-detail-section"><h4>Geographic Variation</h4>${geoHtml || '<span style="color:var(--dim);font-size:11px">No geographic data</span>'}</div>
+      <div class="narr-detail-section"><h4>Models</h4>
+        ${modelListHtml('what_works', 'What Works', 'nmc-works')}
+        ${modelListHtml('whats_needed', "What's Needed", 'nmc-needed')}
+        ${modelListHtml('what_dies', 'What Dies', 'nmc-dies')}
+      </div>
+      <div class="narr-detail-section"><h4>Confidence</h4>
+        ${n.confidence ? Object.entries(n.confidence).map(([k,v]) => `<div style="font-size:11px;display:flex;gap:6px"><span style="color:var(--dim);min-width:70px">${esc(k)}</span><span style="color:${v==='high'?'var(--green)':v==='medium'?'var(--amber)':'var(--red)'};font-weight:600">${esc(v)}</span></div>`).join('') : '<span style="color:var(--dim);font-size:11px">--</span>'}
+      </div>
+    </div>`;
+}
+
+// ─── CASCADE RENDERING ───
+function renderCascades(dashboard) {
+  const graph = dashboard.cascade_graph || {};
+  const nodes = graph.nodes || [];
+  const edges = graph.edges || [];
+
+  // Render cascade dependency graph
+  const graphContainer = document.getElementById('cascade-graph-container');
+  if (edges.length > 0) {
+    const edgeHtml = edges.map(e => {
+      const fromNode = nodes.find(n => n.id === e.from);
+      const toNode = nodes.find(n => n.id === e.to);
+      return `<div class="cascade-edge">
+        <span class="tns-badge tns-${fromNode?.category||'MODERATE'}" style="font-size:9px">${esc(fromNode?.name||e.from)}</span>
+        <span class="cascade-edge-arrow">&rarr;</span>
+        <span class="tns-badge tns-${toNode?.category||'MODERATE'}" style="font-size:9px">${esc(toNode?.name||e.to)}</span>
+        <span style="font-size:9px;color:var(--dim);margin-left:4px">${esc(e.type||'')}</span>
+      </div>`;
+    }).join('');
+    graphContainer.innerHTML = `<div class="glass-static card"><h3 style="font-size:13px;margin-bottom:12px;color:var(--text)">Narrative Dependencies</h3>${edgeHtml}</div>`;
+  } else {
+    graphContainer.innerHTML = '';
+  }
+
+  // Render cascade chain cards
+  const listContainer = document.getElementById('cascade-list-container');
+  const totalCascades = dashboard.total_cascades || 0;
+  if (totalCascades === 0 && edges.length === 0) {
+    listContainer.innerHTML = '<div style="color:var(--dim);font-size:12px;padding:20px">No cascade data available.</div>';
+    return;
+  }
+
+  // We show cascade edges as the primary view since cascade detail is in cascades.json (not loaded separately for now)
+  const nodeCards = nodes.map(n => {
+    const outEdges = edges.filter(e => e.from === n.id);
+    const inEdges = edges.filter(e => e.to === n.id);
+    if (outEdges.length === 0 && inEdges.length === 0) return '';
+    return `<div class="glass cascade-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span class="tns-badge tns-${n.category}" style="font-size:10px">${esc(n.category)}</span>
+        <span style="font-weight:600;font-size:13px">${esc(n.name)}</span>
+        <span style="color:var(--dim);font-size:11px">TNS ${(n.tns||0).toFixed(1)}</span>
+      </div>
+      ${outEdges.length ? '<div style="font-size:10px;color:var(--dim);margin-bottom:4px">Drives:</div>' + outEdges.map(e => {
+        const to = nodes.find(x => x.id === e.to);
+        return `<div style="font-size:11px;padding:2px 0;color:var(--text-secondary)">&rarr; ${esc(to?.name||e.to)}</div>`;
+      }).join('') : ''}
+      ${inEdges.length ? '<div style="font-size:10px;color:var(--dim);margin-bottom:4px;margin-top:6px">Driven by:</div>' + inEdges.map(e => {
+        const from = nodes.find(x => x.id === e.from);
+        return `<div style="font-size:11px;padding:2px 0;color:var(--text-secondary)">&larr; ${esc(from?.name||e.from)}</div>`;
+      }).join('') : ''}
+    </div>`;
+  }).filter(Boolean).join('');
+
+  listContainer.innerHTML = nodeCards || '<div style="color:var(--dim);font-size:12px;padding:20px">Cascade dependencies visible in Narrative detail panels.</div>';
+}
+
 // ─── MAIN ───
 async function refresh() {
-  const [d, m] = await Promise.all([
+  const [d, m, narr] = await Promise.all([
     load(BASE + '/dashboard.json'),
-    load(BASE + '/models.json')
+    load(BASE + '/models.json'),
+    load(BASE + '/narratives.json')
   ]);
 
   if (d) {
     // Header
-    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-18';
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v4-0';
     const ts = d.last_updated;
     document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
-    // KPIs
-    const ratedCount = d.total_models_rated || 0;
-    if (ratedCount) document.getElementById('kpi-rated').textContent = ratedCount;
+    // v4 KPIs
+    const totalNarr = d.total_narratives || 0;
+    const totalModels = d.total_models || 0;
+    if (totalNarr) document.getElementById('kpi-narratives').textContent = totalNarr;
+    if (totalModels) document.getElementById('kpi-rated').textContent = totalModels;
 
-    // Structural Winners — root-level category_distribution
-    const rootCatDist = d.category_distribution || {};
-    const sw = rootCatDist.STRUCTURAL_WINNER;
-    if (sw !== undefined) document.getElementById('kpi-winners').textContent = sw;
+    // Defining count
+    const tnsCatDist = d.tns_category_distribution || {};
+    if (tnsCatDist.DEFINING !== undefined) document.getElementById('kpi-defining').textContent = tnsCatDist.DEFINING;
+    const catParts = Object.entries(tnsCatDist).map(([k,v]) => v + ' ' + k).join(', ');
+    if (catParts) document.getElementById('kpi-narr-cat-sub').textContent = catParts;
 
-    // Composite stats
-    const rs = d.rating_system || {};
-    const cs = rs.composite_stats || {};
-    if (cs.max) { document.getElementById('kpi-top').textContent = cs.max; }
-    if (cs.mean) { document.getElementById('kpi-mean-sub').textContent = 'mean ' + cs.mean; }
+    // TNS stats
+    const tnsStats = d.tns_stats || {};
+    if (tnsStats.max) document.getElementById('kpi-top-tns').textContent = tnsStats.max;
+    if (tnsStats.mean) document.getElementById('kpi-tns-mean-sub').textContent = 'mean ' + tnsStats.mean;
 
-    // New models
-    if (d.new_models_this_cycle) document.getElementById('kpi-new').textContent = d.new_models_this_cycle;
+    // Linked count
+    const linked = d.models_linked || 0;
+    document.getElementById('kpi-linked-sub').textContent = linked + ' linked to narratives';
 
-    // Sub-models
-    const eb = d.evidence_base || {};
-    if (eb.v3_sub_models) document.getElementById('kpi-sub-models').textContent = eb.v3_sub_models;
+    // Cascades + Collisions
+    if (d.total_cascades) document.getElementById('kpi-cascades').textContent = d.total_cascades;
+    if (d.total_collisions) document.getElementById('kpi-collisions').textContent = d.total_collisions;
 
-    // Decomposed parents
-    if (eb.v3_decomposed_parents) document.getElementById('kpi-decomposed').textContent = eb.v3_decomposed_parents;
+    // Subtitles
+    if (totalNarr) document.getElementById('narr-total-sub').textContent = totalNarr + ' narratives';
+    if (totalModels) document.getElementById('model-total-sub').textContent = totalModels + ' models';
+
+    // Render cascades view
+    renderCascades(d);
 
     // Subtitle
     if (ratedCount) document.getElementById('model-total-sub').textContent = ratedCount + ' rated models';
@@ -2630,6 +2975,15 @@ async function refresh() {
     renderCatalystWatch(allModels);
     applyFilters();
     applyVcrFilters();
+  }
+
+  // Narratives
+  if (narr && narr.narratives) {
+    narrativeData = narr;
+    allNarratives = narr.narratives;
+    filteredNarratives = [...allNarratives];
+    renderNarrCatFilters();
+    applyNarrFilters();
   }
 }
 
