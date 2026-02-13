@@ -732,7 +732,40 @@
 </style>
 </head>
 <body>
-<div class="container">
+<div id="auth-gate" style="display:flex;align-items:center;justify-content:center;min-height:100dvh;position:relative;z-index:10">
+  <div class="glass" style="padding:48px 40px;text-align:center;max-width:340px;width:90%;border:1px solid var(--glass-border)">
+    <div style="font-size:22px;font-weight:700;margin-bottom:6px;background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Research Engine</div>
+    <div style="color:var(--text-secondary);font-size:12px;margin-bottom:28px">v3.12 &middot; 508 models &middot; triple ranking</div>
+    <input id="auth-input" type="password" placeholder="Access code" autofocus
+      style="width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--glass-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:14px;outline:none;margin-bottom:12px;transition:border-color var(--transition)"
+      onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--glass-border)'">
+    <div id="auth-error" style="color:var(--red);font-size:11px;height:18px;margin-bottom:8px"></div>
+    <button onclick="checkAuth()" style="width:100%;padding:10px;background:var(--accent);color:#000;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;font-family:inherit;font-size:13px">Enter</button>
+  </div>
+</div>
+<script>
+function checkAuth(){
+  var p=document.getElementById('auth-input').value;
+  if(p==='1212'){
+    sessionStorage.setItem('re_auth','1');
+    document.getElementById('auth-gate').style.display='none';
+    document.getElementById('main-app').style.display='';
+    if(typeof refresh==='function')refresh();
+  } else {
+    document.getElementById('auth-error').textContent='Invalid code';
+    document.getElementById('auth-input').value='';
+    document.getElementById('auth-input').focus();
+  }
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('auth-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkAuth();});
+  if(sessionStorage.getItem('re_auth')==='1'){
+    document.getElementById('auth-gate').style.display='none';
+    document.getElementById('main-app').style.display='';
+  }
+});
+</script>
+<div class="container" id="main-app" style="display:none">
   <nav id="main-nav">
     <a class="active" data-view="models">Models</a>
     <a data-view="vcroi">VC ROI</a>
