@@ -158,7 +158,17 @@ For each business model, produce a **Model Card**:
     }
   },
 
-  "falsification_criteria": ["what evidence would kill this thesis"]
+  "falsification_criteria": ["what evidence would kill this thesis"],
+
+  "catalyst_scenario": {
+    "// NOTE": "Only for PARKED/CONDITIONAL models with TG ≤ 6 and cluster match",
+    "cluster": "quantum_computing | bci_neurotech | space_orbital | agriculture_macro | healthcare_discovery | energy_fusion | prof_services_cascade",
+    "triggers": [{"event": "string", "probability_2yr": 0.0, "probability_5yr": 0.0, "monitoring": ["data source"]}],
+    "conditional_scores": {"SN": 0, "FA": 0, "EC": 0, "TG": 0, "CE": 0},
+    "asymmetry_ratio": 0.0,
+    "propagation_chain": ["step1", "step2"],
+    "timeline": "N-M years"
+  }
 }
 ```
 

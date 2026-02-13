@@ -183,6 +183,27 @@ Scale: 10-100.
 | **FORTIFIED** | OPP ≥ 30 |
 | **LOCKED** | OPP < 30 |
 
+### 4c. Catalyst Scenario Layer (v3-16)
+
+PARKED/CONDITIONAL models with TG ≤ 6 may have `catalyst_scenario` metadata identifying
+asymmetric upside if domain-specific triggers fire. 7 clusters with unique trigger mechanics:
+
+| Cluster | Trigger Example | Conditional Boosts |
+|---------|----------------|-------------------|
+| Quantum Computing | Error correction <10^-12/gate | SN+3, FA+2, TG+4.5, CE+1 |
+| BCI/Neurotech | FDA consumer pathway OR >90% accuracy | SN+3.5, FA+3, TG+5, EC+1.5 |
+| Space/Orbital | Launch <$100/kg + yield proven | SN+3, FA+2.5, TG+5, CE+2 |
+| Agriculture x Macro | Commodity crash OR H-2A curtailment | SN+2, FA+2, TG+3, EC+1 |
+| Healthcare x Discovery | Phase 3 + FDA + CMS coverage chain | SN+2, FA+1.5, TG+2.5, EC+1 |
+| Energy/Fusion | Fusion LCOE <$60/MWh OR storage <$50/kWh | SN+2.5, FA+2, TG+3.5, CE+2 |
+| Prof Services Cascade | Big 4/AmLaw100 >20% headcount cut | SN+2, FA+2.5, TG+3, EC+1.5 |
+
+**Qualifying criteria**: PARKED/CONDITIONAL primary category, TG ≤ 6, cluster match, asymmetry ratio > 1.2.
+**Asymmetry ratio** = conditional_composite / current_composite. Current range: 1.22x to 1.79x.
+
+When monitoring signals suggest a trigger is firing, flag for immediate re-evaluation.
+Do NOT adjust base scores — catalyst scenarios are conditional metadata only.
+
 ### 5. Force Velocity Cascade Triggers
 
 When a force velocity changes, cascade to affected model ratings:

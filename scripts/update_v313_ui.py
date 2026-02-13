@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 """
-v3-15 UI Refresh: Regenerate models.json and dashboard.json with all v3-15 changes.
+v3-16 UI Refresh: Regenerate models.json and dashboard.json with all v3-16 changes.
 
 Includes:
-  - v3-13 enrichment fields (confidence_tier, evidence_quality, polanyi, architecture)
-  - v3-14 score corrections (MO/MA, CAP/VEL, ECO/MOA axis decoupling, batch normalization)
-  - v3-15 SN axis redefinition (Market Necessity), BCI coverage, AI naming audit, Polanyi completion
-  - Legacy backfill (force tags + one-liners for all models)
+  - All v3-15 enrichment (confidence, evidence_quality, polanyi, architecture, naming audit)
+  - v3-16 data-driven SN scoring (Polanyi + Baumol → SN Component 3)
+  - v3-16 live QCEW TAM → VCR MKT (replaces hardcoded sector TAM lookup)
   - Sector aggregation, force distribution, research priority queue
 
 Dashboard updates:
-  - engine_version → v3.15
+  - engine_version → v3.16
   - enrichment_summary, sector_model_aggregation, force_model_distribution
-  - top_20_tri_actionable rebuilt with corrected scores
+  - top_20_tri_actionable rebuilt with data-driven scores
 
 State updates:
-  - state_version → 25
-  - current_cycle → v3-15
+  - state_version → 26
+  - current_cycle → v3-16
   - engine_version description updated
 """
 
@@ -94,12 +93,29 @@ def build_slim_model(m):
         slim["layer_name"] = m.get("layer_name")
         slim["granularity_type"] = m.get("granularity_type")
 
+    # Catalyst scenario (v3-16)
+    cat_sc = m.get("catalyst_scenario")
+    if cat_sc:
+        slim["catalyst_scenario"] = {
+            "cluster": cat_sc.get("cluster"),
+            "cluster_name": cat_sc.get("cluster_name"),
+            "current_composite": cat_sc.get("current_composite"),
+            "conditional_composite": cat_sc.get("conditional_composite"),
+            "asymmetry_ratio": cat_sc.get("asymmetry_ratio"),
+            "timeline": cat_sc.get("timeline"),
+            "propagation_chain": cat_sc.get("propagation_chain"),
+            "triggers": [
+                {"event": t["event"], "probability_2yr": t["probability_2yr"], "probability_5yr": t["probability_5yr"]}
+                for t in cat_sc.get("triggers", [])
+            ],
+        }
+
     return slim
 
 
 def main():
     print("=" * 70)
-    print("v3-15 UI REFRESH: Regenerating UI files with SN redefinition + BCI + naming audit + Polanyi")
+    print("v3-16 UI REFRESH: Regenerating UI files with data-driven SN + live QCEW TAM")
     print("=" * 70)
     print()
 
@@ -200,7 +216,7 @@ def main():
     vcr_system = data.get("rating_system", {}).get("vcr_system", {})
 
     ui_output = {
-        "cycle": "v3-15",
+        "cycle": "v3-16",
         "date": "2026-02-12",
         "total": len(models),
         "dual_ranking": True,
@@ -231,8 +247,8 @@ def main():
     with open(UI_DASHBOARD) as f:
         dashboard = json.load(f)
 
-    dashboard["engine_version"] = "v3.15"
-    dashboard["current_cycle"] = "v3-15"
+    dashboard["engine_version"] = "v3.16"
+    dashboard["current_cycle"] = "v3-16"
     dashboard["enrichment"] = True
     dashboard["enrichment_summary"] = enrichment_summary
 
@@ -408,6 +424,18 @@ def main():
                 break
     dashboard["research_priorities"] = research_priorities
 
+    # ── Catalyst summary (v3-16) ──
+    catalyst_models = [m for m in models if m.get("catalyst_scenario")]
+    if catalyst_models:
+        cluster_summary = Counter(m["catalyst_scenario"]["cluster"] for m in catalyst_models)
+        ratios = [m["catalyst_scenario"]["asymmetry_ratio"] for m in catalyst_models]
+        dashboard["catalyst_summary"] = {
+            "total_catalyst_models": len(catalyst_models),
+            "cluster_distribution": dict(sorted(cluster_summary.items(), key=lambda x: -x[1])),
+            "asymmetry_ratio_range": [round(min(ratios), 2), round(max(ratios), 2)],
+            "asymmetry_ratio_mean": round(statistics.mean(ratios), 2),
+        }
+
     with open(UI_DASHBOARD, "w") as f:
         json.dump(dashboard, f, indent=2, ensure_ascii=False)
     print(f"  Written: {UI_DASHBOARD}")
@@ -417,15 +445,14 @@ def main():
     with open(STATE_FILE) as f:
         state = json.load(f)
 
-    state["state_version"] = 25
-    state["current_cycle"] = "v3-15"
+    state["state_version"] = 26
+    state["current_cycle"] = "v3-16"
     state["engine_version"] = (
-        "3.15 — 'Market Necessity': 608 models. "
-        "(1) SN axis redefined: 'structural forces' → 'market necessity' (can alternatives fill this gap?). SN↔FA r=0.692→0.040. "
-        "(2) BCI coverage: 4 frontier models (medical, consumer, cognitive, infrastructure). "
-        "(3) AI naming audit: 63%→18.6% AI-in-name (286 renames, 13 kept). "
-        "(4) Polanyi completion: 466→538/608 (88.5%). NAICS 42/71 bridges extended. "
-        "(5) All v3-14 corrections preserved (MO/MA, CAP/VEL, ECO/MOA, batch normalization)."
+        "3.16 — 'Data-Driven + Catalyst': 608 models. "
+        "(1) SN Component 3 data-driven: Polanyi automation_exposure + QCEW Baumol cross-reference replaces hardcoded lookup. SN↔FA r=0.054. "
+        "(2) VCR MKT live TAM: QCEW total_annual_wages replaces 80-entry hardcoded SECTOR_TAM_M. MKT stdev 1.68→2.02, score-10 11.7%→3.0%. "
+        "(3) Parsed TAM addressable: >$50B gets 10%, >$10B gets 25% addressable factor. "
+        "(4) All v3-15 preserved (SN Market Necessity, BCI coverage, naming audit, Polanyi completion)."
     )
 
     # Update rated_models_index
@@ -445,7 +472,7 @@ def main():
     # ── Summary ──
     print()
     print("=" * 70)
-    print("v3-15 UI REFRESH COMPLETE")
+    print("v3-16 UI REFRESH COMPLETE")
     print("=" * 70)
     print()
     print(f"  Models: {len(models)}")

@@ -820,12 +820,13 @@ document.addEventListener('DOMContentLoaded',function(){
     <a data-view="regions">Regions</a>
     <a data-view="fear">Fear Index</a>
     <a data-view="timeline">Timeline</a>
+    <a data-view="catalyst">Catalyst</a>
     <a data-view="data">Data</a>
     <a data-view="glossary">Glossary</a>
   </nav>
 
   <header>
-    <h1>Research Engine v3.15</h1>
+    <h1>Research Engine v3.16</h1>
     <div class="subtitle">
       <span class="cycle-badge" id="cycle-badge">v3-12</span>
       &nbsp; <span id="model-total-sub">608 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
@@ -1017,6 +1018,13 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
     <div class="section-label">Worker Displacement Signals</div>
     <div class="displacement-grid" id="displacement-grid"></div>
+  </div>
+
+  <!-- ═══ VIEW: CATALYST WATCH ═══ -->
+  <div id="view-catalyst" class="view-section">
+    <div class="section-label">Catalyst Watch <span class="count">asymmetric upside opportunities with domain-specific triggers</span></div>
+    <div class="kpi-row" id="catalyst-kpis"></div>
+    <div id="catalyst-clusters"></div>
   </div>
 
   <!-- ═══ VIEW: TIMELINE ═══ -->
@@ -1685,6 +1693,7 @@ function modelCardHtml(m) {
   const oppCatCls = 'opp-' + (m.opportunity_category || 'CONTESTED');
   const newBadge = m.new_in_v36 ? '<span class="new-badge">NEW</span>' : '';
   const subBadge = m.parent_id ? '<span class="sub-badge">SUB</span>' : '';
+  const catBadge = m.catalyst_scenario ? `<span style="font-size:8px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,0.15);color:#f59e0b;font-weight:700;margin-left:4px" title="Catalyst: ${esc(m.catalyst_scenario.cluster_name || '')}">CAT ${m.catalyst_scenario.asymmetry_ratio.toFixed(1)}x</span>` : '';
   const decompIndicator = m.decomposed ? '<span class="decomposed-indicator">(' + (m.sub_model_count || '?') + ' layers)</span>' : '';
   const axisHtml = ['SN','FA','EC','TG','CE'].map(a => {
     const v = m.scores[a] || 0;
@@ -1697,7 +1706,7 @@ function modelCardHtml(m) {
       <span class="mci-rank">#${m.rank}</span>
       <span class="cat-badge ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</span>
     </div>
-    <div class="mci-name">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}</div>
+    <div class="mci-name">${esc(m.name)}${newBadge}${subBadge}${catBadge}${decompIndicator}</div>
     <div class="mci-score-row">
       <span class="mci-composite">${m.composite.toFixed(1)}</span>
       <span class="mci-opp-composite">OPP ${oppComp.toFixed(1)}</span>
@@ -1834,6 +1843,7 @@ function toggleModelDetail(id) {
     ${m.vcr_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">VCR Rationale <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; investment thesis basis</span></div><div class="detail-rationale">${esc(m.vcr_rationale)}</div>` : ''}
     ${m.deep_dive_evidence ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Evidence <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; supporting data from deep dive</span></div><div class="detail-rationale">${esc(m.deep_dive_evidence)}</div>` : ''}
     ${(m.falsification_criteria && m.falsification_criteria.length) ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Falsification Criteria <span style="font-weight:400;text-transform:none;letter-spacing:0">&mdash; conditions that would invalidate this model</span></div><ul class="falsification-list">${m.falsification_criteria.map(c => '<li class="falsification-item">' + esc(c) + '</li>').join('')}</ul>` : ''}
+    ${m.catalyst_scenario ? renderCatalystDetail(m.catalyst_scenario) : ''}
   `;
   panel.classList.add('visible');
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -2353,6 +2363,106 @@ function renderResearchPriorities(dashboard) {
     '</tbody></table>';
 }
 
+// ─── CATALYST WATCH ───
+function renderCatalystDetail(cs) {
+  if (!cs) return '';
+  const triggers = (cs.triggers || []).map(t =>
+    `<li style="font-size:11px;margin-bottom:6px;color:var(--text-secondary)">
+      <strong style="color:var(--text)">${esc(t.event)}</strong><br>
+      <span style="font-size:9px;color:var(--dim)">P(2yr): ${(t.probability_2yr*100).toFixed(0)}% &middot; P(5yr): ${(t.probability_5yr*100).toFixed(0)}%</span>
+    </li>`
+  ).join('');
+  const chain = (cs.propagation_chain || []).map(s => esc(s)).join(' &rarr; ');
+  return `
+    <div style="margin-top:12px;padding:10px 12px;background:rgba(251,191,36,0.05);border-radius:var(--radius-xs);border-left:3px solid #f59e0b">
+      <div style="font-size:10px;color:#f59e0b;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Catalyst Scenario: ${esc(cs.cluster_name || cs.cluster)}</div>
+      <div style="display:flex;gap:16px;margin-bottom:8px">
+        <div style="font-size:11px;color:var(--text-secondary)">Current: <strong style="color:var(--dim)">${(cs.current_composite||0).toFixed(1)}</strong></div>
+        <div style="font-size:11px;color:var(--text-secondary)">Conditional: <strong style="color:#f59e0b">${(cs.conditional_composite||0).toFixed(1)}</strong></div>
+        <div style="font-size:11px;color:var(--text-secondary)">Asymmetry: <strong style="color:#f59e0b">${(cs.asymmetry_ratio||0).toFixed(2)}x</strong></div>
+        <div style="font-size:11px;color:var(--text-secondary)">Timeline: <strong>${esc(cs.timeline || '?')}</strong></div>
+      </div>
+      <div style="font-size:10px;color:var(--dim);font-weight:600;margin-bottom:4px">TRIGGERS</div>
+      <ul style="margin:0;padding-left:16px">${triggers}</ul>
+      <div style="font-size:10px;color:var(--dim);font-weight:600;margin-top:8px;margin-bottom:4px">PROPAGATION CHAIN</div>
+      <div style="font-size:10px;color:var(--text-secondary)">${chain}</div>
+    </div>`;
+}
+
+function renderCatalystWatch(models) {
+  if (!models || !models.length) return;
+  const catModels = models.filter(m => m.catalyst_scenario);
+  if (!catModels.length) return;
+
+  // Group by cluster
+  const clusters = {};
+  catModels.forEach(m => {
+    const cid = m.catalyst_scenario.cluster;
+    if (!clusters[cid]) clusters[cid] = { name: m.catalyst_scenario.cluster_name, models: [] };
+    clusters[cid].models.push(m);
+  });
+
+  // Sort clusters by model count desc
+  const sortedClusters = Object.entries(clusters).sort((a,b) => b[1].models.length - a[1].models.length);
+
+  // KPIs
+  const kpiEl = document.getElementById('catalyst-kpis');
+  const ratios = catModels.map(m => m.catalyst_scenario.asymmetry_ratio);
+  const maxRatio = Math.max(...ratios);
+  const avgRatio = ratios.reduce((a,b) => a+b, 0) / ratios.length;
+  kpiEl.innerHTML = [
+    { label: 'Catalyst Models', value: catModels.length },
+    { label: 'Clusters', value: sortedClusters.length },
+    { label: 'Max Asymmetry', value: maxRatio.toFixed(1) + 'x' },
+    { label: 'Avg Asymmetry', value: avgRatio.toFixed(2) + 'x' },
+  ].map(k => `<div class="kpi glass"><div class="kpi-value">${k.value}</div><div class="kpi-label">${k.label}</div></div>`).join('');
+
+  // Cluster cards
+  const el = document.getElementById('catalyst-clusters');
+  el.innerHTML = sortedClusters.map(([cid, cluster]) => {
+    const ms = cluster.models.sort((a,b) => b.catalyst_scenario.asymmetry_ratio - a.catalyst_scenario.asymmetry_ratio);
+    const sample = ms[0].catalyst_scenario;
+    const triggers = (sample.triggers || []).map(t =>
+      `<div style="font-size:10px;margin-bottom:4px;color:var(--text-secondary)">
+        <span style="color:#f59e0b">&bull;</span> ${esc(t.event)}
+        <span style="font-size:8px;color:var(--dim)">(P(2yr)=${(t.probability_2yr*100).toFixed(0)}%, P(5yr)=${(t.probability_5yr*100).toFixed(0)}%)</span>
+      </div>`
+    ).join('');
+    const chain = (sample.propagation_chain || []).map(s => esc(s)).join(' &rarr; ');
+    const modelRows = ms.map(m => {
+      const cs = m.catalyst_scenario;
+      const catCls = 'cat-' + (m.category || 'PARKED');
+      return `<tr style="border-bottom:1px solid rgba(255,255,255,0.03)">
+        <td style="padding:4px 6px;font-size:10px;color:var(--dim);font-family:var(--mono)">${esc(m.id)}</td>
+        <td style="padding:4px 6px;font-size:11px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.name)}</td>
+        <td style="padding:4px 6px;font-size:11px;color:var(--dim);text-align:right">${cs.current_composite.toFixed(1)}</td>
+        <td style="padding:4px 6px;font-size:11px;color:#f59e0b;font-weight:600;text-align:right">${cs.conditional_composite.toFixed(1)}</td>
+        <td style="padding:4px 6px;font-size:11px;color:#f59e0b;font-weight:700;text-align:right">${cs.asymmetry_ratio.toFixed(2)}x</td>
+        <td style="padding:4px 6px"><span class="cat-badge ${catCls}" style="font-size:7px;padding:1px 4px">${esc((m.category||'').replace(/_/g,' '))}</span></td>
+      </tr>`;
+    }).join('');
+    return `<div class="glass-static card" style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div style="font-size:13px;font-weight:700;color:#f59e0b">${esc(cluster.name)}</div>
+        <div style="font-size:10px;color:var(--dim)">${ms.length} models &middot; Timeline: ${esc(sample.timeline || '?')}</div>
+      </div>
+      <div style="margin-bottom:10px">${triggers}</div>
+      <div style="font-size:9px;color:var(--dim);margin-bottom:10px"><span style="font-weight:600">Propagation:</span> ${chain}</div>
+      <table style="width:100%;border-collapse:collapse">
+        <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08)">
+          <th style="padding:4px 6px;font-size:8px;color:var(--dim);text-align:left;text-transform:uppercase;letter-spacing:1px">ID</th>
+          <th style="padding:4px 6px;font-size:8px;color:var(--dim);text-align:left;text-transform:uppercase;letter-spacing:1px">Name</th>
+          <th style="padding:4px 6px;font-size:8px;color:var(--dim);text-align:right;text-transform:uppercase;letter-spacing:1px">Current</th>
+          <th style="padding:4px 6px;font-size:8px;color:#f59e0b;text-align:right;text-transform:uppercase;letter-spacing:1px">Cond.</th>
+          <th style="padding:4px 6px;font-size:8px;color:#f59e0b;text-align:right;text-transform:uppercase;letter-spacing:1px">Ratio</th>
+          <th style="padding:4px 6px;font-size:8px;color:var(--dim);text-align:left;text-transform:uppercase;letter-spacing:1px">Cat</th>
+        </tr></thead>
+        <tbody>${modelRows}</tbody>
+      </table>
+    </div>`;
+  }).join('');
+}
+
 // ─── MAIN ───
 async function refresh() {
   const [d, m] = await Promise.all([
@@ -2436,6 +2546,7 @@ async function refresh() {
     renderForceFilters(allModels);
     renderScatterPlot(allModels);
     renderTimeline(allModels);
+    renderCatalystWatch(allModels);
     applyFilters();
     applyVcrFilters();
   }

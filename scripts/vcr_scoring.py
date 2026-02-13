@@ -45,10 +45,49 @@ from pathlib import Path
 
 BASE = Path("/Users/mv/Documents/research/data/verified")
 UI_DIR = Path("/Users/mv/Documents/research/data/ui")
+CACHE_DIR = Path("/Users/mv/Documents/research/data/cache")
 
 NORMALIZED_FILE = BASE / "v3-12_normalized_2026-02-12.json"
 UI_MODELS = UI_DIR / "models.json"
 UI_DASHBOARD = UI_DIR / "dashboard.json"
+QCEW_FILE = CACHE_DIR / "qcew_sn_lookup.json"
+
+# ── QCEW Live Data (loaded once) ──
+_QCEW_DATA = None
+
+# NAICS combined code mapping (BLS uses "31-33", "44-45", "48-49")
+NAICS_COMBINED = {
+    "31": "31-33", "32": "31-33", "33": "31-33",
+    "44": "44-45", "45": "44-45",
+    "48": "48-49", "49": "48-49",
+}
+
+
+def _load_qcew():
+    """Load QCEW data lazily."""
+    global _QCEW_DATA
+    if _QCEW_DATA is None:
+        if QCEW_FILE.exists():
+            with open(QCEW_FILE) as f:
+                _QCEW_DATA = json.load(f).get("sectors", {})
+        else:
+            print(f"  WARNING: QCEW file not found: {QCEW_FILE}")
+            _QCEW_DATA = {}
+    return _QCEW_DATA
+
+
+def _qcew_lookup(naics_code):
+    """Look up QCEW sector data, handling combined codes."""
+    sectors = _load_qcew()
+    # Direct match first
+    if naics_code in sectors:
+        return sectors[naics_code]
+    # Try combined code mapping for 2-digit
+    if len(naics_code) == 2 and naics_code in NAICS_COMBINED:
+        combined = NAICS_COMBINED[naics_code]
+        if combined in sectors:
+            return sectors[combined]
+    return None
 
 VCR_WEIGHTS = {"MKT": 25, "CAP": 25, "ECO": 20, "VEL": 15, "MOA": 15}
 SEED_VALUATION_M = 10  # $10M seed
@@ -767,10 +806,11 @@ def tam_to_mkt_score(tam_m, growth_pct=None):
     log_tam = math.log10(tam_m)
 
     # Map log10(TAM_M) to 1-10 score
-    # log10(30) = 1.48 → 1, log10(100000) = 5.0 → 10
-    # Linear: score = (log_tam - 1.48) / (5.0 - 1.48) * 9 + 1
+    # log10(30) = 1.48 → 1, log10(200000) = 5.3 → 10
+    # v3-16: shifted LOG_MAX from 5.0→5.3, combined with parsed TAM addressable
+    # factors and QCEW live data for broader MKT distribution
     LOG_MIN = 1.48   # $30M
-    LOG_MAX = 5.0    # $100B
+    LOG_MAX = 5.3    # $200B
     base = (log_tam - LOG_MIN) / (LOG_MAX - LOG_MIN) * 9 + 1
 
     # Growth modifier (smaller impact with log scale)
@@ -798,6 +838,30 @@ def lookup_sector_tam(naics_full):
         if prefix in SECTOR_TAM_M:
             return SECTOR_TAM_M[prefix]
     return None
+
+
+def lookup_sector_tam_live(naics_full):
+    """Look up TAM from QCEW total_annual_wages as live proxy.
+
+    Falls back to hardcoded SECTOR_TAM_M if QCEW data unavailable.
+    Returns (tam_M, source_desc) or (None, None).
+    """
+    # Try QCEW live data first — longest prefix match
+    for length in (4, 3, 2):
+        prefix = naics_full[:length]
+        qcew = _qcew_lookup(prefix)
+        if qcew and qcew.get("total_annual_wages"):
+            # total_annual_wages is in dollars — convert to $M
+            wages_m = qcew["total_annual_wages"] / 1_000_000
+            source = f"qcew_live ${wages_m:.0f}M wages (NAICS {prefix})"
+            return wages_m, source
+
+    # Fall back to hardcoded if QCEW miss
+    static_tam = lookup_sector_tam(naics_full)
+    if static_tam:
+        return static_tam, f"static_lookup (NAICS {naics_full})"
+
+    return None, None
 
 
 def heuristic_vcr(model):
@@ -828,22 +892,28 @@ def heuristic_vcr(model):
     text_lower = all_text.lower()
 
     # ── MKT: Market Magnitude ──
-    # Priority: parsed TAM from text > sector TAM lookup > architecture default
+    # Priority: (1) parsed TAM from text, (2) QCEW live wages, (3) arch default
     tam_data = parse_tam_from_text(all_text)
     tam_source = "none"
     if tam_data:
-        mkt = tam_to_mkt_score(tam_data["tam_high_M"], tam_data.get("growth_pct"))
-        tam_source = f"parsed ${tam_data['tam_high_M']:.0f}M"
+        raw_tam = tam_data["tam_high_M"]
+        # Parsed TAMs > $50B are sector-level figures — apply addressable factor
+        # A single AI startup addresses a software layer, not the whole sector
+        if raw_tam > 50000:
+            effective_tam = raw_tam * 0.10  # 10% of sector-level TAM
+        elif raw_tam > 10000:
+            effective_tam = raw_tam * 0.25  # 25% of large market
+        else:
+            effective_tam = raw_tam  # Already scoped
+        mkt = tam_to_mkt_score(effective_tam, tam_data.get("growth_pct"))
+        tam_source = f"parsed ${raw_tam:.0f}M" + (f"→${effective_tam:.0f}M adj" if effective_tam != raw_tam else "")
     else:
-        sector_tam = lookup_sector_tam(naics_full)
+        sector_tam, tam_detail = lookup_sector_tam_live(naics_full)
         if sector_tam:
-            # Scale sector TAM down — a startup addresses a software/AI layer, not total revenue
-            # Previous percentages (3%/1.5%/0.5%) were too generous — produced $15B-$75B
-            # "addressable" markets that all scored MKT=10, eliminating differentiation.
-            # Revised: reflects that a single AI startup competes for a narrow slice
-            # 4-digit NAICS: specific sub-sector → 1% of sub-sector revenue
+            # Scale sector size down — a startup addresses an AI/software layer
+            # 4-digit NAICS: specific sub-sector → 1% of sector size
             # 3-digit NAICS: moderate specificity → 0.5%
-            # 2-digit NAICS: very broad → 0.15% of total sector revenue
+            # 2-digit NAICS: very broad → 0.15% of total sector
             naics_digits = len(naics_full.rstrip())
             if naics_digits >= 4:
                 tam_pct = 0.01
@@ -853,7 +923,7 @@ def heuristic_vcr(model):
                 tam_pct = 0.0015
             realistic_tam = sector_tam * tam_pct
             mkt = tam_to_mkt_score(realistic_tam)
-            tam_source = f"sector ${sector_tam:.0f}M→${realistic_tam:.0f}M addressable"
+            tam_source = f"{tam_detail}→${realistic_tam:.0f}M addressable"
         else:
             mkt = ARCH_MKT.get(arch, 5)
             tam_source = "arch_default"
@@ -1202,6 +1272,28 @@ def main():
         "below_30": sum(1 for c in vcr_composites if c < 30),
     }
 
+    # MKT axis stats (for v3-16 validation)
+    mkt_scores = [m["vcr"]["scores"]["MKT"] for m in models]
+    mkt_stats = {
+        "mean": round(statistics.mean(mkt_scores), 2),
+        "median": round(statistics.median(mkt_scores), 2),
+        "stdev": round(statistics.stdev(mkt_scores), 2),
+        "at_10": sum(1 for s in mkt_scores if s == 10),
+        "at_10_pct": round(sum(1 for s in mkt_scores if s == 10) / len(mkt_scores) * 100, 1),
+    }
+    # Count TAM source types
+    tam_sources = {"parsed": 0, "qcew_live": 0, "static_lookup": 0, "arch_default": 0}
+    for model in models:
+        rat = model.get("vcr", {}).get("rationale", "")
+        if "tam_source=parsed" in rat:
+            tam_sources["parsed"] += 1
+        elif "tam_source=qcew_live" in rat:
+            tam_sources["qcew_live"] += 1
+        elif "tam_source=static_lookup" in rat:
+            tam_sources["static_lookup"] += 1
+        elif "tam_source=arch_default" in rat:
+            tam_sources["arch_default"] += 1
+
     roi_multiples = [m["vcr"]["roi_estimate"]["seed_roi_multiple"] for m in models]
     roi_stats = {
         "max": max(roi_multiples),
@@ -1345,6 +1437,15 @@ def main():
     print("=" * 70)
     print("VCR SCORING COMPLETE — TRIPLE RANKING SYSTEM ACTIVE")
     print("=" * 70)
+    print()
+
+    print("  MKT Axis Stats (v3-16 live TAM):")
+    print(f"    Mean:    {mkt_stats['mean']}")
+    print(f"    Median:  {mkt_stats['median']}")
+    print(f"    Stdev:   {mkt_stats['stdev']}")
+    print(f"    At 10:   {mkt_stats['at_10']} ({mkt_stats['at_10_pct']}%)")
+    print(f"    Sources: parsed={tam_sources['parsed']}, qcew_live={tam_sources['qcew_live']}, "
+          f"static={tam_sources['static_lookup']}, arch_default={tam_sources['arch_default']}")
     print()
 
     print("  VCR Statistics:")
