@@ -1,0 +1,750 @@
+{
+  "cycle": "v3-12",
+  "date": "2026-02-12",
+  "agent": "agent_b",
+  "type": "sector_deep_dive",
+  "sector": "Construction",
+  "sector_naics": "23",
+
+  "sector_context": {
+    "total_employment": 8300000,
+    "sub_sectors": [
+      {
+        "naics": "236",
+        "name": "Construction of Buildings",
+        "employment": 1800000,
+        "establishments": 225000,
+        "avg_annual_pay": 72800,
+        "key_segments": ["2361 Residential Building Construction (~1.1M workers)", "2362 Nonresidential Building Construction (~700K workers)"],
+        "notes": "Residential dominated by small firms (avg 7.5 workers). Nonresidential includes commercial, institutional, industrial building. Heavily exposed to interest rate cycles and housing demand. Single-family housing starts ~1.0M/year, multi-family declining. Modular/prefab penetration still <5% of residential."
+      },
+      {
+        "naics": "237",
+        "name": "Heavy and Civil Engineering Construction",
+        "employment": 1100000,
+        "establishments": 48000,
+        "avg_annual_pay": 86500,
+        "key_segments": ["2371 Utility System Construction (~450K workers)", "2372 Land Subdivision (~65K workers)", "2373 Highway, Street, and Bridge Construction (~385K workers)", "2379 Other Heavy and Civil Engineering (~200K workers)"],
+        "notes": "Largest direct beneficiary of $1.2T IIJA infrastructure bill. Highest wages in construction due to heavy equipment operation, engineering complexity. Workforce skews older (median age 44). Federal and state DOT contracts dominate revenue. Bridge and road inspection is a $5B+ annual spend increasingly shifting to AI/drone methods."
+      },
+      {
+        "naics": "238",
+        "name": "Specialty Trade Contractors",
+        "employment": 4700000,
+        "establishments": 540000,
+        "avg_annual_pay": 68200,
+        "key_segments": ["2381 Foundation, Structure, and Building Exterior (~680K workers)", "2382 Building Equipment Contractors (~2.0M workers, includes electricians, plumbers, HVAC)", "2383 Building Finishing Contractors (~770K workers)", "2389 Other Specialty Trade Contractors (~450K workers)"],
+        "notes": "The backbone of US construction. 57% of all construction employment. Extreme fragmentation: 540K establishments averaging 8.7 workers each. 90%+ have fewer than 20 employees. Electricians alone: 830K workers. HVAC technicians: 420K. Plumbers/pipefitters: 530K. Severe labor shortage across all trades -- 650K+ unfilled positions. Average worker age 42.5. Immigration enforcement (F3) directly constrains labor supply: 24% of construction workers are foreign-born."
+      }
+    ],
+
+    "industry_structure": "The most fragmented major sector in the US economy after real estate. 814,557 employer firms plus 2.7M non-employer sole proprietors. 90% of firms have <20 employees. Top 400 contractors (ENR 400) account for ~$600B of $2.1T total spending -- meaning the long tail of 800K+ small firms handles $1.5T. The general contractor / subcontractor hierarchy creates deep supply chains: a typical commercial project involves 1 GC and 15-30 specialty subs. Payment flows are notoriously slow (60-90 day cycles), creating a $40B slow-payment economic drag. Unionization rate ~13% (higher in heavy/civil at ~25%, lower in residential at ~8%). Project-based, geographically distributed work creates unique technology adoption challenges: every jobsite is temporary infrastructure.",
+
+    "key_incumbents": [
+      {"name": "Procore Technologies", "type": "construction_software", "revenue": "$1.31B (2025)", "notes": "Dominant cloud construction management platform. ~$10B market cap. 16,000+ customers. The 'Salesforce of construction' thesis. Growing 14% YoY but faces competition from Autodesk and vertical challengers."},
+      {"name": "Autodesk", "type": "design_and_bim", "revenue": "$6.1B total ($1.8B construction)", "notes": "BIM market leader via Revit + AutoCAD. Autodesk Construction Cloud (ACC) integrating BIM to field. Acquired PlanGrid ($875M) for field management. Dominant in design-to-build workflow."},
+      {"name": "Trimble", "type": "hardware_and_software", "revenue": "$3.7B", "notes": "GPS, surveying, machine control. Strong in heavy/civil. Acquired Viewpoint for contractor ERP. Hardware-software integration moat."},
+      {"name": "Oracle (Aconex/Textura)", "type": "enterprise_construction", "revenue": "~$800M construction segment", "notes": "Enterprise PM and payment management for large owners/GCs. Strong in infrastructure and government projects."},
+      {"name": "Buildertrend / CoConstruct", "type": "residential_pm", "revenue": "~$300M combined", "notes": "Residential-focused project management. 1M+ projects managed. Competing for the residential contractor market."},
+      {"name": "Built Technologies", "type": "construction_fintech", "revenue": "~$100M+", "notes": "Unicorn ($1B+ valuation). Construction lending automation for banks. $135B in construction value financed through platform."},
+      {"name": "Caterpillar / Komatsu / John Deere", "type": "equipment_oem", "revenue": "$65B+ combined", "notes": "Heavy equipment OEMs investing in autonomous equipment, machine control, telematics. Cat's autonomous haul trucks operating in mining; construction applications next."},
+      {"name": "Hilti / Milwaukee Tool / DeWalt", "type": "tools_and_equipment", "revenue": "$20B+ combined", "notes": "Power tool and fastener manufacturers investing in connected tools, IoT-enabled equipment tracking, and jobsite robotics (Hilti Jaibot for overhead drilling)."}
+    ],
+
+    "transformation_drivers": [
+      {
+        "force": "F1_technology",
+        "impact": "high",
+        "mechanism": "AI/ML transforming construction across four vectors: (1) Design: generative design, automated code compliance checking, clash detection in BIM models. (2) Field: computer vision for progress monitoring (Doxel, OpenSpace), safety compliance (Newmetrix/Oracle), quality inspection. (3) Operations: AI scheduling, resource optimization, predictive equipment maintenance. (4) Robotics: bricklaying (Hadrian X), rebar tying (TyBot), drilling (Hilti Jaibot), 3D concrete printing (ICON). AI in construction market: $11.1B (2025) growing to $24.3B by 2030 at 16.9% CAGR. But adoption remains LOW: <15% of contractors use AI tools in daily operations.",
+        "key_data": ["AI in construction: $11.1B (2025) to $24.3B (2030), 16.9% CAGR", "BIM market: $9.0B (2025) to $15.4B (2030), 11.3% CAGR", "Construction robotics: $1.1B (2024) to $3.5B (2030), 17.5% CAGR", "Construction 4.0 overall: $56.4B by 2030, 20.3% CAGR", "<15% of contractors use AI daily -- massive adoption runway"]
+      },
+      {
+        "force": "F2_demographics",
+        "impact": "extreme",
+        "mechanism": "Construction faces the MOST ACUTE labor crisis of any major sector. Average worker age 42.5 and rising. 650K+ unfilled positions. 77% of firms report difficulty filling positions (AGC 2025 survey). The sector loses ~250K workers annually to retirement vs ~150K new entrants. Skilled trades (electricians, plumbers, HVAC) face 10-15 year training pipelines with insufficient apprenticeship throughput. Unlike white-collar sectors where AI REPLACES workers, construction AI must AUGMENT a workforce that literally does not exist. This makes construction the clearest 'demographic necessity' driver for technology adoption in the economy.",
+        "key_data": ["650K+ unfilled construction positions (Feb 2026)", "77% of firms report hiring difficulty", "Average construction worker age: 42.5", "24% of construction workers foreign-born -- immigration enforcement constrains supply", "Electrician shortage: 80K+ unfilled nationally", "HVAC technician shortage: 45K+ unfilled", "Net annual workforce deficit: ~100K workers/year"]
+      },
+      {
+        "force": "F3_geopolitics",
+        "impact": "high",
+        "mechanism": "Three geopolitical channels: (1) INFRASTRUCTURE BILL: $1.2T IIJA creating unprecedented demand for heavy/civil construction through 2030. $550B in new spending on roads, bridges, broadband, water systems, EV chargers. This is the largest infrastructure investment since the Interstate Highway System. (2) IMMIGRATION: Construction depends on immigrant labor (24% of workforce, higher in residential at ~30%). Immigration enforcement directly constrains labor supply, accelerating the case for automation and modular construction. (3) TARIFFS: Steel and lumber tariffs increase material costs 15-25%, creating volatility that rewards procurement optimization and supply chain visibility platforms.",
+        "key_data": ["$1.2T IIJA: $550B new spending through 2030", "$110B for roads and bridges", "$65B for broadband", "$55B for water infrastructure", "24% foreign-born workforce exposed to immigration policy", "Steel tariffs: 25% Section 232 tariffs remain in effect", "Lumber prices: 2x-3x volatility vs pre-2020 norms"]
+      },
+      {
+        "force": "F4_capital",
+        "impact": "moderate",
+        "mechanism": "Construction is capital-intensive but historically under-invested in technology (1.5% of revenue vs 3.5% cross-industry average). Two capital dynamics: (1) CONSTRUCTION LENDING: $480B annual US construction loans. Draw management, progress verification, and lien tracking are manual processes creating $40B in slow-payment drag. Fintech disruption via Built Technologies ($135B financed), Billd, and CoFi. (2) CONTECH VC: Construction tech funding ~$5B in 2025 (down from $7B peak in 2022 but stabilizing). Procore at $10B market cap validates the space. The 'construction is under-digitized' thesis has survived multiple VC cycles.",
+        "key_data": ["$480B annual US construction loans", "$40B slow-payment economic impact", "ConTech VC: ~$5B in 2025", "Procore market cap: ~$10B", "Construction IT spend: 1.5% of revenue vs 3.5% cross-industry", "$2.1T total US construction spending (2025)"]
+      },
+      {
+        "force": "F5_psychology",
+        "impact": "high",
+        "mechanism": "Construction has the HIGHEST technology resistance of any major sector, driven by: (1) CRAFT IDENTITY: Skilled tradespeople define competence by physical skill, not digital tools. 'I'm an electrician, not a software user.' (2) GENERATIONAL NORMS: Older workforce (42.5 avg age) learned on paper plans, physical measurements, phone-based coordination. (3) LIABILITY FEAR: Construction errors have physical consequences (building collapse, injury, death). Fear of AI errors in structural calculations, safety monitoring, or compliance creates rational resistance. (4) FRAGMENTATION: 800K+ small firms lack IT departments, training budgets, or change management capacity. Technology adoption requires reaching the individual tradesperson, not the IT buyer. Fear friction gap is WIDE: economic necessity (SN 8+) far exceeds psychological readiness (PR 4-5).",
+        "key_data": ["Technology adoption 2-3x slower than comparable sectors", "Only 30% of contractors use project management software", "BIM adoption <30% in residential (higher in commercial at ~75%)", "Smartphone penetration high (95%) but construction app usage low (25%)", "Paper plans still used on 40%+ of residential jobsites", "Average age of technology adopter vs non-adopter: 36 vs 48"]
+      },
+      {
+        "force": "F6_energy",
+        "impact": "moderate",
+        "mechanism": "Energy intersects construction through: (1) BUILDING CODES: Energy efficiency mandates tightening nationwide. IECC 2024 requires 15-25% improvement vs 2021 baseline. California Title 24, NYC LL97, Washington state energy code all pushing zero-energy-ready building. (2) ELECTRIFICATION: Heat pump mandates in new construction (9 states). EV charger installation requirements. (3) EMBODIED CARBON: Emerging regulations on embodied carbon in construction materials (concrete = 8% of global CO2). Portland, Vancouver, LEED v5 addressing embodied carbon. (4) DATA CENTER CONSTRUCTION: AI infrastructure boom driving $200B+ in data center construction 2025-2030 -- the single largest category of non-residential construction growth.",
+        "key_data": ["IECC 2024: 15-25% energy improvement required", "9 states mandate heat pumps in new construction", "Data center construction: $200B+ projected 2025-2030", "Embodied carbon regulations emerging in 10+ jurisdictions", "Building sector: 40% of US energy consumption", "Construction equipment electrification nascent but Volvo, Cat investing"]
+      }
+    ]
+  },
+
+  "transformation_timeline": {
+    "2026": {
+      "headline": "Infrastructure Spending Ramp + AI Pilot Year",
+      "key_events": [
+        "IIJA spending reaches peak annual disbursement ($120B+) -- heavy/civil construction at capacity",
+        "AI progress monitoring (Doxel, OpenSpace) deployed on 5,000+ commercial projects",
+        "Construction robotics: 500+ robots deployed across US jobsites (bricklaying, drilling, rebar tying)",
+        "BIM mandate expands: federal projects >$5M require BIM, 8+ states adopt similar requirements",
+        "Construction worker shortage exceeds 700K unfilled positions as infrastructure demand peaks",
+        "Data center construction exceeds $50B annual spend (AI infrastructure buildout)",
+        "PermitFlow, Pulley, and GovBuilt reach 500+ municipal deployments for digital permitting",
+        "Built Technologies processes >$50B in construction draws",
+        "Procore reaches $1.5B ARR, launches AI copilot features for project managers"
+      ],
+      "employment_projection": "+2.5% (infrastructure demand pulling in workers faster than retirement removes them)",
+      "confidence": "high"
+    },
+    "2027": {
+      "headline": "AI Adoption Inflection + Modular Breakout",
+      "key_events": [
+        "AI-powered safety monitoring mandatory on federal jobsites (OSHA partnership program)",
+        "Modular construction crosses 10% share of new multifamily (up from ~5%)",
+        "First autonomous heavy equipment (grading, excavation) deployed on 50+ US civil projects",
+        "AI scheduling and resource optimization reduces project overruns 15-20% on early adopter sites",
+        "Digital twin adoption crosses 25% of commercial projects (up from ~10%)",
+        "Skilled trades marketplace platforms (Tradesmen International, Workrise, Hireup) reach $5B GMV",
+        "Construction insurance AI reduces claim processing 40% and underwriting time 60%",
+        "Energy code compliance software required in 15+ states for new construction permitting"
+      ],
+      "employment_projection": "+1.5% (moderation as some projects complete, automation begins offsetting new roles)",
+      "confidence": "medium-high"
+    },
+    "2028": {
+      "headline": "Robotics Scale + Workforce Restructuring",
+      "key_events": [
+        "Construction robotics market exceeds $2B annual US deployment",
+        "AI copilots standard on 40%+ of commercial projects (PM, scheduling, safety, quality)",
+        "Modular construction reaches 15% of new residential starts (factory-built homes)",
+        "Autonomous equipment handles 25%+ of earthmoving on highway/infrastructure projects",
+        "Digital permitting reaches 60% of US jurisdictions (up from ~20%)",
+        "Construction workforce peaks and begins gradual decline as automation substitutes for unfilled positions",
+        "3D concrete printing used on 1,000+ structures (residential, military, affordable housing)",
+        "Prefab electrical and plumbing assemblies reduce on-site skilled labor requirements 20%"
+      ],
+      "employment_projection": "+0.5% (plateau -- automation absorbing unfilled positions, not replacing existing workers)",
+      "confidence": "medium"
+    },
+    "2029": {
+      "headline": "AI-Native Construction Firms Emerge",
+      "key_events": [
+        "First construction firms operate with AI-first workflows (design through turnover)",
+        "Autonomous equipment standard on heavy/civil projects -- operators become fleet supervisors",
+        "Modular + robotics convergence: factory-built assemblies with robotic on-site integration",
+        "Construction productivity growth turns positive for first time in 20 years",
+        "Smart building requirements (digital twin + IoT) mandatory for commercial projects in 10+ states",
+        "Construction lending fully digitized: AI-verified progress, automated draws, smart lien tracking"
+      ],
+      "employment_projection": "-0.5% (first net decline, but voluntary -- unfilled positions absorbed by automation rather than layoffs)",
+      "confidence": "medium"
+    },
+    "2030": {
+      "headline": "Structural Transformation Visible",
+      "key_events": [
+        "Construction productivity up 15-20% from 2025 baseline (reversing 20-year stagnation)",
+        "Modular/prefab reaches 25% of new residential, 15% of commercial",
+        "AI copilot universal on commercial projects -- paper-based operations confined to small residential",
+        "Robotics handles 30%+ of repetitive physical tasks (drilling, fastening, finishing, inspection)",
+        "Worker profile shifts: fewer laborers, more robot operators, data analysts, BIM specialists",
+        "Construction workforce: 7.8M (down from 8.3M peak but higher output per worker)"
+      ],
+      "employment_projection": "-1.0% from peak (total employment ~7.8M but productivity up 15-20%)",
+      "confidence": "low-medium"
+    }
+  },
+
+  "model_cards": [
+    {
+      "id": "MC-V312-CON-001",
+      "name": "AI Construction Project Management Copilot",
+      "architecture": "ai_copilot",
+      "sector_naics": "236",
+      "sector_name": "Construction of Buildings",
+      "one_liner": "AI copilot for construction project managers that automates scheduling, RFI processing, submittal tracking, and daily reports -- targeting the $11.6B construction management software market growing to $19.1B by 2030 at 12.1% CAGR",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "macro_source": "F1: AI-driven progress analytics expanding at 14.12% CAGR through 2031, outpacing traditional PM modules. F2: 650K unfilled positions mean PMs are overloaded, managing 2-3x project volume vs 2019. Mordor Intelligence Construction Management Software Market Report 2025.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 8,
+        "TG": 8,
+        "CE": 7
+      },
+      "composite": 78.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 6,
+        "VD": 7,
+        "DV": 8,
+        "rationale": "Market openness is moderate because Procore ($1.31B revenue, 16K+ customers), Autodesk Construction Cloud, and Oracle Aconex dominate the GC/owner segment. However, AI-native copilot features are nascent -- Procore just launched basic AI in 2025. The opportunity is to build an AI-first PM tool for the underserved mid-market (sub-$50M projects, 90%+ of market by volume) where Procore is too expensive ($10K-$50K/year) and Excel/paper still dominates. Moat builds through project data accumulation: each completed project trains the model on scheduling patterns, delay causes, cost escalation factors. Value density is high -- construction PM software yields $8K-$50K ACV per GC. Demand is proven: 70% of construction projects run over budget, 80% run over schedule."
+      },
+      "deep_dive_evidence": "The construction management software market reached $10.64B in 2025 and is projected to grow to $19.12B by 2030 (Mordor Intelligence, 12.08% CAGR). Cloud solutions lead with 62.35% market share. AI-driven progress analytics is the fastest-growing segment at 14.12% CAGR. Currently, 70% of construction projects exceed budget and 80% exceed schedule. The average construction project overrun is 16% on cost and 20% on time (McKinsey Global Institute). Procore dominates large GCs but only serves ~16K customers out of 814K+ employer construction firms -- 98% of the market is unserved by modern PM software. Mid-market GCs and specialty contractors manage projects via spreadsheets, email, and paper. An AI copilot that automates RFI processing (avg 200+ RFIs per commercial project), submittal tracking, daily report generation, and schedule optimization could reduce PM labor by 30-40% per project while improving on-time/on-budget rates. At $500-$2,000/month per project (10-20x cheaper than Procore for small firms), the addressable mid-market is $3-5B.",
+      "falsification_criteria": "If Procore's AI features mature rapidly enough to serve the mid-market at lower price points (watch for Procore pricing tier below $500/month). If construction firms prove fundamentally unwilling to adopt AI PM tools (adoption stays below 10% through 2028). If the economic necessity argument weakens -- construction slowdown reduces project volume, easing PM workload pressure.",
+      "vcr_evidence": {
+        "tam_estimate": "$5.2B (AI-specific PM tools within $19.1B total construction software market by 2030)",
+        "capture_analysis": "Startup can capture mid-market segment underserved by Procore/Autodesk. 800K+ firms with no modern PM software. Path to $100M ARR serving 10K firms at $10K ACV. Competing against spreadsheets and paper, not Procore.",
+        "unit_economics": "ACV $6K-$24K depending on firm size. Gross margins 80%+. CAC challenge is high (fragmented market, low digital engagement). Field sales required for larger GCs. Product-led growth possible for sub-10 employee firms.",
+        "velocity_indicators": "Sales cycle 30-90 days for small firms, 6-12 months for mid-market GCs. Seasonal demand (construction is seasonal in northern US). Network effects: GCs pull subs onto platform for document sharing.",
+        "moat_sources": "Project data compounding (scheduling patterns, cost databases, risk models trained on thousands of completed projects). Integration with BIM tools and accounting systems. Workflow lock-in once adopted mid-project."
+      }
+    },
+    {
+      "id": "MC-V312-CON-002",
+      "name": "Construction Digital Twin & BIM Intelligence Platform",
+      "architecture": "digital_twin",
+      "sector_naics": "2362",
+      "sector_name": "Nonresidential Building Construction",
+      "one_liner": "AI-powered digital twin platform that converts BIM models into living project replicas with real-time progress tracking, clash detection, and lifecycle management -- serving the $15.4B BIM market by 2030 and $155B digital twin construction market",
+      "forces": ["F1_technology", "F6_energy", "F4_capital"],
+      "macro_source": "F1: BIM market growing from $9.0B (2025) to $15.4B (2030) at 11.3% CAGR (MarketsandMarkets). Digital twin in construction projected to reach $155B by 2030 at 19.0% CAGR. Federal BIM mandate expanding to all projects >$5M.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 9,
+        "EC": 8,
+        "TG": 7,
+        "CE": 5
+      },
+      "composite": 76.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 4,
+        "MA": 7,
+        "VD": 8,
+        "DV": 7,
+        "rationale": "Autodesk (Revit, ACC) and Bentley Systems dominate BIM authoring. But the AI layer -- converting static BIM into living digital twins with computer vision progress tracking, automated clash detection, and predictive analytics -- is nascent. Doxel (YC, $45M raised) and OpenSpace ($116M raised) lead AI progress monitoring but haven't closed the BIM-to-twin loop. The opportunity is the INTEGRATION layer: connecting BIM design data to field reality via computer vision, IoT sensors, and AI analytics. Moat advantage is high because training data (thousands of project scans correlated with outcomes) creates compounding accuracy. Value density is strong: $50K-$500K per project for large commercial/infrastructure."
+      },
+      "deep_dive_evidence": "The BIM market is valued at $9.04B (2025) growing to $15.42B by 2030 (MarketsandMarkets, 11.3% CAGR). Digital twin in construction: $64.9B (2025) to $155.0B (2030) at 19.0% CAGR (NextMSC). BIM adoption is ~75% on commercial projects but only ~30% on residential. Federal mandate: all GSA projects >$5M require BIM. 8 states have adopted BIM requirements for public projects. The gap is BIM-to-reality: models are created in design but rarely updated during construction or used in operations. OpenSpace (360-degree photo capture, 2M+ captures) and Doxel (AI progress tracking, claims 'visual intelligence') are proving the computer vision approach. A digital twin platform that maintains BIM-to-field synchronization throughout construction and into facility operations creates a $50K-$500K value proposition per commercial project (reducing rework costs that average $31.3B/year in the US per NIST). The lifecycle operations market (building management using the as-built digital twin) extends the TAM into facilities management ($1.1T globally).",
+      "falsification_criteria": "If Autodesk closes the BIM-to-twin gap internally with ACC features, eliminating the integration opportunity. If BIM adoption stalls below 40% in residential (removing the largest sub-segment). If construction firms reject the ongoing data capture requirements (too much field effort for perceived benefit). If digital twin costs don't compress -- currently requires expensive hardware and labor to capture.",
+      "vcr_evidence": {
+        "tam_estimate": "$8.5B (AI/analytics layer on BIM + digital twin for construction by 2030)",
+        "capture_analysis": "Startup opportunity is in the analytics/intelligence layer on top of BIM, not BIM authoring itself (Autodesk's moat). Doxel and OpenSpace have proven willingness to pay. Path to $200M ARR by serving 2,000 large commercial/infrastructure projects at $100K average.",
+        "unit_economics": "ACV $50K-$500K for commercial/infrastructure. $5K-$20K for mid-market. Gross margins 70-80%. Hardware capture costs declining (LiDAR on iPhone, $500 360-cameras vs $5K+ 5 years ago). Professional services component ~20% of revenue.",
+        "velocity_indicators": "Sales cycle 6-18 months for enterprise. BIM mandates create regulatory pull. Owner/developer mandates flow to GCs which flow to subs (top-down adoption). IIJA infrastructure spending creates 5-year demand runway.",
+        "moat_sources": "Training data from thousands of scanned projects creates accuracy advantage. BIM model library for clash detection. Integration depth with Autodesk, Trimble, Bentley ecosystems. Switching costs once embedded in project workflows."
+      }
+    },
+    {
+      "id": "MC-V312-CON-003",
+      "name": "AI Jobsite Safety Monitoring Platform",
+      "architecture": "predictive_analytics",
+      "sector_naics": "23",
+      "sector_name": "Construction (All Sub-sectors)",
+      "one_liner": "Computer vision + wearable IoT platform that detects safety hazards in real-time (fall risk, PPE compliance, struck-by exposure) on construction jobsites -- addressing the $4.6B construction worker safety market by 2030 within the broader $24.3B AI in construction market",
+      "forces": ["F1_technology", "F5_psychology", "F4_capital"],
+      "macro_source": "F1: AI safety/risk management fastest-growing AI-in-construction segment at 30.5% CAGR through 2030. Construction worker safety market: $3.2B (2024) to $4.6B (2030). OSHA reporting ~1,000 construction fatalities/year and 200K injuries. GlobeNewswire Sept 2025, Grand View Research.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 9,
+        "FA": 8,
+        "EC": 9,
+        "TG": 8,
+        "CE": 6
+      },
+      "composite": 81.5,
+      "category": "STRUCTURAL_WINNER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 7,
+        "VD": 7,
+        "DV": 9,
+        "rationale": "Construction safety is the strongest demand signal in contech -- OSHA fines doubled in 2023, EMR (experience modification rate) directly impacts insurance premiums and bidding eligibility. Newmetrix (acquired by Oracle 2023) and Smartvid.io (acquired by Newmetrix) validated the category. Current leaders include Versatile (crane monitoring), Triax (wearables), and various startups. Market openness is moderate-high because no single platform dominates across all safety vectors (fall protection, struck-by, PPE, housekeeping, trenching). Oracle/Newmetrix is enterprise-focused. The mid-market (200K+ firms) is largely unserved. Demand visibility is the highest of any construction AI category: every GC faces OSHA compliance, insurance pressure, and moral obligation."
+      },
+      "deep_dive_evidence": "Construction is the deadliest major industry: 1,056 fatalities in 2023 (BLS), 200K+ non-fatal injuries. OSHA's 'Fatal Four' (falls 33.5%, struck-by 11.1%, electrocution 7.0%, caught-in/between 5.4%) are all detectable by computer vision. OSHA maximum penalties increased to $16,131 per serious violation and $161,323 per willful violation (2024 adjustment). The construction worker safety market: $3.2B (2024) to $4.6B (2030) at 6.0% CAGR (GlobeNewswire/ResearchAndMarkets). AI-specific safety solutions growing at 30.5% CAGR within this market (Grand View Research). Insurance incentive: a single fatality costs $5M+ in direct costs; EMR impacts persist for 3 years on all bids. AI safety platforms (camera-based + wearable) can reduce recordable incidents 40-60% based on pilot data from Newmetrix, Smartvid.io, and Suffolk Construction deployments. Pricing: $2-5K/month per active jobsite for camera-based monitoring, $5-15/month per wearable per worker.",
+      "falsification_criteria": "If Oracle/Newmetrix integrates comprehensive safety AI into standard Aconex/Primavera bundles at no additional cost. If construction firms refuse to deploy cameras on jobsites due to union resistance or privacy concerns. If OSHA relaxes enforcement under deregulatory political environment, reducing compliance pressure. If wearable IoT fatigue sets in (workers refuse to wear devices).",
+      "vcr_evidence": {
+        "tam_estimate": "$4.6B (construction worker safety technology by 2030, AI-specific segment ~$1.8B)",
+        "capture_analysis": "Mid-market opportunity is strong: Oracle/Newmetrix serves enterprise GCs, leaving 200K+ mid-market firms underserved. Insurance companies are potential distribution partners (reduced EMR = reduced premiums = shared savings). Path to $150M ARR serving 5,000 jobsites at $30K/year average.",
+        "unit_economics": "ACV $12K-$120K per firm (scaled by number of active jobsites). Hardware cost: $2-5K per jobsite for cameras. Wearables: $200-500 per unit. Gross margins 65-75% (hardware drag). Payback: one prevented serious injury ($50K+ direct cost) justifies annual subscription.",
+        "velocity_indicators": "Sales cycle 30-60 days for mid-market (safety is urgent, not strategic). Insurance partnership channel accelerates adoption. OSHA citation is often the trigger event. Seasonal: Northern US jobsites slower in winter.",
+        "moat_sources": "Computer vision models trained on millions of construction-specific images (PPE detection, fall zone identification, equipment proximity). Incident database creates predictive capability (which site conditions predict injuries). Integration with insurance carriers creates switching costs."
+      }
+    },
+    {
+      "id": "MC-V312-CON-004",
+      "name": "Construction Robotics Fleet Platform",
+      "architecture": "robotics_automation",
+      "sector_naics": "238",
+      "sector_name": "Specialty Trade Contractors",
+      "one_liner": "Robotics-as-a-service platform deploying task-specific construction robots (bricklaying, rebar tying, drilling, finishing) to trade contractors facing 650K worker shortages -- targeting the $3.5B construction robotics market by 2030 at 17.5% CAGR",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "macro_source": "F1: Construction robotics market $1.12B (2024) to $3.5B (2030) at 17.5% CAGR (Grand View Research, Strategic Market Research). F2: 650K unfilled construction positions, avg worker age 42.5. Robots fill positions that CANNOT be filled by humans who do not exist.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 9,
+        "FA": 9,
+        "EC": 7,
+        "TG": 6,
+        "CE": 4
+      },
+      "composite": 74.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 8,
+        "VD": 8,
+        "DV": 7,
+        "rationale": "Construction robotics is early-stage with no dominant platform. Current players are task-specific: FBR (Hadrian X bricklaying, ASX-listed), Advanced Construction Robotics (TyBot rebar tying), Hilti (Jaibot drilling), Canvas (drywall finishing), Dusty Robotics (layout). Boston Dynamics and Figure are humanoid but not construction-focused. Market openness is HIGH because no one has built the fleet management / RaaS platform layer yet. Each robot manufacturer sells directly. The platform opportunity (manage multiple robot types across jobsites, handle logistics, training, maintenance) is unoccupied. Moat builds through multi-vendor integration, deployment data, and contractor relationships. Value density is high: a bricklaying robot replaces 3-4 masons at $80K+/year each."
+      },
+      "deep_dive_evidence": "Construction robotics market: $1.12B (2024) to $2.76B-$3.66B (2030) depending on source (Strategic Market Research, Grand View Research). Key deployed systems: Hadrian X (lays 200 blocks/hour vs 300-500/day for human mason), TyBot (ties rebar autonomously, deployed on 50+ bridge projects), Hilti Jaibot (autonomous overhead drilling, 400+ deployments), Canvas (drywall finishing robot, 1M+ SF finished), Dusty Robotics (BIM-to-layout robot, 10,000+ layouts). NVIDIA Jetson compute ($1,999) and declining sensor costs (LiDAR from $10K to $500) are reducing robot unit economics. BUT adoption is extremely early: <500 construction robots deployed across US jobsites in 2025. The constraint is not technology but deployment complexity: every jobsite is different, robots need human supervisors, weather/terrain variability high. RaaS model ($5-15K/month per robot) lowers the capital barrier for contractors who won't spend $150-500K on a robot purchase.",
+      "falsification_criteria": "If construction robot reliability fails to reach 90%+ uptime in field conditions (dust, rain, temperature variation). If immigration policy reversal floods the construction labor market, reducing the demographic necessity argument. If humanoid robots (Figure, Tesla Optimus) reach construction-viable capabilities at <$25K by 2028, leapfrogging task-specific robots. If construction unions successfully block robotic deployment on jobsites.",
+      "vcr_evidence": {
+        "tam_estimate": "$3.5B (construction robotics by 2030, RaaS/fleet platform layer ~$800M)",
+        "capture_analysis": "Platform/RaaS play sits above individual robot OEMs. Requires partnerships with 5-10 robot manufacturers. Path to $100M ARR by deploying 2,000 robots at $50K/year RaaS fee. Capital-intensive: need $50M+ to build fleet. But demographic necessity creates inelastic demand.",
+        "unit_economics": "RaaS revenue: $5-15K/month per robot. Robot COGS: $100-500K purchase price, 3-5 year useful life. Gross margins 40-50% on RaaS (lower than SaaS due to hardware). Break-even per robot: 18-30 months. Maintenance and logistics costs significant.",
+        "velocity_indicators": "Sales cycle 3-6 months (contractors need to see demo on their jobsite). Seasonal in northern US. Infrastructure projects provide steady demand year-round. GC mandate flows to subs.",
+        "moat_sources": "Multi-vendor fleet management software (no competitor integrates across robot types). Deployment data: knowing which robot works on which task/terrain/weather. Contractor relationships and training programs. Logistics infrastructure for robot deployment/retrieval."
+      }
+    },
+    {
+      "id": "MC-V312-CON-005",
+      "name": "Skilled Trades Workforce Marketplace & Upskilling Platform",
+      "architecture": "marketplace",
+      "sector_naics": "2382",
+      "sector_name": "Building Equipment Contractors (Electricians, Plumbers, HVAC)",
+      "one_liner": "Two-sided marketplace connecting 2M+ specialty trade workers with 540K contractor firms, with embedded skills verification, credential management, and AR-powered upskilling -- addressing the 650K worker shortage in a $130B temporary staffing market where 17.2% of gig workers are in construction",
+      "forces": ["F2_demographics", "F1_technology", "F3_geopolitics"],
+      "macro_source": "F2: 650K unfilled construction positions, 77% of firms report hiring difficulty (AGC 2025). F3: Immigration enforcement constraining 24% foreign-born workforce. CSIS analysis: US needs 140K additional electricians, HVAC techs, equipment operators by 2030. Global temp staffing market $130B by 2030 (Spherical Insights).",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 9,
+        "FA": 8,
+        "EC": 7,
+        "TG": 9,
+        "CE": 7
+      },
+      "composite": 80.5,
+      "category": "STRUCTURAL_WINNER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 6,
+        "VD": 6,
+        "DV": 9,
+        "rationale": "No dominant digital marketplace exists for construction labor. Current solutions: (1) Traditional staffing agencies (Tradesmen International, $1.5B+ revenue; PeopleReady) -- high-fee, low-tech. (2) Workrise (formerly RigUp, $500M+ raised) -- primarily oil & gas, expanding to construction. (3) Instawork, Wonolo -- general gig, not construction-specific. (4) Hireup (construction-focused, early). The gap is a construction-native platform with: credential verification (licenses, OSHA cards, drug tests), skill-matching (an electrician is not a plumber), project-based scheduling (not gig-by-gig), and embedded upskilling (AR training for new certifications). Market openness is high because traditional staffing agencies charge 30-50% markup and the 'Uber for construction workers' has not been built. Demand visibility is the highest possible: 650K unfilled positions is not a forecast, it is a measured gap."
+      },
+      "deep_dive_evidence": "Construction workforce crisis by the numbers: 650K+ unfilled positions (Feb 2026 estimate based on AGC survey + BLS JOLTS data). 77% of firms report difficulty filling hourly craft positions (AGC 2025 Workforce Survey). Average construction worker age 42.5 and rising. Net annual deficit: ~100K workers/year (retirements exceed new entrants). 24% of construction workforce is foreign-born (Pew Research), concentrated in residential (30%+) -- directly exposed to immigration enforcement. Electrician shortage: 80K+ nationally (IBEW). HVAC technician shortage: 45K+. CSIS (Jan 2026): US needs 140K additional skilled trade workers by 2030 just for clean energy and data center construction. Traditional staffing agencies charge 30-50% markup; digital marketplace could reduce to 15-20% while improving matching speed from days to hours. Credential management is a massive pain point: the average specialty contractor carries 15-25 different licenses, certifications, and insurance documents that must be current for each project. An integrated marketplace with embedded credential verification, AI skill-matching, and AR upskilling modules creates a 3-sided platform (workers, contractors, training providers).",
+      "falsification_criteria": "If immigration policy reverses and labor supply expands rapidly, reducing the shortage below 300K. If Workrise successfully pivots from oil & gas to dominate construction labor. If construction workers prove unwilling to adopt a platform-mediated work model (preferring direct relationships and word-of-mouth hiring). If unions block marketplace models as circumventing collective bargaining agreements.",
+      "vcr_evidence": {
+        "tam_estimate": "$22B (construction segment of US temporary/contract staffing, growing at 9% CAGR)",
+        "capture_analysis": "Construction staffing is ~$22B of the $130B US temp staffing market. Platform take rate 12-18% vs traditional agency 30-50%. Path to $500M GMV / $75M revenue in 5 years by serving 50K active workers. Network effects: worker density in a metro creates contractor liquidity.",
+        "unit_economics": "GMV per placement: $3-8K/week. Platform take rate: 12-18%. Revenue per active worker: $2-4K/year. CLTV/CAC ratio needs to exceed 3x. Worker acquisition via trade schools, unions, immigration services. Contractor acquisition via demonstrated fill rates.",
+        "velocity_indicators": "Fastest adoption where shortage is most acute: electricians, HVAC, data center trades. Sales cycle: 1-7 days (contractors need workers NOW). Seasonal variation but data center and infrastructure provide year-round demand.",
+        "moat_sources": "Worker credential database (verified licenses, certifications, drug tests, safety records). Network effects (more workers attract more contractors attract more workers). Training content library for upskilling. Reputation/rating system creates trust layer that word-of-mouth lacks."
+      }
+    },
+    {
+      "id": "MC-V312-CON-006",
+      "name": "Construction Materials Procurement & Supply Chain AI",
+      "architecture": "supply_chain_optimization",
+      "sector_naics": "236",
+      "sector_name": "Construction of Buildings",
+      "one_liner": "AI-powered materials procurement platform with real-time pricing, demand forecasting, and supply chain visibility for the $1.5B construction procurement software market growing to $2.6B by 2032 -- reducing material cost overruns that average 10-15% of project budgets",
+      "forces": ["F1_technology", "F3_geopolitics", "F4_capital"],
+      "macro_source": "F1: AI demand forecasting reducing procurement costs 5-15%. F3: Steel tariffs (25% Section 232) and lumber volatility (2-3x range) create urgent need for supply chain visibility. Construction procurement software market $1.5B (2025) to $2.6B (2032), 8.1% CAGR (GM Insights, ResearchAndMarkets).",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 70.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 6,
+        "VD": 6,
+        "DV": 7,
+        "rationale": "Existing players include HCSS (heavy civil focused), BIM 360 (Autodesk, design-integrated), Procore (PM-integrated procurement), and general procurement platforms (Coupa, SAP Ariba) that serve construction poorly. Construction-specific AI procurement startups include StructionSite, Kojo ($51M raised, materials procurement for electrical contractors), and Voyage Control. Kojo has validated the niche approach (starting with electrical materials). The market is moderately open because construction procurement is uniquely complex: project-based (not recurring), geographically variable, subject to long lead times, and requires integration with project schedules. Value density is moderate -- savings of 5-15% on materials (which are 40-60% of project cost) create clear ROI. Moat from pricing data accumulation across thousands of projects."
+      },
+      "deep_dive_evidence": "Construction materials represent 40-60% of project costs ($840B-$1.26T of $2.1T US construction spending). Material cost overruns average 10-15% per project (McKinsey). Lumber price volatility: 2021 peak $1,700/MBF, 2023 low $350/MBF, 2025 ranging $450-$650/MBF. Steel: 25% tariff adds $200-400/ton. Concrete: up 30% since 2020. Construction procurement software market: $1.5B (2025) to $2.6B (2032) at 8.1% CAGR (GM Insights). Kojo ($51M raised, Series B 2023) proved the vertical approach by focusing on electrical contractor materials procurement -- claims 10-15% cost savings, 90%+ procurement digitization for customers. The broader opportunity is an AI platform that: (1) aggregates pricing across suppliers for real-time comparison, (2) forecasts material price movements using commodity futures, tariff signals, and demand indicators, (3) optimizes order timing and quantities based on project schedules and storage constraints, (4) provides supply chain visibility (lead time tracking, alternative sourcing). At $2.1T in total construction spending and 40-60% materials share, even 1% efficiency improvement = $8-12B in value created.",
+      "falsification_criteria": "If material price volatility subsides (stable prices reduce the value of forecasting and optimization). If Procore or Autodesk integrates adequate procurement AI into their platforms at no extra cost. If construction firms prefer relationship-based purchasing from local suppliers over platform-mediated procurement. If tariff policy stabilizes, reducing the urgency of supply chain optimization.",
+      "vcr_evidence": {
+        "tam_estimate": "$2.6B (construction procurement software by 2032, AI-specific layer ~$800M)",
+        "capture_analysis": "Kojo proved the vertical approach ($51M raised, electrical contractors). Replicable across plumbing, HVAC, concrete, steel. Path to $100M ARR serving 10K contractor firms at $10K ACV. Trade-specific knowledge creates defensible niches.",
+        "unit_economics": "ACV $5K-$30K per contractor depending on size and trade. Gross margins 75-80%. Transaction-based pricing also possible (% of procurement volume). CAC high in fragmented market but trade associations provide channel.",
+        "velocity_indicators": "Sales cycle 30-90 days (cost savings are immediate and measurable). Price volatility events (tariff changes, supply shortages) create urgency spikes. Trade-specific go-to-market (start with one trade, expand).",
+        "moat_sources": "Pricing database across thousands of suppliers and projects. Material-specific demand forecasting models. Supplier relationship data. Integration with project schedules and accounting systems."
+      }
+    },
+    {
+      "id": "MC-V312-CON-007",
+      "name": "Modular Construction Design & Factory Optimization Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "2361",
+      "sector_name": "Residential Building Construction",
+      "one_liner": "Software platform for modular/prefab construction: generative design, factory production scheduling, logistics optimization, and on-site assembly coordination -- enabling the $122B modular construction market growing to $156B+ by 2030 at 6.3% CAGR",
+      "forces": ["F1_technology", "F2_demographics", "F6_energy"],
+      "macro_source": "F1: Generative design + factory automation converge on modular construction. F2: Labor shortage makes site-built construction increasingly unviable. Modular construction market: $91.25B (2025) to $122.24B (2030) at 6.3% CAGR (Mordor Intelligence). Roots Analysis: $105.7B to $155.9B by 2030.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 73.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 7,
+        "VD": 7,
+        "DV": 6,
+        "rationale": "Modular construction is growing but the software layer is nascent. Current players: (1) ICON ($451M raised) -- 3D concrete printing, hardware-focused. (2) Katerra (failed 2021 after $2B raised -- cautionary tale). (3) Factory_OS, Volumetric Building Companies, MiTek -- factory-focused. (4) Autodesk and Revit offer design tools but not factory optimization. The software opportunity is the CONNECTOR: translating architectural designs into manufacturable modular units, optimizing factory scheduling, coordinating logistics (oversized loads, crane scheduling), and managing on-site assembly. Katerra's failure was vertical integration (trying to be both factory and software); the opportunity is to be the SOFTWARE LAYER for the 500+ modular factories. Demand visibility is moderate: modular is growing but still <5% of residential starts."
+      },
+      "deep_dive_evidence": "Global modular construction market: $91.25B (2025) to $122.24B (2030) at 6.3% CAGR (Mordor Intelligence). Alternative estimates: $105.7B to $155.9B (Roots Analysis), $173.5B to $228.9B (Future Market Insights -- broader definition including prefab components). US modular: ~5% of new residential construction in 2025, projected to reach 10-15% by 2030. Key drivers: (1) Labor: modular requires 30-50% fewer on-site labor hours. (2) Speed: 30-50% faster construction time. (3) Quality: factory-controlled environment reduces defects 50-70%. (4) Cost: currently 5-15% cheaper for multifamily at scale. Barriers: (1) Transportation logistics (modules limited by highway dimensions), (2) Local building code variability (state-by-state approval), (3) Financing (lenders unfamiliar with modular workflows). Katerra's $2B failure in 2021 (tried to vertically integrate design, manufacturing, and construction) proves the danger of over-integration. The software-only play avoids this risk: serve the 500+ modular factories with design-to-factory tools, production scheduling, supply chain management, and site coordination. ICON's 3D printing ($451M raised) validates investor interest but is hardware-heavy.",
+      "falsification_criteria": "If modular construction growth stalls below 8% of residential starts through 2030 (code barriers, NIMBY resistance, financing challenges persist). If Autodesk or Trimble builds adequate modular design-to-factory tools into existing platforms. If another Katerra-scale failure poisons the modular category for investors and lenders. If transportation cost inflation (diesel prices, driver shortage) erodes the modular cost advantage.",
+      "vcr_evidence": {
+        "tam_estimate": "$2.5B (software layer for modular construction: design, factory optimization, logistics, assembly coordination)",
+        "capture_analysis": "500+ modular factories in the US, growing. Each factory is a $50K-$200K ACV customer for production optimization software. Path to $80M ARR by serving 500 factories + 2,000 modular-focused contractors. Software-only model avoids Katerra's vertical integration trap.",
+        "unit_economics": "ACV $50K-$200K per factory, $10K-$30K per contractor. Gross margins 80%+. Implementation requires factory-specific configuration (3-6 months). Professional services 15-20% of revenue initially.",
+        "velocity_indicators": "Sales cycle 6-12 months for factories, 2-4 months for contractors. Housing affordability crisis creates policy tailwinds (state incentives for modular). Factory construction 18-24 month lead time means pipeline is visible well ahead.",
+        "moat_sources": "Design library of manufacturable modules (parametric, customizable). Factory production data creates optimization algorithms specific to each factory's equipment. Code compliance database across all 50 states. Integration with supply chain for just-in-time material delivery."
+      }
+    },
+    {
+      "id": "MC-V312-CON-008",
+      "name": "Construction Lending & Draw Management Fintech",
+      "architecture": "embedded_fintech",
+      "sector_naics": "236",
+      "sector_name": "Construction of Buildings",
+      "one_liner": "Digital platform automating construction loan draw management, progress verification, and lien tracking for the $480B annual US construction lending market -- reducing 74-day draw cycles to under 10 days and eliminating the $40B slow-payment economic drag",
+      "forces": ["F4_capital", "F1_technology"],
+      "macro_source": "F4: $480B annual US construction loans with manual draw processes averaging 74 days. $40B slow-payment economic impact (Rabbet/Levelset data). Built Technologies ($135B financed, unicorn valuation) validates category. Billd raised $7.3M (Nov 2025) for subcontractor financing.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 8,
+        "CE": 6
+      },
+      "composite": 72.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 8,
+        "DV": 8,
+        "rationale": "Built Technologies is the clear category leader ($135B financed, 200K+ projects, unicorn valuation, ~300 lending institution partners). This limits market openness for a direct competitor on the lender side. However, Built serves LENDERS (bank-side platform). The BORROWER/CONTRACTOR side remains underserved. Additionally, the subcontractor payment layer (Billd, Levelset/Procore, Material Financials) is fragmented. The opportunity is either: (1) contractor-side draw management that integrates with Built/lenders, or (2) the full subcontractor payment acceleration stack (combining lending, lien management, payment acceleration). Value density is very high: construction financing is $480B annual, and even small efficiency improvements generate significant revenue."
+      },
+      "deep_dive_evidence": "US construction lending: ~$480B annually. Average draw request processing: 74 days (Rabbet data), creating massive cash flow problems for contractors and subcontractors. Slow payments cost the construction industry $40B/year (Levelset research). Lien law complexity: 50 different state lien statutes, creating compliance nightmares. Built Technologies: unicorn valuation, ~300 lending institution partners, $135B in construction value financed since 2015. The platform automates inspection scheduling, draw approval, budget tracking, and disbursement for banks. Billd ($7.3M raised Nov 2025): focuses on giving subcontractors 120-day payment terms for materials, addressing the sub-tier cash flow crisis. Rabbet: construction loan monitoring for lenders. The contractor/sub side remains largely manual: 60%+ of subcontractors report cash flow as their #1 business challenge. Construction-specific financial products (progress-based lending, retainage financing, performance bond alternatives) represent a $5-10B fintech opportunity beyond Built's lender-side platform.",
+      "falsification_criteria": "If Built Technologies expands to fully serve the contractor/borrower side, closing the gap. If Procore's acquisition of Levelset results in an integrated PM + payments platform that captures contractor-side financial workflows. If construction lending volume declines significantly due to interest rates or housing downturn. If construction firms resist sharing project financial data with fintech platforms (trust barrier).",
+      "vcr_evidence": {
+        "tam_estimate": "$4.8B (construction fintech services: draw management, payment acceleration, lien management, embedded lending on $480B loan volume)",
+        "capture_analysis": "Built owns lender side. Opportunity on contractor/sub side: 540K specialty trade firms and 225K building construction firms need cash flow solutions. Path to $150M ARR via payment acceleration fees (1-3% of accelerated payments) + SaaS ($500-$2K/month). Billd proves sub-tier financing demand.",
+        "unit_economics": "Payment acceleration: 1-3% fee on accelerated payments (average sub payment $25-75K). SaaS: $6K-$24K ACV. Blended gross margins 50-60% (fintech margins lower than pure SaaS due to credit risk). Net revenue retention high because payment volume grows with contractor revenue.",
+        "velocity_indicators": "Sales cycle: 14-30 days (cash flow is urgent). Every late payment is a sales trigger. Referral loops: GCs refer subs, subs refer GCs. Material suppliers are channel partners (they want faster payment too).",
+        "moat_sources": "Payment network effects (more parties on platform = faster settlement). Credit risk models trained on construction project data. Lien law compliance engine across 50 states. Integration with accounting, PM, and banking systems."
+      }
+    },
+    {
+      "id": "MC-V312-CON-009",
+      "name": "Building Permit & Code Compliance Automation",
+      "architecture": "compliance_automation",
+      "sector_naics": "236",
+      "sector_name": "Construction of Buildings",
+      "one_liner": "AI platform that automates building permit applications, plan reviews, and code compliance checks across 19,000+ US jurisdictions -- targeting the $8.2B building code compliance market growing to $17.5B by 2032 at 8.8% CAGR",
+      "forces": ["F1_technology", "F6_energy", "F5_psychology"],
+      "macro_source": "F1: NLP/AI can parse building codes and check plan compliance automatically. F6: Energy code compliance becoming more complex (IECC 2024 requires 15-25% improvement). Building code compliance market: $8.2B (2023) to $17.52B (2032) at 8.8% CAGR (Coherent Market Insights). PermitFlow and GovBuilt validating the category.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 8,
+        "TG": 7,
+        "CE": 8
+      },
+      "composite": 73.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 6,
+        "VD": 6,
+        "DV": 7,
+        "rationale": "The permit/code compliance space is early and fragmented. PermitFlow (YC W22, $31M+ raised) leads the contractor-side permit filing category. GovBuilt and Accela serve the government side (plan review, permit issuance). Salesforce Government has entered permitting. The two-sided nature (government and contractor) creates complexity. Market openness is high for AI-powered automated plan review: currently plan reviews take 4-16 weeks and are done manually by under-staffed building departments. AI that pre-checks plans against building codes before submission (reducing rejection rate from 30%+ to <5%) creates enormous value for both sides. Energy code compliance is the fastest-growing complexity driver (IECC 2024, Title 24, LL97). Value density is moderate per permit but high in aggregate: 1.5M building permits issued annually in the US."
+      },
+      "deep_dive_evidence": "Building code compliance market: $8.2B (2023) to $17.52B (2032) at 8.8% CAGR (Coherent Market Insights). 19,000+ building jurisdictions in the US, each with potentially different code amendments. Average permit review time: 4-16 weeks. First-time plan rejection rate: 30-50% (plans fail code check, must be revised and resubmitted). 1.5M+ building permits issued annually. PermitFlow ($31M+ raised) automates permit applications (filing, tracking, expediting) for contractors -- claims 75% time reduction. But the BIGGER opportunity is automated plan review: using AI to check architectural/engineering plans against building codes BEFORE submission. This is the 10x value creation because it eliminates the 4-16 week review cycle and 30-50% rejection rate. Energy code complexity is exploding: IECC 2024 requires energy modeling, blower door tests, and thermal bridging calculations that most small builders cannot perform without software assistance. 70% of firms in developed regions already rely on software for LEED compliance. Accela dominates the government permitting platform market but has not built AI plan review. The integration play: AI pre-check on contractor side + digital submission to government + automated review on government side = end-to-end digitization.",
+      "falsification_criteria": "If local government budgets prevent adoption of new permitting technology (austerity). If building code complexity stabilizes rather than increasing (political pushback on energy codes). If Accela builds adequate AI plan review into its platform. If the 19,000 jurisdiction fragmentation proves intractable for a single platform (each jurisdiction's code amendments are too different for AI generalization).",
+      "vcr_evidence": {
+        "tam_estimate": "$3.5B (automated plan review + permit management + energy code compliance software by 2030)",
+        "capture_analysis": "Two customer types: (1) Contractors: 500K+ firms that file permits, willing to pay $200-$2K per permit for faster processing. (2) Municipalities: 19K+ jurisdictions willing to pay $10-100K/year for digital permitting and AI plan review. Path to $100M ARR serving 5K contractor firms + 2K municipalities.",
+        "unit_economics": "Contractor side: per-permit pricing $200-$2K or subscription $2K-$12K/year. Government side: $10K-$100K/year SaaS. Gross margins 80%+. CAC challenge on government side (slow procurement). Contractor side is faster via direct sales.",
+        "velocity_indicators": "Government procurement: 6-18 months (slow). Contractor adoption: 30-90 days. Energy code changes create immediate urgency. State mandates for digital permitting accelerate government adoption.",
+        "moat_sources": "Building code database across 19K+ jurisdictions (no competitor has comprehensive coverage). AI models trained on millions of plan review decisions. Government partnerships create long-term contracts (3-5 year terms). Network effects: contractors prefer jurisdictions with faster permitting, creating demand pull."
+      }
+    },
+    {
+      "id": "MC-V312-CON-010",
+      "name": "Construction Insurance & Risk Intelligence Platform",
+      "architecture": "insurtech",
+      "sector_naics": "23",
+      "sector_name": "Construction (All Sub-sectors)",
+      "one_liner": "AI-powered construction insurance platform using jobsite data, safety records, and project analytics to price risk dynamically -- targeting the $45B US construction insurance market (workers comp, general liability, builder's risk, surety) where incumbents still rely on manual underwriting",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "macro_source": "F1: AI underwriting using real-time jobsite data vs historical loss ratios. F4: Construction insurance premiums rising 10-20% annually due to social inflation and nuclear verdicts. US construction insurance market ~$45B. Insurtech market broadly: $152B by 2030 (Grand View Research).",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 5
+      },
+      "composite": 69.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 8,
+        "DV": 8,
+        "rationale": "Construction insurance is dominated by large carriers (Zurich, Liberty Mutual, Travelers, CNA, Hartford) and specialty brokers (Aon, Marsh). The market is 'structurally stupid': premiums are based on payroll, revenue, and historical EMR -- not real-time jobsite safety data. No major carrier has built a data-driven, dynamic pricing model for construction risk. Startups: Shepherd (construction-focused MGA, $27M raised), Pie Insurance (small commercial, including construction), Cowbell (cyber but model applicable). Market openness is moderate: insurance is heavily regulated and requires carrier partnerships or MGA licenses. But the VALUE PROPOSITION is enormous: contractors spend 3-8% of revenue on insurance, and a platform that reduces claims by 20-30% through better risk selection and loss control creates shared savings for carriers and policyholders. Value density is very high: average construction policy premium is $15-50K per firm."
+      },
+      "deep_dive_evidence": "US construction insurance market estimated at $45B across four major lines: (1) Workers compensation: ~$15B (construction is the #1 WC market by premium). (2) General liability: ~$12B. (3) Builder's risk: ~$8B. (4) Surety bonds: ~$10B. Premiums have risen 10-20% annually since 2022 due to social inflation (nuclear verdicts in construction defect litigation), rising material costs (replacement cost inflation), and increased weather events (climate-driven property damage). Current underwriting is archaic: based on payroll volume, trade classification, and 3-year EMR history. No real-time data integration. Construction fatalities: 1,056 in 2023, OSHA penalties up to $161K per willful violation. Shepherd (construction MGA, $27M raised) is building a data-driven underwriting platform. The opportunity is to integrate AI safety monitoring data (from MC-V312-CON-003) with underwriting: contractors who deploy safety AI get dynamically lower premiums. This creates a FLYWHEEL: safety technology adoption reduces losses, which reduces premiums, which incentivizes more safety technology adoption. The insurance distribution chain (broker to carrier to reinsurer) is ripe for disintermediation through digital MGAs.",
+      "falsification_criteria": "If major carriers build their own AI underwriting platforms (Zurich, Travelers investing in analytics). If regulatory barriers prevent dynamic/usage-based insurance pricing in construction (state DOI resistance). If construction safety data proves unreliable for underwriting (too much noise, not enough signal). If social inflation / nuclear verdicts increase so rapidly that no amount of AI can keep up with loss cost trends.",
+      "vcr_evidence": {
+        "tam_estimate": "$45B (US construction insurance premiums; AI-enhanced underwriting/distribution captures 5-10% = $2.25-$4.5B serviceable market)",
+        "capture_analysis": "MGA model: underwrite and distribute construction insurance using AI risk assessment. Path to $200M GWP (gross written premium) in 5 years by writing 10K policies at $20K average premium. Take 25-30% as MGA commission = $50-60M revenue. Requires carrier capacity partnerships.",
+        "unit_economics": "MGA commission: 25-30% of premium. Average construction policy: $15-50K. Loss ratio target: <60% (vs industry 65-70%). Revenue per policy: $5-15K. CAC: $2-5K per policy (broker channel). Capital requirement: $5-10M for MGA setup + reinsurance capacity.",
+        "velocity_indicators": "Annual policy renewal cycle creates natural sales cadence. Premium increases drive shopping behavior. Safety AI integration creates measurable loss reduction. Broker partnerships provide distribution leverage.",
+        "moat_sources": "Proprietary loss data from insured projects (creates better risk models over time). Integration with safety monitoring platforms. Actuarial models specific to construction sub-trades. Broker relationships and contractor trust. Regulatory licensing barriers protect from casual entry."
+      }
+    },
+    {
+      "id": "MC-V312-CON-011",
+      "name": "Infrastructure Inspection AI & Drone Platform",
+      "architecture": "autonomous_systems",
+      "sector_naics": "2373",
+      "sector_name": "Highway, Street, and Bridge Construction",
+      "one_liner": "AI-powered drone and sensor platform for bridge, road, and utility infrastructure inspection -- replacing dangerous manual inspections in the $38.2B drone inspection market by 2030, with the US infrastructure backlog creating $2.6T in needed repairs (ASCE)",
+      "forces": ["F1_technology", "F3_geopolitics", "F2_demographics"],
+      "macro_source": "F1: AI + drones replacing manual infrastructure inspection. F3: IIJA allocates $110B for roads/bridges, requiring inspection at scale. Drone inspection market: $16.4B (2024) to $38.2B (2030) at 15.1% CAGR (ResearchAndMarkets). AI in drones: $821M (2025) to $2.75B (2030) at 27.4% CAGR (MarketsandMarkets).",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 9,
+        "EC": 9,
+        "TG": 8,
+        "CE": 6
+      },
+      "composite": 81.5,
+      "category": "STRUCTURAL_WINNER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 7,
+        "VD": 7,
+        "DV": 9,
+        "rationale": "Infrastructure inspection is the strongest convergence point in construction: (1) IIJA mandates inspection of 45,000+ structurally deficient bridges, (2) manual inspection is dangerous (inspector fatalities, lane closures causing accidents), (3) inspector workforce is aging and shrinking, (4) drone + AI technology is mature enough for deployment. Current players: DroneUp, Skydio (raised $750M, US-made drones for defense/infrastructure), Flyability (confined space), Gecko Robotics (wall-climbing robots for utilities), and various DOT-specific solutions. Market openness is moderate: Skydio dominates the hardware layer for US government use (Chinese drone ban benefits US manufacturers). The AI ANALYSIS layer (identifying cracks, corrosion, deformation from drone imagery) is where the value concentrates and where competition is fragmented. Demand visibility is extreme: $2.6T infrastructure backlog (ASCE 2025 Report Card) + IIJA spending mandate."
+      },
+      "deep_dive_evidence": "US infrastructure condition: ASCE 2025 Infrastructure Report Card grades US infrastructure C- overall, with $2.6T investment gap. 45,000+ structurally deficient bridges (7.5% of total). 40% of roads in poor or mediocre condition. 7,500 dam safety deficiencies. IIJA: $110B for roads and bridges, $55B for water, $65B for broadband -- all requiring inspection capacity. Current manual bridge inspection: $5-25K per bridge, requires lane closures (costing $50K+/day in economic impact), and exposes inspectors to fall risk. Drone inspection: $1-5K per bridge, no lane closure, higher-resolution data capture. Global drone inspection and monitoring market: $16.4B (2024) to $38.2B (2030) at 15.1% CAGR (ResearchAndMarkets). AI-specific drone analysis: $821M (2025) to $2.75B (2030) at 27.4% CAGR. The FAA BVLOS (beyond visual line of sight) waiver program is expanding, enabling autonomous long-range inspections. Skydio's $750M raise and US government contracts validate the hardware layer. The AI layer (automated crack detection, corrosion measurement, structural deformation analysis) is where the most defensible value lies -- each inspection adds training data that improves detection accuracy.",
+      "falsification_criteria": "If FAA restricts BVLOS drone operations beyond current waiver programs. If state DOTs resist drone inspection due to liability concerns (who is responsible if a drone-inspected bridge fails?). If manual inspection workforce expands through immigration or training programs, reducing cost pressure. If Skydio or DJI builds the AI analysis layer into their platforms, commoditizing the software.",
+      "vcr_evidence": {
+        "tam_estimate": "$5.2B (US infrastructure inspection services addressable by drone + AI, within $38.2B global drone inspection market)",
+        "capture_analysis": "US has 617,000 bridges, 4.2M miles of roads, 91,000 dams, 2.6M miles of pipeline -- all requiring periodic inspection. Path to $200M ARR by serving 500 state/municipal DOT contracts at $200K average + 2,000 utility/pipeline contracts at $50K average.",
+        "unit_economics": "Per-inspection: $1-5K (bridge), $500-2K (road segment), $2-10K (dam). Subscription: $50K-$500K/year per DOT or utility. Gross margins 60-70% (drone hardware and operator costs). Multi-year government contracts provide revenue visibility.",
+        "velocity_indicators": "IIJA funding creates 5-year demand window. Federal mandate: all bridges inspected every 2 years. State DOT procurement cycles: 6-18 months but once won, multi-year contracts. Emergency inspection demand after weather events.",
+        "moat_sources": "AI models trained on millions of infrastructure images (crack detection, corrosion grading, deformation measurement). Government security clearance and compliance (NDAA-compliant hardware). Historical inspection baseline database. Integration with DOT asset management systems."
+      }
+    },
+    {
+      "id": "MC-V312-CON-012",
+      "name": "Construction Equipment Fleet Intelligence Platform",
+      "architecture": "iot_platform",
+      "sector_naics": "237",
+      "sector_name": "Heavy and Civil Engineering Construction",
+      "one_liner": "IoT + AI platform for construction equipment fleet management: predictive maintenance, utilization optimization, fuel management, and autonomous operation readiness -- serving the $6.6B construction telematics market by 2030 at 15.8% CAGR within $186B equipment market",
+      "forces": ["F1_technology", "F4_capital", "F6_energy"],
+      "macro_source": "F1: AI predictive maintenance reducing equipment downtime 25-40%. F4: Construction equipment is a $186B market; fleet costs are 15-25% of heavy/civil project budgets. Construction machinery telematics: $3.18B (2025) to $6.62B (2030) at 15.83% CAGR (Mordor Intelligence). MarketsandMarkets equipment market: $186.62B by 2030.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 68.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 4,
+        "MA": 6,
+        "VD": 7,
+        "DV": 7,
+        "rationale": "Equipment OEMs (Caterpillar, Komatsu, John Deere, Volvo) all have proprietary telematics platforms (Cat Product Link, Komatsu KOMTRAX, John Deere JDLink). These are the primary competitive threat -- they bundle telematics with equipment purchases. However, most contractors operate MIXED fleets (Cat excavator + Komatsu dozer + Deere loader + rental equipment), creating demand for fleet-agnostic platforms. Current multi-OEM solutions: Tenna ($100M+ raised), HCSS, Trackunit, Samsara (broader fleet, not construction-specific). Market openness is moderate-low due to OEM bundling, but the multi-fleet management gap is real. Value density is high: a single piece of heavy equipment costs $200K-$2M, and 10% better utilization saves $20K-$200K per unit per year."
+      },
+      "deep_dive_evidence": "Construction equipment fleet costs represent 15-25% of heavy/civil project budgets. The global construction equipment market: $186.62B by 2030 (MarketsandMarkets). Construction machinery telematics market: $3.18B (2025) to $6.62B (2030) at 15.83% CAGR (Mordor Intelligence). Average equipment utilization on construction sites: 40-60% (meaning 40-60% idle time). Unplanned downtime costs: $1,000-$5,000 per hour for heavy equipment. AI predictive maintenance can reduce unplanned downtime 25-40% (Caterpillar data, Uptake deployments). Fuel costs: 15-30% of equipment operating costs, with 10-15% optimization potential through AI-driven idling reduction and route optimization. Autonomous equipment: Caterpillar has 500+ autonomous haul trucks in mining, with construction applications imminent (autonomous grading, excavation). The fleet intelligence platform opportunity: aggregate data across mixed fleets, optimize utilization (scheduling equipment across jobsites), predict maintenance needs, manage fuel consumption, and prepare for autonomous operations. Tenna ($100M+ raised) is the leading construction-specific fleet platform but focused on equipment tracking rather than AI optimization.",
+      "falsification_criteria": "If equipment OEMs successfully lock contractors into proprietary telematics ecosystems (Caterpillar refusing data sharing). If API standardization (ISO 15143-3 AEMP telematics) makes multi-fleet aggregation trivial, commoditizing the platform layer. If construction equipment electrification reduces maintenance complexity, diminishing the predictive maintenance value proposition. If contractors prove unwilling to share fleet utilization data across companies (competitive sensitivity).",
+      "vcr_evidence": {
+        "tam_estimate": "$6.6B (construction machinery telematics by 2030, AI optimization layer ~$1.5B)",
+        "capture_analysis": "Target: mid-market heavy/civil contractors with 20-200 pieces of equipment (too large for manual management, too small for enterprise platforms). Path to $100M ARR serving 3,000 contractors at $33K average ACV. Multi-OEM integration is the entry wedge.",
+        "unit_economics": "ACV $10K-$100K per fleet (scaled by equipment count). Per-unit pricing $50-200/month per machine. Gross margins 70-80%. IoT hardware cost $200-500 per unit (aftermarket telematics for equipment without OEM telematics). Payback: reducing one major equipment failure ($50K-$200K) pays for annual subscription.",
+        "velocity_indicators": "Sales cycle 60-180 days. Equipment purchase cycle provides natural entry point. Rental companies are key customers (United Rentals 940K+ units). Insurance incentive: fleet monitoring reduces insurance premiums.",
+        "moat_sources": "Cross-OEM data normalization layer. Predictive maintenance models trained on millions of equipment hours across brands. Fleet optimization algorithms (which machine to send where). Integration with project management systems. Historical equipment performance benchmarks."
+      }
+    },
+    {
+      "id": "MC-V312-CON-013",
+      "name": "Subcontractor Prequalification & Risk Management Platform",
+      "architecture": "data_compounding",
+      "sector_naics": "238",
+      "sector_name": "Specialty Trade Contractors",
+      "one_liner": "AI platform that aggregates financial health, safety records, project history, and insurance data to score and prequalify subcontractors for GCs -- serving 540K specialty trade firms and 225K GCs in a market where sub failure causes $15B+ in annual project disruptions",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "macro_source": "F1: AI can aggregate and analyze subcontractor risk signals from financial data, OSHA records, litigation, insurance, and project references. F4: Subcontractor failure (bankruptcy, abandonment, defective work) costs GCs $15B+ annually in project delays and rework. F5: Trust deficit between GCs and subs is the primary friction in construction supply chains.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 6,
+        "TG": 7,
+        "CE": 8
+      },
+      "composite": 69.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 8,
+        "VD": 6,
+        "DV": 7,
+        "rationale": "Existing prequalification is manual: GCs require subs to fill out paper/PDF prequalification questionnaires (20-50 pages each) for every project bid. Current digital solutions: ISNetworld (safety-focused, $200M+ revenue, dominant in industrial), Avetta (supply chain risk, broader than construction), TradeTapp (construction-specific prequal, acquired by Procore competitor Command Alkon). Procore has basic prequal features but not AI-driven risk scoring. The AI opportunity: automatically pull OSHA records, financial filings, insurance certificates, litigation history, project performance data, and generate a real-time risk score for any subcontractor. The compounding data moat is strong: each prequal assessment adds to the database, and GCs who use the platform want ALL their subs on it, creating network effects. Market openness is high because ISNetworld is industrial-focused and no one dominates construction-specific prequal."
+      },
+      "deep_dive_evidence": "The GC-subcontractor relationship is the central axis of US construction: a typical $50M commercial project involves 1 GC and 20-30 specialty subcontractors. Subcontractor selection is the single highest-risk decision a GC makes. Subcontractor failure (bankruptcy mid-project, abandonment, defective work requiring rework) causes an estimated $15B+ in annual project disruptions (based on construction defect litigation data, surety bond claims, and project delay costs). Current prequal process: manual, paper-based, requiring 5-20 hours per sub per project. GCs typically prequalify 100-500 subs per year. Data sources available for AI aggregation: (1) OSHA inspection records (public), (2) State contractor license status (public), (3) Financial health indicators (D&B, Experian commercial), (4) Insurance certificate verification (API-accessible), (5) Litigation history (court records), (6) Project performance references (proprietary). ISNetworld dominates industrial prequal ($200M+ revenue) but is weak in commercial/residential construction. A construction-specific prequal platform with AI risk scoring could charge $5-15K/year per GC and $500-1,500/year per sub (sub pays to maintain verified profile). Network effects: GCs want all subs on platform, subs want to be findable by all GCs.",
+      "falsification_criteria": "If Procore builds comprehensive AI prequal into its platform (they have the GC customer base to dominate). If ISNetworld expands aggressively into commercial construction. If GCs resist algorithmic sub selection (preferring relationship-based decisions). If data quality proves insufficient for reliable risk scoring (OSHA records are lagged, financial data is sparse for small firms).",
+      "vcr_evidence": {
+        "tam_estimate": "$1.8B (subcontractor prequalification, risk management, and performance analytics -- 225K GCs + 540K subs)",
+        "capture_analysis": "Two-sided market: GCs pay for risk intelligence, subs pay for verified profiles. Path to $80M ARR by serving 5,000 GCs at $8K ACV + 50,000 subs at $800 ACV. Network effects create winner-take-most dynamics. ISNetworld's $200M+ in industrial prequal validates the category economics.",
+        "unit_economics": "GC side: $5-15K/year ACV. Sub side: $500-1,500/year ACV. Gross margins 85%+. CAC: $1-3K per GC (direct sales), $100-300 per sub (pulled by GC requirement). CLTV/CAC: 5x+ on GC side, 3x+ on sub side.",
+        "velocity_indicators": "GC procurement cycle for prequal tools: 3-6 months. Once GC adopts, 50-200 subs are pulled onto platform. Annual subscription renewal. New project starts trigger sub onboarding.",
+        "moat_sources": "Subcontractor database with verified credentials, safety records, financial health, and project performance. Network effects (GCs attract subs, subs attract GCs). Data compounding: each project outcome improves the risk model. Switching costs once embedded in GC procurement workflow."
+      }
+    },
+    {
+      "id": "MC-V312-CON-014",
+      "name": "Energy Code & Sustainability Compliance Platform for Construction",
+      "architecture": "compliance_automation",
+      "sector_naics": "2361",
+      "sector_name": "Residential Building Construction",
+      "one_liner": "AI platform automating energy code compliance, LEED/WELL certification documentation, and embodied carbon tracking for new construction -- targeting the $17.5B building code compliance market by 2032 where 70% of firms already use software for green certification and energy codes are tightening 15-25% per cycle",
+      "forces": ["F6_energy", "F1_technology", "F3_geopolitics"],
+      "macro_source": "F6: IECC 2024 requires 15-25% energy improvement. 9 states mandate heat pumps. Building sector = 40% of US energy consumption. F1: AI automates energy modeling and code checking. Building code compliance market: $8.2B (2023) to $17.52B (2032), 8.8% CAGR (Coherent Market Insights). Green construction market growing at 11.2% CAGR.",
+      "source_batch": "v3-12_construction",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 8,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 77.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 6,
+        "VD": 6,
+        "DV": 8,
+        "rationale": "Energy code compliance is increasingly mandatory and increasingly complex. Current tools: (1) EnergyPlus (DOE, free, complex), (2) REScheck/COMcheck (DOE, basic compliance), (3) IES VE, eQUEST (commercial energy modeling, $10K+/year), (4) Autodesk Insight (integrated with Revit but limited), (5) cove.tool ($30M raised, performance-based building design). No single platform connects energy code compliance to permit submission to sustainability certification to embodied carbon tracking. The fragmentation of energy codes across jurisdictions (some states on IECC 2021, others on 2024, California on Title 24) creates complexity that AI can simplify. 70% of firms in developed regions already use software for green building compliance -- the question is whether a new platform can consolidate the workflow. Demand visibility is high: every new building must comply with energy codes, and codes are tightening every 3 years."
+      },
+      "deep_dive_evidence": "Building sector consumes 40% of US energy. Building codes are the primary policy lever for reducing building energy consumption. IECC 2024 (adopted by 12 states as of Feb 2026) requires 15-25% energy improvement over 2021 baseline, including: mandatory blower door testing, continuous insulation, high-efficiency HVAC, and for commercial buildings, automated lighting controls and energy recovery ventilation. California Title 24 (2025 cycle) mandates all-electric new construction in many zones. NYC LL97 imposes carbon penalties on existing buildings >25,000 SF starting 2024 (up to $268/ton CO2). 9 states mandate heat pumps in new residential. Embodied carbon: Portland, Vancouver, and LEED v5 now require lifecycle carbon assessment of construction materials. Building code compliance market: $8.2B (2023) to $17.52B (2032) at 8.8% CAGR. Green building certification market growing at 11.2% CAGR. cove.tool ($30M raised) has proven the 'performance-based design' category. The integration opportunity: a single platform that (1) identifies applicable energy codes by jurisdiction, (2) runs automated energy modeling on building designs, (3) checks compliance and generates required documentation, (4) tracks embodied carbon in material selections, (5) generates LEED/WELL/ENERGY STAR documentation. For residential builders (1.1M workers, 225K firms), energy code compliance is the FASTEST-GROWING source of project complexity and delay.",
+      "falsification_criteria": "If political backlash halts energy code tightening (building code adoption is state-level; conservative states may freeze at IECC 2021 or earlier). If Autodesk integrates comprehensive energy code compliance into Revit/ACC at no extra cost. If embodied carbon regulation stalls at pilot-city level without scaling. If builders bypass energy codes through loopholes rather than adopting compliance software.",
+      "vcr_evidence": {
+        "tam_estimate": "$3.2B (energy code compliance + green certification + embodied carbon software within the $17.5B broader code compliance market)",
+        "capture_analysis": "Target: 200K+ residential builders + 50K commercial builders needing energy code compliance. Path to $100M ARR by serving 15K builder firms at $6.5K ACV. Regulatory mandate creates non-optional demand. Code tightening every 3 years creates recurring upgrade cycles.",
+        "unit_economics": "ACV $3K-$15K per builder depending on volume. Per-project pricing also possible ($200-$1K per energy model). Gross margins 80%+. CAC moderate: code officials and building departments are referral channels. Energy raters and HERS providers are channel partners.",
+        "velocity_indicators": "New code adoption cycles create demand spikes. California Title 24 and NYC LL97 are early indicators of national trend. Builder association partnerships provide channel. Every new project is a potential sale.",
+        "moat_sources": "Jurisdiction-specific code database (energy codes vary by state, county, and city). AI energy modeling trained on thousands of building types and climate zones. Integration with BIM tools and permit submission systems. Green certification workflow automation."
+      }
+    }
+  ],
+
+  "sector_synthesis": {
+    "headline": "Construction (NAICS 23) is the economy's most UNDER-DIGITIZED major sector -- $2.1T in annual spending, 8.3M workers, negative productivity growth over 20 years -- now facing a CONVERGENCE of transformation forces that make technology adoption not optional but demographically and economically mandatory. Unlike white-collar sectors where AI DISRUPTS existing workers, construction AI must AUGMENT a workforce that literally does not exist (650K unfilled positions). This makes construction the clearest 'forced modernization' opportunity in the economy.",
+
+    "structural_winners": [
+      "MC-V312-CON-003: AI Jobsite Safety Monitoring (composite 81.5) -- regulatory mandate + insurance incentive + moral imperative create non-optional demand",
+      "MC-V312-CON-011: Infrastructure Inspection AI (composite 81.5) -- IIJA funding mandate + 45K deficient bridges + aging inspector workforce = structural necessity",
+      "MC-V312-CON-005: Skilled Trades Workforce Marketplace (composite 80.5) -- 650K worker shortage is measured, not forecast; marketplace solves the single largest constraint in construction"
+    ],
+
+    "force_riders": [
+      "MC-V312-CON-001: AI PM Copilot (78.5) -- massive TAM, proven demand, but must compete with Procore's AI features",
+      "MC-V312-CON-014: Energy Code Compliance (77.0) -- regulatory mandate creates guaranteed demand, code tightening every 3 years",
+      "MC-V312-CON-002: Digital Twin/BIM Intelligence (76.5) -- large TAM but capital-intensive and long sales cycles",
+      "MC-V312-CON-004: Construction Robotics Fleet (74.0) -- highest long-term potential but earliest-stage and capital-intensive",
+      "MC-V312-CON-009: Permit Automation (73.5) -- PermitFlow validates, large TAM but government procurement is slow",
+      "MC-V312-CON-007: Modular Construction Platform (73.5) -- addresses labor crisis but modular adoption still early",
+      "MC-V312-CON-008: Construction Lending Fintech (72.5) -- Built Technologies validates category, contractor side still open",
+      "MC-V312-CON-006: Materials Procurement AI (70.0) -- Kojo validates vertical approach, material volatility creates urgency",
+      "MC-V312-CON-010: Construction Insurtech (69.5) -- huge market but insurance regulation and carrier relationships create barriers",
+      "MC-V312-CON-013: Sub Prequalification (69.5) -- strong network effects but competes with Procore's expansion plans",
+      "MC-V312-CON-012: Equipment Fleet Intelligence (68.5) -- crowded by OEM telematics, multi-fleet gap is real but narrow"
+    ],
+
+    "key_patterns_in_construction": {
+      "demographic_forced_modernization": "Unlike information, financial services, or professional services where AI DISRUPTS well-paid cognitive workers (Baumol cure), construction transformation is ADDITIVE. Technology fills positions that cannot be filled by humans. This inverts the usual AI narrative: construction workers WELCOME technology because it means they can actually complete projects, not that they lose jobs.",
+      "fragmentation_as_opportunity": "814K employer firms, 90% with <20 employees. This is IDENTICAL to the real estate pattern (488K establishments) that makes technology adoption slow but creates massive total addressable market. The winning go-to-market in construction is trade-specific vertical (start with electricians, then plumbers, then HVAC) rather than horizontal.",
+      "regulation_as_tailwind": "Unlike most sectors where regulation is a constraint, construction regulation (OSHA safety, building codes, energy codes, IIJA mandates) PULLS technology adoption. Every new code tightening cycle creates demand for compliance software. This is the reverse of the 'move fast and break things' tech narrative.",
+      "infrastructure_bill_as_catalyst": "$1.2T IIJA creates a 5-year demand window (2023-2028 peak spending) that forces adoption of technology solutions because the LABOR to execute projects manually DOES NOT EXIST. IIJA is not just a demand driver -- it is the constraint that forces the industry to finally modernize.",
+      "psychology_as_primary_brake": "The fear friction gap in construction is the WIDEST of any major sector: economic necessity (SN 8-9) far exceeds psychological readiness (4-5). The craft identity, liability fear, and generational resistance slow adoption by 2-3 years vs what the economics would suggest. This means: the WINDOW for technology adoption is longer than expected, giving startups more time to achieve product-market fit before incumbents catch up."
+    },
+
+    "cross_sector_connections": [
+      "Real Estate (NAICS 53): Construction is the upstream input to real estate. CRE distress reduces commercial construction demand, but data center boom ($200B+) creates offsetting demand. Office-to-residential conversion pipeline (70K+ units in NYC alone) creates specialized construction demand.",
+      "Manufacturing (NAICS 31-33): Modular/prefab construction moves value from jobsite to factory, blurring the line between construction and manufacturing. Factory-built construction uses manufacturing techniques (robotics, quality control, lean production) that construction has never adopted.",
+      "Finance (NAICS 52): Construction lending ($480B), surety bonding ($10B), and construction insurance ($45B) create massive financial services overlay. Fintech disruption of construction finance is a second-order effect of construction digitization (digital data enables digital finance).",
+      "Utilities (NAICS 22): IIJA utility infrastructure spending ($55B water, $65B broadband) directly employs NAICS 2371 Utility System Construction workers. Energy code mandates create ongoing demand for building performance technology."
+    ],
+
+    "confidence_assessment": {
+      "high_confidence": "Labor shortage will persist and worsen through 2030 (demographic certainty). IIJA spending will continue through 2028 (already appropriated). Safety monitoring AI will see widespread adoption (regulatory + insurance incentive convergence). BIM adoption will continue expanding (government mandates).",
+      "medium_confidence": "Construction robotics will reach meaningful scale by 2028-2029 (technology proven, but deployment logistics unresolved). Modular construction will exceed 10% residential share by 2029 (growing but from low base). AI PM copilots will become standard on commercial projects by 2028 (demand clear, adoption speed uncertain).",
+      "low_confidence": "Construction productivity will measurably improve by 2030 (historical stagnation is deeply structural). Autonomous heavy equipment will be routine on US jobsites by 2030 (mining has precedent but construction environments are less controlled). 3D printed construction will exceed 1% of new buildings by 2030 (impressive demos but scalability unproven)."
+    }
+  },
+
+  "data_sources": [
+    "BLS QCEW 2023 annual averages (NAICS 23, private sector, national)",
+    "BLS Current Employment Statistics (construction employment through Jan 2026)",
+    "AGC 2025 Workforce Survey (77% hiring difficulty, 650K shortage estimate)",
+    "ASCE 2025 Infrastructure Report Card (C- grade, $2.6T investment gap)",
+    "MarketsandMarkets BIM Market Report 2025 ($9.04B to $15.42B by 2030)",
+    "Grand View Research Construction Robots Market 2025 ($3.66B by 2030)",
+    "Mordor Intelligence AI in Construction Market ($11.1B to $24.3B by 2030)",
+    "Mordor Intelligence Construction Management Software Market ($10.64B to $19.12B by 2030)",
+    "Mordor Intelligence Construction Machinery Telematics Market ($3.18B to $6.62B by 2030)",
+    "Mordor Intelligence Modular Construction Market ($91.25B to $122.24B by 2030)",
+    "Coherent Market Insights Building Code Compliance Market ($8.2B to $17.52B by 2032)",
+    "GM Insights Construction Procurement Software Market ($1.5B to $2.6B by 2032)",
+    "GlobeNewswire Construction Worker Safety Market ($3.2B to $4.6B by 2030)",
+    "GlobeNewswire Construction 4.0 Market ($56.43B by 2030, 20.3% CAGR)",
+    "NextMSC Digital Twin in Construction Market ($64.9B to $155.0B by 2030)",
+    "ResearchAndMarkets Drone Inspection Market ($16.4B to $38.2B by 2030)",
+    "MarketsandMarkets AI in Drones Market ($821M to $2.75B by 2030)",
+    "MarketsandMarkets Construction Equipment Market ($186.62B by 2030)",
+    "Spherical Insights Contract Staffing Market ($130.2B by 2030)",
+    "CSIS Jan 2026: US skilled trade labor demand analysis through 2030",
+    "McKinsey Global Institute: Construction productivity analysis",
+    "Fortune Feb 2026: US construction industry needs 500K new workers",
+    "Deloitte 2026 Engineering and Construction Industry Outlook",
+    "Procore Technologies Q4 2025 earnings ($1.31B revenue)",
+    "Pew Research: 24% of construction workers foreign-born",
+    "BLS Census of Fatal Occupational Injuries 2023 (1,056 construction fatalities)",
+    "Trepp/MarketsandMarkets insurance premium data"
+  ]
+}

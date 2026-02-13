@@ -1,0 +1,779 @@
+{
+  "cycle": "v3-12",
+  "date": "2026-02-12",
+  "agent": "agent_b",
+  "type": "sector_deep_dive",
+  "sector": "Administrative & Support Services",
+  "sector_naics": "56",
+  "sector_context": {
+    "total_employment": 9400000,
+    "sub_sectors": [
+      {
+        "naics": "5611",
+        "name": "Office Administrative Services",
+        "employment": 400000,
+        "avg_pay_est": 58000,
+        "transformation_thesis": "Back-office functions (payroll, AP/AR, scheduling, document management) are the most automatable white-collar tasks in this sector. AI agents replacing 40-60% of these functions by 2030. SMBs outsource entire office admin to AI-first platforms."
+      },
+      {
+        "naics": "5612",
+        "name": "Facilities Support Services",
+        "employment": 150000,
+        "avg_pay_est": 52000,
+        "transformation_thesis": "IoT sensors + AI-driven predictive maintenance and energy management transform facilities support from reactive break-fix to proactive optimization. Smart building platforms (Siemens, Johnson Controls, Verkada) eating this sub-sector from above."
+      },
+      {
+        "naics": "5613",
+        "name": "Employment Services (Staffing, Temp, PEOs)",
+        "employment": 3500000,
+        "avg_pay_est": 38000,
+        "transformation_thesis": "The single largest sub-sector and most structurally threatened. $200B+ US staffing market facing AI matching platforms, direct sourcing, and gig economy erosion. Robert Half -53%, ManpowerGroup -44% stock declines signal structural disruption. AI can match candidates 100x faster with 10x better signal. The 30-50% staffing markup is Coasean transaction cost that AI collapses."
+      },
+      {
+        "naics": "5614",
+        "name": "Business Support Services (call centers, collections, document prep)",
+        "employment": 800000,
+        "avg_pay_est": 36000,
+        "transformation_thesis": "Call centers and BPO are ground zero for AI agent replacement. Intelligent process automation market growing at 22.6% CAGR to $44.7B by 2030. AI voice agents handling 60-80% of routine customer service by 2028. Collections, data entry, and document preparation are highly automatable routine-cognitive tasks."
+      },
+      {
+        "naics": "5615",
+        "name": "Travel Arrangement & Reservation Services",
+        "employment": 200000,
+        "avg_pay_est": 42000,
+        "transformation_thesis": "AI travel planning market growing to $13.9B by 2030 (28.7% CAGR). Post-COVID recovery combined with AI trip planning disrupting traditional agencies. Corporate travel management shifting to AI-first platforms. Leisure travel agents face existential threat from conversational AI."
+      },
+      {
+        "naics": "5616",
+        "name": "Investigation & Security Services",
+        "employment": 1100000,
+        "avg_pay_est": 35000,
+        "transformation_thesis": "1.1M security guards at $35K avg pay. AI video surveillance market growing 30.6% CAGR to $28.8B by 2030. Physical guard model being replaced by AI-monitored camera systems at 80-90% cost reduction per monitored zone. Verkada valued at $4.5B. Background screening market growing to $25.9B by 2030 with AI automation cutting verification time 48%."
+      },
+      {
+        "naics": "5617",
+        "name": "Services to Buildings & Dwellings (Janitorial, Landscaping, Pest Control)",
+        "employment": 2200000,
+        "avg_pay_est": 30000,
+        "transformation_thesis": "2.2M workers in lowest-wage sub-sector. US janitorial market $77B+ growing to $100B by 2033. Commercial cleaning robotics market growing at 15.7% CAGR. Robotic floor scrubbers (Brain Corp, Avidbots) deployed in 20K+ facilities. Landscaping robotic mowing $2.4B growing to $4.7B by 2030. Labor shortage and turnover rates >100%/year make automation ROI compelling."
+      },
+      {
+        "naics": "5619",
+        "name": "Other Support Services (packaging, labeling, convention services)",
+        "employment": 300000,
+        "avg_pay_est": 33000,
+        "transformation_thesis": "Mixed bag of niche services. Convention/trade show services rebounding post-COVID. Packaging and labeling increasingly automated. Limited AI transformation urgency compared to other sub-sectors."
+      },
+      {
+        "naics": "562",
+        "name": "Waste Management & Remediation Services",
+        "employment": 500000,
+        "avg_pay_est": 48000,
+        "transformation_thesis": "US waste management market $42.7B growing to $63.3B by 2030. Highly consolidated (Waste Management Inc $20B+, Republic Services $16.7B revenue). AI waste sorting robots market growing 18.6% CAGR. Smart waste management $3.5B growing to $7.2B by 2030. Route optimization, contamination detection, and robotic sorting are the transformation vectors."
+      }
+    ],
+    "industry_structure": "NAICS 56 is the economy's SERVICE INFRASTRUCTURE layer. It provides the labor, security, cleaning, staffing, and administrative support that enables every other sector to function. The sector is characterized by: (1) extreme labor intensity with the lowest average wages outside food service, (2) high fragmentation with hundreds of thousands of small operators, (3) disproportionate immigrant workforce exposure (immigration policy F3 is a first-order force), (4) the fundamental business model of LABOR ARBITRAGE \u2014 buying labor cheap and selling it slightly less cheap. AI disrupts the core economic logic: when AI can replace the labor or match workers to jobs without intermediaries, the arbitrage collapses. The sector splits into two distinct transformation paths: knowledge-work sub-sectors (5611, 5613, 5614, 5615) face AI agent replacement of cognitive tasks, while physical-work sub-sectors (5616, 5617, 562) face robotics + AI monitoring replacement of manual tasks. Both paths lead to the same outcome: fewer workers per dollar of output.",
+    "key_incumbents": [
+      {
+        "name": "Waste Management Inc.",
+        "naics": "562",
+        "revenue": "$20.4B (2024)",
+        "employees": "~48,000",
+        "moat": "Landfill permits, route density, long-term municipal contracts"
+      },
+      {
+        "name": "Republic Services",
+        "naics": "562",
+        "revenue": "$16.7B (2025 guidance)",
+        "employees": "~41,000",
+        "moat": "Second-largest waste hauler, aggressive tech adoption (AI sorting, fleet electrification)"
+      },
+      {
+        "name": "ABM Industries",
+        "naics": "5617",
+        "revenue": "$8.1B (2024)",
+        "employees": "~100,000",
+        "moat": "Largest US janitorial company, facilities management integration"
+      },
+      {
+        "name": "Cintas",
+        "naics": "5617",
+        "revenue": "$9.6B (FY2024)",
+        "employees": "~45,000",
+        "moat": "Uniform/facility services with deep B2B relationships, 20%+ operating margins"
+      },
+      {
+        "name": "Robert Half",
+        "naics": "5613",
+        "revenue": "$5.8B (2024, declining)",
+        "employees": "~14,000",
+        "moat": "Brand recognition in professional staffing, but stock -53% signals structural erosion"
+      },
+      {
+        "name": "ManpowerGroup",
+        "naics": "5613",
+        "revenue": "$18.8B (2024)",
+        "employees": "~27,000",
+        "moat": "Global staffing leader, but stock -44% and transitioning to AI-augmented model"
+      },
+      {
+        "name": "Randstad",
+        "naics": "5613",
+        "revenue": "$27.6B (2024 global)",
+        "employees": "~46,000",
+        "moat": "Largest global staffing firm, investing in AI matching (Randstad Digital)"
+      },
+      {
+        "name": "Allied Universal",
+        "naics": "5616",
+        "revenue": "$20B+ (estimated)",
+        "employees": "~300,000",
+        "moat": "Largest US security company, but guard-heavy model faces AI substitution"
+      },
+      {
+        "name": "Securitas",
+        "naics": "5616",
+        "revenue": "$14.5B (2024 global)",
+        "employees": "~340,000 global",
+        "moat": "Second-largest, investing heavily in technology-enabled security"
+      },
+      {
+        "name": "Verkada",
+        "naics": "5616",
+        "revenue": "~$400M ARR (estimated)",
+        "employees": "~2,500",
+        "moat": "Cloud-native physical security, $4.5B valuation, AI-first disrupting guard model"
+      },
+      {
+        "name": "BrightSpring Health / Aramark",
+        "naics": "5612",
+        "revenue": "$17B+ combined facilities",
+        "employees": "~250,000 combined",
+        "moat": "Integrated facilities management at scale"
+      },
+      {
+        "name": "Upwork",
+        "naics": "5613",
+        "revenue": "$690M (2024)",
+        "employees": "~1,000",
+        "moat": "Largest freelance marketplace, but facing AI agent competition for tasks freelancers do"
+      }
+    ],
+    "transformation_drivers": [
+      {
+        "driver": "F1_technology",
+        "impact": "HIGHEST. AI agents replace cognitive admin tasks (BPO, staffing matching, back-office). Robotics replace physical tasks (cleaning, security patrol, waste sorting). IoT transforms facilities management. Every sub-sector has a technology disruption vector.",
+        "velocity": 9
+      },
+      {
+        "driver": "F2_demographics",
+        "impact": "HIGH. Chronic labor shortage in low-wage sub-sectors (janitorial 100%+ turnover, security guard 200-300% turnover). Silver Tsunami creates small business succession opportunities in fragmented services. Aging workforce cannot be replaced 1:1 \u2014 automation fills the gap.",
+        "velocity": 7
+      },
+      {
+        "driver": "F3_geopolitics",
+        "impact": "MODERATE-HIGH. Immigration policy directly impacts 5617 and 5616 workforce availability. H-1B changes affect IT staffing sub-segment. Trade policy affects waste export markets (China National Sword policy already redirected recycling flows).",
+        "velocity": 6
+      },
+      {
+        "driver": "F4_capital",
+        "impact": "MODERATE. PE firms active in services rollups (janitorial, landscaping, staffing, waste). $930B PE refinancing wall creates distressed acquisition opportunities in fragmented sub-sectors. VC flowing to AI-first staffing and security platforms.",
+        "velocity": 6
+      },
+      {
+        "driver": "F5_psychology",
+        "impact": "LOW-MODERATE. Fear friction relatively low in this sector \u2014 workers lack political power to resist automation. Customers (enterprises) actively seek cost reduction. Main psychological barrier is trust in AI security monitoring and resistance to replacing 'the guard at the desk' with cameras.",
+        "velocity": 4
+      },
+      {
+        "driver": "F6_energy",
+        "impact": "LOW-MODERATE. Waste-to-energy and recycling optimization are energy-adjacent. Smart building energy management is a selling point. Fleet electrification in waste collection. Otherwise minimal.",
+        "velocity": 4
+      }
+    ],
+    "barbell_classification": {
+      "routine_cognitive_pct": 30,
+      "routine_cognitive_tasks": [
+        "Staffing candidate matching and resume screening",
+        "Call center customer service (scripted responses)",
+        "Data entry and document preparation",
+        "Payroll processing and AP/AR",
+        "Travel booking and itinerary management",
+        "Background check processing",
+        "Scheduling and dispatch coordination",
+        "Invoice processing and billing"
+      ],
+      "tacit_manual_pct": 50,
+      "tacit_manual_tasks": [
+        "Janitorial cleaning and facility maintenance",
+        "Security guard patrol and presence",
+        "Landscaping and grounds maintenance",
+        "Waste collection and sorting",
+        "Pest control treatment",
+        "Building repair and maintenance",
+        "Environmental remediation"
+      ],
+      "tacit_cognitive_pct": 20,
+      "tacit_cognitive_tasks": [
+        "Executive recruiting relationship management",
+        "Complex security threat assessment",
+        "Environmental compliance consulting",
+        "Facilities management strategic planning",
+        "Labor relations and workforce strategy",
+        "Enterprise travel program management",
+        "Waste stream optimization consulting"
+      ],
+      "net_effect": "Unlike most sectors where AI hits routine-cognitive first, NAICS 56 has massive tacit-manual exposure (50%). Robotics timeline is slower than AI agent timeline, creating a two-wave disruption: Wave 1 (2026-2028) AI agents replace routine-cognitive tasks (staffing matching, call centers, back-office). Wave 2 (2028-2032) robotics gradually replace tacit-manual tasks (cleaning, security patrol, grounds maintenance). The 20% tacit-cognitive layer survives \u2014 relationship-driven recruiting, complex facilities strategy, environmental consulting."
+    },
+    "fear_friction_profile": {
+      "economic_readiness": 8,
+      "psychological_readiness": 6,
+      "gap": 2,
+      "classification": "low_to_moderate_friction",
+      "analysis": "NAICS 56 has one of the LOWEST fear friction gaps in the economy because: (1) Workers in this sector have limited political or institutional power to resist automation \u2014 no strong unions, no licensing barriers, no regulatory protection. (2) Enterprise customers WANT to automate these costs \u2014 administrative support is a cost center, not a value driver. (3) The economics are overwhelmingly favorable: replacing a $35K security guard with a $500/month camera subscription is a 5-10x cost reduction. (4) The main friction is CAPABILITY, not psychology \u2014 can the robot actually clean as well as the janitor? Can the AI camera actually detect threats? This is a technology readiness question, not a fear question. Resolution: Adoption speed is gated by technology maturity and proof of ROI, not by institutional resistance. Fastest adoption in security (cameras already proven), slowest in cleaning (robot reliability still inconsistent)."
+    },
+    "existing_model_coverage": {
+      "existing_count": 16,
+      "existing_models": [
+        "Full-Service AI Landscaping Operations (5617, composite ~72)",
+        "India AI-First Workforce Marketplace (561311, composite ~67)",
+        "LATAM AI Nearshoring Enablement Platform (561311, composite ~64)",
+        "Acquire + Modernize Commercial Cleaning Company (5617, composite ~64)",
+        "Acquire + Modernize Pest Control Company (5617, composite ~63)",
+        "Workforce Intelligence Platform (5613, composite ~61)",
+        "AI Recruiting for Blue-Collar/Trades Workers (5613, composite ~62)",
+        "Multi-Territory Landscaping Rollup with AI Operations (5617, composite ~60)",
+        "Trust-Bridging Human-AI Handoff Service (561499, composite ~59)",
+        "AI-Native Professional Staffing Agency (5613, composite ~58)",
+        "AI Workforce Transition Services (5613, composite ~57)",
+        "AI Back-Office Replacement for SMBs (5611, composite ~56)",
+        "AI-Native Travel Advisory Service Revival (5615, composite ~43)",
+        "AI Operations Platform for Landscaping Companies (5617, composite ~43)"
+      ],
+      "gap_analysis": [
+        "NO security services model (5616) \u2014 1.1M workers, $50B+ market, AI surveillance is one of the fastest-growing AI verticals",
+        "NO waste management/sorting model (562) \u2014 500K workers, $42.7B market, smart waste growing 15.1% CAGR",
+        "NO facilities management IoT/smart building model (5612) \u2014 $14.9B US FM market growing to $30.6B by 2030",
+        "NO background check/screening AI model \u2014 $14.7B market growing to $25.9B by 2030",
+        "NO AI-first BPO/call center replacement model (5614) \u2014 $44.7B IPA market by 2030",
+        "NO commercial cleaning robotics pure-play model \u2014 $6.9B market growing at 15.7% CAGR",
+        "NO workforce compliance platform for hourly/temp workers \u2014 $8.4B WFM market growing to $13B by 2030",
+        "NO AI staffing marketplace that directly competes with traditional staffing agencies on the $200B+ staffing TAM",
+        "Existing staffing models are too narrow (blue-collar only, India/LATAM focused) \u2014 need a US enterprise-grade platform",
+        "Existing cleaning models are acquire-and-modernize \u2014 no robotics-first model"
+      ]
+    }
+  },
+  "model_cards": [
+    {
+      "id": "MC-V312-ADM-001",
+      "name": "AI-Powered Physical Security Monitoring Platform",
+      "architecture": "ai_copilot",
+      "sector_naics": "5616",
+      "sector_name": "Investigation & Security Services",
+      "one_liner": "Cloud-native AI video analytics platform replacing physical security guards with intelligent monitoring \u2014 targeting $9.7B US AI video surveillance market by 2030",
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F4_capital"
+      ],
+      "macro_source": "Grand View Research AI video surveillance market ($28.8B global by 2030, 30.6% CAGR), Verkada $4.5B valuation proving market, Mordor Intelligence physical security services market ($149.2B by 2030). US security guard industry employs 1.1M at $35K avg \u2014 $38.5B annual payroll addressable by technology substitution.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 7,
+        "TG": 8,
+        "CE": 7
+      },
+      "composite": 76.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 7,
+        "VD": 8,
+        "DV": 9,
+        "rationale": "Verkada ($4.5B valuation, ~$400M ARR) dominates cloud-native security but focuses on hardware+software bundle for enterprises. Market openness moderate because Verkada, Rhombus, and Coram.ai are funded incumbents. But moat advantage is HIGH because AI model quality compounds with deployment scale \u2014 more cameras = better anomaly detection = fewer false alarms = lower monitoring costs. Value density is very high: enterprises spend $50-200K/year on security per location. A $5-15K/year AI monitoring subscription replaces 2-3 guards ($100-150K annual cost). Demand visibility is proven \u2014 every commercial building, retail store, warehouse, and campus needs security monitoring. The 1.1M guard workforce at 200-300% annual turnover creates chronic labor shortage that PUSHES adoption."
+      },
+      "deep_dive_evidence": "The US security guard services industry employs 1.1M workers at $35K average pay ($38.5B annual payroll) with the highest turnover rate of any sub-sector (200-300% annually per ASIS International). The AI video surveillance market was $6.5B globally in 2024 and is projected to reach $28.8B by 2030 at 30.6% CAGR (Grand View Research), with North America holding 33.6% share ($9.7B by 2030). Verkada raised $200M Series E at $4.5B valuation (Feb 2025), proving venture-scale economics. The company reports 20,000+ customers across 70+ countries. Cloud-based security represents a fundamental shift: traditional security requires on-premise NVR hardware ($10-50K), dedicated monitoring staff ($40-60K/year), and physical guard presence ($35-50K/year per guard). AI monitoring platforms reduce this to $200-500/camera/year with superior detection accuracy. Verkada's AI can detect people, vehicles, license plates, and unusual behavior patterns. SIA (Security Industry Association) reports that AI-driven systems account for roughly one-third of new security deployments in 2025, up from <10% in 2022. The physical security services market stands at $119.2B globally in 2025 (Mordor Intelligence). Key growth driver: commercial real estate owners facing CMBS delinquency pressure (12.34% record) are cutting guard contracts and replacing with camera-based monitoring to reduce operating costs 60-80% per monitored zone.",
+      "falsification_criteria": "Model invalidated if: (1) AI false alarm rates remain above 20% by 2028, preventing trust-based guard replacement; (2) Regulation requires physical human guard presence for certain facility types (some jurisdictions already mandate this for schools/hospitals); (3) Verkada or similar player achieves >40% market share, closing the window for new entrants; (4) Liability concerns prevent enterprises from replacing guards with cameras (wrongful-death lawsuits when AI misses threats).",
+      "vcr_evidence": {
+        "tam_estimate": "$9.7B US AI video surveillance market by 2030 (North America 33.6% of $28.8B global). Broader addressable: $38.5B annual guard payroll that can be partially converted to technology spend.",
+        "capture_analysis": "Startup capture feasible in SMB and mid-market segments that Verkada under-serves. Verkada focuses on enterprise (avg deal $50K+). Massive long tail of 500K+ commercial properties spending $5-25K/year on security that need simpler, lower-cost AI monitoring. Regional integrators (50K+ in US) are the distribution channel.",
+        "unit_economics": "SaaS model: $200-500/camera/year. At 50 cameras per customer, $10-25K ACV. 85%+ gross margins on software. Hardware margins 30-40% if bundled. Customer payback: replacing one security guard ($35-50K/year) with 10-20 AI cameras ($2-10K/year total) delivers 5-15x ROI in year one.",
+        "velocity_indicators": "Fast adoption cycle: 2-4 week deployment (cloud-based, no on-premise servers needed). Security turnover crisis accelerates adoption \u2014 when a customer can't hire guards, they buy cameras. Commercial real estate cost pressure (CMBS delinquency) creates urgency. Insurance premium reductions for AI-monitored facilities create financial incentive.",
+        "moat_sources": "Data compounding: more deployed cameras = better AI models = fewer false alarms = lower monitoring cost = more deployments. Network effects within multi-site customers (retail chains, property managers). Switching costs moderate (camera hardware lock-in). Channel relationships with 50K+ security integrators create distribution moat."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-002",
+      "name": "AI Staffing Marketplace \u2014 Enterprise Direct Sourcing Platform",
+      "architecture": "marketplace",
+      "sector_naics": "5613",
+      "sector_name": "Employment Services \u2014 Staffing & Temporary Help",
+      "one_liner": "AI-native talent matching platform enabling enterprise direct sourcing and bypassing traditional staffing agencies \u2014 targeting $200B+ US staffing market disruption with $12B direct sourcing TAM by 2028",
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F4_capital"
+      ],
+      "macro_source": "Staffing Industry Analysts: US staffing market $290B+ by 2030 (2.2% CAGR). Robert Half stock -53%, ManpowerGroup -44% signaling structural disruption (P-027 canary). Grand View Research: freelance platforms market $14.4B by 2030 (17.7% CAGR). 70% of tech leaders more likely to use staffing \u2014 but for AI specialists, not commodity workers. AI recruitment tools cut hiring costs 30% and time-to-fill 40% (DemandSage 2025).",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 6,
+        "TG": 8,
+        "CE": 7
+      },
+      "composite": 74.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 6,
+        "VD": 7,
+        "DV": 9,
+        "rationale": "Market openness is high because traditional staffing firms (Robert Half, ManpowerGroup, Randstad) are structurally disadvantaged \u2014 their business model depends on the markup that AI eliminates. Existing digital platforms (Upwork $690M revenue, Fiverr, Toptal) focus on freelancers, not enterprise staffing replacement. The gap between 'freelance marketplace' and 'enterprise staffing replacement' is where the opportunity lives. Moat advantage is moderate \u2014 data on placement outcomes compounds over time (which placements succeed, which fail, why), but talent marketplaces face multi-homing problem (candidates list on multiple platforms). Value density high: enterprise staffing contracts are $50K-500K annual per account. Demand visibility is proven \u2014 $200B+ market with incumbents visibly declining."
+      },
+      "deep_dive_evidence": "The US staffing industry generates $290B+ annually (Staffing Industry Analysts, growing at 2.2% CAGR to 2030). The industry's structural economics are under assault: traditional staffing agencies charge 25-50% markups on hourly rates for candidate sourcing, screening, and employer-of-record services. AI-powered matching can perform sourcing and screening at near-zero marginal cost. Robert Half (RHI) stock declined 53% from peak and ManpowerGroup (MAN) declined 44% \u2014 these are the market pricing in structural disruption, not cyclical weakness. IT staffing aggregate revenue is down 9% with larger firms suffering most. The direct sourcing model allows enterprises to build their own curated talent pools, bypassing staffing agency intermediation. Beeline's acquisition of MBO Partners (June 2025) signals enterprise VMS platforms moving into direct sourcing. 65% of recruiters have already implemented AI tools (DemandSage), primarily for candidate sourcing (58% use case), time savings (44%), and cost reduction (30% per hire). The freelance platforms market is $5.6B in 2024 growing to $14.4B by 2030 (Grand View Research, 17.7% CAGR). But this understates the opportunity: the real TAM is the delta between the $200B+ staffing market and the 25-50% markup that AI eliminates \u2014 roughly $50-100B in intermediation value at risk. Even capturing 10-15% of this displacement represents a $5-15B market for AI-native staffing platforms.",
+      "falsification_criteria": "Model invalidated if: (1) Enterprise procurement continues to mandate traditional staffing agencies for liability/compliance reasons, preventing platform adoption; (2) Major staffing firms (Randstad, ManpowerGroup) successfully pivot to AI-native models and retain market share; (3) Regulation (co-employment rules, worker classification) creates barriers that favor traditional staffing agency structure; (4) AI matching quality plateaus below human recruiter judgment for complex/senior roles.",
+      "vcr_evidence": {
+        "tam_estimate": "$12B direct sourcing software/platform TAM by 2028 (conservative: 6% of $200B staffing market converting to platform economics). Broader disruption TAM: $50-100B in staffing intermediation value at risk of AI compression.",
+        "capture_analysis": "Startup capture is feasible because incumbents face innovator's dilemma \u2014 their revenue IS the markup that AI eliminates. New entrants can charge 5-10% platform fees vs 25-50% staffing markups, winning on price while delivering faster, better matching. Key risk: two-sided marketplace cold-start problem requires domain focus (start in healthcare staffing, light industrial, or tech).",
+        "unit_economics": "Platform model: 5-10% take rate on placement value. Enterprise ACV $100K-1M for large accounts. Gross margins 75-85% (software + AI matching, no employee carrying cost). Break-even at 200-500 enterprise accounts. Capital efficient: $5-15M to build platform and reach product-market fit.",
+        "velocity_indicators": "Staffing agencies experiencing 9%+ revenue decline creates urgency for enterprise alternatives. Contract/project-based hiring preference (vs permanent) favors platform model. 70% of tech leaders already increasing staffing usage \u2014 the demand exists, it's seeking a better channel. Healthcare staffing crisis creates immediate wedge market ($42.8B healthcare staffing by 2035).",
+        "moat_sources": "Data compounding: placement outcome data (who succeeded, who churned, why) improves matching over time. Curated talent benches create switching costs \u2014 enterprises invest in building their 'pre-vetted' talent pools on the platform. Employer-of-record compliance layer creates stickiness. Network effects: more talent = better matches = more employers = more talent."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-003",
+      "name": "Autonomous Commercial Cleaning Robotics Platform",
+      "architecture": "robotics_automation",
+      "sector_naics": "5617",
+      "sector_name": "Services to Buildings & Dwellings \u2014 Janitorial Services",
+      "one_liner": "Robots-as-a-Service commercial cleaning platform deploying autonomous floor scrubbers, vacuums, and disinfection robots \u2014 targeting $6.9B commercial cleaning robot market growing at 15.7% CAGR to $25.5B by 2034",
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F6_energy"
+      ],
+      "macro_source": "GM Insights: commercial cleaning robots market $6.9B in 2025, $25.5B by 2034 (15.7% CAGR). Grand View Research: cleaning robot market $18B in 2025 to $41.5B by 2030 (18.2% CAGR). US janitorial services market $76.7B in 2024 (Grand View Research). Brain Corp powers 30,000+ autonomous robots in retail/commercial. RaaS model growing at 18.5% CAGR. 100%+ annual turnover in janitorial creates chronic labor shortage.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 6,
+        "TG": 7,
+        "CE": 5
+      },
+      "composite": 65.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 6,
+        "DV": 8,
+        "rationale": "Market openness is moderate \u2014 Brain Corp (powers 30K+ robots, SoftBank-backed), Avidbots (Series C, deployed in 3,000+ facilities), and ICE Robotics are established players. But the market is early and massive: $77B US janitorial market with <1% robot penetration in 2025. Moat advantage is high because autonomous cleaning requires facility-specific mapping, workflow optimization, and integration with building management systems \u2014 this creates deployment-level switching costs. Value density moderate: RaaS pricing $500-2,000/month per robot replaces $2,500-4,000/month equivalent human labor. Demand visibility high: chronic janitorial labor shortage (100%+ turnover) and post-COVID hygiene standards create pull."
+      },
+      "deep_dive_evidence": "The US janitorial services market is valued at $76.7B in 2024 and projected to reach $100.2B by 2033 at 3.0% CAGR (Grand View Research). The sector employs approximately 2.2M workers in NAICS 5617, with average pay around $30K \u2014 among the lowest in the economy (Baumol ratio ~0.41x). Annual turnover exceeds 100% industry-wide (ISSA Cleaning Industry Research Institute), creating permanent labor shortage. The global commercial cleaning robots market was valued at $6.9B in 2025 and is projected to grow at 15.7% CAGR to $25.5B by 2034 (GM Insights). Brain Corp, the leading autonomous navigation platform, powers 30,000+ robots deployed across retailers (Walmart, Kroger, Sam's Club) and commercial facilities. Avidbots has deployed autonomous floor scrubbers in 3,000+ facilities across 30 countries. The Robots-as-a-Service (RaaS) model is growing at 18.5% annually, converting $50-100K upfront robot purchases into $500-2,000/month subscriptions. Key economics: one autonomous floor scrubber can clean 20,000-50,000 sq ft per shift, replacing 1-2 janitorial workers. At RaaS pricing of $1,000-1,500/month versus fully-loaded labor cost of $3,000-4,000/month (including benefits, workers comp, management overhead), the ROI is 2-3x. Post-COVID, healthcare facilities are the fastest adopters (18.55% CAGR per Mordor Intelligence) driven by infection control requirements. Hospitals, airports, and large commercial buildings are the beachhead \u2014 24/7 cleaning requirements make robots' unlimited endurance a structural advantage.",
+      "falsification_criteria": "Model invalidated if: (1) Autonomous cleaning robot reliability remains below 90% uptime in real-world conditions through 2028, preventing commercial deployment at scale; (2) Labor costs stabilize or decline (immigration reform providing cheap janitorial labor), eliminating ROI advantage; (3) Brain Corp or Avidbots achieve market dominance and vertical integration, closing the platform opportunity; (4) Building liability/insurance concerns prevent autonomous robot operation in occupied spaces.",
+      "vcr_evidence": {
+        "tam_estimate": "$6.9B commercial cleaning robotics market in 2025, growing to $25.5B by 2034. US-specific TAM: ~$2.5B in 2025 growing to ~$9B by 2034 (35% US share). Broader addressable: $77B US janitorial market, of which 10-15% is automatable by 2030 = $7.7-11.5B.",
+        "capture_analysis": "Startup capture difficult at hardware level (Brain Corp, Avidbots well-funded). Better entry point is RaaS fleet management platform \u2014 aggregate cleaning robots from multiple manufacturers, deploy as managed service with AI-optimized scheduling, route planning, and quality verification. Think 'Uber for cleaning robots' rather than 'build a better robot.' Capital requirements $10-25M for initial fleet and platform.",
+        "unit_economics": "RaaS model: $1,000-2,000/month per deployed robot. 50-60% gross margins after robot depreciation, maintenance, and connectivity. Customer payback: replaces $3,000-4,000/month equivalent human labor, 3-6 month payback. Fleet of 500 robots = $6-12M ARR. Break-even at ~200-300 deployed units.",
+        "velocity_indicators": "Janitorial labor shortage accelerating (post-COVID hygiene standards + immigration enforcement reducing available workforce). Walmart, Kroger, Sam's Club already deploying at scale (30K+ Brain Corp robots). Hospital/healthcare facilities fastest-growing segment. RaaS model eliminates CapEx barrier for mid-market customers.",
+        "moat_sources": "Facility mapping data compounds (each deployment improves route optimization). Multi-manufacturer fleet management creates switching costs (customers don't want to re-map facilities). Quality verification data (before/after cleanliness scores) enables performance-based contracting. Integration with building management systems (HVAC, lighting, access control) creates ecosystem lock-in."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-004",
+      "name": "AI Waste Stream Intelligence & Sorting Optimization Platform",
+      "architecture": "predictive_analytics",
+      "sector_naics": "562",
+      "sector_name": "Waste Management & Remediation Services",
+      "one_liner": "AI-powered contamination detection, sorting optimization, and waste stream analytics for recycling facilities \u2014 targeting $7.2B smart waste management market by 2030",
+      "forces": [
+        "F1_technology",
+        "F6_energy",
+        "F3_geopolitics"
+      ],
+      "macro_source": "Mordor Intelligence: smart waste management market $3.5B in 2025, $7.2B by 2030 (15.1% CAGR). Mordor Intelligence: robotic waste sorting systems $2.8B in 2025, $6.7B by 2030 (18.6% CAGR). Market.us: AI in waste management $18.2B by 2033 (27% CAGR). China National Sword policy (2018) redirected global recycling, forcing US to build domestic sorting capacity. AI sorting increases recycling efficiency 60% (Columbia Climate School, June 2025).",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 6,
+        "CE": 6
+      },
+      "composite": 67.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 7,
+        "VD": 6,
+        "DV": 7,
+        "rationale": "Market openness moderate \u2014 AMP Robotics (raised $190M+, deployed 400+ systems), ZenRobotics (TOMRA-owned), Machinex, and Bollegraaf compete in robotic sorting. But the software/analytics layer (contamination detection, stream optimization, commodity pricing) is less crowded. Moat advantage high because waste stream data is facility-specific and compounds \u2014 more data = better sorting accuracy = higher commodity recovery rates = higher recycling revenue. Value density moderate: average MRF processes $5-50M annually in recyclable commodities, and AI sorting can increase commodity recovery value 20-40%. Demand visibility strong: 9,800 MRFs in US, many still using manual sorting."
+      },
+      "deep_dive_evidence": "The US waste management market was $42.7B in 2023 and is projected to reach $63.3B by 2030 (Grand View Research, 4.7% CAGR). The smart waste management market stood at $3.5B in 2025 and is forecast to reach $7.2B by 2030 at 15.1% CAGR (Mordor Intelligence). Robotic waste sorting systems are the fastest-growing segment: $2.8B in 2025 growing at 18.6% CAGR to $6.7B by 2030 (Mordor Intelligence). AI vision-based sorting is growing at 20.1% CAGR (highest in the category). The US has approximately 9,800 Materials Recovery Facilities (MRFs), of which only 15-20% have AI-enabled sorting as of 2025. China's National Sword policy (2018) rejected contaminated recyclables from the US, forcing domestic processing infrastructure development. AI-enabled recycling systems demonstrate 60% efficiency increase (Columbia Climate School, June 2025) and can sort at rates of 80+ picks per minute versus 30-40 picks per minute for human sorters. AMP Robotics has raised $190M+ and deployed 400+ systems globally, processing 90B+ objects through its AI system. The economics are compelling: contamination reduces recyclable commodity value by 30-50%. AI contamination detection and sorting can recover $10-30M annually in otherwise-lost commodity value across a large MRF network. Waste Management Inc. ($20.4B revenue) and Republic Services ($16.7B) dominate the industry but are actively seeking technology partners \u2014 Republic Services specifically targets technology-enabled route optimization and facility automation in its strategy.",
+      "falsification_criteria": "Model invalidated if: (1) AMP Robotics or TOMRA/ZenRobotics achieve dominant installed base (>50% of MRFs), foreclosing new entry; (2) Recycling commodity prices collapse, eliminating economic incentive for sorting optimization; (3) Chemical recycling advances make mechanical sorting obsolete; (4) Municipal contract structures prevent technology adoption (long-term contracts lock in legacy processes).",
+      "vcr_evidence": {
+        "tam_estimate": "$7.2B smart waste management market by 2030 (Mordor Intelligence). US-specific: ~$2.8B (40% of global). AI waste sorting sub-segment: $6.7B globally by 2030. US MRF addressable market: 9,800 facilities x $100-500K annual AI subscription = $1-5B software TAM.",
+        "capture_analysis": "Startup capture feasible at software/analytics layer (avoid competing with AMP Robotics at hardware level). Build contamination detection AI and waste stream analytics that integrates with multiple robotic sorting vendors. Channel through Waste Management Inc. and Republic Services partnerships \u2014 both actively seeking AI technology partners. Capital requirements $5-15M for AI platform development and initial MRF deployments.",
+        "unit_economics": "SaaS + per-ton model: $100-500K annual subscription per MRF + $0.50-2.00/ton processing analytics fee. Large MRFs process 100K-500K tons/year. Gross margins 80%+ on software. Customer ROI: 20-40% increase in commodity recovery value ($2-10M annually for large MRFs). Break-even at 30-50 deployed facilities.",
+        "velocity_indicators": "Municipal recycling mandates expanding (10+ states with extended producer responsibility laws by 2025). China National Sword created domestic processing urgency. Republic Services investing $1B+ in polymer center infrastructure. EPA recycling rate target of 50% by 2030 (current 32%). ESG mandates push corporate recycling programs.",
+        "moat_sources": "Waste stream data compounds (material composition patterns vary by geography, season, and source \u2014 years of data create sorting accuracy advantage). Multi-facility benchmarking creates network effects (insights from one MRF improve optimization at others). Commodity market integration (real-time pricing feeds optimize which materials to sort vs landfill). Integration with existing SCADA/PLC systems creates deployment-level stickiness."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-005",
+      "name": "AI-Native Business Process Automation Platform",
+      "architecture": "workflow_automation",
+      "sector_naics": "5614",
+      "sector_name": "Business Support Services \u2014 Call Centers & BPO",
+      "one_liner": "End-to-end AI agent platform replacing BPO call centers, data entry, and back-office processing \u2014 targeting $44.7B intelligent process automation market by 2030",
+      "forces": [
+        "F1_technology",
+        "F4_capital",
+        "F2_demographics"
+      ],
+      "macro_source": "Grand View Research: intelligent process automation market $14.6B in 2024, $44.7B by 2030 (22.6% CAGR). Grand View Research: BPO market $525.2B globally by 2030 (9.8% CAGR). GlobeNewsWire: HR BPO $80B by 2030, 60% of contracts now AI-enhanced. Automation outsourcing market $10.2B in 2025 growing at 32.4% CAGR (TBRC). AI agents handling 60-80% of L1/L2 customer service by 2028.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 6,
+        "TG": 8,
+        "CE": 8
+      },
+      "composite": 76.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 6,
+        "VD": 8,
+        "DV": 9,
+        "rationale": "Market openness moderate \u2014 UiPath ($1.3B revenue), Automation Anywhere, and new AI-native players (Sierra.ai for customer service, Observe.ai for contact center AI, Bland.ai for voice agents) are well-funded. But the market is massive ($525B global BPO) and fragmented \u2014 no single platform dominates AI-native BPO replacement. Moat advantage moderate: workflow-specific AI training and process data compound, but LLM commoditization means anyone can build AI agents. Value density is very high: BPO contracts are $1-50M annually per enterprise customer. AI platform replacing 50-80% of BPO headcount at 20-30% of cost creates enormous value capture opportunity. Demand visibility is proven: 60% of organizations already cutting headcount anticipating AI, BPO contracts specifically targeted for AI replacement."
+      },
+      "deep_dive_evidence": "The global business process outsourcing market is projected to reach $525.2B by 2030 at 9.8% CAGR (Grand View Research). Within this, the intelligent process automation sub-segment is growing far faster: $14.6B in 2024 to $44.7B by 2030 at 22.6% CAGR (Grand View Research). The automation outsourcing market specifically reached $10.2B in 2025 and is growing at 32.4% CAGR (TBRC). NAICS 5614 (Business Support Services) employs approximately 800K US workers in call centers, collections, data entry, and document preparation at an average pay of ~$36K. These are overwhelmingly routine-cognitive tasks: scripted customer service responses, data entry from standardized forms, document classification and routing, and collections calls following decision trees. AI voice agents (Bland.ai, Observe.ai, Sierra.ai) can now handle 60-80% of L1/L2 customer service interactions with human-equivalent or superior satisfaction scores. HR BPO specifically is $80B market by 2030 with 60% of contracts now AI-enhanced (GlobeNewsWire). The economics are transformative: a US-based call center agent costs $35-50K/year fully loaded. An offshore BPO agent costs $8-15K/year. An AI agent costs $500-2,000/year per equivalent agent-seat \u2014 a 20-70x cost reduction versus onshore and 4-10x versus offshore. This collapses the labor arbitrage that BPO industry is built on. McKinsey estimates 30% of companies preparing to cut jobs due to AI, with BPO/administrative functions as the primary target.",
+      "falsification_criteria": "Model invalidated if: (1) AI voice/text agent quality plateaus below human-equivalent for complex customer interactions, limiting replacement to simple FAQs only; (2) Regulation requires human agents for certain interactions (financial services, healthcare), creating protected BPO segments; (3) Customer satisfaction with AI agents is significantly lower than human agents, creating churn; (4) Offshore BPO providers (Infosys, Wipro, Concentrix) successfully deploy AI themselves, maintaining the outsourcing model with AI-augmented offshore workers.",
+      "vcr_evidence": {
+        "tam_estimate": "$44.7B intelligent process automation market by 2030 (Grand View Research). US-specific BPO TAM: NAICS 5614 represents ~$30B in annual revenue. AI replacement of 50-80% of BPO functions represents $15-24B in addressable market. Total automation outsourcing: $10.2B growing at 32.4% CAGR.",
+        "capture_analysis": "Startup capture feasible in vertical-specific BPO replacement (healthcare back-office, insurance claims processing, financial services operations). UiPath and RPA incumbents are transitioning to AI but carry legacy RPA architectures. AI-native platforms have architectural advantage. Key risk: OpenAI, Anthropic, and Google launching their own agent frameworks that could commoditize the agent layer.",
+        "unit_economics": "Per-agent-seat pricing: $50-200/month per AI agent equivalent (vs $3,000-4,000/month per human agent). Enterprise contracts: $500K-5M annually for full BPO function replacement. Gross margins 85%+ (LLM API costs declining rapidly). Break-even at 50-100 enterprise customers. Capital efficient: $5-10M to build platform, LLM costs declining 10x every 18 months.",
+        "velocity_indicators": "32.4% CAGR in automation outsourcing (fastest segment in BPO). 60% of organizations already cutting headcount for AI. Enterprise procurement cycles for BPO replacement: 3-6 months (faster than traditional BPO transitions of 12-18 months). COVID normalized remote/digital service delivery, removing physical presence requirement.",
+        "moat_sources": "Process-specific fine-tuning data compounds (AI trained on thousands of customer interactions in a specific domain outperforms general-purpose agents). Workflow integration creates switching costs (replacing an AI BPO platform requires re-integrating with CRM, ERP, ticketing systems). Compliance certifications (SOC 2, HIPAA, PCI) create barriers. Performance data (resolution rates, satisfaction scores, handle times) enables continuous optimization."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-006",
+      "name": "AI Background Screening & Continuous Monitoring Platform",
+      "architecture": "compliance_automation",
+      "sector_naics": "5616",
+      "sector_name": "Investigation & Security Services \u2014 Background Screening",
+      "one_liner": "AI-accelerated background verification with continuous post-hire monitoring and blockchain-verified credentials \u2014 targeting $25.9B background screening market by 2030",
+      "forces": [
+        "F1_technology",
+        "F3_geopolitics",
+        "F5_psychology"
+      ],
+      "macro_source": "Mordor Intelligence: background screening market $14.7B in 2025, $25.9B by 2030 (12.0% CAGR). Background check software sub-segment $4.7B growing to $7.1B by 2030 (8.7% CAGR). 43% of vendors introduced AI-based screening modules 2023-2025, improving verification speeds 48%. 41% of organizations use AI-powered systems for employment verification. Cross-border hiring expansion and tighter global regulations driving demand.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 70.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 7,
+        "DV": 8,
+        "rationale": "Market openness moderate \u2014 Sterling Check (acquired by First Advantage for $2.2B, 2024), HireRight, Checkr, and GoodHire are established players. Checkr raised $679M+ and processes 5M+ background checks annually. But the shift from point-in-time pre-hire checks to continuous post-hire monitoring creates a new market that incumbents are slow to enter. Moat advantage high because verification data networks compound (every verification adds to the graph of verified credentials, employment histories, and educational records). Value density high: enterprise background screening contracts $50-500K annually, continuous monitoring 2-3x larger than point-in-time checks. Demand visibility strong: every employer screens, regulatory requirements expanding (gig economy worker verification, ban-the-box compliance)."
+      },
+      "deep_dive_evidence": "The global background screening market is valued at $14.7B in 2025 and projected to reach $25.9B by 2030 at 12.0% CAGR (Mordor Intelligence). North America holds 44% market share ($6.5B in 2025). The background check software segment specifically is $4.7B growing to $7.1B by 2030 at 8.7% CAGR (Mordor Intelligence). 43% of screening vendors introduced AI-based modules between 2023-2025, improving verification speeds by 48% (Mordor Intelligence). 41% of organizations now use AI-powered systems for employment verification and criminal record tracking. The market is shifting from point-in-time pre-hire screening (80% of current revenue) to continuous post-hire monitoring (growing from <5% to projected 25-30% of revenue by 2030). This shift is driven by: (1) gig economy expansion requiring ongoing worker verification, (2) increasing regulatory requirements for continuous monitoring in financial services, healthcare, and education, (3) enterprise risk management extending beyond hire date. Key market dynamics: First Advantage acquired Sterling Check for $2.2B in 2024, consolidating the top 2 traditional players. Checkr (VC-backed, $5M+ background checks annually) targets the gig economy with API-first approach. Cross-border hiring expansion (remote work normalization) increases complexity \u2014 multilingual verification engines and international criminal record access are emerging requirements. The NAICS 5616 sub-sector that includes investigation services employs 1.1M workers. Within this, background screening is a $6.5B US sub-market currently growing at 12% CAGR, driven by tighter regulations, cross-border hiring, and the shift to continuous monitoring.",
+      "falsification_criteria": "Model invalidated if: (1) First Advantage/Sterling merger successfully integrates AI capabilities and dominates the consolidated market; (2) Background screening becomes commoditized by LLM integration into existing HR platforms (Workday, ADP adding screening natively); (3) Privacy regulation (state-level data privacy laws) restricts continuous monitoring capability; (4) Blockchain credential verification fails to gain enterprise adoption by 2028.",
+      "vcr_evidence": {
+        "tam_estimate": "$25.9B global background screening market by 2030 (Mordor Intelligence). US-specific: $11.4B (44% share by 2030). AI-accelerated screening + continuous monitoring sub-segment: $3-5B US TAM by 2030 (including net-new continuous monitoring revenue).",
+        "capture_analysis": "Startup capture feasible in continuous monitoring niche \u2014 this is a net-new product category that incumbents (Sterling, HireRight) are slow to build. API-first approach for gig platforms and enterprise HR systems is the distribution wedge. International verification (cross-border hiring) is underserved. Key risk: Checkr's scale ($679M+ raised) gives it distribution advantage in gig economy segment.",
+        "unit_economics": "Per-check pricing: $20-100 for pre-hire screening (commoditizing). Continuous monitoring: $5-25/employee/month (net-new recurring revenue). Enterprise contract ACV: $100K-1M for continuous monitoring. Gross margins 70-80%. Break-even at 500-1,000 enterprise accounts for monitoring product. API integration with HRIS systems enables platform distribution.",
+        "velocity_indicators": "First Advantage/Sterling $2.2B merger signals market maturation. Gig economy expansion (Uber, DoorDash, Instacart) requires real-time screening. Financial services continuous monitoring mandates expanding. Remote hiring across state/national borders creates compliance complexity that AI solves. Employee retention crisis means more hiring = more screening demand.",
+        "moat_sources": "Verification data network compounds (every verification adds to credential graph, enabling instant re-verification). API integration with HRIS systems (Workday, ADP, UKG) creates distribution moat. International verification partnerships (court records, education databases, employment registries across 100+ countries) create data access barriers. Compliance certification (FCRA, GDPR, SOC 2) creates regulatory moat."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-007",
+      "name": "Smart Building Facilities Management OS",
+      "architecture": "iot_platform",
+      "sector_naics": "5612",
+      "sector_name": "Facilities Support Services",
+      "one_liner": "IoT-integrated AI platform unifying HVAC, lighting, security, cleaning, and maintenance into a single facilities operating system \u2014 targeting $30.6B US facility management market by 2030",
+      "forces": [
+        "F1_technology",
+        "F6_energy",
+        "F4_capital"
+      ],
+      "macro_source": "MarketsandMarkets: US facility management market $14.9B in 2025, $30.6B by 2030 (15.5% CAGR). Mordor Intelligence: integrated FM market $191.8B globally in 2025, $269.7B by 2030 (7.1% CAGR). Smart building market $141.8B in 2025, $309.6B by 2030 (Mordor Intelligence). Building IoT market $64.1B in 2024, $101.0B by 2030 (7.9% CAGR, Memoori). CMBS office delinquency at 12.34% record creates cost-cutting urgency.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 68.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 8,
+        "DV": 8,
+        "rationale": "Market openness moderate \u2014 Siemens (Smart Infrastructure), Johnson Controls (OpenBlue), Honeywell (Forge), and Schneider Electric (EcoStruxure) are massive incumbents. However, these legacy BMS vendors sell hardware-centric solutions with software as an afterthought. The opportunity is a software-first FM platform that integrates across multiple BMS vendors (Siemens + Honeywell + third-party IoT sensors) rather than being locked to one hardware ecosystem. Moat advantage high: building operational data compounds over years (energy usage patterns, maintenance histories, occupancy trends). Value density very high: commercial buildings spend $5-25/sqft annually on facilities management \u2014 a 500K sqft office = $2.5-12.5M annual FM spend. Demand visibility strong: CMBS delinquency creates cost-cutting urgency, ESG mandates require energy monitoring, hybrid work requires space optimization."
+      },
+      "deep_dive_evidence": "The US facility management market is projected to grow from $14.9B in 2025 to $30.6B by 2030 at 15.5% CAGR (MarketsandMarkets). The global smart building market reached $141.8B in 2025 (Mordor Intelligence) and the Building IoT market is $64.1B in 2024 growing to $101.0B by 2030 (Memoori). NAICS 5612 (Facilities Support Services) employs approximately 150K US workers. But the real opportunity extends across all buildings served by NAICS 5611-5619 \u2014 there are 5.9M commercial buildings in the US, of which only 15-20% have any smart building technology. The economic drivers are powerful: (1) CMBS office delinquency reached 12.34% all-time record \u2014 building owners must cut costs to avoid default, and FM technology reduces operating costs 15-30%. (2) ESG mandates require energy monitoring and carbon reporting \u2014 smart building platforms provide this data. (3) Hybrid work creates occupancy volatility \u2014 AI-driven space optimization reduces wasted energy and FM resources. (4) Energy costs: commercial buildings account for 35% of US electricity consumption ($150B+/year). AI-driven HVAC optimization delivers 15-30% energy savings ($22-45B annual savings potential). Key competition: Siemens Smart Infrastructure ($19B segment), Johnson Controls OpenBlue, Honeywell Forge, and Schneider Electric EcoStruxure are multi-billion dollar incumbents. But they sell proprietary hardware-locked ecosystems. The market gap is a vendor-agnostic FM OS that integrates across BMS vendors, IoT sensor types, and building management workflows. 32% of CRE leaders plan further footprint reduction, creating demand for technology-enabled FM to manage remaining portfolio more efficiently.",
+      "falsification_criteria": "Model invalidated if: (1) Siemens/Johnson Controls/Honeywell successfully open their platforms and become vendor-agnostic, eliminating the integration gap; (2) Commercial real estate market collapse reduces FM spending rather than shifting to technology; (3) IoT sensor standardization (Matter protocol) makes integration trivial, commoditizing the platform layer; (4) Enterprise IT departments build custom FM dashboards using general-purpose IoT platforms (AWS IoT, Azure IoT).",
+      "vcr_evidence": {
+        "tam_estimate": "$30.6B US facility management market by 2030 (MarketsandMarkets). Software/platform sub-segment: $5-8B by 2030 (platform fees, analytics, optimization services). Energy savings addressable: $22-45B annual savings potential across US commercial buildings.",
+        "capture_analysis": "Startup capture feasible as vendor-agnostic integration layer \u2014 this is a classic 'Switzerland' platform play. Property management firms (CBRE, JLL, Cushman & Wakefield) are potential channel partners and acquirers. REITs are anchor customers (manage hundreds of buildings, need portfolio-wide optimization). Capital requirements $10-20M for platform development and initial building deployments.",
+        "unit_economics": "SaaS pricing: $0.25-1.00/sqft/year for FM platform. A 500K sqft building = $125K-500K ACV. Enterprise portfolio (10M+ sqft) = $2.5-10M annually. Gross margins 75-85% on software. Customer ROI: 15-30% energy savings + 20-40% maintenance cost reduction = $1-5M annual savings for a single large building. Break-even at 20-30 large building deployments or 2-3 REIT portfolio deals.",
+        "velocity_indicators": "CMBS delinquency at record levels creates cost-cutting urgency. ESG reporting mandates (SEC climate disclosure rule) require building-level energy data. Hybrid work occupancy variability requires AI-driven space optimization. Rising energy costs (commercial electricity up 15-20% since 2020) improve automation ROI. 15.5% market CAGR indicates strong underlying demand.",
+        "moat_sources": "Building operational data compounds (3-5 years of HVAC, energy, occupancy data enables predictive optimization impossible for new entrants). Multi-vendor integration creates complexity moat (connecting Siemens BMS + Honeywell sensors + third-party IoT + elevator systems requires deep domain expertise). Portfolio-level benchmarking creates network effects (insights from building A improve optimization at building B). Long-term building management contracts (3-5 year) create revenue predictability and switching costs."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-008",
+      "name": "Hourly Workforce Compliance & Scheduling Intelligence Platform",
+      "architecture": "vertical_saas",
+      "sector_naics": "5613",
+      "sector_name": "Employment Services \u2014 PEO/Compliance",
+      "one_liner": "AI-powered compliance automation for hourly and temp workforce management \u2014 scheduling, wage law, break rules, and credential tracking \u2014 targeting $13.0B workforce management market by 2030",
+      "forces": [
+        "F1_technology",
+        "F3_geopolitics",
+        "F2_demographics"
+      ],
+      "macro_source": "MarketsandMarkets: workforce management market $8.4B in 2025, $13.0B by 2030 (9.2% CAGR). US employs 80M+ hourly workers subject to complex state/local scheduling and wage laws. Predictive scheduling laws now in 12+ jurisdictions (NYC, SF, Chicago, Oregon, Seattle, Philadelphia). Wage theft claims total $15B+ annually. Immigration enforcement (E-Verify, I-9 audits) increasing under current administration.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 8,
+        "CE": 8
+      },
+      "composite": 75.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 7,
+        "VD": 7,
+        "DV": 9,
+        "rationale": "Market openness moderate \u2014 UKG (merged Kronos + Ultimate), ADP, When I Work, Deputy, and Homebase serve this market. But compliance automation is the Achilles heel: scheduling laws change quarterly across 12+ jurisdictions and counting, creating a regulatory complexity moat. Moat advantage high because compliance rule engines are jurisdiction-specific, change frequently, and require continuous updating \u2014 smaller players can't keep up. Value density is strong: mid-market employers (100-5,000 hourly workers) spend $50-500K/year on workforce management. Demand visibility is proven: 80M+ hourly workers, predictive scheduling laws expanding, wage theft litigation costs $15B+ annually."
+      },
+      "deep_dive_evidence": "The global workforce management market is growing from $8.4B in 2025 to $13.0B by 2030 at 9.2% CAGR (MarketsandMarkets). The US has 80M+ hourly workers (BLS), representing 55% of the workforce. NAICS 56 directly employs 9.4M of these workers and places millions more through staffing agencies. The compliance landscape is increasingly complex: predictive scheduling laws (requiring advance notice of schedules, penalty pay for changes) now exist in 12+ jurisdictions with more pending. Fair workweek legislation, minimum wage variation across 50+ state/local jurisdictions, break and meal period rules, and overtime calculations create a compliance minefield. Wage theft claims exceed $15B annually (Economic Policy Institute), with scheduling violations a growing category. Immigration enforcement is intensifying: E-Verify mandates expanding, I-9 audit volume increasing, and NAICS 56 (particularly 5617 and 5616) has disproportionate immigrant workforce exposure. Credential and certification tracking adds another layer \u2014 security guards need state licensing, healthcare staffing requires credential verification, construction workers need OSHA certifications. Current workforce management solutions (UKG, ADP, Deputy) handle scheduling but lack AI-driven compliance automation. The gap: when a manager creates a schedule, AI should automatically flag: predictive scheduling violations, overtime threshold approaches, break period compliance, credential expirations, and I-9 re-verification deadlines. AI-driven demand forecasting (predicting staffing needs from foot traffic, weather, events) can reduce overstaffing 10-15% while maintaining compliance.",
+      "falsification_criteria": "Model invalidated if: (1) UKG or ADP successfully build best-in-class compliance AI within their existing platforms, eliminating the gap; (2) Predictive scheduling law momentum stalls or reverses (federal preemption of local scheduling laws); (3) Immigration enforcement de-escalates, reducing I-9/E-Verify compliance urgency; (4) Hourly workforce shrinks significantly due to AI automation (reducing the addressable worker count).",
+      "vcr_evidence": {
+        "tam_estimate": "$13.0B workforce management market by 2030 (MarketsandMarkets). Compliance-specific sub-segment: $3-5B (premium over basic scheduling for automated compliance). US hourly worker compliance TAM: 80M workers x $2-5/worker/month = $1.9-4.8B annual recurring revenue.",
+        "capture_analysis": "Startup capture feasible in compliance-first positioning \u2014 differentiate from scheduling-first incumbents (Deputy, When I Work) by leading with compliance automation and adding scheduling as a feature. Vertical wedge: start in restaurant/hospitality (most complex scheduling laws) then expand to retail, healthcare, and staffing agencies. Distribution through PEOs and payroll providers (ADP marketplace, Gusto, Paychex). Capital requirements $5-10M.",
+        "unit_economics": "Per-employee-per-month pricing: $4-12/employee/month. 500-employee employer = $24-72K ACV. Gross margins 85%+ (SaaS). Customer ROI: avoid one wage theft lawsuit ($50K-500K settlement) = 5-20x annual platform cost. Scheduling optimization reduces labor costs 5-10% ($50-200K annually for mid-market employer). Break-even at 500-1,000 employer accounts.",
+        "velocity_indicators": "Predictive scheduling legislation expanding to 5-8 new jurisdictions per year. Wage theft litigation increasing (plaintiff attorneys actively targeting scheduling violations). Immigration enforcement escalation creates I-9 compliance urgency. Labor shortage forces employers to optimize existing workforce (do more with fewer workers). Gig economy classification uncertainty (independent contractor vs employee) creates compliance demand.",
+        "moat_sources": "Jurisdiction-specific compliance rule engine is expensive to build and maintain (50+ state/local jurisdictions, each with unique rules that change quarterly). Every jurisdiction added increases the moat. Data compounding: scheduling patterns, compliance violation predictions, and demand forecasting improve with scale. Integration with payroll providers creates distribution moat. Compliance audit trail creates switching costs (employers don't want to lose their compliance documentation history)."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-009",
+      "name": "AI-Powered Corporate Travel & Expense Management Platform",
+      "architecture": "ai_copilot",
+      "sector_naics": "5615",
+      "sector_name": "Travel Arrangement & Reservation Services",
+      "one_liner": "AI travel agent replacing corporate travel management companies with autonomous booking, policy enforcement, and expense optimization \u2014 targeting $4.3B AI travel market by 2025 growing to $13.9B by 2030",
+      "forces": [
+        "F1_technology",
+        "F4_capital"
+      ],
+      "macro_source": "MarketsandMarkets: AI in tourism market $4.3B in 2025, $13.9B by 2030 (28.7% CAGR). Grand View Research: AI in tourism $3.4B in 2024, $13.9B by 2030 (26.7% CAGR). AI-powered personal travel assistant market $757M in 2025, $1.1B by 2030 (8.4% CAGR, 360iResearch). US corporate travel spending $350B+ annually (GBTA). Traditional travel management companies (TMCs) charge 2-5% of travel spend for booking and management.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 6,
+        "FA": 6,
+        "EC": 5,
+        "TG": 7,
+        "CE": 8
+      },
+      "composite": 62.5,
+      "category": "CONDITIONAL",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 5,
+        "VD": 7,
+        "DV": 7,
+        "rationale": "Market openness moderate \u2014 Navan (formerly TripActions, $9.2B valuation), SAP Concur, and Brex compete aggressively in corporate travel/expense. Google, Kayak, and Booking.com are adding AI travel planning to consumer platforms. Moat advantage moderate: travel preference data and corporate policy enforcement create some switching costs, but travel booking is inherently commoditizable. Value density high for corporate market: enterprise travel programs are $5-50M annually \u2014 2-5% management fee is $100K-2.5M. Demand visibility moderate: corporate travel recovered post-COVID but is structurally lower (hybrid work reduces business travel 20-30% from 2019 peak)."
+      },
+      "deep_dive_evidence": "The AI in tourism market is projected to grow from $4.3B in 2025 to $13.9B by 2030 at 28.7% CAGR (MarketsandMarkets). NAICS 5615 (Travel Arrangement & Reservation Services) employs approximately 200K US workers. US corporate travel spending exceeded $350B annually (Global Business Travel Association). Traditional travel management companies (TMCs) like American Express GBT, CWT, and BCD Travel charge 2-5% management fees plus transaction fees. AI travel agents can: (1) autonomously book flights, hotels, and ground transport optimized for both cost and traveler preference, (2) enforce corporate travel policies in real-time without human review, (3) re-route and re-book during disruptions faster than human agents, (4) process expense reports automatically from receipts/emails. Navan (formerly TripActions) raised at $9.2B valuation and is the leading modern corporate travel platform. However, Navan still employs human travel consultants for complex bookings \u2014 the opportunity is full AI autonomy. The personal travel assistant AI market is $757M in 2025 growing to $1.1B by 2030 (360iResearch). Structural headwind: business travel is 20-30% below 2019 peak due to hybrid work and video conferencing normalization. This reduces the total addressable employee-trip volume but increases price sensitivity (companies want to spend less per trip), which favors AI-first platforms that optimize costs. Leisure travel AI (conversational trip planning) is a parallel market but lower revenue per user.",
+      "falsification_criteria": "Model invalidated if: (1) Navan or SAP Concur successfully deploy fully autonomous AI booking, closing the platform gap; (2) Business travel continues declining post-COVID, reducing total market size; (3) Google/Booking.com AI travel assistants commoditize the planning layer, eliminating differentiation; (4) Corporate travel remains relationship-driven (TMCs retained for VIP service, airline negotiations) rather than platform-driven.",
+      "vcr_evidence": {
+        "tam_estimate": "$13.9B global AI travel market by 2030 (MarketsandMarkets). US corporate travel management software/platform: $5-8B by 2030. Expense management software: $8.5B by 2030 (combined T&E platform TAM: $13-16B).",
+        "capture_analysis": "Startup capture difficult \u2014 Navan ($9.2B) dominates modern corporate travel. Better angle: vertical-specific AI travel (healthcare travel nursing, government travel with GSA rates, education/research travel with grant compliance). Or expense-first approach: AI expense processing that expands into travel booking. SMB segment underserved \u2014 Navan focuses on enterprise.",
+        "unit_economics": "Per-trip transaction fee: $5-15/booking. SaaS fee: $5-15/user/month for expense management. Enterprise ACV: $100K-1M. Gross margins 80%+ on software. Break-even at 1,000+ SMB accounts or 50-100 enterprise accounts. Capital efficient: $3-8M to build AI-first travel/expense platform using existing GDS and payment APIs.",
+        "velocity_indicators": "AI chatbot adoption in travel: 47% of travelers used AI for trip planning in 2025 (Mindful Ecotourism). Corporate cost-cutting pressure favors AI-optimized booking. Post-COVID travel recovery stabilizing at new normal. Expense report automation is a proven buyer wedge (no one likes filing expenses). LLM improvements enable conversational booking interfaces.",
+        "moat_sources": "Corporate travel policy data and traveler preference data compound over time. Integration with corporate payment cards (Brex, Amex) creates financial data moat. Negotiated airline/hotel rates create procurement advantage (volume-based). Compliance integration (SOX controls, per-diem enforcement) creates enterprise stickiness."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-010",
+      "name": "AI-First Waste Collection Route Optimization & Fleet Intelligence",
+      "architecture": "logistics_optimization",
+      "sector_naics": "562",
+      "sector_name": "Waste Management & Remediation Services \u2014 Collection",
+      "one_liner": "AI route optimization and fleet management platform for waste haulers \u2014 reducing fuel costs 15-25% and increasing collection efficiency 20-30% across $86.1B US waste collection market",
+      "forces": [
+        "F1_technology",
+        "F6_energy",
+        "F4_capital"
+      ],
+      "macro_source": "IBISWorld: US waste collection services $86.1B in 2025 (3.7% CAGR over 5 years). Grand View Research: US waste management market $42.7B (2023) to $63.3B by 2030 (4.7% CAGR). Fleet electrification: Waste Management Inc. ordered 1,000+ electric collection vehicles. Route optimization delivers 15-25% fuel savings (Routeware, FleetMind). Waste Management Inc. and Republic Services spend $3-4B annually on fleet operations. IoT sensors on bins (fill-level monitoring) enable dynamic routing.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 6,
+        "EC": 6,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 64.0,
+      "category": "CONDITIONAL",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 7,
+        "DV": 8,
+        "rationale": "Market openness moderate \u2014 Routeware, FleetMind, Rubicon (now Rubicon Technologies, struggling post-SPAC), and Sensoneo compete in waste routing/IoT. Major haulers (WM, Republic) build internal technology. But the long tail of 5,000+ small/mid waste haulers lacks technology capabilities. Moat advantage high: route optimization data compounds (historical pick-up data, traffic patterns, seasonal variation improve models over years). Value density strong: mid-size hauler ($10-50M revenue) spends $2-5M on fleet operations \u2014 15-25% fuel savings = $300K-1.25M annually. Demand visibility strong: diesel costs rising, fleet electrification requires range optimization, municipal contracts increasingly require efficiency metrics."
+      },
+      "deep_dive_evidence": "US waste collection services generate $86.1B in annual revenue (IBISWorld 2025, 3.7% 5-year CAGR). The US waste management market broadly is $42.7B in 2023 growing to $63.3B by 2030 at 4.7% CAGR (Grand View Research). NAICS 562 employs approximately 500K workers. The industry is highly concentrated at the top (Waste Management Inc. $20.4B, Republic Services $16.7B) but has a massive long tail: there are 5,000+ small and mid-size waste haulers operating local and regional routes. Fleet operations are the largest cost center: fuel, vehicle maintenance, driver labor, and route planning consume 50-60% of hauler revenue. AI route optimization delivers documented savings: 15-25% fuel reduction through dynamic routing based on traffic patterns, bin fill-levels (IoT sensors), and weather conditions. Route efficiency improvements of 20-30% (more stops per shift, fewer empty runs). Fleet electrification adds urgency: Waste Management Inc. ordered 1,000+ electric collection vehicles (BYD, Mack, Peterbilt). Electric trucks have limited range (100-150 miles), making route optimization critical \u2014 every wasted mile is a percentage of daily capacity lost. Republic Services is investing $1B+ in technology-enabled operations. Smart waste management (IoT bins, dynamic routing, fill-level monitoring) is a $3.5B market growing to $7.2B by 2030 at 15.1% CAGR (Mordor Intelligence). Rubicon Technologies (formerly a promising tech-enabled hauler marketplace) has struggled post-SPAC, creating a gap in the market. The economics for small/mid haulers: a 200-truck fleet burning 3M gallons of diesel annually ($9M+ at $3/gallon) saves $1.35-2.25M per year with 15-25% route optimization. This is a clear, measurable ROI that sells itself.",
+      "falsification_criteria": "Model invalidated if: (1) Waste Management Inc. and Republic Services build best-in-class internal route optimization, refusing to adopt third-party platforms; (2) Rubicon Technologies recovers and dominates the independent hauler segment; (3) Waste collection goes fully autonomous (self-driving trucks), making route optimization a subset of autonomous driving rather than a standalone platform; (4) Long-tail haulers consolidate (M&A) into larger operators that build internal tech, shrinking the addressable market.",
+      "vcr_evidence": {
+        "tam_estimate": "$7.2B global smart waste management by 2030 (Mordor Intelligence). US-specific: ~$2.9B (40% of global). Route optimization software sub-segment: $1-2B US TAM. Broader addressable: $86.1B waste collection market, fleet operations = $43-52B, of which 5-10% = software spend = $2.2-5.2B.",
+        "capture_analysis": "Startup capture feasible targeting the long tail of 5,000+ independent haulers that Waste Management/Republic don't serve. Channel: waste industry associations (NWRA), equipment dealers, and fleet management providers. Vertical SaaS model with waste-specific domain knowledge as differentiator. Capital requirements $5-10M for platform and initial customer deployments.",
+        "unit_economics": "SaaS pricing: $200-500/truck/month. 200-truck fleet = $480K-1.2M ACV. Gross margins 80%+ on software. Customer payback: $1.35-2.25M annual fuel savings vs $480K-1.2M platform cost = 1.5-3x ROI in year one. Break-even at 40-80 hauler accounts (8,000-40,000 trucks on platform).",
+        "velocity_indicators": "Diesel prices volatile and trending up ($3-4/gallon range). Fleet electrification creates range optimization urgency. Municipal sustainability mandates require emissions reporting (optimized routes = lower emissions). Driver shortage (CDL drivers) means must optimize routes for fewer drivers. Post-Rubicon market gap creates adoption window.",
+        "moat_sources": "Route history data compounds (years of pick-up timing, tonnage, traffic patterns create optimization advantage impossible for new entrants to replicate). Municipal contract relationships (long-term 5-10 year contracts mean once a hauler adopts, they stay). Integration with weighing/billing systems creates workflow stickiness. Multi-hauler benchmarking enables performance comparison and optimization sharing."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-011",
+      "name": "AI Security Threat Intelligence & Access Control Platform",
+      "architecture": "cybersecurity",
+      "sector_naics": "5616",
+      "sector_name": "Investigation & Security Services \u2014 Integrated Security",
+      "one_liner": "Converged physical-cyber security platform unifying access control, threat detection, identity management, and incident response \u2014 targeting $48.9B security analytics market by 2030",
+      "forces": [
+        "F1_technology",
+        "F3_geopolitics",
+        "F5_psychology"
+      ],
+      "macro_source": "Mordor Intelligence: security analytics market $19.4B in 2025, $48.9B by 2030 (20.3% CAGR). Mordor Intelligence: AI cybersecurity solutions $30.9B in 2025, $86.3B by 2030 (22.8% CAGR). Grand View Research: global security market $309.6B by 2030. AI-based security operations $28.2B in 2024, $82.5B by 2030 (NextMSC). Physical-cyber convergence is the structural shift: 73% of security leaders report need for unified physical and cyber threat monitoring.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 8,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 71.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 8,
+        "DV": 8,
+        "rationale": "Market openness moderate \u2014 Verkada ($4.5B) does physical security, CrowdStrike/Palo Alto/SentinelOne do cybersecurity. The convergence gap (unified physical + cyber) is underserved. Major access control players (HID Global, LenelS2, Genetec) focus on hardware. Moat advantage high: security data from physical (cameras, badges, sensors) and cyber (network logs, identity events) creates a unified threat model that single-domain vendors can't replicate. Value density very high: enterprise security budgets $500K-10M+ annually. Demand visibility strong: insider threat, workplace violence, and regulatory compliance drive converged security adoption."
+      },
+      "deep_dive_evidence": "The security analytics market stands at $19.4B in 2025 and is projected to reach $48.9B by 2030 at 20.3% CAGR (Mordor Intelligence). The broader AI cybersecurity solutions market is $30.9B in 2025 growing to $86.3B by 2030 at 22.8% CAGR (Mordor Intelligence). AI-based security operations reached $28.2B in 2024 and is projected to reach $82.5B by 2030 at 19.2% CAGR (NextMSC). The structural shift in NAICS 5616 is physical-cyber convergence: traditionally, physical security (guards, cameras, access control) and cybersecurity (firewalls, endpoint protection, SIEM) operated as separate silos with separate budgets, vendors, and teams. AI enables convergence because threat detection patterns span both domains \u2014 a disgruntled employee shows behavioral changes in both physical (unusual building access patterns) and digital (unusual data access patterns) domains. 73% of security leaders report needing unified physical-cyber monitoring (SIA Security Megatrends). Verkada pioneered cloud-native physical security ($4.5B valuation, 20K+ customers) but remains physical-only. CrowdStrike ($3B+ revenue) dominates endpoint cybersecurity but has no physical security capability. The convergence gap is structural: who owns the unified security operating system? Key use cases: (1) Insider threat detection: correlate badge access + network activity + communication patterns. (2) Identity-first security: unified identity across physical access (badge) and digital access (SSO/MFA). (3) Compliance: SOX, HIPAA, and FedRAMP require both physical and logical access controls documented in unified audit trails. Enterprise security spending: physical security $149.2B globally by 2030, cyber security $309.6B globally by 2030 \u2014 converged spend is a greenfield category.",
+      "falsification_criteria": "Model invalidated if: (1) Verkada expands into cybersecurity or CrowdStrike expands into physical security, closing the convergence gap from one side; (2) Enterprises prefer to keep physical and cyber security separate (organizational politics between CISO and physical security director prevent convergence); (3) The converged security platform requires too many integrations (camera vendors, access control hardware, SIEM systems, identity providers) to be buildable by a startup; (4) False alarm rates in cross-domain correlation produce noise rather than signal, undermining the convergence value proposition.",
+      "vcr_evidence": {
+        "tam_estimate": "$48.9B security analytics market by 2030 (Mordor Intelligence). Converged physical-cyber sub-segment: $5-10B by 2030 (net-new category). US-specific: ~$2-4B by 2030.",
+        "capture_analysis": "Startup capture feasible at the convergence layer \u2014 building the 'Datadog for security' that correlates physical and digital signals. Neither physical security vendors nor cybersecurity vendors have the cross-domain expertise to build this. Government/defense sector is an early adopter wedge (FedRAMP requirements mandate converged access controls). Healthcare is another wedge (HIPAA requires both physical and logical access documentation).",
+        "unit_economics": "SaaS platform pricing: $5-20/employee/month for unified security intelligence. 10,000-employee enterprise = $600K-2.4M ACV. Gross margins 80%+. Break-even at 30-50 enterprise customers. Capital requirements $10-20M (deep security domain expertise needed, SOC 2/FedRAMP certification).",
+        "velocity_indicators": "Insider threat incidents rising (30%+ increase since 2020 per Verizon DBIR). Workplace violence prevention legislation expanding. Regulatory convergence (SEC cyber disclosure rules + physical security requirements). Enterprise CISO role expanding to include physical security oversight. AI-driven anomaly detection accuracy improving rapidly.",
+        "moat_sources": "Cross-domain security data creates unique threat intelligence (physical + cyber correlation patterns are proprietary). FedRAMP/StateRAMP/HIPAA certifications create compliance moat. Integration complexity (cameras + access control + network monitoring + identity management) creates deployment-level switching costs. Incident response playbooks trained on multi-domain data compound over time."
+      }
+    },
+    {
+      "id": "MC-V312-ADM-012",
+      "name": "AI-Powered Property Services Marketplace & Operations Platform",
+      "architecture": "platform",
+      "sector_naics": "5617",
+      "sector_name": "Services to Buildings & Dwellings \u2014 Multi-Service",
+      "one_liner": "Unified platform connecting commercial properties with AI-matched, quality-verified janitorial, landscaping, HVAC, and maintenance service providers \u2014 targeting $100B+ US building services market",
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F4_capital"
+      ],
+      "macro_source": "Grand View Research: US janitorial services $76.7B in 2024 growing to $100.2B by 2033. US landscaping services market $130B+ (IBISWorld). Total NAICS 5617 revenue exceeds $230B across janitorial, landscaping, pest control, HVAC, and maintenance. 2.2M workers. Industry fragmentation extreme: 300K+ establishments at average 7 workers per firm. 100%+ annual turnover in janitorial. Property managers (CBRE, JLL) manage $30T+ in commercial real estate \u2014 they are the buyer.",
+      "source_batch": "v3-12_admin_support",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 5,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 66.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 6,
+        "VD": 7,
+        "DV": 8,
+        "rationale": "Market openness high \u2014 building services is extremely fragmented with no dominant technology platform. ServiceChannel (acquired by Brookfield for ~$1.5B) is the closest competitor but focuses on reactive work order management, not AI-matched provider discovery and quality optimization. Moat advantage moderate: marketplace effects compound (more properties = more providers = better matching = more properties) but providers multi-home across platforms. Value density high: commercial property building services spend $5-15/sqft annually \u2014 a 1M sqft portfolio = $5-15M annual services spend flowing through the platform at 5-10% take rate. Demand visibility strong: every commercial building needs these services, property managers are actively consolidating vendor management."
+      },
+      "deep_dive_evidence": "NAICS 5617 (Services to Buildings & Dwellings) is the largest sub-sector of NAICS 56 with 2.2M workers and estimated $230B+ in combined revenue across janitorial ($76.7B growing to $100.2B by 2033, Grand View Research), landscaping ($130B+, IBISWorld), pest control ($23B), and building maintenance services. The industry is extraordinarily fragmented: 300K+ establishments averaging 7 workers per firm. This fragmentation creates a massive coordination problem: a commercial property manager overseeing 50 buildings in 10 cities might work with 200+ individual service providers for cleaning, landscaping, HVAC, pest control, electrical, plumbing, and snow removal. ServiceChannel (acquired by Brookfield for approximately $1.5B) provides work order management for multi-site commercial properties, proving the platform thesis. But ServiceChannel is reactive (submit work order, route to provider) rather than proactive (AI predicts maintenance needs, matches optimal provider, verifies quality). The opportunity is a multi-service platform that: (1) AI-matches properties with pre-vetted service providers based on quality scores, pricing, availability, and specialization. (2) Provides quality verification through IoT sensors and post-service inspection (before/after photo AI, sensor data confirming cleaning completion). (3) Enables dynamic pricing and on-demand booking for variable services (snow removal, emergency repairs). (4) Aggregates small providers' volume for insurance, equipment purchasing, and training. The 100%+ annual turnover rate in janitorial creates chronic provider reliability problems \u2014 AI quality scoring and backup provider matching solves this. Property managers (CBRE, JLL, Cushman & Wakefield) collectively manage $30T+ in commercial real estate and are the key buyer persona. They want consolidated vendor management, quality assurance, and cost optimization across their entire portfolio.",
+      "falsification_criteria": "Model invalidated if: (1) ServiceChannel (Brookfield) builds AI-native matching and quality verification capabilities, closing the platform gap; (2) Major property managers (CBRE, JLL) build internal platforms and refuse to use third-party marketplaces; (3) Building services workers are too fragmented and tech-averse to adopt a platform (supply-side adoption failure); (4) Commercial real estate market contraction reduces building services spending substantially.",
+      "vcr_evidence": {
+        "tam_estimate": "$230B+ US building services market (janitorial + landscaping + pest control + maintenance). Platform take rate of 3-7% = $7-16B platform revenue TAM. Software/SaaS TAM (work order management, quality verification, provider matching): $3-5B by 2030.",
+        "capture_analysis": "Startup capture feasible as the 'vertical marketplace for building services.' Start in one metro with one service category (commercial janitorial in NYC or SF), prove quality matching model, then expand geographically and across service categories. PE firms doing building services rollups are potential channel partners and acquirers. Capital requirements $10-20M for marketplace development and initial metro launch.",
+        "unit_economics": "Marketplace take rate: 5-8% of service value. Average commercial property spends $200K-2M/year on building services. 100 properties at 5% take rate on $500K avg spend = $2.5M ARR. SaaS layer: $500-5,000/property/month for quality management and analytics. Gross margins: 25-35% on marketplace revenue, 80%+ on SaaS. Break-even at 200-500 managed properties.",
+        "velocity_indicators": "ServiceChannel $1.5B exit validates category. Property management technology spending increasing 10-15% annually. CBRE/JLL actively digitizing vendor management. COVID created permanent demand for cleaning quality verification. Commercial property insurance increasingly requiring documented maintenance programs. Labor shortage forces provider quality monitoring (bad providers harder to replace).",
+        "moat_sources": "Network effects: more properties on platform attracts more providers, better matching, more properties. Quality score data compounds (provider performance across hundreds of jobs creates reliable quality signal). Multi-category integration creates one-stop switching cost (property managers don't want 5 different platforms for 5 service categories). Geographic density matters: having 50+ vetted providers in a metro area is a defensible advantage. Property management group relationships (CBRE, JLL) provide winner-take-most dynamics within portfolios."
+      }
+    }
+  ],
+  "synthesis": {
+    "total_new_cards": 12,
+    "category_distribution": {
+      "STRUCTURAL_WINNER": 0,
+      "FORCE_RIDER": 10,
+      "CAPITAL_MOAT": 1,
+      "CONDITIONAL": 1,
+      "PARKED": 0
+    },
+    "composite_range": {
+      "max": 76.5,
+      "min": 62.5,
+      "mean": 69.7
+    },
+    "key_findings": [
+      "NAICS 56 is undergoing a TWO-WAVE disruption: Wave 1 (2026-2028) AI agents replace routine-cognitive work (staffing matching, call centers, back-office, travel booking). Wave 2 (2028-2032) robotics gradually replace tacit-manual work (cleaning, security patrol, waste sorting). This dual-wave pattern is unique to this sector.",
+      "The sector's fundamental economic logic \u2014 LABOR ARBITRAGE (buying cheap labor, selling at markup) \u2014 is structurally undermined by AI. When AI can match workers without staffing intermediaries (30-50% markup eliminated), monitor security without guards ($35K/year replaced by $6K/year in cameras), and clean floors without janitors (2-3x ROI on robots), the arbitrage collapses.",
+      "Security services (5616) is the FASTEST transformation vector: AI video surveillance growing at 30.6% CAGR, Verkada at $4.5B valuation, and the guard-to-camera substitution economics (5-15x cost savings) are the most compelling in the sector. This is the closest to a STRUCTURAL_WINNER but scored conservatively due to Verkada's market dominance.",
+      "BPO/call center replacement (5614) has the highest immediate market impact: $525B global BPO market with AI agents offering 20-70x cost reduction versus human agents. The automation outsourcing segment growing at 32.4% CAGR is the fastest-growing category in admin services.",
+      "Workforce compliance (5613) is a regulatory-driven FORCE_RIDER: predictive scheduling laws expanding to 12+ jurisdictions, immigration enforcement increasing, and wage theft claims exceeding $15B annually create compliance demand that is structurally necessary and growing.",
+      "No STRUCTURAL_WINNER scored because the sector's transformation, while certain, faces timing uncertainty in robotics adoption (Wave 2) and existing well-funded competitors (Verkada, AMP Robotics, Navan) limit startup capture in the highest-scoring segments."
+    ],
+    "existing_model_updates": "The 16 existing NAICS 56 models remain valid but should be re-scored with this deep dive context. Several existing models (AI Landscaping Operations, Acquire+Modernize Commercial Cleaning, AI Recruiting for Blue-Collar) may deserve composite upgrades given the stronger-than-expected market data and technology readiness evidence uncovered in this analysis. The India AI-First Workforce Marketplace and LATAM Nearshoring Platform should be cross-referenced with the new AI Staffing Marketplace (MC-V312-ADM-002) for overlap.",
+    "second_order_effects": [
+      "IMMIGRANT WORKFORCE DISPLACEMENT: NAICS 56 disproportionately employs immigrants. AI/robotics replacement of security guards, janitors, and landscaping workers creates immigration-policy-independent workforce displacement. This has political implications beyond the sector.",
+      "COMMERCIAL REAL ESTATE OPERATING COSTS: As building services automate (cleaning robots, AI security, smart building management), CRE operating costs decline 15-30%. This partially offsets CMBS delinquency pressure but also reduces NAICS 56 employment \u2014 a deflationary loop.",
+      "STAFFING INDUSTRY CASCADING COLLAPSE: If AI staffing platforms capture even 10% of the $200B+ staffing market, traditional staffing agencies lose $20B+ in revenue. This cascades to: office space (staffing firm headquarters), marketing (staffing firm ad spend), and the PEO/benefits industry that serves temp workers.",
+      "ENTRY-LEVEL JOB DESTRUCTION: NAICS 56 is the largest provider of entry-level jobs in the US economy (security guard, janitor, office admin, call center). AI/robotics replacement of these roles eliminates the bottom rung of the employment ladder for workers without college degrees. This is a structural labor market concern with political dimensions.",
+      "WASTE MANAGEMENT TECHNOLOGY ARMS RACE: As Waste Management Inc. and Republic Services invest billions in technology (AI sorting, electric fleets, route optimization), smaller haulers that cannot afford technology investment face margin compression and acquisition pressure. This accelerates industry consolidation."
+    ]
+  }
+}

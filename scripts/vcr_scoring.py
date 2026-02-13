@@ -46,12 +46,231 @@ from pathlib import Path
 BASE = Path("/Users/mv/Documents/research/data/verified")
 UI_DIR = Path("/Users/mv/Documents/research/data/ui")
 
-NORMALIZED_FILE = BASE / "v3-10_normalized_2026-02-12.json"
+NORMALIZED_FILE = BASE / "v3-12_normalized_2026-02-12.json"
 UI_MODELS = UI_DIR / "models.json"
 UI_DASHBOARD = UI_DIR / "dashboard.json"
 
 VCR_WEIGHTS = {"MKT": 25, "CAP": 25, "ECO": 20, "VEL": 15, "MOA": 15}
 SEED_VALUATION_M = 10  # $10M seed
+
+# ──────────────────────────────────────────────────────────────────────
+# Sector TAM Lookup (real market sizes in $M, by NAICS prefix)
+# Sourced from IBISWorld, Grand View Research, Statista, BLS QCEW
+# ──────────────────────────────────────────────────────────────────────
+
+SECTOR_TAM_M = {
+    # 4-digit matches take priority over 2-digit
+    # Accommodation & Food Services (72)
+    "7211": 220000,  # Hotels & motels $220B
+    "7221": 350000,  # Full-service restaurants $350B
+    "7222": 380000,  # Limited-service restaurants $380B
+    "7223": 65000,   # Special food services (catering) $65B
+    "7224": 28000,   # Drinking places $28B
+    "72": 900000,    # Total accommodation & food $900B+
+
+    # Transportation & Warehousing (48-49)
+    "4841": 350000,  # General freight trucking $350B
+    "4842": 80000,   # Specialized freight trucking $80B
+    "4811": 280000,  # Scheduled air transport $280B
+    "4821": 80000,   # Rail transportation $80B
+    "4831": 50000,   # Deep sea/coastal transport $50B
+    "4851": 45000,   # Urban transit $45B
+    "4881": 80000,   # Support activities for air $80B
+    "4885": 30000,   # Freight arrangement (brokers) $30B
+    "4911": 90000,   # Postal service $90B
+    "4921": 120000,  # Couriers & express delivery $120B
+    "4931": 60000,   # Warehousing & storage $60B
+    "48": 800000,    # Total transportation $800B
+    "49": 300000,    # Total warehousing/postal/courier $300B
+
+    # Construction (23)
+    "2361": 500000,  # Residential building $500B
+    "2362": 350000,  # Nonresidential building $350B
+    "2371": 120000,  # Utility system construction $120B
+    "2372": 100000,  # Land subdivision $100B
+    "2373": 150000,  # Highway/street/bridge $150B
+    "2381": 120000,  # Foundation/structure contractors $120B
+    "2382": 250000,  # Building equipment contractors $250B (HVAC/electrical/plumbing)
+    "2383": 80000,   # Building finishing contractors $80B
+    "2389": 60000,   # Other specialty trades $60B
+    "23": 2000000,   # Total construction $2T
+
+    # Admin/Support/Waste (56)
+    "5613": 200000,  # Employment services (staffing) $200B
+    "5614": 60000,   # Business support services $60B
+    "5615": 50000,   # Travel arrangement $50B
+    "5616": 90000,   # Investigation & security services $90B
+    "5617": 120000,  # Services to buildings (janitorial/landscape) $120B
+    "5621": 80000,   # Waste collection $80B
+    "5622": 20000,   # Waste treatment $20B
+    "5629": 15000,   # Remediation services $15B
+    "56": 650000,    # Total admin/support $650B
+
+    # Previously covered sectors — add specific sub-sector TAMs
+    "5221": 800000,  # Banking $800B revenue
+    "5231": 300000,  # Securities/commodity brokerage $300B
+    "5241": 1300000, # Insurance carriers $1.3T
+    "5411": 120000,  # Legal services $120B
+    "5412": 250000,  # Accounting services $250B
+    "5415": 550000,  # Computer systems design $550B
+    "5413": 65000,   # Architectural/engineering $65B
+    "5416": 120000,  # Management consulting $120B
+    "52": 2500000,   # Total finance/insurance $2.5T
+    "54": 1200000,   # Total professional services $1.2T
+
+    "6211": 350000,  # Offices of physicians $350B
+    "6214": 60000,   # Outpatient care centers $60B
+    "6221": 1100000, # General medical hospitals $1.1T
+    "6231": 180000,  # Nursing care facilities $180B
+    "6241": 50000,   # Individual/family services $50B
+    "62": 2600000,   # Total healthcare $2.6T
+
+    "4451": 800000,  # Grocery stores $800B
+    "4461": 60000,   # Health/personal care stores $60B
+    "4471": 600000,  # Gas stations $600B
+    "4481": 280000,  # Clothing stores $280B
+    "4411": 250000,  # Auto dealers $250B
+    "44": 3500000,   # Total retail $3.5T
+    "45": 800000,    # Total general merchandise/misc $800B
+
+    "3111": 200000,  # Animal food manufacturing $200B
+    "3114": 60000,   # Fruit/vegetable preserving $60B
+    "3241": 250000,  # Petroleum & coal products $250B
+    "3254": 300000,  # Pharmaceutical manufacturing $300B
+    "3341": 100000,  # Computer & peripheral equipment $100B
+    "3344": 120000,  # Semiconductor manufacturing $120B
+    "3364": 300000,  # Aerospace product mfg $300B
+    "31": 900000,    # Total food/beverage/textile mfg $900B
+    "32": 800000,    # Total wood/paper/chemical/plastic mfg $800B
+    "33": 1200000,   # Total metals/machinery/electronics mfg $1.2T
+
+    "22": 500000,    # Utilities $500B
+    "51": 1500000,   # Information sector $1.5T
+    "53": 500000,    # Real estate $500B
+    "55": 200000,    # Management of companies $200B
+    "61": 180000,    # Educational services $180B
+    "71": 200000,    # Arts/entertainment $200B
+    "81": 350000,    # Other services $350B
+    "92": 400000,    # Public administration $400B (est. addressable tech spend)
+    "11": 150000,    # Agriculture $150B
+    "21": 200000,    # Mining $200B
+}
+
+# Buyer-type classification by architecture
+# Determines independent CAP and VEL scoring
+BUYER_TYPE = {
+    "vertical_saas": "smb_mid",
+    "saas": "mid_enterprise",
+    "platform_saas": "mid_enterprise",
+    "horizontal_saas": "mid_enterprise",
+    "data_compounding": "mid_enterprise",
+    "platform": "multi",
+    "platform_infrastructure": "enterprise",
+    "infrastructure_platform": "enterprise",
+    "network_platform": "multi",
+    "marketplace_network": "multi",
+    "marketplace_platform": "multi",
+    "marketplace": "multi",
+    "marketplace_optimizer": "smb_mid",
+    "platform_marketplace": "multi",
+    "fear_economy_capture": "enterprise",
+    "regulatory_moat_builder": "enterprise",
+    "service_platform": "smb_mid",
+    "advisory_platform": "smb_mid",
+    "advisory": "mid_enterprise",
+    "academy_platform": "consumer_smb",
+    "product": "multi",
+    "product_platform": "smb_mid",
+    "physical_product_platform": "smb_mid",
+    "hardware_plus_saas": "mid_enterprise",
+    "full_service_replacement": "smb_mid",
+    "managed_service": "mid_enterprise",
+    "hybrid_service": "smb_mid",
+    "acquire_and_modernize": "smb_mid",
+    "rollup_consolidation": "smb_mid",
+    "roll_up_modernize": "smb_mid",
+    "rollup": "smb_mid",
+    "automation": "enterprise",
+    "physical_production_ai": "enterprise",
+    "project_developer": "enterprise",
+    "project_development": "enterprise",
+    "distress_operator": "smb_mid",
+    "arbitrage_window": "multi",
+    "geographic_arbitrage": "smb_mid",
+    "service": "smb_mid",
+    "micro_firm_os": "consumer_smb",
+    "ai_copilot": "consumer_smb",
+    "workflow_automation": "smb_mid",
+    "compliance_automation": "mid_enterprise",
+    "predictive_analytics": "mid_enterprise",
+    "embedded_fintech": "multi",
+    "insurtech": "mid_enterprise",
+    "regtech": "enterprise",
+    "supply_chain_optimization": "enterprise",
+    "robotics_automation": "enterprise",
+    "autonomous_systems": "enterprise",
+    "iot_platform": "mid_enterprise",
+    "digital_twin": "enterprise",
+    "cybersecurity": "mid_enterprise",
+    "edtech": "consumer_smb",
+    "healthtech": "mid_enterprise",
+    "proptech": "smb_mid",
+    "climate_tech": "enterprise",
+    "agritech": "smb_mid",
+    "logistics_optimization": "mid_enterprise",
+    "content_automation": "consumer_smb",
+    "creator_economy": "consumer_smb",
+    "decision_intelligence": "enterprise",
+    "simulation_modeling": "enterprise",
+}
+
+# Buyer type → independent CAP base modifier and VEL modifier
+BUYER_CAP_BASE = {
+    "consumer_smb": 8,    # Direct acquisition, PLG, self-serve
+    "smb_mid": 7,         # Mixed channels, moderate sales effort
+    "multi": 6,           # Multiple buyer types, complex GTM
+    "mid_enterprise": 5,  # Longer sales cycles, need champions
+    "enterprise": 4,      # Long procurement, committees, POCs
+    "government": 2,      # Procurement bureaucracy, 12-24 month cycles
+}
+
+BUYER_VEL_BASE = {
+    "consumer_smb": 8,    # <6 months to meaningful revenue
+    "smb_mid": 7,         # 3-9 months
+    "multi": 6,           # 6-12 months average
+    "mid_enterprise": 5,  # 6-18 months
+    "enterprise": 4,      # 12-24 months
+    "government": 2,      # 18-36 months
+}
+
+# NAICS-level fragmentation scores (1-10, 10=most fragmented)
+# Based on Census establishment counts and HHI concentration
+SECTOR_FRAGMENTATION = {
+    "72": 10,   # 1M+ restaurants, extreme fragmentation
+    "23": 10,   # 750K+ construction firms, extreme
+    "81": 9,    # Other services, very fragmented
+    "44": 8,    # Retail, fragmented but consolidating
+    "45": 8,
+    "56": 8,    # Admin/support, many small operators
+    "53": 8,    # Real estate, fragmented
+    "54": 7,    # Professional services, moderately fragmented
+    "62": 6,    # Healthcare, mixed (hospitals consolidated, practices fragmented)
+    "48": 6,    # Transportation, mixed
+    "61": 6,    # Education, mixed
+    "42": 7,    # Wholesale, many distributors
+    "31": 5,    # Manufacturing, moderately concentrated
+    "32": 5,
+    "33": 5,
+    "51": 4,    # Information, concentrated
+    "52": 4,    # Finance, concentrated
+    "22": 3,    # Utilities, very concentrated
+    "55": 3,    # Management holding companies
+    "21": 4,    # Mining, moderately concentrated
+    "92": 2,    # Government, by definition concentrated buyer
+    "11": 7,    # Agriculture, fragmented
+    "71": 7,    # Arts/entertainment, fragmented
+    "49": 5,    # Warehousing/postal
+}
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -60,7 +279,7 @@ SEED_VALUATION_M = 10  # $10M seed
 
 VCR_SYSTEM = {
     "name": "VC ROI Assessment",
-    "version": "1.0",
+    "version": "2.0",
     "seed_valuation_M": SEED_VALUATION_M,
     "axes": {
         "MKT": {
@@ -570,10 +789,30 @@ def clamp(v, lo=1, hi=10):
     return max(lo, min(hi, round(v, 1)))
 
 
+def lookup_sector_tam(naics_full):
+    """Look up TAM from SECTOR_TAM_M using longest NAICS prefix match."""
+    # Try 4-digit, then 3-digit, then 2-digit
+    for length in (4, 3, 2):
+        prefix = naics_full[:length]
+        if prefix in SECTOR_TAM_M:
+            return SECTOR_TAM_M[prefix]
+    return None
+
+
 def heuristic_vcr(model):
-    """Compute VCR scores heuristically from existing model data."""
+    """Compute VCR scores fundamentally from market structure and architecture.
+
+    v2 (fundamental): Minimizes cross-references to existing CLA/Transformation
+    scores. Scoring is driven primarily by:
+      - Architecture type (business model economics)
+      - Sector TAM data (real market sizes)
+      - Buyer type analysis (who buys, how fast)
+      - Market fragmentation (establishment counts)
+      - Keyword signals from evidence text
+    """
     arch = model.get("architecture", "")
-    naics = model.get("sector_naics", "")[:2]
+    naics_full = model.get("sector_naics", "")
+    naics = naics_full[:2]
     mid = model.get("id", "")
     scores = model.get("scores", {})
     cla = model.get("cla", {})
@@ -585,38 +824,105 @@ def heuristic_vcr(model):
     elif not isinstance(evidence, str):
         evidence = str(evidence) if evidence else ""
     all_text = one_liner + " " + evidence
+    text_lower = all_text.lower()
 
     # ── MKT: Market Magnitude ──
+    # Priority: parsed TAM from text > sector TAM lookup > architecture default
     tam_data = parse_tam_from_text(all_text)
+    tam_source = "none"
     if tam_data:
         mkt = tam_to_mkt_score(tam_data["tam_high_M"], tam_data.get("growth_pct"))
+        tam_source = f"parsed ${tam_data['tam_high_M']:.0f}M"
     else:
-        mkt = ARCH_MKT.get(arch, 5)
+        sector_tam = lookup_sector_tam(naics_full)
+        if sector_tam:
+            # Scale sector TAM down — a startup addresses a software/AI layer, not total revenue
+            # 4-digit NAICS: more specific → 3% of sub-sector revenue
+            # 2-digit NAICS: very broad → 0.5% of total sector revenue
+            naics_digits = len(naics_full.rstrip())
+            if naics_digits >= 4:
+                tam_pct = 0.03
+            elif naics_digits >= 3:
+                tam_pct = 0.015
+            else:
+                tam_pct = 0.005
+            realistic_tam = sector_tam * tam_pct
+            mkt = tam_to_mkt_score(realistic_tam)
+            tam_source = f"sector ${sector_tam:.0f}M→${realistic_tam:.0f}M addressable"
+        else:
+            mkt = ARCH_MKT.get(arch, 5)
+            tam_source = "arch_default"
 
-    # ── CAP: Capture Feasibility ──
-    # Base from architecture
-    cap = ARCH_CAP.get(arch, 5)
+    # ── CAP: Capture Feasibility ── (FUNDAMENTALIZED)
+    # Three independent inputs: architecture, buyer type, fragmentation
+    # Minimal cross-reference to CLA (20% down from 60%)
 
-    # Cross-reference CLA Market Openness — strongest proxy
+    # Input 1: Architecture base (what kind of product)
+    arch_cap = ARCH_CAP.get(arch, 5)
+
+    # Input 2: Buyer type (who buys, how accessible)
+    buyer = BUYER_TYPE.get(arch, "mid_enterprise")
+    buyer_cap = BUYER_CAP_BASE.get(buyer, 5)
+
+    # Input 3: Market fragmentation (how many potential buyers)
+    frag = SECTOR_FRAGMENTATION.get(naics, 5)
+    frag_bonus = (frag - 5) * 0.3  # -1.2 to +1.5 based on fragmentation
+
+    # Blend: 40% architecture + 30% buyer type + 10% fragmentation + 20% CLA MO
     mo = cla_scores.get("MO", 5)
-    # Blend: 40% architecture, 60% CLA MO
-    cap = cap * 0.4 + mo * 0.6
+    cap = arch_cap * 0.40 + buyer_cap * 0.30 + frag_bonus + mo * 0.20
 
-    # ── ECO: Unit Economics ──
+    # Keyword adjustments for CAP
+    if "fragmented" in text_lower or "150k+" in text_lower or "100k+" in text_lower:
+        cap += 0.5
+    if "monopol" in text_lower or "duopol" in text_lower or "oligopol" in text_lower:
+        cap -= 1.0
+    if "regulatory cliff" in text_lower or "mandate" in text_lower:
+        cap += 0.5  # forced adoption
+    if "nascent" in text_lower or "greenfield" in text_lower or "no dominant" in text_lower:
+        cap += 0.5
+    if "plg" in text_lower or "self-serve" in text_lower or "product-led" in text_lower:
+        cap += 0.5
+    if "enterprise sales" in text_lower or "rfe" in text_lower or "rfp" in text_lower:
+        cap -= 0.5
+
+    # ── ECO: Unit Economics ── (reduced CE dependency)
     eco = ARCH_ECO.get(arch, 5)
 
-    # CE score adjustment — capital efficiency from transformation scores
+    # CE minor adjustment (15% down from 30%)
     ce = scores.get("CE", 5)
-    eco = eco * 0.7 + ce * 0.3
+    eco = eco * 0.85 + ce * 0.15
 
-    # ── VEL: Revenue Velocity ──
-    vel = ARCH_VEL.get(arch, 5)
+    # Keyword adjustments for ECO
+    if "saas" in text_lower or "recurring" in text_lower or "subscription" in text_lower:
+        eco += 0.3
+    if "hardware" in text_lower or "physical" in text_lower or "capex" in text_lower:
+        eco -= 0.3
+    if "thin margin" in text_lower or "low margin" in text_lower:
+        eco -= 0.5
 
-    # TG score adjustment — timing window
+    # ── VEL: Revenue Velocity ── (FUNDAMENTALIZED)
+    # Primary: architecture velocity + buyer type velocity
+    # Minor TG adjustment (15% down from 40%)
+
+    arch_vel = ARCH_VEL.get(arch, 5)
+    buyer_vel = BUYER_VEL_BASE.get(buyer, 5)
+
+    # Blend: 50% architecture + 35% buyer type + 15% TG
     tg = scores.get("TG", 5)
-    vel = vel * 0.6 + tg * 0.4
+    vel = arch_vel * 0.50 + buyer_vel * 0.35 + tg * 0.15
 
-    # ── MOA: Moat Trajectory ──
+    # Keyword adjustments for VEL
+    if "procurement" in text_lower or "clearance" in text_lower or "certification" in text_lower:
+        vel -= 0.5
+    if "regulatory cliff" in text_lower or "mandate" in text_lower:
+        vel += 0.5  # urgency accelerates
+    if "pilot" in text_lower or "poc" in text_lower:
+        vel -= 0.3  # implies enterprise evaluation
+    if "viral" in text_lower or "word of mouth" in text_lower:
+        vel += 0.5
+
+    # ── MOA: Moat Trajectory ── (already mostly independent)
     moa = ARCH_MOA.get(arch, 5)
 
     # SN bonus — structurally necessary businesses have durable moats
@@ -624,19 +930,28 @@ def heuristic_vcr(model):
     if sn >= 8:
         moa += 1
 
-    # CLA MA cross-reference (if incumbent moats are fragile AND this is a
-    # data/platform play, new entrant builds replacement moat)
+    # CLA MA cross-reference (conditional, small impact)
     ma = cla_scores.get("MA", 5)
     if ma >= 7 and arch in ("data_compounding", "platform", "platform_infrastructure",
                              "vertical_saas", "marketplace_network"):
         moa += 0.5
 
-    # ── Apply NAICS sector adjustments ──
+    # Keyword adjustments for MOA
+    if "network effect" in text_lower or "data flywheel" in text_lower:
+        moa += 0.5
+    if "commodity" in text_lower or "undifferentiated" in text_lower:
+        moa -= 1
+    if "switching cost" in text_lower or "lock-in" in text_lower:
+        moa += 0.5
+    if "api integration" in text_lower or "embedded" in text_lower:
+        moa += 0.3
+
+    # ── Apply NAICS sector adjustments (refined, smaller impact) ──
     adj = SECTOR_ADJ.get(naics, (0, 0, 0, 0, 0))
     mkt += adj[0]
-    cap += adj[1]
+    cap += adj[1] * 0.5   # Halve sector CAP adjustment since fragmentation already captures this
     eco += adj[2]
-    vel += adj[3]
+    vel += adj[3] * 0.5   # Halve sector VEL adjustment since buyer type already captures this
     moa += adj[4]
 
     # ── Defense penalty ──
@@ -645,28 +960,21 @@ def heuristic_vcr(model):
         cap += DEFENSE_PENALTY["CAP"]
         vel += DEFENSE_PENALTY["VEL"]
 
-    # ── Keyword adjustments ──
-    text_lower = all_text.lower()
-    if "fragmented" in text_lower or "150k+" in text_lower or "100k+" in text_lower:
-        cap += 0.5  # many small buyers = faster capture
-    if "procurement" in text_lower or "clearance" in text_lower or "certification" in text_lower:
-        vel -= 0.5  # slower
-    if "network effect" in text_lower or "data flywheel" in text_lower:
-        moa += 0.5
-    if "commodity" in text_lower or "undifferentiated" in text_lower:
-        moa -= 1
-    if "regulatory cliff" in text_lower or "mandate" in text_lower:
-        vel += 0.5  # urgency
-        cap += 0.5  # forced adoption
-    if "nascent" in text_lower or "greenfield" in text_lower or "no dominant" in text_lower:
-        cap += 0.5
-        mkt -= 0.5  # market not yet proven
-
     # ── Sub-model bonus ──
-    # Sub-models from granularity decomposition are specifically identified
-    # as accessible layers within fortified parents — good for seed-stage
     if model.get("parent_id"):
-        cap += 0.5  # the decomposition already proved this layer is accessible
+        cap += 0.5
+
+    # ── VCR evidence from deep dive (new in v3-12) ──
+    vcr_ev = model.get("vcr_evidence", {})
+    if vcr_ev:
+        # If deep dive includes explicit VCR evidence, use keyword signals
+        ev_text = json.dumps(vcr_ev).lower() if isinstance(vcr_ev, dict) else str(vcr_ev).lower()
+        if "high margin" in ev_text or ">70%" in ev_text or ">80%" in ev_text:
+            eco += 0.5
+        if "fast adoption" in ev_text or "pull demand" in ev_text:
+            vel += 0.5
+        if "data moat" in ev_text or "network effect" in ev_text:
+            moa += 0.5
 
     # Clamp all scores
     mkt = clamp(mkt)
@@ -675,11 +983,10 @@ def heuristic_vcr(model):
     vel = clamp(vel)
     moa = clamp(moa)
 
-    rationale = f"Heuristic: arch={arch}, naics={naics}"
-    if tam_data:
-        rationale += f", parsed TAM=${tam_data['tam_high_M']:.0f}M"
+    rationale = f"Fundamental v2: arch={arch}, buyer={buyer}, frag={SECTOR_FRAGMENTATION.get(naics, '?')}"
+    rationale += f", tam_source={tam_source}"
     if is_defense:
-        rationale += ", defense penalty applied"
+        rationale += ", defense penalty"
 
     return mkt, cap, eco, vel, moa, rationale
 

@@ -1,0 +1,741 @@
+{
+  "cycle": "v3-12",
+  "date": "2026-02-12",
+  "agent": "agent_b",
+  "type": "sector_deep_dive",
+  "sector": "Accommodation & Food Services",
+  "sector_naics": "72",
+  "sector_context": {
+    "total_employment": 13965928,
+    "total_employment_note": "QCEW 2023 private sector. BLS broader estimates including non-covered workers reach ~16.5M. Using QCEW figure for consistency with engine data.",
+    "total_establishments": 781169,
+    "avg_weekly_wage": 551,
+    "avg_annual_pay": 28667,
+    "economy_avg_weekly_wage": 1392,
+    "wage_ratio_to_economy": 0.396,
+    "baumol_score": 0.396,
+    "total_annual_wages": 400359339262,
+    "employment_growth_pct_yoy": 4.1,
+    "establishment_growth_pct_yoy": 2.5,
+    "wage_growth_pct_yoy": 4.4,
+    "sub_sectors": [
+      {
+        "naics": "721",
+        "name": "Accommodation",
+        "employment_2023": 1870321,
+        "establishments_2023": 77757,
+        "avg_annual_pay": 41524,
+        "avg_workers_per_establishment": 24.1,
+        "employment_growth_pct": 6.1,
+        "sub_segments": [
+          {
+            "naics": "721110",
+            "name": "Hotels and Motels (except Casino Hotels)",
+            "employment_2023": 1514663,
+            "establishments_2023": 61273,
+            "avg_annual_pay": 40778,
+            "employment_growth_pct": 6.7,
+            "note": "Core accommodation segment. Still recovering post-COVID. 80.9% of accommodation employment."
+          },
+          {
+            "naics": "721120",
+            "name": "Casino Hotels",
+            "employment_2023": 238111,
+            "establishments_2023": 412,
+            "avg_annual_pay": 49715,
+            "employment_growth_pct": 3.8,
+            "note": "Highly concentrated — 412 establishments averaging 578 workers each. Highest pay in accommodation."
+          },
+          {
+            "naics": "721191",
+            "name": "Bed-and-Breakfast Inns",
+            "employment_2023": 14132,
+            "establishments_2023": 2454,
+            "avg_annual_pay": 30728,
+            "employment_growth_pct": 0.6,
+            "note": "Tiny, fragmented. 5.8 workers per establishment. Airbnb disruption already occurred."
+          },
+          {
+            "naics": "721199",
+            "name": "All Other Traveler Accommodation",
+            "employment_2023": 17529,
+            "establishments_2023": 3008,
+            "avg_annual_pay": 45143,
+            "employment_growth_pct": 4.6,
+            "note": "Includes RV parks, vacation rentals with services. Fastest establishment growth (+11.2%) in accommodation — short-term rental formalization."
+          },
+          {
+            "naics": "721211",
+            "name": "RV Parks and Campgrounds",
+            "employment_2023": 37200,
+            "establishments_2023": 5529,
+            "avg_annual_pay": 30011,
+            "employment_growth_pct": 2.1,
+            "note": "Steady, outdoor hospitality niche."
+          },
+          {
+            "naics": "721214",
+            "name": "Recreational and Vacation Camps",
+            "employment_2023": 38385,
+            "establishments_2023": 3259,
+            "avg_annual_pay": 34469,
+            "employment_growth_pct": 7.9,
+            "note": "Strong growth in experiential travel category."
+          },
+          {
+            "naics": "721310",
+            "name": "Rooming and Boarding Houses, Dormitories, Workers Camps",
+            "employment_2023": 10300,
+            "establishments_2023": 1823,
+            "avg_annual_pay": 38404,
+            "employment_growth_pct": 1.4,
+            "note": "Small niche, workforce housing."
+          }
+        ]
+      },
+      {
+        "naics": "722",
+        "name": "Food Services and Drinking Places",
+        "employment_2023": 12095607,
+        "establishments_2023": 703412,
+        "avg_annual_pay": 26679,
+        "avg_workers_per_establishment": 17.2,
+        "employment_growth_pct": 3.8,
+        "sub_segments": [
+          {
+            "naics": "722310",
+            "name": "Food Service Contractors",
+            "employment_2023": 521524,
+            "establishments_2023": 25206,
+            "avg_annual_pay": 37468,
+            "employment_growth_pct": 11.6,
+            "note": "FASTEST GROWING segment. Corporate cafeterias, hospital food, school lunch. Compass Group, Aramark, Sodexo dominate. Post-COVID return-to-office driving recovery."
+          },
+          {
+            "naics": "722320",
+            "name": "Caterers",
+            "employment_2023": 163779,
+            "establishments_2023": 13639,
+            "avg_annual_pay": 33008,
+            "employment_growth_pct": 5.8,
+            "note": "Strong recovery. Average 12 workers per establishment — fragmented, event-driven."
+          },
+          {
+            "naics": "722330",
+            "name": "Mobile Food Services",
+            "employment_2023": 40284,
+            "establishments_2023": 10918,
+            "avg_annual_pay": 26044,
+            "employment_growth_pct": 11.2,
+            "note": "Food trucks. Explosive establishment growth (+14.4%). Lowest employment per establishment (3.7) — micro-businesses. Fastest-growing format in food services."
+          },
+          {
+            "naics": "722410",
+            "name": "Drinking Places (Alcoholic Beverages)",
+            "employment_2023": 415782,
+            "establishments_2023": 42680,
+            "avg_annual_pay": 26027,
+            "employment_growth_pct": 3.4,
+            "note": "Bars, brewpubs, nightclubs. 9.7 workers per establishment. Extremely fragmented."
+          },
+          {
+            "naics": "722511",
+            "name": "Full-Service Restaurants",
+            "employment_2023": 5331268,
+            "establishments_2023": 262155,
+            "avg_annual_pay": 29723,
+            "employment_growth_pct": 3.8,
+            "note": "LARGEST single segment: 5.33M workers. 20.3 avg workers/establishment. $572/wk avg wage. The epicenter of AI/automation transformation in food services."
+          },
+          {
+            "naics": "722513",
+            "name": "Limited-Service Restaurants",
+            "employment_2023": 4606116,
+            "establishments_2023": 263503,
+            "avg_annual_pay": 22553,
+            "employment_growth_pct": 3.2,
+            "note": "QSR/fast food. 4.6M workers at the LOWEST wage in the economy ($434/wk, $22.5K annual). Fast food chains (McDonald's, Yum, Restaurant Brands) are the primary automation adopters. Self-order kiosks, automated drive-throughs, AI voice ordering already deployed at scale."
+          },
+          {
+            "naics": "722514",
+            "name": "Cafeterias, Grill Buffets, Buffets",
+            "employment_2023": 75294,
+            "establishments_2023": 5285,
+            "avg_annual_pay": 25941,
+            "employment_growth_pct": 4.0,
+            "note": "Declining format. Establishment count down -1.7% even as employment grows — consolidation."
+          },
+          {
+            "naics": "722515",
+            "name": "Snack and Nonalcoholic Beverage Bars",
+            "employment_2023": 941560,
+            "establishments_2023": 80027,
+            "avg_annual_pay": 22920,
+            "employment_growth_pct": 2.7,
+            "note": "Coffee shops, juice bars, ice cream. 941K workers. Establishment growth of +6.1% — Starbucks effect. 11.8 workers/establishment."
+          }
+        ]
+      }
+    ],
+    "industry_structure": "THE most fragmented major sector in the US economy: 781K establishments, 17.9 avg workers per establishment. Food services (703K establishments) is more fragmented than accommodation (78K). 90%+ of restaurants are single-unit or small chain. Hotel sector is bifurcated: top 5 chains (Marriott 8,800+ properties, Hilton 7,500+, IHG 6,400+, Wyndham 9,000+, Choice 7,500+) manage or franchise ~30% of US rooms, but the properties themselves are often independently owned. Average restaurant net margin 3-9%. Hotel net margin 10-15%. Labor is 30-35% of restaurant costs, 25-30% of hotel costs. The sector is characterized by: (1) extreme labor intensity at economy-bottom wages, (2) fragmented ownership with low tech literacy, (3) thin margins that make any technology investment high-stakes, (4) massive platform dependency (DoorDash, Uber Eats extract 15-30% commissions), (5) post-COVID acceleration of digital ordering, contactless service, and ghost kitchens.",
+    "key_incumbents": [
+      "Toast (restaurant POS/management platform, ~$1.2B revenue, 120K+ locations)",
+      "Square for Restaurants (Block Inc, horizontal POS expanding into vertical)",
+      "Oracle Hospitality (MICROS legacy, hotel PMS/POS, $500M+ segment)",
+      "Marriott International (8,800+ properties, Bonvoy loyalty platform)",
+      "Hilton (7,500+ properties, Digital Key, Connected Room)",
+      "DoorDash (US food delivery leader, ~60% market share, $8.6B revenue 2024)",
+      "Uber Eats (global #2, ~25% US share)",
+      "Compass Group (food service contracting, $40B+ revenue)",
+      "Mews/Cloudbeds/Guesty (cloud PMS challengers in accommodation)",
+      "7shifts/Homebase/When I Work (workforce scheduling)",
+      "Olo (digital ordering infrastructure for restaurant chains)",
+      "Flippy/Bear Robotics/Sweetgreen Infinite Kitchen (food robotics pioneers)"
+    ],
+    "transformation_drivers": [
+      {
+        "force": "F1_technology",
+        "driver": "AI voice ordering, computer vision for kitchen ops, robotic food preparation, LLM-powered guest services",
+        "evidence": "Wendy's FreshAI (voice AI drive-through) deployed to 100+ locations. McDonald's testing automated order-taking. Bear Robotics Servi robot in 1,000+ venues. Sweetgreen Infinite Kitchen automated assembly line. Food robotics market growing 20.6% CAGR to $6.8B by 2030."
+      },
+      {
+        "force": "F2_demographics",
+        "driver": "Independent restaurant owner aging — average age 55+, no succession plan. Gen Z workers demanding flexibility, refusing traditional shift structures. Immigration enforcement threatening back-of-house workforce.",
+        "evidence": "NRA: 62% of operators report not having enough employees in 2025. Average restaurant employee tenure: 56 days. 73% of restaurant operators cite labor as #1 challenge."
+      },
+      {
+        "force": "F3_geopolitics",
+        "driver": "Immigration policy directly impacts sector workforce. Tariffs affect food commodity costs. Supply chain regionalization changing procurement economics.",
+        "evidence": "Estimated 1.4M undocumented workers in food services (11% of workforce). H-2B visa program serves hospitality directly. Tariff-driven food inflation adds 3-5% to COGS."
+      },
+      {
+        "force": "F4_capital",
+        "driver": "Restaurant tech VC funding recovered to $2.3B in 2025 after 2023 trough. Ghost kitchen capital reallocation after over-investment bust. Hotel tech M&A wave (Mews raised $110M Series D, Cloudbeds $150M).",
+        "evidence": "Toast IPO (2021) and subsequent performance proved restaurant-tech venture category. Restaurant tech solutions market growing 18.55% CAGR. Smart hospitality market growing 25.8% CAGR."
+      },
+      {
+        "force": "F5_psychology",
+        "driver": "Restaurant owners deeply suspicious of technology — burned by delivery platform economics (15-30% commissions). Fear of alienating guests with automation. Generational divide: 55+ owners resist, 35-under operators embrace.",
+        "evidence": "Only 38% of independent restaurants use any form of digital ordering (vs 95% of chains). Technology adoption gap between chains and independents is widest of any sector. Average independent restaurant spends <$3K/year on technology."
+      },
+      {
+        "force": "F6_energy",
+        "driver": "Commercial kitchen energy costs rising. Electric kitchen equipment transition. Food waste reduction (estimated 30-40% of food purchased is wasted in restaurants).",
+        "evidence": "Average restaurant spends $2,500-$5,000/month on energy. ENERGY STAR commercial kitchen equipment adoption at 45%. Food waste represents $162B annual loss for US food services."
+      }
+    ]
+  },
+  "model_cards": [
+    {
+      "id": "MC-V312-ACC-001",
+      "name": "AI-Native Restaurant Operating System",
+      "architecture": "vertical_saas",
+      "sector_naics": "7225",
+      "sector_name": "Restaurants and Other Eating Places",
+      "one_liner": "Unified AI-powered back-office platform for independent restaurants — scheduling, inventory, accounting, vendor management in one system targeting the $14.7B restaurant management software market by 2030",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "macro_source": "Grand View Research restaurant management software forecast; QCEW NAICS 7225 (10.95M workers, 611K establishments, $26K avg pay); NRA operator surveys 2025",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 9,
+        "FA": 8,
+        "EC": 8,
+        "TG": 8,
+        "CE": 7
+      },
+      "composite": 81.0,
+      "category": "STRUCTURAL_WINNER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 7,
+        "VD": 5,
+        "DV": 9,
+        "rationale": "Toast dominates restaurant tech at 120K+ locations but charges $69-$165/mo per terminal plus payment processing — leaving massive room for AI-native challengers that compress multiple point solutions. Market Openness is moderate (6): Toast, Square, Clover have distribution but independents remain deeply underserved (only 38% use digital ordering). Moat Advantage is strong (7): data compounding across scheduling, inventory, and accounting creates switching costs once embedded — the restaurant OS becomes the system of record. Value Density is moderate (5): $200-400/mo ARPU from small restaurants with high churn (56-day avg employee tenure mirrors owner turnover). Demand Visibility is proven (9): 611K restaurants with <$3K/year tech spend is the most visible unmet demand in any sector. The gap between chain sophistication and independent capability is the largest technology adoption gap in the US economy."
+      },
+      "deep_dive_evidence": "QCEW data confirms 610,970 restaurant and eating places establishments (NAICS 7225) employing 10.95M workers at $502/week ($26,097 annual) — a Baumol score of 0.36, the lowest in the economy. Grand View Research projects the restaurant management software market reaching $14.7B by 2030 from $5.79B in 2024 (17.4% CAGR). The core thesis: independent restaurants (90%+ of establishments) spend less than $3,000/year on technology versus chains spending $15,000-50,000+/year per location. This $12-47K gap per location across 550K+ independents represents a $6.6-25.8B annual technology spend gap. Toast proved the category ($1.2B+ revenue) but charges payment processing spreads on top of SaaS fees — the AI-native entrant can offer a unified OS (scheduling via AI demand prediction, inventory via computer vision waste tracking, accounting via transaction auto-categorization, vendor management via price comparison) at lower total cost by monetizing the software layer rather than payment spreads. The 2022-2023 QCEW data shows establishments growing 2.5% YoY while employment grows 3.5% — new restaurants are opening and hiring, validating continued demand. Average workers per establishment of 17.9 means the buyer is a small-business owner who needs simplicity, not enterprise features.",
+      "falsification_criteria": "Toast achieves 60%+ penetration of independent restaurants (currently estimated at ~15-20%), eliminating the addressable gap. OR independent restaurant failure rate exceeds 80% in first 3 years (currently ~60%), making the customer base too volatile for SaaS economics. OR LLM costs fail to decline, making AI-native features uneconomical at $200-400/mo price points.",
+      "vcr_evidence": {
+        "tam_estimate": "$14.7B (restaurant management software by 2030, Grand View Research). US-specific serviceable addressable: $4.8B based on 600K+ independents at $8K/year average technology spend potential.",
+        "capture_analysis": "Startup can capture 2-5% of US independent restaurants in 5 years (12,000-30,000 locations) at $3,600/year ARPU = $43-108M ARR. This is achievable given Toast's 120K location trajectory from 2017-2026. PLG motion with free tier possible for smallest restaurants.",
+        "unit_economics": "Software-only model targets 75-80% gross margins versus Toast's ~22% gross margin on payments. At $300/mo ARPU, LTV of $3,600 (assuming 12-month avg retention for independents, improving to 24+ months for multi-unit). CAC of $800-1,200 via digital + restaurant supply channel partnerships. LTV:CAC of 3-4.5x.",
+        "velocity_indicators": "Fast adoption cycle: restaurant owners make technology decisions in 1-4 weeks (not enterprise 6-12 months). Monthly billing reduces commitment friction. COVID permanently shifted owner willingness to adopt digital tools. 73% of operators cite labor as #1 challenge — any tool that reduces scheduling pain has immediate pull demand.",
+        "moat_sources": "Data compounding: once the system tracks scheduling patterns, inventory usage, vendor pricing, and financial performance, switching costs increase monthly. Integration with POS/payment/delivery platforms creates ecosystem lock-in. Network effects emerge if vendor marketplace is built (restaurants collectively negotiate better food prices)."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-002",
+      "name": "Food Service Robotics-as-a-Service",
+      "architecture": "robotics_automation",
+      "sector_naics": "7225",
+      "sector_name": "Restaurants and Other Eating Places",
+      "one_liner": "Robotic food preparation and delivery systems deployed as RaaS subscriptions to QSR and fast-casual chains, targeting the $6.8B food robotics market by 2030",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "macro_source": "Grand View Research food robotics market forecast ($6.81B by 2030, 20.6% CAGR); Bear Robotics deployment data; Sweetgreen Infinite Kitchen announcements; NRA labor shortage surveys",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 8,
+        "FA": 8,
+        "EC": 6,
+        "TG": 6,
+        "CE": 4
+      },
+      "composite": 67.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 8,
+        "VD": 7,
+        "DV": 7,
+        "rationale": "Market Openness is moderate (5): capital intensity ($50-150K per unit) and long deployment cycles (3-6 months for kitchen integration) create barriers, but major chains are actively seeking solutions — Chipotle invested in Hyphen, Sweetgreen built Infinite Kitchen, White Castle deployed Flippy. Moat Advantage is strong (8): robotics IP, proprietary kitchen integration data, and regulatory compliance (food safety, OSHA) create deep defensibility — competitors cannot easily replicate 10,000+ hours of real-world food preparation data. Value Density is strong (7): RaaS pricing of $2,000-5,000/month per unit against $3,500-5,000/month labor cost per FTE replaced — clear ROI story. Demand Visibility is strong (7): 4.6M limited-service restaurant workers at $22.5K/year making automation ROI clear, but adoption requires solving integration with existing kitchen workflows."
+      },
+      "deep_dive_evidence": "The food robotics market was valued at $1.81B in 2023 and is projected to reach $6.81B by 2030 (20.6% CAGR, Grand View Research). QCEW data shows limited-service restaurants (722513) employ 4.606M workers at $434/week ($22,553 annual) — the lowest-wage major employment category in the US economy. Labor scarcity is structural: NRA reports 62% of operators cannot find enough workers in 2025. Bear Robotics has deployed its Servi robot to 1,000+ venues globally. Miso Robotics' Flippy has been deployed at White Castle, CaliBurger, and several other chains. Sweetgreen's Infinite Kitchen automated assembly processes 500+ bowls/hour. The economics are compelling: a robotic food prep station operating 16 hours/day at $2,500/month RaaS fee replaces 1.5-2 FTEs at a combined cost of $5,000-8,000/month (including benefits, training, turnover costs). However, the sector faces real constraints: kitchen retrofitting costs $20-50K, integration with existing POS/KDS systems is complex, and food safety certification adds 6-12 months to deployment. The 2023 QCEW data shows food truck/mobile food (722330) growing 14.4% in establishments — the lowest-capex format — while full-service restaurants grow only 1.8%, suggesting capital constraints are real for traditional formats.",
+      "falsification_criteria": "Immigration policy reversal floods food service with low-cost labor, destroying automation ROI (labor must stay scarce for robotics economics to work). OR robotics unit costs fail to decline below $50K within 3 years. OR major food safety incident with robotic food prep triggers regulatory backlash and 2+ year permitting delays.",
+      "vcr_evidence": {
+        "tam_estimate": "$6.8B (food robotics by 2030, Grand View Research). Food service robotics specifically: ~$2.5B by 2030. RaaS model serviceable: $1.5B based on 25,000 QSR/fast-casual deployments at $5K/month.",
+        "capture_analysis": "Capital intensive — a startup can realistically deploy to 500-2,000 locations in 5 years. At $4,000/month RaaS per unit: $24-96M ARR. Requires $50-100M+ in venture funding for hardware development and fleet deployment. This is a Series B+ play, not seed-stage.",
+        "unit_economics": "Hardware COGS of $30-60K per unit amortized over 36-month RaaS contract at $3,500-5,000/month = $126-180K lifetime revenue per unit. 55-65% gross margins at scale (including maintenance, remote monitoring). Payback on hardware: 8-14 months. Customer payback: 4-8 months (labor savings).",
+        "velocity_indicators": "Slow deployment (3-6 months per site for kitchen integration) but highly sticky once installed (expected 85%+ renewal rate). Chain deployments create bulk orders (50-500 units per chain decision). Sales cycle: 6-12 months for chain pilots, 18-24 months for national rollout commitment.",
+        "moat_sources": "Hardware IP + proprietary training data from thousands of kitchen environments. Food safety certification creates 12-18 month regulatory moat per category. Kitchen integration partnerships with POS/KDS vendors (Toast, Oracle MICROS) create distribution advantages. Each deployment generates data that improves reliability, creating a flywheel that new entrants cannot replicate without equivalent scale."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-003",
+      "name": "AI Voice Ordering & Drive-Through Intelligence",
+      "architecture": "ai_copilot",
+      "sector_naics": "722513",
+      "sector_name": "Limited-Service Restaurants",
+      "one_liner": "AI-powered voice ordering for drive-throughs, phone orders, and counter service — automating the $285B limited-service restaurant ordering workflow targeting a $3.2B addressable market by 2028",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "macro_source": "Wendy's FreshAI deployment data; McDonald's Apprente acquisition and subsequent partnerships; QCEW NAICS 722513 (4.6M workers); restaurant technology solutions market forecast (360iResearch)",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 9,
+        "CE": 7
+      },
+      "composite": 75.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 6,
+        "VD": 8,
+        "DV": 9,
+        "rationale": "Market Openness is moderate (5): major chains are already deploying (Wendy's FreshAI at 100+ locations, Taco Bell testing, McDonald's previously with IBM/now pivoting) but most are built on third-party AI — creating room for best-of-breed platform providers. The 263,503 limited-service restaurant establishments represent massive volume. Moat Advantage is moderate (6): voice AI for ordering requires food-service-specific training data (menu variations, accent handling, upsell logic, dietary modifications) that creates specialization moat, but foundation model improvements could commoditize base capability. Value Density is high (8): per-location value of $1,000-3,000/month (replacing 0.5-1.0 FTE order-taker + upsell revenue lift of 5-15%). Demand Visibility is proven (9): Wendy's, Taco Bell, Checkers already deploying — this is not speculative, the adoption curve is active."
+      },
+      "deep_dive_evidence": "QCEW data: 722513 (Limited-Service Restaurants) has 263,503 establishments employing 4.606M workers at $434/week ($22,553/year). Average of 17.5 workers per location. Drive-through generates 70-75% of QSR revenue (pre-COVID: 65%). Wendy's FreshAI (built on Google Cloud AI) has deployed to 100+ locations with reported 86% order accuracy and 22-second average order time. McDonald's abandoned its IBM partnership but continues testing AI ordering through other vendors. SoundHound's SYNQ3 processes 300M+ voice orders annually for restaurant chains. ConverseNow (raised $15M Series B) processes voice orders for Pizza Hut, Domino's franchisees. The unit economics are stark: a drive-through order-taker costs $15-18/hr ($31-37K/year with benefits), operates one lane, and has inconsistent upsell performance. AI voice ordering costs $1,500-3,000/month per lane, operates 24/7 with zero breaks, and consistently upsells (reported 5-15% ticket increase). At 263K limited-service locations, assuming 60% have drive-throughs (158K lanes), the addressable market for voice ordering alone is $1.9-4.7B annually. Adding phone ordering (the other 40%) expands to $3.2B. Restaurant analytics solutions growing at 17.8% CAGR (Grand View Research) confirms the trajectory.",
+      "falsification_criteria": "Foundation model voice AI becomes so commoditized that chains build in-house (McDonald's already tried and abandoned — suggesting this is harder than it looks, but Google/Amazon could bundle). OR consumer backlash against AI ordering reaches critical mass (current surveys show 55% of consumers are comfortable with AI ordering). OR labor costs decline due to immigration reform, reducing automation ROI.",
+      "vcr_evidence": {
+        "tam_estimate": "$3.2B (voice ordering for limited-service restaurants including drive-through and phone). Broader restaurant voice AI including full-service: $4.5B by 2028.",
+        "capture_analysis": "Startup can capture 3,000-8,000 locations in 5 years through chain partnerships (one national QSR chain = 5,000+ locations). At $2,000/month per location: $72-192M ARR. SoundHound's existing 300M+ order volume proves the scale is achievable.",
+        "unit_economics": "Pure software/API model: 85-90% gross margins. $2,000/month per location ARPU. Implementation cost of $500-2,000 per site (minimal hardware — microphone + speaker + cloud connection). LTV of $48,000 (assuming 24-month retention). CAC of $3,000-8,000 per location (chain sales require enterprise BD team). LTV:CAC of 6-16x.",
+        "velocity_indicators": "Fast once chain decision is made: 60-90 day deployment per location, 500+ locations per quarter possible for national chains. Phone/counter ordering can be deployed in days (no hardware). Upsell revenue lift creates measurable ROI within 30 days — the fastest payback of any restaurant technology.",
+        "moat_sources": "Menu-specific voice training data (handling 'no pickles extra mayo light ice' across thousands of menu permutations). Integration partnerships with POS systems (Toast, Oracle MICROS, NCR) create distribution moat. Chain-level contracts with 2-3 year terms create revenue predictability. Each location deployment improves the model's accent/dialect handling."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-004",
+      "name": "Restaurant Supply Chain & Procurement Intelligence",
+      "architecture": "supply_chain_optimization",
+      "sector_naics": "7225",
+      "sector_name": "Restaurants and Other Eating Places",
+      "one_liner": "AI-powered food procurement, inventory optimization, and waste reduction platform for multi-unit restaurants, addressing the $162B annual food waste problem in a $9.2B inventory software market by 2030",
+      "forces": ["F1_technology", "F6_energy", "F4_capital"],
+      "macro_source": "GlobeNewsWire restaurant inventory management software forecast ($9.17B by 2030, 15% CAGR); USDA food waste data ($162B annual restaurant food waste); QCEW NAICS 722 sector economics",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 8,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 74.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 7,
+        "VD": 6,
+        "DV": 8,
+        "rationale": "Market Openness is strong (7): Sysco and US Foods (combined ~35% of foodservice distribution) are tech platforms in disguise but their software is distribution-tied — creating room for vendor-neutral procurement intelligence. BlueCart was acquired by US Foods; xtraCHEF was acquired by Toast — confirming category value but removing independents. Moat Advantage is strong (7): price data compounding across thousands of restaurant purchase histories creates unique pricing intelligence that individual operators cannot access. Integration with distributor APIs, POS waste tracking, and menu engineering creates deep embedding. Value Density is moderate (6): $300-800/month ARPU from multi-unit operators; value proposition is 5-15% food cost reduction on 28-35% of restaurant revenue going to COGS. Demand Visibility is proven (8): food cost inflation (+5-8% in 2024-2025) and labor shortages driving urgent need for waste reduction and procurement efficiency."
+      },
+      "deep_dive_evidence": "Restaurant inventory management software market projected to reach $9.17B by 2030 from $3.95B in 2024 (GlobeNewsWire, 15% CAGR). USDA estimates US restaurants waste 30-40% of food purchased, totaling $162B in annual losses. For a restaurant with $1M in revenue and 30% food cost ($300K), reducing waste by 10% saves $30K/year — often the difference between profit and loss at 3-9% net margins. QCEW data: NAICS 722 has $322.7B in total annual wages across 703K establishments, with food costs adding another $300-400B. The supply chain is uniquely fragmented: 1,000+ food distributors, 150,000+ food manufacturers, wildly variable pricing. Sysco ($76B revenue) and US Foods ($37B) together control ~35% but use pricing opacity as a profit tool. AI-powered procurement can aggregate purchasing data across thousands of independent restaurants to identify price discrepancies, predict demand (reducing over-ordering), and optimize menus for food cost (menu engineering). The regulatory tailwind is real: California SB 1383 requires 75% reduction in organic waste by 2025, creating compliance pressure. Food service contractors (722310, growing 11.6% YoY) represent a concentrated buyer segment — Compass Group, Aramark, and Sodexo collectively operate 50,000+ kitchens.",
+      "falsification_criteria": "Sysco/US Foods build superior procurement intelligence tools tied to their distribution and offer them free to capture restaurant lock-in (they have the data advantage). OR food cost deflation removes urgency for procurement optimization. OR independent restaurant adoption stays below 10% due to technology aversion and cash-flow constraints preventing $300-800/month software spend.",
+      "vcr_evidence": {
+        "tam_estimate": "$9.2B (restaurant inventory management/procurement software by 2030). US-specific: ~$3.0B. Waste reduction value-add: $16.2B (10% of $162B food waste addressable by software).",
+        "capture_analysis": "Multi-unit operators (10+ locations) are the beachhead: ~50,000 establishments controlled by buyers who can make centralized procurement decisions. At $500/month per location: capturing 5,000 locations = $30M ARR. Expanding to food service contractors (522K workers at 25K establishments) adds enterprise segment.",
+        "unit_economics": "SaaS model: 75-80% gross margins. $500/month ARPU for multi-unit chains, $200/month for independents. Integration costs of $2,000-5,000 per chain (POS/distributor API connections). LTV: $12,000 (24-month retention at $500/mo). CAC: $2,000-4,000 (inside sales to restaurant groups). LTV:CAC of 3-6x.",
+        "velocity_indicators": "Measurable ROI within 60 days (first month of food cost data reveals savings opportunities). Multi-unit chains can deploy across 10-50 locations in 30 days once the pilot succeeds. Seasonal food cost spikes (summer produce, holiday proteins) create natural urgency windows for sales.",
+        "moat_sources": "Pricing data network effect: each restaurant's purchasing data improves price benchmarking for all users. Once procurement workflows route through the platform, switching costs are high (vendor relationships, historical data, menu engineering tied to the system). Regulatory compliance features (waste tracking, FSMA documentation) add non-discretionary stickiness."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-005",
+      "name": "Hospitality Workforce Intelligence Platform",
+      "architecture": "workflow_automation",
+      "sector_naics": "72",
+      "sector_name": "Accommodation and Food Services",
+      "one_liner": "AI-driven scheduling, labor compliance, and retention platform purpose-built for hospitality's unique shift/tip/seasonal workforce, targeting the $3.1B restaurant scheduling software market by 2035",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "macro_source": "360iResearch restaurant scheduling software forecast ($3.12B by 2035, 7.9% CAGR); QCEW NAICS 72 (14M workers, 781K establishments); NRA workforce surveys; BLS JOLTS hospitality quit rates",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 8,
+        "CE": 8
+      },
+      "composite": 75.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 6,
+        "VD": 5,
+        "DV": 9,
+        "rationale": "Market Openness is moderate (6): 7shifts (raised $100M+ total), Homebase, and When I Work have traction but none has achieved dominant share in a 781K-establishment market. Deputy was acquired by Gusto for $100M — validating the category but showing how workforce management is being absorbed into broader HR platforms. Moat Advantage is moderate (6): scheduling data creates switching costs, but the core product (shift scheduling) risks commoditization — differentiation comes from AI demand prediction, tip pooling compliance, and retention analytics. Value Density is moderate (5): $50-200/month per location ARPU for scheduling alone — must bundle labor compliance, tip management, and hiring to reach $300+/month. Demand Visibility is proven (9): hospitality has the highest quit rate of any sector (5.7% monthly in food services per BLS JOLTS) — workforce management is a survival requirement, not a nice-to-have."
+      },
+      "deep_dive_evidence": "QCEW data: NAICS 72 employs 13.97M private-sector workers across 781K establishments at $551/week ($28,667 annual). The Baumol score of 0.396 (wages 60% below economy average) means workers are among the poorest in the economy — and the most mobile. BLS JOLTS data shows food services consistently has the highest quit rate: approximately 5.7% monthly, meaning a restaurant turns over its entire staff approximately every 17 months. The scheduling software market was valued at $1.46B in 2025 (360iResearch) growing at 7.9% CAGR. But the real opportunity is workforce intelligence — not just scheduling but predictive demand-based staffing (AI analyzes weather, events, holidays, historical patterns to predict covers and staff accordingly), automated compliance (tip credit tracking, predictive scheduling laws in NYC/SF/Chicago/Seattle, break compliance, overtime management), and retention analytics (identifying which employees are at risk of quitting based on schedule satisfaction, hours stability, and peer patterns). The regulatory tailwind is significant: predictive scheduling laws now cover 10M+ workers and are expanding. NAICS 722310 (food service contractors) growing at 11.6% creates a concentrated enterprise buyer segment. The total workforce management value opportunity for hospitality: scheduling ($1.5B), compliance ($800M), hiring/retention ($600M), tip management ($400M) = $3.3B addressable by 2028.",
+      "falsification_criteria": "7shifts achieves 30%+ market penetration and becomes the category default (currently estimated at <5%). OR horizontal HR platforms (Gusto, Rippling, ADP) add hospitality-specific features that eliminate the need for vertical solutions. OR hospitality worker classification shifts (gig/1099) undermining traditional scheduling-based workforce management.",
+      "vcr_evidence": {
+        "tam_estimate": "$3.1B (restaurant scheduling by 2035). Broader hospitality workforce intelligence (scheduling + compliance + retention + tip management): $3.3B by 2028.",
+        "capture_analysis": "Startup can capture 15,000-40,000 locations in 5 years. At $150/month per location: $27-72M ARR. 7shifts has ~40,000 locations after 10 years — the market supports multiple winners given 781K establishments.",
+        "unit_economics": "Pure SaaS: 80-85% gross margins. $100-200/month ARPU for scheduling, $250-400/month bundled (scheduling + compliance + hiring). LTV: $3,600 (24-month retention at $150/mo). CAC: $400-800 (PLG + channel partnerships with POS platforms). LTV:CAC of 4.5-9x.",
+        "velocity_indicators": "Fastest adoption cycle in hospitality tech: scheduling is a weekly pain point with immediate relief. Free trial to paid conversion in 14-30 days. Multi-location chains can deploy in 1-2 weeks. Predictive scheduling law compliance creates urgency-driven sales in regulated cities.",
+        "moat_sources": "Historical scheduling data creates AI prediction accuracy advantage. Compliance rule engine (different laws in 20+ jurisdictions) is complex to build and maintain. Employee app network effects: if workers use the platform across multiple employers (common in hospitality), the platform becomes the worker's career tool. Integration with payroll and POS creates data dependency."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-006",
+      "name": "Hotel Revenue Management AI",
+      "architecture": "predictive_analytics",
+      "sector_naics": "7211",
+      "sector_name": "Traveler Accommodation",
+      "one_liner": "AI-powered dynamic pricing and demand forecasting for independent and boutique hotels, targeting the $2.2B hotel revenue management system market growing at 15% CAGR to $7.9B by 2034",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "macro_source": "Hotel revenue management system market forecasts (multiple sources: $2.19B in 2025 to $7.87B by 2034); QCEW NAICS 7211 (1.78M workers, 67K establishments); STR hotel performance data",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 7,
+        "FA": 6,
+        "EC": 7,
+        "TG": 7,
+        "CE": 8
+      },
+      "composite": 69.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 8,
+        "DV": 8,
+        "rationale": "Market Openness is moderate (5): IDeaS (SAS), Duetto, and Atomize are established RMS vendors for large hotels, and OTAs (Booking.com, Expedia) have built pricing tools. However, independent hotels (67K establishments minus ~20K chain-managed = ~47K independent/boutique properties) are underserved — legacy RMS tools are too complex and expensive ($500-2,000/month). Moat Advantage is strong (7): pricing algorithms trained on property-specific demand patterns compound in accuracy over time — a hotel that has used the system for 2 years gets better recommendations than a new user, creating natural retention. Value Density is high (8): revenue management directly drives topline — a 2-5% RevPAR improvement on a $5M/year hotel is $100-250K, justifying $500-2,000/month fees easily. Demand Visibility is strong (8): hotel operators universally understand revenue management value; the gap is that independent/boutique hotels cannot afford or operate enterprise RMS tools."
+      },
+      "deep_dive_evidence": "QCEW data: NAICS 7211 (Traveler Accommodation) has 67,147 establishments employing 1.784M workers at $806/week ($41,934 annual). Hotel revenue management system market projected from $2.19B (2025) to $7.87B (2034) at 15% CAGR. Cloud-based RMS now 58% of deployments (up from 35% in 2020). The independent hotel segment is the gap: major chains (Marriott, Hilton, IHG) have proprietary or enterprise-grade RMS systems. But ~47K independent properties (70% of establishments) rely on manual pricing or basic rule-based systems. STR data shows RevPAR recovery to $97 in 2025 (US average), with independent hotels averaging 5-15% lower RevPAR than branded properties — a gap that AI revenue management can close. Hotel hospitality management software market projected to reach $10.55B by 2030 (GlobeNewsWire), with AI-driven personalization as the fastest-growing segment. The LLM revolution enables a new generation of RMS: instead of requiring revenue managers to interpret dashboards, AI can explain pricing decisions in natural language, recommend specific actions, and auto-execute rate changes across OTA channels. This democratizes revenue management for properties without dedicated revenue managers.",
+      "falsification_criteria": "OTAs (Booking.com, Expedia) build and offer free/bundled revenue management tools to properties that list on their platforms, effectively commoditizing RMS as a distribution cost. OR major PMS platforms (Cloudbeds, Mews) integrate RMS natively and offer it as a bundled feature, eliminating standalone RMS demand. OR hotel industry consolidation reduces independent properties below 40K, shrinking the addressable market.",
+      "vcr_evidence": {
+        "tam_estimate": "$2.2B (hotel RMS in 2025, growing to $7.9B by 2034). Independent/boutique hotel segment: ~$700M by 2028.",
+        "capture_analysis": "Startup targets 2,000-5,000 independent hotels in 5 years. At $800/month average: $19-48M ARR. Category leaders (IDeaS, Duetto) focus upmarket — the mid-market and boutique segment is wide open.",
+        "unit_economics": "Pure software: 85-90% gross margins. $500-1,500/month ARPU depending on property size. Implementation cost of $1,000-3,000 per property (PMS integration, historical data import). LTV: $24,000 (30+ month retention at $800/mo — revenue management systems are extremely sticky). CAC: $3,000-6,000 (hotel industry conferences, PMS partner channels). LTV:CAC of 4-8x.",
+        "velocity_indicators": "30-60 day proof of value: AI can demonstrate pricing recommendations against actual rates within first month. Revenue lift is directly measurable on monthly P&L. Hotel industry conferences (HITEC, ALIS) provide concentrated buyer access. PMS partnership channels (Cloudbeds has 20,000+ properties, Mews has 5,000+) provide distribution leverage.",
+        "moat_sources": "Property-specific demand model that improves with historical data creates switching cost (losing 2 years of trained models is painful). Multi-property portfolio optimization (pricing one property relative to competitor properties nearby) creates network-level intelligence. OTA channel management integration (auto-pushing rates to Booking/Expedia/Airbnb) creates workflow dependency."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-007",
+      "name": "Direct Restaurant Ordering & Delivery Infrastructure",
+      "architecture": "platform",
+      "sector_naics": "722511",
+      "sector_name": "Full-Service Restaurants",
+      "one_liner": "White-label ordering, delivery logistics, and customer retention platform enabling restaurants to bypass 15-30% delivery platform commissions, targeting the $505B online food delivery market by 2030",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "macro_source": "Grand View Research online food delivery market ($505.5B by 2030, 9.4% CAGR); DoorDash/Uber Eats commission structure analysis; QCEW NAICS 722511 and 722513 combined 10M workers",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 6,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 66.5,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 5,
+        "VD": 6,
+        "DV": 8,
+        "rationale": "Market Openness is moderate (5): Olo ($225M revenue) provides ordering infrastructure to major chains (Wingstop, Shake Shack, Five Guys) but focuses on enterprise. ChowNow, BentoBox (acquired by Fiserv), and Owner.com serve smaller restaurants. DoorDash/Uber Eats have massive consumer demand aggregation that is hard to displace. Moat Advantage is moderate (5): white-label ordering platforms face commoditization risk — Shopify-for-restaurants is a crowded positioning. Differentiation comes from delivery logistics (pooling drivers across restaurants in a geography) and customer data ownership. Value Density is moderate (6): $200-500/month SaaS plus 3-5% transaction fee on orders — lower than DoorDash's 15-30% but meaningful at scale. Demand Visibility is proven (8): restaurants actively hate paying 15-30% commissions — every restaurant owner knows this problem and wants alternatives."
+      },
+      "deep_dive_evidence": "Grand View Research projects the global online food delivery market at $505.5B by 2030 (9.4% CAGR from $288.84B in 2024). In the US, the market is ~$100B and growing at 9.6% CAGR. DoorDash holds ~60% US delivery share, Uber Eats ~25%. Their commission structure: 15-30% per order for marketplace listings, 6-15% for delivery-only. On a $30 average order, DoorDash captures $4.50-9.00 in commission — often exceeding the restaurant's profit margin. QCEW data: 262,155 full-service restaurants and 263,503 limited-service restaurants. An estimated 35-45% participate in third-party delivery, meaning 180,000-235,000 establishments are paying delivery platform commissions. If average commission is $500-1,500/month per restaurant, the total commission pool is $1.1-4.2B annually — this is the value that direct ordering platforms can redistribute. Olo processes $26B+ in annual orders for 700+ brands, proving the infrastructure play works at scale. The direct ordering thesis: restaurants capture customer data (email, order history, preferences) that DoorDash currently owns, enabling retention marketing that platforms explicitly prevent. A restaurant saving 10-20% in commission costs on 30% of its delivery orders saves $6,000-24,000/year — enough to justify $200-500/month in software fees.",
+      "falsification_criteria": "DoorDash/Uber Eats lower commission rates below 10% to retain restaurant supply (they have margin room from $8.6B/$11B revenues). OR consumer behavior proves too locked into aggregator apps — direct ordering fails to capture meaningful share because consumers prefer single-app convenience. OR delivery driver logistics prove too complex for white-label platforms to operate cost-effectively outside of dense urban areas.",
+      "vcr_evidence": {
+        "tam_estimate": "$505B global online food delivery by 2030. US market: ~$100B. Direct ordering infrastructure TAM: $4-6B (SaaS + transaction fees on redirected delivery volume).",
+        "capture_analysis": "Startup can sign 5,000-15,000 restaurants in 5 years. At $300/month SaaS + 3% transaction fee on $5,000/month order volume = $450/month effective ARPU. Total: $27-81M ARR. Owner.com reportedly reaching $50M+ ARR, validating the trajectory.",
+        "unit_economics": "Blended model: SaaS (80% margin) + transaction fees (50-60% margin after payment processing) + delivery logistics (15-25% margin if operating own driver network). Blended gross margin: 55-70%. LTV: $7,200 (16-month retention at $450/mo — higher churn than enterprise but lower than scheduling tools). CAC: $1,000-2,500 (digital marketing + restaurant industry events). LTV:CAC of 2.9-7.2x.",
+        "velocity_indicators": "Immediate measurable value: restaurant sees first direct order within 48 hours of setup. Commission savings are visible on first monthly statement. Multi-location chains can deploy in 1-2 weeks. Seasonal peaks (holidays, game days) demonstrate delivery volume capture.",
+        "moat_sources": "Customer data ownership: once restaurant has 5,000+ customer records with order history, switching back to DoorDash means losing that asset. Delivery driver network in a geography creates logistics moat (expensive to build, hard to replicate). Integration with POS, kitchen, and loyalty systems creates operational dependency."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-008",
+      "name": "Cloud-Native Hotel Property Management System",
+      "architecture": "vertical_saas",
+      "sector_naics": "721110",
+      "sector_name": "Hotels and Motels (except Casino Hotels)",
+      "one_liner": "AI-embedded cloud PMS replacing legacy Oracle MICROS and on-premise systems for independent and boutique hotels, targeting the $14.7B hotel property management software market by 2030",
+      "forces": ["F1_technology", "F4_capital", "F2_demographics"],
+      "macro_source": "Grand View Research hotel PMS market forecast ($14.71B by 2030, 10.84% CAGR); QCEW NAICS 721110 (1.51M workers, 61K establishments); Mews Series D ($110M), Cloudbeds ($150M) funding rounds",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 8,
+        "FA": 7,
+        "EC": 7,
+        "TG": 7,
+        "CE": 6
+      },
+      "composite": 71.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 5,
+        "MA": 7,
+        "VD": 7,
+        "DV": 8,
+        "rationale": "Market Openness is moderate (5): Oracle Hospitality (legacy MICROS) still dominates large/chain properties but is losing share to cloud challengers. Mews, Cloudbeds, and Guesty have raised $400M+ combined and are growing rapidly. However, 61K hotel/motel establishments means the market supports multiple winners — no single cloud PMS has >10% share of independents yet. Moat Advantage is strong (7): PMS is the operational nervous system of a hotel — managing reservations, check-in/out, housekeeping, billing, channel management. Once embedded, switching is extremely painful (3-6 month migration, staff retraining, reservation data risk). Value Density is strong (7): $300-1,500/month per property depending on room count — hotels are higher-ARPU customers than restaurants. Demand Visibility is strong (8): cloud PMS adoption is at ~61% and accelerating — the remaining 39% on legacy systems represent forced migration demand."
+      },
+      "deep_dive_evidence": "Hotel PMS market growing from $7.91B (2024) to $14.71B by 2030 at 10.84% CAGR. Cloud segment holds 61.2% market share and growing. QCEW: 721110 (Hotels and Motels) has 61,273 establishments employing 1.515M workers at $784/week ($40,778 annual), with 6.7% employment growth YoY — the strongest recovery signal in accommodation. Oracle MICROS has been the hotel technology standard for 30+ years but its on-premise architecture is increasingly uncompetitive against cloud-native systems. Mews raised a $110M Series D (2024) at a reported $1.2B valuation; Cloudbeds raised $150M (2023); Guesty raised $170M for vacation rental PMS. The AI opportunity in PMS: automated guest communication (pre-arrival upsells, chatbot concierge, review response generation), predictive housekeeping scheduling, intelligent room assignment (maximizing loyalty member preferences), and integrated revenue management. Hilton's 'Connected Room' initiative and Marriott's AI concierge show chain demand for intelligent property systems. For independent properties, the cloud PMS becomes the platform through which all other hotel tech integrates — channel management, revenue management, guest experience, payment processing. The platform play is real: Mews has an open API marketplace with 600+ integrations.",
+      "falsification_criteria": "Oracle Hospitality successfully modernizes to cloud and retains dominant share through existing distribution and switching cost lock-in. OR Airbnb launches a hotel PMS product (they have Airbnb for Work and are expanding into traditional accommodation). OR hotel industry consolidation accelerates to the point where independent properties fall below 35K, limiting the addressable market for non-chain PMS.",
+      "vcr_evidence": {
+        "tam_estimate": "$14.7B (hotel PMS by 2030). Independent hotel segment: ~$5B. Cloud-native PMS specifically: ~$9B by 2030 (61%+ of total and growing).",
+        "capture_analysis": "Late-stage opportunity: Mews, Cloudbeds already have traction. A new entrant needs a differentiated wedge — AI-native architecture with LLM-powered guest services and automated operations. Target 1,000-3,000 properties in 5 years at $700/month average: $8.4-25.2M ARR.",
+        "unit_economics": "SaaS model: 75-80% gross margins. $500-1,500/month ARPU (higher than restaurants due to room revenue scale). Implementation: $5,000-15,000 per property (data migration, staff training, PMS is complex). LTV: $25,200 (36-month retention at $700/mo — PMS has the longest retention of any hospitality vertical). CAC: $5,000-12,000 (enterprise sales, hotel industry conferences, PMS migration services). LTV:CAC of 2.1-5x.",
+        "velocity_indicators": "Slower sales cycle: 3-6 months for hotel PMS decision (property evaluates, negotiates, plans migration). Implementation: 30-60 days. But extremely sticky once deployed — 36+ month average retention. Hotel industry conferences (HITEC, NYU International Hospitality Industry Investment Conference) are concentrated buyer events.",
+        "moat_sources": "Data depth: PMS captures every guest interaction, payment, housekeeping event, maintenance request — this operational data is irreplaceable and creates massive switching costs. Open API ecosystem (Mews model with 600+ integrations) creates platform lock-in. Guest profile data compounds across stays — the longer a hotel uses the PMS, the richer the guest intelligence."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-009",
+      "name": "Food Safety & Compliance Automation",
+      "architecture": "compliance_automation",
+      "sector_naics": "722",
+      "sector_name": "Food Services and Drinking Places",
+      "one_liner": "IoT sensor-based food safety monitoring and automated compliance documentation for restaurants and food service operations, targeting the $19.8B food safety compliance technology market by 2030",
+      "forces": ["F1_technology", "F3_geopolitics", "F6_energy"],
+      "macro_source": "Fact.MR food safety compliance technologies forecast ($19.8B by 2030); FDA FSMA regulations; QCEW NAICS 722 (12.1M workers, 703K establishments)",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 8,
+        "FA": 6,
+        "EC": 9,
+        "TG": 7,
+        "CE": 7
+      },
+      "composite": 74.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 6,
+        "VD": 5,
+        "DV": 8,
+        "rationale": "Market Openness is strong (7): ComplianceMate (acquired by Emerson), Testo, and Therma (Google-backed) serve portions of the market but no dominant player exists for the full-service compliance stack (temperature monitoring + HACCP documentation + health inspection prep + employee training tracking). 703K food service establishments with only ~15% using automated monitoring = massive greenfield. Moat Advantage is moderate (6): IoT sensor hardware is increasingly commoditized, but the compliance rule engine (different regulations in 50 states + 3,000+ county health departments) and automated documentation create stickiness. Value Density is moderate (5): $100-300/month per location — low ARPU but mandatory spend once regulators enforce. Demand Visibility is proven (8): FDA FSMA enforcement tightening, health department inspection technology modernization, and brand liability concerns (a single foodborne illness outbreak can cost $75K-2M+ per incident) create non-discretionary demand."
+      },
+      "deep_dive_evidence": "Food safety compliance technologies market projected from $12.2B (2025) to $19.8B by 2030 (Fact.MR, 10.4% CAGR). Blockchain and traceability technologies expected to lead with 35% share. The regulatory tailwind is powerful: FDA FSMA (Food Safety Modernization Act) requires preventive controls and supply chain documentation for food service operations. The CDC estimates 48M foodborne illnesses annually in the US, resulting in 128,000 hospitalizations and 3,000 deaths — creating persistent regulatory pressure. For restaurants specifically: HACCP (Hazard Analysis Critical Control Points) compliance requires temperature logging, food handling documentation, and cleaning verification — traditionally done on paper clipboards. IoT sensors can automate temperature monitoring 24/7 (walk-in coolers, freezers, prep stations, serving lines), alerting managers before food spoilage occurs. ComplianceMate (acquired by Emerson for undisclosed) monitors 250,000+ sensors in food service. Therma (backed by Google's Area 120) raised $12.5M for refrigeration monitoring. The per-location economics: a single spoilage incident costs $2,000-10,000 in wasted food; a health department violation costs $500-5,000 in fines plus potential closure. Automated monitoring at $150-300/month prevents both. QCEW data shows food service contractors (722310, $37,468 avg pay) growing 11.6% — these institutional food operations (hospitals, schools, corporate) have the strictest compliance requirements and are the most receptive enterprise buyers.",
+      "falsification_criteria": "Health department inspections remain paper-based and infrequent (no technology mandate), keeping compliance optional. OR commodity IoT sensors from Amazon/Google become so cheap and easy that restaurants self-deploy without needing a compliance platform. OR restaurant failure rate increases to the point where food safety investment is deprioritized relative to survival.",
+      "vcr_evidence": {
+        "tam_estimate": "$19.8B (food safety compliance technologies by 2030). Restaurant/food service specific: ~$5B. IoT monitoring + automated documentation specifically: ~$2B.",
+        "capture_analysis": "Target food service contractors (25K establishments) and multi-unit restaurant chains first. Startup can deploy to 10,000-30,000 locations in 5 years. At $200/month per location: $24-72M ARR.",
+        "unit_economics": "Hardware + SaaS model: 60-70% gross margins (IoT sensors at $200-500 per location, amortized into subscription). $150-300/month per location ARPU. LTV: $4,800 (24-month retention at $200/mo). CAC: $800-1,500 (institutional food service has concentrated buyer base). LTV:CAC of 3.2-6x.",
+        "velocity_indicators": "Installation in 1-2 hours per location (plug-and-play sensors). Value demonstrated on first temperature alert (typically within 48 hours — walk-in cooler malfunctions are surprisingly common). Health inspection improvement measurable within 90 days. Regulatory events (local health code changes, FSMA updates) create urgency spikes.",
+        "moat_sources": "Compliance rule engine covering 3,000+ jurisdictions is complex to replicate. Sensor data history creates audit trail that operators cannot risk losing (switching means losing compliance documentation). Integration with food distributors for automated recall management adds critical safety functionality. Brand trust in food safety is non-negotiable — operators don't switch food safety vendors casually."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-010",
+      "name": "Ghost Kitchen & Virtual Brand Operating Platform",
+      "architecture": "platform",
+      "sector_naics": "722330",
+      "sector_name": "Mobile Food Services / Virtual Restaurants",
+      "one_liner": "End-to-end platform for launching and operating virtual restaurant brands from existing kitchens, targeting the $147B global ghost kitchen market by 2030",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "macro_source": "Virtue Market Research ghost kitchen forecast ($147.3B by 2030, 13.3% CAGR); QCEW NAICS 722330 (40K workers, 10.9K establishments, 14.4% establishment growth); Coherent Market Insights US ghost kitchen market",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 6,
+        "FA": 6,
+        "EC": 5,
+        "TG": 6,
+        "CE": 6
+      },
+      "composite": 58.0,
+      "category": "CONDITIONAL",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 4,
+        "VD": 5,
+        "DV": 5,
+        "rationale": "Market Openness is moderate (6): CloudKitchens (Travis Kalanick), Kitchen United (acquired by RBD), Reef Technology all raised hundreds of millions but have scaled back or pivoted — the pure ghost kitchen real estate model showed cracks. The opportunity is in the SOFTWARE layer — enabling existing restaurants to operate virtual brands from their current kitchens without capital investment in new facilities. Moat Advantage is weak (4): virtual brand creation is increasingly commoditized — NextBite, Virtual Dining Concepts (MrBeast Burger), and Uber Eats' own virtual brand program all compete. Differentiation requires proprietary demand data, menu optimization AI, and multi-brand kitchen orchestration that is hard to sustain. Value Density is moderate (5): revenue share (5-15% of virtual brand revenue) or $300-800/month SaaS. Demand Visibility is mixed (5): ghost kitchen hype has cooled significantly from 2021 peak — CloudKitchens, Kitchen United, and others have retrenched. But QCEW shows 722330 (Mobile Food Services) growing establishments at 14.4% YoY, confirming the underlying format growth."
+      },
+      "deep_dive_evidence": "Ghost kitchen market valued at $78.45B (2025) growing to $147.3B by 2030 at 13.3% CAGR (Virtue Market Research). North America represents 31.7% of market. However, the 2022-2024 reality check was brutal: Kitchen United closed, Reef Technology pivoted to parking management, CloudKitchens has been opaque about performance. The THESIS SHIFT is from 'build new kitchen facilities' to 'enable existing restaurants to add virtual brands.' QCEW data confirms the underlying trend: NAICS 722330 (Mobile Food Services) grew establishments by 14.4% YoY (9,546 to 10,918) and employment by 11.2% — the fastest-growing food service format. Average of 3.7 workers per establishment means these are micro-operations optimized for delivery. The surviving model is software-first: a platform that helps a full-service Italian restaurant also operate as 'Wings Factory' and 'Taco House' from the same kitchen during off-peak hours, managing separate menus, packaging, delivery logistics, and customer reviews. NextBite claims 1,000+ restaurant partners generating incremental revenue of $3,000-8,000/month per virtual brand. The economics work when there is no incremental real estate cost — the restaurant's existing kitchen has spare capacity during off-peak hours (typically 2-5pm and after 9pm). Average restaurant kitchen utilization is 40-60% — the virtual brand fills dead time.",
+      "falsification_criteria": "Delivery platform economics make virtual brands unprofitable after commissions (if DoorDash/Uber Eats take 25% and the virtual brand has 30% food cost + 15% labor, there is nothing left). OR consumer confusion/review dilution from virtual brands creates backlash (fake brand fatigue). OR health department regulations restrict the number of brands that can operate from a single kitchen license.",
+      "vcr_evidence": {
+        "tam_estimate": "$147B global ghost kitchen by 2030. US market: ~$46B. Virtual brand software platform: ~$2-4B (software layer on top of kitchen operations).",
+        "capture_analysis": "Startup can partner with 3,000-8,000 restaurants in 5 years for virtual brand operations. At $500/month SaaS + 8% revenue share on $5,000/month virtual brand revenue = $900/month effective ARPU. Total: $32-86M ARR.",
+        "unit_economics": "Software + revenue share model: 70-75% gross margins on SaaS, 40-50% on operations support. Blended: 55-65%. Implementation cost: $500-1,000 per restaurant (menu setup, delivery platform integration, packaging design). LTV: $10,800 (12-month retention at $900/mo — virtual brands have high churn if they don't perform). CAC: $2,000-4,000 (outbound sales to restaurant owners). LTV:CAC of 2.7-5.4x.",
+        "velocity_indicators": "Virtual brand can launch in 7-14 days from existing kitchen. First delivery orders within 24 hours of listing. Revenue is measurable immediately. But quality control and review management take 60-90 days to stabilize.",
+        "moat_sources": "Menu optimization data: understanding which virtual brand concepts perform in which geographies/demographics. Delivery platform relationships and SEO knowledge (getting virtual brands ranked on DoorDash/Uber Eats). Multi-brand kitchen orchestration software (managing 3-5 brands from one kitchen with different prep stations, packaging, and timing). Brand portfolio IP (owning the brand names and recipes)."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-011",
+      "name": "Hospitality Guest Experience AI",
+      "architecture": "ai_copilot",
+      "sector_naics": "721110",
+      "sector_name": "Hotels and Motels (except Casino Hotels)",
+      "one_liner": "AI-powered guest communication, concierge, and personalization platform for hotels — automating pre-arrival, in-stay, and post-stay touchpoints in the $74.9B smart hospitality market by 2029",
+      "forces": ["F1_technology", "F2_demographics", "F5_psychology"],
+      "macro_source": "Business Research Company smart hospitality market ($74.86B by 2029, 26.1% CAGR); Grand View Research AI in tourism ($13.87B by 2030); QCEW NAICS 721110 (1.51M workers)",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 7,
+        "FA": 7,
+        "EC": 6,
+        "TG": 8,
+        "CE": 8
+      },
+      "composite": 71.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 6,
+        "MA": 5,
+        "VD": 7,
+        "DV": 7,
+        "rationale": "Market Openness is moderate (6): Canary Technologies (raised $50M+), Alice (now Actabl), and Revinate serve portions of guest experience but no single platform covers the full guest journey. Major chains (Marriott, Hilton) build in-house but their solutions are proprietary. Moat Advantage is moderate (5): LLM-powered guest communication risks commoditization as foundation models improve — differentiation comes from hospitality-specific training data, PMS integration depth, and multi-language capabilities. Value Density is strong (7): $200-800/month per property, with upsell revenue (spa, room upgrades, late checkout) creating performance-based pricing opportunity. Demand Visibility is strong (7): 78% of hotel guests expect personalized communication (per Oracle Hospitality survey); hotels that personalize see 6-10% higher guest satisfaction and 15-20% higher upsell conversion."
+      },
+      "deep_dive_evidence": "Smart hospitality market projected from $23.2B (2024) to $74.86B by 2029 at 26.1% CAGR (Business Research Company). AI in tourism projected to $13.87B by 2030 at 26.7% CAGR (Grand View Research). The guest experience AI opportunity spans the full journey: (1) Pre-arrival: automated confirmation, upsell offers (room upgrades, dining reservations, spa bookings), preference collection. (2) In-stay: AI concierge (via text/WhatsApp/in-room tablet), automated service requests (housekeeping, maintenance, amenities), real-time sentiment detection. (3) Post-stay: automated review solicitation, personalized loyalty offers, re-booking prompts. Canary Technologies processes $10B+ in guest payments and serves 20,000+ hotels — proving the tech layer works. Hotels report that AI-powered upselling generates $5-15 per room-night in incremental revenue. On a 100-room hotel at 70% occupancy (25,550 room-nights/year), that is $127,750-383,250 in annual incremental revenue — dwarfing any $200-800/month software cost. QCEW: 721110 has 61,273 establishments. Average hotel has 24.7 workers, suggesting an average of ~80-100 rooms. The labor impact: front desk staff at hotels spend 60-70% of time on routine inquiries that AI can handle. A 100-room hotel can reduce front desk from 5 FTEs to 3 FTEs while improving guest satisfaction through 24/7 AI availability.",
+      "falsification_criteria": "Major chain loyalty apps (Marriott Bonvoy, Hilton Honors) extend AI guest services to franchisees for free as a brand standard, eliminating independent demand. OR guest backlash against AI communication reaches tipping point (prefer human interaction for hospitality). OR PMS platforms (Mews, Cloudbeds) build native guest communication that is 'good enough,' eliminating standalone demand.",
+      "vcr_evidence": {
+        "tam_estimate": "$74.9B smart hospitality by 2029. Guest experience AI specifically: ~$3-5B. Hotel guest communication/upsell platform: ~$1.5B by 2028.",
+        "capture_analysis": "Startup can serve 3,000-8,000 hotels in 5 years. At $500/month SaaS + performance fee averaging $200/month (upsell revenue share) = $700/month effective ARPU. Total: $25-67M ARR.",
+        "unit_economics": "Pure software: 80-85% gross margins. $500-800/month ARPU (SaaS + performance). LTV: $21,000 (30-month retention at $700/mo). CAC: $3,000-6,000 (hotel industry channels, PMS partner referrals). LTV:CAC of 3.5-7x.",
+        "velocity_indicators": "Setup in 1-2 days (API connection to PMS, guest database import). First upsell revenue generated within first week. Guest satisfaction improvement measurable within 30 days. Multi-property hotel groups can deploy across portfolio in 2-4 weeks.",
+        "moat_sources": "Guest profile data compounding: the more stays processed, the better the personalization engine becomes for each guest. Multi-language AI (hospitality has high international guest mix) requires specialized training. PMS integration depth creates switching costs. Upsell optimization model improves with data — knowing that Tuesday business travelers accept room upgrades at 3x the rate of Saturday leisure guests."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-012",
+      "name": "Restaurant AI Financial Intelligence",
+      "architecture": "embedded_fintech",
+      "sector_naics": "7225",
+      "sector_name": "Restaurants and Other Eating Places",
+      "one_liner": "AI-powered financial management combining real-time P&L, cash flow prediction, and embedded lending for restaurants operating on 3-9% margins, targeting a $2.8B opportunity within the $14.7B restaurant management software market",
+      "forces": ["F1_technology", "F4_capital", "F5_psychology"],
+      "macro_source": "Grand View Research restaurant management software ($14.7B by 2030); QCEW NAICS 7225 ($285.9B total annual wages, 611K establishments); Federal Reserve small business lending data; NRA financial surveys",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 7,
+        "FA": 6,
+        "EC": 6,
+        "TG": 7,
+        "CE": 8
+      },
+      "composite": 67.0,
+      "category": "FORCE_RIDER",
+      "competitive_landscape_assessment": {
+        "MO": 7,
+        "MA": 7,
+        "VD": 6,
+        "DV": 7,
+        "rationale": "Market Openness is strong (7): restaurant financial management is shockingly primitive — most independent restaurants use paper records or basic QuickBooks with no restaurant-specific intelligence. Toast Capital (merchant cash advances) and Square Loans provide embedded lending but not financial intelligence. xtraCHEF (acquired by Toast) focused on invoice management, not full P&L. The gap between what restaurants need (real-time margin tracking by menu item, cash flow forecasting, tax optimization) and what they have (a shoebox of receipts) is enormous. Moat Advantage is strong (7): once a platform has access to a restaurant's POS data, bank accounts, vendor invoices, and payroll, the switching cost is massive — the system becomes the restaurant's financial nervous system. Embedded lending creates additional revenue stream and lock-in. Value Density is moderate (6): $200-500/month for financial intelligence + lending revenue (2-5% of loan value). Demand Visibility is strong (7): 60% of restaurant failures cite poor financial management — this is a survival tool, not a nice-to-have."
+      },
+      "deep_dive_evidence": "QCEW data: NAICS 7225 (Restaurants and Other Eating Places) has 610,970 establishments with $285.9B in total annual wages. Restaurant net margins of 3-9% mean the difference between profit and failure is often $20-50K/year — exactly the range that better financial intelligence can impact. The Federal Reserve's Small Business Credit Survey shows 64% of restaurants that applied for financing in 2024 received less than they requested. Toast Capital has originated $2B+ in merchant cash advances — proving embedded lending demand. The AI financial intelligence thesis: by connecting POS transaction data, bank account feeds, vendor invoices (via photo capture/OCR), and payroll systems, an AI can produce real-time daily P&L (most restaurants only see monthly financials from their accountant), predict cash flow 30-60 days forward (critical for a business with irregular revenue and weekly payroll), identify menu items with negative contribution margin, and pre-qualify for embedded lending based on actual financial performance rather than credit scores. Restaurant-specific financial challenges that general tools miss: tip reporting and tax obligations, COGS tracking against menu pricing, seasonal cash flow patterns (summer vs winter, holiday peaks), and multiple revenue channels (dine-in, takeout, delivery, catering) that need separate margin analysis. The 2023 QCEW data shows average restaurant pay of $26,097 ($502/week) with total sector wages of $285.9B — the payroll processing and compliance layer alone is a $1B+ market.",
+      "falsification_criteria": "Toast expands financial intelligence features to match this value proposition (they have the POS data advantage). OR QuickBooks/Xero build restaurant-specific modules that are 'good enough.' OR restaurant owners prove too financially unsophisticated to use AI financial tools even when available (the problem is behavior, not technology).",
+      "vcr_evidence": {
+        "tam_estimate": "$2.8B (restaurant financial intelligence within the $14.7B restaurant management software market). Embedded lending opportunity adds $1-2B (based on lending volume and fee income).",
+        "capture_analysis": "Startup can serve 8,000-20,000 restaurants in 5 years. At $300/month SaaS + $100/month average embedded lending revenue = $400/month effective ARPU. Total: $38-96M ARR.",
+        "unit_economics": "SaaS layer: 80% gross margins. Embedded lending: 30-50% gross margins (after credit losses). Blended: 60-70%. $400/month effective ARPU. LTV: $7,200 (18-month retention at $400/mo). CAC: $600-1,200 (PLG possible — free P&L tool as lead gen for premium features and lending). LTV:CAC of 6-12x.",
+        "velocity_indicators": "POS data connection provides instant P&L visibility — value demonstrated on day 1. Cash flow prediction requires 30-60 days of data. Lending pre-qualification creates immediate monetization path for capital-constrained restaurants. Tax season (Q1, Q4) creates urgency spikes for financial management tools.",
+        "moat_sources": "Financial data access is the ultimate switching cost — a restaurant cannot easily disconnect its bank feed, POS integration, and vendor invoice history. Credit underwriting model improves with data — more restaurant financial histories = better lending decisions = lower default rates = better loan terms = more restaurants attracted. Multi-location restaurant groups create enterprise accounts with even deeper data access."
+      }
+    },
+    {
+      "id": "MC-V312-ACC-013",
+      "name": "Catering & Event Operations Intelligence",
+      "architecture": "workflow_automation",
+      "sector_naics": "722320",
+      "sector_name": "Caterers",
+      "one_liner": "AI-powered end-to-end catering operations platform covering proposals, menu costing, logistics, and event execution for the $2.8B catering software market growing at 12.3% CAGR to 2033",
+      "forces": ["F1_technology", "F2_demographics", "F4_capital"],
+      "macro_source": "Straits Research catering software market ($2.84B by 2033, 12.3% CAGR); QCEW NAICS 722320 (163.8K workers, 13.6K establishments); event industry recovery data",
+      "source_batch": "v3-12_accommodation_food",
+      "scores": {
+        "SN": 6,
+        "FA": 5,
+        "EC": 6,
+        "TG": 6,
+        "CE": 8
+      },
+      "composite": 60.5,
+      "category": "CONDITIONAL",
+      "competitive_landscape_assessment": {
+        "MO": 8,
+        "MA": 5,
+        "VD": 6,
+        "DV": 6,
+        "rationale": "Market Openness is very strong (8): catering is one of the most technology-underserved segments in food services. CaterTrax (acquired by Compass Group), CaterZen, and Total Party Planner serve small portions of the market but no dominant platform exists. Most caterers manage operations via spreadsheets, paper, and phone calls. 13,639 establishments with <5% technology penetration = wide open. Moat Advantage is moderate (5): catering workflow software is not deeply technical — the moat comes from operational data (event costing, margin analysis, logistics patterns) that accumulates over time. Value Density is moderate (6): $200-600/month ARPU from caterers who are willing to pay for tools that improve proposal-to-close rates and event profitability. Demand Visibility is moderate (6): post-COVID event recovery is strong (QCEW shows 5.8% employment growth in catering) but the market is small — 13.6K establishments is a niche."
+      },
+      "deep_dive_evidence": "QCEW data: NAICS 722320 (Caterers) has 13,639 establishments employing 163,779 workers at $635/week ($33,008/year). Employment growth of 5.8% YoY and establishment growth of 3.7% show strong recovery. Global catering software market projected to $2.84B by 2033 from $1.12B in 2025 at 12.3% CAGR (Straits Research). Catering operations are uniquely complex: each event is a custom project requiring proposal generation (menu selection, dietary accommodations, staffing plan, equipment rental), precise costing (food cost per head, labor hours, transportation, rental fees), logistics coordination (kitchen prep timing, transport, on-site setup, service, breakdown), and post-event settlement (final headcount adjustments, gratuity, feedback). AI can transform each step: LLM-generated proposals based on event parameters and past successes, computer vision-assisted inventory counting for prep planning, route optimization for multi-event delivery days, and automated post-event financial reconciliation. The food service contractor segment (NAICS 722310, 25,206 establishments, growing 11.6% YoY, $37,468 avg pay) represents the enterprise crossover — Compass Group, Aramark, and Sodexo all operate catering divisions alongside institutional food service. Total US catering industry revenue estimated at $70B+ (including corporate catering, wedding, and event catering).",
+      "falsification_criteria": "Catering market remains too fragmented for scalable SaaS (13.6K establishments limits TAM ceiling). OR all-in-one restaurant management platforms (Toast, Square) add catering modules that are 'good enough.' OR economic downturn significantly reduces corporate and social event spending, shrinking the catering industry.",
+      "vcr_evidence": {
+        "tam_estimate": "$2.8B (catering software by 2033). US-specific: ~$900M. Including food service contractor crossover: $1.5B.",
+        "capture_analysis": "Startup can serve 1,000-3,000 caterers in 5 years. At $400/month ARPU: $4.8-14.4M ARR. Niche market — better suited as a feature of broader food service platform or acquisition target for Toast/Square.",
+        "unit_economics": "Pure SaaS: 80-85% gross margins. $300-600/month ARPU. LTV: $7,200 (24-month retention at $300/mo). CAC: $1,000-2,000 (catering industry associations, trade shows, referral programs). LTV:CAC of 3.6-7.2x.",
+        "velocity_indicators": "Moderate adoption cycle: caterers evaluate during off-peak season (Q1, Q3). Setup takes 1-2 weeks (menu library creation, staff roster import). First proposal generated within 24 hours of setup. Value proven on first event where the platform's costing saved money or improved execution.",
+        "moat_sources": "Event history data: caterers build their business on past event templates and client relationships — once stored in the platform, switching means losing that institutional knowledge. Menu costing database with real ingredient pricing creates operational dependency. Client relationship management for repeat corporate customers creates CRM-level stickiness."
+      }
+    }
+  ],
+  "synthesis": {
+    "total_model_cards": 13,
+    "structural_winners": 1,
+    "force_riders": 10,
+    "conditional": 2,
+    "niche": 0,
+    "coverage_assessment": "This deep dive produces 13 model cards covering the full Accommodation & Food Services sector (NAICS 72), up from 2 existing models — a 6.5x expansion that closes the most critical coverage gap in the engine. The cards span: restaurant operations (MC-001 operating system, MC-012 financial intelligence), food automation (MC-002 robotics, MC-003 voice ordering), supply chain (MC-004 procurement), workforce (MC-005 scheduling), hotel technology (MC-006 revenue management, MC-008 PMS, MC-011 guest AI), delivery infrastructure (MC-007), food safety (MC-009), virtual brands (MC-010), and catering (MC-013).",
+    "key_structural_findings": [
+      "NAICS 72 is the lowest-Baumol sector in the economy (0.396 wage ratio) — wages 60% below average. This means automation ROI is driven by LABOR SCARCITY not WAGE ARBITRAGE. The economics only work because workers are leaving faster than wages are rising.",
+      "The sector's extreme fragmentation (781K establishments, 17.9 avg workers) is both the opportunity and the constraint: massive addressable market but extremely high customer acquisition and retention costs. Every model card accounts for this by targeting multi-unit operators or chain decisions as the primary GTM motion.",
+      "Post-COVID acceleration created a permanent technology adoption shift: contactless ordering, delivery infrastructure, and digital payments are now baseline expectations. The question is no longer IF restaurants digitize but HOW FAST and THROUGH WHOM.",
+      "The platform consolidation battle is the structural story: Toast ($1.2B+ revenue, 120K locations) is becoming the Shopify of restaurants. Every model card must be evaluated against the question: 'Will Toast build this, acquire this, or ignore this?'",
+      "Hotel technology follows a fundamentally different pattern than restaurant technology: higher ARPU, longer sales cycles, longer retention, more concentrated buyers, and higher switching costs. The 61K hotel establishments at $41K avg pay is a different economy than 611K restaurants at $26K avg pay.",
+      "QCEW data reveals the fastest-growing food service formats are the most technology-native: food service contractors (+11.6%), mobile food services (+14.4%), and caterers (+5.8%). The traditional formats (full-service restaurants +1.8%, limited-service +2.1%) are growing slowly — suggesting the future of food service is institutional, mobile, and technology-enabled."
+    ],
+    "force_velocity_notes": {
+      "F1_technology": "ACCELERATING. AI voice ordering deployed at 100+ Wendy's locations. Food robotics crossing $2B. LLM costs declining 10x annually, making AI features affordable for $200-500/month restaurant software. Kitchen display systems, computer vision waste tracking, and automated inventory all reaching commercial viability simultaneously.",
+      "F2_demographics": "STRUCTURAL. 14M workers at the lowest wages in the economy. 56-day average tenure. 62% of operators cannot find enough workers. Immigration enforcement threatens the estimated 1.4M undocumented food service workers. Owner demographic shift: average independent restaurant owner age 55+ with no succession technology plan.",
+      "F4_capital": "RECOVERING. Restaurant tech VC funding bounced from 2023 trough. Toast's market performance proved the category. Mews ($110M D), Cloudbeds ($150M), and multiple $50M+ rounds in hotel tech show capital flowing. Ghost kitchen capital reallocation from real estate to software layer.",
+      "F5_psychology": "THE BINDING CONSTRAINT. Only 38% of independent restaurants use digital ordering. <$3K/year average technology spend. Restaurant owners burned by delivery platform economics (15-30% commissions) are deeply suspicious of technology vendors. The fear friction gap is widest in this sector — economic readiness for transformation is HIGH but psychological readiness is LOW. Every model card must account for this adoption barrier."
+    },
+    "data_sources": [
+      "BLS QCEW 2022-2023 annual averages (private sector, national, NAICS 72 and all subsectors)",
+      "Grand View Research restaurant management software market forecast (2024-2030)",
+      "Grand View Research food robotics market forecast (2024-2030)",
+      "Grand View Research online food delivery market forecast (2024-2030)",
+      "Grand View Research hotel PMS market forecast (2024-2030)",
+      "360iResearch restaurant technology solutions market forecast (2025-2030)",
+      "360iResearch restaurant scheduling software market forecast (2025-2035)",
+      "Virtue Market Research ghost kitchen market forecast (2025-2030)",
+      "Fact.MR food safety compliance technologies forecast (2025-2035)",
+      "Straits Research catering software market forecast (2025-2033)",
+      "Business Research Company smart hospitality market forecast (2024-2029)",
+      "GlobeNewsWire hotel hospitality management software report (2025-2030)",
+      "Mordor Intelligence hotel revenue management system forecasts",
+      "NRA Restaurant Industry Operations Report 2025",
+      "BLS JOLTS hospitality sector quit rate data",
+      "USDA food waste estimates for commercial food service",
+      "Wendy's FreshAI deployment announcements",
+      "Toast Inc financial filings and earnings reports",
+      "Mews, Cloudbeds, Guesty funding round announcements"
+    ]
+  }
+}
