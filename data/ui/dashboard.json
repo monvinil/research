@@ -2643,7 +2643,7 @@
   "triple_ranking": true,
   "vcr_system": {
     "name": "VC ROI Assessment",
-    "version": "2.0",
+    "version": "2.1",
     "seed_valuation_M": 10,
     "axes": {
       "MKT": {
@@ -2651,11 +2651,11 @@
         "weight": 0.25,
         "description": "Realistic capturable market in 3-5 years. Not hand-waving TAM but plausible revenue ceiling for a single company.",
         "scale": {
-          "1-2": "Niche market, <$100M realistic ceiling",
-          "3-4": "$100-500M category ceiling, modest VC outcome",
-          "5-6": "$500M-2B realistic addressable, single-fund returner potential",
-          "7-8": "$2-10B realistic addressable, multiple paths to $500M+ revenue",
-          "9-10": "$10B+ realistic addressable, platform-scale outcome"
+          "1-2": "Niche market, <$100M realistic addressable",
+          "3-4": "$100M-500M addressable, modest VC outcome",
+          "5-6": "$500M-2B addressable, single-fund returner potential",
+          "7-8": "$2B-10B addressable, multiple paths to $500M+ revenue",
+          "9-10": "$10B+ addressable, platform-scale outcome (log-scale, top quartile only)"
         }
       },
       "CAP": {
@@ -2717,78 +2717,36 @@
     }
   },
   "vcr_stats": {
-    "max": 86.4,
-    "min": 43.25,
-    "mean": 67.09,
-    "median": 66.53
+    "max": 85.15,
+    "min": 40.75,
+    "mean": 62.57,
+    "median": 61.75
   },
   "vcr_distribution": {
-    "above_75": 83,
-    "60_to_75": 360,
-    "45_to_60": 63,
-    "30_to_45": 2,
+    "above_75": 42,
+    "60_to_75": 258,
+    "45_to_60": 205,
+    "30_to_45": 3,
     "below_30": 0
   },
   "vcr_category_distribution": {
-    "FUND_RETURNER": 83,
-    "MARGINAL": 2,
-    "STRONG_MULTIPLE": 360,
-    "VIABLE_RETURN": 63
+    "FUND_RETURNER": 42,
+    "MARGINAL": 3,
+    "STRONG_MULTIPLE": 258,
+    "VIABLE_RETURN": 205
   },
   "vcr_roi_stats": {
     "max": 500,
-    "min": 0.2,
-    "mean": 173.2,
-    "median": 110.1,
-    "above_10x": 482,
-    "above_20x": 461,
-    "above_50x": 393
+    "min": 0.1,
+    "mean": 70.6,
+    "median": 21.5,
+    "above_10x": 359,
+    "above_20x": 275,
+    "above_50x": 148
   },
   "top_20_by_vcr_roi": [
     {
       "vcr_rank": 1,
-      "transformation_rank": 21,
-      "opportunity_rank": 109,
-      "id": "MC-V312-ACC-001",
-      "name": "AI-Native Restaurant Operating System",
-      "composite": 81.0,
-      "opportunity_composite": 68.0,
-      "vcr_composite": 86.4,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 11374.0,
-      "architecture": "vertical_saas",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 8.5,
-        "ECO": 8.0,
-        "VEL": 8.1,
-        "MOA": 8.0
-      }
-    },
-    {
-      "vcr_rank": 2,
-      "transformation_rank": 209,
-      "opportunity_rank": 51,
-      "id": "MC-V312-CON-013",
-      "name": "Subcontractor Prequalification & Risk Management Platform",
-      "composite": 69.5,
-      "opportunity_composite": 70.5,
-      "vcr_composite": 86.1,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 11800.0,
-      "architecture": "data_compounding",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 7.2,
-        "ECO": 9.7,
-        "VEL": 5.8,
-        "MOA": 10
-      }
-    },
-    {
-      "vcr_rank": 3,
       "transformation_rank": 121,
       "opportunity_rank": 139,
       "id": "MC-V312-CON-007",
@@ -2809,28 +2767,7 @@
       }
     },
     {
-      "vcr_rank": 4,
-      "transformation_rank": 88,
-      "opportunity_rank": 38,
-      "id": "MC-V312-ADM-008",
-      "name": "Hourly Workforce Compliance & Scheduling Intelligence Platform",
-      "composite": 75.5,
-      "opportunity_composite": 72.0,
-      "vcr_composite": 84.25,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 10653.0,
-      "architecture": "vertical_saas",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 8.4,
-        "ECO": 7.8,
-        "VEL": 7.6,
-        "MOA": 7.5
-      }
-    },
-    {
-      "vcr_rank": 5,
+      "vcr_rank": 2,
       "transformation_rank": 75,
       "opportunity_rank": 414,
       "id": "MC-V37-53-005",
@@ -2851,49 +2788,7 @@
       }
     },
     {
-      "vcr_rank": 6,
-      "transformation_rank": 186,
-      "opportunity_rank": 160,
-      "id": "MC-V312-ACC-008",
-      "name": "Cloud-Native Hotel Property Management System",
-      "composite": 71.0,
-      "opportunity_composite": 66.5,
-      "vcr_composite": 83.7,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 10764.0,
-      "architecture": "vertical_saas",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 8.3,
-        "ECO": 7.5,
-        "VEL": 7.5,
-        "MOA": 7.8
-      }
-    },
-    {
-      "vcr_rank": 7,
-      "transformation_rank": 389,
-      "opportunity_rank": 411,
-      "id": "C7-DC-TRADES-01",
-      "name": "Trades Intelligence Platform (Data Compounding from HVAC/Plumbing/Electrical)",
-      "composite": 62.25,
-      "opportunity_composite": 53.0,
-      "vcr_composite": 83.55,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 11024.0,
-      "architecture": "data_compounding",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 7.0,
-        "ECO": 9.5,
-        "VEL": 5.7,
-        "MOA": 9
-      }
-    },
-    {
-      "vcr_rank": 8,
+      "vcr_rank": 3,
       "transformation_rank": 79,
       "opportunity_rank": 350,
       "id": "MC-INFO-005",
@@ -2914,146 +2809,293 @@
       }
     },
     {
-      "vcr_rank": 9,
-      "transformation_rank": 403,
-      "opportunity_rank": 409,
-      "id": "C7-DC-CONSTRUCTION-01",
-      "name": "Construction Project Intelligence Platform",
-      "composite": 61.5,
-      "opportunity_composite": 53.0,
-      "vcr_composite": 83.2,
+      "vcr_rank": 4,
+      "transformation_rank": 21,
+      "opportunity_rank": 109,
+      "id": "MC-V312-ACC-001",
+      "name": "AI-Native Restaurant Operating System",
+      "composite": 81.0,
+      "opportunity_composite": 68.0,
+      "vcr_composite": 82.4,
       "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 10930.0,
-      "architecture": "data_compounding",
+      "seed_roi_multiple": 227.5,
+      "exit_val_M": 2275.0,
+      "architecture": "vertical_saas",
       "vcr_scores": {
-        "MKT": 10,
-        "CAP": 7.0,
-        "ECO": 9.4,
-        "VEL": 5.6,
-        "MOA": 9
+        "MKT": 8.4,
+        "CAP": 8.5,
+        "ECO": 8.0,
+        "VEL": 8.1,
+        "MOA": 8.0
       }
     },
     {
-      "vcr_rank": 10,
-      "transformation_rank": 42,
-      "opportunity_rank": 80,
-      "id": "C7-DC-FIN-01",
-      "name": "AI Financial Intelligence Platform (Data Compounding)",
-      "composite": 78.75,
-      "opportunity_composite": 69.0,
-      "vcr_composite": 83.1,
+      "vcr_rank": 5,
+      "transformation_rank": 209,
+      "opportunity_rank": 51,
+      "id": "MC-V312-CON-013",
+      "name": "Subcontractor Prequalification & Risk Management Platform",
+      "composite": 69.5,
+      "opportunity_composite": 70.5,
+      "vcr_composite": 82.1,
       "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 472.0,
-      "exit_val_M": 4720.0,
+      "seed_roi_multiple": 236.0,
+      "exit_val_M": 2360.0,
       "architecture": "data_compounding",
       "vcr_scores": {
-        "MKT": 9,
-        "CAP": 7.0,
+        "MKT": 8.4,
+        "CAP": 7.2,
         "ECO": 9.7,
         "VEL": 5.8,
         "MOA": 10
       }
     },
     {
-      "vcr_rank": 11,
-      "transformation_rank": 194,
-      "opportunity_rank": 412,
-      "id": "MC-V35-5415-001",
-      "name": "IT Services Engagement Intelligence Platform",
-      "composite": 70.75,
-      "opportunity_composite": 53.0,
-      "vcr_composite": 83.1,
+      "vcr_rank": 6,
+      "transformation_rank": 9,
+      "opportunity_rank": 47,
+      "id": "MC-INFO-002",
+      "name": "AI Code Quality and Security Audit Platform",
+      "composite": 82.5,
+      "opportunity_composite": 70.5,
+      "vcr_composite": 80.5,
       "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 11118.0,
-      "architecture": "data_compounding",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 6.6,
-        "ECO": 9.7,
-        "VEL": 5.8,
-        "MOA": 9
-      }
-    },
-    {
-      "vcr_rank": 12,
-      "transformation_rank": 210,
-      "opportunity_rank": 352,
-      "id": "MC-V35-5417-001",
-      "name": "AI Lab Notebook and Experiment Intelligence Platform",
-      "composite": 69.5,
-      "opportunity_composite": 57.0,
-      "vcr_composite": 82.1,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 6587.0,
+      "seed_roi_multiple": 212.8,
+      "exit_val_M": 2128.0,
       "architecture": "vertical_saas",
       "vcr_scores": {
-        "MKT": 10,
-        "CAP": 7.4,
-        "ECO": 8.8,
-        "VEL": 7.0,
+        "MKT": 8,
+        "CAP": 8,
+        "ECO": 9,
+        "VEL": 8,
         "MOA": 7
       }
     },
     {
-      "vcr_rank": 13,
-      "transformation_rank": 45,
-      "opportunity_rank": 228,
-      "id": "MC-UTL-002-L3",
-      "name": "Small Modular Reactor Digital Construction & Commissioning Platform",
-      "composite": 78.5,
-      "opportunity_composite": 64.0,
-      "vcr_composite": 81.95,
+      "vcr_rank": 7,
+      "transformation_rank": 31,
+      "opportunity_rank": 2,
+      "id": "V3-EMRG-001",
+      "name": "Micro-Firm AI Operating System",
+      "composite": 80.5,
+      "opportunity_composite": 88.0,
+      "vcr_composite": 80.0,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 298.7,
+      "exit_val_M": 2987.0,
+      "architecture": "platform",
+      "vcr_scores": {
+        "MKT": 8,
+        "CAP": 8,
+        "ECO": 8,
+        "VEL": 8,
+        "MOA": 8
+      }
+    },
+    {
+      "vcr_rank": 8,
+      "transformation_rank": 225,
+      "opportunity_rank": 389,
+      "id": "MC-V37-62-005",
+      "name": "AI Patient Flow Optimization Engine",
+      "composite": 69.0,
+      "opportunity_composite": 55.0,
+      "vcr_composite": 79.9,
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 500,
-      "exit_val_M": 5567.0,
+      "exit_val_M": 5650.0,
+      "architecture": "data_compounding",
+      "vcr_scores": {
+        "MKT": 10,
+        "CAP": 5.1,
+        "ECO": 9.6,
+        "VEL": 5.3,
+        "MOA": 10
+      }
+    },
+    {
+      "vcr_rank": 9,
+      "transformation_rank": 186,
+      "opportunity_rank": 160,
+      "id": "MC-V312-ACC-008",
+      "name": "Cloud-Native Hotel Property Management System",
+      "composite": 71.0,
+      "opportunity_composite": 66.5,
+      "vcr_composite": 79.7,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 215.3,
+      "exit_val_M": 2153.0,
+      "architecture": "vertical_saas",
+      "vcr_scores": {
+        "MKT": 8.4,
+        "CAP": 8.3,
+        "ECO": 7.5,
+        "VEL": 7.5,
+        "MOA": 7.8
+      }
+    },
+    {
+      "vcr_rank": 10,
+      "transformation_rank": 116,
+      "opportunity_rank": 288,
+      "id": "MC-V39-MFG-005",
+      "name": "Cloud MES/ERP for SMB Manufacturing",
+      "composite": 74.0,
+      "opportunity_composite": 61.0,
+      "vcr_composite": 79.65,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 500,
+      "exit_val_M": 5243.0,
       "architecture": "vertical_saas",
       "vcr_scores": {
         "MKT": 10,
-        "CAP": 6.1,
+        "CAP": 6.3,
+        "ECO": 8.2,
+        "VEL": 7.0,
+        "MOA": 8
+      }
+    },
+    {
+      "vcr_rank": 11,
+      "transformation_rank": 48,
+      "opportunity_rank": 52,
+      "id": "MC-V37-55-002",
+      "name": "AI-Augmented PE Portfolio Operations Platform",
+      "composite": 78.5,
+      "opportunity_composite": 70.5,
+      "vcr_composite": 79.2,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 500,
+      "exit_val_M": 5270.0,
+      "architecture": "vertical_saas",
+      "vcr_scores": {
+        "MKT": 10,
+        "CAP": 5.6,
         "ECO": 8.7,
         "VEL": 6.7,
-        "MOA": 9.5
+        "MOA": 8.5
+      }
+    },
+    {
+      "vcr_rank": 12,
+      "transformation_rank": 88,
+      "opportunity_rank": 38,
+      "id": "MC-V312-ADM-008",
+      "name": "Hourly Workforce Compliance & Scheduling Intelligence Platform",
+      "composite": 75.5,
+      "opportunity_composite": 72.0,
+      "vcr_composite": 79.0,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 213.1,
+      "exit_val_M": 2131.0,
+      "architecture": "vertical_saas",
+      "vcr_scores": {
+        "MKT": 7.9,
+        "CAP": 8.4,
+        "ECO": 7.8,
+        "VEL": 7.6,
+        "MOA": 7.5
+      }
+    },
+    {
+      "vcr_rank": 13,
+      "transformation_rank": 190,
+      "opportunity_rank": 464,
+      "id": "MC-V38-44-012",
+      "name": "Shrinkage Detection & Loss Prevention AI",
+      "composite": 71.0,
+      "opportunity_composite": 48.0,
+      "vcr_composite": 78.85,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 500,
+      "exit_val_M": 5461.0,
+      "architecture": "saas",
+      "vcr_scores": {
+        "MKT": 10,
+        "CAP": 7.1,
+        "ECO": 7.7,
+        "VEL": 6.8,
+        "MOA": 7
       }
     },
     {
       "vcr_rank": 14,
-      "transformation_rank": 462,
-      "opportunity_rank": 466,
-      "id": "C7-DC-VETERINARY-01",
-      "name": "Veterinary Clinical Intelligence Platform",
-      "composite": 56.0,
-      "opportunity_composite": 47.5,
-      "vcr_composite": 81.9,
+      "transformation_rank": 115,
+      "opportunity_rank": 176,
+      "id": "MC-V38-44-004",
+      "name": "AI Demand Forecasting & Inventory Optimization",
+      "composite": 74.0,
+      "opportunity_composite": 66.0,
+      "vcr_composite": 78.45,
       "vcr_category": "FUND_RETURNER",
       "seed_roi_multiple": 500,
-      "exit_val_M": 8197.0,
-      "architecture": "data_compounding",
+      "exit_val_M": 8192.0,
+      "architecture": "saas",
       "vcr_scores": {
         "MKT": 10,
-        "CAP": 6.4,
-        "ECO": 9.5,
-        "VEL": 5.6,
-        "MOA": 9
+        "CAP": 7.5,
+        "ECO": 7.0,
+        "VEL": 6.8,
+        "MOA": 7
       }
     },
     {
       "vcr_rank": 15,
+      "transformation_rank": 176,
+      "opportunity_rank": 343,
+      "id": "MC-V38-62-012",
+      "name": "AI Medical Coding & Compliance Engine",
+      "composite": 71.5,
+      "opportunity_composite": 58.0,
+      "vcr_composite": 78.25,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 416.7,
+      "exit_val_M": 4167.0,
+      "architecture": "saas",
+      "vcr_scores": {
+        "MKT": 10,
+        "CAP": 6.2,
+        "ECO": 8.0,
+        "VEL": 6.5,
+        "MOA": 8
+      }
+    },
+    {
+      "vcr_rank": 16,
+      "transformation_rank": 2,
+      "opportunity_rank": 165,
+      "id": "MC-V38-44-003-L3",
+      "name": "Retail Media Measurement & Attribution Platform",
+      "composite": 84.5,
+      "opportunity_composite": 66.5,
+      "vcr_composite": 78.0,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 106.4,
+      "exit_val_M": 1064.0,
+      "architecture": "vertical_saas",
+      "vcr_scores": {
+        "MKT": 7,
+        "CAP": 8,
+        "ECO": 9,
+        "VEL": 8,
+        "MOA": 7
+      }
+    },
+    {
+      "vcr_rank": 17,
       "transformation_rank": 508,
       "opportunity_rank": 86,
       "id": "C7-NR-11",
       "name": "General AI Writing Tool",
       "composite": 29.25,
       "opportunity_composite": 68.5,
-      "vcr_composite": 81.85,
+      "vcr_composite": 77.85,
       "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 5063.0,
+      "seed_roi_multiple": 101.3,
+      "exit_val_M": 1013.0,
       "architecture": "vertical_saas",
       "vcr_scores": {
-        "MKT": 10,
+        "MKT": 8.4,
         "CAP": 6.4,
         "ECO": 9.4,
         "VEL": 6.2,
@@ -3061,108 +3103,66 @@
       }
     },
     {
-      "vcr_rank": 16,
+      "vcr_rank": 18,
+      "transformation_rank": 307,
+      "opportunity_rank": 177,
+      "id": "MC-V38-44-007",
+      "name": "Retail Workforce Management AI",
+      "composite": 65.5,
+      "opportunity_composite": 66.0,
+      "vcr_composite": 77.8,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 500,
+      "exit_val_M": 7789.0,
+      "architecture": "saas",
+      "vcr_scores": {
+        "MKT": 10,
+        "CAP": 7.5,
+        "ECO": 7.5,
+        "VEL": 6.7,
+        "MOA": 6
+      }
+    },
+    {
+      "vcr_rank": 19,
+      "transformation_rank": 237,
+      "opportunity_rank": 319,
+      "id": "MC-V38-44-005",
+      "name": "Dynamic Pricing & Markdown Optimization AI",
+      "composite": 68.5,
+      "opportunity_composite": 60.0,
+      "vcr_composite": 77.75,
+      "vcr_category": "FUND_RETURNER",
+      "seed_roi_multiple": 500,
+      "exit_val_M": 5316.0,
+      "architecture": "saas",
+      "vcr_scores": {
+        "MKT": 10,
+        "CAP": 7.3,
+        "ECO": 7.5,
+        "VEL": 7.0,
+        "MOA": 6
+      }
+    },
+    {
+      "vcr_rank": 20,
       "transformation_rank": 185,
       "opportunity_rank": 481,
       "id": "MC-INFO-008",
       "name": "AI-Powered Streaming Content Intelligence Platform",
       "composite": 71.0,
       "opportunity_composite": 44.5,
-      "vcr_composite": 81.55,
+      "vcr_composite": 77.55,
       "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 5284.0,
+      "seed_roi_multiple": 105.7,
+      "exit_val_M": 1057.0,
       "architecture": "vertical_saas",
       "vcr_scores": {
-        "MKT": 10,
+        "MKT": 8.4,
         "CAP": 5.8,
         "ECO": 9.7,
         "VEL": 7.1,
         "MOA": 8
-      }
-    },
-    {
-      "vcr_rank": 17,
-      "transformation_rank": 507,
-      "opportunity_rank": 87,
-      "id": "C7-NR-12",
-      "name": "AI Code Generation Tool",
-      "composite": 30.5,
-      "opportunity_composite": 68.5,
-      "vcr_composite": 81.4,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 493.9,
-      "exit_val_M": 4938.0,
-      "architecture": "vertical_saas",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 6.4,
-        "ECO": 9.4,
-        "VEL": 5.9,
-        "MOA": 8.5
-      }
-    },
-    {
-      "vcr_rank": 18,
-      "transformation_rank": 233,
-      "opportunity_rank": 404,
-      "id": "MC-INFO-010",
-      "name": "AI Video Production and Post-Production Platform",
-      "composite": 68.5,
-      "opportunity_composite": 54.0,
-      "vcr_composite": 81.25,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 5203.0,
-      "architecture": "vertical_saas",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 5.8,
-        "ECO": 9.7,
-        "VEL": 6.9,
-        "MOA": 8
-      }
-    },
-    {
-      "vcr_rank": 19,
-      "transformation_rank": 280,
-      "opportunity_rank": 416,
-      "id": "MC-V37-55-007",
-      "name": "AI-Era Leadership Development Platform",
-      "composite": 67.0,
-      "opportunity_composite": 53.0,
-      "vcr_composite": 80.9,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 8339.0,
-      "architecture": "data_compounding",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 5.8,
-        "ECO": 9.6,
-        "VEL": 5.8,
-        "MOA": 9
-      }
-    },
-    {
-      "vcr_rank": 20,
-      "transformation_rank": 47,
-      "opportunity_rank": 339,
-      "id": "MC-V35-5223-001",
-      "name": "Mortgage and Loan Servicing AI Operations Platform",
-      "composite": 78.5,
-      "opportunity_composite": 58.0,
-      "vcr_composite": 80.65,
-      "vcr_category": "FUND_RETURNER",
-      "seed_roi_multiple": 500,
-      "exit_val_M": 5376.0,
-      "architecture": "vertical_saas",
-      "vcr_scores": {
-        "MKT": 10,
-        "CAP": 5.7,
-        "ECO": 9.0,
-        "VEL": 6.6,
-        "MOA": 9
       }
     }
   ],
@@ -3171,7 +3171,7 @@
       "tri_score": 82.75,
       "transformation_rank": 31,
       "opportunity_rank": 2,
-      "vcr_rank": 24,
+      "vcr_rank": 7,
       "id": "V3-EMRG-001",
       "name": "Micro-Firm AI Operating System",
       "composite": 80.5,
@@ -3180,22 +3180,10 @@
       "seed_roi_multiple": 298.7
     },
     {
-      "tri_score": 78.07,
-      "transformation_rank": 21,
-      "opportunity_rank": 109,
-      "vcr_rank": 1,
-      "id": "MC-V312-ACC-001",
-      "name": "AI-Native Restaurant Operating System",
-      "composite": 81.0,
-      "opportunity_composite": 68.0,
-      "vcr_composite": 86.4,
-      "seed_roi_multiple": 500
-    },
-    {
       "tri_score": 77.65,
       "transformation_rank": 9,
       "opportunity_rank": 47,
-      "vcr_rank": 21,
+      "vcr_rank": 6,
       "id": "MC-INFO-002",
       "name": "AI Code Quality and Security Audit Platform",
       "composite": 82.5,
@@ -3207,7 +3195,7 @@
       "tri_score": 77.62,
       "transformation_rank": 7,
       "opportunity_rank": 17,
-      "vcr_rank": 150,
+      "vcr_rank": 97,
       "id": "V3-FEAR-001",
       "name": "AI Governance and Compliance Operating System",
       "composite": 83.0,
@@ -3216,34 +3204,22 @@
       "seed_roi_multiple": 85.3
     },
     {
-      "tri_score": 77.08,
-      "transformation_rank": 88,
-      "opportunity_rank": 38,
+      "tri_score": 76.85,
+      "transformation_rank": 21,
+      "opportunity_rank": 109,
       "vcr_rank": 4,
-      "id": "MC-V312-ADM-008",
-      "name": "Hourly Workforce Compliance & Scheduling Intelligence Platform",
-      "composite": 75.5,
-      "opportunity_composite": 72.0,
-      "vcr_composite": 84.25,
-      "seed_roi_multiple": 500
-    },
-    {
-      "tri_score": 76.72,
-      "transformation_rank": 42,
-      "opportunity_rank": 80,
-      "vcr_rank": 10,
-      "id": "C7-DC-FIN-01",
-      "name": "AI Financial Intelligence Platform (Data Compounding)",
-      "composite": 78.75,
-      "opportunity_composite": 69.0,
-      "vcr_composite": 83.1,
-      "seed_roi_multiple": 472.0
+      "id": "MC-V312-ACC-001",
+      "name": "AI-Native Restaurant Operating System",
+      "composite": 81.0,
+      "opportunity_composite": 68.0,
+      "vcr_composite": 82.4,
+      "seed_roi_multiple": 227.5
     },
     {
       "tri_score": 76.7,
       "transformation_rank": 60,
       "opportunity_rank": 3,
-      "vcr_rank": 218,
+      "vcr_rank": 138,
       "id": "MC-V39-MICRO-002",
       "name": "Solopreneur AI Assistant — Free-to-$100/mo Tier",
       "composite": 77.5,
@@ -3255,7 +3231,7 @@
       "tri_score": 76.08,
       "transformation_rank": 30,
       "opportunity_rank": 43,
-      "vcr_rank": 67,
+      "vcr_rank": 26,
       "id": "MC-V39-MICRO-004",
       "name": "AI Accountant for Micro-Firms",
       "composite": 80.5,
@@ -3267,7 +3243,7 @@
       "tri_score": 75.96,
       "transformation_rank": 48,
       "opportunity_rank": 52,
-      "vcr_rank": 32,
+      "vcr_rank": 11,
       "id": "MC-V37-55-002",
       "name": "AI-Augmented PE Portfolio Operations Platform",
       "composite": 78.5,
@@ -3279,7 +3255,7 @@
       "tri_score": 75.96,
       "transformation_rank": 2,
       "opportunity_rank": 165,
-      "vcr_rank": 48,
+      "vcr_rank": 16,
       "id": "MC-V38-44-003-L3",
       "name": "Retail Media Measurement & Attribution Platform",
       "composite": 84.5,
@@ -3288,10 +3264,22 @@
       "seed_roi_multiple": 106.4
     },
     {
+      "tri_score": 75.45,
+      "transformation_rank": 88,
+      "opportunity_rank": 38,
+      "vcr_rank": 12,
+      "id": "MC-V312-ADM-008",
+      "name": "Hourly Workforce Compliance & Scheduling Intelligence Platform",
+      "composite": 75.5,
+      "opportunity_composite": 72.0,
+      "vcr_composite": 79.0,
+      "seed_roi_multiple": 213.1
+    },
+    {
       "tri_score": 75.31,
       "transformation_rank": 26,
       "opportunity_rank": 50,
-      "vcr_rank": 82,
+      "vcr_rank": 40,
       "id": "MC-V312-CON-005",
       "name": "Skilled Trades Workforce Marketplace & Upskilling Platform",
       "composite": 80.5,
@@ -3303,7 +3291,7 @@
       "tri_score": 75.06,
       "transformation_rank": 150,
       "opportunity_rank": 11,
-      "vcr_rank": 116,
+      "vcr_rank": 70,
       "id": "MC-V39-MICRO-005",
       "name": "AI Legal Agent for Micro-Firms",
       "composite": 72.5,
@@ -3315,7 +3303,7 @@
       "tri_score": 75.03,
       "transformation_rank": 121,
       "opportunity_rank": 139,
-      "vcr_rank": 3,
+      "vcr_rank": 1,
       "id": "MC-V312-CON-007",
       "name": "Modular Construction Design & Factory Optimization Platform",
       "composite": 73.5,
@@ -3324,46 +3312,10 @@
       "seed_roi_multiple": 500
     },
     {
-      "tri_score": 75.0,
-      "transformation_rank": 209,
-      "opportunity_rank": 51,
-      "vcr_rank": 2,
-      "id": "MC-V312-CON-013",
-      "name": "Subcontractor Prequalification & Risk Management Platform",
-      "composite": 69.5,
-      "opportunity_composite": 70.5,
-      "vcr_composite": 86.1,
-      "seed_roi_multiple": 500
-    },
-    {
-      "tri_score": 74.52,
-      "transformation_rank": 83,
-      "opportunity_rank": 22,
-      "vcr_rank": 156,
-      "id": "MC-V37-5415-004",
-      "name": "IT Services Micro-Firm Rollup Platform",
-      "composite": 76.0,
-      "opportunity_composite": 78.0,
-      "vcr_composite": 69.8,
-      "seed_roi_multiple": 192.4
-    },
-    {
-      "tri_score": 74.51,
-      "transformation_rank": 36,
-      "opportunity_rank": 48,
-      "vcr_rank": 92,
-      "id": "MC-INFO-003",
-      "name": "Content Authentication and Provenance Platform",
-      "composite": 79.25,
-      "opportunity_composite": 70.5,
-      "vcr_composite": 74.05,
-      "seed_roi_multiple": 237.6
-    },
-    {
       "tri_score": 74.51,
       "transformation_rank": 4,
       "opportunity_rank": 157,
-      "vcr_rank": 88,
+      "vcr_rank": 46,
       "id": "MC-DEF-012-L4",
       "name": "AI-Powered Cloud Compliance & Accreditation Automation Platform",
       "composite": 83.5,
@@ -3372,40 +3324,88 @@
       "seed_roi_multiple": 30.1
     },
     {
-      "tri_score": 74.43,
-      "transformation_rank": 23,
-      "opportunity_rank": 231,
-      "vcr_rank": 27,
-      "id": "MC-V39-MFG-004",
-      "name": "Manufacturing AI Quality Control Platform (Vertical SaaS)",
-      "composite": 81.0,
-      "opportunity_composite": 64.0,
-      "vcr_composite": 79.55,
-      "seed_roi_multiple": 298.1
-    },
-    {
-      "tri_score": 74.39,
-      "transformation_rank": 45,
-      "opportunity_rank": 228,
-      "vcr_rank": 13,
-      "id": "MC-UTL-002-L3",
-      "name": "Small Modular Reactor Digital Construction & Commissioning Platform",
-      "composite": 78.5,
-      "opportunity_composite": 64.0,
-      "vcr_composite": 81.95,
-      "seed_roi_multiple": 500
+      "tri_score": 74.34,
+      "transformation_rank": 42,
+      "opportunity_rank": 80,
+      "vcr_rank": 35,
+      "id": "C7-DC-FIN-01",
+      "name": "AI Financial Intelligence Platform (Data Compounding)",
+      "composite": 78.75,
+      "opportunity_composite": 69.0,
+      "vcr_composite": 75.6,
+      "seed_roi_multiple": 47.2
     },
     {
       "tri_score": 73.93,
       "transformation_rank": 12,
       "opportunity_rank": 140,
-      "vcr_rank": 108,
+      "vcr_rank": 59,
       "id": "MC-V38-44-002-L6",
       "name": "Robot Fleet Operations & Predictive Maintenance Platform",
       "composite": 82.0,
       "opportunity_composite": 67.5,
       "vcr_composite": 73.0,
       "seed_roi_multiple": 28.0
+    },
+    {
+      "tri_score": 73.82,
+      "transformation_rank": 209,
+      "opportunity_rank": 51,
+      "vcr_rank": 5,
+      "id": "MC-V312-CON-013",
+      "name": "Subcontractor Prequalification & Risk Management Platform",
+      "composite": 69.5,
+      "opportunity_composite": 70.5,
+      "vcr_composite": 82.1,
+      "seed_roi_multiple": 236.0
+    },
+    {
+      "tri_score": 73.45,
+      "transformation_rank": 70,
+      "opportunity_rank": 30,
+      "vcr_rank": 96,
+      "id": "MC-V312-ADM-001",
+      "name": "AI-Powered Physical Security Monitoring Platform",
+      "composite": 76.5,
+      "opportunity_composite": 74.0,
+      "vcr_composite": 70.0,
+      "seed_roi_multiple": 405.0
+    },
+    {
+      "tri_score": 73.25,
+      "transformation_rank": 23,
+      "opportunity_rank": 231,
+      "vcr_rank": 34,
+      "id": "MC-V39-MFG-004",
+      "name": "Manufacturing AI Quality Control Platform (Vertical SaaS)",
+      "composite": 81.0,
+      "opportunity_composite": 64.0,
+      "vcr_composite": 75.8,
+      "seed_roi_multiple": 149.0
+    },
+    {
+      "tri_score": 73.15,
+      "transformation_rank": 36,
+      "opportunity_rank": 48,
+      "vcr_rank": 95,
+      "id": "MC-INFO-003",
+      "name": "Content Authentication and Provenance Platform",
+      "composite": 79.25,
+      "opportunity_composite": 70.5,
+      "vcr_composite": 70.05,
+      "seed_roi_multiple": 47.5
+    },
+    {
+      "tri_score": 73.13,
+      "transformation_rank": 104,
+      "opportunity_rank": 36,
+      "vcr_rank": 62,
+      "id": "MC-V312-ADM-002",
+      "name": "AI Staffing Marketplace — Enterprise Direct Sourcing Platform",
+      "composite": 74.5,
+      "opportunity_composite": 72.5,
+      "vcr_composite": 72.4,
+      "seed_roi_multiple": 423.7
     }
   ],
   "vcr_architecture_breakdown": [
@@ -3414,28 +3414,7 @@
       "count": 5,
       "avg_eco": 4.5,
       "avg_moa": 5.1,
-      "avg_roi_multiple": 406.4
-    },
-    {
-      "architecture": "saas",
-      "count": 16,
-      "avg_eco": 7.7,
-      "avg_moa": 6.9,
-      "avg_roi_multiple": 397.5
-    },
-    {
-      "architecture": "data_compounding",
-      "count": 31,
-      "avg_eco": 9.2,
-      "avg_moa": 9.1,
-      "avg_roi_multiple": 342.0
-    },
-    {
-      "architecture": "workflow_automation",
-      "count": 3,
-      "avg_eco": 4.5,
-      "avg_moa": 4.8,
-      "avg_roi_multiple": 310.5
+      "avg_roi_multiple": 359.2
     },
     {
       "architecture": "embedded_fintech",
@@ -3445,53 +3424,18 @@
       "avg_roi_multiple": 307.9
     },
     {
+      "architecture": "workflow_automation",
+      "count": 3,
+      "avg_eco": 4.5,
+      "avg_moa": 4.8,
+      "avg_roi_multiple": 297.9
+    },
+    {
       "architecture": "marketplace",
       "count": 6,
       "avg_eco": 5.7,
       "avg_moa": 7.3,
-      "avg_roi_multiple": 271.7
-    },
-    {
-      "architecture": "compliance_automation",
-      "count": 5,
-      "avg_eco": 4.8,
-      "avg_moa": 5.3,
-      "avg_roi_multiple": 270.1
-    },
-    {
-      "architecture": "platform",
-      "count": 36,
-      "avg_eco": 6.8,
-      "avg_moa": 8.4,
-      "avg_roi_multiple": 260.7
-    },
-    {
-      "architecture": "vertical_saas",
-      "count": 56,
-      "avg_eco": 8.6,
-      "avg_moa": 7.7,
-      "avg_roi_multiple": 260.3
-    },
-    {
-      "architecture": "predictive_analytics",
-      "count": 4,
-      "avg_eco": 4.5,
-      "avg_moa": 4.9,
-      "avg_roi_multiple": 244.6
-    },
-    {
-      "architecture": "platform_saas",
-      "count": 3,
-      "avg_eco": 8.3,
-      "avg_moa": 8.7,
-      "avg_roi_multiple": 232.1
-    },
-    {
-      "architecture": "supply_chain_optimization",
-      "count": 3,
-      "avg_eco": 4.6,
-      "avg_moa": 4.8,
-      "avg_roi_multiple": 230.6
+      "avg_roi_multiple": 240.6
     },
     {
       "architecture": "iot_platform",
@@ -3501,25 +3445,25 @@
       "avg_roi_multiple": 226.6
     },
     {
-      "architecture": "hardware_plus_saas",
+      "architecture": "saas",
+      "count": 16,
+      "avg_eco": 7.7,
+      "avg_moa": 6.9,
+      "avg_roi_multiple": 205.4
+    },
+    {
+      "architecture": "supply_chain_optimization",
       "count": 3,
-      "avg_eco": 6.0,
-      "avg_moa": 7.3,
-      "avg_roi_multiple": 204.0
+      "avg_eco": 4.6,
+      "avg_moa": 4.8,
+      "avg_roi_multiple": 200.2
     },
     {
-      "architecture": "digital_twin",
-      "count": 2,
-      "avg_eco": 4.5,
-      "avg_moa": 5.8,
-      "avg_roi_multiple": 179.2
-    },
-    {
-      "architecture": "managed_service",
-      "count": 2,
-      "avg_eco": 5.2,
-      "avg_moa": 4.5,
-      "avg_roi_multiple": 176.9
+      "architecture": "platform",
+      "count": 36,
+      "avg_eco": 6.8,
+      "avg_moa": 8.4,
+      "avg_roi_multiple": 184.2
     },
     {
       "architecture": "logistics_optimization",
@@ -3529,137 +3473,193 @@
       "avg_roi_multiple": 171.5
     },
     {
-      "architecture": "marketplace_network",
-      "count": 16,
-      "avg_eco": 5.8,
-      "avg_moa": 7.0,
-      "avg_roi_multiple": 168.0
-    },
-    {
-      "architecture": "regulatory_moat_builder",
-      "count": 16,
-      "avg_eco": 7.1,
-      "avg_moa": 8.8,
-      "avg_roi_multiple": 163.6
-    },
-    {
-      "architecture": "platform_infrastructure",
-      "count": 38,
-      "avg_eco": 6.9,
-      "avg_moa": 8.5,
-      "avg_roi_multiple": 147.6
-    },
-    {
-      "architecture": "product_platform",
+      "architecture": "predictive_analytics",
       "count": 4,
-      "avg_eco": 5.6,
-      "avg_moa": 7.8,
-      "avg_roi_multiple": 147.1
+      "avg_eco": 4.5,
+      "avg_moa": 4.9,
+      "avg_roi_multiple": 158.1
+    },
+    {
+      "architecture": "digital_twin",
+      "count": 2,
+      "avg_eco": 4.5,
+      "avg_moa": 5.8,
+      "avg_roi_multiple": 152.2
     },
     {
       "architecture": "autonomous_systems",
       "count": 3,
       "avg_eco": 4.5,
       "avg_moa": 5.8,
-      "avg_roi_multiple": 132.6
+      "avg_roi_multiple": 123.3
+    },
+    {
+      "architecture": "compliance_automation",
+      "count": 5,
+      "avg_eco": 4.8,
+      "avg_moa": 5.3,
+      "avg_roi_multiple": 98.6
+    },
+    {
+      "architecture": "data_compounding",
+      "count": 31,
+      "avg_eco": 9.2,
+      "avg_moa": 9.1,
+      "avg_roi_multiple": 97.7
+    },
+    {
+      "architecture": "vertical_saas",
+      "count": 56,
+      "avg_eco": 8.6,
+      "avg_moa": 7.7,
+      "avg_roi_multiple": 94.7
     },
     {
       "architecture": "advisory",
       "count": 2,
       "avg_eco": 5.3,
       "avg_moa": 3.5,
-      "avg_roi_multiple": 130.4
-    },
-    {
-      "architecture": "acquire_and_modernize",
-      "count": 31,
-      "avg_eco": 4.5,
-      "avg_moa": 5.1,
-      "avg_roi_multiple": 126.1
+      "avg_roi_multiple": 91.5
     },
     {
       "architecture": "robotics_automation",
       "count": 5,
       "avg_eco": 4.6,
       "avg_moa": 5.3,
-      "avg_roi_multiple": 122.8
+      "avg_roi_multiple": 80.3
     },
     {
-      "architecture": "service_platform",
-      "count": 8,
-      "avg_eco": 6.2,
-      "avg_moa": 6.4,
-      "avg_roi_multiple": 110.5
-    },
-    {
-      "architecture": "",
-      "count": 15,
-      "avg_eco": 4.7,
-      "avg_moa": 5.2,
-      "avg_roi_multiple": 97.6
-    },
-    {
-      "architecture": "arbitrage_window",
-      "count": 11,
-      "avg_eco": 5.9,
-      "avg_moa": 3.3,
-      "avg_roi_multiple": 92.4
-    },
-    {
-      "architecture": "full_service_replacement",
-      "count": 108,
-      "avg_eco": 5.2,
-      "avg_moa": 5.2,
-      "avg_roi_multiple": 87.6
-    },
-    {
-      "architecture": "rollup_consolidation",
-      "count": 22,
-      "avg_eco": 3.8,
-      "avg_moa": 5.4,
-      "avg_roi_multiple": 77.5
-    },
-    {
-      "architecture": "marketplace_platform",
-      "count": 4,
-      "avg_eco": 5.7,
-      "avg_moa": 6.5,
-      "avg_roi_multiple": 73.9
+      "architecture": "hardware_plus_saas",
+      "count": 3,
+      "avg_eco": 6.0,
+      "avg_moa": 7.3,
+      "avg_roi_multiple": 62.0
     },
     {
       "architecture": "automation",
       "count": 4,
       "avg_eco": 3.8,
       "avg_moa": 6.8,
-      "avg_roi_multiple": 70.5
+      "avg_roi_multiple": 52.3
+    },
+    {
+      "architecture": "managed_service",
+      "count": 2,
+      "avg_eco": 5.2,
+      "avg_moa": 4.5,
+      "avg_roi_multiple": 39.8
+    },
+    {
+      "architecture": "platform_infrastructure",
+      "count": 38,
+      "avg_eco": 6.9,
+      "avg_moa": 8.5,
+      "avg_roi_multiple": 38.8
+    },
+    {
+      "architecture": "platform_saas",
+      "count": 3,
+      "avg_eco": 8.3,
+      "avg_moa": 8.7,
+      "avg_roi_multiple": 35.0
+    },
+    {
+      "architecture": "regulatory_moat_builder",
+      "count": 16,
+      "avg_eco": 7.1,
+      "avg_moa": 8.8,
+      "avg_roi_multiple": 30.4
+    },
+    {
+      "architecture": "arbitrage_window",
+      "count": 11,
+      "avg_eco": 5.9,
+      "avg_moa": 3.3,
+      "avg_roi_multiple": 30.4
+    },
+    {
+      "architecture": "marketplace_network",
+      "count": 16,
+      "avg_eco": 5.8,
+      "avg_moa": 7.0,
+      "avg_roi_multiple": 27.2
+    },
+    {
+      "architecture": "service_platform",
+      "count": 8,
+      "avg_eco": 6.2,
+      "avg_moa": 6.4,
+      "avg_roi_multiple": 26.9
+    },
+    {
+      "architecture": "full_service_replacement",
+      "count": 108,
+      "avg_eco": 5.2,
+      "avg_moa": 5.2,
+      "avg_roi_multiple": 23.8
     },
     {
       "architecture": "physical_production_ai",
       "count": 11,
       "avg_eco": 3.2,
       "avg_moa": 5.8,
-      "avg_roi_multiple": 59.2
+      "avg_roi_multiple": 22.1
+    },
+    {
+      "architecture": "acquire_and_modernize",
+      "count": 31,
+      "avg_eco": 4.5,
+      "avg_moa": 5.1,
+      "avg_roi_multiple": 19.5
+    },
+    {
+      "architecture": "rollup_consolidation",
+      "count": 22,
+      "avg_eco": 3.8,
+      "avg_moa": 5.4,
+      "avg_roi_multiple": 18.6
     },
     {
       "architecture": "network_platform",
       "count": 2,
       "avg_eco": 6.5,
       "avg_moa": 6.0,
-      "avg_roi_multiple": 47.2
+      "avg_roi_multiple": 17.4
+    },
+    {
+      "architecture": "marketplace_platform",
+      "count": 4,
+      "avg_eco": 5.7,
+      "avg_moa": 6.5,
+      "avg_roi_multiple": 14.0
+    },
+    {
+      "architecture": "product_platform",
+      "count": 4,
+      "avg_eco": 5.6,
+      "avg_moa": 7.8,
+      "avg_roi_multiple": 13.6
+    },
+    {
+      "architecture": "",
+      "count": 15,
+      "avg_eco": 4.7,
+      "avg_moa": 5.2,
+      "avg_roi_multiple": 8.6
     },
     {
       "architecture": "service",
       "count": 4,
       "avg_eco": 4.2,
       "avg_moa": 3.2,
-      "avg_roi_multiple": 31.2
+      "avg_roi_multiple": 4.5
     },
     {
       "architecture": "project_developer",
       "count": 3,
       "avg_eco": 4.2,
       "avg_moa": 6.0,
-      "avg_roi_multiple": 21.7
+      "avg_roi_multiple": 2.2
     }
   ]
 }

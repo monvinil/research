@@ -279,7 +279,7 @@ SECTOR_FRAGMENTATION = {
 
 VCR_SYSTEM = {
     "name": "VC ROI Assessment",
-    "version": "2.0",
+    "version": "2.1",
     "seed_valuation_M": SEED_VALUATION_M,
     "axes": {
         "MKT": {
@@ -287,11 +287,11 @@ VCR_SYSTEM = {
             "weight": 0.25,
             "description": "Realistic capturable market in 3-5 years. Not hand-waving TAM but plausible revenue ceiling for a single company.",
             "scale": {
-                "1-2": "Niche market, <$100M realistic ceiling",
-                "3-4": "$100-500M category ceiling, modest VC outcome",
-                "5-6": "$500M-2B realistic addressable, single-fund returner potential",
-                "7-8": "$2-10B realistic addressable, multiple paths to $500M+ revenue",
-                "9-10": "$10B+ realistic addressable, platform-scale outcome"
+                "1-2": "Niche market, <$100M realistic addressable",
+                "3-4": "$100M-500M addressable, modest VC outcome",
+                "5-6": "$500M-2B addressable, single-fund returner potential",
+                "7-8": "$2B-10B addressable, multiple paths to $500M+ revenue",
+                "9-10": "$10B+ addressable, platform-scale outcome (log-scale, top quartile only)"
             }
         },
         "CAP": {
@@ -619,27 +619,29 @@ ARCH_MULTIPLES = {
 # ──────────────────────────────────────────────────────────────────────
 
 # (mkt_adj, cap_adj, eco_adj, vel_adj, moa_adj)
+# MKT adjustments reduced — log-scale scoring already differentiates by sector TAM.
+# Non-MKT adjustments unchanged.
 SECTOR_ADJ = {
     "11": (0, -1, 0, -1, 0),    # Agriculture: slow, resistant
-    "21": (-1, -1, 0, -2, 0),   # Mining: small, slow procurement
-    "22": (1, -1, 0, -1, 1),    # Utilities: big market, slow adoption, strong moats
-    "23": (1, 0, 0, 0, 0),      # Construction: big market
-    "31": (1, 0, -1, 0, 0),     # Manufacturing food: big, lower margins
+    "21": (-0.5, -1, 0, -2, 0), # Mining: small, slow procurement
+    "22": (0, -1, 0, -1, 1),    # Utilities: slow adoption, strong moats (TAM already in lookup)
+    "23": (0.5, 0, 0, 0, 0),    # Construction: under-digitized bonus
+    "31": (0, 0, -1, 0, 0),     # Manufacturing food: lower margins
     "32": (0, 0, -1, 0, 0),     # Manufacturing chem: moderate
-    "33": (1, 0, -1, 0, 1),     # Manufacturing advanced: big, hardware-ish, strong moats
-    "42": (1, 1, 0, 0, 0),      # Wholesale: big + fragmented
-    "44": (2, 1, 0, 1, 0),      # Retail: massive, faster cycles
-    "45": (2, 1, 0, 1, 0),      # Retail: massive, faster cycles
-    "48": (1, 0, -1, -1, 0),    # Transportation: big, capital heavy
-    "51": (1, 0, 1, 0, 1),      # Information: tech-native, data moats
-    "52": (1, -1, 0, -1, 1),    # Finance: big, regulated, strong moats
+    "33": (0.5, 0, -1, 0, 1),   # Manufacturing advanced: hardware-ish, strong moats
+    "42": (0, 1, 0, 0, 0),      # Wholesale: fragmented
+    "44": (0.5, 1, 0, 1, 0),    # Retail: faster cycles
+    "45": (0.5, 1, 0, 1, 0),    # Retail: faster cycles
+    "48": (0, 0, -1, -1, 0),    # Transportation: capital heavy
+    "51": (0.5, 0, 1, 0, 1),    # Information: tech-native, data moats
+    "52": (0, -1, 0, -1, 1),    # Finance: regulated, strong moats
     "53": (0, 1, 0, 0, -1),     # Real estate: fragmented, weak moats
-    "54": (1, 1, 0, 0, 0),      # Professional services: big + fragmented
+    "54": (0.5, 1, 0, 0, 0),    # Professional services: fragmented
     "55": (0, -1, 0, -1, 0),    # Management: slow, enterprise
-    "56": (1, 1, -1, 1, -1),    # Admin services: big, fragmented, commodity
+    "56": (0, 1, -1, 1, -1),    # Admin services: fragmented, commodity
     "61": (0, 0, 0, 0, 0),      # Education: moderate
-    "62": (2, -1, 0, -1, 1),    # Healthcare: massive but slow + regulated
-    "72": (1, 1, -1, 1, -1),    # Accommodation/food: big, fragmented, thin margins
+    "62": (0.5, -1, 0, -1, 1),  # Healthcare: regulated
+    "72": (0.5, 1, -1, 1, -1),  # Accommodation/food: fragmented, thin margins
     "81": (0, 1, -1, 0, -1),    # Other services: fragmented, commodity
 }
 
@@ -750,35 +752,34 @@ def parse_tam_from_text(text):
 
 
 def tam_to_mkt_score(tam_m, growth_pct=None):
-    """Convert TAM in $M to MKT score (1-10)."""
-    if tam_m >= 20000:
-        base = 10
-    elif tam_m >= 8000:
-        base = 9
-    elif tam_m >= 4000:
-        base = 8
-    elif tam_m >= 2000:
-        base = 7
-    elif tam_m >= 800:
-        base = 6
-    elif tam_m >= 400:
-        base = 5
-    elif tam_m >= 150:
-        base = 4
-    elif tam_m >= 50:
-        base = 3
-    elif tam_m >= 15:
-        base = 2
-    else:
-        base = 1
+    """Convert TAM in $M to MKT score (1-10) using log-scale.
 
-    # Growth modifier
+    Log-scale provides much better differentiation across the 4-order-of-magnitude
+    range of realistic addressable TAMs ($30M to $100B+). The old step-function
+    gave 56% of models a score of 10 — zero discriminating power.
+
+    Anchors: $30M → 1, $100M → 3, $500M → 5, $2B → 7, $10B → 9, $50B+ → 10
+    """
+    import math
+    if tam_m <= 0:
+        return 1
+
+    log_tam = math.log10(tam_m)
+
+    # Map log10(TAM_M) to 1-10 score
+    # log10(30) = 1.48 → 1, log10(100000) = 5.0 → 10
+    # Linear: score = (log_tam - 1.48) / (5.0 - 1.48) * 9 + 1
+    LOG_MIN = 1.48   # $30M
+    LOG_MAX = 5.0    # $100B
+    base = (log_tam - LOG_MIN) / (LOG_MAX - LOG_MIN) * 9 + 1
+
+    # Growth modifier (smaller impact with log scale)
     if growth_pct and growth_pct > 30:
-        base += 1
-    elif growth_pct and growth_pct > 20:
         base += 0.5
+    elif growth_pct and growth_pct > 20:
+        base += 0.3
 
-    return min(10, max(1, base))
+    return round(min(10, max(1, base)), 1)
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -837,15 +838,19 @@ def heuristic_vcr(model):
         sector_tam = lookup_sector_tam(naics_full)
         if sector_tam:
             # Scale sector TAM down — a startup addresses a software/AI layer, not total revenue
-            # 4-digit NAICS: more specific → 3% of sub-sector revenue
-            # 2-digit NAICS: very broad → 0.5% of total sector revenue
+            # Previous percentages (3%/1.5%/0.5%) were too generous — produced $15B-$75B
+            # "addressable" markets that all scored MKT=10, eliminating differentiation.
+            # Revised: reflects that a single AI startup competes for a narrow slice
+            # 4-digit NAICS: specific sub-sector → 1% of sub-sector revenue
+            # 3-digit NAICS: moderate specificity → 0.5%
+            # 2-digit NAICS: very broad → 0.15% of total sector revenue
             naics_digits = len(naics_full.rstrip())
             if naics_digits >= 4:
-                tam_pct = 0.03
+                tam_pct = 0.01
             elif naics_digits >= 3:
-                tam_pct = 0.015
-            else:
                 tam_pct = 0.005
+            else:
+                tam_pct = 0.0015
             realistic_tam = sector_tam * tam_pct
             mkt = tam_to_mkt_score(realistic_tam)
             tam_source = f"sector ${sector_tam:.0f}M→${realistic_tam:.0f}M addressable"
