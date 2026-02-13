@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.12</title>
+<title>Research Engine v3.14</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -309,6 +309,38 @@
   }
   .filter-chip:hover { opacity: 0.85; }
   .filter-chip.active { border-color: currentColor; }
+
+  /* Confidence tier badges */
+  .conf-HIGH { background: rgba(52,211,153,0.08); color: var(--green); }
+  .conf-MODERATE { background: rgba(251,191,36,0.06); color: var(--amber); }
+  .conf-LOW { background: rgba(248,113,113,0.06); color: var(--red); }
+  .confidence-badge { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.3px; }
+
+  /* Force filter chips */
+  .force-filter-chip { background: rgba(167,139,250,0.06); color: var(--accent); }
+  .force-filter-chip.active { background: rgba(167,139,250,0.15); border-color: var(--accent); }
+
+  /* Falsification criteria in detail panel */
+  .falsification-list { list-style: none; padding: 0; margin: 0; }
+  .falsification-item { font-size: 11px; color: var(--text-secondary); padding: 4px 0 4px 16px; position: relative; line-height: 1.5; }
+  .falsification-item::before { content: '\2717'; color: var(--red); position: absolute; left: 0; font-size: 10px; }
+
+  /* Rationale text */
+  .detail-rationale { font-size: 11.5px; color: var(--text-secondary); line-height: 1.6; padding: 10px 12px; background: rgba(255,255,255,0.015); border-radius: var(--radius-xs); border-left: 3px solid var(--glass-border); margin-bottom: 12px; }
+
+  /* Running patterns */
+  .patterns-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .pattern-card { padding: 14px; font-size: 12px; color: var(--text); cursor: pointer; }
+  .pattern-card:hover { border-color: var(--accent); }
+  .pattern-id { font-size: 10px; color: var(--dim); font-weight: 600; margin-bottom: 4px; }
+  .pattern-evidence { font-size: 10.5px; color: var(--text-secondary); margin-top: 6px; }
+
+  /* Scatter plot */
+  .scatter-dot { position: absolute; border-radius: 50%; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; opacity: 0.7; }
+  .scatter-dot:hover { transform: scale(2); opacity: 1; z-index: 10; }
+  .scatter-axis-label { position: absolute; font-size: 10px; color: var(--dim); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .scatter-grid-line { position: absolute; background: rgba(255,255,255,0.03); }
+  .scatter-tooltip { position: absolute; background: var(--bg); border: 1px solid var(--glass-border); border-radius: 6px; padding: 6px 10px; font-size: 10px; color: var(--text); pointer-events: none; z-index: 20; white-space: nowrap; display: none; }
   .toggle-btn {
     font-size: 10.5px; font-weight: 600; padding: 6px 14px;
     border-radius: 8px; cursor: pointer;
@@ -777,10 +809,10 @@ document.addEventListener('DOMContentLoaded',function(){
   </nav>
 
   <header>
-    <h1>Research Engine v3.12</h1>
+    <h1>Research Engine v3.14</h1>
     <div class="subtitle">
       <span class="cycle-badge" id="cycle-badge">v3-12</span>
-      &nbsp; <span id="model-total-sub">508 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      &nbsp; <span id="model-total-sub">604 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
   </header>
 
@@ -832,6 +864,11 @@ document.addEventListener('DOMContentLoaded',function(){
     <div style="height:6px"></div>
     <!-- Opportunity Category Filters -->
     <div class="filter-chips" id="opp-cat-filters"></div>
+    <div style="height:6px"></div>
+    <!-- Confidence + Force Filters -->
+    <div class="filter-chips" id="confidence-filters"></div>
+    <div style="height:6px"></div>
+    <div class="filter-chips" id="force-filters"></div>
     <div style="height:8px"></div>
 
     <!-- Results info -->
@@ -891,12 +928,29 @@ document.addEventListener('DOMContentLoaded',function(){
         <div id="vcr-tri-list"></div>
       </div>
     </div>
+
+    <!-- T vs OPP Scatter Plot -->
+    <div class="glass-static card" style="margin-top:16px">
+      <div class="section-label">Transformation vs Opportunity <span class="count">each dot = 1 model, size = VCR</span></div>
+      <div id="scatter-plot" style="position:relative;width:100%;height:400px;overflow:hidden"></div>
+    </div>
   </div>
 
   <!-- ═══ VIEW: FORCES ═══ -->
   <div id="view-forces" class="view-section">
     <div class="section-label">Force Velocities <span class="count">F1-F6</span></div>
     <div class="force-grid" id="force-grid"></div>
+
+    <!-- Force-Model Distribution -->
+    <div class="section-label">Force-Model Distribution <span class="count" id="force-dist-count"></span></div>
+    <div class="glass-static card" style="margin-bottom:16px">
+      <div id="force-model-distribution"></div>
+    </div>
+
+    <!-- Running Patterns -->
+    <div class="section-label">Running Patterns <span class="count" id="patterns-count">0</span></div>
+    <div class="patterns-grid" id="patterns-grid"></div>
+
     <!-- Key Findings -->
     <div class="section-label">Key Findings <span class="count" id="findings-count">0</span></div>
     <div class="findings-grid" id="findings-grid"></div>
@@ -975,7 +1029,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
   </div>
 
-  <div class="footer">Research Engine v3.12 &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v3.14 &middot; 604 models &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -989,6 +1043,8 @@ let newOnlyActive = false;
 let activeCatFilter = null;
 let activeOppFilter = null;
 let activeVcrFilter = null;
+let activeConfFilter = null;
+let activeForceFilter = null;
 let vcrFilteredModels = [];
 let vcrCurrentPage = 1;
 let expandedModelId = null;
@@ -1075,6 +1131,26 @@ function roiClass(r) {
   if (r >= 20) return 'roi-good';
   if (r >= 10) return 'roi-moderate';
   return 'roi-low';
+}
+
+function setConfFilter(tier) {
+  if (activeConfFilter === tier) { activeConfFilter = null; }
+  else { activeConfFilter = tier; }
+  document.querySelectorAll('#confidence-filters .filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeConfFilter);
+  });
+  currentPage = 1;
+  applyFilters();
+}
+
+function setForceFilter(force) {
+  if (activeForceFilter === force) { activeForceFilter = null; }
+  else { activeForceFilter = force; }
+  document.querySelectorAll('#force-filters .filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeForceFilter);
+  });
+  currentPage = 1;
+  applyFilters();
 }
 
 function setVcrFilter(cat) {
@@ -1239,8 +1315,13 @@ function applyFilters() {
     if (newOnlyActive && !m.new_in_v36) return false;
     if (activeCatFilter && m.category !== activeCatFilter) return false;
     if (activeOppFilter && m.opportunity_category !== activeOppFilter) return false;
+    if (activeConfFilter && m.confidence_tier !== activeConfFilter) return false;
+    if (activeForceFilter) {
+      const forces = m.forces || [];
+      if (!forces.some(f => f.startsWith(activeForceFilter))) return false;
+    }
     if (q) {
-      const hay = [m.name, m.id, m.sector_naics, m.architecture, m.category, m.opportunity_category || '', m.one_liner || '', m.layer_name || ''].join(' ').toLowerCase();
+      const hay = [m.name, m.id, m.sector_naics, m.architecture, m.category, m.opportunity_category || '', m.one_liner || '', m.layer_name || '', m.sector_name || ''].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -1333,7 +1414,7 @@ function modelTableRow(m) {
 
   return `<tr onclick="toggleModelDetail('${esc(m.id)}')">
     <td class="rank-cell">${m.rank}</td>
-    <td class="name-cell">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}</td>
+    <td class="name-cell">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}${m.confidence_tier ? ' <span class="confidence-badge conf-' + m.confidence_tier + '" style="font-size:8px;padding:1px 4px;vertical-align:middle">' + m.confidence_tier[0] + '</span>' : ''}</td>
     <td class="composite-cell" style="color:${compColor}">${m.composite.toFixed(1)}</td>
     <td class="opp-cell" style="color:${oppColor}">${oppComp.toFixed(1)}</td>
     <td class="opp-cell roi-value ${roiClass(m.vcr_roi_multiple || 0)}" style="font-size:12px">${m.vcr_roi_multiple ? (m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) + 'x' : m.vcr_roi_multiple.toFixed(1) + 'x') : '--'}</td>
@@ -1484,11 +1565,17 @@ function toggleModelDetail(id) {
     ${m.vcr_roi_multiple ? `<div style="font-size:13px;color:var(--text-secondary);padding:8px 12px;background:rgba(52,211,153,0.04);border-radius:var(--radius-xs);border-left:3px solid var(--green);margin-bottom:12px">Seed ROI Estimate: <strong class="roi-value ${roiClass(m.vcr_roi_multiple)}" style="font-size:16px">${m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) : m.vcr_roi_multiple.toFixed(1)}x</strong> on $10M &middot; Exit: <strong>$${(m.vcr_exit_val_M || 0).toLocaleString()}M</strong></div>` : ''}
     <div class="detail-cats">${cats} ${oppCatBadge}</div>
     <div class="detail-meta">
-      <span><span class="meta-label">NAICS:</span> ${esc(m.sector_naics)}</span>
+      <span><span class="meta-label">NAICS:</span> ${esc(m.sector_naics)}${m.sector_name ? ' (' + esc(m.sector_name) + ')' : ''}</span>
       <span><span class="meta-label">Architecture:</span> ${esc(m.architecture)}</span>
       <span><span class="meta-label">Source:</span> ${esc(m.source_batch)}</span>
+      ${m.confidence_tier ? `<span><span class="meta-label">Confidence:</span> <span class="confidence-badge conf-${m.confidence_tier}">${m.confidence_tier}</span></span>` : ''}
     </div>
     ${m.one_liner ? `<div class="detail-oneliner">${esc(m.one_liner)}</div>` : ''}
+    ${(m.forces && m.forces.length) ? `<div style="margin:8px 0"><span class="meta-label" style="font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px">Forces: </span>${m.forces.map(f => '<span style="font-size:10px;font-weight:600;color:var(--accent);margin-right:6px">' + esc(f.replace(/_/g, ' ')) + '</span>').join('')}</div>` : ''}
+    ${m.cla_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;margin-top:8px">Opportunity Rationale</div><div class="detail-rationale">${esc(m.cla_rationale)}</div>` : ''}
+    ${m.vcr_rationale ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">VCR Rationale</div><div class="detail-rationale">${esc(m.vcr_rationale)}</div>` : ''}
+    ${m.deep_dive_evidence ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Evidence</div><div class="detail-rationale">${esc(m.deep_dive_evidence)}</div>` : ''}
+    ${(m.falsification_criteria && m.falsification_criteria.length) ? `<div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Falsification Criteria</div><ul class="falsification-list">${m.falsification_criteria.map(c => '<li class="falsification-item">' + esc(c) + '</li>').join('')}</ul>` : ''}
   `;
   panel.classList.add('visible');
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1578,6 +1665,130 @@ function renderOppCatFilters(summary) {
     const cls = 'opp-' + k;
     return `<span class="filter-chip cat-badge ${cls}" data-cat="${k}" onclick="setOppFilter('${k}')">${dist[k]} ${k.replace(/_/g, ' ')}</span>`;
   }).join('');
+}
+
+// ─── CONFIDENCE FILTER ───
+function renderConfidenceFilters(models) {
+  const el = document.getElementById('confidence-filters');
+  const counts = { HIGH: 0, MODERATE: 0, LOW: 0 };
+  models.forEach(m => { const t = m.confidence_tier; if (counts[t] !== undefined) counts[t]++; });
+  const order = ['HIGH', 'MODERATE', 'LOW'];
+  el.innerHTML = '<span style="font-size:10px;color:var(--dim);font-weight:600;padding:4px 0;text-transform:uppercase;letter-spacing:0.5px">Confidence:</span> ' +
+    order.filter(k => counts[k] > 0).map(k => {
+    return '<span class="filter-chip confidence-badge conf-' + k + '" data-cat="' + k + '" onclick="setConfFilter(\'' + k + '\')">' + counts[k] + ' ' + k + '</span>';
+  }).join('');
+}
+
+// ─── FORCE FILTER ───
+function renderForceFilters(models) {
+  const el = document.getElementById('force-filters');
+  const forceNames = { F1: 'Technology', F2: 'Demographics', F3: 'Geopolitics', F4: 'Capital', F5: 'Psychology', F6: 'Energy' };
+  const counts = {};
+  models.forEach(m => {
+    const forces = m.forces || [];
+    const seen = new Set();
+    forces.forEach(f => {
+      const key = f.substring(0, 2);
+      if (!seen.has(key)) { counts[key] = (counts[key] || 0) + 1; seen.add(key); }
+    });
+  });
+  const order = ['F1','F2','F3','F4','F5','F6'];
+  el.innerHTML = '<span style="font-size:10px;color:var(--dim);font-weight:600;padding:4px 0;text-transform:uppercase;letter-spacing:0.5px">Forces:</span> ' +
+    order.filter(k => counts[k] > 0).map(k => {
+    return '<span class="filter-chip force-filter-chip" data-cat="' + k + '" onclick="setForceFilter(\'' + k + '\')">' + counts[k] + ' ' + k + ' ' + forceNames[k] + '</span>';
+  }).join('');
+}
+
+// ─── RUNNING PATTERNS ───
+function renderPatterns(dashboard) {
+  const rp = dashboard.running_patterns || {};
+  const confirmed = rp.confirmed || [];
+  const el = document.getElementById('patterns-grid');
+  const countEl = document.getElementById('patterns-count');
+  if (!confirmed.length) { el.innerHTML = '<div style="font-size:12px;color:var(--dim)">No patterns data available</div>'; return; }
+  countEl.textContent = confirmed.length;
+  el.innerHTML = confirmed.map(p => {
+    const id = typeof p === 'string' ? '' : (p.id || '');
+    const name = typeof p === 'string' ? p : (p.name || p.title || p);
+    const evidence = typeof p === 'string' ? '' : (p.evidence || p.description || '');
+    return '<div class="glass pattern-card">' +
+      (id ? '<div class="pattern-id">' + esc(id) + '</div>' : '') +
+      '<div>' + esc(name) + '</div>' +
+      (evidence ? '<div class="pattern-evidence">' + esc(evidence) + '</div>' : '') +
+      '</div>';
+  }).join('');
+}
+
+// ─── FORCE-MODEL DISTRIBUTION ───
+function renderForceDistribution(dashboard) {
+  const dist = dashboard.force_model_distribution || {};
+  const conv = dashboard.force_convergence || {};
+  const el = document.getElementById('force-model-distribution');
+  const countEl = document.getElementById('force-dist-count');
+  const forceNames = { F1: 'Technology', F2: 'Demographics', F3: 'Geopolitics', F4: 'Capital', F5: 'Psychology', F6: 'Energy' };
+  const total = Object.values(dist).reduce((s, v) => s + v, 0) || 1;
+  const order = ['F1','F2','F3','F4','F5','F6'];
+  if (countEl) countEl.textContent = 'across ' + (dashboard.total_models_rated || '?') + ' models';
+  el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">' +
+    order.map(k => {
+      const count = dist[k] || 0;
+      const pct = Math.round((count / total) * 100);
+      const barColor = k === 'F1' ? 'var(--accent)' : k === 'F2' ? 'var(--blue)' : k === 'F3' ? 'var(--red)' : k === 'F4' ? 'var(--amber)' : k === 'F5' ? 'var(--pink)' : 'var(--green)';
+      return '<div style="padding:8px"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:4px">' + k + ' ' + (forceNames[k] || '') + '</div>' +
+        '<div style="font-size:18px;font-weight:800;color:' + barColor + '">' + count + '</div>' +
+        '<div style="height:4px;border-radius:2px;background:rgba(255,255,255,0.05);margin-top:4px"><div style="height:100%;border-radius:2px;background:' + barColor + ';width:' + Math.min(pct * 1.5, 100) + '%"></div></div>' +
+        '<div style="font-size:10px;color:var(--dim);margin-top:3px">' + pct + '% of models</div></div>';
+    }).join('') + '</div>' +
+    (Object.keys(conv).length ? '<div style="margin-top:12px;font-size:11px;color:var(--text-secondary)">' +
+      Object.entries(conv).map(([k, v]) => '<span style="margin-right:12px">' + k.replace(/_/g, ' ') + ': <strong>' + v + '</strong></span>').join('') +
+    '</div>' : '');
+}
+
+// ─── SCATTER PLOT ───
+function renderScatterPlot(models) {
+  const el = document.getElementById('scatter-plot');
+  if (!el || !models.length) return;
+  const pad = { top: 20, right: 20, bottom: 35, left: 40 };
+  const w = el.clientWidth || 800;
+  const h = 400;
+
+  // Ranges
+  const tMin = 40, tMax = 95, oMin = 25, oMax = 85;
+  const scaleX = (v) => pad.left + ((v - tMin) / (tMax - tMin)) * (w - pad.left - pad.right);
+  const scaleY = (v) => h - pad.bottom - ((v - oMin) / (oMax - oMin)) * (h - pad.top - pad.bottom);
+
+  let html = '';
+
+  // Grid lines
+  for (let t = 50; t <= 90; t += 10) {
+    const x = scaleX(t);
+    html += '<div class="scatter-grid-line" style="left:' + x + 'px;top:' + pad.top + 'px;width:1px;height:' + (h - pad.top - pad.bottom) + 'px"></div>';
+    html += '<div style="position:absolute;left:' + x + 'px;bottom:10px;font-size:9px;color:var(--dim);transform:translateX(-50%)">' + t + '</div>';
+  }
+  for (let o = 30; o <= 80; o += 10) {
+    const y = scaleY(o);
+    html += '<div class="scatter-grid-line" style="left:' + pad.left + 'px;top:' + y + 'px;width:' + (w - pad.left - pad.right) + 'px;height:1px"></div>';
+    html += '<div style="position:absolute;left:5px;top:' + y + 'px;font-size:9px;color:var(--dim);transform:translateY(-50%)">' + o + '</div>';
+  }
+
+  // Axis labels
+  html += '<div class="scatter-axis-label" style="bottom:0;left:50%;transform:translateX(-50%)">T-Score (Transformation)</div>';
+  html += '<div class="scatter-axis-label" style="top:50%;left:-2px;transform:rotate(-90deg) translateX(-50%);transform-origin:0 0">OPP Score</div>';
+
+  // Dots
+  const confColors = { HIGH: 'var(--green)', MODERATE: 'var(--amber)', LOW: 'var(--red)' };
+  models.forEach(m => {
+    const t = m.composite || 0;
+    const o = m.opportunity_composite || 0;
+    const vcr = m.vcr_composite || 50;
+    const x = scaleX(t);
+    const y = scaleY(o);
+    const size = Math.max(4, Math.min(12, (vcr - 40) / 5));
+    const color = confColors[m.confidence_tier] || 'var(--accent)';
+    html += '<div class="scatter-dot" style="left:' + (x - size/2) + 'px;top:' + (y - size/2) + 'px;width:' + size + 'px;height:' + size + 'px;background:' + color + '" title="' + esc(m.name) + ' (T:' + t.toFixed(0) + ' O:' + o.toFixed(0) + ' V:' + vcr.toFixed(0) + ')" onclick="toggleModelDetail(\'' + esc(m.id) + '\')"></div>';
+  });
+
+  el.innerHTML = html;
 }
 
 // ─── FORCES ───
@@ -1824,6 +2035,8 @@ async function refresh() {
     renderCycles(d.cycle_history);
     renderVcrArchBreakdown(d);
     renderVcrTriList(d);
+    renderPatterns(d);
+    renderForceDistribution(d);
 
     // VCR KPIs
     const vcrStats = d.vcr_stats || {};
@@ -1843,6 +2056,9 @@ async function refresh() {
     renderCatFilters(m.summary || {});
     renderOppCatFilters(m.summary || {});
     renderVcrCatFilters(m.summary || {});
+    renderConfidenceFilters(allModels);
+    renderForceFilters(allModels);
+    renderScatterPlot(allModels);
     applyFilters();
     applyVcrFilters();
   }
