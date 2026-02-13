@@ -1,0 +1,416 @@
+[
+  {
+    "id": "MC-V314-QC-001",
+    "name": "Post-Quantum Cryptography Migration Platform",
+    "one_liner": "Enterprise migration platform for NIST post-quantum cryptographic standards \u2014 automated PKI inventory, cipher suite replacement, and compliance validation targeting the $3.2B PQC migration market by 2030 as harvest-now-decrypt-later threats accelerate government and financial sector deadlines",
+    "sector_naics": "51",
+    "sector_name": "Information",
+    "architecture": "vertical_saas",
+    "forces_v3": [
+      "F1_technology",
+      "F3_geopolitics",
+      "F5_psychology"
+    ],
+    "scores": {
+      "SN": 9,
+      "FA": 8,
+      "EC": 9,
+      "TG": 8,
+      "CE": 7
+    },
+    "composite": 83.0,
+    "category": "STRUCTURAL_WINNER",
+    "macro_source": "NIST FIPS 203/204/205 PQC standard finalization (August 2024); NSA CNSA 2.0 mandate requiring PQC for national security systems by 2030; CISA PQC migration guidance; Quantum Threat Timeline Report (Global Risk Institute 2025); IBM Quantum roadmap projecting 100K+ qubit systems by 2033",
+    "deep_dive_evidence": "NIST finalized three post-quantum cryptographic standards in August 2024 (FIPS 203 ML-KEM, FIPS 204 ML-DSA, FIPS 205 SLH-DSA), triggering the largest cryptographic migration since the SHA-1 to SHA-2 transition. The NSA's CNSA 2.0 timeline mandates PQC adoption for all national security systems by 2030, with software and firmware signing required by 2025. The harvest-now-decrypt-later threat \u2014 adversaries capturing encrypted data today to decrypt with future quantum computers \u2014 makes the timeline urgent for financial services, healthcare, and government. MarketsandMarkets projects the PQC market reaching $3.2B by 2030 from $310M in 2024 (43% CAGR). The core problem is discovery: large enterprises have 50,000-500,000+ cryptographic assets (certificates, keys, cipher suites) embedded across applications, APIs, and infrastructure with no centralized inventory. IBM, Thales, and Entrust are offering PQC toolkits but none provide automated end-to-end migration orchestration. SandboxAQ (spun out of Alphabet) raised $500M and is targeting this space. Estimated 85% of Fortune 500 companies have not begun PQC readiness assessment (Deloitte 2025 survey). Federal contractors face binding deadlines under OMB M-23-02 requiring cryptographic inventory by 2025 and migration plans by 2026.",
+    "falsification_criteria": "Quantum computing timelines slip significantly (no fault-tolerant machine by 2040), removing urgency from migration deadlines. OR NIST standards are found to have fundamental weaknesses requiring re-standardization (SIKE was broken in 2022 after Round 3 selection). OR hyperscalers (AWS, Azure, GCP) bundle PQC migration tooling into existing security products at zero incremental cost.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-QC-002",
+    "name": "Quantum Simulation-as-a-Service for Drug Discovery",
+    "one_liner": "Cloud-accessible quantum simulation platform for molecular dynamics and protein-ligand binding \u2014 targeting pharmaceutical R&D teams where quantum advantage is nearest, addressing a $2.1B quantum computing in pharma market by 2030",
+    "sector_naics": "54",
+    "sector_name": "Professional, Scientific, and Technical Services",
+    "architecture": "platform_infrastructure",
+    "forces_v3": [
+      "F1_technology",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 8,
+      "FA": 6,
+      "EC": 6,
+      "TG": 4,
+      "CE": 4
+    },
+    "composite": 59.0,
+    "category": "PARKED",
+    "macro_source": "IBM Quantum, Quantinuum, and IonQ hardware roadmaps; McKinsey quantum computing in pharma report (2024); Nature papers on quantum advantage for FeMoCo simulation; Pharma R&D spend of $260B annually (EvaluatePharma 2025)",
+    "deep_dive_evidence": "Molecular simulation for drug discovery is widely considered the first commercially viable quantum computing application. The FeMoCo problem (nitrogen fixation catalyst) and cytochrome P450 enzyme simulations require 1,000-10,000 logical qubits \u2014 still beyond current hardware (IBM's 1,121-qubit Condor is noisy, not error-corrected). However, hybrid quantum-classical algorithms (VQE, QAOA) running on 50-200 qubit machines can already accelerate specific molecular property calculations 10-100x versus classical DFT methods for small molecules. Pharma companies are investing: Roche partnered with Cambridge Quantum, Merck with Riverlane, Boehringer Ingelheim with Google Quantum AI. The pharmaceutical R&D market spends $260B annually, with computational chemistry comprising roughly $8-12B. BCG estimates quantum computing could accelerate drug discovery timelines by 15-20%, creating $50-100B in value across pharma. However, the timeline remains uncertain: error-corrected quantum computers capable of outperforming classical simulations for drug-relevant molecules are likely 5-8 years away. Current offerings from Zapata AI, QC Ware (acquired by PsiQuantum 2025), and Algorithmiq are primarily consulting-wrapped simulation services, not self-serve platforms. The capital intensity is extreme \u2014 quantum hardware access costs $1-5M/year, and customer willingness to pay is limited until clear advantage is demonstrated.",
+    "falsification_criteria": "Classical computing advances (especially GPU-accelerated tensor network methods or AI-driven molecular simulation like AlphaFold 3) close the gap, eliminating quantum advantage for drug-relevant molecules. OR quantum hardware error rates fail to improve on IBM/Quantinuum roadmap timelines. OR pharma companies reduce R&D spending in a capital contraction cycle.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-QC-003",
+    "name": "Quantum-Safe Key Management Infrastructure",
+    "one_liner": "Enterprise PKI infrastructure platform for NIST lattice-based cryptographic key lifecycle management \u2014 generation, distribution, rotation, and revocation of ML-KEM and ML-DSA keys across hybrid classical-quantum environments",
+    "sector_naics": "51",
+    "sector_name": "Information",
+    "architecture": "platform_infrastructure",
+    "forces_v3": [
+      "F1_technology",
+      "F3_geopolitics",
+      "F5_psychology"
+    ],
+    "scores": {
+      "SN": 8,
+      "FA": 7,
+      "EC": 8,
+      "TG": 7,
+      "CE": 6
+    },
+    "composite": 73.0,
+    "category": "FORCE_RIDER",
+    "macro_source": "NIST FIPS 203 ML-KEM standard; OMB M-23-02 federal cryptographic inventory mandate; Gartner PKI modernization forecast; Venafi machine identity management market data; DigiCert and Keyfactor enterprise PKI deployment statistics",
+    "deep_dive_evidence": "The NIST PQC standards introduce fundamentally different key sizes and performance characteristics: ML-KEM-768 public keys are 1,184 bytes versus 32 bytes for X25519, and ML-DSA-65 signatures are 3,309 bytes versus 64 bytes for Ed25519. This 30-50x increase in key/signature sizes breaks assumptions embedded in every certificate management system, HSM, TLS implementation, and API gateway. Existing PKI vendors (DigiCert, Venafi, Keyfactor) manage classical certificates but lack native PQC key lifecycle support. The enterprise PKI market is $5.2B (2024, MarketsandMarkets) growing to $12.6B by 2029. The hybrid transition period (running classical and PQC algorithms simultaneously for backward compatibility) creates extraordinary complexity \u2014 every TLS connection, code signing operation, and certificate rotation must support both algorithm families. Keyfactor's 2025 Machine Identity Report found that the average enterprise manages 256,000+ certificates with 74% experiencing certificate-related outages. Adding PQC migration multiplies this complexity. The Federal PKI (FPKI) ecosystem alone manages 380+ million certificates across civilian agencies. Financial services firms (SWIFT, major banks) are piloting PQC-ready key management for payment systems. First movers include PQShield (raised $37M), Quantinuum's Quantum Origin (QRNG-based), and evolutionQ, but no dominant platform has emerged for enterprise-grade PQC key lifecycle management.",
+    "falsification_criteria": "Existing PKI vendors (DigiCert, Venafi, Keyfactor) ship native PQC key management modules that fully address the hybrid transition, preventing greenfield entrants. OR NIST PQC migration timelines are extended beyond 2035 due to slower-than-expected quantum computing progress, removing urgency. OR a crypto-agility standard emerges that makes key management algorithm-independent, commoditizing the PQC-specific layer.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-SB-001",
+    "name": "AI-Accelerated Protein Engineering Platform",
+    "one_liner": "Integrated wet-lab and ML platform for directed protein evolution \u2014 using AI to design, predict, and optimize novel enzymes and therapeutic proteins with a proprietary data flywheel from each experimental cycle",
+    "sector_naics": "54",
+    "sector_name": "Professional, Scientific, and Technical Services",
+    "architecture": "data_compounding",
+    "forces_v3": [
+      "F1_technology",
+      "F4_capital",
+      "F6_energy"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 8,
+      "EC": 7,
+      "TG": 6,
+      "CE": 5
+    },
+    "composite": 68.0,
+    "category": "FORCE_RIDER",
+    "macro_source": "AlphaFold impact on structural biology; Nature Biotechnology protein engineering review 2025; Absci, Evolvere, Arzeda funding and partnerships; Global protein engineering market forecast (Grand View Research $6.1B by 2030); industrial enzyme market $8.7B (2024)",
+    "deep_dive_evidence": "The protein engineering market is projected to reach $6.1B by 2030 (Grand View Research, 12.5% CAGR). AlphaFold 2/3 proved that ML can predict protein structure, but design \u2014 engineering proteins with novel functions, improved stability, or enhanced catalytic activity \u2014 remains the high-value frontier. The design-build-test-learn cycle for directed evolution historically takes 6-12 months per iteration; AI-guided approaches reduce this to 2-4 weeks by predicting which mutations improve function before wet-lab testing. Absci ($ABSI, market cap ~$800M) demonstrated AI-designed antibodies entering preclinical development. Arzeda designs novel enzymes for industrial applications (food, agriculture, materials). Profluent Bio (raised $35M) designed functional CRISPR-Cas proteins entirely computationally. The data moat is critical: each experimental cycle generates sequence-function data that improves predictive models. A platform with 100,000+ characterized protein variants has a compounding advantage that new entrants cannot replicate without equivalent wet-lab investment. The industrial enzyme market alone ($8.7B in 2024, Allied Market Research) is being disrupted by AI-designed enzymes that outperform natural variants by 10-1000x on specific metrics (thermal stability, substrate specificity, catalytic rate). Pharma partnerships provide upfront milestones ($5-50M per program) plus downstream royalties, creating a capital-efficient path if the platform generates hits.",
+    "falsification_criteria": "Open-source protein design tools (RFdiffusion, ProteinMPNN) become so capable that proprietary data moats are commoditized. OR wet-lab validation remains the bottleneck (AI designs still fail 90%+ in vitro), preventing the data flywheel from compounding. OR large pharma companies build internal AI protein engineering teams (Genentech, Novartis already investing), eliminating the need for external platforms.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-SB-002",
+    "name": "Bio-Manufacturing Scale-Up for Chemical Replacement",
+    "one_liner": "Fermentation-based bio-manufacturing platform replacing petrochemical intermediates with engineered microorganisms \u2014 targeting the $180B specialty chemicals market where bio-routes achieve cost parity at scale for select molecules",
+    "sector_naics": "32",
+    "sector_name": "Manufacturing \u2014 Chemical",
+    "architecture": "physical_production_ai",
+    "forces_v3": [
+      "F1_technology",
+      "F6_energy",
+      "F3_geopolitics"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 8,
+      "EC": 7,
+      "TG": 5,
+      "CE": 3
+    },
+    "composite": 63.5,
+    "category": "FORCE_RIDER",
+    "macro_source": "McKinsey Bio Revolution report ($2-4T economic impact by 2040); Ginkgo Bioworks and Zymergen cautionary tales on scale-up; USDA BioPreferred program; EU REACH chemical regulation driving bio-alternatives; IEA petrochemical demand forecast",
+    "deep_dive_evidence": "The specialty chemicals market ($180B globally) relies heavily on petroleum feedstocks. Bio-manufacturing \u2014 using engineered microorganisms to produce chemicals via fermentation \u2014 offers a decarbonization pathway and supply chain independence from petrochemical volatility. However, the sector carries deep scar tissue: Zymergen's $3B implosion (2021) after failing to manufacture its bio-based electronics film at scale, and Ginkgo Bioworks' decline from $15B SPAC valuation to ~$400M market cap, demonstrated that lab-to-commercial-scale remains the critical gap. The survivors are instructive: Genomatica (raised $440M+) achieved commercial-scale production of 1,4-butanediol (BDO) \u2014 a $6B chemical market \u2014 via fermentation, with BASF licensing the process. LanzaTech converts industrial waste gases into ethanol and chemicals at commercial scale across 3 facilities. Solugen produces glucaric acid and hydrogen peroxide bio-catalytically at a 10,000 ton/year facility in Houston. The pattern: success requires choosing molecules where bio-routes have inherent advantages (ambient temperature/pressure vs. high-energy petrochemical processes) AND where the molecule sells for >$2/kg (below that, fermentation economics cannot compete). The EU's REACH regulations and corporate Scope 3 emissions targets are creating a sustainability premium of 10-30% that bio-manufactured chemicals can capture. Capital intensity is extreme: a single fermentation facility costs $50-200M, requiring Series C+ funding before meaningful revenue.",
+    "falsification_criteria": "Petrochemical feedstock prices collapse (oil below $40/bbl sustained), destroying the cost competitiveness of bio-routes. OR fermentation scale-up challenges persist (contamination, yield degradation at scale) as they did for Zymergen/Ginkgo. OR green hydrogen enables low-carbon petrochemical production, offering a less disruptive decarbonization path for the chemical industry.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-SB-003",
+    "name": "Precision Fermentation Food Ingredients",
+    "one_liner": "Microbial fermentation platform producing animal-identical dairy proteins, fats, and flavor compounds \u2014 targeting the $27B global dairy protein ingredients market where regulatory and scale hurdles keep cost parity 3-5 years away",
+    "sector_naics": "31",
+    "sector_name": "Manufacturing \u2014 Food",
+    "architecture": "physical_production_ai",
+    "forces_v3": [
+      "F1_technology",
+      "F2_demographics",
+      "F6_energy"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 6,
+      "EC": 7,
+      "TG": 5,
+      "CE": 4
+    },
+    "composite": 60.0,
+    "category": "CONDITIONAL",
+    "macro_source": "Good Food Institute precision fermentation market analysis; Perfect Day (now Change Foods competitor) dairy protein production data; McKinsey alternative protein forecast; USDA GRAS approval pathway timelines; RethinkX food disruption model",
+    "deep_dive_evidence": "Precision fermentation uses engineered yeast or fungi to produce animal-identical proteins (whey, casein), fats, and other compounds. Perfect Day pioneered the category with its animal-free whey protein (beta-lactoglobulin), achieving FDA GRAS status in 2020 and launching consumer products through partnerships with Brave Robot and Starbucks. The technology is proven: fermentation-derived chymosin (rennet) already dominates 90% of the cheese market. However, cost parity remains elusive \u2014 precision fermentation whey costs $10-20/kg versus conventional whey at $8-12/kg, and casein (critical for cheese functionality) is even further from parity. The global whey protein market is $10.3B (2024) growing at 8.5% CAGR; total dairy protein ingredients market is $27B. New Protein Ltd and Remilk have received regulatory approvals in Israel and Singapore. The US pathway requires GRAS self-determination or FDA approval (6-18 months). Capital intensity is the binding constraint: a commercial-scale fermentation facility costs $50-150M, and capacity utilization below 80% destroys unit economics. Change Foods (raised $40M) and Formo ($61M) are racing to scale casein production. RethinkX projects precision fermentation proteins could be 5-10x cheaper than animal-derived by 2035, but current evidence suggests cost parity for commodity dairy proteins is 3-5 years away at optimistic scale-up rates. The sustainability premium (50-97% lower GHG emissions per kg protein) creates an addressable market among ESG-conscious CPG brands willing to pay 15-25% premiums.",
+    "falsification_criteria": "Fermentation yields plateau at current levels (5-20g/L), preventing cost parity with conventional dairy proteins. OR consumer rejection of 'lab-grown' ingredients accelerates (GMO backlash 2.0). OR conventional dairy industry achieves dramatic emissions reductions through methane capture and regenerative practices, neutralizing the sustainability premium. OR FDA imposes burdensome novel food ingredient regulations that delay market access by 3+ years.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-CT-001",
+    "name": "Climate Risk Analytics and Disclosure Platform",
+    "one_liner": "AI-powered climate risk modeling, scenario analysis, and regulatory disclosure platform for corporates and financial institutions \u2014 serving mandatory SEC and EU CSRD reporting requirements across 50,000+ affected companies",
+    "sector_naics": "52",
+    "sector_name": "Finance and Insurance",
+    "architecture": "data_compounding",
+    "forces_v3": [
+      "F1_technology",
+      "F3_geopolitics",
+      "F6_energy"
+    ],
+    "scores": {
+      "SN": 9,
+      "FA": 8,
+      "EC": 9,
+      "TG": 8,
+      "CE": 7
+    },
+    "composite": 83.0,
+    "category": "STRUCTURAL_WINNER",
+    "macro_source": "SEC Climate Disclosure Rule (adopted March 2024, compliance beginning 2026); EU Corporate Sustainability Reporting Directive (CSRD) effective January 2024; ISSB IFRS S1/S2 standards; TCFD adoption statistics; McKinsey climate risk quantification methodology",
+    "deep_dive_evidence": "The SEC's climate disclosure rule (adopted March 2024, partially stayed pending litigation but Scope 1/2 reporting proceeding) requires public companies to report greenhouse gas emissions, climate risk governance, and transition plans. The EU's CSRD is more aggressive \u2014 requiring 50,000+ companies (including non-EU companies with significant EU revenue) to report under European Sustainability Reporting Standards (ESRS) starting 2024-2026 in phases. Together, these mandates create a structural requirement for climate risk analytics that did not exist 3 years ago. The climate risk analytics market is projected at $4.8B by 2029 (MarketsandMarkets, 22.3% CAGR). Current landscape: Persefoni (raised $101M) provides carbon accounting for SEC/CSRD compliance. Watershed (raised $100M, valued at $1.8B) serves enterprise carbon management. S&P Global, MSCI, and Moody's offer climate risk scoring but lack the granular physical risk modeling and disclosure automation that corporates need. The data moat opportunity: climate risk modeling requires integrating satellite imagery, weather data, supply chain mapping, emissions factors, and financial data into company-specific risk scores. Each client engagement generates proprietary risk data that improves models. Banks and insurers need portfolio-level climate risk aggregation for TCFD/ECB stress testing \u2014 JPMorgan alone has $3.4T in assets requiring climate risk assessment. The gap between regulatory requirement and corporate capability is enormous: Deloitte's 2025 climate survey found only 23% of affected companies have automated climate data collection, and 68% are relying on spreadsheets for CSRD reporting.",
+    "falsification_criteria": "SEC climate disclosure rule is struck down by courts and no replacement legislation emerges (current Supreme Court skepticism of agency rulemaking is a real risk). OR EU CSRD enforcement is watered down under business lobby pressure. OR Big 4 accounting firms bundle climate disclosure into existing audit services at marginal cost, preventing specialized platform revenue.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-CT-002",
+    "name": "Carbon Credit Verification and Registry Platform",
+    "one_liner": "Digital-native carbon credit registry with AI-powered MRV (measurement, reporting, verification) \u2014 rebuilding trust in voluntary carbon markets after the integrity crisis by providing satellite-verified, transparent credit issuance",
+    "sector_naics": "54",
+    "sector_name": "Professional, Scientific, and Technical Services",
+    "architecture": "platform_infrastructure",
+    "forces_v3": [
+      "F1_technology",
+      "F3_geopolitics",
+      "F6_energy"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 8,
+      "EC": 8,
+      "TG": 7,
+      "CE": 6
+    },
+    "composite": 73.0,
+    "category": "FORCE_RIDER",
+    "macro_source": "ICVCM Core Carbon Principles (March 2023); Article 6 of Paris Agreement operationalization (COP28); Bloomberg voluntary carbon market analysis ($2B in 2023); Verra/Gold Standard registry reform announcements; Pachama, Sylvera, and BeZero funding rounds",
+    "deep_dive_evidence": "The voluntary carbon market experienced an integrity crisis in 2023-2024 when investigations (The Guardian, Bloomberg) found that major Verra-certified REDD+ forest carbon credits were largely worthless \u2014 up to 94% of offsets did not represent real emissions reductions. Market volume dropped from $2B (2023) to estimated $1.5B (2024) as corporate buyers paused purchases. This crisis creates a rebuild opportunity: the Integrity Council for the Voluntary Carbon Market (ICVCM) published Core Carbon Principles requiring enhanced additionality, permanence, and robust MRV. Article 6 of the Paris Agreement (operationalized at COP28/29) establishes a framework for international carbon trading that requires registry-level transparency. The technology to solve verification exists: satellite-based forest monitoring (Planet Labs provides 3m resolution daily global imagery), LiDAR-measured biomass estimation, and IoT-enabled soil carbon measurement can replace the site-visit-based verification that enabled fraud. Pachama (raised $79M) and Sylvera (raised $57M) provide AI-powered carbon credit rating and verification. BeZero ($50M raised) rates credit quality. But the registry layer itself \u2014 where credits are issued, tracked, and retired \u2014 remains controlled by legacy nonprofits (Verra, Gold Standard) using outdated systems. A digital-native registry with satellite-verified issuance, transparent methodology scoring, and real-time monitoring could capture 10-20% of a market projected to reach $50B by 2030 (TSVCM estimate, revised down from $100B). The CORSIA aviation offset mandate (2024+) creates guaranteed demand from airlines regardless of voluntary market sentiment.",
+    "falsification_criteria": "Voluntary carbon market fails to recover from integrity crisis \u2014 corporate buyers permanently shift to insetting (internal emissions reductions) over offsetting. OR existing registries (Verra, Gold Standard) successfully reform and retain market control. OR government carbon taxes/cap-and-trade systems expand globally, making voluntary markets irrelevant.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-CT-003",
+    "name": "Grid-Scale Long-Duration Energy Storage",
+    "one_liner": "Iron-air and flow battery systems for 100+ hour grid-scale energy storage \u2014 enabling renewable grid reliability beyond lithium-ion's 4-hour limit, addressing a $120B long-duration storage market need by 2040",
+    "sector_naics": "22",
+    "sector_name": "Utilities",
+    "architecture": "hardware_ai",
+    "forces_v3": [
+      "F1_technology",
+      "F6_energy",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 9,
+      "FA": 7,
+      "EC": 8,
+      "TG": 5,
+      "CE": 2
+    },
+    "composite": 66.5,
+    "category": "FORCE_RIDER",
+    "macro_source": "DOE Long-Duration Energy Storage (LDES) Earthshot target ($0.05/kWh by 2030); Form Energy iron-air battery development; LDES Council reports; IRA Section 48E investment tax credits for storage; CAISO duck curve data showing 10+ hour curtailment periods",
+    "deep_dive_evidence": "Lithium-ion batteries dominate grid storage but are economically limited to 4-hour discharge \u2014 insufficient for multi-day renewable droughts (Dunkelflaute events). As renewable penetration exceeds 50% of grid capacity (California reached 100% instantaneous renewable generation in April 2024), long-duration energy storage (LDES) becomes structurally necessary for grid reliability. The DOE's LDES Earthshot targets $0.05/kWh for 100+ hour storage by 2030 (current lithium-ion is $0.15-0.25/kWh for 4 hours). Form Energy (raised $800M+, valued at $2B+) is building the first commercial iron-air battery facility in Weirton, WV \u2014 750 MW manufacturing capacity with first deliveries expected 2025-2026. Iron-air promises 100+ hour duration at 1/10th the cost of lithium-ion per kWh stored, using abundant iron and water. Competitors: ESS Inc. ($ESS, iron flow batteries, struggling commercially \u2014 stock down 90%+ from SPAC), Ambri (liquid metal batteries, raised $200M+), EnerVenue (metal-hydrogen batteries, $368M raised). The LDES Council estimates 85-140 TWh of LDES needed globally by 2040, representing a $1.5-3T cumulative investment. IRA Section 48E provides 30-50% investment tax credits for standalone storage. The challenge is extreme: first-of-kind manufacturing risk, 10-20 year project lifetimes for utility contracts, and massive capital requirements ($500M+ to build a single Gigafactory). This is definitionally not venture-scalable \u2014 it requires growth equity, project finance, and DOE loan guarantees. Round-trip efficiency of 45-55% for iron-air (vs. 85-95% for lithium-ion) is a real technical limitation that increases effective storage cost.",
+    "falsification_criteria": "Lithium-ion cost declines continue (reaching $50/kWh cell-level) and 8-12 hour lithium-iron-phosphate systems prove sufficient for grid stability. OR iron-air round-trip efficiency fails to improve beyond 50%, making the technology too wasteful. OR natural gas peaker plants with carbon capture prove cheaper for grid balancing than LDES. OR nuclear (SMRs) provides reliable baseload that reduces LDES need.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-LV-001",
+    "name": "GLP-1 Patient Management and Outcomes Platform",
+    "one_liner": "Comprehensive patient management platform for the 30M+ Americans on GLP-1 agonists \u2014 integrating dosing optimization, side effect management, nutritional guidance, muscle preservation protocols, and long-term outcomes tracking in a $4.2B digital therapeutics adjacency",
+    "sector_naics": "62",
+    "sector_name": "Health Care and Social Assistance",
+    "architecture": "vertical_saas",
+    "forces_v3": [
+      "F1_technology",
+      "F2_demographics",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 9,
+      "FA": 8,
+      "EC": 6,
+      "TG": 9,
+      "CE": 8
+    },
+    "composite": 80.0,
+    "category": "STRUCTURAL_WINNER",
+    "macro_source": "GLP-1 prescription data (IQVIA: 9M+ active prescriptions Q4 2024, growing 40% YoY); Novo Nordisk Wegovy and Eli Lilly Zepbound revenue ($40B+ combined 2025E); Medicare Part D GLP-1 coverage expansion (January 2026); Obesity prevalence 42.4% (CDC NHANES 2023)",
+    "deep_dive_evidence": "GLP-1 receptor agonists (semaglutide/Wegovy, tirzepatide/Zepbound) represent the most significant pharmaceutical category expansion since statins. IQVIA data shows 9M+ active GLP-1 prescriptions in Q4 2024, with Morgan Stanley projecting 30M+ US patients by 2028 as Medicare coverage expands and supply constraints ease. Combined Wegovy + Zepbound revenue is projected to exceed $40B globally in 2025. The patient management gap is stark: GLP-1 patients experience significant side effects (nausea in 44%, muscle loss of 25-40% of weight lost, gallbladder events in 1.5%), require dosing titration over 16-20 weeks, need nutritional guidance to preserve lean mass, and face indefinite treatment duration with high discontinuation rates (50-70% stop within 1 year per real-world data from Truveta). Yet no dedicated patient management platform exists \u2014 patients rely on generic telehealth (Ro, Hims) for prescriptions and receive minimal ongoing support. The opportunity: a SaaS platform sold to health systems, employer wellness programs, and GLP-1 manufacturers that tracks patient outcomes, optimizes dosing schedules using real-world evidence, integrates CGM and body composition data, and reduces the $15,000+/year drug cost through improved adherence and reduced adverse events. Employer interest is surging: JPMorgan, Goldman Sachs, and major self-insured employers are adding GLP-1 coverage but need tools to manage $500M+ annual pharmacy spend on these drugs. Digital health companies Calibrate and Found focus on prescribing, not outcomes management \u2014 the post-prescription journey is unserved.",
+    "falsification_criteria": "GLP-1 manufacturers (Novo, Lilly) build proprietary patient management apps that become standard of care, closing the platform opportunity. OR GLP-1 safety signals emerge (thyroid cancer, pancreatitis at higher rates than trials suggested), causing a prescribing pullback. OR GLP-1 prices decline rapidly due to biosimilars/generics (semaglutide patent expiry ~2031-2032), reducing employer incentive to invest in management platforms.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-LV-002",
+    "name": "Longevity Biomarker Analytics Platform",
+    "one_liner": "Multi-omic aging clock platform for pharmaceutical clinical trials and employer wellness programs \u2014 providing biological age measurement, intervention response tracking, and aging trajectory analytics using epigenetic, proteomic, and metabolomic biomarkers",
+    "sector_naics": "62",
+    "sector_name": "Health Care and Social Assistance",
+    "architecture": "data_compounding",
+    "forces_v3": [
+      "F1_technology",
+      "F2_demographics",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 6,
+      "EC": 6,
+      "TG": 6,
+      "CE": 6
+    },
+    "composite": 62.5,
+    "category": "CONDITIONAL",
+    "macro_source": "Horvath epigenetic clock publications; TruDiagnostic GrimAge 2.0 commercialization; Altos Labs ($3B funding), Calico Labs, Unity Biotechnology longevity R&D; longevity supplement market $64B by 2028 (Grand View Research); NIH NHLBI aging biomarker initiatives",
+    "deep_dive_evidence": "The longevity biomarker market is emerging from academia into commercial application. Epigenetic clocks (Horvath, GrimAge, DunedinPACE) can measure biological age with +-2 year accuracy, and more importantly, can detect intervention effects within 6-12 months \u2014 far faster than waiting for mortality endpoints. This makes aging clocks potentially transformative for clinical trials: a longevity drug trial that would take 10-15 years using mortality endpoints could show biological age reversal in 1-2 years. Pharma companies investing in aging (Altos Labs $3B, Calico/Alphabet, Unity Biotechnology, BioAge Labs) need validated aging biomarkers for trial design and regulatory submissions. The FDA's TAME trial (Targeting Aging with Metformin) is establishing the precedent for aging-as-indication. TruDiagnostic (raised $15M) offers consumer epigenetic testing at $350/test, with 50,000+ samples generating a proprietary aging database. Elysium Health sells consumer aging tests. But the B2B opportunity \u2014 providing aging clock analytics as a clinical trial endpoint for pharma \u2014 is larger and stickier. The data moat compounds: each sample adds to a multi-omic dataset (epigenetic + proteomic + metabolomic) that improves clock accuracy and enables stratified analysis (how does drug X affect aging in men vs. women, diabetics vs. healthy, etc.). Market sizing: 200+ longevity-related clinical trials currently active (ClinicalTrials.gov), with aging biomarker services at $50-500K per trial, plus employer wellness ($20-100 per employee for annual biological age testing). The challenge: regulatory uncertainty (FDA has not validated any aging clock as a clinical endpoint) and scientific debate about which clock best predicts healthspan.",
+    "falsification_criteria": "FDA refuses to accept aging biomarkers as clinical trial endpoints, keeping longevity drugs in the 10+ year mortality-endpoint paradigm. OR aging clocks prove unreliable across diverse populations (current validation is skewed toward European-descent cohorts). OR a single dominant clock emerges from academic research (e.g., DunedinPACE becomes gold standard), commoditizing the measurement and eliminating platform value.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-SP-001",
+    "name": "Space Debris Tracking and Collision Avoidance",
+    "one_liner": "AI-powered space situational awareness platform providing real-time debris tracking, conjunction analysis, and collision avoidance maneuver planning for satellite operators managing 10,000+ active satellites amid 36,000+ tracked debris objects",
+    "sector_naics": "54",
+    "sector_name": "Professional, Scientific, and Technical Services",
+    "architecture": "data_compounding",
+    "forces_v3": [
+      "F1_technology",
+      "F3_geopolitics",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 8,
+      "FA": 7,
+      "EC": 8,
+      "TG": 7,
+      "CE": 6
+    },
+    "composite": 73.0,
+    "category": "FORCE_RIDER",
+    "macro_source": "FCC 5-year deorbit rule (effective September 2024); ESA Space Debris Office statistics; SpaceX Starlink constellation (6,000+ satellites, 12,000 planned); 18th Space Defense Squadron conjunction data; LeoLabs and ExoAnalytic funding rounds",
+    "deep_dive_evidence": "The orbital debris problem is reaching a critical threshold. The US Space Surveillance Network tracks 36,500+ objects larger than 10cm, but the estimated population includes 130M+ objects larger than 1mm \u2014 any of which can damage or destroy a satellite at orbital velocities (7-8 km/s in LEO). SpaceX alone has launched 6,000+ Starlink satellites with 12,000 planned; Amazon's Kuiper, OneWeb, and Chinese constellations add thousands more. The FCC's September 2024 rule requiring satellite deorbit within 5 years of mission end (reduced from 25 years) creates a regulatory mandate for active debris management. The 18th Space Defense Squadron issues 20,000+ conjunction warnings per day but cannot provide the granular, operator-specific collision avoidance analysis that constellation operators need. This gap is the commercial opportunity. LeoLabs (raised $82M) operates a ground-based radar network providing LEO tracking. ExoAnalytic Solutions uses optical telescopes. Neither provides the integrated conjunction analysis + automated maneuver planning that operators need at mega-constellation scale. The space situational awareness market is projected at $1.8B by 2028 (Allied Market Research). Each new satellite launch increases the tracking requirement exponentially (each new object creates conjunction possibilities with every existing object). Insurance is a driver: space insurance premiums ($600M+ annual market) increasingly require demonstrated collision avoidance capability. ESA's ClearSpace-1 active debris removal mission (2026 launch) validates the seriousness of the problem. The data moat: tracking history for 10,000+ objects over years creates a propagation model that improves conjunction prediction accuracy \u2014 new entrants cannot replicate historical observation data.",
+    "falsification_criteria": "US Space Force or international body develops and freely distributes a high-accuracy public tracking catalog that matches commercial offerings. OR mega-constellation operators (SpaceX, Amazon) build proprietary tracking sufficient for their needs and refuse to participate in shared SSA platforms. OR a major Kessler syndrome event makes LEO economically unusable, destroying the customer base rather than growing it.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-SP-002",
+    "name": "Commercial Earth Observation Analytics",
+    "one_liner": "AI-powered geospatial analytics platform transforming satellite imagery into actionable intelligence for agriculture, insurance, commodity trading, and infrastructure monitoring \u2014 serving a $9.4B earth observation data market growing at 14% CAGR",
+    "sector_naics": "51",
+    "sector_name": "Information",
+    "architecture": "platform_infrastructure",
+    "forces_v3": [
+      "F1_technology",
+      "F3_geopolitics",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 8,
+      "EC": 8,
+      "TG": 8,
+      "CE": 7
+    },
+    "composite": 76.0,
+    "category": "FORCE_RIDER",
+    "macro_source": "Planet Labs ($PL) financial reports; Euroconsult earth observation market report 2025; Maxar (acquired by Advent International for $6.4B); Orbital Insight and Descartes Labs funding; USDA crop monitoring programs; global crop insurance market $46B (2024)",
+    "deep_dive_evidence": "The earth observation data and services market reached $6.1B in 2024 and is projected to hit $9.4B by 2028 (Euroconsult, 14% CAGR). Critically, the commercial segment now exceeds the defense/intelligence segment for the first time \u2014 agriculture, insurance, energy, finance, and infrastructure monitoring collectively represent 60%+ of demand. Planet Labs ($PL, ~$180M annual revenue) provides daily global 3m imagery from 200+ satellites but generates only basic analytics. The value gap: raw satellite imagery is abundant and commoditizing; AI-derived insights are scarce and high-value. Specific verticals demonstrate this: crop yield prediction (Descartes Labs, Gro Intelligence) commands $5-50/acre from commodity traders and insurers; infrastructure monitoring (Orbital Insight, HawkEye 360) charges $50-500K/year for pipeline and power line surveillance; deforestation monitoring commands $100K+ per engagement from ESG-mandated corporations. The analytics layer has better unit economics than the satellite layer \u2014 Planet Labs has -10% operating margins despite $180M revenue, while analytics providers operate at 60-80% gross margins with no space hardware risk. The data compounding advantage: AI models trained on multi-year, multi-spectral satellite archives with ground-truth validation (actual crop yields, confirmed insurance claims, verified deforestation) improve continuously. SAR (synthetic aperture radar) data from Capella Space and ICEYE adds all-weather, day-night capability. The CHIPS Act and ITAR reform are enabling US commercial earth observation exports that were previously restricted. Maxar's $6.4B acquisition by Advent International (2023) validates category value at the asset level.",
+    "falsification_criteria": "Satellite imagery becomes so commoditized (free Sentinel/Landsat data + open-source AI models) that commercial analytics margins compress to zero. OR cloud hyperscalers (Google Earth Engine, AWS Ground Station + SageMaker) vertically integrate imagery + analytics, displacing independent platforms. OR global crop production stabilizes due to climate adaptation, reducing the urgency for monitoring analytics.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-SP-003",
+    "name": "In-Space Manufacturing Platform",
+    "one_liner": "Orbital manufacturing facility for ultra-pure fiber optics, semiconductor crystals, and pharmaceutical proteins \u2014 leveraging microgravity for materials impossible to produce on Earth, targeting a $10B in-space economy by 2040 that remains deeply speculative today",
+    "sector_naics": "33",
+    "sector_name": "Manufacturing \u2014 Misc",
+    "architecture": "hardware_ai",
+    "forces_v3": [
+      "F1_technology",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 6,
+      "FA": 6,
+      "EC": 5,
+      "TG": 3,
+      "CE": 2
+    },
+    "composite": 47.5,
+    "category": "PARKED",
+    "macro_source": "NASA In-Space Production Applications (InSPA) program; Space Tango, Varda Space Industries, and Made In Space commercial demonstrations; McKinsey space economy forecast ($1.8T by 2035); SpaceX Starship reducing launch costs to $200-500/kg projected",
+    "deep_dive_evidence": "In-space manufacturing leverages microgravity to produce materials with properties unattainable on Earth: ZBLAN fluoride fiber optics (100x lower signal loss than silica fiber, worth $1-5M/km), semiconductor crystals with zero convective defects, and proteins that crystallize in structures impossible in gravity. Varda Space Industries (raised $90M) launched its first capsule in 2023 and returned pharmaceutical crystals (ritonavir) to Earth \u2014 demonstrating the end-to-end manufacture-and-return cycle. Space Tango operates automated manufacturing payloads on the ISS. Made In Space (acquired by Redwire for $73M) produced ZBLAN fiber samples showing 100x attenuation improvement over terrestrial fiber in ISS experiments. The economic thesis requires SpaceX's Starship to achieve $200-500/kg launch costs (current Falcon 9: $2,700/kg) \u2014 at current costs, only materials worth >$100K/kg justify the logistics. The NASA InSPA program has funded 18 commercial pathfinder projects. However, this market is deeply pre-commercial: no in-space manufactured product has been sold commercially at scale, the ISS (primary platform) retires ~2030, and commercial space stations (Axiom, Vast, Orbital Reef) are 3-5 years from operational. Total addressable market estimates range wildly from $500M to $10B by 2040 depending on launch cost assumptions. Capital requirements are extreme ($100M+ before any revenue), regulatory pathways for space-manufactured pharmaceuticals and optical fiber are undefined, and the technology risk is substantial. This is a 10+ year bet on launch cost reduction and commercial space station availability.",
+    "falsification_criteria": "SpaceX Starship fails to achieve <$1,000/kg launch costs, making in-space manufacturing uneconomical for all but the most exotic materials. OR terrestrial manufacturing advances (additive manufacturing, advanced crystal growth techniques) close the quality gap for ZBLAN and semiconductor crystals. OR ISS retirement occurs before commercial stations are operational, creating a multi-year platform gap. OR pharmaceutical regulators refuse to approve space-manufactured drugs due to quality assurance concerns.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-AM-001",
+    "name": "Wide-Bandgap Semiconductor Fabless Design",
+    "one_liner": "Fabless design house specializing in SiC and GaN power semiconductor chips for EV inverters, data center power supplies, and renewable energy converters \u2014 riding the $18.4B wide-bandgap market by 2030 with design IP and OSAT partnerships",
+    "sector_naics": "33",
+    "sector_name": "Manufacturing \u2014 Electronics",
+    "architecture": "platform_infrastructure",
+    "forces_v3": [
+      "F1_technology",
+      "F6_energy",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 7,
+      "FA": 8,
+      "EC": 8,
+      "TG": 7,
+      "CE": 6
+    },
+    "composite": 73.0,
+    "category": "FORCE_RIDER",
+    "macro_source": "Wolfspeed SiC foundry expansion (Mohawk Valley $5B fab); Yole D\u00e9veloppement SiC/GaN power semiconductor market forecast; CHIPS Act Section 48D manufacturing credits; Tesla vertical integration of SiC inverters; Infineon, STMicro, and ON Semi SiC roadmaps",
+    "deep_dive_evidence": "Silicon carbide (SiC) and gallium nitride (GaN) power semiconductors are replacing silicon IGBTs in high-power applications due to 50% lower switching losses, 10x higher switching frequency, and higher temperature operation. The SiC power device market reached $4.1B in 2024 and is projected to hit $12.6B by 2030 (Yole, 21% CAGR). GaN power adds another $5.8B by 2030 (primarily in <900V applications: data center power supplies, phone chargers, solar microinverters). The combined wide-bandgap market of $18.4B by 2030 is being driven by three converging demands: EVs (each EV uses $300-500 of SiC in the main inverter \u2014 Tesla's Model 3/Y use STMicro SiC MOSFETs), data center power (AI GPU racks draw 40-120kW requiring high-efficiency power conversion), and renewable energy (solar inverters and wind turbine converters). The market is supply-constrained: Wolfspeed's $5B Mohawk Valley fab expansion has faced repeated delays and the company's stock has declined 80%+ since 2023. Established players (Infineon, STMicro, ON Semi, ROHM) are vertically integrated, but the fabless opportunity exists because SiC/GaN foundry capacity (from X-FAB, Tower Semiconductor, and emerging Chinese fabs) is becoming available \u2014 enabling design houses to compete without $1-5B fab investments. CHIPS Act Section 48D provides 25% investment tax credits for semiconductor manufacturing, and Department of Commerce grants target SiC/GaN specifically. The design challenge: SiC/GaN devices require fundamentally different circuit topologies, gate drivers, and thermal management \u2014 creating space for specialized design IP. Navitas Semiconductor ($NVTS, GaN focus, $120M revenue run-rate) and EPC (acquired by Renesas) validate the fabless WBG model.",
+    "falsification_criteria": "Vertically integrated IDMs (Infineon, STMicro, ON Semi) lock up foundry capacity and automotive qualification slots, preventing fabless entrants from reaching production. OR silicon IGBT technology advances (SiGe, super-junction) close the performance gap at lower cost. OR Chinese SiC/GaN overcapacity crashes ASPs before design houses achieve scale. OR EV sales growth decelerates significantly, reducing the primary demand driver.",
+    "source_batch": "v314_frontier_coverage"
+  },
+  {
+    "id": "MC-V314-AM-002",
+    "name": "AI-Optimized Liquid Cooling for Data Centers",
+    "one_liner": "Intelligent direct-to-chip and immersion liquid cooling systems for AI data centers \u2014 replacing air cooling that cannot handle 120kW+ GPU racks, serving a $12.5B data center cooling market growing at 20% CAGR as AI compute density doubles annually",
+    "sector_naics": "33",
+    "sector_name": "Manufacturing \u2014 Electronics",
+    "architecture": "hardware_ai",
+    "forces_v3": [
+      "F1_technology",
+      "F6_energy",
+      "F4_capital"
+    ],
+    "scores": {
+      "SN": 9,
+      "FA": 9,
+      "EC": 7,
+      "TG": 9,
+      "CE": 5
+    },
+    "composite": 80.0,
+    "category": "STRUCTURAL_WINNER",
+    "macro_source": "NVIDIA Blackwell GPU TDP 1,000W+ per chip; Schneider Electric and Vertiv data center cooling product roadmaps; Dell'Oro Group data center physical infrastructure forecast; CoolIT Systems, GRC, LiquidCool Solutions deployment data; Microsoft, Google, Meta liquid cooling announcements",
+    "deep_dive_evidence": "AI data center power density is outstripping air cooling physics. NVIDIA's Blackwell B200 GPU draws 1,000W per chip; a rack of 8 GPUs with networking and compute overhead reaches 100-150kW per rack \u2014 versus 15-25kW for traditional server racks. Air cooling physically cannot remove 100kW+ from a standard 42U rack without unacceptable airflow velocities and temperature differentials. This is not a preference \u2014 it is a thermodynamic constraint. The data center cooling market was $9.2B in 2024 and is projected to reach $25.5B by 2030 (Mordor Intelligence, 18.3% CAGR), with liquid cooling specifically reaching $12.5B. Three architectures compete: direct-to-chip (cold plates on CPUs/GPUs with liquid loops \u2014 deployed by CoolIT Systems at 4M+ nodes), rear-door heat exchangers (retrofit for existing racks), and full immersion (submerging servers in dielectric fluid \u2014 GRC, LiquidCool Solutions). Microsoft deployed liquid cooling across Azure AI data centers in 2024. Google uses liquid cooling for TPU pods. Meta is transitioning to liquid cooling for GPU clusters. NVIDIA mandates liquid cooling capability for Blackwell-based systems. The AI optimization layer is the differentiation: intelligent coolant flow control that adapts to GPU workload patterns (LLM inference has different thermal profiles than training), predictive maintenance using vibration and temperature sensors, and energy optimization that can reduce PUE from 1.3 (air) to 1.05-1.10 (liquid). CoolIT Systems (private, profitable) is the market leader in direct-to-chip but serves primarily hyperscalers \u2014 the enterprise and colocation segments remain underserved. Vertiv ($VRT, stock up 400%+ in 2024) and Schneider Electric are developing liquid cooling products but are not yet shipping at scale. The urgency is extreme: data center capacity is the binding constraint on AI scaling, and cooling is the binding constraint on density.",
+    "falsification_criteria": "NVIDIA or AMD develop integrated on-chip cooling solutions that eliminate the need for external liquid cooling infrastructure. OR AI compute shifts to more efficient architectures (optical computing, neuromorphic chips) that dramatically reduce heat generation per FLOP. OR data center buildout slows due to energy constraints, power grid limitations, or AI winter, reducing cooling demand growth. OR air cooling technology advances (phase-change materials, directed jet impingement) extend the viable power density range to 80-100kW per rack.",
+    "source_batch": "v314_frontier_coverage"
+  }
+]
