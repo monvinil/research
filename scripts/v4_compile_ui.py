@@ -75,6 +75,8 @@ def build_slim_model(m):
     cla = m.get("cla", {})
     vcr = m.get("vcr", {})
 
+    roi_est = vcr.get("roi_estimate", {}) if isinstance(vcr.get("roi_estimate"), dict) else {}
+
     slim = {
         "rank": m.get("rank"),
         "opportunity_rank": m.get("opportunity_rank"),
@@ -84,24 +86,44 @@ def build_slim_model(m):
         "composite": m.get("composite", 0),
         "opportunity_composite": cla.get("composite"),
         "vcr_composite": vcr.get("composite"),
-        "vcr_roi_multiple": vcr.get("roi_estimate", {}).get("seed_roi_multiple") if isinstance(vcr.get("roi_estimate"), dict) else None,
+        "vcr_roi_multiple": roi_est.get("seed_roi_multiple"),
+        "vcr_exit_val_M": roi_est.get("exit_val_M"),
         "category": m.get("primary_category", m.get("category", "")),
         "opportunity_category": cla.get("category"),
         "vcr_category": vcr.get("category"),
         "scores": m.get("scores", {}),
         "cla_scores": cla.get("scores"),
         "vcr_scores": vcr.get("scores"),
+        "cla_rationale": cla.get("rationale"),
+        "vcr_rationale": vcr.get("rationale"),
         "sector_naics": m.get("sector_naics"),
         "architecture": m.get("architecture"),
         "one_liner": m.get("one_liner"),
         "sector_name": m.get("sector_name"),
+        "source_batch": m.get("source_batch"),
         "confidence_tier": m.get("confidence_tier"),
         "evidence_quality": m.get("evidence_quality"),
         "forces": m.get("forces_v3"),
+        "deep_dive_evidence": m.get("deep_dive_evidence"),
+        "falsification_criteria": m.get("falsification_criteria"),
+        "force_rider_subtype": m.get("force_rider_subtype"),
+        "new_in_v36": m.get("new_in_v36"),
+        # Decomposition fields
+        "parent_id": m.get("parent_id"),
+        "layer_name": m.get("layer_name"),
+        "layer": m.get("layer"),
+        "decomposed": m.get("decomposed"),
+        "sub_model_count": m.get("sub_model_count"),
+        "sub_model_opp_range": m.get("sub_model_opp_range"),
         # v4 fields
         "narrative_ids": m.get("narrative_ids", []),
         "narrative_role": m.get("narrative_role", "unlinked"),
     }
+
+    # Catalyst scenario
+    cat = m.get("catalyst_scenario")
+    if cat:
+        slim["catalyst_scenario"] = cat
 
     # Polanyi
     pol = m.get("polanyi")
