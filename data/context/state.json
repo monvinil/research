@@ -1,6 +1,6 @@
 {
-  "state_version": 20,
-  "current_cycle": "v3-10",
+  "state_version": 21,
+  "current_cycle": "v3-11",
   "engine_mode": "economy_map_with_cascade_modeling",
   "engine_version": "3.10 -- 'Granularity Layer' cycle: First standardized value chain decomposition of FORTIFIED models. 10 parent models analyzed (2 commercial, 6 defense, 2 utilities), 19 sub-models created from 7 decomposed parents, 3 parent CLAs confirmed accurate (defense — procurement barriers universal). 454 models total (435→454). Granularity Framework v1.0 standardized. Sub-models span ACCESSIBLE (9), CONTESTED (7), FORTIFIED (3) — revealing hidden entry points within fortress markets. Dual ranking preserved. Key findings: Retail Media Measurement (L3) OPP=66.5 ACCESSIBLE vs parent's 31.0 FORTIFIED (+35.5pt), Defense Cloud Compliance (L4) OPP=66.5 ACCESSIBLE, DC Energy Management Software (L5) OPP=66.5 ACCESSIBLE with highest sub-model composite (80.75). Physical layers remain FORTIFIED, software layers are ACCESSIBLE — consistent cross-sector pattern.",
   "force_velocities": {
@@ -855,8 +855,17 @@
       "CONDITIONAL",
       "PARKED"
     ],
-    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced. v3-10: Granularity decomposition sub-models added.",
-    "total_models_rated": 454
+    "notes": "v2.0: GG (Geographic Grade) replaced by EC (External Context). GEOGRAPHIC_PLAY category removed. Batch normalization applied. Categories hard-enforced. v3-10: Granularity decomposition sub-models added. v3-11: VCR (VC ROI) added as third independent ranking dimension — 5 axes (MKT/CAP/ECO/VEL/MOA).",
+    "total_models_rated": 454,
+    "vcr_system": {
+      "version": "1.0",
+      "axes": ["MKT", "CAP", "ECO", "VEL", "MOA"],
+      "weights": [0.25, 0.25, 0.20, 0.15, 0.15],
+      "composite_formula": "(MKT*25 + CAP*25 + ECO*20 + VEL*15 + MOA*15) / 10",
+      "categories": ["FUND_RETURNER", "STRONG_MULTIPLE", "VIABLE_RETURN", "MARGINAL", "VC_POOR"],
+      "seed_valuation_M": 10,
+      "description": "Third independent ranking: VC ROI attractiveness at $10M seed. Measures market magnitude, capture feasibility, unit economics, revenue velocity, and moat trajectory."
+    }
   },
   "rated_models_index": {
     "total_models_rated": 454,

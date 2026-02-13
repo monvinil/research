@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v3.10</title>
+<title>Research Engine v3.11</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -408,6 +408,20 @@
   .opp-FORTIFIED { background: rgba(248,113,113,0.15); color: var(--red); }
   .opp-LOCKED { background: rgba(248,113,113,0.25); color: var(--red); }
 
+  /* VCR category badges */
+  .vcr-FUND_RETURNER { background: rgba(52,211,153,0.15); color: var(--green); }
+  .vcr-STRONG_MULTIPLE { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .vcr-VIABLE_RETURN { background: rgba(251,191,36,0.15); color: var(--amber); }
+  .vcr-MARGINAL { background: rgba(248,113,113,0.15); color: var(--red); }
+  .vcr-VC_POOR { background: rgba(255,255,255,0.06); color: var(--dim); }
+
+  /* ROI multiple display */
+  .roi-value { font-variant-numeric: tabular-nums; font-weight: 800; }
+  .roi-high { color: var(--green); }
+  .roi-good { color: var(--blue); }
+  .roi-moderate { color: var(--amber); }
+  .roi-low { color: var(--red); }
+
   /* Expanded model detail */
   .model-detail {
     display: none;
@@ -721,6 +735,7 @@
 <div class="container">
   <nav id="main-nav">
     <a class="active" data-view="models">Models</a>
+    <a data-view="vcroi">VC ROI</a>
     <a data-view="forces">Forces</a>
     <a data-view="sectors">Sectors</a>
     <a data-view="regions">Regions</a>
@@ -729,10 +744,10 @@
   </nav>
 
   <header>
-    <h1>Research Engine v3.10</h1>
+    <h1>Research Engine v3.11</h1>
     <div class="subtitle">
-      <span class="cycle-badge" id="cycle-badge">v3-10</span>
-      &nbsp; <span id="model-total-sub">454 rated models</span> &middot; dual ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
+      <span class="cycle-badge" id="cycle-badge">v3-11</span>
+      &nbsp; <span id="model-total-sub">454 rated models</span> &middot; triple ranking &middot; 6 forces &middot; 8 regions &middot; Updated <span id="last-updated">--</span>
     </div>
   </header>
 
@@ -768,6 +783,9 @@
         <option value="tg">TG (Timing)</option>
         <option value="ce">CE (Competitive)</option>
         <option value="name">Name A-Z</option>
+        <option value="vcr-rank">VCR Rank</option>
+        <option value="vcr-desc">VCR Score (high)</option>
+        <option value="roi-desc">ROI Multiple (high)</option>
       </select>
       <button class="toggle-btn" id="new-only-btn" onclick="toggleNewOnly()">NEW only</button>
       <div class="view-toggle">
@@ -794,6 +812,52 @@
 
     <!-- Pagination -->
     <div class="pagination" id="pagination"></div>
+  </div>
+
+  <!-- ═══ VIEW: VC ROI ═══ -->
+  <div id="view-vcroi" class="view-section">
+    <div class="kpi-row" id="vcr-kpi-row">
+      <div class="glass kpi"><div class="kpi-label">Fund Returners</div><div class="kpi-value" style="color:var(--green)" id="vcr-kpi-fund">--</div><div class="kpi-sub">VCR &ge;75</div></div>
+      <div class="glass kpi"><div class="kpi-label">Avg ROI Multiple</div><div class="kpi-value" style="color:var(--accent)" id="vcr-kpi-avg-roi">--</div><div class="kpi-sub">on $10M seed</div></div>
+      <div class="glass kpi"><div class="kpi-label">Median ROI</div><div class="kpi-value" style="color:var(--blue)" id="vcr-kpi-med-roi">--</div><div class="kpi-sub" id="vcr-kpi-med-sub">median multiple</div></div>
+      <div class="glass kpi"><div class="kpi-label">Above 10x</div><div class="kpi-value" style="color:var(--amber)" id="vcr-kpi-10x">--</div><div class="kpi-sub">models</div></div>
+      <div class="glass kpi"><div class="kpi-label">Above 50x</div><div class="kpi-value" style="color:var(--red)" id="vcr-kpi-50x">--</div><div class="kpi-sub">models</div></div>
+      <div class="glass kpi"><div class="kpi-label">Top VCR</div><div class="kpi-value" style="color:var(--green)" id="vcr-kpi-top">--</div><div class="kpi-sub" id="vcr-kpi-top-sub">score</div></div>
+    </div>
+
+    <div class="controls-bar">
+      <input type="text" class="search-box" id="vcr-search" placeholder="Search models...">
+      <select class="sort-select" id="vcr-sort">
+        <option value="vcr-rank">VCR Rank</option>
+        <option value="roi-desc">ROI Multiple (high)</option>
+        <option value="vcr-desc">VCR Score (high)</option>
+        <option value="tri-score">Triple Actionable</option>
+        <option value="mkt">MKT (Market)</option>
+        <option value="cap">CAP (Capture)</option>
+        <option value="eco">ECO (Economics)</option>
+        <option value="vel">VEL (Velocity)</option>
+        <option value="moa">MOA (Moat)</option>
+      </select>
+    </div>
+
+    <div class="filter-chips" id="vcr-cat-filters"></div>
+    <div style="height:8px"></div>
+    <div class="results-info" id="vcr-results-info"></div>
+
+    <div id="vcr-table-container"></div>
+
+    <div class="pagination" id="vcr-pagination"></div>
+
+    <div class="two-col" style="margin-top:16px">
+      <div class="glass-static card">
+        <div class="section-label">Architecture ROI Breakdown <span class="count">avg multiples by type</span></div>
+        <div id="vcr-arch-breakdown"></div>
+      </div>
+      <div class="glass-static card">
+        <div class="section-label">Top 20 Triple Actionable <span class="count">T &times; O &times; VCR</span></div>
+        <div id="vcr-tri-list"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ═══ VIEW: FORCES ═══ -->
@@ -878,7 +942,7 @@
     </div>
   </div>
 
-  <div class="footer">Research Engine v3.10 &middot; dual ranking (transformation + opportunity) &middot; 5-axis + CLA scoring &middot; 2026&ndash;2031</div>
+  <div class="footer">Research Engine v3.11 &middot; triple ranking (transformation + opportunity + VC ROI) &middot; 5-axis + CLA + VCR scoring &middot; 2026&ndash;2031</div>
 </div>
 
 <script>
@@ -891,6 +955,9 @@ let viewMode = 'table';
 let newOnlyActive = false;
 let activeCatFilter = null;
 let activeOppFilter = null;
+let activeVcrFilter = null;
+let vcrFilteredModels = [];
+let vcrCurrentPage = 1;
 let expandedModelId = null;
 
 async function load(path) {
@@ -925,10 +992,16 @@ const axisColor = {
 const claColor = {
   MO: 'var(--green)', MA: 'var(--amber)', VD: 'var(--cyan)', DV: 'var(--accent)'
 };
+const vcrColor = {
+  MKT: 'var(--green)', CAP: 'var(--blue)', ECO: 'var(--amber)',
+  VEL: 'var(--cyan)', MOA: 'var(--accent)'
+};
 
 // ─── MODEL CONTROLS ───
 document.getElementById('model-search').addEventListener('input', () => { currentPage = 1; applyFilters(); });
 document.getElementById('model-sort').addEventListener('change', () => { currentPage = 1; applyFilters(); });
+document.getElementById('vcr-search').addEventListener('input', () => { vcrCurrentPage = 1; applyVcrFilters(); });
+document.getElementById('vcr-sort').addEventListener('change', () => { vcrCurrentPage = 1; applyVcrFilters(); });
 
 function toggleNewOnly() {
   newOnlyActive = !newOnlyActive;
@@ -962,6 +1035,167 @@ function setOppFilter(cat) {
   });
   currentPage = 1;
   applyFilters();
+}
+
+function roiClass(r) {
+  if (r >= 50) return 'roi-high';
+  if (r >= 20) return 'roi-good';
+  if (r >= 10) return 'roi-moderate';
+  return 'roi-low';
+}
+
+function setVcrFilter(cat) {
+  if (activeVcrFilter === cat) { activeVcrFilter = null; }
+  else { activeVcrFilter = cat; }
+  document.querySelectorAll('#vcr-cat-filters .filter-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.cat === activeVcrFilter);
+  });
+  vcrCurrentPage = 1;
+  applyVcrFilters();
+}
+
+function applyVcrFilters() {
+  const q = document.getElementById('vcr-search').value.toLowerCase().trim();
+  const sort = document.getElementById('vcr-sort').value;
+
+  vcrFilteredModels = allModels.filter(m => {
+    if (activeVcrFilter && m.vcr_category !== activeVcrFilter) return false;
+    if (q) {
+      const hay = [m.name, m.id, m.architecture || '', m.vcr_category || ''].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const sortFns = {
+    'vcr-rank': (a, b) => (a.vcr_rank || 9999) - (b.vcr_rank || 9999),
+    'roi-desc': (a, b) => (b.vcr_roi_multiple || 0) - (a.vcr_roi_multiple || 0),
+    'vcr-desc': (a, b) => (b.vcr_composite || 0) - (a.vcr_composite || 0),
+    'tri-score': (a, b) => {
+      const gA = Math.pow((a.composite || 1) * (a.opportunity_composite || 1) * (a.vcr_composite || 1), 1/3);
+      const gB = Math.pow((b.composite || 1) * (b.opportunity_composite || 1) * (b.vcr_composite || 1), 1/3);
+      return gB - gA;
+    },
+    'mkt': (a, b) => ((b.vcr_scores || {}).MKT || 0) - ((a.vcr_scores || {}).MKT || 0),
+    'cap': (a, b) => ((b.vcr_scores || {}).CAP || 0) - ((a.vcr_scores || {}).CAP || 0),
+    'eco': (a, b) => ((b.vcr_scores || {}).ECO || 0) - ((a.vcr_scores || {}).ECO || 0),
+    'vel': (a, b) => ((b.vcr_scores || {}).VEL || 0) - ((a.vcr_scores || {}).VEL || 0),
+    'moa': (a, b) => ((b.vcr_scores || {}).MOA || 0) - ((a.vcr_scores || {}).MOA || 0),
+  };
+  if (sortFns[sort]) vcrFilteredModels.sort(sortFns[sort]);
+
+  renderVcrTable();
+}
+
+function renderVcrTable() {
+  const total = vcrFilteredModels.length;
+  const pages = Math.ceil(total / PAGE_SIZE);
+  if (vcrCurrentPage > pages) vcrCurrentPage = pages || 1;
+  const start = (vcrCurrentPage - 1) * PAGE_SIZE;
+  const pageModels = vcrFilteredModels.slice(start, start + PAGE_SIZE);
+
+  document.getElementById('vcr-results-info').textContent = total + ' model' + (total !== 1 ? 's' : '') + (activeVcrFilter ? ' \u2014 ' + activeVcrFilter.replace(/_/g, ' ') : '');
+
+  const container = document.getElementById('vcr-table-container');
+  const vcrAxes = ['MKT','CAP','ECO','VEL','MOA'];
+
+  container.innerHTML = '<div class="glass-static" style="overflow-x:auto"><table class="model-table">' +
+    '<thead><tr>' +
+    '<th>VCR#</th>' +
+    '<th>Name</th>' +
+    '<th>VCR</th>' +
+    '<th>ROI</th>' +
+    '<th>T-Score</th>' +
+    '<th>O-Score</th>' +
+    '<th>VCR Cat</th>' +
+    '<th>Arch</th>' +
+    '<th>VCR Axes</th>' +
+    '</tr></thead>' +
+    '<tbody>' + pageModels.map(m => {
+      const vcrComp = m.vcr_composite || 0;
+      const vcrCls = vcrComp >= 75 ? 'var(--green)' : vcrComp >= 60 ? 'var(--blue)' : vcrComp >= 45 ? 'var(--amber)' : 'var(--red)';
+      const roi = m.vcr_roi_multiple || 0;
+      const roiStr = roi >= 100 ? Math.round(roi) + 'x' : roi.toFixed(1) + 'x';
+      const vcrCat = m.vcr_category || 'VIABLE_RETURN';
+      const catCls = 'vcr-' + vcrCat;
+      const subBadge = m.parent_id ? '<span class="sub-badge">SUB</span>' : '';
+      const axes = vcrAxes.map(a => {
+        const v = (m.vcr_scores || {})[a] || 0;
+        const pct = (v / 10) * 100;
+        return '<div class="axis-bar"><div class="axis-bar-label">' + a + '</div><div class="axis-bar-track"><div class="axis-bar-fill" style="width:' + pct + '%;background:' + vcrColor[a] + '"></div></div><div class="axis-bar-val">' + v.toFixed(1) + '</div></div>';
+      }).join('');
+      return '<tr onclick="toggleModelDetail(\'' + esc(m.id) + '\')">' +
+        '<td class="rank-cell">' + (m.vcr_rank || '--') + '</td>' +
+        '<td class="name-cell">' + esc(m.name) + subBadge + '</td>' +
+        '<td class="composite-cell" style="color:' + vcrCls + '">' + vcrComp.toFixed(1) + '</td>' +
+        '<td class="opp-cell roi-value ' + roiClass(roi) + '">' + roiStr + '</td>' +
+        '<td style="font-size:12px;color:var(--text-secondary)">' + m.composite.toFixed(1) + '</td>' +
+        '<td style="font-size:12px;color:var(--text-secondary)">' + (m.opportunity_composite || 0).toFixed(1) + '</td>' +
+        '<td><span class="cat-badge ' + catCls + '">' + esc(vcrCat.replace(/_/g, ' ')) + '</span></td>' +
+        '<td style="font-size:11px;color:var(--dim)">' + esc(m.architecture || '') + '</td>' +
+        '<td><div class="axis-bars">' + axes + '</div></td>' +
+        '</tr>';
+    }).join('') + '</tbody>' +
+  '</table></div>';
+
+  // Pagination
+  const pEl = document.getElementById('vcr-pagination');
+  if (pages <= 1) { pEl.innerHTML = ''; return; }
+  let pHtml = '<button class="page-btn" onclick="goVcrPage(' + (vcrCurrentPage - 1) + ')" ' + (vcrCurrentPage === 1 ? 'disabled' : '') + '>&laquo;</button>';
+  for (let i = 1; i <= pages; i++) {
+    if (pages > 7 && i > 2 && i < pages - 1 && Math.abs(i - vcrCurrentPage) > 1) {
+      if (i === 3 || i === pages - 2) pHtml += '<span class="page-info">...</span>';
+      continue;
+    }
+    pHtml += '<button class="page-btn ' + (i === vcrCurrentPage ? 'active' : '') + '" onclick="goVcrPage(' + i + ')">' + i + '</button>';
+  }
+  pHtml += '<button class="page-btn" onclick="goVcrPage(' + (vcrCurrentPage + 1) + ')" ' + (vcrCurrentPage === pages ? 'disabled' : '') + '>&raquo;</button>';
+  pHtml += '<span class="page-info">' + vcrFilteredModels.length + ' models</span>';
+  pEl.innerHTML = pHtml;
+}
+
+function goVcrPage(p) {
+  const pages = Math.ceil(vcrFilteredModels.length / PAGE_SIZE);
+  if (p < 1 || p > pages) return;
+  vcrCurrentPage = p;
+  renderVcrTable();
+  document.getElementById('vcr-table-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderVcrCatFilters(summary) {
+  const el = document.getElementById('vcr-cat-filters');
+  const dist = summary.vcr_category_distribution || {};
+  const order = ['FUND_RETURNER','STRONG_MULTIPLE','VIABLE_RETURN','MARGINAL','VC_POOR'];
+  el.innerHTML = order.filter(k => dist[k] > 0).map(k => {
+    const cls = 'vcr-' + k;
+    return '<span class="filter-chip cat-badge ' + cls + '" data-cat="' + k + '" onclick="setVcrFilter(\'' + k + '\')">' + dist[k] + ' ' + k.replace(/_/g, ' ') + '</span>';
+  }).join('');
+}
+
+function renderVcrArchBreakdown(dashboard) {
+  const el = document.getElementById('vcr-arch-breakdown');
+  const data = dashboard.vcr_architecture_breakdown || [];
+  if (!data.length) return;
+  el.innerHTML = '<table class="model-table" style="font-size:11px"><thead><tr><th>Architecture</th><th>Count</th><th>Avg ECO</th><th>Avg MOA</th><th>Avg ROI</th></tr></thead><tbody>' +
+    data.slice(0, 15).map(a => {
+      const rc = roiClass(a.avg_roi_multiple);
+      return '<tr><td style="font-weight:600">' + esc(a.architecture) + '</td><td>' + a.count + '</td><td>' + a.avg_eco.toFixed(1) + '</td><td>' + a.avg_moa.toFixed(1) + '</td><td class="roi-value ' + rc + '">' + a.avg_roi_multiple.toFixed(1) + 'x</td></tr>';
+    }).join('') + '</tbody></table>';
+}
+
+function renderVcrTriList(dashboard) {
+  const el = document.getElementById('vcr-tri-list');
+  const data = dashboard.top_20_tri_actionable || [];
+  if (!data.length) return;
+  el.innerHTML = data.map((a, i) => {
+    const rc = roiClass(a.seed_roi_multiple || 0);
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:11px">' +
+      '<span style="color:var(--dim);width:20px">' + (i+1) + '</span>' +
+      '<span style="flex:1;font-weight:600;color:var(--text)">' + esc(a.name).slice(0,30) + '</span>' +
+      '<span style="color:var(--accent);font-weight:700;width:45px;text-align:right">' + a.tri_score.toFixed(1) + '</span>' +
+      '<span class="roi-value ' + rc + '" style="width:50px;text-align:right;font-size:10px">' + (a.seed_roi_multiple || 0).toFixed(0) + 'x</span>' +
+      '</div>';
+  }).join('');
 }
 
 function applyFilters() {
@@ -998,6 +1232,9 @@ function applyFilters() {
     'tg': (a, b) => (b.scores.TG || 0) - (a.scores.TG || 0),
     'ce': (a, b) => (b.scores.CE || 0) - (a.scores.CE || 0),
     'name': (a, b) => a.name.localeCompare(b.name),
+    'vcr-rank': (a, b) => (a.vcr_rank || 9999) - (b.vcr_rank || 9999),
+    'vcr-desc': (a, b) => (b.vcr_composite || 0) - (a.vcr_composite || 0),
+    'roi-desc': (a, b) => (b.vcr_roi_multiple || 0) - (a.vcr_roi_multiple || 0),
   };
   if (sortFns[sort]) filteredModels.sort(sortFns[sort]);
 
@@ -1026,6 +1263,7 @@ function renderModelList() {
         <th data-sort="name">Name</th>
         <th data-sort="composite-desc">T-Score</th>
         <th data-sort="opp-desc">O-Score</th>
+        <th data-sort="roi-desc">ROI</th>
         <th data-sort="category">T-Category</th>
         <th>O-Category</th>
         <th>Axes</th>
@@ -1065,6 +1303,7 @@ function modelTableRow(m) {
     <td class="name-cell">${esc(m.name)}${newBadge}${subBadge}${decompIndicator}</td>
     <td class="composite-cell" style="color:${compColor}">${m.composite.toFixed(1)}</td>
     <td class="opp-cell" style="color:${oppColor}">${oppComp.toFixed(1)}</td>
+    <td class="opp-cell roi-value ${roiClass(m.vcr_roi_multiple || 0)}" style="font-size:12px">${m.vcr_roi_multiple ? (m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) + 'x' : m.vcr_roi_multiple.toFixed(1) + 'x') : '--'}</td>
     <td><span class="cat-badge ${catCls}">${esc((m.category || '').replace(/_/g, ' '))}</span></td>
     <td><span class="cat-badge ${oppCatCls}">${esc((m.opportunity_category || '').replace(/_/g, ' '))}</span></td>
     <td><div class="axis-bars">${axes}</div></td>
@@ -1144,6 +1383,21 @@ function toggleModelDetail(id) {
     </div>`;
   }).join('');
 
+  // VCR axes
+  const vcrAxesList = ['MKT','CAP','ECO','VEL','MOA'];
+  const vcrNames = { MKT: 'Market Magnitude', CAP: 'Capture Feasibility', ECO: 'Unit Economics', VEL: 'Revenue Velocity', MOA: 'Moat Trajectory' };
+  const vcrScores = m.vcr_scores || {};
+  const vcrHtml = vcrAxesList.map(a => {
+    const v = vcrScores[a] || 0;
+    const pct = (v / 10) * 100;
+    return `<div class="detail-axis">
+      <div class="da-label" style="color:${vcrColor[a]}">${a}</div>
+      <div class="da-value" style="color:${vcrColor[a]}">${v}</div>
+      <div class="da-bar"><div class="da-bar-fill" style="width:${pct}%;background:${vcrColor[a]}"></div></div>
+      <div style="font-size:8px;color:var(--dim);margin-top:3px">${vcrNames[a]}</div>
+    </div>`;
+  }).join('');
+
   const cats = (m.categories || [m.category]).map(c => `<span class="cat-badge cat-${c}">${esc(c.replace(/_/g, ' '))}</span>`).join('');
   const oppCatCls = 'opp-' + (m.opportunity_category || 'CONTESTED');
   const oppCatBadge = m.opportunity_category ? `<span class="cat-badge ${oppCatCls}">OPP: ${esc(m.opportunity_category.replace(/_/g, ' '))}</span>` : '';
@@ -1180,6 +1434,10 @@ function toggleModelDetail(id) {
           <div class="detail-composite-label">Opportunity</div>
           <div class="detail-composite-opp">${oppComp.toFixed(1)}</div>
         </div>
+        <div class="detail-composite-block">
+          <div class="detail-composite-label">VC ROI</div>
+          <div class="detail-composite-opp" style="color:var(--green)">${(m.vcr_composite || 0).toFixed(1)}</div>
+        </div>
       </div>
     </div>
     ${subInfoHtml}
@@ -1188,6 +1446,9 @@ function toggleModelDetail(id) {
     <div class="detail-axes">${axesHtml}</div>
     <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Opportunity Axes (CLA)</div>
     <div class="detail-cla-axes">${claHtml}</div>
+    <div style="font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">VC ROI Axes (VCR)</div>
+    <div class="detail-cla-axes" style="grid-template-columns:repeat(5,1fr)">${vcrHtml}</div>
+    ${m.vcr_roi_multiple ? `<div style="font-size:13px;color:var(--text-secondary);padding:8px 12px;background:rgba(52,211,153,0.04);border-radius:var(--radius-xs);border-left:3px solid var(--green);margin-bottom:12px">Seed ROI Estimate: <strong class="roi-value ${roiClass(m.vcr_roi_multiple)}" style="font-size:16px">${m.vcr_roi_multiple >= 100 ? Math.round(m.vcr_roi_multiple) : m.vcr_roi_multiple.toFixed(1)}x</strong> on $10M &middot; Exit: <strong>$${(m.vcr_exit_val_M || 0).toLocaleString()}M</strong></div>` : ''}
     <div class="detail-cats">${cats} ${oppCatBadge}</div>
     <div class="detail-meta">
       <span><span class="meta-label">NAICS:</span> ${esc(m.sector_naics)}</span>
@@ -1261,7 +1522,7 @@ function renderWhatsNew(d) {
 
   if (!items.length) { el.style.display = 'none'; return; }
 
-  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-10'}</div>
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v3-11'}</div>
     <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
 }
 
@@ -1482,7 +1743,7 @@ async function refresh() {
 
   if (d) {
     // Header
-    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-10';
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v3-11';
     const ts = d.last_updated;
     document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 
@@ -1528,6 +1789,19 @@ async function refresh() {
     renderDefense(d.defense_ai);
     renderInventory(d.model_inventory);
     renderCycles(d.cycle_history);
+    renderVcrArchBreakdown(d);
+    renderVcrTriList(d);
+
+    // VCR KPIs
+    const vcrStats = d.vcr_stats || {};
+    const vcrRoi = d.vcr_roi_stats || {};
+    const vcrCatDist = d.vcr_category_distribution || {};
+    if (vcrCatDist.FUND_RETURNER !== undefined) document.getElementById('vcr-kpi-fund').textContent = vcrCatDist.FUND_RETURNER;
+    if (vcrRoi.mean) document.getElementById('vcr-kpi-avg-roi').textContent = vcrRoi.mean + 'x';
+    if (vcrRoi.median) document.getElementById('vcr-kpi-med-roi').textContent = vcrRoi.median + 'x';
+    if (vcrRoi.above_10x !== undefined) document.getElementById('vcr-kpi-10x').textContent = vcrRoi.above_10x;
+    if (vcrRoi.above_50x !== undefined) document.getElementById('vcr-kpi-50x').textContent = vcrRoi.above_50x;
+    if (vcrStats.max) document.getElementById('vcr-kpi-top').textContent = vcrStats.max;
   }
 
   // Models
@@ -1535,7 +1809,9 @@ async function refresh() {
     allModels = m.models;
     renderCatFilters(m.summary || {});
     renderOppCatFilters(m.summary || {});
+    renderVcrCatFilters(m.summary || {});
     applyFilters();
+    applyVcrFilters();
   }
 }
 
