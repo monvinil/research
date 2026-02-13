@@ -62,9 +62,16 @@ def build_slim_model(m):
         "source_batch": m.get("source_batch"),
         "new_in_v36": m.get("new_in_v36", False),
         "one_liner": m.get("one_liner"),
+        "sector_name": m.get("sector_name"),
         # v3-13 enrichment fields
         "confidence_tier": m.get("confidence_tier"),
         "evidence_quality": m.get("evidence_quality"),
+        "falsification_criteria": m.get("falsification_criteria"),
+        "forces": m.get("forces_v3"),
+        # Rationales — the "why" behind scores
+        "cla_rationale": cla.get("rationale"),
+        "vcr_rationale": vcr.get("rationale"),
+        "deep_dive_evidence": m.get("deep_dive_evidence") if isinstance(m.get("deep_dive_evidence"), str) else None,
     }
 
     # Polanyi — only include key metrics, not full SOC lists
@@ -312,6 +319,93 @@ def main():
         "confidence_tiers", "evidence_quality", "falsification_criteria",
         "polanyi_automation", "architecture_normalization"
     ]
+
+    # ── Sector-level aggregation (new for v3-14 review) ──
+    sector_agg = {}
+    for m in models:
+        naics = (m.get("sector_naics") or "")[:2]
+        sname = m.get("sector_name", "")
+        if not naics:
+            continue
+        if naics not in sector_agg:
+            sector_agg[naics] = {
+                "sector_naics": naics,
+                "sector_name": sname,
+                "count": 0,
+                "t_sum": 0, "opp_sum": 0, "vcr_sum": 0,
+                "structural_winners": 0,
+                "fund_returners": 0,
+                "high_confidence": 0,
+                "architectures": Counter(),
+            }
+        s = sector_agg[naics]
+        s["count"] += 1
+        s["t_sum"] += m["composite"]
+        s["opp_sum"] += m.get("cla", {}).get("composite", 0)
+        s["vcr_sum"] += m.get("vcr", {}).get("composite", 0)
+        cats = m.get("category", [])
+        if isinstance(cats, list) and "STRUCTURAL_WINNER" in cats:
+            s["structural_winners"] += 1
+        if m.get("vcr", {}).get("category") == "FUND_RETURNER":
+            s["fund_returners"] += 1
+        if m.get("confidence_tier") == "HIGH":
+            s["high_confidence"] += 1
+        s["architectures"][m.get("architecture", "unknown")] += 1
+    sector_summary = []
+    for naics, s in sorted(sector_agg.items(), key=lambda x: -x[1]["count"]):
+        top_arch = s["architectures"].most_common(1)[0] if s["architectures"] else ("unknown", 0)
+        sector_summary.append({
+            "sector_naics": naics,
+            "sector_name": s["sector_name"],
+            "model_count": s["count"],
+            "avg_t": round(s["t_sum"] / s["count"], 1),
+            "avg_opp": round(s["opp_sum"] / s["count"], 1),
+            "avg_vcr": round(s["vcr_sum"] / s["count"], 1),
+            "structural_winners": s["structural_winners"],
+            "fund_returners": s["fund_returners"],
+            "high_confidence": s["high_confidence"],
+            "top_architecture": top_arch[0],
+            "top_architecture_count": top_arch[1],
+        })
+    dashboard["sector_model_aggregation"] = sector_summary
+
+    # ── Force convergence analysis ──
+    force_counts = Counter()
+    force_convergence = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+    for m in models:
+        forces = m.get("forces_v3", [])
+        normalized = set()
+        for f in forces:
+            key = f[:2] if f.startswith("F") else f
+            normalized.add(key)
+        for f in normalized:
+            force_counts[f] += 1
+        n = len(normalized)
+        if n > 0:
+            force_convergence[min(n, 5)] = force_convergence.get(min(n, 5), 0) + 1
+    dashboard["force_model_distribution"] = dict(sorted(force_counts.items()))
+    dashboard["force_convergence"] = {
+        f"{k}_forces": v for k, v in sorted(force_convergence.items())
+    }
+
+    # ── Research priority queue: high T + LOW confidence ──
+    research_priorities = []
+    for m in sorted(models, key=lambda x: -x["composite"]):
+        if m.get("confidence_tier") == "LOW" and m["composite"] >= 65:
+            research_priorities.append({
+                "rank": m["rank"],
+                "id": m["id"],
+                "name": m["name"],
+                "composite": m["composite"],
+                "opportunity_composite": m.get("cla", {}).get("composite"),
+                "vcr_composite": m.get("vcr", {}).get("composite"),
+                "confidence_tier": "LOW",
+                "evidence_quality": m.get("evidence_quality"),
+                "architecture": m.get("architecture"),
+            })
+            if len(research_priorities) >= 30:
+                break
+    dashboard["research_priorities"] = research_priorities
 
     with open(UI_DASHBOARD, "w") as f:
         json.dump(dashboard, f, indent=2, ensure_ascii=False)
