@@ -469,6 +469,72 @@ def main():
     if opp_cat_dist:
         dashboard["opp_category_distribution"] = dict(sorted(opp_cat_dist.items()))
 
+    # v5 Tension summary (if available)
+    v5_tensions_path = BASE / "data/v5/tensions.json"
+    v5_requirements_path = BASE / "data/v5/requirements.json"
+    v5_prop_log_path = BASE / "data/v5/propagation_log.json"
+
+    if v5_tensions_path.exists():
+        with open(v5_tensions_path) as f:
+            v5t = json.load(f)
+        dashboard["tensions_summary"] = {
+            "total": v5t.get("summary", {}).get("total_tensions", 0),
+            "by_type": v5t.get("summary", {}).get("by_type", {}),
+            "self_fulfillment": v5t.get("summary", {}).get("self_fulfillment_status", "UNKNOWN"),
+            "correlations": {
+                k: v.get("r", 0) for k, v in
+                v5t.get("self_fulfillment_metrics", {}).get("correlations", {}).items()
+            },
+        }
+        # Write slim tensions for UI
+        ui_tensions = []
+        for t in v5t.get("tensions", []):
+            slim = {
+                "tension_id": t["tension_id"],
+                "tension_type": t["tension_type"],
+                "question": t.get("question", ""),
+            }
+            # Copy type-specific fields
+            for k in ["narrative_id", "narrative_name", "tns_category", "avg_o_score",
+                       "tension_magnitude", "direction", "model_count",
+                       "architecture", "spread", "best_narrative_name", "worst_narrative_name",
+                       "best_avg_o", "worst_avg_o",
+                       "model_id", "model_name", "t_score", "o_score", "gap",
+                       "force_id", "fr_rate_pct", "expected_fr_rate_pct", "inversion_magnitude",
+                       "avg_t_works", "avg_t_needed", "t_gap",
+                       "collision_id", "collision_name", "t_stdev", "t_min", "t_max"]:
+                if k in t:
+                    slim[k] = t[k]
+            ui_tensions.append(slim)
+
+        tensions_ui = {
+            "cycle": v5t.get("cycle", "v5-0"),
+            "timestamp": v5t.get("timestamp", ""),
+            "tensions": ui_tensions,
+            "self_fulfillment": v5t.get("self_fulfillment_metrics", {}).get("correlations", {}),
+        }
+        if v5_requirements_path.exists():
+            with open(v5_requirements_path) as f:
+                v5r = json.load(f)
+            tensions_ui["requirements"] = [
+                {
+                    "requirement_id": r["requirement_id"],
+                    "question": r["question"],
+                    "priority": r["priority"],
+                    "tension_source": r["tension_source"],
+                    "models_affected_count": r.get("models_affected_count", 0),
+                }
+                for r in v5r.get("requirements", [])
+            ]
+        if v5_prop_log_path.exists():
+            with open(v5_prop_log_path) as f:
+                v5p = json.load(f)
+            tensions_ui["propagation"] = v5p.get("summary", {})
+
+        with open(UI_DIR / "tensions.json", "w") as f:
+            json.dump(tensions_ui, f, indent=2, ensure_ascii=False)
+        print(f"  Written: {UI_DIR / 'tensions.json'} ({len(ui_tensions)} tensions)")
+
     with open(UI_DIR / "dashboard.json", "w") as f:
         json.dump(dashboard, f, indent=2, ensure_ascii=False)
     print(f"  Written: {UI_DIR / 'dashboard.json'}")

@@ -1,0 +1,558 @@
+{
+  "cycle": "v5-0",
+  "timestamp": "2026-02-13T08:56:44",
+  "tensions": [
+    {
+      "tension_id": "TENS-TN-008-OPP-DIV",
+      "tension_type": "narrative_opportunity_divergence",
+      "question": "Defense AI / National Security Technology Transformation scores TNS 74.5 (MAJOR) but avg O-score is only 55.7. Is the market structurally inaccessible to new entrants, or are O-scores underestimating openness due to scoring heuristics?",
+      "narrative_id": "TN-008",
+      "narrative_name": "Defense AI / National Security Technology Transformation",
+      "tns_category": "MAJOR",
+      "avg_o_score": 55.7,
+      "tension_magnitude": 18.8,
+      "direction": "strong_narrative_closed_market",
+      "model_count": 44
+    },
+    {
+      "tension_id": "TENS-TN-015-OPP-DIV",
+      "tension_type": "narrative_opportunity_divergence",
+      "question": "Energy & Resources Transformation scores TNS 69.75 (MAJOR) but avg O-score is only 54.9. Is the market structurally inaccessible to new entrants, or are O-scores underestimating openness due to scoring heuristics?",
+      "narrative_id": "TN-015",
+      "narrative_name": "Energy & Resources Transformation",
+      "tns_category": "MAJOR",
+      "avg_o_score": 54.9,
+      "tension_magnitude": 14.9,
+      "direction": "strong_narrative_closed_market",
+      "model_count": 10
+    },
+    {
+      "tension_id": "TENS-TN-007-OPP-DIV",
+      "tension_type": "narrative_opportunity_divergence",
+      "question": "Wholesale Trade Transformation scores TNS 60.1 (MODERATE) but avg O-score is 65.0. Is the market genuinely open despite weak transformation signal, or is something else driving opportunity scores?",
+      "narrative_id": "TN-007",
+      "narrative_name": "Wholesale Trade Transformation",
+      "tns_category": "MODERATE",
+      "avg_o_score": 65.0,
+      "tension_magnitude": 4.9,
+      "direction": "weak_narrative_open_market",
+      "model_count": 35
+    },
+    {
+      "tension_id": "TENS-ARCH-FULL_SERVICE_REPLACE-XSECTOR",
+      "tension_type": "architecture_cross_sector_gap",
+      "question": "Architecture 'full_service_replacement' scores O=69.1 in Wholesale Trade Transformation but only O=40.5 in Management of Companies and Enterprises Transformation (spread: 28.6). What market structure variable explains this gap?",
+      "architecture": "full_service_replacement",
+      "spread": 28.6,
+      "best_narrative_name": "Wholesale Trade Transformation",
+      "worst_narrative_name": "Management of Companies and Enterprises Transformation",
+      "best_avg_o": 69.1,
+      "worst_avg_o": 40.5
+    },
+    {
+      "tension_id": "TENS-ARCH-ROLLUP_CONSOLIDATION-XSECTOR",
+      "tension_type": "architecture_cross_sector_gap",
+      "question": "Architecture 'rollup_consolidation' scores O=78.0 in Micro-Firm AI Economy (Emerging Category) Transformation but only O=58.0 in Retail Trade Transformation (spread: 20.0). What market structure variable explains this gap?",
+      "architecture": "rollup_consolidation",
+      "spread": 20.0,
+      "best_narrative_name": "Micro-Firm AI Economy (Emerging Category) Transformation",
+      "worst_narrative_name": "Retail Trade Transformation",
+      "best_avg_o": 78.0,
+      "worst_avg_o": 58.0
+    },
+    {
+      "tension_id": "TENS-TO-MC-V38-44-003",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Retail Media Network Platform' has T=80.0 but O=31.0 (gap +49.0). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "platform_infrastructure",
+      "model_id": "MC-V38-44-003",
+      "model_name": "Retail Media Network Platform",
+      "t_score": 80.0,
+      "o_score": 31.0,
+      "gap": 49.0
+    },
+    {
+      "tension_id": "TENS-TO-V3-DEF-002",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Defense AI/ML Intelligence Fusion Platform' has T=72.5 but O=32.0 (gap +40.5). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "platform_infrastructure",
+      "model_id": "V3-DEF-002",
+      "model_name": "Defense AI/ML Intelligence Fusion Platform",
+      "t_score": 72.5,
+      "o_score": 32.0,
+      "gap": 40.5
+    },
+    {
+      "tension_id": "TENS-TO-V3-DEF-004",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Defense Logistics Optimizer' has T=79.0 but O=39.0 (gap +40.0). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "platform_infrastructure",
+      "model_id": "V3-DEF-004",
+      "model_name": "Defense Logistics Optimizer",
+      "t_score": 79.0,
+      "o_score": 39.0,
+      "gap": 40.0
+    },
+    {
+      "tension_id": "TENS-TO-C7-NR-11",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'General Writing Tool' has T=31.2 but O=68.5 (gap -37.2). Market is open but transformation evidence is weak. What external evidence would validate this transformation?",
+      "direction": "market_open_transformation_uncertain",
+      "architecture": "vertical_saas",
+      "model_id": "C7-NR-11",
+      "model_name": "General Writing Tool",
+      "t_score": 31.2,
+      "o_score": 68.5,
+      "gap": -37.2
+    },
+    {
+      "tension_id": "TENS-TO-C7-NR-12",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Automated Code Generation Tool' has T=31.2 but O=68.5 (gap -37.2). Market is open but transformation evidence is weak. What external evidence would validate this transformation?",
+      "direction": "market_open_transformation_uncertain",
+      "architecture": "vertical_saas",
+      "model_id": "C7-NR-12",
+      "model_name": "Automated Code Generation Tool",
+      "t_score": 31.2,
+      "o_score": 68.5,
+      "gap": -37.2
+    },
+    {
+      "tension_id": "TENS-TO-V3-DEF-007-L4",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Intelligent Commercial Earth Observation Analytics Platform' has T=73.0 but O=36.5 (gap +36.5). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "V3-DEF-007-L4",
+      "model_name": "Intelligent Commercial Earth Observation Analytics Platform",
+      "t_score": 73.0,
+      "o_score": 36.5,
+      "gap": 36.5
+    },
+    {
+      "tension_id": "TENS-TO-V3-DEF-001",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Autonomous Drone Swarm Command Platform' has T=74.8 but O=39.0 (gap +35.8). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "platform_infrastructure",
+      "model_id": "V3-DEF-001",
+      "model_name": "Autonomous Drone Swarm Command Platform",
+      "t_score": 74.8,
+      "o_score": 39.0,
+      "gap": 35.8
+    },
+    {
+      "tension_id": "TENS-TO-MC-V38-44-002",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Warehouse Fulfillment Robotics Platform' has T=76.2 but O=41.0 (gap +35.2). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "vertical_saas",
+      "model_id": "MC-V38-44-002",
+      "model_name": "Warehouse Fulfillment Robotics Platform",
+      "t_score": 76.2,
+      "o_score": 41.0,
+      "gap": 35.2
+    },
+    {
+      "tension_id": "TENS-TO-MC-V313-21-001",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Critical Minerals Exploration & Resource Estimation Platform' has T=71.5 but O=36.5 (gap +35.0). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "MC-V313-21-001",
+      "model_name": "Critical Minerals Exploration & Resource Estimation Platform",
+      "t_score": 71.5,
+      "o_score": 36.5,
+      "gap": 35.0
+    },
+    {
+      "tension_id": "TENS-TO-MC-V312-TRN-001",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Autonomous Trucking Middleware Platform' has T=81.2 but O=47.5 (gap +33.8). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "robotics_automation",
+      "model_id": "MC-V312-TRN-001",
+      "model_name": "Autonomous Trucking Middleware Platform",
+      "t_score": 81.2,
+      "o_score": 47.5,
+      "gap": 33.8
+    },
+    {
+      "tension_id": "TENS-TO-V3-DEF-006",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Dual-Use Autonomous Vehicle Platform (Defense + Commercial)' has T=72.8 but O=39.0 (gap +33.8). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "hardware_ai",
+      "model_id": "V3-DEF-006",
+      "model_name": "Dual-Use Autonomous Vehicle Platform (Defense + Commercial)",
+      "t_score": 72.8,
+      "o_score": 39.0,
+      "gap": 33.8
+    },
+    {
+      "tension_id": "TENS-TO-V318-OCE-008",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Open-Source Education Assessment Platform' has T=56.7 but O=90.5 (gap -33.8). Market is open but transformation evidence is weak. What external evidence would validate this transformation?",
+      "direction": "market_open_transformation_uncertain",
+      "architecture": "open_core_ecosystem",
+      "model_id": "V318-OCE-008",
+      "model_name": "Open-Source Education Assessment Platform",
+      "t_score": 56.7,
+      "o_score": 90.5,
+      "gap": -33.8
+    },
+    {
+      "tension_id": "TENS-TO-MC-DEF-012",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Classified Environment Deployment Platform (IL5/IL6)' has T=69.8 but O=36.5 (gap +33.2). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "platform_infrastructure",
+      "model_id": "MC-DEF-012",
+      "model_name": "Classified Environment Deployment Platform (IL5/IL6)",
+      "t_score": 69.8,
+      "o_score": 36.5,
+      "gap": 33.2
+    },
+    {
+      "tension_id": "TENS-TO-MC-V312-TRN-005",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Warehouse Robotics Orchestration Layer' has T=80.0 but O=47.5 (gap +32.5). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "robotics_automation",
+      "model_id": "MC-V312-TRN-005",
+      "model_name": "Warehouse Robotics Orchestration Layer",
+      "t_score": 80.0,
+      "o_score": 47.5,
+      "gap": 32.5
+    },
+    {
+      "tension_id": "TENS-TO-V3-DEF-010",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Defense Predictive Maintenance AI' has T=77.0 but O=44.5 (gap +32.5). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "platform_infrastructure",
+      "model_id": "V3-DEF-010",
+      "model_name": "Defense Predictive Maintenance AI",
+      "t_score": 77.0,
+      "o_score": 44.5,
+      "gap": 32.5
+    },
+    {
+      "tension_id": "TENS-TO-MC-V313-71-009",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'iGaming & Casino Analytics Platform' has T=76.2 but O=45.0 (gap +31.2). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "MC-V313-71-009",
+      "model_name": "iGaming & Casino Analytics Platform",
+      "t_score": 76.2,
+      "o_score": 45.0,
+      "gap": 31.2
+    },
+    {
+      "tension_id": "TENS-TO-MC-V313-11-001",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Commodity Row Crop Precision Input Management Platform' has T=75.8 but O=44.5 (gap +31.2). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "MC-V313-11-001",
+      "model_name": "Commodity Row Crop Precision Input Management Platform",
+      "t_score": 75.8,
+      "o_score": 44.5,
+      "gap": 31.2
+    },
+    {
+      "tension_id": "TENS-TO-MC-V312-TRN-002",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Automated Fleet Management & Predictive Maintenance Platform' has T=78.8 but O=48.0 (gap +30.8). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "MC-V312-TRN-002",
+      "model_name": "Automated Fleet Management & Predictive Maintenance Platform",
+      "t_score": 78.8,
+      "o_score": 48.0,
+      "gap": 30.8
+    },
+    {
+      "tension_id": "TENS-TO-MC-V313-21-008",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Oilfield Services Predictive Maintenance & Downhole Intelligence Platform' has T=72.5 but O=42.0 (gap +30.5). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "MC-V313-21-008",
+      "model_name": "Oilfield Services Predictive Maintenance & Downhole Intelligence Platform",
+      "t_score": 72.5,
+      "o_score": 42.0,
+      "gap": 30.5
+    },
+    {
+      "tension_id": "TENS-FVCR-F4_capital",
+      "tension_type": "force_vcr_inversion",
+      "question": "Force F4_capital has 274 models but only 11.3% fund-returner rate (baseline: 7.2%). Is VCR biased toward this force's market structure, or is this a real signal about investability?",
+      "model_count": 274,
+      "force_id": "F4_capital",
+      "fr_rate_pct": 11.3,
+      "expected_fr_rate_pct": 7.2,
+      "inversion_magnitude": 4.2
+    },
+    {
+      "tension_id": "TENS-FVCR-F2_demographics",
+      "tension_type": "force_vcr_inversion",
+      "question": "Force F2_demographics has 342 models but only 4.4% fund-returner rate (baseline: 7.2%). Is VCR biased toward this force's market structure, or is this a real signal about investability?",
+      "model_count": 342,
+      "force_id": "F2_demographics",
+      "fr_rate_pct": 4.4,
+      "expected_fr_rate_pct": 7.2,
+      "inversion_magnitude": 2.8
+    },
+    {
+      "tension_id": "TENS-ROLE-TN-010",
+      "tension_type": "role_score_paradox",
+      "question": "In Computer Systems Design and Related Services (IT Services) Transformation, what_needed models avg T=65.4 vs what_works T=62.0 (gap +3.3). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
+      "narrative_id": "TN-010",
+      "narrative_name": "Computer Systems Design and Related Services (IT Services) Transformation",
+      "avg_t_works": 62.0,
+      "avg_t_needed": 65.4,
+      "t_gap": 3.3
+    },
+    {
+      "tension_id": "TENS-ROLE-TN-008",
+      "tension_type": "role_score_paradox",
+      "question": "In Defense AI / National Security Technology Transformation, what_needed models avg T=69.6 vs what_works T=66.8 (gap +2.8). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
+      "narrative_id": "TN-008",
+      "narrative_name": "Defense AI / National Security Technology Transformation",
+      "avg_t_works": 66.8,
+      "avg_t_needed": 69.6,
+      "t_gap": 2.8
+    },
+    {
+      "tension_id": "TENS-ROLE-TN-009",
+      "tension_type": "role_score_paradox",
+      "question": "In Educational Services Transformation, what_needed models avg T=65.7 vs what_works T=62.9 (gap +2.7). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
+      "narrative_id": "TN-009",
+      "narrative_name": "Educational Services Transformation",
+      "avg_t_works": 62.9,
+      "avg_t_needed": 65.7,
+      "t_gap": 2.7
+    },
+    {
+      "tension_id": "TENS-ROLE-TN-011",
+      "tension_type": "role_score_paradox",
+      "question": "In Management of Companies and Enterprises Transformation, what_needed models avg T=71.9 vs what_works T=69.7 (gap +2.2). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
+      "narrative_id": "TN-011",
+      "narrative_name": "Management of Companies and Enterprises Transformation",
+      "avg_t_works": 69.7,
+      "avg_t_needed": 71.9,
+      "t_gap": 2.2
+    },
+    {
+      "tension_id": "TENS-COLL-FC-036",
+      "tension_type": "collision_coherence",
+      "question": "Collision 'Technology + Demographics in Computer Systems Design and Related Services (IT Services)' (amplifying) has 84 models with T-score stdev=9.1 (range 31.2–79.2). If these models share the same force dynamics, why do they diverge?",
+      "model_count": 84,
+      "collision_id": "FC-036",
+      "collision_name": "Technology + Demographics in Computer Systems Design and Related Services (IT Services)",
+      "t_stdev": 9.1,
+      "t_min": 31.2,
+      "t_max": 79.2
+    },
+    {
+      "tension_id": "TENS-COLL-FC-037",
+      "tension_type": "collision_coherence",
+      "question": "Collision 'Technology + Capital in Computer Systems Design and Related Services (IT Services)' (amplifying) has 84 models with T-score stdev=9.1 (range 31.2–79.2). If these models share the same force dynamics, why do they diverge?",
+      "model_count": 84,
+      "collision_id": "FC-037",
+      "collision_name": "Technology + Capital in Computer Systems Design and Related Services (IT Services)",
+      "t_stdev": 9.1,
+      "t_min": 31.2,
+      "t_max": 79.2
+    },
+    {
+      "tension_id": "TENS-COLL-FC-038",
+      "tension_type": "collision_coherence",
+      "question": "Collision 'Technology + Psychology in Computer Systems Design and Related Services (IT Services)' (opposing) has 84 models with T-score stdev=9.1 (range 31.2–79.2). If these models share the same force dynamics, why do they diverge?",
+      "model_count": 84,
+      "collision_id": "FC-038",
+      "collision_name": "Technology + Psychology in Computer Systems Design and Related Services (IT Services)",
+      "t_stdev": 9.1,
+      "t_min": 31.2,
+      "t_max": 79.2
+    },
+    {
+      "tension_id": "TENS-COLL-FC-039",
+      "tension_type": "collision_coherence",
+      "question": "Collision 'Demographics + Capital in Computer Systems Design and Related Services (IT Services)' (amplifying) has 84 models with T-score stdev=9.1 (range 31.2–79.2). If these models share the same force dynamics, why do they diverge?",
+      "model_count": 84,
+      "collision_id": "FC-039",
+      "collision_name": "Demographics + Capital in Computer Systems Design and Related Services (IT Services)",
+      "t_stdev": 9.1,
+      "t_min": 31.2,
+      "t_max": 79.2
+    },
+    {
+      "tension_id": "TENS-COLL-FC-040",
+      "tension_type": "collision_coherence",
+      "question": "Collision 'Demographics + Psychology in Computer Systems Design and Related Services (IT Services)' (opposing) has 84 models with T-score stdev=9.1 (range 31.2–79.2). If these models share the same force dynamics, why do they diverge?",
+      "model_count": 84,
+      "collision_id": "FC-040",
+      "collision_name": "Demographics + Psychology in Computer Systems Design and Related Services (IT Services)",
+      "t_stdev": 9.1,
+      "t_min": 31.2,
+      "t_max": 79.2
+    },
+    {
+      "tension_id": "TENS-COLL-FC-041",
+      "tension_type": "collision_coherence",
+      "question": "Collision 'Capital + Psychology in Computer Systems Design and Related Services (IT Services)' (opposing) has 84 models with T-score stdev=9.1 (range 31.2–79.2). If these models share the same force dynamics, why do they diverge?",
+      "model_count": 84,
+      "collision_id": "FC-041",
+      "collision_name": "Capital + Psychology in Computer Systems Design and Related Services (IT Services)",
+      "t_stdev": 9.1,
+      "t_min": 31.2,
+      "t_max": 79.2
+    }
+  ],
+  "self_fulfillment": {
+    "tns_vs_model_t": {
+      "r": 0.3266,
+      "status": "HEALTHY",
+      "message": "TNS and Model T-score have partial overlap (r=0.327). Each adds unique signal."
+    },
+    "tns_vs_model_o": {
+      "r": 0.0344,
+      "status": "DISCONNECTED",
+      "message": "TNS and Model O-score appear disconnected (r=0.034). Narrative layer may not be informative."
+    },
+    "tns_vs_model_vcr": {
+      "r": 0.4332,
+      "status": "HEALTHY",
+      "message": "TNS and Model VCR have partial overlap (r=0.433). Each adds unique signal."
+    },
+    "model_t_vs_model_o": {
+      "r": -0.8066,
+      "status": "STRUCTURAL_INVERSE",
+      "message": "Model T-score and Model O-score are strongly inversely related (r=-0.807). This is a structural pattern (e.g., certain transformation → closed market), not circularity."
+    }
+  },
+  "requirements": [
+    {
+      "requirement_id": "REQ-TN-008-ACCESS",
+      "question": "Is Defense AI / National Security Technology Transformation accessible to new entrants or structurally locked by incumbents/regulation?",
+      "priority": "high",
+      "tension_source": "narrative_opportunity_divergence",
+      "models_affected_count": 44
+    },
+    {
+      "requirement_id": "REQ-TN-015-ACCESS",
+      "question": "Is Energy & Resources Transformation accessible to new entrants or structurally locked by incumbents/regulation?",
+      "priority": "high",
+      "tension_source": "narrative_opportunity_divergence",
+      "models_affected_count": 10
+    },
+    {
+      "requirement_id": "REQ-TN-007-VALID",
+      "question": "Is Wholesale Trade Transformation genuinely open for new entrants, or are O-scores inflated by heuristic scoring?",
+      "priority": "medium",
+      "tension_source": "narrative_opportunity_divergence",
+      "models_affected_count": 35
+    },
+    {
+      "requirement_id": "REQ-ARCH-FULL_SERVICE_RE-GAP",
+      "question": "Why does 'full_service_replacement' architecture score O=69.1 in Wholesale Trade Transformation but only O=40.5 in Management of Companies and Enterprises Transformation? What market structure variable explains the 29-point gap?",
+      "priority": "high",
+      "tension_source": "architecture_cross_sector_gap",
+      "models_affected_count": 2
+    },
+    {
+      "requirement_id": "REQ-ARCH-ROLLUP_CONSOLID-GAP",
+      "question": "Why does 'rollup_consolidation' architecture score O=78.0 in Micro-Firm AI Economy (Emerging Category) Transformation but only O=58.0 in Retail Trade Transformation? What market structure variable explains the 20-point gap?",
+      "priority": "medium",
+      "tension_source": "architecture_cross_sector_gap",
+      "models_affected_count": 1
+    },
+    {
+      "requirement_id": "REQ-TO-CERTAIN-CLOSED",
+      "question": "16 models have T >> O (transformation certain but market closed). Top gaps: Retail Media Network Platform (+49), Defense AI/ML Intelligence Fusion Platform (+40), Defense Logistics Optimizer (+40), Intelligent Commercial Earth Observation Analytics Platform (+36), Autonomous Drone Swarm Command Platform (+36). Should these be decomposed into accessible sub-layers?",
+      "priority": "high",
+      "tension_source": "t_o_extreme_divergence",
+      "models_affected_count": 16
+    },
+    {
+      "requirement_id": "REQ-TO-OPEN-UNCERTAIN",
+      "question": "3 models have O >> T (market open but transformation uncertain). Top gaps: General Writing Tool (-37), Automated Code Generation Tool (-37), Open-Source Education Assessment Platform (-34). What external evidence would validate these transformations?",
+      "priority": "medium",
+      "tension_source": "t_o_extreme_divergence",
+      "models_affected_count": 3
+    },
+    {
+      "requirement_id": "REQ-FVCR-F4_capital",
+      "question": "Force F4_capital has 274 models with 11.3% fund-returner rate (vs 7.2% baseline). Is VCR scoring biased toward F4_capital's typical market structures, or does this force genuinely produce better investments?",
+      "priority": "medium",
+      "tension_source": "force_vcr_inversion",
+      "models_affected_count": 274
+    },
+    {
+      "requirement_id": "REQ-FVCR-F2_demographics",
+      "question": "Force F2_demographics has 342 models but only 4.4% fund-returner rate (vs 7.2% baseline). Are F2_demographics-driven models systematically underscored on VCR, or is investability genuinely lower?",
+      "priority": "medium",
+      "tension_source": "force_vcr_inversion",
+      "models_affected_count": 342
+    },
+    {
+      "requirement_id": "REQ-ROLE-TN-010",
+      "question": "In Computer Systems Design and Related Services (IT Services) Transformation, what_needed models avg T=65.4 vs what_works T=62.0. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "priority": "low",
+      "tension_source": "role_score_paradox",
+      "models_affected_count": 25
+    },
+    {
+      "requirement_id": "REQ-ROLE-TN-008",
+      "question": "In Defense AI / National Security Technology Transformation, what_needed models avg T=69.6 vs what_works T=66.8. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "priority": "low",
+      "tension_source": "role_score_paradox",
+      "models_affected_count": 15
+    },
+    {
+      "requirement_id": "REQ-ROLE-TN-009",
+      "question": "In Educational Services Transformation, what_needed models avg T=65.7 vs what_works T=62.9. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "priority": "low",
+      "tension_source": "role_score_paradox",
+      "models_affected_count": 15
+    },
+    {
+      "requirement_id": "REQ-ROLE-TN-011",
+      "question": "In Management of Companies and Enterprises Transformation, what_needed models avg T=71.9 vs what_works T=69.7. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "priority": "low",
+      "tension_source": "role_score_paradox",
+      "models_affected_count": 3
+    },
+    {
+      "requirement_id": "REQ-COLL-FC-036",
+      "question": "Collision 'Technology + Demographics in Computer Systems Design and Related Services (IT Services)' has 84 models with T-score stdev=9.1 (range 31.2–79.2). If shared force dynamics should produce coherent trajectories, what explains the divergence?",
+      "priority": "low",
+      "tension_source": "collision_coherence",
+      "models_affected_count": 84
+    },
+    {
+      "requirement_id": "REQ-SELF-TNS-O-DISCONNECT",
+      "question": "TNS and model O-scores are disconnected (r≈0). Should narrative strength predict market openness at all?",
+      "priority": "medium",
+      "tension_source": "self_fulfillment_check",
+      "models_affected_count": 0
+    }
+  ],
+  "propagation": {
+    "total_adjustments": 666,
+    "iterations_run": 3,
+    "converged": false,
+    "models_changed": 223,
+    "narratives_changed": 8,
+    "t_score_changes": 206,
+    "o_score_changes": 20,
+    "tns_changes": 1,
+    "force_signals": []
+  }
+}
