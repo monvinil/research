@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""v4 Research Cycle Runner — Narrative-first economy map pipeline.
+"""v4.1 Research Cycle Runner — Model-first economy map pipeline.
 
-Extends run_cycle.py with v4 collision detection, narrative updates,
+Extends run_cycle.py with v4 collision detection, narrative context,
 and cascade mapping. Uses the same connector infrastructure and LLM routing.
 
-v4 Pipeline:
+Models are the primary deliverable (685+ ranked on T/CLA/VCR).
+Narratives provide organizational context: WHY models exist, HOW forces create opportunities.
+
+v4.1 Pipeline:
   Phase 1:   SCAN — pull live data from 12 connectors (unchanged)
   Phase 1.5: ANALYTICS — derived indicators (unchanged)
-  Phase 2:   AGENT A — collision evidence scanning (v4 prompts)
+  Phase 2:   AGENT A — collision evidence scanning for model viability (v4 prompts)
   Phase 3:   AGENT C — collision clustering + signal grading (v4 prompts)
-  Phase 3.5: COLLISION DETECTOR — algorithmic collision matching (NEW)
-  Phase 4:   AGENT B — narrative construction/update (v4 prompts)
-  Phase 5:   MASTER — economy map synthesis (v4 prompts)
-  Phase 6:   COMPILE — narrative scoring + UI generation (v4 scripts)
+  Phase 3.5: COLLISION DETECTOR — algorithmic collision matching
+  Phase 4:   AGENT B — model card construction + narrative context update (v4 prompts)
+  Phase 5:   MASTER — model-first economy map synthesis (v4 prompts)
+  Phase 6:   COMPILE — model scoring + narrative scoring + UI generation (v4 scripts)
 
 Usage:
     python scripts/v4_run_cycle.py                   # full v4 cycle
@@ -534,27 +537,28 @@ def format_for_agent_b_v4(collision_updates, graded_signals, v4_state):
     sections.append("")
 
     # Instructions
-    sections.append("# v4 INSTRUCTIONS")
-    sections.append("Based on the collision updates and signal evidence, produce narrative updates:")
+    sections.append("# v4.1 INSTRUCTIONS — MODEL CARDS PRIMARY, NARRATIVE CONTEXT SECONDARY")
+    sections.append("Based on the collision updates and signal evidence, produce MODEL CARD updates first, then narrative context updates:")
     sections.append("")
-    sections.append("1. For each narrative with new evidence (see Narrative Evidence Matches):")
-    sections.append("   - Update year-by-year timeline if signals shift timing")
-    sections.append("   - Update geographic variation if regional signals detected")
-    sections.append("   - Reclassify models between what_works/whats_needed/what_dies if warranted")
-    sections.append("   - Update confidence and falsification criteria status")
+    sections.append("## PRIMARY: Model Card Updates")
+    sections.append("1. Assess how new evidence affects existing model viability and scoring:")
+    sections.append("   - Which models should have T/CLA/VCR score adjustments?")
+    sections.append("   - Which models should be reclassified (what_works/whats_needed/what_dies)?")
+    sections.append("   - Are there model gaps revealed by new evidence? Construct new model cards for critical gaps.")
     sections.append("")
     sections.append("2. For new collision hypotheses with 3+ signals:")
-    sections.append("   - Assess whether they merit a new narrative or belong in an existing one")
-    sections.append("   - If new: construct full Transformation Narrative with year-by-year")
+    sections.append("   - What new model opportunities emerge from the collision?")
+    sections.append("   - Construct model cards for high-viability opportunities")
     sections.append("")
-    sections.append("3. For cascade transmissions:")
+    sections.append("## SECONDARY: Narrative Context Updates")
+    sections.append("3. For each narrative with new evidence:")
+    sections.append("   - Update year-by-year timeline if signals shift timing")
+    sections.append("   - Update geographic variation if regional signals detected")
+    sections.append("   - Update confidence and falsification criteria status")
+    sections.append("")
+    sections.append("4. For cascade transmissions:")
     sections.append("   - Update cascade_dependencies in affected narratives")
-    sections.append("   - Note any new narrative-to-narrative links")
-    sections.append("")
-    sections.append("4. Identify model gaps:")
-    sections.append("   - Which narratives lack what_works models?")
-    sections.append("   - Which narratives lack whats_needed infrastructure models?")
-    sections.append("   - Construct new model cards ONLY for critical gaps")
+    sections.append("   - Note new narrative-to-narrative links that create downstream model opportunities")
     sections.append("")
     sections.append("Return a JSON object:")
     sections.append("```json")
@@ -673,21 +677,28 @@ def format_for_master_v4(graded_signals, collision_updates, narrative_updates,
             sections.append(f"Cycle {c['cycle']}: {summary[:1500]}")
         sections.append("")
 
-    # v4 Master instructions
-    sections.append("# v4 MASTER SYNTHESIS INSTRUCTIONS")
-    sections.append("Produce the Economy Map Update following your v4 output format:")
-    sections.append("1. NARRATIVE RANKINGS: Assess which narratives strengthened/weakened")
-    sections.append("2. COLLISION VELOCITY REPORT: Which collisions are accelerating?")
-    sections.append("3. CASCADE GRAPH UPDATE: New narrative-to-narrative transmissions?")
-    sections.append("4. GEOGRAPHIC OVERLAY: Regional variation in collision manifestation")
-    sections.append("5. MODEL EVIDENCE HIGHLIGHTS: Key model additions/reclassifications")
-    sections.append("6. EMERGENT ECONOMY: New categories from collision interactions")
-    sections.append("7. CONFIDENCE & DIRECTIVE: What to scan next cycle")
+    # v4.1 Master instructions — model-first
+    sections.append("# v4.1 MASTER SYNTHESIS INSTRUCTIONS — MODEL-FIRST OUTPUT")
+    sections.append("Produce the Economy Map Update with MODEL HIGHLIGHTS as the primary section:")
+    sections.append("1. MODEL HIGHLIGHTS: New models added, score changes, category changes, top movers, model gaps identified")
+    sections.append("2. NARRATIVE RANKINGS: Which narratives strengthened/weakened (organizational context for models)")
+    sections.append("3. COLLISION VELOCITY REPORT: Which collisions are accelerating? (feeds model viability)")
+    sections.append("4. CASCADE GRAPH UPDATE: New narrative-to-narrative transmissions? (creates downstream model opportunities)")
+    sections.append("5. GEOGRAPHIC OVERLAY: Regional variation in collision manifestation (affects model geographic fit)")
+    sections.append("6. EMERGENT ECONOMY: New categories from collision interactions (new model opportunities)")
+    sections.append("7. CONFIDENCE & DIRECTIVE: What to scan next cycle (focused on model gap filling)")
     sections.append("")
     sections.append("Return a JSON object:")
     sections.append("```json")
     sections.append("""{
-  "economy_map_synthesis": "2-4 paragraph narrative of the economy map state",
+  "economy_map_synthesis": "2-4 paragraph synthesis leading with model inventory changes",
+  "model_highlights": {
+    "new_models": [{"model_id": "MC-...", "name": "...", "narrative_id": "TN-NNN", "role": "what_works|whats_needed|what_dies"}],
+    "score_changes": [{"model_id": "MC-...", "axis": "T|CLA|VCR", "old": 0, "new": 0, "reason": "..."}],
+    "category_changes": [{"model_id": "MC-...", "old_category": "...", "new_category": "...", "reason": "..."}],
+    "top_movers": ["model_id — direction — reason"],
+    "gaps_identified": ["narrative TN-NNN missing what_works models for X"]
+  },
   "narrative_ranking_changes": [
     {"narrative_id": "TN-NNN", "direction": "strengthened|weakened|stable", "reason": "..."}
   ],
@@ -703,12 +714,13 @@ def format_for_master_v4(graded_signals, collision_updates, narrative_updates,
   "emergent_economy_signals": ["..."],
   "scanning_gaps": ["..."],
   "next_cycle_directive": {
+    "priority_models": ["MC-NNN — what model evidence to validate"],
     "priority_collisions": ["FC-NNN — what to validate"],
-    "priority_narratives": ["TN-NNN — what needs deepening"],
+    "model_gaps_to_fill": ["narrative TN-NNN needs models for X"],
     "scan_focus": ["what Agent A should prioritize"],
     "deprioritize": ["what to reduce focus on"]
   },
-  "cycle_summary": "1-paragraph summary for context accumulation"
+  "cycle_summary": "1-paragraph summary leading with model inventory changes"
 }""")
     sections.append("```")
     sections.append("Return ONLY the JSON object. No preamble.")
@@ -1009,7 +1021,7 @@ def run_v4_cycle(model="sonnet", scan_only=False, analytics_only=False,
     t0 = time.time()
 
     print("\n" + "#" * 60)
-    print("#  v4 ECONOMY MAP ENGINE — NARRATIVE-FIRST CYCLE")
+    print("#  v4.1 ECONOMY MAP ENGINE — MODEL-FIRST CYCLE")
     print(f"#  LLM Mode: {'API' if use_api else 'CLI (subscription)'}")
     print(f"#  Model: {MODELS.get(model, model)}")
     print("#" * 60)
@@ -1140,7 +1152,7 @@ def run_v4_cycle(model="sonnet", scan_only=False, analytics_only=False,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="v4 Economy Map Engine — Narrative-First Cycle Runner"
+        description="v4.1 Economy Map Engine — Model-First Cycle Runner"
     )
     parser.add_argument("--model", default="sonnet",
                         choices=["sonnet", "opus", "haiku"],
@@ -1150,7 +1162,7 @@ def main():
     parser.add_argument("--analytics-only", action="store_true",
                         help="Run scan + analytics, skip LLM phases")
     parser.add_argument("--skip-narratives", action="store_true",
-                        help="Skip Agent B narrative update (faster cycles)")
+                        help="Skip Agent B model card + narrative update (faster cycles)")
     parser.add_argument("--use-api", action="store_true",
                         help="Use Anthropic API instead of Claude Code CLI")
     parser.add_argument("--verbose", action="store_true",
