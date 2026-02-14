@@ -1,0 +1,105 @@
+{
+  "cycle": "v5-1",
+  "grading_date": "2026-02-13",
+  "agent": "Agent C — v5 Signal Grader (Cycle 1)",
+  "signals_graded": 14,
+  "score_adjustments": [
+    {
+      "model_id": "C7-NR-12",
+      "model_name": "Automated Code Generation Tool",
+      "adjustment_type": "cla_score_increase",
+      "requirement_id": "REQ-TO-OPEN-UNCERTAIN",
+      "evidence": "Cursor $500M ARR, Devin/Cognition $10.2B valuation, 85% developer adoption. Market consolidating into 3 leaders (Cursor, Copilot, Devin). Moat increasing for established players.",
+      "changes": {
+        "MA": {"old": 5, "new": 6, "rationale": "Market consolidation (Cognition acquired Windsurf) increases moat for established code gen tools. Three leaders emerging with network effects."},
+        "CE": {"old": 8.0, "new": 8.5, "rationale": "Evidence certainty further increased: Cursor $500M ARR is strongest single-product validation in AI coding"}
+      },
+      "confidence": "high"
+    },
+    {
+      "model_id": "MC-V50-ROBO-001",
+      "model_name": "Industrial Robotics Integration Platform",
+      "adjustment_type": "t_score_increase",
+      "requirement_id": "REQ-TO-CERTAIN-CLOSED",
+      "evidence": "Figure AI $39B valuation. Q1 2026: $2.26B robotics funding. Capital acceleration from digital→physical AI continues.",
+      "changes": {
+        "CE": {"old": 6.5, "new": 7.5, "rationale": "Evidence certainty increased: Figure AI $39B and Q1 2026 $2.26B funding confirm physical AI capital rotation is accelerating, not speculative"}
+      },
+      "confidence": "high"
+    },
+    {
+      "model_id": "MC-V312-TRN-001",
+      "model_name": "Autonomous Trucking Middleware Platform",
+      "adjustment_type": "cla_score_increase",
+      "requirement_id": "REQ-TO-CERTAIN-CLOSED",
+      "evidence": "Model is middleware/software stack, not AV hardware. Fleet management SaaS layer more accessible than O-score of 47.5 suggests. Software companies funded at scale in adjacent logistics.",
+      "changes": {
+        "MO": {"old": 4, "new": 5, "rationale": "Middleware positioning means MO should reflect software accessibility, not full AV hardware barriers. Fleet management and route optimization layers are software plays."}
+      },
+      "confidence": "medium"
+    },
+    {
+      "model_id": "MC-V50-DEF-001",
+      "model_name": "Defense AI Software Platform",
+      "adjustment_type": "t_score_increase",
+      "requirement_id": "REQ-TN-008-ACCESS",
+      "evidence": "GovTech procurement AI validated: Starbridge $42M, OpenGov $1.8B. Defense software layer accessibility confirmed by growing GovTech ecosystem.",
+      "changes": {
+        "CE": {"old": 6.5, "new": 7.0, "rationale": "GovTech funding data further confirms defense software layer accessibility. Starbridge $42M and OpenGov $1.8B validate government SaaS model."}
+      },
+      "confidence": "medium"
+    }
+  ],
+  "no_change_validations": [
+    {"requirement_id": "REQ-FVCR-F4_capital", "verdict": "FURTHER VALIDATED — $238B AI funding in 2025 confirms F4_capital enrichment is real"},
+    {"requirement_id": "REQ-ROLE-TN-010", "verdict": "VALIDATED — AI agent infrastructure genuinely more necessary. 40% enterprise apps agentic by 2026 confirms infrastructure-first pattern."},
+    {"requirement_id": "REQ-TN-008-ACCESS", "verdict": "FURTHER VALIDATED — Defense software accessible, platform locked. MC-V50-DEF-001 captures accessible layer correctly."},
+    {"requirement_id": "REQ-ROLE-TN-008", "verdict": "STRUCTURAL — Infrastructure scoring higher is real for defense, confirmed by $7.7B defense VC flowing to software/infrastructure."},
+    {"requirement_id": "REQ-ROLE-TN-009", "verdict": "NOT ADDRESSED — Insufficient data on education infrastructure vs business model scoring."},
+    {"requirement_id": "REQ-SELF-TNS-O-DISCONNECT", "verdict": "CONFIRMED BY DESIGN — TNS-O disconnection is structural feature, revalidated."}
+  ],
+  "new_model_recommendations": [
+    {
+      "candidate_id": "MC-V51-VOICE-001",
+      "name": "Enterprise AI Voice Agent Platform",
+      "rationale": "Conversational AI $19.21B, VC 7x growth. ElevenLabs $3.3B, Giga $61M. Distinct vertical: contact center replacement economics with per-call pricing, BFSI/healthcare verticals, multilingual requirements.",
+      "parent_model": null,
+      "priority": "high"
+    },
+    {
+      "candidate_id": "MC-V51-SYNTH-001",
+      "name": "Domain-Specific Synthetic Data Generation Platform",
+      "rationale": "TAM $60-90B. 70% of AI training data by 2030. Domain expertise + HIPAA/GDPR compliance = moat. Enterprises pay $500K-$5M/yr. Synthesia $4B valuation validates space.",
+      "parent_model": null,
+      "priority": "high"
+    },
+    {
+      "candidate_id": "MC-V51-AISAFE-001",
+      "name": "AI Safety & Compliance Platform",
+      "rationale": "EU AI Act Aug 2026 mandatory compliance. Penalties €35M/7% turnover. Insurers requiring red-teaming. 175+ startups. Mandatory demand = highest SN possible.",
+      "parent_model": null,
+      "priority": "high"
+    },
+    {
+      "candidate_id": "MC-V51-LLMOPS-001",
+      "name": "LLMOps & AI Agent Observability Platform",
+      "rationale": "WitnessAI $58M. Agent proliferation creates monitoring/governance need. Emergent infrastructure — similar to APM (Datadog) but for AI agents.",
+      "parent_model": null,
+      "priority": "medium"
+    },
+    {
+      "candidate_id": "MC-V51-DRONE-001",
+      "name": "Commercial Drone Inspection & Delivery Platform",
+      "rationale": "Zipline $7.6B, 2M+ deliveries. Commercial layer accessible. Regulatory progress enabling deployment. Distinct from military drone platforms.",
+      "parent_model": null,
+      "priority": "medium"
+    },
+    {
+      "candidate_id": "MC-V51-GOVAI-001",
+      "name": "AI-Powered Government Procurement Platform",
+      "rationale": "Starbridge $42M, OpenGov $1.8B. GovTech fundability up 30%. Procurement automation = specific vertical SaaS with government buyer economics.",
+      "parent_model": null,
+      "priority": "medium"
+    }
+  ]
+}

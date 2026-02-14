@@ -1,6 +1,6 @@
 {
   "cycle": "v5-0",
-  "timestamp": "2026-02-13T09:37:08",
+  "timestamp": "2026-02-13T15:47:39",
   "tensions": [
     {
       "tension_id": "TENS-TN-008-OPP-DIV",
@@ -97,6 +97,18 @@
       "gap": 36.7
     },
     {
+      "tension_id": "TENS-TO-MC-V313-21-001",
+      "tension_type": "t_o_extreme_divergence",
+      "question": "'Critical Minerals Exploration & Resource Estimation Platform' has T=72.4 but O=36.5 (gap +35.9). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
+      "direction": "transformation_certain_door_closed",
+      "architecture": "data_compounding",
+      "model_id": "MC-V313-21-001",
+      "model_name": "Critical Minerals Exploration & Resource Estimation Platform",
+      "t_score": 72.4,
+      "o_score": 36.5,
+      "gap": 35.9
+    },
+    {
       "tension_id": "TENS-TO-V3-DEF-001",
       "tension_type": "t_o_extreme_divergence",
       "question": "'Autonomous Drone Swarm Command Platform' has T=74.8 but O=39.0 (gap +35.8). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
@@ -106,18 +118,6 @@
       "model_name": "Autonomous Drone Swarm Command Platform",
       "t_score": 74.8,
       "o_score": 39.0,
-      "gap": 35.8
-    },
-    {
-      "tension_id": "TENS-TO-MC-V313-21-001",
-      "tension_type": "t_o_extreme_divergence",
-      "question": "'Critical Minerals Exploration & Resource Estimation Platform' has T=72.3 but O=36.5 (gap +35.8). Transformation is near-certain but market is closed. Should this model be decomposed into more accessible sub-layers?",
-      "direction": "transformation_certain_door_closed",
-      "architecture": "data_compounding",
-      "model_id": "MC-V313-21-001",
-      "model_name": "Critical Minerals Exploration & Resource Estimation Platform",
-      "t_score": 72.3,
-      "o_score": 36.5,
       "gap": 35.8
     },
     {
@@ -195,14 +195,14 @@
     {
       "tension_id": "TENS-TO-V318-OCE-008",
       "tension_type": "t_o_extreme_divergence",
-      "question": "'Open-Source Education Assessment Platform' has T=58.0 but O=90.5 (gap -32.5). Market is open but transformation evidence is weak. What external evidence would validate this transformation?",
+      "question": "'Open-Source Education Assessment Platform' has T=58.1 but O=90.5 (gap -32.4). Market is open but transformation evidence is weak. What external evidence would validate this transformation?",
       "direction": "market_open_transformation_uncertain",
       "architecture": "open_core_ecosystem",
       "model_id": "V318-OCE-008",
       "model_name": "Open-Source Education Assessment Platform",
-      "t_score": 58.0,
+      "t_score": 58.1,
       "o_score": 90.5,
-      "gap": -32.5
+      "gap": -32.4
     },
     {
       "tension_id": "TENS-TO-MC-V313-71-009",
@@ -255,18 +255,18 @@
     {
       "tension_id": "TENS-FVCR-F4_capital",
       "tension_type": "force_vcr_inversion",
-      "question": "Force F4_capital has 278 models but only 11.2% fund-returner rate (baseline: 7.1%). Is VCR biased toward this force's market structure, or is this a real signal about investability?",
-      "model_count": 278,
+      "question": "Force F4_capital has 283 models but only 11.0% fund-returner rate (baseline: 7.1%). Is VCR biased toward this force's market structure, or is this a real signal about investability?",
+      "model_count": 283,
       "force_id": "F4_capital",
-      "fr_rate_pct": 11.2,
+      "fr_rate_pct": 11.0,
       "expected_fr_rate_pct": 7.1,
-      "inversion_magnitude": 4.0
+      "inversion_magnitude": 3.9
     },
     {
       "tension_id": "TENS-FVCR-F2_demographics",
       "tension_type": "force_vcr_inversion",
-      "question": "Force F2_demographics has 343 models but only 4.4% fund-returner rate (baseline: 7.1%). Is VCR biased toward this force's market structure, or is this a real signal about investability?",
-      "model_count": 343,
+      "question": "Force F2_demographics has 344 models but only 4.4% fund-returner rate (baseline: 7.1%). Is VCR biased toward this force's market structure, or is this a real signal about investability?",
+      "model_count": 344,
       "force_id": "F2_demographics",
       "fr_rate_pct": 4.4,
       "expected_fr_rate_pct": 7.1,
@@ -285,10 +285,10 @@
     {
       "tension_id": "TENS-ROLE-TN-009",
       "tension_type": "role_score_paradox",
-      "question": "In Educational Services Transformation, what_needed models avg T=65.9 vs what_works T=63.1 (gap +2.7). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
+      "question": "In Educational Services Transformation, what_needed models avg T=65.9 vs what_works T=63.2 (gap +2.7). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
       "narrative_id": "TN-009",
       "narrative_name": "Educational Services Transformation",
-      "avg_t_works": 63.1,
+      "avg_t_works": 63.2,
       "avg_t_needed": 65.9,
       "t_gap": 2.7
     },
@@ -301,16 +301,6 @@
       "avg_t_works": 69.7,
       "avg_t_needed": 71.9,
       "t_gap": 2.2
-    },
-    {
-      "tension_id": "TENS-ROLE-TN-010",
-      "tension_type": "role_score_paradox",
-      "question": "In Computer Systems Design and Related Services (IT Services) Transformation, what_needed models avg T=65.5 vs what_works T=63.4 (gap +2.1). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
-      "narrative_id": "TN-010",
-      "narrative_name": "Computer Systems Design and Related Services (IT Services) Transformation",
-      "avg_t_works": 63.4,
-      "avg_t_needed": 65.5,
-      "t_gap": 2.1
     }
   ],
   "self_fulfillment": {
@@ -320,17 +310,17 @@
       "message": "TNS and Model T-score have partial overlap (r=0.341). Each adds unique signal."
     },
     "tns_vs_model_o": {
-      "r": 0.0169,
+      "r": 0.018,
       "status": "DISCONNECTED",
-      "message": "TNS and Model O-score appear disconnected (r=0.017). Narrative layer may not be informative."
+      "message": "TNS and Model O-score appear disconnected (r=0.018). Narrative layer may not be informative."
     },
     "tns_vs_model_vcr": {
-      "r": 0.4423,
+      "r": 0.4441,
       "status": "HEALTHY",
-      "message": "TNS and Model VCR have partial overlap (r=0.442). Each adds unique signal."
+      "message": "TNS and Model VCR have partial overlap (r=0.444). Each adds unique signal."
     },
     "model_t_vs_model_o": {
-      "r": -0.825,
+      "r": -0.8246,
       "status": "STRUCTURAL_INVERSE",
       "message": "Model T-score and Model O-score are strongly inversely related (r=-0.825). This is a structural pattern (e.g., certain transformation → closed market), not circularity."
     }
@@ -366,42 +356,42 @@
     },
     {
       "requirement_id": "REQ-TO-CERTAIN-CLOSED",
-      "question": "16 models have T >> O (transformation certain but market closed). Top gaps: Retail Media Network Platform (+49), Defense AI/ML Intelligence Fusion Platform (+40), Defense Logistics Optimizer (+40), Intelligent Commercial Earth Observation Analytics Platform (+37), Autonomous Drone Swarm Command Platform (+36). Should these be decomposed into accessible sub-layers?",
+      "question": "16 models have T >> O (transformation certain but market closed). Top gaps: Retail Media Network Platform (+49), Defense AI/ML Intelligence Fusion Platform (+40), Defense Logistics Optimizer (+40), Intelligent Commercial Earth Observation Analytics Platform (+37), Critical Minerals Exploration & Resource Estimation Platform (+36). Should these be decomposed into accessible sub-layers?",
       "priority": "high",
       "tension_source": "t_o_extreme_divergence",
       "models_affected_count": 16
     },
     {
       "requirement_id": "REQ-TO-OPEN-UNCERTAIN",
-      "question": "1 models have O >> T (market open but transformation uncertain). Top gaps: Open-Source Education Assessment Platform (-33). What external evidence would validate these transformations?",
+      "question": "1 models have O >> T (market open but transformation uncertain). Top gaps: Open-Source Education Assessment Platform (-32). What external evidence would validate these transformations?",
       "priority": "medium",
       "tension_source": "t_o_extreme_divergence",
       "models_affected_count": 1
     },
     {
       "requirement_id": "REQ-FVCR-F4_capital",
-      "question": "Force F4_capital has 278 models with 11.2% fund-returner rate (vs 7.1% baseline). Is VCR scoring biased toward F4_capital's typical market structures, or does this force genuinely produce better investments?",
+      "question": "Force F4_capital has 283 models with 11.0% fund-returner rate (vs 7.1% baseline). Is VCR scoring biased toward F4_capital's typical market structures, or does this force genuinely produce better investments?",
       "priority": "medium",
       "tension_source": "force_vcr_inversion",
-      "models_affected_count": 278
+      "models_affected_count": 283
     },
     {
       "requirement_id": "REQ-FVCR-F2_demographics",
-      "question": "Force F2_demographics has 343 models but only 4.4% fund-returner rate (vs 7.1% baseline). Are F2_demographics-driven models systematically underscored on VCR, or is investability genuinely lower?",
+      "question": "Force F2_demographics has 344 models but only 4.4% fund-returner rate (vs 7.1% baseline). Are F2_demographics-driven models systematically underscored on VCR, or is investability genuinely lower?",
       "priority": "medium",
       "tension_source": "force_vcr_inversion",
-      "models_affected_count": 343
+      "models_affected_count": 344
     },
     {
       "requirement_id": "REQ-ROLE-TN-008",
-      "question": "In Defense AI / National Security Technology Transformation, what_needed models avg T=69.6 vs what_works T=66.9. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "question": "In Defense AI / National Security Technology Transformation, what_needed models avg T=69.7 vs what_works T=67.0. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
       "priority": "low",
       "tension_source": "role_score_paradox",
       "models_affected_count": 15
     },
     {
       "requirement_id": "REQ-ROLE-TN-009",
-      "question": "In Educational Services Transformation, what_needed models avg T=65.8 vs what_works T=63.1. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
+      "question": "In Educational Services Transformation, what_needed models avg T=65.9 vs what_works T=63.2. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
       "priority": "low",
       "tension_source": "role_score_paradox",
       "models_affected_count": 15
@@ -414,13 +404,6 @@
       "models_affected_count": 3
     },
     {
-      "requirement_id": "REQ-ROLE-TN-010",
-      "question": "In Computer Systems Design and Related Services (IT Services) Transformation, what_needed models avg T=65.5 vs what_works T=63.4. Is infrastructure genuinely more structurally necessary, or are SN/FA scores inherited from parent sector?",
-      "priority": "low",
-      "tension_source": "role_score_paradox",
-      "models_affected_count": 25
-    },
-    {
       "requirement_id": "REQ-SELF-TNS-O-DISCONNECT",
       "question": "TNS and model O-scores are disconnected (r≈0). Should narrative strength predict market openness at all?",
       "priority": "medium",
@@ -429,13 +412,13 @@
     }
   ],
   "propagation": {
-    "total_adjustments": 352,
-    "iterations_run": 2,
+    "total_adjustments": 145,
+    "iterations_run": 1,
     "converged": true,
-    "models_changed": 202,
+    "models_changed": 144,
     "narratives_changed": 8,
-    "t_score_changes": 199,
-    "o_score_changes": 5,
+    "t_score_changes": 144,
+    "o_score_changes": 0,
     "tns_changes": 1,
     "force_signals": []
   }
