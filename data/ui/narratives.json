@@ -1,8 +1,8 @@
 {
-  "engine_version": "v5.2",
+  "engine_version": "v5.4",
   "cycle": "v5-1",
-  "date": "2026-02-13",
-  "total_narratives": 16,
+  "date": "2026-02-14",
+  "total_narratives": 17,
   "tns_system": {
     "axes": {
       "EM": {
@@ -59,10 +59,6 @@
         {
           "naics": "31-33",
           "role": "primary"
-        },
-        {
-          "naics": "11",
-          "role": "secondary"
         }
       ],
       "forces": [
@@ -862,7 +858,8 @@
           "MC-V52-52-001",
           "MC-V52-52-002",
           "MC-V52-52-003",
-          "MC-V52-52-004"
+          "MC-V52-52-004",
+          "MC-V53-ROBFL-001"
         ],
         "whats_needed": [
           "V318-CP-001",
@@ -977,10 +974,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 224,
+        "what_works": 225,
         "whats_needed": 79,
         "what_dies": 28,
-        "total": 331
+        "total": 332
       },
       "cascade_dependencies": {
         "upstream_of": [
@@ -1189,7 +1186,9 @@
           "MC-V52-44-004",
           "MC-V52-45-007",
           "MC-V52-44-005",
-          "MC-V52-72-003"
+          "MC-V52-72-003",
+          "MC-V54-LIVEV-001",
+          "MC-V54-SYNMED-001"
         ],
         "whats_needed": [
           "MC-V38-44-003",
@@ -1203,10 +1202,10 @@
         "what_dies": []
       },
       "model_counts": {
-        "what_works": 38,
+        "what_works": 40,
         "whats_needed": 7,
         "what_dies": 0,
-        "total": 45
+        "total": 47
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -1473,7 +1472,13 @@
           "MC-INFO-010",
           "MC-V314-48-002",
           "V318-ART-002",
-          "MC-V52-62-001"
+          "MC-V52-62-001",
+          "MC-V53-AGREL-001",
+          "MC-V53-DEVAI-001",
+          "MC-V53-SOVAI-001",
+          "MC-V54-AICONT-001",
+          "MC-V54-GAMEA-001",
+          "MC-V54-SYNMED-001"
         ],
         "whats_needed": [
           "MC-V38-44-003-L5",
@@ -1537,10 +1542,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 100,
+        "what_works": 106,
         "whats_needed": 40,
         "what_dies": 16,
-        "total": 156
+        "total": 162
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -3085,7 +3090,8 @@
           "MC-V52-92-002",
           "MC-V52-92-003",
           "MC-V52-92-004",
-          "MC-V52-92-005"
+          "MC-V52-92-005",
+          "MC-V53-SOVAI-001"
         ],
         "whats_needed": [
           "MC-V313-71-003",
@@ -3109,10 +3115,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 33,
+        "what_works": 34,
         "whats_needed": 15,
         "what_dies": 1,
-        "total": 49
+        "total": 50
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -3552,7 +3558,8 @@
           "MC-V52-56-002",
           "MC-V52-48-006",
           "MC-V52-81-005",
-          "MC-V52-81-006"
+          "MC-V52-81-006",
+          "MC-V53-WKTRN-001"
         ],
         "whats_needed": [
           "C7-PI-TRUCKING-01",
@@ -3574,10 +3581,10 @@
         ]
       },
       "model_counts": {
-        "what_works": 68,
+        "what_works": 69,
         "whats_needed": 6,
         "what_dies": 8,
-        "total": 82
+        "total": 83
       },
       "cascade_dependencies": {
         "upstream_of": [],
@@ -4380,6 +4387,190 @@
         "magnitude": "medium"
       },
       "collision_ids": []
+    },
+    {
+      "narrative_id": "TN-017",
+      "name": "Agriculture & Food Production Transformation",
+      "slug": "agriculture",
+      "tns_composite": 76.25,
+      "tns_category": "MAJOR",
+      "tns_rank": 17,
+      "tns_scores": {
+        "EM": 7.5,
+        "FC": 8.0,
+        "ES": 8.5,
+        "TC": 6.5,
+        "IR": 7.5
+      },
+      "sectors": [
+        {
+          "naics": "11",
+          "role": "primary"
+        },
+        {
+          "naics": "1111",
+          "role": "secondary"
+        },
+        {
+          "naics": "1112",
+          "role": "secondary"
+        }
+      ],
+      "forces": [
+        "F1_technology",
+        "F2_demographics",
+        "F6_energy"
+      ],
+      "transformation_phase": "early_disruption",
+      "summary": "v5.4 NARRATIVE: 19 models, 2.6M workers, 2.1M farms. Precision agriculture VC funding +71% (2025-2026). John Deere fully autonomous tractors at production scale. Average farm operator age 57.5 (succession crisis mirrors manufacturing). Baumol score low — labor scarcity (not cost) drives automation. AI transforms input management, crop insurance, livestock monitoring, compliance, and farm succession. Controlled environment ag (vertical farming) emerging as climate hedge. Key architectures: vertic",
+      "year_by_year": {
+        "2026": {
+          "phase": "early_disruption",
+          "description": "2.6M workers, 2.1M farms. Precision ag VC +71%. John Deere autonomous tractors shipping. Average operator 57.5yo — succession wave beginning. H-2A labor shortage acute (300K+ seasonal workers needed). FSMA 204 compliance deadline approaching for food traceability.",
+          "indicators": [
+            "USDA NASS farm count and operator demographics",
+            "Precision ag VC funding (baseline: .3B in 2025)",
+            "Autonomous equipment deployment count",
+            "H-2A visa applications vs approvals gap"
+          ]
+        },
+        "2027": {
+          "phase": "early_disruption",
+          "description": "Autonomous equipment moves beyond row crops to orchards and vineyards. First fully autonomous dairy operations. Drone-based application (herbicide, fertilizer) reaches 15% adoption in large farms. Farm succession transactions accelerate as boomer operators retire.",
+          "indicators": [
+            "Autonomous equipment market revenue",
+            "Drone application acreage treated",
+            "Farm succession transaction volume"
+          ]
+        },
+        "2028": {
+          "phase": "acceleration",
+          "description": "AI-driven input optimization reduces chemical usage 30-40% on adopting farms. Carbon credit verification via satellite/AI reaches scale. Controlled environment agriculture costs cross below field-grown for select crops in northern markets.",
+          "indicators": [
+            "Chemical input spend per acre (adopters vs non-adopters)",
+            "Ag carbon credit volume and pricing",
+            "CEA production cost per unit"
+          ]
+        },
+        "2029": {
+          "phase": "acceleration",
+          "description": "Bimodality emerges: top 10% of farms fully AI-integrated (autonomous, precision-input, data-driven insurance), bottom 50% still manual. Mid-size farm consolidation accelerates. Food traceability becomes table stakes for retail buyers.",
+          "indicators": [
+            "Farm size distribution shift",
+            "Traceability adoption rate among retail suppliers"
+          ]
+        },
+        "2030": {
+          "phase": "acceleration",
+          "description": "Labor shortage forces widespread autonomous adoption even among mid-size farms. Crop insurance shifts to continuous AI monitoring (vs annual inspection). Livestock operations mostly sensor-managed.",
+          "indicators": [
+            "Agricultural employment vs output ratio",
+            "AI-based insurance premium share"
+          ]
+        },
+        "2031": {
+          "phase": "maturation",
+          "description": "60%+ of large farms use some form of AI/autonomous technology. Succession crisis resolves through PE-backed consolidation or family-to-tech-operator transitions. Carbon farming becomes material revenue stream (-10/acre).",
+          "indicators": [
+            "AI adoption rate by farm size",
+            "Carbon farming revenue per acre"
+          ]
+        }
+      },
+      "geographic_variation": {
+        "US": {
+          "velocity": "high",
+          "timeline_shift": "baseline",
+          "notes": "Largest precision ag market. John Deere HQ. VC concentration in AgTech (Iowa, California, Indiana). H-2A crisis acute in California, Southeast."
+        },
+        "EU": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "CAP reform pushing sustainability metrics. EU Farm to Fork strategy mandates traceability. Smaller farm size limits ROI on autonomous equipment."
+        },
+        "China": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Government-driven modernization of 200M+ small farms. DJI agricultural drones at massive scale. Food security priority post-COVID."
+        },
+        "India": {
+          "velocity": "low",
+          "timeline_shift": "+3 years",
+          "notes": "150M+ small farms, avg <2 hectares. Mobile-first precision ag via smartphone. Government AgriStack initiative. Affordability is key constraint."
+        },
+        "LATAM": {
+          "velocity": "medium",
+          "timeline_shift": "+1 year",
+          "notes": "Brazil is AgTech leader (Solinftec, Agrotools). Large farm sizes favor autonomous. Argentina, Colombia emerging. Climate volatility drives adoption."
+        }
+      },
+      "outputs": {
+        "what_works": [
+          "MC-V313-11-001",
+          "MC-V313-11-005",
+          "MC-V313-11-006",
+          "MC-V313-11-004",
+          "MC-V313-11-007",
+          "MC-V313-11-012",
+          "MC-V313-11-002",
+          "MC-V52-11-002",
+          "MC-V313-11-008",
+          "MC-V313-11-009",
+          "MC-V52-11-001",
+          "MC-V52-11-003",
+          "MC-V52-11-004",
+          "MC-V313-11-011",
+          "MC-V313-11-010",
+          "MC-V313-11-003",
+          "C7-PI-AGRICULTURE-01",
+          "C7-NR-09"
+        ],
+        "whats_needed": [
+          "PC8-EXT-AIBENE-FARMOPS-01"
+        ],
+        "what_dies": []
+      },
+      "model_counts": {
+        "what_works": 18,
+        "whats_needed": 1,
+        "what_dies": 0,
+        "total": 19
+      },
+      "cascade_dependencies": {
+        "upstream_of": [
+          "TN-014"
+        ],
+        "downstream_of": [
+          "TN-003"
+        ],
+        "amplified_by": [
+          "TN-015"
+        ],
+        "dampened_by": []
+      },
+      "fear_friction": {
+        "economic_readiness": 7,
+        "psychological_readiness": 5,
+        "gap": 2,
+        "classification": "moderate_friction",
+        "notes": "Farmers pragmatic about technology when ROI clear. Generational divide: younger operators adopt faster. Trust in John Deere/established brands high. Data ownership concerns moderate. Right-to-repair movement indicates friction with platform lock-in."
+      },
+      "falsification_criteria": [
+        "Precision ag VC funding declines >30% for 2 consecutive years",
+        "Autonomous equipment adoption stalls below 5% of large farms by 2028",
+        "H-2A labor shortage resolves through immigration reform, eliminating automation urgency",
+        "Crop input costs decline naturally without AI optimization, weakening ROI case"
+      ],
+      "confidence": {
+        "direction": "high",
+        "timing": "medium",
+        "magnitude": "medium"
+      },
+      "collision_ids": [
+        "FC-010",
+        "FC-011",
+        "FC-016"
+      ]
     }
   ]
 }

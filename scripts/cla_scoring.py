@@ -449,7 +449,7 @@ MANUAL_CLA = {
 
 # Architecture → base CLA scores (MO, MA, VD, DV)
 ARCH_DEFAULTS = {
-    "full_service_replacement":   (6, 6, 6, 7),
+    "full_service_replacement":   (4, 4, 5, 5),  # v5.4: reduced from (6,6,6,7) — manual avg 42.8 vs old heuristic 63.5
     "vertical_saas":              (7, 7, 5, 7),
     "platform_infrastructure":    (5, 5, 6, 6),
     "platform":                   (5, 5, 7, 5),
@@ -505,25 +505,25 @@ SECTOR_ADJUSTMENTS = {
     "62": (-1, 0, 0, 1),
     # Finance — regulatory complexity but fragmented
     "52": (0, -1, 0, 1),
-    # Education — enrollment cliff creates openings
-    "61": (1, 1, 0, 0),
+    # Education — v5.4: reduced from (1,1,0,0), gap +21.5 vs manual overrides
+    "61": (0, 0, 0, 0),
     # Utilities — regulated monopolies
     "22": (-1, -1, 0, 0),
-    # Information — AI-native disruption
-    "51": (1, 1, 0, 1),
-    # Real estate — fragmented, distress creating openings
-    "53": (1, 0, 0, 1),
-    # Admin/support services — highly fragmented
-    "56": (1, 1, 0, 0),
-    # Wholesale — fragmented, AI disintermediation
-    "42": (1, 1, 0, 1),
+    # Information — mixed: some fragmented, some platform oligopoly
+    "51": (0, 0, 0, 1),  # v5.3: reduced from (+1,+1,0,+1) — DataDog/AWS/CrowdStrike moats
+    # Real estate — v5.4: reduced from (1,0,0,1), gap +22.2 vs manual overrides
+    "53": (0, 0, 0, 1),
+    # Admin/support services — mixed fragmentation
+    "56": (0, 0, 0, 0),  # v5.3: reduced from (+1,+1,0,0) — security (5616) has platform lock-in
+    # Wholesale — v5.4: reduced from (1,1,0,1), gap +14.6 vs manual overrides
+    "42": (0, 0, 0, 0),
     # Retail — Amazon dominance for e-commerce, fragmented for physical
     "44": (0, 0, 0, 0),
     "45": (0, 0, 0, 0),
     # Construction — trades shortage, technology-poor
     "23": (1, 1, 0, 0),
-    # Other services — fragmented
-    "81": (1, 1, 0, 0),
+    # Other services — v5.4: reduced from (1,1,0,0), gap +15.7 vs manual overrides
+    "81": (0, 0, 0, 0),
     # Management of companies — PE driven
     "55": (0, 0, 0, 1),
     # Manufacturing (food, etc.)
@@ -533,6 +533,37 @@ SECTOR_ADJUSTMENTS = {
     "48": (0, 0, 0, 0),
     # Mining — capital-intensive
     "21": (-1, -1, 0, 0),
+}
+
+# v5.3: Architecture-aware sector penalty for platform oligopolies
+# SaaS-type architectures in consolidated sectors get MO/MA penalties
+# because "fragmented market" assumption fails where platforms dominate
+PLATFORM_OLIGOPOLY_PENALTY = {
+    # (architecture_set, naics_set) → (MO_penalty, MA_penalty)
+    # Software/SaaS in Information sector — DataDog, Splunk, CrowdStrike
+    "saas_in_info": {
+        "archs": {"vertical_saas", "ai_copilot", "data_compounding"},
+        "naics_prefixes": {"51", "5112", "5415"},
+        "penalty": (-1, -1),
+    },
+    # SaaS in insurance — regulated, capital-intensive, carrier moats
+    "saas_in_insurance": {
+        "archs": {"vertical_saas"},
+        "naics_prefixes": {"5242", "5241"},
+        "penalty": (-2, -1),
+    },
+    # SaaS in healthcare IT — Epic/Cerner integration moats
+    "saas_in_healthcare": {
+        "archs": {"vertical_saas", "compliance_automation"},
+        "naics_prefixes": {"62", "6211", "6221"},
+        "penalty": (-1, 0),
+    },
+    # SaaS in telecom — oligopoly
+    "saas_in_telecom": {
+        "archs": {"vertical_saas", "platform_infrastructure"},
+        "naics_prefixes": {"517"},
+        "penalty": (-2, -1),
+    },
 }
 
 # Category adjustments
@@ -609,6 +640,14 @@ def heuristic_cla(model):
         elif status == "crowded":
             mo -= 2
             dv -= 1
+
+    # v5.3: Platform oligopoly penalty — SaaS in consolidated sectors
+    for rule_name, rule in PLATFORM_OLIGOPOLY_PENALTY.items():
+        if arch in rule["archs"]:
+            if any(naics.startswith(p) for p in rule["naics_prefixes"]):
+                mo += rule["penalty"][0]
+                ma += rule["penalty"][1]
+                break  # Apply at most one penalty
 
     # One-liner keyword analysis for concentration signals
     one_liner = (model.get("one_liner") or "").lower()

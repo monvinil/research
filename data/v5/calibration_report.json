@@ -1,0 +1,62 @@
+{
+  "version": "v5.4",
+  "timestamp": "2026-02-14T04:31:05.344591",
+  "description": "Calibration pass: FSR CLA recalibration (127 models), sector CLA deflation (87 models in 4 sectors), 2026 T-score boosts (Education 32, Government 23, Mining 19, Transportation 42), OPP boosts (Retail 36, Agriculture 19), 4 new Arts/Entertainment models",
+  "models_before": 793,
+  "models_after": 797,
+  "total_adjusted": 348,
+  "new_models": [
+    "MC-V54-AICONT-001",
+    "MC-V54-GAMEA-001",
+    "MC-V54-LIVEV-001",
+    "MC-V54-SYNMED-001"
+  ],
+  "rule_counts": {
+    "FSR_CLA_RECALIBRATION": 127,
+    "SECTOR_CLA_DEFLATION": 87,
+    "TRANSPORTATION_TG_BOOST": 42,
+    "RETAIL_OPP_BOOST": 36,
+    "EDUCATION_T_BOOST": 32,
+    "GOVERNMENT_T_BOOST": 23,
+    "AGRICULTURE_OPP_BOOST": 19,
+    "MINING_T_BOOST": 19
+  },
+  "statistics": {
+    "t_mean": 66.2,
+    "t_median": 66.5,
+    "cla_mean": 58.3,
+    "cla_median": 58.0,
+    "vcr_mean": 58.5,
+    "vcr_median": 58.3,
+    "t_cla_correlation": 0.153
+  },
+  "fixes_applied": {
+    "overscoring": {
+      "FSR_CLA_RECALIBRATION": "ARCH_DEFAULTS for full_service_replacement reduced (6,6,6,7) to (4,4,5,5). Manual override avg 42.8 vs old heuristic avg 63.5. 127 heuristic-scored FSR models recalculated.",
+      "SECTOR_CLA_DEFLATION": "4 sectors with inflated CLA: Real Estate (1,0,0,1) to (0,0,0,1), Education (1,1,0,0) to (0,0,0,0), Other Services (1,1,0,0) to (0,0,0,0), Wholesale (1,1,0,1) to (0,0,0,0). 87 heuristic models adjusted."
+    },
+    "underscoring": {
+      "EDUCATION_T_BOOST": "SN +1.0, FA +0.5, EC +0.5 for 32 NAICS-61 models. Evidence: enrollment cliff Fall 2025, 80+ closures, $10B/yr AI investment.",
+      "GOVERNMENT_T_BOOST": "SN +1.0, EC +1.0, TG +0.5 for 23 NAICS-92 models. Evidence: 82% CIO adopted AI, Pentagon AI strategy, $50B federal IT/quarter.",
+      "RETAIL_OPP_BOOST": "MO +0.5, MA +0.5, DV +1.0 for 36 NAICS-44/45 models. Evidence: AI-retail 46.5% CAGR, 87-94% positive revenue impact.",
+      "MINING_T_BOOST": "SN +1.0, TG +0.5, CE +0.5 for 19 NAICS-21 models. Evidence: BHP/Rio Tinto autonomous ops at production scale.",
+      "AGRICULTURE_OPP_BOOST": "MO +1.0, MA +0.5, DV +1.0 for 19 NAICS-11 models. Evidence: precision ag VC funding +71%, John Deere autonomy.",
+      "TRANSPORTATION_TG_BOOST": "TG +1.5 for 42 NAICS-48/49 models. Evidence: Aurora commercial revenue, Serve robotics 1000+ robots, Waymo 150K+ rides/week."
+    },
+    "new_models": {
+      "MC-V54-AICONT-001": "AI Content Generation Studio Platform \u2014 T=84.5, CLA=79.5, VCR=82.8, GM=82.2 (#3 triple actionable)",
+      "MC-V54-GAMEA-001": "AI-Native Game Development Engine \u2014 T=77.5, CLA=71.5, VCR=74.8",
+      "MC-V54-LIVEV-001": "AI Live Entertainment Optimization Platform \u2014 T=69.2, CLA=68.0, VCR=68.5",
+      "MC-V54-SYNMED-001": "Synthetic Media Rights & Compliance Platform \u2014 T=75.2, CLA=78.0, VCR=73.8, GM=75.6 (#8)"
+    }
+  },
+  "heuristic_fixes_permanent": {
+    "cla_scoring.py": {
+      "ARCH_DEFAULTS.full_service_replacement": "(6,6,6,7) \u2192 (4,4,5,5)",
+      "SECTOR_ADJUSTMENTS.53": "(1,0,0,1) \u2192 (0,0,0,1)",
+      "SECTOR_ADJUSTMENTS.61": "(1,1,0,0) \u2192 (0,0,0,0)",
+      "SECTOR_ADJUSTMENTS.81": "(1,1,0,0) \u2192 (0,0,0,0)",
+      "SECTOR_ADJUSTMENTS.42": "(1,1,0,1) \u2192 (0,0,0,0)"
+    }
+  }
+}
