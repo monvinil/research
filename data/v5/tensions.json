@@ -1,10 +1,10 @@
 {
   "cycle": "v5-1",
-  "timestamp": "2026-02-14T04:31:14",
-  "engine_version": "5.4",
+  "timestamp": "2026-02-14T04:50:17",
+  "engine_version": "5.5",
   "source_data": {
-    "models": 797,
-    "narratives": 16,
+    "models": 828,
+    "narratives": 17,
     "collisions": 66
   },
   "tensions": [
@@ -102,9 +102,39 @@
       "worst_narrative_name": "Educational Services Transformation",
       "worst_avg_o": 52.5,
       "spread": 25.5,
-      "narratives_count": 9,
-      "models_affected": 12,
+      "narratives_count": 10,
+      "models_affected": 13,
       "question": "Architecture 'compliance_automation' scores O=78.0 in Retail Trade Transformation but only O=52.5 in Educational Services Transformation (spread: 25.5). What market structure variable explains this gap?"
+    },
+    {
+      "tension_id": "TENS-ARCH-MARKETPLACE_NETWORK-XSECTOR",
+      "tension_type": "architecture_cross_sector_gap",
+      "architecture": "marketplace_network",
+      "best_narrative": "TN-017",
+      "best_narrative_name": "Agriculture & Food Production Transformation",
+      "best_avg_o": 66.6,
+      "worst_narrative": "TN-013",
+      "worst_narrative_name": "Securities, Commodity Contracts, and Financial Investments Transformation",
+      "worst_avg_o": 44.0,
+      "spread": 22.6,
+      "narratives_count": 17,
+      "models_affected": 43,
+      "question": "Architecture 'marketplace_network' scores O=66.6 in Agriculture & Food Production Transformation but only O=44.0 in Securities, Commodity Contracts, and Financial Investments Transformation (spread: 22.6). What market structure variable explains this gap?"
+    },
+    {
+      "tension_id": "TENS-ARCH-AI_COPILOT-XSECTOR",
+      "tension_type": "architecture_cross_sector_gap",
+      "architecture": "ai_copilot",
+      "best_narrative": "TN-017",
+      "best_narrative_name": "Agriculture & Food Production Transformation",
+      "best_avg_o": 69.5,
+      "worst_narrative": "TN-005",
+      "worst_narrative_name": "Administrative Services Transformation",
+      "worst_avg_o": 47.2,
+      "spread": 22.2,
+      "narratives_count": 10,
+      "models_affected": 15,
+      "question": "Architecture 'ai_copilot' scores O=69.5 in Agriculture & Food Production Transformation but only O=47.2 in Administrative Services Transformation (spread: 22.2). What market structure variable explains this gap?"
     },
     {
       "tension_id": "TENS-TO-MC-V38-44-003",
@@ -576,29 +606,29 @@
       "tension_id": "TENS-FVCR-F4_capital",
       "tension_type": "force_vcr_inversion",
       "force_id": "F4_capital",
-      "model_count": 353,
+      "model_count": 354,
       "fund_returner_count": 34,
       "fr_rate_pct": 9.6,
-      "expected_fr_rate_pct": 6.5,
-      "inversion_magnitude": 3.1,
+      "expected_fr_rate_pct": 6.3,
+      "inversion_magnitude": 3.3,
       "avg_t": 67.4,
       "avg_o": 58.9,
       "avg_vcr": 60.4,
-      "question": "Force F4_capital has 353 models but only 9.6% fund-returner rate (baseline: 6.5%). Is VCR biased toward this force's market structure, or is this a real signal about investability?"
+      "question": "Force F4_capital has 354 models but only 9.6% fund-returner rate (baseline: 6.3%). Is VCR biased toward this force's market structure, or is this a real signal about investability?"
     },
     {
       "tension_id": "TENS-FVCR-F2_demographics",
       "tension_type": "force_vcr_inversion",
       "force_id": "F2_demographics",
-      "model_count": 405,
+      "model_count": 416,
       "fund_returner_count": 15,
-      "fr_rate_pct": 3.7,
-      "expected_fr_rate_pct": 6.5,
-      "inversion_magnitude": 2.8,
-      "avg_t": 66.4,
-      "avg_o": 58.5,
-      "avg_vcr": 57.1,
-      "question": "Force F2_demographics has 405 models but only 3.7% fund-returner rate (baseline: 6.5%). Is VCR biased toward this force's market structure, or is this a real signal about investability?"
+      "fr_rate_pct": 3.6,
+      "expected_fr_rate_pct": 6.3,
+      "inversion_magnitude": 2.7,
+      "avg_t": 66.5,
+      "avg_o": 58.7,
+      "avg_vcr": 57.2,
+      "question": "Force F2_demographics has 416 models but only 3.6% fund-returner rate (baseline: 6.3%). Is VCR biased toward this force's market structure, or is this a real signal about investability?"
     },
     {
       "tension_id": "TENS-ROLE-TN-009",
@@ -671,6 +701,43 @@
         "MC-V314-62-002",
         "V318-OCE-008",
         "MC-V38-62-020"
+      ]
+    },
+    {
+      "tension_id": "TENS-ROLE-TN-017",
+      "tension_type": "role_score_paradox",
+      "narrative_id": "TN-017",
+      "narrative_name": "Agriculture & Food Production Transformation",
+      "avg_t_works": 65.9,
+      "avg_t_needed": 69.4,
+      "t_gap": 3.5,
+      "avg_o_works": 66.1,
+      "avg_o_needed": 66.1,
+      "works_count": 16,
+      "needed_count": 3,
+      "question": "In Agriculture & Food Production Transformation, what_needed models avg T=69.4 vs what_works T=65.9 (gap +3.5). Is infrastructure genuinely more structurally necessary, or is this a scoring artifact (e.g., SN/FA inherited from parent sector)?",
+      "works_model_ids": [
+        "MC-V313-11-001",
+        "MC-V313-11-005",
+        "MC-V313-11-006",
+        "MC-V313-11-002",
+        "MC-V52-11-002",
+        "MC-V313-11-008",
+        "MC-V313-11-009",
+        "MC-V52-11-001",
+        "MC-V52-11-003",
+        "MC-V52-11-004",
+        "MC-V313-11-011",
+        "MC-V313-11-010",
+        "MC-V313-11-003",
+        "C7-PI-AGRICULTURE-01",
+        "PC8-EXT-AIBENE-FARMOPS-01",
+        "C7-NR-09"
+      ],
+      "needed_model_ids": [
+        "MC-V313-11-004",
+        "MC-V313-11-007",
+        "MC-V313-11-012"
       ]
     },
     {
@@ -1926,29 +1993,29 @@
     "tension_type": "self_fulfillment_check",
     "correlations": {
       "tns_vs_model_t": {
-        "r": 0.3661,
+        "r": 0.3604,
         "status": "HEALTHY",
-        "message": "TNS and Model T-score have partial overlap (r=0.366). Each adds unique signal."
+        "message": "TNS and Model T-score have partial overlap (r=0.360). Each adds unique signal."
       },
       "tns_vs_model_o": {
-        "r": 0.6185,
+        "r": 0.503,
         "status": "HIGH_OVERLAP",
-        "message": "TNS and Model O-score have high overlap (r=0.619). Check for shared derivation."
+        "message": "TNS and Model O-score have high overlap (r=0.503). Check for shared derivation."
       },
       "tns_vs_model_vcr": {
-        "r": 0.4722,
+        "r": 0.4714,
         "status": "HEALTHY",
-        "message": "TNS and Model VCR have partial overlap (r=0.472). Each adds unique signal."
+        "message": "TNS and Model VCR have partial overlap (r=0.471). Each adds unique signal."
       },
       "model_t_vs_model_o": {
-        "r": -0.0679,
+        "r": 0.0339,
         "status": "DISCONNECTED",
-        "message": "Model T-score and Model O-score appear disconnected (r=-0.068). Narrative layer may not be informative."
+        "message": "Model T-score and Model O-score appear disconnected (r=0.034). Narrative layer may not be informative."
       }
     },
     "flags": [
-      "TNS and Model O-score have high overlap (r=0.619). Check for shared derivation.",
-      "Model T-score and Model O-score appear disconnected (r=-0.068). Narrative layer may not be informative."
+      "TNS and Model O-score have high overlap (r=0.503). Check for shared derivation.",
+      "Model T-score and Model O-score appear disconnected (r=0.034). Narrative layer may not be informative."
     ],
     "structural_findings": [],
     "is_circular": false,
@@ -2001,6 +2068,13 @@
         "avg_t": 64.4,
         "avg_o": 60.1,
         "avg_vcr": 65.1
+      },
+      {
+        "narrative_id": "TN-017",
+        "tns": 76.25,
+        "avg_t": 67.8,
+        "avg_o": 67.9,
+        "avg_vcr": 59.8
       },
       {
         "narrative_id": "TN-006",
@@ -2068,13 +2142,13 @@
     ]
   },
   "summary": {
-    "total_tensions": 45,
+    "total_tensions": 48,
     "by_type": {
       "narrative_opportunity_divergence": 4,
-      "architecture_cross_sector_gap": 1,
+      "architecture_cross_sector_gap": 3,
       "t_o_extreme_divergence": 26,
       "force_vcr_inversion": 2,
-      "role_score_paradox": 6,
+      "role_score_paradox": 7,
       "collision_coherence": 6
     },
     "models_with_tensions": 512,

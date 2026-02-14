@@ -1,9 +1,9 @@
 {
   "state_version": 2,
-  "engine_version": "5.4",
+  "engine_version": "5.5",
   "current_cycle": "v5-1",
   "engine_mode": "constraint_propagation",
-  "description": "v5.4: 797 models (348 adjusted, 4 new). Calibration pass: FSR CLA recalibration (127), sector CLA deflation (87), 2026 T-score boosts (Education 32, Government 23, Mining 19, Transportation 42), OPP boosts (Retail 36, Agriculture 19), 4 new Arts/Entertainment models, TN-017 Agriculture narrative (19 models).",
+  "description": "v5.5: 828 models. Agriculture deep dive expansion: 31 new models across 14 sub-sectors, 13 architecture types. TN-017 Agriculture: 50 models (was 19).",
   "cycles": [
     {
       "cycle_id": "v5-0",
@@ -124,6 +124,46 @@
         "T mean 64.8 to 66.2 (+1.4pts, sector boosts)",
         "T-CLA r=0.153 (remains independent)"
       ]
+    },
+    {
+      "cycle_id": "v5-5-agriculture",
+      "date": "2026-02-14",
+      "models_before": 797,
+      "models_after": 828,
+      "new_models": [
+        "MC-V55-1113-001",
+        "MC-V55-1113-002",
+        "MC-V55-1113-003",
+        "MC-V55-1122-001",
+        "MC-V55-1122-002",
+        "MC-V55-1123-001",
+        "MC-V55-1123-002",
+        "MC-V55-1125-001",
+        "MC-V55-1125-002",
+        "MC-V55-113-001",
+        "MC-V55-113-002",
+        "MC-V55-113-003",
+        "MC-V55-114-001",
+        "MC-V55-115-001",
+        "MC-V55-115-002",
+        "MC-V55-115-003",
+        "MC-V55-115-004",
+        "MC-V55-115-005",
+        "MC-V55-1152-001",
+        "MC-V55-1152-002",
+        "MC-V55-1111-001",
+        "MC-V55-1111-002",
+        "MC-V55-11-001",
+        "MC-V55-11-002",
+        "MC-V55-1121-001",
+        "MC-V55-1114-001",
+        "MC-V55-1112-001",
+        "MC-V55-1111-003",
+        "MC-V55-1119-001",
+        "MC-V55-1121-002",
+        "MC-V55-11-003"
+      ],
+      "key_findings": []
     }
   ],
   "entity_counts": {
@@ -131,8 +171,8 @@
     "narratives": 17,
     "cascades": 3,
     "geographies": 8,
-    "models": 797,
-    "tensions": 26,
+    "models": 828,
+    "tensions": 48,
     "requirements": 12
   }
 }
