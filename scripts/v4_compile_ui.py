@@ -549,6 +549,50 @@ def main():
             json.dump(tensions_ui, f, indent=2, ensure_ascii=False)
         print(f"  Written: {UI_DIR / 'tensions.json'} ({len(ui_tensions)} tensions)")
 
+    # v5 Projections (if available)
+    v5_projections_path = BASE / "data/v5/projections.json"
+    if v5_projections_path.exists():
+        with open(v5_projections_path) as f:
+            v5proj = json.load(f)
+        projections_ui = {
+            "cycle": v5proj.get("cycle", current_cycle),
+            "timestamp": v5proj.get("timestamp", ""),
+            "methods": v5proj.get("projection_methods", {}),
+            "summary": v5proj.get("summary", {}),
+            "projections": [
+                {
+                    "id": p["id"],
+                    "name": p.get("name", ""),
+                    "one_liner": p.get("one_liner", ""),
+                    "architecture": p.get("architecture", ""),
+                    "sector_naics": p.get("sector_naics", ""),
+                    "sector_name": p.get("sector_name", ""),
+                    "composite": p.get("composite", 0),
+                    "cla_composite": p.get("cla", {}).get("composite", 0),
+                    "vcr_composite": p.get("vcr", {}).get("composite", 0),
+                    "cla_category": p.get("cla", {}).get("category", ""),
+                    "vcr_category": p.get("vcr", {}).get("category", ""),
+                    "triple_score": p.get("triple_score", 0),
+                    "confidence_tier": p.get("confidence_tier", ""),
+                    "projection_rank": p.get("projection_rank", 0),
+                    "method": p.get("projection", {}).get("method", ""),
+                    "evidence_chain": p.get("projection", {}).get("evidence_chain", []),
+                    "forces": p.get("forces_v3", []),
+                    "scores": p.get("scores", {}),
+                    "cla_scores": p.get("cla", {}).get("scores", {}),
+                    "vcr_scores": p.get("vcr", {}).get("scores", {}),
+                    "roi_estimate": p.get("vcr", {}).get("roi_estimate", {}),
+                }
+                for p in v5proj.get("projections", [])
+            ],
+        }
+        with open(UI_DIR / "projections.json", "w") as f:
+            json.dump(projections_ui, f, indent=2, ensure_ascii=False)
+        print(f"  Written: {UI_DIR / 'projections.json'} ({len(projections_ui['projections'])} projections)")
+
+        # Add projection summary to dashboard
+        dashboard["projections_summary"] = v5proj.get("summary", {})
+
     with open(UI_DIR / "dashboard.json", "w") as f:
         json.dump(dashboard, f, indent=2, ensure_ascii=False)
     print(f"  Written: {UI_DIR / 'dashboard.json'}")

@@ -905,6 +905,7 @@ document.addEventListener('DOMContentLoaded',function(){
     <a data-view="timeline">Timeline</a>
     <a data-view="catalyst">Catalyst</a>
     <a data-view="tensions">Tensions</a>
+    <a data-view="projections">Projections</a>
     <a data-view="data">Data</a>
     <a data-view="glossary">Glossary</a>
   </nav>
@@ -1228,6 +1229,60 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="glass-static card">
       <div class="section-label">Propagation Summary <span class="count">bounded score adjustments with anti-circularity checks</span></div>
       <div id="propagation-container" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <!-- ═══ VIEW: PROJECTIONS ═══ -->
+  <div id="view-projections" class="view-section">
+    <div style="font-size:12px;color:var(--text-secondary);line-height:1.6;max-width:820px;margin-bottom:20px">
+      <strong>Model Projection Engine (v5.2)</strong> &mdash; Algorithmically projects new business models from patterns across 695 scored models. Five methods: Architecture Transfer, FUND_RETURNER Template, Narrative Coverage Gap, Force Convergence Hotspot, and Tension-Derived. Each projection is scored through the same T/CLA/VCR pipeline as real models.
+    </div>
+
+    <!-- Projection KPIs -->
+    <div class="kpi-row" id="proj-kpis">
+      <div class="glass kpi"><div class="kpi-label">Projected Models</div><div class="kpi-value" style="color:var(--accent)" id="proj-kpi-total">--</div><div class="kpi-sub" id="proj-kpi-methods-sub">-- methods</div></div>
+      <div class="glass kpi"><div class="kpi-label">High Confidence</div><div class="kpi-value" style="color:var(--green)" id="proj-kpi-high">--</div><div class="kpi-sub" id="proj-kpi-conf-sub">-- medium, -- low</div></div>
+      <div class="glass kpi"><div class="kpi-label">Top Triple Score</div><div class="kpi-value" style="color:var(--amber)" id="proj-kpi-top">--</div><div class="kpi-sub" id="proj-kpi-mean-sub">mean --</div></div>
+      <div class="glass kpi"><div class="kpi-label">Strong+ VCR</div><div class="kpi-value" style="color:var(--blue)" id="proj-kpi-vcr">--</div><div class="kpi-sub" id="proj-kpi-vcr-sub">STRONG_MULTIPLE or better</div></div>
+    </div>
+
+    <!-- Method Breakdown -->
+    <div class="glass-static card" style="margin-bottom:16px">
+      <div class="section-label">Projection Methods <span class="count">5 independent methods for gap detection</span></div>
+      <div id="proj-methods-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px"></div>
+    </div>
+
+    <!-- Projection Controls -->
+    <div class="controls-bar" style="margin-bottom:12px">
+      <input type="text" class="search-input" id="proj-search" placeholder="Search projections..." style="max-width:260px">
+      <select class="sort-select" id="proj-method-filter" style="min-width:180px">
+        <option value="all">All Methods</option>
+        <option value="AT">Architecture Transfer</option>
+        <option value="FR">FUND_RETURNER Template</option>
+        <option value="NC">Narrative Coverage Gap</option>
+        <option value="FC">Force Convergence</option>
+        <option value="TD">Tension-Derived</option>
+      </select>
+      <select class="sort-select" id="proj-conf-filter" style="min-width:160px">
+        <option value="all">All Confidence</option>
+        <option value="HIGH">High</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="LOW">Low</option>
+      </select>
+      <select class="sort-select" id="proj-sort" style="min-width:160px">
+        <option value="triple_score">Triple Score</option>
+        <option value="composite">T-Score</option>
+        <option value="cla_composite">Opportunity</option>
+        <option value="vcr_composite">VCR</option>
+        <option value="confidence_tier">Confidence</option>
+      </select>
+      <div id="proj-results-info" style="font-size:11px;color:var(--dim);margin-left:12px"></div>
+    </div>
+
+    <!-- Projections Table -->
+    <div class="glass-static card">
+      <div class="section-label">Projected Models <span class="count" id="proj-table-count"></span></div>
+      <div id="proj-table-container" style="margin-top:12px"></div>
     </div>
   </div>
 
@@ -3232,6 +3287,169 @@ function renderPropagation(prop) {
     '</div>' : '');
 }
 
+// ─── PROJECTIONS (v5.2) ───
+let projectionData = null;
+
+function renderProjections(pd) {
+  if (!pd) return;
+  const projs = pd.projections || [];
+  const summary = pd.summary || {};
+  const methods = pd.methods || {};
+
+  // KPIs
+  document.getElementById('proj-kpi-total').textContent = summary.total_projected || projs.length;
+  document.getElementById('proj-kpi-methods-sub').textContent = Object.keys(methods).length + ' methods';
+  const byConf = summary.by_confidence || {};
+  document.getElementById('proj-kpi-high').textContent = byConf.HIGH || 0;
+  document.getElementById('proj-kpi-conf-sub').textContent = (byConf.MEDIUM || 0) + ' medium, ' + (byConf.LOW || 0) + ' low';
+  const triStats = summary.triple_score_stats || {};
+  document.getElementById('proj-kpi-top').textContent = triStats.max ? triStats.max.toFixed(1) : '--';
+  document.getElementById('proj-kpi-mean-sub').textContent = 'mean ' + (triStats.mean ? triStats.mean.toFixed(1) : '--');
+  const byVcr = summary.by_vcr_category || {};
+  const strongPlus = (byVcr.FUND_RETURNER || 0) + (byVcr.STRONG_MULTIPLE || 0);
+  document.getElementById('proj-kpi-vcr').textContent = strongPlus;
+
+  // Method cards
+  const methodColors = { AT: 'var(--accent)', FR: 'var(--amber)', NC: 'var(--cyan)', FC: 'var(--pink)', TD: 'var(--red)' };
+  const methodGrid = document.getElementById('proj-methods-grid');
+  methodGrid.innerHTML = Object.entries(methods).map(([code, m]) => {
+    const count = (summary.by_method || {})[code] || 0;
+    const color = methodColors[code] || 'var(--dim)';
+    return '<div style="background:rgba(255,255,255,0.02);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:14px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">' +
+        '<span style="font-size:11px;font-weight:700;color:' + color + '">' + esc(code) + '</span>' +
+        '<span style="font-size:16px;font-weight:700;color:var(--text)">' + count + '</span>' +
+      '</div>' +
+      '<div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">' + esc(m.name || code) + '</div>' +
+      '<div style="font-size:10px;color:var(--dim);line-height:1.5">' + esc(m.description || '') + '</div>' +
+    '</div>';
+  }).join('');
+
+  // Wire up controls
+  document.getElementById('proj-search').oninput = function() { renderProjTable(projs); };
+  document.getElementById('proj-method-filter').onchange = function() { renderProjTable(projs); };
+  document.getElementById('proj-conf-filter').onchange = function() { renderProjTable(projs); };
+  document.getElementById('proj-sort').onchange = function() { renderProjTable(projs); };
+
+  renderProjTable(projs);
+}
+
+function renderProjTable(projs) {
+  const search = (document.getElementById('proj-search').value || '').toLowerCase();
+  const methodF = document.getElementById('proj-method-filter').value;
+  const confF = document.getElementById('proj-conf-filter').value;
+  const sortKey = document.getElementById('proj-sort').value;
+
+  let filtered = projs.filter(p => {
+    if (methodF !== 'all' && p.method !== methodF) return false;
+    if (confF !== 'all' && p.confidence_tier !== confF) return false;
+    if (search && !(p.name || '').toLowerCase().includes(search) && !(p.one_liner || '').toLowerCase().includes(search) && !(p.architecture || '').toLowerCase().includes(search) && !(p.sector_name || '').toLowerCase().includes(search) && !(p.id || '').toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  const confOrder = { HIGH: 0, MEDIUM: 1, LOW: 2 };
+  filtered.sort((a, b) => {
+    if (sortKey === 'confidence_tier') return (confOrder[a.confidence_tier] || 9) - (confOrder[b.confidence_tier] || 9);
+    return (b[sortKey] || 0) - (a[sortKey] || 0);
+  });
+
+  document.getElementById('proj-table-count').textContent = filtered.length + ' of ' + projs.length;
+  document.getElementById('proj-results-info').textContent = (methodF !== 'all' ? methodF : '') + (confF !== 'all' ? ' ' + confF : '');
+
+  const confColors = { HIGH: 'var(--green)', MEDIUM: 'var(--amber)', LOW: 'var(--red)' };
+  const methodColors = { AT: 'var(--accent)', FR: 'var(--amber)', NC: 'var(--cyan)', FC: 'var(--pink)', TD: 'var(--red)' };
+  const oppColors = { WIDE_OPEN: 'var(--green)', ACCESSIBLE: 'var(--blue)', CONTESTED: 'var(--amber)', FORTIFIED: 'var(--red)', LOCKED: 'var(--red)' };
+  const vcrColors = { FUND_RETURNER: 'var(--green)', STRONG_MULTIPLE: 'var(--blue)', VIABLE_RETURN: 'var(--amber)', MARGINAL: 'var(--red)', VC_POOR: 'var(--red)' };
+
+  const container = document.getElementById('proj-table-container');
+  if (!filtered.length) {
+    container.innerHTML = '<div style="color:var(--dim);font-size:12px;padding:16px">No projections match the current filters.</div>';
+    return;
+  }
+
+  // Header
+  let html = '<div style="display:grid;grid-template-columns:44px 1fr 100px 56px 56px 56px 60px 70px 70px;gap:4px;padding:8px 12px;font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--glass-border)">' +
+    '<div>Rank</div><div>Model</div><div>Architecture</div><div>T</div><div>O</div><div>VCR</div><div>Triple</div><div>Conf.</div><div>Method</div></div>';
+
+  // Rows
+  html += filtered.map((p, i) => {
+    const rank = p.projection_rank || (i + 1);
+    const confColor = confColors[p.confidence_tier] || 'var(--dim)';
+    const methColor = methodColors[p.method] || 'var(--dim)';
+    const oppColor = oppColors[p.cla_category] || 'var(--dim)';
+    const vColor = vcrColors[p.vcr_category] || 'var(--dim)';
+
+    // Axis bars for detail view
+    const tScores = p.scores || {};
+    const claScores = p.cla_scores || {};
+    const vcrScores = p.vcr_scores || {};
+    const roi = p.roi_estimate || {};
+    const evidence = (p.evidence_chain || []);
+
+    const tAxes = ['SN','FA','EC','TG','CE'];
+    const claAxes = ['MO','MA','VD','DV'];
+    const vcrAxes = ['MKT','CAP','ECO','VEL','MOA'];
+
+    const axisBars = (axes, scores, colors) => axes.map(a => {
+      const v = scores[a] || 0;
+      const c = colors[a] || 'var(--dim)';
+      return '<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">' +
+        '<span style="font-size:9px;color:var(--dim);width:28px;text-align:right">' + a + '</span>' +
+        '<div style="flex:1;height:5px;background:rgba(255,255,255,0.04);border-radius:3px;overflow:hidden">' +
+          '<div style="width:' + (v * 10) + '%;height:100%;background:' + c + ';border-radius:3px;opacity:0.7"></div>' +
+        '</div>' +
+        '<span style="font-size:9px;color:var(--text-secondary);width:22px">' + (typeof v === 'number' ? v.toFixed(1) : v) + '</span>' +
+      '</div>';
+    }).join('');
+
+    return '<div style="border-bottom:1px solid rgba(255,255,255,0.03)">' +
+      '<div style="display:grid;grid-template-columns:44px 1fr 100px 56px 56px 56px 60px 70px 70px;gap:4px;padding:10px 12px;font-size:11px;color:var(--text);cursor:pointer;transition:background 0.2s" onmouseover="this.style.background=\'rgba(255,255,255,0.02)\'" onmouseout="this.style.background=\'transparent\'" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'none\'?\'block\':\'none\'">' +
+        '<div style="color:var(--dim);font-weight:600">#' + rank + '</div>' +
+        '<div>' +
+          '<div style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="' + esc(p.one_liner || p.name) + '">' + esc(p.sector_name || '') + '</div>' +
+          '<div style="font-size:10px;color:var(--dim);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + esc(p.id) + '</div>' +
+        '</div>' +
+        '<div style="font-size:10px;color:var(--text-secondary)">' + esc(p.architecture || '') + '</div>' +
+        '<div style="font-weight:600">' + (p.composite || 0).toFixed(1) + '</div>' +
+        '<div style="font-weight:600;color:' + oppColor + '">' + (p.cla_composite || 0).toFixed(1) + '</div>' +
+        '<div style="font-weight:600;color:' + vColor + '">' + (p.vcr_composite || 0).toFixed(1) + '</div>' +
+        '<div style="font-weight:700;color:var(--accent)">' + (p.triple_score || 0).toFixed(1) + '</div>' +
+        '<div><span style="font-size:9px;font-weight:700;color:' + confColor + ';background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:3px">' + esc(p.confidence_tier || '') + '</span></div>' +
+        '<div><span style="font-size:9px;font-weight:700;color:' + methColor + '">' + esc(p.method || '') + '</span></div>' +
+      '</div>' +
+      // Expandable detail
+      '<div style="display:none;padding:12px 20px 16px 60px;background:rgba(255,255,255,0.01);border-top:1px solid rgba(255,255,255,0.03)">' +
+        '<div style="font-size:11px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px">' + esc(p.one_liner || '') + '</div>' +
+        '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:12px">' +
+          '<div>' +
+            '<div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:6px">T-Score: ' + (p.composite || 0).toFixed(1) + '</div>' +
+            axisBars(tAxes, tScores, axisColor) +
+          '</div>' +
+          '<div>' +
+            '<div style="font-size:10px;font-weight:700;color:' + oppColor + ';margin-bottom:6px">Opportunity: ' + (p.cla_composite || 0).toFixed(1) + ' (' + esc(p.cla_category || '') + ')</div>' +
+            axisBars(claAxes, claScores, claColor) +
+          '</div>' +
+          '<div>' +
+            '<div style="font-size:10px;font-weight:700;color:' + vColor + ';margin-bottom:6px">VCR: ' + (p.vcr_composite || 0).toFixed(1) + ' (' + esc(p.vcr_category || '') + ')</div>' +
+            axisBars(vcrAxes, vcrScores, vcrColor) +
+          '</div>' +
+        '</div>' +
+        (roi.seed_roi_multiple ? '<div style="display:flex;gap:16px;margin-bottom:12px;font-size:10px">' +
+          '<span style="color:var(--dim)">Y5 Rev: <strong style="color:var(--text)">$' + (roi.year5_revenue_M || 0).toFixed(1) + 'M</strong></span>' +
+          '<span style="color:var(--dim)">Multiple: <strong style="color:var(--text)">' + (roi.revenue_multiple || 0).toFixed(1) + 'x</strong></span>' +
+          '<span style="color:var(--dim)">Exit: <strong style="color:var(--text)">$' + (roi.exit_val_M || 0).toFixed(0) + 'M</strong></span>' +
+          '<span style="color:var(--dim)">Seed ROI: <strong style="color:var(--accent)">' + (roi.seed_roi_multiple || 0).toFixed(1) + 'x</strong></span>' +
+        '</div>' : '') +
+        (p.forces && p.forces.length ? '<div style="margin-bottom:8px">' + p.forces.map(f => '<span style="display:inline-block;font-size:9px;font-weight:600;color:var(--cyan);background:rgba(0,200,255,0.08);padding:2px 8px;border-radius:10px;margin-right:4px">' + esc(f) + '</span>').join('') + '</div>' : '') +
+        '<div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:4px">Evidence Chain:</div>' +
+        evidence.map(e => '<div style="font-size:10px;color:var(--text-secondary);line-height:1.6;padding-left:12px;border-left:2px solid var(--glass-border);margin-bottom:4px">' + esc(e) + '</div>').join('') +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  container.innerHTML = html;
+}
+
 // ─── MAIN ───
 async function refresh() {
   const [d, m, narr] = await Promise.all([
@@ -3354,6 +3572,12 @@ async function refresh() {
     const td = await load(BASE + '/tensions.json');
     if (td) { tensionData = td; renderTensions(td); }
   } catch(e) { /* tensions.json may not exist yet */ }
+
+  // Projections (v5.2)
+  try {
+    const pd = await load(BASE + '/projections.json');
+    if (pd) { projectionData = pd; renderProjections(pd); }
+  } catch(e) { /* projections.json may not exist yet */ }
 }
 
 refresh();
