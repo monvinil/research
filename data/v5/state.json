@@ -1,9 +1,9 @@
 {
   "state_version": 2,
-  "engine_version": "5.5",
+  "engine_version": "5.6",
   "current_cycle": "v5-1",
   "engine_mode": "constraint_propagation",
-  "description": "v5.5: 828 models. Agriculture deep dive expansion: 31 new models across 14 sub-sectors, 13 architecture types. TN-017 Agriculture: 50 models (was 19).",
+  "description": "v5.6: 828 models. ROI unification pass: all roi_estimate values re-derived through canonical formula (vcr_scoring.py). Fixes v53 exponential bug, v54/v55 simplified formulas.",
   "cycles": [
     {
       "cycle_id": "v5-0",
@@ -164,6 +164,20 @@
         "MC-V55-11-003"
       ],
       "key_findings": []
+    },
+    {
+      "cycle_id": "v5-6-roi-unification",
+      "date": "2026-02-14",
+      "models_before": 828,
+      "models_after": 828,
+      "roi_changed": 129,
+      "roi_unchanged": 699,
+      "key_findings": [
+        "Unified ROI formula: all 828 models through canonical vcr_scoring.py estimator",
+        "Before: mean=50.3x, max=7188.9x. After: mean=38.6x, max=500.0x",
+        "129 models changed, 699 unchanged",
+        "All seed_roi_multiple now in [0.1, 500] range with 1-decimal precision"
+      ]
     }
   ],
   "entity_counts": {
