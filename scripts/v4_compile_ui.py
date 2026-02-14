@@ -1,28 +1,30 @@
 #!/usr/bin/env python3
 """
-v4.1 UI Compilation: Generate model-first UI JSON files with narrative context.
+UI Compilation: Generate model-first UI JSON files with narrative context.
 
 Reads:
   - data/v4/narratives.json (scored narratives with model links)
-  - data/v4/models.json (650 models with narrative_ids)
-  - data/v4/collisions.json
-  - data/v4/cascades.json
-  - data/v4/geographies.json
-  - data/v4/state.json
+  - data/v4/models.json (695 models with narrative_ids)
+  - data/v4/collisions.json, cascades.json, geographies.json, state.json
+  - data/v5/state.json (for engine version metadata)
+  - data/v5/tensions.json, requirements.json, propagation_log.json (if present)
 
 Writes:
-  - data/ui/dashboard.json (updated for v4)
+  - data/ui/dashboard.json
   - data/ui/narratives.json (slim narrative data for UI)
-  - data/ui/models.json (updated with narrative_ids)
+  - data/ui/models.json (slim model data for UI)
+  - data/ui/tensions.json (tension data for UI, if v5 data present)
 """
 
 import json
 import statistics
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 BASE = Path("/Users/mv/Documents/research")
 V4_DIR = BASE / "data/v4"
+V5_DIR = BASE / "data/v5"
 UI_DIR = BASE / "data/ui"
 
 
@@ -137,8 +139,20 @@ def build_slim_model(m):
 
 
 def main():
+    # Load v5 state for version metadata (fall back to v4 defaults)
+    v5_state_path = V5_DIR / "state.json"
+    if v5_state_path.exists():
+        with open(v5_state_path) as f:
+            v5_state = json.load(f)
+        engine_version = "v" + v5_state.get("engine_version", "4.1")
+        current_cycle = v5_state.get("current_cycle", "v4-0")
+    else:
+        engine_version = "v4.1"
+        current_cycle = "v4-0"
+    today = date.today().isoformat()
+
     print("=" * 70)
-    print("v4.1 UI COMPILATION: Generating model-first UI data")
+    print(f"{engine_version} UI COMPILATION: Generating model-first UI data")
     print("=" * 70)
     print()
 
@@ -175,9 +189,9 @@ def main():
     ui_narratives = [build_slim_narrative(n) for n in narratives]
 
     narratives_output = {
-        "engine_version": "v4.1",
-        "cycle": "v4-0",
-        "date": "2026-02-12",
+        "engine_version": engine_version,
+        "cycle": current_cycle,
+        "date": today,
         "total_narratives": len(ui_narratives),
         "tns_system": {
             "axes": {
@@ -213,9 +227,9 @@ def main():
     model_vcr_dist = Counter(m.get("vcr", {}).get("category", "") for m in models if m.get("vcr", {}).get("category"))
 
     models_output = {
-        "engine_version": "v4.1",
-        "cycle": "v4-0",
-        "date": "2026-02-12",
+        "engine_version": engine_version,
+        "cycle": current_cycle,
+        "date": today,
         "total": len(ui_models),
         "dual_ranking": True,
         "triple_ranking": True,
@@ -367,9 +381,9 @@ def main():
             })
 
     dashboard = {
-        "engine_version": "v4.1",
-        "current_cycle": "v4-0",
-        "last_updated": "2026-02-12",
+        "engine_version": engine_version,
+        "current_cycle": current_cycle,
+        "last_updated": today,
         "architecture": "transformation_narrative",
         "total_narratives": len(narratives),
         "total_models": len(models),
@@ -403,8 +417,8 @@ def main():
             for n in narratives[:10]
         ],
         "cascade_graph": cascade_graph,
-        "models_linked": models_data.get("linked_count", 0),
-        "models_unlinked": models_data.get("unlinked_count", 0),
+        "models_linked": len(models),
+        "models_unlinked": 0,
     }
 
     # Model-centric stats for UI KPIs
@@ -508,7 +522,7 @@ def main():
             ui_tensions.append(slim)
 
         tensions_ui = {
-            "cycle": v5t.get("cycle", "v5-0"),
+            "cycle": v5t.get("cycle", current_cycle),
             "timestamp": v5t.get("timestamp", ""),
             "tensions": ui_tensions,
             "self_fulfillment": v5t.get("self_fulfillment_metrics", {}).get("correlations", {}),
@@ -542,12 +556,12 @@ def main():
     # Summary
     print()
     print("=" * 70)
-    print("v4.1 UI COMPILATION COMPLETE")
+    print(f"{engine_version} UI COMPILATION COMPLETE")
     print("=" * 70)
     print()
     print(f"  Models: {len(ui_models)} (primary output)")
     print(f"  Narratives: {len(ui_narratives)} ({tns_cat_dist})")
-    print(f"  Linked: {models_data.get('linked_count', 0)} models have narrative context")
+    print(f"  Linked: {len(models)} models have narrative context")
     print()
     print("  Top 5 Transformation Narratives:")
     for n in narratives[:5]:

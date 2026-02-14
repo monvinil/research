@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Research Engine v5.0</title>
+<title>Research Engine v5.1</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
 
@@ -1269,7 +1269,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <!-- ═══ VIEW: GLOSSARY ═══ -->
   <div id="view-glossary" class="view-section">
     <div class="glossary-intro">
-      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031. <strong>v5.0</strong> ranks <strong>685 business models</strong> on 3 independent axes (Transformation, Opportunity, VC ROI) with <strong>constraint propagation</strong> &mdash; detecting tensions between scoring layers and propagating bounded adjustments. Models are the primary deliverable. <strong>Transformation Narratives</strong> provide organizational context. Forces drive collisions, collisions drive narratives, narratives organize models. The <strong>Tensions</strong> tab shows system inconsistencies the linear pipeline never surfaced.
+      This engine projects <strong>what the economy becomes</strong> over 2026&ndash;2031. <strong>v5.1</strong> ranks <strong>695 business models</strong> on 3 independent axes (Transformation, Opportunity, VC ROI) with <strong>constraint propagation</strong> &mdash; detecting tensions between scoring layers and propagating bounded adjustments. Models are the primary deliverable. <strong>Transformation Narratives</strong> provide organizational context. Forces drive collisions, collisions drive narratives, narratives organize models. The <strong>Tensions</strong> tab shows system inconsistencies the linear pipeline never surfaced.
     </div>
 
     <!-- TNS System (v4) -->
@@ -2232,7 +2232,7 @@ function renderWhatsNew(d) {
 
   if (!items.length) { el.style.display = 'none'; return; }
 
-  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v4-0'}</div>
+  el.innerHTML = `<div class="whats-new-title">What's New in ${d.current_cycle || 'v5-1'}</div>
     <div class="whats-new-items">${items.map(i => `<span class="wn-tag ${i.cls}">${esc(i.text)}</span>`).join('')}</div>`;
 }
 
@@ -3242,7 +3242,7 @@ async function refresh() {
 
   if (d) {
     // Header
-    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v4-0';
+    document.getElementById('cycle-badge').textContent = d.current_cycle || 'v5-1';
     const ts = d.last_updated;
     document.getElementById('last-updated').textContent = ts ? new Date(ts).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) : '--';
 

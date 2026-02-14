@@ -739,10 +739,20 @@ def run():
 
     # Write output
     V5_DIR.mkdir(parents=True, exist_ok=True)
+    # Read cycle info from v5 state
+    v5_state_path = V5_DIR / "state.json"
+    if v5_state_path.exists():
+        v5_state = load_json(v5_state_path)
+        cycle_id = v5_state.get("current_cycle", "v5-0")
+        eng_ver = v5_state.get("engine_version", "5.0")
+    else:
+        cycle_id = "v5-0"
+        eng_ver = "5.0"
+
     output = {
-        "cycle": "v5-0",
+        "cycle": cycle_id,
         "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-        "engine_version": "5.0",
+        "engine_version": eng_ver,
         "source_data": {
             "models": len(models),
             "narratives": len(narratives),
