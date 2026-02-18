@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Century — Business Model</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafbfc;
+  --white:#fff;
+  --ink:#0f172a;
+  --sub:#475569;
+  --muted:#94a3b8;
+  --line:#e2e8f0;
+  --teal:#0d9488;
+  --teal-bg:#f0fdfa;
+  --cyan:#0891b2;
+  --cyan-bg:#ecfeff;
+  --amber:#d97706;
+  --amber-bg:#fffbeb;
+  --rose:#e11d48;
+  --rose-bg:#fff1f2;
+  --violet:#7c3aed;
+  --violet-bg:#f5f3ff;
+  --green:#16a34a;
+  --green-bg:#f0fdf4;
+  --blue:#2563eb;
+  --blue-bg:#eff6ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5;padding:40px 24px 80px}
+.page{max-width:1200px;margin:0 auto}
+
+/* Header */
+.hdr{text-align:center;margin-bottom:48px}
+.hdr h1{font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px}
+.hdr p{color:var(--sub);font-size:0.85rem}
+
+/* Section */
+.sec{margin-bottom:48px}
+.sec-label{
+  font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;
+  margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--line);
+}
+
+/* ===== THE BIG FLOW ===== */
+.flow{display:flex;gap:12px;align-items:stretch;margin-bottom:24px}
+.flow-card{
+  flex:1;background:var(--white);border-radius:12px;padding:20px 18px;
+  border:1.5px solid var(--line);position:relative;text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+}
+.flow-card .icon{font-size:2rem;margin-bottom:8px}
+.flow-card h3{font-size:0.9rem;font-weight:700;margin-bottom:6px}
+.flow-card p{font-size:0.78rem;color:var(--sub);line-height:1.5}
+.flow-card .tag{
+  font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
+  padding:3px 10px;border-radius:20px;margin-top:auto;margin-top:12px;
+}
+.flow-arrow{
+  display:flex;align-items:center;flex-shrink:0;
+  font-size:1.4rem;color:var(--teal);font-weight:300;
+}
+
+/* Accent borders */
+.b-teal{border-color:var(--teal);background:var(--teal-bg)}.b-teal h3{color:var(--teal)}
+.b-cyan{border-color:var(--cyan);background:var(--cyan-bg)}.b-cyan h3{color:var(--cyan)}
+.b-amber{border-color:var(--amber);background:var(--amber-bg)}.b-amber h3{color:var(--amber)}
+.b-violet{border-color:var(--violet);background:var(--violet-bg)}.b-violet h3{color:var(--violet)}
+.b-green{border-color:var(--green);background:var(--green-bg)}.b-green h3{color:var(--green)}
+.b-rose{border-color:var(--rose);background:var(--rose-bg)}.b-rose h3{color:var(--rose)}
+.b-blue{border-color:var(--blue);background:var(--blue-bg)}.b-blue h3{color:var(--blue)}
+
+.t-teal{background:rgba(13,148,136,0.1);color:var(--teal)}
+.t-amber{background:rgba(217,119,6,0.1);color:var(--amber)}
+.t-violet{background:rgba(124,58,237,0.1);color:var(--violet)}
+.t-green{background:rgba(22,163,74,0.1);color:var(--green)}
+.t-rose{background:rgba(225,29,72,0.1);color:var(--rose)}
+.t-blue{background:rgba(37,99,235,0.1);color:var(--blue)}
+.t-cyan{background:rgba(8,145,178,0.1);color:var(--cyan)}
+
+/* Grid layouts */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.g5{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px}
+
+/* Box */
+.box{
+  background:var(--white);border-radius:12px;padding:22px 20px;
+  border:1.5px solid var(--line);
+}
+.box h3{font-size:0.85rem;font-weight:700;margin-bottom:8px}
+.box p,.box li{font-size:0.78rem;color:var(--sub);line-height:1.6}
+.box ul{list-style:none;padding:0}
+.box li{padding:4px 0;padding-left:16px;position:relative}
+.box li::before{content:'→';position:absolute;left:0;color:var(--teal);font-weight:600}
+
+/* Stat card */
+.stat{text-align:center;padding:16px 12px}
+.stat .num{font-size:1.5rem;font-weight:800;letter-spacing:-0.02em}
+.stat .lbl{font-size:0.7rem;color:var(--sub);margin-top:2px}
+
+/* Mini table */
+.mt{width:100%;border-collapse:collapse;font-size:0.78rem;margin-top:8px}
+.mt th{text-align:left;font-weight:700;color:var(--ink);padding:8px 10px;border-bottom:2px solid var(--line);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em}
+.mt td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--sub)}
+.mt td:first-child{color:var(--ink);font-weight:600}
+.mt .hi{color:var(--teal);font-weight:700}
+
+/* Callout */
+.callout{
+  background:var(--teal-bg);border:1.5px solid rgba(13,148,136,0.2);
+  border-radius:10px;padding:16px 20px;margin-top:16px;
+}
+.callout p{font-size:0.8rem;color:var(--ink)}
+.callout strong{color:var(--teal)}
+
+/* Loop diagram */
+.loop-wrap{display:flex;justify-content:center;margin:24px 0}
+.loop{
+  position:relative;width:520px;height:520px;
+}
+.loop-node{
+  position:absolute;width:145px;text-align:center;
+  background:var(--white);border-radius:10px;padding:14px 10px;
+  border:1.5px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+.loop-node h4{font-size:0.78rem;font-weight:700;margin-bottom:3px}
+.loop-node p{font-size:0.68rem;color:var(--sub)}
+.loop-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:160px;height:160px;border-radius:50%;
+  background:var(--teal-bg);border:2px solid var(--teal);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  text-align:center;
+}
+.loop-center h4{font-size:0.85rem;font-weight:800;color:var(--teal)}
+.loop-center p{font-size:0.68rem;color:var(--sub);margin-top:2px}
+
+/* SVG arrows for loop */
+.loop svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+
+/* Divider */
+.divider{
+  display:flex;align-items:center;gap:12px;margin:40px 0 32px;
+}
+.divider span{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);white-space:nowrap}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line)}
+
+@media(max-width:900px){
+  .flow{flex-direction:column}
+  .flow-arrow{transform:rotate(90deg);justify-content:center}
+  .g2,.g3,.g5{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hdr">
+  <h1>Century — How the Business Works</h1>
+  <p>Solving agriculture at the silicon layer · century.ag</p>
+</div>
+
+<!-- ================================================ -->
+<!-- CORE VALUE CHAIN -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--teal)">The Value Chain — From Ground to Revenue</div>
+  <div class="flow">
+    <div class="flow-card b-teal">
+      <div class="icon">📡</div>
+      <h3>Sensors in Soil</h3>
+      <p>Proprietary sensor nodes buried in fields. Measure what satellites physically cannot see: root-zone moisture, nutrients, carbon, pH — 30 to 120cm underground.</p>
+      <div class="tag t-teal">Own hardware</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-card b-cyan">
+      <div class="icon">🔗</div>
+      <h3>Open Data Platform</h3>
+      <p>Combines underground sensor data with satellite imagery, weather forecasts, and equipment telemetry into one unified view. Farmers own their data. Open API.</p>
+      <div class="tag t-cyan">Free tier drives adoption</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-card b-amber">
+      <div class="icon">🧠</div>
+      <h3>AI Intelligence</h3>
+      <p>Turns raw data into decisions: when to irrigate, how much to fertilize, expected yield, verified carbon credits, parcel-level risk scores. The $1 data becomes a $15 decision.</p>
+      <div class="tag t-amber">Paid tier — 80% margin</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-card b-violet">
+      <div class="icon">💰</div>
+      <h3>Buyers Pay</h3>
+      <p>Farmers pay per acre. Insurers and carbon registries pay for verified intelligence. OEMs license the chip. Robotics companies subscribe to the field API.</p>
+      <div class="tag t-violet">5 revenue streams</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- WHY UNDERGROUND MATTERS -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--cyan)">Why Underground Data Matters — What Satellites Can and Cannot See</div>
+  <div class="g2">
+    <div class="box" style="border-color:var(--teal);background:var(--teal-bg)">
+      <h3 style="color:var(--teal)">🔒 Satellites Cannot Do This</h3>
+      <ul>
+        <li><strong>Root-zone water</strong> — the water crops actually use (30-120cm). Satellites see top 5cm only.</li>
+        <li><strong>Soil nutrients</strong> — nitrogen, phosphorus, potassium. Not observable from space.</li>
+        <li><strong>Carbon measurement</strong> — soil carbon is underground. No sensor = no verified credit.</li>
+        <li><strong>Precision irrigation</strong> — drip scheduling requires depth profiles, not surface estimates.</li>
+      </ul>
+      <p style="margin-top:10px;font-size:0.75rem;color:var(--teal);font-weight:600">These four use cases drive the institutional revenue.</p>
+    </div>
+    <div class="box">
+      <h3>🛰️ Satellites Do This Well (and Getting Better)</h3>
+      <ul>
+        <li><strong>Crop identification</strong> — what's planted where. Satellite is excellent.</li>
+        <li><strong>Surface moisture</strong> — top 2-5cm. Good accuracy, free data.</li>
+        <li><strong>Yield estimation</strong> — 75-80% accuracy from space. Sensors push to 85-90%.</li>
+        <li><strong>Vegetation health</strong> — canopy temperature, growth stage. Well-covered.</li>
+      </ul>
+      <p style="margin-top:10px;font-size:0.75rem;color:var(--sub);font-weight:600">Century uses satellites too — the value is fusing both, not replacing one.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- THREE PRODUCTS -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--amber)">Three Products — Each Enables the Next</div>
+  <div class="g3">
+    <div class="box b-teal">
+      <h3 style="color:var(--teal)">① The Chip</h3>
+      <p>Custom agricultural sensor hardware. Ships today on off-the-shelf components ($50-70/node). Custom silicon reduces cost to $12-18/node over 3 years. Each stage is a shippable product.</p>
+      <table class="mt">
+        <tr><td>Today</td><td class="hi">$50-70/node</td></tr>
+        <tr><td>Custom analog chip (Year 2)</td><td class="hi">$20-35/node</td></tr>
+        <tr><td>Full system-on-chip (Year 3+)</td><td class="hi">$12-18/node</td></tr>
+      </table>
+      <p style="margin-top:10px;font-size:0.72rem;color:var(--teal);font-weight:600">Generates data. Hardware revenue from day one.</p>
+    </div>
+    <div class="box b-cyan">
+      <h3 style="color:var(--cyan)">② The Platform</h3>
+      <p>Farm Data OS. Aggregates sensors + satellite + weather + equipment into one view. Free tier for data access. Paid tier for AI intelligence. Machine API for autonomous systems.</p>
+      <table class="mt">
+        <tr><td>Free tier</td><td>Data aggregation, export, basic maps</td></tr>
+        <tr><td>Paid tier</td><td class="hi">AI intelligence — $5-15/acre/yr</td></tr>
+        <tr><td>Machine API</td><td class="hi">Robotics field intelligence</td></tr>
+      </table>
+      <p style="margin-top:10px;font-size:0.72rem;color:var(--cyan);font-weight:600">Makes data useful. Adoption engine.</p>
+    </div>
+    <div class="box b-amber">
+      <h3 style="color:var(--amber)">③ The Intelligence</h3>
+      <p>Six AI products built on the data: irrigation scheduling, yield prediction, nutrient prescriptions, water compliance, carbon verification, risk scoring.</p>
+      <table class="mt">
+        <tr><td>Raw sensor data</td><td>$1-2/acre value</td></tr>
+        <tr><td>AI-processed intelligence</td><td class="hi">$10-15/acre value</td></tr>
+        <tr><td>Value multiplier</td><td class="hi">10× on same data</td></tr>
+      </table>
+      <p style="margin-top:10px;font-size:0.72rem;color:var(--amber);font-weight:600">Makes data valuable. 80% gross margin.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- PLATFORM DEPTH -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--cyan)">Platform — What It Actually Does</div>
+  <div class="g3">
+    <div class="box">
+      <h3>For Farmers & Advisors</h3>
+      <ul>
+        <li>Field-by-field sensor dashboards</li>
+        <li>Irrigation scheduling + alerts</li>
+        <li>Input tracking (what was applied where)</li>
+        <li>Yield forecasts per block</li>
+        <li>Season-over-season comparison</li>
+        <li>Advisor collaboration + sharing</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>For Institutions</h3>
+      <ul>
+        <li>SGMA water compliance reporting</li>
+        <li>Carbon credit verification (sensor-backed)</li>
+        <li>Parcel-level insurance risk models</li>
+        <li>Portfolio-wide analytics dashboards</li>
+        <li>Regulatory audit trails (tamper-evident)</li>
+        <li>Bulk data licensing via API</li>
+      </ul>
+    </div>
+    <div class="box" style="border-color:var(--rose);background:var(--rose-bg)">
+      <h3 style="color:var(--rose)">For Robots & Autonomous Systems</h3>
+      <ul>
+        <li>Real-time field condition grid</li>
+        <li>Prescription maps (spray this zone at this rate)</li>
+        <li>Streaming condition alerts</li>
+        <li>Variable-rate application data</li>
+        <li>Navigation context for autonomous tractors</li>
+        <li>Fleet integration APIs</li>
+      </ul>
+      <p style="margin-top:8px;font-size:0.72rem;color:var(--rose);font-weight:600">Robots visit the field. Our sensors live there.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- WHO PAYS -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--violet)">Five Revenue Streams — Who Pays and Why</div>
+  <div class="g5">
+    <div class="box stat b-teal">
+      <div class="num" style="color:var(--teal)">$5-15</div>
+      <div class="lbl">per acre / year</div>
+      <h3 style="font-size:0.78rem;margin-top:10px;color:var(--teal)">Farmers</h3>
+      <p style="font-size:0.72rem">AI intelligence subscriptions via crop advisors</p>
+    </div>
+    <div class="box stat b-amber">
+      <div class="num" style="color:var(--amber)">$500K-5M</div>
+      <div class="lbl">per customer / year</div>
+      <h3 style="font-size:0.78rem;margin-top:10px;color:var(--amber)">Institutions</h3>
+      <p style="font-size:0.72rem">Insurers, water districts, carbon registries</p>
+    </div>
+    <div class="box stat b-violet">
+      <div class="num" style="color:var(--violet)">$0.50-2</div>
+      <div class="lbl">per chip at scale</div>
+      <h3 style="font-size:0.78rem;margin-top:10px;color:var(--violet)">Equipment OEMs</h3>
+      <p style="font-size:0.72rem">Chip licensing to Deere, CNH, AGCO</p>
+    </div>
+    <div class="box stat b-rose">
+      <div class="num" style="color:var(--rose)">API</div>
+      <div class="lbl">per acre or per query</div>
+      <h3 style="font-size:0.78rem;margin-top:10px;color:var(--rose)">Robotics</h3>
+      <p style="font-size:0.72rem">Field intelligence for autonomous systems</p>
+    </div>
+    <div class="box stat b-green">
+      <div class="num" style="color:var(--green)">Land</div>
+      <div class="lbl">appreciation + crop revenue</div>
+      <h3 style="font-size:0.78rem;margin-top:10px;color:var(--green)">Farmland</h3>
+      <p style="font-size:0.72rem">SGMA-distressed acres, ag-lender financed</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>The AI multiplier:</strong> Without AI, this is a $1.5-2M/year hardware company valued at $6-10M (3-5× multiple). With AI, this is a $4.5-8M/year intelligence company valued at $54-160M (12-20× multiple). Same sensors. Same data. Different processing layer.</p>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- HARDWARE STAGING -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--teal)">Hardware — Staged Path (Not One Big Bet)</div>
+  <table class="mt" style="background:var(--white);border-radius:12px;border:1.5px solid var(--line);overflow:hidden">
+    <tr><th>Stage</th><th>Timeline</th><th>Cost / Node</th><th>What Ships</th><th>What Funds It</th></tr>
+    <tr><td>Off-the-shelf</td><td>Month 0-6</td><td class="hi">$50-70</td><td>Custom board, full firmware, production-ready</td><td>Seed round</td></tr>
+    <tr><td>Custom radio module</td><td>Month 6-12</td><td class="hi">$40-55</td><td>Integrated radio front-end, 40-80% range gain</td><td>Seed + grants</td></tr>
+    <tr><td>Custom analog chip</td><td>Month 12-24</td><td class="hi">$20-35</td><td>Replaces $40-55 in discrete components with one $2-3 chip</td><td>Grants + revenue</td></tr>
+    <tr><td>Full system-on-chip</td><td>Month 24-40</td><td class="hi">$12-18</td><td>Processor + analog + radio + AI on one die</td><td>Strategic VC</td></tr>
+    <tr><td>Production chip</td><td>Month 36+</td><td class="hi">$8-12</td><td>Qualified for OEM licensing, antenna-in-package</td><td>Revenue + VC</td></tr>
+  </table>
+  <p style="font-size:0.78rem;color:var(--sub);margin-top:10px;text-align:center">Each stage ships a sellable product and generates revenue. The full chip is the accelerant, not the dependency.</p>
+</div>
+
+<!-- ================================================ -->
+<!-- FLYWHEEL -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--green)">The Flywheel — Why This Compounds</div>
+  <div class="loop-wrap">
+    <div class="loop">
+      <svg viewBox="0 0 520 520">
+        <!-- curved arrows -->
+        <defs>
+          <marker id="a1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#0d9488" stroke-width="1.5"/></marker>
+        </defs>
+        <!-- Top to Right -->
+        <path d="M330,70 Q440,70 430,190" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#a1)" stroke-dasharray="6,4"/>
+        <!-- Right to Bottom -->
+        <path d="M430,290 Q440,420 330,430" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#a1)" stroke-dasharray="6,4"/>
+        <!-- Bottom to Left -->
+        <path d="M190,430 Q70,430 80,310" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#a1)" stroke-dasharray="6,4"/>
+        <!-- Left to Top -->
+        <path d="M80,200 Q70,70 190,60" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#a1)" stroke-dasharray="6,4"/>
+      </svg>
+      <!-- Nodes -->
+      <div class="loop-node" style="top:25px;left:187px;border-color:var(--teal)">
+        <h4 style="color:var(--teal)">Deploy Sensors</h4>
+        <p>More acres instrumented</p>
+      </div>
+      <div class="loop-node" style="top:195px;right:0;border-color:var(--cyan)">
+        <h4 style="color:var(--cyan)">Collect Data</h4>
+        <p>More soil types, crops, seasons</p>
+      </div>
+      <div class="loop-node" style="bottom:30px;left:187px;border-color:var(--amber)">
+        <h4 style="color:var(--amber)">Better AI Models</h4>
+        <p>Higher accuracy, more products</p>
+      </div>
+      <div class="loop-node" style="top:195px;left:0;border-color:var(--violet)">
+        <h4 style="color:var(--violet)">More Customers</h4>
+        <p>Revenue funds more deployment</p>
+      </div>
+      <!-- Center -->
+      <div class="loop-center">
+        <h4>Data Flywheel</h4>
+        <p>Each loop makes the next<br>loop faster and cheaper</p>
+      </div>
+    </div>
+  </div>
+  <div class="g2" style="max-width:800px;margin:0 auto">
+    <div class="box" style="text-align:center;border-color:var(--teal)">
+      <h3 style="color:var(--teal)">Calibration Compounds</h3>
+      <p>Every soil type measured improves accuracy for all future deployments. Same sensor, ±2% accuracy vs. competitor's ±8%.</p>
+    </div>
+    <div class="box" style="text-align:center;border-color:var(--green)">
+      <h3 style="color:var(--green)">Land Compounds</h3>
+      <p>Sensor data proves productivity → land value rises → credit line grows → acquire more land → more training data.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- GO TO MARKET -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--blue)">Go-to-Market — Concentric Rings</div>
+  <div class="flow">
+    <div class="flow-card b-green">
+      <div class="icon">🏠</div>
+      <h3>Ring 0: Own Facility</h3>
+      <p>Greenhouse + field plots. R&D data factory. Generates crop revenue from day one. Proves the system works before selling it.</p>
+      <div class="tag t-green">Month 0-12</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-card b-teal">
+      <div class="icon">🌾</div>
+      <h3>Ring 1: Regional Farms</h3>
+      <p>50-100 partner operations via UC Davis crop advisor network. Multi-crop training data. Per-acre subscription revenue begins.</p>
+      <div class="tag t-teal">Month 6-24</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-card b-amber">
+      <div class="icon">🏛️</div>
+      <h3>Ring 2: Institutions</h3>
+      <p>Water districts (legally mandated), insurers, carbon programs. $500K-5M contracts. Top-down — bypasses farmer adoption.</p>
+      <div class="tag t-amber">Month 12-36</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-card b-violet">
+      <div class="icon">⚙️</div>
+      <h3>Ring 3: OEM + Robotics</h3>
+      <p>Chip licensed to equipment manufacturers. Field intelligence API for autonomous ag companies. Platform becomes standard.</p>
+      <div class="tag t-violet">Month 24-48</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- FARMLAND STRATEGY -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--green)">Farmland — Technology-Enabled Asset Play</div>
+  <div class="g2">
+    <div class="box b-green">
+      <h3 style="color:var(--green)">The Opportunity</h3>
+      <p>California's SGMA law forces 500K-1M acres off groundwater. Land reprices from $15-20K/acre to $2-5K/acre. But AI-enabled precision irrigation uses 60-95% less water — making "unproductive" land productive again.</p>
+      <p style="margin-top:10px;font-weight:600;color:var(--green);font-size:0.78rem">Information asymmetry: we have forward-looking sensor data the market doesn't.</p>
+    </div>
+    <div class="box">
+      <h3>Why It's Not a Liability</h3>
+      <table class="mt">
+        <tr><td>Capital source</td><td>Farm Credit (ag lender, not VC equity)</td></tr>
+        <tr><td>Leverage</td><td>65-85% loan-to-value</td></tr>
+        <tr><td>Structural return</td><td>10.7% annualized over 30 years</td></tr>
+        <tr><td>Inflation hedge</td><td>67% CPI correlation</td></tr>
+        <tr><td>Entity isolation</td><td>FarmCo LLC — separate from TechCo risk</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:16px;background:var(--green-bg);border-color:rgba(22,163,74,0.2)">
+    <p style="color:var(--ink)"><strong style="color:var(--green)">Credit flywheel:</strong> Acquire distressed land → deploy sensors + AI → prove productivity → land reappraises upward → credit line grows → acquire more → repeat.</p>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- CAPITAL STRUCTURE -->
+<!-- ================================================ -->
+<div class="sec">
+  <div class="sec-label" style="color:var(--violet)">Capital Structure — Dual Entity</div>
+  <div class="g2">
+    <div class="box b-violet">
+      <h3 style="color:var(--violet)">TechCo (C-Corp · QSBS-Eligible)</h3>
+      <p style="margin-bottom:10px">Holds all IP. Takes equity investment. 100% capital gains exclusion for qualifying investors.</p>
+      <table class="mt">
+        <tr><th>Source</th><th>Amount</th></tr>
+        <tr><td>Seed (SAFE notes)</td><td class="hi">$500K-1M</td></tr>
+        <tr><td>USDA STTR Phase I</td><td class="hi">$125K</td></tr>
+        <tr><td>R&D payroll tax credit</td><td class="hi">$250K/yr</td></tr>
+        <tr><td>USDA STTR Phase II</td><td class="hi">$650K</td></tr>
+        <tr><td>Strategic VC (later)</td><td class="hi">$5-20M</td></tr>
+      </table>
+    </div>
+    <div class="box b-green">
+      <h3 style="color:var(--green)">FarmCo (LLC)</h3>
+      <p style="margin-bottom:10px">Operates land. Borrows from agricultural lenders. Capital sources no software company can access.</p>
+      <table class="mt">
+        <tr><th>Source</th><th>Amount</th></tr>
+        <tr><td>CDFA Specialty Crop Grant</td><td class="hi">$100-500K</td></tr>
+        <tr><td>FSA Microloan</td><td class="hi">$50K</td></tr>
+        <tr><td>SBA 504 Green Loan</td><td class="hi">Up to $5.5M</td></tr>
+        <tr><td>Farm Credit</td><td class="hi">65-85% LTV</td></tr>
+        <tr><td>USDA REAP Guarantee</td><td class="hi">Up to $25M</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:16px;background:var(--violet-bg);border-color:rgba(124,58,237,0.2)">
+    <p><strong style="color:var(--violet)">Phase 0 capital stack: ~$1M-1.4M.</strong> 30-40% is non-dilutive (grants + tax credits). Use: engineering 45%, hardware 20%, facility 20%, operations 15%.</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
