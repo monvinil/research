@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Century | Agricultural Quality Intelligence</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.2);
+            --card-bg: #18181b;
+            --card-border: #27272a;
+            --amber: #f59e0b;
+            --rose: #f43f5e;
+            --violet: #8b5cf6;
+            --cyan: #06b6d4;
+            --blue: #3b82f6;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Slide Styling */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .slide:last-child {
+            border-bottom: none;
+        }
+
+        .slide-number {
+            font-size: 0.875rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h1, h2 {
+            margin: 0 0 1.5rem 0;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3.5rem; letter-spacing: -0.02em; }
+        h2 { font-size: 2.75rem; letter-spacing: -0.01em; }
+
+        p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Data Callouts */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .metric-source {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.35rem;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        li::before {
+            content: "\2192";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        /* Flow / Pipeline */
+        .flow-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            gap: 0;
+            align-items: stretch;
+            margin: 2rem 0;
+        }
+
+        .flow-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+        }
+
+        .flow-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 0.75rem 0;
+            color: var(--accent);
+        }
+
+        .flow-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            color: var(--text-muted);
+        }
+
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            padding: 0 0.5rem;
+            opacity: 0.5;
+        }
+
+        /* Comparison Table */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .compare-table th {
+            text-align: left;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid var(--card-border);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .compare-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        .compare-table td:first-child {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .compare-table .hi {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .compare-table .lo {
+            color: var(--rose);
+        }
+
+        /* Revenue Grid */
+        .rev-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .rev-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            text-align: center;
+        }
+
+        .rev-card .rev-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .rev-card .rev-unit {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .rev-card .rev-who {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .rev-card .rev-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .team-member h3 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.25rem;
+        }
+
+        .team-member .role {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-member p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* Callout */
+        .callout {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .callout p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0;
+        }
+
+        .callout strong {
+            color: var(--accent);
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-top: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--card-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.5rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .timeline-item .time {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .timeline-item p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Flywheel */
+        .flywheel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .flywheel-step {
+            padding: 2rem;
+            border: 1px solid var(--card-border);
+        }
+
+        .flywheel-step:nth-child(1) { border-radius: 12px 0 0 0; }
+        .flywheel-step:nth-child(2) { border-radius: 0 12px 0 0; }
+        .flywheel-step:nth-child(3) { border-radius: 0 0 0 12px; }
+        .flywheel-step:nth-child(4) { border-radius: 0 0 12px 0; }
+
+        .flywheel-step .step-num {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .flywheel-step h3 {
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .flywheel-step p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Ask Section */
+        .ask-box {
+            background: var(--card-bg);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 0 40px var(--accent-glow);
+        }
+
+        .ask-box h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--accent);
+        }
+
+        .ask-box .ask-amount {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .ask-box ul {
+            margin: 0;
+        }
+
+        .ask-box li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            p { font-size: 1.1rem; }
+            li { font-size: 1.1rem; }
+            .flow-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                padding: 0;
+            }
+            .flywheel {
+                grid-template-columns: 1fr;
+            }
+            .flywheel-step { border-radius: 0 !important; }
+            .flywheel-step:first-child { border-radius: 12px 12px 0 0 !important; }
+            .flywheel-step:last-child { border-radius: 0 0 12px 12px !important; }
+            .metric-value { font-size: 2.25rem; }
+            .ask-box .ask-amount { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ========================================== -->
+    <!-- SLIDE 01: THE HOOK -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">01 / The Problem</div>
+        <h1>Agriculture optimized the wrong variable for 70 years.</h1>
+        <p>Yield went up. Nutrition went down. The cause is structural&mdash;and not fixable within the existing agricultural paradigm.</p>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">8x</div>
+                <div class="metric-label">Oranges needed today to match 1950s Vitamin A.</div>
+                <div class="metric-source">Davis & Davis, Journal of the American College of Nutrition</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">-27%</div>
+                <div class="metric-label">Decline in iron content of commercial spinach since 1950.</div>
+                <div class="metric-source">USDA Nutrient Database, historical comparison</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">-76%</div>
+                <div class="metric-label">Mineral density decline across 43 garden crops in 50 years.</div>
+                <div class="metric-source">Donald Davis, UT Austin, HortScience 2004</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 02: WHY IT HAPPENED -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">02 / Root Cause</div>
+        <h2>The system measures yield per acre. Nobody measures nutrition per acre.</h2>
+        <p>Agricultural infrastructure&mdash;from seed breeding to soil testing to crop insurance&mdash;was built to optimize one variable: tons per acre. Nutrient density isn't tracked, priced, or rewarded anywhere in the supply chain.</p>
+        <ul>
+            <li><strong>Seed companies</strong> breed for yield, shelf life, and pest resistance. Nutrient density is not a selection variable.</li>
+            <li><strong>Soil testing</strong> measures N-P-K for growth. Micronutrients, trace minerals, and soil biology are rarely measured at field scale.</li>
+            <li><strong>Crop insurance</strong> prices risk on satellite imagery and county averages. A $20B federal program that has never seen a soil sensor reading.</li>
+            <li><strong>Carbon markets</strong> need field-level verification. Periodic lab samples at $25&ndash;50 each can't cover a 5,000-acre operation.</li>
+        </ul>
+        <div class="callout">
+            <p><strong>The missing piece isn't agronomy knowledge.</strong> It's the physical infrastructure to measure what matters&mdash;continuously, underground, at field scale, at a price point that works.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 03: THE DATA GAP -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">03 / The Data Gap</div>
+        <h2>$400 billion of output runs on worse data than a coffee shop.</h2>
+        <p>A Starbucks tracks every transaction, ingredient, and second of wait time across 16,000 locations. A $10M almond operation in the Central Valley makes irrigation decisions from one soil test per year and intuition.</p>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value" style="color: var(--rose);">60%</div>
+                <div class="metric-label">of US farmland lacks reliable broadband.</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: var(--rose);">72%</div>
+                <div class="metric-label">of farmers report concerns about data ownership in proprietary systems.</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: var(--rose);">$0</div>
+                <div class="metric-label">spent on purpose-built agricultural semiconductors. Every ag sensor uses repurposed industrial chips.</div>
+            </div>
+        </div>
+
+        <div class="callout" style="margin-top: 3rem; border-color: rgba(244, 63, 94, 0.15); background: rgba(244, 63, 94, 0.06);">
+            <p><strong style="color: var(--rose);">Every standalone farm data platform has failed.</strong> Climate Corp ($1.1B, written down). Granular ($300M, shut down). Farmers Edge (IPO to 99% loss). The pattern: farmer-facing SaaS can't generate standalone revenue. The infrastructure layer was never built.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 04: THE SOLUTION -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">04 / Century</div>
+        <h2>The intelligence layer agriculture has never had.</h2>
+        <p>Three products, built together, that can't work apart. The chip makes sensing affordable. The platform makes data interoperable. The AI makes it actionable.</p>
+
+        <div class="flow-row">
+            <div class="flow-card">
+                <h3>Sensor Hardware</h3>
+                <p>Purpose-built nodes buried 30&ndash;120cm in fields. Measure root-zone water, nutrients, carbon flux, pH, salinity. What no satellite can reach.</p>
+                <p style="margin-top: 1rem; color: var(--accent); font-weight: 600; font-size: 0.9rem;">$50&ndash;70/node now &rarr; $12&ndash;18 with custom SoC</p>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-card">
+                <h3>Farm Data OS</h3>
+                <p>Open-core platform fusing underground sensors with satellite imagery, weather, and equipment telemetry. Farmers own their data. Free tier drives adoption.</p>
+                <p style="margin-top: 1rem; color: var(--accent); font-weight: 600; font-size: 0.9rem;">The Linux of agriculture</p>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-card">
+                <h3>Decision Engine</h3>
+                <p>ML models trained on compounding field data. Yield prediction, input optimization, risk modeling, carbon verification, quality scoring.</p>
+                <p style="margin-top: 1rem; color: var(--accent); font-weight: 600; font-size: 0.9rem;">Raw data ($1/acre) &rarr; decisions ($15/acre)</p>
+            </div>
+        </div>
+
+        <div class="callout">
+            <p><strong>Quality intelligence is the wedge.</strong> The same sensor infrastructure that measures nutrient density also measures water efficiency, carbon sequestration, and crop health. Nutrient-dense food is the consumer story. Underground data infrastructure is the business.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 05: WHY NOW -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">05 / Why Now</div>
+        <h2>Three structural forces converging.</h2>
+
+        <div class="metrics-grid" style="grid-template-columns: 1fr;">
+            <div class="metric-card">
+                <h3 style="color: var(--cyan); font-size: 1.25rem; margin: 0 0 1rem 0;">Water Crisis</h3>
+                <p style="font-size: 1.1rem; margin: 0;">California's SGMA will force <strong style="color: var(--text-main);">500K&ndash;1M acres</strong> out of production by 2040. Water districts legally need field-level monitoring data&mdash;and the sensors don't exist yet. Central Valley land has bifurcated 8&ndash;10x: water-secure ($12&ndash;23K/acre) vs. water-insecure ($2&ndash;3K/acre).</p>
+            </div>
+            <div class="metric-card">
+                <h3 style="color: var(--amber); font-size: 1.25rem; margin: 0 0 1rem 0;">Generational Transfer</h3>
+                <p style="font-size: 1.1rem; margin: 0;">Average farmer age: <strong style="color: var(--text-main);">58.3</strong>. 40% of US farmland ($1.5T) changing hands by 2035. Only 1 in 4 farms has a succession plan. New operators will adopt technology&mdash;they don't have 30 years of intuition to rely on.</p>
+            </div>
+            <div class="metric-card">
+                <h3 style="color: var(--violet); font-size: 1.25rem; margin: 0 0 1rem 0;">Regulatory Demand</h3>
+                <p style="font-size: 1.1rem; margin: 0;">EU Data Act mandates agricultural equipment data portability. <strong style="color: var(--text-main);">7 US states</strong> passed right-to-repair for ag equipment (2023&ndash;2025). Carbon credit markets require sensor-verified field data&mdash;no sensor, no credit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 06: COMPETITIVE MOAT -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">06 / Moat</div>
+        <h2>Four compounding advantages.</h2>
+        <p>Each layer reinforces the others. Time to replicate the full stack: 5+ years.</p>
+
+        <table class="compare-table">
+            <tr>
+                <th>Moat</th>
+                <th>What It Does</th>
+                <th>Replication Time</th>
+            </tr>
+            <tr>
+                <td>Custom Silicon</td>
+                <td>Makes field-scale sensing economically viable. Cost advantage widens with volume.</td>
+                <td class="hi">3&ndash;4 years</td>
+            </tr>
+            <tr>
+                <td>Open Data Platform</td>
+                <td>Becomes the interoperability standard. Every vendor that integrates increases switching costs.</td>
+                <td class="hi">2&ndash;4 years</td>
+            </tr>
+            <tr>
+                <td>Data Compounding</td>
+                <td>Every acre deployed generates proprietary training data. More data = better models = more acres.</td>
+                <td class="hi">3&ndash;5 years</td>
+            </tr>
+            <tr>
+                <td>Farmland Portfolio</td>
+                <td>Sensor data gives forward-looking land valuation. Information asymmetry no competitor has.</td>
+                <td class="hi">Unique</td>
+            </tr>
+        </table>
+
+        <div class="callout" style="margin-top: 2rem;">
+            <p><strong>Why Deere won't build this.</strong> Open data directly undermines their equipment lock-in business model. That structural conflict is our moat against the $150B incumbent.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 07: FLYWHEEL -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">07 / Flywheel</div>
+        <h2>Each cycle makes the next one faster.</h2>
+        <p>The technology business and the land portfolio compound together. This flywheel is funded by agricultural debt, not venture capital.</p>
+
+        <div class="flywheel">
+            <div class="flywheel-step" style="background: var(--card-bg);">
+                <div class="step-num">01</div>
+                <h3>Deploy Sensors</h3>
+                <p style="color: var(--text-muted);">More acres instrumented, more soil types covered, more crops measured.</p>
+            </div>
+            <div class="flywheel-step" style="background: var(--card-bg);">
+                <div class="step-num">02</div>
+                <h3>Richer Data</h3>
+                <p style="color: var(--text-muted);">Every soil-crop-climate combination makes the calibration models more precise.</p>
+            </div>
+            <div class="flywheel-step" style="background: var(--card-bg);">
+                <div class="step-num">03</div>
+                <h3>Better Models</h3>
+                <p style="color: var(--text-muted);">Higher accuracy unlocks new products: quality scoring, carbon verification, parcel-level insurance.</p>
+            </div>
+            <div class="flywheel-step" style="background: var(--card-bg);">
+                <div class="step-num">04</div>
+                <h3>More Customers</h3>
+                <p style="color: var(--text-muted);">Revenue funds the next deployment wave. Land appreciates. Credit line grows. Repeat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 08: MARKET -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">08 / Market</div>
+        <h2>Not one market. The intelligence layer across all of them.</h2>
+
+        <table class="compare-table">
+            <tr>
+                <th>Market</th>
+                <th>Size</th>
+                <th>Our Position</th>
+            </tr>
+            <tr>
+                <td>US Agricultural Output</td>
+                <td>$400B/year</td>
+                <td class="hi">Intelligence layer across all production</td>
+            </tr>
+            <tr>
+                <td>US Farmland Assets</td>
+                <td>$3.67T</td>
+                <td class="hi">Data-driven valuation + acquisition</td>
+            </tr>
+            <tr>
+                <td>Federal Crop Insurance</td>
+                <td>$20B/year</td>
+                <td class="hi">Parcel-level risk data licensing</td>
+            </tr>
+            <tr>
+                <td>Precision Ag Technology</td>
+                <td>$12.8B &rarr; $44B</td>
+                <td class="hi">SoC + sensors + platform</td>
+            </tr>
+            <tr>
+                <td>Carbon Verification</td>
+                <td>$2B &rarr; $50B+</td>
+                <td class="hi">Sensor-verified field data required</td>
+            </tr>
+        </table>
+
+        <div class="callout" style="margin-top: 2rem;">
+            <p><strong>100M acres of US specialty + high-value crops at $10/acre/year = $1B in data subscription revenue alone.</strong> Add SoC licensing, institutional data products, and farmland&mdash;this is a multi-billion-dollar business.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 09: REVENUE STREAMS -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">09 / Revenue</div>
+        <h2>Five buyer categories. None depend on farmer SaaS adoption.</h2>
+
+        <div class="rev-grid">
+            <div class="rev-card">
+                <div class="rev-amount" style="color: var(--accent);">$5&ndash;15</div>
+                <div class="rev-unit">per acre / year</div>
+                <div class="rev-who">Farmers</div>
+                <div class="rev-desc">Decision products via crop advisor network</div>
+            </div>
+            <div class="rev-card">
+                <div class="rev-amount" style="color: var(--amber);">$500K&ndash;5M</div>
+                <div class="rev-unit">per customer / year</div>
+                <div class="rev-who">Institutions</div>
+                <div class="rev-desc">Insurers, water districts, carbon registries</div>
+            </div>
+            <div class="rev-card">
+                <div class="rev-amount" style="color: var(--violet);">$0.50&ndash;2</div>
+                <div class="rev-unit">per chip at volume</div>
+                <div class="rev-who">Equipment OEMs</div>
+                <div class="rev-desc">Silicon licensed to Deere, CNH, AGCO</div>
+            </div>
+            <div class="rev-card">
+                <div class="rev-amount" style="color: var(--cyan);">$3&ndash;8</div>
+                <div class="rev-unit">per acre / year</div>
+                <div class="rev-who">Robotics</div>
+                <div class="rev-desc">Field intelligence API for autonomous ag</div>
+            </div>
+            <div class="rev-card">
+                <div class="rev-amount" style="color: var(--blue);">10.7%</div>
+                <div class="rev-unit">30-year annualized return</div>
+                <div class="rev-who">Farmland</div>
+                <div class="rev-desc">Distressed acres, ag-lender financed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 10: GO-TO-MARKET -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">10 / Go-to-Market</div>
+        <h2>Concentric rings. Each funds the next.</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">Months 0&ndash;12</div>
+                <h3>Ring 0: Own Facility</h3>
+                <p>Greenhouse + field plots near UC Davis. R&D lab with revenue. Test sensors, validate the data pipeline, prove the system works at commercial scale. $150&ndash;250K/year from crop sales covers facility costs.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time">Months 6&ndash;24</div>
+                <h3>Ring 1: Regional Farms</h3>
+                <p>50&ndash;100 partner operations via UC Davis Cooperative Extension. Multi-crop, multi-soil training data. Per-acre subscriptions begin.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time">Months 12&ndash;36</div>
+                <h3>Ring 2: Institutional Customers</h3>
+                <p>Water districts, crop insurers, carbon programs. $500K&ndash;5M contracts. Top-down sales that bypass individual farmer adoption entirely.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time">Months 24&ndash;48</div>
+                <h3>Ring 3: OEM + Robotics</h3>
+                <p>Chip licensed into equipment manufacturers. Field intelligence API becomes the data standard for autonomous agriculture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 11: TEAM -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">11 / Team</div>
+        <h2>Agricultural science + enterprise software + semiconductor design.</h2>
+        <p>A combination that doesn't exist at any other ag-tech startup.</p>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>CEO</h3>
+                <div class="role">Agriculture + Capital Formation</div>
+                <p>UC Davis, Agriculture</p>
+                <p>Distributed systems engineering</p>
+                <p>Multiple successful capital raises</p>
+            </div>
+            <div class="team-member">
+                <h3>CTO</h3>
+                <div class="role">Software + Machine Learning</div>
+                <p>UC Davis CS + Georgia Tech MS (AI/ML)</p>
+                <p>Veeva Systems, Senior Engineer</p>
+                <p>Enterprise SaaS at production scale</p>
+            </div>
+            <div class="team-member">
+                <h3>Hardware Lead</h3>
+                <div class="role">Semiconductor Design</div>
+                <p>UC Davis MS, Material Science</p>
+                <p>Skyworks Solutions &mdash; 5G chip design</p>
+                <p>Taped out chips for Apple &amp; Samsung</p>
+            </div>
+        </div>
+
+        <div class="callout" style="margin-top: 2rem;">
+            <p><strong>Davis, California.</strong> #1 agricultural university in the world. 15 minutes from the Central Valley&mdash;the most productive agricultural region on Earth. The densest concentration of agricultural research infrastructure in the Western US.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 12: THE ASK -->
+    <!-- ========================================== -->
+    <section class="slide">
+        <div class="slide-number">12 / The Ask</div>
+        <h2>Seed round.</h2>
+
+        <div class="ask-box">
+            <h3>SAFE / Convertible Note &middot; QSBS-Eligible</h3>
+            <div class="ask-amount">$500K &ndash; $1M</div>
+            <ul>
+                <li><strong>Open-core platform MVP</strong> &mdash; data aggregation from sensors + satellite + weather</li>
+                <li><strong>COTS sensor prototypes</strong> deployed across 3+ crop types in Davis/Central Valley</li>
+                <li><strong>Own facility</strong> &mdash; greenhouse + field plots for R&D with revenue</li>
+                <li><strong>First institutional conversations</strong> &mdash; water district and crop insurer pilots</li>
+                <li><strong>USDA STTR application</strong> with UC Davis co-PI for custom silicon R&D</li>
+            </ul>
+        </div>
+
+        <div class="callout" style="margin-top: 2rem;">
+            <p><strong>Parallel non-dilutive capital: $440K&ndash;$1M+.</strong> USDA STTR ($125K), CDFA Specialty Crop Block Grant ($100&ndash;500K), FSA Microloan ($50K), AgWest Grant ($15K). Total Phase 0 capital stack: ~$1&ndash;2M at 30&ndash;40% non-dilutive.</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 13: CLOSING -->
+    <!-- ========================================== -->
+    <section class="slide" style="min-height: 70vh;">
+        <div class="slide-number">13 / Summary</div>
+        <h2>The chip generates data. The platform makes it useful. The data compounds into intelligence. The intelligence makes land more valuable. The land funds the next deployment.</h2>
+        <p class="lead">Every layer feeds the next. The moat compounds.</p>
+        <p>Agricultural data is the last major undigitized data domain. Finance, healthcare, and logistics all have infrastructure standards. Agriculture does not. The company that builds it will define the category.</p>
+    </section>
+
+    <div class="footer">
+        <p>Confidential &mdash; For Discussion Purposes Only</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">Century Business Architecture &rarr;</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>
